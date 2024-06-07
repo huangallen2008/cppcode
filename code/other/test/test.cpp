@@ -48,6 +48,6 @@ signed main() {
     int n;
     cin>>n;
     vector<int> a(n);
-    REP(i,n) cn>>a[i];
+    REP(i,n) cin>>a[i];
     return 0;
 }
