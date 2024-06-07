@@ -45,32 +45,5 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,x;
-    cin>>n>>x;
-    bool ok=0;
-    while(((ld)clock()/CLOCKS_PER_SEC)<=1) {
-        vector<int> a(n+1);
-        int v=0;
-        int ook=1;
-        REP1(i,n-1) {
-            a[i]=rd(a[i-1]+1,500000-n+i),v^=a[i];
-            if(a[i]<0||a[i]>1e6) {
-                ook=0;
-                break;
-            }
-        }
-        if(!ook) continue;
-        a[n]=v^x;
-        if(a[n]<0||a[n]>1e6) ook=0;
-        REP1(i,n-1) if(a[i]==a[n]) ook=0;
-        if(ook) {
-            cout<<"YES\n";
-            REP1(i,n) cout<<a[i]<<' ';
-            cout<<'\n';
-            ok=1;
-            break;
-        }
-    }
-    if(!ok)cout<<"NO\n";
     return 0;
 }
