@@ -45,5 +45,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    int n;
+    cin>>n;
+    
     return 0;
 }
