@@ -1,0 +1,48 @@
+<form method="post" action="{{ url_for('student_search') }}">
+  年級:
+  <select name="grade">
+      <option value=0>grade</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+  </select>
+
+  班級:
+  <select name="class">
+      <option value="0">value</option>
+  {% for i in range(1,22) %}
+      <option value={{i}}>{{i}}</option>
+  {% endfor %}
+  </select>
+
+  座號:
+  <select name="number">
+
+  {% for i in range(51) %}
+      <option value={{i}}>{{i}}</option>
+  {% endfor %}
+  </select>
+
+  日期:
+  <input type="date" name="date">
+    
+  付款狀態:
+  <select name="is_payed">
+      <option value=0>不限</option>
+      <option value=1>已付款</option>
+      <option value=2>未付款</option>
+  </select>
+
+  <button type="submit">submit</button>
+
+  <br><br>
+  <table border>
+    <tr><td>編號</td><td>年級</td><td>班級</td><td>座號</td><td>日期</td><td>餐點</td><td>數量</td><td>付款狀態</td></tr>
+{% for line in order %}{% set indexn,grade,classs,number,date,meal,qua,is_payed = line %}<tr><td>{{indexn}}</td><td>{{grade}}</td><td> {{classs}}</td><td>{{number}}</td><td> {{date}} </td><td>{{meal}}</td><td>{{qua}}</td><td><input type="checkbox" name="check {{indexn}}" value="1" disabled {% if is_payed=='1' %} checked {% endif %}></td></tr>
+{% endfor %}
+</table>
+
+  </form>
+  <form method="post" action="{{ url_for('student') }}">
+      <button type="submit">back</button>
+  </form>
