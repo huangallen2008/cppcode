@@ -55,7 +55,6 @@ signed main() {
     for(int ct:cv) {
         REP(i,ct) now[i]++;
     }
-    
 
     return 0;
 }
