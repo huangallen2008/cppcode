@@ -51,7 +51,6 @@ signed main() {
     REP(i,n) cin>>a[i];
     int sum=0;
     REP(i,n) sum+=a[i];
-    cout<<sum<<'\n';
     cout<<n<<'\n';
     return 0;
 }
