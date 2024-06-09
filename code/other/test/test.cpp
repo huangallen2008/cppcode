@@ -52,7 +52,11 @@ signed main() {
     int sum=0;
     REP(i,n) sum+=a[i];
     cout<<sum<<'\n';
+<<<<<<< HEAD
     cout<<sum<<'\n';
     cout<<sum<<'\n';
+=======
+    cout<<n<<'\n';
+>>>>>>> 64a9c55e38786cde0c4b8e5d175b6cad1e4c0f5c
     return 0;
 }
