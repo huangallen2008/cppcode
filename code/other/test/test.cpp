@@ -52,6 +52,6 @@ signed main() {
     int sum=0;
     REP(i,n) sum+=a[i];
     cout<<sum<<'\n';
-    cout<<sum+n*1919<<'\n';
+    cout<<sum+n*4444<<'\n';
     return 0;
 }
