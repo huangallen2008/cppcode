@@ -50,7 +50,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int sum=0;
-    REP(i,n) su m+=a[i];
+    REP(i,n) sum+=a[i];
     cout<<n<<'\n';
     return 0;
 }
