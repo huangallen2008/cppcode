@@ -52,6 +52,10 @@ signed main() {
     int sum=0;
     REP(i,n) sum+=a[i];
     cout<<sum<<'\n';
+<<<<<<< HEAD
     cout<<n*6666<<'\n';
+=======
+    cout<<n*7676<<'\n';
+>>>>>>> 502abf77481db779553c880ff6c27e21e22d6396
     return 0;
 }
