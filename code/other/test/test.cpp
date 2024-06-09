@@ -52,6 +52,6 @@ signed main() {
     int sum=0;
     REP(i,n) sum+=a[i];
     cout<<sum<<'\n';
-    cout<<n*2347234<<'\n';
+    cout<<n*23323534<<'\n';
     return 0;
 }
