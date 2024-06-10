@@ -60,10 +60,22 @@ signed main() {
     queue<pii> q;
     q.push({0,n-1});
     dis[0][n-1]=0;
+    int an=inf;
     while(q.size()) {
         auto [u1,u2]=q.front();
         q.pop();
+        if(dis[u1][u2]*2>=an) {
+            cout<<an<<'\n';
+            return 0;
+        }
+        if(u1==u2) {
+            cout<<dis[u1][u2]*2<<'\n';
+            return 0;
+        }
         for(auto &[v1,c1]:g[u1]) {
+            if(v1==u2) {
+                chmin(an,dis[u1][u2]<<1|1);
+            }
             for(auto &[v2,c2]:g[u2]) {
                 if(c1!=c2) continue;
                 if(dis[v1][v2]<=dis[u1][u2]+1) continue;
