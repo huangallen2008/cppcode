@@ -47,7 +47,7 @@ vector<pair<int,char>> g[maxn];
 int dis[maxn][maxn];
 signed main() {
     IOS();
-    memset(dis,15,sizeof(dis));
+    memset(dis,15,sizeof(dis));ope(dis[0][0])
     int n,m;
     cin>>n>>m;
     REP(i,m) {
