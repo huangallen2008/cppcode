@@ -48,6 +48,7 @@ int dis[maxn][maxn];
 signed main() {
     IOS();
     memset(dis,1,sizeof(dis));
+    cout<<dis[0][0]<<'\n';
     int n,m;
     cin>>n>>m;
     REP(i,m) {
