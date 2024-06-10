@@ -53,8 +53,11 @@ signed main() {
     vector<string> a(n+1);
     REP(i,n) cin>>a[i];
     reverse(ALL(a));
-    vector<string> dp(n+1);dp[0]='z';
-    REP1(i,n) dp[i]=min(a[i]+dp[i-1],dp[i-1]);
+    vector<vector<string>> dp(n+1,vector<string>(k+1));
+    REP1(i,n) {
+        dp[i][0]=dp[i-1][0];
+        REP1(j,n) dp[i][j]=min(a[i]+dp[i-1][j-1],dp[i-1][j]);
+    }
     oparr(dp)
     dp[n].pop_back();
     cout<<dp[n]<<'\n';
