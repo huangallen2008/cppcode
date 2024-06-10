@@ -49,7 +49,7 @@ signed main() {
     int n,k;
     cin>>n>>k;
     vector<string> a(n+1);
-    REP(i,n) cin>>a[i];
+    REP1(i,n) cin>>a[i];
     reverse(ALL(a));
     vector<string> dp(n+1);
     REP(i,n) {
