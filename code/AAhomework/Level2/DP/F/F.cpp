@@ -54,7 +54,8 @@ signed main() {
     vector<vector<string>> dp(n+1,vector<string>(k+1));
     REP1(i,n) {
         dp[i][0]=dp[i-1][0];
-        REP1(j,i) dp[i][j]=min(a[i]+dp[i-1][j-1],j<=i-1?dp[i-1][j]:"~");
+        REP1(j,i) dp[i][j]=min(a[i]+dp[i-1][j-1],j<i?dp[i-1][j]:"~");
+        ope(i)
     }
     cout<<dp[n][k]<<'\n';
     return 0;
