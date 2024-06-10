@@ -45,6 +45,37 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    int n,m;
+    cin>>n>>m;
+    vector<vector<pair<int,char>>> g(n);
+    REP(i,m) {
+        int u,v;
+        char c;
+        cin>>u>>v>>c;
+        u--,v--;
+        g[u].pb({v,c});
+        g[v].pb({u,c});
+    }
+    vector<vector<int>> dis(n,vector<int>(n));
+    queue<pii> q;
+    q.push({0,n-1});
+    dis[0][n-1]=0;
+    while(q.size()) {
+        auto [u1,u2]=q.front();
+        q.pop();
+        if(u1==u2) {
+            cout<<dis[u1][u1]<<'\n';
+            return 0;
+        }
+        for(auto &[v1,c1]:g[u1]) {
+            for(auto &[v2,c2]:g[u2]) {
+                if(c1!=c2) continue;
+                if(dis[v1][v2]<dis[u1][u2]+1) continue;
+                dis[v1][v2]=dis[u1][u2]+1;
+                q.push({v1,v2});
+            }
+        }
+    }
+    cout<<"-1\n";
     return 0;
 }
