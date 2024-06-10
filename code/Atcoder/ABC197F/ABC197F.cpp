@@ -68,6 +68,10 @@ signed main() {
             return 0;
         }
         for(auto &[v1,c1]:g[u1]) {
+            if(c1==u2) {
+                cout<<dis[u1][u2]*2+1<<'\n';
+                return 0;
+            }
             for(auto &[v2,c2]:g[u2]) {
                 if(c1!=c2) continue;
                 if(dis[v1][v2]<dis[u1][u2]+1) continue;
