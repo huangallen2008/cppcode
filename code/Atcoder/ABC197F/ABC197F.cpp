@@ -56,7 +56,7 @@ signed main() {
         g[u].pb({v,c});
         g[v].pb({u,c});
     }
-    vector<vector<int>> dis(n,vector<int>(n));
+    vector<vector<int>> dis(n,vector<int>(n,inf));
     queue<pii> q;
     q.push({0,n-1});
     dis[0][n-1]=0;
