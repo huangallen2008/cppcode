@@ -70,6 +70,7 @@ signed main() {
     IOS();
     int q;
     cin>>q>>mod;
+    init();
     while(q--) solve();
     return 0;
 }
