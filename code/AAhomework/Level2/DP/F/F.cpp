@@ -58,8 +58,6 @@ signed main() {
         dp[i][0]=dp[i-1][0];
         REP1(j,n) dp[i][j]=min(a[i]+dp[i-1][j-1],dp[i-1][j]);
     }
-    oparr(dp)
-    dp[n].pop_back();
     cout<<dp[n][k]<<'\n';
     return 0;
 }
