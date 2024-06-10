@@ -75,7 +75,7 @@ signed main() {
     int an=inf;
     REP(i,n) chmin(an,dis[i][i]*2);
     ope(an)
-    REP(u,n) for(auto [v,c]:g[u]) chmin(an,dis[u][v]*2+1);
+    REP(u,n) for(auto [v,c]:g[u]) {chmin(an,dis[u][v]*2+1);op(u)op(v)ope(an)}
     if(an==inf) cout<<"-1\n";
     else cout<<an<<'\n';
     return 0;
