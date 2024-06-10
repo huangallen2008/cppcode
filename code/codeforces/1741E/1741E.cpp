@@ -46,12 +46,13 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> a(n+1),dp(n+1);
+    vector<int> a(n+1);
+    vector<bool>dp(n+1);
     REP1(i,n) cin>>a[i];
     dp[0]=1;
     REP(i,n+1) {
-        if(i>0&&i-a[i]-1>=0) dp[i]+=dp[i-a[i]-1];
-        if(i<n&&i+a[i+1]+1<=n) dp[i+a[i+1]+1]+=dp[i];
+        if(i>0&&i-a[i]-1>=0) dp[i]=dp[i]||dp[i-a[i]-1];
+        if(i<n&&i+a[i+1]+1<=n) dp[i+a[i+1]+1]=dp[i+a[i+1]+1]||dp[i];
     }
     if(dp[n]) cout<<"YES"<<'\n';
     else cout<<"NO\n";
