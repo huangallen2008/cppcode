@@ -37,17 +37,19 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=2e5+5;
+const int maxn=5000+5;
 const int inf=(1ll<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+vector<pair<int,char>> g[maxn];
+int dis[maxn][maxn];
 signed main() {
     IOS();
+    memset(dis,0,sizeof(dis));
     int n,m;
     cin>>n>>m;
-    vector<vector<pair<int,char>>> g(n);
     REP(i,m) {
         int u,v;
         char c;
@@ -56,7 +58,6 @@ signed main() {
         g[u].pb({v,c});
         g[v].pb({u,c});
     }
-    vector<vector<int>> dis(n,vector<int>(n,inf));
     queue<pii> q;
     q.push({0,n-1});
     dis[0][n-1]=0;
