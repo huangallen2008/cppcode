@@ -53,7 +53,8 @@ void solve() {
         if(i<n&&i+a[i+1]+1<=n) dp[i+a[i+1]+1]+=dp[i];
         if(i>0&&i-a[i]-1>=0) dp[i]+=dp[i-a[i]-1];
     }
-    cout<<dp[n]<<'\n';
+    if(dp[n]) cout<<"YES"<<'\n';
+    else cout<<"NO\n";
 }
 signed main() {
     IOS();
