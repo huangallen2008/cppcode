@@ -47,7 +47,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     string s1="123",s2="12";
-    ope((char)('z'+1))
+    REP(i,12)ope((char)('z'+i))
     int n,k;
     cin>>n>>k;
     vector<string> a(n+1);
