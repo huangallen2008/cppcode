@@ -62,7 +62,7 @@ void solve() {
             dp[i][j]=t[mm];
         }
     }
-    cout<<dp[n][k]<<'\n';;
+    cout<<dp[n][k]<<'\n';
 }
 signed main() {
     IOS();
