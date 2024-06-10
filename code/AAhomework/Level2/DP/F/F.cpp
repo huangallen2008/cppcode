@@ -60,6 +60,6 @@ signed main() {
     }
     oparr(dp)
     dp[n].pop_back();
-    cout<<dp[n]<<'\n';
+    cout<<dp[n][k]<<'\n';
     return 0;
 }
