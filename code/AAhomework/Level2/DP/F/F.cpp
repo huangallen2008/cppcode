@@ -46,8 +46,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    string s1="123",s2="12";
-    REP(i,12)ope((char)('z'+i))
     int n,k;
     cin>>n>>k;
     vector<string> a(n+1);
@@ -56,7 +54,7 @@ signed main() {
     vector<vector<string>> dp(n+1,vector<string>(k+1));
     REP1(i,n) {
         dp[i][0]=dp[i-1][0];
-        REP1(j,i) dp[i][j]=min(a[i]+dp[i-1][j-1],j<=i-1?dp[i-1][j]:"");
+        REP1(j,i) dp[i][j]=min(a[i]+dp[i-1][j-1],j<=i-1?dp[i-1][j]:"~");
     }
     cout<<dp[n][k]<<'\n';
     return 0;
