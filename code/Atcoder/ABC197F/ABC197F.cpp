@@ -63,15 +63,7 @@ signed main() {
     while(q.size()) {
         auto [u1,u2]=q.front();
         q.pop();
-        if(u1==u2) {
-            cout<<dis[u1][u1]*2<<'\n';
-            return 0;
-        }
         for(auto &[v1,c1]:g[u1]) {
-            if(v1==u2) {
-                cout<<dis[u1][u2]*2+1<<'\n';
-                return 0;
-            }
             for(auto &[v2,c2]:g[u2]) {
                 if(c1!=c2) continue;
                 if(dis[v1][v2]<=dis[u1][u2]+1) continue;
@@ -80,6 +72,9 @@ signed main() {
             }
         }
     }
+    int an=inf;
+    REP(i,n) chmin(an,dis[i][i]*2);
+    REP(i,n) for(auto [v,c]:g[i]) chmin(an,dis[i][v]*2+1);
     cout<<"-1\n";
     return 0;
 }
