@@ -78,7 +78,7 @@ signed main() {
             }
             for(auto &[v2,c2]:g[u2]) {
                 if(c1!=c2) continue;
-                if(dis[v1][v2]<=dis[u1][u2]+1) continue;
+                if(dis[v1][v2]==inf) continue;
                 dis[v1][v2]=dis[u1][u2]+1;
                 q.push({v1,v2});
             }
