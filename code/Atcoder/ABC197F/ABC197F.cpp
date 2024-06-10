@@ -84,9 +84,6 @@ signed main() {
             }
         }
     }
-    REP(i,n) if(dis[i][i]!=inf)chmin(an,dis[i][i]*2);
-    REP(u,n) for(auto [v,c]:g[u]) {if(dis[u][v]!=inf)chmin(an,dis[u][v]*2+1);}
-    if(an==inf) cout<<"-1\n";
-    else cout<<an<<'\n';
+    cout<<"-1\n";
     return 0;
 }
