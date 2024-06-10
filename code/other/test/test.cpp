@@ -53,6 +53,6 @@ signed main() {
     REP(i,n) sum+=a[i];
     cout<<sum<<'\n';
     cout<<n<<'\n';
-    ope(n)
+    ope("2024/6/11 12:45")
     return 0;
 }
