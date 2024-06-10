@@ -47,7 +47,7 @@ void solve() {
     int n;
     cin>>n;
     vector<int> a(n+1);
-    bitset<maxn> dp(n+1);
+    bitset<maxn> dp;
     REP1(i,n) cin>>a[i];
     dp[0]=1;
     REP(i,n+1) {
