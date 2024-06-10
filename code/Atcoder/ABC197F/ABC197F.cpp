@@ -64,7 +64,7 @@ signed main() {
         auto [u1,u2]=q.front();
         q.pop();
         if(u1==u2) {
-            cout<<dis[u1][u1]<<'\n';
+            cout<<dis[u1][u1]*2<<'\n';
             return 0;
         }
         for(auto &[v1,c1]:g[u1]) {
