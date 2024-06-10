@@ -51,7 +51,7 @@ signed main() {
     vector<string> a(n+1);
     REP1(i,n) cin>>a[i];
     reverse(ALL(a));
-    vector<string> dp(n+1);
+    vector<string> dp(n+1,"");
     REP(i,n) {
         dp[i]=min(a[i]+dp[i-1],dp[i-1]);
     }
