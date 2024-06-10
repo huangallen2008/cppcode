@@ -46,6 +46,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ope(min("123","12"))
     int n,k;
     cin>>n>>k;
     vector<string> a(n+1);
