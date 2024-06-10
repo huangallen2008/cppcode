@@ -55,7 +55,7 @@ signed main() {
     REP1(i,n) {
         dp[i]=min(a[i]+dp[i-1],dp[i-1]);
     }
-    oparr(dp)
+    oparr(a)oparr(dp)
     cout<<dp[n]<<'\n';
     return 0;
 }
