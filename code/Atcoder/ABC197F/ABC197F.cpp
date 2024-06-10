@@ -47,7 +47,6 @@ vector<pair<int,char>> g[maxn];
 int dis[maxn][maxn];
 signed main() {
     IOS();
-    memset(dis,15,sizeof(dis));ope(dis[0][0])
     int n,m;
     cin>>n>>m;
     REP(i,m) {
@@ -58,6 +57,7 @@ signed main() {
         g[u].pb({v,c});
         g[v].pb({u,c});
     }
+    REP(i,n) REP(j,n) dis[i][j]=inf;
     queue<pii> q;
     q.push({0,n-1});
     dis[0][n-1]=0;
