@@ -38,12 +38,13 @@ using namespace std;
 #endif
 // const int mod=1e9+7;
 int mod=1e9+7;
-const int maxn=2e5+5;
+const int maxn=5000+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+vector<vector<int>> dp(maxn,vector<int>(maxn));
 void solve() {
     int n,k;
     cin>>k>>n;
@@ -52,24 +53,23 @@ void solve() {
         cout<<"0\n";
         return;
     }
-    vector<vector<int>> dp(n+1,vector<int>(k+1));
+    cout<<dp[n][k]<<'\n';
+}
+void init() {
     dp[0][0]=1;
-    REP1(i,n) {
+    REP1(i,maxn-1) {
         vector<int> t(i);
-        REP(j,k+1) {
+        REP(j,maxn) {
             int mm=j%i;
             addmod(t[mm],dp[i-1][j]);
             dp[i][j]=t[mm];
         }
     }
-    cout<<dp[n][k]<<'\n';
 }
 signed main() {
     IOS();
     int q;
     cin>>q>>mod;
-    while(q--) {
-        solve();
-    }
+    while(q--) solve();
     return 0;
 }
