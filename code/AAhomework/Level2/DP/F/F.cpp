@@ -55,8 +55,6 @@ signed main() {
     REP1(i,n) {
         dp[i][0]=dp[i-1][0];
         REP1(j,min(i,k)) dp[i][j]=min(a[i]+dp[i-1][j-1],j<i?dp[i-1][j]:"~");
-        ope(i)
-        oparr(dp[i])
     }
     cout<<dp[n][k]<<'\n';
     return 0;
