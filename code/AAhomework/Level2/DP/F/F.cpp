@@ -55,6 +55,7 @@ signed main() {
     reverse(ALL(a));
     vector<string> dp(n+1);dp[0]='z';
     REP1(i,n) dp[i]=min(a[i]+dp[i-1],dp[i-1]);
+    oparr(dp)
     dp[n].pop_back();
     cout<<dp[n]<<'\n';
     return 0;
