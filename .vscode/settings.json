@@ -2,7 +2,6 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "git.autorefresh": true,
     "git.postCommitCommand": "sync",
     "gitdoc.commitMessageFormat": "coding",
     "gitdoc.pushMode": "push",
