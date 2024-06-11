@@ -46,13 +46,10 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n;
-    cin>>n;
-    vector<int> a(n);
-    REP(i,n) cin>>a[i];
-    int sum=0;
-    REP(i,n) sum+=a[i];
-    cout<<sum<<'\n';
-    cout<<n<<'\n';
-    ope("2024/6/11 12:45")
+    vector<int> f(50);f[0]=f[1]=1;
+    for(int i=2;i<50;i++) f[i]=f[i-1]+f[i-2];
+    while(cin>>n) {
+        cout<<n<<'\n';
+    }
     return 0;
 }
