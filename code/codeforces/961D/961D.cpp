@@ -68,7 +68,7 @@ signed main() {
     }
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
-    int T=1000;
+    int T=10;
     while(T--) {
     //while((ld)clock()/CLOCKS_PER_SEC<0.9) {
         int p1=rd(0,n-1),p2=rd(0,n-1);
