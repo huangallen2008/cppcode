@@ -66,8 +66,8 @@ signed main() {
                 if(p[i][j]-p[i][j-mid]-p[i-mid][j]+p[i-mid][j-mid]==0) l=mid;
                 else r=mid-1;
             }
-            chmax(mx,m);
-            an+=m;
+            chmax(mx,mid);
+            an+=mid;
         }
     }
     cout<<an<<' '<<mx<<'\n';
