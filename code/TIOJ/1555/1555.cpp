@@ -49,6 +49,7 @@ signed main() {
     cin>>n>>m;
     vector<vector<bool>> a(n+1,vector<bool>(m+1));
     vector<vector<int>> p(n+1,vector<int>(m+1));
+    ope(sizeof(p))
     REP1(i,n) {
         REP1(j,m) {
             char c;
