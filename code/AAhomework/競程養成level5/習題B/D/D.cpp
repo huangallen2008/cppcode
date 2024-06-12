@@ -68,7 +68,6 @@ signed main() {
         }
         chmin(an,ti);
     }
-    op(an)
     cout<<an*t<<'\n';
     return 0;
 }
