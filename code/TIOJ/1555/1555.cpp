@@ -45,6 +45,31 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-
+    int n,m;
+    cin>>n>>m;
+    vector<vector<bool>> a(n+1,vector<bool>(m+1));
+    vector<vector<int>> p(n+1,vector<int>(m+1));
+    REP1(i,n) {
+        REP1(j,m) {
+            char c;
+            cin>>c;
+            if(c=='1') a[i][j]=1;
+            p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
+        }
+    }
+    int mx=0,an=0;
+    REP1(i,n) {
+        REP1(j,n) {
+            int l=0,r=min(i,j),m;
+            while(l<r) {//last m : p[i][j]-...-p[i-m][j-m]==0
+                m=l+r+1>>1;
+                if(p[i][j]-p[i][j-m]-p[i-m][j]+p[i-m][j-m]==0) l=m;
+                else r=m-1;
+            }
+            chmax(mx,m);
+            an+=m;
+        }
+    }
+    cout<<an<<' '<<mx<<'\n';
     return 0;
 }
