@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -58,7 +58,7 @@ signed main() {
     }
     REP(i,m) ord.pb(i);
     int an=inf;
-    while((ld)clock()/CLOCKS_PER_SEC<0.8) {
+    while((ld)clock()/CLOCKS_PER_SEC<0.9) {
         shuffle(ALL(ord),rng);
         now.reset();
         int ti=0;
