@@ -53,18 +53,18 @@ signed main() {
         REP(j,m) {
             char c;
             cin>>c;
-            if(c=='O') d[j][i]=1;
+            if(c=='X') d[j][i]=1;
         }
     }
     REP(i,m) ord.pb(i);
     int an=inf;
     while((ld)clock()/CLOCKS_PER_SEC<0.8) {
         shuffle(ALL(ord),rng);
-        now.set();
+        now.reset();
         int ti=0;
         for(int &i:ord) {
-            ti+=now.count();
-            now&=d[ord[i]];
+            ti+=m-now.count();
+            now|=d[ord[i]];
         }
         chmin(an,ti);
     }
