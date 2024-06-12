@@ -56,6 +56,8 @@ struct line {
     }
 };
 bool inl(line l,pii p) {
+    op(p.f)op(p.s)
+    ope((p.s-l.y0)*l.dx==(p.f-l.x0)*l.dy);
     return (p.s-l.y0)*l.dx==(p.f-l.x0)*l.dy;
 }
 signed main() {
