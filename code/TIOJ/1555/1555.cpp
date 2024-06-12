@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -37,19 +37,18 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5000+5;
+const int maxn=2e5+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int p[maxn][maxn];
-bitset<maxn> a[maxn];
 signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    memset(p,0,sizeof(p));
+    vector<vector<bool>> a(n+1,vector<bool>(m+1));
+    vector<vector<int>> p(n+1,vector<int>(m+1));
     REP1(i,n) {
         REP1(j,m) {
             char c;
@@ -60,12 +59,12 @@ signed main() {
     }
     int mx=0,an=0;
     REP1(i,n) {
-        REP1(j,n) {
-            int l=0,r=min(i,j),m;
+        REP1(j,m) {
+            int l=0,r=min(i,j),mid;
             while(l<r) {//last m : p[i][j]-...-p[i-m][j-m]==0
-                m=l+r+1>>1;
-                if(p[i][j]-p[i][j-m]-p[i-m][j]+p[i-m][j-m]==0) l=m;
-                else r=m-1;
+                mid=l+r+1>>1;
+                if(p[i][j]-p[i][j-mid]-p[i-mid][j]+p[i-mid][j-mid]==0) l=mid;
+                else r=mid-1;
             }
             chmax(mx,m);
             an+=m;
