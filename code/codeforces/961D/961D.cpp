@@ -76,7 +76,7 @@ signed main() {
         vector<pii> r;
         for(auto t:p) if(!inl(l1,t)) r.pb(t);
         if(r.size()<=2) {
-            cout<<"YES\n";
+            cout<<"YES\n"; 
             return 0;
         }
         bool ok=1;
