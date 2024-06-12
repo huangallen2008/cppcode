@@ -68,11 +68,9 @@ signed main() {
     }
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
-    int T=3;
-    while(T--) {
-    //while((ld)clock()/CLOCKS_PER_SEC<0.9) {
+    // int T=1000;while(T--) {
+    while((ld)clock()/CLOCKS_PER_SEC<0.1) {
         int p1=rd(0,n-1),p2=rd(0,n-1);
-        op(p1)ope(p2)
         if(p1==p2) continue;
         line l1(p[p1],p[p2]);
         vector<pii> r;
@@ -83,7 +81,6 @@ signed main() {
         }
         bool ok=1;
         line l2(r[0],r[1]);
-        for(auto [x,y]:r) cout<<"{"<<x<<','<<y<<"} ";entr
         for(auto t:r) if(!inl(l2,t)) {
             ok=0;
             break;
