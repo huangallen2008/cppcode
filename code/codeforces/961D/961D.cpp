@@ -48,7 +48,6 @@ struct line {
     line(pii p1,pii p2) {
         x0=p1.f,y0=p1.s;
         dx=p1.f-p2.f,dy=p1.s-p2.s;
-        op(dx)ope(dy)
         if(dx<0) dx=-dx,dy=-dy;
         if(dx&&dy){
             int g=__gcd(abs(dx),abs(dy));
@@ -57,8 +56,6 @@ struct line {
     }
 };
 bool inl(line l,pii p) {
-    op(p.f)op(p.s)
-    ope((p.s-l.y0)*l.dx==(p.f-l.x0)*l.dy);
     return (p.s-l.y0)*l.dx==(p.f-l.x0)*l.dy;
 }
 signed main() {
@@ -78,7 +75,6 @@ signed main() {
         op(p1)ope(p2)
         if(p1==p2) continue;
         line l1(p[p1],p[p2]);
-        cout<<"L1:";auto [v1,v2,v3,v4]=l1;for(int tt:{v1,v2,v3,v4}) cout<<tt<<' ';entr
         vector<pii> r;
         for(auto t:p) if(!inl(l1,t)) r.pb(t);
         if(r.size()<=2) {
