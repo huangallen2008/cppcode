@@ -49,8 +49,10 @@ struct line {
         x0=p1.f,y0=p1.s;
         dx=p1.f-p2.f,dx=p1.s-p2.s;
         if(dx<0) dx=-dx,dy=-dy;
-        int g=__gcd(abs(dx),abs(dy));
-        dx/=g,dy/=g;
+        if(dx&&dy){
+            int g=__gcd(abs(dx),abs(dy));
+            dx/=g,dy/=g;
+        }
     }
 };
 bool inl(line l,pii p) {
