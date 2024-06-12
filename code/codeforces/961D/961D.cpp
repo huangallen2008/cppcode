@@ -77,6 +77,7 @@ signed main() {
         op(p1)ope(p2)
         if(p1==p2) continue;
         line l1(p[p1],p[p2]);
+        cout<<"L1:";auto [v1,v2,v3,v4]=l1;for(int tt:{v1,v2,v3,v4}) cout<<tt<<' ';entr
         vector<pii> r;
         for(auto t:p) if(!inl(l1,t)) r.pb(t);
         if(r.size()<=2) {
