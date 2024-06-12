@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -49,7 +49,6 @@ signed main() {
     cin>>n>>m;
     vector<vector<bool>> a(n+1,vector<bool>(m+1));
     vector<vector<int>> p(n+1,vector<int>(m+1));
-    ope(sizeof(p))
     REP1(i,n) {
         REP1(j,m) {
             char c;
