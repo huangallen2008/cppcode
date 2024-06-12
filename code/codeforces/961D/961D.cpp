@@ -45,9 +45,9 @@ int rd(int l,int r) {
 }
 struct line {
     int x0,y0,dx,dy;
-    line(int x,int y,int mx,int my) {
-        x0=x,y0=y;
-        dx=mx,dx=my;
+    line(pii p1,pii p2) {
+        x0=p1.f,y0=p1.s;
+        dx=p1.f-p2.f,dx=p1.s-p2.s;
         if(dx<0) dx=-dx,dy=-dy;
         int g=__gcd(abs(dx),abs(dy));
         dx/=g,dy/=g;
@@ -68,12 +68,30 @@ signed main() {
     }
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
-    while((ld)clock()/CLOCKS_PER_SEC<0.9) {
+    int T=1000;
+    while(T--) {
+    //while((ld)clock()/CLOCKS_PER_SEC<0.9) {
         int p1=rd(0,n-1),p2=rd(0,n-1);
+        op(p1)ope(p2)
         if(p1==p2) continue;
-        line l1(p[p1].f,p[p1].s,p[p2].f-p[p1].f,p[p2].s-p[p1].s);
+        line l1(p[p1],p[p2]);
         vector<pii> r;
         for(auto t:p) if(!inl(l1,t)) r.pb(t);
+        if(r.size()<=2) {
+            cout<<"YES\n";
+            return 0;
+        }
+        bool ok=1;
+        line l2(r[0],r[1]);
+        for(auto t:r) if(!inl(l2,t)) {
+            ok=0;
+            break;
+        }
+        if(ok) {
+            cout<<"YES\n";
+            return 0;
+        }
     }
+    cout<<"NO\n";
     return 0;
 }
