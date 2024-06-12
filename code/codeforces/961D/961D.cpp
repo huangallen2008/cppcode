@@ -47,7 +47,7 @@ struct line {
     int x0,y0,dx,dy;
     line(pii p1,pii p2) {
         x0=p1.f,y0=p1.s;
-        dx=p1.f-p2.f,dx=p1.s-p2.s;
+        dx=p1.f-p2.f,dy=p1.s-p2.s;
         op(dx)ope(dy)
         if(dx<0) dx=-dx,dy=-dy;
         if(dx&&dy){
