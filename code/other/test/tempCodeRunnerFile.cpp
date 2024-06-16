@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=2e5+5;
+const int maxn=2e3+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -45,31 +45,25 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,x;
-    cin>>n>>x;
-    bool ok=0;
-    while(((ld)clock()/CLOCKS_PER_SEC)<=0.98) {
-        vector<int> a(n+1);
-        int v=0;
-        int ook=1;
-        REP1(i,n-1) {
-            a[i]=rd(a[i-1]+1,(500000)/i),v^=a[i];
-            if(a[i]<0||a[i]>1e6) {
-                ook=0;
-                break;
-            }
-        }
-        if(!ook) continue;
-        a[n]=v^x;
-        if(a[n]<0||a[n]>1e6) ook=0;
-        if(ook) {
-            cout<<"YES\n";
-            REP1(i,n) cout<<a[i]<<' ';
-            cout<<'\n';
-            ok=1;
-            break;
-        }
+    int n,k;
+    cin>>n>>k;
+    vector<int> a(n+1),ps(n+1),p(n+1);p[0]=maxn;
+    REP1(i,n) {
+        cin>>a[i];
+        ps[i]=ps[i-1]+a[i];
+        if(a[i]&1) p[i]=p[i-1]+1;
+        else p[i]=p[i-1]-1;
     }
-    if(!ok)cout<<"NO\n";
+    int an=ps[n];
+    vector<int> mxid(maxn<<1|1,-1);
+    REP(i,n) {
+        mxid[p[i]]=i;
+        int rid=upper_bound(ALL(ps),ps[n]-k+ps[i])-ps.begin();
+        if(rid>n) break;
+        int lid=mxid[p[rid]-p[n]+maxn];
+        if(lid==-1) continue;
+        an=min(an,ps[rid]-ps[lid]);
+    }
+    cout<<ps[n]-an<<'\n';
     return 0;
 }

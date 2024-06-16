@@ -1,46 +1,73 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
+#define REP(i,n) for(int i=0;i<(n);i++)
+#define REP1(i,n) for(int i=1;i<=(n);i++)
+#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
+#define RREP1(i,n) for(int i=(n);i>=1;i--)
+#define f first
+#define s second
+#define pb push_back
+#define ALL(x) (x).begin(),(x).end()
+#define SZ(x) (int)((x).size())
+#define SQ(x) (x)*(x)
+#define pii pair<int,int>
+#define pipii pair<int,pii>
+#define Graph vector<vector<int>>
+#define Graphw vector<vector<pii>>
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
+#define md(x) (((x)%(mod)+(mod))%(mod))
+#define MD(x,M) (((x)%(M)+(M))%(M))
+#define ld long double
+#define pdd pair<ld,ld>
+#define chmax(x,y) x=max(x,y)
+#define chmin(x,y) x=min(x,y)
+#define addmod(x,y) x=((x+(y))%mod)
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
 const int mod=1e9+7;
-const int maxn=2e5+5;
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r*=x,r%=mod;
-        x*=x,x%=mod;
-        p>>=1;
-    }
-    return r;
-}
-int inv(int x) {
-    return pw(x,mod-2);
-}
-vector<int> fac(maxn),infac(maxn);
-void init() {
-    fac[0]=1,infac[0]=1;
-    for(int i=1;i<maxn;i++) fac[i]=fac[i-1]*i%mod; 
-    for(int i=1;i<maxn;i++) infac[i]=inv(fac[i]); 
-}
-int C(int n,int k) { 
-    return (fac[n]*infac[n-k]%mod)*infac[k]%mod;
-}
-void solve() {
-    int n;
-    cin>>n;
-    int an=0;
-    for(int i=0;i<=(n-1>>1);i++) {
-        an=(an+C(n-i-1,i))%mod;
-    }
-    an=((an<<1)%mod+mod)%mod;
-    cout<<an<<'\n';
+const int maxn=2e3+5;
+const int inf=(1ll<<62);
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
 }
 signed main() {
     IOS();
-    init();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    int n,k;
+    cin>>n>>k;
+    vector<int> a(n+1),ps(n+1),p(n+1);p[0]=maxn;
+    REP1(i,n) {
+        cin>>a[i];
+        ps[i]=ps[i-1]+a[i];
+        if(a[i]&1) p[i]=p[i-1]+1;
+        else p[i]=p[i-1]-1;
+    }
+    int an=ps[n];
+    vector<int> mxid(maxn<<1|1,-1);
+    int lid=0;
+    mxid[p[0]]=0;
+    REP1(i,n) {
+        while(lid<=i&&ps[i]-ps[lid]>=ps[n]-k) {
+            mxid[p[lid]]=lid;
+            lid++;
+        }
+        int lr=mxid[p[i]-p[n]+maxn];
+        // op(i)op(lid)ope(lr)ope(ps[i]-ps[lr])
+        if(lr>=0&&ps[i]-ps[lr]>=ps[n]-k)chmin(an,ps[i]-ps[lr]);
+        // ope(an)
+    }
+    cout<<ps[n]-an<<'\n';
     return 0;
 }
-

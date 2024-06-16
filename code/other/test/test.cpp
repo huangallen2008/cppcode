@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -37,22 +37,35 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=2e5+5;
+const int maxn=7e5+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int l,k;
+string rc,s;
+vector<int> id(26,-1);
+unordered_map<string,bool> mp;
+string p;
+void f() {
+    if(p.size()==l) {
+        if(mp.find(p)==mp.end()) {
+            cout<<p<<'\n';
+            exit(0);
+        }
+        return;
+    }
+    for(char ch:rc) {
+        p+=ch;
+        f();
+        p.pop_back();
+    }
+}
 signed main() {
     IOS();
-    int n;
-    vector<int> f(50);f[0]=f[1]=1;
-    for(int i=2;i<50;i++) f[i]=f[i-1]+f[i-2];
-    int n;
-    cin>>n;
-    cout<<n<<endl;
-    // while(cin>>n) {
-    //     cout<<n<<'\n';
-    // }
+    cin>>rc>>l>>s;k=rc.size();
+    for(int i=0;i+l-1<s.size();i++) mp[s.substr(i,l)]=1;
+    f();
     return 0;
 }
