@@ -62,10 +62,19 @@ void f() {
         p.pop_back();
     }
 }
+template<const int n> bitset<n> operator+(bitset<n> a,bitset<n> b) {
+    bitset<n> c;
+    bool nxt=0;
+    for(int i=0;i<n;i++) {
+        c[i]=a[i]^b[i];
+        
+    }
+}
 signed main() {
     IOS();
-    cin>>rc>>l>>s;k=rc.size();
-    for(int i=0;i+l-1<s.size();i++) mp[s.substr(i,l)]=1;
-    f();
+    int a,b;
+    while(cin>>a>>b) {
+        ope(add(a,b))
+    }
     return 0;
 }

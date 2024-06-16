@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3")
-#define int long long
+#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
 #define REP(i,n) for(int i=0;i<n;i++)
 #define REP1(i,n) for(int i=1;i<=n;i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -40,7 +41,7 @@ struct DSU {
         if(x==y) return;
         p[x]=y;
     }
-    void del(int x) {
+    void del(int &x) {
         merge(x,x+1);
     }
 };

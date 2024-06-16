@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
+#pragma GCC target("avx2,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=2e5+5;
+const int maxn=5e3+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -47,29 +47,26 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<vector<bool>> a(n+1,vector<bool>(m+1));
-    vector<vector<int>> p(n+1,vector<int>(m+1));
+    bitset<maxn> a;
+    vector<int> ms(m+1),sms(m+1),nms(m+1);
     REP1(i,n) {
+        string s;
+        cin>>s;
+        reverse(ALL(s));s+='0';
+        a=bitset<maxn>(s);
+        vector<int> ms2(m+1),sms2(m+1),nms2(m+1);
         REP1(j,m) {
-            char c;
-            cin>>c;
-            if(c=='1') a[i][j]=1;
-            p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
-        }
-    }
-    int mx=0,an=0;
-    REP1(i,n) {
-        REP1(j,m) {
-            int l=0,r=min(i,j),mid;
-            while(l<r) {//last m : p[i][j]-...-p[i-m][j-m]==0
-                mid=l+r+1>>1;
-                if(p[i][j]-p[i][j-mid]-p[i-mid][j]+p[i-mid][j-mid]==0) l=mid;
-                else r=mid-1;
+            if(!a[j]) {
+                sms2[j]=min({sms[j-1],sms[j],sms2[j-1]})+1;
+                ms2[j]=max({ms[j],ms2[j-1],sms2[j]});
             }
-            chmax(mx,mid);
-            an+=mid;
+            else ms2[j]=max(ms2[j-1],ms[j]);
+            nms2[j]=nms2[j-1]+nms[j]-nms[j-1]+sms2[j];
         }
+        swap(ms2,ms);
+        swap(sms2,sms);
+        swap(nms2,nms);
     }
-    cout<<an<<' '<<mx<<'\n';
+    cout<<nms[m]<<' '<<ms[m]<<'\n';
     return 0;
 }

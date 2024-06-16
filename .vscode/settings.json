@@ -8,6 +8,23 @@
     "gitdoc.enabled": true,
     "gitdoc.autoCommitDelay": 300,
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     }
 }
