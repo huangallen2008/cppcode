@@ -8,7 +8,7 @@ bitset<n> operator+(const bitset<n> a,const bitset<n> b) {
     for(int i=0;i<n-1;i++) {
         c[i+1]=(c[i]&a[i])|(c[i]&b[i])|(a[i]&b[i]);
         c[i]=c[i]^a[i]^b[i];
-    }
+    } 
     c[n-1]=c[n-1]^a[n-1]^b[n-1];
     return c;
 }
