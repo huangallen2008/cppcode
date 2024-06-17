@@ -12,6 +12,7 @@ bitset<n> operator+(const bitset<n> a,const bitset<n> b) {
     c[n-1]=c[n-1]^a[n-1]^b[n-1];
     return c;
 }
+
 template<size_t n> 
 bitset<n> operator-(bitset<n> a) {
     a=~a;
@@ -24,6 +25,7 @@ bitset<n> operator-(bitset<n> a) {
     }
     return a;
 }
+
 template<size_t n> 
 bitset<n>& operator+=(const bitset<n> &a,const bitset<n> b) {
     bitset<n> c=a;
@@ -34,6 +36,7 @@ bitset<n>& operator+=(const bitset<n> &a,const bitset<n> b) {
     c[n-1]=c[n-1]^a[n-1]^b[n-1];
     return c;
 }
+
 template<size_t n> 
 bitset<n> operator*(bitset<n> a,bitset<n> b) {
     bitset<n> c;
