@@ -75,7 +75,9 @@ signed main() {
     int l=0,r=20005,m;
     while(l<r) {
         m=l+r>>1;
-        if(dfs(0,m)>=t) r=m;
+        int ret=dfs(0,m);
+        op(m)ope(ret)op("!!!!!!!!!!")
+        if(ret>=t) r=m;
         else l=m+1;
     }
     cout<<l<<'\n';
