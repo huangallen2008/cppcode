@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,bmi,popcnt")
-// #define int long long
+// #pragma GCC target("avx2,bmi,popcnt")
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=40+5;
+const int maxn=20+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,37 +46,36 @@ int rd(int l,int r) {
 Graphw g;
 int n,k,t;
 bitset<maxn> vis;
-vector<pii> edges;
-vector<int> w;
-int dfs(int id,int x) {
-    if(id>=edges.size()) return 1;
-    auto [u,v]=edges[id];
-    int an=0;
-    if(!vis[u]&&!vis[v]&&x>=w[id]) {
-        vis[u]=vis[v]=1;
-        an+=dfs(id+1,x-w[id]);
-        vis[u]=vis[v]=0;
+int cnt=0;
+int lim;
+void dfs(int u,int x) {
+    if(u>=n||cnt>=lim) return;
+    dfs(u+1,x);
+    for(auto [v,w]:g[u]) {
+        if(vis[v]) continue;
+        if(x<w) continue;
+        vis[v]=1;
+        cnt++;
+        dfs(u+1,x-w);
+        vis[v]=0;
     }
-    an+=dfs(id+1,x);
-    return an;
 }
 signed main() {
     IOS();
     cin>>n>>k>>t;
     g=Graphw(n);
     REP(i,k) {
-        int u,v,ww;
-        cin>>u>>v>>ww;
+        int u,v,w;
+        cin>>u>>v>>w;
         u--,v--;
-        edges.pb({u,n+v});
-        w.pb(ww);
-        // g[u].pb({v,w});
+        g[u].pb({v,w});
     }
     int l=0,r=20005,m;
     while(l<r) {
         m=l+r>>1;
-        int ret=dfs(0,m);
-        if(ret>=t) r=m;
+        lim=m;
+        dfs(0,m);
+        if(cnt>=t) r=m;
         else l=m+1;
     }
     cout<<l<<'\n';
