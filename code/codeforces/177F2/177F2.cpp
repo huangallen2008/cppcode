@@ -47,7 +47,6 @@ Graphw g;
 int n,k,t;
 bitset<maxn> vis;
 int dfs(int u,int x) {
-    op(u)ope(x)
     if(x<0) return 0;
     if(u>=n) return 1;
     int an=dfs(u+1,x);
@@ -69,12 +68,10 @@ signed main() {
         u--,v--;
         g[u].pb({v,w});
     }
-    // dfs(0,0);
     int l=0,r=20005,m;
     while(l<r) {
         m=l+r>>1;
         int ret=dfs(0,m);
-        op("!!!!!!!!!!")op(m)ope(ret)
         if(ret>=t) r=m;
         else l=m+1;
     }
