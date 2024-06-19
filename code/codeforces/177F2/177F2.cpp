@@ -73,6 +73,7 @@ signed main() {
     while(l<r) {
         m=l+r>>1;
         dfs(0,m);
+        op(m)ope(cnt)
         if(cnt>=t) r=m;
         else l=m+1;
     }
