@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=20+5;
+const int maxn=40+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -68,7 +68,7 @@ signed main() {
         int u,v,ww;
         cin>>u>>v>>ww;
         u--,v--;
-        edges.pb({u,v});
+        edges.pb({u,n+v});
         w.pb(ww);
         // g[u].pb({v,w});
     }
