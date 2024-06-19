@@ -53,8 +53,8 @@ void dfs(int u,int x) {
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
         if(x<w) continue;
-        vis[v]=1;
         cnt++;
+        vis[v]=1;
         dfs(u+1,x-w);
         vis[v]=0;
     }
