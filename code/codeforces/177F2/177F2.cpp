@@ -47,9 +47,8 @@ Graphw g;
 int n,k,t;
 bitset<maxn> vis;
 int cnt=0;
-int lim;
 void dfs(int u,int x) {
-    if(u>=n||cnt>=lim) return;
+    if(u>=n||cnt>=t) return;
     dfs(u+1,x);
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
@@ -73,7 +72,6 @@ signed main() {
     int l=0,r=20005,m;
     while(l<r) {
         m=l+r>>1;
-        lim=m;
         dfs(0,m);
         if(cnt>=t) r=m;
         else l=m+1;
