@@ -64,10 +64,16 @@ signed main() {
     pq.push({a[0]+b[0]+c[0],0,0});
     if(y>1)pq.push({a[0]+b[0]+c[0],0,1});
     if(z>1)pq.push({a[0]+b[0]+c[0],0,2});
-    REP(rd,k) {
+    int lv=inf;
+    int cnt=0;
+    while(cnt<k) {
         auto [v,id,now]=pq.top();
         op(v)op(id)ope(now)
-        cout<<v<<'\n';
+        if(v!=lv) {
+            cout<<v<<'\n';
+            lv=v;
+            cnt++;
+        }
         pq.pop();
         // if(now<2)pq.push({v,0,now+1});
         if(now==0&&id<x-1)pq.push({v-a[id]+a[id+1],id+1,now});
