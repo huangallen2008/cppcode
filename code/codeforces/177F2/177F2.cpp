@@ -57,9 +57,6 @@ int dfs(int u,int x) {
         an+=dfs(u+1,k-w);
         vis[v]=0;
     }
-    if(an>0) {
-        op(u)op(x)ope(an)
-    }
     return an;
 }
 signed main() {
@@ -72,14 +69,15 @@ signed main() {
         u--,v--;
         g[u].pb({v,w});
     }
+    dfs(0,0);
     int l=0,r=20005,m;
-    while(l<r) {
-        m=l+r>>1;
-        int ret=dfs(0,m);
-        op("!!!!!!!!!!")op(m)ope(ret)
-        if(ret>=t) r=m;
-        else l=m+1;
-    }
+    // while(l<r) {
+    //     m=l+r>>1;
+    //     int ret=dfs(0,m);
+    //     op("!!!!!!!!!!")op(m)ope(ret)
+    //     if(ret>=t) r=m;
+    //     else l=m+1;
+    // }
     cout<<l<<'\n';
     return 0;
 }
