@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -48,7 +48,7 @@ struct E {
     int v,id,now;
 };
 struct so_E {
-    bool operator()(E a,E b) {
+    bool operator()(E &a,E &b) {
         return a.v<b.v;
     }
 };
@@ -66,12 +66,16 @@ signed main() {
         auto [v,id,now]=pq.top();
         cout<<v<<'\n';
         pq.pop();
-        if(now==0&&id<x-1)pq.push({v-a[id]+a[id+1],id+1,now});
-        if(now==1&&id<y-1)pq.push({v-b[id]+b[id+1],id+1,now});
-        if(now==2&&id<z-1)pq.push({v-c[id]+c[id+1],id+1,now});
-        if(now==0)pq.push({v-b[0]+b[1],1,now+1});
-        if(now==0)pq.push({v-c[0]+c[1],1,now+2});
-        if(now==1)pq.push({v-c[0]+c[1],1,now+1});
+        if(now==0){
+            if(id<x-1)pq.push({v-a[id]+a[id+1],id+1,0});
+            pq.push({v-b[0]+b[1],1,1});
+            pq.push({v-c[0]+c[1],1,2});
+        }
+        if(now==1) {
+            if(id<y-1)pq.push({v-b[id]+b[id+1],id+1,1});
+            pq.push({v-c[0]+c[1],1,2});
+        }
+        if(now==2&&id<z-1)pq.push({v-c[id]+c[id+1],id+1,2});
     }
     return 0;
 }
