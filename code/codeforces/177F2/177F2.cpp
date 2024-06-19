@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -47,11 +47,11 @@ Graphw g;
 int n,k,t;
 bitset<maxn> vis;
 int dfs(int u,int x) {
-    if(x<0) return 0;
     if(u>=n) return 1;
     int an=dfs(u+1,x);
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
+        if(x<w) continue;
         vis[v]=1;
         an+=dfs(u+1,x-w);
         vis[v]=0;
