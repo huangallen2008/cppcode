@@ -54,7 +54,7 @@ int dfs(int u,int x) {
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
         vis[v]=1;
-        an+=dfs(u+1,k-w);
+        an+=dfs(u+1,x-w);
         vis[v]=0;
     }
     return an;
