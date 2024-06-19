@@ -64,7 +64,7 @@ signed main() {
     pq.push({a[0]+b[0]+c[0],0,0});
     if(y>1)pq.push({a[0]+b[0]+c[0],0,1});
     if(z>1)pq.push({a[0]+b[0]+c[0],0,2});
-    REP(rd,k) {
+    REP(rd,k+3) {
         auto [v,id,now]=pq.top();
         op(v)op(id)ope(now)
         cout<<v<<'\n';
