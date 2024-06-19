@@ -61,7 +61,7 @@ signed main() {
     REP(i,y) cin>>b[i];sort(ALL(b),so);
     REP(i,z) cin>>c[i];sort(ALL(c),so);
     priority_queue<E,vector<E>,so_E> pq;
-    oparr(a)oparr(b)oparr(c)
+    oparr(a)oparr(b)oparr(c)ope(a[0]*b[0]*c[0])
     pq.push({a[0]*b[0]*c[0],0,0});
     REP(rd,k) {
         auto [v,id,now]=pq.top();
