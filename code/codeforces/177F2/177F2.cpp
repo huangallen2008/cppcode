@@ -76,7 +76,7 @@ signed main() {
     while(l<r) {
         m=l+r>>1;
         int ret=dfs(0,m);
-        op(m)ope(ret)op("!!!!!!!!!!")
+        op("!!!!!!!!!!")op(m)ope(ret)
         if(ret>=t) r=m;
         else l=m+1;
     }
