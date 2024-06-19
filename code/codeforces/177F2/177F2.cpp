@@ -53,7 +53,9 @@ int dfs(int id,int x) {
     auto [u,v]=edges[id];
     int an=0;
     if(!vis[u]&&!vis[v]&&x>=w[id]) {
+        vis[u]=vis[v]=1;
         an+=dfs(id+1,x-w[id]);
+        vis[u]=vis[v]=0;
     }
     an+=dfs(id+1,x);
     return an;
