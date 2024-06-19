@@ -68,7 +68,7 @@ signed main() {
     int cnt=0;
     while(cnt<k) {
         auto [v,id,now]=pq.top();
-        op(v)op(id)ope(now)
+        // op(v)op(id)ope(now)
         if(v!=lv) {
             cout<<v<<'\n';
             lv=v;
