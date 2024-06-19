@@ -47,6 +47,7 @@ Graphw g;
 int n,k,t;
 bitset<maxn> vis;
 int dfs(int u,int x) {
+    op(u)ope(x)
     if(x<0) return 0;
     if(u>=n) return 1;
     int an=dfs(u+1,x);
