@@ -48,6 +48,7 @@ struct edge {
 };
 struct DSU {
     vector<int> p,sz;
+    int cnt;
     void init(int n) {
         p=vector<int>(n);
         sz=vector<int>(n,1);
