@@ -62,15 +62,15 @@ signed main() {
     REP(i,z) cin>>c[i];sort(ALL(c),so);
     priority_queue<E,vector<E>,so_E> pq;
     oparr(a)oparr(b)oparr(c)ope(a[0]*b[0]*c[0])
-    pq.push({a[0]*b[0]*c[0],0,0});
+    pq.push({a[0]+b[0]+c[0],0,0});
     REP(rd,k) {
         auto [v,id,now]=pq.top();
         cout<<v<<'\n';
         pq.pop();
         if(now<2)pq.push({v,id,now+1});
-        if(now==0&&id<x-1)pq.push({(v/a[id])*a[id+1],id+1,now});
-        if(now==1&&id<y-1)pq.push({(v/b[id])*b[id+1],id+1,now});
-        if(now==2&&id<z-1)pq.push({(v/c[id])*c[id+1],id+1,now});
+        if(now==0&&id<x-1)pq.push({v-a[id]+a[id+1],id+1,now});
+        if(now==1&&id<y-1)pq.push({v-b[id]+b[id+1],id+1,now});
+        if(now==2&&id<z-1)pq.push({v-c[id]+c[id+1],id+1,now});
     }
     return 0;
 }
