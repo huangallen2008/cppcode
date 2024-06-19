@@ -66,7 +66,7 @@ signed main() {
     if(z>1)pq.push({a[0]+b[0]+c[0],0,2});
     int lv=inf;
     int cnt=0;
-    while(cnt<k) {
+    while(cnt<k-1) {
         auto [v,id,now]=pq.top();
         // op(v)op(id)ope(now)
         if(v!=lv) {
