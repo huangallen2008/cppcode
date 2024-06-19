@@ -46,16 +46,16 @@ int rd(int l,int r) {
 Graphw g;
 int n,k,t;
 bitset<maxn> vis;
-int dfs(int u,int x) {
-    if(u>=n) return 1;
-    int an=dfs(u+1,x);
-    for(auto [v,w]:g[u]) {
-        if(vis[v]) continue;
-        if(x<w) continue;
-        vis[v]=1;
-        an+=dfs(u+1,x-w);
-        vis[v]=0;
+vector<pii> edges;
+vector<int> w;
+int dfs(int id,int x) {
+    if(id>=edges.size()) return 1;
+    auto [u,v]=edges[id];
+    int an=0;
+    if(!vis[u]&&!vis[v]&&x>=w[id]) {
+        an+=dfs(id+1,x-w[id]);
     }
+    an+=dfs(id+1,x);
     return an;
 }
 signed main() {
@@ -63,10 +63,12 @@ signed main() {
     cin>>n>>k>>t;
     g=Graphw(n);
     REP(i,k) {
-        int u,v,w;
-        cin>>u>>v>>w;
+        int u,v,ww;
+        cin>>u>>v>>ww;
         u--,v--;
-        g[u].pb({v,w});
+        edges.pb({u,v});
+        w.pb(ww);
+        // g[u].pb({v,w});
     }
     int l=0,r=20005,m;
     while(l<r) {
