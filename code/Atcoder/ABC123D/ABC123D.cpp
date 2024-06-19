@@ -62,6 +62,8 @@ signed main() {
     REP(i,z) cin>>c[i];sort(ALL(c),so);
     priority_queue<E,vector<E>,so_E> pq;
     pq.push({a[0]+b[0]+c[0],0,0});
+    pq.push({a[0]+b[0]+c[0],0,1});
+    pq.push({a[0]+b[0]+c[0],0,2});
     // if(y>1)pq.push({a[0]+b[1]+c[0],1,1});
     // if(z>1)pq.push({a[0]+b[0]+c[1],1,2});
     REP(rd,k) {
