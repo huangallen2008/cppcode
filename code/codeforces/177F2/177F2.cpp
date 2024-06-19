@@ -51,6 +51,7 @@ void dfs(int u,int x) {
     if(u>=n||cnt>=t) return;
     dfs(u+1,x);
     for(auto [v,w]:g[u]) {
+        if(cnt>=t) return;
         if(vis[v]) continue;
         if(x<w) continue;
         cnt++;
