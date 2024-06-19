@@ -57,6 +57,9 @@ int dfs(int u,int x) {
         an+=dfs(u+1,k-w);
         vis[v]=0;
     }
+    if(an>0) {
+        op(u)op(x)ope(an)
+    }
     return an;
 }
 signed main() {
