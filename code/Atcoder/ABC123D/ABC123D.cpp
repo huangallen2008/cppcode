@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 bool so(int a,int b) {return a>b;}
 struct E {
-    int v,a,b,c;
+    int v,id,now;
 };
 struct so_E {
     bool operator()(E a,E b) {
@@ -61,10 +61,16 @@ signed main() {
     REP(i,y) cin>>b[i];sort(ALL(b),so);
     REP(i,z) cin>>c[i];sort(ALL(c),so);
     priority_queue<E,vector<E>,so_E> pq;
-    pq.push({a[0]*b[0]*c[0],0,0,0});
+    pq.push({a[0]*b[0]*c[0],0,0});
     REP(rd,k) {
-        auto [x,p,q,r]=pq.top();
-
+        auto [v,id,now]=pq.top();
+        pq.pop();
+        if(now<2)pq.push({v,id,now+1});
+        if(now==0&&id<x-1)pq.push({(v/a[id])*a[id+1],id+1,now});
+        if(now==1&&id<y-1)pq.push({(v/b[id])*b[id+1],id+1,now});
+        if(now==2&&id<z-1)pq.push({(v/c[id])*c[id+1],id+1,now});
     }
+    int an=pq.top().v;
+    cout<<an<<'\n';
     return 0;
 }
