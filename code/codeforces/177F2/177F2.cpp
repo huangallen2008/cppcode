@@ -62,7 +62,7 @@ void dfs(int u,int x) {
 }
 signed main() {
     IOS();
-    cin>>n>>k>>t;
+    cin>>n>>k>>t;t--;
     g=Graphw(n);
     REP(i,k) {
         int u,v,w;
