@@ -20,7 +20,7 @@ vector<int> fac(maxn<<1),infac(maxn<<1);
 int C(int n) {
     return (fac[n<<1]*infac[n]%mod)*infac[n+1]%mod;
 }
-signed main() {
+signed main() { 
     IOS();
     fac[0]=1,infac[0]=1;
     for(int i=1;i<maxn<<1;i++) 
