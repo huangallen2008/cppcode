@@ -52,6 +52,7 @@ int pw(int x,int p) {
         }
         x*=x;
         x%=mod;
+        p>>=1;
     }
     return r;
 }
