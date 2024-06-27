@@ -66,8 +66,8 @@ int C(int n) {
 signed main() {
     IOS();
     fac[0]=1,infac[0]=1;
-    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    REP1(i,maxn-1) infac[i]=inv(fac[i]);
+    for(int i=1;i<maxn<<1;i++) 
+        fac[i]=fac[i-1]*i%mod,infac[i]=inv(fac[i]);
     int T;
     cin>>T;
     while(T--) {
