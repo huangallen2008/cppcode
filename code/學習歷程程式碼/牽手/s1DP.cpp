@@ -12,7 +12,7 @@ signed main() {
     for(int i=1;i<maxn;i++)
         for(int j=0;j<i;j++)
             dp[i]=(dp[i]+dp[j]*dp[i-1-j])%mod;
-    int T;
+    int T; 
     cin>>T;
     while(T--) {
         int n;
@@ -21,3 +21,9 @@ signed main() {
     }
     return 0;
 }
+
+
+
+
+
+
