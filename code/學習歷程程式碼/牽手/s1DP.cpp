@@ -65,8 +65,5 @@ signed main() {
     while(T--) {
         solve();
     }
-    REP1(i,1000) {
-        op(i)ope(dp[i])
-    }
     return 0;
 }
