@@ -37,33 +37,25 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e4+5;
+const int maxn=5e3+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-vector<int> dp(maxn);
-void init() {
-    dp[0]=1;
-    REP1(i,maxn-1) {
-        REP(j,i) {
-            dp[i]=(dp[i]+dp[j]*dp[i-1-j])%mod;
-        }
-    }
-}
-void solve() {
-    int n;
-    cin>>n;
-    cout<<dp[n]<<'\n';
-}
 signed main() {
     IOS();
-    init();
+    vector<int> dp(maxn);
+    dp[0]=1;
+    REP1(i,maxn-1)
+        REP(j,i)
+            dp[i]=(dp[i]+dp[j]*dp[i-1-j])%mod;
     int T;
     cin>>T;
     while(T--) {
-        solve();
+        int n;
+        cin>>n;
+        cout<<dp[n]<<'\n';
     }
     return 0;
 }
