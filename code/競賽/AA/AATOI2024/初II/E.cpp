@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct P {
-    int sum,fix,cntr,cnta,lsn;
+    int sum,fix,itr,cnta,lsn;
 };
 struct pq_P {
     const bool operator()(const P &a,const P &b) const {
@@ -65,13 +65,13 @@ signed main() {
     for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,1});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,cntr,cnta,lsn]=*pq.begin();
+        auto [sum,fix,itr,cnta,lsn]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
-        if(fix+cntr<n) pq.insert({sum+a[fix+cntr+1]-a[fix+cntr],fix+cntr,1,cnta,fix+1});
+        if(itr<n) pq.insert({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
         for(;fix>lsn;) {
-            sum+=a[fix]-a[fix-1],cntr++,fix--;
-            pq.insert({sum,fix,cntr,cnta,lsn});
+            sum+=a[fix]-a[fix-1],fix--;
+            pq.insert({sum,fix,itr,cnta,lsn});
             // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
