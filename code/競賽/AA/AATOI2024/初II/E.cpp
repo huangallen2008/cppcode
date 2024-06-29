@@ -51,13 +51,14 @@ struct pq_P {
         return a.sum>b.sum;
     }
 };
+bool so(int a,int b) { return a>b; }
 signed main() {
     IOS();
     int n,k,l,r;
     cin>>n>>k>>l>>r;
     vector<int> a(n+1),p(n+1);
     REP1(i,n) cin>>a[i];
-    sort(a.begin()+1,a.end());
+    sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
     pq.push({p[l],1,l});
