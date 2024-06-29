@@ -68,7 +68,6 @@ signed main() {
         auto [sum,fix,cntl,cnta]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
-        ope(sum)
         if(fix+cnta-cntl>n) continue;
         sum+=a[fix+cnta-cntl];
         for(;cntl<cnta;) {
