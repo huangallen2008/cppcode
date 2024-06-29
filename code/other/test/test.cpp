@@ -47,6 +47,6 @@ int n=0;
 signed main() {
     IOS();
     ope("ok")
-    ope(""<<n<<"")
+    ope(""n"")
     return 0;
 }
