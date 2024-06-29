@@ -60,16 +60,14 @@ signed main() {
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
     pq.push({p[l],1,l});
+    int an=0;
     REP1(rd,k) {
         auto [sum,fix,cnt]=pq.top();
         pq.pop();
-        if(rd==k) {
-            cout<<sum<<'\n';
-            return 0;
-        }
+        an+=sum;
         if(cnt<r) pq.push({sum+a[fix+cnt],fix,cnt+1});
         if(fix+cnt<n) pq.push({sum+a[fix+cnt]-a[fix],fix+1,cnt});
     }
-
+    cout<<an<<'\n';
     return 0;
 }
