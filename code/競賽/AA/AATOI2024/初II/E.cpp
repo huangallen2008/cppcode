@@ -48,7 +48,7 @@ struct P {
 };
 struct pq_P {
     const bool operator()(const P &a,const P &b) const {
-        return a.sum<b.sum;
+        return a.sum>b.sum;
     }
 };
 bool so(int a,int b) { return a>b; }
