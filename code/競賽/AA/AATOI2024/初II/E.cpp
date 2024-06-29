@@ -72,7 +72,7 @@ signed main() {
         if(fix>lsn) {
             sum+=a[fix]-a[fix-1],fix--;
             pq.insert({sum,fix,itr,cnta,lsn});
-            // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
+            if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
     cout<<an<<'\n';
