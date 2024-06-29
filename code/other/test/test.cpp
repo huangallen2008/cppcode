@@ -43,45 +43,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int l,k;
-string rc,s;
-vector<int> id(26,-1);
-unordered_map<string,bool> mp;
-string p;
-void f() {
-    if(p.size()==l) {
-        if(mp.find(p)==mp.end()) {
-            cout<<p<<'\n';
-            exit(0);
-        }
-        return;
-    }
-    for(char ch:rc) {
-        p+=ch;
-        f();
-        p.pop_back();
-    }
-}
-template<size_t n> 
-bitset<n> operator+(const bitset<n> a,const bitset<n> b) {
-    bitset<n> c;
-    for(int i=0;i<n-1;i++) {
-        c[i+1]=(c[i]&a[i])|(c[i]&b[i])|(a[i]&b[i]);
-        c[i]=c[i]^a[i]^b[i];
-    } 
-    c[n-1]=c[n-1]^a[n-1]^b[n-1];
-    return c;
-}
-
+int n=0;
 signed main() {
     IOS();
-    string a,b;
-    while(cin>>a>>b) {
-        bitset<5> b1(a),b2(b),b3=-b1;
-        cout<<(b1).to_ullong()<<' ';
-        cout<<(b2).to_ullong()<<' ';
-        cout<<(b3).to_ullong()<<' ';
-        entr
-    }
+    ope("ok")
+    ope("<<n<<")
     return 0;
 }
