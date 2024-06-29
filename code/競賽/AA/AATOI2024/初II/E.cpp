@@ -68,8 +68,7 @@ signed main() {
         auto [sum,fix,itr,cnta,lsn]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
-        for(auto [ss,t1,t2,t3,t4]:pq) cout<<ss<<' ';entr
-        op(pq.size())op(sum)op(fix)op(itr)op(cnta)ope(lsn)
+        op(sum)op(fix)op(itr)op(cnta)ope(lsn)
         if(itr<n) pq.insert({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
         if(fix>lsn) {
             sum+=a[fix]-a[fix-1],fix--;
