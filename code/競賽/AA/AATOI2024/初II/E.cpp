@@ -70,8 +70,7 @@ signed main() {
         an+=sum;
         if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
         if(fix>lsn) {
-            sum+=a[fix]-a[fix-1],fix--;
-            pq.push({sum,fix,itr,cnta,lsn});
+            pq.push({sum+a[fix]-a[fix-1],fix-1,itr,cnta,lsn});
             // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
