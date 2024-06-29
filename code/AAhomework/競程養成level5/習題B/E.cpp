@@ -125,7 +125,7 @@ signed main() {
         while(id<n-1) {
             ban[used[id]]=1;
             C nc(ban,id+1);
-            op(nc.used.size())ope(nc.sum)
+            op(used[id])op(nc.used.size())ope(nc.sum)
             if(nc.used.size()==n-1) pq.push(nc);
             id++;
         }
