@@ -115,17 +115,13 @@ signed main() {
     sort(ALL(edges),so);
     priority_queue<C,vector<C>,so_C> pq;
     B<maxn> B0;
-    ope("ok")
     pq.push(C(B0,0));
-    ope("ok")
     while(k--) {
         auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
-        ope(sum)
         while(id<n-1) {
             ban[used[id]]=1;
             C nc(ban,id+1);
-            op(used[id])op(nc.used.size())ope(nc.sum)
             if(nc.used.size()==n-1) pq.push(nc);
             ban[used[id]]=0;
             id++;
