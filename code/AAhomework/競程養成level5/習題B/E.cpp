@@ -82,8 +82,8 @@ struct DSU {
 struct C {
     B<maxn> ban;
     DSU dsu;
-    int sum;
-    int id;
+    int sum=0;
+    int id=0;
     vector<int> used;
     C(B<maxn> &_ban,int _id) : ban(_ban),id(_id) {
         dsu.init(n);
