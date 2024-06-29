@@ -114,8 +114,12 @@ signed main() {
     }
     sort(ALL(edges),so);
     priority_queue<C,vector<C>,so_C> pq;
-    B<maxn> B0;
-    pq.push(C(B0,0));
+    B<maxn> B0;C c0(B0,0);
+    if(c0.used.size()==n-1)pq.push(c0);
+    else {
+        cout<<"-1\n";
+        return 0;
+    }
     int k0=k;
     while(k--) {
         if(!pq.size()) {
