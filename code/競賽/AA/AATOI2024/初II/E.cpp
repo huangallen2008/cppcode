@@ -73,7 +73,7 @@ signed main() {
         sum+=a[fix+cnta-cntl];
         for(;cntl<cnta;) {
             pq.insert({sum-a[fix],fix+1,cntl,cnta});
-            if(pq.size()>k) pq.erase(prev(pq.end()));
+            // if(pq.size()>k) pq.erase(prev(pq.end()));
             cntl++,fix++;
         }
     }
