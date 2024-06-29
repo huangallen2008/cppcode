@@ -57,6 +57,7 @@ signed main() {
     cin>>n>>k>>l>>r;
     vector<int> a(n+1),p(n+1);
     REP1(i,n) cin>>a[i];
+    sort(a.begin()+1,a.end());
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
     pq.push({p[l],1,l});
