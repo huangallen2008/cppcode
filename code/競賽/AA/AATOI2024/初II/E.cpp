@@ -66,6 +66,7 @@ signed main() {
         auto [sum,fix,cnt]=pq.top();
         pq.pop();
         an+=sum;
+        ope(sum)
         if(cnt<r) pq.push({sum+a[fix+cnt],fix,cnt+1});
         if(fix+cnt<n) pq.push({sum+a[fix+cnt]-a[fix],fix+1,cnt});
     }
