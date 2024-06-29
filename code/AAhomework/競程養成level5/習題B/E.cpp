@@ -107,7 +107,7 @@ bool so(edge a,edge b) {
 }
 signed main() {
     IOS();
-    cin>>n>>m>>k;
+    cin>>n>>m>>k;k--;
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w;
