@@ -67,6 +67,7 @@ signed main() {
     REP1(rd,k) {
         auto [sum,fix,cntl,cnta]=*pq.begin();
         pq.erase(pq.begin());
+        ope(sum)
         an+=sum;
         if(fix+cnta-cntl>n) continue;
         sum+=a[fix+cnta-cntl];
