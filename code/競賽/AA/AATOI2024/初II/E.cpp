@@ -60,19 +60,19 @@ signed main() {
     REP1(i,n) cin>>a[i];
     sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
-    // priority_queue<P,vector<P>,pq_P> pq;
-    multiset<P,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,0});
+    priority_queue<P,vector<P>,pq_P> pq;
+    // multiset<P,pq_P> pq;
+    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],0,cnta,cnta,0});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,itr,cnta,lsn]=*pq.begin();
-        pq.erase(pq.begin());
+        auto [sum,fix,itr,cnta,lsn]=pq.top();
+        pq.pop();
         an+=sum;
-        if(itr<n) pq.insert({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
+        if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
         if(fix>lsn) {
             sum+=a[fix]-a[fix-1],fix--;
-            pq.insert({sum,fix,itr,cnta,lsn});
-            if(pq.size()+rd>k) pq.erase(prev(pq.end()));
+            pq.push({sum,fix,itr,cnta,lsn});
+            // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
     cout<<an<<'\n';
