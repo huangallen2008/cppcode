@@ -94,6 +94,7 @@ struct C {
                 sum+=edges[i].w;
             }
         }
+        ope(sum)
     }
 };
 struct so_C {
