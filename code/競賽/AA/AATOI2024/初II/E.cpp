@@ -51,7 +51,7 @@ struct pq_P {
         return a.sum<b.sum;
     }
 };
-const bool so(const int &a,const int &b) const{ return a>b; }
+const bool so(const int &a,const int &b) { return a>b; }
 signed main() {
     IOS();
     int n,k,l,r;
