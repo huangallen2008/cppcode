@@ -70,7 +70,6 @@ signed main() {
         ope(sum)
         if(fix+cnta-cntl>n) continue;
         sum+=a[fix+cnta-cntl];
-        if(cntl<cnta) pq.push({sum,fix,cntl,cnta});
         for(;cntl<cnta;) {
             pq.push({sum-a[fix],fix+1,cntl,cnta});
             cntl++,fix++;
