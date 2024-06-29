@@ -61,8 +61,7 @@ signed main() {
     sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
-    // multiset<P,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],0,cnta,0});
+    for(int cnt=l;cnt<=r;cnt++) pq.push({p[cnt],0,cnt,0});
     int an=0;
     REP1(rd,k) {
         auto [sum,fix,itr,lsn]=pq.top();
