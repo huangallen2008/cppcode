@@ -62,7 +62,7 @@ signed main() {
     REP1(i,n) p[i]=p[i-1]+a[i];
     // priority_queue<P,vector<P>,pq_P> pq;
     multiset<P,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,05});
+    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,0});
     int an=0;
     REP1(rd,k) {
         auto [sum,fix,itr,cnta,lsn]=*pq.begin();
@@ -71,7 +71,7 @@ signed main() {
         for(auto [ss,t1,t2,t3,t4]:pq) cout<<ss<<' ';entr
         op(pq.size())op(sum)op(fix)op(itr)op(cnta)ope(lsn)
         if(itr<n) pq.insert({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
-        for(;fix>lsn;) {
+        if(fix>lsn) {
             sum+=a[fix]-a[fix-1],fix--;
             pq.insert({sum,fix,itr,cnta,lsn});
             // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
