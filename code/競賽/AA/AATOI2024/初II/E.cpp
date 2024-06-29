@@ -62,7 +62,7 @@ signed main() {
     REP1(i,n) p[i]=p[i-1]+a[i];
     // priority_queue<P,vector<P>,pq_P> pq;
     multiset<P,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],1,cnta,cnta,});
+    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,0});
     int an=0;
     REP1(rd,k) {
         ope(pq.size())
@@ -70,7 +70,7 @@ signed main() {
         pq.erase(pq.begin());
         an+=sum;
         ope(sum)
-        if(fix+cntr<=n) pq.insert({sum+a[fix+cntr]-a[fix+cntr-1],fix+cntr-1,1,fix+cntr-1});
+        if(fix+cntr<n) pq.insert({sum+a[fix+cntr+1]-a[fix+cntr],fix+cntr,1,fix+cntr});
         for(;fix>ls;) {
             sum+=a[fix]-a[fix-1],cntr++,fix--;
             pq.insert({sum,fix,cntr,cnta,ls});
