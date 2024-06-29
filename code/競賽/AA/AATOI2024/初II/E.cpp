@@ -61,18 +61,18 @@ signed main() {
     sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
-    pq.push({p[l],1,0,l});
+    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],1,0,cnta});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,cntl,cntr]=pq.top();
+        auto [sum,fix,cntl,cnta]=pq.top();
         pq.pop();
         an+=sum;
-        if(fix+cntr>n) continue;
-        sum+=a[fix+cntr];
-        if(cntl+cntr<r) pq.push({sum,fix,cntl,cntr+1});
-        for(;cntr>0;) {
-            pq.push({sum-a[fix],fix+1,cntl,cntr});
-            cntl++,cntr--,fix++;
+        if(fix+cnta-cntl>n) continue;
+        sum+=a[fix+cnta-cntl];
+        if(cntl<cnta) pq.push({sum,fix,cntl,cnta});
+        for(;cntl<cnta;) {
+            pq.push({sum-a[fix],fix+1,cntl,cnta});
+            cntl++,fix++;
         }
     }
     cout<<an<<'\n';
