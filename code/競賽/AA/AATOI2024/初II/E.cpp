@@ -47,11 +47,11 @@ struct P {
     int sum,fix,itr,lsn;
 };
 struct pq_P {
-    const bool operator()(const P &a,const P &b) const {
+    bool operator()(const P &a,const P &b) const {
         return a.sum<b.sum;
     }
 };
-const bool so(const int &a,const int &b) { return a>b; }
+bool so(const int &a,const int &b) { return a>b; }
 signed main() {
     IOS();
     int n,k,l,r;
