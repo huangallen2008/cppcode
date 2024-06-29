@@ -60,17 +60,19 @@ signed main() {
     REP1(i,n) cin>>a[i];
     sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
-    priority_queue<P,vector<P>,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],1,0,cnta});
+    // priority_queue<P,vector<P>,pq_P> pq;
+    set<P,pq_P> pq;
+    for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],1,0,cnta});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,cntl,cnta]=pq.top();
-        pq.pop();
+        auto [sum,fix,cntl,cnta]=*pq.begin();
+        pq.erase(pq.begin());
         an+=sum;
         if(fix+cnta-cntl>n) continue;
         sum+=a[fix+cnta-cntl];
         for(;cntl<cnta;) {
-            pq.push({sum-a[fix],fix+1,cntl,cnta});
+            pq.insert({sum-a[fix],fix+1,cntl,cnta});
+            if(pq.suze()+rd>k) pq.erase(pq.rbegin())
             cntl++,fix++;
         }
     }
