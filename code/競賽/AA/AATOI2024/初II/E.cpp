@@ -65,11 +65,9 @@ signed main() {
     for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,0});
     int an=0;
     REP1(rd,k) {
-        ope(pq.size())
         auto [sum,fix,cntr,cnta,ls]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
-        ope(sum)
         if(fix+cntr<n) pq.insert({sum+a[fix+cntr+1]-a[fix+cntr],fix+cntr,1,fix+cntr});
         for(;fix>ls;) {
             sum+=a[fix]-a[fix-1],cntr++,fix--;
