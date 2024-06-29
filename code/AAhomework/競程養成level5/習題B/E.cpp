@@ -117,6 +117,10 @@ signed main() {
     B<maxn> B0;
     pq.push(C(B0,0));
     while(k--) {
+        if(!pq.size()) {
+            cout<<"-1\n";
+            return 0;
+        }
         auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
         while(id<n-1) {
