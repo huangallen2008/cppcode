@@ -44,11 +44,11 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct P {
-    int sum,fix,cnt;
+    int sum,fix,cntl,cntr;
 };
 struct pq_P {
     const bool operator()(const P &a,const P &b) const {
-        return a.sum>b.sum;
+        return a.sum<b.sum;
     }
 };
 bool so(int a,int b) { return a>b; }
@@ -61,17 +61,18 @@ signed main() {
     sort(a.begin()+1,a.end(),so);
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
-    pq.push({p[l],1,l});
+    pq.push({p[l],1,0,l});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,cnt]=pq.top();
+        auto [sum,fix,cntl,cntr]=pq.top();
         pq.pop();
         an+=sum;
-        ope(sum)
-        ope(rd)op(k)
-        if(fix+cnt<=n) {
-            if(cnt<r) pq.push({sum+a[fix+cnt],fix,cnt+1});
-            pq.push({sum+a[fix+cnt]-a[fix],fix+1,cnt});
+        if(fix+cntr>n) continue;
+        sum+=a[fix+cntr];
+        if(cntl+cntr<r) pq.push({sum,fix,cntl,cntr+1});
+        for(;cntr>0;) {
+            pq.push({sum-a[fix],fix+1,cntl,cntr});
+            cntl++,cntr--,fix++;
         }
     }
     cout<<an<<'\n';

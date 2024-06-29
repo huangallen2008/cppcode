@@ -29,5 +29,6 @@
         "random": "cpp",
         "bitset": "cpp",
         "functional": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
