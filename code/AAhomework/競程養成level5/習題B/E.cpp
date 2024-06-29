@@ -85,7 +85,7 @@ struct C {
     int sum=0;
     int id=0;
     vector<int> used;
-    C(B<maxn> &_ban,int _id) : ban(_ban),id(_id) {
+    C(B<maxn> _ban,int _id) : ban(_ban),id(_id) {
         dsu.init(n);
         REP(i,m) {
             if(!ban[i]&&dsu.merge(edges[i])) {
