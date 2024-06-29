@@ -72,8 +72,8 @@ signed main() {
         ope(sum)
         if(fix+cntr<=n) pq.insert({sum+a[fix+cntr]-a[fix+cntr-1],fix+cntr-1,1,fix+cntr-1});
         for(;fix>ls;) {
-            sum+=a[fix]-a[fix-1],cntr++;
-            pq.insert({sum,fix-1,cntr,cnta,ls});
+            sum+=a[fix]-a[fix-1],cntr++,fix--;
+            pq.insert({sum,fix,cntr,cnta,ls});
             if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
