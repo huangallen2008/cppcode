@@ -27,7 +27,7 @@ using namespace std;
 #define addmod(x,y) x=((x+(y))%mod)
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
-#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define ope(x) cout<<#x<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
 #define entr cout<<endl;
 #else
