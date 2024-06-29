@@ -123,6 +123,7 @@ signed main() {
         }
         auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
+        ope(sum)
         while(id<n-1) {
             ban[used[id]]=1;
             C nc(ban,id);
