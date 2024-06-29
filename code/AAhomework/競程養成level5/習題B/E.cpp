@@ -127,6 +127,7 @@ signed main() {
             C nc(ban,id+1);
             op(used[id])op(nc.used.size())ope(nc.sum)
             if(nc.used.size()==n-1) pq.push(nc);
+            ban[used[id]]=0;
             id++;
         }
     }
