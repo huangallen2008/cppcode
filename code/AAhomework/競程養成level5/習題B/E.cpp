@@ -105,7 +105,7 @@ bool so(edge a,edge b) {
 }
 signed main() {
     IOS();
-    cin>>n>>m>>k;k--;
+    cin>>n>>m>>k;
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w;
@@ -121,6 +121,10 @@ signed main() {
             cout<<"-1\n";
             return 0;
         }
+        if(k==0) {
+            cout<<pq.top().sum<<'\n';
+            return 0;
+        }
         auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
         oparr(used)ope(sum)
@@ -132,7 +136,5 @@ signed main() {
             id++;
         }
     }
-    int an=pq.top().sum;
-    cout<<an<<'\n';
     return 0;
 }
