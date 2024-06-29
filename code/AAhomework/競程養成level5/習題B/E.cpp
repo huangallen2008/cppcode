@@ -36,8 +36,9 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
+#define B bitset
 const int mod=1e9+7;
-const int maxn=20+5;
+const int maxn=2000+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,6 +47,8 @@ int rd(int l,int r) {
 struct edge {
     int u,v,w;
 };
+int n,m,k;
+vector<edge> edges;
 struct DSU {
     vector<int> p,sz;
     int cnt;
@@ -58,15 +61,16 @@ struct DSU {
         if(p[u]==u) return u;
         return p[u]=find(p[u]);
     }
-    void merge(int a,int b) {
+    bool merge(int a,int b) {
         int x=find(a),y=find(b);
-        if(x==y) return ;
+        if(x==y) return 0;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
         sz[y]+=sz[x];
+        return 1;
     }
-    void merge(edge p) {
-        merge(p.u,p.v);
+    bool merge(edge p) {
+        return merge(p.u,p.v);
     }
     bool sameg(int a,int b) {
         return find(a)==find(b);
@@ -76,12 +80,23 @@ struct DSU {
     }
 };
 struct C {
+    B<maxn> ban;
     DSU dsu;
     int sum;
     int id;
+    vector<int> used;
+    C(B<maxn> &_ban,int _id) : ban(_ban),id(_id) {
+        dsu.init(n);
+        REP(i,m) {
+            if(!ban[i]&&dsu.merge(edges[i])) {
+                used.pb(i);
+                sum+=edges[i].w;
+            }
+        }
+    }
 };
 struct so_C {
-    bool operator()(C &a,C &b) {
+    bool operator()(const C &a,const C &b) {
         return a.sum>b.sum;
     }
 };
@@ -90,9 +105,7 @@ bool so(edge a,edge b) {
 }
 signed main() {
     IOS();
-    int n,m,k;
     cin>>n>>m>>k;
-    vector<edge> edges;
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w;
@@ -101,16 +114,20 @@ signed main() {
     }
     sort(ALL(edges),so);
     priority_queue<C,vector<C>,so_C> pq;
-    DSU dsu0;dsu0.init(n);
-    pq.push({dsu0,edges[0].w,0});
+    B<maxn> B0;
+    ope("ok")
+    pq.push(C(B0,0));
+    ope("ok")
     while(k--) {
-        auto [dsu,sum,id]=pq.top();
+        auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
-        int nid=id+1;
-        while(id<edges.size()-1&&dsu.sameg(edges[nid])) nid++;
-        if(id<edges.size()-1)pq.push({dsu,sum-edges[id].w+edges[nid].w,id+1});
-        dsu.merge(edges[id]);
-        pq.push({dsu,sum+edges[id+1].w,id+1});
+        ope(sum)
+        while(id<n-1) {
+            ban[used[id]]=1;
+            C nc(ban,id+1);
+            if(nc.used.size()==n-1) pq.push(nc);
+            id++;
+        }
     }
     int an=pq.top().sum;
     cout<<an<<'\n';
