@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct P {
-    int sum,fix,itr,cnta,lsn;
+    int sum,fix,itr,lsn;
 };
 struct pq_P {
     const bool operator()(const P &a,const P &b) const {
@@ -62,15 +62,15 @@ signed main() {
     REP1(i,n) p[i]=p[i-1]+a[i];
     priority_queue<P,vector<P>,pq_P> pq;
     // multiset<P,pq_P> pq;
-    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],0,cnta,cnta,0});
+    for(int cnta=l;cnta<=r;cnta++)pq.push({p[cnta],0,cnta,0});
     int an=0;
     REP1(rd,k) {
-        auto [sum,fix,itr,cnta,lsn]=pq.top();
+        auto [sum,fix,itr,lsn]=pq.top();
         pq.pop();
         an+=sum;
-        if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
+        if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,fix+1});
         if(fix>lsn) {
-            pq.push({sum+a[fix]-a[fix-1],fix-1,itr,cnta,lsn});
+            pq.push({sum+a[fix]-a[fix-1],fix-1,itr,lsn});
             // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
         }
     }
