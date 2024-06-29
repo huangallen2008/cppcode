@@ -68,6 +68,7 @@ signed main() {
         auto [sum,fix,itr,cnta,lsn]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
+        ope(sum)
         if(itr<n) pq.insert({sum+a[itr+1]-a[itr],itr,itr+1,cnta,fix+1});
         for(;fix>lsn;) {
             sum+=a[fix]-a[fix-1],fix--;
