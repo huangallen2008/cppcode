@@ -65,10 +65,10 @@ signed main() {
     for(int cnta=l;cnta<=r;cnta++)pq.insert({p[cnta],0,cnta,cnta,0});
     int an=0;
     REP1(rd,k) {
+        for(auto [ss,ttt,ttt2,ttt3,ttt4]:pq) cout<<ss<<' ';entr
         auto [sum,fix,cntr,cnta,ls]=*pq.begin();
         pq.erase(pq.begin());
         an+=sum;
-        for(auto [ss,ttt,ttt2,ttt3,ttt4]:pq) cout<<ss<<' ';entr
         ope(sum)
         if(fix+cntr<n) pq.insert({sum+a[fix+cntr+1]-a[fix+cntr],fix+cntr,1,cnta,fix+cntr});
         for(;fix>ls;) {
