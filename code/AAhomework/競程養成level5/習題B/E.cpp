@@ -90,11 +90,9 @@ struct C {
         REP(i,m) {
             if(!ban[i]&&dsu.merge(edges[i])) {
                 used.pb(i);
-                op(edges[i].u)op(edges[i].v)ope(edges[i].w)
                 sum+=edges[i].w;
             }
         }
-        ope(sum)
     }
 };
 struct so_C {
