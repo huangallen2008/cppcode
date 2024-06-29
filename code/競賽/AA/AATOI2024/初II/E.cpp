@@ -69,10 +69,7 @@ signed main() {
         pq.pop();
         an+=sum;
         if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,fix+1});
-        if(fix>lsn) {
-            pq.push({sum+a[fix]-a[fix-1],fix-1,itr,lsn});
-            // if(pq.size()+rd>k) pq.erase(prev(pq.end()));
-        }
+        if(fix>lsn) pq.push({sum+a[fix]-a[fix-1],fix-1,itr,lsn});
     }
     cout<<an<<'\n';
     return 0;
