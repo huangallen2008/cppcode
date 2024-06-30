@@ -48,5 +48,6 @@ signed main() {
     IOS();
     ope("ok")
     ope("n"<<"")
+    ope("8:37")
     return 0;
 }
