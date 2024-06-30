@@ -62,6 +62,7 @@ signed main() {
             }
         }
     }
-    cout<<dp[x][y]<<'\n';
+    if(dp[x][y]>n) cout<<"-1\n";
+    else cout<<dp[x][y]<<'\n';
     return 0;
 }
