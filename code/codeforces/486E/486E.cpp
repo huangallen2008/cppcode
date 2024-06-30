@@ -64,9 +64,9 @@ signed main() {
     }
     oparr(dpp)oparr(dps)
     vector<int> cnt(n);
-    REP(i,n) cnt[dpp[i]]++;
+    REP(i,n) if(dpp[i]+dps[i]==len+1)cnt[dpp[i]]++;
     REP(i,n) {
-        if(dpp[i]+dps[i]==len+1) cout<<1;
+        if(dpp[i]+dps[i]!=len+1) cout<<1;
         else if(cnt[dpp[i]]>1) cout<<2;
         else cout<<3;
     }
