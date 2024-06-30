@@ -51,7 +51,7 @@ signed main() {
     vector<int> a(n),b(n);
     REP(i,n) cin>>a[i]>>b[i];
     REP(i,maxn) REP(j,maxn) dp[i][j]=inf;
-    ope(dp[0][0])
+    dp[0][0]=0;
     REP(i,n) {
         for(int j=x;j>=a[i];j--) {
             for(int k=y;k>=b[i];k--) {
