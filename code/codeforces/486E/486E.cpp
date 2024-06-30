@@ -62,6 +62,7 @@ signed main() {
         dps[i]=id+1;
         d[id]=-a[i];
     }
+    oparr(dpp)oparr(dps)
     vector<int> cnt(n);
     REP(i,n) cnt[dpp[i]]++;
     REP(i,n) {
