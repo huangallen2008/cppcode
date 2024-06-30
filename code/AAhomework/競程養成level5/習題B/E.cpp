@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+#pragma GCC target("avx2,bmi,popcnt")
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -82,15 +82,14 @@ struct DSU {
 struct C {
     B<maxn> ban;
     DSU dsu;
-    int sum;
-    int id;
+    int sum=0;
+    int id=0;
     vector<int> used;
-    C(B<maxn> &_ban,int _id) : ban(_ban),id(_id) {
+    C(B<maxn> _ban,int _id) : ban(_ban),id(_id) {
         dsu.init(n);
         REP(i,m) {
             if(!ban[i]&&dsu.merge(edges[i])) {
                 used.pb(i);
-                op(edges[i].u)op(edges[i].v)ope(edges[i].w)
                 sum+=edges[i].w;
             }
         }
@@ -115,22 +114,31 @@ signed main() {
     }
     sort(ALL(edges),so);
     priority_queue<C,vector<C>,so_C> pq;
-    B<maxn> B0;
-    ope("ok")
-    pq.push(C(B0,0));
-    ope("ok")
+    B<maxn> B0;C c0(B0,0);
+    if(c0.used.size()==n-1)pq.push(c0);
+    else {
+        cout<<"-1\n";
+        return 0;
+    }
+    int k0=k;
     while(k--) {
+        if(!pq.size()) {
+            cout<<"-1\n";
+            return 0;
+        }
+        if(k==0) {
+            cout<<pq.top().sum<<'\n';
+            return 0;
+        }
         auto [ban,dsu,sum,id,used]=pq.top();
         pq.pop();
-        ope(sum)
         while(id<n-1) {
             ban[used[id]]=1;
-            C nc(ban,id+1);
+            C nc(ban,id);
             if(nc.used.size()==n-1) pq.push(nc);
+            ban[used[id]]=0;
             id++;
         }
     }
-    int an=pq.top().sum;
-    cout<<an<<'\n';
     return 0;
 }

@@ -27,6 +27,8 @@
         "regex": "cpp",
         "valarray": "cpp",
         "random": "cpp",
-        "bitset": "cpp"
-    }
+        "bitset": "cpp",
+        "functional": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

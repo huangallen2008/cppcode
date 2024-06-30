@@ -43,10 +43,33 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n=0;
+struct P {
+    int sum,fix,itr,lsn;
+};
+struct pq_P {
+    bool operator()(const P &a,const P &b) const {
+        return a.sum<b.sum;
+    }
+};
+bool so(const int &a,const int &b) { return a>b; }
 signed main() {
     IOS();
-    ope("ok")
-    ope("n"<<"")
+    int n,k,l,r;
+    cin>>n>>k>>l>>r;
+    vector<int> a(n+1),p(n+1);
+    REP1(i,n) cin>>a[i];
+    sort(a.begin()+1,a.end(),so);
+    REP1(i,n) p[i]=p[i-1]+a[i];
+    priority_queue<P,vector<P>,pq_P> pq;
+    for(int cnt=l;cnt<=r;cnt++) pq.push({p[cnt],0,cnt,0});
+    int an=0;
+    REP1(rd,k) {
+        auto [sum,fix,itr,lsn]=pq.top();
+        pq.pop();
+        an+=sum;
+        if(itr<n) pq.push({sum+a[itr+1]-a[itr],itr,itr+1,fix+1});
+        if(fix>lsn) pq.push({sum+a[fix]-a[fix-1],fix-1,itr,lsn});
+    }
+    cout<<an<<'\n';
     return 0;
 }
