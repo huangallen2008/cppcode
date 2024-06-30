@@ -49,7 +49,7 @@ signed main() {
     cin>>n;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    vector<int> d(n,inf),dpp(n),dps(n);
+    vector<int> d(n+1,inf),dpp(n),dps(n);
     REP(i,n) {
         int id=lower_bound(ALL(d),a[i])-d.begin();
         dpp[i]=id+1;
