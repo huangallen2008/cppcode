@@ -55,7 +55,7 @@ signed main() {
     REP(i,n) {
         for(int j=x;j>=a[i];j--) {
             for(int k=y;k>=b[i];k--) {
-                dp[j][k]=min(dp[j][k],dp[j-a[i]][k-b[i]]);
+                dp[j][k]=min(dp[j][k],dp[j-a[i]][k-b[i]]+1);
             }
         }
     }
