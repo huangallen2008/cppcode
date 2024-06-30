@@ -36,7 +36,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=300+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
