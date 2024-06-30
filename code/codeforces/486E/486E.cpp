@@ -55,7 +55,7 @@ signed main() {
         dpp[i]=id+1;
         d[id]=a[i];
     }
-    int len=lower_bound(ALL(d),inf)-d.begin()+1;
+    int len=lower_bound(ALL(d),inf)-d.begin();
     d=vector<int>(n,inf);
     RREP(i,n) {
         int id=lower_bound(ALL(d),-a[i])-d.begin();
