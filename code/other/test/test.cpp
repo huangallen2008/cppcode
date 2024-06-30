@@ -46,8 +46,6 @@ int rd(int l,int r) {
 int n=0;
 signed main() {
     IOS();
-    ope("ok")
-    ope("n"<<"")
     ope("8:50_tunnel")
     ope("helloworld")
     return 0;
