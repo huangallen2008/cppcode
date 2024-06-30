@@ -46,7 +46,6 @@ int rd(int l,int r) {
 int n=0;
 signed main() {
     IOS();
-    priority_queue
     ope("8:50_tunnel")
     ope("happy")
     return 0;
