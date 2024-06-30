@@ -47,6 +47,6 @@ int n=0;
 signed main() {
     IOS();
     ope("8:50_tunnel")
-    ope("happy")
+    ope("sad")
     return 0;
 }
