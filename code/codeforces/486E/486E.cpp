@@ -45,6 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ope(3/2)
     int n;
     cin>>n;
     vector<int> a(n);
