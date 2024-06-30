@@ -53,9 +53,6 @@ signed main() {
     REP(i,maxn) REP(j,maxn) dp[i][j]=inf;
     dp[0][0]=0;
     REP(i,n) {
-        REP1(j,x) {
-            REP1(k,y) cout<<dp[j][k]<<' ';entr
-        }
         for(int j=x;j>=0;j--) {
             for(int k=y;k>=0;k--) {
                 dp[j][k]=min(dp[j][k],dp[max(j-a[i],0ll)][max(k-b[i],0ll)]+1);
