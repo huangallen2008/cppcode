@@ -50,14 +50,15 @@ signed main() {
     cin>>n>>x>>y;
     vector<int> a(n),b(n);
     REP(i,n) cin>>a[i]>>b[i];
-    memset(dp,15,sizeof(dp));
+    REP(i,maxn) REP(j,maxn) dp[i][j]=inf;
     ope(dp[0][0])
     REP(i,n) {
         for(int j=x;j>=a[i];j--) {
             for(int k=y;k>=b[i];k--) {
-
+                dp[j][k]=min(dp[j][k],dp[j-a[i]][k-b[i]]);
             }
         }
     }
+    cout<<dp[x][y]<<'\n';
     return 0;
 }
