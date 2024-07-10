@@ -47,13 +47,16 @@ Graph g;
 vector<int> stk,v,p,l;
 void dfs(int u) {
     op(u)oparr(stk)
-    while(stk.back()<=v[u]) stk.pop_back();
-    l[u]=stk.back();
-    stk.pb(v[u]);
+    if(stk.size()==0||v[u]>=stk.back()) {
+        l[u]=n;
+        stk.pb(v[u]);
+    }
+    else {
+        l[u]=stk.back();
+    }
     for(int v:g[u]) {
         dfs(v);
     }
-    if(stk.back()==v[u]) stk.pop_back();
 }
 void solve() {
     int n;
