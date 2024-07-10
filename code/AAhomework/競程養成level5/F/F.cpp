@@ -44,6 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
+int n;
 vector<int> stk,v,p,l;
 void dfs(int u) {
     op(u)oparr(stk)
@@ -69,7 +70,7 @@ void solve() {
     REP(i,n) cin>>v[i];
     REP1(i,n-1) g[p[i]].pb(i);
     REP(i,n) sort(ALL(g[i]));
-    stk={n};oparr(stk)
+    stk.clear();
     dfs(0);
     oparr(l)
     int an=0;
