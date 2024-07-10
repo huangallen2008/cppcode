@@ -60,7 +60,6 @@ void dfs(int u) {
     }
 }
 void solve() {
-    int n;
     cin>>n;
     p=vector<int>(n);
     v=vector<int>(n);
