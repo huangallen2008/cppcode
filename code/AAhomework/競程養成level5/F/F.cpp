@@ -43,34 +43,51 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct SEG {
+    vector<int> s;
+    void init(int n) {
+        s=vector<int>(n<<2,-inf);
+    }
+    void ud(int w,int l,int r,int u,int v) {
+        if(l==r) {
+            s[w]=v;
+            return;
+        }
+        int m=l+r>>1;
+        if(u<=m) ud(w<<1,l,m,u,v);
+        else ud(w<<1|1,m+1,r,u,v);
+        s[w]=max(s[w<<1],s[w<<1|1]);
+    }
+    int qu(int w,int l,int r,int v) {
+        if(l==r) return s[w];
+        int m=l+r>>1;
+        if(s[w<<1|1]>v) return qu(w<<1|1,m+1,r,v);
+        else return qu(w<<1,l,m,v);
+    }
+}seg;
 Graph g;
 int n;
 vector<int> stk,v,p,l;
 void dfs(int u) {
-    op(u)oparr(stk)
-    if(stk.size()==0||v[u]>=stk.back()) {
-        l[u]=n;
-        stk.pb(v[u]);
-    }
-    else {
-        l[u]=stk.back();
-    }
-    for(int v:g[u]) {
-        dfs(v);
-    }
-    if(stk.size()&&stk.back()==v[u]) stk.pop_back();
+    l[u]=seg.qu(1,0,n-1,v[u]);
+    seg.ud(1,0,n-1,stk.size(),v[u]);
+    stk.pb(v[u]);
+    for(int v:g[u]) dfs(v);
+    stk.pop_back();
+    seg.ud(1,0,n-1,stk.size(),-inf);
 }
 void solve() {
     cin>>n;
     p=vector<int>(n);
     v=vector<int>(n);
     l=vector<int>(n);
+    seg.init(n);
     g=Graph(n);
     REP1(i,n-1) cin>>p[i];
     REP(i,n) cin>>v[i];
     REP1(i,n-1) g[p[i]].pb(i);
-    REP(i,n) sort(ALL(g[i]));
-    stk.clear();
+    stk={n};
+    seg.ud(1,0,n-1,0,n);
     dfs(0);
     oparr(l)
     int an=0;
