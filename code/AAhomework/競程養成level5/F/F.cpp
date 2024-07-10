@@ -60,7 +60,7 @@ void solve() {
     v=vector<int>(n);
     l=vector<int>(n);
     g=Graph(n);
-    REP(i,n) cin>>p[i];
+    REP1(i,n-1) cin>>p[i];
     REP(i,n) cin>>v[i];
     REP(i,n) g[p[i]].pb(i);
     REP(i,n) sort(ALL(g));
