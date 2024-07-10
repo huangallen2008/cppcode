@@ -64,7 +64,7 @@ void solve() {
     REP1(i,n-1) cin>>p[i];
     REP(i,n) cin>>v[i];
     REP1(i,n-1) g[p[i]].pb(i);
-    REP(i,n) sort(ALL(g));
+    REP(i,n) sort(ALL(g[i]));
     stk={n};oparr(stk)
     dfs(0);
     oparr(l)
