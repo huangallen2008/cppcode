@@ -89,11 +89,9 @@ void solve() {
     stk={n};
     seg.ud(1,0,n-1,0,n);
     dfs(0);
-    oparr(l)
     int an=0;
     REP(i,n) addmod(an,l[i]*(i+1));
     cout<<an<<'\n';
-    entr
 }
 signed main() {
     IOS();
