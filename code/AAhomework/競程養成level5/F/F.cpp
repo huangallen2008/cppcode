@@ -46,6 +46,7 @@ int rd(int l,int r) {
 Graph g;
 vector<int> stk,v,p,l;
 void dfs(int u) {
+    op(u)oparr(stk)
     while(stk.back()<=v[u]) stk.pop_back();
     l[u]=stk.back();
     stk.pb(v[u]);
