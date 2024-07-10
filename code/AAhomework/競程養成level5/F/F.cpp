@@ -58,6 +58,7 @@ void dfs(int u) {
     for(int v:g[u]) {
         dfs(v);
     }
+    if(stk.size()&&stk.back()==v[u]) stk.pop_back();
 }
 void solve() {
     cin>>n;
