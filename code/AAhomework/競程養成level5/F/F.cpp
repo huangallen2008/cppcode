@@ -66,6 +66,7 @@ void solve() {
     REP(i,n) sort(ALL(g));
     stk={n};
     dfs(0);
+    oparr(l)
     int an=0;
     REP(i,n) addmod(an,l[i]*(i+1));
     cout<<an<<'\n';
