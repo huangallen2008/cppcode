@@ -53,6 +53,7 @@ void dfs(int u) {
     for(int v:g[u]) {
         dfs(v);
     }
+    if(stk.back()==v[u]) stk.pop_back();
 }
 void solve() {
     int n;
