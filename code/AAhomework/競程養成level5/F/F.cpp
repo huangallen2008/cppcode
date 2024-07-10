@@ -70,6 +70,7 @@ void solve() {
     int an=0;
     REP(i,n) addmod(an,l[i]*(i+1));
     cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS();
