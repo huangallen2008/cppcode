@@ -47,7 +47,7 @@ int rd(int l,int r) {
 struct my_que {
     vector<int> dp;
     queue<int> q;
-    mq_que() {
+    my_que() {
         ope(1111)
         dp=vector<int>(maxs);
         dp[0]=1;
@@ -66,10 +66,9 @@ struct my_que {
         oparr(dp)
         return dp[s];
     }
-};
+} q;
 signed main() {
     IOS();
-    my_que q();
     int n,s;
     cin>>n>>s;
     vector<int> a(n);
