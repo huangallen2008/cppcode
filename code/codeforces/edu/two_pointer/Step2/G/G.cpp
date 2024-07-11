@@ -98,6 +98,7 @@ signed main() {
             q.push(a[r++]);
         }
         if(r==n) break;
+        op(l)op(r)ope(q.gcd())
         chmin(an,r-l+1); 
         q.pop();
     }
