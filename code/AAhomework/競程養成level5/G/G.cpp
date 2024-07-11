@@ -57,7 +57,6 @@ void solve() {
     int an=0;
     vector<int> dp(n+1);
     vector<pipii> stk;
-    // stk.pb({0});
     REP1(i,n) {
         int ll=l[a[i]],rr=r[a[i]];
         while(stk.size()&&ll<=stk.back().f) {
@@ -70,8 +69,6 @@ void solve() {
         an+=dp[i];
     }
     cout<<an<<'\n';
-    ope(an)
-    oparr(dp)
     REP1(i,n) {
         l[a[i]]=inf;
         r[a[i]]=-inf;
