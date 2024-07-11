@@ -67,7 +67,7 @@ struct my_que {
     void push(int x) {
         s1.push(x);
     }
-    int pop(int x) {
+    int pop() {
         if(s2.size()) return s2.pop();
         else {
             while(s1.size()>1) {
