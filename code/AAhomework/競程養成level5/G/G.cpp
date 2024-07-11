@@ -44,23 +44,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct SEG {
-    vector<int> s;
-    void init(int n) {
-        s=vectoor<int>(n<<2);
-    }
-    void ud(int w,int l,int r,int u,int v) {
-        if(l==r) {
-            s[w]=v;
-            return;
-        }
-        int m=l+r>>1;
-        if(u<=m) ud(w<<1,l,m,u,v);
-        else ud(w<<1|1,m+1,r,u,v);
-        s[w]=min(s[w<<1],s[w<<1|1]);
-    }
-    int qu() { return s[1]; }
-}seg;
 vector<int> l(maxv,inf),r(maxv,-inf);
 void solve() {
     int n;
