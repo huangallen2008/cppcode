@@ -48,7 +48,6 @@ struct my_que {
     vector<int> dp;
     queue<int> q;
     my_que() {
-        ope(1111)
         dp=vector<int>(maxs);
         dp[0]=1;
     }
