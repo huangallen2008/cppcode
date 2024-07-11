@@ -80,7 +80,7 @@ void solve() {
     int an=0;
     REP(s,n+1) {
         REP1(res,s<<1|1) {
-            addmod(an,(res*C(res-1,res-s)%mod)*C(n-res,(s<<1|1)-res));
+            addmod(an,(res*C(min(res-1,n),res-s-1)%mod)*C(n-res,(s<<1|1)-res));
             op(s)op(res)ope(an)
         }
     }
