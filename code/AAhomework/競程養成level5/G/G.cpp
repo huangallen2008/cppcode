@@ -55,16 +55,20 @@ void solve() {
         chmax(r[a[i]],i);
     }
     int an=0;
-    int nr=1,cnt=0;
+    vector<int> dp(n+1);
+    vector<int> stk;
+    stk={0};
     REP1(i,n) {
-        chmax(nr,r[a[i]]);
-        if(nr==i) {
-            cnt++;
-            nr++;
+        int ll=l[a[i]],rr=r[a[i]];
+        while(stk.back()>=ll) {
+            chmax(rr,stk.back());
+            stk.pop_back();
+            chmin(ll,stk.back()+1);
         }
+        if(rr<=i) dp[i]=dp[stk.back()]+1;
+        stk.pb(rr);
+        an+=dp[i];
     }
-    an=cnt*(cnt-1)>>1;
-    ope(cnt)
     cout<<an<<'\n';
     REP1(i,n) {
         l[a[i]]=inf;
