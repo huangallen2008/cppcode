@@ -69,7 +69,7 @@ struct my_que {
             }
         }
     }
-}
+};
 signed main() {
     IOS();
     int n,s;
