@@ -65,6 +65,7 @@ void solve() {
             stk.pop_back();
             chmin(ll,stk.back()+1);
         }
+        ope(i)oparr(stk)
         if(rr<=i) dp[i]=dp[stk.back()]+1;
         stk.pb(rr);
         an+=dp[i];
