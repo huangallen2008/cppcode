@@ -55,7 +55,7 @@ void solve() {
         chmax(r[a[i]],i);
     }
     int an=0;
-    int pl=n,sc=0;
+    int pl=inf,sc=0;
     REP1(i,n) {
         sc++;
         if(r[a[i]]==i) {
@@ -65,7 +65,7 @@ void solve() {
         else {
             sc=0;
         }
-        an+=(pl==n?0:pl)+sc;
+        an+=(pl==inf?0:pl)+sc;
     }
     cout<<an<<'\n';
 }
