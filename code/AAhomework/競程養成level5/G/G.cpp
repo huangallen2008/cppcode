@@ -66,7 +66,7 @@ void solve() {
             stk.pop_back();
         }
         stk.pb({i,{ll,rr}});
-        if(rr<=i) dp[i]=dp[ll]+1;
+        if(rr<=i) dp[i]=dp[ll-1]+1;
         an+=dp[i];
     }
     cout<<an<<'\n';
