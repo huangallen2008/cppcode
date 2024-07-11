@@ -63,7 +63,7 @@ void solve() {
             nr++;
         }
     }
-    an=cnt*(cnt+1)>>1;
+    an=cnt*(cnt-1)>>1;
     cout<<an<<'\n';
     REP1(i,n) {
         l[a[i]]=inf;
