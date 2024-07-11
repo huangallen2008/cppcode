@@ -52,13 +52,8 @@ struct my_que {
         dp[0]=1;
     }
     void push(int x) {
-        q.push(x);
-        for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
     }
     void pop() {
-        int x=q.front();
-        for(int i=x;i<maxs;i++) dp[i]-=dp[i-x];
-        q.pop();
     }
     bool ok(int s) {
         return dp[s];
@@ -70,12 +65,19 @@ signed main() {
     cin>>n>>s;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
+    queue<int> q;
+    vector<int> dp(maxs);
+    dp[0]=1;
     int r=0,an=inf;
     REP(l,n) {
-        while(r<n&&!q.ok(s)) {
-            q.push(a[r++]);
+        while(r<n&&!dp[s]) {
+            int x=a[r++];
+            q.push(x);
+            for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
         }
-        if(!q.ok(s)) break;
+        if(!dp[s]) break;
+        int x=q.front();
+        for(int i=x;i<maxs;i++) dp[i]-=dp[i-x];
         q.pop();
         chmin(an,r-l);
     }
