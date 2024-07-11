@@ -65,9 +65,10 @@ struct my_que {
         oparr(dp)
         return dp[s];
     }
-} q;
+};
 signed main() {
     IOS();
+    my_que q;
     int n,s;
     cin>>n>>s;
     vector<int> a(n);
