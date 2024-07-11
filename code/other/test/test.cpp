@@ -77,7 +77,7 @@ void solve() {
     int an=0;
     REP(s,n+1) {
         REP1(res,s<<1|1) {
-            addmod(an,C(res-1,res-1-s)*C(n-res,(s<<1|1)-res));
+            addmod(an,(res*C(res-1,res-1-s)%mod)*C(n-res,(s<<1|1)-res));
         }
     }
     cout<<an<<'\n';entr
