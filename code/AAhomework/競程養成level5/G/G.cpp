@@ -65,7 +65,7 @@ void solve() {
         else {
             sc=0;
         }
-        an+=pl+sc;
+        an+=min(pl,i)+sc;
     }
     cout<<an<<'\n';
 }
