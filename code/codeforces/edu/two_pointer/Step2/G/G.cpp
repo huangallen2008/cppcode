@@ -67,14 +67,11 @@ struct my_stk {
     int size() { return stk.size(); }
 };
 struct my_que {
-    deque<int> q;
     my_stk s1,s2;
     void push(int x) {
         s1.push(x);
-        q.push_back(x);
     }
     int pop() {
-        q.pop_front();
         if(s2.size()) {
             return s2.pop();
         }
@@ -103,11 +100,9 @@ signed main() {
     REP(l,n) {
         while(r<n&&q.gcd()!=1) {
             q.push(a[r++]);
-        op(l)op(r)op(q.gcd())op(q.s1.gcd())ope(q.s2.gcd())
         }
         if(r==n) break;
-        oparr(q.q)
-        chmin(an,r-l+1); 
+        chmin(an,r-l); 
         q.pop();
     }
     if(an==inf) cout<<"-1\n";
