@@ -65,7 +65,7 @@ struct my_que {
         oparr(dp)
         return dp[s];
     }
-} q();
+} q;
 signed main() {
     IOS();
     int n,s;
