@@ -103,9 +103,9 @@ signed main() {
     REP(l,n) {
         while(r<n&&q.gcd()!=1) {
             q.push(a[r++]);
+        op(l)op(r)op(q.gcd())op(q.s1.gcd())ope(q.s2.gcd())
         }
         if(r==n) break;
-        op(l)op(r)op(q.gcd())op(q.s1.gcd())ope(q.s2.gcd())
         oparr(q.q)
         chmin(an,r-l+1); 
         q.pop();
