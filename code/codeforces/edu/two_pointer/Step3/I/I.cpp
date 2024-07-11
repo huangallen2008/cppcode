@@ -44,21 +44,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct my_que {
-    vector<int> dp;
-    queue<int> q;
-    my_que() {
-        dp=vector<int>(maxs);
-        dp[0]=1;
-    }
-    void push(int x) {
-    }
-    void pop() {
-    }
-    bool ok(int s) {
-        return dp[s];
-    }
-} q;
 signed main() {
     IOS();
     int n,s;
