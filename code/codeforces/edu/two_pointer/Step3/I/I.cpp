@@ -75,6 +75,7 @@ signed main() {
         while(r<n&&!q.ok(s)) {
             q.push(a[r++]);
         }
+        ope(l)
         if(!q.ok(s)) break;
         q.pop();
         chmin(an,r-l);
