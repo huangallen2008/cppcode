@@ -45,7 +45,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct my_stk {
-    vector<int> stk,dp(maxs);
+    vector<int> stk,dp;
     void push(int x) {
         stk.pb(x);
         for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
