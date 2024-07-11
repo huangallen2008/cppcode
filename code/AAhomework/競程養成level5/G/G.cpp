@@ -71,7 +71,7 @@ void solve() {
     }
     cout<<an<<'\n';
     ope(an)
-    // oparr(dp)
+    oparr(dp)
     REP1(i,n) {
         l[a[i]]=inf;
         r[a[i]]=-inf;
