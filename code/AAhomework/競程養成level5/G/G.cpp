@@ -71,6 +71,7 @@ void solve() {
         ope(i)oparr(stk)
     }
     cout<<an<<'\n';
+    oparr(dp)
     REP1(i,n) {
         l[a[i]]=inf;
         r[a[i]]=-inf;
