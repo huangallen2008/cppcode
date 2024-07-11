@@ -68,7 +68,7 @@ void init() {
 }
 int C(int n,int k) {
     if(n<0||k<0||n<k) return 0;
-    // op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
+    op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 void solve() {
