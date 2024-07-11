@@ -69,7 +69,7 @@ struct my_que {
 };
 signed main() {
     IOS();
-    my_que q;
+    my_que q();
     int n,s;
     cin>>n>>s;
     vector<int> a(n);
