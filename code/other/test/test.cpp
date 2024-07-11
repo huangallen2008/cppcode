@@ -61,7 +61,7 @@ int inv(int x) {
 }
 vector<int> fac(maxn),infac(maxn);
 void init() {
-    fac[0]=1.infac[0]=1;
+    fac[0]=1,infac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
     REP1(i,maxn-1) infac[i]=inv(fac[i]);
 }
