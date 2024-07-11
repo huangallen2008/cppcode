@@ -66,8 +66,8 @@ void init() {
     REP1(i,maxn-1) infac[i]=inv(fac[i]);
 }
 int C(int n,int k) {
-    op(n)ope(k)
     if(n<0||k<0||n<k) return 0;
+    op(n)ope(k)
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 void solve() {
