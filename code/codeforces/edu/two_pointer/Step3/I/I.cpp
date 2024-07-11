@@ -62,8 +62,6 @@ struct my_que {
         q.pop();
     }
     bool ok(int s) {
-        ope(s)
-        oparr(dp)
         return dp[s];
     }
 } q;
@@ -76,10 +74,8 @@ signed main() {
     int r=0,an=inf;
     REP(l,n) {
         while(r<n&&!q.ok(s)) {
-            ope(r)
             q.push(a[r++]);
         }
-        ope(l)
         if(!q.ok(s)) break;
         q.pop();
         chmin(an,r-l);
