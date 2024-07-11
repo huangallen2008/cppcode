@@ -67,7 +67,7 @@ void init() {
     REP1(i,10) cout<<fac[i]<<' ';entr
 }
 int C(int n,int k) {
-    if(k==0) {
+    if(k==0&&n==-1) {
         return 1;
     }
     if(n<0||k<0||n<k) return 0;
