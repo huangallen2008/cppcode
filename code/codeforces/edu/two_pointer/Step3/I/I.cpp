@@ -54,6 +54,7 @@ struct my_stk {
         for(int i=stk.back();i<maxs;i++) dp[i]-=dp[i-x];
         return stk.pop_back();
     }
+    int size() { return stk.size(); }
 };
 struct my_que {
     my_stk s1,s2;
