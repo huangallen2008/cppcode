@@ -79,7 +79,7 @@ void solve() {
             addmod(an,C(res-1,res-1-s)*C(n-res,(s<<1|1)-res));
         }
     }
-    cout<<an<<'\n';
+    cout<<an<<'\n';entr
 }
 signed main() {
     IOS();
@@ -88,3 +88,8 @@ signed main() {
     while(T--) solve();
     return 0;
 }
+/*
+5
+1 2 3 4 5
+
+*/
