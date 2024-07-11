@@ -71,7 +71,7 @@ int C(int n,int k) {
         return 1;
     }
     if(n<0||k<0||n<k) return 0;
-    op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
+    // op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 void solve() {
@@ -81,7 +81,7 @@ void solve() {
     REP(s,n+1) {
         REP1(res,s<<1|1) {
             addmod(an,(res*C(min(res-1,n),res-s-1)%mod)*C(n-res,(s<<1|1)-res));
-            op(s)op(res)ope(an)
+            // op(s)op(res)ope(an)
         }
     }
     cout<<an<<'\n';entr
