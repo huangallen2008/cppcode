@@ -64,10 +64,11 @@ void init() {
     fac[0]=1,infac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
     REP1(i,maxn-1) infac[i]=inv(fac[i]);
+    REP1(i,10) cout<<fac[i]<<' ';entr
 }
 int C(int n,int k) {
     if(n<0||k<0||n<k) return 0;
-    op(n)ope(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
+    op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 void solve() {
