@@ -66,6 +66,8 @@ struct my_que {
     my_stk s1,s2;
     void push(int x) {
         s1.push(x);
+        REP(i,101) if(s1.ok(i)) cout<<i<<' ';entr
+        REP(i,101) if(s2.ok(i)) cout<<i<<' ';entr
     }
     int pop() {
         if(s2.size()) return s2.pop();
