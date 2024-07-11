@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct my_stk {
     vector<int> os,stk;
-    int g=0;
+    int g=inf;
     void push(int x) {
         os.pb(x);
         if(stk.size()) {
