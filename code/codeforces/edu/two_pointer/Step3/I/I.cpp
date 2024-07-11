@@ -60,27 +60,45 @@ struct my_stk {
         return x;
     }
     int size() { return stk.size(); }
+    bool ok(int s) { return dp[s]; }
 };
 struct my_que {
     my_stk s1,s2;
     void push(int x) {
         s1.push(x);
     }
-    void pop(int x) {
-        if(s2.size()) s2.pop();
+    int pop(int x) {
+        if(s2.size()) return s2.pop();
         else {
-            while(s1.size()) {
+            while(s1.size()>1) {
                 s2.push(s1.pop());
             }
+            return s1.pop();
         }
     }
-};
+    int size() { return s1.size()+s2.size(); }
+    bool ok(int s) {
+        REP(i,s+1) {
+            if(s1.ok(i)&&s2.ok(s-i)) return 1;
+        }
+        return 0;
+    }
+} q;
 signed main() {
     IOS();
     int n,s;
     cin>>n>>s;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-
+    int r=0,an=inf;
+    REP(l,n) {
+        while(r<n&&!q.ok(s)) {
+            q.push(a[r++]);
+        }
+        if(!q.ok(s)) break;
+        q.pop();
+        chmin(an,r-l);
+    }
+    cout<<an<<'\n';
     return 0;
 }
