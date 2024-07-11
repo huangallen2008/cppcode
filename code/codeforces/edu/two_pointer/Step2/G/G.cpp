@@ -63,7 +63,7 @@ struct my_stk {
         stk.pop_back();
         return t;
     }
-    int gcd() { return gcd; }
+    int gcd() { return g; }
     int size() { return stk.size(); }
 };
 struct my_que {
