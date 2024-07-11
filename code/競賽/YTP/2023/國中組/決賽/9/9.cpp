@@ -1,7 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC target("avx2,bmi,popcnt")
 #define ll long long
-#define int long long
+// #define int long long
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 #define REP(i,n) FOR(i,0,n)
 #define REP1(i,n) FOR(i,1,(n)+1)
