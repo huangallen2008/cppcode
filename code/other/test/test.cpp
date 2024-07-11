@@ -37,16 +37,52 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=7e5+5;
+const int maxn=1e4+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n=0;
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) {
+            r*=x;
+            r%=mod;
+        }
+        x*=x;
+        x%=mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) {
+    return pw(x,mod-2);
+}
+vector<int> fac(maxn),infac(maxn);
+void init() {
+    fac[0]=1.infac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    REP1(i,maxn-1) infac[i]=inv(fac[i]);
+}
+int C(int n,int k) {
+    if(n<0||k<0||n<k) return 0;
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
+void solve() {
+    int n;
+    cin>>n;
+    REP(s,n+1) {
+        REP1(res,s<<1|1) {
+            addmod(an,C(res-1,res-1-s)*C(n-res,(s<<1|1)-res));
+        }
+    }
+    cout<<an<<'\n';
+}
 signed main() {
     IOS();
-    ope("8:50_tunnel")
-    ope("sad")
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
