@@ -82,7 +82,7 @@ void solve() {
             addmod(an,(res*C(min(res-1,n),res-s-1)%mod)*C(n-res,(s<<1|1)-res));
         }
     }
-    cout<<an<<'\n';
+    cout<<md(an)<<'\n';
 }
 signed main() {
     IOS();
