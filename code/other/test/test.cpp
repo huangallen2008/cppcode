@@ -67,6 +67,9 @@ void init() {
     REP1(i,10) cout<<fac[i]<<' ';entr
 }
 int C(int n,int k) {
+    if(k==0) {
+        return n==0;
+    }
     if(n<0||k<0||n<k) return 0;
     op(n)op(k)ope((fac[n]*infac[k]%mod)*infac[n-k]%mod)
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
