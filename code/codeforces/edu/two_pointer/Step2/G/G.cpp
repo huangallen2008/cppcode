@@ -101,7 +101,7 @@ signed main() {
         while(r<n&&q.gcd()!=1) {
             q.push(a[r++]);
         }
-        if(r==n) break;
+        if(q.gcd()!=1) break;
         chmin(an,r-l); 
         q.pop();
     }
