@@ -61,8 +61,7 @@ signed main() {
             for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
         }
         if(!dp[s]) break;
-        int x=q.front();
-        for(int i=x;i<maxs;i++) dp[i]-=dp[i-x];
+        for(int i=q.front();i<maxs;i++) dp[i]-=dp[i-q.front()];
         q.pop();
         chmin(an,r-l);
     }
