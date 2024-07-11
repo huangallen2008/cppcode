@@ -98,7 +98,7 @@ signed main() {
             q.push(a[r++]);
         }
         if(r==n) break;
-        op(l)op(r)ope(q.gcd())
+        op(l)op(r)op(q.gcd())op(q.s1.gcd())ope(q.s2.gcd())
         chmin(an,r-l+1); 
         q.pop();
     }
