@@ -62,6 +62,7 @@ struct my_que {
     }
     bool ok(int s) {
         ope(s)
+        oparr(dp)
         return dp[s];
     }
 } q;
