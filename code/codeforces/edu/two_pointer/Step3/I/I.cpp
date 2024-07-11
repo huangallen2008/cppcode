@@ -51,8 +51,10 @@ struct my_stk {
         for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
     }
     int pop() {
-        for(int i=stk.back();i<maxs;i++) dp[i]-=dp[i-x];
-        return stk.pop_back();
+        int x=stk.back();
+        for(int i=x;i<maxs;i++) dp[i]-=dp[i-x];
+        stk.pop_back();
+        return x;
     }
     int size() { return stk.size(); }
 };
