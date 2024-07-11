@@ -60,7 +60,7 @@ void solve() {
     // stk.pb({0});
     REP1(i,n) {
         int ll=l[a[i]],rr=r[a[i]];
-        while(stk.size()&&ll>=stk.back().f) {
+        while(stk.size()&&ll<=stk.back().f) {
             chmin(ll,stk.back().s.f);
             chmax(rr,stk.back().s.s);
             stk.pop_back();
