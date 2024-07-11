@@ -48,6 +48,7 @@ struct my_stk {
     vector<int> stk,dp;
     my_stk() {
         dp=vector<int>(maxs);
+        dp[0]=1;
     }
     void push(int x) {
         stk.pb(x);
