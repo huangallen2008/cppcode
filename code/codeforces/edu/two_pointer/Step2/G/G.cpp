@@ -45,16 +45,13 @@ int rd(int l,int r) {
 }
 struct my_stk {
     vector<int> os,stk;
-    int g=inf;
     void push(int x) {
         os.pb(x);
         if(stk.size()) {
-            g=__gcd(g,x);
-            stk.pb(g);
+            stk.pb(__gcd(stk.back(),x));
         }
         else {
             stk.pb(x);
-            g=x;
         }
     }
     int pop() {
@@ -63,7 +60,10 @@ struct my_stk {
         stk.pop_back();
         return t;
     }
-    int gcd() { return g; }
+    int gcd() { 
+        if(stk.size()) return stk.back();
+        return -1;    
+    }
     int size() { return stk.size(); }
 };
 struct my_que {
@@ -86,7 +86,11 @@ struct my_que {
         }
         return 0;
     }
-    int gcd() { return __gcd(s1.gcd(),s2.gcd()); }
+    int gcd() { 
+        if(s1.gcd()==-1) return s2.gcd();
+        if(s2.gcd()==-1) return s1.gcd();
+        return __gcd(s1.gcd(),s2.gcd());    
+    }
     int size() { return s1.size()+s2.size(); }
 }q;
 signed main() {
