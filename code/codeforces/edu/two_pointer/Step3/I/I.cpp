@@ -44,45 +44,24 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct my_stk {
-    vector<int> stk,dp;
-    my_stk() {
+struct my_que {
+    vector<int> dp;
+    queue<int> q;
+    mq_que() {
         dp=vector<int>(maxs);
         dp[0]=1;
     }
     void push(int x) {
-        stk.pb(x);
+        q.push(x);
         for(int i=maxs-1;i>=x;i--) dp[i]+=dp[i-x];
     }
-    int pop() {
-        int x=stk.back();
+    void pop() {
+        int x=q.front();
         for(int i=x;i<maxs;i++) dp[i]-=dp[i-x];
-        stk.pop_back();
-        return x;
+        q.pop();
     }
-    int size() { return stk.size(); }
-    bool ok(int s) { return dp[s]; }
-};
-struct my_que {
-    my_stk s1,s2;
-    void push(int x) {
-        s1.push(x);
-    }
-    int pop() {
-        if(s2.size()) return s2.pop();
-        else {
-            while(s1.size()>1) {
-                s2.push(s1.pop());
-            }
-            return s1.pop();
-        }
-    }
-    int size() { return s1.size()+s2.size(); }
     bool ok(int s) {
-        REP(i,s+1) {
-            if(s1.ok(i)&&s2.ok(s-i)) return 1;
-        }
-        return 0;
+        return dp[s];
     }
 } q;
 signed main() {
