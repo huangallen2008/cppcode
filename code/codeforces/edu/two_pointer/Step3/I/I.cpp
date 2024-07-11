@@ -61,6 +61,7 @@ struct my_que {
         q.pop();
     }
     bool ok(int s) {
+        ope(s)
         return dp[s];
     }
 } q;
@@ -71,7 +72,6 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int r=0,an=inf;
-    ope("ok")
     REP(l,n) {
         while(r<n&&!q.ok(s)) {
             ope(r)
