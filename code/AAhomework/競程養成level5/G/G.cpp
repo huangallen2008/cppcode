@@ -65,10 +65,13 @@ void solve() {
     }
     an=cnt*(cnt+1)>>1;
     cout<<an<<'\n';
+    REP1(i,n) {
+        l[a[i]]=inf;
+        r[a[i]]=-inf;
+    }
 }
 signed main() {
     IOS();
-    seg.init(maxv);
     int T;
     cin>>T;
     while(T--) solve();
