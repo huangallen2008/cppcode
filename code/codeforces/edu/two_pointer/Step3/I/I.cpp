@@ -71,6 +71,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int r=0,an=inf;
+    ope("ok")
     REP(l,n) {
         while(r<n&&!q.ok(s)) {
             ope(r)
