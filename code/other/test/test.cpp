@@ -72,6 +72,7 @@ int C(int n,int k) {
 void solve() {
     int n;
     cin>>n;
+    int an=0;
     REP(s,n+1) {
         REP1(res,s<<1|1) {
             addmod(an,C(res-1,res-1-s)*C(n-res,(s<<1|1)-res));
