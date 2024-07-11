@@ -73,6 +73,7 @@ signed main() {
     int r=0,an=inf;
     REP(l,n) {
         while(r<n&&!q.ok(s)) {
+            ope(r)
             q.push(a[r++]);
         }
         ope(l)
