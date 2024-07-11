@@ -56,19 +56,18 @@ void solve() {
     }
     int an=0;
     vector<int> dp(n+1);
-    vector<int> stk;
-    stk={0};
+    vector<pipii> stk;
+    // stk.pb({0});
     REP1(i,n) {
         int ll=l[a[i]],rr=r[a[i]];
-        while(stk.back()>=ll) {
-            chmax(rr,stk.back());
+        while(stk.size()&&ll>=stk.back().f) {
+            chmin(ll,stk.back().s.f);
+            chmax(rr,stk.back().s.s);
             stk.pop_back();
-            chmin(ll,stk.back()+1);
         }
-        if(rr<=i) dp[i]=dp[stk.back()]+1;
-        stk.pb(rr);
+        stk.pb({i,{ll,rr}});
+        if(rr<=i) dp[i]=dp[ll]+1;
         an+=dp[i];
-        ope(i)oparr(stk)
     }
     cout<<an<<'\n';
     oparr(dp)
