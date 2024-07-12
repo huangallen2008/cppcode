@@ -43,56 +43,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) {
-            r*=x;
-            r%=mod;
-        }
-        x*=x;
-        x%=mod;
-        p>>=1;
-    }
-    return r;
-}
-int inv(int x) {
-    return pw(x,mod-2);
-}
-vector<int> fac(maxn),infac(maxn);
-void init() {
-    fac[0]=1,infac[0]=1;
-    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    REP1(i,maxn-1) infac[i]=inv(fac[i]);
-}
-int C(int n,int k) {
-    if(k==0) {
-        return 1;
-    }
-    if(n<0||k<0||n<k) return 0;
-    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
-}
-void solve() {
-    int n;
-    cin>>n;
-    int an=0;
-    REP(s,n+1) {
-        REP1(res,s<<1|1) {
-            addmod(an,(res*C(min(res-1,n),res-s-1)%mod)*C(n-res,(s<<1|1)-res));
-        }
-    }
-    cout<<md(an)<<'\n';
-}
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    init();
-    while(T--) solve();
+
     return 0;
 }
-/*
-5
-1 2 3 4 5
-
-*/
