@@ -59,6 +59,7 @@ signed main() {
             if(c[i][j]) c[i][j]+=c[i-1][j];
         }
     }
+    int an=0;
     for(auto &v:c) {
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
