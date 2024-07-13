@@ -72,13 +72,13 @@ signed main() {
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
         stk.pb({0,0});
-        // REP1(i,m) {
-        //     while(stk.back().f>=v[i]) {
-        //         stk.pop_back();
-        //     }
-        //     pre[i]=stk.back().s;
-        //     stk.pb({v[i],i});
-        // }
+        REP1(i,m) {
+            while(stk.back().f>=v[i]) {
+                stk.pop_back();
+            }
+            pre[i]=stk.back().s;
+            stk.pb({v[i],i});
+        }
         // stk={{0,m+1}};
         // ope("ok1")
         // RREP1(i,m) {
