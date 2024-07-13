@@ -61,7 +61,7 @@ signed main() {
     }
     ope("ok")
     int an=0;
-    REP1(i,10) op(i)entr
+    REP1(i,10) op(i)entr ope(n)
     REP1(rd,n) {
         ope(rd)
         oparr(a[rd])
