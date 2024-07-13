@@ -76,7 +76,7 @@ signed main() {
             t+=v[i];
             r+=t;
         }
-        ope(r)
+        oparr(v)ope(r)
         an+=r;
     }
     cout<<an<<'\n';
