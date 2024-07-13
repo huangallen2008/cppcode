@@ -75,6 +75,7 @@ signed main() {
             }
             t+=v[i];
             r+=t;
+            stk.pb({v[i],i});
         }
         oparr(v)ope(r)
         an+=r;
