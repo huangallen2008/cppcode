@@ -69,7 +69,7 @@ signed main() {
         oparr(a[rr])
         auto &v=a[rr];
         ope("ok0")
-        vector<int> pre(m),nxt(m);
+        vector<int> pre(m+1),nxt(m+1);
         vector<pii> stk;
         stk.pb({0,0});
         REP1(i,m) {
