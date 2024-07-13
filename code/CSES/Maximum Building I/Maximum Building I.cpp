@@ -65,10 +65,9 @@ signed main() {
     ope("ok")
     int an=0;
     REP1(i,10) op(i)entr ope(n)
-    REP1(rd,n) {
-        ope(rd)
-        oparr(a[rd])
-        auto &v=a[rd];
+    REP1(rr,n) {
+        oparr(a[rr])
+        auto &v=a[rr];
         ope("ok0")
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
@@ -90,7 +89,6 @@ signed main() {
             stk.pb({v[i],i});
         }
         REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
-        ope("ok2")ope(rd)
     }
     cout<<an<<'\n';
     return 0;
