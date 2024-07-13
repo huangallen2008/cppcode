@@ -77,7 +77,6 @@ signed main() {
             r+=t;
             stk.pb({v[i],i});
         }
-        oparr(v)ope(r)
         an+=r;
     }
     cout<<an<<'\n';
