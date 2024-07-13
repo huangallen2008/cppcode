@@ -67,11 +67,11 @@ signed main() {
     REP1(i,10) op(i)entr ope(n)
     REP1(rr,n) {
         oparr(a[rr])
-        // auto &v=a[rr];
-        // ope("ok0")
-        // vector<int> pre(m),nxt(m);
-        // vector<pii> stk;
-        // stk.pb({0,0});
+        auto &v=a[rr];
+        ope("ok0")
+        vector<int> pre(m),nxt(m);
+        vector<pii> stk;
+        stk.pb({0,0});
         // REP1(i,m) {
         //     while(stk.back().f>=v[i]) {
         //         stk.pop_back();
