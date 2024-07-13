@@ -71,7 +71,7 @@ signed main() {
         ope("ok0")
         vector<int> pre(m+1),nxt(m+1);
         vector<pii> stk;
-        stk.pb({0,0});
+        stk.pb({-1,0});
         REP1(i,m) {
             while(stk.back().f>=v[i]) {
                 stk.pop_back();
@@ -79,7 +79,7 @@ signed main() {
             pre[i]=stk.back().s;
             stk.pb({v[i],i});
         }
-        stk={{0,m+1}};
+        stk={{-1,m+1}};
         ope("ok1")
         RREP1(i,m) {
             while(stk.size()&&stk.back().f>=v[i]) {
