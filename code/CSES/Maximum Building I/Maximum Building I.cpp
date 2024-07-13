@@ -62,6 +62,7 @@ signed main() {
     ope("ok")
     int an=0;
     REP1(rd,n) {
+        oparr(a)
         auto &v=a[rd];
         ope("ok0")
         vector<int> pre(m),nxt(m);
