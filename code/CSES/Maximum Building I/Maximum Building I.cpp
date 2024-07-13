@@ -62,6 +62,7 @@ signed main() {
     ope("ok")
     int an=0;
     for(auto &v:a) {
+        ope("ok0")
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
         stk.pb({0,0});
@@ -73,6 +74,7 @@ signed main() {
             stk.pb({v[i],i});
         }
         stk={{0,m+1}};
+        ope("ok1")
         RREP1(i,m) {
             while(stk.back().f>=v[i]) {
                 stk.pop_back();
@@ -81,7 +83,7 @@ signed main() {
             stk.pb({v[i],i});
         }
         REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
-        ope("ok")
+        ope("ok2")
     }
     cout<<an<<'\n';
     return 0;
