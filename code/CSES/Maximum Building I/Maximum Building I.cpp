@@ -54,6 +54,7 @@ signed main() {
             if(c=='.') a[i][j]=1;
         }
     } 
+    ope("ok")
     REP1(i,n) {
         REP1(j,m) {
             if(a[i][j]) a[i][j]+=a[i-1][j];
