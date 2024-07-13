@@ -81,13 +81,13 @@ signed main() {
         }
         stk={{0,m+1}};
         ope("ok1")
-        // RREP1(i,m) {
-        //     while(stk.back().f>=v[i]) {
-        //         stk.pop_back();
-        //     }
-        //     nxt[i]=stk.back().s;
-        //     stk.pb({v[i],i});
-        // }
+        RREP1(i,m) {
+            while(stk.back().f>=v[i]) {
+                stk.pop_back();
+            }
+            nxt[i]=stk.back().s;
+            stk.pb({v[i],i});
+        }
         // REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
     }
     cout<<an<<'\n';
