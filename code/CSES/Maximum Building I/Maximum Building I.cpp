@@ -46,21 +46,21 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<vector<int>> c(n+1,vector<int>(m+1));
+    vector<vector<int>> a(n+1,vector<int>(m+1));
     REP1(i,n) {
         REP1(j,m) {
             char c;
             cin>>c;
-            if(c=='.') c[i][j]=1;
+            if(c=='.') a[i][j]=1;
         }
     } 
     REP1(i,n) {
         REP1(j,m) {
-            if(c[i][j]) c[i][j]+=c[i-1][j];
+            if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
     int an=0;
-    for(auto &v:c) {
+    for(auto &v:a) {
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
         stk.pb({0,0});
