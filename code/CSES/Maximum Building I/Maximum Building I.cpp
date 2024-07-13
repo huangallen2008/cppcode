@@ -82,7 +82,7 @@ signed main() {
         stk={{0,m+1}};
         ope("ok1")
         RREP1(i,m) {
-            while(stk.back().f>=v[i]) {
+            while(stk.size()&&stk.back().f>=v[i]) {
                 stk.pop_back();
             }
             nxt[i]=stk.back().s;
