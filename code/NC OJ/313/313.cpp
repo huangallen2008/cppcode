@@ -45,20 +45,20 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    vector<vector<bool>> a(n,vector<bool>(m));
-    vector<vector<int>> c(n,vector<int>(m));
+    int n;
+    cin>>n;
+    vector<vector<bool>> a(n,vector<bool>(n));
+    vector<vector<int>> c(n,vector<int>(n));
     REP(i,n) {
-        REP(j,m) {
+        REP(j,n) {
             char c;
             cin>>c;
             if(c=='.') a[i][j]=1;
         }
     }
-    REP(i,m) c[0][i]=a[0][i];
+    REP(i,n) c[0][i]=a[0][i];
     REP1(i,n-1) {
-        REP(j,m) {
+        REP(j,n) {
             if(a[i][j]) c[i][j]=c[i-1][j]+1;
         }
     }
@@ -68,7 +68,7 @@ signed main() {
         vector<pii> stk;
         stk.pb({-1,-1});
         int t=0;
-        REP(i,m) {
+        REP(i,n) {
             while(stk.back().f>=v[i]) {
                 t-=(stk[stk.size()-1].s-stk[stk.size()-2].s)*(stk.back().f-v[i]);
                 stk.pop_back();
