@@ -88,7 +88,7 @@ signed main() {
             nxt[i]=stk.back().s;
             stk.pb({v[i],i});
         }
-        // REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
+        REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
     }
     cout<<an<<'\n';
     return 0;
