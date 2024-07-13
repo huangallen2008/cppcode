@@ -47,7 +47,8 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<vector<bool>> a(n,vector<bool>(m)),c(n,vector<int>(m));
+    vector<vector<bool>> a(n,vector<bool>(m));
+    vector<vector<int>> c(n,vector<int>(m));
     REP(i,n) {
         REP(j,m) {
             char c;
@@ -62,7 +63,7 @@ signed main() {
         }
     }
     for(auto &v:c) {
-        
+
     }
     return 0;
 }
