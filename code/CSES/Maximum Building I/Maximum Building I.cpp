@@ -59,16 +59,9 @@ signed main() {
             if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
-    REP1(i,n) {
-        oparr(a[i])
-    }
-    ope("ok")
     int an=0;
-    REP1(i,10) op(i)entr ope(n)
     REP1(rr,n) {
-        oparr(a[rr])
         auto &v=a[rr];
-        ope("ok0")
         vector<int> pre(m+1),nxt(m+1);
         vector<pii> stk;
         stk.pb({-1,0});
@@ -80,7 +73,6 @@ signed main() {
             stk.pb({v[i],i});
         }
         stk={{-1,m+1}};
-        ope("ok1")
         RREP1(i,m) {
             while(stk.size()&&stk.back().f>=v[i]) {
                 stk.pop_back();
