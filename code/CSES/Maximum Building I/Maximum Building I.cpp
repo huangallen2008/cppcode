@@ -42,31 +42,43 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int16_t n,m;
-int16_t cal(bitset<maxn> &b) {
-    int16_t an=0,c=0;
-    for(int i=0;i<=m;i++) {
-        if(b[i]) c++;
-        else an=max(an,c),c=0;
-    }
-    return an;
-}
-bitset<maxn> b[maxn];
 signed main() {
     IOS();
+    int n,m;
     cin>>n>>m;
-    REP(i,n) {
-        string s;
-        cin>>s;
-        REP(j,m) if(s[j]=='.') b[i].set(j);
-    }
-    int an=0;
-    REP(i,n) {
-        bitset<maxn> r;r.set();
-        RREP(j,i+1) {
-            r=r&b[j];
-            chmax(an,(i-j+1)*cal(r));
+    vector<vector<int>> c(n+1,vector<int>(m+1));
+    REP1(i,n) {
+        REP1(j,m) {
+            char c;
+            cin>>c;
+            if(c=='.') c[i][j]=1;
         }
+    } 
+    REP1(i,n) {
+        REP1(j,m) {
+            if(c[i][j]) c[i][j]+=c[i-1][j];
+        }
+    }
+    for(auto &v:c) {
+        vector<int> pre(m),nxt(m);
+        vector<pii> stk;
+        stk.pb({0,0});
+        REP1(i,m) {
+            while(stk.back().f>=v[i]) {
+                stk.pop_back();
+            }
+            pre[i]=stk.back().s;
+            stk.pb({v[i],i});
+        }
+        stk={{0,m+1}};
+        RREP1(i,m) {
+            while(stk.back().f>=v[i]) {
+                stk.pop_back();
+            }
+            nxt[i]=stk.back().s;
+            stk.pb({v[i],i});
+        }
+        REP1(i,m) chmax(an,v[i]*(nxt[i]-pre[i]-1));
     }
     cout<<an<<'\n';
     return 0;
