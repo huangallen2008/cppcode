@@ -61,7 +61,7 @@ signed main() {
     }
     ope("ok")
     int an=0;
-    for(auto &v:a) {
+    for(auto v:a) {
         ope("ok0")
         vector<int> pre(m),nxt(m);
         vector<pii> stk;
