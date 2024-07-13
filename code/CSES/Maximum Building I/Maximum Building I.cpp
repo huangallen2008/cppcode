@@ -59,6 +59,9 @@ signed main() {
             if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
+    REP1(i,n) {
+        oparr(a[i])
+    }
     ope("ok")
     int an=0;
     REP1(i,10) op(i)entr ope(n)
