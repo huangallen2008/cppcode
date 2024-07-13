@@ -62,8 +62,22 @@ signed main() {
             if(a[i][j]) c[i][j]=c[i-1][j]+1;
         }
     }
+    int an=0;
     for(auto &v:c) {
-
+        int r=0;
+        vector<pii> stk;
+        stk.pb({-1,-1});
+        int t=0;
+        REP(i,m) {
+            while(stk.back().f>=v[i]) {
+                t-=(stk[stk.size()-1].s-stk[stk.size()-2].s)*(stk.back().f-v[i]);
+                stk.pop_back();
+            }
+            t+=v[i];
+            r+=t;
+        }
+        an+=r;
     }
+    cout<<an<<'\n';
     return 0;
 }
