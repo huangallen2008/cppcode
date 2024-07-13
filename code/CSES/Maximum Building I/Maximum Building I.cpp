@@ -62,6 +62,7 @@ signed main() {
     ope("ok")
     int an=0;
     REP1(rd,n) {
+        ope(rd)
         oparr(a[rd])
         auto &v=a[rd];
         ope("ok0")
