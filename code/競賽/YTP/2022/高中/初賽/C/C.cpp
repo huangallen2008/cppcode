@@ -84,14 +84,11 @@ signed main() {
         g[u].pb({v,i});
         g[v].pb({u,i});
     }
-    dfs(0,-1);
+    REP(i,n) {
+        if(!vis[i]) dfs(i,-1);
+    }
     cout<<r.size()<<'\n';
     for(int x:r) cout<<x<<' ';
     cout<<"\n";
-    vector<int> used(m+1);
-    for(int x:r) {
-        assert(!used[x]);
-        used[x]=1;
-    }
     return 0;
 }
