@@ -54,13 +54,32 @@ signed main() {
             if(c=='.') a[i][j]=1;
         }
     } 
-    REP(i,n) {
+    REP1(i,n-1) {
         REP(j,m) {
             if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
-    for(auto &v:a) {
-        
+    vector<vector<int>> an(n+1,vector<int>(m));
+    for(auto v:a) {
+        v.pb(0);
+        vector<pii> stk={{-1,-1}};
+        REP(i,m+1) {
+            while(stk.back().f>=v[i]) {
+                an[v[i]+1][i-stk.back().s-1]++;
+                an[v[i]+1][i-stk[stk.size()-2].s]--;
+                an[stk.back().f][i-stk.back()-1]--;
+                an[stk.back().f][i-stk[stk.size()-2].s]++;
+                stk.pop_back();
+            }
+            stk.pb({v[i],i});
+        }
+    }
+    REP1(i,n) {
+        REP1(j,m) an[i][j]+=an[i-1][j]+an[i][j-1]-an[i-1][j-1];
+    }
+    REP1(i,n) {
+        REP1(j,m) cout<<an[i][j]<<' ';
+        cout<<'\n';
     }
     return 0;
 }
