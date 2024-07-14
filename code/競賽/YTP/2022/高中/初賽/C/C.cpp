@@ -52,6 +52,7 @@ void dfs(int u,int p) {
         if(vis[v]) continue;
         dfs(v,u);
         if(a[v]) {
+            op(u)op(v)ope(id)
             r.pb(id);
             a[u]=a[u]^1;
         }
@@ -84,6 +85,7 @@ signed main() {
         g[v].pb({u,i});
     }
     dfs(0,-1);
+    cout<<r.size()<<'\n';
     for(int x:r) cout<<x<<' ';
     cout<<"\n";
     return 0;
