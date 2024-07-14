@@ -54,7 +54,7 @@ signed main() {
     REP(l,n) {
         while(r<n&&sum<=k) sum+=a[r++];
         if(sum<=k) an++;
-        an+=r-l;
+        an+=r-l-1;
         sum-=a[l];
     }
     cout<<an<<'\n';
