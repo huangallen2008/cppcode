@@ -53,7 +53,8 @@ signed main() {
     int r=0;
     REP(l,n) {
         while(r<n&&sum<=k) sum+=a[r++];
-        chmax(an,r-l-1);
+        chmax(an,r-l);
+        op(l)ope(r)
         sum-=a[l];
     }
     cout<<an<<'\n';
