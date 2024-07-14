@@ -52,7 +52,7 @@ signed main() {
     int sum=0,an=inf;
     int r=0;
     REP(l,n) {
-        while(r<n&&sum<=k) sum+=a[r++];
+        while(r<n&&sum<k) sum+=a[r++];
         if(sum<=k) break;
         chmin(an,r-l);
         sum-=a[l];
