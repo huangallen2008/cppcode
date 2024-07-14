@@ -52,7 +52,7 @@ signed main() {
     int sum=0,an=0;
     int r=0;
     REP(l,n) {
-        while(r<n&&sum<=k) sum+=a[r++];
+        while(r<n&&sum<k) sum+=a[r++];
         an+=n-r;
         sum-=a[l];
     }
