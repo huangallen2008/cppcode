@@ -43,12 +43,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-vector<bool> a,r;
+vector<bool> a,r,vis;
 Graphw g;
 void dfs(int u,int p) {
-    ope(u)
+    vid[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==p) continue;
+        if(vis[v]) continue;
         dfs(v,u);
         if(a[v]) {
             r.pb(id);
@@ -61,6 +62,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     a=vector<bool>(n);
+    vis=vector<bool>(n);
     g=Graphw(n);
     int cnt=0;
     REP(i,n) {
