@@ -59,15 +59,15 @@ signed main() {
             if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
-    vector<vector<int>> an(n+1,vector<int>(m));
+    vector<vector<int>> an(n+1,vector<int>(m+1));
     for(auto v:a) {
         v.pb(0);
         vector<pii> stk={{-1,-1}};
         REP(i,m+1) {
             while(stk.back().f>=v[i]) {
-                an[v[i]+1][i-stk.back().s-1]++;
+                an[v[i]+1][i-stk.back().s]++;
                 an[v[i]+1][i-stk[stk.size()-2].s]--;
-                an[stk.back().f][i-stk.back().s-1]--;
+                an[stk.back().f][i-stk.back().s]--;
                 an[stk.back().f][i-stk[stk.size()-2].s]++;
                 stk.pop_back();
             }
