@@ -48,13 +48,11 @@ vector<int> r;
 Graphw g;
 void dfs(int u,int p) {
     vis[u]=1;
-    ope(u)
     for(auto [v,id]:g[u]) {
         if(v==p) continue;
         if(vis[v]) continue;
         dfs(v,u);
         if(a[v]) {
-            op(u)op(v)ope(id)
             r.pb(id);
             a[u]=a[u]^1;
         }
