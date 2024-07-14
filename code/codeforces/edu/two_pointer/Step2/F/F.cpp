@@ -90,7 +90,7 @@ signed main() {
         op(l)op(r)ope(q.dif())
         // op(q.s1.mxe())op(q.s1.mne())
         // op(q.s1.mxe())ope(q.s1.mne())
-        an+=r-l;
+        an+=r-l-1;
         q.pop();
     }
     cout<<an<<'\n';
