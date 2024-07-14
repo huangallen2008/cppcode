@@ -90,7 +90,7 @@ signed main() {
     cout<<"\n";
     vector<int> used(m+1);
     for(int x:r) {
-        assert(!used[x])
+        assert(!used[x]);
         used[x]=1;
     }
     return 0;
