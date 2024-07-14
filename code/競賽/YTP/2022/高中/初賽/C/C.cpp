@@ -61,6 +61,7 @@ signed main() {
     cin>>n>>m;
     a=vector<bool>(n);
     g=Graphw(n);
+    int cnt=0;
     REP(i,n) {
         int t;
         cin>>t;
