@@ -50,7 +50,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int r=0;
-    map<int,int> mp;
+    unordered_map<int,int> mp;
     int cnt=0,an=0;
     REP(l,n) {
         while(r<n&&cnt<=k) cnt+=(mp[a[r++]]++==0);
