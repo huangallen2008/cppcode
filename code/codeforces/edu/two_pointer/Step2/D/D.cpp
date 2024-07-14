@@ -55,6 +55,7 @@ signed main() {
         while(r<n&&sum<k) sum+=a[r++];
         if(sum<k) continue;
         an+=n-r;
+        op(l)ope(r)
         sum-=a[l];
     }
     cout<<an<<'\n';
