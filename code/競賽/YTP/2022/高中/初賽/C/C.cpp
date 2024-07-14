@@ -70,7 +70,6 @@ signed main() {
         cin>>t;
         if(t) a[i]=1;
     }
-    cout<<"Yes\n";
     REP1(i,m) {
         int u,v;
         cin>>u>>v;
@@ -87,6 +86,7 @@ signed main() {
             }
         }
     }
+    cout<<"Yes\n";
     cout<<r.size()<<'\n';
     for(int x:r) cout<<x<<' ';
     cout<<"\n";
