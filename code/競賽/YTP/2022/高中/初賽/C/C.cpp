@@ -46,6 +46,7 @@ int rd(int l,int r) {
 vector<bool> a,r;
 Graphw g;
 void dfs(int u,int p) {
+    ope(u)
     for(auto [v,id]:g[u]) {
         if(v==p) continue;
         dfs(v,u);
