@@ -87,6 +87,7 @@ signed main() {
     int r=0,an=0;
     REP(l,n) {
         while(r<n&&q.dif()<=k) q.push(a[r++]);
+        op(l)op(r)ope(q.dif())
         an+=r-l-1;
         q.pop();
     }
