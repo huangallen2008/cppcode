@@ -74,9 +74,9 @@ struct my_que {
         }
     }
     int size() { return s1.size()+s2.size(); }
-    int max() { return max(s1.max(),s2.max()); }
-    int min() { return this.min(s1.min(),s2.min()); }
-    int dif() { return max()-min(); }  
+    int mx() { return max(s1.max(),s2.max()); }
+    int mn() { return min(s1.min(),s2.min()); }
+    int dif() { return mx()-mn(); }  
 }q;
 signed main() {
     IOS();
