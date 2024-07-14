@@ -65,16 +65,10 @@ signed main() {
     a=vector<bool>(n);
     vis=vector<bool>(n);
     g=Graphw(n);
-    int cnt=0;
     REP(i,n) {
         int t;
         cin>>t;
         if(t) a[i]=1;
-        cnt+=a[i];
-    }
-    if(cnt&1) {
-        cout<<"No\n";
-        return 0;
     }
     cout<<"Yes\n";
     REP1(i,m) {
@@ -85,15 +79,17 @@ signed main() {
         g[v].pb({u,i});
     }
     REP(i,n) {
-        if(!vis[i]) dfs(i,-1);
+        if(!vis[i]) {
+            dfs(i,-1);
+            if(a[i]) {
+                cout<<"No\n";
+                return 0;
+            }
+        }
     }
     cout<<r.size()<<'\n';
     for(int x:r) cout<<x<<' ';
     cout<<"\n";
-    vector<int> used(m+1);
-    for(int x:r) {
-        assert(!used[x]);
-        used[x]=1;
-    }
+    
     return 0;
 }
