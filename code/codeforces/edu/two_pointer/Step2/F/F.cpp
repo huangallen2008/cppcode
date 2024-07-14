@@ -88,9 +88,6 @@ signed main() {
     REP(l,n) {
         while(r<n&&q.dif()<=k) q.push(a[r++]);
         if(q.dif()<=k) an++;
-        op(l)op(r)ope(q.dif())
-        // op(q.s1.mxe())op(q.s1.mne())
-        // op(q.s1.mxe())ope(q.s1.mne())
         an+=r-l-1;
         q.pop();
     }
