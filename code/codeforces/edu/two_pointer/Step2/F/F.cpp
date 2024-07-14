@@ -58,8 +58,8 @@ struct my_stk {
         return x;
     }
     int size() { return stk.size(); }
-    int max() { return mx.size()?mx.back():0; }
-    int min() { return mn.size()?mn.back():inf; }
+    int mx() { return mx.size()?mx.back():0; }
+    int mn() { return mn.size()?mn.back():inf; }
 };
 struct my_que {
     my_stk s1,s2;
@@ -74,8 +74,8 @@ struct my_que {
         }
     }
     int size() { return s1.size()+s2.size(); }
-    int mx() { return max(s1.max(),s2.max()); }
-    int mn() { return min(s1.min(),s2.min()); }
+    int mx() { return max(s1.mx(),s2.mx()); }
+    int mn() { return min(s1.mn(),s2.mn()); }
     int dif() { return mx()-mn(); }  
 }q;
 signed main() {
