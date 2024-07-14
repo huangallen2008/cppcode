@@ -74,9 +74,6 @@ signed main() {
             stk.pb({v[i],i});
         }
     }
-    REP(i,n+1) {
-        oparr(an[i])
-    }
     REP1(i,n) {
         RREP1(j,m) an[i][j]+=an[i][j+1];
     }
