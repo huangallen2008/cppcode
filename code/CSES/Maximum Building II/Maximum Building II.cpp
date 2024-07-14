@@ -59,16 +59,16 @@ signed main() {
             if(a[i][j]) a[i][j]+=a[i-1][j];
         }
     }
-    vector<vector<int>> an(n+1,vector<int>(m+1));
+    vector<vector<int>> an(n+2,vector<int>(m+2));
     for(auto v:a) {
         v.pb(0);
         vector<pii> stk={{-1,-1}};
         REP(i,m+1) {
             while(stk.back().f>=v[i]) {
-                an[v[i]+1][i-stk.back().s]++;
-                an[v[i]+1][i-stk[stk.size()-2].s]--;
-                an[stk.back().f][i-stk.back().s]--;
-                an[stk.back().f][i-stk[stk.size()-2].s]++;
+                int mnh=v[i]+1,mxh=stk.back().f;
+                int mxw=i-stk[stk.size()-2].s-1;
+                an[mxh][mxw]++;
+                an[v[i]][mxw]--;
                 stk.pop_back();
             }
             stk.pb({v[i],i});
@@ -78,7 +78,10 @@ signed main() {
         oparr(an[i])
     }
     REP1(i,n) {
-        REP1(j,m) an[i][j]+=an[i-1][j]+an[i][j-1]-an[i-1][j-1];
+        RREP1(j,m) an[i][j]+=an[i][j+1];
+    }
+    RREP1(i,n) {
+        RREP1(j,m) an[i][j]+=an[i+1][j]+an[i][j+1]-an[i+1][j+1];
     }
     REP1(i,n) {
         REP1(j,m) cout<<an[i][j]<<' ';
