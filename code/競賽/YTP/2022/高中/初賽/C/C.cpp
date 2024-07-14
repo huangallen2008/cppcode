@@ -87,6 +87,7 @@ signed main() {
     }
     dfs(0,-1);
     cout<<r.size()<<'\n';
+    oparr(r)
     for(int x:r) cout<<x<<' ';
     cout<<"\n";
     return 0;
