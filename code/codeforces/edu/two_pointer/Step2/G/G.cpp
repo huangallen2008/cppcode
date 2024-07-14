@@ -37,22 +37,75 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e4+5;
+const int maxn=300+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct my_stk {
+    vector<int> os,stk;
+    void push(int x) {
+        os.pb(x);
+        if(stk.size()) {
+            stk.pb(__gcd(stk.back(),x));
+        }
+        else {
+            stk.pb(x);
+        }
+    }
+    int pop() {
+        int t=os.back();
+        os.pop_back();
+        stk.pop_back();
+        return t;
+    }
+    int gcd() { 
+        if(stk.size()) return stk.back();
+        return -1;    
+    }
+    int size() { return stk.size(); }
+};
+struct my_que {
+    my_stk s1,s2;
+    void push(int x) {
+        s1.push(x);
+    }
+    int pop() {
+        if(s2.size()) {
+            return s2.pop();
+        }
+        else {
+            while(s1.size()>1) {
+                s2.push(s1.pop());
+            }
+            return s1.pop();
+        }
+        return 0;
+    }
+    int gcd() { 
+        if(s1.gcd()==-1) return s2.gcd();
+        if(s2.gcd()==-1) return s1.gcd();
+        return __gcd(s1.gcd(),s2.gcd());    
+    }
+    int size() { return s1.size()+s2.size(); }
+}q;
 signed main() {
     IOS();
     int n;
     cin>>n;
-    cout<<(n*n*2+1)<<'\n';
-    REP(i,n) {
-        REP(j,n) {
-            cout<<i<<' '<<j<<' ';
+    vector<int> a(n);
+    REP(i,n) cin>>a[i];
+    int r=0,an=inf;
+    REP(l,n) {
+        while(r<n&&q.gcd()!=1) {
+            q.push(a[r++]);
         }
+        if(q.gcd()!=1) break;
+        chmin(an,r-l); 
+        q.pop();
     }
-    cout<<0<<'\n';
+    if(an==inf) cout<<"-1\n";
+    else cout<<an<<'\n';
     return 0;
 }
