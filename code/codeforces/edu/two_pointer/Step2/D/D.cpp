@@ -54,7 +54,7 @@ signed main() {
     REP(l,n) {
         while(r<n&&sum<k) sum+=a[r++];
         if(sum<k) continue;
-        an+=n-r;
+        an+=n-r+1;
         op(l)ope(r)
         sum-=a[l];
     }
