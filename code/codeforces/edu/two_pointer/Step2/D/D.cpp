@@ -50,6 +50,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int sum=0,an=0;
+    int r=0;
     REP(l,n) {
         while(r<n&&sum<=k) sum+=a[r++];
         if(sum<=k) an++;
