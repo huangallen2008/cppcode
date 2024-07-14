@@ -48,7 +48,7 @@ struct my_stk {
     void push(int x) {
         stk.pb(x);
         mx.pb(mx.size()?max(mx.back(),x):x);
-        mn.pb(mn.size()?min(mx.back(),x):x);
+        mn.pb(mn.size()?min(mn.back(),x):x);
     }
     int pop() {
         int x=stk.back();
