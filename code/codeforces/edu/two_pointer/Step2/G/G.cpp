@@ -47,6 +47,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    cout<<(n<<1|1)<<'\n';
     REP(i,n) {
         REP(j,n) {
             cout<<i<<' '<<j<<' ';
