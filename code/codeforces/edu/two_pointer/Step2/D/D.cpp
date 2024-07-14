@@ -53,7 +53,7 @@ signed main() {
     int r=0;
     REP(l,n) {
         while(r<n&&sum<=k) sum+=a[r++];
-        an+=n-r-1;
+        an+=n-r;
         sum-=a[l];
     }
     cout<<an<<'\n';
