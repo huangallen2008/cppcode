@@ -65,10 +65,10 @@ signed main() {
         vector<pii> stk={{-1,-1}};
         REP(i,m+1) {
             while(stk.back().f>=v[i]) {
-                int mnh=v[i]+1,mxh=stk.back().f;
+                int mnh=max(stk[stk.size()-2].f+1,v[i]+1),mxh=stk.back().f;
                 int mxw=i-stk[stk.size()-2].s-1;
                 an[mxh][mxw]++;
-                an[v[i]][mxw]--;
+                an[mnh-1][mxw]--;
                 stk.pop_back();
             }
             stk.pb({v[i],i});
