@@ -51,7 +51,7 @@ void dfs(int u,int p) {
         dfs(v,u);
         if(a[v]) {
             r.pb(id);
-            a[u]^=1;
+            a[u]=a[u]^1;
         }
     }
 }
