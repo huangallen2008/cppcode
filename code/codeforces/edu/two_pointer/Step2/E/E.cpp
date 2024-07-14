@@ -54,7 +54,8 @@ signed main() {
     int cnt=0,an=0;
     REP(l,n) {
         while(r<n&&cnt<=k) cnt+=(mp[a[r++]]++==0);
-        an+=r-l;
+        if(cnt<=k) an++;
+        an+=r-l-1;
         cnt-=(--mp[a[l]]==0);
     }
     cout<<an<<'\n';
