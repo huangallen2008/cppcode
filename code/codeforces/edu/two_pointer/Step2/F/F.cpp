@@ -84,10 +84,10 @@ signed main() {
     cin>>n>>k;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    int r=0,an=inf;
+    int r=0,an=0;
     REP(l,n) {
         while(r<n&&q.dif()<=k) q.push(a[r++]);
-        chmin(an,r-l);
+        an+=r-l;
         q.pop();
     }
     cout<<an<<'\n';
