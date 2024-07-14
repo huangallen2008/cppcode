@@ -67,7 +67,7 @@ signed main() {
             while(stk.back().f>=v[i]) {
                 an[v[i]+1][i-stk.back().s-1]++;
                 an[v[i]+1][i-stk[stk.size()-2].s]--;
-                an[stk.back().f][i-stk.back()-1]--;
+                an[stk.back().f][i-stk.back().s-1]--;
                 an[stk.back().f][i-stk[stk.size()-2].s]++;
                 stk.pop_back();
             }
