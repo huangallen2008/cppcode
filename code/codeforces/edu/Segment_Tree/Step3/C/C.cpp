@@ -105,6 +105,7 @@ signed main() {
             cin>>x>>l;
             cout<<seg.qu(1,0,n-1,x,l)<<'\n';
         }
+        REP1(j,10) cout<<seg.s[j].mx<<' ';entr
     }
     return 0;
 }
