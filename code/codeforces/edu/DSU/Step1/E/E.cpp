@@ -48,7 +48,7 @@ struct DSU {
     int cnt;
     void init(int n) {
         p=vector<int>(n);
-        v=vector<int>(n,inf);
+        v=vector<int>(n,-1);
         sz=vector<int>(n,1);
         REP(i,n) p[i]=i;
         cnt=n;
