@@ -87,6 +87,7 @@ struct SEG {
     }
     int qu(int w,int l,int r,int k) {
         if(l==r) return l;
+        push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         int lsum=s[w<<1].sum;
         if(k<=lsum) return qu(w<<1,l,m,k);
