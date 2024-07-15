@@ -56,7 +56,7 @@ struct SEG {
         a.t=-1;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
-        a.v=min(b.v,c.v);
+        a.v=b.v+c.v;
     }
     vector<Seg> s;
     void build(int w,int l,int r) {
