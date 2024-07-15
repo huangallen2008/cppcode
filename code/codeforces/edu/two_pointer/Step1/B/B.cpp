@@ -53,8 +53,9 @@ signed main() {
     int r=0;
     REP(i,m) {
         while(r<n&&b[i]>a[r]) r++;
-        if(b[i]>a[r]) cout<<r+1<<' ';
-        else cout<<r<<' ';
+        // if(b[i]>a[r]) cout<<r+1<<' ';
+        // else 
+        cout<<r<<' ';
     }
     cout<<'\n';
     return 0;
