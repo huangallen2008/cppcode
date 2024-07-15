@@ -69,9 +69,6 @@ struct DSU {
         if(y==0) v[x]=id;
         cnt--;
     }
-    bool same(int a,int b) {
-        return find(a)==find(b);
-    }
 }dsu;
 signed main() {
     IOS();
@@ -96,14 +93,12 @@ signed main() {
         if(!rr[i]) dsu.merge(i,r[i]-1,-1);
     }
     RREP(i,m) {
-        op(a[i].f)op(a[i].s)ope(r[a[i].f-1])
         if(a[i].s==1) dsu.merge(a[i].f-1,l[a[i].f-1]-1,i);
         if(a[i].s==2) dsu.merge(a[i].f-1,r[a[i].f-1]-1,i);
     }
-    ope("ok")
     REP(i,n) {
         dsu.find(i);
-        cout<<dsu.v[i]<<' ';
+        cout<<dsu.v[i]<<'\n';
     }
     return 0;
 }
