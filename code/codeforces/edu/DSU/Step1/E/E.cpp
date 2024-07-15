@@ -100,6 +100,7 @@ signed main() {
         if(a[i].s==1) dsu.merge(a[i].f-1,l[a[i].f-1],i);
         if(a[i].s==2) dsu.merge(a[i].f-1,r[a[i].f-1],i);
     }
+    ope("ok")
     REP(i,n) {
         dsu.find(i);
         cout<<dsu.v[i]<<' ';
