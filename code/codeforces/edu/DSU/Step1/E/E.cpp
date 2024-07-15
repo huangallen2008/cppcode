@@ -96,7 +96,7 @@ signed main() {
         if(!rr[i]) dsu.merge(i,r[i]-1,-1);
     }
     RREP(i,m) {
-        ope(a[i].f)
+        ope(a[i].f)ope(a[i].s)
         if(a[i].s==1) dsu.merge(a[i].f-1,l[a[i].f-1],i);
         if(a[i].s==2) dsu.merge(a[i].f-1,r[a[i].f-1],i);
     }
