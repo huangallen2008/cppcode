@@ -59,7 +59,7 @@ struct SEG {
         a.t=0;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
-        a.sm=b.sum+c.sum;
+        a.sum=b.sum+c.sum;
     }
     vector<Seg> s;
     void build(int w,int l,int r) {
