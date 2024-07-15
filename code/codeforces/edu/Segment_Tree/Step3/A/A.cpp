@@ -47,7 +47,7 @@ struct SEG {
     struct Seg {
         int mcs=0,mp=0,ms=0,sum=0,len=0,t=-1;
     }zero={-1,-1,-1,-1,-1,-1};
-    void addtag(Seg a,int t) {
+    void addtag(Seg &a,int t) {
         a.sum=t*a.len;
         a.mp=a.ms=a.mcs=max(0ll,a.sum);
         a.t=t;
