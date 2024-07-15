@@ -109,7 +109,7 @@ signed main() {
         else {
             int k;
             cin>>k;
-            cout<<seg.qu(1,0,n-1,k)<<'\n';
+            cout<<seg.qu(1,0,n-1,k+1)<<'\n';
         }
     }
     return 0;
