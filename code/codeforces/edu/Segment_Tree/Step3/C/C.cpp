@@ -50,7 +50,7 @@ struct SEG {
     };
     void addtag(Seg &a,bool t) {
         a.mx+=t;
-        a.t=t;
+        a.t+=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         addtag(b,a.t);
