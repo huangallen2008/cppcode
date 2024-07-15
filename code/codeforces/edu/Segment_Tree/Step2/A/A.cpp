@@ -61,7 +61,7 @@ struct SEG {
     void ud(int w,int l,int r,int ul,int ur,int v) {
         if(ul<=l&&r<=ur) {
             s[w].v+=v;
-            t+=v;
+            s[w].t+=v;
             return;
         }
         if(ul>r||ur<l) return;
