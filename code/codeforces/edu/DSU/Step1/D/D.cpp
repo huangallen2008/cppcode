@@ -95,6 +95,7 @@ signed main() {
         }
         else dsu.merge(u,v);
     }
+    reverse(ALL(an));
     for(bool x:an) {
         if(x) cout<<"YES\n";
         else cout<<"NO\n";
