@@ -74,8 +74,8 @@ struct SEG {
         if(ul>r||ur<l) return;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        ud(w<<1,l,m,ul,ur);
-        ud(w<<1|1,m+1,r,ul,ur);
+        ud(w<<1,l,m,ul,ur,v);
+        ud(w<<1|1,m+1,r,ul,ur,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     int qu(int w,int l,int r,int x,int ql) {
