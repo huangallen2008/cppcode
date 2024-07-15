@@ -58,7 +58,7 @@ struct SEG {
         addtag(c,a.t);
         a.t=-1;
     }
-    Seg merge(Seg &b,Seg &c) {
+    Seg merge(Seg b,Seg c) {
         if(b==zero) return c;
         if(c==zero) return b;
         Seg a;
