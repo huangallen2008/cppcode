@@ -52,9 +52,12 @@ signed main() {
     REP(i,m) cin>>b[i];
     int r=0;
     int an=0;
+    vector<int> d(n);
     REP(i,n) {
-        while(r<m&&a[i]>=b[r]) an+=b[r++]==a[i];
+        while(r<m&&a[i]>=b[r]) d[i]+=b[r++]==a[i];
+        if(i>0&&a[i]==a[i-1]) d[i]=d[i-1];
     }
+    REP(i,n) an+=d[i];
     cout<<an<<'\n';
     return 0;
 }
