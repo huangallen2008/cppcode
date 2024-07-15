@@ -62,7 +62,7 @@ struct SEG {
         if(b.mcs==-1) return c;
         if(c.mcs==-1) return b;
         Seg a;
-        a.mp=max(b.mp,a.sum+c.mp);
+        a.mp=max(b.mp,b.sum+c.mp);
         a.ms=max(c.ms,c.sum+b.ms);
         a.sum=b.sum+c.sum;
         a.mcs=max({b.mcs,c.mcs,b.ms+c.mp});
