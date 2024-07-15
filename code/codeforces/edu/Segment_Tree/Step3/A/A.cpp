@@ -46,7 +46,7 @@ int rd(int l,int r) {
 struct SEG {
     struct Seg {
         int mcs=0,mp=0,ms=0,sum=0,len=0,t=-1;
-    };
+    }zero={-1,-1,-1,-1,-1,-1};
     void addtag(Seg a,int t) {
         a.sum=t*a.len;
         a.mcs=max(0ll,a.sum);
@@ -59,6 +59,8 @@ struct SEG {
         a.t=-1;
     }
     Seg merge(Seg &b,Seg &c) {
+        if(b==zero) return c;
+        if(c==zero) return b;
         Seg a;
         a.mp=max(b.mp,a.sum+c.mp);
         a.ms=max(c.ms,c.sum+b.ms);
@@ -94,12 +96,12 @@ struct SEG {
         ud(w<<1|1,m+1,r,ul,ur,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    Seg qu(int w,int l,int r,int ql,int qr) {
+    Seg qu0(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].v;
         if(ql>r||qr<l) return 0;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
-        return merge(qu(w<<1,l,m,ql,qr),qu(w<<1|1,m+1,r,ql,qr));
+        return merge(qu0(w<<1,l,m,ql,qr),qu0(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int w,int l,int r,int ql,int qr) {
         return qu(w,l,r,ql,qr).mcs;
