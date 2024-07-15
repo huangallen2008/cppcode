@@ -77,6 +77,7 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    dsu.init(n);
     vector<int> l(n),r(n);
     REP(i,n) cin>>l[i]>>r[i];
     vector<bool> rl(n),rr(n);
