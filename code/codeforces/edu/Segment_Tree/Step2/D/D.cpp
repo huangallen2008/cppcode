@@ -56,7 +56,7 @@ struct SEG {
     }
     void ud(int w,int l,int r,int ul,int ur,int v) {
         if(ul<=l&&r<=ur) {
-            s[w].v+=v;
+            s[w].v+=(r-l+1)*v;
             s[w].t+=v;
             return;
         }
