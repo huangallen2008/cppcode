@@ -88,6 +88,7 @@ struct SEG {
         if(ul<=l&&r<=ur) {
             op(w)ope(v)
             addtag(s[w],v);
+            ope(s[w].mcs)
             return;
         }
         if(ul>r||ur<l) return;
