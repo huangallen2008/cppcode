@@ -49,8 +49,7 @@ struct SEG {
     }zero={-1,-1,-1,-1,-1,-1};
     void addtag(Seg a,int t) {
         a.sum=t*a.len;
-        a.mcs=max(0ll,a.sum);
-        a.mp=a.ms=a.mcs;
+        a.mp=a.ms=a.mcs=max(0ll,a.sum);
         a.t=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
