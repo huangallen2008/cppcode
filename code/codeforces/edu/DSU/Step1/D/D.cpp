@@ -69,7 +69,7 @@ struct DSU {
 }dsu;
 struct qur {
     int t,u,v;
-}
+};
 signed main() {
     IOS();
     int n,m,k;
