@@ -48,9 +48,9 @@ struct SEG {
         int sum=0,t=0;
     };
     void push(Seg &a,Seg &b,Seg &c) {
-        b.v=(b.v*a.t)%mod;
+        b.sum=(b.sum*a.t)%mod;
         b.t=(b.t*a.t)%mod;
-        c.v=(c.v*a.t)%mod;
+        c.sum=(c.sum*a.t)%mod;
         c.t=(c.t*a.t)%mod;
         a.t=1;
     }
