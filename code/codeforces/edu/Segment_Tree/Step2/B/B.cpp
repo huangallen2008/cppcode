@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int sum=0,t=0;
+        int sum,t=1;
     };
     void push(Seg &a,Seg &b,Seg &c) {
         b.sum=(b.sum*a.t)%mod;
