@@ -82,9 +82,9 @@ struct SEG {
         if(l==r) return l;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
-        int la=qu(w<<1,l,m,ql,x);
+        int la=qu(w<<1,l,m,x,ql);
         if(la!=-1) return la;
-        return qu(w<<1|1,m+1,r,ql,x);
+        return qu(w<<1|1,m+1,r,x,ql);
     }
 }seg;
 signed main() {
