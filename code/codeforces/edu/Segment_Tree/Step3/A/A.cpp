@@ -86,9 +86,7 @@ struct SEG {
     }
     void ud(int w,int l,int r,int ul,int ur,int v) {
         if(ul<=l&&r<=ur) {
-            op(w)ope(v)
             addtag(s[w],v);
-            ope(s[w].mcs)
             return;
         }
         if(ul>r||ur<l) return;
@@ -112,7 +110,6 @@ signed main() {
         cin>>l>>r>>v;
         seg.ud(1,0,n-1,l,r-1,v);
         cout<<seg.get_an()<<'\n';
-        REP1(j,10) cout<<seg.s[j].mcs<<' ';entr
     }
     return 0;
 }
