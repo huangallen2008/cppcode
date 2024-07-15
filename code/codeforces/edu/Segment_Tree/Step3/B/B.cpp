@@ -50,7 +50,7 @@ struct SEG {
     };
     void addtag(Seg &a,bool t) {
         if(!t) return;
-        sum=len-sum;
+        a.sum=a.len-a.sum;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         if(!a.t) return;
