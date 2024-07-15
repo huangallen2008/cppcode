@@ -86,6 +86,7 @@ signed main() {
         if(l[i]==-1) rl[i]=1;
         if(r[i]==-1) rr[i]=1;
     }
+    ope("ok")
     REP(i,m) {
         if(a[i].s==1) rl[a[i].f-1]=1;
         else rr[a[i].f-1]=1;
