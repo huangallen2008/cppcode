@@ -92,12 +92,11 @@ signed main() {
         else rr[a[i].f-1]=1;
     }
     REP(i,n) {
-        op(rl[i])op(rr[i])op(l[i])ope(r[i])
         if(!rl[i]) dsu.merge(i,l[i]-1,-1);
         if(!rr[i]) dsu.merge(i,r[i]-1,-1);
     }
-    ope("ok")
     RREP(i,m) {
+        ope(a[i].f)
         if(a[i].s==1) dsu.merge(a[i].f-1,l[a[i].f-1],i);
         if(a[i].s==2) dsu.merge(a[i].f-1,r[a[i].f-1],i);
     }
