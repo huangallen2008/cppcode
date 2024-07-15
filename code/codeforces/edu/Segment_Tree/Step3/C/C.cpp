@@ -79,6 +79,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     int qu(int w,int l,int r,int x,int ql) {
+        op(w)op(l)op(r)op(x)ope(ql)
         if(s[w].mx<x||r<ql) return -1;
         if(l==r) return l;
         push(s[w],s[w<<1],s[w<<1|1]);
