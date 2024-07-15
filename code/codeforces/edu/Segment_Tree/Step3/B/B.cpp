@@ -49,7 +49,7 @@ struct SEG {
     };
     void addtag(Seg &a,bool t) {
         if(!t) return;
-        v^=1;
+        v=v^1;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         if(!a.t) return;
