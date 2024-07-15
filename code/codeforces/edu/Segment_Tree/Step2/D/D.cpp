@@ -47,13 +47,6 @@ struct SEG {
     struct Seg {
         int v=0,t=0;
     };
-    void push(Seg &a,Seg &b,Seg &c) {
-        b.v+=a.t;
-        b.t+=a.t;
-        c.v+=a.t;
-        c.t+=a.t;
-        a.t=0;
-    }
     void pull(Seg &a,Seg &b,Seg &c) {
         a.v=b.v+c.v;
     }
@@ -68,7 +61,11 @@ struct SEG {
             return;
         }
         if(ul>r||ur<l) return;
-        push(s[w],s[w<<1],s[w<<1|1]);
+        s[w<<1].v+=(m-l+1)*s[w].t;
+        s[w<<1].t+=s[w].t;
+        s[w<<1|1].v+=(r-m)*s[w].t;
+        s[w<<1|1].t+=s[w].t;
+        s[w].t=0;
         int m=l+r>>1;
         ud(w<<1,l,m,ul,ur,v);
         ud(w<<1|1,m+1,r,ul,ur,v);
@@ -77,7 +74,11 @@ struct SEG {
     int qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].v;
         if(ql>r||qr<l) return 0;
-        push(s[w],s[w<<1],s[w<<1|1]);
+        s[w<<1].v+=(m-l+1)*s[w].t;
+        s[w<<1].t+=s[w].t;
+        s[w<<1|1].v+=(r-m)*s[w].t;
+        s[w<<1|1].t+=s[w].t;
+        s[w].t=0;
         int m=l+r>>1;
         return qu(w<<1,l,m,ql,qr)+qu(w<<1|1,m+1,r,ql,qr);
     }
