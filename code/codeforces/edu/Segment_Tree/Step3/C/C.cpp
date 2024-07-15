@@ -48,7 +48,7 @@ struct SEG {
         int mx=0;
         int t=0;
     };
-    void addtag(Seg &a,bool t) {
+    void addtag(Seg &a,int t) {
         a.mx+=t;
         a.t+=t;
     }
