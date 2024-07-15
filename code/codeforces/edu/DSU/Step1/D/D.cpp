@@ -87,12 +87,17 @@ signed main() {
         else q.pb({1,u,v}); 
     }
     reverse(ALL(q));
+    vector<bool> an;
     for(auto [t,u,v]:q) {
         if(t) {
-            if(dsu.same(u,v)) cout<<"Yes\n";
-            else cout<<"No\n";
+            if(dsu.same(u,v)) an.pb(1);
+            else an.pb(0);
         }
         else dsu.merge(u,v);
+    }
+    for(bool x:an) {
+        if(x) cout<<"YES\n";
+        else cout<<"NO\n";
     }
     return 0;
 }
