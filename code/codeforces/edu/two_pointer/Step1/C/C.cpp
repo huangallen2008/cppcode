@@ -53,7 +53,7 @@ signed main() {
     int r=0;
     int an=0;
     REP(i,n) {
-        while(r<m&&a[i]>b[r]) an+=b[r++]==a[i];
+        while(r<m&&a[i]>=b[r]) an+=b[r++]==a[i];
     }
     cout<<an<<'\n';
     return 0;
