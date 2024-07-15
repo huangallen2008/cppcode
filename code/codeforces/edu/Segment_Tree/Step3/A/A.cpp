@@ -110,11 +110,6 @@ signed main() {
         cin>>l>>r>>v;
         seg.ud(1,0,n-1,l,r-1,v);
         cout<<seg.get_an()<<'\n';
-        REP1(j,10) cout<<seg.s[j].mcs<<' ';entr
-        REP1(j,10) cout<<seg.s[j].ms<<' ';entr
-        REP1(j,10) cout<<seg.s[j].mp<<' ';entr
-        REP1(j,10) cout<<seg.s[j].len<<' ';entr
-        REP1(j,10) cout<<seg.s[j].sum<<' ';entr
     }
     return 0;
 }
