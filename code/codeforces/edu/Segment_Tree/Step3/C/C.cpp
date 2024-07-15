@@ -60,7 +60,7 @@ struct SEG {
         a.t=0;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
-        a.mx=max(b.mx+c.mx);
+        a.mx=max(b.mx,c.mx);
     }
     vector<Seg> s;
     void init(int n) {
