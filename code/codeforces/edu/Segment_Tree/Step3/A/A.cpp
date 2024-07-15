@@ -51,6 +51,7 @@ struct SEG {
         a.sum=t*a.len;
         a.mcs=max(0ll,a.sum);
         a.mp=a.ms=a.mcs;
+        a.t=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         if(a.t==-1) return;
