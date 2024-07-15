@@ -49,12 +49,10 @@ struct SEG {
         int t=0;
     };
     void addtag(Seg &a,bool t) {
-        if(!t) return;
         a.mx+=t;
         a.t=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
-        if(!a.t) return;
         addtag(b,a.t);
         addtag(c,a.t);
         a.t=0;
