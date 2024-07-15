@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int mcs=0,mp=0,ms=0,sum=0,len=0,t=-1;
+        int mcs=0,mp=0,ms=0,sum=0,len=0,t=-inf;
     };
     Seg zero={-1,-1,-1,-1,-1,-1};
     void addtag(Seg &a,int t) {
@@ -54,10 +54,10 @@ struct SEG {
         a.t=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
-        if(a.t==-1) return;
+        if(a.t==-inf) return;
         addtag(b,a.t);
         addtag(c,a.t);
-        a.t=-1;
+        a.t=-inf;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mp=max(b.mp,b.sum+c.mp);
@@ -67,7 +67,7 @@ struct SEG {
     }
     vector<Seg> s;
     void build(int w,int l,int r) {
-        s[w]={0,0,0,0,r-l+1,-1};
+        s[w]={0,0,0,0,r-l+1,-inf};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
