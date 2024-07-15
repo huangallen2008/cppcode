@@ -46,7 +46,7 @@ int rd(int l,int r) {
 struct SEG {
     struct Seg {
         int v=0,t=0;
-    }
+    };
     void push(Seg &a,Seg &b,Seg &c) {
         b.v+=a.t;
         b.t+=a.t;
