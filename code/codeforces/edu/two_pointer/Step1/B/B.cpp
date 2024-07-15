@@ -51,9 +51,9 @@ signed main() {
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
     int r=0;
-    REP(i,n) {
-        while(r<m&&a[i]>b[r]) r++;
-        if(a[i]>b[r]) cout<<r+1<<'\n';
+    REP(i,m) {
+        while(r<n&&b[i]>a[r]) r++;
+        if(b[i]>a[r]) cout<<r+1<<'\n';
         else cout<<r<<'\n';
     }
     return 0;
