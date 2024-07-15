@@ -96,15 +96,8 @@ struct SEG {
         ud(w<<1|1,m+1,r,ul,ur,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    Seg qu0(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return zero;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        int m=l+r>>1;
-        return merge(qu0(w<<1,l,m,ql,qr),qu0(w<<1|1,m+1,r,ql,qr));
-    }
-    int qu(int w,int l,int r,int ql,int qr) {
-        return qu0(w,l,r,ql,qr).mcs;
+    int get_an() {
+        return s[1].mcs;
     }
 }seg;
 signed main() {
@@ -113,18 +106,10 @@ signed main() {
     cin>>n>>q;
     seg.init(n);
     REP(i,q) {
-        int opt;
-        cin>>opt;
-        if(opt==1) {
-            int l,r,v;
-            cin>>l>>r>>v;
-            seg.ud(1,0,n-1,l,r-1,v);
-        }
-        else {
-            int l,r;
-            cin>>l>>r;
-            cout<<seg.qu(1,0,n-1,l,r-1)<<'\n';
-        }
+        int l,r,v;
+        cin>>l>>r>>v;
+        seg.ud(1,0,n-1,l,r-1,v);
+        cout<<seg.get_an()<<'\n';
     }
     return 0;
 }
