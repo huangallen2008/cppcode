@@ -45,11 +45,12 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        bool v=0,t=0;
+        int sum=0,len;
+        bool t=0;
     };
     void addtag(Seg &a,bool t) {
         if(!t) return;
-        v=v^1;
+        sum=len-sum;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         if(!a.t) return;
@@ -58,16 +59,11 @@ struct SEG {
         a.t=0;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
-        a.mp0=max(b.mp0,b.mp0==b.len?b.len+c.mp:0);
-        a.ms0=max(c.ms0,c.ms0==c.len?c.len+b.ms0:0);
-        a.mc0=max({b.mc0,c.mc0,b.ms0+c.mp0});
-        a.mp1=max(b.mp1,b.mp1==b.len?b.len+c.mp:1);
-        a.ms1=max(c.ms1,c.ms1==c.len?c.len+b.ms1:1);
-        a.mc1=max({b.mc1,c.mc1,b.ms1+c.mp1});
+        a.sm=b.sum+c.sum;
     }
     vector<Seg> s;
     void build(int w,int l,int r) {
-        s[w]={0,0,0,0,r-l+1,-inf};
+        s[w]={0,r-l+1,0};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
@@ -77,20 +73,24 @@ struct SEG {
         s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
-    void ud(int w,int l,int r,int ul,int ur,int v) {
+    void ud(int w,int l,int r,int ul,int ur) {
         if(ul<=l&&r<=ur) {
-            addtag(s[w],v);
+            addtag(s[w],1);
             return;
         }
         if(ul>r||ur<l) return;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        ud(w<<1,l,m,ul,ur,v);
-        ud(w<<1|1,m+1,r,ul,ur,v);
+        ud(w<<1,l,m,ul,ur);
+        ud(w<<1|1,m+1,r,ul,ur);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    int get_an() {
-        return s[1].mc1;
+    int qu(int w,int l,int r,int k) {
+        if(l==r) return l;
+        int m=l+r>>1;
+        int lsum=s[w<<1].sum;
+        if(k<=lsum) return qu(w<<1,l,m,k);
+        else return qu(w<<1|1,m+1,r,k-lsum);
     }
 }seg;
 signed main() {
@@ -99,10 +99,18 @@ signed main() {
     cin>>n>>q;
     seg.init(n);
     REP(i,q) {
-        int l,r,v;
-        cin>>l>>r>>v;
-        seg.ud(1,0,n-1,l,r-1,v);
-        cout<<seg.get_an()<<'\n';
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int l,r;
+            cin>>l>>r;
+            seg.ud(1,0,n-1,l,r-1);
+        }
+        else {
+            int k;
+            cin>>k;
+            cout<<seg.qu(1,0,n-1,k)<<'\n';
+        }
     }
     return 0;
 }
