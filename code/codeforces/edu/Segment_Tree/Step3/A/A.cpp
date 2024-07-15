@@ -104,7 +104,7 @@ struct SEG {
         return merge(qu0(w<<1,l,m,ql,qr),qu0(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int w,int l,int r,int ql,int qr) {
-        return qu(w,l,r,ql,qr).mcs;
+        return qu0(w,l,r,ql,qr).mcs;
     }
 }seg;
 signed main() {
