@@ -90,11 +90,11 @@ signed main() {
         if(a[i].s==1) rl[a[i].f-1]=1;
         else rr[a[i].f-1]=1;
     }
-    ope("ok")
     REP(i,n) {
         if(!rl[i]) dsu.merge(i,l[i]-1,-1);
         if(!rr[i]) dsu.merge(i,r[i]-1,-1);
     }
+    ope("ok")
     RREP(i,m) {
         if(a[i].s==1) dsu.merge(a[i].f-1,l[a[i].f-1],i);
         if(a[i].s==2) dsu.merge(a[i].f-1,r[a[i].f-1],i);
