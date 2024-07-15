@@ -59,8 +59,8 @@ struct SEG {
         a.t=-1;
     }
     Seg merge(Seg b,Seg c) {
-        if(b==zero) return c;
-        if(c==zero) return b;
+        if(b.mcs==-1) return c;
+        if(c.mcs==-1) return b;
         Seg a;
         a.mp=max(b.mp,a.sum+c.mp);
         a.ms=max(c.ms,c.sum+b.ms);
