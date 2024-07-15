@@ -77,7 +77,7 @@ struct SEG {
     }
     int qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].v;
-        if(ql>r||qr<l) return 0;
+        if(ql>r||qr<l) return inf;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         return min(qu(w<<1,l,m,ql,qr),qu(w<<1|1,m+1,r,ql,qr));
