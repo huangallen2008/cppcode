@@ -59,12 +59,12 @@ struct BIT {
         int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
             if(r+(1<<i)>n) continue;
-            if(b[r+(1<<i)]<=k) {
+            if(b[r+(1<<i)]<k) {
                 k-=b[r+(1<<i)];
                 r+=(1<<i);
             }
         }
-        return r;
+        return r+1;
     }
 }bit;
 signed main() {
