@@ -59,7 +59,7 @@ signed main() {
     int n,q;
     cin>>n>>q;
     REP(i,n) {
-        st[0][i]=Matrix(1,vector<int>(2));
+        st[0][i]=Matrix(2,vector<int>(2));
         REP(j,2) REP(k,2) cin>>st[0][i][j][k];
     }
     REP1(i,18) {
