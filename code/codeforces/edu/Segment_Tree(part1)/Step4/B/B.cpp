@@ -57,10 +57,10 @@ signed main() {
     int n,q;
     cin>>n>>q;
     vector<vector<Matrix>> st(19,vector<Matrix>(n,one));
-    ope("ok")
     REP(i,n) {
         REP(j,2) REP(k,2) cin>>st[0][i][j][k];
     }
+    ope("ok")
     REP1(i,18) {
         REP(j,n) {
             if(j+(1<<i)>n) break;
