@@ -72,6 +72,7 @@ signed main() {
     int n;
     cin>>n;
     bit.init(n);
+    REP1(i,n) bit.ud(i,1);
     vector<int> p(n);
     REP(i,n) cin>>p[i];
     RREP(i,n) {
