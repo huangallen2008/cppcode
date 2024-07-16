@@ -73,14 +73,18 @@ signed main() {
         else r[a[i]]=i;
     }
     REP1(i,n<<1) {
-        if(l[a[i]]==i) {bit.ud(r[a[i]],1);ope(r[a[i]])}
-        else an[a[i]]+=bit.qu(n<<1)-bit.qu(i);
+        if(l[a[i]]==i) {
+            an[a[i]]+=bit.qu(r[a[i]])-bit.qu(i);
+            bit.ud(r[a[i]],1);
+        }
     }
     oparr(an)
     bit.init(n<<1);
     RREP1(i,n<<1) {
-        if(r[a[i]]==i) bit.ud(l[a[i]],1);
-        else an[a[i]]+=bit.qu(i-1);
+        if(r[a[i]]==i) {
+            an[a[i]]+=bit.qu(i-1)-bit.qu(l[a[i]]);
+            bit.ud(l[a[i]],1);
+        }
     }
     REP1(i,n) cout<<an[i]<<' ';
     cout<<'\n';
