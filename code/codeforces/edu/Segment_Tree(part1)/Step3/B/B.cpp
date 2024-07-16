@@ -54,7 +54,6 @@ struct BIT {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int qu(int k) {
-        ope(k)
         int r=0;
         int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
@@ -79,7 +78,6 @@ signed main() {
         int v=bit.qu(i+1-p[i]);
         cout<<v<<' ';
         bit.ud(v,-1);
-        oparr(bit.b)
     }
     cout<<'\n';
     return 0;
