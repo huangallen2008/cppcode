@@ -67,6 +67,7 @@ signed main() {
     bit.init(n);
     vector<int> a(n+1);
     REP1(i,n) cin>>a[i];
+    REP1(i,n) bit.ud(i,a[i]);
     cin>>q;
     REP(i,q) {
         int opt;
