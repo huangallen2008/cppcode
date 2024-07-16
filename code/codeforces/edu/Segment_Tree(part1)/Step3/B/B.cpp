@@ -54,11 +54,9 @@ struct BIT {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int qu(int k) {
-        ope(k)
         int r=0;
         int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
-            ope(r)
             if(r+(1<<i)>n) continue;
             if(b[r+(1<<i)]<=k) {
                 k-=b[r+(1<<i)];
@@ -74,7 +72,6 @@ signed main() {
     cin>>n;
     bit.init(n);
     REP1(i,n) bit.ud(i,1);
-    REP1(i,n) cout<<bit.b[i]<<' ';entr
     vector<int> p(n);
     REP(i,n) cin>>p[i];
     RREP(i,n) {
