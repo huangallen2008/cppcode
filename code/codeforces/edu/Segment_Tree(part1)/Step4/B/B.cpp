@@ -47,7 +47,7 @@ int M;
 #define Matrix vector<vector<int>>
 Matrix operator*(Matrix a,Matrix b) {
     int n=a.size(),m=b.size(),k=b[0].size();
-    op(n)op(m)ope(k)
+    op(n)op(m)ope(k)ope(M)
     Matrix c(n,vector<int>(k));
     REP(i,n) REP(j,k) REP(l,m) c[i][j]=(c[i][j]+a[i][l]*b[l][j])%M;
 }
