@@ -82,6 +82,7 @@ signed main() {
         cin>>x;
         seg.ud(1,0,n-1,i,x);
     }
+    cout<<seg.get_an()<<'\n';
     REP(i,q) {
         int u,v;
         cin>>u>>v;
