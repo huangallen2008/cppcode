@@ -51,7 +51,7 @@ struct BIT {
         b=vector<int>(n+1);
     }
     void ud(int u,int v) {
-        for(;u<=n;u+=u&-u) bpu[+=v;]
+        for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int qu(int u) {
         int r=0;
