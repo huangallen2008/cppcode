@@ -67,8 +67,9 @@ signed main() {
     REP(i,n) {
         int x;
         cin>>x;
-        cout<<bit.qu(n)-bit.qu(x)<<'\n';
+        cout<<bit.qu(n)-bit.qu(x)<<' ';
         bit.ud(x,1);
     }
+    cout<<'\n';
     return 0;
 }
