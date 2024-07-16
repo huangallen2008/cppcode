@@ -59,10 +59,12 @@ signed main() {
     int n,q;
     cin>>n>>q;
     REP(i,n) {
+        st[0][i]=Matrix(1,vector<int>(2));
         REP(j,2) REP(k,2) cin>>st[0][i][j][k];
     }
     REP1(i,18) {
         REP(j,n) {
+            st[i][j]=Matrix(2,vector<int>(2));
             if(j+(1<<i)>n) break;
             st[i][j]=st[i-1][j]*st[i-1][j+(1<<i-1)];
         }
