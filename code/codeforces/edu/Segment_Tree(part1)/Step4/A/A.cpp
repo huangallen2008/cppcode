@@ -63,9 +63,11 @@ struct BIT {
 signed main() {
     IOS();
     int n,q;
-    cin>>n>>q;
+    cin>>n;
     bit.init(n);
     vector<int> a(n+1);
+    REP1(i,n) cin>>a[i];
+    cin>>q;
     REP(i,q) {
         int opt;
         cin>>opt;
