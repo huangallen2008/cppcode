@@ -80,7 +80,7 @@ signed main() {
         int v=bit.qu(i+1-p[i]);
         ope(i+1-p[i])
         cout<<v<<' ';
-        bit.ud(v,1);
+        bit.ud(v,-1);
     }
     cout<<'\n';
     return 0;
