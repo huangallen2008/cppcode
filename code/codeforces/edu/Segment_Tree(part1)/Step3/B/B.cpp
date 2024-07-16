@@ -73,6 +73,7 @@ signed main() {
     vector<int> p(n);
     REP(i,n) cin>>p[i];
     RREP(i,n) {
+        ope(3)
         int v=bit.qu(i+1-p[i]);
         cout<<v<<' ';
         bit.ud(v,1);
