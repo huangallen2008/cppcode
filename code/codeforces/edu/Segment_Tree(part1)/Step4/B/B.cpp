@@ -50,6 +50,7 @@ Matrix operator*(Matrix a,Matrix b) {
     op(n)op(m)ope(k)ope(M)
     Matrix c(n,vector<int>(k));
     REP(i,n) REP(j,k) REP(l,m) c[i][j]=(c[i][j]+a[i][l]*b[l][j])%M;
+    return c;
 }
 Matrix one={{1,0},{0,1}};
 signed main() {
