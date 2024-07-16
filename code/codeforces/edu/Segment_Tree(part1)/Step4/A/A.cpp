@@ -74,14 +74,12 @@ signed main() {
         if(opt==0) {
             int u,v;
             cin>>u>>v;
-            u++;
             bit.ud(u,v-a[u]);
             a[u]=v;
         }
         else {
             int l,r;
             cin>>l>>r;
-            l++,r++;
             int ret=bit.qu(r)-bit.qu(l-1);
             if(l&1) ret=-ret;
             cout<<ret<<'\n';
