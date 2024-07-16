@@ -67,12 +67,14 @@ signed main() {
     vector<int> an(n+1);
     vector<int> lid(n+1,-1);
     REP1(i,n<<1) {
-        if(lid[a[i]]==-1) {
-            lid[a[i]]=i;
+        int x;
+        cin>>x;
+        if(lid[x]==-1) {
+            lid[x]=i;
         }
         else {
-            an[a[i]]=bit.qu(n<<1)-bit.qu(lid[a[i]]);
-            bit.ud(lid[a[i]],1);
+            an[x]=bit.qu(n<<1)-bit.qu(lid[x]);
+            bit.ud(lid[ax],1);
         }
     }
     REP1(i,n) cout<<an[i]<<' ';
