@@ -74,7 +74,7 @@ signed main() {
         }
         else {
             an[x]=bit.qu(n<<1)-bit.qu(lid[x]);
-            bit.ud(lid[ax],1);
+            bit.ud(lid[x],1);
         }
     }
     REP1(i,n) cout<<an[i]<<' ';
