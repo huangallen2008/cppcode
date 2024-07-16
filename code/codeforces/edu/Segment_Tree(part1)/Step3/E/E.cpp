@@ -63,6 +63,7 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
+    bit.init(n);
     REP(i,q) {
         int opt;
         cin>>opt;
