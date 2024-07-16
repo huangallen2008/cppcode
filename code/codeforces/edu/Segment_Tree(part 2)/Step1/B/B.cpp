@@ -62,7 +62,7 @@ struct SEG {
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         ud(w<<1,l,m,ul,ur,v);
-        ud(w<<1|1,m+1,r,ul,ut,v);
+        ud(w<<1|1,m+1,r,ul,ur,v);
     }
     int qu(int w,int l,int r,int u) {
         if(l==r) return s[w];
