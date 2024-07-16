@@ -60,7 +60,7 @@ struct BIT {
         for(int i=lg;i>=0;i--) {
             ope(r)
             if(r+(1<<i)>n) continue;
-            if(b[r+(1<<i)]<k) {
+            if(b[r+(1<<i)]<=k) {
                 k-=b[r+(1<<i)];
                 r+=(1<<i);
             }
