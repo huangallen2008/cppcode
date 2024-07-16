@@ -79,6 +79,7 @@ signed main() {
         int v=bit.qu(i+1-p[i]);
         cout<<v<<' ';
         bit.ud(v,-1);
+        oparr(bit.s)
     }
     cout<<'\n';
     return 0;
