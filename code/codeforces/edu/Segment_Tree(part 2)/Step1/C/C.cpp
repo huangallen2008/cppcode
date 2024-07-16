@@ -52,7 +52,7 @@ struct SEG {
     }
     vector<int> s;
     void init(int n) {
-        s=vector<int>(n<<2);
+        s=vector<int>(n<<2,-1);
     }
     void ud(int w,int l,int r,int ul,int ur,int v) {
         if(ul<=l&&r<=ur) {
