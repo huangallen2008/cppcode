@@ -62,7 +62,6 @@ struct SEG {
         if(r<u||s[w]<x) return -1;
         if(l==r) return l;
         int m=l+r>>1;
-        if(u>m) return qu(w<<1|1,m+1,r,u,x);
         int la=qu(w<<1,l,m,u,x);
         if(la!=-1) return la;
         return qu(w<<1|1,m+1,r,u,x); 
