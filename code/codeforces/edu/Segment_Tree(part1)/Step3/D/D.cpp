@@ -76,6 +76,7 @@ signed main() {
         if(l[a[i]]==i) bit.ud(r[a[i]],1);
         else an[a[i]]+=bit.qu(n<<1)-bit.qu(i);
     }
+    oparr(an)
     bit.init(n<<1);
     RREP1(i,n<<1) {
         if(r[a[i]]==i) bit.ud(l[a[i]],1);
