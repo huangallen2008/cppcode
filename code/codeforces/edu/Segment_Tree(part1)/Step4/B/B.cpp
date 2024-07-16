@@ -65,6 +65,7 @@ signed main() {
         REP(j,n) {
             if(j+(1<<i)>n) break;
             st[i][j]=st[i-1][j]*st[i-1][j+(1<<i-1)];
+            op(i)ope(j)
         }
     }
     REP(i,q) {
