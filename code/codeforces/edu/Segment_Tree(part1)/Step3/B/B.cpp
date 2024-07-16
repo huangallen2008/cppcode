@@ -54,6 +54,7 @@ struct BIT {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int qu(int k) {
+        ope(k)
         int r=0;
         int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
