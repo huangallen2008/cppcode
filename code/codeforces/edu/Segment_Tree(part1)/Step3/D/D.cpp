@@ -73,7 +73,7 @@ signed main() {
         else r[a[i]]=i;
     }
     REP1(i,n<<1) {
-        if(l[a[i]]==i) bit.ud(r[a[i]],1);
+        if(l[a[i]]==i) {bit.ud(r[a[i]],1);ope(r[a[i]])}
         else an[a[i]]+=bit.qu(n<<1)-bit.qu(i);
     }
     oparr(an)
