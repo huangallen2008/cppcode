@@ -78,7 +78,6 @@ signed main() {
             bit.ud(r[a[i]],1);
         }
     }
-    oparr(an)
     bit.init(n<<1);
     RREP1(i,n<<1) {
         if(r[a[i]]==i) {
