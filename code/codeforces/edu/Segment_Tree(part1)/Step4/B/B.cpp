@@ -51,11 +51,6 @@ Matrix operator*(Matrix a,Matrix b) {
     REP(i,n) REP(j,k) REP(l,m) c[i][j]=(c[i][j]+a[i][l]*b[l][j])%M;
 }
 Matrix one={{1,0},{0,1}};
-struct SEG {
-    struct Seg {
-        Matrix m;
-    }
-}
 signed main() {
     IOS();
     cin>>M;
