@@ -70,12 +70,14 @@ signed main() {
         if(opt==1) {
             int l,r,v;
             cin>>l>>r>>v;
+            l++,r++;
             bit.ud(l,v);
             bit.ud(r,-v);
         }
         else {
             int u;
             cin>>u;
+            u++;
             cout<<bit.qu(u)<<'\n';
         }
     }
