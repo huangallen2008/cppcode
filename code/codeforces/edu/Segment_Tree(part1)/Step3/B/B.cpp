@@ -72,6 +72,7 @@ signed main() {
     bit.init(n);
     vector<int> p(n);
     REP(i,n) cin>>p[i];
+    ope("ok")
     RREP(i,n) {
         int v=bit.qu(i+1-p[i]);
         ope(i+1-p[i])
