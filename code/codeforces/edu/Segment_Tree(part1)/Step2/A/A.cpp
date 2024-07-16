@@ -77,6 +77,11 @@ signed main() {
     int n,q;
     cin>>n>>q;
     seg.init(n);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        seg.ud(1,0,n-1,i,x);
+    }
     REP(i,q) {
         int u,v;
         cin>>u>>v;
