@@ -71,7 +71,7 @@ signed main() {
     REP(i,q) {
         int opt;
         cin>>opt;
-        if(opt==1) {
+        if(opt==0) {
             int u,v;
             cin>>u>>v;
             u++;
