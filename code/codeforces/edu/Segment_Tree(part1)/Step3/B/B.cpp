@@ -65,6 +65,7 @@ struct BIT {
                 r+=(1<<i);
             }
         }
+        return r;
     }
 }bit;
 signed main() {
