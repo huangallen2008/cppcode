@@ -73,6 +73,7 @@ signed main() {
     cin>>n;
     bit.init(n);
     REP1(i,n) bit.ud(i,1);
+    REP1(i,n) cout<<bit.b[i]<<' ';entr
     vector<int> p(n);
     REP(i,n) cin>>p[i];
     RREP(i,n) {
