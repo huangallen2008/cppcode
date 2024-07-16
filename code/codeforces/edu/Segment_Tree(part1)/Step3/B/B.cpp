@@ -77,7 +77,6 @@ signed main() {
     RREP(i,n) {
     op(i)
         int v=bit.qu(i+1-p[i]);
-        ope(i+1-p[i])
         cout<<v<<' ';
         bit.ud(v,-1);
     }
