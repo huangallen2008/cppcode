@@ -58,13 +58,12 @@ struct SEG {
         else ud(w<<1|1,m+1,r,u,v);
         s[w]=max(s[w<<1],s[w<<1|1]);
     }
-    int qu(int w,int l,int r,int u,int x) {
-        if(r<u||s[w]<x) return -1;
+    int qu(int w,int l,int r,int x) {
+        if(s[w]<x) return -1;
         if(l==r) return l;
         int m=l+r>>1;
-        int la=qu(w<<1,l,m,u,x);
-        if(la!=-1) return la;
-        return qu(w<<1|1,m+1,r,u,x); 
+        if(s[w<<1]>=x) return qu(w<<1,l,m,x);
+        else return qu(w<<1|1,m+1,r,x);
     }
 }seg;
 signed main() {
@@ -86,9 +85,9 @@ signed main() {
             seg.ud(1,0,n-1,u,v);
         }
         else {
-            int u,x;
-            cin>>u>>x;
-            cout<<seg.qu(1,0,n-1,u,x)<<'\n';
+            int x;
+            cin>>x;
+            cout<<seg.qu(1,0,n-1,x)<<'\n';
         }
     }
     return 0;
