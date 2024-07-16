@@ -74,11 +74,14 @@ signed main() {
     REP1(i,n) bit.ud(i,1);
     vector<int> p(n);
     REP(i,n) cin>>p[i];
+    vector<int>an;
     RREP(i,n) {
         int v=bit.qu(i+1-p[i]);
-        cout<<v<<' ';
+        an.pb(v);
         bit.ud(v,-1);
     }
+    reverse(ALL(an));
+    for(int x:an) cout<<x<<' ';
     cout<<'\n';
     return 0;
 }
