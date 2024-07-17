@@ -98,7 +98,7 @@ signed main() {
             if(it==n) break;
             nt=a[it].t;
         }
-        else nt=pq.top().f;
+        else nt=pq.top().f+1;
         while(it<n&&a[it].t==nt) {
             auto [t,x,y,d,id,c]=a[it++];
             if(id==3) ope("???")
@@ -107,7 +107,7 @@ signed main() {
             m[x][y]=c;
             pq.push({t,id});
         }
-        while(pq.size()&&pq.top().f==nt) {
+        while(pq.size()&&pq.top().f==nt-1) {
             auto [t,id]=pq.top();
             op(t)ope(id)
             pq.pop();
