@@ -98,12 +98,12 @@ signed main() {
             m[x][y]=c;
             pq.push({t,id});
         }
-        while(pq.size()&&pq.top().t==nt) {
+        while(pq.size()&&pq.top().f==nt) {
             auto [t,id]=pq.top();
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
-            
+
         }
     }
     return 0;
