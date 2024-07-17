@@ -53,8 +53,8 @@ signed main() {
     REP(i,n) if(a[i].f<a[i].s) swap(a[i].f,a[i].s);
     vector<int> v1;
     REP(i,n) {
-        if(a[i].s>h+1) v1.pb(a[i].f);
-        else if(a[i].f>h+1) {
+        if(a[i].s>h) v1.pb(a[i].f);
+        else if(a[i].f>h) {
             v1.pb(a[i].s);
         }
     }
@@ -70,8 +70,8 @@ signed main() {
     }
     vector<int> v2;
     REP(i,n) {
-        if(a[i].s>w+1) v2.pb(a[i].f);
-        else if(a[i].f>w+1) v2.pb(a[i].s);
+        if(a[i].s>w) v2.pb(a[i].f);
+        else if(a[i].f>w) v2.pb(a[i].s);
     }
     sort(ALL(v2),so);
     int s2=0;
