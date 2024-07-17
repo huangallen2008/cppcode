@@ -110,8 +110,8 @@ signed main() {
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
-            ope("ok")
             int xx=x+dir[di].f,yy=y+dir[di].s;
+            ope("ok")
             if(!ok) continue;
             if(m[xx][yy]!='#') continue;
             m[xx][yy]=c;
