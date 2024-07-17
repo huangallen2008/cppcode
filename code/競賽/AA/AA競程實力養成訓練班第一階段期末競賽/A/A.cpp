@@ -92,7 +92,7 @@ signed main() {
         if(pq.empty()) {
             nt=a[it].t;
         }
-        else nt=pq.top().t;
+        else nt=pq.top().f;
         while(it<n&&a[it].t==nt) {
             auto [t,x,y,d,id,c]=a[it++];
             if(m[x][y]!='#') continue;
