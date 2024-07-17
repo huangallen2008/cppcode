@@ -97,22 +97,21 @@ signed main() {
             if(it==n) break;
             nt=a[it].t;
         }
-        else nt=pq.top().f+1;
+        else nt=pq.top().f;
         while(it<n&&a[it].t==nt) {
             auto [t,x,y,d,id,c]=a[it++];
             if(m[x][y]!='#') continue;
-            m[x][y]=c;
             pq.push({t,id});
         }
-        while(pq.size()&&pq.top().f==nt-1) {
+        while(pq.size()&&pq.top().f==nt) {
             auto [t,id]=pq.top();
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
+            if(m[x][y]!='#') continue;
             int xx=x+dir[di].f,yy=y+dir[di].s;\
             if(!ok(xx,yy)) continue;
             if(m[xx][yy]!='#') continue;
-            m[xx][yy]=c;
             nx[id]=xx,ny[id]=yy;
             pq.push({t+1,id});
         }
