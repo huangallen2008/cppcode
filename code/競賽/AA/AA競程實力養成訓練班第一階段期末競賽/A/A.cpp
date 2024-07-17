@@ -48,7 +48,7 @@ struct so {
         if(a.f==b.f) return a.s>b.s;
         else return a.f>b.f;
     }
-}
+};
 signed main() {
     IOS();
     int r,c,n;
