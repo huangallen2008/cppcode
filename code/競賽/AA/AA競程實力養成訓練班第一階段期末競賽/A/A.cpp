@@ -109,6 +109,7 @@ signed main() {
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
             if(m[x][y]!='#') continue;
+            m[x][y]=c;
             int xx=x+dir[di].f,yy=y+dir[di].s;\
             if(!ok(xx,yy)) continue;
             if(m[xx][yy]!='#') continue;
