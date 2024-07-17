@@ -93,7 +93,6 @@ signed main() {
     sort(ALL(a),so_ag);
     int nt=0;
     while(1) {
-        ope(nt)
         if(pq.empty()) {
             if(it==n) break;
             nt=a[it].t;
