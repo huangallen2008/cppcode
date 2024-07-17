@@ -45,19 +45,39 @@ int rd(int l,int r) {
 }
 Graphw g;
 vector<bool> inc;
-
+vector<int> an;
+vector<pii> edge;
+void dfs1(int u,int p) {
+    for(auto [v,id]:g[u]) {
+        if(v==p) continue;
+        if(!inc[v]) continue;
+        if(an[id]!=-1) continue;
+        an[id]=edge[id].f==u;
+        dfs1(v,u);
+    }
+}
+void dfs2(int u,int p) {
+    for(auto [v,id]:g[u]) {
+        if(v==p) continue;
+        if(inc[v])continue;
+        an[id]=edge[id].f==u;
+        dfs2(v,u);
+    }
+}
 signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
     g=Graphw(n);
+    an=vector<int>(m,-1);
     vector<int> deg(n);
     REP(i,m) {
         int u,v;
         cin>>u>>v;
-        g[u].pb({v,1});
-        g[v].pb({u,0});
+        g[u].pb({v,i});
+        g[v].pb({u,i});
         deg[u]++,deg[v]++;
+        edge.pb({u,v});
     }
     inc=vector<bool>(n,1);
     queue<int> q;
@@ -73,6 +93,18 @@ signed main() {
             }
         }
     }
-
+    REP(i,n) {
+        if(inc[i]) {
+            dfs1(i,-1);
+            break;
+        }
+    }
+    REP(i,n) {
+        if(inc[i]) {
+            dfs2(i,-1);
+        }
+    }
+    REP(i,n) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
