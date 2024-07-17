@@ -101,15 +101,12 @@ signed main() {
         else nt=pq.top().f+1;
         while(it<n&&a[it].t==nt) {
             auto [t,x,y,d,id,c]=a[it++];
-            if(id==3) ope("???")
             if(m[x][y]!='#') continue;
-            ope("yes")
             m[x][y]=c;
             pq.push({t,id});
         }
         while(pq.size()&&pq.top().f==nt-1) {
             auto [t,id]=pq.top();
-            op(t)ope(id)
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
@@ -121,7 +118,6 @@ signed main() {
             pq.push({t+1,id});
         }
     }
-    ope("OOOOOO")
     REP(i,r) {
         REP(j,c) cout<<m[i][j];
         cout<<'\n';
