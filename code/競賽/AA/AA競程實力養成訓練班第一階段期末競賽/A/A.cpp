@@ -108,9 +108,9 @@ signed main() {
         while(pq.size()&&pq.top().f==nt) {
             auto [t,id]=pq.top();
             pq.pop();
-            op(t)ope(id)
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
+            ope("ok")
             int xx=x+dir[di].f,yy=y+dir[di].s;
             if(!ok) continue;
             if(m[xx][yy]!='#') continue;
@@ -118,7 +118,6 @@ signed main() {
             nx[id]=xx,ny[id]=yy;
             pq.push({t+1,id});
         }
-        ope("ook")
     }
     ope("OOOOOO")
     REP(i,r) {
