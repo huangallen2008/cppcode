@@ -44,10 +44,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int dirtoi(char d) {
-    if(d=='R') return 1;
-    if(d=='U') return 2;
-    if(d=='L') return 3;
-    return 4;
+    if(d=='R') return 0;
+    if(d=='U') return 1;
+    if(d=='L') return 2;
+    return 3;
 }
 vector<pii> dir={{0,1},{-1,0},{0,-1},{1,0}};
 struct so {
