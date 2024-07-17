@@ -105,6 +105,7 @@ signed main() {
             m[x][y]=c;
             pq.push({t,id});
         }
+        ope("ok")
         while(pq.size()&&pq.top().f==nt) {
             auto [t,id]=pq.top();
             pq.pop();
