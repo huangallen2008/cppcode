@@ -86,3 +86,10 @@ signed main() {
     else cout<<an<<'\n';
     return 0;
 }
+/*
+5 7 3
+8 2
+8 3
+8 4
+
+*/
