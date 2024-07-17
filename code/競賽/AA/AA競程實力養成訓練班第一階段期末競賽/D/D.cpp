@@ -51,6 +51,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     unordered_map<vector<int>,bool> mp;
+    int an=0;
     REP(r,n) {
         REP(l,r+1) {
             vector<int> t=a;
