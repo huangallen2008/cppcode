@@ -72,7 +72,7 @@ signed main() {
     vector<int> v2;
     REP(i,n) {
         if(a[i].s>w+1) v2.pb(a[i].f);
-        else if(a[i].f>w+1) v1.pb(a[i].s);
+        else if(a[i].f>w+1) v2.pb(a[i].s);
     }
     sort(ALL(v2),so);
     int s2=0;
