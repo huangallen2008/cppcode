@@ -43,17 +43,68 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int dirtoi(char d) {
+    if(d=='R') return 1;
+    if(d=='U') return 2;
+    if(d=='L') return 3;
+    return 4;
+}
+vector<pii> dir={{0,1},{-1,0},{0,-1},{1,0}};
 struct so {
     bool operator()(pii a,pii b) {
         if(a.f==b.f) return a.s>b.s;
         else return a.f>b.f;
     }
 };
+struct ag {
+    int t,x,y,dir,id;
+    char c;
+};
+bool so_ag(ag a,ag b){
+    if(a.t==b.t) return a.id<b.id;
+    return a.t<b.t;
+}
 signed main() {
     IOS();
     int r,c,n;
     cin>>r>>c>>n;
     vector<vector<char>> m(r,vector<char>(c,'#'));
     priority_queue<pii,vector<pii>,so> pq;
+    vector<ag> a(n);
+    vector<char> ch(n);
+    vector<int> d(n);
+    vector<int> nx(n);
+    vector<int> ny(n);
+    REP(i,n) {
+        char dd;
+        cin>>a[i].x>>a[i].y>>a[i].t>>dd>>a[i].c;
+        a[i].x--,a[i].y--;
+        a[i].id=i;
+        ch[i]=a[i].c;
+        a[i].dir=dirtoi(dd);
+        d[i]=a[i].dir;
+        nx[i]=a[i].x,ny[i]=a[i].y;
+    }
+    sort(ALL(a),so_ag);
+    int nt=0;
+    while(1) {
+        if(pq.empty()) {
+            nt=a[it].t;
+        }
+        else nt=pq.top().t;
+        while(it<n&&a[it].t==nt) {
+            auto [t,x,y,d,id,c]=a[it++];
+            if(m[x][y]!='#') continue;
+            m[x][y]=c;
+            pq.push({t,id});
+        }
+        while(pq.size()&&pq.top().t==nt) {
+            auto [t,id]=pq.top();
+            pq.pop();
+            int x=nx[id],y=ny[id],di=d[id];
+            char c=ch[id];
+            
+        }
+    }
     return 0;
 }
