@@ -76,6 +76,7 @@ signed main() {
     }
     sort(ALL(v2),so);
     int s2=0;
+    oparr(v2)
     REP(i,v2.size()) {
         s2+=v2[i];
         if(s2>=h) {
