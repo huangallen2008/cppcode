@@ -50,7 +50,7 @@ signed main() {
     cin>>n;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    unordered_map<vector<int>,bool> mp;
+    unordered_map<vector<int>,int8_t> mp;
     int an=0;
     REP(r,n) {
         REP(l,r+1) {
