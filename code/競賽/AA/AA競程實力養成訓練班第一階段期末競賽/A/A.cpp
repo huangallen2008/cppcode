@@ -118,6 +118,7 @@ signed main() {
             nx[id]=xx,ny[id]=yy;
             pq.push({t+1,id});
         }
+        ope("ook")
     }
     ope("OOOOOO")
     REP(i,r) {
