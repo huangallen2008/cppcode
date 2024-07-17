@@ -119,6 +119,7 @@ signed main() {
             pq.push({t+1,id});
         }
     }
+    ope("OOOOOO")
     REP(i,r) {
         REP(j,c) cout<<m[i][j]<<' ';
         cout<<'\n';
