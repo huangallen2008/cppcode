@@ -101,6 +101,7 @@ signed main() {
         else nt=pq.top().f;
         while(it<n&&a[it].t==nt) {
             auto [t,x,y,d,id,c]=a[it++];
+            if(id==3) ope("???")
             if(m[x][y]!='#') continue;
             m[x][y]=c;
             pq.push({t,id});
