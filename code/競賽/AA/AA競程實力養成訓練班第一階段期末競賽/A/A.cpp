@@ -107,11 +107,11 @@ signed main() {
         }
         while(pq.size()&&pq.top().f==nt) {
             auto [t,id]=pq.top();
+            op(t)ope(id)
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
-            int xx=x+dir[di].f,yy=y+dir[di].s;
-            ope("ok")
+            int xx=x+dir[di].f,yy=y+dir[di].s;\
             if(!ok(xx,yy)) continue;
             if(m[xx][yy]!='#') continue;
             m[xx][yy]=c;
