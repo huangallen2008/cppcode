@@ -68,6 +68,7 @@ signed main() {
             break;
         }
     }
+    ope(an)
     vector<int> v2;
     REP(i,n) {
         if(a[i].f>w+1) v2.pb(a[i].f);
