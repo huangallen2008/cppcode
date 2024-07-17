@@ -85,6 +85,7 @@ signed main() {
         d[i]=a[i].dir;
         nx[i]=a[i].x,ny[i]=a[i].y;
     }
+    int it=0;
     sort(ALL(a),so_ag);
     int nt=0;
     while(1) {
