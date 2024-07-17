@@ -50,7 +50,7 @@ signed main() {
     cin>>n;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    map<vector<int>,int8_t> mp;
+    map<vector<int>,bool> mp;
     int an=0;
     REP(r,n) {
         REP(l,r+1) {
