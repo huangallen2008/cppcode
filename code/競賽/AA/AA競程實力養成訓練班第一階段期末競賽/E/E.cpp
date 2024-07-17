@@ -104,7 +104,7 @@ signed main() {
             dfs2(i,-1);
         }
     }
-    REP(i,m) cout<<an[i]<<' ';
+    REP(i,m) cout<<an[i];
     cout<<'\n';
     return 0;
 }
