@@ -64,9 +64,13 @@ bool so_ag(ag a,ag b){
     if(a.t==b.t) return a.id<b.id;
     return a.t<b.t;
 }
+int r,c,n;
+bool ok(int x,int y) {
+    if(x<0||x>=r||y<0||y>=c) return 0;
+    return 1;
+}
 signed main() {
     IOS();
-    int r,c,n;
     cin>>r>>c>>n;
     vector<vector<char>> m(r,vector<char>(c,'#'));
     priority_queue<pii,vector<pii>,so> pq;
@@ -90,6 +94,7 @@ signed main() {
     int nt=0;
     while(1) {
         if(pq.empty()) {
+            if(it==n) break;
             nt=a[it].t;
         }
         else nt=pq.top().f;
@@ -104,8 +109,17 @@ signed main() {
             pq.pop();
             int x=nx[id],y=ny[id],di=d[id];
             char c=ch[id];
-
+            int xx=x+dir[di].f,yy=y+dir[di].s;
+            if(!ok) continue;
+            if(m[xx][yy]!='#') continue;
+            m[xx][yy]=c;
+            nx[id]=xx,ny[id]=yy;
+            pq.push({t+1,id});
         }
+    }
+    REP(i,r) {
+        REP(j,c) cout<<m[i][j]<<' ';
+        cout<<'\n';
     }
     return 0;
 }
