@@ -112,7 +112,7 @@ signed main() {
             char c=ch[id];
             int xx=x+dir[di].f,yy=y+dir[di].s;
             ope("ok")
-            if(!ok) continue;
+            if(!ok(xx,yy)) continue;
             if(m[xx][yy]!='#') continue;
             m[xx][yy]=c;
             nx[id]=xx,ny[id]=yy;
