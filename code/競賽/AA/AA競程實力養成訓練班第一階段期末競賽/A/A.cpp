@@ -121,7 +121,7 @@ signed main() {
     }
     ope("OOOOOO")
     REP(i,r) {
-        REP(j,c) cout<<m[i][j]<<' ';
+        REP(j,c) cout<<m[i][j];
         cout<<'\n';
     }
     return 0;
