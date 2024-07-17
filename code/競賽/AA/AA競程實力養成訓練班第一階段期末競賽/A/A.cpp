@@ -103,6 +103,7 @@ signed main() {
             auto [t,x,y,d,id,c]=a[it++];
             if(id==3) ope("???")
             if(m[x][y]!='#') continue;
+            ope("yes")
             m[x][y]=c;
             pq.push({t,id});
         }
