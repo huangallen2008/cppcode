@@ -61,7 +61,6 @@ signed main() {
         if(l[i]>0) chmin(dp[i],v[l[i]-1]-a[i]*3);
         if(i<n) v[i]=min(v[i-1],dp[i]+2*a[i+1]+a[i]);
     }
-    oparr(dp)oparr(v)oparr(l)
-    cout<<dp[n]<<'\n';
+    cout<<dp[n]+a[0]<<'\n';
     return 0;
 }
