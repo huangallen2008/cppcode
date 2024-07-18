@@ -84,7 +84,7 @@ signed main() {
         g.pb(solve(l));
     }
     REP(i,g.size()) {
-        cout<<setfill(' ')<<setw(3)<<i+1<<": ";
+        cout<<setfill(' ')<<setw(6)<<i+1<<": ";
         REP(j,g[i].size()) {
             if(g[i][j]==inf) cout<<setw(5)<<"x"<<"\n";
             else cout<<setw(5)<<g[i][j]<<' ';
