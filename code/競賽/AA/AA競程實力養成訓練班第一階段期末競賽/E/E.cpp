@@ -54,6 +54,7 @@ void bfs(int st) {
     vector<int> dis(n,inf),pre(n,-1),pid(n,-1);
     vector<bool> vis(n);
     dis[st]=0;
+    ope("ok")
     while(q.size()) {
         int u=q.front();
         q.pop();
