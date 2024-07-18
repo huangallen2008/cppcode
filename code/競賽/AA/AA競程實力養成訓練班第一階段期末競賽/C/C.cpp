@@ -59,7 +59,6 @@ signed main() {
     REP1(i,n) {
         dp[i]=dp[l[i]]+max((a[l[i]+1]-a[i])*2,t)+a[l[i]]-a[i];
         if(l[i]>0) chmin(dp[i],v[l[i]-1]-a[i]*3);
-        if(i==1) dp[i]=2;
         if(i<n) v[i]=min(v[i-1],dp[i]+2*a[i+1]+a[i]);
     }
     oparr(dp)oparr(v)oparr(l)
