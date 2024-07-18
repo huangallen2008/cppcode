@@ -86,8 +86,8 @@ signed main() {
     REP(i,g.size()) {
         cout<<setfill(' ')<<setw(3)<<i+1<<": ";
         REP(j,g[i].size()) {
-            if(g[i][j]==inf) cout<<setw(3)<<"x"<<"\n";
-            else cout<<setw(3)<<g[i][j]<<' ';
+            if(g[i][j]==inf) cout<<setw(5)<<"x"<<"\n";
+            else cout<<setw(5)<<g[i][j]<<' ';
         }
     }
     return 0;
