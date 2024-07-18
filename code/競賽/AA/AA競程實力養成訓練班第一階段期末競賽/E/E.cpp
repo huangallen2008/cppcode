@@ -43,33 +43,70 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int n,m;
 Graphw g;
-vector<bool> inc;
+vector<bool> inc,incy;
 vector<int> an;
 vector<pii> edge;
-void dfs1(int u,int p) {
-    for(auto [v,id]:g[u]) {
-        if(v==p) continue;
-        if(!inc[v]) continue;
-        if(an[id]!=-1) continue;
-        an[id]=edge[id].f==u;
-        dfs1(v,u);
+void bfs(int st) {
+    queue<int> q;
+    q.push(st);
+    vector<int> dis(n,inf),pre(n,-1),pid(n,-1);
+    vector<bool> vis(n);
+    dis[st]=0;
+    while(q.size()) {
+        int u=q.front();
+        q.pop();
+        for(auto [v,w]:g[u]) {
+            if(v==pre[u]) continue;
+            if(dis[v]!=-1) {
+                int t=u;
+                while(t!=st) {
+                    incy[t]=1;
+                    int id=pid[t];
+                    an[id]=edge[id].f==t;
+                    t=pre[t];
+                }
+                t=v;
+                while(t!=st) {
+                    incy[t]=1;
+                    int id=pid[t];
+                    an[id]=edge[id].s==t;
+                    t=pre[t];
+                }
+                incy[st]=1;
+                an[w]=edge[w].f==v;
+                return;
+            }
+            dis[v]=dis[u]+1;
+            pre[v]=u;
+            pid[v]=w;
+            q.push(v);
+        }
     }
 }
+vector<bool> vis;
+vector<int> dep;
 void dfs2(int u,int p) {
+    vis[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==p) continue;
-        if(inc[v])continue;
+        if(incy[v])continue;
+        if(vis[v]) {
+            if(dep[v]>dep[u]) an[id]=edge[id].f==u;
+            continue;
+        }
         an[id]=edge[id].f==u;
+        dep[v]=dep[u]+1;
         dfs2(v,u);
     }
 }
 signed main() {
     IOS();
-    int n,m;
     cin>>n>>m;
     g=Graphw(n);
     an=vector<int>(m,-1);
+    incy=vector<bool>(n);
     vector<int> deg(n);
     REP(i,m) {
         int u,v;
@@ -93,15 +130,13 @@ signed main() {
             }
         }
     }
+    vis=vector<bool>(n);
+    dep=vector<int>(n,-1);
     REP(i,n) {
-        if(inc[i]) {
-            dfs1(i,-1);
+        if(incy[i]) {
+            dep[i]=0;
+            bfs(i);
             break;
-        }
-    }
-    REP(i,n) {
-        if(inc[i]) {
-            dfs2(i,-1);
         }
     }
     REP(i,m) cout<<an[i];
