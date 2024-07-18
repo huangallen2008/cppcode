@@ -58,7 +58,9 @@ void bfs(int st) {
     while(q.size()) {
         int u=q.front();
         q.pop();
+        ope(u)
         for(auto [v,w]:g[u]) {
+            op(u)ope(v)
             if(v==pre[u]) continue;
             if(dis[v]!=-1) {
                 int t=u;
