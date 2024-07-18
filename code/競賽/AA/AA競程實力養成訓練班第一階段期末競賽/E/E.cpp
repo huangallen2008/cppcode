@@ -57,6 +57,7 @@ void bfs(int st) {
     ope("ok")
     while(q.size()) {
         int u=q.front();
+        ope(u)
         q.pop();
         for(auto [v,w]:g[u]) {
             if(v==pre[u]) continue;
@@ -139,7 +140,6 @@ signed main() {
             break;
         }
     }
-    ope("ok")
     REP(i,n) {
         if(incy[i]) {
             dep[i]=0;
