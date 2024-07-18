@@ -48,11 +48,10 @@ signed main() {
     int n,e,t;
     cin>>n>>e>>t;
     vector<int> x(n+1),l(n+1);
-    REP(i,n) cin>>x[i];
+    REP(i,n) cin>>x[i]; x[n]=e;
     REP(i,n) l[n-i]=n-(upper_bound(ALL(x),x[i]+(t>>1))-x.begin());
     vector<int> a=x;
     reverse(ALL(a));
-    a[0]=e;
     vector<int> dp(n+1);
     vector<int> v(n+1);
     dp[0]=0;
