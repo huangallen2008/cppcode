@@ -73,7 +73,7 @@ vector<int> solve(int l) {
 }
 signed main() {
     IOS();
-    // fre
+    freopen("防堵法數據.txt","w",stdout);
 //    REP1(i,20) {
 //        op(i) ope(f(i))
 //    }
