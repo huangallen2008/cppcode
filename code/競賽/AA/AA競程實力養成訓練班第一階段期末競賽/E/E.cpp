@@ -130,7 +130,6 @@ signed main() {
             }
         }
     }
-    ope("ok")
     vis=vector<bool>(n);
     dep=vector<int>(n,-1);
     REP(i,n) {
@@ -139,6 +138,7 @@ signed main() {
             break;
         }
     }
+    ope("ok")
     REP(i,n) {
         if(incy[i]) {
             dep[i]=0;
