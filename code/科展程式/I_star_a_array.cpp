@@ -64,15 +64,16 @@ vector<int> solve(int l) {
             a.pb(n);
         }
     }
-    REP1(i,a.size()-1) {
-        if(a[i]==inf) cout<<"a["<<i<<"] = inf"<<endl;
-        else cout<<"a["<<i<<"] = "<<a[i]<<"\n";
-    }
-    entr
+    // REP1(i,a.size()-1) {
+    //     if(a[i]==inf) cout<<"a["<<i<<"] = inf"<<endl;
+    //     else cout<<"a["<<i<<"] = "<<a[i]<<"\n";
+    // }
+    // entr
     return a;
 }
 signed main() {
     IOS();
+    // fre
 //    REP1(i,20) {
 //        op(i) ope(f(i))
 //    }
