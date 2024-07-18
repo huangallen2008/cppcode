@@ -80,7 +80,7 @@ signed main() {
     int l=1;
     vector<vector<int>> g;
 //    while(cin>>l) {
-    REP1(l,1000){
+    REP1(l,10000){
         g.pb(solve(l));
     }
     REP(i,g.size()) {
