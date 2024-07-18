@@ -1,3 +1,4 @@
+//🔥🐥
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
