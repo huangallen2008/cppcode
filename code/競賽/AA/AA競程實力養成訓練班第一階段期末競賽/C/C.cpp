@@ -61,7 +61,7 @@ signed main() {
         dp[i]=v[l[i]]-a[i]*3;
         if(i<n) v[i]=max(v[i-1],dp[i]+2*a[i+1]+a[i]);
     }
-    oparr(dp)oparr(v)
+    oparr(dp)oparr(v)oparr(l)
     cout<<dp[n]<<'\n';
     return 0;
 }
