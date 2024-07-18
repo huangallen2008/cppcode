@@ -35,7 +35,7 @@ int f(int n) {
     return r;
 }
 vector<int> solve(int l) {
-    ope(l)
+    // ope(l)
     vector<int> a;
     int aid=1;
     int rest=0;
