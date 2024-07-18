@@ -133,10 +133,15 @@ signed main() {
     vis=vector<bool>(n);
     dep=vector<int>(n,-1);
     REP(i,n) {
-        if(incy[i]) {
-            dep[i]=0;
+        if(inc[i]) {
             bfs(i);
             break;
+        }
+    }
+    REP(i,n) {
+        if(incy[i]) {
+            dep[i]=0;
+            dfs(i);
         }
     }
     REP(i,m) cout<<an[i];
