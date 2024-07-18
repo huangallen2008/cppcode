@@ -130,6 +130,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     vis=vector<bool>(n);
     dep=vector<int>(n,-1);
     REP(i,n) {
