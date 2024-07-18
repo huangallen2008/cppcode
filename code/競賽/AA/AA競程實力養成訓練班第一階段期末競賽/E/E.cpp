@@ -57,7 +57,6 @@ void bfs(int st) {
     ope("ok")
     while(q.size()) {
         int u=q.front();
-        ope(u)
         q.pop();
         for(auto [v,w]:g[u]) {
             if(v==pre[u]) continue;
@@ -80,6 +79,7 @@ void bfs(int st) {
                 an[w]=edge[w].f==v;
                 return;
             }
+            ope("ok3")
             dis[v]=dis[u]+1;
             pre[v]=u;
             pid[v]=w;
