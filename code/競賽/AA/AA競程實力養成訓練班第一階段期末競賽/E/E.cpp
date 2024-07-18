@@ -63,7 +63,7 @@ void bfs(int st) {
             op(u)ope(v)
             ope(dis[v])
             if(v==pre[u]) continue;
-            if(dis[v]!=-1) {
+            if(dis[v]!=inf) {
                 int t=u;
                 while(t!=st) {
                     incy[t]=1;
