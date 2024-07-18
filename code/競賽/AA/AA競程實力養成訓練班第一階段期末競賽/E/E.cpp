@@ -141,7 +141,7 @@ signed main() {
     REP(i,n) {
         if(incy[i]) {
             dep[i]=0;
-            dfs(i);
+            dfs(i,-1);
         }
     }
     REP(i,m) cout<<an[i];
