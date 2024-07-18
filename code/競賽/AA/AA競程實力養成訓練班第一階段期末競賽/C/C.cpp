@@ -58,6 +58,7 @@ signed main() {
     v[0]=dp[0]+2*a[1]+a[0];
     REP1(i,n) {
         dp[i]=v[l[i]]-a[i]*3;
+        if(i==1) dp[i]=2;
         if(i<n) v[i]=min(v[i-1],dp[i]+2*a[i+1]+a[i]);
     }
     oparr(dp)oparr(v)oparr(l)
