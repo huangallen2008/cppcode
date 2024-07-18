@@ -59,7 +59,7 @@ signed main() {
     v[0]=dp[0]+2*a[1]+a[0];
     REP1(i,n) {
         dp[i]=v[l[i]-1]-a[i]*3;
-        if(i<n) v[i]=max(v[i-1],dp[i]+2*a[i+1]+a[i]);
+        if(i<n) v[i]=min(v[i-1],dp[i]+2*a[i+1]+a[i]);
     }
     oparr(dp)oparr(v)oparr(l)
     cout<<dp[n]<<'\n';
