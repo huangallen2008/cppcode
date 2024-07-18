@@ -54,14 +54,10 @@ void bfs(int st) {
     vector<int> dis(n,inf),pre(n,-1),pid(n,-1);
     vector<bool> vis(n);
     dis[st]=0;
-    ope("ok")
     while(q.size()) {
         int u=q.front();
         q.pop();
-        ope(u)
         for(auto [v,w]:g[u]) {
-            op(u)ope(v)
-            ope(dis[v])
             if(v==pre[u]) continue;
             if(dis[v]!=inf) {
                 int t=u;
