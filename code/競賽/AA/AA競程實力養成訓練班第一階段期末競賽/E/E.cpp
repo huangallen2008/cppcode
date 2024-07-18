@@ -61,6 +61,7 @@ void bfs(int st) {
         ope(u)
         for(auto [v,w]:g[u]) {
             op(u)ope(v)
+            ope(dis[v])
             if(v==pre[u]) continue;
             if(dis[v]!=-1) {
                 int t=u;
