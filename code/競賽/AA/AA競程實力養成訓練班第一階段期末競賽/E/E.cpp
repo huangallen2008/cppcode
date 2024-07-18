@@ -87,7 +87,7 @@ void bfs(int st) {
 }
 vector<bool> vis;
 vector<int> dep;
-void dfs2(int u,int p) {
+void dfs(int u,int p) {
     vis[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==p) continue;
@@ -98,7 +98,7 @@ void dfs2(int u,int p) {
         }
         an[id]=edge[id].f==u;
         dep[v]=dep[u]+1;
-        dfs2(v,u);
+        dfs(v,u);
     }
 }
 signed main() {
