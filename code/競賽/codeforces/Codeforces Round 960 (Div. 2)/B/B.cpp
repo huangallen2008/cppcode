@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 void solve() {
     int n,x,y;
-    cin>>n>>x>>y;
+    cin>>n>>y>>x;
     x--,y--;
     vector<int> a(n);
     for(int i=0;i<n;i++) {
