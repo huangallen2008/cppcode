@@ -50,15 +50,22 @@ void solve() {
     REP(i,n) cin>>a[i];
     vector<int> c(n+1);
     vector<int> b(n);
-    int mx=0;
+    vector<int> c2(n+1);
+    vector<int> b2(n);
+    int mx=0,mx2;
     REP(i,n) {
         c[a[i]]++;
         if(c[a[i]]==2) chmax(mx,a[i]);
         b[i]=mx;
     }
+    REP(i,n) {
+        c2[b[i]]++;
+        if(c2[b[i]]==2) chmax(mx2,b[i]);
+        b2[i]=mx2;
+    }
     int sum=0;
-    REP(i,n) sum+=a[i];
-    REP(i,n) sum+=b[i]*(n-i);
+    REP(i,n) sum+=a[i]+b[i];
+    REP(i,n) sum+=b2[i]*(n-i);
     cout<<sum<<'\n';
 }
 signed main() {
