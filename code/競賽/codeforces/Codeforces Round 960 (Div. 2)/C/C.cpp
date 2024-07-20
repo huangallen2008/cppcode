@@ -54,6 +54,10 @@ void solve() {
         if(i>1&&a[i-1]<=2) chmin(dp1[i],dp[i-2]+1);
         if(i>2&&a[i-1]<=4&&a[i-2]<=4) chmin(dp1[i],dp1[i-2]+2);
         dp[i]=dp[i-1]+1;
+        if(a[i]==0) {
+            chmin(dp[i],dp[i-1]);
+            chmin(dp1[i],dp1[i-1]);
+        }
         if(a[i]<=2) chmin(dp[i],dp1[i]);
     }
     cout<<dp[n]<<'\n';
