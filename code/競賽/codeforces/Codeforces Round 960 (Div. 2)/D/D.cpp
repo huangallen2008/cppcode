@@ -56,7 +56,7 @@ void solve() {
         dp[i]=dp[i-1]+1;
         if(a[i]==0) {
             chmin(dp[i],dp[i-1]);
-            chmin(dp1[i],dp1[i-1]);
+            chmin(dp1[i],dp[i-1]);
         }
         if(a[i]<=2) chmin(dp[i],dp1[i]);
     }
