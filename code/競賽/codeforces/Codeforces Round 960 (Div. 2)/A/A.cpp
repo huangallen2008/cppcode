@@ -51,7 +51,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     REP(i,n) c[a[i]]++;
     int ok=0;
-    REP(i,n) if(c[i]&1) ok=1;
+    REP1(i,n) if(c[i]&1) ok=1;
     if(ok) cout<<"YES\n";
     else cout<<"NO\n";
 }
