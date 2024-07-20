@@ -52,7 +52,7 @@ void solve() {
     vector<int> b(n);
     vector<int> c2(n+1);
     vector<int> b2(n);
-    int mx=0,mx2;
+    int mx=0,mx2=0;
     REP(i,n) {
         c[a[i]]++;
         if(c[a[i]]==2) chmax(mx,a[i]);
