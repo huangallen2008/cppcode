@@ -78,7 +78,6 @@ void bfs(int st) {
                 an[w]=edge[w].f==v;
                 return;
             }
-            ope("ok3")
             dis[v]=dis[u]+1;
             pre[v]=u;
             pid[v]=w;
