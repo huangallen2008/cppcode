@@ -46,7 +46,7 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> c(n+1);
+    vector<int> c(n+2);
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     REP(i,n) c[a[i]]++;
