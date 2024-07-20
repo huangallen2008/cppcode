@@ -46,27 +46,17 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> a(n);
-    REP(i,n) cin>>a[i];
-    vector<int> c(n+1);
-    vector<int> b(n);
-    vector<int> c2(n+1);
-    vector<int> b2(n);
-    int mx=0,mx2=0;
-    REP(i,n) {
-        c[a[i]]++;
-        if(c[a[i]]==2) chmax(mx,a[i]);
-        b[i]=mx;
+    vector<int> a(n+1);
+    REP1(i,n) cin>>a[i];
+    vector<int> dp(n+1),dp1(n+1);
+    REP1(i,n) {
+        dp1[i]=dp[i-1]+1;
+        if(i>1&&a[i-1]<=2) chmin(dp1[i],dp[i-2]+1);
+        if(i>2&&a[i-1]<=4&&a[i-2]<=4) chmin(dp1[i],dp1[i-2]+2);
+        dp[i]=dp[i-1]+1;
+        if(a[i]<=2) chmin(dp[i],dp1[i]);
     }
-    REP(i,n) {
-        c2[b[i]]++;
-        if(c2[b[i]]==2) chmax(mx2,b[i]);
-        b2[i]=mx2;
-    }
-    int sum=0;
-    REP(i,n) sum+=a[i]+b[i];
-    REP(i,n) sum+=b2[i]*(n-i);
-    cout<<sum<<'\n';
+    cout<<dp[n]<<'\n';
 }
 signed main() {
     IOS();
