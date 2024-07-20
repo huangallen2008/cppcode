@@ -46,7 +46,7 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> c(n+2);
+    vector<int> c(n+1);
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     REP(i,n) c[a[i]]++;
@@ -54,7 +54,6 @@ void solve() {
     REP(i,n) if(c[i]&1) ok=1;
     if(ok) cout<<"YES\n";
     else cout<<"NO\n";
-    entr
 }
 signed main() {
     IOS();
