@@ -54,6 +54,7 @@ void solve() {
     REP(i,n) if(c[i]&1) ok=1;
     if(ok) cout<<"YES\n";
     else cout<<"NO\n";
+    entr
 }
 signed main() {
     IOS();
