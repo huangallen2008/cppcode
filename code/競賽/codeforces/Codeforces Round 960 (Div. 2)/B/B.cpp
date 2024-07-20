@@ -52,6 +52,7 @@ void solve() {
         if(i<x) {
             if((i^x)&1) a[i]=-1;
             else a[i]=1;
+            ope(i)
         }
         else if(i<=y)  a[i]=1;
         else {
