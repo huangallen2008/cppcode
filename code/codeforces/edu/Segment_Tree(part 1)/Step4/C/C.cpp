@@ -77,7 +77,7 @@ struct SEG {
     void init(int n,vector<int> &_a) {
         a=_a;
         s=vector<Seg>(n<<2);
-        build(1,0,n-1,a)
+        build(1,0,n-1,a);
     }
     void ud(int w,int l,int r,int u,int v) {
         if(l==r) {
