@@ -45,7 +45,6 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int dif=0;
         vector<int> c;
         Seg() {
             c=vector<int>(41);
@@ -54,7 +53,6 @@ struct SEG {
     Seg merge(Seg b,Seg c) {
         Seg a;
         REP1(i,40) a.c[i]=b.c[i]+c.c[i];
-        REP1(i,40) if(a.c[i]) a.dif++;
         return a;
     }
     void push(Seg &a,Seg &b,Seg &c) {
@@ -96,7 +94,10 @@ struct SEG {
         return merge(qu0(w<<1,l,m,ql,qr),qu0(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int w,int l,int r,int ql,int qr) {
-        return qu0(w,l,r,ql,qr).dif;
+        auto v=qu0(w,l,r,ql,qr).c;
+        int an=0;
+        REP1(i,40) if(v[i]) an++;
+        return an;
     }
 }seg;
 signed main() {
