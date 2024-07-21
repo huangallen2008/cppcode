@@ -70,8 +70,8 @@ struct SEG {
             return;
         }
         int m=l+r>>1;
-        build(w<<1,l,m,a);
-        build(w<<1|1,m+1,r,a);
+        build(w<<1,l,m);
+        build(w<<1|1,m+1,r);
         push(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int n,vector<int> &_a) {
