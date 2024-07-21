@@ -46,7 +46,10 @@ int rd(int l,int r) {
 struct SEG {
     struct Seg {
         int inv=0;
-        vector<int> c(41);
+        vector<int> c;
+        Seg() {
+            c=vector<int>(41);
+        }
     }zero;
     Seg merge(Seg b,Seg c) {
         Seg a;
