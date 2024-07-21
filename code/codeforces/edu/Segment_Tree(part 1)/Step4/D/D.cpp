@@ -54,7 +54,7 @@ struct SEG {
     Seg merge(Seg b,Seg c) {
         Seg a;
         REP1(i,40) a.c[i]=b.c[i]+c.c[i];
-        REP1(i,40) if(a.c[i]) dif++;
+        REP1(i,40) if(a.c[i]) a.dif++;
         return a;
     }
     void push(Seg &a,Seg &b,Seg &c) {
