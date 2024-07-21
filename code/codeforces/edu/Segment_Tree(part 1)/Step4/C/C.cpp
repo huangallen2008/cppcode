@@ -48,7 +48,7 @@ struct SEG {
         int inv=0;
         vector<int> c(41);
     }zero;
-    Seg merge(Seg &b,Seg &c) {
+    Seg merge(Seg b,Seg c) {
         Seg a;
         REP1(i,40) a[i]=b[i]+c[i];
         a.inv=b.inv+c.inv;
