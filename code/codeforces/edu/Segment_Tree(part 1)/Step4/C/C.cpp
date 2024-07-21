@@ -50,12 +50,12 @@ struct SEG {
     }zero;
     Seg merge(Seg b,Seg c) {
         Seg a;
-        REP1(i,40) a[i]=b[i]+c[i];
+        REP1(i,40) a.c[i]=b.c[i]+c.c[i];
         a.inv=b.inv+c.inv;
         int s=0;
         REP1(i,40) {
-            a.inv+=s*b[i];
-            s+=c[i];
+            a.inv+=s*b.c[i];
+            s+=c.c[i];
         }
         return a;
     }
