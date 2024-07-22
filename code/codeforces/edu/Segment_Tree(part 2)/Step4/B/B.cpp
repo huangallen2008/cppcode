@@ -72,14 +72,14 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int ql,int qr,int a,int d) {
         if(ql<=l&&r<=qr) {
-            addtag(s[w],a,d);
+            addtag(s[w],a+(l-ql)*d,d);
             return;
         }
         if(ql>r||qr<l) return;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         _ud(w<<1,l,m,ql,qr,a,d);
-        _ud(w<<1|1,m+1,r,ql,qr,a+(m+1-l)*d,d);
+        _ud(w<<1|1,m+1,r,ql,qr,a,d);
     }
     void ud(int l,int r,int a,int d) {
         _ud(1,0,n-1,l,r,a,d);
