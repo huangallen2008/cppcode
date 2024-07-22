@@ -56,7 +56,6 @@ Matrix operator*(Matrix a,Matrix b) {
     c.d=(a.c*b.b+a.d*b.d)%M;
     return c;
 }
-Matrix one={1,0,0,1};
 struct SEG {
     vector<Matrix> s;
     void build(int w,int l,int r,vector<Matrix> &a) {
@@ -75,7 +74,7 @@ struct SEG {
     }
     Matrix qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return one;
+        if(ql>r||qr<l) return {1,0,0,1};
         int m=l+r>>1;
         return qu(w<<1,l,m,ql,qr)*qu(w<<1|1,m+1,r,ql,qr);
     }
