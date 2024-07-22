@@ -76,12 +76,15 @@ struct SEG {
     void ud(int l,int r,int a,int d) {
         _ud(1,0,n-1,l,r,a,d);
     }
-    int qu(int w,int l,int r,int u) {
+    int _qu(int w,int l,int r,int u) {
         if(l==r) return s[w].a;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
-        if(u<=m) return qu(w<<1,l,m,u);
-        else return qu(w<<1|1,m+1,r,u);
+        if(u<=m) return _qu(w<<1,l,m,u);
+        else return _qu(w<<1|1,m+1,r,u);
+    }
+    int qu(int u) {
+        return _qu(1,0,n-1,u);
     }
 }seg;
 signed main() {
@@ -100,7 +103,7 @@ signed main() {
         else {
             int u;
             cin>>u;
-            cout<<seg.qu(u);
+            cout<<seg.qu(u)<<'\n';
         }
     }
     return 0;
