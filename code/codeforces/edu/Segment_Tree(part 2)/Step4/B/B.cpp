@@ -52,8 +52,8 @@ struct SEG {
         s.d+=d;
     }
     void push(Seg &a,Seg &b,Seg &c) {
-        addtag(b,a.tas,a.tad);
-        addtag(c,a.tas,a.tad);
+        addtag(b,a.a,a.d);
+        addtag(c,a.a,a.d);
         a.a=0,a.d=0;
     }
     int n;
