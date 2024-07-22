@@ -53,37 +53,45 @@ Matrix operator*(Matrix a,Matrix b) {
 }
 Matrix one={{1,0},{0,1}};
 Matrix st[19][maxn];
+struct SEG {
+    vector<Matrix> s;
+    void build(int w,int l,int r,vector<Matrix> &a) {
+        if(l==r) {
+            s[w]=a[l];
+            return;
+        }
+        int m=l+r>>1;
+        build(w<<1,l,m,a);
+        build(w<<1|1,m+1,r,a);
+        s[w]=s[w<<1]*s[w<<1|1];
+    }
+    void init(int n,vector<Matrix> &a) {
+        s=vector<Matrix>(n<<2);
+        build(1,0,n-1,a);
+    }
+    Matrix qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql>r||qr<l) return one;
+        int m=l+r>>1;
+        return qu(w<<1,l,m,ql,qr)*qu(w<<1|1,m+1,r,ql,qr);
+    }
+}seg;
 signed main() {
     IOS();
     cin>>M;
     int n,q;
     cin>>n>>q;
+    vector<Matrix> a(n);
     REP(i,n) {
-        st[0][i]=Matrix(2,vector<int>(2));
-        REP(j,2) REP(k,2) cin>>st[0][i][j][k];
+        REP(j,2) REP(k,2) cin>>a[i][j][k];
     }
-    REP1(i,18) {
-        REP(j,n) {
-            st[i][j]=Matrix(2,vector<int>(2));
-            if(j+(1<<i)>n) break;
-            st[i][j]=st[i-1][j]*st[i-1][j+(1<<i-1)];
-        }
-    }
+    seg.init(n,a);
     REP(i,q) {
         int l,r;
         cin>>l>>r;
-        Matrix an=one;
-        l--;
-        RREP(j,19) {
-            if(l+(1<<j)<=r) {
-                an=an*st[j][l];
-                l+=1<<j;
-            }
-        }
-        REP(j,2) {
-            REP(k,2) cout<<an[j][k]<<' ';
-            cout<<'\n';
-        }
+        l--,r--;
+        Matrix an=seg.qu(1,0,n-1,l,r);
+        REP(j,2) REP(k,2) cout<<an[j][k]<<(k==1?'\n':' ');
         cout<<'\n';
     }
     return 0;
