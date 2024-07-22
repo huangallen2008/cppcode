@@ -88,7 +88,6 @@ signed main() {
         else {
             int l,r,p;
             cin>>l>>r>>p;
-            u--;
             cout<<seg.qu(1,0,n-1,l,r-1,p)<<'\n';
         }
     }
