@@ -74,9 +74,7 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
-    vector<int> a(n);
-    REP(i,n) cin>>a[i];
-    seg.init(n,a);
+    seg.init(n);
     REP(i,q) {
         int opt;
         cin>>opt;
