@@ -47,7 +47,7 @@ int M;
 // #define Matrix vector<vector<int>>
 struct Matrix {
     int a,b,c,d;
-}
+};
 Matrix mul(Matrix a,Matrix b) {
     Matrix c;
     c.a=(a.a*b.a+a.b*b.c)%M;
