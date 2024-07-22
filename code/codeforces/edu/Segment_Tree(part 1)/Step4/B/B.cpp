@@ -52,7 +52,6 @@ Matrix operator*(Matrix a,Matrix b) {
     return c;
 }
 Matrix one={{1,0},{0,1}};
-Matrix st[19][maxn];
 struct SEG {
     vector<Matrix> s;
     void build(int w,int l,int r,vector<Matrix> &a) {
