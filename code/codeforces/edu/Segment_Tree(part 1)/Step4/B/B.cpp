@@ -48,7 +48,7 @@ int M;
 struct Matrix {
     int a,b,c,d;
 }
-Matrix operator*(Matrix a,Matrix b) {
+Matrix mul(Matrix a,Matrix b) {
     Matrix c;
     c.a=(a.a*b.a+a.b*b.c)%M;
     c.b=(a.a*b.b+a.b*b.d)%M;
@@ -66,7 +66,7 @@ struct SEG {
         int m=l+r>>1;
         build(w<<1,l,m,a);
         build(w<<1|1,m+1,r,a);
-        s[w]=s[w<<1]*s[w<<1|1];
+        s[w]=mul(s[w<<1],s[w<<1|1]);
     }
     void init(int n,vector<Matrix> &a) {
         s=vector<Matrix>(n<<2);
@@ -76,7 +76,7 @@ struct SEG {
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return {1,0,0,1};
         int m=l+r>>1;
-        return qu(w<<1,l,m,ql,qr)*qu(w<<1|1,m+1,r,ql,qr);
+        return mul(qu(w<<1,l,m,ql,qr),qu(w<<1|1,m+1,r,ql,qr));
     }
 }seg;
 signed main() {
