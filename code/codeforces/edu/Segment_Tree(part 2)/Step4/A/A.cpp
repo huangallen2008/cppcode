@@ -88,7 +88,7 @@ struct SEG {
         int m=l+r>>1;
         _ass(w<<1,l,m,ql,qr,v);
         _ass(w<<1|1,m+1,r,ql,qr,v);
-        pqll(s[w],s[w<<1],s[w<<1|1]);
+        pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ass(int l,int r,int v) {
         _ass(1,0,n-1,l,r,v);
