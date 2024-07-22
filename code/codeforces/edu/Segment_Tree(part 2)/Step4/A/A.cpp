@@ -49,9 +49,9 @@ struct SEG {
     };
     void addtag(Seg &a,int tas,int tad) {
         if(tas!=-1) {
-            a.sum*=tas;
-            a.tas*=tas;
-            a.tad*=tas;
+            a.sum=tas*a.len;
+            a.tas=tas;
+            a.tad=0;
         }
         a.sum+=tad*a.len;
         a.tad+=tad;
