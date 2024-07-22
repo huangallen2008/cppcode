@@ -122,6 +122,7 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
+    seg.init(n);
     REP(i,q) {
         int opt;
         cin>>opt;
