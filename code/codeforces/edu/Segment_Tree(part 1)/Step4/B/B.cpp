@@ -44,13 +44,16 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int M;
-#define Matrix vector<vector<int>>
+// #define Matrix vector<vector<int>>
+struct Matrix {
+    int a,b,c,d;
+}
 Matrix operator*(Matrix a,Matrix b) {
     Matrix c(2,vector<int>(2));
-    c[0][0]=(a[0][0]*b[0][0]+a[0][1]*b[1][0])%M;
-    c[0][1]=(a[0][0]*b[0][1]+a[0][1]*b[1][1])%M;
-    c[1][0]=(a[1][0]*b[0][0]+a[1][1]*b[1][0])%M;
-    c[1][1]=(a[1][0]*b[0][1]+a[1][1]*b[1][1])%M;
+    c.a=(a.a*b.a+a.b*b.c)%M;
+    c.b=(a.a*b.b+a.b*b.d)%M;
+    c.c=(a.c*b.a+a.d*b.c)%M;
+    c.d=(a.c*b.b+a.d*b.d)%M;
     return c;
 }
 Matrix one={{1,0},{0,1}};
@@ -82,9 +85,9 @@ signed main() {
     cin>>M;
     int n,q;
     cin>>n>>q;
-    vector<Matrix> a(n,Matrix(2,vector<int>(2)));
+    vector<Matrix> a(n);
     REP(i,n) {
-        REP(j,2) REP(k,2) cin>>a[i][j][k];
+        cin>>a[i].a>>a[i].b>>a[i].c>>a[i].d;
     }
     seg.init(n,a);
     REP(i,q) {
@@ -92,8 +95,7 @@ signed main() {
         cin>>l>>r;
         l--,r--;
         Matrix an=seg.qu(1,0,n-1,l,r);
-        REP(j,2) REP(k,2) cout<<an[j][k]<<(k==1?'\n':' ');
-        cout<<'\n';
+        cout<<an.a<<' '<<an.b<<'\n'<<an.c<<' '<<an.d<<'\n'<<'\n';
     }
     return 0;
 }
