@@ -46,9 +46,11 @@ int rd(int l,int r) {
 int M;
 #define Matrix vector<vector<int>>
 Matrix operator*(Matrix a,Matrix b) {
-    int n=a.size(),m=b.size(),k=b[0].size();
-    Matrix c(n,vector<int>(k));
-    REP(i,n) REP(j,k) REP(l,m) c[i][j]=(c[i][j]+a[i][l]*b[l][j])%M;
+    Matrix c(2,vector<int>(2));
+    c[0][0]=(a[0][0]*b[0][0]+a[0][1]*b[1][0])%M;
+    c[0][1]=(a[0][0]*b[0][1]+a[0][1]*b[1][1])%M;
+    c[1][0]=(a[1][0]*b[0][0]+a[1][1]*b[1][0])%M;
+    c[1][1]=(a[1][0]*b[0][1]+a[1][1]*b[1][1])%M;
     return c;
 }
 Matrix one={{1,0},{0,1}};
