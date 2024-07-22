@@ -80,7 +80,7 @@ signed main() {
     cin>>M;
     int n,q;
     cin>>n>>q;
-    vector<Matrix> a(n);
+    vector<Matrix> a(n,Matrix(2,vector<int>(2)));
     REP(i,n) {
         REP(j,2) REP(k,2) cin>>a[i][j][k];
     }
