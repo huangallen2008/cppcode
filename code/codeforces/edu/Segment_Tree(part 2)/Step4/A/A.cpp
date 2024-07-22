@@ -78,17 +78,17 @@ struct SEG {
         s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
-    void _ass(int w,int l,int r,int ul,int ur,int v) {
-        if(ul<=l&&r<=ur) {
+    void _ass(int w,int l,int r,int ql,int qr,int v) {
+        if(ql<=l&&r<=qr) {
             addtag(s[w],v,0);
             return;
         }
-        if(ul>r||ur<l) return;
+        if(ql>r||qr<l) return;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
-        _ass(w<<1,l,m,ul,ur,v);
-        _ass(w<<1|1,m+1,r,ul,ur,v);
-        pull(s[w],s[w<<1],s[w<<1|1]);
+        _ass(w<<1,l,m,ql,qr,v);
+        _ass(w<<1|1,m+1,r,ql,qr,v);
+        pqll(s[w],s[w<<1],s[w<<1|1]);
     }
     void ass(int l,int r,int v) {
         _ass(1,0,n-1,l,r,v);
