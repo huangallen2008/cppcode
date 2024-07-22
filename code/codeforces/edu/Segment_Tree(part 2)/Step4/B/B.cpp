@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int a=0,d=0;
+        int len,a=0,d=0;
     };
     void addtag(Seg &s,int a,int d) {
         s.a+=a;
@@ -53,14 +53,22 @@ struct SEG {
     }
     void push(Seg &a,Seg &b,Seg &c) {
         addtag(b,a.a,a.d);
-        addtag(c,a.a,a.d);
+        addtag(c,a.a+a.d*b.len,a.d);
         a.a=0,a.d=0;
     }
     int n;
     vector<Seg> s;
+    void build(int w,int l,int r) {
+        s[w]={r-l+1,0,0};
+        if(l==r) return;
+        int m=l+r>>1;
+        build(w<<1,l,m);
+        build(w<<1|1,m+1,r);
+    }
     void init(int _n) {
         n=_n;
         s=vector<Seg>(n<<2);
+        build(1,0,n-1);
     }
     void _ud(int w,int l,int r,int ql,int qr,int a,int d) {
         if(ql<=l&&r<=qr) {
