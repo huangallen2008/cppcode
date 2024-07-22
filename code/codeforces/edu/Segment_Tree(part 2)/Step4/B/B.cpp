@@ -98,11 +98,13 @@ signed main() {
         if(opt==1) {
             int l,r,a,d;
             cin>>l>>r>>a>>d;
+            l--,r--;
             seg.ud(l,r,a,d);
         }
         else {
             int u;
             cin>>u;
+            u--;
             cout<<seg.qu(u)<<'\n';
         }
     }
