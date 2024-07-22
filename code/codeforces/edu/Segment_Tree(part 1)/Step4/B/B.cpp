@@ -49,7 +49,7 @@ struct Matrix {
     int a,b,c,d;
 }
 Matrix operator*(Matrix a,Matrix b) {
-    Matrix c(2,vector<int>(2));
+    Matrix c;
     c.a=(a.a*b.a+a.b*b.c)%M;
     c.b=(a.a*b.b+a.b*b.d)%M;
     c.c=(a.c*b.a+a.d*b.c)%M;
