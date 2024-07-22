@@ -56,7 +56,7 @@ Matrix operator*(Matrix a,Matrix b) {
     c.d=(a.c*b.b+a.d*b.d)%M;
     return c;
 }
-Matrix one={{1,0},{0,1}};
+Matrix one={1,0,0,1};
 struct SEG {
     vector<Matrix> s;
     void build(int w,int l,int r,vector<Matrix> &a) {
