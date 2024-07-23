@@ -88,6 +88,7 @@ signed main() {
         }
         else paint(1,l,l+x);
         cout<<cnt<<'\n';
+        for(auto [x,y]:mp) cout<<"{"<<x<<","<<y<<"} ";entr
     }
     return 0;
 }
