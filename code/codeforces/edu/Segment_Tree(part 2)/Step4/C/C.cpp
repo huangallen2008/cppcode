@@ -77,6 +77,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    mp[0]=1;
     REP(i,n) {
         char c;
         cin>>c;
