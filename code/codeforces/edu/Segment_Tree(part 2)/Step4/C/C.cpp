@@ -82,7 +82,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    mp[-1]=1;
+    mp[0]=1;
     REP(i,n) {
         char c;
         cin>>c;
