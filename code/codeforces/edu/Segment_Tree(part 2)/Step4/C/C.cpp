@@ -62,7 +62,6 @@ void paint(int color,int l,int r) {
     it_l->s=color;
     mp.erase(next(it_l),it_r);
     if(!color) cnt++;
-    ope(cnt)
     while(it_l!=mp.begin()&&prev(it_l)->s==it_l->s) {
         if(!it_l->s) cnt--;
         it_l--;
@@ -87,7 +86,7 @@ signed main() {
         if(c=='B') {
             paint(0,l,l+x);
         }
-        else paint(0,l,l+x);
+        else paint(1,l,l+x);
         cout<<cnt<<'\n';
     }
     return 0;
