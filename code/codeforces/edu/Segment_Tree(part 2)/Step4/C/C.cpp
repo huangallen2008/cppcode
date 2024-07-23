@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 map<int,int> mp;
-int cnt=0;
+int cnt=0,cb=0;
 void spl(int x) {
     auto it=mp.lower_bound(x);
     if(it->f!=x) {
@@ -57,11 +57,11 @@ void paint(int color,int l,int r) {
     auto it_l=mp.find(l);
     auto it_r=mp.find(r);
     for(auto it=it_l;it!=it_r;it++) {
-        if(it->s==0) cnt--;
+        if(it->s==0) cnt--,cb-=(next(it)->f-it->f);
     }
     it_l->s=color;
     mp.erase(next(it_l),it_r);
-    if(!color) cnt++;
+    if(!color) cnt++,cb+=next(it_l)->f-it_l->f;
     while(it_l!=mp.begin()&&prev(it_l)->s==it_l->s) {
         if(!it_l->s) cnt--;
         it_l--;
