@@ -44,7 +44,6 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 map<int,int> mp;
-void output() {for(auto [x,y]:mp) cout<<"{"<<x<<","<<y<<"} ";entr}
 int cnt=0,cb=0;
 void spl(int x) {
     auto it=mp.lower_bound(x);
@@ -68,7 +67,7 @@ void paint(int color,int l,int r) {
         it_l--;
         mp.erase(next(it_l));
     }
-    while(it_r->f!=inf&&next(it_r)->s==it_r->s) {
+    while(it_r!=prev(mp.end())&&next(it_r)->s==it_r->s) {
         if(!it_r->s) cnt--;
         it_r++;
         mp.erase(prev(it_r));
@@ -84,7 +83,6 @@ signed main() {
     int n;
     cin>>n;
     mp[-inf]=1;
-    mp[inf]=0;
     REP(i,n) {
         char c;
         int l,x;
@@ -92,7 +90,7 @@ signed main() {
         if(c=='B') paint(0,l,l+x);
         else paint(1,l,l+x);
         cout<<cnt<<' '<<cb<<'\n';
-        // entr
+        // for(auto [x,y]:mp) cout<<"{"<<x<<","<<y<<"} ";entr
     }
     return 0;
 }
