@@ -62,9 +62,15 @@ void paint(int color,int l,int r) {
     it_l->s=color;
     mp.erase(next(it_l),it_r);
     if(!color) cnt++;
-    while(prev(it_l)->s==it_l->s) {
+    while(it_l!=mp.begin()&&prev(it_l)->s==it_l->s) {
+        if(!it_l->s) cnt--;
         it_l--;
-        mp.erase(it_l+1);
+        mp.erase(next(it_l));
+    }
+    while(it_r!=mp.end()&&next(it_r)->s==it_r->s) {
+        if(!it_r->s) cnt--;
+        it_r++;
+        mp.erase(prev(it_r));
     }
 }
 signed main() {
@@ -74,9 +80,13 @@ signed main() {
     REP(i,q) {
         char c;
         cin>>c;
+        int l,x;
+        cin>>l>>x;
         if(c=='B') {
-            
+            paint(0,l,l+x);
         }
+        else paint(0,l,l+x);
+        cout<<cnt<<'\n';
     }
     return 0;
 }
