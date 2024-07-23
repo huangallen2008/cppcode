@@ -67,10 +67,15 @@ void paint(int color,int l,int r) {
         it_l--;
         mp.erase(next(it_l));
     }
-    while(it_l!=mp.end()&&next(it_l)->s==it_l->s) {
-        if(!it_l->s) cnt--;
-        it_l++;
-        mp.erase(prev(it_l));
+    while(it_r!=mp.end()&&next(it_r)->s==it_r->s) {
+        if(!it_r->s) cnt--;
+        it_r++;
+        mp.erase(prev(it_r));
+    }
+    if(it_r->s==it_l->s) {
+        if(!it_r->s) cnt--;
+        it_r++;
+        mp.erase(prev(it_r));
     }
 }
 signed main() {
