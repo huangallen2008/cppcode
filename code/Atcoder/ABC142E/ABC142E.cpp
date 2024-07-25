@@ -63,7 +63,7 @@ signed main() {
     for(int i=0;i<1<<n;i++)
         REP(j,m) chmin(dp[i],dp[i&~v[j]]+a[j]);
     int an=dp[(1<<n)-1];
-    if(an>=inf) cout<<"-1\n";
+    if(an==inf) cout<<"-1\n";
     else cout<<an<<'\n';
     return 0;
 }
