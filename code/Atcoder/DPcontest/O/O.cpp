@@ -50,6 +50,7 @@ signed main() {
     vector<vector<int>> a(n,vector<int>(n));
     REP(i,n) REP(j,n) cin>>a[i][j];
     vector<int> dp(1<<n);
+    dp[0]=1;
     for(int i=1;i<1<<n;i++) {
         int u=__lg(i&-i);
         REP(v,n) {
