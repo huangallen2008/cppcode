@@ -62,7 +62,8 @@ struct DSU {
     bool merge(int a,int b) {
         int x=find(a),y=find(b);
         if(x==y) {
-            oparr(d)
+            REP(i,n) cout<<d[i]<<' ';entr
+            ope(d[a])ope(d[b])
             if(d[a]==d[b]) return 0;
             return 1;
         }
