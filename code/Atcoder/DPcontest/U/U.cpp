@@ -56,11 +56,9 @@ signed main() {
         REP(t,n) if((i>>t)&1) v[i]+=a[u][t];
     }
     vector<int> dp(1<<n);
-    for(int i=1;i<1<<n;i++) {
-        for(int j=i;j>0;j=(j-1)&i) {
+    for(int i=1;i<1<<n;i++)
+        for(int j=i;j>0;j=(j-1)&i)
             chmax(dp[i],dp[i^j]+v[j]);
-        }
-    }
     cout<<dp[(1<<n)-1]<<'\n';
     return 0;
 }
