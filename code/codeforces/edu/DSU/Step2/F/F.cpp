@@ -74,6 +74,7 @@ struct DSU {
         if(merge(e.u,e.v)) {
             chmin(mn,e.w);
             chmax(mx,e.w);
+            ope(e.w);
         }
     }
     int val() { op(mn)op(mx)return mn==inf||cnt>0?inf:mx-mn; }
