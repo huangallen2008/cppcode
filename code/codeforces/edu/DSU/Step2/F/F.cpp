@@ -57,6 +57,7 @@ struct DSU {
         sz=vector<int>(n,1);
         REP(i,n) p[i]=i;
         cnt=n;
+        mn=inf,mx=0;
     }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
