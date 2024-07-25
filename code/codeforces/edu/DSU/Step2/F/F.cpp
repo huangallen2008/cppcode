@@ -57,7 +57,7 @@ struct DSU {
         sz=vector<int>(n,1);
         REP(i,n) p[i]=i;
         cnt=n;
-        mn=inf,mx=0;
+        mn=inf,mx=-inf;
     }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
@@ -77,7 +77,7 @@ struct DSU {
             chmax(mx,e.w);
         }
     }
-    int val() { return mn==inf||cnt>1?inf:mx-mn; }
+    int val() { return cnt>1?inf:mx-mn; }
 }dsu;
 int f(int u) {
     dsu.init(n);
