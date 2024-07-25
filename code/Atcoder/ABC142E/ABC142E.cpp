@@ -47,10 +47,11 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<int> a(n),b(n),v(n);
+    vector<int> a(m),v(m);
     REP(i,m) {
-        cin>>a[i]>>b[i];
-        REP(j,b[i]) {
+        int k;
+        cin>>a[i]>>k;
+        REP(j,k) {
             int x;
             cin>>x;
             x--;
