@@ -81,7 +81,7 @@ struct DSU {
 int f(int u) {
     dsu.init(n);
     for(int i=u;i<m;i++) dsu.merge(e[i]);
-    oparr(dsu.p)
+    oparr(dsu.p)ope(dsu.cnt)
     return dsu.val();
 }
 bool so(edge a,edge b) {
