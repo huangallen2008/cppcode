@@ -56,7 +56,7 @@ struct DSU {
     }
     int find(int u) {
         if(p[u]==u) return u;
-        if(p[p[u]]!=p[u])d[u]=d[p[u]]^1;
+        d[u]^=d[p[u]];
         return p[u]=find(p[u]);
     }
     bool merge(int a,int b) {
