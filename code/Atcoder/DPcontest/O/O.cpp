@@ -54,7 +54,7 @@ signed main() {
     for(int i=1;i<1<<n;i++) {
         int u=__builtin_popcount(i)-1;
         REP(v,n) {
-            if(a[u][v]) dp[i]+=dp[i^(1<<v)];
+            if(a[u][v]) addmod(dp[i],dp[i^(1<<v)]);
         }
     }
     cout<<dp[(1<<n)-1]<<'\n';
