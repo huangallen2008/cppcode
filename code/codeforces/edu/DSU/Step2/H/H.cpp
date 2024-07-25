@@ -90,11 +90,15 @@ signed main() {
     vector<bool> used(m);
     REP(i,m) used[i]=dsu.merge(e[i]);
     int cnt=0,now=0;
+    vector<int> an;
     RREP(i,m) {
         if(used[i]||now+e[i].w>s) continue;
         cnt++,now+=e[i].w;
         an.pb(e[i].id);
     }
+    sort(ALL(an));
     cout<<cnt<<'\n';
+    for(int x:an) cout<<x<<' ';
+    cout<<'\n';
     return 0;
 }
