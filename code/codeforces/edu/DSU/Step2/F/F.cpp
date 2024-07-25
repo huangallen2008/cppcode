@@ -75,16 +75,14 @@ struct DSU {
         if(merge(e.u,e.v)) {
             chmin(mn,e.w);
             chmax(mx,e.w);
-            ope(e.w);
         }
     }
-    int val() { op(mn)op(mx)return mn==inf||cnt>1?inf:mx-mn; }
+    int val() { return mn==inf||cnt>1?inf:mx-mn; }
 }dsu;
 int f(int u) {
     ope(u)
     dsu.init(n);
     for(int i=u;i<m;i++) dsu.merge(e[i]);
-    oparr(dsu.p)
     return dsu.val();
 }
 bool so(edge a,edge b) {
