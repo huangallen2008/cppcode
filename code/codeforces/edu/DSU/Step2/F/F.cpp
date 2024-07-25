@@ -76,12 +76,12 @@ struct DSU {
             chmax(mx,e.w);
         }
     }
-    int val() { return mn==inf||cnt>0?inf:mx-mn; }
+    int val() { op(mn)op(mx)return mn==inf||cnt>0?inf:mx-mn; }
 }dsu;
 int f(int u) {
     dsu.init(n);
     for(int i=u;i<m;i++) dsu.merge(e[i]);
-    oparr(dsu.p)ope(dsu.cnt)
+    oparr(dsu.p)
     return dsu.val();
 }
 bool so(edge a,edge b) {
