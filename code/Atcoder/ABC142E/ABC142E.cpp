@@ -48,7 +48,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<int> a(n),b(n),v(n);
-    REP(i,n) {
+    REP(i,m) {
         cin>>a[i]>>b[i];
         REP(j,b[i]) {
             int x;
