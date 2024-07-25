@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct edge {
-    int u,v,w;
+    int u,v,w,id;
 };
 struct DSU {
     vector<int> p,sz;
@@ -84,7 +84,7 @@ signed main() {
         int u,v,w;
         cin>>u>>v>>w;
         u--,v--;
-        e.pb({u,v,w});
+        e.pb({u,v,w,i+1});
     }
     sort(ALL(e),so);
     vector<bool> used(m);
@@ -93,6 +93,7 @@ signed main() {
     RREP(i,m) {
         if(used[i]||now+e[i].w>s) continue;
         cnt++,now+=e[i].w;
+        an.pb(e[i].id);
     }
     cout<<cnt<<'\n';
     return 0;
