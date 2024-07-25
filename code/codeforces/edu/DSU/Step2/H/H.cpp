@@ -91,7 +91,7 @@ signed main() {
     REP(i,m) used[i]=dsu.merge(e[i]);
     int cnt=0,now=0;
     RREP(i,m) {
-        if(now+e[i].w>s) continue;
+        if(used[i]||now+e[i].w>s) continue;
         cnt++,now+=e[i].w;
     }
     cout<<cnt<<'\n';
