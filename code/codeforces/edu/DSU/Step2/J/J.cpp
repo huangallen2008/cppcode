@@ -69,6 +69,7 @@ struct DSU {
         p[x]=y;
         sz[y]+=sz[x];
         d[x]=1;
+        oparr(d)
         return 1;
     }
 }dsu;
