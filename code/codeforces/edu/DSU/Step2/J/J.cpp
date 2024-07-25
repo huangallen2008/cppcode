@@ -69,7 +69,7 @@ struct DSU {
         p[x]=y;
         sz[y]+=sz[x];
         d[x]=1;
-        oparr(d)
+        REP(i,n) cout<<d[i]<<' ';entr
         return 1;
     }
 }dsu;
