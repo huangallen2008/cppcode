@@ -96,7 +96,6 @@ signed main() {
         cnt++,now+=e[i].w;
         an.pb(e[i].id);
     }
-    sort(ALL(an));
     cout<<cnt<<'\n';
     for(int x:an) cout<<x<<' ';
     cout<<'\n';
