@@ -77,8 +77,9 @@ signed main() {
         cin>>x;
         x--;
         int ret=dsu.lb(x);
-        cout<<ret<<'\n';
+        cout<<ret+1<<' ';
         dsu.del(ret);
     }
+    cout<<'\n';
     return 0;
 }
