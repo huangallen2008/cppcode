@@ -78,7 +78,7 @@ struct DSU {
             ope(e.w);
         }
     }
-    int val() { op(mn)op(mx)return mn==inf||cnt>0?inf:mx-mn; }
+    int val() { op(mn)op(mx)return mn==inf||cnt>1?inf:mx-mn; }
 }dsu;
 int f(int u) {
     ope(u)
