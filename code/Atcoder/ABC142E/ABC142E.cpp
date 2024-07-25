@@ -59,6 +59,7 @@ signed main() {
     }
     vector<int> dp(1<<n,inf);
     dp[0]=0;
+    ope("ok")
     for(int i=1;i<1<<n;i++) {
         REP(j,n) chmin(dp[i],dp[i&~v[j]]+a[j]);
     }
