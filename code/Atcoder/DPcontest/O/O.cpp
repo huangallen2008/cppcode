@@ -52,8 +52,7 @@ signed main() {
     vector<int> dp(1<<n);
     dp[0]=1;
     for(int i=1;i<1<<n;i++) {
-        int u=__builtin_popcount(i);
-        ope(u)
+        int u=__builtin_popcount(i)-1;
         REP(v,n) {
             if(a[u][v]) dp[i]+=dp[i^(1<<v)];
         }
