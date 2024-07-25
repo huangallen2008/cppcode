@@ -5,7 +5,7 @@
     "git.postCommitCommand": "sync",
     "gitdoc.commitMessageFormat": "coding",
     "gitdoc.pushMode": "push",
-    "gitdoc.enabled": true,
+    "gitdoc.enabled": false,
     "gitdoc.autoCommitDelay": 300,
     "files.associations": {
         "iostream": "cpp",
