@@ -68,7 +68,7 @@ struct DSU {
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
         sz[y]+=sz[x];
-        d[x]=1;
+        d[x]=1^d[a]^d[b];
         oparr(p)
         REP(i,n) cout<<d[i]<<' ';entr
         return 1;
