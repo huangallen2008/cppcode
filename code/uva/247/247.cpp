@@ -1,0 +1,185 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define int ll
+#define FOR(i,a,b) for (int i = (a); i<(b); i++)
+#define REP(i,n) FOR(i,0,(n))
+#define REP1(i,n) FOR(i,1,(n)+1)
+#define RREP(i,n) for (int i=(n)-1; i>=0; i--)
+#define f first
+#define s second
+#define pb push_back
+#define ALL(x) x.begin(),x.end()
+#define SZ(x) (int)(x.size())
+#define SQ(x) (x)*(x)
+#define pii pair<int, int>
+#define MD(x,m) ((x)%(m)+(m))%(m)
+#define md(x) MD(x,mod)
+#define Graph vector<vector<int>>
+#define IOS() ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+const ll inf = 1ll<<62;
+const int iinf=2147483647;
+const ll mod = 1e9+9;
+const ll maxn=1e5+5;
+const double PI=acos(-1);
+ll pw(ll x, ll p, ll m=mod){
+    ll ret=1;
+    while (p>0){
+        if (p&1){
+            ret*=x;
+            ret%=m;
+        }
+        x*=x;
+        x%=m;
+        p>>=1;
+    }
+    return ret;
+}
+struct Bridge {
+    vector<int> low,vis,dep;
+    vector<pii> an;
+    vector<vector<int>> g;
+    Bridge(vector<vector<int>> _g) {
+        getBridge(_g);
+    }
+    void dfs(int u,int par) {
+        vis[u]=1;
+        low[u]=inf;
+        for(auto v:g[u]) {
+            if(vis[v]) {
+                if(v==par) continue;
+                low[u]=min(low[u],dep[v]);
+                continue;
+            }
+            dep[v]=dep[u]+1;
+            dfs(v,u);
+            if(low[v]>dep[u])
+                an.pb({u,v});
+            low[u]=min(low[u],low[v]);
+        }
+    }
+    vector<pii> getBridge(vector<vector<int>> _g) {
+        g=_g;
+        int n=SZ(g);
+        low=vector<int>(n);
+        vis=vector<int>(n);
+        dep=vector<int>(n);
+        an.clear();
+        dfs(0,-1);
+        return an;
+    }
+};
+struct SCC {
+    int scccnt=0;//scc數量
+    vector<int> scc;//scc[x]:x在第幾個scc
+    vector<int> end_order;//結束時間
+    vector<int> vis;
+    SCC(const vector<vector<int>> &g) {
+        scccnt=0;
+        int n=SZ(g);
+        vector<vector<int>> rg(n);
+        vis=vector<int>(n);
+        scc=vector<int>(n);
+        REP(i,SZ(g))
+            for(auto v:g[i]) rg[v].pb(i);
+        REP(i,SZ(g))
+            if(vis[i]==0)
+                dfs1(rg,i);
+        vis=vector<int>(n);
+        reverse(ALL(end_order));
+        for(auto u:end_order) {
+            if(vis[u]==0) {
+                scc[u]=scccnt++;
+                dfs2(g,u);
+            }
+        }
+    }
+    void dfs1(const vector<vector<int>> &rg,int u) {
+        vis[u]=1;
+        for(auto v:rg[u]) {
+            if(vis[v]) continue;
+            dfs1(rg,v);
+        }
+        end_order.pb(u);
+    }
+    void dfs2(const vector<vector<int>> &g,int u) {
+        vis[u]=1;
+        for(auto v:g[u]) {
+            if(vis[v]) continue;
+            scc[v]=scc[u];
+            dfs2(g,v);
+        }
+    }
+};
+struct TwoSAT {//1-based
+    bool ok=1;
+    int n;
+    vector<int> an;
+    vector<vector<int>> g;
+    TwoSAT(int _n,vector<pii> cons) {
+        ok=1;
+        n=_n;
+        an=vector<int>(n+1);
+        g=vector<vector<int>>(n*2);
+        for(auto [u,v]:cons) {
+            g[id(-u)].pb(id(v));
+            g[id(-v)].pb(id(u));
+        }
+        SCC scc(g);
+        REP1(i,n) {
+            if(scc.scc[id(i)]==scc.scc[id(-i)]) {
+                ok=0;
+                break;
+            }
+            if(scc.scc[id(i)]<scc.scc[id(-i)]) an[i]=1;
+            else an[i]=0;
+        }
+    }
+    int id(int x) { return x+n-(x<0?0:1); }
+};
+int n,m;
+int cnt=1;
+string x,y;
+signed main()
+{
+    IOS();
+    while(cin>>n>>m) {
+        if(n==0) break;
+        int c=2;
+        unordered_map<string,int> id;
+        vector<string> s;
+        Graph g;
+        g=Graph(n);
+        s=vector<string>(n);
+        cin>>x>>y;
+        id[x]=0; id[y]=1;
+        s[0]=x; s[1]=y;
+        g[0].pb(1);
+        REP1(i,m-1) {
+            cin>>x>>y;
+            if(id[x]==0 && x!=s[0]) {
+                id[x]=c++;
+                s[id[x]]=x;
+            }
+            if(id[y]==0 && y!=s[0]) {
+                id[y]=c++;
+                s[id[y]]=y;
+            }
+            g[id[x]].pb(id[y]);
+        }
+        /*REP(i,n) {
+            cout<<i<<":";
+            for(auto p:g[i]) cout<<p<<" ";cout<<"\n";
+        }
+        REP(i,n) cout<<s[i]<<" ";cout<<"\n";*/
+        SCC scc(g);
+        Graph an(scc.scccnt);
+        REP(i,n) an[scc.scc[i]].pb(i);
+        cout<<"Calling circles for data set "<<cnt++<<":\n";
+        RREP(i,SZ(an)) {
+            REP(j,SZ(an[i])) cout<<s[an[i][j]]<<(j==SZ(an[i])-1?"\n":", ");
+        }
+        cout<<"\n";
+    }
+    return 0;
+}

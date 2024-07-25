@@ -1,0 +1,10 @@
+{
+    "gitdoc.enabled": true,
+    "files.associations": {
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "utility": "cpp",
+        "cstdlib": "cpp"
+    }
+}
