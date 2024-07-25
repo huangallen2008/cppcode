@@ -80,6 +80,7 @@ struct DSU {
     int val() { op(mn)op(mx)return mn==inf||cnt>0?inf:mx-mn; }
 }dsu;
 int f(int u) {
+    ope(u)
     dsu.init(n);
     for(int i=u;i<m;i++) dsu.merge(e[i]);
     oparr(dsu.p)
