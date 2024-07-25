@@ -84,8 +84,9 @@ signed main() {
         u--,v--;
         if(!dsu.merge(u,v)) {
             cout<<i<<'\n';
-            break;
+            return 0;
         }
     }
+    cout<<"-1\n";
     return 0;
 }
