@@ -90,6 +90,7 @@ signed main() {
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w;
+        u--,v--;
         e.pb({u,v,w});
     }
     sort(ALL(e),so);
