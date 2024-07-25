@@ -53,6 +53,7 @@ signed main() {
     dp[0]=1;
     for(int i=1;i<1<<n;i++) {
         int u=__builtin_popcount(i);
+        ope(u)
         REP(v,n) {
             if(a[u][v]) dp[i]+=dp[i^(1<<v)];
         }
