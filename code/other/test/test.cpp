@@ -43,28 +43,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-<<<<<<< HEAD
 signed main() {
     IOS();
     char c=7;
     REP(i,100000) cout<<c;
-=======
-bool isp(int n) {
-    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
-    return 1;
-}
-signed main() {
-    IOS();
-    int cnt=0;
-    for(int i=2;;i++) {
-        if(isp(i)) {
-            cnt++;
-        }
-        if(cnt==10000) {
-            ope(i)
-            break;
-        }
-    }
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
     return 0;
 }
