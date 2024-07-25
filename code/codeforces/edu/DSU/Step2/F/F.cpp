@@ -50,12 +50,13 @@ int n,m;
 vector<edge> e;
 struct DSU {
     vector<int> p,sz;
-    int n,mn=inf,mx=0;
+    int n,mn=inf,mx=0,cnt;
     void init(int _n) {
         n=_n;
         p=vector<int>(n);
         sz=vector<int>(n,1);
         REP(i,n) p[i]=i;
+        cnt=n;
     }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
@@ -66,6 +67,7 @@ struct DSU {
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
         sz[y]+=sz[x];
+        cnt--;
         return 1;
     }
     void merge(edge e) {
@@ -74,7 +76,7 @@ struct DSU {
             chmax(mx,e.w);
         }
     }
-    int val() { return mn==inf?inf:mx-mn; }
+    int val() { return mn==inf||cnt>0?inf:mx-mn; }
 }dsu;
 int f(int u) {
     dsu.init(n);
