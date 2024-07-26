@@ -127,9 +127,9 @@ signed main() {
         q[i]={l,r,i};
     }
     sort(ALL(q),so_qur);
-    ope("ok")
     vector<int> t(k);
     REP(i,k) t[i]=q[i].l/sn;
+    ope("ok")
     REP(i,k) {
         auto [l,r,id]=q[i];
         int L=t[i]*sn,R=(t[i]+1)*sn;
