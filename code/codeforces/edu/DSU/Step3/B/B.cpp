@@ -142,7 +142,7 @@ signed main() {
             else st=R+1;
             for(int j=st;j<=r;j++) dsu.merge(e[j]);
             dsu.save();
-            for(int j=R;j>=l;j--) dsu.merge(e[i]);
+            for(int j=R;j>=l;j--) dsu.merge(e[j]);
             an[id]=dsu.cc;
             dsu.revert();
         }
