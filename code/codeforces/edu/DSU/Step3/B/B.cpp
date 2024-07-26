@@ -129,7 +129,7 @@ signed main() {
     sort(ALL(q),so_qur);
     vector<int> t(k);
     REP(i,k) t[i]=q[i].l/sn;
-    ope("ok")
+    ope("ok")ope(sn)
     REP(i,k) {
         auto [l,r,id]=q[i];
         int L=t[i]*sn,R=(t[i]+1)*sn;
