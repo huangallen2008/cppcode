@@ -129,11 +129,9 @@ signed main() {
     sort(ALL(q),so_qur);
     vector<int> t(k);
     REP(i,k) t[i]=q[i].l/sn;
-    ope("ok")ope(sn)
     REP(i,k) {
         auto [l,r,id]=q[i];
         int L=t[i]*sn,R=(t[i]+1)*sn;
-        op(l)op(r)op(id)op(L)op(R)ope("")
         if(i>0&&t[i]!=t[i-1]) dsu.init(n);
         if(r<R) an[id]=getan(l,r);
         else {
