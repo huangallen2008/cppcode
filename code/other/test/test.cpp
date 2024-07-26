@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    char c=7;
-    REP(i,100000) cout<<c;
+    tuple<int,int,int> t={1,2,3};
+    
     return 0;
 }
