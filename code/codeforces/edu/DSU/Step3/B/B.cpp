@@ -92,7 +92,7 @@ struct qur {
     int l,r,id;
 };
 bool so_qur(qur a,qur b) {
-    int x=a.l/sn,y=b,l/sn;
+    int x=a.l/sn,y=b.l/sn;
     return x==y?a.r<b.r:x<y;
 }
 int getan(int l,int r) {
