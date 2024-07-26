@@ -46,6 +46,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     tuple<int,int,int> t={1,2,3};
-    
+    auto [x,y,z]=t;
+    op(x)op(y)ope(z)
     return 0;
 }
