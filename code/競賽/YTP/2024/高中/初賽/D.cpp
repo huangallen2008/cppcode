@@ -43,14 +43,48 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct BIT {
+    vector<int> b;
+    int n;
+    void init(int _n) {
+        n=_n;
+        b=vector<int>(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) chmax(b[u],v);
+    } 
+    int qu(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) chmax(r,b[u]);
+        return r;
+    }
+}bita,bitb;
 void solve() {
     int n;
     cin>>n;
+    bita.init(n);
+    bitb.init(n);
     vector<int> a(n),b(n);
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
+    // reverse(ALL(a));
+    // reverse(ALL(b));
     vector<int> ta,tb;
     REP(i,n) ta.pb(a[i]),tb.pb(b[i]);
+    sort(ALL(ta));
+    aort(ALL(tb));
+    REP(i,n) a[i]=lower_bound(ALL(ta),a[i])-ta.begin()+1;
+    REP(i,n) b[i]=lower_bound(ALL(tb),b[i])-tb.begin()+1;
+    // REP(i,n) a[i]=n-a[i],b[i]=n-b[i];
+    vector<int> dp(n);
+    REP(i,n) {
+        dp[i]=max(bita.qu(a[i]-1),bitb.qu(b[i]-1));
+        bita.ud(a[i],dp[i]);
+        bitb.ud(b[i],dp[i]);
+    }
+    int an=0;
+    REP(i,n) chmax(an,dp[i]);
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
