@@ -45,11 +45,21 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n;
+Graph g;
+vector<int> a,v;
+void dfs(int u,int p) {
+    a.pb(v[u]);
+    for(auto v:g[u]) {
+        if(v==p) continue;
+        dfs(v,u);
+    }
+};
 signed main() {
     IOS();
     cin>>n;
-    Graph g(n);
-    vector<int> v(n);
+    a={0};
+    g=Graph(n);
+    v=vector<int>(n);
     REP(i,n) cin>>v[i];
     vector<int> deg(n);
     REP(i,n-1) {
@@ -62,14 +72,6 @@ signed main() {
     }
     int st=0;
     REP(i,n) if(deg[i]==1) st=i;
-    vector<int> a={0};
-    auto dfs=[&](int u,int p) {
-        a.pb(v[u]);
-        for(auto v:g[u]) {
-            if(v==p) continue;
-            dfs(v,u);
-        }
-    };
     dfs(st,-1);
     oparr(a)
     return 0;
