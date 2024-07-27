@@ -83,11 +83,22 @@ signed main() {
     dfs(st,-1);
     REP1(i,n) a[i]+=a[i-1];
     priority_queue<P,vector<P>,so> pq;
-    REP(i,n) pq.push({a[i+1]-a[i],i,i});
+    REP(i,n) pq.push({a[i+1]-a[i],i,i+1});
     while(k--) {
-        auto [val,id,r]=pq.top();
+        if(pq.size()==0) {
+            cout<<"-1\n";
+            return 0;
+        }
+        auto [val,l,r]=pq.top();
+        if(k==0) {
+            cout<<val<<'\n';
+            return 0;
+        }
         pq.pop();
-
+        if(r<n-1) {
+            val=val-a[r]+a[r+1];
+            pq.push({val,l,r+1});
+        }
     }
     return 0;
 }
