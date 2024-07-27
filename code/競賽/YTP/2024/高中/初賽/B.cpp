@@ -52,6 +52,10 @@ signed main() {
     sort(ALL(a));
     int an=inf;
     REP(i,n) {
+        if(a[i]==0) {
+            chmin(an,k);
+            continue;
+        }
         int id=lower_bound(ALL(a),k/a[i])-a.begin();
         if(id>0) chmin(an,abs(k-a[i]*a[id-1]));
         if(id<n) chmin(an,abs(k-a[i]*a[id]));
