@@ -85,7 +85,7 @@ signed main() {
     priority_queue<P,vector<P>,so> pq;
     REP(i,n) pq.push({a[i+1]-a[i],i,i});
     while(k--) {
-        auto [val,id]=pq.top();
+        auto [val,id,r]=pq.top();
         pq.pop();
 
     }
