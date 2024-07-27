@@ -78,7 +78,7 @@ void solve() {
     // REP(i,n) a[i]=n-a[i],b[i]=n-b[i];
     vector<int> dp(n);
     REP(i,n) {
-        dp[i]=max(bita.qu(a[i]-1),bitb.qu(b[i]-1));
+        dp[i]=max(bita.qu(a[i]-1),bitb.qu(b[i]-1))+1;
         bita.ud(a[i],dp[i]);
         bitb.ud(b[i],dp[i]);
     }
