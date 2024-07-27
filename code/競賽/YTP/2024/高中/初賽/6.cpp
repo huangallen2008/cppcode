@@ -44,7 +44,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n;
+int n,k;
 Graph g;
 vector<int> a,v;
 void dfs(int u,int p) {
@@ -56,7 +56,7 @@ void dfs(int u,int p) {
 };
 signed main() {
     IOS();
-    cin>>n;
+    cin>>n>>k;
     a={0};
     g=Graph(n);
     v=vector<int>(n);
