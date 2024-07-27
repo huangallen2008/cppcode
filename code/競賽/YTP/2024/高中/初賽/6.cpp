@@ -95,7 +95,7 @@ signed main() {
             return 0;
         }
         pq.pop();
-        if(r<n-1) {
+        if(r<n) {
             val=val-a[r]+a[r+1];
             pq.push({val,l,r+1});
         }
