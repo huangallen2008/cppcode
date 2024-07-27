@@ -54,6 +54,14 @@ void dfs(int u,int p) {
         dfs(v,u);
     }
 };
+struct P {
+    int val,l,r;
+};
+struct so {
+    bool operator()(P a,P b) {
+        return a.val>b.val;
+    }
+};
 signed main() {
     IOS();
     cin>>n>>k;
@@ -73,6 +81,13 @@ signed main() {
     int st=0;
     REP(i,n) if(deg[i]==1) st=i;
     dfs(st,-1);
-    oparr(a)
+    REP1(i,n) a[i]+=a[i-1];
+    priority_queue<P,vector<P>,so> pq;
+    REP(i,n) pq.push({a[i+1]-a[i],i,i});
+    while(k--) {
+        auto [val,id]=pq.top();
+        pq.pop();
+
+    }
     return 0;
 }
