@@ -53,9 +53,9 @@ signed main() {
     int an=inf;
     REP(i,n) {
         int id=lower_bound(ALL(a),k/a[i])-a.begin();
-        if(id>0) chmin(an,k-a[i]*a[id-1]);
-        if(id<n) chmin(an,k-a[i]*a[id]);
-        if(id<n-1) chmin(an,k-a[i]*a[id+1]);
+        if(id>0) chmin(an,abs(k-a[i]*a[id-1]));
+        if(id<n) chmin(an,abs(k-a[i]*a[id]));
+        if(id<n-1) chmin(an,abs(k-a[i]*a[id+1]));
     }
     cout<<an<<'\n';
     return 0;
