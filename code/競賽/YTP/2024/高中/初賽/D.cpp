@@ -72,7 +72,7 @@ void solve() {
     vector<int> ta,tb;
     REP(i,n) ta.pb(a[i]),tb.pb(b[i]);
     sort(ALL(ta));
-    aort(ALL(tb));
+    sort(ALL(tb));
     REP(i,n) a[i]=lower_bound(ALL(ta),a[i])-ta.begin()+1;
     REP(i,n) b[i]=lower_bound(ALL(tb),b[i])-tb.begin()+1;
     // REP(i,n) a[i]=n-a[i],b[i]=n-b[i];
