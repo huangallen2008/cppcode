@@ -67,7 +67,7 @@ signed main() {
         a.pb(v[u]);
         for(auto v:g[u]) {
             if(v==p) continue;
-            dfs(v);
+            dfs(v,u);
         }
     };
     dfs(st,-1);
