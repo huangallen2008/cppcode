@@ -76,7 +76,7 @@ void solve() {
     REP(i,n) a[i]=lower_bound(ALL(ta),a[i])-ta.begin()+1;
     REP(i,n) b[i]=lower_bound(ALL(tb),b[i])-tb.begin()+1;
     // REP(i,n) a[i]=n-a[i],b[i]=n-b[i];
-    oparr(a)oparr(b)
+    // oparr(a)oparr(b)
     vector<int> dp(n);
     REP(i,n) {
         dp[i]=max(bita.qu(a[i]-1),bitb.qu(b[i]-1))+1;
@@ -86,7 +86,7 @@ void solve() {
     int an=0;
     REP(i,n) chmax(an,dp[i]);
     cout<<an<<'\n';
-    entr
+    // entr
 }
 signed main() {
     IOS();
