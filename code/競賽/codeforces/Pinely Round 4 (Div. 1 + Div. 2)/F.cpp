@@ -44,10 +44,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 // vector<int> v;
-bool ok(int a,int b,int c) {
+
+struct DS {bool ok(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
-struct DS {
     set<pii> s;
     set<int> s1;
     vector<int> o;
