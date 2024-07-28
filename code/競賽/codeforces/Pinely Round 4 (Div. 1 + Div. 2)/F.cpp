@@ -51,7 +51,7 @@ struct DS {
     set<pii> s;
     void push(int x) {
         auto it=s.lower_bound(x);
-        vector<set::iterator> v;
+        vector<set<pii>::iterator> v;
     }
 };
 void solve() {
