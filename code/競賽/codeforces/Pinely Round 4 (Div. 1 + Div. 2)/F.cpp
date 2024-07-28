@@ -44,12 +44,16 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 vector<int> v;
-bool ok2(int a,int b,int c) {
+bool ok(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
-bool ok(int a,int b,int c,int d,int e,int f) {
-    return ok2(a,b,c)&&ok2(d,e,f);
-}
+struct DS {
+    set<pii> s;
+    void push(int x) {
+        auto it=s.lower_bound(x);
+        vector<set::iterator> v;
+    }
+};
 void solve() {
     int n,q;
     cin>>n>>q;
