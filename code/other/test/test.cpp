@@ -53,7 +53,7 @@ signed main() {
     int n=100;
     REP1(i,n) {
         vector<int> v;
-        REP(j,n) {
+        REP1(j,n) {
             if(isp(i^j)) {
                 // cout<<i<<' '<<j<<'\n';
                 v.pb(j);
