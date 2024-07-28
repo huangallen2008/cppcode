@@ -56,7 +56,7 @@ signed main() {
             nb++;
             now+=na;
         }
-        while(l<=r&&now>s) {
+        while(l<=r&&now>c) {
             if(s[l]=='a') {
                 na--;
                 now-=nb;
