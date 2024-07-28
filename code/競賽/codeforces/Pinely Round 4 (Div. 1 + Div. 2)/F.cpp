@@ -44,10 +44,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 // vector<int> v;
-
-struct DS {bool ok(const int a,const int b,const int c) {
+bool ok(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
+struct DS {
     set<pii> s;
     set<int> s1;
     vector<int> o;
@@ -147,7 +147,7 @@ struct DS {bool ok(const int a,const int b,const int c) {
             }
         }
     }
-    bool ok() {
+    bool ok1() {
         if(!s1.size()) return 0;
         return *s1.rbegin()-*s1.begin()>=3;
     }
@@ -175,7 +175,7 @@ void solve() {
         while (r < qu[i].s.s) ds.push(a[++r],r);
         while (l < qu[i].s.f) ds.pop(a[l],l),l++;
         while (r > qu[i].s.s) ds.pop(a[r],r),r++;
-        an[qu[i].f]=ds.ok();
+        an[qu[i].f]=ds.ok1();
     }
     REP(i,q) {
         if(an[i]) cout<<"yes\n";
