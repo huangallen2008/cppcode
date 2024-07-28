@@ -147,6 +147,10 @@ struct DS {
             }
         }
     }
+    bool ok() {
+        if(!s1.size()) return 0;
+        return *s1.rbegin()-*s1.begin()>=3;
+    }
 }ds;
 int sn=0;
 void solve() {
@@ -164,11 +168,17 @@ void solve() {
         cin>>qu[i].s.f>>qu[i].s.s;
     }
     sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; });
+    vector<bool> an(q);
     REP(i,q) {
-        while (l > ql) ds.push(a[--l]);
-        while (r < qr) ds.push(a[++r]);
-        while (l < ql) ds.pop(a[l++]);
-        while (r > qr) ds.pop(a[r--]);
+        while (l > qu[i].l) ds.push(a[--l]);
+        while (r < qu[i].r) ds.push(a[++r]);
+        while (l < qu[i].l) ds.pop(a[l++]);
+        while (r > qu[i].r) ds.pop(a[r--]);
+        an[qu[i].f]=ds.ok();
+    }
+    REP(i,q) {
+        if(an[i]) cout<<"yes\n";
+        else cout<<"no\n";
     }
 }
 signed main() {
