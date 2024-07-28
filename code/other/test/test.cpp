@@ -43,10 +43,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+bool isp(int n) {
+    if(n<=1) return 0;
+    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
+    return 1;
+}
 signed main() {
     IOS();
-    tuple<int,int,int> t={1,2,3};
-    auto [x,y,z]=t;
-    op(x)op(y)ope(z)
+    int n=100;
+    REP1(i,n) {
+        REP(j,n) {
+            if(isp(i^j)) {
+                cout<<i<<' '<<j<<'\n';
+            }
+        }
+    }
     return 0;
 }
