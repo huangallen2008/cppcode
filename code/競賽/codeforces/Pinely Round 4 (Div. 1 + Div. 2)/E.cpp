@@ -50,24 +50,11 @@ bool isp(int n) {
 }
 void solve() {
     int n;
-    // cin>>n;
-    n=rd(1,1000);
+    cin>>n;
     int an=(n>>1)+1;
-    // cout<<an<<'\n';
-    // REP1(i,n) cout<<(i>>1)+1<<' ';
-    vector<int> c(n+1);
-    REP1(i,n) c[i]=(i>>1)+1;
-    REP1(i,n) {
-        bool ok=1;
-        REP1(j,i-1) {
-            if(isp(i^j)&&c[i]==c[j]) {
-                ope("NONO")ope(n)ok=0;
-                break;
-            }
-        }if(!ok) break;
-    }
-    // cout<<'\n';
-    // entr
+    cout<<an<<'\n';
+    REP1(i,n) cout<<(i>>1)+1<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
