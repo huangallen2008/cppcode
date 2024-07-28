@@ -52,11 +52,14 @@ signed main() {
     IOS();
     int n=100;
     REP1(i,n) {
+        vector<int> v;
         REP(j,n) {
             if(isp(i^j)) {
-                cout<<i<<' '<<j<<'\n';
+                // cout<<i<<' '<<j<<'\n';
+                v.pb(j);
             }
         }
+        op(i)oparr(v)
     }
     return 0;
 }
