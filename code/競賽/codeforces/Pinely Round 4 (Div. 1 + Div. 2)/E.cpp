@@ -66,6 +66,7 @@ void solve() {
         }if(!ok) break;
     }
     cout<<'\n';
+    entr
 }
 signed main() {
     IOS();
