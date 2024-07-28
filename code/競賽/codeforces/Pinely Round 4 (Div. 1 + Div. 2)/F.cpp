@@ -55,7 +55,7 @@ struct DS {
         if(it!=s.end()) {
             nxt.pb(it);
             it=next(it);
-            if(it!=s.end()) nct.pb(it);
+            if(it!=s.end()) nxt.pb(it);
         }
         if(itl!=s.begin()) {
             itl=prev(itl);
