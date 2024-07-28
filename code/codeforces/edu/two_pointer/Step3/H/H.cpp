@@ -57,6 +57,7 @@ signed main() {
     int r=m,now=sumb,an=0;
     REP(l,n+1) {
         while(r>=0&&now>s) now-=b[r--];
+        if(now>s) break;
         op(l)ope(r)
         chmax(an,(r+1)*wb+l*wa);
         now+=a[l];
