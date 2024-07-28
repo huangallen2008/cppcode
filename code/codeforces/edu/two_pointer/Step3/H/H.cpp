@@ -51,8 +51,8 @@ signed main() {
     vector<int> a(n+1),b(m+1);
     REP1(i,n) cin>>a[i];
     REP1(i,m) cin>>b[i];
-    sort(ALL(a),so);
-    sort(ALL(b),so);
+    sort(a.begin()+1,a.end(),so);
+    sort(b.begin()+1,b.end(),so);
     REP1(i,n) a[i]+=a[i-1];
     REP1(i,m) b[i]+=b[i-1];
     oparr(a)oparr(b)
