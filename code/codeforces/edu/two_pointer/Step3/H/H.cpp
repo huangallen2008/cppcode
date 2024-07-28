@@ -55,12 +55,10 @@ signed main() {
     sort(b.begin()+1,b.end(),so);
     REP1(i,n) a[i]+=a[i-1];
     REP1(i,m) b[i]+=b[i-1];
-    oparr(a)oparr(b)
     int an=0;
     REP(na,n+1) {
         if(na*wa>s) continue;
         int nb=min((s-na*wa)/wb,m);
-        op(na)op(nb)ope(a[na]+b[nb])
         chmax(an,a[na]+b[nb]);
     }
     cout<<an<<'\n';
