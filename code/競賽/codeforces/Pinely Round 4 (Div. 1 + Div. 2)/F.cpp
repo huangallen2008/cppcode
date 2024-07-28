@@ -102,12 +102,12 @@ struct DS {
         s.insert({x,id});
     }
     void pop(int x,int id) {
-        auto it=s.find({x,id});
+        auto it0=s.find({x,id});
         if(o[id]==1) {
             o[id]=0;
             s1.erase(id);
         }
-        s.erase(it);
+        s.erase(it0);
         auto it=s.lower_bound({x,id}),itl=it;
         vector<set<pii>::iterator> nxt,las;
         if(it!=s.end()) {
