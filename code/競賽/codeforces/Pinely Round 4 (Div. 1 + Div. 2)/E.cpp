@@ -69,7 +69,7 @@ void solve() {
     int n,m;
     cin>>n>>m;
     if(n==1) {
-        cout<<"Bob\n";cout.flush();entr
+        cout<<"Bob\n";cout.flush();
         int c1,c2;
         cin>>c1>>c2;
         cout<<1<<' '<<c1<<'\n';
@@ -110,7 +110,7 @@ void solve() {
     }
 }
 signed main() {
-    // IOS();
+    IOS();
     int T;
     cin>>T;
     while(T--) 
