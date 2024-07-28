@@ -170,10 +170,10 @@ void solve() {
     sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; });
     vector<bool> an(q);
     REP(i,q) {
-        while (l > qu[i].l) ds.push(a[--l]);
-        while (r < qu[i].r) ds.push(a[++r]);
-        while (l < qu[i].l) ds.pop(a[l++]);
-        while (r > qu[i].r) ds.pop(a[r--]);
+        while (l > qu[i].s.f) ds.push(a[--l]);
+        while (r < qu[i].s.s) ds.push(a[++r]);
+        while (l < qu[i].s.f) ds.pop(a[l++]);
+        while (r > qu[i].s.s) ds.pop(a[r--]);
         an[qu[i].f]=ds.ok();
     }
     REP(i,q) {
