@@ -69,7 +69,7 @@ signed main() {
             }
         }
         if(i==5) {
-            // co[i]=3;
+            co[i]=3;
             continue;
         }
         // op(i)oparr(v)
