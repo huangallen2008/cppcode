@@ -108,11 +108,21 @@ void solve() {
             cin>>c1>>c2;
             if(c1>c2)swap(c1,c2);
             if(c2==3) {
-                if(v1.size()) {
-                    cout<<v1.back()<<' '<<3<<'\n';cout.flush();v1.pop_back();
+                if(c1==1) {
+                    if(v1.size()) {
+                        cout<<v1.back()<<' '<<1<<'\n';cout.flush();v1.pop_back();
+                    }
+                    else {
+                        cout<<v2.back()<<' '<<3<<'\n';cout.flush();v2.pop_back();
+                    }
                 }
                 else {
-                    cout<<v2.back()<<' '<<3<<'\n';cout.flush();v2.pop_back();
+                    if(v2.size()) {
+                        cout<<v2.back()<<' '<<2<<'\n';cout.flush();v2.pop_back();
+                    }
+                    else {
+                        cout<<v1.back()<<' '<<3<<'\n';cout.flush();v1.pop_back();
+                    }
                 }
             }
             else {
