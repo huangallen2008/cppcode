@@ -52,7 +52,7 @@ signed main() {
     REP(i,n) cin>>c[i];
     int r=0,now=0,val=0,an=0;
     REP(l,n) {
-        while(r<n&&now+w[r]<=s) now+=w[r],v+=c[r++];
+        while(r<n&&now+w[r]<=s) now+=w[r],val+=c[r++];
         chmax(an,val);
         val-=c[l];
         now-=w[l];
