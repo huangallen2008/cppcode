@@ -50,5 +50,6 @@ signed main() {
     auto it=s.lower_bound(0);
     auto it2=prev(it);
     ope("ok")
+    ope(it2->f)ope(it2->s)
     return 0;
 }
