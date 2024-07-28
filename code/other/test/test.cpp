@@ -65,7 +65,7 @@ signed main() {
                 }
             }if(!ok) break;
         }
-        if(ok) cout<<"YES"<<endl;
+        // if(ok) cout<<"YES"<<endl;
     }
     return 0;
 }
