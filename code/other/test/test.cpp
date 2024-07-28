@@ -50,33 +50,10 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int n=1000;
-    vector<int> co(n+1);
-    REP1(i,n) {
-        vector<int> v;
-        vector<int> c(i+1);
-        REP1(j,i) {
-            if(isp(i^j)) {
-                // cout<<i<<' '<<j<<'\n';
-                v.pb(j);
-                c[co[j]]=1;
-            }
-        }
-        REP1(j,i+1) {
-            if(c[j]==0) {
-                co[i]=j;
-                break;
-            }
-        }
-        if(i==5) {
-            co[i]=3;
-            continue;
-        }
-        // op(i)oparr(v)
-    }
-    oparr(co)
-    vector<int> v;
-    for(int i=2;i<=n;i+=4) v.pb(co[i]);
-    oparr(v)
+    set<int> s;
+    s.insert(10);
+    auto it=s.lower_bound(0);
+    auto it2=prev(it);
+    ope("ok")
     return 0;
 }
