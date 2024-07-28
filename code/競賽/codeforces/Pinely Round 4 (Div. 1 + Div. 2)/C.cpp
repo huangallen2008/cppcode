@@ -53,7 +53,7 @@ void solve() {
         int mx=0;
         REP(i,n) chmax(mx,a[i]);
         if(mx==0) break;
-        int v=mx>>1;
+        int v=mx+1>>1;
         if(v==0) {
             oparr(an)
             cout<<"-1\n";
