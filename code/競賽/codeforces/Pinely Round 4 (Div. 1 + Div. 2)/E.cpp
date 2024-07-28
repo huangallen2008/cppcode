@@ -47,6 +47,7 @@ void solve() {
     int n;
     cin>>n;
     int an=(n>>1)+1;
+    cout<<an<<'\n';
     REP1(i,an) cout<<(i>>1)+1<<' ';
     cout<<'\n';
 }
