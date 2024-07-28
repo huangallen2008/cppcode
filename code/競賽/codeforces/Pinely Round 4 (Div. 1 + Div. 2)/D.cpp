@@ -91,6 +91,13 @@ void solve() {
     }
     cout<<mx<<'\n';
     REP1(i,n) cout<<c[i]<<' ';
+    REP1(i,n) {
+        REP1(j,i-1) {
+            if(isp(i^j)&&c[i]==c[j]) {
+                ope("NOOOOOO")
+            }
+        }
+    }
     cout<<'\n';
 }
 signed main() {
