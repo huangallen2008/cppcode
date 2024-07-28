@@ -63,45 +63,17 @@ void solve() {
         cout<<"2\n1 2 2\n";
         return;
     }
-    int mx=0;
-    vector<int> c(n+1);
-    REP1(i,n) {
-        if(i==1) {
-            c[i]=1;
-            continue;
-        }
-        int k=i-2;
-        if(k%4==2) {
-            c[i]=2;
-            continue;
-        }
-        if(k%4==3) {
-            c[i]=1;
-            continue;
-        }
-        int rd=k>>2;
-        int rd2=rd>>4;
-        int fir=4*(rd2>>1)+2+1;
-        int rr=rd%16;
-        int rr2=rd%32;
-        if(4<=rr&&rr<12) {
-            int cof=fir+((rr&1)^(rr2>=16))+2;
-            c[i]=cof;
-        }
-        else {
-            int cof=fir+((rr&1)^(rr2>=16));
-            c[i]=cof;
-        }
-        chmax(mx,c[i]);
+    if(n==4) {
+        cout<<"3\n1 2 2 3\n";
+        return;
     }
-    cout<<mx<<'\n';
-    REP1(i,n) cout<<c[i]<<' ';
+    if(n==5) {
+        cout<<"3\n1 2 2 3 3\n";
+        return;
+    }
+    cout<<4<<'\n';
     REP1(i,n) {
-        REP1(j,i-1) {
-            if(isp(i^j)&&c[i]==c[j]) {
-                ope("NOOOOOO")
-            }
-        }
+        cout<<(i-1)%4+1<<' ';
     }
     cout<<'\n';
 }
