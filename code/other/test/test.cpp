@@ -43,13 +43,15 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bool isp(int n) {
+bool ispf(int n) {
     if(n<=1) return 0;
     for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
     return 1;
 }
 signed main() {
     IOS();
+    vector<int> isp(10000);
+    REP1(i,10000-1) isp[i]=ispf(i);
     REP1(rd,5000) {
         int n;
         // cin>>n;
@@ -59,7 +61,7 @@ signed main() {
             REP1(i,n) c[i]=(i>>1)+1;
         REP1(i,n) {
             REP1(j,i-1) {
-                if(isp(i^j)&&c[i]==c[j]) {
+                if(isp[i^j]&&c[i]==c[j]) {
                     op("NOOOOOO")ope(n)
                     ok=0;break;
                 }
