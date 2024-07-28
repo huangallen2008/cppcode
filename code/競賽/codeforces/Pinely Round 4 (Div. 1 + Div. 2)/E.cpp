@@ -50,7 +50,8 @@ bool isp(int n) {
 }
 void solve() {
     int n;
-    cin>>n;
+    // cin>>n;
+    n=rd(1,1000);
     int an=(n>>1)+1;
     cout<<an<<'\n';
     // REP1(i,n) cout<<(i>>1)+1<<' ';
