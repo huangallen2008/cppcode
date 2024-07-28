@@ -78,7 +78,6 @@ signed main() {
             }
         }
     }
-    cout<<an<<'\n';
     for(int x:id) cout<<x<<' ';
     cout<<'\n';
     return 0;
