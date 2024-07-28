@@ -51,7 +51,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     int r=0,an=0;
     REP(l,n) {
-        while(r<n&&a[l]+d<=a[r]) r++;
+        while(r<n&&a[l]+d>=a[r]) r++;
         an+=n-r;
     }
     cout<<an<<'\n';
