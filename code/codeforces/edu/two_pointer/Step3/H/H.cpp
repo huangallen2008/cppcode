@@ -54,8 +54,7 @@ signed main() {
     sort(ALL(b));
     REP1(i,n) a[i]+=a[i-1];
     REP1(i,m) b[i]+=b[i-1];
-    int sumb=0;
-    REP1(i,m) sumb+=b[i];
+    oparr(a)oparr(b)
     int an=0;
     REP(na,n+1) {
         if(na*wa>s) continue;
