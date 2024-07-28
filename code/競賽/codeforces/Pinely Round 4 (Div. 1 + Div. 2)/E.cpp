@@ -69,7 +69,11 @@ void solve() {
     int n,m;
     cin>>n>>m;
     if(n==1) {
-        dosomething
+        cout<<"Bob\n";cout.flush();
+        int c1,c2;
+        cin>>c1>>c2;
+        cout<<1<<' '<<c1<<'\n';
+        cout.flush();
     }
     g=Graph(n+1);
     ok=1;
