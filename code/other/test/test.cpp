@@ -50,6 +50,6 @@ signed main() {
     auto it=s.lower_bound(0);
     auto it2=prev(it);
     ope("ok")
-    cout<<(it2->f)<<(it2->s);
+    cout<<(*it2);
     return 0;
 }
