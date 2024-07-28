@@ -59,6 +59,7 @@ void dfs(int u) {
                 ok=0;
                 return;
             }
+            continue;
         }
         col[v]=3-col[u];
         dfs(v);
