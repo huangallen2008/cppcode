@@ -55,6 +55,7 @@ void solve() {
         if(mx==0) break;
         int v=mx>>1;
         if(v==0) {
+            oparr(an)
             cout<<"-1\n";
             return;
         }
