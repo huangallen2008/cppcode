@@ -110,7 +110,7 @@ void solve() {
     }
 }
 signed main() {
-    IOS();
+    // IOS();
     int T;
     cin>>T;
     while(T--) 
