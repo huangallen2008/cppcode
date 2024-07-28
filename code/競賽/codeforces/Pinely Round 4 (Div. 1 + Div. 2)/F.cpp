@@ -50,8 +50,24 @@ bool ok(int a,int b,int c) {
 struct DS {
     set<pii> s;
     void push(int x) {
-        auto it=s.lower_bound({x,0});
-        vector<set<pii>::iterator> v;
+        auto it=s.lower_bound({x,0}),itl=it;
+        vector<set<pii>::iterator> nxt,las;
+        if(it!=s.end()) {
+            nct.pb(it);
+            it=next(it);
+            if(it!=s.end()) nct.pb(it);
+        }
+        if(itl!=s.begin()) {
+            itl=prev(itl);
+            las.pb(itl);
+            if(itl!=s.begin()) {
+                itl=prev(itl);
+                las.pb(itl);
+            }
+        }
+        if(las.size()==2) {
+            bool oo=ok(*las[0]->f,*las[1]->f,x);
+        }
     }
 };
 void solve() {
