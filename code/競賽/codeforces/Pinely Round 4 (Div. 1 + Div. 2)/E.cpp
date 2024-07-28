@@ -53,7 +53,7 @@ void solve() {
     // cin>>n;
     n=rd(1,1000);
     int an=(n>>1)+1;
-    cout<<an<<'\n';
+    // cout<<an<<'\n';
     // REP1(i,n) cout<<(i>>1)+1<<' ';
     vector<int> c(n+1);
     REP1(i,n) c[i]=(i>>1)+1;
@@ -61,13 +61,13 @@ void solve() {
         bool ok=1;
         REP1(j,i-1) {
             if(isp(i^j)&&c[i]==c[j]) {
-                ope("NONO")ok=0;
+                ope("NONO")ope(n)ok=0;
                 break;
             }
         }if(!ok) break;
     }
-    cout<<'\n';
-    entr
+    // cout<<'\n';
+    // entr
 }
 signed main() {
     IOS();
