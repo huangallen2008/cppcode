@@ -53,7 +53,7 @@ signed main() {
         REP(j,n[i]) cin>>a[i][j];
         sort(ALL(a[i]));
     }
-    vector<int> rd;
+    vector<int> id;
     int an=inf;
     REP(rd,4) {
         r[0]=r[1]=r[2]=r[3]=0;
