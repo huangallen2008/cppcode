@@ -52,15 +52,15 @@ signed main() {
     REP1(i,m) cin>>b[i];
     sort(ALL(a));
     sort(ALL(b));
+    REP1(i,n) a[i]+=a[i-1];
+    REP1(i,m) b[i]+=b[i-1];
     int sumb=0;
     REP1(i,m) sumb+=b[i];
-    int r=m,now=sumb,an=0;
-    REP(l,n+1) {
-        while(r>=0&&now>s) now-=b[r--];
-        if(now>s) break;
-        op(l)ope(r)
-        chmax(an,(r+1)*wb+(l+1)*wa);
-        now+=a[l];
+    int an=0;
+    REP(na,n+1) {
+        if(na*wa>s) continue;
+        int nb=(s-na*wa)/wb;
+        chmax(an,a[na]+b[nb]);
     }
     cout<<an<<'\n';
     return 0;
