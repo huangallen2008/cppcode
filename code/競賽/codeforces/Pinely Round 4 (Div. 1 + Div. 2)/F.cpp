@@ -50,7 +50,7 @@ bool ok(int a,int b,int c) {
 struct DS {
     set<pii> s;
     void push(int x) {
-        auto it=s.lower_bound(x);
+        auto it=s.lower_bound({x,0});
         vector<set<pii>::iterator> v;
     }
 };
