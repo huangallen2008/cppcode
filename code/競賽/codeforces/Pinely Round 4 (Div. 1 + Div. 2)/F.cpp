@@ -171,10 +171,10 @@ void solve() {
     vector<bool> an(q);
     int l=0,r=0;
     REP(i,q) {
-        while (l > qu[i].s.f) ds.push(a[--l]);
-        while (r < qu[i].s.s) ds.push(a[++r]);
-        while (l < qu[i].s.f) ds.pop(a[l++]);
-        while (r > qu[i].s.s) ds.pop(a[r--]);
+        while (l > qu[i].s.f) ds.push(a[--l],l);
+        while (r < qu[i].s.s) ds.push(a[++r],r);
+        while (l < qu[i].s.f) ds.pop(a[l],l),l++;
+        while (r > qu[i].s.s) ds.pop(a[r],r),r++;
         an[qu[i].f]=ds.ok();
     }
     REP(i,q) {
