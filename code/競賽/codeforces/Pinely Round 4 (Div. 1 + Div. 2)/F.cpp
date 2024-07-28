@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 // vector<int> v;
 
-struct DS {bool ok(int a,int b,int c) {
+struct DS {bool ok(const int a,const int b,const int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
     set<pii> s;
