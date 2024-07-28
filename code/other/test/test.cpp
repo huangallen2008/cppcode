@@ -50,16 +50,19 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int n=100;
-    REP1(i,n) {
-        vector<int> v;
-        REP1(j,i) {
-            if(isp(i^j)) {
-                // cout<<i<<' '<<j<<'\n';
-                v.pb(j);
-            }
+    REP(rd,1000) {
+        int n=rd(1,1000);
+        cin>>n;
+            bool ok=1;
+        REP1(i,n) {
+            REP1(j,i-1) {
+                if(isp(i^j)&&c[i]!=c[j]) {
+                    op("NOOOOOO")ope(n)
+                    ok=0;break;
+                }
+            }if(!ok) break;
         }
-        op(i)oparr(v)
+        if(ok) cout<<"YES\n";
     }
     return 0;
 }
