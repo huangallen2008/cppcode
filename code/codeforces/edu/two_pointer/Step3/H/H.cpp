@@ -45,10 +45,19 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,m,s,A,B;
-    cin>>n>>m>>s>>A>>B;
-    vector<int> a(n),b(m);
-    REP(i,n) cin>>a[i];
-    REP(i,m) cin>>b[i];
+    int n,m,s,wa,wb;
+    cin>>n>>m>>s>>wa>>wb;
+    vector<int> a(n+1),b(m+1);
+    REP1(i,n) cin>>a[i];
+    REP1(i,m) cin>>b[i];
+    int sumb=0;
+    REP1(i,m) sumb+=b[i];
+    int r=m,now=sumb,an=0;
+    REP(l,n+1) {
+        while(r>=0&&now>s) now-=b[r--];
+        chmax(an,r-l);
+        now+=a[l];
+    }
+    cout<<an<<'\n';
     return 0;
 }
