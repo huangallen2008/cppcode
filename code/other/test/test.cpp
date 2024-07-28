@@ -52,5 +52,7 @@ signed main() {
     ope("ok")
     cout<<(*it);
     cout<<(*it2);
+    REP(i,10) it2=prev(it2);
+    cout<<*it2;
     return 0;
 }
