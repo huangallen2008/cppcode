@@ -71,5 +71,8 @@ signed main() {
         // op(i)oparr(v)
     }
     oparr(co)
+    vector<int> v;
+    for(int i=2;i<=n;i+=4) v.pb(co[i]);
+    oparr(v)
     return 0;
 }
