@@ -78,12 +78,13 @@ void solve() {
         int rd2=rd>>4;
         int fir=(rd2*4)+2+1;
         int rr=rd%16;
+        int rr2=rd%32;
         if(4<=rr&&rr<12) {
-            int cof=fir+((rr&1)^(rr>=8))+2;
+            int cof=fir+((rr&1)^(rr2>=16))+2;
             c[i]=cof;
         }
         else {
-            int cof=fir+((rr&1)^(rr>=8));
+            int cof=fir+((rr&1)^(rr2>=16));
             c[i]=cof;
         }
         chmax(mx,c[i]);
