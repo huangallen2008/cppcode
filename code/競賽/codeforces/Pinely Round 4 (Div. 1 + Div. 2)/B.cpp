@@ -52,6 +52,7 @@ void solve() {
     bool ok=1;
     REP1(i,n-1) if(b[i]!=a[i]&a[i-1]) ok=0;
     oparr(a)
+    REP1(i,n-1) cout<<(a[i]&a[i-1])<<' ';entr
     if(ok) {
         REP(i,n) cout<<a[i]<<' ';
         cout<<'\n';
