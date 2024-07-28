@@ -50,10 +50,15 @@ void solve() {
     vector<int> an;
     REP(i,n) cin>>a[i];
     while(1) {
-        int mx=0;
+        int mx=0,mn=inf;
         REP(i,n) chmax(mx,a[i]);
+        REP(i,n) chmin(mn,a[i]);
         if(mx==0) break;
-        int v=mx+1>>1;
+        if(mx==mn) {
+            an.pb(mx);
+            break;
+        }
+        int v=mx>>1;
         if(v==0) {
             oparr(an)
             cout<<"-1\n";
