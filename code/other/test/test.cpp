@@ -48,11 +48,11 @@ signed main() {
     set<int> s;
     s.insert(10);
     auto it=s.lower_bound(0);
-    auto it2=prev(it);
+    auto it2=next(it);
     ope("ok")
     cout<<(*it);
     cout<<(*it2);
-    REP(i,10) it2=prev(it2);
+    REP(i,10) it2=next(it2);
     cout<<*it2;
     return 0;
 }
