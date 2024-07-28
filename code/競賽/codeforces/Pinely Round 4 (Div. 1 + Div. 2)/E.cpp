@@ -53,7 +53,7 @@ void solve() {
     cin>>n;
     int an=(n>>1)+1;
     cout<<an<<'\n';
-    REP1(i,n) cout<<(i>>1)+1<<' ';
+    // REP1(i,n) cout<<(i>>1)+1<<' ';
     vector<int> c(n+1);
     REP1(i,n) c[i]=(i>>1)+1;
     REP1(i,n) {
