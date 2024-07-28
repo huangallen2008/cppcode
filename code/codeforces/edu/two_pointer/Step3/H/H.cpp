@@ -43,6 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+bool so(int a,int b) { return a>b; }
 signed main() {
     IOS();
     int n,m,s,wa,wb;
@@ -50,8 +51,8 @@ signed main() {
     vector<int> a(n+1),b(m+1);
     REP1(i,n) cin>>a[i];
     REP1(i,m) cin>>b[i];
-    sort(ALL(a));
-    sort(ALL(b));
+    sort(ALL(a),so);
+    sort(ALL(b),so);
     REP1(i,n) a[i]+=a[i-1];
     REP1(i,m) b[i]+=b[i-1];
     oparr(a)oparr(b)
