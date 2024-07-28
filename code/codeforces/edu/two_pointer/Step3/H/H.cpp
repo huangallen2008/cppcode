@@ -55,7 +55,7 @@ signed main() {
     int r=m,now=sumb,an=0;
     REP(l,n+1) {
         while(r>=0&&now>s) now-=b[r--];
-        chmax(an,r-l);
+        chmax(an,(r+1)*wb+l*wa);
         now+=a[l];
     }
     cout<<an<<'\n';
