@@ -59,7 +59,7 @@ signed main() {
     int an=0;
     REP(na,n+1) {
         if(na*wa>s) continue;
-        int nb=min((s-na*wa)/wb,nb);
+        int nb=min((s-na*wa)/wb,m);
         chmax(an,a[na]+b[nb]);
     }
     cout<<an<<'\n';
