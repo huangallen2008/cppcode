@@ -48,9 +48,17 @@ bool ok(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
 struct DS {
-    set<pii> s;
-    void push(int x) {
-        auto it=s.lower_bound({x,0}),itl=it;
+    multiset<pii> s;
+    multiset<int> s1;
+    vector<int> o;
+    void init(int n) {
+        o=vector<int>(n+1);
+    }
+    void push_1(int x) {
+        s1.insert(x);
+    }
+    void push(int x,int id) {
+        auto it=s.lower_bound({x,id}),itl=it;
         vector<set<pii>::iterator> nxt,las;
         if(it!=s.end()) {
             nxt.pb(it);
@@ -68,13 +76,27 @@ struct DS {
         if(las.size()==2) {
             bool oo=ok((*las[0]).f,(*las[1]).f,x);
             if(oo) { 
-                if((*las[1]).s==0) push_1((*las[1]).f);
-                pii tt=*las[1];
-                tt.s=1;
-                s.erase(las[1]);
-                s.insert(tt);
+                if(o[(*las[1]).s]==0) push_1((*las[1]).s);
+                o[(*las[1]).s]=1;
+            }
+            las.pop_back();
+        }
+        if(las.size()+nxt.size()>=2) {
+            bool oo=ok((*las[0]).f,(*nxt[0]).f,x);
+            if(oo) { 
+                if(o[(*las[0]).s]==0) push_1((*las[0]).s);
+                o[(*las[0]).s]=1;
+            }
+            las.pop_back();
+        }
+        if(nxt.size()==2) {
+            bool oo=ok((*nxt[0]).f,(*nxt[1]).f,x);
+            if(oo) { 
+                if(o[id]==0) push_1(id);
+                o[id]=1;
             }
         }
+        s.insert({x,id});
     }
 };
 void solve() {
