@@ -74,6 +74,7 @@ void solve() {
         cin>>c1>>c2;
         cout<<1<<' '<<c1<<'\n';
         cout.flush();
+        return;
     }
     g=Graph(n+1);
     ok=1;
