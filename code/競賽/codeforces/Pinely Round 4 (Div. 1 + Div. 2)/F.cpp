@@ -60,10 +60,6 @@ void solve() {
     vector<int> a(n+1);
     REP1(i,n) cin>>a[i];
     vector<int> c(n);
-    REP1(l,n-5) {
-        int &v1=a[l],&v2=a[l+1],&v3=a[l+2],&v4=a[l+3],&v5=a[l+4],&v6=a[l+5];
-        v={a[l],a[l+1],a[l+2],a[l+3],a[l+4],a[l+5]};
-        }
     REP1(i,n) c[i]+=c[i-1];
     REP(i,q) {
         int l,r;
