@@ -169,6 +169,7 @@ void solve() {
     }
     sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; });
     vector<bool> an(q);
+    int l=0,r=0;
     REP(i,q) {
         while (l > qu[i].s.f) ds.push(a[--l]);
         while (r < qu[i].s.s) ds.push(a[++r]);
