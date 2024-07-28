@@ -51,6 +51,7 @@ bool isp(int n) {
 signed main() {
     IOS();
     REP(rd,1000) {
+        int n;
         cin>>n;
             bool ok=1;
             vector<int> c(n+1);
