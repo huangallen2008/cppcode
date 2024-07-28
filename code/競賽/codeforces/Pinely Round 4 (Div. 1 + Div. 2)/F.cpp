@@ -66,7 +66,7 @@ struct DS {
             }
         }
         if(las.size()==2) {
-            bool oo=ok((*las[0]).f,*las[1].f,x);
+            bool oo=ok((*las[0]).f,(*las[1]).f,x);
         }
     }
 };
