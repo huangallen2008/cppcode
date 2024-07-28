@@ -69,7 +69,7 @@ struct DS {
             bool oo=ok((*las[0]).f,(*las[1]).f,x);
             if(oo) { 
                 if((*las[1]).s==0) push_1((*las[1]).f);
-                (*las).s=1;
+                *(las->s)=1;
             }
         }
     }
