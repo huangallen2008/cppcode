@@ -47,8 +47,11 @@ void solve() {
     int n;
     cin>>n;
     vector<int> c(n+1);
-    int rod=n-2>>2;
     REP1(i,n) {
+        if(i==1) {
+            c[i]=1;
+            continue;
+        }
         int k=i-2;
         if(k%4==2) {
             c[i]=2;
@@ -60,7 +63,7 @@ void solve() {
         }
         int rd=k>>2;
         int rd2=rd>>4;
-        int fir=(rd2*4)+2;
+        int fir=(rd2*4)+2+1;
         int rr=rd%16;
         if(4<=rr&&rr<12) {
             int cof=fir+(rr&1)+2;
