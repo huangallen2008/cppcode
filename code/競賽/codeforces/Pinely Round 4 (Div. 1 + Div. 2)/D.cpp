@@ -46,6 +46,19 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
+    if(n==1) {
+        cout<<"1\n1\n";
+        return ;
+    }
+    if(n==2) {
+        cout<<"2\n1 2\n";
+        return;
+    }
+    if(n==3) {
+        cout<<"2\n1 2 2\n";
+        return;
+    }
+    int mx=0;
     vector<int> c(n+1);
     REP1(i,n) {
         if(i==1) {
@@ -73,7 +86,9 @@ void solve() {
             int cof=fir+(rr&1);
             c[i]=cof;
         }
+        chmax(mx,c[i]);
     }
+    cout<<mx<<'\n';
     REP1(i,n) cout<<c[i]<<' ';
     cout<<'\n';
 }
