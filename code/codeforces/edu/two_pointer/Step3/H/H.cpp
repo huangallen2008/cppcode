@@ -50,6 +50,8 @@ signed main() {
     vector<int> a(n+1),b(m+1);
     REP1(i,n) cin>>a[i];
     REP1(i,m) cin>>b[i];
+    sort(ALL(a));
+    sort(ALL(b));
     int sumb=0;
     REP1(i,m) sumb+=b[i];
     int r=m,now=sumb,an=0;
