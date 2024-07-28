@@ -176,7 +176,7 @@ void solve() {
         while (l < qu[i].s.f) ds.pop(a[l],l),l++;
         while (r > qu[i].s.s) ds.pop(a[r],r),r++;
         an[qu[i].f]=ds.ok1();
-        ope(an[qu[i].f])
+        ope(an[qu[i].f])ope(qu[i].f)
     }
     REP(i,q) {
         if(an[i]) cout<<"yes\n";
