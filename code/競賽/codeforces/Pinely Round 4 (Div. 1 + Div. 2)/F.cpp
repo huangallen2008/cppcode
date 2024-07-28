@@ -163,7 +163,7 @@ void solve() {
         qu[i].f=i;
         cin>>qu[i].s.f>>qu[i].s.s;
     }
-    sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; })
+    sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; });
     REP(i,q) {
         while (l > ql) ds.push(a[--l]);
         while (r < qr) ds.push(a[++r]);
