@@ -60,7 +60,6 @@ void solve() {
         }
         int v=mx>>1;
         if(v==0) {
-            oparr(an)
             cout<<"-1\n";
             return;
         }
