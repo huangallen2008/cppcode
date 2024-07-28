@@ -74,7 +74,7 @@ signed main() {
             int val=mxv-a[rd][l];
             if(val<an) {
                 an=val;
-                id={r[0],r[1],r[2],r[3]};
+                id={a[0][r[0]],a[1][r[1]],a[2][r[2]],a[3][r[3]]};
             }
         }
     }
