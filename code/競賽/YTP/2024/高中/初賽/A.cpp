@@ -45,6 +45,18 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    int n;
+    cin>>n;
+    string an="";
+    int sc=0;
+    REP(i,n) {
+        string s;
+        cin>>s;
+        int c=0;
+        cin>>c;
+        if(c>sc) {
+            s=
+        }
+    }
     return 0;
 }
