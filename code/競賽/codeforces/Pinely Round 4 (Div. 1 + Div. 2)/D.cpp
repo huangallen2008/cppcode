@@ -76,7 +76,7 @@ void solve() {
         }
         int rd=k>>2;
         int rd2=rd>>4;
-        int fir=(rd2*2)+2+1;
+        int fir=4*(rd2>>1)+2+1;
         int rr=rd%16;
         int rr2=rd%32;
         if(4<=rr&&rr<12) {
