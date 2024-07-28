@@ -50,9 +50,10 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    REP(rd,1000) {
+    REP1(rd,5000) {
         int n;
-        cin>>n;
+        // cin>>n;
+        n=rd;
             bool ok=1;
             vector<int> c(n+1);
             REP1(i,n) c[i]=(i>>1)+1;
