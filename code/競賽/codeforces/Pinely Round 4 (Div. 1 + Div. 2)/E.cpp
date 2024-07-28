@@ -110,6 +110,8 @@ void solve() {
             cout.flush();
         }
     }
+    int x;
+    cin>>x>>x;
 }
 signed main() {
     IOS();
