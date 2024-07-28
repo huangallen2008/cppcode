@@ -63,8 +63,7 @@ void solve() {
     REP1(l,n-5) {
         int &v1=a[l],&v2=a[l+1],&v3=a[l+2],&v4=a[l+3],&v5=a[l+4],&v6=a[l+5];
         v={a[l],a[l+1],a[l+2],a[l+3],a[l+4],a[l+5]};
-        c[l]=(ok(v1,v2,v3,v4,v5,v6)||ok(v1,v2,v4,v3,v5,v6)||ok(v1,v2,v5,v3,v4,v6)||ok(v1,v2,v6,v3,v4,v5)||ok(v1,v3,v4,v2,v5,v6)||ok(v1,v3,v5,v2,v4,v6)||ok(v1,v3,v6,v4,v5,v2)||ok(v1,v4,v5,v2,v3,v6)||ok(v1,v4,v6,v2,v3,v5)||ok(v1,v5,v6,v2,v3,v4));
-    }
+        }
     REP1(i,n) c[i]+=c[i-1];
     REP(i,q) {
         int l,r;
