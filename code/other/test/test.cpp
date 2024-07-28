@@ -58,7 +58,7 @@ signed main() {
             REP1(i,n) c[i]=(i>>1)+1;
         REP1(i,n) {
             REP1(j,i-1) {
-                if(isp(i^j)&&c[i]!=c[j]) {
+                if(isp(i^j)&&c[i]==c[j]) {
                     op("NOOOOOO")ope(n)
                     ok=0;break;
                 }
