@@ -43,18 +43,67 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bool isp(int n) {
-    if(n<=1) return 0;
-    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
-    return 1;
+pii qu() {
+    cout<<"1 2\n";cout.flush();
+    int u,c;
+    cin>>u>>c;
+    return {u,c};
+}
+Graph g;
+vector<int> col;
+bool ok;
+void dfs(int u) {
+    for(int v:g[u]) {
+        if(col[v]!=0) {
+            if(col[v]!=3-col[u]) {
+                ok=0;
+                return;
+            }
+        }
+        col[v]=3-col[u];
+        dfs(v);
+        if(!ok) return;
+    }
 }
 void solve() {
-    int n;
-    cin>>n;
-    int an=(n>>1)+1;
-    cout<<an<<'\n';
-    REP1(i,n) cout<<(i>>1)+1<<' ';
-    cout<<'\n';
+    int n,m;
+    cin>>n>>m;
+    if(n==1) {
+        dosomething
+    }
+    g=Graph(n+1);
+    ok=1;
+    vector<bool> vis(n+1);
+    col=vector<int>(n+1);
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v;
+        g[u].pb(v);
+        g[v].pb(u);
+    }
+    cout<<"Alice\n";cout.flush();
+    pii ret=qu();
+    col[ret.f]=ret.s;
+    dfs(ret.f);
+    vis[ret.f]=1;
+    if(!ok) {
+        REP1(i,n-1) qu();
+        return;
+    }
+    REP1(i,n-2) {
+        pii ret=qu();
+        if(col[ret.f]!=ret.s) {
+            REP(rd,n-i-1) qu();
+            return;
+        }
+        vis[ret.f]=1;
+    }
+    REP1(i,n) {
+        if(!vis[i]) {
+            cout<<3-col[i]<<' '<<3<<'\n';
+            cout.flush();
+        }
+    }
 }
 signed main() {
     IOS();
