@@ -53,7 +53,7 @@ struct DS {
         auto it=s.lower_bound({x,0}),itl=it;
         vector<set<pii>::iterator> nxt,las;
         if(it!=s.end()) {
-            nct.pb(it);
+            nxt.pb(it);
             it=next(it);
             if(it!=s.end()) nct.pb(it);
         }
