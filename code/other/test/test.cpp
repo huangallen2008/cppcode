@@ -50,8 +50,8 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int n=100;
-    vector<int> co(101);
+    int n=1000;
+    vector<int> co(n+1);
     REP1(i,n) {
         vector<int> v;
         vector<int> c(i+1);
