@@ -59,7 +59,7 @@ void solve() {
     REP1(i,n) {
         bool ok=1;
         REP1(j,i-1) {
-            if(isp(i,j)&&c[i]==c[j]) {
+            if(isp(i^j)&&c[i]==c[j]) {
                 ope("NONO")ok=0;
                 break;
             }
