@@ -87,31 +87,44 @@ void solve() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    cout<<"Alice\n";cout.flush();
-    pii ret=qu();
-    col[ret.f]=ret.s;
-    dfs(ret.f);
-    vis[ret.f]=1;
+    col[1]=1;
+    dfs(1);
     if(!ok) {
-        REP1(i,n-1) qu();
-        return;
-    }
-    REP1(i,n-2) {
-        pii ret=qu();
-        if(col[ret.f]!=ret.s) {
-            REP(rd,n-i-1) qu();
+        cout<<"Alice\n";cout.flush();
+        if(!ok) {
+            REP1(i,n) qu();
             return;
         }
-        vis[ret.f]=1;
     }
-    REP1(i,n) {
-        if(!vis[i]) {
-            cout<<3-col[i]<<' '<<3<<'\n';
-            cout.flush();
+    else {
+        cout<<"Bob\n";cout.flush();
+        vector<int> v1,v2;
+        REP1(i,n) {
+            if(col[i]==1) v1.pb(i);
+            else v2.pb(i);
+        }
+        REP(rd,n) {
+            int c1,c2;
+            cin>>c1>>c2;
+            if(c1>c2)swap(c1,c2);
+            if(c2==3) {
+                if(v1.size()) {
+                    cout<<v1.back()<<' '<<3<<'\n';cout.flush();v1.pop_back();
+                }
+                else {
+                    cout<<v2.back()<<' '<<3<<'\n';cout.flush();v2.pop_back();
+                }
+            }
+            else {
+                if(v1.size()) {
+                    cout<<v1.back()<<' '<<1<<'\n';cout.flush();v1.pop_back();
+                }
+                else {
+                    cout<<v2.back()<<' '<<2<<'\n';cout.flush();v2.pop_back();
+                }
+            }
         }
     }
-    int x;
-    cin>>x>>x;
 }
 signed main() {
     IOS();
