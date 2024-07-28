@@ -59,7 +59,7 @@ signed main() {
         while(r>=0&&now>s) now-=b[r--];
         if(now>s) break;
         op(l)ope(r)
-        chmax(an,(r+1)*wb+l*wa);
+        chmax(an,(r+1)*wb+(l+1)*wa);
         now+=a[l];
     }
     cout<<an<<'\n';
