@@ -63,6 +63,7 @@ void solve() {
         for(int i=l;i<r;i++) v.pb(a[i]);
         sort(ALL(v));
         int ok=0;
+        ope(r-l)
         REP(i,r-l-2) {
             if(okt(v[i],v[i+1],v[i+2])) {
                 ok++,i+=2;
