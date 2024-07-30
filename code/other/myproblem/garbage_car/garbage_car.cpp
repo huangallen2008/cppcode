@@ -9,30 +9,33 @@ using namespace std;
 const int maxv=1e9+5;
 const int inf=(1ll<<62);
 struct people {
-    map<int,int> mp,imp;
+    map<int,int> mp,imp,mp,impt;
+
     int an=0;
     void init() {
         mp[-inf]=0,mp[inf]=inf;
+        mpt[-inf]=-inf,mpt[inf]=inf;
         imp[-inf]=0,imp[inf]=inf;
+        impt[-inf]=-inf,impt[inf]=inf;
     }
-    void ins(map<int,int> &mp,int x,int y) {
+    void ins(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         auto it=prev(mp.upper_bound(x));
         if(it->s>=y) return;
         mp[x]=y;
+        mpt[x+y]=x;
+        auto itt=mpt.find(x+y);
         it=mp.find(x);
-        while(next(it)->s<=it->s) mp.erase(next(it));
+        while(next(it)->s<=it->s) {
+            mp.erase(next(it));
+            mpt.erase(next(itt));
+        }
     }
-    int bs(map<int,int> &mp,int x,int y) {
+    int bs(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         if(prev(mp.upper_bound(x))->s<=y) return 0;
         int l=0,r=maxv,m;
-        auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
-        while(it_l!=it_r) {
-            auto it_m=mp.lower_bound(it_l->f+it_r->f>>1);
-            if(it_m==it_r) it_m=prev(it_m);
-            if(y+x<=it_m->f+it_m->s) it_r=it_m;
-            else it_l=next(it_m);
-        }
-        return min(abs(it_l->s-y),abs(next(it_l)->f-x));
+        // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
+        auto it=prev(mpt.upper_bound(x+y));
+        return min(abs(it->f-it->s-y),abs(next(it)->s-x));
     }
     void insert(int x,int y) {
         ins(mp,x,y),ins(imp,y,x);
