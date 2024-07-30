@@ -71,7 +71,7 @@ void solve() {
                     for(int l=i;l<i+6&&l<len;l++) {
                         if(l!=i&&l!=j&&l!=k) res.pb(v[l]);
                     }
-                    // op(i)op(j)op(k)oparr(res)
+                    op(i)op(j)op(k)oparr(res)
                     if(res.size()<3) continue;
                     if(okt(v[i],v[j],v[k])&&okt(res[0],res[1],res[2])) {
                         ok=1;break;
