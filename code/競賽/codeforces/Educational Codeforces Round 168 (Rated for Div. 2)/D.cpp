@@ -64,7 +64,7 @@ void dfs(int u) {
     else {
         k[u]=(nv+mn*t.size())/(t.size()+1);
     }
-    // op(u)ope(k[u])
+    op(u)ope(k[u])
 }
 void solve() {
     int n;
