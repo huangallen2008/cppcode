@@ -72,8 +72,8 @@ void solve() {
                 s[i]='(';
             }
         }
-        if(s[i]=='(') now++;
-        if(s[i]==')') {
+        else if(s[i]=='(') now++;
+        else if(s[i]==')') {
             now--;
             if(now<0) {
                 auto t=pq.top();
