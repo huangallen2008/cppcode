@@ -63,8 +63,15 @@ void solve() {
         for(int i=l;i<r;i++) v.pb(a[i]);
         sort(ALL(v));
         bool ok=0;
-        if(v.size()>0)oparr(v)
         int len=r-l;
+        int cnt=0;
+        REP(i,r-l-2) {
+            if(okt(v[i],v[i+1],v[i+2])) {cnt++,i+=2;}
+        }
+        if(cnt>=2) {
+            cout<<"YES\n";
+            continue;
+        }
         REP(i,r-l) {
             for(int j=i+1;j<i+6&&j<len;j++) {
                 for(int k=j+1;k<i+6&&k<len;k++) {
