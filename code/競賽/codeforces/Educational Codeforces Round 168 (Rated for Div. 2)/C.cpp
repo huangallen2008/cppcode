@@ -54,6 +54,7 @@ void solve() {
         if(s[i]=='_') cnt--;
     }
     //l+r=cnt,l-r=-v
+    op(cnt)ope(v)
     int l=cnt-v>>1,r=cnt+v>>1;
     int now=0;
     priority_queue<int> pq;
