@@ -73,7 +73,6 @@ void solve() {
             cout<<"YES\n";
             continue;
         }
-        oparr(v)
         REP(i,r-l-5) {
             for(auto tt:t) {
                 if(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[4]],v[i+tt[5]])) {
