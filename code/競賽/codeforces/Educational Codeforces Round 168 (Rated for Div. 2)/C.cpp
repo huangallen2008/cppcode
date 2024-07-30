@@ -54,7 +54,7 @@ void solve() {
         if(s[i]=='_') cnt--;
     }
     //l-r=v,l+r=cnt
-    op(cnt)ope(v)
+    op(cnt)ope(v)ope(cnt-v)
     int l=v+cnt>>1,r=(cnt-v)>>1;
     int now=0;
     REP(i,n) {
