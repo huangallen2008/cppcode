@@ -38,8 +38,8 @@ struct people {
         return min(abs(it->f-it->s-y),abs(next(it)->s-x));
     }
     void insert(int x,int y) {
-        ins(mp,x,y),ins(imp,y,x);
-        an=max(an, max(bs(mp,x,y)>>1,bs(imp,y,x)>>1));
+        ins(mp,mpt,x,y),ins(imp,impt,y,x);
+        an=max(an, max(bs(mp,mpt,x,y)>>1,bs(imp,impt,y,x)>>1));
     }
     int get_ans() {
         return an;
