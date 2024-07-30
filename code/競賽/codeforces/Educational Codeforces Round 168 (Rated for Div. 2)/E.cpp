@@ -99,7 +99,7 @@ void solve() {
     REP1(i,n) {
         if(a[i]>=n) continue;
         int res=id[a[i]].size()-1;
-        for(int x=resok;r>0;r--) {
+        for(int x=resok;x>0;x--) {
             if(bit.sum()-bit.pre(la[x].back())<x) {
                 resok--;
                 continue;
