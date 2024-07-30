@@ -112,6 +112,8 @@ void solve() {
             while(res>0&&id[a[i]][res]>ret) {
                 bit.ud(id[a[i]][res--],-1);
             }
+            op(i)op(x)
+            REP1(tt,n) cout<<bit.val(tt)<<' ';;entr
         }
     }
     REP1(i,n) {
@@ -123,7 +125,7 @@ void solve() {
         for(auto [u,id]:qu[x]) {
             if(a[u]>=la[x].size()) an[id]=1;
             else {
-                if(u>la[x][a[u]]) an[id]=0;
+                if(u>=la[x][a[u]]) an[id]=0;
                 else an[id]=1;
             }
         }
