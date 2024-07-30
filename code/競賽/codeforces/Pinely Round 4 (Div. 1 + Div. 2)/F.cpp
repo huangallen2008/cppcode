@@ -55,22 +55,30 @@ void solve() {
         int l,r;
         cin>>l>>r;
         l--;
-        if(r-l>=40) {
+        if(r-l>=50) {
             cout<<"YSE\n";
             continue;
         }
         vector<int> v;
         for(int i=l;i<r;i++) v.pb(a[i]);
         sort(ALL(v));
-        int ok=0;
-        ope(r-l)
-        REP(i,r-l-2) {
-            if(okt(v[i],v[i+1],v[i+2])) {
-                ok++,i+=2;
-                op(i)ope(ok)
+        bool ok=0;
+        REP(i,r-l) {
+            for(int j=i+1;j<i+6;j++) {
+                for(int k=j+1;k<i+6;k++) {
+                    vector<int> res;
+                    for(int l=i;l<i+6;l++) {
+                        if(l!=i&&l!=j&&l!=k) res.pb(l);
+                    }
+                    if(okt(i,j,k)&&okt(l[0],l[1],l[2])) {
+                        ok=1;break;
+                    }
+                }
+                if(ok) break;
             }
-        } 
-        if(ok>=2) cout<<"YES\n";
+            if(ok) break;
+        }
+        if(ok) cout<<"YES\n";
         else cout<<"NO\n";
     }
 }
