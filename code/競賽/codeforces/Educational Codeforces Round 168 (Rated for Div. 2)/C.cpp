@@ -55,20 +55,33 @@ void solve() {
     }
     int l=v-cnt>>1,r=cnt+v>>1;
     int now=0;
+    priority_queue<int> pq;
     REP(i,n) {
         if(s[i]=='_') {
             if(now>0&&r>0) {
                 now--,r--;
                 s[i]=')';
+                pq.push(i);
             }
             else {
+                if(l==0) {
+
+                }
                 now++;
                 l--;
                 s[i]='(';
             }
         }
         if(s[i]=='(') now++;
-        if(s[i]==')') now--;
+        if(s[i]==')') {
+            now--;
+            if(now<0) {
+                auto t=pq.top();
+                pq.pop();
+                s[t]='(';
+                l--,r++,now+=2;
+            }
+        }
     }
     int an=0;
     REP(i,n) {
