@@ -76,7 +76,6 @@ void solve() {
         int p;
         cin>>p;
         p--;
-        if(i==0) continue;
         g[p].pb(i);
     }
     dfs(0);
