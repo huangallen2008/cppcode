@@ -80,6 +80,7 @@ void solve() {
                     ope("ok")
                 }
                 ope(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[3]],v[i+tt[5]]))
+                op(v[i+tt[0]])op(v[i+tt[1]])op(v[i+tt[2]])op(v[i+tt[3]])op(v[i+tt[3]])ope(v[i+tt[5]])
                 if(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[3]],v[i+tt[5]])) {
                     ok=1;
                     break;
