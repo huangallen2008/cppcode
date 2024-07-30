@@ -43,144 +43,33 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-// vector<int> v;
 bool ok(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
-struct DS {
-    set<pii> s;
-    set<int> s1;
-    vector<int> o;
-    void init(int n) {
-        o=vector<int>(n+1);
-    }
-    void push_1(int x) {
-        s1.insert(x);
-    }
-    void pop_1(int x) {
-        if(s1.find(x)!=s1.end()) s1.erase(x);
-    }
-    void push(int x,int id) {
-        auto it=s.lower_bound({x,id}),itl=it;
-        vector<set<pii>::iterator> nxt,las;
-        if(it!=s.end()) {
-            nxt.pb(it);
-            it=next(it);
-            if(it!=s.end()) nxt.pb(it);
-        }
-        if(itl!=s.begin()) {
-            itl=prev(itl);
-            las.pb(itl);
-            if(itl!=s.begin()) {
-                itl=prev(itl);
-                las.pb(itl);
-            }
-        }
-        if(las.size()==2) {
-            bool oo=ok((*las[0]).f,(*las[1]).f,x);
-            if(oo) { 
-                push_1((*las[1]).s);
-                o[(*las[1]).s]=1;
-            }
-            las.pop_back();
-        }
-        if(las.size()+nxt.size()>=2) {
-            bool oo=ok((*las[0]).f,(*nxt[0]).f,x);
-            if(oo) { 
-                push_1((*las[0]).s);
-                o[(*las[0]).s]=1;
-            }
-            las.pop_back();
-        }
-        if(nxt.size()==2) {
-            bool oo=ok((*nxt[0]).f,(*nxt[1]).f,x);
-            if(oo) { 
-                push_1(id);
-                o[id]=1;
-            }
-        }
-        s.insert({x,id});
-    }
-    void pop(int x,int id) {
-        auto it0=s.find({x,id});
-        if(o[id]==1) {
-            o[id]=0;
-            s1.erase(id);
-        }
-        s.erase(it0);
-        auto it=s.lower_bound({x,id}),itl=it;
-        vector<set<pii>::iterator> nxt,las;
-        if(it!=s.end()) {
-            nxt.pb(it);
-            it=next(it);
-            if(it!=s.end()) nxt.pb(it);
-        }
-        if(itl!=s.begin()) {
-            itl=prev(itl);
-            las.pb(itl);
-            if(itl!=s.begin()) {
-                itl=prev(itl);
-                las.pb(itl);
-            }
-        }
-        if(las.size()==2) {
-            bool oo=ok((*las[0]).f,(*las[1]).f,x);
-            if(!oo) { 
-                pop_1((*las[1]).s);
-                o[(*las[1]).s]=0;
-            }
-            las.pop_back();
-        }
-        if(las.size()+nxt.size()>=2) {
-            bool oo=ok((*las[0]).f,(*nxt[0]).f,x);
-            if(!oo) { 
-                pop_1((*las[0]).s);
-                o[(*las[0]).s]=0;
-            }
-            las.pop_back();
-        }
-        if(nxt.size()==2) {
-            bool oo=ok((*nxt[0]).f,(*nxt[1]).f,x);
-            if(!oo) { 
-                pop_1(id);
-                o[id]=0;
-            }
-        }
-    }
-    bool ok1() {
-        if(!s1.size()) return 0;
-        return *s1.rbegin()-*s1.begin()>=3;
-    }
-}ds;
-int sn=0;
 void solve() {
     int n,q;
     cin>>n>>q;
-    sn=sqrt(n);
-    ds.init(n);
-    vector<int> a(n+1);
-    REP1(i,n) cin>>a[i];
-    vector<int> c(n);
-    REP1(i,n) c[i]+=c[i-1];
-    vector<pipii> qu(q);
-    REP(i,q) {
-        qu[i].f=i;
-        cin>>qu[i].s.f>>qu[i].s.s;
-    }
-    sort(ALL(qu),[&](pipii a,pipii b) { if((int)a.s.f/sn==(int)b.s.f/sn) return a.s.s<b.s.s;return a.s.f/sn<b.s.f/sn; });
-    vector<bool> an(q);
-    int l=1,r=0;
-    REP(i,q) {
-        while (l > qu[i].s.f) l--,ds.push(a[l],l);
-        while (r < qu[i].s.s) r++,ds.push(a[r],r);
-        while (l < qu[i].s.f) ds.pop(a[l],l),l++;
-        while (r > qu[i].s.s) ds.pop(a[r],r),r++;
-        an[qu[i].f]=ds.ok1();
-        ope(an[qu[i].f])ope(qu[i].f)
-    }
-    REP(i,q) {
-        if(an[i]) cout<<"yes\n";
-        else cout<<"no\n";
+    vector<int> a(n);
+    REP(i,n) cin>>a[i];
+    REP(rd,q) {
+        int l,r;
+        cin>>l>>r;
+        l--;
+        if(r-l>=40) {
+            cout<<"YSE\n";
+            continue;
+        }
+        vector<int> v;
+        for(int i=l;i<r;i++) v.pb(a[i]);
+        sort(ALL(v));
+        int ok=0;
+        REP(i,r-l-2) {
+            if(ok(v[i],v[i+1],v[i+2])) {
+                ok++,i+=2;
+            }
+        } 
+        if(ok>=2) cout<<"YES\n";
+        else cout<<"NO\n";
     }
 }
 signed main() {
