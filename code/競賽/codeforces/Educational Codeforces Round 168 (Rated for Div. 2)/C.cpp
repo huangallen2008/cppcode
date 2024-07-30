@@ -53,8 +53,6 @@ void solve() {
         if(s[i]==')') v--;
         if(s[i]=='_') cnt--;
     }
-    //l-r=v,l+r=cnt
-    // op(cnt)ope(v)ope(cnt-v)
     int l=v-cnt>>1,r=cnt+v>>1;
     int now=0;
     REP(i,n) {
@@ -77,7 +75,6 @@ void solve() {
         if(s[i]=='(') an-=i;
         else an+=i;
     }
-    // op(l)op(r)ope(s)
     cout<<an<<'\n';
 }
 signed main() {
