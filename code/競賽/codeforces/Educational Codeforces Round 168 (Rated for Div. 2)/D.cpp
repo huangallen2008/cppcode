@@ -61,7 +61,7 @@ void solve() {
     k=vector<int>(n);
     g=Graph(n);
     REP(i,n) cin>>v[i];
-    REP(i,n) {
+    REP1(i,n-1) {
         int p;
         cin>>p;
         p--;
