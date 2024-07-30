@@ -113,6 +113,7 @@ void solve() {
     }
     vector<bool> an(q);
     REP1(x,n) {
+        ope(x)
         for(auto [u,id]:qu[x]) {
             if(a[u]>=la[x].size()) an[id]=1;
             else {
