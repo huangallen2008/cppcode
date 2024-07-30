@@ -21,7 +21,6 @@ const int maxv=1e9+5;
 const int inf=(1ll<<62);
 struct people {
     map<int,int> mp,imp,mpt,impt;
-
     int an=0;
     void init() {
         mp[-inf]=0,mp[inf]=inf;
@@ -43,12 +42,7 @@ struct people {
     }
     int bs(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         if(prev(mp.upper_bound(x))->s<=y) return 0;
-        int l=0,r=maxv,m;
-        // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
         auto it=prev(mpt.upper_bound(x+y));
-        op(it->f)ope(it->s)
-        op(next(it)->f)ope(next(it)->s)
-        ope(min(abs(it->f-it->s-y),abs(next(it)->s-x)));
         return min(abs(it->f-it->s-y),abs(next(it)->s-x))+1;
     }
     void insert(int x,int y) {
@@ -70,7 +64,6 @@ signed main() {
         cin>>x>>y;
         people.insert(x,y);
         cout<<people.get_ans()<<'\n';
-        cout<<endl;
     }
     return 0;
 }
