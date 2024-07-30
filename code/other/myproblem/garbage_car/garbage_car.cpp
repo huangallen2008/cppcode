@@ -39,6 +39,7 @@ struct people {
     }
     void insert(int x,int y) {
         ins(mp,mpt,x,y),ins(imp,impt,y,x);
+        cout<<"ok"<<endl;
         an=max(an, max(bs(mp,mpt,x,y)>>1,bs(imp,impt,y,x)>>1));
     }
     int get_ans() {
