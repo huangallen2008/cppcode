@@ -23,6 +23,7 @@ struct people {
         if(it->s>=y) return;
         mp[x]=y;
         mpt[x+y]=x;
+        cout<<"ok2"<<endl;
         auto itt=mpt.find(x+y);
         it=mp.find(x);
         while(next(it)->s<=it->s) {
