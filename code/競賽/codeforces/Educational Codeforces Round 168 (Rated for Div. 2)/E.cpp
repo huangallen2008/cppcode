@@ -89,6 +89,7 @@ void solve() {
     REP1(i,n) {
         if(a[i]<n) id[a[i]].pb(i);
     }
+    ope(bit.qu(n,0))
     // ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
