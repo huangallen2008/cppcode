@@ -51,6 +51,7 @@ void solve() {
     cin>>n>>q;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
+    vector<vector<int>> t={{0,1,2,3,4,5},{0,1,3,2,4,5},{0,1,4,2,3,5},{0,1,5,2,3,4},{0,2,3,1,4,5},{0,2,4,1,3,5},{0,2,5,1,3,4},{0,3,4,1,2,5},{0,3,5,1,2,4},{0,4,5,1,2,3}};
     REP(rd,q) {
         int l,r;
         cin>>l>>r;
@@ -72,22 +73,10 @@ void solve() {
             cout<<"YES\n";
             continue;
         }
-        REP(i,r-l) {
-            for(int j=i+1;j<i+6&&j<len;j++) {
-                for(int k=j+1;k<i+6&&k<len;k++) {
-                    vector<int> res;
-                    for(int l=i;l<i+6&&l<len;l++) {
-                        if(l!=i&&l!=j&&l!=k) res.pb(v[l]);
-                    }
-                    // op(i)op(j)op(k)oparr(res)
-                    if(res.size()<3) continue;
-                    if(okt(v[i],v[j],v[k])&&okt(res[0],res[1],res[2])) {
-                        ok=1;break;
-                    }
-                }
-                if(ok) break;
+        REP(i,r-l-5) {
+            for(auto tt:t) {
+                if
             }
-            if(ok) break;
         }
         if(ok) cout<<"YES\n";
         else cout<<"NO\n";
