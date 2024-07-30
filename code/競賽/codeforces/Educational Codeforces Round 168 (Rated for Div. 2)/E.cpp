@@ -111,14 +111,19 @@ void solve() {
             }
         }
     }
+    vector<bool> an(q);
     REP1(x,n) {
         for(auto [u,id]:qu[x]) {
-            if(a[u]>=la[x].size()) cout<<"YES\n";
+            if(a[u]>=la[x].size()) an[id]=1;
             else {
-                if(u>la[x][a[u]]) cout<<"YES\n";
-                else cout<<"NO\n";
+                if(u>la[x][a[u]]) an[id]=1;
+                else an[id]=0;
             }
         }
+    }
+    REP(i,q) {
+        if(an[i]) cout<<"YES\n";
+        else cout<<"NO\n";
     }
 }
 signed main() {
