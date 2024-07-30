@@ -79,6 +79,7 @@ void solve() {
                 if(tt[1]==4&&tt[2]==5) {
                     ope("ok")
                 }
+                ope(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[3]],v[i+tt[5]]))
                 if(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[3]],v[i+tt[5]])) {
                     ok=1;
                     break;
