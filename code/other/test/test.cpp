@@ -45,14 +45,11 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    set<int> s;
-    s.insert(10);
-    auto it=s.lower_bound(0);
-    auto it2=next(it);
-    ope("ok")
-    cout<<(*it);
-    cout<<(*it2);
-    REP(i,10) it2=next(it2);
-    cout<<*it2;
+    vector<int> a(100);
+    a[0]=a[1]=1;
+    for(int i=2;i<60;i++) {
+        a[i]=a[i-1]+a[i-1];
+        op(i)ope(a[i])
+    }
     return 0;
 }
