@@ -113,6 +113,9 @@ void solve() {
             }
         }
     }
+    REP1(i,n) {
+        oparr(la[i])
+    }
     vector<bool> an(q);
     REP1(x,n) {
         ope(x)
