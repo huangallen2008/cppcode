@@ -95,11 +95,11 @@ void solve() {
         cin>>u>>x;
         qu[x].pb({u,i});
     }
-    ope("ok")
+    // ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
     REP1(i,n-1) {
-        ope(i)
+        // ope(i)
         if(i>=n) continue;
         int res=id[i].size()-1;
         for(int x=resok;x>0;x--) {
@@ -112,17 +112,17 @@ void solve() {
             while(res>=0&&id[i][res]>ret) {
                 bit.ud(id[i][res--],-1);
             }
-            oparr(id[i])
-            op(i)op(x)ope(ret)
-            REP1(tt,n) cout<<bit.val(tt)<<' ';;entr
+            // oparr(id[i])
+            // op(i)op(x)ope(ret)
+            // REP1(tt,n) cout<<bit.val(tt)<<' ';;entr
         }
     }
-    REP1(i,n) {
-        oparr(la[i])
-    }
+    // REP1(i,n) {
+    //     oparr(la[i])
+    // }
     vector<bool> an(q);
     REP1(x,n) {
-        ope(x)
+        // ope(x)
         for(auto [u,id]:qu[x]) {
             if(a[u]>=la[x].size()) an[id]=1;
             else {
