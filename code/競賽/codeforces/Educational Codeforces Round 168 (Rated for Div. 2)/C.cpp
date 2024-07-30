@@ -53,7 +53,8 @@ void solve() {
         if(s[i]==')') v--;
         if(s[i]=='_') cnt--;
     }
-    int l=v-cnt>>1,r=cnt+v>>1;
+    //l+r=cnt,l-r=-v
+    int l=cnt-v>>1,r=cnt+v>>1;
     int now=0;
     priority_queue<int> pq;
     REP(i,n) {
