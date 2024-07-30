@@ -75,7 +75,7 @@ void solve() {
         if(s[i]=='(') an-=i;
         else an+=i;
     }
-    ope(s)
+    op(l)op(r)ope(s)
     cout<<an<<'\n';
 }
 signed main() {
