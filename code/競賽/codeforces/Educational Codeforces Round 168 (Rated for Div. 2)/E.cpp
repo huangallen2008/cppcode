@@ -97,6 +97,7 @@ void solve() {
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
     REP1(i,n) {
+        ope(i)
         if(a[i]>=n) continue;
         int res=id[a[i]].size()-1;
         for(int x=resok;x>0;x--) {
