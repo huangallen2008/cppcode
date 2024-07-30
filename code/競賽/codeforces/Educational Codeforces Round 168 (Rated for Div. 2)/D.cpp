@@ -59,12 +59,12 @@ void dfs(int u) {
     for(int x:t) chmin(mn,x);
     int nv=v[u];
     for(int x:t) nv+=x-mn;
-    op(nv)ope(mn)
+    // op(nv)ope(mn)
     if(nv>mn) k[u]=mn;
     else {
-        k[u]=(nv+k[u]*t.size())/(t.size()+1);
+        k[u]=(nv+mn*t.size())/(t.size()+1);
     }
-    op(u)ope(k[u])
+    // op(u)ope(k[u])
 }
 void solve() {
     int n;
