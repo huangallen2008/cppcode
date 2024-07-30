@@ -126,7 +126,7 @@ void solve() {
         for(auto [u,id]:qu[x]) {
             if(a[u]>=la[x].size()) an[id]=1;
             else {
-                if(u>=la[x][a[u]]) an[id]=0;
+                if(u>la[x][a[u]]) an[id]=0;
                 else an[id]=1;
             }
         }
