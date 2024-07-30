@@ -31,7 +31,7 @@ struct people {
         }
     }
     int bs(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
-        if(prev(mp.upper_bound(x))->s<=y) return 0;
+        // if(prev(mp.upper_bound(x))->s<=y) return 0;
         int l=0,r=maxv,m;
         // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
         auto it=prev(mpt.upper_bound(x+y));
@@ -54,7 +54,7 @@ signed main() {
         int x,y;
         cin>>x>>y;
         people.insert(x,y);
-        cout<<people.get_ans()<<'\n';
+        cout<<people.get_ans()<<'\n';entr
     }
     return 0;
 }
