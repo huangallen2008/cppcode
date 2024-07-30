@@ -46,13 +46,23 @@ int rd(int l,int r) {
 vector<int> v,k;
 Graph g;
 void dfs(int u) {
-    int t=inf;
+    if(g[u].size()==0) {
+        k[u]=v[u];
+        return;
+    }
+    vector<int> t;
     for(int v:g[u]) {
         dfs(v);
-        chmin(t,k[u]);
+        t.pb(k[v]);
     }
-    if(t==inf) k[u]=v[u];
-    else k[u]=v[u]+t>>1;
+    int mn=inf;
+    for(int x:t) chmin(mn,x);
+    int nv=v[u];
+    for(int x:t) nv+=x-mn;
+    if(nv>mn) k[u]=mn;
+    else {
+        k[u]=(nv+k[u]*t.size())/(t.size()+1);
+    }
 }
 void solve() {
     int n;
