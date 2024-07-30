@@ -112,7 +112,7 @@ void solve() {
             while(res>0&&id[i][res]>ret) {
                 bit.ud(id[i][res--],-1);
             }
-            op(i)op(x)
+            op(i)op(x)ope(ret)
             REP1(tt,n) cout<<bit.val(tt)<<' ';;entr
         }
     }
