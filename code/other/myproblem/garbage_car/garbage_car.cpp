@@ -9,7 +9,7 @@ using namespace std;
 const int maxv=1e9+5;
 const int inf=(1ll<<62);
 struct people {
-    map<int,int> mp,imp,mp,impt;
+    map<int,int> mp,imp,mpt,impt;
 
     int an=0;
     void init() {
