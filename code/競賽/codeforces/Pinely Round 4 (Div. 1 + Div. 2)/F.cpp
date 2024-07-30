@@ -76,6 +76,9 @@ void solve() {
         oparr(v)
         REP(i,r-l-5) {
             for(auto tt:t) {
+                if(tt[1]==4&&tt[2]==5) {
+                    ope("ok")
+                }
                 if(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[3]],v[i+tt[5]])) {
                     ok=1;
                     break;
