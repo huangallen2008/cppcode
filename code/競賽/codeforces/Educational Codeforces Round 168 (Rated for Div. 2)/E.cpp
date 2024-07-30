@@ -109,7 +109,7 @@ void solve() {
             }
             int ret=bit.qu(x,la[x].back());
             la[x].pb(ret);
-            while(res>0&&id[i][res]>ret) {
+            while(res>=0&&id[i][res]>ret) {
                 bit.ud(id[i][res--],-1);
             }
             oparr(id[i])
