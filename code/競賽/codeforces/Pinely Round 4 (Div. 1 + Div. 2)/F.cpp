@@ -70,6 +70,7 @@ void solve() {
                     for(int l=i;l<i+6;l++) {
                         if(l!=i&&l!=j&&l!=k) res.pb(l);
                     }
+                    if(res.size()<3) continue;
                     if(okt(i,j,k)&&okt(res[0],res[1],res[2])) {
                         ok=1;break;
                     }
