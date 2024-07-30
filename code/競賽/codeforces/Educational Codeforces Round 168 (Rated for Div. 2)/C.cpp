@@ -47,11 +47,11 @@ void solve() {
     string s;
     int n;
     cin>>n>>s;
-    int v=0,cnt=n;
+    int v=0,cnt=0;
     REP(i,n) {
         if(s[i]=='(') v++;
         if(s[i]==')') v--;
-        if(s[i]=='_') cnt--;
+        if(s[i]=='_') cnt++;
     }
     //l+r=cnt,l-r=-v
     op(cnt)ope(v)
