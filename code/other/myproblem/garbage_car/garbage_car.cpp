@@ -6,6 +6,17 @@ using namespace std;
 #define f first
 #define s second
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
 const int maxv=1e9+5;
 const int inf=(1ll<<62);
 struct people {
@@ -35,12 +46,13 @@ struct people {
         int l=0,r=maxv,m;
         // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
         auto it=prev(mpt.upper_bound(x+y));
+        op(it->f)ope(it->s)
         return min(abs(it->f-it->s-y),abs(next(it)->s-x));
     }
     void insert(int x,int y) {
         ins(mp,mpt,x,y);
         ins(imp,impt,y,x);
-        an=max(an, max(bs(mp,mpt,x,y)>>1,bs(imp,impt,y,x)>>1));
+        an=max(an,max(bs(mp,mpt,x,y)>>1,bs(imp,impt,y,x)>>1));
     }
     int get_ans() {
         return an;
