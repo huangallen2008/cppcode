@@ -82,7 +82,7 @@ void solve() {
     int n,q;
     cin>>n>>q;
     bit.init(n);
-    REP1(i,n) bit.qu(i,1);
+    REP1(i,n) bit.ud(i,1);
     vector<int> a(n+1);
     id=vector<vector<int>>(n);
     REP1(i,n) cin>>a[i];
