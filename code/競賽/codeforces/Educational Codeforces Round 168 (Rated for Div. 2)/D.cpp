@@ -57,7 +57,7 @@ void dfs(int u) {
     }
     int mn=inf;
     for(int x:t) chmin(mn,x);
-    if(u==1) {
+    if(u==0) {
         k[u]=mn;
         return ;
     }
