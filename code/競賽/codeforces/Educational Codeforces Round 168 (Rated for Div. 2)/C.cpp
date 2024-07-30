@@ -64,9 +64,6 @@ void solve() {
                 pq.push(i);
             }
             else {
-                if(l==0) {
-
-                }
                 now++;
                 l--;
                 s[i]='(';
@@ -83,6 +80,7 @@ void solve() {
             }
         }
     }
+    ope(s)
     int an=0;
     REP(i,n) {
         if(s[i]=='(') an-=i;
