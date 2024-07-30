@@ -47,6 +47,7 @@ struct people {
         // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
         auto it=prev(mpt.upper_bound(x+y));
         op(it->f)ope(it->s)
+        op(next(it)->f)ope(next(it)->s)
         return min(abs(it->f-it->s-y),abs(next(it)->s-x));
     }
     void insert(int x,int y) {
