@@ -18,16 +18,16 @@ using namespace std;
 #define entr ;
 #endif
 const int maxv=1e9+5;
-const int inf=(1ll<<61);
+const int inf=(1ll<<62);
 struct people {
     map<int,int> mp,imp,mpt,impt;
 
     int an=0;
     void init() {
         mp[-inf]=0,mp[inf]=inf;
-        mpt[-inf]=-inf,mpt[inf<<1]=inf;
+        mpt[-inf]=-inf,mpt[inf]=inf;
         imp[-inf]=0,imp[inf]=inf;
-        impt[-inf]=-inf,impt[inf<<1]=inf;
+        impt[-inf]=-inf,impt[inf]=inf;
     }
     void ins(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         auto it=prev(mp.upper_bound(x));
@@ -48,6 +48,7 @@ struct people {
         auto it=prev(mpt.upper_bound(x+y));
         op(it->f)ope(it->s)
         op(next(it)->f)ope(next(it)->s)
+        ope(min(abs(it->f-it->s-y),abs(next(it)->s-x)));
         return min(abs(it->f-it->s-y),abs(next(it)->s-x));
     }
     void insert(int x,int y) {
