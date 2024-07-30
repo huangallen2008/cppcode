@@ -103,6 +103,7 @@ void solve() {
         if(a[i]>=n) continue;
         int res=id[a[i]].size()-1;
         for(int x=resok;x>0;x--) {
+            ope(bit.sum())
             if(bit.sum()-bit.pre(la[x].back())<x) {
                 resok--;
                 continue;
