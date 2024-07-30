@@ -18,7 +18,7 @@ using namespace std;
 #define entr ;
 #endif
 const int maxv=1e9+5;
-const int inf=(1ll<<62);
+const int inf=(1ll<<61);
 struct people {
     map<int,int> mp,imp,mpt,impt;
 
@@ -26,8 +26,8 @@ struct people {
     void init() {
         mp[-inf]=0,mp[inf]=inf;
         mpt[-inf]=-inf,mpt[inf]=inf;
-        imp[-inf]=0,imp[inf]=inf;
-        impt[-inf]=-inf,impt[inf]=inf;
+        imp[-inf]=0,imp[inf<<1]=inf;
+        impt[-inf]=-inf,impt[inf<<1]=inf;
     }
     void ins(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         auto it=prev(mp.upper_bound(x));
