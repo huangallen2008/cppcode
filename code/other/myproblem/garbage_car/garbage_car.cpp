@@ -54,7 +54,8 @@ signed main() {
         int x,y;
         cin>>x>>y;
         people.insert(x,y);
-        cout<<people.get_ans()<<'\n';entr
+        cout<<people.get_ans()<<'\n';
+        cout<<endl;
     }
     return 0;
 }
