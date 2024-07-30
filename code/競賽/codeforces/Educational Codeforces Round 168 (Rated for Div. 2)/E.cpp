@@ -94,6 +94,7 @@ void solve() {
         cin>>u>>x;
         qu[x].pb({u,i});
     }
+    ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
     REP1(i,n) {
