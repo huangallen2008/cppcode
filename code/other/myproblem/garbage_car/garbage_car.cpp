@@ -25,8 +25,8 @@ struct people {
     int an=0;
     void init() {
         mp[-inf]=0,mp[inf]=inf;
-        mpt[-inf]=-inf,mpt[inf]=inf;
-        imp[-inf]=0,imp[inf<<1]=inf;
+        mpt[-inf]=-inf,mpt[inf<<1]=inf;
+        imp[-inf]=0,imp[inf]=inf;
         impt[-inf]=-inf,impt[inf<<1]=inf;
     }
     void ins(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
