@@ -98,10 +98,10 @@ void solve() {
     ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
-    REP1(i,n) {
+    REP1(i,n-1) {
         ope(i)
-        if(a[i]>=n) continue;
-        int res=id[a[i]].size()-1;
+        if(i>=n) continue;
+        int res=id[i].size()-1;
         for(int x=resok;x>0;x--) {
             if(bit.sum()-bit.pre(la[x].back())<x) {
                 resok--;
@@ -109,8 +109,8 @@ void solve() {
             }
             int ret=bit.qu(x,la[x].back());
             la[x].pb(ret);
-            while(res>0&&id[a[i]][res]>ret) {
-                bit.ud(id[a[i]][res--],-1);
+            while(res>0&&id[i][res]>ret) {
+                bit.ud(id[i][res--],-1);
             }
             op(i)op(x)
             REP1(tt,n) cout<<bit.val(tt)<<' ';;entr
