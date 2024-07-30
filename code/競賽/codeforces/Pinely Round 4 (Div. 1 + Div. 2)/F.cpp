@@ -66,6 +66,7 @@ void solve() {
         REP(i,r-l-2) {
             if(okt(v[i],v[i+1],v[i+2])) {
                 ok++,i+=2;
+                op(i)ope(ok)
             }
         } 
         if(ok>=2) cout<<"YES\n";
