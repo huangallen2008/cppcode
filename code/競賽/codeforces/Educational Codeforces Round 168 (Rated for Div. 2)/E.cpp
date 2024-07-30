@@ -89,12 +89,6 @@ void solve() {
     REP1(i,n) {
         if(a[i]<n) id[a[i]].pb(i);
     }
-    vector<vector<pii>> qu(n+1); 
-    REP(i,q) {
-        int u,x;
-        cin>>u>>x;
-        qu[x].pb({u,i});
-    }
     // ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
@@ -120,21 +114,30 @@ void solve() {
     // REP1(i,n) {
     //     oparr(la[i])
     // }
-    vector<bool> an(q);
-    REP1(x,n) {
-        // ope(x)
-        for(auto [u,id]:qu[x]) {
-            if(a[u]>=la[x].size()) an[id]=1;
+    // vector<vector<pii>> qu(n+1); 
+    REP(i,q) {
+        int u,x;
+        cin>>u>>x;
+        if(a[u]>=la[x].size()) {
+            cout<<"YES\n";
+        }
+        else {
+            if(u>la[x][a[u]]) {
+                cout<<"NO\n";
+            }
             else {
-                if(u>la[x][a[u]]) an[id]=0;
-                else an[id]=1;
+                cout<<"YES\n";
             }
         }
     }
-    REP(i,q) {
-        if(an[i]) cout<<"YES\n";
-        else cout<<"NO\n";
-    }
+    // vector<bool> an(q);
+    // REP1(x,n) {
+    //     // ope(x)
+    // }
+    // REP(i,q) {
+    //     if(an[i]) cout<<"YES\n";
+    //     else cout<<"NO\n";
+    // }
 }
 signed main() {
     IOS();
