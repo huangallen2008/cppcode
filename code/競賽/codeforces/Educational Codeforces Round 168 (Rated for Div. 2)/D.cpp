@@ -49,10 +49,10 @@ void dfs(int u) {
     int t=inf;
     for(int v:g[u]) {
         dfs(v);
-        chmin(t,k[i]);
+        chmin(t,k[u]);
     }
-    if(t==inf) k[i]=v[i];
-    else k[i]=v[i]+t>>1;
+    if(t==inf) k[u]=v[u];
+    else k[u]=v[u]+t>>1;
 }
 void solve() {
     int n;
