@@ -46,8 +46,10 @@ int rd(int l,int r) {
 struct BIT {
     vector<int> b;
     int n;
+    int lg;
     void init(int _n) {
         n=_n;
+        lg=__lg(n);
         b=vector<int>(n+1);
     }
     void ud(int u,int v) {
@@ -64,9 +66,8 @@ struct BIT {
     int qu(int k,int ba) {
         k+=pre(ba);
         int id=0;
-        int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
-            if(b[id+(1<<i)]<k) {
+            if(id+(1<<i)<=n&&b[id+(1<<i)]<k) {
                 id+=1<<i;
                 k-=b[id];
             }
@@ -95,7 +96,6 @@ void solve() {
     int resok=n;
     REP1(i,n-1) {
         // ope(i)
-        if(i>=n) continue;
         int res=id[i].size()-1;
         for(int x=resok;x>0;x--) {
             if(bit.sum()-bit.pre(la[x].back())<x) {
