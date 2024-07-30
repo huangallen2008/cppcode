@@ -21,7 +21,9 @@ const int maxv=1e9+5;
 const int inf=(1ll<<62);
 struct people {
     map<int,int> mp,imp,mpt,impt;
-
+    int dis(int x1,int y1,int x2,int y2) {
+        return max(abs(x1-x2),abs(y1-y2));
+    }
     int an=0;
     void init() {
         mp[-inf]=0,mp[inf]=inf;
@@ -49,7 +51,7 @@ struct people {
         op(it->f)ope(it->s)
         op(next(it)->f)ope(next(it)->s)
         ope(min(abs(it->f-it->s-y),abs(next(it)->s-x)));
-        return min(abs(it->f-it->s-y),abs(next(it)->s-x))+1;
+        return min(dis(x,y,it->s,it->f-it->s),dis(x,y,next(it)->s,next(it)->f-next(it)->s))+1;
     }
     void insert(int x,int y) {
         ins(mp,mpt,x,y);
