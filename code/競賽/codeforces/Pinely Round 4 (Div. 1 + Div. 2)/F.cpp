@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bool ok(int a,int b,int c) {
+bool okt(int a,int b,int c) {
     return a+b>c&&a+c>b&&c+b>a;
 }
 void solve() {
@@ -64,7 +64,7 @@ void solve() {
         sort(ALL(v));
         int ok=0;
         REP(i,r-l-2) {
-            if(ok(v[i],v[i+1],v[i+2])) {
+            if(okt(v[i],v[i+1],v[i+2])) {
                 ok++,i+=2;
             }
         } 
