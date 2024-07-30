@@ -55,18 +55,17 @@ void dfs(int u) {
         dfs(v);
         t.pb(k[v]);
     }
-    if(u==0) {
-        k[u]=v[u];
-        for(int x:t) k[u]+=x;
-        return ;
-    }
     int mn=inf;
     for(int x:t) chmin(mn,x);
+    if(u==0) {
+        k[u]=v[u]+mn;
+        return ;
+    }
     int nv=v[u];
     for(int x:t) nv+=x-mn;
     if(nv>mn) k[u]=mn;
     else {
-        k[u]=(nv+mn*t.size())/(t.size()+1);
+        k[u]=(nv+mn)>>1;
     }
 
 }
