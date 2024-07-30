@@ -49,7 +49,7 @@ struct people {
         op(it->f)ope(it->s)
         op(next(it)->f)ope(next(it)->s)
         ope(min(abs(it->f-it->s-y),abs(next(it)->s-x)));
-        return min(abs(it->f-it->s-y),abs(next(it)->s-x));
+        return min(abs(it->f-it->s-y),abs(next(it)->s-x))+1;
     }
     void insert(int x,int y) {
         ins(mp,mpt,x,y);
