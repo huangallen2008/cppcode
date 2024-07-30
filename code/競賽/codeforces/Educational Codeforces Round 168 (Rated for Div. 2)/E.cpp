@@ -88,7 +88,7 @@ void solve() {
     REP1(i,n) {
         if(a[i]<n) id[a[i]].pb(i);
     }
-    vector<vector<pii>> qu(n); 
+    vector<vector<pii>> qu(n+1); 
     REP(i,q) {
         int u,x;
         cin>>u>>x;
