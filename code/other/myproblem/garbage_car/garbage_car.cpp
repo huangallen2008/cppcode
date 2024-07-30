@@ -23,7 +23,6 @@ struct people {
         if(it->s>=y) return;
         mp[x]=y;
         mpt[x+y]=x;
-        cout<<"ok2"<<endl;
         auto itt=mpt.find(x+y);
         it=mp.find(x);
         while(next(it)->s<=it->s) {
@@ -40,7 +39,6 @@ struct people {
     }
     void insert(int x,int y) {
         ins(mp,mpt,x,y);
-        cout<<"ok"<<endl;
         ins(imp,impt,y,x);
         an=max(an, max(bs(mp,mpt,x,y)>>1,bs(imp,impt,y,x)>>1));
     }
