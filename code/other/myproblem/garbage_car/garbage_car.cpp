@@ -45,12 +45,7 @@ struct people {
     }
     int bs(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
         if(prev(mp.upper_bound(x))->s<=y) return 0;
-        // int l=0,r=maxv,m;
-        // auto it_l=mp.begin(),it_r=prev(mp.lower_bound(x));
         auto it=prev(mpt.upper_bound(x+y));
-        op(it->f)ope(it->s)
-        op(next(it)->f)ope(next(it)->s)
-        ope(min(abs(it->f-it->s-y),abs(next(it)->s-x)));
         return min(dis(x,y,it->s,it->f-it->s),dis(x,y,next(it)->s,next(it)->f-next(it)->s))+1;
     }
     void insert(int x,int y) {
