@@ -61,7 +61,7 @@ void dfs(int u) {
         k[u]=v[u]+mn;
         return ;
     }
-    if(v[u]>mn) k[u]=v[u];
+    if(v[u]>mn) k[u]=mn;
     else {
         k[u]=(v[u]+mn)>>1;
     }
