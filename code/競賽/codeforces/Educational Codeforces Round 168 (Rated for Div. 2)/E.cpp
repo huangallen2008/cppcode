@@ -78,14 +78,13 @@ struct BIT {
         return pre(u)-pre(u-1);
     }
 }bit;
-vector<vector<int>> id; 
 void solve() {
     int n,q;
     cin>>n>>q;
     bit.init(n);
     REP1(i,n) bit.ud(i,1);
     vector<int> a(n+1);
-    id=vector<vector<int>>(n);
+    vector<vector<int>>id(n);
     REP1(i,n) cin>>a[i];
     REP1(i,n) {
         if(a[i]<n) id[a[i]].pb(i);
