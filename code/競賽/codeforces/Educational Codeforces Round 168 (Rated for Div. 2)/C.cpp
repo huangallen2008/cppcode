@@ -57,6 +57,7 @@ void solve() {
     int now=0;
     priority_queue<int> pq;
     REP(i,n) {
+        op(i)op(now)op(l)ope(r)
         if(s[i]=='_') {
             if(now>0&&r>0) {
                 now--,r--;
