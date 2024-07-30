@@ -84,7 +84,6 @@ void solve() {
     bit.init(n);
     vector<int> a(n+1);
     id=vector<vector<int>>(n);
-    ope("ok")
     REP1(i,n) cin>>a[i];
     REP1(i,n) {
         if(a[i]<n) id[a[i]].pb(i);
@@ -95,6 +94,7 @@ void solve() {
         cin>>u>>x;
         qu[x].pb({u,i});
     }
+    ope("ok")
     vector<vector<int>> la(n+1,vector<int>(1));
     int resok=n;
     REP1(i,n) {
