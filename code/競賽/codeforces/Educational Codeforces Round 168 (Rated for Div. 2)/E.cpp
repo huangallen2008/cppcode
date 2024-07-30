@@ -61,8 +61,8 @@ struct BIT {
     int sum() {
         return pre(n);
     }
-    int qu(int k,int b) {
-        k+=pre(b);
+    int qu(int k,int ba) {
+        k+=pre(ba);
         int id=0;
         int lg=__lg(n);
         for(int i=lg;i>=0;i--) {
