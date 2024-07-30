@@ -27,8 +27,8 @@ struct people {
         auto itt=mpt.find(x+y);
         it=mp.find(x);
         while(next(it)->s<=it->s) {
+            mpt.erase(next(it)->f+next(it)->s);
             mp.erase(next(it));
-            mpt.erase(next(itt));
         }
     }
     int bs(map<int,int> &mp,map<int,int> &mpt,int x,int y) {
