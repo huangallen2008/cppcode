@@ -63,11 +63,12 @@ void solve() {
         for(int i=l;i<r;i++) v.pb(a[i]);
         sort(ALL(v));
         bool ok=0;
+        int len=r-l;
         REP(i,r-l) {
-            for(int j=i+1;j<i+6;j++) {
-                for(int k=j+1;k<i+6;k++) {
+            for(int j=i+1;j<i+6&&j<len;j++) {
+                for(int k=j+1;k<i+6&&k<len;k++) {
                     vector<int> res;
-                    for(int l=i;l<i+6;l++) {
+                    for(int l=i;l<i+6&&l<len;l++) {
                         if(l!=i&&l!=j&&l!=k) res.pb(v[l]);
                     }
                     op(i)op(j)op(k)oparr(res)
