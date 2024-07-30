@@ -57,6 +57,10 @@ void dfs(int u) {
     }
     int mn=inf;
     for(int x:t) chmin(mn,x);
+    if(u==1) {
+        k[u]=mn;
+        return ;
+    }
     int nv=v[u];
     for(int x:t) nv+=x-mn;
     // op(nv)ope(mn)
