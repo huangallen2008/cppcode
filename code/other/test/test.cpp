@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    char* c;
-    cin>>c;
+    char* c="12345";
+    cout<<c;
     return 0;
 }
