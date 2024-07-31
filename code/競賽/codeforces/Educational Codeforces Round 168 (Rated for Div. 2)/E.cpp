@@ -145,6 +145,5 @@ signed main() {
     // cin>>T;
     // while(T--) 
     solve();
-    cerr<<fixed<<setprecision(3)<<(double)clock()/CLOCKS_PER_SEC<<endl;
     return 0;
 }
