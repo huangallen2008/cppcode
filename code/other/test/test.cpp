@@ -45,12 +45,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    vector<int> a(100);
-    a[0]=a[1]=1;
-    for(int i=2;i<60;i++) {
-        a[i]=a[i-1]+a[i-2];
-        op(i)ope(a[i])
-    }
+    freopen("in.txt","r",stdout);
+    int q=15;
+    cout<<q<<'\n';
+    REP1(i,q) cout<<i<<' ';cout<<'\n';
 
     return 0;
 }
