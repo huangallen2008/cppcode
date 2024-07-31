@@ -67,7 +67,10 @@ void solve() {
         int len=r-l;
         int cnt=0;
         REP(i,r-l-2) {
-            if(okt(v[i],v[i+1],v[i+2])) {cnt++,i+=2;}
+            if(okt(v[i],v[i+1],v[i+2])) {
+                cnt++,i+=2;
+                if(cnt>=2) break;
+            }
         }
         if(cnt>=2) {
             cout<<"YES\n";
@@ -75,7 +78,7 @@ void solve() {
         }
         REP(i,r-l-5) {
             for(auto tt:t) {
-                if(okt(v[i+tt[0]],v[i+tt[1]],v[i+tt[2]])&&okt(v[i+tt[3]],v[i+tt[4]],v[i+tt[5]])) {
+                if(v[i+tt[0]]+v[i+tt[1]]>v[i+tt[2]]&&v[i+tt[3]]+v[i+tt[4]]>v[i+tt[5]]) {
                     ok=1;
                     break;
                 }
