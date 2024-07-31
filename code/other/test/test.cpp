@@ -48,7 +48,7 @@ signed main() {
     freopen("in.txt","w",stdout);
     int q=20;
     cout<<q<<'\n';
-    REP1(i,q) cout<<i<<' ';cout<<'\n';
+    REP1(i,q) cout<<q<<' ';cout<<'\n';
 
     return 0;
 }
