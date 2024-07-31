@@ -48,7 +48,7 @@ signed main() {
     freopen("in.txt","w",stdout);
     int q=5000;
     cout<<q<<'\n';
-    RREP1(i,q) cout<<q<<' ';cout<<'\n';
+    RREP(i,q) cout<<5000-i%50<<' ';cout<<'\n';
 
     return 0;
 }
