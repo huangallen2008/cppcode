@@ -79,8 +79,6 @@ struct BIT {
     }
 }bit;
 void solve() {
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
     int n,q;
     cin>>n>>q;
     bit.init(n);
