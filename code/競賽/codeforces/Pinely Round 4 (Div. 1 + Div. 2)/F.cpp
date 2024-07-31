@@ -57,7 +57,7 @@ void solve() {
         cin>>l>>r;
         l--;
         if(r-l>=50) {
-            cout<<"YSE\n";
+            cout<<"YES\n";
             continue;
         }
         vector<int> v;
