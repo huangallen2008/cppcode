@@ -46,9 +46,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int q=5000;
+    int q=2000000;
     cout<<q<<'\n';
-    REP(i,q) cout<<rd(0,5000)<<' ';cout<<'\n';
+    REP(i,q) cout<<200000<<' ';cout<<'\n';
 
     return 0;
 }
