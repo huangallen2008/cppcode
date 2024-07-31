@@ -45,10 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    freopen("in.txt","w",stdout);
-    int q=2000000;
-    cout<<q<<'\n';
-    REP(i,q) cout<<rd(150000,200000)<<' ';cout<<'\n';
-
+    char* c;
+    cin>>c;
     return 0;
 }
