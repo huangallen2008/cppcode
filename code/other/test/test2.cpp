@@ -9,7 +9,7 @@ signed main() {
     for(int i=2;i<maxn;i++) f[i]=(f[i-1]+f[i-2])%mod;
     int q;
     cin>>q;
-    REP(i,q) {
+    while(q--) {
         int n;
         cin>>n;
         cout<<f[n]<<' ';
