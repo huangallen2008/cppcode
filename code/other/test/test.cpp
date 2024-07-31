@@ -46,6 +46,6 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     char* c="12345";
-    cout<<c;
+    cout<<stoi(c);
     return 0;
 }
