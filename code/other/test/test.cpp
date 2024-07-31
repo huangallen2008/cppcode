@@ -46,9 +46,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int q=15;
+    int q=20;
     cout<<q<<'\n';
-    REP1(i,q) cout<<q<<' ';cout<<'\n';
+    REP1(i,q) cout<<i<<' ';cout<<'\n';
 
     return 0;
 }
