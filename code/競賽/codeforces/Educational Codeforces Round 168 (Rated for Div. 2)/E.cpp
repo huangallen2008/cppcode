@@ -79,6 +79,8 @@ struct BIT {
     }
 }bit;
 void solve() {
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     int n,q;
     cin>>n>>q;
     bit.init(n);
@@ -145,5 +147,6 @@ signed main() {
     // cin>>T;
     // while(T--) 
     solve();
+    cerr<<fixed<<setprecision(3)<<(double)clock()/CLOCKS_PER_SEC<<endl;
     return 0;
 }
