@@ -74,6 +74,7 @@ signed main() {
             addmod(d[i],d[s]*two[cnt[i^s]]);
         }
     }
+    oparr(d)
     int all=(1<<n)-1;
     vector<int> an(n);
     REP(i,1<<n) {
