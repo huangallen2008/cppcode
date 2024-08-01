@@ -56,7 +56,7 @@ void solve(int n) {
     // optime();
     stable_sort(ALL(b));
     // optime();
-    e2.clock();
+    e2=clock();
     cout<<fixed<<setprecision(3)<<(long double)(e1-st)/CLOCKS_PER_SEC<<endl;
     cout<<fixed<<setprecision(3)<<(long double)(e2-e1)/CLOCKS_PER_SEC<<endl;
 }
