@@ -63,7 +63,6 @@ signed main() {
             if(((i>>u)&1)&&((i>>v)&1)) cnt[i]++;
         }
     }
-    oparr(cnt)
     vector<int> d(1<<n);
     d[1]=1;
     for(int i=2;i<1<<n;i++) {
@@ -75,7 +74,6 @@ signed main() {
             addmod(d[i],-d[s]*two[cnt[i^s]]);
         }
     }
-    oparr(d)
     int all=(1<<n)-1;
     vector<int> an(n);
     REP(i,1<<n) {
