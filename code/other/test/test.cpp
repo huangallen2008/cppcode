@@ -62,9 +62,9 @@ void solve(int n) {
 }
 signed main() {
     IOS();
-    solve(10000000);
-    solve(10000000);
-    solve(10000000);
-    solve(10000000);
+    int T=10;
+    while(T--) {
+        solve(rd(1000000,50000000));
+    }
     return 0;
 }
