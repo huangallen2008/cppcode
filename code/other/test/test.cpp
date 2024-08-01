@@ -63,5 +63,8 @@ void solve(int n) {
 signed main() {
     IOS();
     solve(10000000);
+    solve(10000000);
+    solve(10000000);
+    solve(10000000);
     return 0;
 }
