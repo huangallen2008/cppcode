@@ -68,10 +68,11 @@ signed main() {
     d[1]=1;
     for(int i=2;i<1<<n;i++) {
         if(~i&1) continue;
+        d[i]=two[cnt[i]];
         for(int s=i;s>0;s=(s-1)&i) {
             if(~s&1) continue;
             if(s==i) continue;
-            addmod(d[i],d[s]*two[cnt[i^s]]);
+            addmod(d[i],-d[s]*two[cnt[i^s]]);
         }
     }
     oparr(d)
