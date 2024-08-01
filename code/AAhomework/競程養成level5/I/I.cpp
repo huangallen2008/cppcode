@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -37,14 +37,15 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=998244353;
-const int maxn=20+5;
+const int maxn=20+1;
+const int maxn2=1048577;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int dp[maxn][2000000];
-int ndp[maxn][2000000];
+int dp[maxn][maxn2];
+int ndp[maxn][maxn2];
 signed main() {
     IOS();
     memset(dp,0,sizeof(dp));
