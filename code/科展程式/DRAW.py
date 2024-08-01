@@ -100,9 +100,9 @@ ax.set_ylim(min(y), max(y))
 def zoom(event):
     axtemp=event.inaxes
     x_min, x_max = axtemp.get_xlim()
-    xrang = (x_max - x_min) / 20
+    xrang = (x_max - x_min) / 100
     y_min, y_max = axtemp.get_ylim()
-    yrang = (y_max - y_min) / 20
+    yrang = (y_max - y_min) / 100
     if event.button == 'up':
         ax.set_xlim(ax.get_xlim()[0] +xrang, ax.get_xlim()[1] -xrang)
         ax.set_ylim(ax.get_ylim()[0] +yrang, ax.get_ylim()[1] -yrang)
