@@ -36,7 +36,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=20+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -58,12 +58,28 @@ signed main() {
             id[a[i][j]][i]=j;
         }
     }
+    int all=(1<<m)-1;
     REP(i,n) {
         REP(j,m) {
             REP(k,1<<m) {
-                if(i==0&&j==0&&0){}
+                if(i==0&&j==0&&k==0) {
+                    ndp[j][k]=1;
+                    continue;
+                }
+                if(j==0) {
+                    int ni=all;
+                    REP(l,m) if((k>>l)&1) ni^=(1<<id[a[i][l]][i-1]);
+                    ndp[j][k]=dp[m-1][ni];
+                }
+                else {
+                    ndp[j][k]=ndp[j-1][k];
+                    if(((k>>j)&1)&&((k>>j-1)&1)) addmod(ndp[j][k],ndp[j-1][k^(1<<j)^(1<<j-1)]);
+                }
             }
         }
+        swap(dp,ndp);
     }
+    int an=dp[m-1][all];
+    cout<<an<<'\n';
     return 0;
 }
