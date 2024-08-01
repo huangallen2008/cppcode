@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -48,14 +46,13 @@ void addmod(int &a,int b) {
     a+=b;
     if(a>=mod) a-=mod;
 }
-int dp[maxn][maxn2];
-int ndp[maxn][maxn2];
 int a[maxn][maxn],id[maxn][maxn];
 signed main() {
     IOS();
-    memset(dp,0,sizeof(dp));
     int n,m;
     cin>>n>>m;
+    // vector<vector<int>> dp(m, vector<int>(1 << m));
+    // vector<vector<int>> ndp(m, vector<int>(1 << m));
     REP(i,n) {
         REP(j,m) {
             cin>>a[i][j],a[i][j]--;
@@ -63,27 +60,29 @@ signed main() {
         }
     }
     int all=(1<<m)-1;
+    vector<int> dp(1<<n);
     REP(i,n) {
         REP(j,m) {
+            vector<int> ndp(1<<n);
             REP(k,1<<m) {
                 if(i==0&&j==0&&k==0) {
-                    ndp[j][k]=1;
+                    ndp[k]=1;
                     continue;
                 }
                 if(j==0) {
                     int ni=all;
                     REP(l,m) if((k>>l)&1) ni^=(1<<id[a[i][l]][i-1]);
-                    ndp[j][k]=dp[m-1][ni];
+                    ndp[k]=dp[ni];
                 }
                 else {
-                    ndp[j][k]=ndp[j-1][k];
-                    if(((k>>j)&1)&&((k>>j-1)&1)) addmod(ndp[j][k],ndp[j-1][k^(1<<j)^(1<<j-1)]);
+                    ndp[k]=ndp[k];
+                    if(((k>>j-1)&3) == 3) addmod(ndp[k],dp[k^(1<<j)^(1<<j-1)]);
                 }
             }
+            dp.swap(ndp);
         }
-        swap(dp,ndp);
     }
-    int an=dp[m-1][all];
+    int an=dp[all];
     cout<<an<<'\n';
     return 0;
 }
