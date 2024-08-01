@@ -87,12 +87,12 @@ for i in range(3,len(mx)+3) :
     yy.append(i-1)
 # 創建一個子圖
 fig, ax = plt.subplots()
-# ax.plot(x, y,marker='.',markersize=0.1,color='red')
-# line, = ax.plot(mx, my,color='blue')
-# ax.plot(xx, yy,color="red")
-plt.scatter(mx,my,s=1,c='blue')
-plt.scatter(x,y,s=1,c='red')
-plt.scatter(xx,yy,s=1,c='red')
+ax.plot(x, y,marker='.',markersize=0.1,color='red')
+line, = ax.plot(mx, my,color='blue')
+ax.plot(xx, yy,color="red")
+# plt.scatter(mx,my,s=1,c='blue')
+# plt.scatter(x,y,s=1,c='red')
+# plt.scatter(xx,yy,s=1,c='red')
 ax.set_xlim(min(x), max(x))
 ax.set_ylim(min(y), max(y))
 
