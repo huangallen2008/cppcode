@@ -47,7 +47,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    int an=1<<__lg(n);
+    int an=__lg(n);
     cout<<an;
     return 0;
 }
