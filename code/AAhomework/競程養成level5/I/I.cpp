@@ -43,9 +43,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int dp[maxn][maxn][1<<maxn];
+int dp[maxn][maxn][2000000];
 signed main() {
     IOS();
+    memset(dp,0,sizeof(dp));
     int n,m;
     cin>>n>>m;
     vector<vector<int>> a(n,vector<int>(m));
@@ -56,6 +57,12 @@ signed main() {
             id[a[i][j]][i]=j;
         }
     }
-    
+    REP(i,n) {
+        REP(j,m) {
+            REP(k,1<<m) {
+
+            }
+        }
+    }
     return 0;
 }
