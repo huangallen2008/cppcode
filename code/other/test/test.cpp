@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e4+5;
+const int maxn=2e5+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -45,7 +45,16 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    char* c="12345";
-    cout<<stoi(c);
+    vector<int> f(maxn);
+    f[1]=1;
+    for(int i=2;i<maxn;i++) f[i]=(f[i-1]+f[i-2])%mod;
+    int q;
+    cin>>q;
+    while(q--) {
+        int n;
+        cin>>n;
+        cout<<f[n]<<' ';
+    }
+    cout<<'\n';
     return 0;
 }
