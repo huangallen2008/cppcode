@@ -43,11 +43,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#define optime() cout<<fixed<<setprecision(3)<<(long double)clock()/CLOCKS_PER_SEC<<endl;
+void solve(int n) {
+    vector<int> a,b;
+    REP(i,n) a.pb(i);
+    shuffle(ALL(a),rng);
+    b=a;
+    optime();
+    sort(ALL(a));
+    optime();
+    stable_sort(ALL(b));
+    optime();
+}
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    int an=__lg(n);
-    cout<<an;
+    solve(10000000);
     return 0;
 }
