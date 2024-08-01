@@ -81,6 +81,6 @@ signed main() {
             if((i>>j)&1) addmod(an[j],d[i]*two[cnt[i^all]]); 
         }
     }
-    REP1(i,n-1) cout<<an[i]<<'\n';
+    REP1(i,n-1) cout<<md(an[i])<<'\n';
     return 0;
 }
