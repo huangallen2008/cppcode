@@ -51,7 +51,7 @@ signed main() {
         int n;
         cin>>n;
         if(n==0) {
-            cout<<"0\n";
+            cout<<"0 ";
             continue;
         }
         vector<int> f(n+1);
