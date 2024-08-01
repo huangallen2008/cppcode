@@ -44,7 +44,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void addmod(int &a,int b) {
+void addmod(int &a,int &b) {
     a+=b;
     if(a>=mod) a-=mod;
 }
@@ -85,7 +85,6 @@ signed main() {
             id[a[j]]=j;
         }
     }
-    int an=dp[all];
-    cout<<an<<'\n';
+    cout<<dp[all]<<'\n';
     return 0;
 }
