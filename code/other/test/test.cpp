@@ -45,14 +45,14 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    vector<int> f(maxn);
-    f[1]=1;
-    for(int i=2;i<maxn;i++) f[i]=(f[i-1]+f[i-2])%mod;
     int q;
     cin>>q;
     while(q--) {
         int n;
         cin>>n;
+        vector<int> f(n+1);
+        f[1]=1;
+        for(int i=2;i<=n;i++) f[i]=(f[i]+f[i-1])%mod;
         cout<<f[n]<<' ';
     }
     cout<<'\n';
