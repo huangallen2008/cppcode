@@ -38,7 +38,7 @@ using namespace std;
 #endif
 const int mod=998244353;
 const int maxn=20+1;
-const int maxn2=1048577;
+const int maxn2=1100000;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,13 +46,12 @@ int rd(int l,int r) {
 }
 int dp[maxn][maxn2];
 int ndp[maxn][maxn2];
+int a[maxn][maxn],id[maxn][maxn];
 signed main() {
     IOS();
     memset(dp,0,sizeof(dp));
     int n,m;
     cin>>n>>m;
-    vector<vector<int>> a(n,vector<int>(m));
-    vector<vector<int>> id(m,vector<int>(n));
     REP(i,n) {
         REP(j,m) {
             cin>>a[i][j],a[i][j]--;
