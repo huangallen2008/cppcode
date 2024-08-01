@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
+#pragma GCC target("avx2,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -24,7 +24,7 @@ using namespace std;
 #define pdd pair<ld,ld>
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
-#define addmod(x,y) x=((x+(y))%mod)
+// #define addmod(x,y) x=((x+(y))%mod)
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
@@ -43,6 +43,10 @@ const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+void addmod(int &a,int b) {
+    a+=b;
+    if(a>=mod) a-=mod;
 }
 int dp[maxn][maxn2];
 int ndp[maxn][maxn2];
