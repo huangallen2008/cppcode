@@ -75,7 +75,7 @@ signed main() {
                     ndp[k]=dp[ni];
                 }
                 else {
-                    ndp[k]=ndp[k];
+                    ndp[k]=dp[k];
                     if(((k>>j-1)&3) == 3) addmod(ndp[k],dp[k^(1<<j)^(1<<j-1)]);
                 }
             }
