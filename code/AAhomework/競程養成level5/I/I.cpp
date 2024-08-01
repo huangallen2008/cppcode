@@ -62,17 +62,19 @@ signed main() {
     REP(i,n) {
         REP(j,m) {
             vector<int> ndp(1<<m);
-            REP(k,1<<m) {
-                if(i==0&&j==0&&k==0) {
-                    ndp[k]=1;
-                    continue;
-                }
-                if(j==0) {
+            if(j==0) {
+                REP(k,1<<m) {
+                    if(i==0) {
+                        ndp[k]=k==0;
+                        continue;
+                    }
                     int ni=all;
                     REP(l,m) if((k>>l)&1) ni^=(1<<id[a[i][l]][i-1]);
                     ndp[k]=dp[ni];
                 }
-                else {
+            }
+            else {
+                REP(k,1<<m) {
                     ndp[k]=dp[k];
                     if(((k>>j-1)&3) == 3) addmod(ndp[k],dp[k^(1<<j)^(1<<j-1)]);
                 }
