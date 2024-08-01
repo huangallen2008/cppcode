@@ -49,11 +49,16 @@ void solve(int n) {
     REP(i,n) a.pb(i);
     shuffle(ALL(a),rng);
     b=a;
-    optime();
+    // optime();
+    clock_t st=clock(),e1,e2;
     sort(ALL(a));
-    optime();
+    e1=clock();
+    // optime();
     stable_sort(ALL(b));
-    optime();
+    // optime();
+    e2.clock();
+    cout<<fixed<<setprecision(3)<<(long double)(e1-st)/CLOCKS_PER_SEC<<endl;
+    cout<<fixed<<setprecision(3)<<(long double)(e2-e1)/CLOCKS_PER_SEC<<endl;
 }
 signed main() {
     IOS();
