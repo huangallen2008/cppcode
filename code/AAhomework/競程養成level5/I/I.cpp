@@ -61,6 +61,7 @@ signed main() {
     vector<int> dp(1<<n);
     REP(i,n) {
         REP(j,m) {
+            oparr(dp)
             vector<int> ndp(1<<m);
             REP(k,1<<m) {
                 if(i==0&&j==0&&k==0) {
