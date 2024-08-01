@@ -61,7 +61,7 @@ signed main() {
     REP(i,n) {
         REP(j,m) {
             REP(k,1<<m) {
-                if(i==0&&j==0&&)
+                if(i==0&&j==0&&0){}
             }
         }
     }
