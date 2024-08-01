@@ -58,10 +58,9 @@ signed main() {
         }
     }
     int all=(1<<m)-1;
-    vector<int> dp(1<<n);
+    vector<int> dp(1<<m);
     REP(i,n) {
         REP(j,m) {
-            oparr(dp)
             vector<int> ndp(1<<m);
             REP(k,1<<m) {
                 if(i==0&&j==0&&k==0) {
