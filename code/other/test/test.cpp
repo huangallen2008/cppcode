@@ -1,4 +1,6 @@
 #include<bits/stdc++.h>
+#include __FILE__
+#include __FILE__
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
