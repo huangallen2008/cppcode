@@ -65,8 +65,8 @@ signed main() {
     }
     oparr(cnt)
     vector<int> d(1<<n);
-    d[0]=1;
-    for(int i=1;i<1<<n;i++) {
+    d[1]=1;
+    for(int i=2;i<1<<n;i++) {
         if(~i&1) continue;
         for(int s=i;s>0;s=(s-1)&i) {
             if(~s&1) continue;
