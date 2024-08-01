@@ -43,7 +43,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int dp[maxn][maxn][2000000];
+int dp[maxn][2000000];
+int ndp[maxn][2000000];
 signed main() {
     IOS();
     memset(dp,0,sizeof(dp));
@@ -60,7 +61,7 @@ signed main() {
     REP(i,n) {
         REP(j,m) {
             REP(k,1<<m) {
-
+                if(i==0&&j==0&&)
             }
         }
     }
