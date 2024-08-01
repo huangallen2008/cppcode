@@ -48,7 +48,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<pii> e(m);
-    vdctor<int> two(m+1);
+    vector<int> two(m+1);
     two[0]=1;
     REP1(i,m) two[i]=(two[i-1]<<1)%mod;
     REP(i,m) {
@@ -69,7 +69,7 @@ signed main() {
         for(int s=i;s>0;s=(s-1)&i) {
             if(~s&1) continue;
             if(s==i) continue;
-            addmod(d[i],s[i]*two[cnt[i^s]]);
+            addmod(d[i],d[s]*two[cnt[i^s]]);
         }
     }
     int all=(1<<n)-1;
