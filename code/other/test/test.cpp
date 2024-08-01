@@ -43,17 +43,19 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int f(int n) {
+    if(n==0) return 0;
+    if(n==1) return 1;
+    return f(n-1)+f(n-2);
+}
 signed main() {
     IOS();
-    vector<int> f(maxn);
-    f[1]=1;
-    for(int i=2;i<maxn;i++) f[i]=(f[i-1]+f[i-2])%mod;
     int q;
     cin>>q;
     while(q--) {
         int n;
         cin>>n;
-        cout<<f[n]<<' ';
+        cout<<f(n)<<' ';
     }
     cout<<'\n';
     return 0;
