@@ -48,20 +48,18 @@ void addmod(int &a,int b) {
     a+=b;
     if(a>=mod) a-=mod;
 }
-int a[maxn][maxn],id[maxn][maxn];
 signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    REP(i,n) {
-        REP(j,m) {
-            cin>>a[i][j],a[i][j]--;
-            id[a[i][j]][i]=j;
-        }
-    }
     int all=(1<<m)-1;
     vector<int> dp(1<<m);
+    vector<int> a(m),id(m);
     REP(i,n) {
+        REP(j,m) {
+            cin>>a[j];
+            a[j]--;
+        }
         REP(j,m) {
             vector<int> ndp(1<<m);
             if(j==0) {
@@ -71,7 +69,7 @@ signed main() {
                         continue;
                     }
                     int ni=all;
-                    REP(l,m) if((k>>l)&1) ni^=(1<<id[a[i][l]][i-1]);
+                    REP(l,m) if((k>>l)&1) ni^=(1<<id[l]);
                     ndp[k]=dp[ni];
                 }
             }
@@ -82,6 +80,9 @@ signed main() {
                 }
             }
             dp.swap(ndp);
+        }
+        REP(j,m) {
+            id[a[j]]=j;
         }
     }
     int an=dp[all];
