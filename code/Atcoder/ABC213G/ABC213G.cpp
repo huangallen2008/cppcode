@@ -64,6 +64,7 @@ signed main() {
         }
     }
     vector<int> d(1<<n);
+    d[0]=1;
     REP(i,1<<n) {
         if(~i&1) continue;
         for(int s=i;s>0;s=(s-1)&i) {
