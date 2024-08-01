@@ -69,7 +69,7 @@ signed main() {
                         continue;
                     }
                     int ni=all;
-                    REP(l,m) if((k>>l)&1) ni^=(1<<id[l]);
+                    REP(l,m) if((k>>l)&1) ni^=(1<<id[a[l]]);
                     ndp[k]=dp[ni];
                 }
             }
