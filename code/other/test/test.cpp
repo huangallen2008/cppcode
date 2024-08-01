@@ -1,6 +1,4 @@
 #include<bits/stdc++.h>
-#include __FILE__
-#include __FILE__
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
@@ -45,20 +43,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int f(int n) {
-    if(n==0) return 0;
-    if(n==1) return 1;
-    return f(n-1)+f(n-2);
-}
 signed main() {
     IOS();
-    int q;
-    cin>>q;
-    while(q--) {
-        int n;
-        cin>>n;
-        cout<<f(n)<<' ';
-    }
-    cout<<'\n';
+    int n;
+    cin>>n;
+    int an=1<<__lg(n);
+    cout<<an;
     return 0;
 }
