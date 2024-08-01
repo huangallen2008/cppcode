@@ -51,8 +51,6 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    // vector<vector<int>> dp(m, vector<int>(1 << m));
-    // vector<vector<int>> ndp(m, vector<int>(1 << m));
     REP(i,n) {
         REP(j,m) {
             cin>>a[i][j],a[i][j]--;
