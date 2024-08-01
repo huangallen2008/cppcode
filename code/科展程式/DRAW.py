@@ -48,22 +48,15 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 import numpy as np
 import csv
-<<<<<<< HEAD
 cnt=0
 maxd=600
 # 開啟 CSV 檔案
 with open('graph1.csv', newline='') as csvfile:
-=======
-
-# 開啟 CSV 檔案
-with open('F_I_star_data.csv', newline='') as csvfile:
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
     # 讀取 CSV 檔案內容
     data = csv.reader(csvfile)
     # 提取 X 和 Y 座標
     x = []
     y = []
-<<<<<<< HEAD
     cnt=0
     for row in data:
         cnt+=1
@@ -72,26 +65,15 @@ with open('F_I_star_data.csv', newline='') as csvfile:
         y.append(float(row[1]))  # 第二列為 Y 座標
 
 with open('F_I_star_data.csv', newline='') as csvfile:
-=======
-    for row in data:
-        x.append(float(row[0]))  # 第一列為 X 座標
-        y.append(float(row[1]))  # 第二列為 Y 座標
-
-with open('MAXai.csv', newline='') as csvfile:
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
     # 讀取 CSV 檔案內容
     data = csv.reader(csvfile)
     # 提取 X 和 Y 座標
     mx = []
     my = []
-<<<<<<< HEAD
     cnt=0
     for row in data:
         cnt+=1
         if(cnt>=maxd):break
-=======
-    for row in data:
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
         mx.append(float(row[0]))  # 第一列為 X 座標
         my.append(float(row[1]))  # 第二列為 Y 座標
 
@@ -99,32 +81,20 @@ with open('MAXai.csv', newline='') as csvfile:
 # x = np.linspace(0, 10, 100)
 # y = np.sin(x)
 xx=[]
-<<<<<<< HEAD
 yy=[]
 for i in range(3,len(mx)+3) :
     xx.append(i)
     yy.append(i-1)
 # 創建一個子圖
 fig, ax = plt.subplots()
-ax.plot(x, y,marker='.',markersize=0.1,color='red')
-line, = ax.plot(mx, my,color='blue')
-ax.plot(xx, yy,color="red")
-# plt.scatter(mx,my,s=1,c='blue')
-# plt.scatter(x,y,s=1,c='red')
-# plt.scatter(xx,yy,s=1,c='red')
+# ax.plot(x, y,marker='.',markersize=0.1,color='red')
+# line, = ax.plot(mx, my,color='blue')
+# ax.plot(xx, yy,color="red")
+plt.scatter(mx,my,s=1,c='blue')
+plt.scatter(x,y,s=1,c='red')
+plt.scatter(xx,yy,s=1,c='red')
 ax.set_xlim(min(x), max(x))
 ax.set_ylim(min(y), max(y))
-=======
-for i in range(3,len(mx)+3) :
-    xx.append(i)
-# 創建一個子圖
-fig, ax = plt.subplots()
-ax.plot(x, y,marker='.',markersize=0.1)
-line, = ax.plot(mx, my,color='red')
-ax.set_xlim(min(x), max(x))
-ax.set_ylim(min(y), max(y))
-ax.plot(xx, xx,color="green")
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
 
 # 定義放大和縮小函數
 def zoom(event):
@@ -133,17 +103,10 @@ def zoom(event):
     xrang = (x_max - x_min) / 10
     y_min, y_max = axtemp.get_ylim()
     yrang = (y_max - y_min) / 10
-<<<<<<< HEAD
     if event.button == 'up':
         ax.set_xlim(ax.get_xlim()[0] +xrang, ax.get_xlim()[1] -xrang)
         ax.set_ylim(ax.get_ylim()[0] +yrang, ax.get_ylim()[1] -yrang)
     elif event.button == 'down':
-=======
-    if event.button == 'down':
-        ax.set_xlim(ax.get_xlim()[0] +xrang, ax.get_xlim()[1] -xrang)
-        ax.set_ylim(ax.get_ylim()[0] +yrang, ax.get_ylim()[1] -yrang)
-    elif event.button == 'up':
->>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
         ax.set_xlim(ax.get_xlim()[0] -xrang, ax.get_xlim()[1] +xrang)
         ax.set_ylim(ax.get_ylim()[0] -yrang, ax.get_ylim()[1] +yrang)
     plt.draw()
