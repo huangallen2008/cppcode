@@ -63,6 +63,7 @@ signed main() {
             if(((i>>u)&1)&&((i>>v)&1)) cnt[i]++;
         }
     }
+    oparr(cnt)
     vector<int> d(1<<n);
     d[0]=1;
     for(int i=1;i<1<<n;i++) {
