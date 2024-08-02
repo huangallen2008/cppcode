@@ -39,12 +39,13 @@ signed main() {
     static int a[200005],dp[1048576],rdp[1048576];
     int n;
     cin>>n;
-    REP(i,n) cin>>a[i],dp[a[i]]++,rdp[(~a[i])&1048575]++;
+    REP(i,n) cin>>a[i],dp[a[i]]++,rdp[a[i]]++;
     REP(j,20) {
         REP(i,1048576) {
-            if((i>>j)&1) dp[i]+=dp[i^(1<<j)],rdp[i]+=rdp[i^(1<<j)];
+            if((i>>j)&1) dp[i]+=dp[i^(1<<j)];
+            else rdp[i]+=rdp[i^(1<<j)];
         }
     }
-    REP(i,n) cout<<dp[a[i]]<<' '<<rdp[(~a[i])&1048575]<<' '<<n-dp[(~a[i])&1048575]<<'\n';
+    REP(i,n) cout<<dp[a[i]]<<' '<<rdp[a[i]]<<' '<<n-dp[(~a[i])&1048575]<<'\n';
     return 0;
 }
