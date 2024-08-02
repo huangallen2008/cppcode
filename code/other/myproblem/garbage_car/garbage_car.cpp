@@ -59,8 +59,8 @@ struct people {
 } people;
 signed main() {
     IOS();
-    int n;
-    cin>>n;
+    int h,w,n;
+    cin>>h>>w>>n;
     people.init();
     while(n--) {
         int x,y;
