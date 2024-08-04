@@ -53,14 +53,9 @@ void solve() {
     int mx=0;
     REP(i,n) {
         int nv=a[i]%K;
-        int l=nv+k,r=nv+k+k;
-        if(r<K) {
-            p[l]++,p[r]--;
-        }
-        else {
-            p[l]++,p[K-1]--;
-            p[0]++,p[r%K]--;
-        }
+        int l=nv+k,r=nv+K;
+        p[l]++,p[K-1]--;
+        p[0]++,p[r%K]--;
         chmax(mx,a[i]);
     }
     int r=mx%K;
@@ -74,6 +69,7 @@ void solve() {
     }
     if(an==inf) cout<<"-1\n";
     else cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS();
