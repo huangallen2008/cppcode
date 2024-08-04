@@ -130,7 +130,6 @@ signed main() {
     #endif
     int n,m,k;
     cin>>n>>m>>k;
-    
     seg.init(n,k+1);
     int q=m+k;
     map<pii,int> mp;
@@ -141,9 +140,9 @@ signed main() {
         if(u>v) swap(u,v);
         mp[{u,v}]=0;
     }
-    cerr<<"ok"<<endl;
     REP1(i,k) {
-        if(i%100==0) ope(i)
+        if(i%100==0) 
+    cerr<<"ok"<<endl;
         int opt;
         cin>>opt;
         int u,v;
