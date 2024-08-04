@@ -50,13 +50,13 @@ bool check(vector<int> a,int m) {
     vector<int> mk(n+2);
     REP(i,n+2) mk[i]=i%k;
     dp[0]=0;
-    REP1(i,n+1) {
+    REP1(i,n) {
         if(i%k==1)dp[i]=dp[i-1]+a[i];
         chmax(dp[i],dp[i-k]);
         // dp[i]+=a[i];
         if(i>=k) chmax(dp[i],dp[i-k]);
     }
-    return dp[n+1]>0;
+    return dp[n]>0;
 }
 void solve() {
     cin>>n>>k;
