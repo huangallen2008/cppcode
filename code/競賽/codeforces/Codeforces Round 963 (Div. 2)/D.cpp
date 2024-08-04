@@ -46,14 +46,14 @@ int rd(int l,int r) {
 int n,k;
 bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
-    vector<int> dp(n+1);
-    REP1(i,n) {
+    vector<int> dp(n+2);
+    REP1(i,n+1) {
         dp[i]=dp[i-1];
         if(i>=k) chmax(dp[i],dp[i-k]);
         dp[i]+=a[i];
     }
     int mx=-inf;
-    REP(i,n+1) chmax(mx,dp[i]);
+    REP(i,n+2) chmax(mx,dp[i]);
     op(m)oparr(dp)ope(mx)
     return mx>0;
     // int t=(n+k-1)/k;
@@ -73,7 +73,7 @@ bool check(vector<int> a,int m) {
 }
 void solve() {
     cin>>n>>k;
-    vector<int> a(n+1);
+    vector<int> a(n+2);
     REP1(i,n) cin>>a[i];
     int l=0,r=1e9,m;
     while(l<r) {
