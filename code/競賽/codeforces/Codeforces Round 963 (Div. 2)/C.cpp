@@ -59,7 +59,7 @@ void solve() {
         }
         else {
             p[l]++,p[K-1]--;
-            p[0]++,p[r-K]--;
+            p[0]++,p[r%K]--;
         }
         chmax(mx,a[i]);
     }
