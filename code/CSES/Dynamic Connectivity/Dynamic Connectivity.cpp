@@ -91,7 +91,7 @@ struct SEG {
     }
     void ud(int w,int l,int r,int ql,int qr,int u,int v) {
         if(ql<=l&&r<=qr) {
-            s[i].pb({u,v});
+            s[w].pb({u,v});
             return;
         }
         if(ql>r||qr<l) return;
