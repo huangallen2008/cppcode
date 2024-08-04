@@ -77,7 +77,7 @@ void solve() {
     REP1(i,n) cin>>a[i];
     int l=0,r=1e9,m;
     while(l<r) {
-        m=l+r>>1;
+        m=l+r+1>>1;
         if(check(a,m)) l=m;
         else r=m-1;
     }
