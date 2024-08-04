@@ -84,22 +84,27 @@ struct SEG {
     vector<vector<pii>> s;
     DSU dsu;
     vector<int> an;
-    void init(int n,int q) {
+    int n,q;
+    void init(int _n,int _q) {
+        n=_n,q=_q;
         s=vector<vector<pii>>(q<<2);
         dsu.init(n);
         an=vector<int>(q);
     }
-    void ud(int w,int l,int r,int ql,int qr,int u,int v) {
+    void _ud(int w,int l,int r,int ql,int qr,int u,int v) {
         if(ql<=l&&r<=qr) {
             s[w].pb({u,v});
             return;
         }
         if(ql>r||qr<l) return;
         int m=l+r>>1;
-        ud(w<<1,l,m,ql,qr,u,v);
-        ud(w<<1|1,m+1,r,ql,qr,u,v);
+        _ud(w<<1,l,m,ql,qr,u,v);
+        _ud(w<<1|1,m+1,r,ql,qr,u,v);
     }
-    void dfs(int w,int l,int r) {
+    void ud(int l,int r,int u,int v) {
+        _ud(1,0,q-1,l,r,u,v);
+    }
+    void _dfs(int w,int l,int r) {
         dsu.save();
         for(auto [u,v]:s[w]) dsu.merge(u,v);
         if(l==r) {
@@ -108,23 +113,51 @@ struct SEG {
             return;
         }
         int m=l+r>>1;
-        dfs(w<<1,l,m);
-        dfs(w<<1|1,m+1,r);
+        _dfs(w<<1,l,m);
+        _dfs(w<<1|1,m+1,r);
         dsu.revert();
         return;
     }
+    void dfs() { _dfs(1,0,q-1); }
 }seg;
 signed main() {
     IOS();
     int n,m,k;
     cin>>n>>m>>k;
+    seg.init(n,k+1);
     int q=m+k;
     map<pii,int> mp;
     REP(i,m) {
         int u,v;
         cin>>u>>v;
         u--,v--;
-
+        if(u>v) swap(u,v);
+        mp[{u,v}]=0;
     }
+    REP1(i,k) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int u,v;
+            cin>>u>>v;
+            u--,v--;
+            if(u>v) swap(u,v);
+            mp[{u,v}]=i;
+        }
+        else {
+            int u,v;
+            cin>>u>>v;
+            u--,v--;
+            if(u>v) swap(u,v);
+            int &x=mp[{u,v}];
+            seg.ud(x,i-1,u,v);
+            x=-1;
+        }
+    }
+    for(auto [x,y]:mp) if(y!=-1) seg.ud(y,k,x.f,x.s);
+    seg.dfs();
+    auto &an=seg.an;
+    REP1(i,k) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
