@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int cnt=0;
-void f(int a[5][5]) {
+void f(int a[4][5]) {
     
     REP(i,5) {auto *x=a[i];
         REP(j,5)cout<<x[j]<<' ';entr
