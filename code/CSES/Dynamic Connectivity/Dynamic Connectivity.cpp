@@ -130,9 +130,10 @@ signed main() {
     #endif
     int n,m,k;
     cin>>n>>m>>k;
+    
     seg.init(n,k+1);
     int q=m+k;
-    ope("ok")
+    cerr<<"ok"<<endl;
     map<pii,int> mp;
     REP(i,m) {
         int u,v;
