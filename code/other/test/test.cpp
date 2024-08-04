@@ -43,13 +43,16 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int cnt=0;
+void f(vector<int> &v) {
+    if(cnt++>=10) return;
+    f(v);
+}
 signed main() {
     IOS();
-    ope("0")
-    int cnt=0;
-    for(;cnt<=1.7e9;cnt++);
-    while((double)clock()/CLOCKS_PER_SEC<=1)cnt++;
-    ope(cnt)
+    vector<int> v;
+    REP(i,5e7) v.pb(i);
+    f(v);
     // int T=10;
     // while(T--) {
     //     solve(rd(1000000,50000000));
