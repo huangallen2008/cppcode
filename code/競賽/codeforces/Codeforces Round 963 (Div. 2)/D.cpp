@@ -47,14 +47,14 @@ int n,k;
 bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
     vector<int> dp(n+2,-inf);
-    vector<int> mp(k,-inf),mk(n+2);
+    vector<int> mk(n+2);
     REP(i,n+2) mk[i]=i%k;
-    mp[0]=0,dp[0]=0;
+    dp[0]=0;
     REP1(i,n+1) {
-        // dp[i]=dp[i-1];
-        chmax(dp[i],mp[mk[i-1]]);
-        dp[i]+=a[i];
-        chmax(mp[mk[i]],dp[i]);
+        if(i%k==1)dp[i]=dp[i-1]+a[i];
+        chmax(dp[i],dp[i-k]);
+        // dp[i]+=a[i];
+        if(i>=k) chmax(dp[i],dp[i-k]);
     }
     return dp[n+1]>0;
 }
