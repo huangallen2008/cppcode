@@ -133,7 +133,6 @@ signed main() {
     
     seg.init(n,k+1);
     int q=m+k;
-    cerr<<"ok"<<endl;
     map<pii,int> mp;
     REP(i,m) {
         int u,v;
@@ -142,7 +141,7 @@ signed main() {
         if(u>v) swap(u,v);
         mp[{u,v}]=0;
     }
-    ope("ok")
+    cerr<<"ok"<<endl;
     REP1(i,k) {
         if(i%100==0) ope(i)
         int opt;
