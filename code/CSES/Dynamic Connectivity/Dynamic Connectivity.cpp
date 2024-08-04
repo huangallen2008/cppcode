@@ -132,6 +132,7 @@ signed main() {
     cin>>n>>m>>k;
     seg.init(n,k+1);
     int q=m+k;
+    ope("ok")
     map<pii,int> mp;
     REP(i,m) {
         int u,v;
