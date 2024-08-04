@@ -78,6 +78,7 @@ struct DSU {
             p[x]=x;
             cc++;
         }
+        stk.pop_back();
     }
 }dsu;
 struct SEG {
