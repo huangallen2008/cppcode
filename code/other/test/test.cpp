@@ -57,5 +57,6 @@ signed main() {
     int a[5][5];
     REP(i,5)REP(j,5) a[i][j]=j+1;
     f(a[0]);
+    system("pause");
     return 0;
 }
