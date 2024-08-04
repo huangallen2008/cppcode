@@ -84,6 +84,7 @@ void solve() {
         if(check(a,m)) l=m;
         else r=m-1;
     }
+    ope(1)
     cout<<l<<'\n';
 }
 signed main() {
