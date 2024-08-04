@@ -141,6 +141,7 @@ signed main() {
         mp[{u,v}]=0;
     }
     REP1(i,k) {
+        if(i%100==0) ope(i)
         int opt;
         cin>>opt;
         int u,v;
