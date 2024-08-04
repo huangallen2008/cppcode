@@ -48,6 +48,7 @@ bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
     vector<int> dp(n+2);
     vector<int> mp(k,-inf);
+    dp[0]=0;
     REP1(i,n+1) {
         dp[i]=dp[i-1];
         if(i>k) chmax(dp[i],mp[(i-1)%k]);
