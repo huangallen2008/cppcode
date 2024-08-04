@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int cnt=0;
-void f(vector<int> &v) {
+void f(vector<int> v) {
     if(cnt++>=10) return;
     f(v);
 }
