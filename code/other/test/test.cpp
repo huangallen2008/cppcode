@@ -53,7 +53,7 @@ void f(int a[5][5]) {
 signed main() {
     IOS();
     int a[5][5];
-    REP(i,5)REP(j,5) a[i][j]=i+1;
+    REP(i,5)REP(j,5) a[i][j]=j+1;
     f(a);
     return 0;
 }
