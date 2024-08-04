@@ -49,7 +49,7 @@ bool check(vector<int> a,int m) {
     vector<int> dp(n+2);
     REP1(i,n+1) {
         dp[i]=dp[i-1];
-        if(i>=k) chmax(dp[i],dp[i-k]);
+        if(i>k) chmax(dp[i],dp[i-k-1]);
         dp[i]+=a[i];
     }
     int mx=-inf;
