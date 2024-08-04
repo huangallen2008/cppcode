@@ -46,7 +46,7 @@ int rd(int l,int r) {
 int cnt=0;
 void f(int a[5][5]) {
     
-    REP(i,5) {auto *x=a[0];
+    REP(i,5) {auto *x=a[i];
         REP(j,5)cout<<x[j]<<' ';entr
     }
 }
