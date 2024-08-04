@@ -44,13 +44,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int cnt=0;
-void f(int *a) {
-    REP(i,5) REP(j,5)cout<<a[i]<<' ';entr
+void f(int **a) {
+    REP(i,5) REP(j,5)cout<<a[i][j]<<' ';entr
 }
 signed main() {
     IOS();
     int a[5][5];
-    REP(i,5)REP(j,5) a[i]=i+1;
+    REP(i,5)REP(j,5) a[i][j]=i+1;
     f(a);
     return 0;
 }
