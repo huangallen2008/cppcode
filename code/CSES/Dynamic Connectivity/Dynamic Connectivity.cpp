@@ -110,6 +110,7 @@ struct SEG {
         dsu.save();
         for(auto [u,v]:s[w]) dsu.merge(u,v);
         if(l==r) {
+            ope(l)
             an[l]=dsu.cc;
             dsu.revert();
             return;
@@ -118,7 +119,6 @@ struct SEG {
         _dfs(w<<1,l,m);
         _dfs(w<<1|1,m+1,r);
         dsu.revert();
-        return;
     }
     void dfs() { _dfs(1,0,q-1); }
 }seg;
