@@ -55,24 +55,7 @@ bool check(vector<int> a,int m) {
         dp[i]+=a[i];
         chmax(mp[i%k],dp[i]);
     }
-    // int mx=-inf;
-    // REP(i,n+2) chmax(mx,dp[i]);
-    // op(m)oparr(dp)oparr(a)
     return dp[n+1]>0;
-    // int t=(n+k-1)/k;
-    // vector<vector<int>> p(k,vector<int>(1));
-    // REP(i,n) p[i%k].pb(a[i]);
-    // REP(i,k) if(p[i].size()<=t) p[i].pb(0);
-    // // REP(i,k) REP1(j,t) p[i][j]+=p[i][j-1];
-    // vector<vector<int>> dp(k,vector<int>(t+1));
-    // REP1(i,t) {
-    //     REP(j,k) {
-    //         dp[j][i]=dp[j][i-1]+p[j][i];
-    //         if(j==0) {
-    //             chmax(dp[j][i],dp[k-1][i-1]+p[j][i]);
-    //         }
-    //     }
-    // }
 }
 void solve() {
     cin>>n>>k;
