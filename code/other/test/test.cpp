@@ -44,23 +44,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int cnt=0;
-void f(vector<int> &v) {
-    if(cnt++>=10) return;
-    // oparr(*v)
-    f(v);
+void f(int *a) {
+    REP(i,5) cout<<a[i]<<' ';entr
 }
 signed main() {
     IOS();
-    vector<int> v;
-    // REP(i,5e7) v.pb(i);
-    // f(&v);
-    // cout<<fixed<<setprecision(3)<<(long double)clock()/CLOCKS_PER_SEC<<endl;
-    // int T=10;
-    // while(T--) {
-    //     solve(rd(1000000,50000000));
-    // }
-    int a[5],b;
-    ope(a)ope(&b)
-    for(int &x:a) ope(&x)
+    int a[5];
+    REP(i,5) a[i]=i+1;
+    f(a);
     return 0;
 }
