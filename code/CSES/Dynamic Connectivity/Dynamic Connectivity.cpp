@@ -125,8 +125,8 @@ struct SEG {
 signed main() {
     IOS();
     #ifdef LOCAL
-        freopen("in.txt","r",stdin);
-        freopen("out.txt","w",stdout);
+        // freopen("in.txt","r",stdin);
+        // freopen("out.txt","w",stdout);
     #endif
     int n,m,k;
     cin>>n>>m>>k;
