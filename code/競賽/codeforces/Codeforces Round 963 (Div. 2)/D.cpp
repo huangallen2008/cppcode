@@ -47,12 +47,14 @@ int n,k;
 bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
     vector<int> dp(n+2);
-    vector<int> mp(k,-inf);
+    vector<int> mp(k,-inf),mk(n+2);
+    REP(i,n+2) mk[i]=i%k;
     mp[0]=0;
     REP1(i,n+1) {
-        dp[i]=dp[i-1]+a[i];
-        chmax(dp[i],mp[(i-1)%k]+a[i]);
-        chmax(mp[i%k],dp[i]);
+        dp[i]=dp[i-1];
+        chmax(dp[i],mp[mk[i-1]]);
+        dp[i]+=a[i];
+        chmax(mp[mk[i]],dp[i]);
     }
     return dp[n+1]>0;
 }
@@ -60,11 +62,11 @@ void solve() {
     cin>>n>>k;
     vector<int> a(n+2);
     REP1(i,n) cin>>a[i];
-    int l=0,r=1e9,m;
+    int l=0,r=1e9+5,m;
     while(l<r) {
-        m=l+r+1>>1;
-        if(check(a,m)) l=m;
-        else r=m-1;
+        m=l+r>>1;
+        if(check(a,m)) l=m+1;
+        else r=m;
     }
     cout<<l<<'\n';
 }
