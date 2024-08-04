@@ -46,12 +46,11 @@ int rd(int l,int r) {
 int n,k;
 bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
-    vector<int> dp(n+2,-inf);
-    vector<int> mk(n+2);
-    REP(i,n+2) mk[i]=i%k;
+    vector<int> dp(n+1,-inf);
     dp[0]=0;
     REP1(i,n) {
         if(i%k!=1)dp[i]=dp[i-1]+a[i];
+        else dp[i]=a[i];
         // if(i>=k)chmax(dp[i],dp[i-k]);
         // dp[i]+=a[i];
         if(i>=k) chmax(dp[i],dp[i-k]);
