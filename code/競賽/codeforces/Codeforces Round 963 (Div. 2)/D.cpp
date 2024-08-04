@@ -53,9 +53,9 @@ bool check(vector<int> a,int m) {
         dp[i]+=a[i];
     }
     int mx=-inf;
-    REP(i,n+2) chmax(mx,dp[i]);
+    // REP(i,n+2) chmax(mx,dp[i]);
     op(m)oparr(dp)ope(mx)
-    return mx>0;
+    return dp[n+1]>0;
     // int t=(n+k-1)/k;
     // vector<vector<int>> p(k,vector<int>(1));
     // REP(i,n) p[i%k].pb(a[i]);
