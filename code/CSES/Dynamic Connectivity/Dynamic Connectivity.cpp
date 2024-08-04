@@ -111,7 +111,6 @@ struct SEG {
         dsu.save();
         for(auto [u,v]:s[w]) dsu.merge(u,v);
         if(l==r) {
-            if(l%10000==0)cerr<<l<<endl;
             an[l]=dsu.cc;
             dsu.revert();
             return;
@@ -159,7 +158,6 @@ signed main() {
     }
     for(auto [x,y]:mp) if(y!=-1) seg.ud(y,k,x.f,x.s);
     seg.dfs();
-    cerr<<"ok"<<endl;
     auto &an=seg.an;
     REP(i,k+1) cout<<an[i]<<' ';
     cout<<'\n';
