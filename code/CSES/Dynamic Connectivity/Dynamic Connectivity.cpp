@@ -141,8 +141,8 @@ signed main() {
         mp[{u,v}]=0;
     }
     REP1(i,k) {
-        if(i%100==0) 
-    cerr<<"ok"<<endl;
+        if(i%10000==0) 
+    cerr<<i<<endl;
         int opt;
         cin>>opt;
         int u,v;
