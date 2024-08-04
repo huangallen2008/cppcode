@@ -154,6 +154,7 @@ signed main() {
             x=-1;
         }
     }
+    ope("ok")
     for(auto [x,y]:mp) if(y!=-1) seg.ud(y,k,x.f,x.s);
     seg.dfs();
     auto &an=seg.an;
