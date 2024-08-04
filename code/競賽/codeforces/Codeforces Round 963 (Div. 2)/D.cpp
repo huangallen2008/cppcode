@@ -54,7 +54,7 @@ bool check(vector<int> a,int m) {
     }
     int mx=-inf;
     // REP(i,n+2) chmax(mx,dp[i]);
-    op(m)oparr(dp)ope(mx)
+    op(m)oparr(dp)oparr(a)
     return dp[n+1]>0;
     // int t=(n+k-1)/k;
     // vector<vector<int>> p(k,vector<int>(1));
