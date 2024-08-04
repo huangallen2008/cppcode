@@ -54,7 +54,7 @@ struct DSU {
         p=vector<int>(n);
         sz=vector<int>(n,1);
         REP(i,n) p[i]=i;
-        cc=0;
+        cc=n;
     }
     int find(int u) {
         return p[u]==u?u:find(p[u]);
@@ -64,7 +64,7 @@ struct DSU {
         if(x==y) return;
         p[x]=y;
         sz[y]+=sz[x];
-        cc++;
+        cc--;
         stk.pb({x,y});
     }
     void save() {
@@ -76,7 +76,7 @@ struct DSU {
             stk.pop_back();
             sz[y]-=sz[x];
             p[x]=x;
-            cc--;
+            cc++;
         }
     }
 }dsu;
