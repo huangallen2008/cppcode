@@ -47,6 +47,7 @@ signed main() {
     IOS();
     ope("0")
     int cnt=0;
+    for(;cnt<=1e8;cnt++);
     while((double)clock()/CLOCKS_PER_SEC<=1)cnt++;
     ope(cnt)
     // int T=10;
