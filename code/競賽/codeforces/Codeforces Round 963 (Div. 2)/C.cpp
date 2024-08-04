@@ -49,12 +49,12 @@ void solve() {
     int K=k<<1;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    vector<int> p(K);
+    vector<int> p(K+1);
     int mx=0;
     REP(i,n) {
         int nv=a[i]%K;
         int l=(nv+k)%K,r=nv+K;
-        p[l]++,p[K-1]--;
+        p[l]++,p[K]--;
         p[0]++,p[r%K]--;
         chmax(mx,a[i]);
     }
