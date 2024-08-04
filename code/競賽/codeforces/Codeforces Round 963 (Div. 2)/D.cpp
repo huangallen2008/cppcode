@@ -68,7 +68,7 @@ void solve() {
         if(check(a,m)) l=m+1;
         else r=m;
     }
-    cout<<l<<'\n';
+    cout<<l-1<<'\n';
 }
 signed main() {
     IOS();
