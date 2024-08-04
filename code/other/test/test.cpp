@@ -62,9 +62,12 @@ void solve(int n) {
 }
 signed main() {
     IOS();
-    int T=10;
-    while(T--) {
-        solve(rd(1000000,50000000));
-    }
+    ope("0")
+    while((double)clock()/CLOCKS_PER_SEC<1){}
+    ope("1")
+    // int T=10;
+    // while(T--) {
+    //     solve(rd(1000000,50000000));
+    // }
     return 0;
 }
