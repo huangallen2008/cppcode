@@ -53,7 +53,7 @@ void solve() {
     int mx=0;
     REP(i,n) {
         int nv=a[i]%K;
-        int l=(nv+k)%K,r=nv+K;
+        int l=(nv+k)%K,r=(nv)%K;
         if(l>=r) {
             p[l]++,p[K]--;
             p[0]++,p[r%K]--;
