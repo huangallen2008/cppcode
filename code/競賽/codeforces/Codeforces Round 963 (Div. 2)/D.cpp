@@ -64,11 +64,11 @@ void solve() {
     REP1(i,n) cin>>a[i];
     int l=0,r=1e9+5,m;
     while(l<r) {
-        m=l+r>>1;
-        if(check(a,m)) l=m+1;
-        else r=m;
+        m=l+r+1>>1;
+        if(check(a,m)) l=m;
+        else r=m-1;
     }
-    cout<<l-1<<'\n';
+    cout<<l<<'\n';
 }
 signed main() {
     IOS();
