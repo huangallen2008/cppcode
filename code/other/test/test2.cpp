@@ -1,19 +1,38 @@
 #include <bits/stdc++.h>
-#define int long long
+#include "testlib.h"
+ 
 using namespace std;
-const int maxn=2e5+5;
-const int mod=1e9+7;
-signed main() {
-    vector<int> f(maxn);
-    f[1]=1;
-    for(int i=2;i<maxn;i++) f[i]=(f[i-1]+f[i-2])%mod;
-    int q;
-    cin>>q;
-    while(q--) {
-        int n;
-        cin>>n;
-        cout<<f[n]<<' ';
+struct Mos {
+    map<int,int> mp;
+    void init() {
+        mp.clear();
+        mp[-inf]=0,mp[inf]=inf;
     }
-    cout<<'\n';
+    void ins(int x,int y) {
+        auto it=prev(mp.upper_bound(x));
+        if(it->s>=y) return;
+        mp[x]=y;
+        it=mp.find(x);
+        while(next(it)->s<=it->s) {
+            mp.erase(next(it));
+        }
+    }
+    int qu(int k) {
+        auto it=prev(mp.upper_bound(x));
+        return it->s;
+    }
+} ;
+int main() {
+    int n,q;
+    cin>>n>>q;
+    vector<Mos> m(n);
+    REP(i,n) m[i].init();
+    REP(i,q) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            
+        }
+    }
     return 0;
 }
