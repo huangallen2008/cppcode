@@ -52,6 +52,7 @@ void f(int* a) {
 }
 signed main() {
     IOS();
+    ope(0)
     _sleep(1000);
     int a[5][5];
     REP(i,5)REP(j,5) a[i][j]=j+1;
