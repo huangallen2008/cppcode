@@ -81,7 +81,7 @@ struct DSU {
         }
         stk.pop_back();
     }
-}dsu;
+};
 struct SEG {
     vector<vector<pii>> s;
     DSU dsu;
@@ -124,6 +124,9 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
+    #ifdef LOCAL
+        freopen("in.txt","r",stdin);
+    #endif
     int n,m,k;
     cin>>n>>m>>k;
     seg.init(n,k+1);
