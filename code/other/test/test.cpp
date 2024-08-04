@@ -45,12 +45,12 @@ int rd(int l,int r) {
 }
 int cnt=0;
 void f(int *a) {
-    REP(i,5) cout<<a[i]<<' ';entr
+    REP(i,5) REP(j,5)cout<<a[i]<<' ';entr
 }
 signed main() {
     IOS();
-    int a[5];
-    REP(i,5) a[i]=i+1;
+    int a[5][5];
+    REP(i,5)REP(j,5) a[i]=i+1;
     f(a);
     return 0;
 }
