@@ -44,6 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
+    ope("ok")
     int n,k;
     cin>>n>>k;
     int K=k<<1;
