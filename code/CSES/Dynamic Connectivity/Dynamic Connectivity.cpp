@@ -72,7 +72,7 @@ struct DSU {
     }
     void revert() {
         while(stk.size()&&stk.back().f!=-1) {
-            auto [x,y]:stk.back();
+            auto [x,y]=stk.back();
             stk.pop_back();
             sz[y]-=sz[x];
             p[x]=x;
