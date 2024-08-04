@@ -46,13 +46,13 @@ int rd(int l,int r) {
 int cnt=0;
 void f(vector<int> *v) {
     if(cnt++>=10) return;
-    oparr(*v)
+    // oparr(*v)
     f(v);
 }
 signed main() {
     IOS();
     vector<int> v;
-    REP(i,5) v.pb(i);
+    REP(i,5e7) v.pb(i);
     f(&v);
     cout<<fixed<<setprecision(3)<<(long double)clock()/CLOCKS_PER_SEC<<endl;
     // int T=10;
