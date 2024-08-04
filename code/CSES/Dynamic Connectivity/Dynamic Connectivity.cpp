@@ -137,18 +137,14 @@ signed main() {
     REP1(i,k) {
         int opt;
         cin>>opt;
+        int u,v;
+        cin>>u>>v;
+        u--,v--;
+        if(u>v) swap(u,v);
         if(opt==1) {
-            int u,v;
-            cin>>u>>v;
-            u--,v--;
-            if(u>v) swap(u,v);
             mp[{u,v}]=i;
         }
         else {
-            int u,v;
-            cin>>u>>v;
-            u--,v--;
-            if(u>v) swap(u,v);
             int &x=mp[{u,v}];
             seg.ud(x,i-1,u,v);
             x=-1;
