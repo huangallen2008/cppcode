@@ -59,7 +59,7 @@ signed main() {
     // while(T--) {
     //     solve(rd(1000000,50000000));
     // }
-    int a[5];
-    ope(a)
+    int a[5],b;
+    ope(a)ope(&b)
     return 0;
 }
