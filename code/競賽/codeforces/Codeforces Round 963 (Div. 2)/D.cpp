@@ -51,8 +51,8 @@ bool check(vector<int> a,int m) {
     REP(i,n+2) mk[i]=i%k;
     dp[0]=0;
     REP1(i,n) {
-        if(i%k==1)dp[i]=dp[i-1]+a[i];
-        chmax(dp[i],dp[i-k]);
+        if(i%k!=1)dp[i]=dp[i-1]+a[i];
+        // if(i>=k)chmax(dp[i],dp[i-k]);
         // dp[i]+=a[i];
         if(i>=k) chmax(dp[i],dp[i-k]);
     }
