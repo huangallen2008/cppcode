@@ -48,16 +48,24 @@ void solve() {
     cin>>n;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    int cnte=0;
-    REP(i,n) if(~a[i]&1) cnte++;
-    if(cnte==n) {
+    vector<int> v;
+    REP(i,n) if(~a[i]&1) v.pb(a[i]);
+    if(v.size()==n) {
         cout<<"0\n";
         return;
     }
-    int mx=0;
-    REP(i,n) chmax(mx,a[i]);
-    if(~mx&1) cnte++;
-    cout<<cnte<<'\n';
+    sort(ALL(v));
+    int mxo=0;
+    REP(i,n) if(a[i]&1) chmax(mxo,a[i]);
+    int sum=mxo;
+    REP(i,v.size()) {
+        if(sum<v[i]) {
+            cout<<v.size()+1<<'\n';
+            return;
+        }
+        sum+=v[i];
+    }
+    cout<<v.size()<<'\n';
 }
 signed main() {
     IOS();
