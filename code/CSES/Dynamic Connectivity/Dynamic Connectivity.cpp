@@ -141,8 +141,6 @@ signed main() {
         mp[{u,v}]=0;
     }
     REP1(i,k) {
-        if(i%10000==0) 
-    cerr<<i<<endl;
         int opt;
         cin>>opt;
         int u,v;
@@ -158,6 +156,8 @@ signed main() {
             x=-1;
         }
     }
+    cerr<<"ok"<<endl;
+    
     for(auto [x,y]:mp) if(y!=-1) seg.ud(y,k,x.f,x.s);
     seg.dfs();
     auto &an=seg.an;
