@@ -48,7 +48,7 @@ bool check(vector<int> a,int m) {
     REP1(i,n) a[i]=(a[i]>=m?1:-1);
     vector<int> dp(n+2);
     vector<int> mp(k,-inf);
-    dp[0]=0;
+    mp[0]=0;
     REP1(i,n+1) {
         dp[i]=dp[i-1];
         chmax(dp[i],mp[(i-1)%k]);
@@ -84,7 +84,6 @@ void solve() {
         if(check(a,m)) l=m;
         else r=m-1;
     }
-    ope(1)
     cout<<l<<'\n';
 }
 signed main() {
