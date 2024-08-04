@@ -61,5 +61,6 @@ signed main() {
     // }
     int a[5],b;
     ope(a)ope(&b)
+    for(int &x:a) ope(&x)
     return 0;
 }
