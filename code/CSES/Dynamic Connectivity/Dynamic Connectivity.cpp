@@ -140,6 +140,7 @@ signed main() {
         if(u>v) swap(u,v);
         mp[{u,v}]=0;
     }
+    ope("ok")
     REP1(i,k) {
         if(i%100==0) ope(i)
         int opt;
