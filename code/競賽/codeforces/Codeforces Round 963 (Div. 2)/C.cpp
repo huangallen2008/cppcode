@@ -60,6 +60,7 @@ void solve() {
         p[0]++,p[r%K]--;
         chmax(mx,a[i]);
     }
+    oparr(p)
     int r=mx%K;
     int an=inf;
     REP1(i,K-1) p[i]+=p[i-1];
