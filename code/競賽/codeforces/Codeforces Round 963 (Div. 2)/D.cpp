@@ -52,9 +52,9 @@ bool check(vector<int> a,int m) {
         if(i>k) chmax(dp[i],dp[i-k-1]);
         dp[i]+=a[i];
     }
-    int mx=-inf;
+    // int mx=-inf;
     // REP(i,n+2) chmax(mx,dp[i]);
-    op(m)oparr(dp)oparr(a)
+    // op(m)oparr(dp)oparr(a)
     return dp[n+1]>0;
     // int t=(n+k-1)/k;
     // vector<vector<int>> p(k,vector<int>(1));
