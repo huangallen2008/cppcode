@@ -44,8 +44,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n,k;
-bool check(vector<int> a,int k) {
-    REP1(i,n) a[i]=(a[i]>=k?1:-1);
+bool check(vector<int> a,int m) {
+    REP1(i,n) a[i]=(a[i]>=m?1:-1);
     vector<int> dp(n+1);
     REP1(i,n) {
         dp[i]=dp[i-1];
