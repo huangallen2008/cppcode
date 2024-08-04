@@ -55,16 +55,13 @@ void solve() {
     REP(i,n) {
         int nv=a[i]%K;
         int l=(nv+k)%K,r=nv+K;
-        op(l)ope(r%k)
         p[l]++,p[K-1]--;
         p[0]++,p[r%K]--;
         chmax(mx,a[i]);
     }
-    oparr(p)
     int r=mx%K;
     int an=inf;
     REP1(i,K-1) p[i]+=p[i-1];
-    oparr(p)
     REP(i,K) {
         if(p[i])continue;
         if(i>=r) chmin(an,mx+i-r);
