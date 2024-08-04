@@ -50,9 +50,8 @@ bool check(vector<int> a,int m) {
     vector<int> mp(k,-inf);
     mp[0]=0;
     REP1(i,n+1) {
-        dp[i]=dp[i-1];
+        dp[i]=dp[i-1]+a[i];
         chmax(dp[i],mp[(i-1)%k]);
-        dp[i]+=a[i];
         chmax(mp[i%k],dp[i]);
     }
     return dp[n+1]>0;
