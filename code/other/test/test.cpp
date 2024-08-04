@@ -53,7 +53,7 @@ signed main() {
     vector<int> v;
     REP(i,5e7) v.pb(i);
     f(v);
-    cout<<fixed<<setprecision(3)<<clock()/CLOCKS_PER_SEC<<endl;
+    cout<<fixed<<setprecision(3)<<(long double)clock()/CLOCKS_PER_SEC<<endl;
     // int T=10;
     // while(T--) {
     //     solve(rd(1000000,50000000));
