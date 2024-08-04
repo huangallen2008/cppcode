@@ -157,8 +157,8 @@ signed main() {
         }
     }
     for(auto [x,y]:mp) if(y!=-1) seg.ud(y,k,x.f,x.s);
-    cerr<<"ok"<<endl;
     seg.dfs();
+    cerr<<"ok"<<endl;
     auto &an=seg.an;
     REP(i,k+1) cout<<an[i]<<' ';
     cout<<'\n';
