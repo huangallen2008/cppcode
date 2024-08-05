@@ -47,6 +47,9 @@ signed main() {
     IOS();
     int a,b;
     cin>>a>>b;
+    char c;
+    cin>>c;
     ope(a)ope(b)
+    ope(c)
     return 0;
 }
