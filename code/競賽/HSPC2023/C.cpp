@@ -94,6 +94,10 @@ signed main() {
     sort(ALL(mo),so_mon);
     vector<pii> y(m);
     REP(i,m) cin>>y[i].f,y[i].s=i;
-    
+    sort(ALL(y));
+    seg.init(m);
+    REP(i,n) {
+        int l=lower_bound(ALL(y),make_pair(mo[i].x-r,-inf))-y.begin();
+    }
     return 0;
 }
