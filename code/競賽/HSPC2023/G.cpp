@@ -55,7 +55,7 @@ int dfs(int u,int e,int k,int d,int an,int p) {
             if(ret!=-1) return ret;
         }
         else {
-            int ret=dfs(v,e,k,d+1,-1,u);
+            int ret=dfs(v,e,k,d+1,an,u);
             if(ret!=-1) return ret;
         }
     }
