@@ -112,8 +112,8 @@ signed main() {
     REP(i,n) {
         int l=lower_bound(ALL(y),make_pair(mo[i].x-mo[i].r,-inf))-y.begin();
         int r=lower_bound(ALL(y),make_pair(mo[i].x+mo[i].r,inf))-y.begin()-1;
-    ope(i)
         seg.ud(l,r,mo[i].k);
+        ope(i)
     }
     seg.apush();
     vector<int> an(m);
