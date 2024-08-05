@@ -76,7 +76,7 @@ signed main() {
         it=1;
         a={p,q};
     }
-    char sy=ss[it++][0];
+    char sy=in[it++][0];
     if(!isfac(in[it])) {
         cout<<"B is a Mixed Fraction.\n";
         stringstream ss;
