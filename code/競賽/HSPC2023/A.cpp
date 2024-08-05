@@ -47,6 +47,20 @@ bool isfac(string s) {
     for(char &c:s) if(c=='/') return 1;
     return 0;
 }
+void opt(pii a) {
+    if(a.s==1) {
+        cout<<a.f<<' ';
+        return;
+    }
+    if(a.f>a.s) {
+        int x=a.f/a.s,y=a.f%a.s;
+        cout<<x<<' '<<y<<'/'<<a.s<<' ';
+        return;
+    }
+    else {
+        cout<<a.f<<'/'<<a.s<<' ';
+    }
+}
 signed main() {
     IOS();
     vector<string> in;
@@ -97,6 +111,23 @@ signed main() {
         else cout<<"B is a Improper Fraction.\n";
         b={p,q};
     }
-    op(a.f)op(a.s)op(b.f)ope(b.s)
+    opt(a);
+    cout<<sy<<' ';
+    opt(b);
+    cout<<'\n';
+    if(sy=='+') {
+        pii c={a.f*b.s+b.f*a.s,a.s*b.s};
+        int g=__gcd(c.f,c.s);
+        c.f/=g,c.s/=g;
+        opt(c);
+    }
+    else {
+        if(sy=='/') swap(b.f,b.s);
+        pii c={a.f*b.f,a.s*b.s};
+        int g=__gcd(c.f,c.s);
+        c.f/=g,c.s/=g;
+        opt(c);
+    }
+    cout<<'\n';
     return 0;
 }
