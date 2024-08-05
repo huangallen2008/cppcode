@@ -48,6 +48,7 @@ signed main() {
     int a,b,c;
     cin>>a>>b;
     char ch;
+    ope(a,b);
     if(b!=0) cin>>ch;
     else swap(b,a);
     cin>>c;
