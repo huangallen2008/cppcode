@@ -97,7 +97,7 @@ signed main() {
     sort(ALL(y));
     seg.init(m);
     REP(i,n) {
-        int l=lower_bound(ALL(y),make_pair(mo[i].x-r,-inf))-y.begin();
+        int l=lower_bound(ALL(y),make_pair(mo[i].x-mo[i].r,-inf))-y.begin();
     }
     return 0;
 }
