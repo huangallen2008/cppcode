@@ -47,8 +47,7 @@ int n,q;
 vector<int> c;
 Graph g;
 int dfs(int u,int e,int k,int d,int an,int p) {
-    op(u)op(e)op(k)op(d)op(an)ope(p)
-    if(u==e) return d;
+    if(u==e) return an;
     for(auto v:g[u]) {
         if(v==p) continue;
         if(c[v]==k&&an==-1) {
