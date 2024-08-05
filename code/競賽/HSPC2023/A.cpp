@@ -48,6 +48,8 @@ bool isfac(string s) {
     return 0;
 }
 void opt(pii a) {
+    int g=__gcd(a.f,a.s);
+    a.f/=g,a.s/=g;
     if(a.s==1) {
         cout<<a.f<<' ';
         return;
@@ -119,15 +121,11 @@ signed main() {
     cout<<'\n';
     if(sy=='+') {
         pii c={a.f*b.s+b.f*a.s,a.s*b.s};
-        int g=__gcd(c.f,c.s);
-        c.f/=g,c.s/=g;
         opt(c);
     }
     else {
         if(sy=='/') swap(b.f,b.s);
         pii c={a.f*b.f,a.s*b.s};
-        int g=__gcd(c.f,c.s);
-        c.f/=g,c.s/=g;
         opt(c);
     }
     cout<<'\n';
