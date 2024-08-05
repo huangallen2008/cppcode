@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int a,b;
+    int a,b,c;
     cin>>a>>b;
     char ch;
     if(b!=0) cin>>ch;
