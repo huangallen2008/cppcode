@@ -55,7 +55,7 @@ signed main() {
         }
     }
     sort(ALL(f));
-    int id=upper_bound(ALL(f),n)-f.brgin();
+    int id=upper_bound(ALL(f),n)-f.begin();
     if(id&1) cout<<"Yes\n";
     else cout<<"No\n";
     return 0;
