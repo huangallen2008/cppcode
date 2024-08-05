@@ -50,7 +50,7 @@ int dfs(int u,int e,int k,int d,int an,int p) {
     if(u==e) return d;
     for(auto v:g[u]) {
         if(v==p) continue;
-        if(c[v]==k) {
+        if(c[v]==k&&an==-1) {
             int ret=dfs(v,e,k,d+1,d+1,u);
             if(ret!=-1) return ret;
         }
