@@ -51,7 +51,7 @@ signed main() {
     ss<<s;
     int a,b;
     char c;
-    cin>>a>>c>>b;
+    ss>>a>>c>>b;
     op(a)ope(b)
     return 0;
 }
