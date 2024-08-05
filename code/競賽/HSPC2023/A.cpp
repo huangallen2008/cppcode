@@ -54,7 +54,8 @@ void opt(pii a) {
     }
     if(a.f>a.s) {
         int x=a.f/a.s,y=a.f%a.s;
-        cout<<x<<' '<<y<<'/'<<a.s<<' ';
+        cout<<x<<' ';
+        if(y!=0) cout<<y<<'/'<<a.s<<' ';
         return;
     }
     else {
