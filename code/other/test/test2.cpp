@@ -16,7 +16,7 @@ int main() {
         int k;
         cin>>k;
         k--;
-        cout<<d[k]<<'\n';
+        cout<<d[k]<<' ';
     }
     return 0;
 }
