@@ -46,6 +46,21 @@ int rd(int l,int r) {
 int n,q;
 vector<int> c;
 Graph g;
+int dfs(int u,int e,int k,int d,int an,int p) {
+    if(u==e) return d;
+    for(auto v:g[u]) {
+        if(v==p) continue;
+        if(c[v]==k) {
+            int ret=dfs(v,e,k,d+1,d+1,u);
+            if(ret!=-1) return ret;
+        }
+        else {
+            int ret=dfs(v,e,k,d+1,-1,u);
+            if(ret!=-1) return ret;
+        }
+    }
+    return -1;
+}
 signed main() {
     IOS();
     cin>>n>>q;
@@ -65,6 +80,15 @@ signed main() {
         if(opt==1) {
             int u,v,k;
             cin>>u>>v>>k,u--,v--;
+            int an;
+            if(c[u]==k) an=0;
+            else an=dfs(u,v,k,0,-1,-1);
+            cout<<an<<'\n';
+        }
+        else {
+            int u,k;
+            cin>>u>>k,u--;
+            c[u]=k;
         }
     }
     return 0;
