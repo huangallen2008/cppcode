@@ -45,15 +45,13 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int a,b,c;
-    cin>>a>>b;
-    char ch;
-    ope(a);ope(b)
-    if(b!=0) cin>>ch;
-    else swap(b,a);
-    cin>>c;
-    ope(c)
-    int p=a*c+b,q=c;
-    op(p)ope(q)
+    string s;
+    cin>>s;
+    stringstream ss;
+    ss<<s;
+    int a,b;
+    char c;
+    cin>>a>>c>>b;
+    op(a)ope(b)
     return 0;
 }
