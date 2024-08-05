@@ -7,6 +7,7 @@ int main() {
     for(int i=0;i<n;i++) cin>>a[i];
     int mx=a[0];
     vector<int> d(n);
+    d[0]=-2e9;
     for(int i=1;i<n;i++) {
         d[i]=max(d[i-1],mx-a[i]);
         mx=max(mx,a[i]);
