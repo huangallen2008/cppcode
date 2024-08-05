@@ -76,6 +76,7 @@ struct SEG {
         _ud(w<<1|1,m+1,r,ql,qr,v);
     }
     void ud(int l,int r,int v) {
+        op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,v);
     }
     void _apush(int w,int l,int r) {
