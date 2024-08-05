@@ -77,19 +77,19 @@ signed main() {
         a={p,q};
     }
     char sy=ss[it++][0];
-    if(!isfac(in[tt])) {
+    if(!isfac(in[it])) {
         cout<<"B is a Mixed Fraction.\n";
         stringstream ss;
-        ss<<in[tt+1];
+        ss<<in[it+1];
         int p,q;
         char c;
         ss>>p>>c>>q;
-        p+=q*stoi(in[tt]);
+        p+=q*stoi(in[it]);
         b={p,q};
     }
     else {
         stringstream ss;
-        ss<<in[tt];
+        ss<<in[it];
         int p,q;
         char c;
         ss>>p>>c>>q;
