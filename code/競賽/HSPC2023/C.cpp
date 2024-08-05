@@ -80,7 +80,7 @@ struct SEG {
     }
     void _apush(int w,int l,int r) {
         if(l==r) {
-            an[l]=seg[w].v;
+            an[l]=s[w].v;
             return;
         }
         push(s[w],s[w<<1],s[w<<1|1]);
