@@ -46,10 +46,12 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int a,b;
-    cin>>a;
-    char c;
+    cin>>a>>b;
+    char ch;
+    if(b!=0) cin>>ch;
+    else swap(b,a);
     cin>>c;
-    ope(a)ope(b)
-    ope(c)
+    int p=a*c+b,q=c;
+    op(p)ope(q)
     return 0;
 }
