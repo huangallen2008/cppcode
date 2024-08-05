@@ -78,6 +78,19 @@ struct SEG {
     void ud(int l,int r,int v) {
         _ud(1,0,n-1,l,r,v);
     }
+    void _apush(int w,int l,int r) {
+        if(l==r) {
+            an[i]=seg[w].v;
+            return;
+        }
+        push(s[w],s[w<<1],s[w<<1|1]);
+        int m=l+r>>1;
+        _apush(w<<1,l,m);
+        _apush(w<<1|1,m+1,r);
+    }
+    void apush() {
+        _apush(1,0,n-1);
+    }
 }seg;
 struct mon {
     int x,r,k;
@@ -98,6 +111,13 @@ signed main() {
     seg.init(m);
     REP(i,n) {
         int l=lower_bound(ALL(y),make_pair(mo[i].x-mo[i].r,-inf))-y.begin();
+        int r=lower_bound(ALL(y),make_pair(mo[i].x+mo[i].r,inf))-y.begin()-1;
+        seg.ud(l,r,mo[i].k);
     }
+    seg.apush();
+    vector<int> an(m);
+    REP(i,m) an[y[i].s]=seg.an[i];
+    REP(i,m) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
