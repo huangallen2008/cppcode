@@ -43,17 +43,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int cnt=0;
-void f(int* a) {
-    
-    REP(i,5) {
-        REP(j,5)cout<<a[j]<<' ';entr
-    }
-}
 signed main() {
     IOS();
-    int x=9;
-    int b=x/4*4;
-    cout<<b;
+    int a,b;
+    cin>>a>>b;
+    ope(a)ope(b)
     return 0;
 }
