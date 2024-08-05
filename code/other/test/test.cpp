@@ -52,6 +52,7 @@ signed main() {
     if(b!=0) cin>>ch;
     else swap(b,a);
     cin>>c;
+    ope(c)
     int p=a*c+b,q=c;
     op(p)ope(q)
     return 0;
