@@ -52,7 +52,7 @@ void f(int* a) {
 }
 signed main() {
     IOS();
-    int x=7;
+    int x=9;
     int b=x/4*4;
     cout<<b;
     return 0;
