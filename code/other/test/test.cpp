@@ -45,6 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ope(__gcd(0,5))
     string s;
     cin>>s;
     stringstream ss;
