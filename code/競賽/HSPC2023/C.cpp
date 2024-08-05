@@ -109,10 +109,10 @@ signed main() {
     REP(i,m) cin>>y[i].f,y[i].s=i;
     sort(ALL(y));
     seg.init(m);
-    ope("ok")
     REP(i,n) {
         int l=lower_bound(ALL(y),make_pair(mo[i].x-mo[i].r,-inf))-y.begin();
         int r=lower_bound(ALL(y),make_pair(mo[i].x+mo[i].r,inf))-y.begin()-1;
+    ope(i)
         seg.ud(l,r,mo[i].k);
     }
     seg.apush();
