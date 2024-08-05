@@ -70,6 +70,7 @@ struct SEG {
             addtag(s[w],{v,v,1});
             return;
         }
+        if(ql>r||qr<l) return;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         _ud(w<<1,l,m,ql,qr,v);
