@@ -88,7 +88,10 @@ struct SEG {
         _ud(1,0,n-1,u,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
+        if(ql<=l&&r<=qr) {
+            op(w)op(s[w].v)op(s[w].mn)ope(s[w].mx)
+            return s[w];
+        }
         if(ql>r||qr<l) return {-inf,-inf,inf};
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
