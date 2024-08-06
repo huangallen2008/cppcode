@@ -116,9 +116,9 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.qu(l,r)<<'\n';
         }
-        cout<<"v:";REP1(i,20) cout<<seg.s[i].v<<' ';
-        cout<<"mx:";REP1(i,20) cout<<seg.s[i].mx<<' ';
-        cout<<"mn:";REP1(i,20) cout<<seg.s[i].mn<<' ';
+        cout<<"v:";REP1(i,20) cout<<seg.s[i].v<<' ';entr
+        cout<<"mx:";REP1(i,20) cout<<seg.s[i].mx<<' ';entr
+        cout<<"mn:";REP1(i,20) cout<<seg.s[i].mn<<' ';entr
         entr
     }
     return 0;
