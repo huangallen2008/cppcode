@@ -102,7 +102,6 @@ signed main() {
     int n,q;
     cin>>n>>q;
     seg.init(n);
-    REP1(i,20) cout<<seg.s[i].v<<' ';
     REP(i,q) {
         int opt;
         cin>>opt;
