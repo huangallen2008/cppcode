@@ -71,6 +71,7 @@ struct SEG {
     void init(int _n) {
         n=_n;
         s=vector<Seg>(n<<2);
+        build(1,0,n-1);
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
@@ -100,6 +101,7 @@ signed main() {
     int n,q;
     cin>>n>>q;
     seg.init(n);
+    REP1(i,20) cout<<seg.s[i].v<<' ';
     REP(i,q) {
         int opt;
         cin>>opt;
