@@ -61,7 +61,7 @@ struct SEG {
     int n;
     void init(int _n) {
         n=_n;
-        s=vector<Seg>(n<<2);
+        s=vector<Seg(n<<2);
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
@@ -105,6 +105,7 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.qu(l,r)<<'\n';
         }
+        entr
     }
     return 0;
 }
