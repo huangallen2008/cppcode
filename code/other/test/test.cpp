@@ -51,7 +51,7 @@ struct SEG {
         Seg a;
         a.mx=max(b.mx,c.mx);
         a.mn=min(b.mn,c.mn);
-        a.v=max({b.v,c.v,b.mx-a.mn});
+        a.v=max({b.v,c.v,b.mx-c.mn});
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
