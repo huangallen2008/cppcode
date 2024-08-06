@@ -75,7 +75,6 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            ope(l)
             s[w]={-inf,v,v};
             return;
         }
@@ -88,10 +87,7 @@ struct SEG {
         _ud(1,0,n-1,u,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) {
-            op(w)op(s[w].v)op(s[w].mn)ope(s[w].mx)
-            return s[w];
-        }
+        if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return {-inf,-inf,inf};
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
@@ -119,10 +115,6 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.qu(l,r)<<'\n';
         }
-        cout<<"v:";REP1(i,20) cout<<seg.s[i].v<<' ';entr
-        cout<<"mx:";REP1(i,20) cout<<seg.s[i].mx<<' ';entr
-        cout<<"mn:";REP1(i,20) cout<<seg.s[i].mn<<' ';entr
-        entr
     }
     return 0;
 }
