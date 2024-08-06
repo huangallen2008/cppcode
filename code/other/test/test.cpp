@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int v,mx,mn;
+        int v=-inf,mx=-inf,mn=inf;
     };
     Seg merge(Seg b,Seg c) {
         Seg a;
