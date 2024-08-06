@@ -114,7 +114,7 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.qu(l,r)<<'\n';
         }
-        REP1(i,10) cout<<seg.s[i].v<<' ';
+        REP1(i,20) cout<<seg.s[i].v<<' ';
         entr
     }
     return 0;
