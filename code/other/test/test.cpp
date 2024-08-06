@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int v=-inf,mx=-inf,mn=inf;
+        int v,mx,mn;
     };
     Seg merge(Seg b,Seg c) {
         Seg a;
@@ -59,6 +59,15 @@ struct SEG {
     }
     vector<Seg> s;
     int n;
+    void build(int w,int l,int r) {
+        if(l==r) {
+            s[w]={-inf,0,0};
+            return;
+        }
+        int m=l+r>>1;
+        build(w<<1,l,m);
+        build(w<<1|1,m+1,r);
+    }
     void init(int _n) {
         n=_n;
         s=vector<Seg>(n<<2);
