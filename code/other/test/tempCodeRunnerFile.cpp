@@ -1,12 +1,5 @@
-
-    int n=100;
-    REP1(i,n) {
-        vector<int> v;
-        REP1(j,i) {
-            if(isp(i^j)) {
-                // cout<<i<<' '<<j<<'\n';
-                v.pb(j);
-            }
-        }
-        op(i)oparr(v)
-    }
+5 4
+1 1 5
+2 1 4
+1 2 10
+2 1 2
