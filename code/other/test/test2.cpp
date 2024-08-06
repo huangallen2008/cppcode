@@ -43,6 +43,19 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+void opt(__int128 x) {
+    if(x==0) {
+        cout<<"0\n";
+        return;
+    }
+    string s;
+    while(x>0) {
+        s+='0'+x%10;
+        x/=10;
+    }
+    reverse(ALL(s));
+    cout<<s<<'\n';
+}
 signed main() {
     IOS();
     int n,t;
@@ -72,6 +85,6 @@ signed main() {
             chmax(ans,an);
         }
     }
-    cout<<an<<'\n';
+    opt(ans);
     return 0;
 }
