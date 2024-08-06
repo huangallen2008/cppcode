@@ -75,6 +75,7 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
+            ope(l)
             s[w]={-inf,v,v};
             return;
         }
