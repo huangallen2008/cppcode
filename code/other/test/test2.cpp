@@ -2,7 +2,8 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -38,53 +39,38 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
-const int inf=(1ll<<62);
+const ll inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void opt(__int128 x) {
-    if(x==0) {
-        cout<<"0\n";
-        return;
-    }
-    string s;
-    while(x>0) {
-        s+='0'+x%10;
-        x/=10;
-    }
-    reverse(ALL(s));
-    cout<<s<<'\n';
+int n,k,x,y,z;
+ll cost(int v) {
+    if(v<0) return (ll)x*(-v);
+    else return (ll)y*v;
 }
-signed main() {
+signed main(){
     IOS();
-    int n,t;
-    cin>>n>>t;
-    vector<int> a(n),b(n);
+    cin>>n>>k>>x>>y>>z;
+    vector<int> a(n);
     REP(i,n) cin>>a[i];
-    REP(i,n) cin>>b[i];
-    __int128 ans=0;
-    REP(l,n) {
-        for(int r=l;r<n;r++) {
-            priority_queue<pii>pq;
-            for(int i=l;i<=r;i++) pq.push({a[i]+b[i],min(a[i],b[i])});
-            int tt=t-r+l;
-            __int128 an=0;
-            while(tt--) {
-                auto [x,y]=pq.top();
-                pq.pop();
-                an+=x;
-                if(y==0) {
-                    an+=(__int128)tt*x;
-                    break;
-                }
-                int ny=y>>1;
-                int nx=x-y+ny;
-                pq.push({nx,ny});
+    vector<int> s(1<<n);
+    for(int i=1;i<1<<n;i++) {
+        s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
+    }
+    vector<pii> f;
+    for(int i=1;i*i<=k;i++) if(k%i==0) f.pb({i,k/i});
+    ll an=inf;
+    REP(i,1<<n) {
+        if(i==0||(i&-i)==i) continue;
+        int cnt1=__builtin_popcount(i),v=(cnt1-2)*z;
+        for(int j=(i-1)&i;j>0;j=(j-1)&i) {
+            if(__builtin_popcount(j)>(cnt1>>1)) continue;
+            for(auto &[f1,f2]:f) {
+                chmin(an,min(cost(s[j]-f1)+cost(s[j^i]-f2),cost(s[j]-f2)+cost(s[j^i]-f1))+v);
             }
-            chmax(ans,an);
         }
     }
-    opt(ans);
+    cout<<an<<'\n';
     return 0;
 }
