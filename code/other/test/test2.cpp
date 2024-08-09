@@ -50,8 +50,7 @@ inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+re
 inline int R(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
 int n,k,x,y,z;
 inline ll cost(const int v) {
-    if(v<0) return (ll)x*(-v);
-    else return (ll)y*v;
+    return v<0?(ll)x*(-v):(ll)y*v;
 }
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
 signed main(){
