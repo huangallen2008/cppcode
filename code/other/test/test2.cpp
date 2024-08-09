@@ -80,13 +80,12 @@ signed main(){
     int sk=sqrt(k);
     for(int i=1;i<=sk;i++) if(k%i==0) f.pb({i,k/i});
     ll an=inf;
-
-    for(auto &[f1,f2]:f) {
+    for(const pii &[f1,f2]:f) {
         for(int i=1;i<=all;i++) {
             dp1[i]=cost(s[i]-f1)+(ll)mc[i];
         }
         REP(i,n) {
-            int t=all^(1<<i);
+            const int t=all^(1<<i);
 //            REP(j,1<<n) {
             for(int j=t;j>0;j=(j-1)&t) {
                 mn(dp1[j^(1<<i)],dp1[j]);
