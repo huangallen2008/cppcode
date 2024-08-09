@@ -53,7 +53,7 @@ inline ll cost(const int v) {
     if(v<0) return (ll)x*(-v);
     else return (ll)y*v;
 }
-inline void mn(ll &a,ll b) { if(b>a) swap(a,b); }
+inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
 signed main(){
     IOS();
 //    cin>>n>>k>>x>>y>>z;
