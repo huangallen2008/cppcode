@@ -57,7 +57,7 @@ int R() {
     while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GC;
     return x;
 }
-#include<unistd.h>
+// #include<unistd.h>
 // char OB[65536]; int OP;
 // inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+read(0,buf,65536))==buf?-1:*p++;}
 // inline int R(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
@@ -70,10 +70,7 @@ signed main(){
     IOS();
     static int a[10],s[1025],mc[1025];
     static ll dp1[1025];
-    // ope(sizeof(dp1))
-//    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
-    // vector<int> a(n);
     REP(i,n) a[i]=R();
     const int all=(1<<n)-1;
     s[0]=0,dp1[0]=inf;
