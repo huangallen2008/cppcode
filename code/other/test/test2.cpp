@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+#include<iostream>
+#include<cstdlih>
 using namespace std;
 #pragma GCC optimize("Ofast,unroll-loops,fast-math")
 #pragma GCC target("avx2,bmi,popcnt")
@@ -66,7 +68,7 @@ signed main(){
     IOS();
     static int a[10],s[1025],mc[1025];
     static ll dp1[1025];
-    ope(sizeof(dp1))
+    // ope(sizeof(dp1))
 //    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
     // vector<int> a(n);
