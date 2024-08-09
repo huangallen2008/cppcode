@@ -53,23 +53,23 @@ inline ll cost(const int v) {
     return v<0?(ll)x*(-v):(ll)y*v;
 }
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
+int a[10],s[1025];
+ll dp1[1025];
 signed main(){
     IOS();
 //    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
     vector<int> a(n);
     REP(i,n) a[i]=R();
-    vector<int> s(1<<n);
     const int all=(1<<n)-1;
+    s[0]=0,dp1[0]=inf;
     for(int i=1;i<=all;i++) {
         s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
     }
     ll an=inf;
-    vector<ll> dp1(1<<n);
     for(int f1=1;f1*f1<=k;f1++) {
         if(k%f1) continue;
         int f2=k/f1;
-        dp1[0]=inf;
         for(int i=1;i<=all;i++) {
             dp1[i]=cost(s[i]-f1)+(ll)(__builtin_popcount(i))*z;
         }
