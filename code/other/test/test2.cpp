@@ -80,7 +80,8 @@ signed main(){
         s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
         mc[i]=(__builtin_popcount(i)-1)*z;
     }
-    vector<pii > fa;
+    pair<int,int> pp;
+    vector<pii> fa;
     for(int i=1;i*i<=k;i++) if(k%i==0) fa.pb({i,k/i});
     ll an=inf;
     for(const auto &[f1,f2]:fa) {
