@@ -26,17 +26,19 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) mn(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
-//#ifdef LOCAL
+#ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
 #define entr cout<<endl;
-//#else
-//#define op(x) ;
-//#define ope(x) ;
-//#define oparr(x) ;
-//#define entr ;
-//#endif
+#define GC _getchar_nolock()
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#define GC getchar_unlocked()
+#endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
 const ll inf=(1ll<<62);
@@ -44,8 +46,6 @@ const ll inf=(1ll<<62);
 //int rd(int l,int r) {
 //    return uniform_int_distribution<int>(l,r)(rng);
 //}
-#define GC _getchar_nolock()
-// #define GC getchar_unlocked()
 int R() {
     int x=0;
     char ch=GC;
