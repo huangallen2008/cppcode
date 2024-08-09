@@ -68,7 +68,7 @@ signed main(){
     static ll dp1[1025];
 //    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
-    vector<int> a(n);
+    // vector<int> a(n);
     REP(i,n) a[i]=R();
     const int all=(1<<n)-1;
     s[0]=0,dp1[0]=inf;
