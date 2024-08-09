@@ -64,7 +64,7 @@ inline ll cost(const int v) {
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
 signed main(){
     IOS();
-    static int a[10],s[1025];
+    static int a[10],s[1025],mc[1025];
     static ll dp1[1025];
 //    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
@@ -74,14 +74,16 @@ signed main(){
     s[0]=0,dp1[0]=inf;
     for(int i=1;i<=all;i++) {
         s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
+        mc[i]=(__builtin_popcount(i)-1)*z;
     }
     vector<pii> f;
     int sk=sqrt(k);
     for(int i=1;i<=sk;i++) if(k%i==0) f.pb({i,k/i});
     ll an=inf;
+
     for(auto &[f1,f2]:f) {
         for(int i=1;i<=all;i++) {
-            dp1[i]=cost(s[i]-f1)+(ll)(__builtin_popcount(i))*z;
+            dp1[i]=cost(s[i]-f1)+(ll)mc[i];
         }
         REP(i,n) {
             int t=all^(1<<i);
@@ -91,7 +93,7 @@ signed main(){
             }
         }
         for(int i=1;i<all;i++) {
-            chmin(an,cost(s[i]-f2)+(ll)(__builtin_popcount(i)-2)*z+dp1[all^i]);
+            chmin(an,cost(s[i]-f2)+(ll)mc[i]+dp1[all^i]);
         }
     }
     cout<<an<<'\n';
