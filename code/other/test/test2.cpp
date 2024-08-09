@@ -61,10 +61,11 @@ inline ll cost(const int v) {
     return v<0?(ll)x*(-v):(ll)y*v;
 }
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
-int a[10],s[1025];
-ll dp1[1025];
+
 signed main(){
     IOS();
+    static int a[10],s[1025];
+    static ll dp1[1025];
 //    cin>>n>>k>>x>>y>>z;
     n=R(),k=R(),x=R(),y=R(),z=R();
     vector<int> a(n);
