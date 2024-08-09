@@ -69,6 +69,7 @@ inline ll cost(const int v) {
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
 signed main(){
     IOS();
+    freopen("out.txt","w",stdout);
     static int a[10],s[1025],mc[1025];
     static ll dp1[1025];
     n=R(),k=R(),x=R(),y=R(),z=R();
