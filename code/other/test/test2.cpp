@@ -35,13 +35,13 @@ using namespace std;
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
 #define entr cout<<endl;
-#define GC _getchar_nolock()
+#define RC _getchar_nolock
 #else
 #define op(x) ;
 #define ope(x) ;
 #define oparr(x) ;
 #define entr ;
-#define GC getchar_unlocked()
+#define RC getchar_unlocked
 #endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
@@ -50,17 +50,17 @@ const ll inf=(1ll<<62);
 //int rd(int l,int r) {
 //    return uniform_int_distribution<int>(l,r)(rng);
 //}
-int R() {
-    int x=0;
-    char ch=GC;
-    while(ch==' '||ch=='\n') ch=GC;
-    while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GC;
-    return x;
-}
+// int R() {
+//     int x=0;
+//     char ch=GC;
+//     while(ch==' '||ch=='\n') ch=GC;
+//     while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GC;
+//     return x;
+// }
 // #include<unistd.h>
 // char OB[65536]; int OP;
 // inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+read(0,buf,65536))==buf?-1:*p++;}
-// inline int R(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
+inline int R(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
 int n,k,x,y,z;
 inline ll cost(const int v) {
     return v<0?(ll)x*(-v):(ll)y*v;
