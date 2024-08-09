@@ -80,7 +80,7 @@ signed main(){
     int sk=sqrt(k);
     for(int i=1;i<=sk;i++) if(k%i==0) f.pb({i,k/i});
     ll an=inf;
-    for(const pii &[f1,f2]:f) {
+    for(const auto &[f1,f2]:f) {
         for(int i=1;i<=all;i++) {
             dp1[i]=cost(s[i]-f1)+(ll)mc[i];
         }
