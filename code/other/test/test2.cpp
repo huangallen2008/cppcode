@@ -45,7 +45,7 @@ const ll inf=(1ll<<62);
 //    return uniform_int_distribution<int>(l,r)(rng);
 //}
 #define GC _getchar_nolock()
-int in() {
+int R() {
     int x=0;
     char ch=GC;
     while(ch==' '||ch=='\n') ch=GC;
