@@ -81,8 +81,7 @@ signed main(){
         mc[i]=(__builtin_popcount(i)-1)*z;
     }
     vector<pii> f;
-    int sk=sqrt(k);
-    for(int i=1;i<=sk;i++) if(k%i==0) f.pb({i,k/i});
+    for(int i=1;i*i<=k;i++) if(k%i==0) f.pb({i,k/i});
     ll an=inf;
     for(const auto &[f1,f2]:f) {
         for(int i=1;i<=all;i++) {
