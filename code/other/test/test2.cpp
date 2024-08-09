@@ -80,10 +80,10 @@ signed main(){
         s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
         mc[i]=(__builtin_popcount(i)-1)*z;
     }
-    vector<pii> f;
-    for(int i=1;i*i<=k;i++) if(k%i==0) f.pb({i,k/i});
+    vector<pii> fa;
+    for(int i=1;i*i<=k;i++) if(k%i==0) fa.pb({i,k/i});
     ll an=inf;
-    for(const auto &[f1,f2]:f) {
+    for(const auto &[f1,f2]:fa) {
         for(int i=1;i<=all;i++) {
             dp1[i]=cost(s[i]-f1)+(ll)mc[i];
         }
