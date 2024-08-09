@@ -62,7 +62,6 @@ inline ll cost(const int v) {
     return v<0?(ll)x*(-v):(ll)y*v;
 }
 inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
-
 signed main(){
     IOS();
     static int a[10],s[1025];
@@ -76,10 +75,11 @@ signed main(){
     for(int i=1;i<=all;i++) {
         s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
     }
+    vector<pii> f;
+    int sk=sqrt(k);
+    for(int i=1;i<=sk;i++) if(k%i==0) f.pb({i,k/i});
     ll an=inf;
-    for(int f1=1;f1*f1<=k;f1++) {
-        if(k%f1) continue;
-        int f2=k/f1;
+    for(auto &[f1,f2]:f) {
         for(int i=1;i<=all;i++) {
             dp1[i]=cost(s[i]-f1)+(ll)(__builtin_popcount(i))*z;
         }
@@ -87,7 +87,7 @@ signed main(){
             int t=all^(1<<i);
 //            REP(j,1<<n) {
             for(int j=t;j>0;j=(j-1)&t) {
-                chmin(dp1[j^(1<<i)],dp1[j]);
+                mn(dp1[j^(1<<i)],dp1[j]);
             }
         }
         for(int i=1;i<all;i++) {
