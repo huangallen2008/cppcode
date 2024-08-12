@@ -55,7 +55,7 @@ void dfs(int u,int fa) {
         pre[v]=mxv;
         chmax(mxv,dp1[v]-dp0[v]);
     }
-    opr(u)
+    ope(u)
     mxv=-inf;
     RREP(i,g[u].size()) {
         int v=g[u][i];
