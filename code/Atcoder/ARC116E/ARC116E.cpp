@@ -47,6 +47,7 @@ Graph g;
 int n;
 vector<int> lu,hc;
 int dfs(int u,int p,int k) {
+    ope(u)
     int an=0;
     for(auto v:g[u]) {
         if(v==p) continue;
@@ -81,7 +82,6 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    ope("ok")
     int l=1,r=n,m;
     while(l<r) {//first m that mds(m)<=k
         m=l+r+1>>1;
