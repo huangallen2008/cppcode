@@ -109,11 +109,25 @@ int pw(int x,int p) {
     }
     return r;
 }
+void f(vector<int>&v,int l,int k) {
+    if(k==1) return;
+    vector<int> t(k);
+    REP(i,k>>1) t[i]=v[l+(i<<1)];
+    REP(i,k>>1) t[i+(k>>1)]=v[l+(i<<1)+1];
+    REP(i,k) v[l+i]=t[i];
+    int m=l+(k>>1);
+    f(v,l,k>>1),f(v,l+(k>>1),k>>1);
+}
 signed main() {
     IOS();
-    int a,b;
-    cin>>a>>b;
-    ope(pw(a,b))
+    vector<int> v;
+    int n;
+    while(cin>>n) {
+        int N=1<<n;
+        REP(i,N) v.pb(i);
+        f(v,0,N);
+        oparr(v)
+    }
     // int n,q;
     // cin>>n>>q;
     // seg.init(n);
