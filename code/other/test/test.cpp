@@ -103,7 +103,6 @@ int MU(int a,int b) {
     int c=0; 
     if(a<b) swap(a,b); 
     while(b>0) { 
-        op()
         if(b&1) c=MA(c,a); 
         a=MA(a,a); b>>=1;
     }
