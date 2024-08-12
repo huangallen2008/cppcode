@@ -47,11 +47,6 @@ int rd(int l,int r) {
 
 const int N=1<<20;
 struct NTT {
-    const int mod=998244353;
-    const int G=3;
-    const int INVG=332748118;
-    vector<int> r,c;
-    int n1,n2,t,lt;
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
@@ -66,18 +61,22 @@ struct NTT {
     }
     int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
     int MM(int a,int b) { int c=a-b;if(c<0) c+=mod;return c; }
-    int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
-    void ntt(vector<int> &a,int opt){
-        for (int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
-        for (int m=1;m<t;m<<=1){
-            int OMG=pw(opt==1?G:INVG,(mod-1)/(m<<1));
-            for (int l=0;l<t;l+=m<<1){
-                int omg=1;
-                for (int k=0;k<m;k++){
-                    int t1=a[l+k],t2=a[l+m+k]*omg%mod;
-                    a[l+m+k]=MM(t1,t2);
-                    a[l+k]=MA(t1,t2);
-                    omg*= OMG,omg %= mod;
+    int MU(int a,int b) { int c=0;  if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
+    const int mod=998244353;
+    const int G=3;
+    const int INVG=inv(G);
+    vector<int> r,c;
+    int n1,n2,t,lt;void ntt(vector<int> &a,int opt){
+        for(int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
+        for(int m=1;m<t;m<<=1){
+            int gn=pw(opt==1?G:INVG,(mod-1)/(m<<1));
+            for(int l=0;l<t;l+=m<<1){
+                int g=1;
+                for(int k=l;k<l+m;k++){
+                    int t1=a[k],t2=a[k+m]*gn%mod;
+                    a[k+m]=MM(t1,t2);
+                    a[k]=MA(t1,t2);
+                    g*=gn,g%=mod;
                 }
             }
         }
