@@ -65,7 +65,7 @@ namespace NTT {
     int MU(int a,int b) { int c=0;  if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
     const int G=3;
     const int INVG=inv(G);
-    vector<int> r,c;
+    vector<int> r,c,a,b;
     int n1,n2,t,lt;
     void _ntt(vector<int> &a,int opt){
         for(int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
@@ -82,8 +82,9 @@ namespace NTT {
             }
         }
     }
-    vector<int>& ntt(vector<int>&a,vector<int>&b){
-        int n1=a.size(),n2=b.size();
+    vector<int>& ntt(vector<int>&_a,vector<int>&_b){
+        a=_a,b=_b;
+        n1=a.size(),n2=b.size();
         t=1,lt=0;
         while(t<n1+n2) t<<=1,lt++;
         while(a.size()<t) a.pb(0);
