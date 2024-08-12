@@ -99,14 +99,15 @@ struct SEG {
 }seg;
 int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
 int MM(int a,int b) { int c=a-b;if(c<0) c+=mod;return c; }
-int MU(int a,int b) { 
-    int c=0; 
-    if(a<b) swap(a,b); 
-    while(b>0) { 
-        if(b&1) c=MA(c,a); 
-        a=MA(a,a); b>>=1;
+int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=MU(r,x);
+        x=MU(x,x);
+        p>>=1;
     }
-    return c;
+    return p;
 }
 signed main() {
     IOS();
