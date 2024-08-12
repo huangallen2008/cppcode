@@ -54,7 +54,6 @@ int dfs(int u,int p,int k) {
         chmax(lu[u],lu[v]+1);
         chmin(hc[u],hc[v]+1);
     }
-    op(u)op(lu[u])ope(hc[u])
     if(lu[u]<=k-hc[u]) lu[u]=hc[u]-k-1;
     else {
         if(lu[u]==k) {
@@ -85,7 +84,6 @@ signed main() {
     while(l<r) {//first m that mds(m)<=k
         m=l+r>>1;
         int ret=mds(m);
-        op(m)ope(ret)
         if(ret<=k) r=m;
         else l=m+1;
     }
