@@ -92,7 +92,6 @@ namespace NTT {
         while(t<n1+n2) t<<=1,lt++;
         while(a.size()<t) a.pb(0);
         while(b.size()<t) b.pb(0);
-        oparr(a)oparr(b)
         r=c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         _ntt(a,1),_ntt(b,1);
@@ -101,7 +100,6 @@ namespace NTT {
         int invn=inv(t);
         for(int i=0;i<=n1+n2;i++) c[i]=MU(c[i],invn);
         while(c.size()&&c.back()==0) c.pop_back();
-        oparr(c)
         return c;
     }
 };
