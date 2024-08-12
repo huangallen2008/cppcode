@@ -61,7 +61,7 @@ struct NTT {
         }
         return r;
     }
-    void NTT(vector<int> &A,int opt){
+    void ntt(vector<int> &A,int opt){
         for (int i = 0;i < t;i ++)
         if (i < r[i]) swap(A[i],A[r[i]]);
         for (int mid = 1;mid < t;mid <<= 1){
@@ -82,10 +82,10 @@ struct NTT {
         while(t<=n+m) t<<=1,lt++;
         r=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
-        NTT(a,1);
-        NTT(b,1);
+        ntt(a,1);
+        ntt(b,1);
         for (int i = 0;i < t;i ++) (a[i] *= b[i]) %= MOD;
-        NTT(a,-1);
+        ntt(a,-1);
         int invn = pw(t,MOD - 2);
         for (int i = 0;i <= n + m;i ++)
         a[i]=(a[i] * invn) % MOD;
