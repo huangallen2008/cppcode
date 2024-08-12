@@ -82,6 +82,7 @@ struct NTT {
         }
     }
     vector<int>& init(vector<int>&a,vector<int>&b){
+        ope(INVG)
         int n1=a.size(),n2=b.size();
         t=1,lt=0;
         while(t<n1+n2) t<<=1,lt++;
