@@ -108,6 +108,7 @@ namespace NTT {
     }
 };
 signed main() {
+    ope("ok")
     int k,n,m;
     cin>>k>>n>>m;
     vector<int> a(k+1),b(k+1);
