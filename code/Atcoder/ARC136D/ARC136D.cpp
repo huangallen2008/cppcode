@@ -71,9 +71,8 @@ signed main() {
     int all=99999;
     REP(i,n) {
         bool ok=1;
-        int t=i;
+        int t=a[i];
         while(t>0) {
-            ope(t)
             if(t%10>=5) {
                 ok=0;
                 break;
@@ -81,8 +80,8 @@ signed main() {
             t/=10;
         }
         an+=dp[all-a[i]]-ok;
-        ope(ok)ope(dp[all-a[i]]-ok);
     }
+    an>>=1;
     cout<<an<<'\n';
     return 0;
 }
