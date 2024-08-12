@@ -47,7 +47,7 @@ int rd(int l,int r) {
 
 const int N=1<<20;
 struct NTT {
-    const int MOD=998244353;
+    const int mod=998244353;
     const int G=3;
     const int INVG=332748118;
     vector<int> r,c;
