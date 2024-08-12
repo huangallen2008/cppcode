@@ -47,6 +47,7 @@ int n;
 Graph g;
 vector<int> dp0,dp1,pd0,pd1,pre,suf,an;
 void dfs(int u,int fa) {
+    ope(u)
     int mxv=-inf;
     for(int v:g[u]) {
         if(v==fa) continue;
