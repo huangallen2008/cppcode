@@ -71,6 +71,7 @@ void dfs2(int u,int fa) {
     else {
         pd1[u]=pd1[fa]+dp1[fa]-dp0[u];
         pd0[u]=pd1[u]+max(max({pre[u],suf[u],pd1[fa]-pd0[fa]})+1,0ll);
+        op(u)op(pd0[u])op(pd1[u])op(pre[u])op(suf[u])op(pd1[fa])op(pd0[fa])entr
     }
     an[u]=dp1[u]+pd0[u];
     for(int v:g[u]) {
