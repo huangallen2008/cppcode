@@ -69,7 +69,7 @@ void dfs2(int u,int fa) {
     an[u]=dp[u]*pd[u]%mod;
     for(int v:g[u]) {
         if(v==fa) continue;
-        dfs2(v);
+        dfs2(v,u);
     }
 }
 signed main() {
