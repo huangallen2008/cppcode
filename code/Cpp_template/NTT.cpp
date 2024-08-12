@@ -63,11 +63,11 @@ struct NTT {
         for (int i = 0;i < t;i ++)
         if (i < r[i]) swap(A[i],A[r[i]]);
         for (int mid = 1;mid < t;mid <<= 1){
-            ll OMG = pw(opt == 1 ? G : INVG,(MOD - 1) / (mid << 1));
+            int OMG = pw(opt == 1 ? G : INVG,(MOD - 1) / (mid << 1));
             for (int R = mid << 1,l = 0;l < t;l += R){
-                ll omg = 1;
+                int omg = 1;
                 for (int k = 0;k < mid;k ++,(omg *= OMG) %= MOD){
-                    ll tmp1 = A[l + k],tmp2 = A[l + mid + k] * omg % MOD;
+                    int tmp1 = A[l + k],tmp2 = A[l + mid + k] * omg % MOD;
                     A[l + mid + k] = (tmp1 - tmp2 + MOD) % MOD;
                     A[l + k] =(tmp1 + tmp2) % MOD;
                 }
