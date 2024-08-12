@@ -73,6 +73,7 @@ signed main() {
         bool ok=1;
         int t=i;
         while(t>0) {
+            ope(t)
             if(t%10>=5) {
                 ok=0;
                 break;
