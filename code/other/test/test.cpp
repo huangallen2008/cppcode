@@ -106,6 +106,7 @@ int pw(int x,int p) {
         if(p&1) r=MU(r,x);
         x=MU(x,x);
         p>>=1;
+        ope(r)
     }
     return p;
 }
