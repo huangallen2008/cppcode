@@ -78,7 +78,7 @@ struct NTT {
     }
     void init(vector<int>&a,vector<int>&b){
         n=a.size(),m=b.size();
-        t=0,lt=0;
+        t=1,lt=0;
         ope("ok")
         while(t<=n+m) t<<=1,lt++;
         r=vector<int>(t);
