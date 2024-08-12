@@ -61,7 +61,7 @@ struct NTT {
         }
         return r;
     }
-    inline void NTT(vector<int> &A,int opt){
+    void NTT(vector<int> &A,int opt){
         for (int i = 0;i < t;i ++)
         if (i < r[i]) swap(A[i],A[r[i]]);
         for (int mid = 1;mid < t;mid <<= 1){
