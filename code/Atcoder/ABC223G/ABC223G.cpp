@@ -78,6 +78,7 @@ void dfs2(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
+        ope(v)
     }
 }
 signed main() {
