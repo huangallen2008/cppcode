@@ -75,8 +75,8 @@ struct NTT {
                 int omg=1;
                 for (int k=0;k<m;k++,){
                     int t1=a[l+k],t2=a[l+m+k]*omg%mod;
-                    a[l+m+k]=MM(t1-t2);
-                    a[l+k]=MA(t1+t2);
+                    a[l+m+k]=MM(t1,t2);
+                    a[l+k]=MA(t1,t2);
                     omg*= OMG,omg %= mod;
                 }
             }
