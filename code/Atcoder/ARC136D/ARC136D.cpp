@@ -68,7 +68,7 @@ signed main() {
         }
     }
     int cnt=0,an=0;
-    int all=99999;
+    int all=999999;
     REP(i,n) {
         bool ok=1;
         int t=a[i];
