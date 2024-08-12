@@ -85,6 +85,7 @@ struct NTT {
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         ntt(a,1);
         ntt(b,1);
+        ope("ok")
         for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= MOD;
         ntt(a,-1);
         int invn = pw(t,MOD - 2);
