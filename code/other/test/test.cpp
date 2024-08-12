@@ -109,6 +109,7 @@ signed main() {
         if(s[i]=='1') a[i]++,b[n-1-i]++;
     }
     vector<int> c=NTT::ntt(a,b);
-    oparr(c)
+    for(int i=0;i<n;i++) cout<<c[n+i]<<' ';
+    entr
     return 0;
 }
