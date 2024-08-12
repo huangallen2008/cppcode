@@ -128,6 +128,11 @@ signed main() {
         REP(i,N) v.pb(i);
         f(v,0,N);
         oparr(v)
+        vector<int> t(N);
+        REP(i,N) t[i]=(t[i>>1]>>1)|((i&1)<<n-1);
+        vector<int> v2(N);REP(i,N) v2[i]=i;
+        REP(i,N) if(i<t[i]) swap(v2[i],v2[t[i]]);
+        oparr(v2)
     }
     // int n,q;
     // cin>>n>>q;
