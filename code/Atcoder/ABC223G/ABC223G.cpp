@@ -83,10 +83,12 @@ signed main() {
     IOS();
     cin>>n;
     g=Graph(n);
-    dp0=vector<int>(n);
-    dp1=vector<int>(n);
+    dp0=dp1=vector<int>(n);
+    // vector<int>(n);
     pd0=vector<int>(n);
     pd1=vector<int>(n);
+    pre=vector<int>(n);
+    suf=vector<int>(n);
     an=vector<int>(n);
     REP(i,n-1) {
         int u,v;
