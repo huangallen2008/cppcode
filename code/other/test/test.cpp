@@ -102,7 +102,8 @@ signed main() {
     ope(1<<19)
     int x=((int)(1000000006)*524288)+1;
     bitset<64> b=x;
-    cout<<b<<endl;
+    cout<<(b=x)<<endl;
+    cout<<(b=1000000006)<<endl;
     ope(x)
     // int n,q;
     // cin>>n>>q;
