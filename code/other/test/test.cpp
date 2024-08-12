@@ -99,7 +99,7 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    int x=((int)(1000000006)*(1<<21))+1;
+    int x=((int)(1000000006)*(1<<24))+1;
     bitset<64> b;
     ope(b=x)
     ope(x)
