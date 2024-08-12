@@ -81,6 +81,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
+    ope("ok")
     int l=1,r=n,m;
     while(l<r) {//first m that mds(m)<=k
         m=l+r+1>>1;
