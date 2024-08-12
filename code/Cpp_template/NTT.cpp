@@ -103,8 +103,7 @@ signed main() {
     vector<int> a(n),b(m);
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
-    ntt.init(a,b);
-    vector<int> c=ntt.getan();
+    vector<int> c=ntt.init(a,b);
     oparr(c)
     return 0;
 }
