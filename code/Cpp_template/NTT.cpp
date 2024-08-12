@@ -80,6 +80,8 @@ struct NTT {
         n=a.size(),m=b.size();
         t=1,lt=0;
         while(t<=n+m) t<<=1,lt++;
+        while(a.size()<t) a.pb(0);
+        while(b.size()<t) b.pb(0);
         r=vector<int>(t);
         c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
