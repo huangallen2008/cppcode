@@ -83,11 +83,11 @@ signed main() {
     }
     int l=1,r=n,m;
     while(l<r) {//first m that mds(m)<=k
-        m=l+r+1>>1;
+        m=l+r>>1;
         int ret=mds(m);
         op(m)ope(ret)
-        if(ret<=k) l=m;
-        else r=m-1;
+        if(ret<=k) r=m;
+        else l=m+1;
     }
     cout<<l<<'\n';
     return 0;
