@@ -76,7 +76,7 @@ signed main() {
     IOS();
     cin>>n>>mod;
     g=Graph(n);
-    dp=vector<int>(n);
+    dp=vector<int>(n,1);
     pd=vector<int>(n);
     pre=vector<int>(n);
     suf=vector<int>(n);
