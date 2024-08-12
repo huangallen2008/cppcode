@@ -36,9 +36,9 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
-const int maxn=2e5+5;
-const int inf=(1ll<<62);
+// const int mod=1e9+7;
+// const int maxn=2e5+5;
+// const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
