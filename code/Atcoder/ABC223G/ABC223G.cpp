@@ -75,7 +75,7 @@ void dfs2(int u,int fa) {
     an[u]=dp1[u]+pd0[u];
     for(int v:g[u]) {
         if(v==fa) continue;
-        dfs(v);
+        dfs(v,u);
     }
 }
 signed main() {
