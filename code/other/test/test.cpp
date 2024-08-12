@@ -113,7 +113,7 @@ signed main() {
     IOS();
     int a,b;
     cin>>a>>b;
-    ope(pw(b,a))
+    ope(pw(a,b))
     // int n,q;
     // cin>>n>>q;
     // seg.init(n);
