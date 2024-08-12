@@ -105,20 +105,6 @@ signed main() {
     int a,b;
     cin>>a>>b;
     ope(MU(b,a))
-    int x=((int)(1000000006)*(1<<28))+1;
-    bitset<64> b;
-    ope(b=x)
-    ope(x)
-    bool ok=1;
-    for(int i=2;i*i<=x;i++) {
-        if(x%i==0) {
-            op(i)ope(x/i)
-            cout<<"NO\n";
-            ok=0;
-            break;
-        }
-    }
-    if(ok) cout<<"YES\n";
     // int n,q;
     // cin>>n>>q;
     // seg.init(n);
