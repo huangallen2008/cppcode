@@ -47,7 +47,10 @@ int rd(int l,int r) {
 
 const int N=1<<20;
 namespace NTT {
-    const int mod=998244353;
+    const int mod=75161927681;
+    int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
+    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
+    int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); c=MA(a,a); b>>=1; } return r; }
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
@@ -60,8 +63,6 @@ namespace NTT {
     int inv(int x) {
         return pw(x,mod-2);
     }
-    int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
-    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
     const int G=3;
     const int INVG=inv(G);
     vector<int> r,c,a,b;
