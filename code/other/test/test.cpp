@@ -123,6 +123,7 @@ signed main() {
     vector<int> v;
     int n;
     while(cin>>n) {
+        v.clear();
         int N=1<<n;
         REP(i,N) v.pb(i);
         f(v,0,N);
