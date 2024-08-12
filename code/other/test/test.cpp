@@ -54,8 +54,10 @@ namespace NTT {
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
-            if(p&1) r*=x,r%=mod;
-            x*=x,x%=mod;
+            if(p&1) r=MU(r,x);
+            x=MU(x,x);
+            // r*=x,r%=mod;
+            // x*=x,x%=mod;
             p>>=1;
         }
         return r;
@@ -74,10 +76,11 @@ namespace NTT {
             for(int l=0;l<t;l+=m<<1){
                 int g=1;
                 for(int k=l;k<l+m;k++){
-                    int t1=a[k],t2=a[k+m]*g%mod;
+                    int t1=a[k],t2=MU(a[k+m],g);
                     a[k+m]=MM(t1,t2);
                     a[k]=MA(t1,t2);
-                    g*=gn,g%=mod;
+                    g=MU(g,gn);
+                    // g*=gn,g%=mod;
                 }
             }
         }
@@ -92,26 +95,31 @@ namespace NTT {
         r=c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         _ntt(a,1),_ntt(b,1);
-        for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
+        for (int i=0;i<t;i++) c[i]=MU(a[i],b[i]);
         _ntt(c,-1);
         int invn=inv(t);
-        for(int i=0;i<=n1+n2;i++) c[i]=c[i]*invn%mod;
+        for(int i=0;i<=n1+n2;i++) c[i]=MU(c[i],invn);
         while(c.size()&&c.back()==0) c.pop_back();
         return c;
     }
 };
 signed main() {
-    int n;
-    string s;
-    cin>>s;
-    n=s.size();
-    vector<int> a(n),b(n);
+    int k,n,m;
+    cin>>k>>n>>m;
+    vector<int> a(k+1),b(k+1);
     REP(i,n) {
-        if(s[i]=='1') a[i]++,b[n-1-i]++;
+        int x;
+        cin>>x;
+        a[x]++;
+    }
+    REP(i,m) {
+        int x;
+        cin>>x;
+        b[x]++;
     }
     vector<int> c=NTT::ntt(a,b);
     while(c.size()<n<<1) c.pb(0);
-    for(int i=0;i<n-1;i++) cout<<c[n+i]<<' ';
+    for(int i=2;i<n<<1;i++) cout<<c[i]<<' ';
     cout<<'\n';
     return 0;
 }
