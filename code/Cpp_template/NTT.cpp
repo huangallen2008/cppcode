@@ -95,6 +95,7 @@ namespace NTT {
         _ntt(c,-1);
         int invn=inv(t);
         for(int i=0;i<=n1+n2;i++) c[i]=c[i]*invn%mod;
+        while(c.size()&&c.back()==0) c.pop_back();
         return c;
     }
 };
