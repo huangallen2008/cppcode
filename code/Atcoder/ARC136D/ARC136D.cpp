@@ -72,13 +72,13 @@ signed main() {
     REP(i,n) {
         bool ok=1;
         int t=i;
-        while(t>0) (
+        while(t>0) {
             if(t%10>=5) {
                 ok=0;
                 break;
             }
             t/=10;
-        )
+        }
         an+=dp[all-a[i]]-ok;
     }
     cout<<an<<'\n';
