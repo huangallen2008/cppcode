@@ -73,7 +73,7 @@ struct NTT {
             for(int l=0;l<t;l+=m<<1){
                 int g=1;
                 for(int k=l;k<l+m;k++){
-                    int t1=a[k],t2=a[k+m]*gn%mod;
+                    int t1=a[k],t2=a[k+m]*g%mod;
                     a[k+m]=MM(t1,t2);
                     a[k]=MA(t1,t2);
                     g*=gn,g%=mod;
@@ -82,7 +82,6 @@ struct NTT {
         }
     }
     vector<int>& init(vector<int>&a,vector<int>&b){
-        ope(INVG)
         int n1=a.size(),n2=b.size();
         t=1,lt=0;
         while(t<n1+n2) t<<=1,lt++;
