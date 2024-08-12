@@ -103,7 +103,7 @@ signed main() {
     int n;
     string s;
     cin>>s;
-    int n=s.size();
+    n=s.size();
     vector<int> a(n),b(n);
     REP(i,n) {
         if(s[i]=='1') a[i]++,b[n-1-i]++;
