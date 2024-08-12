@@ -46,7 +46,7 @@ int rd(int l,int r) {
 
 
 const int N=1<<20;
-struct NTT {
+namespace NTT {
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
@@ -66,7 +66,8 @@ struct NTT {
     const int G=3;
     const int INVG=inv(G);
     vector<int> r,c;
-    int n1,n2,t,lt;void ntt(vector<int> &a,int opt){
+    int n1,n2,t,lt;
+    void _ntt(vector<int> &a,int opt){
         for(int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
         for(int m=1;m<t;m<<=1){
             int gn=pw(opt==1?G:INVG,(mod-1)/(m<<1));
@@ -81,7 +82,7 @@ struct NTT {
             }
         }
     }
-    vector<int>& init(vector<int>&a,vector<int>&b){
+    vector<int>& ntt(vector<int>&a,vector<int>&b){
         int n1=a.size(),n2=b.size();
         t=1,lt=0;
         while(t<n1+n2) t<<=1,lt++;
@@ -89,21 +90,21 @@ struct NTT {
         while(b.size()<t) b.pb(0);
         r=c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
-        ntt(a,1),ntt(b,1);
+        _ntt(a,1),_ntt(b,1);
         for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
-        ntt(c,-1);
+        _ntt(c,-1);
         int invn=inv(t);
         for(int i=0;i<=n1+n2;i++) c[i]=c[i]*invn%mod;
         return c;
     }
-}ntt;
+};
 signed main() {
     int n,m;
     cin>>n>>m;
     vector<int> a(n),b(m);
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
-    vector<int> c=ntt.init(a,b);
+    vector<int> c=NTT::ntt(a,b);
     oparr(c)
     return 0;
 }
