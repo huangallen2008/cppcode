@@ -82,13 +82,7 @@ signed main() {
     IOS();
     cin>>n;
     g=Graph(n);
-    dp0=dp1=vector<int>(n);
-    // vector<int>(n);
-    pd0=vector<int>(n);
-    pd1=vector<int>(n);
-    pre=vector<int>(n);
-    suf=vector<int>(n);
-    an=vector<int>(n);
+    dp0=dp1=pd0=pd1=pre=suf=an=vector<int>(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
@@ -98,11 +92,6 @@ signed main() {
     dfs(0,-1),dfs2(0,-1);
     int cnt=0;
     REP(i,n) cnt+=dp0[0]==an[i];
-    oparr(dp0)
-    oparr(dp1)
-    oparr(pd0)
-    oparr(pd1)
-    oparr(an)
     cout<<cnt<<'\n';
     return 0;
 }
