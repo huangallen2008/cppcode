@@ -51,7 +51,7 @@ void dfs(int u,int fa) {
     int p=1,s=1;
     for(int v:g[u]) {
         if(v==fa) continue;
-        dfs(v);
+        dfs(v,u);
         pre[v]=p;
         p=p*(dp[v]+1)%mod;
         dp[u]=dp[u]*(dp[v]+1)%mod;
