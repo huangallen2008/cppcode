@@ -65,6 +65,7 @@ void dfs(int u,int fa) {
     dp0[u]=max(mxv+1,0ll)+dp1[u];
 }
 void dfs2(int u,int fa) {
+    ope(u)
     if(fa==-1) {
         pd1[u]=pd0[u]=0;
     }
