@@ -99,11 +99,8 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    ope(1<<19)
-    int x=((int)(1000000006)*524288)+1;
-    bitset<64> b=x;
-    cout<<(b=x)<<endl;
-    cout<<(b=1000000006)<<endl;
+    int x=((int)(1000000006)*(1<<19)))+1;
+    bitset<64> b;
     ope(x)
     // int n,q;
     // cin>>n>>q;
