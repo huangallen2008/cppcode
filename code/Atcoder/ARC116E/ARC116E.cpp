@@ -44,11 +44,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
-int n;
+int n,k;
 vector<int> lu,hc;
 int dfs(int u,int p,int k) {
-    ope(lu.size())
-    ope(u)
     int an=0;
     for(auto v:g[u]) {
         if(v==p) continue;
@@ -74,7 +72,6 @@ int mds(int k) {
 }
 signed main() {
     IOS();
-    int n,k;
     cin>>n>>k;
     g=Graph(n);
     REP(i,n-1) {
