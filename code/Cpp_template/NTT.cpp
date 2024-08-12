@@ -73,7 +73,7 @@ struct NTT {
             int OMG=pw(opt==1?G:INVG,(mod-1)/(m<<1));
             for (int l=0;l<t;l+=m<<1){
                 int omg=1;
-                for (int k=0;k<m;k++,){
+                for (int k=0;k<m;k++){
                     int t1=a[l+k],t2=a[l+m+k]*omg%mod;
                     a[l+m+k]=MM(t1,t2);
                     a[l+k]=MA(t1,t2);
