@@ -90,4 +90,7 @@ struct NTT {
         for (int i = 0;i <= n + m;i ++)
         a[i]=(a[i] * invn) % MOD;
     }
+};
+signed main() {
+    return 0;
 }
