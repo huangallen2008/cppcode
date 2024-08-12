@@ -79,7 +79,7 @@ struct NTT {
             }
         }
     }
-    void init(vector<int>&a,vector<int>&b){
+    vector<int>& init(vector<int>&a,vector<int>&b){
         n=a.size(),m=b.size();
         t=1,lt=0;
         while(t<n+m) t<<=1,lt++;
@@ -90,13 +90,12 @@ struct NTT {
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         ntt(a,1);
         ntt(b,1);
-        for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= mod;
+        for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
         ntt(c,-1);
-        int invn = pw(t,mod - 2);
-        for (int i = 0;i <= n + m;i ++)
-        c[i]=(c[i] * invn) % mod;
+        int invn=inv(t);
+        for(int i=0;i<=n+m;i++) c[i]=(c[i]*invn)%mod;
+        return c;
     }
-    vector<int>& getan() {return c;}
 }ntt;
 signed main() {
     int n,m;
