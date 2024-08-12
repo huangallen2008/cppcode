@@ -103,6 +103,15 @@ signed main() {
     bitset<64> b;
     ope(b=x)
     ope(x)
+    bool ok=1;
+    for(int i=2;i*i<=x;i++) {
+        if(x%i==0) {
+            cout<<"NO\n";
+            ok=0;
+            break;
+        }
+    }
+    if(!ok) cout<<"YES\n";
     // int n,q;
     // cin>>n>>q;
     // seg.init(n);
