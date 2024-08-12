@@ -66,7 +66,7 @@ void dfs(int u,int fa) {
 }
 void dfs2(int u,int fa) {
     if(fa==-1) {
-        pd1[u]=pd0[u]=0;
+        pd1[u]=pd0[u]=-inf;
     }
     else {
         pd1[u]=pd1[fa]+dp1[fa]-dp0[u];
