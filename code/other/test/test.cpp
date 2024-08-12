@@ -104,6 +104,7 @@ namespace NTT {
     }
 };
 signed main() {
+    ope(NTT::MU(3,5))
     int k,n,m;
     cin>>k>>n>>m;
     vector<int> a(k+1),b(k+1);
