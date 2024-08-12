@@ -86,8 +86,8 @@ struct NTT {
         ntt(a,1);
         ntt(b,1);
         for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= MOD;
-        ope("ok")
         ntt(c,-1);
+        ope("ok")
         int invn = pw(t,MOD - 2);
         for (int i = 0;i <= n + m;i ++)
         c[i]=(c[i] * invn) % MOD;
