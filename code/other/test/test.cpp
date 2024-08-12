@@ -36,128 +36,79 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
-const int maxn=2e5+5;
-const int inf=(1ll<<62);
+// const int mod=1e9+7;
+// const int maxn=2e5+5;
+// const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-struct SEG {
-    struct Seg {
-        int v,mx,mn;
-    };
-    Seg merge(Seg b,Seg c) {
-        Seg a;
-        a.mx=max(b.mx,c.mx);
-        a.mn=min(b.mn,c.mn);
-        a.v=max({b.v,c.v,b.mx-c.mn});
-        return a;
-    }
-    void pull(Seg &a,Seg &b,Seg &c) {
-        a=merge(b,c);
-    }
-    vector<Seg> s;
-    int n;
-    void build(int w,int l,int r) {
-        if(l==r) {
-            s[w]={-inf,0,0};
-            return;
+
+const int N=1<<20;
+namespace NTT {
+    const int mod=998244353;
+    int pw(int x,int p) {
+        int r=1;
+        while(p>0) {
+            if(p&1) r*=x,r%=mod;
+            x*=x,x%=mod;
+            p>>=1;
         }
-        int m=l+r>>1;
-        build(w<<1,l,m);
-        build(w<<1|1,m+1,r);
+        return r;
     }
-    void init(int _n) {
-        n=_n;
-        s=vector<Seg>(n<<2);
-        build(1,0,n-1);
+    int inv(int x) {
+        return pw(x,mod-2);
     }
-    void _ud(int w,int l,int r,int u,int v) {
-        if(l==r) {
-            s[w]={-inf,v,v};
-            return;
+    int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
+    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
+    const int G=3;
+    const int INVG=inv(G);
+    vector<int> r,c,a,b;
+    int n1,n2,t,lt;
+    void _ntt(vector<int> &a,int opt){
+        for(int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
+        for(int m=1;m<t;m<<=1){
+            int gn=pw(opt==1?G:INVG,(mod-1)/(m<<1));
+            for(int l=0;l<t;l+=m<<1){
+                int g=1;
+                for(int k=l;k<l+m;k++){
+                    int t1=a[k],t2=a[k+m]*g%mod;
+                    a[k+m]=MM(t1,t2);
+                    a[k]=MA(t1,t2);
+                    g*=gn,g%=mod;
+                }
+            }
         }
-        int m=l+r>>1;
-        if(u<=m) _ud(w<<1,l,m,u,v);
-        else _ud(w<<1|1,m+1,r,u,v);
-        pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void ud(int u,int v) {
-        _ud(1,0,n-1,u,v);
+    vector<int>& ntt(vector<int>&_a,vector<int>&_b){
+        a=_a,b=_b;
+        n1=a.size(),n2=b.size();
+        t=1,lt=0;
+        while(t<n1+n2) t<<=1,lt++;
+        while(a.size()<t) a.pb(0);
+        while(b.size()<t) b.pb(0);
+        r=c=vector<int>(t);
+        REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
+        _ntt(a,1),_ntt(b,1);
+        for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
+        _ntt(c,-1);
+        int invn=inv(t);
+        for(int i=0;i<=n1+n2;i++) c[i]=c[i]*invn%mod;
+        while(c.size()&&c.back()==0) c.pop_back();
+        return c;
     }
-    Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return {-inf,-inf,inf};
-        int m=l+r>>1;
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    }
-    int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r).v;
-    }
-}seg;
-int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
-int MM(int a,int b) { int c=a-b;if(c<0) c+=mod;return c; }
-int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=MU(r,x);
-        x=MU(x,x);
-        p>>=1;
-    }
-    return r;
-}
-void f(vector<int>&v,int l,int k) {
-    if(k==1) return;
-    vector<int> t(k);
-    REP(i,k>>1) t[i]=v[l+(i<<1)];
-    REP(i,k>>1) t[i+(k>>1)]=v[l+(i<<1)+1];
-    REP(i,k) v[l+i]=t[i];
-    int m=l+(k>>1);
-    f(v,l,k>>1),f(v,l+(k>>1),k>>1);
-}
+};
 signed main() {
-    IOS();
-    vector<int> v;
     int n;
-    while(cin>>n) {
-        v.clear();
-        int N=1<<n;
-        REP(i,N) v.pb(i);
-        f(v,0,N);
-        oparr(v)
-        vector<int> t(N);
-        REP(i,N) t[i]=(t[i>>1]>>1)|((i&1)<<n-1);
-        vector<int> v2(N);REP(i,N) v2[i]=i;
-        REP(i,N) if(i<t[i]) swap(v2[i],v2[t[i]]);
-        oparr(v2)
+    string s;
+    cin>>s;
+    int n=s.size();
+    vector<int> a(n),b(n);
+    REP(i,n) {
+        if(s[i]=='1') a[i]++,b[n-1-i]++;
     }
-    // int n,q;
-    // cin>>n>>q;
-    // seg.init(n);
-    // REP(i,q) {
-    //     int opt;
-    //     cin>>opt;
-    //     if(opt==1) {
-    //         int u,v;
-    //         cin>>u>>v;
-    //         u--;
-    //         seg.ud(u,v);
-    //     }
-    //     if(opt==2) {
-    //         int l,r;
-    //         cin>>l>>r,l--,r--;
-    //         cout<<seg.qu(l,r)<<'\n';
-    //     }
-    // }
+    vector<int> c=NTT::ntt(a,b);
+    oparr(c)
     return 0;
 }
-/*
-5 4
-1 1 5
-2 1 4
-1 2 10
-2 1 2
-*/
