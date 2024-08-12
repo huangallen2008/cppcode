@@ -90,7 +90,6 @@ signed main() {
     }
     dfs(0,-1);
     dfs2(0,-1);
-    REP(i,n) cout<<an[i]<<' ';
-    cout<<'\n';
+    REP(i,n) cout<<an[i]<<'\n';
     return 0;
 }
