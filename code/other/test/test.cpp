@@ -111,7 +111,7 @@ signed main() {
             break;
         }
     }
-    if(!ok) cout<<"YES\n";
+    if(ok) cout<<"YES\n";
     // int n,q;
     // cin>>n>>q;
     // seg.init(n);
