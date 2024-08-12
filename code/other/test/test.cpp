@@ -99,7 +99,7 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    int x=((ll)(1e9+6)<<19)+1;
+    int x=((int)(1e9+6)<<19)+1;
     ope(x)
     // int n,q;
     // cin>>n>>q;
