@@ -47,6 +47,7 @@ Graph g;
 int n;
 vector<int> lu,hc;
 int dfs(int u,int p,int k) {
+    ope(lu.size())
     ope(u)
     int an=0;
     for(auto v:g[u]) {
@@ -55,7 +56,6 @@ int dfs(int u,int p,int k) {
         chmax(lu[u],lu[v]+1);
         chmin(hc[u],hc[v]+1);
     }
-    ope(lu.size())
     op(u)op(lu[u])ope(hc[u])
     if(lu[u]<=k-hc[u]) lu[u]=hc[u]-k-1;
     else {
