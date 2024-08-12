@@ -97,8 +97,14 @@ struct SEG {
         return _qu(1,0,n-1,l,r).v;
     }
 }seg;
+int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
+int MM(int a,int b) { int c=a-b;if(c<0) c+=mod;return c; }
+int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
 signed main() {
     IOS();
+    int a,b;
+    cin>>a>>b;
+    ope(MU(b,a))
     int x=((int)(1000000006)*(1<<28))+1;
     bitset<64> b;
     ope(b=x)
