@@ -47,7 +47,6 @@ int n;
 Graph g;
 vector<int> dp0,dp1,pd0,pd1,pre,suf,an;
 void dfs(int u,int fa) {
-    ope(u)
     int mxv=-inf;
     for(int v:g[u]) {
         if(v==fa) continue;
@@ -56,6 +55,7 @@ void dfs(int u,int fa) {
         pre[v]=mxv;
         chmax(mxv,dp1[v]-dp0[v]);
     }
+    opr(u)
     mxv=-inf;
     RREP(i,g[u].size()) {
         int v=g[u][i];
