@@ -101,6 +101,8 @@ signed main() {
     IOS();
     ope(1<<19)
     int x=((int)(1000000006)*524288)+1;
+    bitset<64> b=x;
+    cout<<b<<endl;
     ope(x)
     // int n,q;
     // cin>>n>>q;
