@@ -62,7 +62,7 @@ struct NTT {
         return r;
     }
     int inv(int x) {
-        return pw(x,mod-2;)
+        return pw(x,mod-2);
     }
     void ntt(vector<int> &A,int opt){
         for (int i = 0;i < t;i ++)
