@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -43,6 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+
 struct SEG {
     struct Seg {
         int v,mx,mn;
@@ -98,24 +99,26 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    int n,q;
-    cin>>n>>q;
-    seg.init(n);
-    REP(i,q) {
-        int opt;
-        cin>>opt;
-        if(opt==1) {
-            int u,v;
-            cin>>u>>v;
-            u--;
-            seg.ud(u,v);
-        }
-        if(opt==2) {
-            int l,r;
-            cin>>l>>r,l--,r--;
-            cout<<seg.qu(l,r)<<'\n';
-        }
-    }
+    int x=((ll)(1e9+6)<<19)+1;
+    ope(x)
+    // int n,q;
+    // cin>>n>>q;
+    // seg.init(n);
+    // REP(i,q) {
+    //     int opt;
+    //     cin>>opt;
+    //     if(opt==1) {
+    //         int u,v;
+    //         cin>>u>>v;
+    //         u--;
+    //         seg.ud(u,v);
+    //     }
+    //     if(opt==2) {
+    //         int l,r;
+    //         cin>>l>>r,l--,r--;
+    //         cout<<seg.qu(l,r)<<'\n';
+    //     }
+    // }
     return 0;
 }
 /*
