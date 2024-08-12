@@ -98,6 +98,7 @@ signed main() {
     dfs(0,-1),dfs2(0,-1);
     int cnt=0;
     REP(i,n) cnt+=dp0[0]==an[i];
+    oparr(dp0)oparr(an)
     cout<<cnt<<'\n';
     return 0;
 }
