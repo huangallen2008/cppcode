@@ -47,7 +47,7 @@ int rd(int l,int r) {
 
 const int N=1<<20;
 struct NTT {
-    const int MOD=998244353;
+    const int mod=998244353;
     const int G=3;
     const int INVG=332748118;
     vector<int> r,c;
@@ -55,23 +55,26 @@ struct NTT {
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
-            if(p&1) r*=x,r%=MOD;
-            x*=x,x%=MOD;
+            if(p&1) r*=x,r%=mod;
+            x*=x,x%=mod;
             p>>=1;
         }
         return r;
+    }
+    int inv(int x) {
+        return pw(x,mod-2;)
     }
     void ntt(vector<int> &A,int opt){
         for (int i = 0;i < t;i ++)
         if (i < r[i]) swap(A[i],A[r[i]]);
         for (int mid = 1;mid < t;mid <<= 1){
-            int OMG = pw(opt == 1 ? G : INVG,(MOD - 1) / (mid << 1));
+            int OMG = pw(opt == 1 ? G : INVG,(mod - 1) / (mid << 1));
             for (int R = mid << 1,l = 0;l < t;l += R){
                 int omg = 1;
-                for (int k = 0;k < mid;k ++,(omg *= OMG) %= MOD){
-                    int tmp1 = A[l + k],tmp2 = A[l + mid + k] * omg % MOD;
-                    A[l + mid + k] = (tmp1 - tmp2 + MOD) % MOD;
-                    A[l + k] =(tmp1 + tmp2) % MOD;
+                for (int k = 0;k < mid;k ++,(omg *= OMG) %= mod){
+                    int tmp1 = A[l + k],tmp2 = A[l + mid + k] * omg % mod;
+                    A[l + mid + k] = (tmp1 - tmp2 + mod) % mod;
+                    A[l + k] =(tmp1 + tmp2) % mod;
                 }
             }
         }
@@ -87,12 +90,12 @@ struct NTT {
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         ntt(a,1);
         ntt(b,1);
-        for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= MOD;
+        for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= mod;
         ntt(c,-1);
         ope("ok")
-        int invn = pw(t,MOD - 2);
+        int invn = pw(t,mod - 2);
         for (int i = 0;i <= n + m;i ++)
-        c[i]=(c[i] * invn) % MOD;
+        c[i]=(c[i] * invn) % mod;
     }
     vector<int>& getan() {return c;}
 }ntt;
