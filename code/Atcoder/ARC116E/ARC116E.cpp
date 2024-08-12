@@ -50,7 +50,7 @@ int dfs(int u,int p,int k) {
     int an=0;
     for(auto v:g[u]) {
         if(v==p) continue;
-        an+=dfs(v,u);
+        an+=dfs(v,u,k);
         chmax(lu[u],lu[v]+1);
         chmin(hc[u],hc[v]+1);
     }
