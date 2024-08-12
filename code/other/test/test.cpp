@@ -119,7 +119,7 @@ signed main() {
     }
     vector<int> c=NTT::ntt(a,b);
     while(c.size()<k<<1) c.pb(0);
-    for(int i=2;i<k<<1;i++) cout<<c[i]<<' ';
+    for(int i=2;i<=k<<1;i++) cout<<c[i]<<' ';
     cout<<'\n';
     return 0;
 }
