@@ -106,6 +106,7 @@ signed main() {
     bool ok=1;
     for(int i=2;i*i<=x;i++) {
         if(x%i==0) {
+            op(i)ope(x/i)
             cout<<"NO\n";
             ok=0;
             break;
