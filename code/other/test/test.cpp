@@ -48,15 +48,17 @@ int rd(int l,int r) {
 const int N=1<<20;
 namespace NTT {
     const int mod=75161927681;
-    int MA(int a,int b) { int c=a+b; if(c>=mod) c-=mod; return c; }
-    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
+    // int MA(int a,int b) { int c=a+b; if(c>=mod) c-=mod; return c; }
+    int& MA(int &a,int b) { a+=b; if(a>=mod) a-=mod; }
+    // int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
+    int& MM(int &a,int b) { a-=b; if(a<0) a+=mod;  }
     // int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1; } return c; }
-    int& MU(int &c,int b) { int a=c; c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1; } }
+    int& MU(int &c,int b) { int a=c; c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) MA(c,a); MA(a,a); b>>=1; } }
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
-            if(p&1) r=MU(r,x);
-            x=MU(x,x);
+            if(p&1) MU(r,x);
+            MU(x,x);
             // r*=x,r%=mod;
             // x*=x,x%=mod;
             p>>=1;
@@ -78,9 +80,10 @@ namespace NTT {
                 int g=1;
                 for(int k=l;k<l+m;k++){
                     int t1=a[k],t2=MU(a[k+m],g);
-                    a[k+m]=MM(t1,t2);
-                    a[k]=MA(t1,t2);
-                    g=MU(g,gn);
+                    int tt;
+                    a[k+m]=MM(tt=t1,t2);
+                    a[k]=MA(tt=t1,t2);
+                    MU(g,gn);
                     // g*=gn,g%=mod;
                 }
             }
@@ -99,7 +102,7 @@ namespace NTT {
         for (int i=0;i<t;i++) c[i]=MU(a[i],b[i]);
         _ntt(c,-1);
         int invn=inv(t);
-        for(int i=0;i<=n1+n2;i++) c[i]=MU(c[i],invn);
+        for(int i=0;i<=n1+n2;i++) MU(c[i],invn);
         while(c.size()&&c.back()==0) c.pop_back();
         return c;
     }
