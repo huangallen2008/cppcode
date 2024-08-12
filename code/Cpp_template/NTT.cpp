@@ -64,17 +64,16 @@ struct NTT {
     int inv(int x) {
         return pw(x,mod-2);
     }
-    void ntt(vector<int> &A,int opt){
-        for (int i = 0;i < t;i ++)
-        if (i < r[i]) swap(A[i],A[r[i]]);
+    void ntt(vector<int> &a,int opt){
+        for (int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
         for (int mid = 1;mid < t;mid <<= 1){
             int OMG = pw(opt == 1 ? G : INVG,(mod - 1) / (mid << 1));
             for (int R = mid << 1,l = 0;l < t;l += R){
                 int omg = 1;
                 for (int k = 0;k < mid;k ++,(omg *= OMG) %= mod){
-                    int tmp1 = A[l + k],tmp2 = A[l + mid + k] * omg % mod;
-                    A[l + mid + k] = (tmp1 - tmp2 + mod) % mod;
-                    A[l + k] =(tmp1 + tmp2) % mod;
+                    int tmp1 = a[l + k],tmp2 = a[l + mid + k] * omg % mod;
+                    a[l + mid + k] = (tmp1 - tmp2 + mod) % mod;
+                    a[l + k] =(tmp1 + tmp2) % mod;
                 }
             }
         }
@@ -85,11 +84,9 @@ struct NTT {
         while(t<n+m) t<<=1,lt++;
         while(a.size()<t) a.pb(0);
         while(b.size()<t) b.pb(0);
-        r=vector<int>(t);
-        c=vector<int>(t);
+        r=c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
-        ntt(a,1);
-        ntt(b,1);
+        ntt(a,1),ntt(b,1);
         for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
         ntt(c,-1);
         int invn=inv(t);
