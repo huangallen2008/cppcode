@@ -47,7 +47,7 @@ int rd(int l,int r) {
 
 const int N=1<<20;
 namespace NTT {
-    int pw(int x,int p) {
+    int pw(int x,int p,int mod=mod) {
         int r=1;
         while(p>0) {
             if(p&1) r*=x,r%=mod;
@@ -56,7 +56,7 @@ namespace NTT {
         }
         return r;
     }
-    int inv(int x) {
+    int inv(int x,int mod=mod) {
         return pw(x,mod-2);
     }
     int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
