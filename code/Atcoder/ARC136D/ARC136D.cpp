@@ -80,6 +80,7 @@ signed main() {
             t/=10;
         }
         an+=dp[all-a[i]]-ok;
+        ope(dp[all-a[i]]-ok);
     }
     cout<<an<<'\n';
     return 0;
