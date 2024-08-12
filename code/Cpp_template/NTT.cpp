@@ -50,7 +50,7 @@ struct NTT {
     const int MOD=998244353;
     const int G=3;
     const int INVG=332748118;
-    vector<int> r;
+    vector<int> r,c;
     int n,m,t,lt;
     int pw(int x,int p) {
         int r=1;
@@ -81,16 +81,26 @@ struct NTT {
         t=0,lt=0;
         while(t<=n+m) t<<=1,lt++;
         r=vector<int>(t);
+        c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         ntt(a,1);
         ntt(b,1);
-        for (int i = 0;i < t;i ++) (a[i] *= b[i]) %= MOD;
+        for (int i = 0;i < t;i ++) c[i]=(a[i] *= b[i]) %= MOD;
         ntt(a,-1);
         int invn = pw(t,MOD - 2);
         for (int i = 0;i <= n + m;i ++)
-        a[i]=(a[i] * invn) % MOD;
+        c[i]=(c[i] * invn) % MOD;
     }
-};
+    vector<int>& getan() {return c;}
+}ntt;
 signed main() {
+    int n,m;
+    cin>>n>>m;
+    vector<int> a(n),b(m);
+    REP(i,n) cin>>a[i];
+    REP(i,m) cin>>b[i];
+    ntt.init(a,b);
+    vector<int> c=ntt.getan();
+    oparr(c)
     return 0;
 }
