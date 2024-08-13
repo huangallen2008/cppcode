@@ -53,7 +53,7 @@ namespace NTT {
     // int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
     int& MM(int &a,int b) { a-=b; if(a<0) a+=mod; return a; }
     // int MU(int a,int b) { int c=0; if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1; } return c; }
-    int& MU(int &c,int b) { c=(__int128)c*b%mod; }
+    int& MU(int &c,int b) { return c=(__int128)c*b%mod; }
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
