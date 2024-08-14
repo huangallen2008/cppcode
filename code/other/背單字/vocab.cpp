@@ -49,6 +49,9 @@ struct voc {
     string aa;
     string cn;
 };
+void opt_voc(voc a) {
+    
+}
 signed main() {
     // freopen("voc1.txt","r",stdin);
     int id;
@@ -82,7 +85,7 @@ signed main() {
                 getline(cin,san);
                 if(san==v[id].en) {
                     cout<<"GOOD!\n";
-                    opt_voc(v[id);
+                    opt_voc(v[id]);
                 }
                 else {
 
