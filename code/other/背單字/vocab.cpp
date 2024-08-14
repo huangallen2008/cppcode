@@ -79,13 +79,16 @@ signed main() {
     while(1) {
         int opt;
         cin>>opt;
-        if(opt==1) {
+        if(opt==1||opt==2) {
             int n;
             cin>>n;
             while(n--) {
                 int id=rd(0,v.size()-1);
                 re:
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
+                if(opt==2) {
+                    cout<<v[id].en[0]<<endl;
+                }
                 string san,tt;
                 REP(i,v[id].cnt) {
                     cin>>tt;
