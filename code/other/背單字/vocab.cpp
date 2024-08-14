@@ -80,7 +80,7 @@ signed main() {
     system("cls");
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
-    ofstream odata;odata.open("data.txt","w",stdout);
+    ofstream odata;odata.open("data.txt");
     odata<<1;
     int vision=1;
     while(1) {
