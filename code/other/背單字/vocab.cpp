@@ -101,12 +101,24 @@ signed main() {
                 }
                 san.pop_back();
                 if(san==v[id].en) {
+                    system("cls");
+                    cout<<"("<<i<<"/"<<n<<")\n";
+                    cout<<v[id].cn<<" "<<v[id].aa<<endl;
+                    if(opt==2) {
+                        cout<<v[id].en[0]<<endl;
+                    }
                     cout<<"GOOD!\n";
                     opt_voc(v[id]);
                     system("pause");
                     system("cls");
                 }
                 else {
+                    system("cls")
+                    cout<<"("<<i<<"/"<<n<<")\n";
+                    cout<<v[id].cn<<" "<<v[id].aa<<endl;
+                    if(opt==2) {
+                        cout<<v[id].en[0]<<endl;
+                    }
                     cout<<"NO!\n";
                     opt_voc(v[id]);
                     system("pause");
