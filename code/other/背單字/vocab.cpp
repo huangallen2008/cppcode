@@ -48,7 +48,7 @@ struct voc {
     string en;
     string aa;
     string cn;
-}
+};
 signed main() {
     freopen("voc1.txt","r",stdin);
     int id;
