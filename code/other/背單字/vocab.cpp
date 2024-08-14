@@ -61,6 +61,7 @@ signed main() {
             en=en+" "+aa;
             cin>>aa;
         }
+        cin>>cn;
         op(id)op(ch)op(en)op(aa)ope(cn)
         v.pb({id,en,aa,cn});
     }
