@@ -56,7 +56,7 @@ void opt_voc(voc a) {
 signed main() {
     // freopen("voc1.txt","r",stdin);
     ifstream vocab;
-    vocab.open("voc1.txt");
+    vocab.open("voc1.csv");
     int id;
     string en,aa,cn;
     char ch;
