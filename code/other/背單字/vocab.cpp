@@ -55,7 +55,12 @@ signed main() {
     string en,aa,cn;
     char ch;
     vector<voc> v;
-    while(cin>>id>>ch>>en>>aa>>cn) {
+    while(cin>>id) {
+        cin>>ch>>en>>aa;
+        while(aa[0]!='(') {
+            en=en+" "+aa;
+            cin>>aa;
+        }
         op(id)op(ch)op(en)op(aa)ope(cn)
         v.pb({id,en,aa,cn});
     }
