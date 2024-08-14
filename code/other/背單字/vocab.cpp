@@ -113,7 +113,7 @@ signed main() {
                     system("cls");
                 }
                 else {
-                    system("cls")
+                    system("cls");
                     cout<<"("<<i<<"/"<<n<<")\n";
                     cout<<v[id].cn<<" "<<v[id].aa<<endl;
                     if(opt==2) {
