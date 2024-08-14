@@ -88,6 +88,11 @@ signed main() {
         int opt;
         cin>>opt;
         system("cls");
+        if(opt==0) {
+            for(auto vo:v) {
+                cout<<"{"<<id<<":"<<sc<<"} ";
+            }cout<<endl;
+        }
         if(opt==1||opt==2) {
             cout<<"number:(all:"<<v.size()<<")\n";
             int n;
