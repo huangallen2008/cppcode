@@ -85,7 +85,7 @@ signed main() {
             cout<<"單字數量:(共"<<v.size()<<"個)\n";
             int n;
             cin>>n;
-            system("")
+            system("cls");
             REP1(i,n) {
                 int id=rd(0,v.size()-1);
                 re:
