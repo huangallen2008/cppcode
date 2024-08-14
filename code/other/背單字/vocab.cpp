@@ -43,7 +43,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-ofstream odata;
 struct voc {
     int id;
     string en;
@@ -57,6 +56,7 @@ void opt_voc(voc a) {
 }
 bool so(voc a,voc b) { return a.sc>b.sc; }
 signed main() {
+ofstream odata;
     // freopen("voc1.txt","r",stdin);
     int id;
     string en,aa,cn;
