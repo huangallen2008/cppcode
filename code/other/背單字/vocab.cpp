@@ -95,6 +95,8 @@ signed main() {
                 if(san==v[id].en) {
                     cout<<"GOOD!\n";
                     opt_voc(v[id]);
+                    system("pause");
+                    system("cls");
                 }
                 else {
                     cout<<"NO!\n";
