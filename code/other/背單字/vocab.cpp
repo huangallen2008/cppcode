@@ -81,12 +81,13 @@ signed main() {
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
     ofstream odata;odata.open("data.txt");
-    odata<<1;
+    odata<<"ok";
+    ope("ok")
     int vision=1;
     while(1) {
         // sort(ALL(v),so);
         REP(i,v.size()) {
-            cerr<<i<<endl;
+            // cerr<<i<<endl;
             odata<<v[i].id<<' '<<v[i].en<<' '<<v[i].aa<<' '<<v[i].cn<<' '<<v[i].cnt<<' '<<v[i].sc<<'\n';
         }odata<<"vision "<<(vision++)<<"\n-------------------\n";
         vector<int> ids;
