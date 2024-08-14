@@ -51,7 +51,7 @@ struct voc {
     int cnt;
 };
 void opt_voc(voc a) {
-    cout<<a.cn<<" "<<a.aa<<" "<<a.en<<endl;
+    cout<<a.en<<" "<<a.aa<<" "<<a.cn<<endl;
 }
 signed main() {
     // freopen("voc1.txt","r",stdin);
