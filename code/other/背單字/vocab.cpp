@@ -55,24 +55,21 @@ void opt_voc(voc a) {
 }
 signed main() {
     // freopen("voc1.txt","r",stdin);
-    ifstream vocab;
-    vocab.open("voc1.csv");
     int id;
     string en,aa,cn;
     char ch;
     vector<voc> v;
-    while(vocab>>id) {
-        // if(id==-1) break;
-        vocab>>ch>>en>>aa;
+    while(cin>>id) {
+        if(id==-1) break;
+        cin>>ch>>en>>aa;
         int cnt=1;
         while(aa[0]!='(') {
             en=en+" "+aa;
             cin>>aa;
             cnt++;
         }
-        vocab>>cn;
-        ope("ok")ope(id)
-        op(id)op(ch)op(en)op(aa)ope(cn)
+        cin>>cn;
+        // op(id)op(ch)op(en)op(aa)ope(cn)
         v.pb({id,en,aa,cn,cnt});
     }
     // for(auto [s1,s2,s3,s4]:v) {
