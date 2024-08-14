@@ -81,6 +81,7 @@ signed main() {
             cin>>n;
             while(n--) {
                 int id=rd(0,v.size()-1);
+                re:
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
                 string san;
                 getline(cin,san);
@@ -89,7 +90,11 @@ signed main() {
                     opt_voc(v[id]);
                 }
                 else {
-
+                    cout<<"NO!\n";
+                    opt_voc(v[id]);
+                    system("pause");
+                    system("cls");
+                    goto re;
                 }
             }
         }
