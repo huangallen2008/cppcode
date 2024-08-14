@@ -50,7 +50,7 @@ struct voc {
     string cn;
 };
 signed main() {
-    freopen("voc1.txt","r",stdin);
+    // freopen("voc1.txt","r",stdin);
     int id;
     string en,aa,cn;
     char ch;
