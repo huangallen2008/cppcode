@@ -81,7 +81,7 @@ signed main() {
     system("cls");
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
-    // odata.open("data.txt");
+    odata.open("data.txt");
     odata<<"ok";
     ope("ok")
     int vision=1;
