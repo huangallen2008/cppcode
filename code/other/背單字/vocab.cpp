@@ -79,8 +79,11 @@ signed main() {
     // }
     system("cls");
     int vn=v.size();
+    vector<int> wa={0,2,4,6,7,7,8};
     while(1) {
-        sort(ALL(v),so);
+        // sort(ALL(v),so);
+        vector<int> ids;
+        for(auto vo:v) REP(i,vo.sc) ids.pb(vo.id);
         cout<<"1:no,2:yes\n";
         int opt;
         cin>>opt;
@@ -91,7 +94,7 @@ signed main() {
             cin>>n;
             system("cls");
             REP1(i,n) {
-                int id=sqrt(rd(0,(vn-1)^2));
+                int id=ids[rd(0,ids.size()-1)];
                 re:
                 cout<<"("<<i<<"/"<<n<<")\n";
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
@@ -111,6 +114,7 @@ signed main() {
                     if(opt==2) {
                         cout<<v[id].en[0]<<endl;
                     }
+                    v[id].sc=max(v[id].sc-1,1ll);
                     cout<<"GOOD!\n";
                     opt_voc(v[id]);
                     system("pause");
@@ -120,6 +124,8 @@ signed main() {
                     system("cls");
                     cout<<"("<<i<<"/"<<n<<")\n";
                     cout<<v[id].cn<<" "<<v[id].aa<<endl;
+                    if(v[id].sc>6) v[id].sc++;
+                    else v[id].sc=wa[v[id].sc];
                     if(opt==2) {
                         cout<<v[id].en[0]<<endl;
                     }
