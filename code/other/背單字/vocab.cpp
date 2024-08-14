@@ -77,12 +77,12 @@ signed main() {
     // }
     system("cls");
     while(1) {
-        cout<<"1:拼字,2:給開頭\n";
+        cout<<"1:no,2:yes\n";
         int opt;
         cin>>opt;
         system("cls");
         if(opt==1||opt==2) {
-            cout<<"單字數量:(共"<<v.size()<<"個)\n";
+            cout<<"number:(all:"<<v.size()<<")\n";
             int n;
             cin>>n;
             system("cls");
