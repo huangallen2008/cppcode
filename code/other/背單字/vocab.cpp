@@ -80,6 +80,8 @@ signed main() {
     system("cls");
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
+    ofstream odata;odata.open("data.txt");
+    int vision=1;
     while(1) {
         // sort(ALL(v),so);
         vector<int> ids;
@@ -88,6 +90,9 @@ signed main() {
         int opt;
         cin>>opt;
         system("cls");
+        REP(i,v.size()) {
+            odata<<v[i].id<<' '<<v[i].en<<' '<<v[i].aa<<' '<<v[i].cn<<' '<<v[i].cnt<<' '<<v[i].sc<<'\n';
+        }odata<<"vision "<<(vision++)<<"\n-------------------\n";
         if(opt==0) {
             for(auto vo:v) {
                 cout<<"{"<<vo.id<<":"<<vo.sc<<"} ";
