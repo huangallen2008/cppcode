@@ -71,7 +71,7 @@ signed main() {
             cnt++;
         }
         vocab>>cn;
-        ope("ok")
+        ope("ok")ope(id)
         // op(id)op(ch)op(en)op(aa)ope(cn)
         v.pb({id,en,aa,cn,cnt});
     }
