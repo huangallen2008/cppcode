@@ -56,7 +56,7 @@ void opt_voc(voc a) {
 }
 bool so(voc a,voc b) { return a.sc>b.sc; }
 signed main() {
-ofstream odata;
+    ofstream odata;
     // freopen("voc1.txt","r",stdin);
     int id;
     string en,aa,cn;
