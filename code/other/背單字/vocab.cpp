@@ -77,20 +77,25 @@ signed main() {
     // }
     system("cls");
     while(1) {
+        cout<<"1:拼字,2:給開頭\n";
         int opt;
         cin>>opt;
+        system("cls");
         if(opt==1||opt==2) {
+            cout<<"單字數量:(共"<<v.size()<<"個)\n";
             int n;
             cin>>n;
-            while(n--) {
+            system("")
+            REP1(i,n) {
                 int id=rd(0,v.size()-1);
                 re:
+                cout<<"("<<i<<"/"<<n<<")\n";
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
                 if(opt==2) {
                     cout<<v[id].en[0]<<endl;
                 }
                 string san,tt;
-                REP(i,v[id].cnt) {
+                REP(rd,v[id].cnt) {
                     cin>>tt;
                     san+=tt+" ";
                 }
