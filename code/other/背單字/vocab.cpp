@@ -50,7 +50,7 @@ struct voc {
     string cn;
 };
 void opt_voc(voc a) {
-    
+
 }
 signed main() {
     // freopen("voc1.txt","r",stdin);
@@ -59,6 +59,7 @@ signed main() {
     char ch;
     vector<voc> v;
     while(cin>>id) {
+        if(id==-1) break;
         cin>>ch>>en>>aa;
         while(aa[0]!='(') {
             en=en+" "+aa;
