@@ -81,6 +81,7 @@ signed main() {
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
     ofstream odata;odata.open("data.txt","w",stdout);
+    odata<<1;
     int vision=1;
     while(1) {
         // sort(ALL(v),so);
