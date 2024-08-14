@@ -62,11 +62,33 @@ signed main() {
             cin>>aa;
         }
         cin>>cn;
-        op(id)op(ch)op(en)op(aa)ope(cn)
+        // op(id)op(ch)op(en)op(aa)ope(cn)
         v.pb({id,en,aa,cn});
     }
-    for(auto [s1,s2,s3,s4]:v) {
-        op(s1)op(s2)op(s3)ope(s4)
+    // for(auto [s1,s2,s3,s4]:v) {
+    //     op(s1)op(s2)op(s3)ope(s4)
+    // }
+    system("cls");
+    while(1) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int n;
+            cin>>n;
+            while(n--) {
+                int id=rd(0,v.size()-1);
+                cout<<v[id].cn<<" "<<v[id].aa<<endl;
+                string san;
+                getline(cin,san);
+                if(san==v[id].en) {
+                    cout<<"GOOD!\n";
+                    opt_voc(v[id);
+                }
+                else {
+
+                }
+            }
+        }
     }
     return 0;
 }
