@@ -49,10 +49,12 @@ struct voc {
     string aa;
     string cn;
     int cnt;
+    int sc;
 };
 void opt_voc(voc a) {
     cout<<a.en<<" "<<a.aa<<" "<<a.cn<<endl;
 }
+bool so(voc a,voc b) { return a.sc>b.sc; }
 signed main() {
     // freopen("voc1.txt","r",stdin);
     int id;
@@ -70,13 +72,15 @@ signed main() {
         }
         cin>>cn;
         // op(id)op(ch)op(en)op(aa)ope(cn)
-        v.pb({id,en,aa,cn,cnt});
+        v.pb({id,en,aa,cn,cnt,0});
     }
     // for(auto [s1,s2,s3,s4]:v) {
     //     op(s1)op(s2)op(s3)ope(s4)
     // }
     system("cls");
+    int vn=v.size();
     while(1) {
+        sort(ALL(v),so);
         cout<<"1:no,2:yes\n";
         int opt;
         cin>>opt;
@@ -87,7 +91,7 @@ signed main() {
             cin>>n;
             system("cls");
             REP1(i,n) {
-                int id=rd(0,v.size()-1);
+                int id=sqrt(rd(0,(vn-1)^2));
                 re:
                 cout<<"("<<i<<"/"<<n<<")\n";
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
