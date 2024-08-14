@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-    ofstream odata;
+ofstream odata;
 struct voc {
     int id;
     string en;
@@ -81,7 +81,7 @@ signed main() {
     system("cls");
     int vn=v.size();
     vector<int> wa={0,2,4,6,7,7,8};
-    odata.open("data.txt");
+    // odata.open("data.txt");
     odata<<"ok";
     ope("ok")
     int vision=1;
