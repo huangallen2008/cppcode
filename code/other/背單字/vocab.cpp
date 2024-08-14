@@ -48,6 +48,7 @@ struct voc {
     string en;
     string aa;
     string cn;
+    int cnt;
 };
 void opt_voc(voc a) {
 
@@ -61,13 +62,15 @@ signed main() {
     while(cin>>id) {
         if(id==-1) break;
         cin>>ch>>en>>aa;
+        int cnt=1;
         while(aa[0]!='(') {
             en=en+" "+aa;
             cin>>aa;
+            cnt++;
         }
         cin>>cn;
         // op(id)op(ch)op(en)op(aa)ope(cn)
-        v.pb({id,en,aa,cn});
+        v.pb({id,en,aa,cn,cnt});
     }
     // for(auto [s1,s2,s3,s4]:v) {
     //     op(s1)op(s2)op(s3)ope(s4)
@@ -83,8 +86,12 @@ signed main() {
                 int id=rd(0,v.size()-1);
                 re:
                 cout<<v[id].cn<<" "<<v[id].aa<<endl;
-                string san;
-                getline(cin,san);
+                string san,tt;
+                REP(i,v[id].cnt) {
+                    cin>>tt;
+                    san+=tt+" ";
+                }
+                san.pop_back();
                 if(san==v[id].en) {
                     cout<<"GOOD!\n";
                     opt_voc(v[id]);
