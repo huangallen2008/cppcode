@@ -90,7 +90,7 @@ signed main() {
         system("cls");
         if(opt==0) {
             for(auto vo:v) {
-                cout<<"{"<<id<<":"<<sc<<"} ";
+                cout<<"{"<<vo.id<<":"<<vo.sc<<"} ";
             }cout<<endl;
         }
         if(opt==1||opt==2) {
