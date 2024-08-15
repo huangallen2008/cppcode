@@ -113,9 +113,8 @@ signed main() {
     REP1(i,100) {
         vector<int> t(i+1);
         REP1(j,i) {
-            if(__gcd(i,j)!=0) continue;
+            if(__gcd(i,j)!=1) continue;
             int ni=i-j;
-            op(i)ope(ni)
             if(g[ni]<=i)t[g[ni]]=1;
         }
         int mex=inf;
