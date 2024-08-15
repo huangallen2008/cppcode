@@ -46,14 +46,14 @@ int rd(int l,int r) {
 void solve() {
     int l,r,a,b;
     cin>>l>>r>>a>>b;
-    if(r<=a||b<=l) {
+    if(r<a||b<l) {
         cout<<"1\n";
         return;
     }
     if(l>a) {
         swap(l,a),swap(r,b);
     }
-    int an=min(r,b)-max(l,a);
+    int an=min(r,b)-max(l,a)+(l!=a)+(r!=b);
     cout<<an<<'\n';
 }
 signed main() {
