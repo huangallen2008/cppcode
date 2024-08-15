@@ -85,6 +85,7 @@ void solve() {
             cout<<abs(x-y)<<'\n';
             continue;
         }
+        op(li)ope(ri)
         int ll=-inf,rr=inf;
         if(li>0)ll=in[li-1]-1;
         oparr(in)
