@@ -134,7 +134,7 @@ signed main() {
         REP1(j,i-1) {
             if(__gcd(i,j)!=1) continue;
             int ni=i-j;
-            cout<<(g[i]^g[ni])<<'\n';
+            if(i<10)cout<<(g[i]^g[ni])<<'\n';
         }
     }
     oparr(g)
