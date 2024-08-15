@@ -115,6 +115,7 @@ signed main() {
         REP1(j,i) {
             if(__gcd(i,j)!=0) continue;
             int ni=i-j;
+            op(i)ope(ni)
             if(g[ni]<=i)t[g[ni]]=1;
         }
         int mex=inf;
