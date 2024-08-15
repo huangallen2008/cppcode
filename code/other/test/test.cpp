@@ -109,8 +109,8 @@ namespace NTT {
 };
 const int inf=1000000000;
 signed main() {
-    vector<int> g(101);
-    REP1(i,100) {
+    vector<int> g(1001);
+    REP1(i,1000) {
         vector<int> t(i+1);
         REP1(j,i) {
             if(__gcd(i,j)!=1) continue;
