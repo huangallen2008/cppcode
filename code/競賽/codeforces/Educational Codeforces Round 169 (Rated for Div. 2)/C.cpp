@@ -52,8 +52,9 @@ void solve() {
     sort(ALL(a),so);
     int p=0;
     for(int i=1;i<n;i+=2) {
-        chmax(p,min(a[i-1]-a[i],k));
+        p+=a[i-1]-a[i];
     }
+    chmin(p,k);
     int an=0;
     REP(i,n) {
         if(i&1) an-=a[i];
