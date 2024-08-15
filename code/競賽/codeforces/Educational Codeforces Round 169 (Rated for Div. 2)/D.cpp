@@ -67,6 +67,7 @@ void solve() {
             lv=val;
         }
     }
+    oparr(in)
     while(q--) {
         int x,y;
         cin>>x>>y;
