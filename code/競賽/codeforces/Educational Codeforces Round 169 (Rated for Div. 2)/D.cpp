@@ -47,7 +47,7 @@ int col(char c) {
     if(c=='R') return 0;
     if(c=='G') return 1;
     if(c=='B') return 2;
-    if(c=='Y') return 4;
+    if(c=='Y') return 3;
 }
 void solve() {
     int n,q;
