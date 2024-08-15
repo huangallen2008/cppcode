@@ -138,6 +138,15 @@ signed main() {
         }
     }
     oparr(g)
+    REP(i,1000) {
+        REP1(j,i) {
+            if(i%j==0) {
+                if(g[i]!=g[j]) {
+                    cout<<i<<" "<<j<<"!#@%$^%!%$#@^$&$#@\n";
+                }
+            }
+        }
+    }
     int n;
     while(cin>>n) {
         int x;
