@@ -58,7 +58,7 @@ void solve() {
         cin>>s;
         v[i]|=(1<<col(s[0]))|(1<<col(s[1]));
     }
-    oparr(v)
+    // oparr(v)
     vector<int> in;
     int lv=-1;
     REP(i,n) {
@@ -85,12 +85,12 @@ void solve() {
             cout<<abs(x-y)<<'\n';
             continue;
         }
-        op(li)ope(ri)
+        // op(li)ope(ri)
         int ll=-inf,rr=inf;
         if(li>1)ll=in[li-1]-1;
-        oparr(in)
+        // oparr(in)
         if(ri<in.size()) rr=in[ri];
-        op(ll)op(rr)
+        // op(ll)op(rr)
         int an=min((x-ll)*2+y-x,(rr-y)*2+y-x);
         if(an>=n*3) cout<<"-1\n";
         else cout<<an<<'\n';
