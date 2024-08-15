@@ -129,6 +129,14 @@ signed main() {
         }
         g[i]=mex;
     }
+    REP1(i,100) {
+        vector<int> t(i+1);
+        REP1(j,i-1) {
+            if(__gcd(i,j)!=1) continue;
+            int ni=i-j;
+            cout<<(g[i]^g[ni])<<'\n';
+        }
+    }
     oparr(g)
     int n;
     while(cin>>n) {
