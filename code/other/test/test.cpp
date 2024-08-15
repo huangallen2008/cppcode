@@ -107,7 +107,7 @@ namespace NTT {
         return c;
     }
 };
-const inf=1000000000;
+const int inf=1000000000;
 signed main() {
     vector<int> g(101);
     REP1(i,100) {
