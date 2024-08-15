@@ -141,6 +141,7 @@ signed main() {
     REP(i,100) {
         REP1(j,i) {
             if(i%j==0) {
+                if(j==1) break;
                 if(g[i]!=g[j]) {
                     cout<<i<<" "<<j<<"!#@%$^%!%$#@^$&$#@\n";
                 }
