@@ -79,7 +79,7 @@ void f(string s,int k) {
         s=B+A+C; 
     }
     if(ok) {
-        cout<<cg<<'\n';
+        cout<<"\ntimes:"<<cg<<'\n';
     }
     else {
         cout<<"NO\n";
