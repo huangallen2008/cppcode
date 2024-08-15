@@ -60,9 +60,8 @@ namespace NTT {
     int inv(int x) {
         return pw(x,mod-2);
     }
-    int MA(int a,int b) { int c=a+b;if(c>mod) c-=mod;return c; }
-    int MM(int a,int b) { int c=a-b;if(c<0) c+=mod;return c; }
-    int MU(int a,int b) { int c=0;  if(a<b) swap(a,b); while(b>0) { if(b&1) c=MA(c,a); a=MA(a,a); b>>=1;} return c;}
+    int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
+    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
     const int G=3;
     const int INVG=inv(G);
     vector<int> r,c,a,b;
@@ -100,6 +99,10 @@ namespace NTT {
         return c;
     }
 };
+ 
+// 998244353=119*2^23+1, g=3
+// 4179340454199820289=29*2^57+1, g=3
+// 75161927681=35*2^31+1, g=3
 signed main() {
     int n,m;
     cin>>n>>m;
