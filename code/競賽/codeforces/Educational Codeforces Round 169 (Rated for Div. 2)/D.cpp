@@ -87,7 +87,7 @@ void solve() {
         }
         op(li)ope(ri)
         int ll=-inf,rr=inf;
-        if(li>0)ll=in[li-1]-1;
+        if(li>1)ll=in[li-1]-1;
         oparr(in)
         if(ri<in.size()) rr=in[ri];
         op(ll)op(rr)
