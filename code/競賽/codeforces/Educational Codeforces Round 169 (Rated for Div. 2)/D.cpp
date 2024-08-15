@@ -66,6 +66,7 @@ void solve() {
             in.pb(i);
             lv=val;
         }
+        op(i)ope(val)
     }
     oparr(in)
     while(q--) {
