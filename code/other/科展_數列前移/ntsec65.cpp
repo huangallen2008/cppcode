@@ -51,6 +51,7 @@ int cntc(string s) {
     return an;
 }
 int n,N;
+int cnty,cntn;
 void f(string s,int k) {
     int nowc=cntc(s),cc=0;
     int cg=0;
@@ -80,9 +81,11 @@ void f(string s,int k) {
     }
     if(ok) {
         cout<<"\ntimes:"<<cg<<'\n';
+        cnty++;
     }
     else {
         cout<<"NO\n";
+        cntn++;
     }
 }
 signed main() {
@@ -99,5 +102,6 @@ signed main() {
         RREP(j,N) s+='A'+((i>>j)&1);
         f(s,k);
     }
+    cout<<"yes:"<<cnty<<'\n'<<"NO:"<<cntn<<'\n';
     return 0;
 }
