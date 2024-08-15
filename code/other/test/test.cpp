@@ -138,7 +138,7 @@ signed main() {
         }
     }
     oparr(g)
-    REP(i,1000) {
+    REP(i,100) {
         REP1(j,i) {
             if(i%j==0) {
                 if(g[i]!=g[j]) {
