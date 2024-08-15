@@ -112,11 +112,11 @@ signed main() {
     vector<int> g(101);
     REP1(i,100) {
         vector<int> t(i+1);
-        REP1(j,i) {
+        REP1(j,i-1) {
             if(__gcd(i,j)!=1) continue;
             int ni=i-j;
             if(i<=10) {
-                op(i)ope(ni)
+                // op(i)ope(ni)
             }
             if(g[ni]<=i)t[g[ni]]=1;
         }
