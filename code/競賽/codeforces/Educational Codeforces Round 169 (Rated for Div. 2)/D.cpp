@@ -81,14 +81,14 @@ void solve() {
         if(x>y) swap(x,y);
         int li=upper_bound(ALL(in),x)-in.begin();
         int ri=upper_bound(ALL(in),y)-in.begin();
-        op(li)op(ri)
         if(li!=ri) {
             cout<<abs(x-y)<<'\n';
             continue;
         }
         int ll=-inf,rr=inf;
-        if(li>0)ll=in[li-1];
+        if(li>0)ll=in[li-1]-1;
         if(ri<in.size()) rr=in[ri];
+        op(ll)
         int an=min((x-ll)*2+y-x,(rr-y)*2+y-x);
         if(an>=n*3) cout<<"-1\n";
         else cout<<an<<'\n';
