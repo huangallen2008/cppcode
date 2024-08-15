@@ -116,7 +116,7 @@ signed main() {
             if(__gcd(i,j)!=1) continue;
             int ni=i-j;
             if(i<=10) {
-                // op(i)ope(ni)
+                op(i)ope(ni)
             }
             if(g[ni]<=i)t[g[ni]]=1;
         }
