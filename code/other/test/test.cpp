@@ -138,7 +138,7 @@ signed main() {
         }
     }
     oparr(g)
-    REP(i,100) {
+    REP(i,1000) {
         REP1(j,i) {
             if(i%j==0) {
                 if(j==1) break;
