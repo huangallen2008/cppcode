@@ -90,7 +90,7 @@ void solve() {
         if(li>0)ll=in[li-1]-1;
         oparr(in)
         if(ri<in.size()) rr=in[ri];
-        // op(ll)
+        op(ll)op(rr)
         int an=min((x-ll)*2+y-x,(rr-y)*2+y-x);
         if(an>=n*3) cout<<"-1\n";
         else cout<<an<<'\n';
