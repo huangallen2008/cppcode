@@ -67,9 +67,9 @@ void solve() {
             in.pb(i);
             lv=val;
         }
-        op(i)ope(val)
+        // op(i)ope(val)
     }
-    oparr(in)
+    // oparr(in)
     while(q--) {
         int x,y;
         cin>>x>>y;
@@ -88,7 +88,7 @@ void solve() {
         int ll=-inf,rr=inf;
         if(li>0)ll=in[li-1]-1;
         if(ri<in.size()) rr=in[ri];
-        op(ll)
+        // op(ll)
         int an=min((x-ll)*2+y-x,(rr-y)*2+y-x);
         if(an>=n*3) cout<<"-1\n";
         else cout<<an<<'\n';
