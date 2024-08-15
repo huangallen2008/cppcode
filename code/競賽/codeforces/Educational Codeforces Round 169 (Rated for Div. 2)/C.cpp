@@ -53,6 +53,7 @@ void solve() {
     int p=0;
     oparr(a)
     for(int i=1;i<n;i+=2) {
+        op(a[i]-a[i-1])
         chmax(p,min(a[i]-a[i-1],k));
     }
     int an=0;
