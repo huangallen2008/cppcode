@@ -51,6 +51,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     sort(ALL(a),so);
     int p=0;
+    oparr(a)
     for(int i=1;i<n;i+=2) {
         chmax(p,min(a[i]-a[i-1],k));
     }
