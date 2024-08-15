@@ -58,6 +58,7 @@ void solve() {
         cin>>s;
         v[i]|=(1<<col(s[0]))|(1<<col(s[1]));
     }
+    oparr(v)
     vector<int> in;
     int lv=-1;
     REP(i,n) {
