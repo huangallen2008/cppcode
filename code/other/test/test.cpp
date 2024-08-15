@@ -130,5 +130,15 @@ signed main() {
         g[i]=mex;
     }
     oparr(g)
+    int n;
+    while(cin>>n) {
+        int x;
+        int v=0;
+        REP(i,n) {
+            cin>>x;
+            v^=g[x];
+        }
+        ope(v)
+    }
     return 0;
 }
