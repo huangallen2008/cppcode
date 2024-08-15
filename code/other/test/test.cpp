@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
+#pragma GCC target("avx2,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -44,10 +44,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
+const int mod=75161927681;
 
-const int N=1<<20;
+// const int N=1<<20;
 namespace NTT {
-    const int mod=75161927681;
     // int MA(int a,int b) { int c=a+b; if(c>=mod) c-=mod; return c; }
     int& MA(int &a,int b) { a+=b; if(a>=mod) a-=mod; return a;}
     // int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
@@ -103,27 +103,28 @@ namespace NTT {
         _ntt(c,-1);
         int invn=inv(t);
         for(int i=0;i<=n1+n2;i++) MU(c[i],invn);
-        while(c.size()&&c.back()==0) c.pop_back();
+        // while(c.size()&&c.back()==0) c.pop_back();
         return c;
     }
 };
 signed main() {
-    int k,n,m;
-    cin>>k>>n>>m;
-    vector<int> a(k+1),b(k+1);
-    REP(i,n) {
-        int x;
-        cin>>x;
-        a[x]++;
+    vector<int> g(100);
+    REP1(i,100) {
+        vector<int> t(i+1);
+        REP1(j,i) {
+            if(__gcd(i,j)!=0) continue;
+            int ni=i-j;
+            if(g[ni]<=i)t[g[ni]]=1;
+        }
+        int mex=inf;
+        REP(j,i+1) {
+            if(t[j]==0) {
+                mex=j;
+                break;
+            }
+        }
+        g[i]=mex;
     }
-    REP(i,m) {
-        int x;
-        cin>>x;
-        b[x]++;
-    }
-    vector<int> c=NTT::ntt(a,b);
-    while(c.size()<=k<<1) c.pb(0);
-    for(int i=2;i<=k<<1;i++) cout<<c[i]<<' ';
-    cout<<'\n';
+    oparr(g)
     return 0;
 }
