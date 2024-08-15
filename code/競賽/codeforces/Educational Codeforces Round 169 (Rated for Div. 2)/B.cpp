@@ -53,7 +53,7 @@ void solve() {
     if(l>a) {
         swap(l,a),swap(r,b);
     }
-    int an=min(r,b)-max(l,a)+(l!=a)+(r!=b);
+    int an=min(r,b)-max(l,a);
     cout<<an<<'\n';
 }
 signed main() {
