@@ -81,6 +81,7 @@ void solve() {
         if(x>y) swap(x,y);
         int li=upper_bound(ALL(in),x)-in.begin();
         int ri=upper_bound(ALL(in),y)-in.begin();
+        op(li)op(ri)
         if(li!=ri) {
             cout<<abs(x-y)<<'\n';
             continue;
