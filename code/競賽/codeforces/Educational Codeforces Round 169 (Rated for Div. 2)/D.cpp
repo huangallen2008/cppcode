@@ -87,6 +87,7 @@ void solve() {
         }
         int ll=-inf,rr=inf;
         if(li>0)ll=in[li-1]-1;
+        oparr(in)
         if(ri<in.size()) rr=in[ri];
         // op(ll)
         int an=min((x-ll)*2+y-x,(rr-y)*2+y-x);
