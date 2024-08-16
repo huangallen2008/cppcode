@@ -75,7 +75,6 @@ signed main() {
         }
     }
     g[1]=1;
-    REP(i,10) cout<<g[i]<<' ';entr
     int T=1;
     cin>>T;
     while(T--) solve();
