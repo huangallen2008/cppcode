@@ -50,6 +50,7 @@ Graph g;
 vector<pii> dp[2];
 vector<bool> use;
 void dfs(int u,int pa) {
+    ope(u)
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
@@ -82,7 +83,6 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    ope("ok")
     dfs(0,-1);
     ope("ok")
     pii an=max(dp[0][0],dp[1][0]);
