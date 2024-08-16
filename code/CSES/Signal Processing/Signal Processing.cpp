@@ -109,8 +109,8 @@ namespace NTT {
 };
 signed main() {
     #ifdef LOCAL
-        freopen("in10.txt","r",stdin);
-        freopen("out.txt","w",stdout);
+        // freopen("in10.txt","r",stdin);
+        // freopen("out.txt","w",stdout);
     #endif
     IOS();
     int n,m;
@@ -122,6 +122,5 @@ signed main() {
     vector<int> c=NTT::ntt(a,b);
     REP(i,n+m-1) cout<<c[i]<<' ';
     cout<<'\n';
-    cerr<<fixed<<setprecision(3)<<(long double)clock()/CLOCKS_PER_SEC<<endl;
     return 0;
 }
