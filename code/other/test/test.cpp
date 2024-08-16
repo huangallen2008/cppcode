@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-const int mod=75161927681;
+const int mod=1004535809;
 
 // const int N=1<<20;
 namespace NTT {
@@ -112,7 +112,7 @@ signed main() {
     bitset<64> b;
     cout<<(b=1004535809)<<endl;
     ope( b)
-    ope(__lg(b&-b))
+    ope(__lg(mod&-mod))
     int t=75161927681;
     while(t>0){
         cout<<(t&1);
