@@ -52,7 +52,7 @@ void solve() {
     REP(i,n) {
         int x;
         cin>>x;
-        sg^=x;
+        sg^=g[x];
     }
     if(sg) cout<<"Alice\n";
     else cout<<"Bob\n";
