@@ -54,7 +54,7 @@ int n,N;
 int cnty,cntn;
 void f(string s,int k) {
     int nowc=cntc(s),cc=0;
-    int cg=0;
+    int cg=-1;
     bool ok=1;
     while(++cg) {
         cout<<s<<' ';
