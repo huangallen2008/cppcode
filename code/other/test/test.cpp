@@ -111,7 +111,7 @@ const int inf=1000000000;
 signed main() {
     bitset<64> b;
     cout<<(b=75161927681)<<endl;
-    ope(b)
+    ope( b)
     int t=75161927681;
     while(t>0){
         cout<<(t&1);
