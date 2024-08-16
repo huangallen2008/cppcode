@@ -122,7 +122,7 @@ const int mod1=167772161;
 const int mod2=469762049;
 const int mmm=mod1*mod2;
 int cc(int x,int y) {
-    return ((mod2*inv(mod2,mod1)%mod1)*x%mod1+(mod1*inv(mod1,mod2)%mod2)*y%mod2)%(mm);
+    return ((mod2*inv(mod2,mod1)%mod1)*x%mod1+(mod1*inv(mod1,mod2)%mod2)*y%mod2)%(mmm);
 }
 signed main() {
     #ifdef LOCAL
