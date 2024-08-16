@@ -91,10 +91,11 @@ void f(string s,int k) {
 }
 signed main() {
     IOS();
-    freopen("data.txt","w",stdout);
     int k;
     // int n,k;
     cin>>n>>k;
+    const string file="data_"+to_string(n)+"_"+to_string(k)+".txt";
+    freopen(file,"w",stdout);
     cout<<"n="<<n<<", k="<<k<<'\n';
     k--;
     // int N=n<<1;
