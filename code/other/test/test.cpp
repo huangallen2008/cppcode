@@ -121,6 +121,7 @@ signed main() {
     int tt2=(tt<<19)+tt;
     ope(b=tt)
     ope(b=tt2)
+    ope(tt)
     ope(tt%mod)
     ope(tt2%mod)
     return 0;
