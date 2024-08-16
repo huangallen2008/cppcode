@@ -83,6 +83,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
+    ope("ok")
     dfs(0,-1);
     pii an=max(dp[0][0],dp[1][0]);
     cout<<an.f<<' '<<an.s<<'\n';
