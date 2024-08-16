@@ -63,8 +63,8 @@ void dfs2(int u,int pa,int ty) {
     use[u]=ty;
     for(int v:g[u]) {
         if(v==pa) continue;
-        if(ty) dfs(v,u,0);
-        else dfs(v,u,dp[1][v]>dp[0][v]);
+        if(ty) dfs2(v,u,0);
+        else dfs2(v,u,dp[1][v]>dp[0][v]);
     }
 }
 signed main() {
