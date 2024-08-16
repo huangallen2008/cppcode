@@ -109,7 +109,7 @@ namespace NTT {
 };
 const int inf=1000000000;
 signed main() {
-    bitset<32> b;
+    bitset<64> b;
     cout<<(b=75161927681)<<endl;
     int t=75161927681;
     while(t>0){
