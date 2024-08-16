@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-pii& operator+=(pii &a,pii b) {
+void operator+=(pii &a,pii b) {
     a.f+=b.f,a.s+=b.s;
 }
 Graph g;
