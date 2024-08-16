@@ -125,8 +125,23 @@ int inv(int x,const int mod) {
 const int mod1=167772161;
 const int mod2=469762049;
 const int mmm=mod1*mod2;
+int MA(int a,int b,const int mod) {
+    a=a+b;
+    if(a>=mod) a-=mod;
+    return a;
+}
+int MU(int a,int b,const int mod) {
+    int r=1;
+    if(a<b) swap(a,b);
+    while(b>0) {
+        if(b&1) r=MA(r,a,mod);
+        a=MA(a,a,mod);
+        b>>=1;
+    }
+    return r;
+}
 int cc(int x,int y) {
-    return ((mod2*inv(mod2,mod1)%mmm)*x%mmm+(mod1*inv(mod1,mod2)%mmm)*y%mmm)%(mmm);
+    return MA(MU(MU(mod2,inv(mod2,mod1)),x),MU(MU(mod1,inv(mod1,mod2)),y));
 }
 signed main() {
     #ifdef LOCAL
