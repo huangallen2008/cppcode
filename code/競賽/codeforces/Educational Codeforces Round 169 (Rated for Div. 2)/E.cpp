@@ -64,6 +64,7 @@ signed main() {
         if(lf[i]==1) {
             lf[i]=i;
             g[i]=cnt++;
+            if(i==2) g[i]=0;
             prime.pb(i);
         }
         for(int &p:prime) {
