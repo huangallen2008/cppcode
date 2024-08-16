@@ -115,7 +115,7 @@ signed main() {
     while(t>0){
         cout<<(t&1);
         t>>=1;
-    }
+    }entr
     int tt=(1<<18)-1;
     int tt2=(tt<<18)+tt;
     ope(b=tt)
