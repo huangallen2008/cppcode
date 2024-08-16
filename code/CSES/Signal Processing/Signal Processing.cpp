@@ -131,7 +131,7 @@ int MA(int a,int b,const int mod) {
     return a;
 }
 int MU(int a,int b,const int mod) {
-    int r=1;
+    int r=0;
     if(a<b) swap(a,b);
     while(b>0) {
         if(b&1) r=MA(r,a,mod);
