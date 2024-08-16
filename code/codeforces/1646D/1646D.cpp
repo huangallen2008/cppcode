@@ -71,6 +71,10 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    if(n==2) {
+        cout<<"2 2\n1 1\n";
+        return 0;
+    }
     dp[0]=vector<pii>(n);
     dp[1]=vector<pii>(n);
     use=vector<bool>(n);
