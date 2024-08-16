@@ -92,6 +92,7 @@ namespace NTT {
     }
     vector<int>& ntt(vector<int>&_a,vector<int>&_b,int _mod){
         // mod=_mod;
+        ope(mod)
         a=_a,b=_b;
         n1=a.size(),n2=b.size();
         t=1,lt=0;
