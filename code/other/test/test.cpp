@@ -116,5 +116,9 @@ signed main() {
         cout<<(t&1);
         t>>=1;
     }
+    int tt=(1<<18)-1;
+    int tt2=(tt<<18)+tt;
+    ope(b=tt)
+    ope(b=tt2)
     return 0;
 }
