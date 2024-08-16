@@ -62,7 +62,7 @@ void dfs(int u,int pa) {
     dp[0][u].s--;
     dp[1][u].f++,dp[1][u].s-=g[u].size();
     ope(u)
-    op(dp[0][u].f)op(dp[0][u].s)
+    op(dp[0][u].f)ope(dp[0][u].s)
 }
 void dfs2(int u,int pa,int ty) {
     use[u]=ty;
