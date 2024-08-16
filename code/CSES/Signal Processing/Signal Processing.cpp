@@ -141,7 +141,7 @@ int MU(int a,int b,const int mod) {
     return r;
 }
 int cc(int x,int y) {
-    return MA(MU(MU(mod2,inv(mod2,mod1)),x),MU(MU(mod1,inv(mod1,mod2)),y));
+    return MA(MU(MU(mod2,inv(mod2,mod1),mmm),x,mmm),MU(MU(mod1,inv(mod1,mod2),mmm),y,mmm),mmm);
 }
 signed main() {
     #ifdef LOCAL
