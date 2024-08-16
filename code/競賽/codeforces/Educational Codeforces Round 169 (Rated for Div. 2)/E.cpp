@@ -60,9 +60,7 @@ void solve() {
 signed main() {
     IOS();
     int cnt=1;
-    lf[2]=2,g[1]=cnt++;
-    prime.pb(2);
-    for(int i=3;i<maxn;i++) {
+    for(int i=2;i<maxn;i++) {
         if(lf[i]==1) {
             lf[i]=i;
             g[i]=cnt++;
@@ -75,6 +73,7 @@ signed main() {
             if(p>=lf[i]) break;
         }
     }
+    swap(g[1],g[2]);
     REP(i,10) cout<<g[i]<<' ';entr
     int T=1;
     cin>>T;
