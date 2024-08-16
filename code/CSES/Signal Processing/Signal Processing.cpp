@@ -109,7 +109,7 @@ namespace NTT {
 };
 signed main() {
     #ifdef LOCAL
-        freopen("in.txt","r",stdin);
+        freopen("in10.txt","r",stdin);
         freopen("out.txt","w",stdout);
     #endif
     IOS();
