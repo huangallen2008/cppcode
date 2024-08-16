@@ -116,7 +116,7 @@ signed main() {
     REP(i,m) cin>>b[i];
     reverse(ALL(b));
     vector<int> c=NTT::ntt(a,b);
-    REP(i,n) cout<<c[i]<<' ';
+    REP(i,n+m-1) cout<<c[i]<<' ';
     cout<<'\n';
     return 0;
 }
