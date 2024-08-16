@@ -58,7 +58,7 @@ void dfs(int u,int pa) {
         dp[0][u]+=max(dp[0][v],dp[1][v]);
     }
     ope("uu")
-    oparr(dp[0])
+    ope(dp[0].size())
     dp[0][u].s--;
     dp[1][u].f++,dp[1][u].s-=g[u].size();
 }
