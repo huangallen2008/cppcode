@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-const int mod=167772161;
+const int mod=998244353;
 
 // const int N=1<<20;
 namespace NTT {
