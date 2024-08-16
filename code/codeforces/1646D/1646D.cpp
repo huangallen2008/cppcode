@@ -79,6 +79,7 @@ signed main() {
         int u,v;
         cin>>u>>v;
         u--,v--;
+        op(u)ope(v)
         g[u].pb(v);
         g[v].pb(u);
     }
