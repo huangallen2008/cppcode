@@ -44,10 +44,11 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-const int mod=1004535809;
+// const int mod=167772161;
 
 // const int N=1<<20;
 namespace NTT {
+    int mod;
     // int MA(int a,int b) { int c=a+b; if(c>=mod) c-=mod; return c; }
     int& MA(int &a,int b) { a+=b; if(a>=mod) a-=mod; return a;}
     // int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
@@ -89,7 +90,8 @@ namespace NTT {
             }
         }
     }
-    vector<int>& ntt(vector<int>&_a,vector<int>&_b){
+    vector<int>& ntt(vector<int>&_a,vector<int>&_b,int _mod){
+        mod=_mod;
         a=_a,b=_b;
         n1=a.size(),n2=b.size();
         t=1,lt=0;
@@ -107,6 +109,21 @@ namespace NTT {
         return c;
     }
 };
+int pw(int x,int p,const int mod) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r*=x,r%=mod;
+        x*=x,x%=mod;
+        p>>=1;
+    }
+    return r;
+}
+const int mod1=167772161;
+const int mod2=469762049;
+const int mmm=mod1*mod2;
+int cc(int x,int y) {
+    return ((mod2*inv(mod2,mod1)%mod1)*x%mod1+(mod1*inv(mod1,mod2)%mod2)*y%mod2)%(mm);
+}
 signed main() {
     #ifdef LOCAL
         // freopen("in10.txt","r",stdin);
@@ -119,8 +136,9 @@ signed main() {
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
     reverse(ALL(b));
-    vector<int> c=NTT::ntt(a,b);
-    REP(i,n+m-1) cout<<c[i]<<' ';
+    vector<int> c1=NTT::ntt(a,b,167772161);
+    vector<int> c2=NTT::ntt(a,b,469762049);
+    REP(i,n+m-1) cout<<cc(c1[i],c2[i])<<' ';
     cout<<'\n';
     return 0;
 }
