@@ -91,6 +91,7 @@ signed main() {
     ope("ok")
     pii an=max(dp[0][0],dp[1][0]);
     cout<<an.f<<' '<<an.s<<'\n';
+    ope("owowowo")
     if(dp[0][0]==an) dfs2(0,-1,0);
     else dfs2(0,-1,1);
     REP(i,n) {
