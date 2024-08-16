@@ -113,7 +113,7 @@ signed main() {
     cout<<(b=1004535809)<<endl;
     ope( b)
     ope(mod)
-    ope(__lg(mod&-mod))
+    ope(__lg((mod-1)&-(mod-1)))
     int t=75161927681;
     while(t>0){
         cout<<(t&1);
