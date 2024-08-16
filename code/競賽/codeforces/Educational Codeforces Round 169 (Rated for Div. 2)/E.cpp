@@ -74,6 +74,7 @@ signed main() {
             if(p>=lf[i]) break;
         }
     }
+    REP(i,10) cout<<g[i]<<' ';entr
     int T=1;
     cin>>T;
     while(T--) solve();
