@@ -54,7 +54,7 @@ int n,N;
 int cnty,cntn;
 void f(string s,int k) {
     int nowc=cntc(s),cc=0;
-    int cg=-1;
+    int cg=0;
     bool ok=1;
     while(++cg) {
         cout<<s<<' ';
@@ -80,6 +80,7 @@ void f(string s,int k) {
         s=B+A+C; 
     }
     if(ok) {
+        cg--;
         cout<<"\ntimes:"<<cg<<'\n';
         cnty++;
     }
