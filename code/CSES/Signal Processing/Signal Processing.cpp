@@ -128,6 +128,7 @@ int cc(int x,int y) {
     return ((mod2*inv(mod2,mod1)%mod1)*x%mod1+(mod1*inv(mod1,mod2)%mod2)*y%mod2)%(mmm);
 }
 signed main() {
+    ope(mmm)
     #ifdef LOCAL
         // freopen("in10.txt","r",stdin);
         // freopen("out.txt","w",stdout);
@@ -139,8 +140,8 @@ signed main() {
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
     reverse(ALL(b));
-    vector<int> c1=NTT::ntt(a,b,167772161);
-    vector<int> c2=NTT::ntt(a,b,469762049);
+    vector<int> c1=NTT::ntt(a,b,mod1);
+    vector<int> c2=NTT::ntt(a,b,mod2);
     oparr(c1)oparr(c2)
     REP(i,n+m-1) cout<<cc(c1[i],c2[i])<<' ';
     cout<<'\n';
