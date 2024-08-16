@@ -54,6 +54,7 @@ void dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
+        op(u)ope(v)
         dp[1][u]+=dp[0][v];
         dp[0][u]+=max(dp[0][v],dp[1][v]);
     }
