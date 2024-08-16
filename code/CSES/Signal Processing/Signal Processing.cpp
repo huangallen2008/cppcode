@@ -44,11 +44,11 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-// const int mod=167772161;
+const int mod=167772161;
 
 // const int N=1<<20;
 namespace NTT {
-    int mod;
+    // int mod;
     // int MA(int a,int b) { int c=a+b; if(c>=mod) c-=mod; return c; }
     int& MA(int &a,int b) { a+=b; if(a>=mod) a-=mod; return a;}
     // int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
@@ -91,7 +91,7 @@ namespace NTT {
         }
     }
     vector<int>& ntt(vector<int>&_a,vector<int>&_b,int _mod){
-        mod=_mod;
+        // mod=_mod;
         a=_a,b=_b;
         n1=a.size(),n2=b.size();
         t=1,lt=0;
