@@ -54,7 +54,7 @@ void solve() {
         cin>>x;
         sg^=x;
     }
-    if(x) cout<<"Alice\n";
+    if(sg) cout<<"Alice\n";
     else cout<<"Bob\n";
 }
 signed main() {
