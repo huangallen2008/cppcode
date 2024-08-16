@@ -141,6 +141,7 @@ signed main() {
     reverse(ALL(b));
     vector<int> c1=NTT::ntt(a,b,167772161);
     vector<int> c2=NTT::ntt(a,b,469762049);
+    oparr(c1)oparr(c2)
     REP(i,n+m-1) cout<<cc(c1[i],c2[i])<<' ';
     cout<<'\n';
     return 0;
