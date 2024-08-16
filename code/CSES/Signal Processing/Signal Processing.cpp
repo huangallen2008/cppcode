@@ -108,6 +108,9 @@ namespace NTT {
     }
 };
 signed main() {
+    #ifdef LOCAL
+        freopen("in.txt","r",stdin);
+    #endif
     IOS();
     int n,m;
     cin>>n>>m;
