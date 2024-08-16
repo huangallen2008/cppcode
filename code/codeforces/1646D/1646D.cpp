@@ -50,20 +50,14 @@ Graph g;
 vector<pii> dp[2];
 vector<bool> use;
 void dfs(int u,int pa) {
-    ope(u)
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
-        op(u)ope(v)
         dp[1][u]+=dp[0][v];
         dp[0][u]+=max(dp[0][v],dp[1][v]);
     }
-    ope("uu")
-    ope(dp[0].size())
     dp[0][u].s--;
     dp[1][u].f++,dp[1][u].s-=g[u].size();
-    ope(u)
-    op(dp[0][u].f)ope(dp[0][u].s)
 }
 void dfs2(int u,int pa,int ty) {
     use[u]=ty;
@@ -89,15 +83,13 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    ope("ok")
     pii an=max(dp[0][0],dp[1][0]);
-    cout<<an.f<<' '<<an.s<<'\n';
-    ope("owowowo")
+    cout<<an.f<<' '<<-an.s<<'\n';
     if(dp[0][0]==an) dfs2(0,-1,0);
     else dfs2(0,-1,1);
     REP(i,n) {
         if(use[i]) cout<<g[i].size()<<' ';
-        else cout<<1<<'\n';
+        else cout<<1<<' ';
     }
     return 0;
 }
