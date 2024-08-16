@@ -122,6 +122,7 @@ signed main() {
     ope(b=tt)
     ope(b=tt2)
     ope(tt)
+    ope(tt*tt%mod)
     ope(tt%mod)
     ope(tt2%mod)
     return 0;
