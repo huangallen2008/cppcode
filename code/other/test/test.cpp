@@ -109,55 +109,7 @@ namespace NTT {
 };
 const int inf=1000000000;
 signed main() {
-    vector<int> g(1001);
-    REP1(i,1000) {
-        vector<int> t(i+1);
-        REP1(j,i) {
-            if(__gcd(i,j)!=1) continue;
-            int ni=i-j;
-            if(i<=10) {
-                op(i)ope(ni)
-            }
-            if(g[ni]<=i)t[g[ni]]=1;
-        }
-        int mex=inf;
-        REP(j,i+1) {
-            if(t[j]==0) {
-                mex=j;
-                break;
-            }
-        }
-        g[i]=mex;
-    }
-    REP1(i,100) {
-        vector<int> t(i+1);
-        REP1(j,i-1) {
-            if(__gcd(i,j)!=1) continue;
-            int ni=i-j;
-            if(i<10)cout<<(g[i]^g[ni])<<'\n';
-        }
-    }
-    oparr(g)
-    REP(i,1000) {
-        REP1(j,i) {
-            if(i%j==0) {
-                if(j==1) break;
-                if(g[i]!=g[j]) {
-                    cout<<i<<" "<<j<<"!#@%$^%!%$#@^$&$#@\n";
-                }
-                break;
-            }
-        }
-    }
-    int n;
-    while(cin>>n) {
-        int x;
-        int v=0;
-        REP(i,n) {
-            cin>>x;
-            v^=g[x];
-        }
-        ope(v)
-    }
+    bitset<32> b;
+    cout<<(b=75161927681)<<endl;
     return 0;
 }
