@@ -118,6 +118,9 @@ int pw(int x,int p,const int mod) {
     }
     return r;
 }
+int inv(int x,const int mod) {
+    return pw(x,mod-2,mod);
+}
 const int mod1=167772161;
 const int mod2=469762049;
 const int mmm=mod1*mod2;
