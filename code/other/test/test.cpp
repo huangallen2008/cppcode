@@ -112,6 +112,7 @@ signed main() {
     bitset<64> b;
     cout<<(b=1004535809)<<endl;
     ope( b)
+    ope(mod)
     ope(__lg(mod&-mod))
     int t=75161927681;
     while(t>0){
