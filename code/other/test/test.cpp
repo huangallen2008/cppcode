@@ -117,8 +117,8 @@ signed main() {
         cout<<(t&1);
         t>>=1;
     }entr
-    int tt=(1<<18)-1;
-    int tt2=(tt<<18)+tt;
+    int tt=(1<<19)-1;
+    int tt2=(tt<<19)+tt;
     ope(b=tt)
     ope(b=tt2)
     return 0;
