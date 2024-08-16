@@ -93,7 +93,9 @@ signed main() {
     freopen("data.txt","w",stdout);
     int k;
     // int n,k;
-    cin>>n>>k;k--;
+    cin>>n>>k;
+    cout<<"n="<<n<<", k="<<k<<'\n';
+    k--;
     // int N=n<<1;
     N=n<<1;
     REP(i,1<<N-1) {
