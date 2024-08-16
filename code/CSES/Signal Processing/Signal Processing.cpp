@@ -149,6 +149,7 @@ signed main() {
         // freopen("out.txt","w",stdout);
     #endif
     IOS();
+    ope(MU(3,5,mmm))
     int n,m;
     cin>>n>>m;
     vector<int> a(n),b(m);
