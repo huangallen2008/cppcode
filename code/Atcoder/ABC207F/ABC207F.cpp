@@ -60,7 +60,7 @@ void dfs(int u,int pa) {
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]&&j>=0;j--) {
                 addmod(t0[i],dp0[u][j]*(dp0[v][i-j]+dp1[v][i-j]));
-                addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp2[v][i-j])+(i>j?dp0[u][j]*dp1[v][i-j-1]:0));
+                addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp2[v][i-j])+(i>j?dp0[u][j]*dp2[v][i-j-1]:0));
                 addmod(t2[i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]));
                 // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
