@@ -45,41 +45,45 @@ int rd(int l,int r) {
 }
 int n;
 Graph g;
-vector<vector<int>> dp0,dp1;
+vector<vector<int>> dp0,dp1,dp2;
 vector<int> sz;
 void dfs(int u,int pa) {
     vector<int> t0(n+1),t1(n+1);
     t0[0]=t1[1]=1;
-    int cc=0;
+    dp0[u][0]=dp1[u][1]=dp2[u][1]=1;
+    int cc=1;
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
         sz[u]+=sz[v];
-        vector<int> tt1(n+1),tt0(n+1);
+        vector<int> t1(n+1),t0(n+1),t2(n+1);
         for(int i=cc;i>=0;i--) {
             for(int j=i;j>=i-sz[v]&&j>=0;j--) {
-                addmod(tt0[i],t0[j]*dp0[v][i-j]);
-                addmod(tt1[i],t1[j]*dp1[v][i-j]);
+                addmod(t0[u][i],dp0[u][j]*(dp0[v][i-j]+dp2[v][i-j]));
+                addmod(t1[u][i],dp1[u][j]*(dp0[v][i-j]+dp2[v][i-j]));
+                addmod(t2[u][i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]));
+                // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
-        t1.swap(tt1);
-        t0.swap(tt0);
+        t0.swap(dp0[u]);
+        t1.swap(dp1[u]);
+        t2.swap(dp2[u]);
         cc+=sz[v];
     }
-    if(sz[u]!=1) {
-        for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
-        for(int i=0;i<=sz[u];i++) dp0[u][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
-    }
-    else {
-        dp0[u][0]=dp1[u][1]=1;
-    }
+    // if(sz[u]!=1) {
+    //     for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
+    //     for(int i=0;i<=sz[u];i++) dp0[u][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
+    // }
+    // else {
+    //     dp0[u][0]=dp1[u][1]=1;
+    // }
 }
 signed main() {
     IOS();
     cin>>n;
     g=Graph(n);
     sz=vector<int>(n,1);
-    dp0=dp1=vector<vector<int>>(n,vector<int>(n+1));
+    dp0=dp1=dp2=vector<vector<int>>(n,vector<int>(n+1));
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
