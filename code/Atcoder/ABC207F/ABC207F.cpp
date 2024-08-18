@@ -51,6 +51,7 @@ void dfs(int u,int pa) {
     vector<int> t0(n+1),t1(n+1);
     int cc=0;
     for(int v:g[u]) {
+        if(v==pa) continue;
         dfs(v,-1);
         sz[u]+=sz[v];
         vector<int> tt1(n+1),tt0(n+1);
