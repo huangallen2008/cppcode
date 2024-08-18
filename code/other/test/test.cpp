@@ -108,7 +108,18 @@ namespace NTT {
     }
 };
 const int inf=1000000000;
+int pw(int x,int p) 
+{
+    int r=1;
+    while(p>0) {
+        if(p&1) r*=x,r%=1000;
+        x*=x,x%=1000;
+        p>>=1;
+    }
+    return r;
+}
 signed main() {
+    ope(pw(3,1024))
     bitset<64> b;
     cout<<(b=1004535809)<<endl;
     ope( b)
