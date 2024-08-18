@@ -72,9 +72,9 @@ void dfs(int u,int pa) {
             }
         }
         // oparr(t0)oparr(t1)oparr(t2)entr
-        t0.swap(dp0[u]);
-        t1.swap(dp1[u]);
-        t2.swap(dp2[u]);
+        swap(t0,dp0[u]);
+        swap(t1,dp1[u]);
+        swap(t2,dp2[u]);
         // cc+=sz[v];
     }
     // if(sz[u]!=1) {
