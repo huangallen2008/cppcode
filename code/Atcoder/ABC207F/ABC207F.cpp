@@ -66,13 +66,14 @@ void dfs(int u,int pa) {
                 // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
-        t00.swap(tt0[u]);
-        t01.swap(tt1[u]);
+        t00.swap(tt0);
+        t01.swap(tt1);
         t1.swap(dp1[u]);
         t2.swap(dp2[u]);
         cc+=sz[v];
     }
-    REP1(i,n) tt1[i]=(tt1[i]-tt0[i]+mod)%mod;
+    REP1(i,n) tt1[i]=(tt1[i]-tt0[i-1]+mod)%mod;
+    REP(i,n+1) dp0[i]=(tt0[i]+tt1[i])%mod;
     // if(sz[u]!=1) {
     //     for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
     //     for(int i=0;i<=sz[u];i++) dp0[u][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
