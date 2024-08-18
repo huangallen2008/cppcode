@@ -60,9 +60,9 @@ void dfs(int u,int pa) {
         dfs(v,u);
         sz[u]+=sz[v];
         // vector<ll> t1(n+1),t2(n+1),t0(n+1);
-        memset(t1,0,sizeog(t1));
-        memset(t2,0,sizeog(t2));
-        memset(t3,0,sizeog(t3));
+        memset(t1,0,sizeof(t1));
+        memset(t2,0,sizeof(t2));
+        memset(t0,0,sizeof(t0));
         // op(sz[u])ope(sz[v])
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]-1&&j>=0;j--) {
