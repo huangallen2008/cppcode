@@ -43,6 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int n,m;
 pii f(int t,vector<int>&a) {
     int cnt=0;
     while(1) {
@@ -55,7 +56,6 @@ pii f(int t,vector<int>&a) {
     return {inf,inf};
 }
 signed main() {
-    int n,m;
     cin>>n>>m;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
