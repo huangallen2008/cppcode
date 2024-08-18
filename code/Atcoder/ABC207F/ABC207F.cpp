@@ -65,7 +65,7 @@ void dfs(int u,int pa) {
         cc+=sz[v];
     }
     for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
-    for(int i=0;i<=sz[u];i++) dp0[v][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
+    for(int i=0;i<=sz[u];i++) dp0[u][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
 }
 signed main() {
     IOS();
