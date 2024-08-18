@@ -85,7 +85,7 @@ signed main() {
     cin>>n;
     g=Graph(n);
     sz=vector<int>(n,1);
-    dp0=dp1=dp2=vector<vector<int>>(n,vector<int>(n+1));
+    dp0=dp1=dp2=vector<vector<ll>>(n,vector<ll>(n+1));
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
