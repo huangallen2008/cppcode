@@ -2,8 +2,9 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
-#define REP(i,n) for(int i=0;i<(n);i++)
+// #define int long long
+#define ll long long
+// #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
 #define RREP1(i,n) for(int i=(n);i>=1;i--)
@@ -60,9 +61,9 @@ void dfs(int u,int pa) {
         // op(sz[u])ope(sz[v])
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]-1&&j>=0;j--) {
-                addmod(t0[i],dp0[u][j]*(dp0[v][i-j]+dp1[v][i-j]));
-                addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp1[v][i-j]+dp2[v][i-j])+(i>j?dp0[u][j]*dp2[v][i-j-1]:0));
-                addmod(t2[i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]+(i>j?dp0[v][i-j-1]:0)));
+                addmod(t0[i],dp0[u][j]*1ll*(dp0[v][i-j]+dp1[v][i-j]));
+                addmod(t1[i],dp1[u][j]*1ll*((ll)dp0[v][i-j]+dp1[v][i-j]+dp2[v][i-j])+(i>j?dp0[u][j]*dp2[v][i-j-1]:0));
+                addmod(t2[i],dp2[u][j]*1ll*((ll)dp1[v][i-j]+dp2[v][i-j]+(i>j?dp0[v][i-j-1]:0)));
             }
         }
         // oparr(t0)oparr(t1)oparr(t2)entr
@@ -96,7 +97,7 @@ signed main() {
     // REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
     // REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
     // REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
-    REP(i,n+1) an[i]=(dp0[0][i]+dp1[0][i]+dp2[0][i])%mod;
+    REP(i,n+1) an[i]=((ll)dp0[0][i]+dp1[0][i]+dp2[0][i])%mod;
     REP(i,n+1) cout<<an[i]<<'\n';
     return 0;
 }
