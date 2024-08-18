@@ -45,11 +45,12 @@ int rd(int l,int r) {
 }
 int n,m;
 pii ga(int t,vector<int>&a,vector<int>&s) {
+    op(t)
     int cnt=0;
     while(1) {
         if(t+a[t]>=n||s[t+a[t]]>s[t]) {
+            op(cnt)ope(t)
             return {t,cnt};
-            break;
         }
         cnt++,t+=a[t];
     }
