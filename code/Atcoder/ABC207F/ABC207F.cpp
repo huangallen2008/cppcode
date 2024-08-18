@@ -48,30 +48,28 @@ Graph g;
 vector<vector<int>> dp0,dp1,dp2;
 vector<int> sz;
 void dfs(int u,int pa) {
-    vector<int> tt0(n+1),tt1(n+1);
-    tt0[0]=tt1[1]=1;
+    // vector<int> tt0(n+1),tt1(n+1);
+    // tt0[0]=tt1[1]=1;
     dp0[u][0]=dp2[u][1]=1;
-    int cc=1;
+    // int cc=1;
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
         sz[u]+=sz[v];
         vector<int> t1(n+1),t2(n+1),t0(n+1);
-        op(sz[u])ope(sz[v])
+        // op(sz[u])ope(sz[v])
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]-1&&j>=0;j--) {
                 addmod(t0[i],dp0[u][j]*(dp0[v][i-j]+dp1[v][i-j]));
                 addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp1[v][i-j]+dp2[v][i-j])+(i>j?dp0[u][j]*dp2[v][i-j-1]:0));
                 addmod(t2[i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]+(i>j?dp0[v][i-j-1]:0)));
-                
-                // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
-        oparr(t0)oparr(t1)oparr(t2)entr
+        // oparr(t0)oparr(t1)oparr(t2)entr
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
         t2.swap(dp2[u]);
-        cc+=sz[v];
+        // cc+=sz[v];
     }
     // if(sz[u]!=1) {
     //     for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
@@ -95,9 +93,9 @@ signed main() {
     }
     dfs(0,-1);
     vector<int> an(n+1);
-    REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
-    REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
-    REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
+    // REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
+    // REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
+    // REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
     REP(i,n+1) an[i]=dp0[0][i]+dp1[0][i]+dp2[0][i];
     REP(i,n+1) cout<<an[i]<<'\n';
     return 0;
