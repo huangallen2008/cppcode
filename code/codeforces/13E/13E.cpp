@@ -62,7 +62,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     int sn=sqrt(n);
-    const vector<int> s(n);
+    vector<int> s(n);
     REP(i,n) s[i]=i/sn;
     vector<pii> r(n);
     REP(i,n) {
