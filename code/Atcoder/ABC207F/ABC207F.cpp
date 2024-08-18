@@ -93,9 +93,9 @@ signed main() {
     }
     dfs(0,-1);
     vector<int> an(n+1);
-    // REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
-    // REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
-    // REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
+    REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
+    REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
+    REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
     REP(i,n+1) an[i]=(dp0[0][i]+dp1[0][i]+dp2[0][i])%mod;
     REP(i,n+1) cout<<an[i]<<'\n';
     return 0;
