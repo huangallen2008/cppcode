@@ -58,8 +58,8 @@ void dfs(int u,int pa) {
         vector<int> tt1(n+1),tt0(n+1);
         for(int i=cc;i>=0;i--) {
             for(int j=i;j>=i-sz[v]&&j>=0;j--) {
-                addmod(tt0[i],t0[j]*dp0[v][i]);
-                addmod(tt1[i],t1[j]*dp1[v][i]);
+                addmod(tt0[i],t0[j]*dp0[v][i-j]);
+                addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
         t1.swap(tt1);
