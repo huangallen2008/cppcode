@@ -49,7 +49,7 @@ pii ga(int t,vector<int>&a,vector<int>&s,vector<pii>&r) {
     // int cnt=0;
     if(t+a[t]>=n||s[t+a[t]]>s[t]) {
         // op(cnt)ope(t)
-        return {t,0};
+        return {t,1};
     }
     else return {r[t+a[t]].f,r[t+a[t]].s+1};
 }
@@ -87,8 +87,8 @@ signed main() {
                 }
                 cnt+=r[t].s;
                 la=r[t].f;
-                t=r[t].f+a[r[t].f];
-                cnt++;
+                t=r[t].f;
+                t+=a[t];
             }
             cout<<la+1<<' '<<cnt<<'\n';
             // op(cnt)ope(la)
