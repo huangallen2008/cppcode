@@ -45,11 +45,11 @@ int rd(int l,int r) {
 }
 int n,m;
 pii ga(int t,vector<int>&a,vector<int>&s) {
-    op(t)
+    // op(t)
     int cnt=0;
     while(1) {
         if(t+a[t]>=n||s[t+a[t]]>s[t]) {
-            op(cnt)ope(t)
+            // op(cnt)ope(t)
             return {t,cnt};
         }
         cnt++,t+=a[t];
@@ -93,7 +93,7 @@ signed main() {
                 t=r[t].f+a[r[t].f];
                 cnt++;
             }
-            cout<<la<<' '<<cnt<<'\n';
+            cout<<la+1<<' '<<cnt<<'\n';
             // op(cnt)ope(la)
         }
     }
