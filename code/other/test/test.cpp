@@ -119,24 +119,11 @@ int pw(int x,int p)
     return r;
 }
 signed main() {
-    ope(pw(3,1024))
-    bitset<64> b;
-    cout<<(b=1004535809)<<endl;
-    ope( b)
-    ope(mod)
-    ope(__lg((mod-1)&-(mod-1)))
-    int t=75161927681;
-    while(t>0){
-        cout<<(t&1);
-        t>>=1;
-    }entr
-    int tt=(1<<19)-1;
-    int tt2=(tt<<19)+tt;
-    ope(b=tt)
-    ope(b=tt2)
-    ope(tt)
-    ope(tt*tt%mod)
-    ope(tt%mod)
-    ope(tt2%mod)
+    IOS();
+    int t,sn=10;
+    while(cin>>t) {
+        int k=t/an*an;
+        ope(k)
+    }
     return 0;
 }
