@@ -59,8 +59,8 @@ void dfs(int u,int pa) {
         vector<int> t1(n+1),t2(n+1),t00(n+1),t01(n+1);
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]&&j>=0;j--) {
-                addmod(t00[i],tt0[u][j]*(dp0[v][i-j]));
-                addmod(t01[i],t1[u][j]*(dp0[v][i-j]+dp1[v][i-j]));
+                addmod(t00[i],tt0[j]*(dp0[v][i-j]));
+                addmod(t01[i],tt1[j]*(dp0[v][i-j]+dp1[v][i-j]));
                 addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp2[v][i-j]));
                 addmod(t2[i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]));
                 // addmod(tt1[i],t1[j]*dp1[v][i-j]);
