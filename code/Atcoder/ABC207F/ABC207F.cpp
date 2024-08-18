@@ -50,30 +50,26 @@ vector<int> sz;
 void dfs(int u,int pa) {
     vector<int> tt0(n+1),tt1(n+1);
     tt0[0]=tt1[1]=1;
-    dp1[u][0]=dp2[u][1]=1;
+    dp0[u][0]=dp2[u][1]=1;
     int cc=1;
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
         sz[u]+=sz[v];
-        vector<int> t1(n+1),t2(n+1),t00(n+1),t01(n+1);
+        vector<int> t1(n+1),t2(n+1),t0(n+1);
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]&&j>=0;j--) {
-                addmod(t00[i],tt0[j]*(dp0[v][i-j]));
-                addmod(t01[i],tt1[j]*(dp0[v][i-j]+dp1[v][i-j]));
-                addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp2[v][i-j]));
+                addmod(t0[i],dp0[u][j]*(dp0[v][i-j]+dp1[v][i-j]));
+                addmod(t1[i],dp1[u][j]*(dp0[v][i-j]+dp1[v][i-j])+(i>j?dp0[u][j]*dp1[v][i-j-1]:0));
                 addmod(t2[i],dp2[u][j]*(dp1[v][i-j]+dp2[v][i-j]));
                 // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
-        t00.swap(tt0);
-        t01.swap(tt1);
+        t0.swap(dp0[u]);
         t1.swap(dp1[u]);
         t2.swap(dp2[u]);
         cc+=sz[v];
     }
-    REP1(i,n) tt1[i]=(tt1[i]-tt0[i-1]+mod)%mod;
-    REP(i,n+1) dp0[u][i]=(tt0[i]+tt1[i])%mod;
     // if(sz[u]!=1) {
     //     for(int i=1;i<=sz[u];i++) dp1[u][i]=(t0[i-1]+t1[i-1])%mod;
     //     for(int i=0;i<=sz[u];i++) dp0[u][i]=(t0[i]+(i>0?t1[i-1]:0))%mod;
