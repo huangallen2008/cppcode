@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 int n,q,sn;
 int nxt[maxn],pre[maxn],bs[maxn];
-void gok(int u,int k) {
+int gok(int u,int k) {
     while(k--) u=nxt[u];
     return u;
 }
