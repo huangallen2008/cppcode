@@ -98,7 +98,7 @@ signed main() {
     REP(i,n) {
         REP(j,n+1) cout<<dp1[i][j]<<' ';entr
     }entr
-    REP(i,n+1) an[i]=max(dp0[0][i],dp1[0][i]);
+    REP(i,n+1) an[i]=max(dp0[0][i],dp2[0][i]);
     REP(i,n+1) cout<<an[i]<<'\n';
     return 0;
 }
