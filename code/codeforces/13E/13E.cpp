@@ -84,10 +84,11 @@ signed main() {
                 if(t>=n) {
                     break;
                 }
-                cnt+=a[t].f;
+                cnt+=r[t].f;
                 la=r[t].s;
                 t+=a[r[t].s];
             }
+            cout<<cnt<<' '<<la<<'\n';
         }
     }
     return 0;
