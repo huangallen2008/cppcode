@@ -38,7 +38,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e5+5;
+const int maxn=2e3+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,7 +46,8 @@ int rd(int l,int r) {
 }
 int n;
 Graph g;
-vector<vector<ll>> dp0,dp1,dp2;
+// vector<vector<ll>> dp0,dp1,dp2;
+ll dp0[maxn][maxn],dp1[maxn][maxn],dp2[maxn][maxn];
 vector<int> sz;
 void dfs(int u,int pa) {
     // vector<int> tt0(n+1),tt1(n+1);
@@ -82,6 +83,9 @@ void dfs(int u,int pa) {
 }
 signed main() {
     IOS();
+    memset(dp0,0,sizeof(dp0));
+    memset(dp1,0,sizeof(dp1));
+    memset(dp2,0,sizeof(dp2));
     cin>>n;
     g=Graph(n);
     sz=vector<int>(n,1);
