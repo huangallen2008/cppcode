@@ -48,6 +48,7 @@ int n;
 Graph g;
 // vector<vector<ll>> dp0,dp1,dp2;
 ll dp0[maxn][maxn],dp1[maxn][maxn],dp2[maxn][maxn];
+ll t1[maxn],t2[maxn],t0[maxn];
 vector<int> sz;
 void dfs(int u,int pa) {
     // vector<int> tt0(n+1),tt1(n+1);
@@ -58,7 +59,10 @@ void dfs(int u,int pa) {
         if(v==pa) continue;
         dfs(v,u);
         sz[u]+=sz[v];
-        vector<ll> t1(n+1),t2(n+1),t0(n+1);
+        // vector<ll> t1(n+1),t2(n+1),t0(n+1);
+        memset(t1,0,sizeog(t1));
+        memset(t2,0,sizeog(t2));
+        memset(t3,0,sizeog(t3));
         // op(sz[u])ope(sz[v])
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]-1&&j>=0;j--) {
