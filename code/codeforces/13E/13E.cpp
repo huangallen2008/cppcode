@@ -56,6 +56,7 @@ pii ga(int t,vector<int>&a,vector<int>&s) {
     return {inf,inf};
 }
 signed main() {
+    IOS();
     cin>>n>>m;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
