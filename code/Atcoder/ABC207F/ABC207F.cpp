@@ -49,7 +49,7 @@ vector<vector<int>> dp0,dp1;
 vector<int> sz;
 void dfs(int u,int pa) {
     vector<int> t0(n+1),t1(n+1);
-    t0[0]=t1[0]=1;
+    t0[0]=t1[1]=1;
     int cc=0;
     for(int v:g[u]) {
         if(v==pa) continue;
