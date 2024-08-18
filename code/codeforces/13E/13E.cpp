@@ -74,7 +74,7 @@ signed main() {
             int u,v;
             cin>>u>>v,u--;
             a[u]=v;
-            int li=i/sn*sn;
+            int li=u/sn*sn;
             for(int j=min(li+sn,n)-1;j>=li;j--) r[j]=ga(j,a,s,r);
         }
         else {
