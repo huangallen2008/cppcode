@@ -122,7 +122,7 @@ signed main() {
     IOS();
     int t,sn=10;
     while(cin>>t) {
-        int k=t/an*an;
+        int k=t/sn*sn;
         ope(k)
     }
     return 0;
