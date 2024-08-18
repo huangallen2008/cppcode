@@ -25,7 +25,7 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
-#ifdef LOCAL_
+#ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
@@ -92,6 +92,7 @@ signed main() {
                 t=r[t].f+a[r[t].f];
             }
             cout<<cnt<<' '<<la<<'\n';
+            op(cnt)ope(la)
         }
     }
     return 0;
