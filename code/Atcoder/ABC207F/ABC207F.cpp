@@ -48,12 +48,11 @@ Graph g;
 vector<vector<int>> dp0,dp1;
 vector<int> sz;
 void dfs(int u,int pa) {
-    ope(u)
     vector<int> t0(n+1),t1(n+1);
     int cc=0;
     for(int v:g[u]) {
         if(v==pa) continue;
-        dfs(v,-1);
+        dfs(v,u);
         sz[u]+=sz[v];
         vector<int> tt1(n+1),tt0(n+1);
         for(int i=cc;i>=0;i--) {
