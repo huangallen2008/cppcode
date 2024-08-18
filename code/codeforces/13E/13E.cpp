@@ -68,6 +68,7 @@ signed main() {
     REP(i,n) {
         r[i]=ga(i,a,s);
     }
+    REP(i,n) cout<<r[i].s<<' ';entr
     REP(i,m) {
         int opt;
         cin>>opt;
