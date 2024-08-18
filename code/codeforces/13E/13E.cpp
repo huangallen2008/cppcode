@@ -68,8 +68,8 @@ signed main() {
     REP(i,n) {
         r[i]=ga(i,a,s);
     }
-    oparr(s)
-    REP(i,n) cout<<r[i].s<<' ';entr
+    // oparr(s)
+    // REP(i,n) cout<<r[i].s<<' ';entr
     REP(i,m) {
         int opt;
         cin>>opt;
@@ -94,7 +94,7 @@ signed main() {
                 cnt++;
             }
             cout<<la<<' '<<cnt<<'\n';
-            op(cnt)ope(la)
+            // op(cnt)ope(la)
         }
     }
     return 0;
