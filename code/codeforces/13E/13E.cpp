@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n,m;
-pii f(int t,vector<int>&a,vector<int>&s) {
+pii ga(int t,vector<int>&a,vector<int>&s) {
     int cnt=0;
     while(1) {
         if(t+a[t]>=n||s[t+a[t]]>s[t]) {
@@ -64,7 +64,7 @@ signed main() {
     REP(i,n) s[i]=i/sn;
     vector<pii> r(n);
     REP(i,n) {
-        r[i]=f(i,a,s);
+        r[i]=ga(i,a,s);
     }
     REP(i,m) {
         int opt;
@@ -74,7 +74,7 @@ signed main() {
             cin>>u>>v,u--;
             a[u]=v;
             int li=i/sn*sn;
-            for(int j=li;j<li+sn&&j<n;j++) r[j]=f(j,a,s);
+            for(int j=li;j<li+sn&&j<n;j++) r[j]=ga(j,a,s);
         }
         else {
             int u;
