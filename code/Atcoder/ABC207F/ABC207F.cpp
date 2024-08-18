@@ -2,8 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
-#define ll long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -38,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=2e3+5;
+const int maxn=1e5+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,9 +45,7 @@ int rd(int l,int r) {
 }
 int n;
 Graph g;
-// vector<vector<ll>> dp0,dp1,dp2;
-ll dp0[maxn][maxn],dp1[maxn][maxn],dp2[maxn][maxn];
-ll t1[maxn],t2[maxn],t0[maxn];
+vector<vector<int>> dp0,dp1,dp2;
 vector<int> sz;
 void dfs(int u,int pa) {
     // vector<int> tt0(n+1),tt1(n+1);
@@ -59,10 +56,7 @@ void dfs(int u,int pa) {
         if(v==pa) continue;
         dfs(v,u);
         sz[u]+=sz[v];
-        // vector<ll> t1(n+1),t2(n+1),t0(n+1);
-        memset(t1,0,sizeof(t1));
-        memset(t2,0,sizeof(t2));
-        memset(t0,0,sizeof(t0));
+        vector<int> t1(n+1),t2(n+1),t0(n+1);
         // op(sz[u])ope(sz[v])
         for(int i=sz[u];i>=0;i--) {
             for(int j=i;j>=i-sz[v]-1&&j>=0;j--) {
@@ -72,9 +66,9 @@ void dfs(int u,int pa) {
             }
         }
         // oparr(t0)oparr(t1)oparr(t2)entr
-        swap(t0,dp0[u]);
-        swap(t1,dp1[u]);
-        swap(t2,dp2[u]);
+        t0.swap(dp0[u]);
+        t1.swap(dp1[u]);
+        t2.swap(dp2[u]);
         // cc+=sz[v];
     }
     // if(sz[u]!=1) {
@@ -87,13 +81,10 @@ void dfs(int u,int pa) {
 }
 signed main() {
     IOS();
-    memset(dp0,0,sizeof(dp0));
-    memset(dp1,0,sizeof(dp1));
-    memset(dp2,0,sizeof(dp2));
     cin>>n;
     g=Graph(n);
     sz=vector<int>(n,1);
-    // dp0=dp1=dp2=vector<vector<ll>>(n,vector<ll>(n+1));
+    dp0=dp1=dp2=vector<vector<int>>(n,vector<int>(n+1));
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
@@ -101,7 +92,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    vector<ll> an(n+1);
+    vector<int> an(n+1);
     // REP(i,n) {REP(j,n+1) cout<<dp0[i][j]<<' ';entr}entr
     // REP(i,n) {REP(j,n+1) cout<<dp1[i][j]<<' ';entr}entr
     // REP(i,n) {REP(j,n+1) cout<<dp2[i][j]<<' ';entr}entr
