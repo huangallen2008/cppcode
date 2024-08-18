@@ -91,7 +91,7 @@ signed main() {
                 la=r[t].f;
                 t=r[t].f+a[r[t].f];
             }
-            cout<<cnt<<' '<<la<<'\n';
+            cout<<la<<' '<<cnt<<'\n';
             op(cnt)ope(la)
         }
     }
