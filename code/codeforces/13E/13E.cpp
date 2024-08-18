@@ -87,9 +87,9 @@ signed main() {
                 if(t>=n) {
                     break;
                 }
-                cnt+=r[t].f;
-                la=r[t].s;
-                t+=a[r[t].s];
+                cnt+=r[t].s;
+                la=r[t].f;
+                t=r[t].f+a[r[t].f];
             }
             cout<<cnt<<' '<<la<<'\n';
         }
