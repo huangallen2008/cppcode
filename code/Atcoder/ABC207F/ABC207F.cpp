@@ -63,7 +63,7 @@ void dfs(int u,int pa) {
                 addmod(t1[i+j],dp1[u][i]*(dp0[v][j]+dp1[v][j]+dp2[v][j]));
                 addmod(t1[i+j+1],dp0[u][i]*dp2[v][j]);
                 addmod(t2[i+j],dp2[u][i]*(dp1[v][j]+dp2[v][j]));
-                addmod(t2[i+j+1],dp2[u][j]*dp0[v][j]);
+                addmod(t2[i+j+1],dp2[u][i]*dp0[v][j]);
             }
         }
         sz[u]+=sz[v];
