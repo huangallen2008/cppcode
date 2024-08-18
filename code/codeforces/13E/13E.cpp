@@ -44,17 +44,14 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n,m;
-pii ga(int t,vector<int>&a,vector<int>&s) {
+pii ga(int t,vector<int>&a,vector<int>&s,vector<pii>&r) {
     // op(t)
-    int cnt=0;
-    while(1) {
-        if(t+a[t]>=n||s[t+a[t]]>s[t]) {
-            // op(cnt)ope(t)
-            return {t,cnt};
-        }
-        cnt++,t+=a[t];
+    // int cnt=0;
+    if(t+a[t]>=n||s[t+a[t]]>s[t]) {
+        // op(cnt)ope(t)
+        return {t,0};
     }
-    return {inf,inf};
+    else return {r[t+a[t]].f,r[t+a[t]].s+1};
 }
 signed main() {
     IOS();
@@ -65,8 +62,8 @@ signed main() {
     vector<int> s(n);
     REP(i,n) s[i]=i/sn;
     vector<pii> r(n);
-    REP(i,n) {
-        r[i]=ga(i,a,s);
+    RREP(i,n) {
+        r[i]=ga(i,a,s,r);
     }
     // oparr(s)
     // REP(i,n) cout<<r[i].s<<' ';entr
@@ -78,7 +75,7 @@ signed main() {
             cin>>u>>v,u--;
             a[u]=v;
             int li=i/sn*sn;
-            for(int j=li;j<li+sn&&j<n;j++) r[j]=ga(j,a,s);
+            for(int j=min(li+sn,n)-1;j>=li;j--) r[j]=ga(j,a,s,r);
         }
         else {
             int u;
