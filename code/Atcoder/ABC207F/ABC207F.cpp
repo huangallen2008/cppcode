@@ -65,6 +65,7 @@ void dfs(int u,int pa) {
                 // addmod(tt1[i],t1[j]*dp1[v][i-j]);
             }
         }
+        oparr(t0)oparr(t1)oparr(t2)entr
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
         t2.swap(dp2[u]);
