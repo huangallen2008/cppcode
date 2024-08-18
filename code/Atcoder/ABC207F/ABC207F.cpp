@@ -4,7 +4,7 @@ using namespace std;
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define ll long long
-// #define REP(i,n) for(int i=0;i<(n);i++)
+#define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
 #define RREP1(i,n) for(int i=(n);i>=1;i--)
