@@ -86,6 +86,7 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
+    ope(maxnl)
     int n,q;
     cin>>n>>q;
     vector<int> a(n+1);
