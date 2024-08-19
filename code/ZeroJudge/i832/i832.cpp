@@ -56,7 +56,7 @@ struct SEG {
         lc[nn]=lc[w],rc[nn]=rc[w],s[nn]=0;
         if(l==r) {
             s[nn]=v;
-            return;
+            return nn;
         }
         int m=l+r>>1;
         if(u<=m) lc[nn]=ud(lc[w],l,m,u,v);
