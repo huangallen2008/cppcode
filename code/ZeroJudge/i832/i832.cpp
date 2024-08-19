@@ -96,7 +96,7 @@ signed main() {
         int l,r;
         cin>>l>>r;
         l^=ans,r^=ans;
-        ans=seg.qu(l,r)
+        ans=seg.qu(l,r);
         cout<<ans<<'\n';
     }
     return 0;
