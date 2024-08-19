@@ -90,7 +90,7 @@ struct SEG {
 signed main() {
     IOS();
     int n,q;
-    cin>>n>>q;
+    n=in(),q=in();
     vector<int> a(n+1);
     REP1(i,n) a[i]=in();
     seg.init(n,a);
