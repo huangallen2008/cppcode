@@ -44,25 +44,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define GU _getchar_nolock()
-#define PU _putchar_nolock
-int in() {
-    int x=0;
-    char ch=GU;
-    while(ch==' '||ch=='\n') ch=GU;
-    while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GU;
-    return x;
-}
-void out(int x) {
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PU(*it);
-    PU('\n');
-}
+#include<unistd.h>
+char OB[65536]; int OP;
+inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+read(0,buf,65536))==buf?-1:*p++;}
+inline int in(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
+inline void out(int n){static char buf[12],p;if(n==0)OB[OP++]='0';p=0;while(n)buf[p++]='0'+(n%10),n/=10;for(--p;p>=0;--p)OB[OP++]=buf[p];OB[OP++]='\n';if(OP>65516)write(1,OB,OP),OP=0;}
 struct SEG {
     int lc[maxnl],rc[maxnl],s[maxnl],vers[maxn];
     int n,nid=1;
