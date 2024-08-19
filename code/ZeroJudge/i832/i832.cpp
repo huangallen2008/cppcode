@@ -91,10 +91,13 @@ signed main() {
     vector<int> a(n+1);
     REP1(i,n) cin>>a[i];
     seg.init(n,a);
+    int ans=0;
     REP(i,q) {
         int l,r;
         cin>>l>>r;
-        cout<<seg.qu(l,r)<<'\n';
+        l^=ans,r^=ans;
+        ans=seg.qu(l,r)
+        cout<<ans<<'\n';
     }
     return 0;
 }
