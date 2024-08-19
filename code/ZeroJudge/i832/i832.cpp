@@ -52,6 +52,7 @@ struct SEG {
     }
     int ud(int w,int l,int r,int u,int v) {
         int nn=nid++;
+        assert(nid<maxnl);
         if(w==-1) w=nn;
         lc[nn]=lc[w],rc[nn]=rc[w],s[nn]=0;
         if(l==r) {
@@ -86,7 +87,6 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    ope(maxnl)
     int n,q;
     cin>>n>>q;
     vector<int> a(n+1);
