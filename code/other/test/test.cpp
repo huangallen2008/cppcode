@@ -128,7 +128,7 @@ int& pp(int& a,int b) {
 signed main() {
     IOS();
     int t=1;
-    f(pp(t,5),pp(t,4),pp(t,-1));
+    f(pp(t,5),pp(t,4),pp(t,-1),++t,t++);
     ope(t)
     // REP1(i,200) cout<<i<<'\n';
     // cout<<"\\n";
