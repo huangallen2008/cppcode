@@ -100,6 +100,7 @@ void solve() {
     vector<bool> used(n);
     oparr(las)
     REP1(rd,cntd) {
+        ope(rd)
         if(rd&1) { 
             pii ret=rmx(l,it);
             op(l)op(it)op(ret.f)ope(ret.s)
