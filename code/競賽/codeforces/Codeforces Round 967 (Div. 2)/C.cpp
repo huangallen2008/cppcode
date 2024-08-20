@@ -82,6 +82,7 @@ void solve() {
     REP1(i,n) {
         for(int v:g[i]) cout<<i<<' '<<v<<' ';
     }
+    cout<<'\n';
     cout.flush();
 }
 signed main() {
