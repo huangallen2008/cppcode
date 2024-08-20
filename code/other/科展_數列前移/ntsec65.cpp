@@ -92,7 +92,9 @@ void f(string s,int k) {
 }
 signed main() {
     IOS();
-    freopen("data.txt","w",stdout);
+    #ifdef LOCAL
+        freopen("data.txt","w",stdout);
+    #else
     int k;
     // int n,k;
     cin>>n>>k;
