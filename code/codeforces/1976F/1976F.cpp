@@ -69,7 +69,7 @@ void solve() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    a.pb(dfs(0,-1)+1);
+    a.pb(dfs(0,-1));
     sort(ALL(a),greater<int>());
     oparr(a)
     int an=n-1,it=0;
