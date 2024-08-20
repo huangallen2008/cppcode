@@ -71,7 +71,7 @@ void solve() {
     }
     a.pb(dfs(0,-1));
     sort(ALL(a),greater<int>());
-    oparr(a)
+    // oparr(a)
     int an=n-1,it=0;
     REP(i,n-1) {
         if(i==0) an-=a[it++];
@@ -82,7 +82,7 @@ void solve() {
         cout<<an<<' ';
     }
     cout<<'\n';
-    entr
+    // entr
 }
 signed main() {
     IOS();
