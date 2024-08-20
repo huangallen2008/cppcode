@@ -95,6 +95,7 @@ void solve() {
         it=i;
         break;
     }
+    ope("ok")
     int l=0;
     vector<int> an;
     vector<bool> used(n);
