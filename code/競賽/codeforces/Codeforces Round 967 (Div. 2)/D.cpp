@@ -96,16 +96,40 @@ void solve() {
     }
     int l=0;
     vector<int> an;
+    vector<bool> used(n);
     REP1(rd,cntd) {
         if(rd&1) { 
-            int ret=mx(l,r);
-            an.pb(ret);
-            if(ret==it) {
+            pii ret=mx(l,r);
+            l=ret.s+1;
+            if(used[ret.f]) {
+                rd--;
+                continue;
+            }
+            an.pb(ret.f);
+            used[ret.f]=1;
+            if(ret.s==it) {
+                it++;
+                while(it<n&&!isl[it]) it++;
+            }
+        }
+        else {
+            pii ret=mn(l,r);
+            l=ret.s+1;
+            if(used[ret.f]) {
+                rd--;
+                continue;
+            }
+            an.pb(ret.f);
+            used[ret.f]=1;
+            if(ret.s==it) {
                 it++;
                 while(it<n&&!isl[it]) it++;
             }
         }
     }
+    cout<<an.size()<<'\n';
+    for(int &x:an) cout<<x<<' ';
+    cout<<'\n'; 
 }
 signed main() {
     IOS();
