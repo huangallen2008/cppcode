@@ -125,7 +125,7 @@ void f(int a=0,int b=0,int c=0,int d=0) {
 signed main() {
     IOS();
     int t=1;
-    f(t,t++);
+    f(t,++t);
     ope(t)
     // REP1(i,200) cout<<i<<'\n';
     // cout<<"\\n";
