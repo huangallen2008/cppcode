@@ -74,7 +74,7 @@ signed main() {
     REP(i,8) cout<<dp[i]<<' ';entr
     REP(i,maxb) {
         REP(j,1<<maxb) {
-            if((i>>j)&1) AM(dp[i^(1<<j)],dp[i]);
+            if((j>>i)&1) AM(dp[j^(1<<i)],dp[j]);
         }
     }
     REP(i,1<<3) cout<<dp[i]<<' ';entr
@@ -82,7 +82,7 @@ signed main() {
     REP(i,1<<maxb) dp[i]=(dp[i]*dp[i-1]%mod)*inv2%mod;
     REP(i,maxb) {
         REP(j,1<<maxb) {
-            if((i>>j)&1) MM(dp[i^(1<<j)],dp[i]);
+            if((j>>i)&1) MM(dp[j^(1<<i)],dp[j]);
         }
     }
     cout<<dp[0]<<'\n';
