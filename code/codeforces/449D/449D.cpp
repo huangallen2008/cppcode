@@ -69,7 +69,7 @@ signed main() {
     int n;
     cin>>n;
     vector<int> a(n);
-    vector<int> dp(1<<maxb)
+    vector<int> dp(1<<maxb);
     REP(i,n) cin>>a[i],dp[a[i]]++;
     REP(i,n) {
         REP(j,1<<maxb) {
