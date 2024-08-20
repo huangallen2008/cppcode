@@ -61,9 +61,7 @@ pii max(pii a,pii b) {
 void init() {
     REP(i,n) mn[0][i]=mx[0][i]={a[i],i};
     REP1(i,maxb-1) {
-    ope(i)
         REP(j,n) {
-            ope(j)
             mn[i][j]=min(mn[i-1][j],mn[i-1][min(n-1,j+(1<<i-1))]);
             mx[i][j]=max(mx[i-1][j],mx[i-1][min(n-1,j+(1<<i-1))]);
         }
@@ -80,7 +78,7 @@ pii rmx(int l,int r) {
 void solve() {
     cin>>n;
     a=vector<int>(n);
-    REP1(i,n) cin>>a[i],a[i]--;
+    REP(i,n) cin>>a[i],a[i]--;
     init();
     vector<int> las(n,-1);
     REP1(i,n) las[a[i]]=i;
