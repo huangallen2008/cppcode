@@ -123,7 +123,7 @@ void f(int a=0,int b=0,int c=0,int d=0) {
 
 }
 int& pp(int& a,int b) {
-    a=a+b;
+    return a=a+b;
 }
 signed main() {
     IOS();
