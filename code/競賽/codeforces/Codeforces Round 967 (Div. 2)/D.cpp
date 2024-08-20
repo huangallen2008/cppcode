@@ -118,6 +118,7 @@ void solve() {
         }
         else {
             pii ret=rmn(l,it);
+            op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
             if(used[ret.f]) {
                 rd--;
