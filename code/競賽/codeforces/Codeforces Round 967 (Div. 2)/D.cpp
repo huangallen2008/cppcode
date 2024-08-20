@@ -85,7 +85,7 @@ void solve() {
     vector<bool> isl(n);
     int cntd=0;
     REP(i,n) {
-        if(las[i]!=-1) {
+        if(las[a[i]]!=-1) {
             isl[i]=1;
             cntd++;
         }
