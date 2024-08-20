@@ -98,7 +98,7 @@ void solve() {
     int l=0;
     vector<int> an;
     vector<bool> used(n);
-    oparr(isl)
+    oparr(las)
     REP1(rd,cntd) {
         if(rd&1) { 
             pii ret=rmx(l,it);
