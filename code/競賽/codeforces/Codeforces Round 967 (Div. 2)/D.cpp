@@ -113,7 +113,7 @@ void solve() {
             used[ret.f]=1;
             if(ret.f==a[it]) {
                 it++;
-                while(it<n&&!used[a[it]]) it++;
+                while(it<n&&used[a[it]]&&!isl[it]) it++;
             }
         }
         else {
@@ -128,7 +128,7 @@ void solve() {
             used[ret.f]=1;
             if(ret.f==a[it]) {
                 it++;
-                while(it<n&&!used[a[it]]) it++;
+                while(it<n&&used[a[it]]&&!isl[it]) it++;
             }
         }
     }
