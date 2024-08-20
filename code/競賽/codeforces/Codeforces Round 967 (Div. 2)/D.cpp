@@ -67,11 +67,13 @@ void init() {
         }
     }
 }
-pii rmn(int l,int r) { 
+pii rmn(int l,int r) {
+    assert(l>r); 
     int lg=__lg(r-l+1);
     return min(mn[lg][l],mn[lg][r-(1<<lg)+1]);
 }
 pii rmx(int l,int r) { 
+    assert(l>r);
     int lg=__lg(r-l+1);
     return max(mx[lg][l],mx[lg][r-(1<<lg)+1]);
 }
@@ -98,12 +100,12 @@ void solve() {
     int l=0;
     vector<int> an;
     vector<bool> used(n);
-    oparr(las)
+    // oparr(las)
     REP1(rd,cntd) {
         ope(rd)
         if(rd&1) { 
             pii ret=rmx(l,it);
-            op(l)op(it)op(ret.f)ope(ret.s)
+            // op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
             if(used[ret.f]) {
                 rd--;
@@ -113,7 +115,7 @@ void solve() {
             used[ret.f]=1;
             if(ret.f==a[it]) {
                 it++;
-                while(it<n&&(used[a[it]]||!isl[it])) it++;
+                while(it<n-1&&(used[a[it]]||!isl[it])) it++;
             }
         }
         else {
@@ -128,7 +130,7 @@ void solve() {
             used[ret.f]=1;
             if(ret.f==a[it]) {
                 it++;
-                while(it<n&&(used[a[it]]||!isl[it])) it++;
+                while(it<n-1&&(used[a[it]]||!isl[it])) it++;
             }
         }
     }
