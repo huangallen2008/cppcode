@@ -122,13 +122,13 @@ void f(int a=0,int b=0,int c=0,int d=0) {
     op(a)op(b)op(c)op(d)
 
 }
-int& operator+=(int& a,int b) {
+int& pp(int& a,int b) {
     a=a+b;
 }
 signed main() {
     IOS();
     int t=1;
-    f(t,++t);
+    f(t,pp(t,4));
     ope(t)
     // REP1(i,200) cout<<i<<'\n';
     // cout<<"\\n";
