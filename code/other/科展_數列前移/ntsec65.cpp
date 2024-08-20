@@ -82,7 +82,7 @@ void f(string s,int k) {
     }
     if(ok) {
         cg--;
-        cout<<"\ntimes:"<<cg<<'\n';
+        cout<<"times:"<<cg<<'\n';
         cnty++;
     }
     else {
