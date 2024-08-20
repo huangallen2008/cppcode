@@ -76,7 +76,7 @@ signed main() {
             if((i>>j)&1) AM(dp[i^(1<<j)],dp[i]);
         }
     }
-    oparr(dp)
+    REP(i,1<<3) cout<<dp[i]<<' ';entr
     int inv2=inv(2);
     REP(i,1<<maxb) dp[i]=(dp[i]*dp[i-1]%mod)*inv2%mod;
     REP(i,n) {
