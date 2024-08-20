@@ -68,11 +68,13 @@ void init() {
     }
 }
 pii rmn(int l,int r) {
+    chmin(r,n-1);
     assert(l<=r); 
     int lg=__lg(r-l+1);
     return min(mn[lg][l],mn[lg][r-(1<<lg)+1]);
 }
 pii rmx(int l,int r) { 
+    chmin(r,n-1);
     assert(l<=r);
     int lg=__lg(r-l+1);
     return max(mx[lg][l],mx[lg][r-(1<<lg)+1]);
@@ -113,9 +115,9 @@ void solve() {
             }
             an.pb(ret.f);
             used[ret.f]=1;
-            if(ret.f==a[it]) {
+            if(it<n&&ret.f==a[it]) {
                 it++;
-                while(it<n-1&&(used[a[it]]||!isl[it])) it++;
+                while(it<n&&(used[a[it]]||!isl[it])) it++;
             }
         }
         else {
@@ -128,9 +130,9 @@ void solve() {
             }
             an.pb(ret.f);
             used[ret.f]=1;
-            if(ret.f==a[it]) {
+            if(it<n&&ret.f==a[it]) {
                 it++;
-                while(it<n-1&&(used[a[it]]||!isl[it])) it++;
+                while(it<n&&(used[a[it]]||!isl[it])) it++;
             }
         }
     }
