@@ -120,9 +120,9 @@ int pw(int x,int p)
 }
 signed main() {
     IOS();
-    int t,sn=10;
-    while(cin>>t) {
-        int k=t/sn*sn;
+    int t,sn=10,l,r,v;
+    while(cin>>l,r,v) {
+        int k=uniform_int_distribution<int>(l,r)(v);
         ope(k)
     }
     return 0;
