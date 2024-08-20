@@ -44,7 +44,16 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    
+    int n;
+    cin>>n;
+    vector<int> cnt(n+1);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        cnt[x]++;
+    }
+    int mx=*max_element(ALL(cnt));
+    cout<<n-mx<<'\n';
 }
 signed main() {
     IOS();
