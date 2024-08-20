@@ -44,18 +44,16 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#include<unistd.h>
-char OB[65536]; int OP;
-inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+read(0,buf,65536))==buf?-1:*p++;}
-inline int in(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
 struct SEG {
     int lc[maxnl],rc[maxnl],s[maxnl],vers[maxn];
     int n,nid=1;
+    void pull(int w) {
+        s[w]=min(s[lc[w]],s[rc[w]]);
+    }
     int ud(int w,int l,int r,int u,int v) {
         int nn=nid++;
         if(w==-1) w=nn;
-        else lc[nn]=lc[w],rc[nn]=rc[w];
-        s[nn]=0;
+        lc[nn]=lc[w],rc[nn]=rc[w],s[nn]=0;
         if(l==r) {
             s[nn]=v;
             return nn;
@@ -63,7 +61,7 @@ struct SEG {
         int m=l+r>>1;
         if(u<=m) lc[nn]=ud(lc[w],l,m,u,v);
         else rc[nn]=ud(rc[w],m+1,r,u,v);
-        s[nn]=min(s[lc[nn]],s[rc[nn]]);
+        pull(nn);
         return nn;
     }
     void init(int _n,vector<int>&a) {
@@ -89,9 +87,9 @@ struct SEG {
 signed main() {
     IOS();
     int n,q;
-    n=in(),q=in();
+    cin>>n>>q;
     vector<int> a(n+1);
-    REP1(i,n) a[i]=in();
+    REP1(i,n) cin>>a[i];
     seg.init(n,a);
     int ans=0;
     REP(i,q) {
