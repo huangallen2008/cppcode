@@ -82,11 +82,11 @@ void f(string s,int k) {
     }
     if(ok) {
         cg--;
-        cout<<" "<<cg<<'\n';
+        cout<<"\t"<<cg<<'\n';
         cnty++;
     }
     else {
-        cout<<"NO\n";
+        cout<<"\tNO\n";
         cntn++;
     }
 }
