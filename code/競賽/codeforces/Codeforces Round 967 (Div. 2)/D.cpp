@@ -124,7 +124,7 @@ void solve() {
             }
             an.pb(ret.f);
             used[ret.f]=1;
-            if(ret.s==it) {
+            if(ret.s==a[it]) {
                 it++;
                 while(it<n&&!isl[it]) it++;
             }
