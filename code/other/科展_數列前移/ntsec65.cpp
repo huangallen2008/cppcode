@@ -94,7 +94,7 @@ signed main() {
     IOS();
     #ifdef LOCAL
         freopen("data.txt","w",stdout);
-    #else
+    #endif
     int k;
     // int n,k;
     cin>>n>>k;
