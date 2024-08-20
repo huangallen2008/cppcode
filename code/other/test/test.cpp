@@ -120,11 +120,12 @@ int pw(int x,int p)
 }
 void f(int a=0,int b=0,int c=0,int d=0) {
     op(a)op(b)op(c)op(d)
+
 }
 signed main() {
     IOS();
     int t=1;
-    f(t++,t++,t++,++t);
+    f(t++,t);
     ope(t)
     // REP1(i,200) cout<<i<<'\n';
     // cout<<"\\n";
