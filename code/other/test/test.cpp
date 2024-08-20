@@ -122,7 +122,7 @@ signed main() {
     IOS();
     int t,sn=10,l,r,v;
     while(cin>>l,r,v) {
-        int k=uniform_int_distribution<int>(l,r)(v);
+        int k=uniform_int_distribution<int>(l,r)(rng);
         ope(k)
     }
     return 0;
