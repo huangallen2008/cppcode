@@ -118,9 +118,15 @@ int pw(int x,int p)
     }
     return r;
 }
+int f(int a,int b) {
+    op(a)ope(b)
+}
 signed main() {
     IOS();
+    int t=1;
+    f(t++,++t);
+    op(t)
     // REP1(i,200) cout<<i<<'\n';
-    cout<<"\\n";
+    // cout<<"\\n";
     return 0;
 }
