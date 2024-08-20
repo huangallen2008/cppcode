@@ -74,7 +74,7 @@ void solve() {
     vis=vector<bool>(n+1);
     vis[1]=1;
     REP1(i,n) {
-        if(!vis[i]) {
+        while(!vis[i]) {
             find(i);
         }
     }
