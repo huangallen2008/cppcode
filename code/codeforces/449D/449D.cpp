@@ -71,6 +71,7 @@ signed main() {
     vector<int> a(n);
     vector<int> dp(1<<maxb);
     REP(i,n) cin>>a[i],dp[a[i]]++;
+    REP(i,8) cout<<dp[i]<<' ';entr
     REP(i,maxb) {
         REP(j,1<<maxb) {
             if((i>>j)&1) AM(dp[i^(1<<j)],dp[i]);
