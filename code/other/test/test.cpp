@@ -122,6 +122,9 @@ void f(int a=0,int b=0,int c=0,int d=0) {
     op(a)op(b)op(c)op(d)
 
 }
+int& operator+=(int& a,int b) {
+    a=a+b;
+}
 signed main() {
     IOS();
     int t=1;
