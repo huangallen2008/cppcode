@@ -75,8 +75,8 @@ void solve() {
     REP(i,n-1) {
         if(i==0) an-=a[it++];
         else {
-            if(it<n) an-=a[it++];
-            if(it<n) an-=a[it++];
+            if(it<a.size()) an-=a[it++];
+            if(it<a.size()) an-=a[it++];
         }
         cout<<an<<' ';
     }
