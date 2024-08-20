@@ -61,7 +61,7 @@ int dfs(int u,int pa) {
 void solve() {
     int n;
     cin>>n;
-    g=Graph(g);
+    g=Graph(n);
     a.clear();
     REP(i,n-1) {
         int u,v;
