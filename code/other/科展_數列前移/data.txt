@@ -1,927 +1,129 @@
-n=6, k=9
-2 
-times:0
-4 
-times:3
-4 
-times:3
-4 
-times:1
-4 
-times:2
-4 
-times:2
-3 
-times:1
-4 
-times:3
-6 
-times:4
-6 
-times:4
-6 
-times:3
-6 
-times:3
-5 
-times:3
-4 
-times:2
-6 
-times:4
-6 
-times:5
-6 
-times:3
-5 
-times:2
-4 
-times:1
-6 
-times:6
-6 
-times:3
-5 
-times:2
-4 
-times:1
-6 
-times:3
-5 
-times:2
-4 
-times:2
-5 
-times:3
-3 
-times:1
-4 
-times:2
-6 
-times:4
-6 
-times:4
-6 
-times:3
-6 
-times:3
-5 
-times:2
-6 
-times:7
-8 
-times:5
-8 
-times:5
-8 
-times:4
-7 
-times:7
-6 
-times:4
-8 
-times:6
-8 
-times:4
-7 
-times:3
-6 
-times:4
-8 
-times:4
-7 
-times:4
-6 
-times:3
-7 
-times:4
-5 
-times:2
-4 
-times:2
-6 
-times:3
-6 
-times:4
-6 
-times:3
-5 
-times:2
-6 
-times:4
-8 
-times:5
-8 
-times:4
-7 
-times:5
-6 
-times:4
-8 
-times:4
-7 
-times:3
-6 
-times:3
-7 
-times:5
-5 
-times:2
-4 
-times:1
-6 
-times:4
-6 
-times:4
-5 
-times:2
-6 
-times:2
-8 
-times:4
-7 
-times:3
-6 
-times:4
-7 
-times:5
-5 
-times:2
-4 
-times:1
-6 
-times:3
-5 
-times:2
-6 
-times:4
-7 
-times:6
-5 
-times:2
-4 
-times:1
-5 
-times:2
-5 
-times:2
-3 
-times:1
-4 
-times:4
-6 
-times:4
-6 
-times:3
-6 
-times:3
-6 
-times:3
-5 
-times:4
-6 
-times:6
-8 
-times:5
-8 
-times:5
-8 
-times:4
-7 
-times:6
-6 
-times:4
-8 
-times:8
-8 
-times:4
-7 
-times:5
-6 
-times:4
-8 
-times:4
-7 
-times:3
-6 
-times:3
-7 
-times:4
-5 
-times:4
-6 
-times:5
-8 
-times:8
-8 
-times:5
-8 
-times:6
-7 
-times:5
-8 
-times:5
-10 
-times:7
-10 
-times:7
-9 
-times:6
-8 
-times:5
-10 
-times:5
-9 
-times:8
-8 
-times:6
-9 
-times:5
-7 
-times:5
-6 
-times:4
-8 
-times:6
-8 
-times:5
-7 
-times:5
-8 
-times:5
-10 
-times:5
-9 
-times:4
-8 
-times:5
-9 
-times:7
-7 
-times:5
-6 
-times:4
-8 
-times:4
-7 
-times:4
-8 
-times:6
-9 
-times:8
-7 
-times:5
-6 
-times:4
-7 
-times:4
-7 
-times:3
-5 
-times:4
-4 
-times:3
-6 
-times:3
-6 
-times:4
-6 
-times:3
-5 
-times:3
-6 
-times:3
-8 
-times:6
-8 
-times:4
-7 
-times:5
-6 
-times:3
-8 
-times:4
-7 
-times:3
-6 
-times:3
-7 
-times:4
-5 
-times:3
-6 
-times:4
-8 
-times:6
-8 
-times:6
-7 
-times:4
-8 
-times:5
-10 
-times:5
-9 
-times:6
-8 
-times:6
-9 
-times:5
-7 
-times:4
-6 
-times:4
-8 
-times:4
-7 
-times:3
-8 
-times:6
-9 
-times:7
-7 
-times:4
-6 
-times:4
-7 
-times:3
-7 
-times:3
-5 
-times:3
-4 
-times:1
-6 
-times:5
-6 
-times:4
-5 
-times:3
-6 
-times:2
-8 
-times:5
-7 
-times:3
-6 
-times:4
-7 
-times:4
-5 
-times:3
-6 
-times:2
-8 
-times:4
-7 
-times:3
-8 
-times:5
-9 
-times:5
-7 
-times:4
-6 
-times:2
-7 
-times:3
-7 
-times:3
-5 
-times:3
-4 
-times:1
-6 
-times:3
-5 
-times:2
-6 
-times:5
-7 
-times:4
-5 
-times:4
-6 
-times:3
-7 
-times:3
-7 
-times:3
-5 
-times:4
-4 
-times:1
-5 
-times:2
-5 
-times:2
-5 
-times:5
-3 
-times:1
-4 
-times:4
-6 
-times:4
-6 
-times:5
-6 
-times:3
-6 
-times:4
-5 
-times:4
-6 
-times:4
-8 
-times:5
-8 
-times:6
-8 
-times:5
-7 
-times:4
-6 
-times:3
-8 
-times:7
-8 
-times:5
-7 
-times:5
-6 
-times:3
-8 
-times:4
-7 
-times:5
-6 
-times:4
-7 
-times:4
-5 
-times:4
-6 
-times:5
-8 
-times:7
-8 
-times:6
-8 
-times:4
-7 
-times:5
-8 
-times:5
-10 
-times:10
-10 
-times:5
-9 
-times:7
-8 
-times:5
-10 
-times:5
-9 
-times:7
-8 
-times:4
-9 
-times:5
-7 
-times:5
-6 
-times:4
-8 
-times:9
-8 
-times:6
-7 
-times:5
-8 
-times:5
-10 
-times:5
-9 
-times:6
-8 
-times:6
-9 
-times:6
-7 
-times:5
-6 
-times:4
-8 
-times:4
-7 
-times:3
-8 
-times:9
-9 
-times:7
-7 
-times:5
-6 
-times:4
-7 
-times:3
-7 
-times:5
-5 
-times:4
-6 
-times:5
-8 
-times:6
-8 
-times:6
-8 
-times:8
-7 
-times:5
-8 
-times:8
-10 
-times:7
-10 
-times:9
-9 
-times:6
-8 
-times:8
-10 
-times:7
-9 
-times:6
-8 
-times:8
-9 
-times:5
-7 
-times:5
-8 
-times:5
-10 
-times:7
-10 
-times:7
-9 
-times:6
-10 
-times:6
-12 
-times:8
-11 
-times:7
-10 
-times:7
-11 
-times:8
-9 
-times:6
-8 
-times:5
-10 
-times:5
-9 
-times:8
-10 
-times:7
-11 
-times:8
-9 
-times:6
-8 
-times:5
-9 
-times:8
-9 
-times:6
-7 
-times:5
-6 
-times:4
-8 
-times:6
-8 
-times:6
-7 
-times:8
-8 
-times:5
-10 
-times:6
-9 
-times:6
-8 
-times:6
-9 
-times:7
-7 
-times:8
-8 
-times:5
-10 
-times:5
-9 
-times:4
-10 
-times:7
-11 
-times:10
-9 
-times:9
-8 
-times:5
-9 
-times:4
-9 
-times:6
-7 
-times:8
-6 
-times:4
-8 
-times:4
-7 
-times:4
-8 
-times:6
-9 
-times:9
-7 
-times:6
-8 
-times:4
-9 
-times:5
-9 
-times:6
-7 
-times:6
-6 
-times:4
-7 
-times:4
-7 
-times:3
-7 
-times:6
-5 
-times:4
-4 
-times:4
-6 
-times:4
-6 
-times:5
-6 
-times:3
-5 
-times:4
-6 
-times:3
-8 
-times:6
-8 
-times:4
-7 
-times:4
-6 
-times:3
-8 
-times:4
-7 
-times:4
-6 
-times:3
-7 
-times:4
-5 
-times:4
-6 
-times:3
-8 
-times:6
-8 
-times:6
-7 
-times:5
-8 
-times:4
-10 
-times:5
-9 
-times:6
-8 
-times:6
-9 
-times:5
-7 
-times:5
-6 
-times:3
-8 
-times:4
-7 
-times:3
-8 
-times:6
-9 
-times:7
-7 
-times:5
-6 
-times:3
-7 
-times:3
-7 
-times:4
-5 
-times:4
-6 
-times:4
-8 
-times:6
-8 
-times:7
-7 
-times:5
-8 
-times:5
-10 
-times:7
-9 
-times:5
-8 
-times:7
-9 
-times:5
-7 
-times:5
-8 
-times:5
-10 
-times:5
-9 
-times:6
-10 
-times:8
-11 
-times:6
-9 
-times:6
-8 
-times:5
-9 
-times:6
-9 
-times:5
-7 
-times:5
-6 
-times:4
-8 
-times:4
-7 
-times:3
-8 
-times:6
-9 
-times:5
-7 
-times:7
-8 
-times:6
-9 
-times:4
-9 
-times:5
-7 
-times:7
-6 
-times:4
-7 
-times:3
-7 
-times:3
-7 
-times:6
-5 
-times:4
-4 
-times:1
-6 
-times:5
-6 
-times:5
-5 
-times:3
-6 
-times:2
-8 
-times:5
-7 
-times:4
-6 
-times:5
-7 
-times:4
-5 
-times:3
-6 
-times:2
-8 
-times:5
-7 
-times:3
-8 
-times:6
-9 
-times:6
-7 
-times:4
-6 
-times:2
-7 
-times:3
-7 
-times:4
-5 
-times:3
-6 
-times:2
-8 
-times:4
-7 
-times:3
-8 
-times:5
-9 
-times:6
-7 
-times:5
-8 
-times:7
-9 
-times:4
-9 
-times:5
-7 
-times:5
-6 
-times:2
-7 
-times:3
-7 
-times:3
-7 
-times:5
-5 
-times:2
-4 
-times:1
-6 
-times:3
-5 
-times:2
-6 
-times:5
-7 
-times:5
-5 
-times:5
-6 
-times:2
-7 
-times:3
-7 
-times:5
-5 
-times:5
-6 
-times:3
-7 
-times:3
-7 
-times:3
-7 
-times:5
-5 
-times:3
-4 
-times:1
-5 
-times:2
-5 
-times:2
-5 
-times:5
-5 
-times:3
-3 
-times:1
-yes:462
-NO:0
+n=5, k=9
+2 times:0
+4 times:2
+4 times:2
+4 times:2
+4 times:1
+3 times:1
+4 times:3
+6 times:4
+6 times:4
+6 times:3
+5 times:3
+4 NO
+6 NO
+6 times:3
+5 NO
+4 NO
+6 times:3
+5 NO
+4 times:1
+5 times:5
+3 times:1
+4 times:3
+6 times:4
+6 times:4
+6 times:4
+5 times:3
+6 NO
+8 NO
+8 times:5
+7 NO
+6 NO
+8 times:5
+7 NO
+6 times:3
+7 times:6
+5 times:3
+4 NO
+6 NO
+6 NO
+5 NO
+6 NO
+8 NO
+7 NO
+6 times:3
+7 times:6
+5 times:3
+4 NO
+6 NO
+5 NO
+6 times:3
+7 times:6
+5 times:3
+4 times:1
+5 times:5
+5 times:2
+3 times:1
+4 times:3
+6 times:4
+6 times:4
+6 times:4
+5 times:3
+6 times:5
+8 times:6
+8 times:5
+7 times:5
+6 NO
+8 times:5
+7 NO
+6 times:4
+7 NO
+5 times:4
+6 times:5
+8 times:6
+8 NO
+7 times:5
+8 NO
+10 NO
+9 NO
+8 times:5
+9 NO
+7 times:5
+6 NO
+8 NO
+7 NO
+8 times:5
+9 times:7
+7 times:5
+6 times:3
+7 times:6
+7 times:4
+5 times:3
+4 times:4
+6 times:5
+6 NO
+5 times:4
+6 times:5
+8 NO
+7 times:5
+6 NO
+7 NO
+5 NO
+6 times:5
+8 NO
+7 times:5
+8 NO
+9 times:7
+7 NO
+6 times:3
+7 times:6
+7 times:4
+5 times:3
+4 times:4
+6 NO
+5 times:4
+6 NO
+7 times:5
+5 NO
+6 times:3
+7 times:5
+7 times:4
+5 times:3
+4 times:1
+5 times:4
+5 times:2
+5 times:2
+3 times:1
+yes:84
+NO:42
