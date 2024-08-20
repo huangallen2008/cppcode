@@ -63,6 +63,7 @@ void init() {
     REP1(i,maxb-1) {
     ope(i)
         REP(j,n) {
+            ope(j)
             mn[i][j]=min(mn[i-1][j],mn[min(n-1,i+(1<<j-1))][j]);
             mx[i][j]=max(mx[i-1][j],mx[min(n-1,i+(1<<j-1))][j]);
         }
