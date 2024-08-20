@@ -99,7 +99,7 @@ void solve() {
     vector<bool> used(n);
     REP1(rd,cntd) {
         if(rd&1) { 
-            pii ret=mx(l,it);
+            pii ret=rmx(l,it);
             l=ret.s+1;
             if(used[ret.f]) {
                 rd--;
@@ -113,7 +113,7 @@ void solve() {
             }
         }
         else {
-            pii ret=mn(l,it);
+            pii ret=rmn(l,it);
             l=ret.s+1;
             if(used[ret.f]) {
                 rd--;
