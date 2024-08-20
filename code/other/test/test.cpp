@@ -121,6 +121,6 @@ int pw(int x,int p)
 signed main() {
     IOS();
     // REP1(i,200) cout<<i<<'\n';
-    cout<<"\"";
+    cout<<"\\n";
     return 0;
 }
