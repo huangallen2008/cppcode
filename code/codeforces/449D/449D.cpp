@@ -79,7 +79,7 @@ signed main() {
     }
     REP(i,1<<3) cout<<dp[i]<<' ';entr
     int inv2=inv(2);
-    REP(i,1<<maxb) dp[i]=(dp[i]*(dp[i]-1)%mod)*inv2%mod;
+    REP(i,1<<maxb) dp[i]=pw(2,dp[i])%mod;
     REP(i,1<<3) cout<<dp[i]<<' ';entr
     REP(i,maxb) {
         REP(j,1<<maxb) {
