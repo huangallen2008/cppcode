@@ -71,7 +71,7 @@ signed main() {
     vector<int> a(n);
     vector<int> dp(1<<maxb);
     REP(i,n) cin>>a[i],dp[a[i]]++;
-    REP(i,n) {
+    REP(i,maxb) {
         REP(j,1<<maxb) {
             if((i>>j)&1) AM(dp[i^(1<<j)],dp[i]);
         }
@@ -79,7 +79,7 @@ signed main() {
     REP(i,1<<3) cout<<dp[i]<<' ';entr
     int inv2=inv(2);
     REP(i,1<<maxb) dp[i]=(dp[i]*dp[i-1]%mod)*inv2%mod;
-    REP(i,n) {
+    REP(i,maxb) {
         REP(j,1<<maxb) {
             if((i>>j)&1) MM(dp[i^(1<<j)],dp[i]);
         }
