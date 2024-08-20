@@ -53,11 +53,12 @@ int cntc(string s) {
 int n,N;
 int cnty,cntn;
 void f(string s,int k) {
+    cout<<nowc<<' ';
     int nowc=cntc(s),cc=0;
     int cg=0;
     bool ok=1;
     while(++cg) {
-        cout<<s<<' ';
+        // cout<<s<<' ';
         int nc=cntc(s);
         if(nc==nowc) {
             cc++;
