@@ -68,12 +68,12 @@ void init() {
     }
 }
 pii rmn(int l,int r) {
-    assert(l>r); 
+    assert(l<=r); 
     int lg=__lg(r-l+1);
     return min(mn[lg][l],mn[lg][r-(1<<lg)+1]);
 }
 pii rmx(int l,int r) { 
-    assert(l>r);
+    assert(l<=r);
     int lg=__lg(r-l+1);
     return max(mx[lg][l],mx[lg][r-(1<<lg)+1]);
 }
