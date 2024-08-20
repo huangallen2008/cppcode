@@ -59,8 +59,8 @@ pii max(pii a,pii b) {
     else return {a.f,min(a.s,b.s)};
 }
 void init() {
-    ope("ok")
     REP(i,n) mn[0][i]=mx[0][i]={a[i],i};
+    ope("ok")
     REP1(i,maxb-1) {
         REP(j,n) {
             mn[i][j]=min(mn[i-1][j],mn[min(n-1,i+(1<<j-1))][j]);
