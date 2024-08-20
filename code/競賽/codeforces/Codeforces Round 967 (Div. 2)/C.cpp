@@ -57,7 +57,7 @@ Graph g;
 void find(int x) {
     int l=1,r=x;
     while(1) {
-        int m=qur(1,x);
+        int m=qur(l,r);
         if(l==m) {
             g[l].pb(r);
             vis[r]=1;
