@@ -120,10 +120,6 @@ int pw(int x,int p)
 }
 signed main() {
     IOS();
-    int t,sn=10,l,r,v;
-    while(cin>>l>>r) {
-        int k=uniform_int_distribution<int>(l,r)(rng);
-        ope(k)
-    }
+    REP1(i,200) cout<<i<<'\n';
     return 0;
 }
