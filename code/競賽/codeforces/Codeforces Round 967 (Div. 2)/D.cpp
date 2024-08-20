@@ -79,6 +79,7 @@ void solve() {
     cin>>n;
     a=vector<int>(n);
     REP1(i,n) cin>>a[i],a[i]--;
+    init();
     vector<int> las(n,-1);
     REP1(i,n) las[a[i]]=i;
     vector<bool> isl(n);
