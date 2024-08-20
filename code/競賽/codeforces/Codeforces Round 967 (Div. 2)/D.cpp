@@ -100,7 +100,7 @@ void solve() {
     REP1(rd,cntd) {
         if(rd&1) { 
             pii ret=rmx(l,it);
-            op(l)op(it)op(res.f)ope(res.s)
+            op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
             if(used[ret.f]) {
                 rd--;
