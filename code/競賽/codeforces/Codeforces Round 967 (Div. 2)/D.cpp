@@ -81,10 +81,10 @@ void solve() {
     REP(i,n) cin>>a[i],a[i]--;
     init();
     vector<int> las(n,-1);
-    REP1(i,n) las[a[i]]=i;
+    REP(i,n) las[a[i]]=i;
     vector<bool> isl(n);
     int cntd=0;
-    REP1(i,n) {
+    REP(i,n) {
         if(las[i]!=-1) {
             isl[i]=1;
             cntd++;
