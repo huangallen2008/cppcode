@@ -46,7 +46,7 @@ int rd(int l,int r) {
 }
 Graph g;
 vector<int> sz;
-pair<vector<int>,vector<int>> dfs(int u,int pa) {
+pair<vector<int>,vector<int>>& dfs(int u,int pa) {
     vector<int> v0(sn,inf),v1(sn,inf);
     v0[1]=v1[1]=0;
     for(int v:g[u]) {
