@@ -77,7 +77,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         chmin(sz[u],sn-1);
     }
     ope(u)ope("p")
-    REP1(i,sn-1) {
+    REP1(i,dp0.size()) {
         chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
         chmin(dp1[0],dp0[i]+i*(i+1));
     }
