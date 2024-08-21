@@ -58,12 +58,6 @@ void merge(vector<int> &dp0,vector<int> &dp1,vector<int> dp0v,vector<int> dp1v,i
             chmin(t1[i+j],dp1[i]+dp1v[j]);
         }
     }
-    // {
-    //     vector<int> __;dp0v.swap(__);
-    // }
-    // {
-    //     vector<int> __;dp1v.swap(__);
-    // }
     t0.swap(dp0);
     t1.swap(dp1);
     del(t0),del(t1);
