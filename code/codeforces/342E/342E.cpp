@@ -44,7 +44,7 @@ const int sn=1300;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
-    return uniform_int_dtribution<int>(l,r)(rng);
+    return uniform_int_distribution<int>(l,r)(rng);
 }
 int n,m;
 Graph g;
