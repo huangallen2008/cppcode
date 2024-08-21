@@ -73,6 +73,8 @@ void dfs(int u,int pa) {
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
+    op(sizeof(dp0))
+    ope(sizeof(dp1))
     REP1(i,sn-1) {
         chmin(dp0[u][0],dp1[u][i]+(i*(i+1)>>1));
         chmin(dp1[u][0],dp0[u][i]+i*(i+1));
@@ -82,13 +84,12 @@ void dfs(int u,int pa) {
 void solve() {
     ope(sizeof(dp0))
     ope(sizeof(dp1))
-    REP(i,10) op(sizeof(dp0[i]))entr
+    // REP(i,10) op(sizeof(dp0[i]))entr
     int n;
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
     g=Graph(n);
-    ope(sizeof(g))
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
