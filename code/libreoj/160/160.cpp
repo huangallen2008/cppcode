@@ -46,6 +46,7 @@ int rd(int l,int r) {
 }
 int n,w;
 vector<int> out,dfn,mo;
+Graph g;
 int cnt=0;
 void dfs(int u) {
     for(int v:g[u]) {
@@ -59,6 +60,7 @@ void dfs(int u) {
 signed main() {
     IOS();
     cin>>n>>c;
+    g=Graph(n);
     vector<int> d(n),w(n),v(n);
     out=vector<int>(n);
     mo=vector<int>(n,inf);
