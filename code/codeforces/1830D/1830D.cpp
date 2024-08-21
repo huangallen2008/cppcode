@@ -76,7 +76,7 @@ void dfs(int u,int pa) {
         chmin(v0[0],v1[i]+(i*(i+1)>>1));
         chmin(v1[0],v0[i]+i*(i+1));
     }
-    v0.swap(dp0[u]),v1.swap(dp1);
+    v0.swap(dp0[u]),v1.swap(dp1[u]);
     ope(u)oparr(v0)oparr(v1)
 }
 void solve() {
