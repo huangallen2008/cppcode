@@ -54,13 +54,18 @@ void dfs(int u,int pa) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
         dfs(v,u);
-        auto [r0,r1]=make_pair(dp0[v],dp1[v]);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
-                chmin(t0[i+j],v0[i]+r0[j]);
-                chmin(t1[i+j],v1[i]+r1[j]);
+                chmin(t0[i+j],v0[i]+dp0[v][j]);
+                chmin(t1[i+j],v1[i]+dp1[v][j]);
             }
+        }
+        {
+            vector<int> __;__.swap(dp0[v]);
+        }
+        {
+            vector<int> __;__.swap(dp1[v]);
         }
         t0.swap(v0);
         t1.swap(v1);
