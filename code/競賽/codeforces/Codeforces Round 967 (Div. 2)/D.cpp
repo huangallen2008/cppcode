@@ -99,7 +99,7 @@ struct SEG {
     }
     pii _mn(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].f;
-        if(ql>r||qr<l) return inf;
+        if(ql>r||qr<l) return {inf,0};
         int m=l+r>>1;
         return min(_mn(w<<1,l,m,ql,qr),_mn(w<<1|1,m+1,r,ql,qr));
     }
