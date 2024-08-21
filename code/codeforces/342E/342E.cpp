@@ -44,7 +44,7 @@ const int sn=1300;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
-    return uniform_int_distribution<int>(l,r)(rng);
+    return uniform_int_dtribution<int>(l,r)(rng);
 }
 int n,m;
 Graph g;
@@ -65,7 +65,7 @@ int lca_dep(int x,int y) {
     int lg=__lg(r-l+1);
     return max(st[lg][l],st[lg][r-(1<<lg)+1]); 
 }
-int dis(int x,int y) {//O(1)
+int d(int x,int y) {//O(1)
     return dep[x]+dep[y]-(lca_dep(x,y)<<1);
 }
 void dfs(int u,int pa) {
@@ -87,8 +87,8 @@ void bfs() {
         int u=q.front();
         q.pop();
         for(int v:g[u]) {
-            if(dis[v]<=dis[u]+1) continue;
-            dis[v]=dis[u]+1;
+            if(d[v]<=d[u]+1) continue;
+            d[v]=d[u]+1;
             q.push(v);
         }
     }
@@ -125,7 +125,7 @@ signed main() {
             int u;
             cin>>u,u--;
             int an=d[u];
-            for(int &x:t) chmin(an,dis(x,u));
+            for(int &x:t) chmin(an,d(x,u));
             cout<<an<<'\n';
         }
     }
