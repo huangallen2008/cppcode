@@ -70,7 +70,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         if(v==pa) continue;
         auto [dp0v,dp1v]=dfs(v,u);
         merge(dp0,dp1,dp0v,dp1v,sz[u],sz[v]);
-        // ,del(dp0v),del(dp1v);
+        del(dp0v),del(dp1v);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
