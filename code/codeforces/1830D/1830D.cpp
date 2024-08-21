@@ -54,7 +54,7 @@ void dfs(int u,int pa) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
         dfs(v,u);
-        auto &[r0,r1]=pii{dp0[v],dp1[v]};
+        auto &[r0,r1]={dp0[v],dp1[v]};
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
@@ -86,7 +86,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    auto [d0,d1]=pii{dp0[0],dp1[0]};
+    auto [d0,d1]={dp0[0],dp1[0]};
     int an=(n*(n+1)>>1)*2-min(d0[0],d1[0]);
     cout<<an<<'\n';
     entr
