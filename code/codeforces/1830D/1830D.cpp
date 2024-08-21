@@ -48,8 +48,8 @@ Graph g;
 vector<int> sz;
 vector<vector<int>> dp0,dp1;
 void dfs(int u,int pa) {
-    vector<int> v0(sn,inf),v1(sn,inf);
-    v0[1]=v1[1]=0;
+    dp0=dp1=vector<int>(sn,inf);
+    dp0[1]=dp1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
@@ -57,8 +57,8 @@ void dfs(int u,int pa) {
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
-                chmin(t0[i+j],v0[i]+dp0[v][j]);
-                chmin(t1[i+j],v1[i]+dp1[v][j]);
+                chmin(t0[i+j],dp0[i]+dp0[v][j]);
+                chmin(t1[i+j],dp1[i]+dp1[v][j]);
             }
         }
         {
@@ -67,17 +67,16 @@ void dfs(int u,int pa) {
         {
             vector<int> __;__.swap(dp1[v]);
         }
-        t0.swap(v0);
-        t1.swap(v1);
+        t0.swap(dp0);
+        t1.swap(dp1);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
     REP1(i,sn-1) {
-        chmin(v0[0],v1[i]+(i*(i+1)>>1));
-        chmin(v1[0],v0[i]+i*(i+1));
+        chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
+        chmin(dp1[0],dp0[i]+i*(i+1));
     }
-    v0.swap(dp0[u]),v1.swap(dp1[u]);
-    ope(u)oparr(v0)oparr(v1)
+    ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
     int n;
