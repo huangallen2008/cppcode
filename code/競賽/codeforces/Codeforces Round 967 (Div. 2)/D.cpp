@@ -160,10 +160,10 @@ void solve() {
             op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
             for(int &x:id[ret.f]) seg.del(x);
-            if(used[ret.f]) {
-                rd--;
-                continue;
-            }
+            // if(used[ret.f]) {
+            //     rd--;
+            //     continue;
+            // }
             an.pb(ret.f);
             used[ret.f]=1;
             if(it<n&&ret.f==a[it]) {
