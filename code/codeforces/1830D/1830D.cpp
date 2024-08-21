@@ -81,7 +81,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
         chmin(dp1[0],dp0[i]+i*(i+1));
     }
-    return {r0,r1};
+    return {dp0,dp1};
     // ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
