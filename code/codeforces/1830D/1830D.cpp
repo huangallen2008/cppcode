@@ -48,37 +48,40 @@ int rd(int l,int r) {
 Graph g;
 vector<int> sz;
 // vector<vector<int>> dp0,dp1;
-vector<int> dp0[maxn],dp1[maxn];
-void dfs(int u,int pa) {
-    dp0[u]=dp1[u]=vector<int>(sn,inf);
-    dp0[u][1]=dp1[u][1]=0;
+// vector<int> dp0[maxn],dp1[maxn];
+pair<vector<int>,vector<int>> dfs(int u,int pa) {
+    // dp0=dp1=vector<int>(sn,inf);
+    vector<int> dp0(sn,inf),dp1(sn,inf);
+    dp0[1]=dp1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
-        dfs(v,u);
+        auto [dp0v,dp1v]=dfs(v,u);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
-                chmin(t0[i+j],dp0[u][i]+dp0[v][j]);
-                chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
+                chmin(t0[i+j],dp0[i]+dp0v[j]);
+                chmin(t1[i+j],dp1[i]+dp1v[j]);
             }
         }
         // {
-        //     vector<int> __;dp0[v].swap(__);
+        //     vector<int> __;dp0v.swap(__);
         // }
         // {
-        //     vector<int> __;dp1[v].swap(__);
+        //     vector<int> __;dp1v.swap(__);
         // }
-        t0.swap(dp0[u]);
-        t1.swap(dp1[u]);
-        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
+        t0.swap(dp0);
+        t1.swap(dp1);
+        del(t0),del(t1);
+        // ,del(dp0v),del(dp1v);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
     REP1(i,sn-1) {
-        chmin(dp0[u][0],dp1[u][i]+(i*(i+1)>>1));
-        chmin(dp1[u][0],dp0[u][i]+i*(i+1));
+        chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
+        chmin(dp1[0],dp0[i]+i*(i+1));
     }
+    return {r0,r1};
     // ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
@@ -94,7 +97,7 @@ void solve() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    dfs(0,-1);
+    auto [dp0,dp1]=dfs(0,-1);
     int an=(n*(n+1)>>1)*2-min(dp0[0][0],dp1[0][0]);
     cout<<an<<'\n';
 }
