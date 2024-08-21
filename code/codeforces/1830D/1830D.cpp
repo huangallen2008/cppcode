@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math,no-stack-protector")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -52,7 +52,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
-        auto [r0,r1]=dfs(v,u);
+        auto &[r0,r1]=dfs(v,u);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
