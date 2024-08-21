@@ -48,6 +48,12 @@ Graph g;
 vector<int> sz;
 // vector<vector<int>> dp0,dp1;
 vector<int> dp0[maxn],dp1[maxn];
+int bsize() {
+    int cnt=0;
+    REP(i,100) cnt+=dp0[i].size();
+    REP(i,100) cnt+=dp1[i].size();
+    return cnt;
+}
 void dfs(int u,int pa) {
     dp0[u]=dp1[u]=vector<int>(sn,inf);
     dp0[u][1]=dp1[u][1]=0;
@@ -62,6 +68,7 @@ void dfs(int u,int pa) {
                 chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
             }
         }
+        ope(bsize())
         {
             vector<int> __;dp0[v].swap(__);
         }
