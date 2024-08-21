@@ -127,10 +127,10 @@ int& pp(int& a,int b) {
 }
 signed main() {
     IOS();
-    int t=1;
-    f(pp(t,5),pp(t,4),pp(t,-1),++t,t++,++t,++t,t++);
-    ope(t)
-    // REP1(i,200) cout<<i<<'\n';
-    // cout<<"\\n";
+    vector<int> a(n);
+    REP(i,n) cin>>a[i];
+    sprt(ALL(a));
+    REP(i,n) a[i]=lower_bound(ALL(a),a[i])-a.begin();
+    oparr(a)
     return 0;
 }
