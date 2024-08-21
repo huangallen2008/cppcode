@@ -99,7 +99,7 @@ struct SEG {
     }
     void init(int _n,vector<int>&a) {
         n=_n;
-        s=vector<int>(n<<2);
+        s=vector<pii>(n<<2);
         build(1,0,n-1,a);
     }
     void _ud(int w,int l,int r,int u,pii v) {
