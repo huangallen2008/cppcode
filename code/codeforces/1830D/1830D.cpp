@@ -61,8 +61,6 @@ void dfs(int u,int pa) {
                 if(i+j>=sn) continue;
                 chmin(t0[i+j],dp0[u][i]+dp0[v][j]);
                 chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
-                chmin(t0[0],t1[i+j]+((i+j)*(i+j+1)>>1));
-                chmin(t1[0],t0[i+j]+(i+j)*(i+j+1));
             }
         }
         // {
@@ -73,9 +71,13 @@ void dfs(int u,int pa) {
         // }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
-        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
+        del(t0),del(t1),del(dp0[v]),del(dp2[v]);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
+    }
+    REP1(i,sn-1) {
+        chmin(dp0[u][0],dp1[u][i]+(i*(i+1)>>1));
+        chmin(dp1[u][0],dp0[u][i]+i*(i+1));
     }
     // ope(u)oparr(dp0)oparr(dp1)
 }
