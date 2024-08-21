@@ -58,7 +58,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         if(v==pa) continue;
         op(u)ope(v)
         auto [dp0v,dp1v]=dfs(v,u);
-        int N=min(sn-1,sz[u]+sz[v]+1);
+        int N=sz[u]+sz[v]+1;
         vector<int> t0(N,inf),t1(N,inf);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
