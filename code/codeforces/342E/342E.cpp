@@ -110,6 +110,7 @@ signed main() {
     oparr(dv)
     st_init();
     vector<int> t;
+    t.pb(0);
     REP(i,m) {
         if(i%sn==0) {
             while(t.size()) {
