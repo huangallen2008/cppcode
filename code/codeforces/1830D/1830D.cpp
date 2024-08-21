@@ -65,7 +65,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         sz[u]+=sz[v];
         chmin(sz[u],sn);
     }
-    v0[0]=v1[0]=inf;
+    oparr(v0)oparr(v1)
     REP1(i,sn-1) {
         chmin(v0[0],v1[i]+(i*(i+1)>>1));
         chmin(v1[0],v0[i]+i*(i+1));
