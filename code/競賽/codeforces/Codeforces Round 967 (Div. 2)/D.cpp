@@ -59,29 +59,8 @@ pii max(pii a,pii b) {
     if(a.f<b.f) return b;
     else return {a.f,min(a.s,b.s)};
 }
-void init() {//sparse table
-    REP(i,n) mn[0][i]=mx[0][i]={a[i],i};
-    REP1(i,maxb-1) {
-        REP(j,n) {
-            mn[i][j]=min(mn[i-1][j],mn[i-1][min(n-1,j+(1<<i-1))]);
-            mx[i][j]=max(mx[i-1][j],mx[i-1][min(n-1,j+(1<<i-1))]);
-        }
-    }
-}
-pii rmn(int l,int r) {// range min
-    chmin(r,n-1);
-    assert(l<=r); 
-    int lg=__lg(r-l+1);
-    return min(mn[lg][l],mn[lg][r-(1<<lg)+1]);
-}
-pii rmx(int l,int r) {//range max 
-    chmin(r,n-1);
-    assert(l<=r);
-    int lg=__lg(r-l+1);
-    return max(mx[lg][l],mx[lg][r-(1<<lg)+1]);
-}
 struct SEG {
-    vector<pii> s;
+    vector<pair<pii,pii>> s;
     int n;
     void pull(int w) {
         s[w].f=min(s[w<<1].f,s[w<<1|1].f);
@@ -89,7 +68,7 @@ struct SEG {
     }
     void build(int w,int l,int r,vector<int> &a) {
         if(l==r) {
-            s[w]={a[l],a[l]};
+            s[w]={{a[l],l},{a[l],l}};
             return;
         }
         int m=l+r>>1;
@@ -99,7 +78,7 @@ struct SEG {
     }
     void init(int _n,vector<int>&a) {
         n=_n;
-        s=vector<pii>(n<<2);
+        s=vector<pair<pii,pii>>(n<<2);
         build(1,0,n-1,a);
     }
     void _ud(int w,int l,int r,int u,pii v) {
@@ -113,7 +92,7 @@ struct SEG {
         pull(w);
     }
     void ud(int u,pii v) {
-        _ud(1,0,n-1,u,v);
+        _ud(1,0,n-1,u,{{v.f,u},{v.s,u}});
     }
     void del(int u) {
         ud(u,{inf,-inf});
@@ -139,9 +118,10 @@ struct SEG {
 }seg;
 void solve() {
     cin>>n;
+    vector<vector<int>> id(n);
     a=vector<int>(n);
-    REP(i,n) cin>>a[i],a[i]--;
-    init();
+    REP(i,n) cin>>a[i],a[i]--,id[a[i]].pb(i);
+    seg.init(n,a);
     vector<int> las(n,-1);//las_pos
     REP(i,n) las[a[i]]=i;
     vector<bool> isl(n);//isl[i]:a[i]是不是最後一個
@@ -164,22 +144,19 @@ void solve() {
     REP1(rd,cntd) {
         ope(rd)
         if(rd&1) { 
-            pii ret=rmx(l,it);
+            pii ret=seg.mx(l,it);
             // op(l)op(it)op(ret.f)ope(ret.s)
-            l=ret.s+1;//更新範圍
-            if(used[ret.f]) {//用過了，重找
-                rd--;
-                continue;
-            }
+            l=ret.s+1;
+            for(int &x:id[ret.f])
             an.pb(ret.f);
             used[ret.f]=1;
-            if(it<n&&ret.f==a[it]) {//需要更新右界
+            if(it<n&&ret.f==a[it]) {
                 it++;
                 while(it<n&&(used[a[it]]||!isl[it])) it++;
             }
         }
         else {
-            pii ret=rmn(l,it);
+            pii ret=seg.mn(l,it);
             op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
             if(used[ret.f]) {
