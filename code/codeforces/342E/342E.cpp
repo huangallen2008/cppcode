@@ -55,7 +55,7 @@ void st_init() {
     REP(i,n) st[0][i]=dv[i];
     REP1(i,maxb-1) {
         REP(j,n) {
-            st[i][j]=max(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
+            st[i][j]=min(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
         }
     }
 }
@@ -63,7 +63,7 @@ int lca_dep(int x,int y) {
     int l=dfn[x],r=dfn[y];
     if(l>r) swap(l,r);
     int lg=__lg(r-l+1);
-    return max(st[lg][l],st[lg][r-(1<<lg)+1]); 
+    return min(st[lg][l],st[lg][r-(1<<lg)+1]); 
 }
 int dis(int x,int y) {//O(1)
     op(x)op(y)op(dep[x])op(dep[y])ope(lca_dep(x,y)<<1)
