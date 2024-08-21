@@ -73,6 +73,9 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         t1.swap(dp1);
         del(t0),del(t1);
         del(dp0v),del(dp1v);
+        while(dp0.size()>=sn) {
+            dp0.pop_back(),dp1.pop_back();
+        }
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
