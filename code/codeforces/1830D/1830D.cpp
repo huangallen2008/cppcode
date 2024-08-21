@@ -97,6 +97,7 @@ void solve() {
     auto [dp0,dp1]=dfs(0,-1);
     ll an=n*(ll)(n+1)-min(dp0[0],dp1[0]);
     cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS();
