@@ -81,7 +81,7 @@ struct SEG {
         s=vector<pair<pii,pii>>(n<<2);
         build(1,0,n-1,a);
     }
-    void _ud(int w,int l,int r,int u,pii v) {
+    void _ud(int w,int l,int r,int u,pair<pii,pii> v) {
         if(l==r) {
             s[w]=v;
             return;
