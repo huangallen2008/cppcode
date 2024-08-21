@@ -53,8 +53,8 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
         auto [r0,r1]=dfs(v,u);
-        REP(i,sz[u]) {
-            REP(j,sz[v]) {
+        REP(i,sz[u]+1) {
+            REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
                 chmin(t0[i+j],v0[i]+r0[j]);
                 chmin(t1[i+j],v1[i]+r1[j]);
@@ -63,7 +63,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         t0.swap(v0);
         t1.swap(v1);
         sz[u]+=sz[v];
-        chmin(sz[u],sn);
+        chmin(sz[u],sn-1);
     }
     REP1(i,sn-1) {
         chmin(v0[0],v1[i]+(i*(i+1)>>1));
