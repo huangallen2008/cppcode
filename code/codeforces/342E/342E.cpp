@@ -65,7 +65,7 @@ int lca_dep(int x,int y) {
     int lg=__lg(r-l+1);
     return max(st[lg][l],st[lg][r-(1<<lg)+1]); 
 }
-int d(int x,int y) {//O(1)
+int dis(int x,int y) {//O(1)
     return dep[x]+dep[y]-(lca_dep(x,y)<<1);
 }
 void dfs(int u,int pa) {
@@ -125,7 +125,7 @@ signed main() {
             int u;
             cin>>u,u--;
             int an=d[u];
-            for(int &x:t) chmin(an,d(x,u));
+            for(int &x:t) chmin(an,dis(x,u));
             cout<<an<<'\n';
         }
     }
