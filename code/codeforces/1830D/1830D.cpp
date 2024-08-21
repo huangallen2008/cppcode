@@ -81,6 +81,7 @@ void dfs(int u,int pa) {
 }
 void solve() {
     ope(sizeof(dp))
+    ope("ok")
     int n;
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
