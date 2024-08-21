@@ -133,7 +133,8 @@ signed main() {
     REP(i,n) cin>>a[i];
     b=a;
     sort(ALL(b));
-    REP(i,n) a[i]=lower_bound(ALL(b),a[i])-b.begin();
+    oparr(b)
+    REP(i,n) a[i]=lower_bound(ALL(b),a[i])-b.begin();//(0~n-1)
     oparr(a)
     return 0;
 }
