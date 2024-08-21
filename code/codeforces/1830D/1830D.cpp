@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math,no-stack-protector")
-#pragma GCC target("avx2,sse4,bmi,popcnt")
+// #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -48,17 +48,13 @@ int rd(int l,int r) {
 }
 Graph g;
 vector<int> sz;
-// vector<vector<int>> dp0,dp1;
-// vector<int> dp0[maxn],dp1[maxn];
 pair<vector<int>,vector<int>> dfs(int u,int pa) {
-    // dp0=dp1=vector<int>(sn,inf);
     vector<int> dp0(2,inf),dp1(2,inf);
     dp0[1]=dp1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
         auto [dp0v,dp1v]=dfs(v,u);
-        ope(v)oparr(dp0v)oparr(dp1v)op(sz[u])op(sz[v])
-        int N=sz[u]+sz[v]+1;
+        int N=min(sz[u]+sz[v]+1,sn-1);
         vector<int> t0(N,inf),t1(N,inf);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
@@ -67,7 +63,6 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
                 chmin(t1[i+j],dp1[i]+dp1v[j]);
             }
         }
-        oparr(t0)oparr(t1)
         t0.swap(dp0);
         t1.swap(dp1);
         del(t0),del(t1);
@@ -82,16 +77,11 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
         chmin(dp1[0],dp0[i]+i*(i+1));
     }
-    ope(u)
-    oparr(dp0)oparr(dp1)
     return {dp0,dp1};
-    // ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
-    // REP(i,10) op(sizeof(dp0[i]))entr
     int n;
     cin>>n;
-    // dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
     g=Graph(n);
     REP(i,n-1) {
