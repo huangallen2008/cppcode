@@ -51,18 +51,6 @@ vector<int> sz;
 // vector<vector<int>> dp0,dp1;
 // vector<int> dp0[maxn],dp1[maxn];
 void merge(vector<int> &dp0,vector<int> &dp1,vector<int> dp0v,vector<int> dp1v,int szu,int szv) {
-    int N=min(sn,szu+szv+2);
-    vector<int> t0(N,inf),t1(N,inf);
-    REP(i,szu+1) {
-        REP(j,szv+1) {
-            if(i+j>=sn) continue;
-            chmin(t0[i+j],dp0[i]+dp0v[j]);
-            chmin(t1[i+j],dp1[i]+dp1v[j]);
-        }
-    }
-    t0.swap(dp0);
-    t1.swap(dp1);\
-    del(t0),del(t1);
 }
 pair<vector<int>,vector<int>> dfs(int u,int pa) {
     // dp0=dp1=vector<int>(sn,inf);
@@ -71,7 +59,18 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         auto [dp0v,dp1v]=dfs(v,u);
-        merge(dp0,dp1,dp0v,dp1v,sz[u],sz[v]);
+        int N=min(sn,sz[u]+sz[v]+1);
+        vector<int> t0(N,inf),t1(N,inf);
+        REP(i,sz[u]+1) {
+            REP(j,sz[v]+1) {
+                if(i+j>=sn) continue;
+                chmin(t0[i+j],dp0[i]+dp0v[j]);
+                chmin(t1[i+j],dp1[i]+dp1v[j]);
+            }
+        }
+        t0.swap(dp0);
+        t1.swap(dp1);
+        del(t0),del(t1);
         del(dp0v),del(dp1v);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
