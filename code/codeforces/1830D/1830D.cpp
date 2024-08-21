@@ -65,7 +65,6 @@ void dfs(int u,int pa) {
                 chmin(t1[0],t0[i+j]+(i+j)*(i+j+1));
             }
         }
-        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
         // {
         //     vector<int> __;dp0[v].swap(__);
         // }
@@ -74,6 +73,7 @@ void dfs(int u,int pa) {
         // }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
+        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
