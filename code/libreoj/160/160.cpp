@@ -75,7 +75,7 @@ signed main() {
         int u=dfn[i];
         REP(j,c+1) {
             if(j>=w[u]) dp[i][j]=dp[i-1][j-w[u]]+v[u];
-            if(mo[u]!=0) chmax(dp[i],dp[mo[u]-1]);
+            if(mo[u]!=0) chmax(dp[i][j],dp[mo[u]-1][j]);
         }
     }
     int an=*max_element(ALL(dp[n-1]));
