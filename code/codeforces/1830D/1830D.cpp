@@ -71,7 +71,7 @@ void dfs(int u,int pa) {
         // }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
-        del(t0),del(t1),del(dp0[v]),del(dp2[v]);
+        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
