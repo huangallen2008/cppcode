@@ -86,7 +86,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    auto [d0,d1]=*new pii{dp0[0],dp1[0]};
+    auto [d0,d1]=make_pair(dp0[0],dp1[0]);
     int an=(n*(n+1)>>1)*2-min(d0[0],d1[0]);
     cout<<an<<'\n';
     entr
