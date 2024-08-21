@@ -49,30 +49,33 @@ Graph g;
 vector<int> sz;
 // vector<vector<int>> dp0,dp1;
 // vector<int> dp0[maxn],dp1[maxn];
+void merge(vector<int> &dp0,vector<int> &dp1,vector<int> dp0v,vector<int> dp1v) {
+    vector<int> t0(sn,inf),t1(sn,inf);
+    REP(i,sz[u]+1) {
+        REP(j,sz[v]+1) {
+            if(i+j>=sn) continue;
+            chmin(t0[i+j],dp0[i]+dp0v[j]);
+            chmin(t1[i+j],dp1[i]+dp1v[j]);
+        }
+    }
+    // {
+    //     vector<int> __;dp0v.swap(__);
+    // }
+    // {
+    //     vector<int> __;dp1v.swap(__);
+    // }
+    t0.swap(dp0);
+    t1.swap(dp1);
+    del(t0),del(t1);
+}
 pair<vector<int>,vector<int>> dfs(int u,int pa) {
     // dp0=dp1=vector<int>(sn,inf);
     vector<int> dp0(sn,inf),dp1(sn,inf);
     dp0[1]=dp1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
-        vector<int> t0(sn,inf),t1(sn,inf);
         auto [dp0v,dp1v]=dfs(v,u);
-        REP(i,sz[u]+1) {
-            REP(j,sz[v]+1) {
-                if(i+j>=sn) continue;
-                chmin(t0[i+j],dp0[i]+dp0v[j]);
-                chmin(t1[i+j],dp1[i]+dp1v[j]);
-            }
-        }
-        // {
-        //     vector<int> __;dp0v.swap(__);
-        // }
-        // {
-        //     vector<int> __;dp1v.swap(__);
-        // }
-        t0.swap(dp0);
-        t1.swap(dp1);
-        del(t0),del(t1);
+        merge(dp0,dp1,dp0v,dp1v);
         // ,del(dp0v),del(dp1v);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
@@ -90,7 +93,6 @@ void solve() {
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
-    ope(sizeof(sz))
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
