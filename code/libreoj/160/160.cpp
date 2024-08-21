@@ -78,7 +78,6 @@ signed main() {
             if(j>=w[u]) dp[i][j]=dp[i-1][j-w[u]]+v[u];
             if(mo[u]!=0) chmax(dp[i][j],dp[mo[u]-1][j]);
         }
-        oparr(dp[i])
     }
     int an=*max_element(ALL(dp[n-1]));
     cout<<an<<'\n';
