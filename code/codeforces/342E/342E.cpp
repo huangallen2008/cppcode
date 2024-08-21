@@ -74,6 +74,7 @@ void dfs(int u,int pa) {
     dv.pb(dep[u]);
     for(int v:g[u]) {
         if(v==pa) continue;
+        dep[v]=dep[u]+1;
         dfs(v,u);
         dv.pb(dep[u]);
     }
