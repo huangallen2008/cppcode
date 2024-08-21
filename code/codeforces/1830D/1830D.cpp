@@ -25,6 +25,7 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
+#define del(x) (x).clear(),(x).shrink_to_fit()
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
@@ -60,12 +61,11 @@ void dfs(int u,int pa) {
                 if(i+j>=sn) continue;
                 chmin(t0[i+j],dp0[u][i]+dp0[v][j]);
                 chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
+                chmin(t0[0],t1[i+j]+((i+j)*(i+j+1)>>1));
+                chmin(t1[0],t0[i+j]+(i+j)*(i+j+1));
             }
         }
-        dp0[v].clear();
-        dp1[v].clear();
-        dp0[v].shrink_to_fit();
-        dp1[v].shrink_to_fit();
+        del(t0),del(t1),del(dp0[v]),del(dp1[v]);
         // {
         //     vector<int> __;dp0[v].swap(__);
         // }
@@ -76,10 +76,6 @@ void dfs(int u,int pa) {
         t1.swap(dp1[u]);
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
-    }
-    REP1(i,sn-1) {
-        chmin(dp0[u][0],dp1[u][i]+(i*(i+1)>>1));
-        chmin(dp1[u][0],dp0[u][i]+i*(i+1));
     }
     // ope(u)oparr(dp0)oparr(dp1)
 }
