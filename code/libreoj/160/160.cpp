@@ -73,6 +73,7 @@ signed main() {
     dp[0][0]=0,dp[0][w[dfn[0]]]=v[dfn[0]];
     REP1(i,n-1) {
         int u=dfn[i];
+        dp[i][0]=0;
         REP(j,c+1) {
             if(j>=w[u]) dp[i][j]=dp[i-1][j-w[u]]+v[u];
             if(mo[u]!=0) chmax(dp[i][j],dp[mo[u]-1][j]);
