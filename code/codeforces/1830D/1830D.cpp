@@ -51,7 +51,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     v0[1]=v1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
-        vector<int> t0=v0,t1=v1;
+        vector<int> t0(sn,inf),t1(sn,inf);
         auto [r0,r1]=dfs(v,u);
         REP(i,sz[u]) {
             REP(j,sz[v]) {
