@@ -80,7 +80,8 @@ void dfs(int u,int pa) {
     // ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
-    ope(sizeof(dp))
+    ope(sizeof(dp0))
+    ope(sizeof(dp1))
     int n;
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
