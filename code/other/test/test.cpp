@@ -129,10 +129,11 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    vector<int> a(n);
+    vector<int> a(n),b(n);
     REP(i,n) cin>>a[i];
-    sort(ALL(a));
-    REP(i,n) a[i]=lower_bound(ALL(a),a[i])-a.begin();
+    b=a;
+    sort(ALL(b));
+    REP(i,n) a[i]=lower_bound(ALL(b),a[i])-b.begin();
     oparr(a)
     return 0;
 }
