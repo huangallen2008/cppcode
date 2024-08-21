@@ -59,7 +59,7 @@ pii max(pii a,pii b) {
     if(a.f<b.f) return b;
     else return {a.f,min(a.s,b.s)};
 }
-void init() {
+void init() {//sparse table
     REP(i,n) mn[0][i]=mx[0][i]={a[i],i};
     REP1(i,maxb-1) {
         REP(j,n) {
@@ -68,55 +68,112 @@ void init() {
         }
     }
 }
-pii rmn(int l,int r) {
+pii rmn(int l,int r) {// range min
     chmin(r,n-1);
     assert(l<=r); 
     int lg=__lg(r-l+1);
     return min(mn[lg][l],mn[lg][r-(1<<lg)+1]);
 }
-pii rmx(int l,int r) { 
+pii rmx(int l,int r) {//range max 
     chmin(r,n-1);
     assert(l<=r);
     int lg=__lg(r-l+1);
     return max(mx[lg][l],mx[lg][r-(1<<lg)+1]);
+}
+struct SEG {
+    vector<pii> s;
+    int n;
+    void pull(int w) {
+        s[w].f=min(s[w<<1].f,s[w<<1|1].f);
+        s[w].s=max(s[w<<1].s,s[w<<1|1].s);
+    }
+    void build(int w,int l,int r,vector<int> &a) {
+        if(l==r) {
+            s[w]={a[l],a[l]};
+            return;
+        }
+        int m=l+r>>1;
+        build(w<<1,l,m,a);
+        build(w<<1|1,m+1,r,a);
+        pull(w);
+    }
+    void init(int _n,vector<int>&a) {
+        n=_n;
+        s=vector<int>(n<<2);
+        build(1,0,n-1,a);
+    }
+    void _ud(int w,int l,int r,int u,pii v) {
+        if(l==r) {
+            s[w]=v;
+            return;
+        }
+        int m=l+r>>1;
+        if(u<=m) _ud(w<<1,l,m,u,v);
+        else _ud(w<<1|1,m+1,r,u,v);
+        pull(w);
+    }
+    void ud(int u,pii v) {
+        _ud(1,0,n-1,u,v);
+    }
+    void del(int u) {
+        ud(u,{inf,-inf});
+    }
+    int _mn(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].f;
+        if(ql>r||qr<l) return inf;
+        int m=l+r>>1;
+        return min(_mn(w<<1,l,m,ql,qr),_mn(w<<1|1,m+1,r,ql,qr));
+    }
+    int mn(int l,int r) {
+        return _mn(1,0,n-1,l,r);
+    }
+    int _mx(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].s;
+        if(ql>r||qr<l) return -inf;
+        int m=l+r>>1;
+        return max(_mx(w<<1,l,m,ql,qr),_mx(w<<1|1,m+1,r,ql,qr));
+    }
+    int mx(int l,int r) {
+        return _mx(1,0,n-1,l,r);
+    }
 }
 void solve() {
     cin>>n;
     a=vector<int>(n);
     REP(i,n) cin>>a[i],a[i]--;
     init();
-    vector<int> las(n,-1);
+    vector<int> las(n,-1);//las_pos
     REP(i,n) las[a[i]]=i;
-    vector<bool> isl(n);
-    int cntd=0;
+    vector<bool> isl(n);//isl[i]:a[i]是不是最後一個
+    int cntd=0;//有幾種數字(an.size())
     REP(i,n) {
         if(las[i]!=-1) {
             isl[las[i]]=1;
             cntd++;
         }
     }
-    int it=0;
+    int it=0;//最右邊可以選的
     REP(i,n) if(isl[i]) {
         it=i;
         break;
     }
     int l=0;
     vector<int> an;
-    vector<bool> used(n);
+    vector<bool> used(n);//有沒有在vector<int> an裡面
     // oparr(las)
     REP1(rd,cntd) {
         ope(rd)
         if(rd&1) { 
             pii ret=rmx(l,it);
             // op(l)op(it)op(ret.f)ope(ret.s)
-            l=ret.s+1;
-            if(used[ret.f]) {
+            l=ret.s+1;//更新範圍
+            if(used[ret.f]) {//用過了，重找
                 rd--;
                 continue;
             }
             an.pb(ret.f);
             used[ret.f]=1;
-            if(it<n&&ret.f==a[it]) {
+            if(it<n&&ret.f==a[it]) {//需要更新右界
                 it++;
                 while(it<n&&(used[a[it]]||!isl[it])) it++;
             }
