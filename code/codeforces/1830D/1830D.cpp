@@ -67,6 +67,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
                 chmin(t1[i+j],dp1[i]+dp1v[j]);
             }
         }
+        oparr(t0)oparr(t1)
         t0.swap(dp0);
         t1.swap(dp1);
         del(t0),del(t1);
