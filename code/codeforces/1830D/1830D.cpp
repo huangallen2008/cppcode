@@ -74,7 +74,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
 void solve() {
     int n;
     cin>>n;
-    dp0=dp1=vector<int>(n);
+    // dp0=dp1=vector<int>(n);
     sz=vector<int>(n,1);
     g=Graph(n);
     REP(i,n-1) {
