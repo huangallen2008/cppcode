@@ -97,22 +97,22 @@ struct SEG {
     void del(int u) {
         ud(u,{inf,-inf});
     }
-    int _mn(int w,int l,int r,int ql,int qr) {
+    pii _mn(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].f;
         if(ql>r||qr<l) return inf;
         int m=l+r>>1;
         return min(_mn(w<<1,l,m,ql,qr),_mn(w<<1|1,m+1,r,ql,qr));
     }
-    int mn(int l,int r) {
+    pii mn(int l,int r) {
         return _mn(1,0,n-1,l,r);
     }
-    int _mx(int w,int l,int r,int ql,int qr) {
+    pii _mx(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].s;
         if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
         return max(_mx(w<<1,l,m,ql,qr),_mx(w<<1|1,m+1,r,ql,qr));
     }
-    int mx(int l,int r) {
+    pii mx(int l,int r) {
         return _mx(1,0,n-1,l,r);
     }
 }seg;
