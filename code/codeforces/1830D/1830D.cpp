@@ -62,6 +62,8 @@ void dfs(int u,int pa) {
                 chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
             }
         }
+        dp0[v].clear();
+        dp1[v].clear();
         dp0[v].shrink_to_fit();
         dp1[v].shrink_to_fit();
         // {
