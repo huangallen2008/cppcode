@@ -73,8 +73,8 @@ void dfs(int u,int pa) {
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
-    op(sizeof(dp0))
-    ope(sizeof(dp1))
+    op(sizeof(dp0[u]))
+    ope(sizeof(dp1[u]))
     REP1(i,sn-1) {
         chmin(dp0[u][0],dp1[u][i]+(i*(i+1)>>1));
         chmin(dp1[u][0],dp0[u][i]+i*(i+1));
