@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math,no-stack-protector")
 #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -40,7 +40,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=2e5+5;
 const int sn=600;
-const int inf=(1ll<<60);
+const int inf=(1<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -95,7 +95,7 @@ void solve() {
         g[v].pb(u);
     }
     auto [dp0,dp1]=dfs(0,-1);
-    int an=(n*(n+1)>>1)*2-min(dp0[0],dp1[0]);
+    ll an=n*(ll)(n+1)-min(dp0[0],dp1[0]);
     cout<<an<<'\n';
 }
 signed main() {
