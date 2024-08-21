@@ -127,9 +127,11 @@ int& pp(int& a,int b) {
 }
 signed main() {
     IOS();
+    int n;
+    cin>>n;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    sprt(ALL(a));
+    sort(ALL(a));
     REP(i,n) a[i]=lower_bound(ALL(a),a[i])-a.begin();
     oparr(a)
     return 0;
