@@ -54,7 +54,7 @@ void dfs(int u,int pa) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
         dfs(v,u);
-        auto &[r0,r1]=make_pair(dp0[v],dp1[v]);
+        auto [r0,r1]=make_pair(dp0[v],dp1[v]);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
