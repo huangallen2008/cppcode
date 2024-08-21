@@ -108,7 +108,7 @@ struct SEG {
     }
     pii _mx(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].s;
-        if(ql>r||qr<l) return -inf;
+        if(ql>r||qr<l) return {-inf,0};
         int m=l+r>>1;
         return max(_mx(w<<1,l,m,ql,qr),_mx(w<<1|1,m+1,r,ql,qr));
     }
