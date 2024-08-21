@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math,no-stack-protector")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -63,10 +63,10 @@ void dfs(int u,int pa) {
             }
         }
         {
-            vector<int> __;__.swap(dp0[v]);
+            vector<int> __;dp0[v].swap(__);
         }
         {
-            vector<int> __;__.swap(dp1[v]);
+            vector<int> __;dp1[v].swap(__);
         }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
