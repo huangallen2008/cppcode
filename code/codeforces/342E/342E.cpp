@@ -66,7 +66,6 @@ int lca_dep(int x,int y) {
     return min(st[lg][l],st[lg][r-(1<<lg)+1]); 
 }
 int dis(int x,int y) {//O(1)
-    op(x)op(y)op(dep[x])op(dep[y])ope(lca_dep(x,y)<<1)
     return dep[x]+dep[y]-(lca_dep(x,y)<<1);
 }
 void dfs(int u,int pa) {
@@ -107,7 +106,6 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(dv)
     st_init();
     vector<int> t;
     t.pb(0);
