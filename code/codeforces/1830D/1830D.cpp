@@ -48,12 +48,6 @@ Graph g;
 vector<int> sz;
 // vector<vector<int>> dp0,dp1;
 vector<int> dp0[maxn],dp1[maxn];
-int bsize() {
-    int cnt=0;
-    REP(i,100) cnt+=dp0[i].size();
-    REP(i,100) cnt+=dp1[i].size();
-    return cnt;
-}
 void dfs(int u,int pa) {
     dp0[u]=dp1[u]=vector<int>(sn,inf);
     dp0[u][1]=dp1[u][1]=0;
@@ -68,13 +62,14 @@ void dfs(int u,int pa) {
                 chmin(t1[i+j],dp1[u][i]+dp1[v][j]);
             }
         }
-        ope(bsize())
-        {
-            vector<int> __;dp0[v].swap(__);
-        }
-        {
-            vector<int> __;dp1[v].swap(__);
-        }
+        dp0[v].shrink_to_fit();
+        dp1[v].shrink_to_fit();
+        // {
+        //     vector<int> __;dp0[v].swap(__);
+        // }
+        // {
+        //     vector<int> __;dp1[v].swap(__);
+        // }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
         sz[u]+=sz[v];
@@ -89,8 +84,6 @@ void dfs(int u,int pa) {
     // ope(u)oparr(dp0)oparr(dp1)
 }
 void solve() {
-    ope(sizeof(dp0))
-    ope(sizeof(dp1))
     // REP(i,10) op(sizeof(dp0[i]))entr
     int n;
     cin>>n;
@@ -104,7 +97,6 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    ope(bsize())
     int an=(n*(n+1)>>1)*2-min(dp0[0][0],dp1[0][0]);
     cout<<an<<'\n';
     entr
