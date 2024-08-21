@@ -46,7 +46,8 @@ int rd(int l,int r) {
 }
 Graph g;
 vector<int> sz;
-vector<vector<int>> dp0,dp1;
+// vector<vector<int>> dp0,dp1;
+vector<int> dp0[maxn],dp1[maxn];
 void dfs(int u,int pa) {
     dp0[u]=dp1[u]=vector<int>(sn,inf);
     dp0[u][1]=dp1[u][1]=0;
@@ -83,7 +84,7 @@ void dfs(int u,int pa) {
 void solve() {
     int n;
     cin>>n;
-    dp0=dp1=vector<vector<int>>(n);
+    // dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
     g=Graph(n);
     REP(i,n-1) {
