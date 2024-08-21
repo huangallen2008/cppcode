@@ -82,7 +82,7 @@ void dfs(int u,int pa) {
 void solve() {
     ope(sizeof(dp0))
     ope(sizeof(dp1))
-    REP(i,10) op(sizeof(dp[0]))entr
+    REP(i,10) op(dp[0].size())entr
     int n;
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
