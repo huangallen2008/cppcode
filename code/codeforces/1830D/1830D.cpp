@@ -72,7 +72,6 @@ void dfs(int u,int pa) {
         chmin(v1[0],v0[i]+i*(i+1));
     }
     ope(u)oparr(v0)oparr(v1)
-    return {v0,v1};
 }
 void solve() {
     int n;
