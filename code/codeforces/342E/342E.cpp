@@ -66,6 +66,7 @@ int lca_dep(int x,int y) {
     return max(st[lg][l],st[lg][r-(1<<lg)+1]); 
 }
 int dis(int x,int y) {//O(1)
+    op(x)op(y)ope(dep[x]+dep[y]-(lca_dep(x,y)<<1))
     return dep[x]+dep[y]-(lca_dep(x,y)<<1);
 }
 void dfs(int u,int pa) {
