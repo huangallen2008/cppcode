@@ -90,6 +90,7 @@ void solve() {
     cin>>n;
     // dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
+    ope(sizeof(sz))
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
