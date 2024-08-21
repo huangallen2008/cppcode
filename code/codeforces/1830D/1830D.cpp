@@ -51,7 +51,8 @@ vector<int> sz;
 // vector<vector<int>> dp0,dp1;
 // vector<int> dp0[maxn],dp1[maxn];
 void merge(vector<int> &dp0,vector<int> &dp1,vector<int> dp0v,vector<int> dp1v,int szu,int szv) {
-    vector<int> t0(sn,inf),t1(sn,inf);
+    int N=min(sn,szu+szv+2);
+    vector<int> t0(N,inf),t1(N,inf);
     REP(i,szu+1) {
         REP(j,szv+1) {
             if(i+j>=sn) continue;
@@ -60,12 +61,12 @@ void merge(vector<int> &dp0,vector<int> &dp1,vector<int> dp0v,vector<int> dp1v,i
         }
     }
     t0.swap(dp0);
-    t1.swap(dp1);
+    t1.swap(dp1);\
     del(t0),del(t1);
 }
 pair<vector<int>,vector<int>> dfs(int u,int pa) {
     // dp0=dp1=vector<int>(sn,inf);
-    vector<int> dp0(sn,inf),dp1(sn,inf);
+    vector<int> dp0(2,inf),dp1(2,inf);
     dp0[1]=dp1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
