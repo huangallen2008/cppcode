@@ -56,8 +56,8 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     dp0[1]=dp1[1]=0;
     ope(u)
     for(int v:g[u]) {
-        ope(v)
         if(v==pa) continue;
+        ope(v)
         op(u)ope(v)
         auto [dp0v,dp1v]=dfs(v,u);
         int N=sz[u]+sz[v]+1;
