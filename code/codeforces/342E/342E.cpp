@@ -105,6 +105,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    st_init();
     vector<int> t;
     REP(i,m) {
         if(i%sn==0) {
