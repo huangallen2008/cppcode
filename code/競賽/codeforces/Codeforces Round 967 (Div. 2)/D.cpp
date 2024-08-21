@@ -122,17 +122,17 @@ void solve() {
     a=vector<int>(n);
     REP(i,n) cin>>a[i],a[i]--,id[a[i]].pb(i);
     seg.init(n,a);
-    vector<int> las(n,-1);//las_pos
+    vector<int> las(n,-1);
     REP(i,n) las[a[i]]=i;
-    vector<bool> isl(n);//isl[i]:a[i]是不是最後一個
-    int cntd=0;//有幾種數字(an.size())
+    vector<bool> isl(n);
+    int cntd=0;
     REP(i,n) {
         if(las[i]!=-1) {
             isl[las[i]]=1;
             cntd++;
         }
     }
-    int it=0;//最右邊可以選的
+    int it=0;
     REP(i,n) if(isl[i]) {
         it=i;
         break;
@@ -147,7 +147,7 @@ void solve() {
             pii ret=seg.mx(l,it);
             // op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
-            for(int &x:id[ret.f])
+            for(int &x:id[ret.f]) seg.del(x);
             an.pb(ret.f);
             used[ret.f]=1;
             if(it<n&&ret.f==a[it]) {
@@ -159,6 +159,7 @@ void solve() {
             pii ret=seg.mn(l,it);
             op(l)op(it)op(ret.f)ope(ret.s)
             l=ret.s+1;
+            for(int &x:id[ret.f]) seg.del(x);
             if(used[ret.f]) {
                 rd--;
                 continue;
