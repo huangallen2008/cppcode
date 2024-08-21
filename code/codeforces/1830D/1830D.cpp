@@ -54,11 +54,8 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     // dp0=dp1=vector<int>(sn,inf);
     vector<int> dp0(2,inf),dp1(2,inf);
     dp0[1]=dp1[1]=0;
-    ope(u)
     for(int v:g[u]) {
         if(v==pa) continue;
-        ope(v)
-        op(u)ope(v)
         auto [dp0v,dp1v]=dfs(v,u);
         int N=sz[u]+sz[v]+1;
         vector<int> t0(N,inf),t1(N,inf);
@@ -79,11 +76,11 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         sz[u]+=sz[v];
         chmin(sz[u],sn-1);
     }
-    ope(u)ope("p")
     REP1(i,dp0.size()) {
         chmin(dp0[0],dp1[i]+(i*(i+1)>>1));
         chmin(dp1[0],dp0[i]+i*(i+1));
     }
+    ope(u)
     oparr(dp0)oparr(dp1)
     return {dp0,dp1};
     // ope(u)oparr(dp0)oparr(dp1)
