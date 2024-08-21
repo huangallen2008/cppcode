@@ -136,7 +136,7 @@ struct SEG {
     int mx(int l,int r) {
         return _mx(1,0,n-1,l,r);
     }
-}
+}seg;
 void solve() {
     cin>>n;
     a=vector<int>(n);
