@@ -106,6 +106,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    oparr(dv)
     st_init();
     vector<int> t;
     REP(i,m) {
