@@ -105,7 +105,7 @@ void solve() {
     }
     dfs(0,-1);
     ope(bsize())
-    int an=(n*(n+1)>>1)*2-min(dp0[0],dp1[0]);
+    int an=(n*(n+1)>>1)*2-min(dp0[0][0],dp1[0][0]);
     cout<<an<<'\n';
     entr
 }
