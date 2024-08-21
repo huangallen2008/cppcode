@@ -46,13 +46,15 @@ int rd(int l,int r) {
 }
 Graph g;
 vector<int> sz;
-pair<vector<int>,vector<int>> dfs(int u,int pa) {
+vector<vector<int>> dp0,dp1;
+void dfs(int u,int pa) {
     vector<int> v0(sn,inf),v1(sn,inf);
     v0[1]=v1[1]=0;
     for(int v:g[u]) {
         if(v==pa) continue;
         vector<int> t0(sn,inf),t1(sn,inf);
-        auto &[r0,r1]=dfs(v,u);
+        dfs(v,u);
+        auto &[r0,r1]=pii(dp0[v],dp1[v]);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
@@ -70,12 +72,12 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         chmin(v1[0],v0[i]+i*(i+1));
     }
     ope(u)oparr(v0)oparr(v1)
-    return pii(v0,v1);
+    return {v0,v1};
 }
 void solve() {
     int n;
     cin>>n;
-    // dp0=dp1=vector<int>(n);
+    dp0=dp1=vector<vector<int>>(n);
     sz=vector<int>(n,1);
     g=Graph(n);
     REP(i,n-1) {
