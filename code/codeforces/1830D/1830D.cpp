@@ -59,7 +59,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
         op(u)ope(v)
         auto [dp0v,dp1v]=dfs(v,u);
         int N=sz[u]+sz[v]+1;
-        vector<int> t0(N,inf),t1(N,inf);
+        vector<int> t0(sn,inf),t1(sn,inf);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 if(i+j>=sn) continue;
