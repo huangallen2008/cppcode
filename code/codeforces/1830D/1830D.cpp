@@ -54,6 +54,7 @@ pair<vector<int>,vector<int>> dfs(int u,int pa) {
     // dp0=dp1=vector<int>(sn,inf);
     vector<int> dp0(2,inf),dp1(2,inf);
     dp0[1]=dp1[1]=0;
+    ope(u)
     for(int v:g[u]) {
         if(v==pa) continue;
         op(u)ope(v)
