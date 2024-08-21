@@ -62,11 +62,13 @@ void dfs(int u,int pa) {
             }
         }
         {
-            vector<int> __;__.swap(dp0[v]);
+            // vector<int> __;__.swap(dp0[v]);
+            free(dp0[v]);
+            free(dp1[v]);
         }
-        {
-            vector<int> __;__.swap(dp1[v]);
-        }
+        // {
+        //     // vector<int> __;__.swap(dp1[v]);
+        // }
         t0.swap(dp0[u]);
         t1.swap(dp1[u]);
         sz[u]+=sz[v];
