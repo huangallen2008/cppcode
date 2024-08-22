@@ -137,11 +137,12 @@ int dp(int u,int r) {
 }
 signed main() {
     IOS();
+    int maxn=100;
     // int d[100];
     // d[0]=1;
-    REP1(n,37) {
+    REP1(n,maxn) {
         cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
-    REP1(n,37) {cout<<fixed<<setprecision(5)<<((ld)d[n][1]/d[n-1][1]);entr}
+    REP1(n,maxn) {cout<<fixed<<setprecision(15)<<((ld)d[n][1]/d[n-1][1]);entr}
     return 0;
 }
