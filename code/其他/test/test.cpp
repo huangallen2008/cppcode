@@ -159,7 +159,7 @@ signed main() {
     ope(sizeof(c))
     ope(c[0])
     ope(c[1])
-    REP1(i,10) op(c[i])
+    REP1(i,1000) cout<<c[i]<<' ';
     // int maxn=100;
     // int d[100];
     // d[0]=1;
