@@ -128,12 +128,13 @@ int& pp(int& a,int b) {
 // int a(auto
 // int n;
 const int maxn=200;
-__int128 d[maxn+1][maxn<<1|1];
+const int k=3;
+__int128 d[maxn+1][maxn*k+1];
 __int128 dp(int u,int r) {
     if(u<=r) return d[u][r]=1;
     if(d[u][r]) return d[u][r];
     __int128 ret=1;
-    for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
+    for(int i=0;i<r;i++) ret+=dp(u-i,(r-i)*k);
     return d[u][r]=ret;
 }
 void out(__int128 x) {
