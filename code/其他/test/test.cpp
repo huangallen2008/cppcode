@@ -127,7 +127,7 @@ int& pp(int& a,int b) {
 }
 // int a(auto
 // int n;
-const int maxn=5000;
+const int maxn=1000;
 const int k=30;
 __int128 d[maxn+1][maxn*k+1];
 __int128 dp(int u,int r) {
