@@ -135,7 +135,7 @@ int dp(int u,int r) {
 }
 signed main() {
     IOS();
-    REP1(n,10) {
+    REP1(n,100) {
         cout<<n<<' '<<dp(n,1)<<'\n';
     }
     return 0;
