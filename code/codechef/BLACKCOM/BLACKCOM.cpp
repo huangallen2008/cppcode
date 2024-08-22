@@ -76,6 +76,8 @@ void dfs(int u,int pa) {
                 t[i+j]=merge(t[i+j],dp[u][i]+dp[v][j]);
             }
         }
+        ope(u)
+        REP(i,n) op2(t[i]);entr
         t.swap(dp[u]);
         sz[u]+=sz[v];
     }
