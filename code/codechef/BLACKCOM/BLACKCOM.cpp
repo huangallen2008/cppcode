@@ -100,7 +100,7 @@ void solve() {
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
     REP(i,n) {
         REP(j,n+1) {
-            op(i)op(j)op2(dp[i][j])entr;
+            op(i)op(j)op2(dp[i][j]);entr;
         }
     }
     REP(i,n+1) {op(i)op2(rg[i]); entr}
