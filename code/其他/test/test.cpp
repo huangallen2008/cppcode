@@ -125,16 +125,17 @@ void f(int a=0,int b=0,int c=0,int d=0,int e=0,int f=0,int g=0,int h=0) {
 int& pp(int& a,int b) {
     return a=a+b;
 }
+// int a(auto
+int n;
+int dp(int u,int r) {
+    if(n-u<=r) return 1;
+    int ret=1;
+    REP(i,r) ret+=dp(u+i,r-i<<1);
+}
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    vector<int> a(n),b(n);
-    REP(i,n) cin>>a[i];
-    b=a;
-    sort(ALL(b));
-    oparr(b)
-    REP(i,n) a[i]=lower_bound(ALL(b),a[i])-b.begin();//(0~n-1)
-    oparr(a)
+    while(cin>>n) {
+        cout<<dp(n,1)<<endl;
+    }
     return 0;
 }
