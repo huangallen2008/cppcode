@@ -97,7 +97,7 @@ void solve() {
     dfs(0,-1);
     vector<pii> rg(n+1,zr);
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
-    REP(i,n+1) {op(i)op2(rg[i]) entr}
+    REP(i,n+1) {op(i)op2(rg[i]); entr}
     REP(i,q) {
         int b,s;
         cin>>s>>b;
