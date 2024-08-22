@@ -25,6 +25,7 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
+pii& op(pii &a) { cout<<"{"<<a.f<<","<<a.s<<"} "; return a; }
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
@@ -96,6 +97,7 @@ void solve() {
     dfs(0,-1);
     vector<pii> rg(n+1,zr);
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
+    REP(i,n+1) cout<<"{"<<rg[i]
     REP(i,q) {
         int b,s;
         cin>>s>>b;
