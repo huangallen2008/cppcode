@@ -77,7 +77,9 @@ void dfs(int u,int pa) {
             }
         }
         ope(u)
-        REP(i,n) op2(t[i]);entr
+        REP(i,n) op2(dp[u][i]);entr
+        REP(i,n) op2(dp[v][i]);entr
+        REP(i,n) op2(t[i]);entr entr
         t.swap(dp[u]);
         sz[u]+=sz[v];
     }
