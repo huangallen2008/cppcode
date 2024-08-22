@@ -81,7 +81,7 @@ signed main() {
     static int c3[100000000];
     static int c4[100000000];
     static int c5[100000000];
-    static int c5[100000000];
+    static int c6[100000000];
     // int t=0;REP(i,100000000) t++;
     ld t2=(ld)clock();
     cout<<fixed<<setprecision(15)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
