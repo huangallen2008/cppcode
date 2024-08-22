@@ -43,8 +43,46 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+Graph g;
+int n,q;
+vector<int> col,sz;
+vector<vector<pii>> dp;
+pii zr={-1,-1};
+void 
+void dfs(int u,int pa) {
+    if(col[u]) {
+        dp[u][0]={0,0};
+        dp[u][1]={1,1};
+    }
+    else {
+        dp[u][0]={0,1};
+    }
+    for(int v:g[u]) {
+        if(v==pa) continue;
+        dfs(v,u);
+        vector<int> tmp(n);
+        REP(i,sz[u]+1) {
+            REP(j,sz[v]+1) {
+                tmp[i+j]
+            }
+        }
+        sz[u]+sz[v];
+    }
+}
 void solve() {
-    
+    cin>>n>>q;
+    sz=vector<int>(n,1);
+    col=vector<int>(n);
+    dp=vector<vector<pii>>(n,vector<int>(n,zr));
+    g=Graph(n);
+    REP(i,n-1) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+        g[v].pb(u);
+    }
+    REP(i,n) cin>>col[i];
+
 }
 signed main() {
     IOS();
