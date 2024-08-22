@@ -127,22 +127,38 @@ int& pp(int& a,int b) {
 }
 // int a(auto
 // int n;
-int d[100][100];
-int dp(int u,int r) {
+const int maxn=200;
+__int128 d[maxn+1][maxn<<1|1];
+__int128 dp(int u,int r) {
     if(u<=r) return d[u][r]=1;
     if(d[u][r]) return d[u][r];
-    int ret=1;
+    __int128 ret=1;
     for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
     return d[u][r]=ret;
 }
+void out(__int128 x) {
+    if(x==0) {cout<<0<<'\n';return;}
+    string s;
+    while(x) {
+        s+='0'+x%10;
+        x/=10;
+    }
+    reverse(ALL(s));
+    cout<<s<<'\n';
+}
 signed main() {
     IOS();
-    int maxn=100;
+    // int maxn=100;
     // int d[100];
     // d[0]=1;
     REP1(n,maxn) {
-        cout<<n<<' '<<(dp(n,1))<<'\n';
+        op(n)
+        out(dp(n,1));
+        // cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
-    REP1(n,maxn) {cout<<fixed<<setprecision(15)<<((ld)d[n][1]/d[n-1][1]);entr}
+    out(d[102][1]);
+    out(d[103][1]);
+    out(d[104][1]);
+    REP1(n,maxn) {op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
     return 0;
 }
