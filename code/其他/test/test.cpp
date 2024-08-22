@@ -137,8 +137,8 @@ int dp(int u,int r) {
 }
 signed main() {
     IOS();
-    int d[100];
-    d[0]=1;
+    // int d[100];
+    // d[0]=1;
     REP1(n,37) {
         cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
