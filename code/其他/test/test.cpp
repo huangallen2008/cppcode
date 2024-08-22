@@ -138,8 +138,8 @@ signed main() {
     int d[100];
     d[0]=1;
     REP1(n,30) {
-        cout<<n<<' '<<d[n]=dp(n,1)<<'\n';
+        cout<<n<<' '<<(d[n]=dp(n,1))<<'\n';
     }entr
-    REP1(n,30) cout<<fixed<<setprecision(5)<<(d[n]/d[n-1]);entr
+    REP1(n,30) {cout<<fixed<<setprecision(5)<<(d[n]/d[n-1]);entr}
     return 0;
 }
