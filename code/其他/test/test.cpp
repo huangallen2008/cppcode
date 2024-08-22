@@ -126,18 +126,17 @@ int& pp(int& a,int b) {
     return a=a+b;
 }
 // int a(auto
-int n;
+// int n;
 int dp(int u,int r) {
     if(u<=r) return 1;
-    op(u)ope(r)
     int ret=1;
     for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
     return ret;
 }
 signed main() {
     IOS();
-    while(cin>>n) {
-        cout<<dp(n,1)<<endl;
+    REP1(n,10) {
+        cout<<n<<' '<<dp(n,1)<<'\n';
     }
     return 0;
 }
