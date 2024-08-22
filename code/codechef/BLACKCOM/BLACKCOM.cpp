@@ -55,8 +55,8 @@ pii merge(pii a,pii b) {
     return {min(a.f,b.f),max(a.s,b.s)};
 }
 pii operator+(pii a,pii b) {
-    if(a==zr) return b;
-    if(b==zr) return a;
+    if(a==zr) return zr;
+    if(b==zr) return zr;
     return {a.f+b.f,a.s+b.s};
 }
 void dfs(int u,int pa) {
