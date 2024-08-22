@@ -69,7 +69,7 @@ void dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
-        vector<pii> t(n+1);
+        vector<pii> t(n+1,zr);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
                 t[i+j]=merge(t[i+j],dp[u][i]+dp[v][j]);
