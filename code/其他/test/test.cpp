@@ -161,7 +161,7 @@ signed main() {
     ope(c[0])
     ope(c[1])
     REP1(i,50) cout<<c[i]<<' ';entr
-    REP(i,10) cout<<*(&t[i])<<endl;entr
+    REP(i,1) cout<<*(&t[i])<<endl;entr
     // int maxn=100;
     // int d[100];
     // d[0]=1;
