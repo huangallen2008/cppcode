@@ -127,7 +127,7 @@ int& pp(int& a,int b) {
 }
 // int a(auto
 // int n;
-const int maxn=200;
+const int maxn=2000;
 const int k=20;
 __int128 d[maxn+1][maxn*k+1];
 __int128 dp(int u,int r) {
@@ -154,7 +154,8 @@ signed main() {
     // d[0]=1;
     REP1(n,maxn) {
         op(n)
-        out(dp(n,1));
+        dp(n,1);
+        // out(dp(n,1));
         // cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
     REP1(n,maxn) { 
