@@ -48,7 +48,14 @@ int n,q;
 vector<int> col,sz;
 vector<vector<pii>> dp;
 pii zr={-1,-1};
-void 
+pii merge(pii a,pii b) {
+    if(a==zr) return b;
+    if(b==zr) return a;
+    return {min(a.f,b.f),max(a.s,b.s)};
+}
+pii operator+(pii a,pii b) {
+    return {a.f+b.f,a.s+b.s};
+}
 void dfs(int u,int pa) {
     if(col[u]) {
         dp[u][0]={0,0};
@@ -60,20 +67,24 @@ void dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         dfs(v,u);
-        vector<int> tmp(n);
+        vector<int> t(n+1);
         REP(i,sz[u]+1) {
             REP(j,sz[v]+1) {
-                tmp[i+j]
+                t[i+j]=merge(t[i+j],dp[u][i]+dp[v][j]);
             }
         }
-        sz[u]+sz[v];
+        t.swap(dp[u]);
+        sz[u]+=sz[v];
     }
+}
+bool inr(pii r,int x) {
+    return r.f<=x&&x<=r.s;
 }
 void solve() {
     cin>>n>>q;
     sz=vector<int>(n,1);
     col=vector<int>(n);
-    dp=vector<vector<pii>>(n,vector<int>(n,zr));
+    dp=vector<vector<pii>>(n,vector<int>(n+1,zr));
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
@@ -82,7 +93,15 @@ void solve() {
         g[v].pb(u);
     }
     REP(i,n) cin>>col[i];
-
+    dfs(0,-1);
+    vector<pii> rg(n+1,zr);
+    REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
+    REP(i,q) {
+        int b,s;
+        cin>>b>>s;
+        if(inr(rg[b],s)) cout<<"Yes\n";
+        else cout<<"No\n";
+    }
 }
 signed main() {
     IOS();
