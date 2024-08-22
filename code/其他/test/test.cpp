@@ -73,7 +73,7 @@ signed main() {
     ld t1=(ld)clock();
     static int c[200000000];
     ld t2=(ld)clock();
-    cout<<fixed<<setprecision(5)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
+    cout<<fixed<<setprecision(15)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
     // ope(c)
     // ope(*c)
     // ope(&c)
