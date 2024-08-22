@@ -127,19 +127,21 @@ int& pp(int& a,int b) {
 }
 // int a(auto
 // int n;
+int d[100][100];
 int dp(int u,int r) {
-    if(u<=r) return 1;
+    if(u<=r) return d[u][r]=1;
+    if(d[u][r]) return d[u][r];
     int ret=1;
     for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
-    return ret;
+    return d[u][r]=ret;
 }
 signed main() {
     IOS();
     int d[100];
     d[0]=1;
     REP1(n,37) {
-        cout<<n<<' '<<(d[n]=dp(n,1))<<'\n';
+        cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
-    REP1(n,37) {cout<<fixed<<setprecision(5)<<((ld)d[n]/d[n-1]);entr}
+    REP1(n,37) {cout<<fixed<<setprecision(5)<<((ld)d[n][1]/d[n-1][1]);entr}
     return 0;
 }
