@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O1,unroll-loops,fast-math")
+#pragma GCC optimize("O2,unroll-loops,fast-math")
 #pragma GCC target("avx2,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
