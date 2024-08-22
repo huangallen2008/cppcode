@@ -98,7 +98,7 @@ void solve() {
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
     REP(i,q) {
         int b,s;
-        cin>>b>>s;
+        cin>>s>>b;
         if(inr(rg[b],s)) cout<<"Yes\n";
         else cout<<"No\n";
     }
