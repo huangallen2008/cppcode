@@ -151,6 +151,7 @@ signed main() {
     IOS();
     int a=5;
     int* c=&a;
+    ope(c)
     ope(sizeof(c))
     // int maxn=100;
     // int d[100];
