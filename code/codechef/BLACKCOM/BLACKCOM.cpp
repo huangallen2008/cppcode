@@ -61,7 +61,6 @@ pii operator+(pii a,pii b) {
 }
 void dfs(int u,int pa) {
     if(col[u]) {
-        // dp[u][0]={0,0};
         dp[u][1]={1,1};
     }
     else {
@@ -76,10 +75,6 @@ void dfs(int u,int pa) {
                 t[i+j]=merge(t[i+j],dp[u][i]+dp[v][j]);
             }
         }
-        ope(u)
-        REP(i,n) op2(dp[u][i]);entr
-        REP(i,n) op2(dp[v][i]);entr
-        REP(i,n) op2(t[i]);entr entr
         t.swap(dp[u]);
         sz[u]+=sz[v];
     }
@@ -104,11 +99,6 @@ void solve() {
     dfs(0,-1);
     vector<pii> rg(n+1,zr);
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
-        REP(j,n+1) {
-    REP(i,n) {
-            op(i)op(j)op2(dp[i][j]);entr;
-        }
-    }
     REP(i,n+1) {op(i)op2(rg[i]); entr}
     REP(i,q) {
         int b,s;
