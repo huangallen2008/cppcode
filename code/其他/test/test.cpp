@@ -149,17 +149,19 @@ void out(__int128 x) {
 }
 signed main() {
     IOS();
+    int* c;
+    ope(sizeof(c))
     // int maxn=100;
     // int d[100];
     // d[0]=1;
-    REP1(n,maxn) {
-        // op(n)
-        dp(n,1);
-        // out(dp(n,1));
-        // cout<<n<<' '<<(dp(n,1))<<'\n';
-    }entr
-    REP1(n,maxn) { 
-        if((n+k+k+k+k-6)%(k-1)) continue;
-        op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
+    // REP1(n,maxn) {
+    //     // op(n)
+    //     dp(n,1);
+    //     // out(dp(n,1));
+    //     // cout<<n<<' '<<(dp(n,1))<<'\n';
+    // }entr
+    // REP1(n,maxn) { 
+    //     if((n+k+k+k+k-6)%(k-1)) continue;
+    //     op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
     return 0;
 }
