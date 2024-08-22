@@ -84,7 +84,7 @@ void solve() {
     cin>>n>>q;
     sz=vector<int>(n,1);
     col=vector<int>(n);
-    dp=vector<vector<pii>>(n,vector<int>(n+1,zr));
+    dp=vector<vector<pii>>(n,vector<pii>(n+1,zr));
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
