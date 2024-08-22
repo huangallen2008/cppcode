@@ -70,10 +70,10 @@ int t[1];
 signed main() {
     IOS();
     int a=5;
-    ld t1=(ld)clock()/CLOCKS_PER_SEC;
+    ld t1=(ld)clock();
     static int c[200000000];
-    ld t2=(ld)clock()/CLOCKS_PER_SEC;
-    cout<<fixed<<setprecision(3)<<(t2-t1)<<endl;
+    ld t2=(ld)clock();
+    cout<<fixed<<setprecision(3)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
     // ope(c)
     // ope(*c)
     // ope(&c)
