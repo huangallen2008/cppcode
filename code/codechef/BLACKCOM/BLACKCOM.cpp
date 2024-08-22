@@ -92,7 +92,7 @@ void solve() {
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
-        op(u)ope(v)
+        op(u)ope(v)ope(g.size())
         g[u].pb(v);
         g[v].pb(u);
     }
