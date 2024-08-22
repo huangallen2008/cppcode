@@ -151,7 +151,9 @@ int t[1];
 signed main() {
     IOS();
     int a=5;
+    cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<endl;
     static int c[50];
+    cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<endl;
     ope(c)
     ope(*c)
     ope(&c)
@@ -160,7 +162,7 @@ signed main() {
     ope(sizeof(c))
     ope(c[0])
     ope(c[1])
-    REP1(i,50) cout<<c[i]<<' ';entr
+    REP(i,50) cout<<c[i]<<' ';entr
     REP(i,100) cout<<t[i]<<' ';entr
     // int maxn=100;
     // int d[100];
