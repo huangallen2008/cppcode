@@ -25,18 +25,18 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
-pii& op(pii &a) { cout<<"{"<<a.f<<","<<a.s<<"} "; return a; }
-// #ifdef LOCAL
-// #define op(x) cout<<(#x)<<"="<<(x)<<", ";
-// #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-// #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
-// #define entr cout<<endl;
-// #else
-// #define op(x) ;
-// #define ope(x) ;
-// #define oparr(x) ;
-// #define entr ;
-// #endif
+pii& op2(pii &a) { cout<<"{"<<a.f<<","<<a.s<<"} "; return a; }
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
 const int inf=(1ll<<62);
@@ -97,7 +97,7 @@ void solve() {
     dfs(0,-1);
     vector<pii> rg(n+1,zr);
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
-    REP(i,n+1) op(rg[i]);
+    REP(i,n+1) {op(i)op2(rg[i])entr;}
     REP(i,q) {
         int b,s;
         cin>>s>>b;
