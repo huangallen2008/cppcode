@@ -151,7 +151,7 @@ int t[1];
 signed main() {
     IOS();
     int a=5;
-    int* c=&a;
+    static int* c=&a;
     ope(c)
     ope(*c)
     ope(&c)
@@ -161,7 +161,7 @@ signed main() {
     ope(c[0])
     ope(c[1])
     REP1(i,50) cout<<c[i]<<' ';entr
-    REP(i,1000) cout<<t[i]<<' ';entr
+    REP(i,100) cout<<t[i]<<' ';entr
     // int maxn=100;
     // int d[100];
     // d[0]=1;
