@@ -135,8 +135,11 @@ int dp(int u,int r) {
 }
 signed main() {
     IOS();
-    REP1(n,100) {
-        cout<<n<<' '<<dp(n,1)<<'\n';
-    }
+    int d[100];
+    d[0]=1;
+    REP1(n,30) {
+        cout<<n<<' '<<d[n]=dp(n,1)<<'\n';
+    }entr
+    REP1(n,30) cout<<fixde<<setprecision(5)<<d[i]/d[i-1]<<'\n';
     return 0;
 }
