@@ -132,6 +132,7 @@ int dp(int u,int r) {
     op(u)ope(r)
     int ret=1;
     for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
+    return ret;
 }
 signed main() {
     IOS();
