@@ -158,7 +158,7 @@ signed main() {
         // cout<<n<<' '<<(dp(n,1))<<'\n';
     }entr
     REP1(n,maxn) { 
-        if((n+k+k-4)%(k-1)) continue;
+        if((n+k+k+k+k-6)%(k-1)) continue;
         op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
     return 0;
 }
