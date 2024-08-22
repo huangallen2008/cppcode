@@ -128,6 +128,7 @@ int& pp(int& a,int b) {
 // int a(auto
 int n;
 int dp(int u,int r) {
+    op(u)ope(r)
     if(u<=r) return 1;
     int ret=1;
     for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
