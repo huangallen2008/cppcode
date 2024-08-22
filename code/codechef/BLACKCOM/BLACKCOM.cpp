@@ -99,8 +99,8 @@ void solve() {
     dfs(0,-1);
     vector<pii> rg(n+1,zr);
     REP(i,n) REP(j,n+1) rg[j]=merge(rg[j],dp[i][j]);
-    REP(i,n) {
         REP(j,n+1) {
+    REP(i,n) {
             op(i)op(j)op2(dp[i][j]);entr;
         }
     }
