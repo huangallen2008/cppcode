@@ -135,7 +135,7 @@ int dp(int u,int r) {
 signed main() {
     IOS();
     while(cin>>n) {
-        cout<<dp(n,1)<<endl;
+        cout<<dp(0,1)<<endl;
     }
     return 0;
 }
