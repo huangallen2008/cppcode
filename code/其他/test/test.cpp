@@ -149,7 +149,8 @@ void out(__int128 x) {
 }
 signed main() {
     IOS();
-    int* c;
+    int a=5;
+    int* c=&a;
     ope(sizeof(c))
     // int maxn=100;
     // int d[100];
