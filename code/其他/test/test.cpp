@@ -152,7 +152,7 @@ signed main() {
     IOS();
     int a=5;
     cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<endl;
-    int c[50000000];
+    int c[500000];
     cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<endl;
     // ope(c)
     // ope(*c)
