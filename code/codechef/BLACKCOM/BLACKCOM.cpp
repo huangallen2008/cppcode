@@ -61,11 +61,11 @@ pii operator+(pii a,pii b) {
 }
 void dfs(int u,int pa) {
     if(col[u]) {
-        dp[u][0]={0,0};
+        // dp[u][0]={0,0};
         dp[u][1]={1,1};
     }
     else {
-        dp[u][0]={0,1};
+        dp[u][0]={1,1};
     }
     for(int v:g[u]) {
         if(v==pa) continue;
