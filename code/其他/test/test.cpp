@@ -151,7 +151,7 @@ int t[1];
 signed main() {
     IOS();
     int a=5;
-    static int c[5];
+    static int c[50];
     ope(c)
     ope(*c)
     ope(&c)
