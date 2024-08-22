@@ -147,6 +147,7 @@ void out(__int128 x) {
     reverse(ALL(s));
     cout<<s<<'\n';
 }
+int t[1];
 signed main() {
     IOS();
     int a=5;
@@ -159,7 +160,8 @@ signed main() {
     ope(sizeof(c))
     ope(c[0])
     ope(c[1])
-    REP1(i,50) cout<<c[i]<<' ';
+    REP1(i,50) cout<<c[i]<<' ';entr
+    REP(i,10) cout<<t[i]<<' ';entr
     // int maxn=100;
     // int d[100];
     // d[0]=1;
