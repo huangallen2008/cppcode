@@ -47,7 +47,7 @@ Graph g;
 int n,q;
 vector<int> col,sz;
 vector<vector<pii>> dp;
-pii zr={-1,-1};
+const pii zr={-1,-1};
 pii merge(pii a,pii b) {
     if(a==zr) return b;
     if(b==zr) return a;
