@@ -128,14 +128,14 @@ int& pp(int& a,int b) {
 // int a(auto
 int n;
 int dp(int u,int r) {
-    if(n-u<=r) return 1;
+    if(u<=r) return 1;
     int ret=1;
-    REP(i,r) ret+=dp(u+i,r-i<<1);
+    for(int i=0;i<r;i++) ret+=dp(u-i,r-i<<1);
 }
 signed main() {
     IOS();
     while(cin>>n) {
-        cout<<dp(0,1)<<endl;
+        cout<<dp(n,1)<<endl;
     }
     return 0;
 }
