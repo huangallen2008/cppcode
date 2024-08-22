@@ -83,6 +83,7 @@ void dfs(int u,int pa) {
         t.swap(dp[u]);
         sz[u]+=sz[v];
     }
+    dp[u][0]=merge(dp[u][0],{0,0});
 }
 bool inr(pii r,int x) {
     return r.f<=x&&x<=r.s;
