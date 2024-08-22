@@ -154,6 +154,8 @@ signed main() {
     ope(c)
     ope(*c)
     ope(&c)
+    ope(&a)
+    ope(a)
     ope(sizeof(c))
     // int maxn=100;
     // int d[100];
