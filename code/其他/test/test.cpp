@@ -72,10 +72,10 @@ signed main() {
     int a=5;
     ld t1=(ld)clock();
     static int c[200000000];
-    static int c2[200000000];
-    static int c3[200000000];
-    static int c4[200000000];
-    static int c5[200000000];
+    static int c2[100000000];
+    static int c3[100000000];
+    static int c4[100000000];
+    static int c5[100000000];
     // int t=0;REP(i,100000000) t++;
     ld t2=(ld)clock();
     cout<<fixed<<setprecision(15)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
