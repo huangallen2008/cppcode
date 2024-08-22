@@ -26,17 +26,17 @@ using namespace std;
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
 pii& op(pii &a) { cout<<"{"<<a.f<<","<<a.s<<"} "; return a; }
-#ifdef LOCAL
-#define op(x) cout<<(#x)<<"="<<(x)<<", ";
-#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
-#define entr cout<<endl;
-#else
-#define op(x) ;
-#define ope(x) ;
-#define oparr(x) ;
-#define entr ;
-#endif
+// #ifdef LOCAL
+// #define op(x) cout<<(#x)<<"="<<(x)<<", ";
+// #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+// #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+// #define entr cout<<endl;
+// #else
+// #define op(x) ;
+// #define ope(x) ;
+// #define oparr(x) ;
+// #define entr ;
+// #endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
 const int inf=(1ll<<62);
