@@ -160,6 +160,6 @@ signed main() {
     out(d[102][1]);
     out(d[103][1]);
     out(d[104][1]);
-    REP1(n,maxn) {op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
+    REP1(n,maxn) {if(n&1) continue;(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
     return 0;
 }
