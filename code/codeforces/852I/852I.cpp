@@ -95,8 +95,8 @@ signed main() {
     }
     sort(ALL(qu),[&](Data &a,Data &b) {
         if(s[a.l]!=s[b.l]) return a.l<b.l;
-        if(s[a.l]&1) return a.s>b.s;
-        return a.s<b.s;
+        if(s[a.l]&1) return a.r>b.r;
+        return a.r<b.r;
     });
     return 0;
 }
