@@ -61,10 +61,10 @@ signed main() {
         cin>>l>>r;
         a[i]={l,r,i+1};
     }
-    sort(ALL(a),[&](data a,data b) {
-        if(s[a.l]!=s[b.l]) return a.l<b.l;
-        if(s[a.l]&1) return a.r>b.r;
-        return a.r<b.r;
+    sort(ALL(a),[&](data x,data y) {
+        if(s[x.l]!=s[y.l]) return x.l<y.l;
+        if(s[x.l]&1) return x.r>y.r;
+        return x.r<y.r;
     });
     for(auto [x,y,i]:a) cout<<i<<' ';
     cout<<'\n';
