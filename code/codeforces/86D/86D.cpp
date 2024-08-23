@@ -52,10 +52,10 @@ int cnt[maxv];
 struct DS {
     int an=0;
     void insert(int x) {
-        an+=cnt[x]++<<1|1;
+        an+=x*cnt[x]++<<1|1;
     }
     void erase(int x) {
-        an-=--cnt[x]<<1|1;
+        an-=x*--cnt[x]<<1|1;
     }
 }ds;
 signed main() {
