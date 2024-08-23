@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -55,7 +55,7 @@ void insert(int x) {
     an+=(ll)x*(cnt[x]++<<1|1);
 }
 void erase(int x) {
-    an-=x*(--cnt[x]<<1|1);
+    an-=(ll)x*(--cnt[x]<<1|1);
 }
 signed main() {
     IOS();
@@ -73,7 +73,7 @@ signed main() {
     REP(i,n) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.l]!=s[b.l]) return s[a.l]<s[b.l]; if(s[a.l]&1) return a.r>b.r;return a.r<b.r; });
     int il=0,ir=-1;
-    vector<int> ans(t);
+    vector<ll> ans(t);
     for(auto [l,r,id]:q) {
         while(il>l) insert(a[--il]);
         while(ir<r) insert(a[++ir]);
