@@ -98,10 +98,10 @@ signed main() {
         if(s[a.l]&1) return a.r>b.r;
         return a.r<b.r;
     });
-    ope("ok")
     vector<int> an(q);
     int il=0,ir=-1;
     for(auto &[l,r,id]:qu) {
+        ope(id)
         while(il>l) add(dfn[--il]);
         while(ir<r) add(dfn[++ir]);
         while(il<l) add(dfn[il++]);
