@@ -82,7 +82,6 @@ signed main() {
         while(ir>r) ds.erase(a[ir--]);
         an[id]=ds.an;
     }
-    for(int &x:an) cout<<x<<' ';
-    cout<<'\n';
+    for(int &x:an) cout<<x<<'\n';
     return 0;
 }
