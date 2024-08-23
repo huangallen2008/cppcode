@@ -65,6 +65,7 @@ bool nc[maxn];
 int cntp[maxn][2],s[maxn<<1];
 int now=0;
 void add(int u) {
+    ope(u)
     if(nc[u]) nc[u]=0,cntp[f[u]][gd[u]]--,now-=cntp[f[u]][gd[u]^1];
     else nc[u]=1,cntp[f[u]][gd[u]]++,now+=cntp[f[u]][gd[u]^1];
 }
@@ -102,7 +103,6 @@ signed main() {
     vector<int> an(q);
     int il=0,ir=-1;
     for(auto &[l,r,id]:qu) {
-        ope(id)
         while(il>l) add(dfn[--il]);
         while(ir<r) add(dfn[++ir]);
         while(il<l) add(dfn[il++]);
