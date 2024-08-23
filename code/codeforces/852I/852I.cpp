@@ -94,8 +94,9 @@ signed main() {
     REP(i,q) {
         int u,v;
         cin>>u>>v,u--,v--;
-        qu[i]={in[u],in[v],i};
-        if(qu[i].l>qu[i].r) swap(qu[i].l,qu[i].r);
+        if(in[u]>in[v]) swap(u,v);
+        if(out[v]<out[u]) qu[i]={in[u],in[v],i};
+        else qu[i]={out[u],in[v],i};
     }
     sort(ALL(qu),[&](Data &a,Data &b) {
         if(s[a.l]!=s[b.l]) return a.l<b.l;
