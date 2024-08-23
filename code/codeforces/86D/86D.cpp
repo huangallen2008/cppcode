@@ -75,11 +75,11 @@ signed main() {
     int il=0,ir=-1;
     vector<int> ans(t);
     for(auto [l,r,id]:q) {
-        while(il>l) ds.insert(a[--il]);
-        while(ir<r) ds.insert(a[++ir]);
-        while(il<l) ds.erase(a[il++]);
-        while(ir>r) ds.erase(a[ir--]);
-        ans[id]=ds.an;
+        while(il>l) insert(a[--il]);
+        while(ir<r) insert(a[++ir]);
+        while(il<l) erase(a[il++]);
+        while(ir>r) erase(a[ir--]);
+        ans[id]=an;
     }
     for(int &x:ans) cout<<x<<'\n';
     return 0;
