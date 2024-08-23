@@ -71,6 +71,9 @@ void out(auto x) {
 }
 signed main() {
     IOS();
-
+    int a=2;
+    string s="2364";
+    out(a);
+    out(s);
     return 0;
 }
