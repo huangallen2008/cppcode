@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -72,9 +72,6 @@ signed main() {
     vector<int> s(n);
     REP(i,n) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.l]!=s[b.l]) return s[a.l]<s[b.l]; if(s[a.l]&1) return a.r>b.r;return a.r<b.r; });
-    REP(i,t) {
-        cout<<q[i].l<<' '<<q[i].r<<endl;
-    }
     int il=0,ir=-1;
     vector<int> ans(t);
     for(auto [l,r,id]:q) {
