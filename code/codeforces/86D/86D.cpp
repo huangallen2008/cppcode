@@ -74,14 +74,15 @@ signed main() {
     REP(i,t) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.r>b.r;return a.r<b.r; });
     int il=0,ir=-1;
+    vector<int> an(t);
     for(auto [l,r,id]:q) {
         while(il>l) ds.insert(a[--il]);
         while(ir<r) ds.insert(a[++ir]);
         while(il<l) ds.erase(a[il++]);
         while(ir>r) ds.erase(a[ir--]);
-        cout<<ds.an<<'\n';
-        REP(i,10) cout<<cnt[i]<<' ';
-        entr
+        an[id]=ds.an;
     }
+    for(int &x:an) cout<<x<<' ';
+    cout<<'\n';
     return 0;
 }
