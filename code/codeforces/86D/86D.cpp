@@ -71,7 +71,7 @@ signed main() {
     }
     vector<int> s(t);
     REP(i,t) s[i]=i/sn;
-    sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.r>b.r;return a.r<b.r; });
+    sort(ALL(q),[&](qur a,qur b) { if(s[a.l]!=s[b.l]) return s[a.l]<s[b.l]; if(s[a.l]&1) return a.r>b.r;return a.r<b.r; });
     REP(i,t) {
         cout<<q[i].l<<' '<<q[i].r<<endl;
     }
