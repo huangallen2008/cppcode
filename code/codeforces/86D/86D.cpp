@@ -38,6 +38,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=2e5+5;
+const int sn=500;
 const int maxv=1e6+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -45,12 +46,11 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct qur {
-    int l,r;
+    int l,r,id;
 };
+int cnt[maxv];
 struct DS {
-    int cnt[maxv];
     int an=0;
-    DS() {memset(cnt,0,sizeof(cnt));}
     void insert(int x) {
         an+=cnt[x]++<<1|1;
     }
@@ -60,6 +60,20 @@ struct DS {
 };
 signed main() {
     IOS();
-
+    int n,t;
+    cin>>n>>t;
+    vector<int> a(n);
+    REP(i,n) cin>>a[i];
+    vector<qur> q(t);
+    REP(i,t) {
+        int l,r;
+        cin>>l>>r,l--,r--;
+        q[i]={l,r,i};
+    }
+    vector<int> s(t);
+    REP(i,t) s[i]=i/sn;
+    sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.s>b.s;return a.s<b.s; });
+    int il=0,ir=-1;
+    for(auto [l,r,id]:qur) {}
     return 0;
 }
