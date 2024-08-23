@@ -81,6 +81,6 @@ signed main() {
         while(ir>r) erase(a[ir--]);
         ans[id]=an;
     }
-    for(int &x:ans) cout<<x<<'\n';
+    for(ll &x:ans) cout<<x<<'\n';
     return 0;
 }
