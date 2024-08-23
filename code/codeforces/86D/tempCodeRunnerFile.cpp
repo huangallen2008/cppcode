@@ -2,7 +2,8 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -49,15 +50,13 @@ struct qur {
     int l,r,id;
 };
 int cnt[maxv];
-struct DS {
-    int an=0;
-    void insert(int x) {
-        an+=x*(cnt[x]++<<1|1);
-    }
-    void erase(int x) {
-        an-=x*(--cnt[x]<<1|1);
-    }
-}ds;
+ll an=0;
+void insert(int x) {
+    an+=(ll)x*(cnt[x]++<<1|1);
+}
+void erase(int x) {
+    an-=x*(--cnt[x]<<1|1);
+}
 signed main() {
     IOS();
     int n,t;
@@ -70,16 +69,21 @@ signed main() {
         cin>>l>>r,l--,r--;
         q[i]={l,r,i};
     }
-    vector<int> s(t);
-    REP(i,t) s[i]=i/sn;
-    sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.r>b.r;return a.r<b.r; });
-    int il=0,ir=-1;
-    for(auto [l,r,id]:q) {
-        while(il>l) ds.insert(a[--il]);
-        while(ir<r) ds.insert(a[++ir]);
-        while(il<l) ds.erase(a[il++]);
-        while(ir>r) ds.erase(a[ir--]);
-        cout<<ds.an<<'\n';
+    vector<int> s(n);
+    REP(i,n) s[i]=i/sn;
+    sort(ALL(q),[&](qur a,qur b) { if(s[a.l]!=s[b.l]) return s[a.l]<s[b.l]; if(s[a.l]&1) return a.r>b.r;return a.r<b.r; });
+    REP(i,t) {
+        cout<<q[i].l<<' '<<q[i].r<<endl;
     }
+    int il=0,ir=-1;
+    vector<int> ans(t);
+    for(auto [l,r,id]:q) {
+        while(il>l) insert(a[--il]);
+        while(ir<r) insert(a[++ir]);
+        while(il<l) erase(a[il++]);
+        while(ir>r) erase(a[ir--]);
+        ans[id]=an;
+    }
+    for(int &x:ans) cout<<x<<'\n';
     return 0;
 }
