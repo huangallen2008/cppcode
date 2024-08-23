@@ -93,6 +93,7 @@ signed main() {
         cin>>u>>v,u--,v--;
         qu[i]={in[u],in[v],i};
     }
+    ope("ok")
     sort(ALL(qu),[&](Data &a,Data &b) {
         if(s[a.l]!=s[b.l]) return a.l<b.l;
         if(s[a.l]&1) return a.r>b.r;
