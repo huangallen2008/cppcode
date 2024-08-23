@@ -76,6 +76,6 @@ signed main() {
     out(a);
     out(s);
     char c='%';out(c);
-    auto out2=[&](auto x) { cout<<x<<endl; };
+    void out2=[&](auto x) { cout<<x<<endl; };
     return 0;
 }
