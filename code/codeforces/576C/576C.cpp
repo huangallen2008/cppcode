@@ -46,7 +46,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct data {
+struct Data {
     int l,r,id;
 };
 int s[maxn];
@@ -55,13 +55,13 @@ signed main() {
     REP(i,maxn) s[i]=i/sn;
     int n;
     cin>>n;
-    vector<data > a(n);
+    vector<Data> a(n);
     REP(i,n) {
         int l,r;
         cin>>l>>r;
         a[i]={l,r,i+1};
     }
-    sort(ALL(a),[&](data x,data y) {
+    sort(ALL(a),[&](Data x,Data y) {
         if(s[x.l]!=s[y.l]) return x.l<y.l;
         if(s[x.l]&1) return x.r>y.r;
         return x.r<y.r;
