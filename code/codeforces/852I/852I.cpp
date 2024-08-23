@@ -145,7 +145,6 @@ signed main() {
             add(_lca);
         }
     }
-    REP(i,q) cout<<an[i]<<' ';
-    cout<<'\n';
+    REP(i,q) cout<<an[i]<<'\n';
     return 0;
 }
