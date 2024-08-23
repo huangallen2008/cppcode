@@ -66,7 +66,7 @@ signed main() {
     IOS();
     cin>>n;
     g=Graph(n);
-    in=out=gd=f=nc=vector<int>(n);
+    in=out=gd=f=vector<int>(n);
     REP(i,n) cin>>gd[i];
     REP(i,n) cin>>f[i];
     vector<int> ttf=f;
