@@ -54,7 +54,7 @@ struct DS {
         an+=cnt[x]++<<1|1;
         cnt[x]++;
     }
-}
+};
 signed main() {
     IOS();
 
