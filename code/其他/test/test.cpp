@@ -66,46 +66,11 @@ void out(__int128 x) {
     reverse(ALL(s));
     cout<<s<<'\n';
 }
-int t[1];
+void out(auto x) {
+    cout<<x<<'\n';
+}
 signed main() {
     IOS();
-    int a=5;
-    ld t1=(ld)clock();
-    // int c1[100000000];
-    // int c2[100000000];
-    // int c3[100000000];
-    // int c4[100000000];
-    // int c5[100000000];
-    static int c1[100000000];
-    static int c2[100000000];
-    static int c3[100000000];
-    static int c4[100000000];
-    static int c5[100000000];
-    static int c6[100000000];
-    // int t=0;REP(i,100000000) t++;
-    ld t2=(ld)clock();
-    cout<<fixed<<setprecision(15)<<(t2-t1)/CLOCKS_PER_SEC<<endl;
-    // ope(c)
-    // ope(*c)
-    // ope(&c)
-    // ope(&a)
-    // ope(a)
-    // ope(sizeof(c))
-    // ope(c[0])
-    // ope(c[1])
-    // REP(i,50) cout<<c[i]<<' ';entr
-    // REP(i,100) cout<<t[i]<<' ';entr
-    // int maxn=100;
-    // int d[100];
-    // d[0]=1;
-    // REP1(n,maxn) {
-    //     // op(n)
-    //     dp(n,1);
-    //     // out(dp(n,1));
-    //     // cout<<n<<' '<<(dp(n,1))<<'\n';
-    // }entr
-    // REP1(n,maxn) { 
-    //     if((n+k+k+k+k-6)%(k-1)) continue;
-    //     op(n);cout<<fixed<<setprecision(25)<<((ld)d[n][1]/(ld)d[n-1][1]);entr}
+
     return 0;
 }
