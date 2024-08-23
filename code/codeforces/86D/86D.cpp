@@ -72,6 +72,9 @@ signed main() {
     vector<int> s(t);
     REP(i,t) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.r>b.r;return a.r<b.r; });
+    REP(i,t) {
+        cout<<q[i].l<<' '<<q[i].r<<endl;
+    }
     int il=0,ir=-1;
     vector<int> ans(t);
     for(auto [l,r,id]:q) {
