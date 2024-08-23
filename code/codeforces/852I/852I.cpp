@@ -113,6 +113,8 @@ signed main() {
         while(ir>r) add(dfn[ir--]);
         an[id]=now;
         entr
+        REP(i,7) cout<<cntp[i][0]<<' ';entr
+        REP(i,7) cout<<cntp[i][1]<<' ';entr entr
     }
     REP(i,q) cout<<an[i]<<' ';
     cout<<'\n';
