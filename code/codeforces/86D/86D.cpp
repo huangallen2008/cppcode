@@ -69,8 +69,8 @@ signed main() {
         cin>>l>>r,l--,r--;
         q[i]={l,r,i};
     }
-    vector<int> s(t);
-    REP(i,t) s[i]=i/sn;
+    vector<int> s(n);
+    REP(i,n) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.l]!=s[b.l]) return s[a.l]<s[b.l]; if(s[a.l]&1) return a.r>b.r;return a.r<b.r; });
     REP(i,t) {
         cout<<q[i].l<<' '<<q[i].r<<endl;
