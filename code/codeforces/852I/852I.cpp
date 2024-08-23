@@ -93,7 +93,6 @@ bool nc[maxn];
 int cntp[maxn][2],s[maxn<<1];
 int now=0;
 void add(int u) {
-    op(u)
     if(nc[u]) nc[u]=0,cntp[f[u]][gd[u]]--,now-=cntp[f[u]][gd[u]^1];
     else nc[u]=1,cntp[f[u]][gd[u]]++,now+=cntp[f[u]][gd[u]^1];
 }
