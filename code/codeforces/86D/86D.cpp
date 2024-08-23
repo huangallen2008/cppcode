@@ -80,6 +80,8 @@ signed main() {
         while(il<l) ds.erase(a[il++]);
         while(ir>r) ds.erase(a[ir--]);
         cout<<ds.an<<'\n';
+        REP(i,10) cout<<cnt[i]<<' ';
+        entr
     }
     return 0;
 }
