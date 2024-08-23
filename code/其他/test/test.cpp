@@ -75,5 +75,7 @@ signed main() {
     string s="2364";
     out(a);
     out(s);
+    queue<int> q;
+    out(q);
     return 0;
 }
