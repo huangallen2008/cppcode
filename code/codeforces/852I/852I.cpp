@@ -60,6 +60,7 @@ void dfs(int u,int pa) {
         dfs(v,u);
     }
     out[u]=cntn++;
+    dfn.pb(u);
 }
 bool nc[maxn];
 int cntp[maxn][2],s[maxn<<1];
