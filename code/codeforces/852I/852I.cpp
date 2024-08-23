@@ -98,5 +98,16 @@ signed main() {
         if(s[a.l]&1) return a.r>b.r;
         return a.r<b.r;
     });
+    vector<int> an(q);
+    int il=0,ir=-1;
+    for(auto &[l,r,id]:q) {
+        while(il>l) add(dfn[--il]);
+        while(ir<r) add(dfn[++ir]);
+        while(il<l) add(dfn[il++]);
+        while(ir>r) add(dfn[ir--]);
+        an[id]=now;
+    }
+    REP(i,q) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
