@@ -49,6 +49,10 @@ int rd(int l,int r) {
 struct Data {
     int u,v,l,r,id;
 };
+int n;
+Graph g;
+vector<int> gd,f,dfn,in,out;
+int cntn=0;
 int lt[maxb][maxn];
 void init_lca() {
     lt[0][0]=0;
@@ -67,10 +71,6 @@ int lca(int u,int v) {
     }
     return u!=v?lt[0][u]:u;
 }
-int n;
-Graph g;
-vector<int> gd,f,dfn,in,out;
-int cntn=0;
 void dfs(int u,int pa) {
     dfn.pb(u);
     in[u]=cntn++;
