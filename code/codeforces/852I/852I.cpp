@@ -69,7 +69,7 @@ int lca(int u,int v) {
             v=lt[i][v];
         }
     }
-    return u!=v?lt[0][u]:u;
+    return u!=v?lt[0][u]:-1;
 }
 void dfs(int u,int pa) {
     dfn.pb(u);
@@ -134,9 +134,12 @@ signed main() {
         while(il<l) add(dfn[il++]);
         while(ir>r) add(dfn[ir--]);
         int _lca=lca(u,v);
-        add(_lca);
-        an[id]=now;
-        add(_lca);
+        if(_lca==-1) an[id]=now;
+        else {
+            add(_lca);
+            an[id]=now;
+            add(_lca);
+        }
         entr
         REP(i,7) cout<<cntp[i][0]<<' ';entr
         REP(i,7) cout<<cntp[i][1]<<' ';entr entr
