@@ -39,11 +39,15 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=1e5+5;
+const int sn=500;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct Data {
+    int l,r,id;
+};
 int n;
 Graph g;
 vector<int> gd,f,dfn,in,out;
@@ -57,13 +61,16 @@ void dfs(int u,int pa) {
     }
     out[u]=cntn++;
 }
-int nc[maxn];
-int cntp[maxn][2];
+bool nc[maxn];
+int cntp[maxn][2],s[maxn<<1];
+int now=0;
 void add(int u) {
-    if(!--nc[u]);
+    if(nc[u]) nc[u]=0,cntp[f[u]][gd[u]]--,now-=cntp[f[u]][gd[u]^1];
+    else nc[u]=1,cntp[f[u]][gd[u]]++,now+=cntp[f[u]][gd[u]^1];
 }
 signed main() {
     IOS();
+    REP(i,maxn<<1) s[i]=i/sn;
     cin>>n;
     g=Graph(n);
     in=out=gd=f=vector<int>(n);
@@ -78,6 +85,18 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-
+    int q;
+    cin>>q;
+    vector<Data> qu(q);
+    REP(i,q) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        qu[i]={in[u],in[v],i};
+    }
+    sort(ALL(qu),[&](Data &a,Data &b) {
+        if(s[a.l]!=s[b.l]) return a.l<b.l;
+        if(s[a.l]&1) return a.s>b.s;
+        return a.s<b.s;
+    });
     return 0;
 }
