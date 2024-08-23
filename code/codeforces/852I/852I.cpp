@@ -85,6 +85,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
+    dfs(0,-1);
     int q;
     cin>>q;
     vector<Data> qu(q);
