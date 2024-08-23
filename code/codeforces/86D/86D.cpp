@@ -74,6 +74,6 @@ signed main() {
     REP(i,t) s[i]=i/sn;
     sort(ALL(q),[&](qur a,qur b) { if(s[a.id]!=s[b.id]) return s[a.id]<s[b.id]; if(s[a.id]&1) return a.s>b.s;return a.s<b.s; });
     int il=0,ir=-1;
-    for(auto [l,r,id]:qur) {}
+    for(auto [l,r,id]:q) {}
     return 0;
 }
