@@ -55,7 +55,7 @@ signed main() {
     REP(i,maxn) s[i]=i/sn;
     int n;
     cin>>n;
-    vector<data> a(n);
+    vector<data > a(n);
     REP(i,n) {
         int l,r;
         cin>>l>>r;
