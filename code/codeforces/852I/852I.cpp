@@ -51,7 +51,7 @@ struct Data {
 };
 int n;
 Graph g;
-vector<int> gd,f,dfn,in,out;
+vector<int> gd,f,dfn,in,out,dep;
 int cntn=0;
 int lt[maxb][maxn];
 void init_lca() {
@@ -63,13 +63,19 @@ void init_lca() {
     }
 }
 int lca(int u,int v) {
+    if(dep[u]>dep[v]) swap(u,v);
+    int goo=dep[v]-dep[u];
+    RREP(i,maxb) {
+        if((goo>>i)&1) v=lt[i][v];
+    }
+    if(u==v) return -1;
     RREP(i,maxb) {
         if(lt[i][u]!=lt[i][v]) {
             u=lt[i][u];
             v=lt[i][v];
         }
     }
-    return u!=v?lt[0][u]:-1;
+    return lt[0][u];
 }
 void dfs(int u,int pa) {
     dfn.pb(u);
@@ -77,6 +83,7 @@ void dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         lt[0][v]=u;
+        dep[v]=dep[u]+1;
         dfs(v,u);
     }
     out[u]=cntn++;
@@ -95,7 +102,7 @@ signed main() {
     REP(i,maxn<<1) s[i]=i/sn;
     cin>>n;
     g=Graph(n);
-    in=out=gd=f=vector<int>(n);
+    in=out=gd=dep=f=vector<int>(n);
     REP(i,n) cin>>gd[i];
     REP(i,n) cin>>f[i];
     vector<int> ttf=f;
