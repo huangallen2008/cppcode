@@ -48,8 +48,9 @@ struct qur {
     int l,r;
 };
 struct DS {
-    vector<int> cnt(maxv);
+    int cnt[maxv];
     int an=0;
+    DS() {memset(cnt,0,sizeof(cnt));}
     void insert(int x) {
         an+=cnt[x]++<<1|1;
         cnt[x]++;
