@@ -53,7 +53,9 @@ struct DS {
     DS() {memset(cnt,0,sizeof(cnt));}
     void insert(int x) {
         an+=cnt[x]++<<1|1;
-        cnt[x]++;
+    }
+    void erase(int x) {
+        an-=--cnt[x]<<1|1;
     }
 };
 signed main() {
