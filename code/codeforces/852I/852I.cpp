@@ -131,11 +131,9 @@ signed main() {
         if(s[a.l]&1) return a.r>b.r;
         return a.r<b.r;
     });
-    oparr(dfn)
     vector<int> an(q);
     int il=0,ir=-1;
     for(auto &[u,v,l,r,id]:qu) {
-        op(l)op(r)ope(id)
         while(il>l) add(dfn[--il]);
         while(ir<r) add(dfn[++ir]);
         while(il<l) add(dfn[il++]);
@@ -147,9 +145,6 @@ signed main() {
             an[id]=now;
             add(_lca);
         }
-        entr
-        REP(i,7) cout<<cntp[i][0]<<' ';entr
-        REP(i,7) cout<<cntp[i][1]<<' ';entr entr
     }
     REP(i,q) cout<<an[i]<<' ';
     cout<<'\n';
