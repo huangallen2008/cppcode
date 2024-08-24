@@ -56,6 +56,7 @@ signed main() {
     vector<pii> all;
     REP(i,maxc) REP1(j,b[i].size()-1) {
         op(i)op(j)
+        oparr(b[i])
         all.pb({b[i][j],i});
     }
     ope("ok")
