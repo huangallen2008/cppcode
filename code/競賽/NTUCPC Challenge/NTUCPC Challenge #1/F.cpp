@@ -34,36 +34,33 @@ void f(int n) {
     int x,y;
     x=-n,y=n;
     REP(i,n-1) {
+        opp(x,y)opp(x,y-1)opp(x+1,y-2)entr
         x++;
-        opp(x,y)
-        opp(x,y-1)
-        opp(x+1,y-2)
-        entr
     }
     x=-n,y=0;
     REP(i,n-1) {
-        y++;
         opp(x,y)opp(x+1,y-1)opp(x+2,y-1)entr
+        y++;
     }
     x=0,y=-n;
     REP(i,n-1) {
-        x--,y++;
         opp(x,y)opp(x+1,y)opp(x+1,y+1)entr
+        x--,y++;
     }
     x=n,y=-n;
     REP(i,n-1) {
-        x--;
         opp(x,y)opp(x,y+1)opp(x-1,y+2)entr
+        x--;
     }
     x=n,y=0;
     REP(i,n-1) {
-        y--;
         opp(x,y)opp(x-1,y+1)opp(x-2,y+1)entr
+        y--;
     }
     x=0,y=n;
     REP(i,n-1) {
-        x++,y--;
         opp(x,y)opp(x-1,y)opp(x-1,y-1)entr
+        x++,y--;
     }
     f(n-3);
 }
