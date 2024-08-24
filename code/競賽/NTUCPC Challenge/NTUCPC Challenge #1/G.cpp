@@ -48,7 +48,7 @@ int rd(int l,int r) {
 struct DS {
     map<int,int> mp;
     int sum=0;
-    void init() {
+    DS() {
         mp[0]=inf,mp[inf]=0;
     }
     void ins(int x,int y) {
@@ -68,11 +68,22 @@ struct DS {
         mp.erase(next(it),it_r);
         mp[x]=y;
     }
-};
+}d1,d2,d3,d4;
 signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    int N=n*m;
+    vector<pii> a(N);
+    REP1(i,n) {
+        REP1(j,m) {
+            int x;
+            cin>>x,x--;
+            a[x]={i,j};
+        }
+    }
+    REP(i,N) {
 
+    }
     return 0;
 }
