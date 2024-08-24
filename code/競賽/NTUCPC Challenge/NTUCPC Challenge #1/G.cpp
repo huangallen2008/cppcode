@@ -135,10 +135,10 @@ signed main() {
             if(nok(nx,ny)||!used[nx][ny]) continue;
             dsu.merge(id(x,y),id(nx,ny));
         }
-        ope("ok")
         used[x][y]=1;
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
+        ope("ok")
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
