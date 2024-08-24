@@ -54,6 +54,8 @@ signed main() {
     vector<int> b[maxc];
     REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s);
     REP(i,maxc) sort(ALL(b[i]));
+    int cntc=0;
+    REP(i,maxc) if(b[i].size()) cntc++;
     vector<pii> all;
     REP(i,maxc) for(int j=2;j<b[i].size();j++) {
         all.pb({b[i][j],i});
@@ -61,7 +63,7 @@ signed main() {
     sort(ALL(all),greater<pii>());
     int basei=0;
     ll basea=0;
-    int ncc=max(0,k-maxc*2);
+    int ncc=max(0,k-cntc*2);
     int inc=k-ncc;
     vector<pii> cl;
     REP(i,ncc) {
@@ -69,19 +71,19 @@ signed main() {
         basea+=all[i].f;
         b[all[i].s].pop_back();
     }
-    vector<int> cntc(maxc);
+    vector<int> cntl(maxc);
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
         ope(i)
         cl.pb(all[i]);
-        cntc[all[i].s]++;
+        cntl[all[i].s]++;
         b[all[i].s].pop_back();
     }
     REP(i,maxc) {
-        while(cntc[i]<2&&b[i].size()) {
+        while(cntl[i]<2&&b[i].size()) {
         // if(b[i].size()) {
             cl.pb({b[i].back(),i});
             b[i].pop_back();
-            cntc[i]++;
+            cntl[i]++;
         // }
         }
     }
