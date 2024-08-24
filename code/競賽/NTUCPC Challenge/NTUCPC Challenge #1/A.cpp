@@ -65,7 +65,10 @@ void solve() {
                 mx=v,id=x;
             }
         };
-        upd(mi-sm.begin()->f),1);
+        upd(mi-sm.begin()->f,1);
+        upd(sm.rbegin()->f-mi,2);
+        upd(ad-sa.begin()->f,3);
+        upd(sa.rbegin()->f-ad,4);
         // if(mi-*sm.begin()>mx) {
         //     mx=ni-*sm.begin();
         //     id=1;
