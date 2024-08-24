@@ -53,14 +53,14 @@ struct DS {
     }
     void ins(int x,int y) {
         auto it=mp.lower_bound(x);
+        if(it->s>=y) {
+            return;
+        }
         if(it->f!=x) {
             mp[x]=it->s;
         }
         auto it_r=mp.find(x);
         it=it_r;
-        if(it->s>=y) {
-            return;
-        }
         while(it->s<=y) {
             sum+=(y-it->s)*(it->f-prev(it)->f);
             it=prev(it);
