@@ -131,15 +131,18 @@ signed main() {
         d3.ins(x,iy);
         d4.ins(ix,iy);
         for(auto [dx,dy]:dir) {
-
+            int nx=x+dx,ny=y+dy;
+            if(nok(nx,ny)||!used[nx][ny]) continue;
+            dsu.merge(id(x,y),id(nx,ny));
         }
+        used[x][y]=1;
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
         op(dx)op(dy)op(sum)entr
-        if(sum-N-(n*dy)-m*dx==i+1) {
+        if(sum-N-(n*dy)-m*dx==i+1&&dsu.cc==N-i) {
             an++;
 
             ope(i)
