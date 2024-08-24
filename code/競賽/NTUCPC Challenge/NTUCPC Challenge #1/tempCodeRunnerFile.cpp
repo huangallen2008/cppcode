@@ -19,46 +19,54 @@ const ll inf=(1ll<<63)-1;
 const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
+#define opp(x,y) cout<<x<<' '<<y<<' ';
+#define entr cout<<'\n';
+bool fir=1;
 void f(int n) {
-    if(n<=1) return;
-    if(n==2) {
-        cout<<"-1 1 -1 0 0 -1\n0 1 1 0 1 -1\n";
+    if(n<=0) return;
+    if(n==1) {
+        if(fir) cout<<"-1 1 -1 0 0 -1\n0 1 1 0 1 -1\n";
+        else cout<<"-1 1 -1 0 0 -1\n0 1 0 0 1 -1\n";
         return;
     }
-    if(n==3) {
-        cout<<"1 0 2 -1 2 -2\n1 -1 1 -2 0 -2\n0 -1 -1 -1 -2 0\n-1 0 -2 1 -2 2\n-1 1 -1 2 0 2\n0 1 1 1 2 0\n";
+    if(n==2) {
+        cout<<"1 0 2 -1 2 -2\n1 -1 1 -2 0 -2\n0 -1 -1 -1 -2 0\n-1 0 -2 1 -2 2\n-1 1 -1 2 0 2\n0 1 1 1 0 0\n";
         return;
     }
     int x,y;
-    x=2,y=-(n-1);
-    REP(i,n-2) {
+    x=-n,y=n;
+    REP(i,n-1) {
+        opp(x,y)opp(x,y-1)opp(x+1,y-2)entr
         x++;
-        cout<<x-1<<" "<<y+1<<" "<<x<<" "<<y<<" "<<x<<" "<<y-1<<"\n";
     }
-    x=n-1,y=-n+3;
-    REP(i,n-2) {
+    x=-n,y=0;
+    REP(i,n-1) {
+        opp(x,y)opp(x+1,y-1)opp(x+2,y-1)entr
         y++;
-        cout<<x<<" "<<y<<" "<<x-1<<" "<<y<<" "<<x+1<<" "<<y-1<<"\n";
     }
-    x=n-3,y=2;
-    REP(i,n-2) {
+    x=0,y=-n;
+    REP(i,n-1) {
+        opp(x,y)opp(x+1,y)opp(x+1,y+1)entr
         x--,y++;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y<<" "<<x<<" "<<y-1<<"\n";
     }
-    x=-2,y=n-1;
-    REP(i,n-2) {
+    x=n,y=-n;
+    REP(i,n-1) {
+        opp(x,y)opp(x,y+1)opp(x-1,y+2)entr
         x--;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y-1<<" "<<x<<" "<<y+1<<"\n";
     }
-    x=-(n-1),y=n-3;
-    REP(i,n-2) {
+    x=n,y=0;
+    if(fir)fir=0,opp(n,0)
+    else opp(n-1,0)
+    opp(n-1,1)opp(n,-1)entr
+    opp(n-2,1)opp(n-2,0)opp(n-3,0)entr
+    REP(i,n-1) {
+        if(i>1){opp(x,y)opp(x-1,y+1)opp(x-2,y+1)entr}
         y--;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y<<" "<<x-1<<" "<<y+1<<"\n";
     }
-    x=-(n-3),y=-2;
-    REP(i,n-2) {
+    x=0,y=n;
+    REP(i,n-1) {
+        opp(x,y)opp(x-1,y)opp(x-1,y-1)entr
         x++,y--;
-        cout<<x<<" "<<y<<" "<<x<<" "<<y+1<<" "<<x-1<<" "<<y<<"\n";
     }
     f(n-3);
 }
@@ -67,8 +75,12 @@ void solve() {
     cin>>n;
     int x,y;
     cin>>x>>y;
+    if(n==3) {
+        cout<<"No\n";
+        return;
+    }
     cout<<"Yes\n";
-    f(n);
+    f(n-1);
 }
 signed main()
 {
