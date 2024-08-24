@@ -26,7 +26,7 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
-#ifdef LOCAL
+#ifdef LOCAL_
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
@@ -57,8 +57,6 @@ void solve() {
     }
     int la=0;
     vector<int> an={0};
-        for(auto &[x,y]:sa) cout<<"{"<<x<<","<<y<<"} ";entr
-        for(auto &[x,y]:sm) cout<<"{"<<x<<","<<y<<"} ";entr entr
     REP(i,n-1) {
         int mx=0,id=0;
         int mi=a[la].f-a[la].s,ad=a[la].f+a[la].s;
@@ -90,7 +88,6 @@ void solve() {
         if(id==3) {
             ni=sa.begin()->s;
             an.pb(ni);
-            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
@@ -102,8 +99,6 @@ void solve() {
             sm.erase({a[ni].f-a[ni].s,ni});
         }
         la=ni;
-        for(auto &[x,y]:sa) cout<<"{"<<x<<","<<y<<"} ";entr
-        for(auto &[x,y]:sm) cout<<"{"<<x<<","<<y<<"} ";entr entr
     }
     cout<<n-1<<"\n";
     for(int &x:an) cout<<x+1<<' ';
