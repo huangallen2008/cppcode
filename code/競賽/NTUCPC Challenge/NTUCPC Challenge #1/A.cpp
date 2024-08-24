@@ -69,14 +69,34 @@ void solve() {
         upd(sm.rbegin()->f-mi,2);
         upd(ad-sa.begin()->f,3);
         upd(sa.rbegin()->f-ad,4);
-        // if(mi-*sm.begin()>mx) {
-        //     mx=ni-*sm.begin();
-        //     id=1;
-        // }
-        // if(*sm.rbegin()-mi>mx) {
-            // mx=
-        // }
+        if(id==1) {
+            int ni=sm.begin()->s;
+            an.pb(ni);
+            sa.erase({a[ni].f+a[ni].s,ni})
+            sm.erase({a[ni].f-a[ni].s,ni})
+        }
+        if(id==2) {
+            int ni=sm.rbegin()->s;
+            an.pb(ni);
+            sa.erase({a[ni].f+a[ni].s,ni})
+            sm.erase({a[ni].f-a[ni].s,ni})
+        }
+        if(id==3) {
+            int ni=sa.begin()->s;
+            an.pb(ni);
+            sa.erase({a[ni].f+a[ni].s,ni})
+            sm.erase({a[ni].f-a[ni].s,ni})
+        }
+        if(id==4) {
+            int ni=sa.rbegin()->s;
+            an.pb(ni);
+            sa.erase({a[ni].f+a[ni].s,ni})
+            sm.erase({a[ni].f-a[ni].s,ni})
+        }
     }
+    cout<<n-1<<"\n";
+    for(int &x:an) cout<<x-1<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
