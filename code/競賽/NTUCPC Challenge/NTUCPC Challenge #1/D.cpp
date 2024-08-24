@@ -80,7 +80,6 @@ signed main() {
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
     REP1(i,SZ(cl)-1) {
-        ope(i)
         vector<vector<int>> ndp=dp;
         REP(j,i+2) {
             REP(k,maxc) {
@@ -91,7 +90,7 @@ signed main() {
     }
     REP(i,c+1) {
         int an=basea+dp[inc][i^basei];
-        if(an<0) cout<<"-1\n";
+        if(an<0) cout<<"-1 ";
         else cout<<an<<' ';
     }
     cout<<'\n';
