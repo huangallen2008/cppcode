@@ -93,15 +93,13 @@ signed main() {
         chmin(mnx,x);
         chmax(mxy,y);
         chmax(mxx,x);
-        int ix=n+1-x,iy=n+1-y;
-        op(x)op(y)op(ix)ope(iy)
+        int ix=n+1-x,iy=m+1-y;
         d1.ins(x,y);
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         int dy=mxy-mny+1,dx=mxx-mnx+1;
-        op(dx)op(dy)ope(sum)
         if(sum-N-(n*dy)-m*dx==i+1) {
             an++;
         }
