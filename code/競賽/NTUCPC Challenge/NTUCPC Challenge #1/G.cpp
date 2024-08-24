@@ -97,9 +97,9 @@ signed main() {
         chmax(mxx,x);
         int ix=n+1-x,iy=m+1-y;
         d1.ins(x,y);
-        // d2.ins(ix,y);
-        // d3.ins(x,iy);
-        // d4.ins(ix,iy);
+        d2.ins(ix,y);
+        d3.ins(x,iy);
+        d4.ins(ix,iy);
         op(x)ope(y)
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)entr
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
