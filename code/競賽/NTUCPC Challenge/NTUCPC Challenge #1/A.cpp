@@ -26,7 +26,7 @@ using namespace std;
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
-#ifdef LOCAL_
+#ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
@@ -69,19 +69,16 @@ void solve() {
         upd(sm.rbegin()->f-mi,2);
         upd(ad-sa.begin()->f,3);
         upd(sa.rbegin()->f-ad,4);
-        op(la)op(mx)ope(id)
         int ni;
         if(id==1) {
             ni=sm.begin()->s;
             an.pb(ni);
-            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==2) {
             ni=sm.rbegin()->s;
             an.pb(ni);
-            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
@@ -94,7 +91,6 @@ void solve() {
         if(id==4) {
             ni=sa.rbegin()->s;
             an.pb(ni);
-            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
@@ -102,7 +98,7 @@ void solve() {
     }
     cout<<n-1<<"\n";
     for(int &x:an) cout<<x+1<<' ';
-    cout<<'\n';entr
+    cout<<'\n';
 }
 signed main() {
     IOS();
