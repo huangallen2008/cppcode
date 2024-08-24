@@ -73,11 +73,39 @@ struct DS {
         // }entr
     }
 }d1,d2,d3,d4;
+struct DSU {
+    vector<int> p,sz;
+    int cc=0,n=0;
+    void init(int _n) {
+        n=_n;
+        p=vector<int>(n);
+        sz=vector<int>(n,1);
+        REP(i,n) p[i]=i;
+        cc=n;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        p[x]=y;
+        sz[y]+=sz[x];
+        cc--;
+    }
+}dsu;
+int n,m;
+int id(int a,int b) {
+    return (a-1)*m+b-1;
+}
+bool nok(int x,int y) {
+    return x<0||y<0||x>=n||y>=m;
+}
 signed main() {
     IOS();
-    int n,m;
     cin>>n>>m;
     int N=n*m;
+    dsu.init(N);
     vector<pii> a(N);
     REP1(i,n) {
         REP1(j,m) {
@@ -89,6 +117,7 @@ signed main() {
     // int q;cin>>q;assert(q==0);
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
+    vector<vector<bool>> used(n,vector<int>(m));
     REP(i,N) {
         auto [x,y]=a[i];
         chmin(mny,y);
@@ -100,6 +129,9 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
+        for(auto [dx,dy]:{{0,1},{0,-1},{1,0},{-1,0}}) {
+            
+        }
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
@@ -111,6 +143,7 @@ signed main() {
 
             ope(i)
         }
+
     }
     cout<<an<<'\n';
     return 0;
