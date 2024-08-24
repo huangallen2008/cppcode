@@ -21,10 +21,12 @@ const ll mod=1e9+7;
 int n;
 #define opp(x,y) cout<<x<<' '<<y<<' ';
 #define entr cout<<'\n';
+bool fir=1;
 void f(int n) {
     if(n<=0) return;
     if(n==1) {
-        cout<<"-1 1 -1 0 0 -1\n0 1 0 0 1 -1\n";
+        if(fir) cout<<"-1 1 -1 0 0 -1\n0 1 1 0 1 -1\n";
+        else cout<<"-1 1 -1 0 0 -1\n0 1 0 0 1 -1\n";
         return;
     }
     if(n==2) {
@@ -53,7 +55,9 @@ void f(int n) {
         x--;
     }
     x=n,y=0;
-    opp(n-1,0)opp(n-1,1)opp(n,-1)entr
+    if(fir)fir=0,opp(n,0)
+    else opp(n-1,0)
+    opp(n-1,1)opp(n,-1)entr
     opp(n-2,1)opp(n-2,0)opp(n-3,0)entr
     REP(i,n-1) {
         if(i>1){opp(x,y)opp(x-1,y+1)opp(x-2,y+1)entr}
@@ -71,6 +75,10 @@ void solve() {
     cin>>n;
     int x,y;
     cin>>x>>y;
+    if(n%3==0) {
+        cout<<"No\n";
+        return;
+    }
     cout<<"Yes\n";
     f(n-1);
 }
