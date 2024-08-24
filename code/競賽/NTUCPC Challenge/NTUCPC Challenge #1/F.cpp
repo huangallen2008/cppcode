@@ -19,6 +19,8 @@ const ll inf=(1ll<<63)-1;
 const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
+#define opp(x,y) cout<<x<<' '<<y<<' ';
+#define entr cout<<'\n';
 void f(int n) {
     if(n<=0) return;
     if(n==1) {
@@ -30,35 +32,38 @@ void f(int n) {
         return;
     }
     int x,y;
-    x=2,y=-(n-1);
+    x=-n,y=n;
     REP(i,n-1) {
         x++;
-        cout<<x-1<<" "<<y+1<<" "<<x<<" "<<y<<" "<<x<<" "<<y-1<<"\n";
+        opp(x,y)
+        opp(x,y-1)
+        opp(x+1,y-2)
+        entr
     }
-    x=n-1,y=-n+3;
+    x=-n,y=0;
     REP(i,n-1) {
         y++;
-        cout<<x<<" "<<y<<" "<<x-1<<" "<<y<<" "<<x+1<<" "<<y-1<<"\n";
+        opp(x,y)opp(x+1,y-1)opp(x+2,y-1)entr
     }
-    x=n-3,y=2;
+    x=0,y=-n;
     REP(i,n-1) {
         x--,y++;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y<<" "<<x<<" "<<y-1<<"\n";
+        opp(x,y)opp(x+1,y)opp(x+1,y+1)entr
     }
-    x=-2,y=n-1;
+    x=n,y=-n;
     REP(i,n-1) {
         x--;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y-1<<" "<<x<<" "<<y+1<<"\n";
+        opp(x,y)opp(x,y+1)opp(x-1,y+2)entr
     }
-    x=-(n-1),y=n-3;
-    REP(i,n-2) {
+    x=n,y=0;
+    REP(i,n-1) {
         y--;
-        cout<<x<<" "<<y<<" "<<x+1<<" "<<y<<" "<<x-1<<" "<<y+1<<"\n";
+        opp(x,y)opp(x-1,y+1)opp(x-2,y+1)entr
     }
-    x=-(n-3),y=-2;
-    REP(i,n-2) {
+    x=0,y=n;
+    REP(i,n-1) {
         x++,y--;
-        cout<<x<<" "<<y<<" "<<x<<" "<<y+1<<" "<<x-1<<" "<<y<<"\n";
+        opp(x,y)opp(x-1,y)opp(x-1,y-1)entr
     }
     f(n-3);
 }
