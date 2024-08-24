@@ -53,7 +53,10 @@ void f(int n) {
         x--;
     }
     x=n,y=0;
+    opp(n-1,0)opp(n-1,1)opp(n,-1)entr
+    opp(n-2,1)opp(n-2,0)opp(n-3,0)entr
     REP(i,n-1) {
+        if(i<2) continue;
         opp(x,y)opp(x-1,y+1)opp(x-2,y+1)entr
         y--;
     }
