@@ -58,10 +58,10 @@ signed main() {
     REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s),sum[a[i].f]+=a[i].s;
     REP(i,maxc) sort(ALL(b[i]),greater<int>());
     vector<pii> all;
-    REP(i,maxc) REP1(j,b[i].size()-1) {
+    REP(i,maxc) REP1(j,SZ(b[i])-1) {
         op(i)op(j)ope(b[i].size())
         oparr(b[i])
-        // all.pb({b[i][j],i});
+        all.pb({b[i][j],i});
     }
     ope("ok")
     sort(ALL(all),greater<pii>());
