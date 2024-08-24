@@ -39,7 +39,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=1e5+5;
 const int maxc=512;
-const int inf=(1ll<<40);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -84,14 +84,15 @@ signed main() {
         vector<vector<int>> ndp=dp;
         REP(j,i+2) {
             REP(k,maxc) {
-                if(j)chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
+                if(j) chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
         }
         dp.swap(ndp);
     }
     REP(i,c+1) {
         int an=basea+dp[inc][i^basei];
-        cout<<an<<' ';
+        if(an<0) cout<<"-1\n";
+        else cout<<an<<' ';
     }
     cout<<'\n';
     return 0;
