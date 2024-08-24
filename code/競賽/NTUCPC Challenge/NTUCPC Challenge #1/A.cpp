@@ -52,8 +52,8 @@ void solve() {
     REP(i,n) cin>>a[i].f>>a[i].s;
     set<pii> sm,sa;
     REP1(i,n-1) {
-        sm.insert({a[i].f+a[i].s,i});
-        sa.insert({a[i].f-a[i].s,i});
+        sa.insert({a[i].f+a[i].s,i});
+        sm.insert({a[i].f-a[i].s,i});
     }
     int la=0;
     vector<int> an={0};
