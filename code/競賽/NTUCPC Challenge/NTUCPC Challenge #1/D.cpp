@@ -48,6 +48,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     for(int i=1;i<=0;i++) ope(i)
+    ope("ok")
     int n,k,c;
     cin>>n>>k>>c;
     vector<pii> a(n);
