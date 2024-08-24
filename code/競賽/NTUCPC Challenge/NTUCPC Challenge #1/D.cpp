@@ -89,6 +89,10 @@ signed main() {
                 if(j)chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
         }
+        REP(j,c){
+            REP(k,c) cout<<dp[i][j]<<' ';
+            entr
+        }entr
         dp.swap(ndp);
     }
     // int basei=0,basea=0;
