@@ -82,9 +82,7 @@ signed main() {
             a[x]={i,j};
         }
     }
-    int q;
-    cin>>q;
-    assert(q==0);
+    // int q;cin>>q;assert(q==0);
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
     REP(i,N) {
