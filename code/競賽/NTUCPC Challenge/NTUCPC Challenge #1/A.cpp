@@ -57,6 +57,8 @@ void solve() {
     }
     int la=0;
     vector<int> an={0};
+        for(auto &[x,y]:sa) cout<<"{"<<x<<","<<y<<"} ";entr
+        for(auto &[x,y]:sm) cout<<"{"<<x<<","<<y<<"} ";entr entr
     REP(i,n-1) {
         int mx=0,id=0;
         int mi=a[la].f-a[la].s,ad=a[la].f+a[la].s;
