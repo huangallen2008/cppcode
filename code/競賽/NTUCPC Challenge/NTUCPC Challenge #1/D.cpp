@@ -71,16 +71,18 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
-    REP(i,maxc) REP(j,maxc) dp[0][i][j]=-inf;
-    dp[0][0][0]=0;
-    if(b[0].size()) dp[0][1][0]=b[0][0];
+    vector<vector<int>> dp(maxc,vector<int>(maxc));
+    REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
+    dp[0][0]=0;
+    dp[0][1][cl[0].s]=cl[0].f;
     REP1(i,cl.size()-1) {
+        vector<vector<int>> ndp=dp;
         REP(j,i+1) {
             REP(k,maxc) {
-                dp[i][j][k]=dp[i-1][j][k];
-                chmax(dp[i][j][k],dp[i-1][j-1][k^cl[i].s]+cl[i].f);
+                chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
         }
+        dp.swap(ndp);
     }
     // int basei=0,basea=0;
     REP(i,c+1) {
