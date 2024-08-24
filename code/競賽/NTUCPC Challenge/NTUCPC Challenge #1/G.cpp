@@ -83,7 +83,16 @@ signed main() {
         }
     }
     REP(i,N) {
-
+        auto [x,y]=a[i];
+        int ix=n+1-x,iy=n+1-y;
+        d1.ins(x,y);
+        d2.ins(ix,y);
+        d3.ins(x,iy);
+        d4.ins(ix,iy);
+        op(d1.sum)
+        op(d2.sum)
+        op(d3.sum)
+        ope(d4.sum)
     }
     return 0;
 }
