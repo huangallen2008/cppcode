@@ -68,7 +68,6 @@ signed main() {
         basea+=all[i].f;
         b[all[i].s].pop_back();
     }
-    ope("ok")ope(ncc)ope(inc)
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
         cl.pb(all[i]);
         b[all[i].s].pop_back();
@@ -76,6 +75,7 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
+    ope("ok")ope(ncc)ope(inc)
     vector<vector<int>> dp(maxc,vector<int>(maxc));
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
