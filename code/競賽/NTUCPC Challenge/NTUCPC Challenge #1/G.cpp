@@ -62,6 +62,7 @@ struct DS {
         auto it_r=mp.find(x);
         it=it_r;
         while(it->s<=y) {
+            op(it->f)op(it->s)op(prev(it)->f)ope(prev(it)->s)
             sum+=(y-it->s)*(it->f-prev(it)->f);
             it=prev(it);
         }
@@ -93,9 +94,9 @@ signed main() {
         chmax(mxx,x);
         int ix=n+1-x,iy=m+1-y;
         d1.ins(x,y);
-        d2.ins(ix,y);
-        d3.ins(x,iy);
-        d4.ins(ix,iy);
+        // d2.ins(ix,y);
+        // d3.ins(x,iy);
+        // d4.ins(ix,iy);
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
