@@ -57,14 +57,14 @@ signed main() {
     REP(i,maxc) if(b[i].size()) cntc++;
     REP(i,maxc) sort(ALL(b[i]));
     vector<pipii> all;all.reserve(n);
-    REP(i,maxc) for(int j=2;j<b[i].size();j++) {
+    REP(i,maxc) for(int j=1;j<b[i].size();j++) {
         all.pb({b[i][j]+b[i][j-1],{b[i][j],i}});
     }
     sort(ALL(all),greater<pipii>());
     ll basei=0,basea=0;
-    int ncc=max(0,k-cntc*2);
+    int ncc=max(0,k-cntc);
     int inc=k-ncc;
-    vector<pii> cl;cl.reserve(inc+cntc*2);
+    vector<pii> cl;cl.reserve(inc+cntc);
     REP(i,ncc) {
         basei^=all[i].s.s;
         basea+=all[i].s.f;
@@ -77,11 +77,11 @@ signed main() {
     REP(i,maxc) {
         if(b[i].size()) {
             cl.pb({b[i].back(),i});
-            b[i].pop_back();
+            // b[i].pop_back();
         }
-        if(b[i].size()) {
-            cl.pb({b[i].back(),i});
-        }
+        // if(b[i].size()) {
+        //     cl.pb({b[i].back(),i});
+        // }
     }
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
