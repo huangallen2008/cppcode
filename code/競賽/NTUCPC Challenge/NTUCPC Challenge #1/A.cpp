@@ -81,7 +81,7 @@ void solve() {
             ni=sm.rbegin()->s;
             an.pb(ni);
             sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase({a[ni].f-a[ni].s,ni});
+            sm.erase(pii{a[ni].f-a[ni].s,ni});
         }
         if(id==3) {
             ni=sa.begin()->s;
