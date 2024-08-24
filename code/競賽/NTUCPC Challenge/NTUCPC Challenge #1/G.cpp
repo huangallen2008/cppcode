@@ -118,7 +118,7 @@ signed main() {
     vector<pii> dir={{0,1},{0,-1},{1,0},{-1,0}};
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
-    vector<vector<bool>> used(n,vector<bool>(m));
+    vector<vector<bool>> used(n+1,vector<bool>(m+1));
     REP(i,N) {
         auto [x,y]=a[i];
         chmin(mny,y);
@@ -135,10 +135,10 @@ signed main() {
             if(nok(nx,ny)||!used[nx][ny]) continue;
             dsu.merge(id(x,y),id(nx,ny));
         }
+        ope("ok")
         used[x][y]=1;
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
-        ope("ok")
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
