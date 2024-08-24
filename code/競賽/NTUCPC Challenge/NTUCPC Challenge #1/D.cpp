@@ -90,7 +90,7 @@ signed main() {
             }
         }
         REP(j,c){
-            REP(k,c) cout<<dp[i][j]<<' ';
+            REP(k,c) cout<<dp[j][k]<<' ';
             entr
         }entr
         dp.swap(ndp);
