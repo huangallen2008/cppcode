@@ -61,7 +61,7 @@ signed main() {
     REP(i,maxc) REP1(j,b[i].size()-1) {
         op(i)op(j)ope(b[i].size())
         oparr(b[i])
-        all.pb({b[i][j],i});
+        // all.pb({b[i][j],i});
     }
     ope("ok")
     sort(ALL(all),greater<pii>());
