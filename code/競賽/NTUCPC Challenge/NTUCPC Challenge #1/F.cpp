@@ -79,6 +79,7 @@ void solve() {
     cin>>n;
     int x,y;
     cin>>x>>y;
+    nox=x,noy=y;
     if(n==2&&x==0&&y==-1) {
         cout<<"Yes\n-1 0 0 0 1 -1\n-1 1 0 1 1 0\n";
         return;
