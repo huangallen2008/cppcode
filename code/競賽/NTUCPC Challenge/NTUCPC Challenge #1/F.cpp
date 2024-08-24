@@ -75,7 +75,7 @@ void solve() {
     cin>>n;
     int x,y;
     cin>>x>>y;
-    if(n%3==0) {
+    if(n==3) {
         cout<<"No\n";
         return;
     }
