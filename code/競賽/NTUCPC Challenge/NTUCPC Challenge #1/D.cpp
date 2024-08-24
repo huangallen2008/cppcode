@@ -63,12 +63,12 @@ signed main() {
     int basei=0,basea=0;
     int ncc=max(0ll,k-maxc),inc=k-ncc;
     vector<pii> cl;
-    ope("ok")ope(ncc)ope(inc)
     REP(i,ncc) {
         basei^=all[i].s;
         basea+=all[i].f;
         b[all[i].s].pop_back();
     }
+    ope("ok")ope(ncc)ope(inc)
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
         cl.pb(all[i]);
         b[all[i].s].pop_back();
