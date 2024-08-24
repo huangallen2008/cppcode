@@ -99,7 +99,7 @@ int id(int a,int b) {
     return (a-1)*m+b-1;
 }
 bool nok(int x,int y) {
-    return x<0||y<0||x>=n||y>=m;
+    return x<=0||y<=0||x>n||y>m;
 }
 signed main() {
     IOS();
