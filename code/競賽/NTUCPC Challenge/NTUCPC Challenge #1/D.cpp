@@ -47,6 +47,7 @@ int rd(int l,int r) {
 // int dp[maxc<<1][maxc][maxc];
 signed main() {
     IOS();
+    for(int i=1;i<=0;i++) ope(i)
     int n,k,c;
     cin>>n>>k>>c;
     vector<pii> a(n);
