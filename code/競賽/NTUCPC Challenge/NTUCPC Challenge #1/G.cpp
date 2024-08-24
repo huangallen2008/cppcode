@@ -129,8 +129,8 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
-        for(auto [dx,dy]:{{0,1},{0,-1},{1,0},{-1,0}}) {
-            
+        for(auto [dx,dy]:vector<pii>{{0,1},{0,-1},{1,0},{-1,0}}) {
+
         }
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
