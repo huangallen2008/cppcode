@@ -86,6 +86,9 @@ signed main() {
         vector<vector<int>> ndp=dp;
         REP(j,i+1) {
             REP(k,maxc) {
+                if(j==2&&k==1) {
+                    op(ndp[j][k])op(dp[j-1][k^cl[i].s])ope(cl[i].f)
+                }
                 if(j)chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
         }
