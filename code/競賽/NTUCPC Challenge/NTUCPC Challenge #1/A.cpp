@@ -96,6 +96,8 @@ void solve() {
             sm.erase({a[ni].f-a[ni].s,ni});
         }
         la=ni;
+        for(auto &[x,y]:sa) cout<<"{"<<x<<","<<y<<"} ";entr
+        for(auto &[x,y]:sm) cout<<"{"<<x<<","<<y<<"} ";entr entr
     }
     cout<<n-1<<"\n";
     for(int &x:an) cout<<x+1<<' ';
