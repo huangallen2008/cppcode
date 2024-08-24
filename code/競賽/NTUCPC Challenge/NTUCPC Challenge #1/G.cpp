@@ -82,6 +82,8 @@ signed main() {
             a[x]={i,j};
         }
     }
+    int q;
+    cin>>q;
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
     REP(i,N) {
