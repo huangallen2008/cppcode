@@ -80,7 +80,7 @@ signed main() {
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
     for(auto &[x,y]:cl) cout<<"{"<<x<<","<<y<<"} ";entr
-    ope("ok")ope(ncc)ope(inc)
+    // ope("ok")ope(ncc)ope(inc)
     REP1(i,SZ(cl)-1) {
         ope(i)
         vector<vector<int>> ndp=dp;
@@ -95,6 +95,7 @@ signed main() {
         }entr
         dp.swap(ndp);
     }
+    op(basei)ope(basea)
     // int basei=0,basea=0;
     REP(i,c+1) {
         int an=basea+dp[inc][i^basei];
