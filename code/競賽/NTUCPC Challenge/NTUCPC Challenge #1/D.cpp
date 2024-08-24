@@ -79,27 +79,16 @@ signed main() {
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
-    for(auto &[x,y]:cl) cout<<"{"<<x<<","<<y<<"} ";entr
-    // ope("ok")ope(ncc)ope(inc)
     REP1(i,SZ(cl)-1) {
         ope(i)
         vector<vector<int>> ndp=dp;
         REP(j,i+2) {
             REP(k,maxc) {
-                if(j==2&&k==1) {
-                    op(ndp[j][k])op(dp[j-1][k^cl[i].s])ope(cl[i].f)
-                }
                 if(j)chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
         }
-        REP(j,c){
-            REP(k,c) cout<<ndp[j][k]<<' ';
-            entr
-        }entr
         dp.swap(ndp);
     }
-    op(basei)ope(basea)
-    // int basei=0,basea=0;
     REP(i,c+1) {
         int an=basea+dp[inc][i^basei];
         cout<<an<<' ';
