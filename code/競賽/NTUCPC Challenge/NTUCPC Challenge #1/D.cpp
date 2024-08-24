@@ -79,7 +79,7 @@ signed main() {
         if(b[i].size()) {
             cl.pb({b[i].back(),i});
         }
-    {}
+    }
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
