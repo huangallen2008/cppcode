@@ -19,7 +19,8 @@ const ll inf=(1ll<<63)-1;
 const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
-#define opp(x,y) cout<<x<<' '<<y<<' ';
+int nox,noy;
+#define opp(x,y) {assert(x!=nox||y!=noy);cout<<x<<' '<<y<<' ';}
 #define entr cout<<'\n';
 bool fir=1;
 void f(int n) {
