@@ -72,26 +72,26 @@ void solve() {
         if(id==1) {
             int ni=sm.begin()->s;
             an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni})
-            sm.erase({a[ni].f-a[ni].s,ni})
+            sa.erase({a[ni].f+a[ni].s,ni});
+            sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==2) {
             int ni=sm.rbegin()->s;
             an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni})
-            sm.erase({a[ni].f-a[ni].s,ni})
+            sa.erase({a[ni].f+a[ni].s,ni});
+            sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==3) {
             int ni=sa.begin()->s;
             an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni})
-            sm.erase({a[ni].f-a[ni].s,ni})
+            sa.erase({a[ni].f+a[ni].s,ni});
+            sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==4) {
             int ni=sa.rbegin()->s;
             an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni})
-            sm.erase({a[ni].f-a[ni].s,ni})
+            sa.erase({a[ni].f+a[ni].s,ni});
+            sm.erase({a[ni].f-a[ni].s,ni});
         }
     }
     cout<<n-1<<"\n";
