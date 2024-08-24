@@ -55,7 +55,7 @@ signed main() {
     REP(i,maxc) sort(ALL(b[i]),greater<int>());
     vector<pii> all;
     REP(i,maxc) REP1(j,b[i].size()-1) {
-        op(i)op(j)
+        op(i)op(j)ope(b[i].size())
         oparr(b[i])
         all.pb({b[i][j],i});
     }
