@@ -69,7 +69,7 @@ void solve() {
         upd(sm.rbegin()->f-mi,2);
         upd(ad-sa.begin()->f,3);
         upd(sa.rbegin()->f-ad,4);
-        op(mx)ope(id)
+        op(la)op(mx)ope(id)
         int ni;
         if(id==1) {
             ni=sm.begin()->s;
