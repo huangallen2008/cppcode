@@ -62,9 +62,9 @@ signed main() {
     sort(ALL(all),greater<pii>());
     int basei=0,basea=0;
     int ncc=max(0ll,k-maxc),inc=k-ncc;
-    ope("ok")
     vector<pii> cl;
     REP(i,ncc) {
+    ope("ok")ope(i)
         basei^=all[i].s;
         basea+=all[i].f;
         b[all[i].s].pop_back();
