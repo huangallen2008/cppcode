@@ -132,10 +132,10 @@ signed main() {
         d4.ins(ix,iy);
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
-        ope("ok")
             if(nok(nx,ny)||!used[nx][ny]) continue;
             dsu.merge(id(x,y),id(nx,ny));
         }
+        ope("ok")
         used[x][y]=1;
         // op(x)ope(y)
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
