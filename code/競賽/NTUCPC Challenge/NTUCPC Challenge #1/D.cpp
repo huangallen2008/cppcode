@@ -80,7 +80,7 @@ signed main() {
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
-    REP1(i,cl.size()-1) {
+    REP1(i,SZ(cl)-1) {
         vector<vector<int>> ndp=dp;
         REP(j,i+1) {
             REP(k,maxc) {
