@@ -73,7 +73,6 @@ signed main() {
     }
     vector<int> cntl(maxc);
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
-        ope(i)
         cl.pb(all[i]);
         cntl[all[i].s]++;
         b[all[i].s].pop_back();
@@ -87,7 +86,6 @@ signed main() {
         // }
         }
     }
-    for(auto &[x,y]:cl) cout<<"|"<<x<<","<<y<<"| ";
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
