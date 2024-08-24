@@ -84,6 +84,7 @@ signed main() {
         // }
         }
     }
+    ope("ok")
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
