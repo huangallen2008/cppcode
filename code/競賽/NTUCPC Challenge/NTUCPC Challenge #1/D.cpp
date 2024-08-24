@@ -75,11 +75,11 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
-    ope("ok")ope(ncc)ope(inc)
     vector<vector<int>> dp(maxc,vector<int>(maxc));
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
+    ope("ok")ope(ncc)ope(inc)
     REP1(i,SZ(cl)-1) {
         vector<vector<int>> ndp=dp;
         REP(j,i+1) {
