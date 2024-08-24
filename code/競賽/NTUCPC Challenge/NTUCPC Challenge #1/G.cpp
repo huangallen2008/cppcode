@@ -101,10 +101,11 @@ signed main() {
         d3.ins(x,iy);
         d4.ins(ix,iy);
         // op(x)ope(y)
-        op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)entr
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
+        op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
+        op(dx)op(dy)op(sum)entr
         if(sum-N-(n*dy)-m*dx==i+1) {
             an++;
 
