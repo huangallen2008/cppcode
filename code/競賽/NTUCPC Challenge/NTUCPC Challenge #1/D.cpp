@@ -82,7 +82,7 @@ signed main() {
             }
         }
     }
-    int basei=0,basea=0;
+    // int basei=0,basea=0;
     REP(i,c+1) {
         int an=basea+dp[cl.size()-1][inc][i^basei];
         cout<<an<<' ';
