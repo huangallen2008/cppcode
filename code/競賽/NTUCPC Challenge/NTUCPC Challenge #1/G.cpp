@@ -57,8 +57,8 @@ struct DS {
             return;
         }
         mp[x]=y;
-        it=mp[x];
-        
+        it=mp.find(x);
+
     }
 };
 signed main() {
