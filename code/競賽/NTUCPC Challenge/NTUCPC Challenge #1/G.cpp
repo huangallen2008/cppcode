@@ -117,7 +117,7 @@ signed main() {
     // int q;cin>>q;assert(q==0);
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
-    vector<vector<bool>> used(n,vector<int>(m));
+    vector<vector<bool>> used(n,vector<bool>(m));
     REP(i,N) {
         auto [x,y]=a[i];
         chmin(mny,y);
@@ -129,7 +129,7 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
-        for(auto [dx,dy]:{pii{0,1},pii{0,-1},pii{1,0},pii{-1,0}}) {
+        for(auto [dx,dy]:{{0,1},{0,-1},{1,0},{-1,0}}) {
 
         }
         // op(x)ope(y)
