@@ -2,7 +2,8 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,7 +40,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=1e5+5;
 const int maxc=512;
-const int inf=(1ll<<62);
+const ll inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -54,11 +55,11 @@ signed main() {
     REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s);
     REP(i,maxc) sort(ALL(b[i]));
     vector<pii> all;
-    REP(i,maxc) REP1(j,SZ(b[i])-1) {
+    REP(i,maxc) for(int j=2;j<b[i].size();j++) {
         all.pb({b[i][j],i});
     }
     sort(ALL(all),greater<pii>());
-    int basei=0,basea=0;
+    ll basei=0,basea=0;
     int ncc=max(0ll,k-maxc*2),inc=k-ncc;
     vector<pii> cl;
     REP(i,ncc) {
@@ -70,14 +71,20 @@ signed main() {
         cl.pb(all[i]);
         b[all[i].s].pop_back();
     }
-    REP(i,maxc) if(b[i].size()) {
-        cl.pb({b[i].back(),i});
-    }
-    vector<vector<int>> dp(inc+1,vector<int>(maxc,-inf));
+    REP(i,maxc) {
+        if(b[i].size()) {
+            cl.pb({b[i].back(),i});
+            b[i].pop_back();
+        }
+        if(b[i].size()) {
+            cl.pb({b[i].back(),i});
+        }
+    {}
+    vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
     REP1(i,SZ(cl)-1) {
-        vector<vector<int>> ndp=dp;
+        vector<vector<ll>> ndp=dp;
         REP(j,inc+1) {
             REP(k,maxc) {
                 if(j) chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
@@ -86,7 +93,7 @@ signed main() {
         dp.swap(ndp);
     }
     REP(i,c+1) {
-        int an=basea+dp[inc][i^basei];
+        ll an=basea+dp[inc][i^basei];
         if(an<0) cout<<"-1 ";
         else cout<<an<<' ';
     }
