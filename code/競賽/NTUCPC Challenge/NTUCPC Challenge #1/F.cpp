@@ -19,7 +19,7 @@ const ll inf=(1ll<<63)-1;
 const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
-#define opp(xx,y) {int x=xx-1;if(-9<x&&x<9&&-9<y&&y<9&&-9<x+y&&x+y<9)cout<<x<<' '<<y<<' ';else cout<<"0 0 ";}
+#define opp(xx,y) {int xxx=xx-1;if(-9<x&&x<9&&-9<y&&y<9&&-9<x+y&&x+y<9)cout<<x<<' '<<y<<' ';else cout<<"0 0 ";}
 #define entr cout<<'\n';
 bool fir=1;
 void f(int n) {
