@@ -47,10 +47,6 @@ int rd(int l,int r) {
 // int dp[maxc<<1][maxc][maxc];
 signed main() {
     IOS();
-    for(int i=1;i<=0;i++) ope(i)
-    REP1(i,0) ope(i)
-    REP1(i,-1) ope(i)
-    ope("ok")
     int n,k,c;
     cin>>n>>k>>c;
     vector<pii> a(n);
@@ -63,10 +59,10 @@ signed main() {
         oparr(b[i])
         all.pb({b[i][j],i});
     }
-    ope("ok")
     sort(ALL(all),greater<pii>());
     int basei=0,basea=0;
     int ncc=max(0ll,k-maxc),inc=k-ncc;
+    ope("ok")
     vector<pii> cl;
     REP(i,ncc) {
         basei^=all[i].s;
