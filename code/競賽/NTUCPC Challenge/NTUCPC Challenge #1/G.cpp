@@ -82,8 +82,14 @@ signed main() {
             a[x]={i,j};
         }
     }
+    int mxy=0,mny=inf,mxx=0,mnx=inf;
+    int an=0;
     REP(i,N) {
         auto [x,y]=a[i];
+        chmin(mny,y);
+        chmin(mnx,x);
+        chmax(mxy,y);
+        chmax(mxx,x);
         int ix=n+1-x,iy=n+1-y;
         d1.ins(x,y);
         d2.ins(ix,y);
@@ -93,6 +99,12 @@ signed main() {
         op(d2.sum)
         op(d3.sum)
         ope(d4.sum)
+        int sum=d1.sum+d2.sum+d3.sum+d4.sum;
+        int dy=mxy-mny+1,dx=mxx-mnx+1;
+        if(sum-N-(n*dy)-m*dx==i+1) {
+            an++;
+        }
     }
+    cout<<an<<'\n';
     return 0;
 }
