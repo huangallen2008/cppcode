@@ -20,12 +20,12 @@ const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
 void f(int n) {
-    if(n<=1) return;
-    if(n==2) {
+    if(n<=0) return;
+    if(n==1) {
         cout<<"-1 1 -1 0 0 -1\n0 1 1 0 1 -1\n";
         return;
     }
-    if(n==3) {
+    if(n==2) {
         cout<<"1 0 2 -1 2 -2\n1 -1 1 -2 0 -2\n0 -1 -1 -1 -2 0\n-1 0 -2 1 -2 2\n-1 1 -1 2 0 2\n0 1 1 1 2 0\n";
         return;
     }
@@ -68,7 +68,7 @@ void solve() {
     int x,y;
     cin>>x>>y;
     cout<<"Yes\n";
-    f(n);
+    f(n-1);
 }
 signed main()
 {
