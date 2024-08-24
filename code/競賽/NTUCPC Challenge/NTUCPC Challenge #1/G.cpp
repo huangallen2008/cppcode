@@ -68,6 +68,9 @@ struct DS {
         }
         mp.erase(next(it),it_r);
         mp[x]=y;
+        for(auto &[x,y]:mp) {
+            cout<<"{"<<x<<','<<y<<"} ";
+        }entr
     }
 }d1,d2,d3,d4;
 signed main() {
