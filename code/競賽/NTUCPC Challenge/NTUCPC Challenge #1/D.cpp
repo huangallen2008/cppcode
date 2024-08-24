@@ -53,37 +53,34 @@ signed main() {
     vector<pii> a(n);
     vector<int> b[maxc];
     REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s);
-    REP(i,maxc) sort(ALL(b[i]));
     int cntc=0;
     REP(i,maxc) if(b[i].size()) cntc++;
-    vector<pii> all;
+    REP(i,maxc) sort(ALL(b[i]));
+    vector<pipii> all;
     REP(i,maxc) for(int j=2;j<b[i].size();j++) {
-        all.pb({b[i][j],i});
+        all.pb({b[i][j]+b[i][j-1],{b[i][j],i}});
     }
-    sort(ALL(all),greater<pii>());
-    int basei=0;
-    ll basea=0;
+    sort(ALL(all),greater<pipii>());
+    ll basei=0,basea=0;
     int ncc=max(0,k-cntc*2);
     int inc=k-ncc;
     vector<pii> cl;
     REP(i,ncc) {
-        basei^=all[i].s;
-        basea+=all[i].f;
-        b[all[i].s].pop_back();
+        basei^=all[i].s.s;
+        basea+=all[i].s.f;
+        b[all[i].s.s].pop_back();
     }
-    vector<int> cntl(maxc);
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
-        cl.pb(all[i]);
-        cntl[all[i].s]++;
-        b[all[i].s].pop_back();
+        cl.pb(all[i].s);
+        b[all[i].s.s].pop_back();
     }
     REP(i,maxc) {
-        while(cntl[i]<2&&b[i].size()) {
-        // if(b[i].size()) {
+        if(b[i].size()) {
             cl.pb({b[i].back(),i});
             b[i].pop_back();
-            cntl[i]++;
-        // }
+        }
+        if(b[i].size()) {
+            cl.pb({b[i].back(),i});
         }
     }
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
