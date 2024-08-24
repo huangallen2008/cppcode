@@ -130,6 +130,7 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
+        ope("ok")
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(nok(nx,ny)||!used[nx][ny]) continue;
