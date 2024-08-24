@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -56,7 +56,7 @@ signed main() {
     int cntc=0;
     REP(i,maxc) if(b[i].size()) cntc++;
     REP(i,maxc) sort(ALL(b[i]));
-    vector<pipii> all;
+    vector<pipii> all;all.reserve(n);
     REP(i,maxc) for(int j=2;j<b[i].size();j++) {
         all.pb({b[i][j]+b[i][j-1],{b[i][j],i}});
     }
@@ -64,7 +64,7 @@ signed main() {
     ll basei=0,basea=0;
     int ncc=max(0,k-cntc*2);
     int inc=k-ncc;
-    vector<pii> cl;
+    vector<pii> cl;cl.reserve(inc+cntc*2);
     REP(i,ncc) {
         basei^=all[i].s.s;
         basea+=all[i].s.f;
