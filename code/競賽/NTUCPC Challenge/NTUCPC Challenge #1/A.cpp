@@ -65,14 +65,14 @@ void solve() {
                 mx=v,id=x;
             }
         };
-        upd(mi-*sm.begin(),1);
+        upd(mi-(*sm.begin()),1);
         // if(mi-*sm.begin()>mx) {
         //     mx=ni-*sm.begin();
         //     id=1;
         // }
-        if(*sm.rbegin()-mi>mx) {
+        // if(*sm.rbegin()-mi>mx) {
             // mx=
-        }
+        // }
     }
 }
 signed main() {
