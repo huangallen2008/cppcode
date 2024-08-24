@@ -50,8 +50,8 @@ signed main() {
     int n,k,c;
     cin>>n>>k>>c;
     vector<pii> a(n);
-    vector<int> b[maxc],sum(maxc);
-    REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s),sum[a[i].f]+=a[i].s;
+    vector<int> b[maxc];
+    REP(i,n) cin>>a[i].f>>a[i].s,b[a[i].f].pb(a[i].s);
     REP(i,maxc) sort(ALL(b[i]));
     vector<pii> all;
     REP(i,maxc) REP1(j,SZ(b[i])-1) {
@@ -73,13 +73,13 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
-    vector<vector<int>> dp(maxc,vector<int>(maxc));
+    vector<vector<int>> dp(maxc+1,vector<int>(maxc));
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
     REP1(i,SZ(cl)-1) {
         vector<vector<int>> ndp=dp;
-        REP(j,i+2) {
+        REP(j,maxc+1) {
             REP(k,maxc) {
                 if(j) chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
