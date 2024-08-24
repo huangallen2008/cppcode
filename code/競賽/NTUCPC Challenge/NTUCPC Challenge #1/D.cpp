@@ -84,7 +84,7 @@ signed main() {
     REP1(i,SZ(cl)-1) {
         ope(i)
         vector<vector<int>> ndp=dp;
-        REP(j,i+1) {
+        REP(j,i+2) {
             REP(k,maxc) {
                 if(j==2&&k==1) {
                     op(ndp[j][k])op(dp[j-1][k^cl[i].s])ope(cl[i].f)
