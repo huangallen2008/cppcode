@@ -48,54 +48,15 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<pii> a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    set<pii> sm,sa;
-    REP1(i,n-1) {
-        sa.insert({a[i].f+a[i].s,i});
-        sm.insert({a[i].f-a[i].s,i});
+    vector<pair<pii,int>> a(n);
+    REP(i,n) cin>>a[i].f.f>>a[i].f.s,a[i].s=i;
+    sort(ALL(a));
+    vector<int> an;
+    for(int i=0;i<n>>1;i++) {
+        an.pb(a[i].s);
+        an.pb(a[n-i-1].s);
     }
-    int la=0;
-    vector<int> an={0};
-    REP(i,n-1) {
-        int mx=0,id=0;
-        int mi=a[la].f-a[la].s,ad=a[la].f+a[la].s;
-        auto upd=[&](int v,int x) {
-            if(v>mx) {
-                mx=v,id=x;
-            }
-        };
-        upd(mi-sm.begin()->f,1);
-        upd(sm.rbegin()->f-mi,2);
-        upd(ad-sa.begin()->f,3);
-        upd(sa.rbegin()->f-ad,4);
-        int ni;
-        if(id==1) {
-            ni=sm.begin()->s;
-            an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase({a[ni].f-a[ni].s,ni});
-        }
-        if(id==2) {
-            ni=sm.rbegin()->s;
-            an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase({a[ni].f-a[ni].s,ni});
-        }
-        if(id==3) {
-            ni=sa.begin()->s;
-            an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase({a[ni].f-a[ni].s,ni});
-        }
-        if(id==4) {
-            ni=sa.rbegin()->s;
-            an.pb(ni);
-            sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase({a[ni].f-a[ni].s,ni});
-        }
-        la=ni;
-    }
+    if(n&1) an.pb(a[n>>1].s);
     cout<<n-1<<"\n";
     for(int &x:an) cout<<x+1<<' ';
     cout<<'\n';
