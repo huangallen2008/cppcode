@@ -81,6 +81,7 @@ signed main() {
     dp[1][cl[0].s]=cl[0].f;
     ope("ok")ope(ncc)ope(inc)
     REP1(i,SZ(cl)-1) {
+        ope(i)
         vector<vector<int>> ndp=dp;
         REP(j,i+1) {
             REP(k,maxc) {
