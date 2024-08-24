@@ -100,7 +100,7 @@ signed main() {
         // d2.ins(ix,y);
         // d3.ins(x,iy);
         // d4.ins(ix,iy);
-        op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
+        op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)entr
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
