@@ -59,7 +59,7 @@ signed main() {
     }
     sort(ALL(all),greater<pii>());
     int basei=0,basea=0;
-    int ncc=max(0ll,k-maxc),inc=k-ncc;
+    int ncc=max(0ll,k-maxc*2),inc=k-ncc;
     vector<pii> cl;
     REP(i,ncc) {
         basei^=all[i].s;
@@ -73,13 +73,13 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
-    vector<vector<int>> dp(maxc+1,vector<int>(maxc));
+    vector<vector<int>> dp(maxc<<1|1,vector<int>(maxc));
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
     REP1(i,SZ(cl)-1) {
         vector<vector<int>> ndp=dp;
-        REP(j,maxc+1) {
+        REP(j,maxc<<1|1) {
             REP(k,maxc) {
                 if(j) chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
