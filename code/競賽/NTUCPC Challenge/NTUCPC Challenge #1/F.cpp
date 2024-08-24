@@ -55,7 +55,10 @@ void f(int n) {
         x--;
     }
     x=n,y=0;
-    if(fir)fir=0,opp(n,0)
+    if(fir){
+        fir=0;
+        opp(n,0)
+    }
     else opp(n-1,0)
     opp(n-1,1)opp(n,-1)entr
     opp(n-2,1)opp(n-2,0)opp(n-3,0)entr
