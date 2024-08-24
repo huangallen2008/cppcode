@@ -76,9 +76,8 @@ signed main() {
     // vector<vector<int>> dp(inc+1,vector<int>(maxc));
     vector<int> dp(maxc);
     REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
-    dp[0][0]=0;
-    dp[1][cl[0].s]=cl[0].f;
-    REP1(i,SZ(cl)-1) {
+    dp[0]=0;
+    REP(i,SZ(cl)-1) {
         REP1(j,inc) {
             vector<int> ndp=dp;
             REP(k,maxc) {
