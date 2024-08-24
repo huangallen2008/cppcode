@@ -60,7 +60,8 @@ signed main() {
     }
     sort(ALL(all),greater<pii>());
     ll basei=0,basea=0;
-    int ncc=max(0ll,k-maxc*2),inc=k-ncc;
+    int ncc=max(0,k-maxc*2);
+    int inc=k-ncc;
     vector<pii> cl;
     REP(i,ncc) {
         basei^=all[i].s;
