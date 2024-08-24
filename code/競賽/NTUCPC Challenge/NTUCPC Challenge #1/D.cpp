@@ -76,7 +76,7 @@ signed main() {
         b[all[i].s].pop_back();
     }
     REP(i,maxc) {
-        while(cntc[i]<2) {
+        while(cntc[i]<2&&b[i].size()) {
         // if(b[i].size()) {
             cl.pb({b[i].back(),i});
             b[i].pop_back();
@@ -84,7 +84,6 @@ signed main() {
         // }
         }
     }
-    ope("ok")
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
     dp[0][0]=0;
     dp[1][cl[0].s]=cl[0].f;
