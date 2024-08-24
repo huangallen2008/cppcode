@@ -19,8 +19,7 @@ const ll inf=(1ll<<63)-1;
 const int maxn=1e5+5;
 const ll mod=1e9+7;
 int n;
-int nox,noy;
-#define opp(x,y) {assert(x!=nox||y!=noy);cout<<x<<' '<<y<<' ';}
+#define opp(x,y) cout<<x<<' '<<y<<' ';
 #define entr cout<<'\n';
 bool fir=1;
 void f(int n) {
@@ -79,7 +78,7 @@ void solve() {
     cin>>n;
     int x,y;
     cin>>x>>y;
-    nox=x,noy=y;
+    fir=1;
     if(n==2&&x==0&&y==-1) {
         cout<<"Yes\n-1 0 0 0 1 -1\n-1 1 0 1 1 0\n";
         return;
