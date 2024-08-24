@@ -115,6 +115,7 @@ signed main() {
         }
     }
     // int q;cin>>q;assert(q==0);
+    vector<pii> dir={{0,1},{0,-1},{1,0},{-1,0}}
     int mxy=0,mny=inf,mxx=0,mnx=inf;
     int an=0;
     vector<vector<bool>> used(n,vector<bool>(m));
@@ -129,7 +130,7 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
-        for(pii [dx,dy]:{{0,1},{0,-1},{1,0},{-1,0}}) {
+        for(pii [dx,dy]:dir) {
 
         }
         // op(x)ope(y)
