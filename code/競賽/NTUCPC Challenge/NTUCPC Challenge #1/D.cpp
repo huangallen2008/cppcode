@@ -71,6 +71,7 @@ signed main() {
     }
     vector<int> cntc(maxc);
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
+        ope(i)
         cl.pb(all[i]);
         cntc[all[i].s]++;
         b[all[i].s].pop_back();
