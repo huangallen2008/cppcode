@@ -59,7 +59,8 @@ signed main() {
         all.pb({b[i][j],i});
     }
     sort(ALL(all),greater<pii>());
-    ll basei=0,basea=0;
+    int basei=0;
+    ll basea=0;
     int ncc=max(0,k-maxc*2);
     int inc=k-ncc;
     vector<pii> cl;
@@ -68,17 +69,19 @@ signed main() {
         basea+=all[i].f;
         b[all[i].s].pop_back();
     }
+    vector<int> cntc(maxc);
     for(int i=ncc;i<ncc+inc&&i<all.size();i++) {
         cl.pb(all[i]);
+        cntc[all[i].s]++;
         b[all[i].s].pop_back();
     }
     REP(i,maxc) {
-        if(b[i].size()) {
+        while(cntc[i]<2) {
+        // if(b[i].size()) {
             cl.pb({b[i].back(),i});
             b[i].pop_back();
-        }
-        if(b[i].size()) {
-            cl.pb({b[i].back(),i});
+            cntc[i]++;
+        // }
         }
     }
     vector<vector<ll>> dp(inc+1,vector<ll>(maxc,-inf));
