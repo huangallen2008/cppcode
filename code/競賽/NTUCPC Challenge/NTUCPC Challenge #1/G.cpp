@@ -141,7 +141,7 @@ signed main() {
         
         int dy=mxy-mny+1,dx=mxx-mnx+1;
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
-        op(dx)op(dy)op(sum)entr
+        op(dx)op(dy)op(sum)op(dsu.cc)entr entr
         if(sum-N-(n*dy)-m*dx==i+1&&dsu.cc==N-i) {
             an++;
 
