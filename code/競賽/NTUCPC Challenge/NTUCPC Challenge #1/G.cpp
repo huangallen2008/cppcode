@@ -99,6 +99,7 @@ signed main() {
         d3.ins(x,iy);
         d4.ins(ix,iy);
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
+        op(sum)
         int dy=mxy-mny+1,dx=mxx-mnx+1;
         if(sum-N-(n*dy)-m*dx==i+1) {
             an++;
