@@ -74,10 +74,9 @@ signed main() {
         cl.pb({b[i].back(),i});
     }
     // vector<vector<int>> dp(inc+1,vector<int>(maxc));
-    vector<int> dp(maxc);
-    REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
+    vector<int> dp(maxc,-inf);
     dp[0]=0;
-    REP(i,SZ(cl)-1) {
+    REP(i,SZ(cl)) {
         REP1(j,inc) {
             vector<int> ndp=dp;
             REP(k,maxc) {
