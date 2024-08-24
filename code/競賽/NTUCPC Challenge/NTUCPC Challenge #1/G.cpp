@@ -62,15 +62,15 @@ struct DS {
         auto it_r=mp.find(x);
         it=it_r;
         while(it->s<=y) {
-            op(it->f)op(it->s)op(prev(it)->f)ope(prev(it)->s)
+            // op(it->f)op(it->s)op(prev(it)->f)ope(prev(it)->s)
             sum+=(y-it->s)*(it->f-prev(it)->f);
             it=prev(it);
         }
         mp.erase(next(it),it_r);
         mp[x]=y;
-        for(auto &[x,y]:mp) {
-            cout<<"{"<<x<<','<<y<<"} ";
-        }entr
+        // for(auto &[x,y]:mp) {
+        //     cout<<"{"<<x<<','<<y<<"} ";
+        // }entr
     }
 }d1,d2,d3,d4;
 signed main() {
@@ -100,7 +100,7 @@ signed main() {
         d2.ins(ix,y);
         d3.ins(x,iy);
         d4.ins(ix,iy);
-        op(x)ope(y)
+        // op(x)ope(y)
         op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)entr
         int sum=d1.sum+d2.sum+d3.sum+d4.sum;
         
