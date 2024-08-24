@@ -98,7 +98,7 @@ void solve() {
         la=ni;
     }
     cout<<n-1<<"\n";
-    for(int &x:an) cout<<x-1<<' ';
+    for(int &x:an) cout<<x+1<<' ';
     cout<<'\n';entr
 }
 signed main() {
