@@ -73,20 +73,21 @@ signed main() {
     REP(i,maxc) if(b[i].size()) {
         cl.pb({b[i].back(),i});
     }
-    // vector<vector<int>> dp(inc+1,vector<int>(maxc));
-    vector<int> dp(maxc,-inf);
-    dp[0]=0;
-    REP(i,SZ(cl)) {
-        REP1(j,inc) {
-            vector<int> ndp=dp;
+    vector<vector<int>> dp(inc+1,vector<int>(maxc));
+    REP(i,maxc) REP(j,maxc) dp[i][j]=-inf;
+    dp[0][0]=0;
+    dp[1][cl[0].s]=cl[0].f;
+    REP1(i,SZ(cl)-1) {
+        vector<vector<int>> ndp=dp;
+        REP(j,inc+1) {
             REP(k,maxc) {
-                chmax(ndp[k],dp[k^cl[i].s]+cl[i].f);
+                if(j) chmax(ndp[j][k],dp[j-1][k^cl[i].s]+cl[i].f);
             }
-            dp.swap(ndp);
         }
+        dp.swap(ndp);
     }
     REP(i,c+1) {
-        int an=basea+dp[i^basei];
+        int an=basea+dp[inc][i^basei];
         if(an<0) cout<<"-1 ";
         else cout<<an<<' ';
     }
