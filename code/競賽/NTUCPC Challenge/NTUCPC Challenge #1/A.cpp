@@ -74,24 +74,28 @@ void solve() {
         if(id==1) {
             ni=sm.begin()->s;
             an.pb(ni);
+            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==2) {
             ni=sm.rbegin()->s;
             an.pb(ni);
+            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
-            sm.erase(pii{a[ni].f-a[ni].s,ni});
+            sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==3) {
             ni=sa.begin()->s;
             an.pb(ni);
+            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
         if(id==4) {
             ni=sa.rbegin()->s;
             an.pb(ni);
+            ope(a[ni].f+a[ni].s)op(ni)
             sa.erase({a[ni].f+a[ni].s,ni});
             sm.erase({a[ni].f-a[ni].s,ni});
         }
