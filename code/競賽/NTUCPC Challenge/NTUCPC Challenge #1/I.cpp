@@ -99,6 +99,10 @@ void solve() {
     while(l<r) {
         mid=l+r+1>>1;
         pii now={amn.f*mid,amn.s*mid};
+        if(now.f>n) {
+            r=mid-1;
+            continue;
+        }
         if(now.s<=m) {
             l=mid;
             continue;
