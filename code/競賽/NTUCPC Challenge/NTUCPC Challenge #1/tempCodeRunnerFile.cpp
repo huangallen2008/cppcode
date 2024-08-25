@@ -89,30 +89,34 @@ void solve() {
         cout<<n+m<<'\n';
         return;
     }
+    assert(ret.f>=0);
+    assert(ret.s>=0);
     pii amn,bmn;
     {
-        int t=(ret.f)/b;
+        int t=min((ret.f)/b,m/a+1);
+        assert(t>=0&&a>=0&&b>=0);
         amn={ret.f-b*t,ret.s+a*t};
     }
     {
-        int t=ret.s/a;
+        int t=min(ret.s/a,n/b+1);
+        assert(t>=0&&a>=0&&b>=0);
         bmn={ret.f+b*t,ret.s-a*t};
     }
-    assert(amn.f<=bmn.f);
-    assert(amn.s<=bmn.s);
+    // assert(amn.f<=bmn.f);
+    // assert(bmn.s<=amn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
         mid=l+r+1>>1;
         pii now={amn.f*mid,amn.s*mid};
-        if(now.f>n) {
+        if(now.f>n||bmn.s*mid>m) {
             r=mid-1;
             continue;
         }
-        if(now.s<bmn.s*mid) {
-            l=mid;
-            continue;
-        }
+        // if(now.s<bmn.s*mid) {
+        //     r=mid-1;
+        //     continue;
+        // }
         if(now.s<=m) {
             l=mid;
             continue;
@@ -120,28 +124,39 @@ void solve() {
         // op(now.f)op(now.s)
             int t=(now.s-m+a-1)/a;
             now={now.f+t*b,now.s-t*a};
-            assert(now.s<=m);
+            // assert(now.s<=m);
         // op(now.f)ope(now.s)
         if(now.f<=n&&now.s>=bmn.s*mid) {
             l=mid;
         }
         else r=mid-1;
     }
-    pii now={amn.f*l,amn.s*l};
-    if(now.s>m) {
-        int t=(now.s-m+a-1)/a;
-        now={now.f+t*b,now.s-t*a};
+    int ans=inf;
+    // int rr=(amn.s==0?0:a/amn.s+5);
+    // op(a)ope(amn.s)
+    vector<bool> ro(a);
+    r0[0]=1;
+    REP1(i,a-1) ro[i]=rd(0,3);
+    for(int ll=l;ll>=0&&ll>=l-a;ll--) {
+        pii now={amn.f*ll,amn.s*ll};
+        if(now.s>m) {
+            int t=(now.s-m+a-1)/a;
+            now={now.f+t*b,now.s-t*a};
+        }
+        // assert(now.f<=n);
+        // assert(now.f>=ll*amn.f);
+        // assert(now.s<=m);
+        // assert(now.s>=ll*bmn.s);
+        // assert(now.f*a+now.s*b==k*ll);
+        int an=n+m-now.f-now.s;
+        chmin(ans,an);
     }
-    assert(now.f<=n);
-    assert(now.f>=l*amn.f);
-    assert(now.s<=m);
-    assert(now.s>=l*bmn.s);
-    assert(now.f*a+now.s*b==k*l);
-    int an=n+m-now.f-now.s;
-    cout<<an<<'\n';
+    cout<<ans<<'\n';
 }
 signed main() {
     IOS();
+    // freopen("in.txt","r",stdin);
+    // freopen("out.txt","w",stdout);
     int T;
     cin>>T;
     while(T--) solve();
