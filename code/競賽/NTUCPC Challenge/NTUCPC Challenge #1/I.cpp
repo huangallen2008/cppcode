@@ -89,13 +89,17 @@ void solve() {
         cout<<n+m<<'\n';
         return;
     }
+    assert(ret.f>=0);
+    assert(ret.s>=0);
     pii amn,bmn;
     {
         int t=(ret.f)/b;
+        assert(t>=0);
         amn={ret.f-b*t,ret.s+a*t};
     }
     {
         int t=ret.s/a;
+        assert(t>=0);
         bmn={ret.f+b*t,ret.s-a*t};
     }
     // assert(amn.f<=bmn.f);
