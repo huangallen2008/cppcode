@@ -146,7 +146,7 @@ void solve() {
         int an=n+m-now.f-now.s;
         chmin(ans,an);
     }
-    cout<<an<<'\n';
+    cout<<ans<<'\n';
 }
 signed main() {
     IOS();
