@@ -83,7 +83,25 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    pii ret=mc(2,3,12);
-    cout<<ret.f<<' '<<ret.s<<'\n';
+    int A=2,B=3,K=12;
+    pii ret=mc(A,B,K);
+    bool ok=1;
+    if(ret.f<0) {
+        int t=(B-1-ret.f)/B;
+        ret.f+=B*t,ret.s-=A*t;
+        if(ret.s<0) {
+            ok=0;
+        }
+    }
+    else {
+        int t=(A-1-ret.s)/A;
+        ret.s+=A*t,ret.f-=B*t;
+        if(ret.f<0) {
+            ok=0;
+        }
+
+    }
+    if(ok) cout<<ret.f<<' '<<ret.s<<" "<<ret.f*A+ret.s*B<<'\n';
+    else cout<<"-2\n";
     return 0;
 }
