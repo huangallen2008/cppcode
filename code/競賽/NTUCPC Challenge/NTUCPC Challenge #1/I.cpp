@@ -89,8 +89,6 @@ void solve() {
         cout<<n+m<<'\n';
         return;
     }
-    assert(ret.f>=0);
-    assert(ret.s>=0);
     pii amn,bmn;
     {
         int t=(ret.f)/b;
@@ -144,6 +142,8 @@ void solve() {
 }
 signed main() {
     IOS();
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     int T;
     cin>>T;
     while(T--) solve();
