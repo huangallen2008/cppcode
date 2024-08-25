@@ -127,6 +127,7 @@ void solve() {
     }
     int an=n+m-now.f-now.s;
     cout<<an<<'\n';
+    assert(an>=0);
 }
 signed main() {
     IOS();
