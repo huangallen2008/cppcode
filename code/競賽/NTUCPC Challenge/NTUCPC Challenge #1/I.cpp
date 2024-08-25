@@ -132,7 +132,7 @@ void solve() {
         else r=mid-1;
     }
     int ans=inf;
-    for(int ll=l;ll>=0&&(ll>=l-amn.f||ll>=l-bmn.s);ll--) {
+    for(int ll=l;ll>=0&&ll>=l-amn.s;ll--) {
         pii now={amn.f*ll,amn.s*ll};
         if(now.s>m) {
             int t=(now.s-m+a-1)/a;
