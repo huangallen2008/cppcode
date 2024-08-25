@@ -69,14 +69,19 @@ void out(__int128 x) {
 void out(auto x) {
     cout<<x<<'\n';
 }
+pii mc(int x,int y,int k) {
+    bool inv=x<y;
+    if(inv) swap(x,y);
+    if(x==1) return {k,0};
+    int t=x/y,z=x-t*y;
+    pii ret=mc(y,z,k);
+    ret.s-=ret.f*t;
+    if(inv) swap(ret.s,ret.f);
+    return ret;
+}
 signed main() {
     IOS();
-    int a=2;
-    string s="2364";
-    out(a);
-    out(s);
-    char c='%';out(c);
-    auto out2=[&](auto x) { cout<<x<<endl; };
-    out2(5);
+    pii ret=mc(37,107,1);
+    cout<<ret.f<<' '<<ret.s<<'\n';
     return 0;
 }
