@@ -84,6 +84,7 @@ pii mc(int x,int y,int k) {
 signed main() {
     IOS();
     int A=2,B=3,K=12;
+    while(cin>>A>>B>>K) {
     pii ret=mc(A,B,K);
     bool ok=1;
     if(ret.f<0) {
@@ -102,6 +103,6 @@ signed main() {
 
     }
     if(ok) cout<<ret.f<<' '<<ret.s<<" "<<ret.f*A+ret.s*B<<'\n';
-    else cout<<"-1\n";
+    else cout<<"-1\n";entr}
     return 0;
 }
