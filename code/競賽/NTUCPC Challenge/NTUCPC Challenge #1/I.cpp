@@ -132,6 +132,7 @@ void solve() {
         else r=mid-1;
     }
     int ans=inf;
+    int rr=amn.s==0?0:a/amn.s+5;
     // op(a)ope(amn.s)
     for(int ll=l;ll>=0&&ll>=l-a/amn.s;ll--) {
         pii now={amn.f*ll,amn.s*ll};
