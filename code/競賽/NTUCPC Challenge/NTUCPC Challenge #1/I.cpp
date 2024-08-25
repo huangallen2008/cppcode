@@ -109,7 +109,7 @@ void solve() {
     while(l<r) {
         mid=l+r+1>>1;
         pii now={amn.f*mid,amn.s*mid};
-        if(now.f>n) {
+        if(now.f>n||bmn.s*mid>m) {
             r=mid-1;
             continue;
         }
@@ -131,17 +131,21 @@ void solve() {
         }
         else r=mid-1;
     }
-    pii now={amn.f*l,amn.s*l};
-    if(now.s>m) {
-        int t=(now.s-m+a-1)/a;
-        now={now.f+t*b,now.s-t*a};
+    int ans=inf;
+    for(int ll=l;ll>=0&&ll>l-b;ll--) {
+        pii now={amn.f*ll,amn.s*ll};
+        if(now.s>m) {
+            int t=(now.s-m+a-1)/a;
+            now={now.f+t*b,now.s-t*a};
+        }
+        assert(now.f<=n);
+        assert(now.f>=ll*amn.f);
+        assert(now.s<=m);
+        assert(now.s>=ll*bmn.s);
+        assert(now.f*a+now.s*b==k*ll);
+        int an=n+m-now.f-now.s;
+        chmin(ans,an);
     }
-    assert(now.f<=n);
-    assert(now.f>=l*amn.f);
-    assert(now.s<=m);
-    assert(now.s>=l*bmn.s);
-    assert(now.f*a+now.s*b==k*l);
-    int an=n+m-now.f-now.s;
     cout<<an<<'\n';
 }
 signed main() {
