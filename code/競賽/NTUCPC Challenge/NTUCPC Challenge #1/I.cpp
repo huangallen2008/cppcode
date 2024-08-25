@@ -134,7 +134,7 @@ void solve() {
     int ans=inf;
     int rr=amn.s==0?0:a/amn.s+5;
     // op(a)ope(amn.s)
-    for(int ll=l;ll>=0&&ll>=l-a/amn.s;ll--) {
+    for(int ll=l;ll>=0&&ll>=l-rr;ll--) {
         pii now={amn.f*ll,amn.s*ll};
         if(now.s>m) {
             int t=(now.s-m+a-1)/a;
