@@ -99,7 +99,7 @@ void solve() {
         bmn={ret.f+b*t,ret.s-a*t};
     }
     assert(amn.f<=bmn.f);
-    assert(amn.s<=bmn.s);
+    assert(bmn.s<=amn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
