@@ -55,36 +55,50 @@ pii mc(int x,int y,int k) {
     // else{op(x)op(y)op(ret.f)op(ret.s)op(ret.f*y+ret.s*x)ope(k)}
     return ret;
 }
-signed main() {
-    IOS();
-    int a,b,k,n,m;
-    while(cin>>n>>m>>a>>b>>k) {
-        int gcd=__gcd(a,b);
-        bool ok=1;
-        if(k%gcd) {
-            ok=0;
+void solve() {
+    int n,m,a,b,k;
+    cin>>n>>m>>a>>b>>k;
+    int gcd=__gcd(a,b);
+    bool ok=1;
+    pii ret;
+    if(k%gcd==0) {
+        a/=gcd,b/=gcd,k/=gcd;
+        ret=mc(a,b,k);
+        if(ret.f<0) {
+            int t=(b-1-ret.f)/b;
+            ret.f+=b*t,ret.s-=a*t;
+            if(ret.s<0) {
+                ok=0;
+            }
         }
         else {
-            a/=gcd,b/=gcd,k/=gcd;
-            pii ret=mc(a,b,k);
+            int t=(a-1-ret.s)/a;
+            ret.s+=a*t,ret.f-=b*t;
             if(ret.f<0) {
-                int t=(b-1-ret.f)/b;
-                ret.f+=b*t,ret.s-=a*t;
-                if(ret.s<0) {
-                    ok=0;
-                }
+                ok=0;
             }
-            else {
-                int t=(a-1-ret.s)/a;
-                ret.s+=a*t,ret.f-=b*t;
-                if(ret.f<0) {
-                    ok=0;
-                }
-            }
-            cout<<ret.f<<' '<<ret.s<<" "<<ret.f*a+ret.s*b<<'\n';
         }
-        if(!ok) cout<<"-1\n";
-        entr
     }
+    else ok=0;
+    if(!ok) {
+        cout<<n+m<<'\n';
+        return;
+    }
+    pii amn,bmn;
+    {
+        int t=(ret.f)/b;
+        amn={ret.f-b*t,ret.s+a*t};
+    }
+    {
+        int t=ret.s/a;
+        bmn={ret.f+b*t,ret.s-a*t};
+    }
+    op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
