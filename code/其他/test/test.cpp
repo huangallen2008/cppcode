@@ -87,7 +87,7 @@ signed main() {
     ope(0x3fffffff)
     bitset<64> b;
     ope(b=0x3fffffff)
-    ope(__lg(0x3ffffff))
+    ope(__lg(0x3fffffffffffff))
     ope(0x3f3f3f3f3f3f3f3f)
     int A=2,B=3,K=12,x;
     while(cin>>x>>x>>A>>B>>K) {
