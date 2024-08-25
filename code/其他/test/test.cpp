@@ -83,7 +83,7 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    pii ret=mc(37,107,1);
+    pii ret=mc(2,3,12);
     cout<<ret.f<<' '<<ret.s<<'\n';
     return 0;
 }
