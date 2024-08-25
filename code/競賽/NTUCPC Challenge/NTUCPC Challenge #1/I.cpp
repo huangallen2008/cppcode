@@ -107,10 +107,6 @@ void solve() {
             r=mid-1;
             continue;
         }
-        if(now.s<bmn.s*mid) {
-            r=mid-1;
-            continue;
-        }
         if(now.s<=m) {
             l=mid;
             continue;
@@ -133,7 +129,7 @@ void solve() {
     assert(now.f<=n);
     assert(now.f>=l*amn.f);
     assert(now.s<=m);
-    // assert(now.s>=l*bmn.s);
+    assert(now.s>=l*bmn.s);
     assert(now.f*a+now.s*b==k*l);
     int an=n+m-now.f-now.s;
     cout<<an<<'\n';
