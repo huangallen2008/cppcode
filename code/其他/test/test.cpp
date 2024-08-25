@@ -85,6 +85,7 @@ signed main() {
     IOS();
     ope(inf)
     ope(0x3fffffff)
+    ope(__lg(0x3ffffff))
     ope(0x3f3f3f3f3f3f3f3f)
     int A=2,B=3,K=12,x;
     while(cin>>x>>x>>A>>B>>K) {
