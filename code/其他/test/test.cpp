@@ -83,7 +83,7 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    ope(0x3f)
+    ope(0xf)
     int A=2,B=3,K=12,x;
     while(cin>>x>>x>>A>>B>>K) {
         int gcd=__gcd(A,B);
