@@ -94,12 +94,12 @@ void solve() {
     pii amn,bmn;
     {
         int t=(ret.f)/b;
-        assert(t>=0);
+        assert(t>=0&&a>=0&&b>=0);
         amn={ret.f-b*t,ret.s+a*t};
     }
     {
         int t=ret.s/a;
-        assert(t>=0);
+        assert(t>=0&&a>=0&&b>=0);
         bmn={ret.f+b*t,ret.s-a*t};
     }
     // assert(amn.f<=bmn.f);
