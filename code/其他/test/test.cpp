@@ -87,7 +87,7 @@ signed main() {
     ope(0x3fffffff)
     bitset<64> b;
     ope(b=0xffffffffffffff)
-    int t=INT_MAX;
+    int t=INFINITY;
     ope(t)
     ope(0x3f3f3f3f3f3f3f3f)
     int A=2,B=3,K=12,x;
