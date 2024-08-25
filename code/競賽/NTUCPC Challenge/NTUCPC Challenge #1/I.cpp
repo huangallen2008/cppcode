@@ -58,6 +58,10 @@ pii mc(int x,int y,int k) {
 void solve() {
     int n,m,a,b,k;
     cin>>n>>m>>a>>b>>k;
+    if(a*n+b*m<k) {
+        cout<<n+m<<'\n';
+        return;
+    }
     if(a<b) swap(a,b),swap(n,m);
     int gcd=__gcd(a,b);
     bool ok=1;
@@ -125,8 +129,6 @@ void solve() {
     cout<<an<<'\n';
 }
 signed main() {
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
     IOS();
     int T;
     cin>>T;
