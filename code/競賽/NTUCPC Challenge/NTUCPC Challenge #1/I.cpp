@@ -89,6 +89,8 @@ void solve() {
         cout<<n+m<<'\n';
         return;
     }
+    assert(ret.f>=0);
+    assert(ret.s>=0);
     pii amn,bmn;
     {
         int t=(ret.f)/b;
@@ -98,8 +100,8 @@ void solve() {
         int t=ret.s/a;
         bmn={ret.f+b*t,ret.s-a*t};
     }
-    assert(amn.f<=bmn.f);
-    assert(bmn.s<=amn.s);
+    // assert(amn.f<=bmn.f);
+    // assert(bmn.s<=amn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
