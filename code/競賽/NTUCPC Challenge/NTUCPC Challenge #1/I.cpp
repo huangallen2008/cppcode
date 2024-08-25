@@ -113,7 +113,7 @@ void solve() {
         else r=mid-1;
     }
     ope(mid)
-    pii now={amn.f*mid,amn.s*mid};
+    pii now={amn.f*l,amn.s*l};
     int t=(now.s-m+a-1)/a;
     now={now.f+t*b,now.s-t*a};
     int an=n+m-now.f-now.s;
