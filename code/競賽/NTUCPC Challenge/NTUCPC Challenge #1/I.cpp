@@ -57,7 +57,7 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    int a=2,b=3,k=12,x;
+    int a,b,k,n,m;
     while(cin>>n>>m>>a>>b>>k) {
         int gcd=__gcd(a,b);
         bool ok=1;
