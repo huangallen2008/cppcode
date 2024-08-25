@@ -91,7 +91,7 @@ signed main() {
             ok=0;
         }
         else {
-            A/=gcd,b/=gcd,k/=gcd;
+            A/=gcd,B/=gcd,K/=gcd;
             pii ret=mc(A,B,K);
             if(ret.f<0) {
                 int t=(B-1-ret.f)/B;
