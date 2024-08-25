@@ -57,16 +57,16 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    int A=2,b=3,K=12,x;
-    while(cin>>n>>m>>a>>b>>K) {
+    int a=2,b=3,k=12,x;
+    while(cin>>n>>m>>a>>b>>k) {
         int gcd=__gcd(a,b);
         bool ok=1;
-        if(K%gcd) {
+        if(k%gcd) {
             ok=0;
         }
         else {
-            a/=gcd,b/=gcd,K/=gcd;
-            pii ret=mc(a,b,K);
+            a/=gcd,b/=gcd,k/=gcd;
+            pii ret=mc(a,b,k);
             if(ret.f<0) {
                 int t=(b-1-ret.f)/b;
                 ret.f+=b*t,ret.s-=a*t;
