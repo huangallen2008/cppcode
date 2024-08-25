@@ -72,7 +72,7 @@ void solve() {
                 ok=0;
             }
         }
-        else {
+        else if(ret.s<0){
             int t=(a-1-ret.s)/a;
             ret.s+=a*t,ret.f-=b*t;
             if(ret.f<0) {
