@@ -116,7 +116,7 @@ void solve() {
     int t=(now.s-m+a-1)/a;
     now={now.f+t*b,now.s-t*a};
     int an=n+m-now.f-now.s;
-    cout<<an<<'\n';entr
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
