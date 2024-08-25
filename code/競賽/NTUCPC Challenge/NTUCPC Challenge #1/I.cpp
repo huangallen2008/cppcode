@@ -93,17 +93,17 @@ void solve() {
     assert(ret.s>=0);
     pii amn,bmn;
     {
-        int t=(ret.f)/b;
+        int t=min((ret.f)/b,m/a+1);
         assert(t>=0&&a>=0&&b>=0);
         amn={ret.f-b*t,ret.s+a*t};
     }
     {
-        int t=ret.s/a;
+        int t=min(ret.s/a,n/b+1);
         assert(t>=0&&a>=0&&b>=0);
         bmn={ret.f+b*t,ret.s-a*t};
     }
-    assert(amn.f<=bmn.f);
-    assert(bmn.s<=amn.s);
+    // assert(amn.f<=bmn.f);
+    // assert(bmn.s<=amn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
