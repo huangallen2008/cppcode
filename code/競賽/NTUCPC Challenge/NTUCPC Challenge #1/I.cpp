@@ -102,8 +102,8 @@ void solve() {
         assert(t>=0&&a>=0&&b>=0);
         bmn={ret.f+b*t,ret.s-a*t};
     }
-    // assert(amn.f<=bmn.f);
-    // assert(bmn.s<=amn.s);
+    assert(amn.f<=bmn.f);
+    assert(bmn.s<=amn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
@@ -136,11 +136,11 @@ void solve() {
         int t=(now.s-m+a-1)/a;
         now={now.f+t*b,now.s-t*a};
     }
-    // assert(now.f<=n);
-    // assert(now.f>=l*amn.f);
-    // assert(now.s<=m);
-    // assert(now.s>=l*bmn.s);
-    // assert(now.f*a+now.s*b==k*l);
+    assert(now.f<=n);
+    assert(now.f>=l*amn.f);
+    assert(now.s<=m);
+    assert(now.s>=l*bmn.s);
+    assert(now.f*a+now.s*b==k*l);
     int an=n+m-now.f-now.s;
     cout<<an<<'\n';
 }
