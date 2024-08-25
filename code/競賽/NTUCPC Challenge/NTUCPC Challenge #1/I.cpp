@@ -103,16 +103,15 @@ void solve() {
             l=mid;
             continue;
         }
-        op(now.f)op(now.s)
+        // op(now.f)op(now.s)
         int t=(now.s-m+a-1)/a;
         now={now.f+t*b,now.s-t*a};
-        op(now.f)ope(now.s)
+        // op(now.f)ope(now.s)
         if(now.f<=n) {
             l=mid;
         }
         else r=mid-1;
     }
-    ope(mid)
     pii now={amn.f*l,amn.s*l};
     int t=(now.s-m+a-1)/a;
     now={now.f+t*b,now.s-t*a};
