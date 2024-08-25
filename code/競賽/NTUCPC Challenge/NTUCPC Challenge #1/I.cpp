@@ -103,8 +103,10 @@ void solve() {
             l=mid;
             continue;
         }
+        op(now.f)op(now.s)
         int t=(now.s-m+a-1)/a;
         now={now.f+t*b,now.s-t*a};
+        op(now.f)ope(now.s)
         if(now.f<=n) {
             l=mid;
         }
