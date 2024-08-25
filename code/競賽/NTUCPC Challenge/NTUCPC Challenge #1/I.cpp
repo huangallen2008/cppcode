@@ -94,6 +94,8 @@ void solve() {
         int t=ret.s/a;
         bmn={ret.f+b*t,ret.s-a*t};
     }
+    assert(amn.f>=0);
+    assert(bmn.s>=0);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
