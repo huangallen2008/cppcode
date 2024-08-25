@@ -86,13 +86,13 @@ signed main() {
     int A=2,B=3,K=12,x;
     while(cin>>x>>x>>A>>B>>K) {
         int gcd=__gcd(A,B);
+            bool ok=1;
         if(K%gcd) {
             ok=0;
         }
         else {
             A/=gcd,b/=gcd,k/=gcd;
             pii ret=mc(A,B,K);
-            bool ok=1;
             if(ret.f<0) {
                 int t=(B-1-ret.f)/B;
                 ret.f+=B*t,ret.s-=A*t;
