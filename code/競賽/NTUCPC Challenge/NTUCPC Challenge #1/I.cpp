@@ -110,6 +110,7 @@ void solve() {
         }
         else l=mid+1;
     }
+    ope(mid)
     pii now={amn.f*mid,amn.s*mid};
     int t=(now.s-m+a-1)/a;
     now={now.f+t*b,now.s-t*a};
