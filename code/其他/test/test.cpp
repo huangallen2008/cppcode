@@ -77,6 +77,7 @@ pii mc(int x,int y,int k) {
     pii ret=mc(y,z,k);
     ret.s-=ret.f*t;
     if(inv) swap(ret.s,ret.f);
+    op(x)op(y)op(ret.f)op(ret.s)op(ret.f*x+ret.s*y)ope(k)
     return ret;
 }
 signed main() {
