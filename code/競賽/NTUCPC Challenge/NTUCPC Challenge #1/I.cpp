@@ -110,7 +110,7 @@ void solve() {
             continue;
         }
         if(now.s<bmn.s*mid) {
-            l=mid;
+            r=mid-1;
             continue;
         }
         if(now.s<=m) {
