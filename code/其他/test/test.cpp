@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-const int mod=1004535809;
+// const int mod=1004535809;
 
 // const int maxn=2000;
 // const int k=10;
