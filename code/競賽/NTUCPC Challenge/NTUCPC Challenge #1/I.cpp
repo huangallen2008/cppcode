@@ -125,6 +125,8 @@ void solve() {
     cout<<an<<'\n';
 }
 signed main() {
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     IOS();
     int T;
     cin>>T;
