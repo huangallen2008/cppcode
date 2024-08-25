@@ -132,13 +132,9 @@ void solve() {
         else r=mid-1;
     }
     int ans=inf;
-    // int rr=(amn.s==0?0:a/amn.s+5);
+    int rr=amn.f==0?0:a/amn.f+5;
     // op(a)ope(amn.s)
-    vector<bool> ro(a);
-    ro[0]=1;
-    REP1(i,a-1) ro[i]=rd(0,3);
-    for(int ll=l;ll>=0&&ll>=l-a;ll--) {
-        if(!ro[l-ll]) continue;
+    for(int ll=l;ll>=0&&ll>=l-rr;ll--) {
         pii now={amn.f*ll,amn.s*ll};
         if(now.s>m) {
             int t=(now.s-m+a-1)/a;
