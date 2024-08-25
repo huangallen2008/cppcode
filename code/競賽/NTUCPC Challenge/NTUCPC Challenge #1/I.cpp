@@ -58,6 +58,7 @@ pii mc(int x,int y,int k) {
 void solve() {
     int n,m,a,b,k;
     cin>>n>>m>>a>>b>>k;
+    if(a<b) swap(a,b),swap(n,m);
     int gcd=__gcd(a,b);
     bool ok=1;
     pii ret;
@@ -93,7 +94,27 @@ void solve() {
         int t=ret.s/a;
         bmn={ret.f+b*t,ret.s-a*t};
     }
-    op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
+    // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
+    int l=0,r=(n*a+m*b)/k,mid;
+    while(l<r) {
+        mid=l+r>>1;
+        pii now={amn.f*mid,amn.s*mid};
+        if(now.s<=m) {
+            r=mid;
+            continue;
+        }
+        int t=(now.s-m+a-1)/a;
+        now={now.f+t*b,now.s-t*a};
+        if(now.f<=n) {
+            r=mid;
+        }
+        else l=mid+1;
+    }
+    pii now={amn.f*mid,amn.s*mid};
+    int t=(now.s-m+a-1)/a;
+    now={now.f+t*b,now.s-t*a};
+    int an=n+m-now.f-now.s;
+    cout<<an<<'\n';entr
 }
 signed main() {
     IOS();
