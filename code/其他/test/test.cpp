@@ -85,8 +85,9 @@ signed main() {
     IOS();
     ope(inf)
     ope(0x3fffffff)
-    bitset<64> b;
+    bitset<100> b;
     ope(b=0xffffffffffffff)
+    ope(b=INFINITY)
     int t=INFINITY;
     ope(t)
     ope(0x3f3f3f3f3f3f3f3f)
