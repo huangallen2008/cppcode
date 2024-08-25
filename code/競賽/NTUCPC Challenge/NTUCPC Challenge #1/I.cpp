@@ -146,8 +146,8 @@ void solve() {
 }
 signed main() {
     IOS();
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
+    // freopen("in.txt","r",stdin);
+    // freopen("out.txt","w",stdout);
     int T;
     cin>>T;
     while(T--) solve();
