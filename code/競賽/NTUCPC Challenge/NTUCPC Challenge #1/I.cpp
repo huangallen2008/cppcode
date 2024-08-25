@@ -114,6 +114,7 @@ void solve() {
         // op(now.f)op(now.s)
         int t=(now.s-m+a-1)/a;
         now={now.f+t*b,now.s-t*a};
+        assert(now.s<=m);
         // op(now.f)ope(now.s)
         if(now.f<=n&&now.s>=bmn.s*mid) {
             l=mid;
@@ -127,7 +128,6 @@ void solve() {
     }
     int an=n+m-now.f-now.s;
     cout<<an<<'\n';
-    assert(an>=0);
 }
 signed main() {
     IOS();
