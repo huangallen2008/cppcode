@@ -129,8 +129,8 @@ void solve() {
     assert(now.f<=n);
     assert(now.f>=l*amn.f);
     assert(now.s<=m);
-    // assert(now.s>=l*bmn.s);
-    // assert(now.f*a+now.s*b==k*l);
+    assert(now.s>=l*bmn.s);
+    assert(now.f*a+now.s*b==k*l);
     int an=n+m-now.f-now.s;
     cout<<an<<'\n';
 }
