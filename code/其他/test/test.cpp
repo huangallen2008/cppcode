@@ -83,8 +83,8 @@ pii mc(int x,int y,int k) {
 }
 signed main() {
     IOS();
-    int A=2,B=3,K=12;
-    while(cin>>A>>B>>K) {
+    int A=2,B=3,K=12,x;
+    while(cin>>x>>x>>A>>B>>K) {
     pii ret=mc(A,B,K);
     bool ok=1;
     if(ret.f<0) {
