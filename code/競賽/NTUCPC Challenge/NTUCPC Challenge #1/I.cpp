@@ -132,9 +132,9 @@ void solve() {
         else r=mid-1;
     }
     int ans=inf;
-    int rr=amn.f==0?0:a/amn.f+5;
+    int rr=amn.s==0?0:(amn.s*l-m+amn.s-1)/amn.s;
     // op(a)ope(amn.s)
-    for(int ll=l;ll>=0&&ll>=l-rr;ll--) {
+    for(int ll=l;ll>=0&&ll>=l-rr;ll-=max(rr,1ll)) {
         pii now={amn.f*ll,amn.s*ll};
         if(now.s>m) {
             int t=(now.s-m+a-1)/a;
