@@ -1,0 +1,90 @@
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC optimize("O0,unroll-loops,fast-math")
+// #pragma GCC target("avx2,bmi,popcnt")
+#define int long long
+#define REP(i,n) for(int i=0;i<(n);i++)
+#define REP1(i,n) for(int i=1;i<=(n);i++)
+#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
+#define RREP1(i,n) for(int i=(n);i>=1;i--)
+#define f first
+#define s second
+#define pb push_back
+#define ALL(x) (x).begin(),(x).end()
+#define SZ(x) (int)((x).size())
+#define SQ(x) (x)*(x)
+#define pii pair<int,int>
+#define pipii pair<int,pii>
+#define Graph vector<vector<int>>
+#define Graphw vector<vector<pii>>
+#define IOS() ios::sync_with_stdio(0),cin.tie(0)
+#define md(x) (((x)%(mod)+(mod))%(mod))
+#define MD(x,M) (((x)%(M)+(M))%(M))
+#define ld long double
+#define pdd pair<ld,ld>
+#define chmax(x,y) x=max(x,y)
+#define chmin(x,y) x=min(x,y)
+#define addmod(x,y) x=((x+(y))%mod)
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
+const int mod=1e9+7;
+const int maxn=2e5+5;
+const int inf=(1ll<<62);
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
+}
+pii mc(int x,int y,int k) {
+    bool inv=x<y;
+    if(inv) swap(x,y);
+    if(x==1) return {k,0};
+    int t=x/y,z=x-t*y;
+    pii ret=mc(y,z,k);
+    ret={ret.s,ret.f-ret.s*t};
+    if(inv) swap(ret.s,ret.f);
+    // if(!inv){op(x)op(y)op(ret.f)op(ret.s)op(ret.f*x+ret.s*y)ope(k)}
+    // else{op(x)op(y)op(ret.f)op(ret.s)op(ret.f*y+ret.s*x)ope(k)}
+    return ret;
+}
+signed main() {
+    IOS();
+    int A=2,b=3,K=12,x;
+    while(cin>>n>>m>>a>>b>>K) {
+        int gcd=__gcd(a,b);
+        bool ok=1;
+        if(K%gcd) {
+            ok=0;
+        }
+        else {
+            a/=gcd,b/=gcd,K/=gcd;
+            pii ret=mc(a,b,K);
+            if(ret.f<0) {
+                int t=(b-1-ret.f)/b;
+                ret.f+=b*t,ret.s-=a*t;
+                if(ret.s<0) {
+                    ok=0;
+                }
+            }
+            else {
+                int t=(a-1-ret.s)/a;
+                ret.s+=a*t,ret.f-=b*t;
+                if(ret.f<0) {
+                    ok=0;
+                }
+            }
+            cout<<ret.f<<' '<<ret.s<<" "<<ret.f*a+ret.s*b<<'\n';
+        }
+        if(!ok) cout<<"-1\n";
+        entr
+    }
+    return 0;
+}
