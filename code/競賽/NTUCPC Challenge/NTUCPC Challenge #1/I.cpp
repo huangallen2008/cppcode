@@ -98,6 +98,8 @@ void solve() {
         int t=ret.s/a;
         bmn={ret.f+b*t,ret.s-a*t};
     }
+    assert(amn.f<=bmn.f);
+    assert(amn.s<=bmn.s);
     // op(amn.f)op(amn.s)op(bmn.f)op(bmn.s)entr
     int l=0,r=(n*a+m*b)/k,mid;
     while(l<r) {
@@ -105,6 +107,10 @@ void solve() {
         pii now={amn.f*mid,amn.s*mid};
         if(now.f>n) {
             r=mid-1;
+            continue;
+        }
+        if(now.s<bmn.s*mid) {
+            l=mid;
             continue;
         }
         if(now.s<=m) {
