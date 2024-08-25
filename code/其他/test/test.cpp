@@ -108,9 +108,9 @@ signed main() {
                 }
 
             }
+            cout<<ret.f<<' '<<ret.s<<" "<<ret.f*A+ret.s*B<<'\n';
         }
-        if(ok) cout<<ret.f<<' '<<ret.s<<" "<<ret.f*A+ret.s*B<<'\n';
-        else cout<<"-1\n";entr
+        if(!ok) cout<<"-1\n";entr
     }
     return 0;
 }
