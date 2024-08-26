@@ -93,6 +93,7 @@ signed main() {
         dijk();
         REP(j,n+1) d[i][j]=dis[j];
     }
-    int an=dp[(1<<k)-1]
+    int an=*max_element(dp[(1<<k)-1],dp[(1<<k)-1]+n);
+    cout<<an<<'\n';
     return 0;
 }
