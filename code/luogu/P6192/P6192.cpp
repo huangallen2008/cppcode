@@ -75,8 +75,8 @@ signed main() {
     b=vector<int>(n+1,-1);
     dis=vector<int>(n+1);
     REP(i,m) {
-        int u,v;
-        cin>>u>>v;
+        int u,v,w;
+        cin>>u>>v>>w;
         g[u].pb({v,w});
         g[v].pb({u,w});
     }
