@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
@@ -99,3 +100,8 @@ signed main() {
     cout<<ans<<'\n';
     return 0;
 }
+=======
+00000];
+    static int c2[100000000];
+    static int c3[1000
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba

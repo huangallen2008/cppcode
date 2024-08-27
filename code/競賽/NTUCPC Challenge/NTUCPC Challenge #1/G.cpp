@@ -48,9 +48,13 @@ int rd(int l,int r) {
 struct DS {
     map<int,int> mp;
     int sum=0;
+<<<<<<< HEAD
     void init() {
         mp.clear();
         sum=0;
+=======
+    DS() {
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
         mp[0]=inf,mp[inf]=0;
     }
     void ins(int x,int y) {
@@ -107,13 +111,19 @@ signed main() {
     IOS();
     cin>>n>>m;
     int N=n*m;
+<<<<<<< HEAD
     vector<pii> a(N);
     vector<vector<int>> b(n+1,vector<int>(m+1));
+=======
+    dsu.init(N);
+    vector<pii> a(N);
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
     REP1(i,n) {
         REP1(j,m) {
             int x;
             cin>>x,x--;
             a[x]={i,j};
+<<<<<<< HEAD
             b[i][j]=x;
         }
     }
@@ -160,5 +170,45 @@ signed main() {
             swap(a[b[x1][y1]],a[b[x2][y2]]);
         }
     }
+=======
+        }
+    }
+    // int q;cin>>q;assert(q==0);
+    vector<pii> dir={{0,1},{0,-1},{1,0},{-1,0}};
+    int mxy=0,mny=inf,mxx=0,mnx=inf;
+    int an=0;
+    vector<vector<bool>> used(n+1,vector<bool>(m+1));
+    REP(i,N) {
+        auto [x,y]=a[i];
+        chmin(mny,y);
+        chmin(mnx,x);
+        chmax(mxy,y);
+        chmax(mxx,x);
+        int ix=n+1-x,iy=m+1-y;
+        d1.ins(x,y);
+        d2.ins(ix,y);
+        d3.ins(x,iy);
+        d4.ins(ix,iy);
+        for(auto [dx,dy]:dir) {
+            int nx=x+dx,ny=y+dy;
+            if(nok(nx,ny)||!used[nx][ny]) continue;
+            dsu.merge(id(x,y),id(nx,ny));
+        }
+        used[x][y]=1;
+        // op(x)ope(y)
+        int sum=d1.sum+d2.sum+d3.sum+d4.sum;
+        
+        int dy=mxy-mny+1,dx=mxx-mnx+1;
+        op(d1.sum)op(d2.sum)op(d3.sum)ope(d4.sum)
+        op(dx)op(dy)op(sum)op(dsu.cc)entr entr
+        if(sum-N-(n*dy)-m*dx==i+1&&dsu.cc==N-i) {
+            an++;
+
+            ope(i)
+        }
+
+    }
+    cout<<an<<'\n';
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
     return 0;
 }

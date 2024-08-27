@@ -15,6 +15,7 @@ using namespace std;
 #define pii pair<int,int>
 #define Graph vector<vector<int>>
 #define IOS() cin.sync_with_stdio(0),cin.tie(0),cout.tie(0)
+<<<<<<< HEAD
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
@@ -33,6 +34,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+=======
+const int inf=(1ll<<62);
+const int maxn=6e5+5;
+const int mod=1e9+7;
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
 struct edge {
     int x1,y1,x2,y2;
 };
@@ -40,7 +46,11 @@ int x0;
 int n,m;
 vector<edge> edges;
 void f(int a,int b,int c,int d) {
+<<<<<<< HEAD
     if(x0+a&&x0+b&&x0+c&&x0+d)edges.pb({x0+a,x0+b,x0+c,x0+d});
+=======
+    edges.pb({x0+a,x0+b,x0+c,x0+d});
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
 }
 //u
 bool sa(edge a,edge b) {
@@ -61,6 +71,7 @@ int ok() {
             if(j>1&&!ine(i,j-1,i,j)) d[i][j]+=d[i][j-1];
         }
     }
+<<<<<<< HEAD
     REP1(i,n) {
         cout<<"  ";REP1(j,m) {
             cout<<"0 ";
@@ -80,6 +91,17 @@ void solve(int t) {
     edges.clear();
     // int t;
     // cin>>t;
+=======
+    return d[n][m];
+}
+
+//u
+signed main()
+{
+    IOS();
+    int t;
+    cin>>t;
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
     int t1=t;
     vector<int> a;
     while(t>0) {
@@ -164,6 +186,7 @@ void solve(int t) {
     cout<<n<<" "<<m<<"\n";
     cout<<edges.size()<<"\n";
     for(auto [x1,y1,x2,y2]:edges) cout<<x1<<" "<<y1<<" "<<x2<<" "<<y2<<"\n";
+<<<<<<< HEAD
     
     // int tt=ok();
     // if(tt!=t1) {
@@ -188,6 +211,15 @@ signed main()
     // while(cin>>R) {
         solve(T);
     // }
+=======
+/*
+    int tt=ok();
+    cout<<t1<<" "<<tt<<endl;
+    if(tt==t1) cout<<"yes!!"<<endl;
+    else cout<<"no!!!!!"<<endl;
+
+
+>>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
     /*
     vector<vector<int>> r(10,vector<int>(10));
     for(auto [x1,y1,x2,y2]:edges) {
