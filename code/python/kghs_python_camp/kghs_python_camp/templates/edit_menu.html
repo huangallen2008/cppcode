@@ -1,0 +1,18 @@
+<table border="menu">
+    <tr><td><center><br>編號</br></center></td><td><center><br>餐點</br></center></td><td><center><br>價錢</br></center></td><tr>
+{% for i in range(1,mlsz) %}<tr><td>{{menu[i][:-1].split(' ')[0]}}</td><td>{{ menu[i][:-1].split(' ')[1] }}</td><td> ${{ menu[i][:-1].split(' ')[2] }}</td></tr>
+{% endfor %}
+<tr><td></td><td>總餐點數</td><td>{{mlsz-1}}</td></tr>
+</table>
+<form method="post" action="{{ url_for('add_menu') }}">
+    <button type="submit">add</button>
+</form>
+<form method="post" action="{{ url_for('remove_menu') }}">
+    <button type="submit">remove</button>
+</form>
+<form method="post" action="{{ url_for('change_menu') }}">
+    <button type="submit">change</button>
+</form>
+<form method="post" action="{{ url_for('admin') }}">
+    <button type="submit">back</button>
+</form>

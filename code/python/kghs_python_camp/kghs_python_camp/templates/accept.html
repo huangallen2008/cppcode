@@ -1,0 +1,8 @@
+<h2>你訂購的餐點</h2>
+<textarea rows="10" cols="50" readonly>
+{% for i in range(1,mlsz) %}{% if(cart[i]>0) %}{{ i }}. {{ menu[i][:-1].split(' ')[1] }} ${{ menu[i][:-1].split(' ')[2] }}  x  {{ cart[i] }}
+{% endif%}{% endfor %}
+</textarea>
+    <form method="post" action="{{ url_for('student') }}">
+        <button type="submit">確定</button>
+    </form>
