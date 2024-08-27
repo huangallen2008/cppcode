@@ -56,7 +56,7 @@ pipic top(int16 x) {
     // ope(x)ope(x>>12)
     return {x&1023,{(x>>10)&3,'0'+(int)(x>>12)}};
 }
-int16 ud(int d0,char c) {return pot((d&1023)+2,2,c); }
+int16 ud(int d,char c) {return pot((d&1023)+2,2,c); }
 signed main() {
     IOS();
     string s;
