@@ -51,6 +51,7 @@ signed main() {
         int x;
         cin>>x;
         cout<<x<<'\n';
+        return 0;
     }
     priority_queue<int,vector<int>,greater<int>> pq;
     REP(i,n) {
