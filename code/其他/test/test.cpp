@@ -1,12 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-<<<<<<< HEAD
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-=======
-#pragma GCC optimize("O0,unroll-loops,fast-math")
-// #pragma GCC target("avx2,bmi,popcnt")
->>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -33,11 +28,7 @@ using namespace std;
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-<<<<<<< HEAD
 #define oparr(x) cout<<(#x)<<":";for(auto &mken:(x)) cout<<mken<<" ";cout<<" size="<<(x).size()<<endl;
-=======
-#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
->>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
 #define entr cout<<endl;
 #else
 #define op(x) ;
@@ -46,18 +37,12 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-<<<<<<< HEAD
 const int maxn=10000;
 const int inf=(1ll<<50);
-=======
-const int maxn=2e5+5;
-const int inf=(1ll<<62);
->>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-<<<<<<< HEAD
 // string dp0[maxn],dp1[maxn];
 #define pipic pair<int,pair<int,char>>
 #define int16 uint16_t
@@ -71,12 +56,12 @@ pipic top(int16 x) {
     // ope(x)ope(x>>12)
     return {x&1023,{(x>>10)&3,'0'+(int)(x>>12)}};
 }
-int16 ud(int d0,char c) { auto d=top(d0); return pot(d.f+2,2,c); }
+int16 ud(int d0,char c) {return pot((d&1023)+2,2,c); }
 signed main() {
     IOS();
     string s;
     cin>>s;
-    int n=s.size();
+    const int n=s.size();
     vector<int> cnt(10);
     REP(i,n) {
         cnt[s[i]-'0']++;
@@ -96,7 +81,7 @@ signed main() {
         REP(i,n-l+1) {
             dp[l][i]=mx(pot(dp[l-1][i]&1023,0,'0'),pot(dp[l-1][i+1]&1023,1,'0'));
             if(s[i]==s[i+l-1]) dp[l][i]=mx(dp[l][i],ud(dp[l-2][i+1],s[i]));
-            if(top(dp[l][i]).f>=1000) {
+            if((dp[l][i]&1023)>=1000) {
                 id={l,i};
                 ok=1;
                 break;
@@ -131,84 +116,5 @@ signed main() {
     reverse(ALL(an));
     ans+=an;
     cout<<ans<<'\n';
-=======
-
-// const int mod=1004535809;
-
-// const int maxn=2000;
-// const int k=10;
-// __int128 d[maxn+1][maxn*k+1];
-// __int128 dp(int u,int r) {
-//     if(u<=r) return d[u][r]=1;
-//     if(d[u][r]) return d[u][r];
-//     __int128 ret=1;
-//     for(int i=0;i<r;i++) ret+=dp(u-i,(r-i)*k);
-//     return d[u][r]=ret;
-// }
-void out(__int128 x) {
-    if(x==0) {cout<<0<<'\n';return;}
-    string s;
-    while(x) {
-        s+='0'+x%10;
-        x/=10;
-    }
-    reverse(ALL(s));
-    cout<<s<<'\n';
-}
-void out(auto x) {
-    cout<<x<<'\n';
-}
-pii mc(int x,int y,int k) {
-    bool inv=x<y;
-    if(inv) swap(x,y);
-    if(x==1) return {k,0};
-    int t=x/y,z=x-t*y;
-    pii ret=mc(y,z,k);
-    ret={ret.s,ret.f-ret.s*t};
-    if(inv) swap(ret.s,ret.f);
-    // if(!inv){op(x)op(y)op(ret.f)op(ret.s)op(ret.f*x+ret.s*y)ope(k)}
-    // else{op(x)op(y)op(ret.f)op(ret.s)op(ret.f*y+ret.s*x)ope(k)}
-    return ret;
-}
-signed main() {
-    IOS();
-    ope(inf)
-    ope(0x3fffffff)
-    bitset<100> b;
-    ope(b=0xffffffffffffff)
-    ope(b=INFINITY)
-    int t=INFINITY;
-    ope(t)
-    ope(0x3f3f3f3f3f3f3f3f)
-    int A=2,B=3,K=12,x;
-    while(cin>>x>>x>>A>>B>>K) {
-        int gcd=__gcd(A,B);
-            bool ok=1;
-        if(K%gcd) {
-            ok=0;
-        }
-        else {
-            A/=gcd,B/=gcd,K/=gcd;
-            pii ret=mc(A,B,K);
-            if(ret.f<0) {
-                int t=(B-1-ret.f)/B;
-                ret.f+=B*t,ret.s-=A*t;
-                if(ret.s<0) {
-                    ok=0;
-                }
-            }
-            else {
-                int t=(A-1-ret.s)/A;
-                ret.s+=A*t,ret.f-=B*t;
-                if(ret.f<0) {
-                    ok=0;
-                }
-            }
-            cout<<ret.f<<' '<<ret.s<<" "<<ret.f*A+ret.s*B<<'\n';
-        }
-        if(!ok) cout<<"-1\n";
-        entr
-    }
->>>>>>> 0b1a1b11a3c05bbc53306c9c4fc912c08c4ad5ba
     return 0;
 }
