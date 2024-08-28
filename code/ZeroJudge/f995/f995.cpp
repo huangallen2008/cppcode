@@ -85,18 +85,19 @@ struct LCSEG {
     void ud(int l,int r,line v) {
         _ud(root,l,r,v);
     }
-    int qu(int id,int l,int r,int x) {
+    int _qu(int id,int l,int r,int x) {
         if(id==-1) return -inf;
         int an=cal(s[id],x);
         if(l==r) return an;
         int m=l+r>>1;
         if(x<=m) {
-            return max(an,qu(lc[id],l,m,x));
+            return max(an,_qu(lc[id],l,m,x));
         }
         else {
-            return max(an,qu(rc[id],m+1,r,x));
+            return max(an,_qu(rc[id],m+1,r,x));
         }
     }
+    int qu(int l,int r,int x) { return _qu(root,l,r,x); }
 };
 struct SEG_lcseg {
     vector<LCSEG> s;
@@ -113,7 +114,7 @@ struct SEG_lcseg {
     }
     int qu(int w,int l,int r,int ql,int qr,int x) {
 //        op(w)op(l)op(r)op(ql)op(qr)ope(x)
-        if(ql<=l&&r<=qr) return s[w].qu(0,-maxv,maxv,x);
+        if(ql<=l&&r<=qr) return s[w].qu(-maxv,maxv,x);
         if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
         return max(qu(w<<1,l,m,ql,qr,x),qu(w<<1|1,m+1,r,ql,qr,x));
