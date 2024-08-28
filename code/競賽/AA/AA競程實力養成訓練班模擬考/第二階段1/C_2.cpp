@@ -89,7 +89,7 @@ void solve() {
         cnt=0;
         c=vector<int>(n,inf);
         l=vector<int>(n);
-        vis=vector<bool>(n);
+        vis.reset();
         // vector<bool> ch(n),ch2(n);
         bitset<maxn> ch,ch2; 
         REP(i,n) if((co>>i)&1) ch[i]=1;
