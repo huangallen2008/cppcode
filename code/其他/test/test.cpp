@@ -50,8 +50,8 @@ signed main() {
     REP1(i,(1<<maxn)-1) {
         x^=(i&-i);
         b=x;
-        op(i)
-        ope(b)
+        op(b)
+        ope(i)
     }
     return 0;
 }
