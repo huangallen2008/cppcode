@@ -52,9 +52,10 @@ void solve() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
+        int j=i&-i;
         if(now&j) s-=a[__builtin_ctz(i)];
         else s+=a[__builtin_ctz(i)];
-        now^=i&-i;
+        now^=j;
         an^=s;
     }
     cout<<an<<'\n';
