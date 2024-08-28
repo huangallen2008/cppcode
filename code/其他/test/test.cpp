@@ -49,7 +49,9 @@ signed main() {
     bitset<maxn> b;
     REP1(i,(1<<maxn)-1) {
         x^=(i&-i);
-        ope(b=x)
+        b=x;
+        op(i)
+        ope(b)
     }
     return 0;
 }
