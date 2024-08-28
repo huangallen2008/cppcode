@@ -62,7 +62,7 @@ signed main() {
             if(used[j]) continue;
             if(mn[id[j]]>=a[j]-k&&mx[id[j]]<=a[j]+k) {
                 used[j]=1;
-                for(int l=id[j];l>=i;l--) {
+                for(int l=id[j]-1;l>=i;l--) {
                     swap(a[l],a[l+1]);
                     swap(id[a[l]],id[a[l+1]]);
                 }
