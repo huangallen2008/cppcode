@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=17;
 const int inf=(1ll<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,7 +46,8 @@ int rd(int l,int r) {
 Graph g,g2;
 int n,a,b;
 vector<int> c,l;
-vector<bool> vis;
+// vector<bool> vis;
+bitset<maxn> vis;
 const int k=1;
 int cnt;
 void dfs(int u) {
@@ -89,7 +90,8 @@ void solve() {
         c=vector<int>(n,inf);
         l=vector<int>(n);
         vis=vector<bool>(n);
-        vector<bool> ch(n),ch2(n);
+        // vector<bool> ch(n),ch2(n);
+        bitset<maxn> ch,ch2; 
         REP(i,n) if((co>>i)&1) ch[i]=1;
         // REP(i,n) cout<<ch[i];entr
         REP(i,n) {
