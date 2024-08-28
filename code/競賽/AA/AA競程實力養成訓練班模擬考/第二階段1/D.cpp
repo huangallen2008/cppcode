@@ -69,6 +69,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     REP1(i,n) cout<<a[i]<<' ';
     cout<<'\n';
     return 0;
