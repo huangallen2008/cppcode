@@ -53,10 +53,9 @@ signed main() {
     REP1(i,n) {
         vector<int> mx(n+1,-inf),mn(n+1,inf);
         for(int j=i;j<=n;j++) {
-            mx[i]=max(mx[i-1],a[i]);
-            mn[i]=min(mn[i-1],a[i]);
+            mx[j]=max(mx[j-1],a[j]);
+            mn[j]=min(mn[j-1],a[j]);
         }
-        int nid=0;
         REP1(j,n) {
             if(used[j]) continue;
             if(mn[id[j]]>=a[i]-k&&mx[id[j]]<=a[i]+k) {
