@@ -93,6 +93,7 @@ void solve() {
                 if(ch[v]) vis[i]=1;
             }
         }
+        oparr(ch)oparr(vis)
         REP(i,n){
             if(vis[i]) continue;
             dfs(i);
