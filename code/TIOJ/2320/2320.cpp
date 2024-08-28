@@ -48,6 +48,34 @@ int cl(vector<int>&v,int x) {
     if(*it-x>x-*prev(it)) return it-v.begin()-1;
     else it-v.begin();
 }
+struct BIT {
+    vector<int> a,b;
+    int n;
+    void init(int _n) {
+        n=_n;
+        a=vector<int>(n+1);
+        b=vector<int>(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    void ad(int u,int v) {
+        ud(u,v);
+        a[u]+=v;
+    }
+    void as(int u,int v) {
+        ud(u,v-a[u]);
+        a[u]=v;
+    }
+    int pre(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
+    }
+    int sum(int l,int r) {
+        return pre(r)-pre(l);
+    }
+}sb,sb2;
 signed main() {
     IOS();
     int n,m,k;
@@ -58,7 +86,8 @@ signed main() {
     REP1(i,m) cin>>b[i];
     vector<int> r(n+1);
     REP1(i,n) {
-
+        r[i]=cl(b,a[i]);
     }
+
     return 0;
 }
