@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Graph g;
+Graph g,g2;
 int n,a,b;
 vector<int> c,l;
 vector<bool> vis;
@@ -73,10 +73,13 @@ void dfs(int u) {
 void solve() {
     cin>>n>>a>>b;
     g=Graph(n);
+    g2=Graph(n);
     REP1(i,n-1) {
         int p;
         cin>>p;
         g[p].pb(i);
+        g2[p].pb(i);
+        g2[i].pb(p);
         // op(p)ope(i)
     }
     int an=inf;
@@ -90,14 +93,14 @@ void solve() {
         REP(i,n) cout<<ch[i];entr
         REP(i,n) {
             if(ch[i]) ch2[i]=1;
-            for(int v:g[i]) {
+            for(int v:g2[i]) {
                 if(ch[v]) ch2[i]=1;
             }
         }
         REP(i,n) cout<<ch2[i];entr
         REP(i,n) {
             if(ch2[i]) vis[i]=1;
-            for(int v:g[i]) {
+            for(int v:g2[i]) {
                 if(ch2[v]) vis[i]=1;
             }
         }
