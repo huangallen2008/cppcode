@@ -99,8 +99,8 @@ struct LCSEG {
     }
     int qu(int l,int r,int x) { return _qu(root,l,r,x); }
 };
-LCSEG s[maxn2<<2];
 struct SEG_lcseg {
+    LCSEG s[maxn2<<2];
     void init(int n) {
         REP(i,n<<2) s[i].init();
     }
