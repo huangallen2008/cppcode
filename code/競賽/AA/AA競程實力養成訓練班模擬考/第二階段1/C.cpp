@@ -56,6 +56,7 @@ void dfs(int u) {
         chmin(mnl,l[v]+1);
         chmax(l[u],l[v]+1);
     }
+    op("i")op(u)op(mnl)ope(l[u])
     if(-mnl-1>=l[u]) {
         l[u]=mnl;
     }
