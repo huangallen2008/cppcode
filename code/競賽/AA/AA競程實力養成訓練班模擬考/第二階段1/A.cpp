@@ -56,7 +56,7 @@ signed main() {
     REP1(i,n-1) fac[i]=fac[i-1]*i;
     vector<bool> used(n<<1);
     int mx=n,mn=n;
-    int las=n;
+    int now=n;
     vector<int> an;
     REP1(i,n-1) {
         for(int j=-n+1;j<=n-1;j++) {
