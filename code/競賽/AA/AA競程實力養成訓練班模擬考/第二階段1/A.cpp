@@ -78,7 +78,11 @@ signed main() {
             break;
         }
     }
-    op(mx)op(mn)
-    oparr(an)
+    REP(i,n) {
+        cout<<an[i]+n-mn+1<<' ';
+    }
+    cout<<'\n';
+    // op(mx)op(mn)
+    // oparr(an)
     return 0;
 }
