@@ -33,11 +33,11 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e7;
+const int maxn=7e6;
 const int maxn2=3e5;
 const int maxv=1e3+5;
 const int maxs=1e6;
-const int inf=(1ll<<60);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
