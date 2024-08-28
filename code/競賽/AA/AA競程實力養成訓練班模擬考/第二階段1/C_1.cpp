@@ -48,6 +48,8 @@ int n,a,b;
 void solve() {
     cin>>n>>a>>b;
     vector<int> dp(n+1,inf);
+    int x;
+    REP(i,n-1) cin>>x;
     dp[0]=0;
     REP1(i,n) {
         chmin(dp[i],dp[max(i-3,0ll)]+a);
