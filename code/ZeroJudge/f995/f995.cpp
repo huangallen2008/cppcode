@@ -33,7 +33,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=255;
+const int maxn=3e5;
 const int maxv=1e3+5;
 const int maxs=1e6;
 const int inf=(1ll<<60);
@@ -46,8 +46,8 @@ struct line {
 };
 const line zr={0,-inf};
 int node_id=0;
-line s[maxn];
-int lc[maxn],rc[maxn];
+line s[maxn<<2];
+int lc[maxn<<2],rc[maxn<<2];
 int root_id=0;
 struct LCSEG {
     int cal(line l,int x) {
