@@ -57,7 +57,7 @@ void dfs(int u) {
         chmax(l[u],l[v]+1);
     }
     if(-mnl-1>=l[u]) {
-        l[u]=-mnl;
+        l[u]=mnl;
     }
     if(l[u]==k) {
         c[u]=0;
