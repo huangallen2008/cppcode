@@ -50,6 +50,7 @@ vector<bool> vis;
 const int k=1;
 int cnt;
 void dfs(int u) {
+    vis[u]=1;
     int mnl=inf;
     for(int v:g[u]) {
         if(vis[v]) continue;
