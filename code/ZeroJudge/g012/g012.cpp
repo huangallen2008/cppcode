@@ -53,8 +53,8 @@ void solve() {
     REP(i,n) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
         int j=i^-i;
-        if(now&j) s-=a[__lg(j)];
-        else s+=a[__lg(j)];
+        if(now&j) s-=a[__builtin_ctz(j)];
+        else s+=a[__builtin_ctz(j)];
         now^=j;
         an^=s;
         op(s)ope(an)
