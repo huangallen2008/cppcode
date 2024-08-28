@@ -80,7 +80,7 @@ void solve() {
         // op(p)ope(i)
     }
     int an=inf;
-    REP(co,n<<1) {
+    REP(co,1<<n) {
         cnt=0;
         c=vector<int>(n,inf);
         l=vector<int>(n);
