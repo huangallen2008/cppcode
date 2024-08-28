@@ -54,7 +54,7 @@ signed main() {
     cin>>n>>k;
     vector<int> fac(n);fac[0]=1;
     REP1(i,n-1) fac[i]=fac[i-1]*i;
-    oparr(fac)
+    // oparr(fac)
     vector<bool> used(n<<1);
     used[n]=1;
     int mx=n,mn=n;
