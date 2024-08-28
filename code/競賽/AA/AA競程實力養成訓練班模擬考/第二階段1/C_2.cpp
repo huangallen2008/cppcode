@@ -98,7 +98,7 @@ void solve() {
             dfs(i);
             if(l[i]>=0) cnt++;
         }  
-        chmax(an,cnt*b+__builtin_popcount(i)*a);
+        chmax(an,cnt*b+__builtin_popcount(co)*a);
     }
     cout<<an<<'\n';
 }
