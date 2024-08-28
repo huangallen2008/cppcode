@@ -60,7 +60,7 @@ signed main() {
         REP1(j,n) {
             op(i)ope(j)
             if(used[j]) continue;
-            if(mn[id[j]]>=a[i]-k&&mx[id[j]]<=a[i]+k) {
+            if(mn[id[j]]>=a[j]-k&&mx[id[j]]<=a[j]+k) {
                 used[j]=1;
                 for(int l=id[j];l>=i;l--) {
                     swap(a[l],a[l+1]);
