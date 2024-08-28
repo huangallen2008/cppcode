@@ -51,6 +51,7 @@ signed main() {
     REP1(i,n) cin>>a[i],id[a[i]]=i;
     vector<bool> used(n+1);
     REP1(i,n) {
+        oparr(a)
         vector<int> mx(n+1,-inf),mn(n+1,inf);
         for(int j=i;j<=n;j++) {
             mx[j]=max(mx[j-1],a[j]);
