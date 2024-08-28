@@ -81,7 +81,7 @@ signed main() {
     int nn=n-mn+1;
     REP(i,n) {
         cout<<nn<<' ';
-        nn+=an[i];
+        if(i<n-1)nn+=an[i];
     }
     cout<<'\n';
     // op(mx)op(mn)
