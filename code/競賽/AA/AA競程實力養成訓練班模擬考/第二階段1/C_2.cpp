@@ -38,7 +38,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=17;
-const int inf=(1ll<<30);
+const int inf=(1ll<<29);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -53,7 +53,7 @@ int cnt;
 void dfs(int u) {
     vis[u]=1;
     int mnl=inf;
-    for(const int &v:g[u]) {
+    for(int &v:g[u]) {
         if(vis[v]) continue;
         dfs(v);
         chmin(c[u],c[v]+1);
@@ -97,14 +97,14 @@ void solve() {
         // REP(i,n) cout<<ch[i];entr
         REP(i,n) {
             if(ch[i]) ch2[i]=1;
-            for(const int &v:g2[i]) {
+            for( int &v:g2[i]) {
                 if(ch[v]) ch2[i]=1;
             }
         }
         // REP(i,n) cout<<ch2[i];entr
         REP(i,n) {
             if(ch2[i]) vis[i]=1;
-            for(const int &v:g2[i]) {
+            for(int &v:g2[i]) {
                 if(ch2[v]) vis[i]=1;
             }
         }
