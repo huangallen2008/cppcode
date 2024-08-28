@@ -63,7 +63,7 @@ struct LCSEG {
     }
     void _ud(int &id,int l,int r,line v) {
         if(id==-1) s[id=node_id++]=zr;
-        if((const line)v==zr) return;
+        if(v==zr) return;
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
