@@ -33,7 +33,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e7;
+const int maxn=3e7;
 const int maxn2=3e5;
 const int maxv=1e3+5;
 const int maxs=1e6;
