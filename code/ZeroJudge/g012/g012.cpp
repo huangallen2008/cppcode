@@ -53,6 +53,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
         int j=i^-i;
+        ope(__builtin_ctz(j))
         if(now&j) s-=a[__builtin_ctz(j)];
         else s+=a[__builtin_ctz(j)];
         now^=j;
