@@ -130,7 +130,7 @@ struct SEG_lcseg {
 int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     vector<int> dp(n+1);
     seg_lct.init(n+1);
-    seg_lct.ud(1,0,n,0,{0,0});
+    seg_lct.ud(0,{0,0});
     REP1(i,n) {
         dp[i]=pla[i]+seg_lct.qu(max(i-k,(int)0),i-1,pa[i]);
         // op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i])
