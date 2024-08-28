@@ -95,3 +95,4 @@ signed main() {
         else cout<<seg.qu(1,0,n-1,l,r)<<"\n";
     }
     return 0;
+}
