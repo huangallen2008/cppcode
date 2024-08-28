@@ -58,8 +58,8 @@ struct LCSEG {
     }
     int root;
     void init() {
-        root=node_id++;
-        s[root]=zr;
+        // root=node_id++;
+        s[root=node_id++]=zr;
     }
     void _ud(int &id,int l,int r,line v) {
         if(id==-1) id=node_id++,s[id]=zr;
