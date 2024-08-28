@@ -78,6 +78,7 @@ void solve() {
         int p;
         cin>>p;
         g[p].pb(i);
+        op(p)ope(i)
     }
     dfs(0);
     cout<<cnt*b<<'\n';
