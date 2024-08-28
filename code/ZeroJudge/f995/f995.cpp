@@ -70,10 +70,8 @@ struct LCSEG {
             return;
         }
         int m=l+r>>1;
-        // line &l1=v,&l2=s[id];
         if(v.m>s[id].m) swap(v,s[id]);
-        int v1=cal(v,m),v2=cal(s[id],m);
-        if(v1<v2) {
+        if(cal(v,m)<cal(s[id],m)) {
             _ud(lc[id],l,m,v);
         }
         else {
