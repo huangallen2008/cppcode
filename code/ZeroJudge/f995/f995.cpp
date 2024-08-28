@@ -42,8 +42,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct line {
-    int m=0,k=0;
+    int m,k;
 };
+const line zr={0,-inf};
+int node_id=0;
+line s[maxn];
+int lc[maxn],rc[maxn];
+int root_id=0;
 struct LCSEG {
     int cal(line l,int x) {
         return l.m*x+l.k;
@@ -52,21 +57,14 @@ struct LCSEG {
         if(cal(a,x)>cal(b,x)) return a;
         else return b;
     }
-    int node_id=0;
-    vector<line> s;
+    int root;
     vector<int> lc,rc;
     void init() {
-        s.pb({0,-inf});
-        lc.pb(0),rc.pb(0);
-//        s={{0,-inf}};
-//        lc={0},rc={0};
+        root=root_id++;
+        s[root]=zr;
     }
-    int mk_node() {
-        s.pb({0,-inf});
-        lc.pb(0),rc.pb(0);
-        return s.size()-1;
-    }
-    void ud(int id,int l,int r,line v) {
+    void _ud(int &id,int l,int r,line v) {
+        if(id==-1) id=node_id++,s[id]=zr;
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
@@ -77,25 +75,25 @@ struct LCSEG {
         int v1=cal(l1,m),v2=cal(l2,m);
         if(v1<v2) {
             s[id]=l2;
-            if(lc[id]==0) lc[id]=mk_node();
-            ud(lc[id],l,m,l1);
+            _ud(lc[id],l,m,l1);
         }
         else {
             s[id]=l1;
-            if(rc[id]==0) rc[id]=mk_node();
-            ud(rc[id],m+1,r,l2);
+            _ud(rc[id],m+1,r,l2);
         }
     }
+    void ud(int l,int r,line v) {
+        _ud(root,l,r,v);
+    }
     int qu(int id,int l,int r,int x) {
+        if(id==-1) return -inf;
         int an=cal(s[id],x);
         if(l==r) return an;
         int m=l+r>>1;
         if(x<=m) {
-            if(lc[id]==0) lc[id]=mk_node();
             return max(an,qu(lc[id],l,m,x));
         }
         else {
-            if(rc[id]==0) rc[id]=mk_node();
             return max(an,qu(rc[id],m+1,r,x));
         }
     }
@@ -133,7 +131,9 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     return dp[n];
 }
 signed main() {
-//    IOS();
+//    IOS();    
+    memset(lc,0,sizeof(lc));
+    memset(rc,0,sizeof(rc));
     int n,k;
     cin>>n>>k;
     vector<int> a(n+1),b(n+1),pa(n+1),pla(n+1);
