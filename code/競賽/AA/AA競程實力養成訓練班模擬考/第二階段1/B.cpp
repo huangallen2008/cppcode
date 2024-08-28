@@ -46,7 +46,7 @@ int rd(int l,int r) {
 int n;
 vector<int> a;
 void solve(int k) {
-    int l=0,r=1e12,m;
+    int l=0,r=1e18,m;
     while(l<r) {
         m=l+r+1>>1;
         int sum=0;
