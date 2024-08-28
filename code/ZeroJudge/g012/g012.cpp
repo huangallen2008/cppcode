@@ -49,8 +49,8 @@ void solve() {
     cin>>n;
     int now=0;
     ll s=0,an=0;
-    vector<int> a(n);
-    REP(i,n) cin>>a[i];
+    vector<int> a(n+1);
+    REP1(i,n) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
         int j=i^-i;
         ope(__builtin_ctz(j))
