@@ -45,8 +45,9 @@ int rd(int l,int r) {
 }
 int n;
 vector<int> a;
+int asum=0;
 void solve(int k) {
-    int l=0,r=1e18,m;
+    int l=0,r=asum/k+1,m;
     while(l<r) {
         m=l+r+1>>1;
         int sum=0;
@@ -61,7 +62,7 @@ signed main() {
     int k;
     cin>>n>>k;
     a=vector<int>(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i],asum+=a[i];
     REP1(i,k) solve(i);
     return 0;
 }
