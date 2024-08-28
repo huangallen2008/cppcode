@@ -64,7 +64,7 @@ signed main() {
             if(ndif>=n) continue;
             if(used[now+j]) continue;
             if(k>fac[n-i-1]*(n-ndif)) {
-                k-=f[n-i-1]*(n-ndif);
+                k-=fac[n-i-1]*(n-ndif);
                 continue;
             }
             now+=j;
