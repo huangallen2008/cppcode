@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,popcnt")
+// #pragma GCC target("avx2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<n;i++)
 #define REP1(i,n) for(int i=1;i<=n;i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
 #define RREP1(i,n) for(int i=(n);i>=1;i--)
-//#define f first
-//#define s second
+#define f first
+#define s second
 #define pb push_back
 #define ALL(x) x.begin(),x.end()
 #define SZ(x) (int)(x.size())
@@ -33,7 +33,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5e7;
+const int maxn=1e7;
 const int maxv=1e3+5;
 const int maxs=1e6;
 const int inf=(1ll<<60);
