@@ -132,8 +132,8 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
 }
 signed main() {
     IOS();    
-    memset(lc,0,sizeof(lc));
-    memset(rc,0,sizeof(rc));
+    memset(lc,-1,sizeof(lc));
+    memset(rc,-1,sizeof(rc));
     int n,k;
     cin>>n>>k;
     vector<int> a(n+1),b(n+1),pa(n+1),pla(n+1);
