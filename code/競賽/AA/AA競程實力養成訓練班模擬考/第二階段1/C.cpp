@@ -56,7 +56,7 @@ void dfs(int u) {
         chmin(mnl,l[v]+1);
         chmax(l[u],l[v]+1);
     }
-    op("i")op(u)op(mnl)ope(l[u])
+    // op("i")op(u)op(mnl)ope(l[u])
     if(-mnl-1>=l[u]) {
         l[u]=mnl;
     }
@@ -64,9 +64,9 @@ void dfs(int u) {
         c[u]=0;
         l[u]=-k-1;
         cnt++;
-        op('o')ope(u)
+        // op('o')ope(u)
     }
-    op(u)op(c[u])ope(l[u])
+    // op(u)op(c[u])ope(l[u])
 }
 void solve() {
     cin>>n>>a>>b;
@@ -78,7 +78,7 @@ void solve() {
         int p;
         cin>>p;
         g[p].pb(i);
-        op(p)ope(i)
+        // op(p)ope(i)
     }
     dfs(0);
     if(l[0]>=0) cnt++;
