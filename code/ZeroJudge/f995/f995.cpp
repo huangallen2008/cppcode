@@ -64,13 +64,13 @@ struct LCSEG {
     }
     void _ud(int &id,int l,int r,line v) {
         if(v==zr) return;
-        if(id==-1) s[id=node_id++]=zr,assert(node_id<maxn);
+        if(id==-1) s[id=node_id++]=zr;
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
         }
         int m=l+r>>1;
-        line l1=v,l2=s[id];
+        line &l1=v,&l2=s[id];
         if(l1.m>l2.m) swap(l1,l2);
         int v1=cal(l1,m),v2=cal(l2,m);
         if(v1<v2) {
@@ -101,22 +101,30 @@ struct LCSEG {
 };
 struct SEG_lcseg {
     LCSEG s[maxn2<<2];
-    void init(int n) {
+    int n;
+    void init(int _n) {
+        n=_n;
         REP(i,n<<2) s[i].init();
     }
-    void ud(int w,int l,int r,int u,line v) {
+    void _ud(int w,int l,int r,int u,line v) {
         s[w].ud(-maxv,maxv,v);
         if(l==r) return;
         int m=l+r>>1;
-        if(u<=m) ud(w<<1,l,m,u,v);
-        else ud(w<<1|1,m+1,r,u,v);
+        if(u<=m) _ud(w<<1,l,m,u,v);
+        else _ud(w<<1|1,m+1,r,u,v);
     }
-    int qu(int w,int l,int r,int ql,int qr,int x) {
+    void ud(int u,line v) {
+        _ud(1,0,n-1,u,v);
+    }
+    int _qu(int w,int l,int r,int ql,int qr,int x) {
 //        op(w)op(l)op(r)op(ql)op(qr)ope(x)
         if(ql<=l&&r<=qr) return s[w].qu(-maxv,maxv,x);
         if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
-        return max(qu(w<<1,l,m,ql,qr,x),qu(w<<1|1,m+1,r,ql,qr,x));
+        return max(_qu(w<<1,l,m,ql,qr,x),_qu(w<<1|1,m+1,r,ql,qr,x));
+    }
+    int qu(int l,int r,int x) {
+        return _qu(1,0,n-1,l,r,x);
     }
 } seg_lct;
 int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
@@ -124,7 +132,7 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     seg_lct.init(n+1);
     seg_lct.ud(1,0,n,0,{0,0});
     REP1(i,n) {
-        dp[i]=pla[i]+seg_lct.qu(1,0,n,max(i-k,(int)0),i-1,pa[i]);
+        dp[i]=pla[i]+seg_lct.qu(max(i-k,(int)0),i-1,pa[i]);
         // op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i])
         seg_lct.ud(1,0,n,i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)-pla[i]});
         // op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i])
