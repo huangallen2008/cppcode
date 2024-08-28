@@ -81,6 +81,7 @@ void solve() {
         op(p)ope(i)
     }
     dfs(0);
+    if(l[0]>=0) cnt++;
     cout<<cnt*b<<'\n';
 }
 signed main() {
