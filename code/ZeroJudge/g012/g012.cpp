@@ -11,7 +11,7 @@ void solve() {
     int now=0;
     ll s=0,an=0;
     vector<ll> a(n);
-    REP(i,n) cin>>a[i];
+    for(int i=0;i<n;i++) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
         int j=i&-i;
         if(now&j) s-=a[__builtin_ctz(i)];
