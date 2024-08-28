@@ -54,7 +54,7 @@ struct LCSEG {
     int cal(line l,int x) {
         return l.m*x+l.k;
     }
-    line mxl(line a,line b,int x) {
+    line mxl(line &a,line &b,int x) {
         if(cal(a,x)>cal(b,x)) return a;
         else return b;
     }
@@ -62,9 +62,9 @@ struct LCSEG {
     void init() {
         s[root=node_id++]=zr;
     }
-    void _ud(int &id,int l,int r,line v) {
+    void _ud(int &id,int l,int r,line &v) {
         if(v==zr) return;
-        if(id==-1) s[id=node_id++]=zr;
+        if(id==-1) s[id=node_id++]=zr,assert(node_id<maxn);
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
@@ -129,7 +129,7 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     seg_lct.init(n+1);
     seg_lct.ud(0,{0,0});
     REP1(i,n) {
-        dp[i]=pla[i]+seg_lct.qu(max(i-k,(int)0),i-1,pa[i]);
+        dp[i]=pla[i]+seg_lct.qu(max(i-k,0ll),i-1,pa[i]);
         // op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i])
         seg_lct.ud(i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)-pla[i]});
         // op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i])
