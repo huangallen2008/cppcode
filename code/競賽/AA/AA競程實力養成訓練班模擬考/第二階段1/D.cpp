@@ -56,10 +56,9 @@ signed main() {
             mx[j]=max(mx[j-1],a[j]);
             mn[j]=min(mn[j-1],a[j]);
         }
-        oparr(a)oparr(mx)oparr(mn)
+        // oparr(a)oparr(mx)oparr(mn)
         REP1(j,n) {
             if(used[j]) continue;
-            op(j)op(mn[id[j]])ope(mx[id[j]])
             if(mn[id[j]]>=j-k&&mx[id[j]]<=j+k) {
                 used[j]=1;
                 for(int l=id[j]-1;l>=i;l--) {
