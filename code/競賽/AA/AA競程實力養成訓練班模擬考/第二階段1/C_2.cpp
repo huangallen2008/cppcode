@@ -120,6 +120,7 @@ void solve() {
         // op(cnt)op(cnt1)ope(ret)
         chmin(an,ret);
     }
+    assert(an!=inf);
     cout<<an<<'\n';
 }
 signed main() {
