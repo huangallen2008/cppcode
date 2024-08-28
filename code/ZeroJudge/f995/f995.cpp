@@ -43,6 +43,7 @@ int rd(int l,int r) {
 }
 struct line {
     int m,k;
+    bool operator==(const line x) { return x.m==m&&x.k==k; }
 };
 const line zr={0,-inf};
 int node_id=0;
