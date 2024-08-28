@@ -109,7 +109,7 @@ void solve() {
             if(vis[i]) continue;
             dfs(i);
             if(l[i]>=0) cnt++;
-            op(i)oparr(vis)
+            op(i)REP(j,n) cout<<v[i];entr
         }
         int cnt1=__builtin_popcount(co);
         int ret=cnt*a+cnt1*b;
