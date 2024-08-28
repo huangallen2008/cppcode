@@ -105,7 +105,7 @@ struct SEG_lcseg {
         REP(i,n<<2) s[i].init();
     }
     void ud(int w,int l,int r,int u,line v) {
-        s[w].ud(0,-maxv,maxv,v);
+        s[w].ud(-maxv,maxv,v);
         if(l==r) return;
         int m=l+r>>1;
         if(u<=m) ud(w<<1,l,m,u,v);
