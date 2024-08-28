@@ -112,7 +112,7 @@ void solve() {
         }
         int cnt1=__builtin_popcount(co);
         int ret=cnt*a+cnt1*b;
-        // op(cnt)op(cnt1)ope(ret)
+        op(cnt)op(cnt1)ope(ret)
         chmin(an,ret);
 
     }
