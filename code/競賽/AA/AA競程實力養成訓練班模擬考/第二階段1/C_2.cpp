@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -53,7 +53,7 @@ int cnt;
 void dfs(int u) {
     vis[u]=1;
     int mnl=inf;
-    for(int v:g[u]) {
+    for(const int &v:g[u]) {
         if(vis[v]) continue;
         dfs(v);
         chmin(c[u],c[v]+1);
@@ -74,6 +74,7 @@ void dfs(int u) {
 }
 void solve() {
     cin>>n>>a>>b;
+    assert(n<=20);
     g=Graph(n);
     g2=Graph(n);
     REP1(i,n-1) {
@@ -96,14 +97,14 @@ void solve() {
         // REP(i,n) cout<<ch[i];entr
         REP(i,n) {
             if(ch[i]) ch2[i]=1;
-            for(int v:g2[i]) {
+            for(const int &v:g2[i]) {
                 if(ch[v]) ch2[i]=1;
             }
         }
         // REP(i,n) cout<<ch2[i];entr
         REP(i,n) {
             if(ch2[i]) vis[i]=1;
-            for(int v:g2[i]) {
+            for(const int &v:g2[i]) {
                 if(ch2[v]) vis[i]=1;
             }
         }
