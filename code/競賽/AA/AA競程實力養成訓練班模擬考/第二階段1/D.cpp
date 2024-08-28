@@ -58,7 +58,6 @@ signed main() {
             mn[j]=min(mn[j-1],a[j]);
         }
         REP1(j,n) {
-            op(i)ope(j)
             if(used[j]) continue;
             if(mn[id[j]]>=a[j]-k&&mx[id[j]]<=a[j]+k) {
                 used[j]=1;
@@ -70,7 +69,6 @@ signed main() {
             }
         }
     }
-    ope("ok")
     REP1(i,n) cout<<a[i]<<' ';
     cout<<'\n';
     return 0;
