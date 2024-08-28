@@ -79,7 +79,7 @@ void solve() {
         g[p].pb(i);
         // op(p)ope(i)
     }
-    int an=0;
+    int an=inf;
     REP(co,n<<1) {
         cnt=0;
         c=vector<int>(n,inf);
@@ -98,7 +98,7 @@ void solve() {
             dfs(i);
             if(l[i]>=0) cnt++;
         }  
-        chmax(an,cnt*b+__builtin_popcount(co)*a);
+        chmin(an,cnt*b+__builtin_popcount(co)*a);
     }
     cout<<an<<'\n';
 }
