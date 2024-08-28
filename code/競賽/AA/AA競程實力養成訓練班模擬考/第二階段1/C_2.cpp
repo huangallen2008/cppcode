@@ -47,7 +47,7 @@ Graph g;
 int n,a,b;
 vector<int> c,l;
 vector<bool> vis;
-const int k=2;
+const int k=1;
 int cnt;
 void dfs(int u) {
     int mnl=inf;
@@ -85,12 +85,18 @@ void solve() {
         c=vector<int>(n,inf);
         l=vector<int>(n);
         vis=vector<bool>(n);
-        vector<bool> ch(n);
+        vector<bool> ch(n),ch2(n);
         REP(i,n) if((co>>i)&1) ch[i]=1;
         REP(i,n) {
-            if(ch[i]) vis[i]=1;
+            if(ch[i]) ch2[i]=1;
             for(int v:g[i]) {
-                if(ch[v]) vis[i]=1;
+                if(ch[v]) ch2[i]=1;
+            }
+        }
+        REP(i,n) {
+            if(ch2[i]) vis[i]=1;
+            for(int v:g[i]) {
+                if(ch2[v]) vis[i]=1;
             }
         }
         REP(i,n) cout<<vis[i];entr
@@ -100,7 +106,7 @@ void solve() {
             if(l[i]>=0) cnt++;
         }
         int cnt1=__builtin_popcount(co);
-        int ret=cnt*b+cnt1*a;
+        int ret=cnt*a+cnt1*b;
         op(cnt)op(cnt1)ope(ret)
         chmin(an,ret);
 
