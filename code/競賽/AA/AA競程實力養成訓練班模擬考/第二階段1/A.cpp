@@ -73,7 +73,7 @@ signed main() {
             used[now]=1;
             chmax(mx,now);
             chmin(mn,now);
-            an.pb(now);
+            an.pb(j);
             break;
         }
     }
