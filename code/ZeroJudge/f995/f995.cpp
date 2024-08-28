@@ -123,6 +123,7 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     seg_lct.ud(1,0,n,0,{0,0});
     REP1(i,n) {
         dp[i]=pla[i]+seg_lct.qu(1,0,n,max(i-k,(int)0),i-1,pa[i]);
+        op(max(i-k,(int)0))op(i-1)ope(pa[i]);
         seg_lct.ud(1,0,n,i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)-pla[i]});
         op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i])
     }
