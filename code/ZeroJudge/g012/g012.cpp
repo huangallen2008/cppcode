@@ -58,7 +58,7 @@ void solve() {
         else s+=a[__builtin_ctz(j)];
         now^=j;
         an^=s;
-        op(s)ope(an)
+        op(j)op(s)ope(an)
     }
     cout<<an<<'\n';
 }
