@@ -51,12 +51,12 @@ signed main() {
     REP1(i,n) cin>>a[i],id[a[i]]=i;
     vector<bool> used(n+1);
     REP1(i,n) {
-        ope(i)
         vector<int> mx(n+1,-inf),mn(n+1,inf);
         for(int j=i;j<=n;j++) {
             mx[j]=max(mx[j-1],a[j]);
             mn[j]=min(mn[j-1],a[j]);
         }
+        ope(i)
         REP1(j,n) {
             if(used[j]) continue;
             if(mn[id[j]]>=a[i]-k&&mx[id[j]]<=a[i]+k) {
