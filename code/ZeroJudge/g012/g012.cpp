@@ -52,7 +52,7 @@ void solve() {
     vector<int> a(n+1);
     REP1(i,n) cin>>a[i];
     for(int i=1;i<1<<n;i++) {
-        int j=i^-i;
+        int j=i&-i;
         ope(__builtin_ctz(j))
         if(now&j) s-=a[__builtin_ctz(j)];
         else s+=a[__builtin_ctz(j)];
