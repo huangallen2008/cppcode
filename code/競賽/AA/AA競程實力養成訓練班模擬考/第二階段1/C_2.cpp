@@ -87,12 +87,14 @@ void solve() {
         vis=vector<bool>(n);
         vector<bool> ch(n),ch2(n);
         REP(i,n) if((co>>i)&1) ch[i]=1;
+        REP(i,n) cout<<ch[i];entr
         REP(i,n) {
             if(ch[i]) ch2[i]=1;
             for(int v:g[i]) {
                 if(ch[v]) ch2[i]=1;
             }
         }
+        REP(i,n) cout<<ch2[i];entr
         REP(i,n) {
             if(ch2[i]) vis[i]=1;
             for(int v:g[i]) {
