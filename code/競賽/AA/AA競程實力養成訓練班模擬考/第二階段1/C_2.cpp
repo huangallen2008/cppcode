@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -116,7 +116,6 @@ void solve() {
         int ret=cnt*a+cnt1*b;
         // op(cnt)op(cnt1)ope(ret)
         chmin(an,ret);
-
     }
     cout<<an<<'\n';
 }
