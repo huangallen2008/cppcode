@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC target("avx2,sse4,abm,bmi,bmi2,popcnt,lzcnt")
 // #define int long long
 #define ll long long
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
