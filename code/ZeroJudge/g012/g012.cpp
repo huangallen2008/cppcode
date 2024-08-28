@@ -57,6 +57,7 @@ void solve() {
         else s+=a[__lg(j)];
         now^=j;
         an^=s;
+        op(s)ope(an)
     }
     cout<<an<<'\n';
 }
