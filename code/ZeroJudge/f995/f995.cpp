@@ -70,16 +70,15 @@ struct LCSEG {
             return;
         }
         int m=l+r>>1;
-        line &l1=v,&l2=s[id];
-        if(l1.m>l2.m) swap(l1,l2);
-        int v1=cal(l1,m),v2=cal(l2,m);
+        // line &l1=v,&l2=s[id];
+        if(v.m>s[id].m) swap(v,s[id]);
+        int v1=cal(v,m),v2=cal(s[id],m);
         if(v1<v2) {
-            s[id]=l2;
-            _ud(lc[id],l,m,l1);
+            _ud(lc[id],l,m,v);
         }
         else {
-            s[id]=l1;
-            _ud(rc[id],m+1,r,l2);
+            swap(s[id],v);
+            _ud(rc[id],m+1,r,v);
         }
     }
     void ud(int l,int r,line v) {
