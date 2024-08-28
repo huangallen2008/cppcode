@@ -78,6 +78,7 @@ signed main() {
             break;
         }
     }
+    op(mx)op(mn)
     oparr(an)
     return 0;
 }
