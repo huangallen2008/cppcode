@@ -144,7 +144,7 @@ signed main() {
     REP1(i,n) {
         pa[i]=pa[i-1]+a[i];
         pla[i]=pla[i-1]+a[i]*i;
-    }=
+    }
     cout<<solve(n,k,pa,pla,b)<<'\n';;
     return 0;
 }
