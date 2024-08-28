@@ -59,6 +59,7 @@ signed main() {
         oparr(a)oparr(mx)oparr(mn)
         REP1(j,n) {
             if(used[j]) continue;
+            op(j)op(mn[id[j]])ope(mx[id[j]])
             if(mn[id[j]]>=a[j]-k&&mx[id[j]]<=a[j]+k) {
                 used[j]=1;
                 for(int l=id[j]-1;l>=i;l--) {
