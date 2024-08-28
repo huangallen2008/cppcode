@@ -132,7 +132,7 @@ int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
     return dp[n];
 }
 signed main() {
-//    IOS();    
+    IOS();    
     memset(lc,0,sizeof(lc));
     memset(rc,0,sizeof(rc));
     int n,k;
@@ -144,6 +144,7 @@ signed main() {
         pa[i]=pa[i-1]+a[i];
         pla[i]=pla[i-1]+a[i]*i;
     }
+    entr
     cout<<solve(n,k,pa,pla,b)<<'\n';;
     return 0;
 }
