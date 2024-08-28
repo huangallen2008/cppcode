@@ -98,8 +98,12 @@ void solve() {
             if(vis[i]) continue;
             dfs(i);
             if(l[i]>=0) cnt++;
-        }  
-        chmin(an,cnt*b+__builtin_popcount(co)*a);
+        }
+        int cnt1=__builtin_popcount(co);
+        int ret=cnt*b+cnt1*a;
+        op(cnt)op(cnt1)ope(ret)
+        chmin(an,ret);
+
     }
     cout<<an<<'\n';
 }
