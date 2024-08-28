@@ -63,6 +63,7 @@ void dfs(int u) {
         c[u]=0;
         l[u]=-k-1;
         cnt++;
+        op('o')ope(u)
     }
     op(u)op(c[u])ope(l[u])
 }
