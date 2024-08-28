@@ -51,7 +51,7 @@ void solve() {
     ll s=0,an=0;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
-    REP1(i,1<<n) {
+    for(int i=1;i<1<<n;i++) {
         int j=i^-i;
         if(now&j) s-=a[__lg(j)];
         else s+=a[__lg(j)];
