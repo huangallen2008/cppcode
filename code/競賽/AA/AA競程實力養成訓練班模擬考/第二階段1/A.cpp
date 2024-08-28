@@ -74,6 +74,7 @@ signed main() {
             chmax(mx,now);
             chmin(mn,now);
             an.pb(now);
+            break;
         }
     }
     oparr(an)
