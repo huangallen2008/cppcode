@@ -56,8 +56,8 @@ signed main() {
             mx[j]=max(mx[j-1],a[j]);
             mn[j]=min(mn[j-1],a[j]);
         }
-        ope(i)
         REP1(j,n) {
+            op(i)ope(j)
             if(used[j]) continue;
             if(mn[id[j]]>=a[i]-k&&mx[id[j]]<=a[i]+k) {
                 used[j]=1;
