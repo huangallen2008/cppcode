@@ -62,7 +62,7 @@ signed main() {
     REP1(i,n-1) {
         for(int j=-n+1;j<=n-1;j++) {
             int ndif=updif(mx,mn,now+j);
-            oparr(an)op(now)op(j)ope(ndif)
+            oparr(an)op(now)op(j)op(ndif)ope(fac[n-i-1]*(n-ndif))
             if(ndif>=n) continue;
             if(used[now+j]) continue;
             if(k>fac[n-i-1]*(n-ndif)) {
