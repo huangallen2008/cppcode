@@ -46,7 +46,8 @@ int rd(int l,int r) {
 Graph g;
 int n,a,b;
 vector<int> c,l;
-int k=2;
+const int k=2;
+int cnt;
 void dfs(int u) {
     int mnl=inf;
     for(int v:g[u]) {
@@ -61,11 +62,13 @@ void dfs(int u) {
     if(l[u]==k) {
         c[u]=0;
         l[u]=-k-1;
+        cnt++;
     }
 }
 void solve() {
     cin>>n>>a>>b;
     g=Graph(n);
+    cnt=0;
     c=vector<int>(n,inf);
     l=vector<int>(n);
     REP1(i,n-1) {
@@ -73,7 +76,8 @@ void solve() {
         cin>>p;
         g[p].pb(i);
     }
-
+    dfs(0);
+    cout<<cnt*b<<'\n';
 }
 signed main() {
     IOS();
