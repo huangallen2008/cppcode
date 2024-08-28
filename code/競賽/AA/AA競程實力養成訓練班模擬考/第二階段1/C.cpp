@@ -64,6 +64,7 @@ void dfs(int u) {
         l[u]=-k-1;
         cnt++;
     }
+    op(u)op(c[u])ope(l[u])
 }
 void solve() {
     cin>>n>>a>>b;
