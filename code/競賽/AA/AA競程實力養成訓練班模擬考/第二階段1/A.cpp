@@ -80,8 +80,8 @@ signed main() {
     }
     int nn=n-mn+1;
     REP(i,n) {
-        nn+=an[i];
         cout<<nn<<' ';
+        nn+=an[i];
     }
     cout<<'\n';
     // op(mx)op(mn)
