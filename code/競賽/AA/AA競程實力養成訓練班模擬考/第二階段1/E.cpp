@@ -56,6 +56,7 @@ signed main() {
     }
     int an1=0,an2=-1;
     REP(i,1<<n) {
+        if(i==0) continue;
         bitset<maxn> t=i;
         bool ok=1;
         REP(j,n) {
