@@ -34,6 +34,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=1e7;
+const int maxn2=3e5;
 const int maxv=1e3+5;
 const int maxs=1e6;
 const int inf=(1ll<<60);
@@ -98,10 +99,9 @@ struct LCSEG {
     }
     int qu(int l,int r,int x) { return _qu(root,l,r,x); }
 };
+LCSEG s[maxn2<<2];
 struct SEG_lcseg {
-    vector<LCSEG> s;
     void init(int n) {
-        s.resize(n<<2);
         REP(i,n<<2) s[i].init();
     }
     void ud(int w,int l,int r,int u,line v) {
