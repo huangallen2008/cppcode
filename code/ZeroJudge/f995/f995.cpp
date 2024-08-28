@@ -48,7 +48,6 @@ const line zr={0,-inf};
 int node_id=0;
 line s[maxn<<2];
 int lc[maxn<<2],rc[maxn<<2];
-int root_id=0;
 struct LCSEG {
     int cal(line l,int x) {
         return l.m*x+l.k;
@@ -59,7 +58,7 @@ struct LCSEG {
     }
     int root;
     void init() {
-        root=root_id++;
+        root=node_id++;
         s[root]=zr;
     }
     void _ud(int &id,int l,int r,line v) {
