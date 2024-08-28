@@ -1,101 +1,97 @@
-//  #include<bits/stdc++.h>
-#include<iostream>
-#include<cstdlib>
-#include<utility>
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("Ofast,unroll-loops,fast-math")
-#pragma GCC target("avx2,bmi,popcnt")
-// #define int long long
-#define ll long long
-#define REP(i,n) for(int i=0;i<(n);i++)
-#define REP1(i,n) for(int i=1;i<=(n);i++)
+#define int long long
+#define FOR(i,a,b) for(int i=a;i<b;i++)
+#define REP(i,n) FOR(i,0,n)
+#define REP1(i,n) FOR(i,1,(n)+1)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
-#define RREP1(i,n) for(int i=(n);i>=1;i--)
 #define f first
 #define s second
 #define pb push_back
-#define ALL(x) (x).begin(),(x).end()
-#define SZ(x) (int)((x).size())
+#define ALL(x) x.begin(),x.end()
+#define SZ(x) (int)(x.size())
 #define SQ(x) (x)*(x)
 #define pii pair<int,int>
 #define pipii pair<int,pii>
 #define Graph vector<vector<int>>
-#define Graphw vector<vector<pii>>
-#define IOS() ios::sync_with_stdio(0),cin.tie(0)
-#define md(x) (((x)%(mod)+(mod))%(mod))
-#define MD(x,M) (((x)%(M)+(M))%(M))
+#define IOS() cin.sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define ld long double
-#define pdd pair<ld,ld>
-#define chmax(x,y) x=max(x,y)
-#define chmin(x,y) mn(x,y)
-#define addmod(x,y) x=((x+(y))%mod)
-#ifdef LOCAL
-#define op(x) cout<<(#x)<<"="<<(x)<<", ";
-#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
-#define entr cout<<endl;
-#define RC _getchar_nolock
-#else
-#define op(x) ;
-#define ope(x) ;
-#define oparr(x) ;
-#define entr ;
-#define RC getchar_unlocked
-#endif
-const int mod=1e9+7;
+const int inf=1e14+5;
 const int maxn=2e5+5;
-const ll inf=(1ll<<62);
-//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-//int rd(int l,int r) {
-//    return uniform_int_distribution<int>(l,r)(rng);
-//}
-// int R() {
-//     int x=0;
-//     char ch=GC;
-//     while(ch==' '||ch=='\n') ch=GC;
-//     while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GC;
-//     return x;
-// }
-// #include<unistd.h>
-// char OB[65536]; int OP;
-// inline char RC(){static char buf[65536],*p=buf,*q=buf;return p==q&&(q=(p=buf)+read(0,buf,65536))==buf?-1:*p++;}
-inline int R(){static char c;int a;while((c=RC())<'0');a=c^'0';while((c=RC())>='0')a*=10,a+=c^'0';return a;}
-int n,k,x,y,z;
-inline ll cost(const int v) {
-    return v<0?(ll)x*(-v):(ll)y*v;
-}
-inline void mn(ll &a,ll b) { if(b<a) swap(a,b); }
-signed main(){
+const int mod=1e9+7;
+vector<int> a;
+struct SEG {
+    struct Seg {
+        int l,r,sum,t,td;
+//        Seg(int _l,int _r,int _sum,int _t,int _td) : l(_l),r(_r),sum(_sum),t(_t),td(_td) {}
+    };
+    void pull(Seg &a,Seg &b,Seg &c) {
+        a.sum=b.sum+c.sum;
+        a.l=b.l;
+        a.r=c.r;
+    }
+    void push(Seg &a,Seg &b,Seg &c) {
+        b.t+=a.t;
+        b.td+=a.td;
+        b.sum+=(b.r-b.l+1)*(a.t*2+(b.r-b.l)*a.td)/2;
+        c.t+=a.t+(c.l-a.l)*a.td;
+        c.td+=a.td;
+        c.sum+=(c.r-c.l+1)*((a.t+(c.l-a.l)*a.td)*2+(c.r-c.l)*a.td)/2;
+        a.t=0;
+        a.td=0;
+    }
+    int n;
+    vector<Seg> s;
+    void init(int _n) {
+        n=_n;
+        s=vector<Seg>(n*4);
+    }
+    void build(int w,int l,int r) {
+        if(l==r) {
+            s[w]={l,r,a[l],0,0};
+            return;
+        }
+        int m=(l+r)/2;
+        build(w*2,l,m);
+        build(w*2+1,m+1,r);
+        pull(s[w],s[w*2],s[w*2+1]);
+    }
+    void ud(int w,int l,int r,int ul,int ur) {
+        if(ul<=l&&r<=ur) {
+            s[w].sum+=(r-l+1)*((l-ul+1)*2+(r-l))/2;
+            s[w].t+=l-ul+1;
+            s[w].td++;
+            return;
+        }
+        if(ul>r||ur<l) return;
+        push(s[w],s[w*2],s[w*2+1]);
+        int m=(l+r)/2;
+        ud(w*2,l,m,ul,ur);
+        ud(w*2+1,m+1,r,ul,ur);
+        pull(s[w],s[w*2],s[w*2+1]);
+    }
+    int qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].sum;
+        if(ql>r||qr<l) return 0;
+        push(s[w],s[w*2],s[w*2+1]);
+        int m=(l+r)/2;
+        return qu(w*2,l,m,ql,qr)+qu(w*2+1,m+1,r,ql,qr);
+    }
+};
+signed main() {
     IOS();
-    static int a[10],s[1025],mc[1025];
-    static ll dp1[1025];
-    n=R(),k=R(),x=R(),y=R(),z=R();
-    REP(i,n) a[i]=R();
-    const int all=(1<<n)-1;
-    s[0]=0,dp1[0]=inf;
-    for(int i=1;i<=all;i++) {
-        s[i]=s[i^(i&-i)]+a[__lg(i&-i)];
-        mc[i]=(__builtin_popcount(i)-1)*z;
+    int n,q;
+    cin>>n>>q;
+    a=vector<int>(n);
+    REP(i,n) cin>>a[i];
+    SEG seg;
+    seg.init(n);
+    seg.build(1,0,n-1);
+    REP(i,q) {
+        int x,l,r;
+        cin>>x>>l>>r;
+        l--,r--;
+        if(x==1) seg.ud(1,0,n-1,l,r);
+        else cout<<seg.qu(1,0,n-1,l,r)<<"\n";
     }
-    vector<pii> fa;
-    for(int i=1;i*i<=k;i++) if(k%i==0) fa.pb({i,k/i});
-    ll an=inf;
-    for(const auto &[f1,f2]:fa) {
-        for(int i=1;i<=all;i++) {
-            dp1[i]=cost(s[i]-f1)+(ll)mc[i];
-        }
-        REP(i,n) {
-            const int t=all^(1<<i);
-//            REP(j,1<<n) {
-            for(int j=t;j>0;j=(j-1)&t) {
-                mn(dp1[j^(1<<i)],dp1[j]);
-            }
-        }
-        for(int i=1;i<all;i++) {
-            chmin(an,cost(s[i]-f2)+(ll)mc[i]+dp1[all^i]);
-        }
-    }
-    cout<<an<<'\n';
     return 0;
-}
