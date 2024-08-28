@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=10000;
+const int maxn=5;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -45,29 +45,11 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    if(n==1) {
-        int x;
-        cin>>x;
-        cout<<x<<'\n';
-        return 0;
+    int x=0;
+    bitset<maxn> b;
+    REP1(i,(1<<maxn)-1) {
+        x^=(i&-i);
+        ope(b=x)
     }
-    priority_queue<int,vector<int>,greater<int>> pq;
-    REP(i,n) {
-        int x;
-        cin>>x;
-        pq.push(x);
-    }
-    int sum=0;
-    REP(i,n-1) {
-        int x=pq.top();
-        pq.pop();
-        int y=pq.top();
-        pq.pop();
-        sum+=x+y;
-        pq.push(x+y);
-    }
-    cout<<sum<<'\n';
     return 0;
 }
