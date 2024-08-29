@@ -109,7 +109,7 @@ signed main() {
         }
     }
     // cout << prime.size() << "\n";
-    // REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
+    REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
     // cout<<prime.back()<<'\n';
     // int s=0;
     // REP(i,31) s+=prime[i];
