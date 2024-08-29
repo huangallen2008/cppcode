@@ -7,7 +7,7 @@ using namespace std;
 #define REP(i,n) for(int i=0;i<n;i++)
 #define REP1(i,n) for(int i=1;i<=n;i++)
 #define pb push_back
-const int maxv=5e6;
+const int maxv=6e6;
 vector<int> minp(maxv+1);
 vector<int> ip(maxv+1);
 const int maxn=4e5+5;
