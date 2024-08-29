@@ -1,72 +1,145 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,popcnt")
 #define int long long
+#define pii pair<int,int>
+#define f first 
+#define s second 
 #define REP(i,n) for(int i=0;i<n;i++)
 #define REP1(i,n) for(int i=1;i<=n;i++)
-#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
-#define RREP1(i,n) for(int i=(n);i>=1;i--)
-#define f first
-#define s second
 #define pb push_back
-#define ALL(x) x.begin(),x.end()
-#define SZ(x) (int)(x.size())
-#define SQ(x) (x)*(x)
-#define pii pair<int,int>
-#define pipii pair<int,pii>
-#define Graph vector<vector<int>>
-#define IOS() ios::sync_with_stdio(0),cin.tie(0)
-#define md(x) (((x)%(mod)+(mod))%(mod))
-#define MD(x,M) (((x)%(M)+(M))%(M))
-#define ld long double
-#define pdd pair<ld,ld>
-#ifdef LOCAL
-#define op(x) cout<<(#x)<<"="<<(x)<<", ";
-#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";REP(allen,(x).size()) cout<<x[allen]<<" ";cout<<" size="<<(x).size()<<endl;
-#define entr cout<<endl;
-#else
-#define op(x) ;
-#define ope(x) ;
-#define oparr(x) ;
-#define entr ;
-#endif
-const int mod=1e9+7;
-const int maxn=255;
-const int inf=(1ll<<62);
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int rd(int l,int r) {
-    return uniform_int_distribution<int>(l,r)(rng);
-}
-pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
-int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
-int sign(int x) { if(x>0) return 1;if(x<0) return -1; return 0; }
-bool kill1(pii a,pii b,pii c) {//1:can kill
-    return cros(to(a,b),to(a,c))<0;
-}
-bool kill2(pii a,pii b,pii c) {//1:can kill
-    return cros(to(a,b),to(a,c))>0;
-}
-signed main() {
-    IOS();
+const int maxv=5e6;
+vector<int> minp(maxv+1);
+vector<int> ip(maxv+1);
+const int maxn=4e5+5;
+vector<int> prime={0},pp={0};
+vector<pair<bool,int>> dp;
+const int m=51;
+int msu;
+void solve() {
     int n;
     cin>>n;
-    vector<pii> p(n);
-    REP(i,n) cin>>p[i].f>>p[i].s;
-    sort(ALL(p));
-    vector<pii> convex={p[0]};
-    REP1(i,n-1) {
-        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
-        convex.pb(p[i]);
+    int psum=pp[n];
+    if(n<=m) {
+        vector<int> an;
+        bool ok=0;
+        vector<bool> ans(n+1);
+        for(int i=psum>>1;;i--) {
+            if(dp[i].f) {
+                int t=i;
+                while(t>0) {
+                    an.pb(dp[t].s);
+                    ans[ip[dp[t].s]]=1;
+                    t-=dp[t].s;
+                }
+                ok=1;
+                break;
+            }
+        }
+        REP1(i,n) {
+            if(ans[i]) cout<<"A";
+            else cout<<"B";
+        }
+        cout<<'\n';
+        // for(int&x:an) cout<<x<<' ';cout<<'\n';
+        // int tt=0;
+        // for(int&x:an) tt+=x;
+        // cout<<pp[n]<<' '<<tt<<" "<<pp[n]-tt<<'\n';
     }
-    RREP(i,n-1) {
-        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
-        convex.pb(p[i]);
+    else {
+        int a=0,b=0;
+        vector<bool> ina(n+1);
+        for(int i=n;i>m;i--) {
+            if(a>b) {
+                b+=prime[i];
+            }
+            else {
+                ina[i]=1;
+                a+=prime[i];
+            }
+        }
+        // cout<<"p"<<a+b+pp[m]<<'\n';
+        if(a<b) {
+            swap(a,b);
+            for(int i=m+1;i<=n;i++) ina[i]=ina[i]^1;
+        }
+        // cout<<a<<' '<<b<<'\n';
+        vector<int> an;
+        for(int i=m+1;i<=n;i++) if(ina[i])an.pb(prime[i]);
+        // for(int &x:an) cout<<x<<' ';cout<<'\n';
+        int dif=a-b>>1;
+        // for(int dd=0;;dd++) {
+        // cout<<pp[m]<<' ';
+        int ch=(pp[m]>>1)-dif;
+        // cout<<ch<<' '<<pp[m]-ch<<'\n';
+            // if(dp[(pp[m]>>1)-dif].f) {
+        int t=(pp[m]>>1)-dif;
+        while(t>0) {
+            an.pb(dp[t].s);
+            ina[ip[dp[t].s]]=1;
+            t-=dp[t].s;
+        }
+            // }
+        // }
+        // int tt=0;
+        // for(int &x:an) cout<<x<<' ';cout<<'\n';
+        // for(int &x:an) tt+=x;
+        REP1(i,n) {
+            if(ina[i]) cout<<"A";
+            else cout<<"B";
+        }
+        cout<<'\n';
+        // cout<<pp[n]<<' '<<tt<<" "<<pp[n]-tt<<'\n';
     }
-    convex.pop_back();
-    cout<<convex.size()<<'\n';
-    sort(ALL(convex));
-    for(auto &[x,y]:convex) cout<<x<<' '<<y<<'\n';
+}
+signed main() {
+    int n=50;
+
+    for(int i=2;i<=maxv;i++) {
+        if (minp[i] == 0) {
+            minp[i] = i;
+            ip[i] = prime.size();
+            prime.pb(i);
+            pp.pb(pp.back()+i);
+            // pp[ip[i]] += i;
+        }
+        for (int j=1;(long long)i * prime[j] <= maxv and prime[j] <= minp[i] and j < prime.size();j++) {
+            minp[i*prime[j]] = prime[j];
+        }
+    }
+    // cout << prime.size() << "\n";
+    // REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
+    // cout<<prime.back()<<'\n';
+    // int s=0;
+    // REP(i,31) s+=prime[i];
+    // cout<<s<<endl;
+    msu=0; REP(i,m) msu+=prime[i];
+    cout << msu*m << "\n";
+    dp=vector<pair<bool,int>>(msu+1);
+    dp[0]={1,0};
+    for(int i=1;i<=m;i++) {
+        for(int j=msu;j>=prime[i];j--) {
+            if((!dp[j].f)&&dp[j-prime[i]].f) {
+                dp[j].f=1;
+                dp[j].s=prime[i];
+            }
+        }
+    }
+    // REP(i,200) cout<<dp[i].s<<' ';cout<<endl;
+    int T;
+    cin>>T;
+    while(T--) solve();
+    // for(int i=0;i<640;i++) cout<<dp[m][i].f;cout<<endl;
+    // for (int i=1;i<=m;i++) {
+    //     for (int j=0;j<=20;j++) {
+    //         cout << dp[i][j] << " ";
+    //     }
+    //     cout << "\n";
+    // }
+    // if(n<=20) {
+    //     int sum = 0;
+    //     for (int i=0;i<n;i++) {
+    //         sum += prime[i];
+    //     }
+    // }
     return 0;
 }
