@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<T x> auto f(auto x,auto y) {
+template<int x> auto f(auto x,auto y) {
     return typename(x);
 }
 signed main() {
