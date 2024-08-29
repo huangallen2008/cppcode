@@ -113,7 +113,7 @@ signed main() {
     // REP(i,31) s+=prime[i];
     // cout<<s<<endl;
     msu=0; REP(i,m) msu+=prime[i];
-    cout << msu*m << "\n";
+    // cout << msu*m << "\n";
     dp=vector<pair<bool,int>>(msu+1);
     dp[0]={1,0};
     for(int i=1;i<=m;i++) {
