@@ -53,6 +53,7 @@ signed main() {
     IOS();
     ope("ok")
     int r=f(1);
+    ope(r)
     f(2);
     ope(r)
     return 0;
