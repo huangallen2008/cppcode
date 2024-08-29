@@ -44,7 +44,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 auto f(auto x,auto y) {
-    return typename(x);
+    return typename;
 }
 signed main() {
     IOS();
