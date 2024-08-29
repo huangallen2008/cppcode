@@ -51,6 +51,7 @@ auto f(auto x) {
 }
 signed main() {
     IOS();
+    ope("ok")
     int r=f(1);
     f(2);
     ope(r)
