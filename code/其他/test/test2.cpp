@@ -109,7 +109,7 @@ signed main() {
         }
     }
     cout << prime.size() << "\n";
-    REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
+    // REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
     // cout<<prime.back()<<'\n';
     // int s=0;
     // REP(i,31) s+=prime[i];
@@ -128,7 +128,7 @@ signed main() {
     }
     // REP(i,200) cout<<dp[i].s<<' ';cout<<endl;
     // REP1(i,msu) cout<<dp[i].f;cout<<endl;
-    for(int i=msu-100;i<=msu;i++) cout<<dp[i].f;cout<<'\n';
+    // for(int i=msu-100;i<=msu;i++) cout<<dp[i].f;cout<<'\n';
     int T;
     cin>>T;
     while(T--) solve();
