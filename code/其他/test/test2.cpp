@@ -90,6 +90,7 @@ void solve() {
         int tt=0;
         for(int &x:an) tt+=x;
         cout<<pp[n]<<' '<<tt<<" "<<pp[n]-tt<<'\n';
+        ope(abs(tt*2-pp[n]))
     }
 }
 signed main() {
