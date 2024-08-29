@@ -81,15 +81,15 @@ void solve() {
         }
             // }
         // }
-        // int tt=0;
+        // REP1(i,n) {
+        //     if(ina[i]) cout<<"A";
+        //     else cout<<"B";
+        // }
+        // cout<<'\n';
         // for(int &x:an) cout<<x<<' ';cout<<'\n';
-        // for(int &x:an) tt+=x;
-        REP1(i,n) {
-            if(ina[i]) cout<<"A";
-            else cout<<"B";
-        }
-        cout<<'\n';
-        // cout<<pp[n]<<' '<<tt<<" "<<pp[n]-tt<<'\n';
+        int tt=0;
+        for(int &x:an) tt+=x;
+        cout<<pp[n]<<' '<<tt<<" "<<pp[n]-tt<<'\n';
     }
 }
 signed main() {
