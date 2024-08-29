@@ -44,17 +44,12 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 auto f(auto x) {
-    auto t;return t;
+    if(x==1) return x;
+    else {
+        x++;
+    }
 }
 signed main() {
     IOS();
-    int x=0;
-    bitset<maxn> b;
-    REP1(i,(1<<maxn)-1) {
-        x^=(i&-i);
-        b=x;
-        op(b)
-        ope(i)
-    }
     return 0;
 }
