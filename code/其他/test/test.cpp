@@ -50,8 +50,7 @@ signed main() {
     IOS();
     ope("ok")
     int r=2;
-    f(r);
-    ope(r)
+    cout<<f(r);
     // int t=f(1);
     // ope(t)
     // ope(t)
