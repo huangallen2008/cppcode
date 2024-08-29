@@ -13,7 +13,7 @@ vector<int> ip(maxv+1);
 const int maxn=4e5+5;
 vector<int> prime={0},pp={0};
 vector<pair<bool,int>> dp;
-const int m=51;
+const int m=101;
 int msu;
 void solve() {
     int n;
@@ -92,7 +92,7 @@ void solve() {
     }
 }
 signed main() {
-    int n=50;
+    // int n=50;
 
     for(int i=2;i<=maxv;i++) {
         if (minp[i] == 0) {
