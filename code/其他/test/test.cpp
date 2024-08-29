@@ -46,7 +46,7 @@ int rd(int l,int r) {
 auto f(auto x) {
     if(x==1) return x;
     else {
-        x++;
+        return x++;
     }
 }
 signed main() {
