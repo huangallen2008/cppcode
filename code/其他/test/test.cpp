@@ -55,8 +55,8 @@ signed main() {
     int r=2;
     f(r);
     ope(r)
-    int t=f(1);
-    ope(t)
-    ope(t)
+    // int t=f(1);
+    // ope(t)
+    // ope(t)
     return 0;
 }
