@@ -51,5 +51,7 @@ auto f(auto x) {
 }
 signed main() {
     IOS();
+    cout<<f(1);
+    f(2);
     return 0;
 }
