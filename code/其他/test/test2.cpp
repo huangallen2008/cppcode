@@ -108,7 +108,7 @@ signed main() {
             minp[i*prime[j]] = prime[j];
         }
     }
-    // cout << prime.size() << "\n";
+    cout << prime.size() << "\n";
     REP(i,100) cout<<prime[i]<<' ';cout<<'\n';
     // cout<<prime.back()<<'\n';
     // int s=0;
