@@ -34,117 +34,39 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=255;
-const int maxv=1e3+5;
-const int maxs=1e6;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct line {
-    int m,k;
-};
-struct LCSEG {
-    int cal(line l,int x) {
-        return l.m*x+l.k;
-    }
-    line mxl(line a,line b,int x) {
-        if(cal(a,x)>cal(b,x)) return a;
-        else return b;
-    }
-    int node_id=0;
-    vector<line> s;
-    vector<int> lc,rc;
-    void init() {
-        s.pb({0,-inf});
-        lc.pb(0),rc.pb(0);
-//        s={{0,-inf}};
-//        lc={0},rc={0};
-    }
-    int mk_node() {
-        s.pb({0,-inf});
-        lc.pb(0),rc.pb(0);
-        return s.size()-1;
-    }
-    void ud(int id,int l,int r,line v) {
-        if(l==r) {
-            s[id]=mxl(s[id],v,l);
-            return;
-        }
-        int m=l+r>>1;
-        line l1=v,l2=s[id];
-        if(l1.m>l2.m) swap(l1,l2);
-        int v1=cal(l1,m),v2=cal(l2,m);
-        if(v1<v2) {
-            s[id]=l2;
-            if(lc[id]==0) lc[id]=mk_node();
-            ud(lc[id],l,m,l1);
-        }
-        else {
-            s[id]=l1;
-            if(rc[id]==0) rc[id]=mk_node();
-            ud(rc[id],m+1,r,l2);
-        }
-    }
-    int qu(int id,int l,int r,int x) {
-        int an=cal(s[id],x);
-        if(l==r) return an;
-        int m=l+r>>1;
-        if(x<=m) {
-            if(lc[id]==0) lc[id]=mk_node();
-            return max(an,qu(lc[id],l,m,x));
-        }
-        else {
-            if(rc[id]==0) rc[id]=mk_node();
-            return max(an,qu(rc[id],m+1,r,x));
-        }
-    }
-} lcseg;
-struct SEG_lcseg {
-    vector<LCSEG> s;
-    void init(int n) {
-        s=vector<LCSEG>(n<<2);
-        REP(i,n<<2) s[i].init();
-    }
-    void ud(int w,int l,int r,int u,line v) {
-        s[w].ud(0,-maxv,maxv,v);
-        if(l==r) return;
-        int m=l+r>>1;
-        if(u<=m) ud(w<<1,l,m,u,v);
-        else ud(w<<1|1,m+1,r,u,v);
-    }
-    int qu(int w,int l,int r,int ql,int qr,int x) {
-//        op(w)op(l)op(r)op(ql)op(qr)ope(x)
-        if(ql<=l&&r<=qr) return s[w].qu(0,-maxv,maxv,x);
-        if(ql>r||qr<l) return -inf;
-        int m=l+r>>1;
-        return max(qu(w<<1,l,m,ql,qr,x),qu(w<<1|1,m+1,r,ql,qr,x));
-    }
-} seg_lct;
-int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
-    vector<int> dp(n+1);
-    seg_lct.init(n+1);
-    seg_lct.ud(1,0,n,0,{0,0});
-    REP1(i,n) {
-        dp[i]=pla[i]+seg_lct.qu(1,0,n,max(i-k,(int)0),i-1,pa[i]);
-        op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i]);
-        op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i]);
-        seg_lct.ud(1,0,n,i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)-pla[i]});
-    }
-   oparr(dp)
-    return dp[n];
+pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
+int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
+int sign(int x) { if(x>0) return 1;if(x<0) return -1; return 0; }
+bool kill1(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))<0;
+}
+bool kill2(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))>0;
 }
 signed main() {
-//    IOS();
-    int n,k;
-    cin>>n>>k;
-    vector<int> a(n+1),b(n+1),pa(n+1),pla(n+1);
-    REP1(i,n) cin>>a[i];
-    REP1(i,n) cin>>b[i];
-    REP1(i,n) {
-        pa[i]=pa[i-1]+a[i];
-        pla[i]=pla[i-1]+a[i]*i;
+    IOS();
+    int n;
+    cin>>n;
+    vector<pii> p(n);
+    REP(i,n) cin>>p[i].f>>p[i].s;
+    sort(ALL(p));
+    vector<pii> convex={p[0]};
+    REP1(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
     }
-    cout<<solve(n,k,pa,pla,b)<<'\n';;
+    RREP(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
+    }
+    convex.pop_back();
+    cout<<convex.size()<<'\n';
+    sort(ALL(convex));
+    for(auto &[x,y]:convex) cout<<x<<' '<<y<<'\n';
     return 0;
 }
