@@ -52,7 +52,9 @@ auto f(auto x) {
 signed main() {
     IOS();
     ope("ok")
-    f(2);
+    int r=1;
+    f(r);
+    ope(r)
     int r=f(1);
     ope(r)
     ope(r)
