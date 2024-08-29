@@ -46,15 +46,15 @@ int rd(int l,int r) {
 auto f(auto x) {
     if(x==1) return x;
     else {
-        return x++;
+        x++;
     }
 }
 signed main() {
     IOS();
     ope("ok")
-    int r=f(1);
-    ope(r)
     f(2);
+    int r=f(2);
+    ope(r)
     ope(r)
     return 0;
 }
