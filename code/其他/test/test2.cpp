@@ -13,7 +13,7 @@ vector<int> ip(maxv+1);
 const int maxn=4e5+5;
 vector<int> prime={0},pp={0};
 vector<pair<bool,int>> dp;
-const int m=201;
+const int m=51;
 int msu;
 void solve() {
     int n;
@@ -85,7 +85,7 @@ void solve() {
             if(ina[i]) cout<<"A";
             else cout<<"B";
         }
-        // cout<<'\n';
+        cout<<'\n';
         // for(int &x:an) cout<<x<<' ';cout<<'\n';
         // int tt=0;
         // for(int &x:an) tt+=x;
