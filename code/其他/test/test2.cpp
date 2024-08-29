@@ -13,7 +13,7 @@ vector<int> ip(maxv+1);
 const int maxn=4e5+5;
 vector<int> prime={0},pp={0};
 vector<pair<bool,int>> dp;
-const int m=301;
+const int m=201;
 int msu;
 void solve() {
     int n;
