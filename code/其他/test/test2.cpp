@@ -127,7 +127,8 @@ signed main() {
         }
     }
     // REP(i,200) cout<<dp[i].s<<' ';cout<<endl;
-    REP1(i,msu) cout<<dp[i].f;cout<<endl;
+    // REP1(i,msu) cout<<dp[i].f;cout<<endl;
+    for(int i=msu-100;i<=msu;i++) cout<<dp[i].f;cout<<'\n';
     int T;
     cin>>T;
     while(T--) solve();
