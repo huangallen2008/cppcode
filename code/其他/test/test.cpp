@@ -71,7 +71,7 @@ void solve() {
         cout<<sc<<'\n';
     }
     else {
-        if(cnt[0]==cnt[1]&&(n-cl-1>0)) {
+        if(cnt[0]==cnt[1]&&((n-cl-1)&1)) {
             sc+=max(cnt[0],cnt[1]);
             sc+=cnt[2]+1>>1;
         }
