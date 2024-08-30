@@ -46,19 +46,18 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Graph g(n);
+    vector<int> g(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
+        deg[u]++,deg[v]++;
     }
     string s;
     cin>>s;
     vector<char> v;
     vector<int> cnt(3);
     REP1(i,n-1) {
-        if(g[u].size()==1) {
+        if(deg[i]==1) {
             if(s[i]=='?') cnt[2]++;
             else cnt[s[i]-'0']++;
         }
