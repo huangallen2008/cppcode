@@ -46,7 +46,7 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    vector<int> g(n);
+    vector<int> deg(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
