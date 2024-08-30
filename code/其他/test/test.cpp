@@ -71,7 +71,7 @@ void solve() {
     else {
         sc+=max(cnt[0],cnt[1]);
         sc+=cnt[2]>>1;
-        cout<<'\n';
+        cout<<sc<<'\n';
     }
 }
 signed main() {
