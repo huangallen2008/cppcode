@@ -57,7 +57,7 @@ void solve() {
     vector<char> v;
     vector<int> cnt(3);
     REP1(i,n-1) {
-        if(i!=0&&deg[i]==1) {
+        if(i!=0) {
             if(s[i]=='?') cnt[2]++;
             else cnt[s[i]-'0']++;
         }
