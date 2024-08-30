@@ -55,11 +55,13 @@ void solve() {
     string s;
     cin>>s;
     vector<char> v;
+    int cl=0;
     vector<int> cnt(3);
     REP1(i,n-1) {
-        if(i!=0) {
+        if(deg[i]==1) {
             if(s[i]=='?') cnt[2]++;
             else cnt[s[i]-'0']++;
+            cl++;
         }
     }
     int sc=0;
@@ -69,8 +71,14 @@ void solve() {
         cout<<sc<<'\n';
     }
     else {
-        sc+=max(cnt[0],cnt[1]);
-        sc+=cnt[2]>>1;
+        if(cnt[0]==cnt[1]&&(n-cl-1>0)) {
+            sc+=max(cnt[0],cnt[1]);
+            sc+=cnt[2]+1>>1;
+        }
+        else {
+            sc+=max(cnt[0],cnt[1]);
+            sc+=cnt[2]>>1;
+        }
         cout<<sc<<'\n';
     }
 }
