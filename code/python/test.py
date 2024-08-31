@@ -5,9 +5,9 @@ h, w, n = map(int, stdin.readline().strip().split())
 a = [(0, 0)] + sorted(tuple(map(int, stdin.readline().strip().split())) for i in range(n)) + [(h, w)]
 
 LIS = []
-bk = [-1]*n
+bk = [-1]*len(a)
 
-for i in range(n):
+for i in range(n+2):
     x, y = a[i]
     idx = bisect_right(LIS, (y, i))
     
