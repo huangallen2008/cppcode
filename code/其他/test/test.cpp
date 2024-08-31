@@ -44,17 +44,17 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graphw g;
-vector<int> v;
+vector<int> va;
 int dfs(int u,int pa) {
     int mx=0;
     for(auto [v,w]:g[u]) {
         if(v==pa) continue;
         int r=dfs(u,v)+w;
         if(r>mx) {
-            if(mx!=-1) v.pb(mx);
+            if(mx!=-1) va.pb(mx);
             mx=r;
         }
-        else v.pb(r);
+        else va.pb(r);
     }
     return mx;
 }
@@ -70,11 +70,11 @@ signed main() {
         g[v].pb({v,w});
     }
     dfs(0,-1);
-    sort(ALL(v),greater<int>());
+    sort(ALL(va),greater<int>());
     vector<int> an(n+1);
     REP1(i,n) {
         if(i>v.size()) an[i]=an[i-1];
-        else an[i]=an[i-1]+v[i-1];
+        else an[i]=an[i-1]+va[i-1];
     }
     REP1(i,n) cout<<an[i]*2<<' ';
     cout<<'\n';
