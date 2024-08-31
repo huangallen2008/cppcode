@@ -46,6 +46,7 @@ int rd(int l,int r) {
 Graphw g;
 vector<int> va;
 int dfs(int u,int pa) {
+    ope(u)
     int mx=0;
     for(auto [v,w]:g[u]) {
         if(v==pa) continue;
