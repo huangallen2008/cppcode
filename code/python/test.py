@@ -7,7 +7,8 @@ a = sorted(tuple(map(int, stdin.readline().strip().split())) for i in range(n))
 LIS = []
 bk = [-1]*n
 
-for x, y in a:
+for i in range(n):
+    x, y = a[i]
     idx = bisect_right(LIS, (y, ))
     if idx == len(LIS):
         LIS.append(y)
