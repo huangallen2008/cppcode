@@ -60,7 +60,7 @@ signed main() {
         dp[i]=id;
         if(id) {
         ll[i]=ii[id-1];
-            la[i]={v[id-1].f-a[i].s,v[id-1].s-a[i].f};
+            la[i]={-v[id-1].f+a[i].s,-v[id-1].s+a[i].f};
         }
     }
     int mx=*max_element(ALL(dp));
