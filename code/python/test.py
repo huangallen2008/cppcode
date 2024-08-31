@@ -25,4 +25,6 @@ v = LIS[-1][1]
 ans = ""
 
 while v != -1:
+    u = bk[v]
     ans = "D"* + "R"* + ans
+    v = u
