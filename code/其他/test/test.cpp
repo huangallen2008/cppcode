@@ -69,7 +69,7 @@ signed main() {
         g[u].pb({v,w});
         g[v].pb({v,w});
     }
-    dfs(0,-1);
+    va.pb(dfs(0,-1));
     sort(ALL(va),greater<int>());
     oparr(va)
     vector<int> an(n+1);
