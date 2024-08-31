@@ -77,6 +77,6 @@ signed main() {
         if(i>va.size()) an[i]=an[i-1];
         else an[i]=an[i-1]+va[i-1];
     }
-    REP1(i,n) cout<<an[i]*2<<'\n';
+    REP1(i,n) cout<<an[i]<<'\n';
     return 0;
 }
