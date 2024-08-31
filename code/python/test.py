@@ -15,7 +15,9 @@ for i in range(n):
         LIS.append((y, i))
     else:
         LIS[idx] = (y, i)
-        bk[i] = bk[LIS[idx][1]]
+    
+    if idx != 0:
+        bk[i] = LIS[idx-1][1]
 
 print(len(LIS) - 1)
 
