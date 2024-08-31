@@ -56,16 +56,16 @@ signed main() {
     REP(i,n) {
         int id=lower_bound(ALL(v),pii{a[i].s,a[i].f})-v.begin();
         v[id]={a[i].s,a[i].f};
-        ll[i]=ii[id]-1;
         ii[id]=i;
         dp[i]=id;
         if(id) {
+        ll[i]=ii[id-1];
             la[i]={v[id-1].f-a[i].s,v[id-1].s-a[i].f};
         }
     }
     int mx=*max_element(ALL(dp));
     int mxi=max_element(ALL(dp))-dp.begin();
-    cout<<mx<<'\n';
+    cout<<mx+1<<'\n';
     string an="";
     int t=mxi;
     while(dp[t]>0) {
