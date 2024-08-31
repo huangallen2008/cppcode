@@ -49,9 +49,9 @@ int dfs(int u,int pa) {
     int mx=0;
     for(auto [v,w]:g[u]) {
         if(v==pa) continue;
-        int r=dfs(u,v);
+        int r=dfs(u,v)+w;
         if(r>mx) {
-            if(mx!=-1) v.pb(mx+w);
+            if(mx!=-1) v.pb(mx);
             mx=r;
         }
         else v.pb(r);
