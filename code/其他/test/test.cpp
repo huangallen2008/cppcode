@@ -68,7 +68,7 @@ signed main() {
     cout<<mx<<'\n';
     string an="";
     int t=mxi;
-    while(ap[t]>0) {
+    while(dp[t]>0) {
         REP(i,la[t].f) an+='L';
         REP(i,la[t].s) an+='D';
         t=ll[t];
