@@ -8,10 +8,12 @@ LIS = []
 bk = [-1]*n
 
 for x, y in a:
-    idx = bisect_right(LIS, y)
+    idx = bisect_right(LIS, (y, ))
     if idx == len(LIS):
         LIS.append(y)
     else:
         LIS[idx] = y
 
 print(len(LIS))
+
+v = LIS
