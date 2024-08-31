@@ -18,7 +18,7 @@ for i in range(n):
         LIS[idx] = y
         bk[i] = bk[LIS[idx]][1]
 
-print(len(LIS))
+print(len(LIS) - 1)
 
 v = LIS[-1][1]
 
