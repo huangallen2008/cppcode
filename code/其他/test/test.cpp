@@ -46,7 +46,6 @@ int rd(int l,int r) {
 Graphw g;
 vector<int> va;
 int dfs(int u,int pa) {
-    ope(u)
     int mx=0;
     for(auto [v,w]:g[u]) {
         if(v==pa) continue;
@@ -77,7 +76,6 @@ signed main() {
         if(i>va.size()) an[i]=an[i-1];
         else an[i]=an[i-1]+va[i-1];
     }
-    REP1(i,n) cout<<an[i]*2<<' ';
-    cout<<'\n';
+    REP1(i,n) cout<<an[i]*2<<'\n';
     return 0;
 }
