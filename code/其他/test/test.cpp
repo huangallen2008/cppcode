@@ -43,52 +43,40 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n;
-    cin>>n;
-    vector<int> deg(n);
-    REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        deg[u]++,deg[v]++;
-    }
-    string s;
-    cin>>s;
-    vector<char> v;
-    int cl=0;
-    vector<int> cnt(3);
-    REP1(i,n-1) {
-        if(deg[i]==1) {
-            if(s[i]=='?') cnt[2]++;
-            else cnt[s[i]-'0']++;
+Graphw g;
+vector<int> v;
+int dfs(int u,int pa) {
+    int mx=0;
+    for(auto [v,w]:g[u]) {
+        if(v==pa) continue;
+        int r=dfs(u,v);
+        if(r>mx) {
+            if(mx!=-1) v.pb(mx+w);
+            mx=r;
         }
-        else {
-            if(s[i]=='?')cl++;
-
-        }
+        else v.pb(r);
     }
-    int sc=0;
-    if(s[0]!='?') {
-        sc+=cnt[1^(s[0]-'0')];
-        sc+=cnt[2]+1>>1;
-        cout<<sc<<'\n';
-    }
-    else {
-        if(cnt[0]==cnt[1]&&(cl&1)) {
-            sc+=max(cnt[0],cnt[1]);
-            sc+=cnt[2]+1>>1;
-        }
-        else {
-            sc+=max(cnt[0],cnt[1]);
-            sc+=cnt[2]>>1;
-        }
-        cout<<sc<<'\n';
-    }
+    return mx;
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    int n;
+    cin>>n;
+    g=Graphw(n);
+    REP(i,n-1) {
+        int u,v,w;
+        cin>>u>>v>>w,u--,v--;
+        g[u].pb({v,w});
+        g[v].pb({v,w});
+    }
+    dfs(0,-1);
+    sort(ALL(v),greater<int>());
+    vector<int> an(n+1);
+    REP1(i,n) {
+        if(i>v.size()) an[i]=an[i-1];
+        else an[i]=an[i-1]+v[i-1];
+    }
+    REP1(i,n) cout<<an[i]*2<<' ';
+    cout<<'\n';
     return 0;
 }
