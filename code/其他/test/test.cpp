@@ -76,8 +76,8 @@ signed main() {
         REP(i,la[t].s) an+='D';
         t=ll[t];
     }
-    REP(i,a[t].f) an+='D';
-    REP(i,a[t].s) an+='R';
+    REP(i,a[t].f-1) an+='D';
+    REP(i,a[t].s-1) an+='R';
     reverse(ALL(an));
     cout<<an<<'\n';
 
