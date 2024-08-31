@@ -7,5 +7,10 @@ a = sorted(tuple(map(int, stdin.readline().strip().split())) for i in range(n))
 LIS = []
 
 for x, y in a:
-    idx = bisect_right(LIS, (x, y))
-    
+    idx = bisect_right(LIS, y)
+    if idx == len(LIS):
+        LIS.append(y)
+    else:
+        LIS[idx] = y
+
+print(len(LIS))
