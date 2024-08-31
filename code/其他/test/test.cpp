@@ -54,7 +54,7 @@ signed main() {
     vector<int> dp(n),ii(n),ll(n);
     vector<pii> la(n);
     REP(i,n) {
-        int id=lower_bound(ALL(v),{a[i].s,a[i].f})-v.begin();
+        int id=lower_bound(ALL(v),pii{a[i].s,a[i].f})-v.begin();
         v[id]={a[i].s,a[i].f};
         ll[i]=ii[id]-1;
         ii[id]=i;
