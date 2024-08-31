@@ -9,7 +9,7 @@ bk = [-1]*n
 
 for i in range(n):
     x, y = a[i]
-    idx = bisect_right(LIS, (y, ))
+    idx = bisect_right(LIS, (y, i))
     if idx == len(LIS):
         LIS.append(y)
     else:
