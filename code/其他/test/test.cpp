@@ -67,13 +67,17 @@ signed main() {
     int mxi=max_element(ALL(dp))-dp.begin();
     cout<<mx+1<<'\n';
     string an="";
+    REP(i,h-a[mxi].f) an+='D';
+    REP(i,w-a[mxi].s) an+='R';
     int t=mxi;
     while(dp[t]>0) {
-        cout<<la[t].f<<' '<<la[t].s<<'\n';
-        REP(i,la[t].f) an+='L';
+        // cout<<la[t].f<<' '<<la[t].s<<'\n';
+        REP(i,la[t].f) an+='R';
         REP(i,la[t].s) an+='D';
         t=ll[t];
     }
+    REP(i,a[t].f) an+='D';
+    REP(i,a[t].s) an+='R';
     reverse(ALL(an));
     cout<<an<<'\n';
 
