@@ -23,7 +23,6 @@ print(len(LIS) - 2)
 
 v = LIS[-1][1]
 
-buf = []
 ans = ""
 
 while v != -1:
@@ -31,6 +30,6 @@ while v != -1:
     dx = a[v][0] - a[u][0]
     dy = a[v][1] - a[u][1]
 
-    ans = "D"*dx + "R"*dy
+    ans += "D"*dx + "R"*dy
     v = u
-print(ans)
+print(ans[::-1])
