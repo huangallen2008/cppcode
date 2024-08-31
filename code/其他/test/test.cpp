@@ -51,7 +51,7 @@ int dfs(int u,int pa) {
         if(v==pa) continue;
         int r=dfs(v,u)+w;
         if(r>mx) {
-            if(mx!=-1) va.pb(mx);
+            if(mx!=0) va.pb(mx);
             mx=r;
         }
         else va.pb(r);
