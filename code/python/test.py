@@ -26,6 +26,7 @@ ans = ""
 
 while v != -1:
     u = bk[v]
+    print(v)
     dx = a[v][0] - a[u][0]
     dy = a[v][1] - a[u][1]
 
