@@ -71,12 +71,12 @@ signed main() {
     }
     va.pb(dfs(0,-1));
     sort(ALL(va),greater<int>());
-    oparr(va)
+    // oparr(va)
     vector<int> an(n+1);
     REP1(i,n) {
         if(i>va.size()) an[i]=an[i-1];
         else an[i]=an[i-1]+va[i-1];
     }
-    REP1(i,n) cout<<an[i]<<'\n';
+    REP1(i,n) cout<<an[i]*2<<'\n';
     return 0;
 }
