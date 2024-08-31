@@ -67,7 +67,7 @@ signed main() {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
         g[u].pb({v,w});
-        g[v].pb({v,w});
+        g[v].pb({u,w});
     }
     va.pb(dfs(0,-1));
     sort(ALL(va),greater<int>());
