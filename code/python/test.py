@@ -2,7 +2,7 @@ from sys import stdin
 from bisect import bisect_right
 h, w, n = map(int, stdin.readline().strip().split())
 
-a = sorted(tuple(map(int, stdin.readline().strip().split())) for i in range(n)) + [(h, w)]
+a = [(0, 0)] + sorted(tuple(map(int, stdin.readline().strip().split())) for i in range(n)) + [(h, w)]
 
 LIS = []
 bk = [-1]*n
@@ -19,7 +19,7 @@ for i in range(n):
     if idx != 0:
         bk[i] = LIS[idx-1][1]
 
-print(len(LIS) - 1)
+print(len(LIS) - 2)
 
 v = LIS[-1][1]
 
