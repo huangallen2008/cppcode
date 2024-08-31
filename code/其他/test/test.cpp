@@ -73,7 +73,7 @@ signed main() {
     sort(ALL(va),greater<int>());
     vector<int> an(n+1);
     REP1(i,n) {
-        if(i>v.size()) an[i]=an[i-1];
+        if(i>va.size()) an[i]=an[i-1];
         else an[i]=an[i-1]+va[i-1];
     }
     REP1(i,n) cout<<an[i]*2<<' ';
