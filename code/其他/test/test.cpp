@@ -45,8 +45,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
+    int n,h,w;
+    cin>>h>>w>>n;
     vector<pii> a(n);
     REP(i,n) cin>>a[i].f>>a[i].s;
     sort(ALL(a));
