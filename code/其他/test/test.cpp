@@ -71,6 +71,7 @@ signed main() {
     }
     dfs(0,-1);
     sort(ALL(va),greater<int>());
+    oparr(va)
     vector<int> an(n+1);
     REP1(i,n) {
         if(i>va.size()) an[i]=an[i-1];
