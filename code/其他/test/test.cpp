@@ -50,7 +50,7 @@ int dfs(int u,int pa) {
     int mx=0;
     for(auto [v,w]:g[u]) {
         if(v==pa) continue;
-        int r=dfs(u,v)+w;
+        int r=dfs(v,u)+w;
         if(r>mx) {
             if(mx!=-1) va.pb(mx);
             mx=r;
