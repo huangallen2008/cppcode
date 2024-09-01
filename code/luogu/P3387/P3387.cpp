@@ -45,10 +45,11 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SCC {
-    vector<int> sccid,dfn,val;
+    vector<int> sccid,dfn,val,dis,ind;
     bitset<maxn> vis;
     int sccc=0;
     Graph ng;
+    int an=0;
     void init(int n,Graph &g,vector<int> &v) {
         sccid=vector<int>(n);
         dfn.clear();
@@ -66,13 +67,27 @@ struct SCC {
             }
         }
         ng=Graph(sccc);
-        val=vector<int>(sccc);
+        ind=val=vector<int>(sccc);
+        REP(i,n) val[sccid[i]]+=v[i];
         REP(u,n) {
             for(auto v:g[u]) {
-                if(sccid[u]==sccid[v]) val[sccid[u]]+=w;
-                else ng[sccid[u]].pb(sccid[v]);
+                if(sccid[u]!=sccid[v]) ng[sccid[u]].pb(sccid[v]),ind[sccid[v]]++;
             }
         }
+        vis.reset();
+        dis=vector<int>(sccc);
+        queue<int> q;
+        REP(i,sccid) if(ind[i]==0) q.push(i),dis[i]=val[i];
+        while(q.size()) {
+            int u=q.front();
+            q.pop();
+            for(int v:g[u]) {
+                chmax(dis[v],dis[u]+val[v]);
+                ind[v]--;
+                if(ind[v]==0) q.push(v);
+            }
+        }
+        an=#max_element(ALL(dis));
     }
     void dfs1(int u,Graph &g) {
         vis[u]=1;
@@ -95,6 +110,15 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-
+    Graph g(n);
+    vector<int> v(n);
+    REP(i,n) cin>>v[i];
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+    }
+    scc.init(n,g);
+    cout<<scc.an<<'\n';
     return 0;
 }
