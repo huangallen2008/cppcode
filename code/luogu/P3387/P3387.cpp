@@ -45,7 +45,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SCC {
-    vector<int> sccid,dfn,val,dis,ind;
+    vector<int> sccid,dfn,val,dis;
     bitset<maxn> vis;
     int sccc=0;
     Graph ng,ngb;
@@ -70,23 +70,19 @@ struct SCC {
                 dfs2(u);
             }
         }
-        ng=Graph(sccc);
-        Graph ngb(sccc);
-        ind=val=vector<int>(sccc);
+        val=vector<int>(sccc);
         REP(i,n) val[sccid[i]]+=v[i];
         REP(u,n) {
             for(auto v:g[u]) {
                 if(sccid[u]!=sccid[v]) {
-                    ng[sccid[u]].pb(sccid[v]);
                     ngb[sccid[v]].pb(sccid[u]);
-                    ind[sccid[v]]++;
                 }
             }
         }
         vis.reset();
         dis=val;
         REP(u,sccc) {
-            for(auto v:ng[u]) {
+            for(auto v:ngb[u]) {
                 chmax(dis[u],dis[v]+val[u]);
             }
         }
