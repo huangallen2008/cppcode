@@ -45,6 +45,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ope(__gcd(0,5))
     int n,h,w;
     cin>>h>>w>>n;
     vector<pii> a(n);
