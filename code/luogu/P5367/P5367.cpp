@@ -51,7 +51,6 @@ struct BIT {
         n=_n;
         b=vector<int>(n+1);
         REP1(i,n) b[i]=i&-i;
-        oparr(b)
     }
     void ud(int u,int v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
@@ -77,7 +76,6 @@ signed main() {
         an+=fac[bit.pre(x-1)];
         if(an>=mod) an-=mod;
         bit.ud(x,-1);
-        REP1(j,n) cout<<bit.pre(j)<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
