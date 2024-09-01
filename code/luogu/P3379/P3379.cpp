@@ -89,6 +89,7 @@ signed main() {
     }
     jp[0][s]=s;
     dfs(s,-1);
+    REP(i,n) cout<<jp[0][i]<<' ';entr
     init();
     REP(i,m) {
         int u,v;
