@@ -82,7 +82,7 @@ struct SCC {
         }
         vis.reset();
         dis=val;
-        REP(u,n) {
+        REP(u,sccc) {
             for(auto v:ng[u]) {
                 chmax(dis[u],dis[v]+val[u]);
             }
