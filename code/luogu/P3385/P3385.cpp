@@ -45,7 +45,7 @@ int rd(int l,int r) {
 }
 struct edge {
     int u,v,w;
-}
+};
 void solve() {
     int n,m;
     cin>>n>>m;
