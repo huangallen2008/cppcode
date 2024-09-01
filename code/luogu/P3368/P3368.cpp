@@ -85,7 +85,6 @@ signed main() {
             cin>>u;
             cout<<bit.pre(u)<<'\n';
         }
-        REP1(i,n) cout<<bit.pre(i)<<' ';entr
     }
     return 0;
 }
