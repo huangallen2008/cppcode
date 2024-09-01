@@ -57,8 +57,8 @@ void solve() {
         return an;
     };
     ld l=0,r=10000,m;
-    int time=50;
-    ld exp=0.0000000001;
+    int time=60;
+    ld exp=1e-11;
     while(time--) {
         m=(l+r)/2;
         ld ret=cal(m+exp)-cal(m);
