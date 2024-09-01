@@ -81,7 +81,7 @@ struct SCC {
         while(q.size()) {
             int u=q.front();
             q.pop();
-            for(int v:g[u]) {
+            for(int v:ng[u]) {
                 chmax(dis[v],dis[u]+val[v]);
                 ind[v]--;
                 if(ind[v]==0) q.push(v);
