@@ -87,7 +87,7 @@ struct SCC {
                 if(ind[v]==0) q.push(v);
             }
         }
-        an=#max_element(ALL(dis));
+        an=*max_element(ALL(dis));
     }
     void dfs1(int u,Graph &g) {
         vis[u]=1;
