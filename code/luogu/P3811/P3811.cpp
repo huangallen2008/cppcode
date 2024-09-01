@@ -62,7 +62,7 @@ signed main() {
     cin>>n>>p;
     int if0=1,fi=1;
     REP1(i,n) {
-        int ii=(fi0*fi)%mod;
+        int ii=(if0*fi)%mod;
         out(ii);
         if0=if0*ii%mod;
         fi=fi*(i+1)%mod;
