@@ -75,6 +75,7 @@ signed main() {
         an+=fac[bit.pre(x-1)];
         if(an>=mod) an-=mod;
         bit.ud(x,-1);
+        REP1(j,n) cout<<bit.pre(j)<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
