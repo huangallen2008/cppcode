@@ -50,7 +50,7 @@ struct BIT {
     void init(int _n) {
         n=_n;
         b=vector<int>(n+1);
-        REP1(i,n) b[i]=__builtin_ctz(i&-i)+1;
+        REP1(i,n) b[i]=i&-i;
         oparr(b)
     }
     void ud(int u,int v) {
