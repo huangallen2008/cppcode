@@ -57,6 +57,7 @@ struct SCC {
         an=0;
         vis.reset();
         REP(i,n) if(!vis[i]) dfs1(i,g);
+        reverse(ALL(dfn));
         Graph gb(n);
         REP(u,n) for(auto v:g[u]) gb[v].pb(u);
         vis.reset();
