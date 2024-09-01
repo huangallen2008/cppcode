@@ -69,7 +69,6 @@ struct TRIE {
             if(ch[w][t]==-1) ch[w][t]=node_id++;
             w=ch[w][t];
             cnt[w]++;
-            op(w)ope(cnt[w])
         }
     }
     int qu(string s) {
