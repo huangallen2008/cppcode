@@ -71,6 +71,7 @@ struct SCC {
             }
         }
         val=vector<int>(sccc);
+        ngb=Graph(n);
         REP(i,n) val[sccid[i]]+=v[i];
         REP(u,n) {
             for(auto v:g[u]) {
