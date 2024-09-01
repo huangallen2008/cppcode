@@ -58,11 +58,10 @@ void solve() {
     };
     ld l=0,r=1000,m;
     int time=60;
-    ld exp=1e-11;
+    ld exp=1e-9;
     while(time--) {
         m=(l+r)/2;
-        ld ret=cal(m+exp)-cal(m);
-        if(ret>=0) r=m;
+        if(cal(m+exp)>=cal(m)) r=m;
         else l=m+exp;
     }
     ld an=cal(l);
