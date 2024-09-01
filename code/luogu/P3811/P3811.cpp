@@ -44,7 +44,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p,int mod=mod) {
+int pw(int x,int p,const int mod=mod) {
     int r=1;
     while(p>0) {
         if(p&1) r*=x;r%=mod;
@@ -53,7 +53,7 @@ int pw(int x,int p,int mod=mod) {
     }
     return r;
 }
-int inv(int x,int mod=mod) {
+int inv(int x,const int mod=mod) {
     return pw(x,mod-2,mod);
 }
 signed main() {
