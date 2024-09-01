@@ -70,11 +70,11 @@ signed main() {
     REP1(i,n-1) fac[i]=fac[i-1]*i%mod;
     fac[0]=0;
     int an=1;
-    REP(i,n) {
+    REP1(i,n) {
         int x;
         cin>>x;
         ope(bit.pre(x-1))
-        an+=fac[bit.pre(x-1)];
+        an+=bit.pre(x-1)*fac[n-i];
         if(an>=mod) an-=mod;
         bit.ud(x,-1);
     }
