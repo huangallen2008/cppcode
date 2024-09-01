@@ -58,7 +58,7 @@ signed main() {
     }
     REP(j,n) {
         REP(i,n) {
-            if(adj[i][j]) nadj[i]|=adj[j];
+            if(adj[i][j]) adj[i]|=adj[j];
         }
     }
     REP(i,n) {
