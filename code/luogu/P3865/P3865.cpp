@@ -47,7 +47,7 @@ int rd(int l,int r) {
 int n;
 int st[maxb][maxn];
 void init() {
-    REP(i,maxb) {
+    REP1(i,maxb-1) {
         REP(j,n) {
             st[i][j]=max(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
         }
