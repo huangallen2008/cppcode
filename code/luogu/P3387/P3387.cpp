@@ -78,7 +78,7 @@ struct SCC {
         vis[u]=1;
         for(auto v:g[u]) {
             if(vis[v]) continue;
-            dfs(v,g);
+            dfs1(v,g);
         }
         dfn.pb(u);
     }
@@ -87,7 +87,7 @@ struct SCC {
         for(auto v:g[u]) {
             if(vis[v]) continue;
             sccid[v]=sccid[u];
-            dfs(v,g);
+            dfs2(v,g);
         }
     }
 }scc;
