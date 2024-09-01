@@ -118,7 +118,7 @@ signed main() {
         cin>>u>>v,u--,v--;
         g[u].pb(v);
     }
-    scc.init(n,g);
+    scc.init(n,g,v);
     cout<<scc.an<<'\n';
     return 0;
 }
