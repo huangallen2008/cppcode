@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -47,8 +48,8 @@ int rd(int l,int r) {
 int pw(int x,int p,const int mod=mod) {
     int r=1;
     while(p>0) {
-        if(p&1) r*=x;r%=mod;
-        x*=x,x%=mod;
+        if(p&1) r=(r*1ll*x)%mod;
+        x=(x*1ll*x)%mod;
         p>>=1;
     }
     return r;
