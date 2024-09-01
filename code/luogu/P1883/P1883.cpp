@@ -51,21 +51,21 @@ void solve() {
     cin>>n;
     vector<pol> p(n);
     REP(i,n) cin>>p[i].a>>p[i].b>>p[i].c;
-    auto cal = [&](double x) {
-        double an=-3e6;
+    auto cal = [&](ld x) {
+        ld an=-3e6;
         REP(i,n) chmax(an,p[i].a*x*x+p[i].b*x+p[i].c);
         return an;
     };
-    double l=0,r=10000,m;
+    ld l=0,r=10000,m;
     int time=50;
-    double exp=0.0001;
+    ld exp=0.000000001;
     while(time--) {
         m=(l+r)/2;
-        double ret=cal(m+exp)-cal(m);
+        ld ret=cal(m+exp)-cal(m);
         if(ret>=0) r=m;
         else l=m+exp;
     }
-    double an=cal(l);
+    ld an=cal(l);
     cout<<fixed<<setprecision(4)<<an<<'\n';
 }
 signed main() {
