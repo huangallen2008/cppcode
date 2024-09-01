@@ -65,6 +65,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    bit.init(n);
     vector<int> fac(n);
     REP1(i,n-1) fac[i]=fac[i-1]*i%mod;
     int an=1;
