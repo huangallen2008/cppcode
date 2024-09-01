@@ -64,7 +64,7 @@ void solve() {
         else l=m+1;
     }
     double an=cal(l);
-    cout<<an<<'\n';
+    cout<<fixed<<setprecision(4)<<an<<'\n';
 }
 signed main() {
     IOS();
