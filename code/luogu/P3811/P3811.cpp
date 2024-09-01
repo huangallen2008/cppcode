@@ -53,7 +53,7 @@ void exgcd(int a,int b,int &x,int &y){
 	exgcd(b,a%b,y,x);
 	y-=a/b*x;
 }
-int inv(int a,const int m){
+int inv(int a,int m){
 	int x,y;
 	exgcd(a,m,x,y);
 	return x;
