@@ -93,7 +93,7 @@ signed main() {
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
-        cout<<lca(u,v)<<'\n';
+        cout<<lca(u,v)+1<<'\n';
     }
     return 0;
 }
