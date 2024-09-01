@@ -64,10 +64,12 @@ signed main() {
     int n,m;
     cin>>n>>m;
     bit.init(n);
+    int la=0;
     REP1(i,n) {
         int x;
         cin>>x;
-        bit.ud(i,x);
+        bit.ud(i,x-la);
+        la=x;
     }
     REP(i,m) {
         int opt;
