@@ -51,7 +51,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<pii> stk={{inf,0}};
     RREP(i,n) {
-        for(auto [x,y]:stk) cout<<"{"<<x<<' '<<y<<"} ";
+        for(auto [x,y]:stk) cout<<"{"<<x<<' '<<y<<"} ";entr
         while(a[i]>=stk.back().f) stk.pop_back();
         an[i]=stk.back().s;
         stk.pb({a[i],i});
