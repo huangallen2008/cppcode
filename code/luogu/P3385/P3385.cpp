@@ -65,7 +65,7 @@ void solve() {
     while(rd--) {
         bool ok=1;
         for(auto &[u,v,w]:e) {
-            if(dis[u]+w<dis[v]) {
+            if(dis[u]!=inf&&dis[u]+w<dis[v]) {
                 dis[v]=dis[u]+w;
                 ok=0;
             }
