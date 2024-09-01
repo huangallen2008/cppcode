@@ -49,11 +49,10 @@ signed main() {
     cin>>n;
     vector<int> a(n),an(n);
     REP(i,n) cin>>a[i];
-    vector<pii> stk={{inf,0}};
+    vector<pii> stk={{inf,-1}};
     RREP(i,n) {
-        for(auto [x,y]:stk) cout<<"{"<<x<<' '<<y<<"} ";entr
         while(a[i]>=stk.back().f) stk.pop_back();
-        an[i]=stk.back().s;
+        an[i]=stk.back().s+1;
         stk.pb({a[i],i});
     }
     REP(i,n) cout<<an[i]<<' ';
