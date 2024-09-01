@@ -49,7 +49,7 @@ struct pol {
 void solve() {
     int n;
     cin>>n;
-    vector<poly> p(n);
+    vector<pol> p(n);
     REP(i,n) cin>>p[i].a>>p[i].b>>p[i].c;
     auto cal = [&](double x) {
         double an=-inf;
