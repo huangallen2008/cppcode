@@ -68,24 +68,23 @@ struct SCC {
             }
         }
         ng=Graph(sccc);
+        Graph ngb(sccc);
         ind=val=vector<int>(sccc);
         REP(i,n) val[sccid[i]]+=v[i];
         REP(u,n) {
             for(auto v:g[u]) {
-                if(sccid[u]!=sccid[v]) ng[sccid[u]].pb(sccid[v]),ind[sccid[v]]++;
+                if(sccid[u]!=sccid[v]) {
+                    ng[sccid[u]].pb(sccid[v]);
+                    ngb[sccid[v]].pb(sccid[u]);
+                    ind[sccid[v]]++;
+                }
             }
         }
         vis.reset();
-        dis=vector<int>(sccc);
-        queue<int> q;
-        REP(i,sccc) if(ind[i]==0) q.push(i),dis[i]=val[i];
-        while(q.size()) {
-            int u=q.front();
-            q.pop();
-            for(int v:ng[u]) {
-                chmax(dis[v],dis[u]+val[v]);
-                ind[v]--;
-                if(ind[v]==0) q.push(v);
+        dis=val;
+        REP(i,n) {
+            for(auto v:ng[u]) {
+                chmax(dis[u],dis[v]+val[u]);
             }
         }
         an=*max_element(ALL(dis));
