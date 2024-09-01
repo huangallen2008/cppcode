@@ -52,12 +52,13 @@ void solve() {
     vector<pol> p(n);
     REP(i,n) cin>>p[i].a>>p[i].b>>p[i].c;
     auto cal = [&](double x) {
-        double an=-3e7;
+        double an=-3e6;
         REP(i,n) chmax(an,p[i].a*x*x+p[i].b*x+p[i].c);
         return an;
     };
-    int l=0,r=10000,m;
-    while(l<r) {
+    double l=0,r=10000,m;
+    int time=50;
+    while(time--) {
         m=l+r>>1;
         double ret=cal(m+1)-cal(m);
         if(ret>=0) r=m;
