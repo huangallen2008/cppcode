@@ -65,12 +65,12 @@ void out(int x) {
         x/=10;
     } while(x);
     for(it--;it>=str;it--) PU(*it);
-    PU(' ');
+    PU('\n');
 }
 signed main() {
     IOS();
     int n,p;
     cin>>n>>p;
-    REP1(i,n) cout<<inv(i,p)<<'\n';
+    REP1(i,n) out(inv(i,p))
     return 0;
 }
