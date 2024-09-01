@@ -56,6 +56,7 @@ signed main() {
     vector<edge> e(m);
     REP(i,m) cin>>e[i].v>>e[i].u>>e[i].w;
     REP1(i,n) e.pb({0,i,0});
+    shuffle(ALL(e),rng);
     bool nc=0;
     REP(i,n+1) {
         bool ok=1;
