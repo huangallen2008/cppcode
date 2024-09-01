@@ -73,8 +73,7 @@ signed main() {
     REP1(i,n) {
         int x;
         cin>>x;
-        an+=bit.pre(x-1)*fac[n-i];
-        if(an>=mod) an-=mod;
+        addmod(an,bit.pre(x-1)*fac[n-i]);
         bit.ud(x,-1);
     }
     cout<<an<<'\n';
