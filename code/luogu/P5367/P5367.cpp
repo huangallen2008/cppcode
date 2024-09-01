@@ -73,7 +73,6 @@ signed main() {
     REP1(i,n) {
         int x;
         cin>>x;
-        ope(bit.pre(x-1))
         an+=bit.pre(x-1)*fac[n-i];
         if(an>=mod) an-=mod;
         bit.ud(x,-1);
