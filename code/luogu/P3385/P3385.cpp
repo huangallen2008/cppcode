@@ -63,9 +63,9 @@ void solve() {
     int rd=n;
     bool cyc=0;
     while(rd--) {
-        int ok=1;
+        bool ok=1;
         for(auto &[u,v,w]:e) {
-            if(dis[v]+w<dis[u]) {
+            if(dis[v]!=inf&&dis[v]+w<dis[u]) {
                 dis[u]=dis[v]+w;
                 ok=0;
             }
