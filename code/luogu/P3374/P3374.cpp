@@ -51,17 +51,14 @@ struct BIT {
         b=vector<int>(n+1);
     }
     void ud(int u,int v) {
-        u++;
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
-        u++;
         int r=0;
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
     int qu(int l,int r) {
-        l++,r++;
         return pre(r)-pre(l-1);
     }
 }bit;
@@ -70,7 +67,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     bit.init(n);
-    REP(i,n) {
+    REP1(i,n) {
         int x;
         cin>>x;
         bit.ud(i,x);
@@ -80,12 +77,12 @@ signed main() {
         cin>>opt;
         if(opt==1) {
             int u,v;
-            cin>>u>>v,u--;
+            cin>>u>>v;
             bit.ud(u,v);
         }
         else {
             int l,r;
-            cin>>l>>r,l--,r--;
+            cin>>l>>r;
             cout<<bit.qu(l,r)<<'\n';
         }
     }
