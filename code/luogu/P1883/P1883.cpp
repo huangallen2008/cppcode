@@ -56,7 +56,7 @@ void solve() {
         REP(i,n) chmax(an,p[i].a*x*x+p[i].b*x+p[i].c);
         return an;
     };
-    ld l=0,r=10000,m;
+    ld l=0,r=1000,m;
     int time=60;
     ld exp=1e-11;
     while(time--) {
