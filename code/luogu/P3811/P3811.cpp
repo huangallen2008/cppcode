@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -50,8 +50,9 @@ void exgcd(int a,int b,int &x,int &y){
 		x=1,y=0;
 		return;
 	}
-	exgcd(b,a%b,y,x);
-	y-=a/b*x;
+    int q=a/b;
+	exgcd(b,a-q*b,y,x);
+	y-=q*x;
 }
 int inv(int a,const int m){
 	int x,y;
