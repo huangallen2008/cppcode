@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi2,popcnt")
+#pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -45,21 +45,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void exgcd(int a,int b,int &x,int &y){
-	if(b==0){
-		x=1,y=0;
-		return;
-	}
-    int q=a/b;
-	exgcd(b,a-q*b,y,x);
-	y-=q*x;
-}
-int inv(int a,const int m){
-	int x,y;
-	exgcd(a,m,x,y);
-    if(x<0) x+=m;
-	return x;
-}
 #define PU putchar
 void out(int x) {
     char str[18];
@@ -75,6 +60,11 @@ signed main() {
     IOS();
     int n,p;
     cin>>n>>p;
-    REP1(i,n) out(inv(i,p));
+    int fi0=1,fi=1;
+    REP1(i,n) {
+        out((fi0*fi)%mod);
+        fi0=fi;
+        fi=fi*(i+1)%mod;
+    }
     return 0;
 }
