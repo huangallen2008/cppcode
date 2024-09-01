@@ -99,6 +99,7 @@ void solve() {
 } 
 signed main() {
     IOS();
+    TRIE_init();
     int T;
     cin>>T;
     while(T--) solve();
