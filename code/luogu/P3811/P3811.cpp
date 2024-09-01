@@ -45,17 +45,18 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p,const int mod=mod) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=(r*1ll*x)%mod;
-        x=(x*1ll*x)%mod;
-        p>>=1;
-    }
-    return r;
+void exgcd(int a,int b,int &x,int &y){
+	if(b==0){
+		x=1,y=0;
+		return;
+	}
+	exgcd(b,a&b,y,x);
+	y-=a/b*x;
 }
-int inv(int x,const int mod=mod) {
-    return pw(x,mod-2,mod);
+int inv(int a,const int m){
+	int x,y;
+	exgcd(a,m,x,y);
+	return x;
 }
 #define PU putchar
 void out(int x) {
