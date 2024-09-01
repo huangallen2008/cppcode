@@ -47,6 +47,7 @@ int rd(int l,int r) {
 int n,m,s;
 int jp[maxb][maxn];
 vector<int> dep;
+Graph g;
 void dfs(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
