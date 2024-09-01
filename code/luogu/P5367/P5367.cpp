@@ -69,6 +69,7 @@ signed main() {
     bit.init(n);
     vector<int> fac(n);fac[0]=1;
     REP1(i,n-1) fac[i]=fac[i-1]*i%mod;
+    fac[0]=0;
     int an=1;
     REP(i,n) {
         int x;
