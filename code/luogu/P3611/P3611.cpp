@@ -55,7 +55,7 @@ signed main() {
             cin>>c;
             if(c=='1') adj[i][j]=1;
         }
-    }=
+    }
     REP(j,n) {
         REP(i,n) {
             if(adj[i][j]) nadj[i]|=adj[j];
