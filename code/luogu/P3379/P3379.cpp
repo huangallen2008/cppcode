@@ -64,7 +64,7 @@ void init() {
 int lca(int a,int b) {
     if(dep[a]>dep[b]) swap(a,b);
     int dif=dep[b]-dep[a];
-    RREP(i,maxb) {
+    REP(i,maxb) {
         if((dif>>i)&1) b=jp[b][i];
     }
     if(a==b) return a;
