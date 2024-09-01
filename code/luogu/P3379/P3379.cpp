@@ -67,6 +67,7 @@ int lca(int a,int b) {
     REP(i,maxb) {
         if((dif>>i)&1) b=jp[b][i];
     }
+
     if(a==b) return a;
     RREP(i,maxb) {
         if(jp[i][a]!=jp[i][b]) {
@@ -78,7 +79,7 @@ int lca(int a,int b) {
 }
 signed main() {
     IOS();
-    cin>>n>>m>>s;
+    cin>>n>>m>>s,s--;
     g=Graph(n);
     dep=vector<int>(n);
     REP(i,n-1) {
