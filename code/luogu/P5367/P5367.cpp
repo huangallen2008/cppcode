@@ -51,6 +51,7 @@ struct BIT {
         n=_n;
         b=vector<int>(n+1);
         REP1(i,n) b[i]=__builtin_ctz(i&-i)+1;
+        oparr(b)
     }
     void ud(int u,int v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
