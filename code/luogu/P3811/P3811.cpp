@@ -62,10 +62,10 @@ signed main() {
     cin>>n>>p;
     int if0=1,fi=1;
     REP1(i,n) {
-        int ii=(if0*fi)%mod;
+        int ii=(if0*fi)%p;
         out(ii);
-        if0=if0*ii%mod;
-        fi=fi*(i+1)%mod;
+        if0=if0*ii%p;
+        fi=fi*(i+1)%p;
     }
     return 0;
 }
