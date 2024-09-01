@@ -77,7 +77,7 @@ struct SCC {
         vis.reset();
         dis=vector<int>(sccc);
         queue<int> q;
-        REP(i,sccid) if(ind[i]==0) q.push(i),dis[i]=val[i];
+        REP(i,sccc) if(ind[i]==0) q.push(i),dis[i]=val[i];
         while(q.size()) {
             int u=q.front();
             q.pop();
