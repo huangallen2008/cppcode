@@ -48,24 +48,26 @@ struct SCC {
     vector<int> sccid,dfn,val,dis,ind;
     bitset<maxn> vis;
     int sccc=0;
-    Graph ng;
+    Graph ng,ngb;
+    Graph g,gb;
     int an=0;
-    void init(int n,Graph &g,vector<int> &v) {
+    void init(int n,Graph &_g,vector<int> &v) {
+        g=_g;
         sccid=vector<int>(n);
         dfn.clear();
         sccc=0;
         an=0;
         vis.reset();
-        REP(i,n) if(!vis[i]) dfs1(i,g);
+        REP(i,n) if(!vis[i]) dfs1(i);
         reverse(ALL(dfn));
-        Graph gb(n);
+        gb=Graph(n);
         REP(u,n) for(auto v:g[u]) gb[v].pb(u);
         vis.reset();
         REP(i,n) {
             int u=dfn[i];
             if(!vis[u]) {
                 sccid[u]=sccc++;
-                dfs2(u,gb);
+                dfs2(u);
             }
         }
         ng=Graph(sccc);
@@ -90,20 +92,20 @@ struct SCC {
         }
         an=*max_element(ALL(dis));
     }
-    void dfs1(int u,Graph &g) {
+    void dfs1(int u) {
         vis[u]=1;
         for(auto v:g[u]) {
             if(vis[v]) continue;
-            dfs1(v,g);
+            dfs1(v);
         }
         dfn.pb(u);
     }
-    void dfs2(int u,Graph &g) {
+    void dfs2(int u) {
         vis[u]=1;
-        for(auto v:g[u]) {
+        for(auto v:gb[u]) {
             if(vis[v]) continue;
             sccid[v]=sccid[u];
-            dfs2(v,g);
+            dfs2(v);
         }
     }
 }scc;
