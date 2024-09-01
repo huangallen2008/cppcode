@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -53,10 +53,10 @@ void exgcd(int a,int b,int &x,int &y){
 	exgcd(b,a%b,y,x);
 	y-=a/b*x;
 }
-int inv(int a,int m){
+int inv(int a,const int m){
 	int x,y;
 	exgcd(a,m,x,y);
-    op(a)op(m)ope(x)
+    if(x<0) x+=m;
 	return x;
 }
 #define PU putchar
