@@ -52,7 +52,7 @@ void solve() {
     vector<pol> p(n);
     REP(i,n) cin>>p[i].a>>p[i].b>>p[i].c;
     auto cal = [&](ld x) {
-        ld an=-3e6;
+        ld an=-5e6;
         REP(i,n) chmax(an,p[i].a*x*x+p[i].b*x+p[i].c);
         return an;
     };
