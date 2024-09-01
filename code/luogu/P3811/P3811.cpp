@@ -56,6 +56,7 @@ void exgcd(int a,int b,int &x,int &y){
 int inv(int a,int m){
 	int x,y;
 	exgcd(a,m,x,y);
+    op(a)op(m)ope(x)
 	return x;
 }
 #define PU putchar
