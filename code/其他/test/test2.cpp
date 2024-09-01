@@ -72,7 +72,7 @@ void solve() {
         int ch=(pp[m]>>1)-dif;
         // cout<<ch<<' '<<pp[m]-ch<<'\n';
             // if(dp[(pp[m]>>1)-dif].f) {
-        assert(dp[(pp[m]>>1)-dif].f);
+        // assert(dp[(pp[m]>>1)-dif].f);
         int t=(pp[m]>>1)-dif;
         while(t>0) {
             an.pb(dp[t].s);
