@@ -60,10 +60,11 @@ signed main() {
     IOS();
     int n,p;
     cin>>n>>p;
-    int fi0=1,fi=1;
+    int if0=1,fi=1;
     REP1(i,n) {
-        out((fi0*fi)%mod);
-        fi0=fi;
+        int ii=(fi0*fi)%mod;
+        out(ii);
+        if0=if0*ii%mod;
         fi=fi*(i+1)%mod;
     }
     return 0;
