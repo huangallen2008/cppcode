@@ -62,7 +62,7 @@ void solve() {
         m=(l+r)/2;
         double ret=cal(m+0.00001)-cal(m);
         if(ret>=0) r=m;
-        else l=m+1;
+        else l=m+0.00001;
     }
     double an=cal(l);
     cout<<fixed<<setprecision(4)<<an<<'\n';
