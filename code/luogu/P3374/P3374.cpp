@@ -72,7 +72,7 @@ signed main() {
         cin>>opt;
         if(opt==1) {
             int u,v;
-            cni>>u>>v,u--;
+            cin>>u>>v,u--;
             bit.ud(u,v);
         }
         else {
