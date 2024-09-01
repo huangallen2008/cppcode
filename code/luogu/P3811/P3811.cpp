@@ -60,12 +60,9 @@ signed main() {
     IOS();
     int n,p;
     cin>>n>>p;
-    int if0=1,fi=1;
-    REP1(i,n) {
-        int ii=(if0*fi)%p;
-        out(ii);
-        if0=if0*ii%p;
-        fi=fi*(i+1)%p;
-    }
+    vector<int> inv(n+1);
+    inv[1]=1;
+    for(int i=2;i<=n;i++) inv[i]=(p-p/i)*inv[p%i]%p;
+    REP1(i,n) out(inv[i]);
     return 0;
 }
