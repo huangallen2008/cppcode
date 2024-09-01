@@ -56,6 +56,17 @@ int pw(int x,int p,const int mod=mod) {
 int inv(int x,const int mod=mod) {
     return pw(x,mod-2,mod);
 }
+#define PU putchar
+void out(int x) {
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PU(*it);
+    PU(' ');
+}
 signed main() {
     IOS();
     int n,p;
