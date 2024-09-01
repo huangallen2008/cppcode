@@ -51,14 +51,17 @@ struct BIT {
         b=vector<int>(n+1);
     }
     void ud(int u,int v) {
+        u++;
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
+        u++;
         int r=0;
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
     int qu(int l,int r) {
+        l++,r++;
         return pre(r)-pre(l-1);
     }
 }bit;
