@@ -56,3 +56,50 @@ inline int RU(){static char c;int a;while(((c=RC())<'0'||c>'9')&&c!=-1);a=c^'0';
 inline void WI(int n){static char buf[12],p;if(n==0)OB[OP++]='0';p=0;if(n<0){OB[OP++]='-';while(n)buf[p++]='0'-(n%10),n/=10;}else{while(n)buf[p++]='0'+(n%10),n/=10;}for(--p;p>=0;--p)OB[OP++]=buf[p];OB[OP++]='\n';if(OP>S-12)write(1,OB,OP),OP=0;}
 inline void WU(int n){static char buf[12],p;if(n==0)OB[OP++]='0';p=0;while(n)buf[p++]='0'+(n%10),n/=10;for(--p;p>=0;--p)OB[OP++]=buf[p];OB[OP++]='\n';if(OP>65524)write(1,OB,OP),OP=0;}
 ////////////////////////////////////////////////////////////////////
+namespace fastIO{
+    #define BUF_SIZE 100000
+    #define OUT_SIZE 100000
+    #define ll long long
+    bool IOerror=0;
+    inline char nc(){
+        static char buf[BUF_SIZE],*p1=buf+BUF_SIZE,*pend=buf+BUF_SIZE;
+        if (p1==pend){
+            p1=buf; pend=buf+fread(buf,1,BUF_SIZE,stdin);
+            if (pend==p1){IOerror=1;return -1;}
+        }
+        return *p1++;
+    }
+    inline bool blank(char ch){return ch==' '||ch=='\n'||ch=='\r'||ch=='\t';}
+    inline void read(int &x){
+        bool sign=0; char ch=nc(); x=0;
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        if (ch=='-')sign=1,ch=nc();
+        for (;ch>='0'&&ch<='9';ch=nc())x=x*10+ch-'0';
+        if (sign)x=-x;
+    }
+    inline void read(ll &x){
+        bool sign=0; char ch=nc(); x=0;
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        if (ch=='-')sign=1,ch=nc();
+        for (;ch>='0'&&ch<='9';ch=nc())x=x*10+ch-'0';
+        if (sign)x=-x;
+    }
+    #undef ll
+    #undef OUT_SIZE
+    #undef BUF_SIZE
+};
+using namespace fastIO;
+
+/////////////////////////
+#define re register
+#define il inline
+il int read()
+{
+    re int x=0,f=1;char c=getchar();
+    while(c<'0'||c>'9'){if(c=='-') f=-1;c=getchar();}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=getchar();
+    return x*f;
+}//快读，不理解的同学用cin代替即可
+//re int a;
