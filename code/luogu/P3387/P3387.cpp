@@ -92,7 +92,7 @@ struct SCC {
     }
 }scc;
 signed main() {
-    IOS()
+    IOS();
     int n,m;
     cin>>n>>m;
 
