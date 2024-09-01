@@ -56,6 +56,15 @@ void solve() {
         REP(i,n) chmax(an,p[i].a*x*x+p[i].b*x+p[i].c);
         return an;
     };
+    int l=0,r=10000,m;
+    while(l<r) {
+        m=l+r>>1;
+        double ret=cal(m+1)-cal(m);
+        if(ret>=0) r=m;
+        else l=m+1;
+    }
+    double an=cal(l);
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
