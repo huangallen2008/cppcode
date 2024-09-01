@@ -67,6 +67,11 @@ signed main() {
     int n,m;
     cin>>n>>m;
     bit.init(n);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        bit.ud(i,x);
+    }
     REP(i,m) {
         int opt;
         cin>>opt;
