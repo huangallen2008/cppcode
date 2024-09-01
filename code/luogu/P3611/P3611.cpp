@@ -55,16 +55,11 @@ signed main() {
             cin>>c;
             if(c=='1') adj[i][j]=1;
         }
-    }
-    int lg=__lg(n)+1;
-    REP(rd,lg) {
-        auto nadj=adj;
+    }=
+    REP(j,n) {
         REP(i,n) {
-            REP(j,n) {
-                if(adj[i][j]) nadj[i]|=adj[j];
-            }
+            if(adj[i][j]) nadj[i]|=adj[j];
         }
-        adj.swap(nadj);
     }
     REP(i,n) {
         REP(j,n) cout<<adj[i][j]<<' ';
