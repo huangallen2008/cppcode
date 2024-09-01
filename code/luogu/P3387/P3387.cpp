@@ -37,7 +37,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e5+5;
+const int maxn=1e4+5;
 const int maxb=18;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -54,6 +54,7 @@ struct SCC {
         sccid=vector<int>(n);
         dfn.clear();
         sccc=0;
+        an=0;
         vis.reset();
         REP(i,n) if(!vis[i]) dfs1(i,g);
         Graph gb(n);
@@ -63,7 +64,7 @@ struct SCC {
             int u=dfn[i];
             if(!vis[u]) {
                 sccid[u]=sccc++;
-                dfs2(u,g);
+                dfs2(u,gb);
             }
         }
         ng=Graph(sccc);
