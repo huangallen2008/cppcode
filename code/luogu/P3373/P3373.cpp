@@ -133,9 +133,9 @@ signed main() {
             seg.mul(x,y,k);
         }
         else if(opt==2) {
-            int x,y,k
+            int x,y,k;
             cin>>x>>y>>k,x--,y--;
-            seg.add(x,y);
+            seg.add(x,y,k);
         }
         else {
             int l,r;
