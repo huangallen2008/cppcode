@@ -36,7 +36,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=571373;
+const int mod=1e9+7;
 const int maxn=1e4+5;
 const int maxb=18;
 const int inf=(1ll<<50);
