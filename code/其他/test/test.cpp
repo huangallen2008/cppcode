@@ -46,19 +46,20 @@ int rd(int l,int r) {
 void solve() {
     int n,q;
     cin>>n>>q;
-    vector<int> a(n+1);
+    vector<int> a(n<<1|1);
     REP1(i,n) cin>>a[i];
-    vector<int>p(n+1);
-    REP1(i,n) p[i]=p[i-1]+a[i];
+    for(int i=n+1;i<n<<1|1;i++) a[i]=a[i-n];
+    vector<int>p(n<<1|1);
+    REP1(i,n<<1) p[i]=p[i-1]+a[i];
     REP(i,q) {
         int l,r;
         cin>>l>>r;
         int ll=r-l+1;
         int l0=l%n;
-        int an=p[l0+ll%n]-p[l0]+(ll/n)*p[n];
+        int an=(r/n*n-l/n*n)/n*p[n]-(p[n*2+1-(l/n)+(l-l/n*n)]-p[n*2+1-(l/n)])+(p[n*2+1-(r/n)+r-r/n*n]-p[n*2+1-(r/n)]);
         cout<<an<<'\n';
     }
-    entr
+    // entr
 }
 signed main() {
     IOS(); 
