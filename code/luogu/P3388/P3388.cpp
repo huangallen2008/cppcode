@@ -88,9 +88,11 @@ signed main() {
     int s=0;
     REP(i,n) s+=ap[i];
     cout<<s<<'\n';
+    int cnt=0;
     REP(i,n) {
-        if(ap[i]) cout<<i+1<<' ';
+        if(ap[i]) cout<<i+1<<' ',cnt++;
     }
+    assert(cnt==s);
     cout<<'\n';
     return 0;
 }
