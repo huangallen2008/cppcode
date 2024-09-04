@@ -119,8 +119,8 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    int n,q;
-    cin>>n>>q;
+    int n,q,m;
+    cin>>n>>q>>m;
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     seg.init(n,a);
