@@ -47,7 +47,7 @@ int rd(int l,int r) {
 struct SEG {
     struct Tag {
         int mu,ad;
-    }
+    };
     struct Seg {
         int len,s;
         Tag t;
