@@ -65,7 +65,7 @@ struct SEG {
     void push(Seg &a,Seg &b,Seg &c) {
         addtag(b,a.t);
         addtag(c,a.t);
-        a.t=0;
+        a.t={1,0};
     }
     vector<Seg> s;
     int n;
