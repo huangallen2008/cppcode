@@ -48,6 +48,7 @@ void solve() {
     cin>>n>>q;
     vector<int> a(n*3+1);
     REP1(i,n) cin>>a[i];
+    ope("ok")
     for(int i=n+1;i<n<<1|1;i++) a[i]=a[i-n];
     for(int i=n*2+1;i<n*3+1;i++) a[i]=a[i-n];
     vector<int>p(n<<1|1);
