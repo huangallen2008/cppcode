@@ -54,7 +54,7 @@ void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         if(vis[v]) {
-            chmin(low[u],low[v]);
+            chmin(low[u],dep[v]);
         }
         else {
             ch++;
@@ -88,11 +88,9 @@ signed main() {
     int s=0;
     REP(i,n) s+=ap[i];
     cout<<s<<'\n';
-    int cnt=0;
     REP(i,n) {
-        if(ap[i]) cout<<i+1<<' ',cnt++;
+        if(ap[i]) cout<<i+1<<' ';
     }
-    assert(cnt==s);
     cout<<'\n';
     return 0;
 }
