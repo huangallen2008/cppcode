@@ -111,7 +111,7 @@ struct SEG {
         if(ql>r||qr<l) return 0;
         push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
-        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
+        return (_qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr))%mod;
     }
     int qu(int l,int r) {
         return _qu(1,0,n-1,l,r);
