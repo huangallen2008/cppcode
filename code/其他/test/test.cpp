@@ -43,44 +43,28 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+void solve() {
+    int n,q;
+    cin>>n>>q;
+    vector<int> a(n+1);
+    REP1(i,n) cin>>a[i];
+    vector<int>p(n+1);
+    REP1(i,n) p[i]=p[i-1]+a[i];
+    REP(i,q) {
+        int l,r;
+        cin>>l>>r;
+        int ll=r-l+1;
+        int l0=l%n;
+        int an=p[l0+ll%n]-p[l0]+(ll/n)*p[n];
+        cout<<an<<'\n';
+    }
+}
 signed main() {
-    IOS();
-    ope(__gcd(0,5))
-    int n,h,w;
-    cin>>h>>w>>n;
-    vector<pii> a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    sort(ALL(a));
-    vector<pii> v(n,{inf,inf});
-    vector<int> dp(n),ii(n),ll(n);
-    vector<pii> la(n);
-    REP(i,n) {
-        int id=lower_bound(ALL(v),pii{a[i].s,a[i].f})-v.begin();
-        v[id]={a[i].s,a[i].f};
-        ii[id]=i;
-        dp[i]=id;
-        if(id) {
-        ll[i]=ii[id-1];
-            la[i]={-v[id-1].f+a[i].s,-v[id-1].s+a[i].f};
-        }
+    IOS(); 
+    int T;
+    cin>>T;
+    while(T--) {
+        solve();
     }
-    int mx=*max_element(ALL(dp));
-    int mxi=max_element(ALL(dp))-dp.begin();
-    cout<<mx+1<<'\n';
-    string an="";
-    REP(i,h-a[mxi].f) an+='D';
-    REP(i,w-a[mxi].s) an+='R';
-    int t=mxi;
-    while(dp[t]>0) {
-        // cout<<la[t].f<<' '<<la[t].s<<'\n';
-        REP(i,la[t].f) an+='R';
-        REP(i,la[t].s) an+='D';
-        t=ll[t];
-    }
-    REP(i,a[t].f-1) an+='D';
-    REP(i,a[t].s-1) an+='R';
-    reverse(ALL(an));
-    cout<<an<<'\n';
-
     return 0;
 }
