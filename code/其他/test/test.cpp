@@ -46,11 +46,12 @@ int rd(int l,int r) {
 void solve() {
     int n,q;
     cin>>n>>q;
-    vector<int> a(n<<1|1);
+    vector<int> a(n*3+1);
     REP1(i,n) cin>>a[i];
     for(int i=n+1;i<n<<1|1;i++) a[i]=a[i-n];
+    for(int i=n*2+1;i<n*3+1;i++) a[i]=a[i-n];
     vector<int>p(n<<1|1);
-    REP1(i,n<<1) p[i]=p[i-1]+a[i];
+    REP1(i,n*3) p[i]=p[i-1]+a[i];
     REP(i,q) {
         int l,r;
         cin>>l>>r;
