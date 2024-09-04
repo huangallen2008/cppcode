@@ -57,7 +57,9 @@ void solve() {
         cin>>l>>r;
         int ll=r-l+1;
         int l0=l%n;
-        int an=(r/n*n-l/n*n)/n*p[n]-(p[n*2+1-(l/n)+(l-l/n*n)]-p[n*2+1-(l/n)])+(p[n*2+1-(r/n)+r-r/n*n]-p[n*2+1-(r/n)]);
+        int an=(r/n*n-l/n*n)/n*p[n];
+        l--;
+        an+=-(p[n*2+1-(l/n)+(l-l/n*n)]-p[n*2+1-(l/n)])+(p[n*2+1-(r/n)+r-r/n*n]-p[n*2+1-(r/n)]);
         cout<<an<<'\n';
     }
     // entr
