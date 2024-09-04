@@ -69,8 +69,8 @@ struct SEG {
             return;
         }
         int m=l+r>>1;
-        build(w<<1,l,m);
-        build(w<<1|1,m+1,r);
+        build(w<<1,l,m,a);
+        build(w<<1|1,m+1,r,a);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,vector<int> &a) {
@@ -96,6 +96,7 @@ struct SEG {
     int _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].s;
         if(ql>r||qr<l) return 0;
+        push(s[w],s[w<<1],s[w<<1|1]);
         int m=l+r>>1;
         return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
     }
