@@ -56,7 +56,7 @@ Mat operator*(Mat a,Mat b) {
     return c;
 }
 Mat pw(Mat x,int p) {
-    Mat r(x.size(),vector<int>(x.szie()));
+    Mat r(x.size(),vector<int>(x.size()));
     REP(i,x.size()) r[i][i]=1;
     while(p>0) {
         if(p&1) {
