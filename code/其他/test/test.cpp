@@ -55,8 +55,6 @@ void solve() {
     REP(i,q) {
         int l,r;
         cin>>l>>r;
-        int ll=r-l+1;
-        int l0=l%n;
         int antt=(r/n*n-l/n*n);
         ope("ok")
         int an=(r/n*n-l/n*n)/n*p[n];
