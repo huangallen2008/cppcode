@@ -58,6 +58,7 @@ void solve() {
         int an=p[l0+ll%n]-p[l0]+(ll/n)*p[n];
         cout<<an<<'\n';
     }
+    entr
 }
 signed main() {
     IOS(); 
