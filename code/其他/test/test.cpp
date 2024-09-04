@@ -50,7 +50,6 @@ void solve() {
     REP1(i,n) cin>>a[i];
     for(int i=n+1;i<n*2+1;i++) a[i]=a[i-n];
     for(int i=n*2+1;i<n*3+1;i++) a[i]=a[i-n];
-    ope("ok")
     vector<int>p(n<<1|1);
     REP1(i,n*3) p[i]=p[i-1]+a[i];
     REP(i,q) {
@@ -58,6 +57,7 @@ void solve() {
         cin>>l>>r;
         int ll=r-l+1;
         int l0=l%n;
+        int antt=(r/n*n-l/n*n);
         int an=(r/n*n-l/n*n)/n*p[n];
         l--;
         ope("ok")
