@@ -80,7 +80,7 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr) {
-            addtag(s[w],t);
+            addtag(s[w],v);
             return;
         }
         if(ql<r||qr<l) return;
