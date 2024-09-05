@@ -102,7 +102,7 @@ signed main() {
     bellm(0);
     if(ncyc){
         cout<<"-1\n";
-        return ;
+        return 0;
     }
     REP(u,n) {
         for(auto &[v,w]:g[u]) {
