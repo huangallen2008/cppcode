@@ -60,7 +60,7 @@ void bellm(int st) {
         bool ok=0;
         for(auto [u,v,w]:e) {
             if(dis[u]+w<dis[v]) {
-                dis[u]=dis[v]+w;
+                dis[v]=dis[u]+w;
                 ok=1;
             }
         }
