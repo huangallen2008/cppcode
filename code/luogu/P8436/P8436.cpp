@@ -58,7 +58,7 @@ void dfs(int u,int fa) {
             chmin(low[u],dep[v]);
         }
         else {
-            ope(v)
+            op(u)ope(v)
             dep[v]=dep[u]+1;
             dfs(v,u);
             if(low[v]<dep[v]) w=1;
