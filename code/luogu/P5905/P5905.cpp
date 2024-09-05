@@ -56,7 +56,6 @@ bool ncyc=0;
 void bellm(int st) {
     dis0=vector<int>(n,inf);
     dis0[st]=0;
-    shuffle(ALL(e),rng);
     REP(rd,n) {
         bool ok=0;
         for(auto [u,v,w]:e) {
