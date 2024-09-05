@@ -39,7 +39,7 @@ using namespace std;
 const int mod=19260817;
 const int maxn=5e5+5;
 const int maxb=18;
-const int inf=(1ll<<50);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -54,9 +54,10 @@ vector<int> dis0;
 vector<int> dis;
 bool ncyc=0;
 void bellm(int st) {
-    dis0=vector<int>(n,inf);
+    dis0=vector<int>(n+1,inf);
     dis0[st]=0;
-    REP(rd,n) {
+    int ts=n+1;
+    while(ts--) {
         bool ok=0;
         for(auto [u,v,w]:e) {
             if(dis0[u]+w<dis0[v]) {
@@ -65,17 +66,17 @@ void bellm(int st) {
             }
         }
         if(!ok) break;
-        if(rd==n-1) {
+        if(!ts) {
             ncyc=1;
         }
     }
 }
 void dijk(int st) {
     priority_queue<pii> pq;
-    dis=vector<int>(n,inf);
+    dis=vector<int>(n+1,inf);
     dis[st]=0;
     pq.push({0,st});
-    vector<bool> vis(n);
+    vector<bool> vis(n+1);
     while(pq.size()) {
         auto [dd,u]=pq.top();
         pq.pop();
@@ -92,27 +93,31 @@ void dijk(int st) {
 signed main() {
     IOS();
     cin>>n>>m;
-    g=Graphw(n);
+    g=Graphw(n+1);
     REP(i,m) {
         int u,v,w;
-        cin>>u>>v>>w,u--,v--;
+        cin>>u>>v>>w;
         g[u].pb({v,w});
         e.pb({u,v,w});
+    }
+    REP1(i,n) {
+        g[0].pb({i,0});
+        e.pb({0,i,0});
     }
     bellm(0);
     if(ncyc){
         cout<<"-1\n";
         return 0;
     }
-    REP(u,n) {
+    REP(u,n+1) {
         for(auto &[v,w]:g[u]) {
             w+=dis0[u]-dis0[v];
         }
     }
-    REP(i,n) {
+    REP1(i,n) {
         dijk(i);
         int an=0;
-        REP(j,n) {
+        REP1(j,n) {
             if(dis[j]==inf) an+=1e9*(j+1);
             else {
                 int dj=dis[j]+dis0[j]-dis0[i];
