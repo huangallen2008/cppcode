@@ -138,7 +138,7 @@ signed main() {
     }
     bellm(0);
     if(ncyc){
-        out(an);
+        out(-1);
         // cout<<"-1\n";
         return 0;
     }
