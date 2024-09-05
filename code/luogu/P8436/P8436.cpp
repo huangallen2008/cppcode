@@ -88,7 +88,7 @@ signed main() {
         g[u].pb({v,0});
         g[v].pb({u,0});
     }
-    REP(i,n) if(!vis[i]) dfs(0,-1);
+    REP(i,n) if(!vis[i]) dfs(i,-1);
     an=Graph(n);
     int it=0;
     vis.reset();
