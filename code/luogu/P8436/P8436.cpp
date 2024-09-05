@@ -49,7 +49,6 @@ vector<int> dep,low,dfn;
 bitset<maxn> vis;
 void dfs(int u,int fa) {
     low[u]=dep[u];
-    ope(u)
     dfn.pb(u);
     vis[u]=1;
     for(auto &[v,w]:g[u]) {
@@ -58,20 +57,17 @@ void dfs(int u,int fa) {
             chmin(low[u],dep[v]);
         }
         else {
-            op(u)ope(v)
             dep[v]=dep[u]+1;
             dfs(v,u);
             chmin(low[u],low[v]);
             if(low[v]>=dep[v]) {
                 w=1;
-                op(u)op(v)op(low[v])ope(dep[v])
             }
         }
     }
 }
 Graph an;
 void dfs2(int u,int id) {
-    ope(id)
     vis[u]=1;
     an[id].pb(u);
     for(auto [v,w]:g[u]) {
@@ -92,10 +88,8 @@ signed main() {
         g[v].pb({u,0});
     }
     dfs(0,-1);
-    oparr(dep)oparr(low)
     int cntb=1;
     REP(u,n) for(auto [v,w]:g[u]) if(w) cntb++;
-    REP(u,n) for(auto [v,w]:g[u]) {op(u)op(v)ope(w)}
     an=Graph(cntb);
     int it=0;
     vis.reset();
