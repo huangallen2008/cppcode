@@ -109,6 +109,7 @@ inline ll dijk(const int st) {
     while(!pq.empty()) {
         auto [dd,u]=pq.top();
         pq.pop();
+        if(vis[u]) continue;
         vis[u]=1;
         for(auto &[v,w]:g[u]) {
             if(vis[v]) continue;
