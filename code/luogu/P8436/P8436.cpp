@@ -73,7 +73,7 @@ void dfs2(int u,int id) {
     an[id].pb(u);
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
-        if(w)dfs2(v,id);
+        if(!w)dfs2(v,id);
     }
 }
 signed main() {
@@ -91,7 +91,7 @@ signed main() {
     dfs(0,-1);
     oparr(dep)oparr(low)
     int cntb=0;
-    REP(u,n) for(auto [v,w]:g[u]) if(!w) cntb++;
+    REP(u,n) for(auto [v,w]:g[u]) if(w) cntb++;
     an=Graph(cntb);
     int it=0;
     vis.reset();
