@@ -122,7 +122,7 @@ inline ll dijk(const int st) {
     REP1(j,n) {
         if(dis[j]==inf) an+=1e9*(ll)j;
         else {
-            an+=(ll)(dis[j]+dis0[j]-dis0[i])*j;
+            an+=(ll)(dis[j]+dis0[j]-dis0[st])*j;
         }
     }
     return an;
