@@ -138,7 +138,8 @@ signed main() {
     }
     bellm(0);
     if(ncyc){
-        cout<<"-1\n";
+        out(an);
+        // cout<<"-1\n";
         return 0;
     }
     REP(u,n+1) {
