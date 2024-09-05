@@ -44,9 +44,36 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#define GC getchar()
+#define PC putchar
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=(~x)+1;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=~(x-1);
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC('\n');
+}
 struct edge {
     int u,v,w;
 };
+
 int n,m;
 Graphw g;
 vector<edge> e;
@@ -93,11 +120,13 @@ void dijk(int st) {
 }
 signed main() {
     IOS();
-    cin>>n>>m;
+    n=in(),m=in();
+    // cin>>n>>m;
     g=Graphw(n+1);
     REP(i,m) {
         int u,v,w;
-        cin>>u>>v>>w;
+        u=in(),v=in(),w=in();
+        // cin>>u>>v>>w;
         g[u].pb({v,w});
         e.pb({u,v,w});
     }
@@ -125,7 +154,8 @@ signed main() {
                 an+=dj*j;
             }
         }
-        cout<<an<<'\n';
+        out(an);
+        // cout<<an<<'\n';
     }
     return 0;
 }
