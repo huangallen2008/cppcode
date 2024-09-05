@@ -80,7 +80,7 @@ vector<edge> e;
 vector<int> dis0;
 vector<int> dis;
 bool ncyc=0;
-void bellm(const int st) {
+inline void bellm(const int st) {
     dis0=vector<int>(n+1,inf);
     dis0[st]=0;
     int ts=n+1;
@@ -99,13 +99,12 @@ void bellm(const int st) {
         }
     }
 }
-void dijk(const int st) {
+inline void dijk(const int st) {
     priority_queue<pii> pq;
     dis=vector<int>(n+1,inf);
     dis[st]=0;
     pq.push({0,st});
     bitset<maxn> vis;
-    REP(i,n) shuffle(ALL(g[i]),rng);
     while(pq.size()) {
         auto [dd,u]=pq.top();
         pq.pop();
