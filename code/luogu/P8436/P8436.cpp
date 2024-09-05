@@ -89,9 +89,7 @@ signed main() {
         g[v].pb({u,0});
     }
     dfs(0,-1);
-    int cntb=1;
-    REP(u,n) for(auto [v,w]:g[u]) if(w) cntb++;
-    an=Graph(cntb);
+    an=Graph(n);
     int it=0;
     vis.reset();
     for(int u:dfn) {
@@ -99,8 +97,8 @@ signed main() {
             dfs2(u,it++);
         }
     }
-    cout<<cntb<<'\n';
-    REP(i,cntb) {
+    cout<<it<<'\n';
+    REP(i,it) {
         cout<<an[i].size()<<' ';
         for(int u:an[i]) cout<<u<<' ';
         cout<<'\n';
