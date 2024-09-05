@@ -118,10 +118,10 @@ signed main() {
         dijk(i);
         int an=0;
         REP1(j,n) {
-            if(dis[j]==inf) an+=1e9*(j+1);
+            if(dis[j]==inf) an+=1e9*j;
             else {
                 int dj=dis[j]+dis0[j]-dis0[i];
-                an+=dj*(j+1);
+                an+=dj*j;
             }
         }
         cout<<an<<'\n';
