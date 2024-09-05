@@ -93,7 +93,7 @@ signed main() {
     }
     dfs(0,-1);
     oparr(dep)oparr(low)
-    int cntb=0;
+    int cntb=1;
     REP(u,n) for(auto [v,w]:g[u]) if(w) cntb++;
     REP(u,n) for(auto [v,w]:g[u]) {op(u)op(v)ope(w)}
     an=Graph(cntb);
