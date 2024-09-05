@@ -50,17 +50,18 @@ struct edge {
 int n,m;
 Graphw g;
 vector<edge> e;
+vector<int> dis0;
 vector<int> dis;
 bool ncyc=0;
 void bellm(int st) {
-    dis=vector<int>(n,inf);
-    dis[st]=0;
+    dis0=vector<int>(n,inf);
+    dis0[st]=0;
     shuffle(ALL(e),rng);
     REP(rd,n) {
         bool ok=0;
         for(auto [u,v,w]:e) {
-            if(dis[u]+w<dis[v]) {
-                dis[v]=dis[u]+w;
+            if(dis0[u]+w<dis0[v]) {
+                dis0[v]=dis0[u]+w;
                 ok=1;
             }
         }
@@ -106,7 +107,7 @@ signed main() {
     }
     REP(u,n) {
         for(auto &[v,w]:g[u]) {
-            w+=dis[u]-dis[v];
+            w+=dis0[u]-dis0[v];
         }
     }
     REP(i,n) {
@@ -114,7 +115,10 @@ signed main() {
         int an=0;
         REP(j,n) {
             if(dis[j]==inf) an+=1e9*(j+1);
-            else an+=dis[j]*(j+1);
+            else {
+                int dj=dis[j]+dis0[j]-dis0[i];
+                an+=dj*(j+1);
+            }
         }
         cout<<an<<'\n';
     }
