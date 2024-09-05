@@ -57,7 +57,7 @@ void bellm(int st) {
     dis0=vector<int>(n+1,inf);
     dis0[st]=0;
     int ts=n+1;
-    shuffle(ALL(e),rng);
+    // shuffle(ALL(e),rng);
     while(ts--) {
         bool ok=0;
         for(auto [u,v,w]:e) {
