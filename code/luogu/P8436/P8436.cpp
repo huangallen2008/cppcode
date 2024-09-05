@@ -100,6 +100,7 @@ signed main() {
     }
     cout<<cntb<<'\n';
     REP(i,cntb) {
+        cout<<an[i].size()<<' ';
         for(int u:an[i]) cout<<u<<' ';
         cout<<'\n';
     }
