@@ -78,7 +78,7 @@ int n,m;
 Graphw g;
 vector<edge> e;
 vector<int> dis0;
-vector<int> dis;
+// vector<int> dis;
 bool ncyc=0;
 inline void bellm(const int st) {
     dis0=vector<int>(n+1,inf);
@@ -102,7 +102,7 @@ inline void bellm(const int st) {
 bitset<maxn> vis;
 inline ll dijk(const int st) {
     priority_queue<pii> pq;
-    dis=vector<int>(n+1,inf);
+    vector<int> dis(n+1,inf);
     dis[st]=0;
     pq.push({0,st});
     vis.reset();
