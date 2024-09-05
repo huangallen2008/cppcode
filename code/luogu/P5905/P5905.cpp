@@ -1,9 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
-// #define int long long
-#define ll long long
+// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -38,56 +37,30 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=19260817;
-const int maxn=3e3+5;
+const int maxn=5e5+5;
 const int maxb=18;
-const int inf=1e9;
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define GC getchar()
-#define PC putchar
-inline int in(){
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=(~x)+1;
-    return x;
-}
-inline void out(ll x) {
-    if(x<0) {
-        PC('-');
-        x=~(x-1);
-    }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC('\n');
-}
 struct edge {
     int u,v,w;
 };
-
 int n,m;
 Graphw g;
 vector<edge> e;
 vector<int> dis0;
-// vector<int> dis;
+vector<int> dis;
 bool ncyc=0;
-inline void bellm(const int st) {
+void bellm(int st) {
     dis0=vector<int>(n+1,inf);
     dis0[st]=0;
     int ts=n+1;
     shuffle(ALL(e),rng);
     while(ts--) {
         bool ok=0;
-        for(auto &[u,v,w]:e) {
+        for(auto [u,v,w]:e) {
             if(dis0[u]+w<dis0[v]) {
                 dis0[v]=dis0[u]+w;
                 ok=1;
@@ -99,57 +72,42 @@ inline void bellm(const int st) {
         }
     }
 }
-bitset<maxn> vis;
-inline ll dijk(const int st) {
-    priority_queue<pii,vector<pii>,greater<pii>> pq;
-    vector<int> dis(n+1,inf);
+void dijk(int st) {
+    priority_queue<pii> pq;
+    dis=vector<int>(n+1,inf);
     dis[st]=0;
     pq.push({0,st});
-    vis.reset();
-    while(!pq.empty()) {
+    vector<bool> vis(n+1);
+    while(pq.size()) {
         auto [dd,u]=pq.top();
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
-        for(auto &[v,w]:g[u]) {
-            if(vis[v]) continue;
+        for(auto [v,w]:g[u]) {
             if(dis[u]+w<dis[v]) {
                 dis[v]=dis[u]+w;
-                pq.push({dis[v],v});
+                pq.push({-dis[v],v});
             }
         }
     }
-    ll an=0;
-    REP1(j,n) {
-        if(dis[j]==inf) an+=1e9*(ll)j;
-        else {
-            an+=(ll)(dis[j]+dis0[j]-dis0[st])*j;
-        }
-    }
-    return an;
 }
 signed main() {
     IOS();
-    n=in(),m=in();
-    // cin>>n>>m;
+    cin>>n>>m;
     g=Graphw(n+1);
-    e.reserve(n+m);
     REP(i,m) {
         int u,v,w;
-        u=in(),v=in(),w=in();
-        // cin>>u>>v>>w;
+        cin>>u>>v>>w;
         g[u].pb({v,w});
         e.pb({u,v,w});
     }
-    g[0].reserve(n);
     REP1(i,n) {
         g[0].pb({i,0});
         e.pb({0,i,0});
     }
     bellm(0);
     if(ncyc){
-        out(-1);
-        // cout<<"-1\n";
+        cout<<"-1\n";
         return 0;
     }
     REP(u,n+1) {
@@ -158,8 +116,16 @@ signed main() {
         }
     }
     REP1(i,n) {
-        out(dijk(i));
-        // cout<<an<<'\n';
+        dijk(i);
+        int an=0;
+        REP1(j,n) {
+            if(dis[j]==inf) an+=1e9*j;
+            else {
+                int dj=dis[j]+dis0[j]-dis0[i];
+                an+=dj*j;
+            }
+        }
+        cout<<an<<'\n';
     }
     return 0;
 }
