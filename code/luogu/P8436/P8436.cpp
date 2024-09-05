@@ -89,8 +89,8 @@ signed main() {
     an=Graph(cntb);
     int it=0;
     vis.reset();
-    ope("ok")
     for(int u:dfn) {
+        ope(u)
         if(!vis[u]) {
             dfs2(u,it++);
         }
