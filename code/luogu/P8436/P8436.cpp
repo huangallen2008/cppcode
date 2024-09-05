@@ -68,7 +68,6 @@ void dfs(int u,int fa) {
 }
 Graph an;
 void dfs2(int u,int id) {
-    op(u)ope(id)
     vis[u]=1;
     an[id].pb(u);
     for(auto [v,w]:g[u]) {
@@ -100,7 +99,7 @@ signed main() {
     cout<<it<<'\n';
     REP(i,it) {
         cout<<an[i].size()<<' ';
-        for(int u:an[i]) cout<<u<<' ';
+        for(int u:an[i]) cout<<u+1<<' ';
         cout<<'\n';
     }
     return 0;
