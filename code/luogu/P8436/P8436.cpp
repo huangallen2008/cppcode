@@ -71,7 +71,7 @@ void dfs2(int u,int id) {
     an[id].pb(u);
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
-        if(w)dfs(v,id);
+        if(w)dfsㄉ(v,id);
     }
 }
 signed main() {
