@@ -94,7 +94,6 @@ signed main() {
     int it=0;
     vis.reset();
     for(int u:dfn) {
-        ope(u)
         if(!vis[u]) {
             dfs2(u,it++);
         }
