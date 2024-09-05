@@ -47,17 +47,18 @@ int rd(int l,int r) {
 Graphw g;
 vector<int> dep,low,dfn;
 bitset<maxn> vis;
-void dfs(int u) {
+void dfs(int u,int fa) {
     low[u]=dep[u];
     dfn.pb(u);
     vis[u]=1;
     for(auto &[v,w]:g[u]) {
+        if(v==fa) continue;
         if(vis[v]) {
             chmin(low[u],dep[v]);
         }
         else {
             dep[v]=dep[u]+1;
-            dfs(v);
+            dfs(v,u);
             chmin(low[u],low[v]);
             if(low[v]>=dep[v]) {
                 w=1;
@@ -86,7 +87,7 @@ signed main() {
         g[u].pb({v,0});
         g[v].pb({u,0});
     }
-    REP(i,n) if(!vis[i]) dfs(i);
+    REP(i,n) if(!vis[i]) dfs(i,-1);
     an=Graph(n);
     int it=0;
     vis.reset();
