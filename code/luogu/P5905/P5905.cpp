@@ -48,7 +48,7 @@ struct edge {
     int u,v,w;
 };
 int n,m;
-Graph g;
+Graphw g;
 vector<edge> e;
 vector<int> dis;
 bool ncyc=0;
@@ -92,7 +92,7 @@ void dijk(int st) {
 signed main() {
     IOS();
     cin>>n>>m;
-    g=Graph(n);
+    g=Graphw(n);
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
