@@ -46,8 +46,7 @@ int rd(int l,int r) {
 }
 #define GC getchar()
 #define PC putchar
-inline int read()
-{
+inline int in(){
     int x=0;
     bool neg=0;
     char c=GC;
