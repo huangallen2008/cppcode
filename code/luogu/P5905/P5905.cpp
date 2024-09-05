@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,7 +40,7 @@ using namespace std;
 const int mod=19260817;
 const int maxn=5e5+5;
 const int maxb=18;
-const int inf=(1ll<<62);
+const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -55,7 +56,7 @@ inline int in(){
     if(neg) x=(~x)+1;
     return x;
 }
-inline void out(int x) {
+inline void out(ll x) {
     if(x<0) {
         PC('-');
         x=~(x-1);
@@ -79,14 +80,14 @@ vector<edge> e;
 vector<int> dis0;
 vector<int> dis;
 bool ncyc=0;
-void bellm(int st) {
+void bellm(const int st) {
     dis0=vector<int>(n+1,inf);
     dis0[st]=0;
     int ts=n+1;
-    shuffle(ALL(e),rng);
     while(ts--) {
+        shuffle(ALL(e),rng);
         bool ok=0;
-        for(auto [u,v,w]:e) {
+        for(const auto &[u,v,w]:e) {
             if(dis0[u]+w<dis0[v]) {
                 dis0[v]=dis0[u]+w;
                 ok=1;
@@ -98,7 +99,7 @@ void bellm(int st) {
         }
     }
 }
-void dijk(int st) {
+void dijk(const int st) {
     priority_queue<pii> pq;
     dis=vector<int>(n+1,inf);
     dis[st]=0;
@@ -108,7 +109,7 @@ void dijk(int st) {
         auto [dd,u]=pq.top();
         pq.pop();
         vis[u]=1;
-        for(auto [v,w]:g[u]) {
+        for(auto &[v,w]:g[u]) {
             if(vis[v]) continue;
             if(dis[u]+w<dis[v]) {
                 dis[v]=dis[u]+w;
@@ -145,12 +146,12 @@ signed main() {
     }
     REP1(i,n) {
         dijk(i);
-        int an=0;
+        ll an=0;
         REP1(j,n) {
-            if(dis[j]==inf) an+=1e9*j;
+            if(dis[j]==inf) an+=1e9*(ll)j;
             else {
                 int dj=dis[j]+dis0[j]-dis0[i];
-                an+=dj*j;
+                an+=(ll)dj*j;
             }
         }
         out(an);
