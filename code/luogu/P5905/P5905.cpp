@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
 // #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -105,6 +105,7 @@ void dijk(const int st) {
     dis[st]=0;
     pq.push({0,st});
     bitset<maxn> vis;
+    REP(i,n) shuffle(ALL(g[i]),rng);
     while(pq.size()) {
         auto [dd,u]=pq.top();
         pq.pop();
