@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
+// #pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
 // #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -87,7 +87,7 @@ inline void bellm(const int st) {
     shuffle(ALL(e),rng);
     while(ts--) {
         bool ok=0;
-        for(const auto &[u,v,w]:e) {
+        for(auto &[u,v,w]:e) {
             if(dis0[u]+w<dis0[v]) {
                 dis0[v]=dis0[u]+w;
                 ok=1;
