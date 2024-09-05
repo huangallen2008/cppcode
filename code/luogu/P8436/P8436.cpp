@@ -48,6 +48,7 @@ Graphw g;
 vector<int> dep,low,dfn;
 bitset<maxn> vis;
 void dfs(int u,int fa) {
+    low[u]=dep[u];
     ope(u)
     dfn.pb(u);
     vis[u]=1;
