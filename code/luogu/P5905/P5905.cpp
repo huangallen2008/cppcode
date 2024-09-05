@@ -99,7 +99,7 @@ signed main() {
         g[u].pb({v,w});
         e.pb({u,v,w});
     }
-    bellm();
+    bellm(0);
     if(ncyc){
         cout<<"-1\n";
         return ;
