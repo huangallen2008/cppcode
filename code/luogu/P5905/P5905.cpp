@@ -101,12 +101,12 @@ inline void bellm(const int st) {
 }
 bitset<maxn> vis;
 inline ll dijk(const int st) {
-    priority_queue<pii> pq;
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
     vector<int> dis(n+1,inf);
     dis[st]=0;
     pq.push({0,st});
     vis.reset();
-    while(pq.size()) {
+    while(!pq.empty()) {
         auto [dd,u]=pq.top();
         pq.pop();
         vis[u]=1;
@@ -114,7 +114,7 @@ inline ll dijk(const int st) {
             if(vis[v]) continue;
             if(dis[u]+w<dis[v]) {
                 dis[v]=dis[u]+w;
-                pq.push({-dis[v],v});
+                pq.push({dis[v],v});
             }
         }
     }
