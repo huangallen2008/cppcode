@@ -62,6 +62,6 @@ signed main() {
     }
     vector<int> d(n,inf);
     REP(i,n) *lower_bound(ALL(d),a[i])=a[i];
-
+    cout<<lower_bound(ALL(d),inf)<<'\n';
     return 0;
 }
