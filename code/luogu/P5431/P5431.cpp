@@ -55,12 +55,38 @@ int pw(int x,int p) {
     return r;
 }
 int inv(int x) { return pw(x,mod-2); }
+#define GC getchar()
+#define PC putchar
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC(' ');
+}
 signed main() {
     IOS();
     int n,k;
-    cin>>n>>mod>>k;
+    n=read(),mod=read(),k=read();
     vector<int> a(n),f(n),fi(n),in(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) a[i]=read();
     f[0]=a[0];
     for(int i=1;i<n;i++) f[i]=a[i]*f[i-1]%mod;
     fi[n-1]=inv(f[n-1]);
@@ -69,6 +95,6 @@ signed main() {
     for(int i=1;i<n;i++) in[i]=fi[i]*f[i-1]%mod;
     int an=0;
     RREP(i,n) an=(an+in[i])*k%mod;
-    cout<<an<<'\n';
+    out(an);
     return 0;
 }
