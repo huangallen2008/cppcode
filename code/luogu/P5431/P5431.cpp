@@ -85,16 +85,15 @@ signed main() {
     IOS();
     int n,k;
     n=read(),mod=read(),k=read();
-    vector<int> a(n),f(n),fi(n),in(n);
+    vector<int> a(n),f(n),fi(n);
     REP(i,n) a[i]=read();
     f[0]=a[0];
     for(int i=1;i<n;i++) f[i]=a[i]*1ll*f[i-1]%mod;
     fi[n-1]=inv(f[n-1]);
     for(int i=n-2;i>=0;i--) fi[i]=fi[i+1]*1ll*a[i+1]%mod;
-    in[0]=fi[0];
-    for(int i=1;i<n;i++) in[i]=fi[i]*1ll*f[i-1]%mod;
+    for(int i=1;i<n;i++) fi[i]=fi[i]*1ll*f[i-1]%mod;
     int an=0;
-    RREP(i,n) an=(an+in[i])*1ll*k%mod;
+    RREP(i,n) an=(an+fi[i])*1ll*k%mod;
     out(an);
     return 0;
 }
