@@ -61,7 +61,7 @@ signed main() {
         a[i]=id[x];
     }
     vector<int> d(n,inf);
-    REP(i,n) *d.lower_bound(a[i])=a[i];
-    
+    REP(i,n) *lower_bound(ALL(d),a[i])=a[i];
+
     return 0;
 }
