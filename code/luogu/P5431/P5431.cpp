@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -48,8 +48,8 @@ int rd(int l,int r) {
 int pw(int x,int p) {
     int r=1;
     while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
+        if(p&1) r=r*1ll*x%mod;
+        x=x*1ll*x%mod;
         p>>=1;
     }
     return r;
@@ -88,13 +88,13 @@ signed main() {
     vector<int> a(n),f(n),fi(n),in(n);
     REP(i,n) a[i]=read();
     f[0]=a[0];
-    for(int i=1;i<n;i++) f[i]=a[i]*f[i-1]%mod;
+    for(int i=1;i<n;i++) f[i]=a[i]*1ll*f[i-1]%mod;
     fi[n-1]=inv(f[n-1]);
-    for(int i=n-2;i>=0;i--) fi[i]=fi[i+1]*a[i+1]%mod;
+    for(int i=n-2;i>=0;i--) fi[i]=fi[i+1]*1ll*a[i+1]%mod;
     in[0]=fi[0];
-    for(int i=1;i<n;i++) in[i]=fi[i]*f[i-1]%mod;
+    for(int i=1;i<n;i++) in[i]=fi[i]*1ll*f[i-1]%mod;
     int an=0;
-    RREP(i,n) an=(an+in[i])*k%mod;
+    RREP(i,n) an=(an+in[i])*1ll*k%mod;
     out(an);
     return 0;
 }
