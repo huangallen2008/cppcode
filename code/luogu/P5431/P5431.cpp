@@ -66,7 +66,7 @@ signed main() {
     fi[n-1]=inv(f[n-1]);
     for(int i=n-2;i>=0;i--) fi[i]=fi[i+1]*a[i+1]%mod;
     in[0]=fi[0];
-    for(int i=1;i<n;i++) in[i]=f[i]*fi[i-1]%mod;
+    for(int i=1;i<n;i++) in[i]=fi[i]*f[i-1]%mod;
     int an=0;
     RREP(i,n) an=(an+in[i])*k%mod;
     cout<<an<<'\n';
