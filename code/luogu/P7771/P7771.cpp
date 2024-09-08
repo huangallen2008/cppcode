@@ -71,10 +71,11 @@ signed main() {
     }
     bool ok=1;
     int cnt[2]={0,0};
+    int st=0;
     REP(i,n) {
         int dif=SZ(g[i])-ind[i];
         if(dif>1||dif<-1) {ok=0;break;}
-        if(dif==1) cnt[1]++;
+        if(dif==1) cnt[1]++,st=i;
         if(dif==-1) cnt[0]++;
     }
     if(cnt[0]!=cnt[1]||cnt[0]>1) ok=0;
@@ -83,7 +84,7 @@ signed main() {
         return 0;
     }
     REP(i,n) sort(ALL(g[i]));
-    dfs(0);
+    dfs(st);
     reverse(ALL(an));
     for(auto &x:an) cout<<x+1<<' ';
     cout<<'\n';
