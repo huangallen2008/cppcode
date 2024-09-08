@@ -63,12 +63,27 @@ signed main() {
     g=Graph(n);
     cur=Vi(n);
     vis.reset();
+    Vi ind(n);
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
         g[u].pb(v);
+        ind[v]++;
+    }
+    bool ok=1;
+    int cnt[2]={0,0};
+    REP(i,n) {
+        if(g[i].size()>ind[i]+1||g[i].size()<ind[i]-1) {ok=0;break;}
+        if(g[i].size()-ind[i]==1) cnt[1]++;
+        if(g[i].size()-ind[i]==-1) cnt[0]++;
+    }
+    if(cnt[0]!=cnt[1]||cnt[0]>1) ok=0;
+    if(!ok) {
+        cout<<"No!\n";
+        return 0;
     }
     REP(i,n) sort(ALL(g[i]));
+
     dfs(0);
     reverse(ALL(an));
     for(auto &x:an) cout<<x+1<<' ';
