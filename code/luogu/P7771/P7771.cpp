@@ -51,7 +51,6 @@ vector<int> cur;
 Vi an;
 bitset<maxm> vis;
 void dfs(int u) {
-    ope(u)
     for(;cur[u]<g[u].size();) {
         auto v=g[u][cur[u]++];
         dfs(v);
@@ -72,6 +71,7 @@ signed main() {
     REP(i,n) sort(ALL(g[i]));
     dfs(0);
     reverse(ALL(an));
-    for(auto &x:an) cout<<x+1<<'\n';
+    for(auto &x:an) cout<<x+1<<' ';
+    cout<<'\n';
     return 0;
 }
