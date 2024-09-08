@@ -103,3 +103,50 @@ il int read()
     return x*f;
 }//快读，不理解的同学用cin代替即可
 //re int a;
+////////////////////////
+#define GC getchar()
+#define PC putchar
+int in() {
+    int x=0;
+    char ch=GC;
+    while(ch==' '||ch=='\n') ch=GC;
+    while(ch>='0'&&ch<='9') x=(x<<3)+(x<<1)+ch-'0',ch=GC;
+    return x;
+}
+void out(int x) {
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC(' ');
+}
+////////////////////
+#define GC getchar()
+#define PC putchar
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=(~x)+1;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=~(x-1);
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC(' ');
+}
