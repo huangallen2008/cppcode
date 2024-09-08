@@ -52,8 +52,8 @@ Vi an;
 bitset<maxm> vis;
 void dfs(int u) {
     ope(u)
-    for(;cur[u]<g[u].size();cur[u]++) {
-        auto v=g[u][cur[u]];
+    for(;cur[u]<g[u].size();) {
+        auto v=g[u][cur[u]++];
         dfs(v);
     }
     an.pb(u);
