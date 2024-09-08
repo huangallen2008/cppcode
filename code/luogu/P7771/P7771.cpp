@@ -48,6 +48,7 @@ int rd(int l,int r) {
 Graph g;
 int n,m;
 vector<int> cur;
+Vi an;
 bitset<maxm> vis;
 void dfs(int u) {
     for(;cur[u]<g[u].size();cur[u]++) {
