@@ -47,7 +47,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     string s1,s2,s;
-    cin>>s1>>s2;
+    cin>>s2>>s1;
     s='$'+s1+'$'+s2;
     int n=s.size();
     vector<int> f(n);
