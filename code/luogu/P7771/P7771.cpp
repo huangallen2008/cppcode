@@ -49,13 +49,12 @@ Graph g;
 int n,m;
 vector<int> cur;
 Vi an;
-bitset<maxm> vis;
 void dfs(int u) {
     for(;cur[u]<g[u].size();cur[u]++) {
         auto v=g[u][cur[u]];
         dfs(v);
     }
-    an.push(v);
+    an.pb(u);
 }
 signed main() {
     IOS();
