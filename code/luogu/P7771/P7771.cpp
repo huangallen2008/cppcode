@@ -61,7 +61,6 @@ signed main() {
     cin>>n>>m;
     g=Graph(n);
     cur=Vi(n);
-    vis.reset();
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
