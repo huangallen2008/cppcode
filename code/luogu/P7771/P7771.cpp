@@ -79,11 +79,10 @@ signed main() {
     }
     if(cnt[0]!=cnt[1]||cnt[0]>1) ok=0;
     if(!ok) {
-        cout<<"No!\n";
+        cout<<"No\n";
         return 0;
     }
     REP(i,n) sort(ALL(g[i]));
-
     dfs(0);
     reverse(ALL(an));
     for(auto &x:an) cout<<x+1<<' ';
