@@ -40,7 +40,7 @@ using namespace std;
 int mod=998244353;
 const int maxn=1e4+5;
 const int maxb=18;
-const int inf=(1ll<<50);
+const int inf=(<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -85,15 +85,15 @@ signed main() {
     IOS();
     int n,k;
     n=read(),mod=read(),k=read();
-    vector<int> a(n),f(n),fi(n);
+    vector<int> a(n),f(n),b(n);
     REP(i,n) a[i]=read();
     f[0]=a[0];
     for(int i=1;i<n;i++) f[i]=a[i]*1ll*f[i-1]%mod;
-    fi[n-1]=inv(f[n-1]);
-    for(int i=n-2;i>=0;i--) fi[i]=fi[i+1]*1ll*a[i+1]%mod;
-    for(int i=1;i<n;i++) fi[i]=fi[i]*1ll*f[i-1]%mod;
+    b[n-1]=inv(f[n-1]);
+    for(int i=n-2;i>=0;i--) b[i]=b[i+1]*1ll*a[i+1]%mod;
+    for(int i=1;i<n;i++) b[i]=b[i]*1ll*f[i-1]%mod;
     int an=0;
-    RREP(i,n) an=(an+fi[i])*1ll*k%mod;
+    RREP(i,n) an=(an+b[i])*1ll*k%mod;
     out(an);
     return 0;
 }
