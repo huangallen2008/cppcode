@@ -72,7 +72,7 @@ signed main() {
     bool ok=1;
     int cnt[2]={0,0};
     REP(i,n) {
-        int dif=g[i].size()-ind[i];
+        int dif=SZ(g[i])-ind[i];
         if(dif>1||dif<-1) {ok=0;break;}
         if(dif==1) cnt[1]++;
         if(dif==-1) cnt[0]++;
