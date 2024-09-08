@@ -50,6 +50,7 @@ int n,m;
 vector<int> cur;
 Vi an;
 void dfs(int u) {
+    if(cur[u]==g[u].size()) return;
     for(;cur[u]<g[u].size();cur[u]++) {
         auto v=g[u][cur[u]];
         dfs(v);
