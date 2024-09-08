@@ -62,7 +62,7 @@ signed main() {
             w=f[w];
         }
         if(w<0) f[i]=w=0;
-        if(f[i]==s1.size()) cout<<i<<'\n';
+        if(f[i]==s1.size()) cout<<i-s1.size()-s1.size()<<'\n';
     }
     REP1(i,s1.size()) cout<<f[i]<<' ';
     cout<<'\n';
