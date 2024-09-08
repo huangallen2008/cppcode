@@ -49,8 +49,9 @@ Graph g;
 int n,m;
 vector<int> cur;
 Vi an;
+bitset<maxm> vis;
 void dfs(int u) {
-    if(cur[u]==g[u].size()) return;
+    ope(u)
     for(;cur[u]<g[u].size();cur[u]++) {
         auto v=g[u][cur[u]];
         dfs(v);
@@ -62,6 +63,7 @@ signed main() {
     cin>>n>>m;
     g=Graph(n);
     cur=Vi(n);
+    vis.reset();
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
