@@ -52,8 +52,7 @@ Vi an;
 bitset<maxm> vis;
 void dfs(int u) {
     for(;cur[u]<g[u].size();) {
-        auto v=g[u][cur[u]++];
-        dfs(v);
+        dfs(g[u][cur[u]++]);
     }
     an.pb(u);
 }
@@ -73,9 +72,10 @@ signed main() {
     bool ok=1;
     int cnt[2]={0,0};
     REP(i,n) {
-        if(g[i].size()>ind[i]+1||g[i].size()<ind[i]-1) {ok=0;break;}
-        if(g[i].size()-ind[i]==1) cnt[1]++;
-        if(g[i].size()-ind[i]==-1) cnt[0]++;
+        int dif=g[i].size()-ind[i];
+        if(dif>1||dif<-1) {ok=0;break;}
+        if(dif==1) cnt[1]++;
+        if(dif==-1) cnt[0]++;
     }
     if(cnt[0]!=cnt[1]||cnt[0]>1) ok=0;
     if(!ok) {
