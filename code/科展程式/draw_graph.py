@@ -58,7 +58,7 @@ for i in range(1,100000):
     if(i==5): 
         print(math.log(i,2))
         print(i/math.log(i,2))
-    if(i>1): y.append(i/math.log(i,pow(2,80)))
+    if(i>1): y.append(i/math.log(i,pow(1.5,80)))
     else : y.append(1)
 # with open('graph1.csv', newline='') as csvfile:
 #     # 讀取 CSV 檔案內容
