@@ -55,6 +55,7 @@ x=[]
 y=[]
 for i in range(1,100000):
     x.append(i)
+    if(i==5): print(math.log(i,2))
     y.append(i/(math.log(i,2)+1))
 # with open('graph1.csv', newline='') as csvfile:
 #     # 讀取 CSV 檔案內容
