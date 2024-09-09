@@ -44,7 +44,7 @@
 # plt.show()
 
 
-from cmath import log
+import math
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 import numpy as np
@@ -55,7 +55,7 @@ x=[]
 y=[]
 for i in range(1,100000):
     x.append(i)
-    y.append(i*log(2,i))
+    y.append(i*log2(i))
 # with open('graph1.csv', newline='') as csvfile:
 #     # 讀取 CSV 檔案內容
 #     data = csv.reader(csvfile)
