@@ -44,7 +44,7 @@
 # plt.show()
 
 
-import math
+import cmath
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 import numpy as np
