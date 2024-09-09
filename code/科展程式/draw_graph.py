@@ -53,7 +53,7 @@ cnt=0
 # 開啟 CSV 檔案
 x=[]
 y=[]
-for i in range(1,5000):
+for i in range(1,100000):
     x.append(i)
     if(i>1): y.append(i*math.log(i,1.641))
     else : y.append(1)
