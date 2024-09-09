@@ -44,23 +44,29 @@
 # plt.show()
 
 
+from cmath import log
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Button, Slider
 import numpy as np
 import csv
 cnt=0
 # 開啟 CSV 檔案
-with open('graph1.csv', newline='') as csvfile:
-    # 讀取 CSV 檔案內容
-    data = csv.reader(csvfile)
-    # 提取 X 和 Y 座標
-    x = []
-    y = []
-    for row in data:
-        cnt+=1
-        # if cnt>1000 : break
-        x.append(float(row[0]))  # 第一列為 X 座標
-        y.append(float(row[1]))  # 第二列為 Y 座標
+x=[]
+y=[]
+for i in range(1,100000):
+    x.append(i)
+    y.append(i*log(2,i))
+# with open('graph1.csv', newline='') as csvfile:
+#     # 讀取 CSV 檔案內容
+#     data = csv.reader(csvfile)
+#     # 提取 X 和 Y 座標
+#     x = []
+#     y = []
+#     for row in data:
+#         cnt+=1
+#         # if cnt>1000 : break
+#         x.append(float(row[0]))  # 第一列為 X 座標
+#         y.append(float(row[1]))  # 第二列為 Y 座標
 cnt=0
 with open('F_I_star_data.csv', newline='') as csvfile:
     # 讀取 CSV 檔案內容
