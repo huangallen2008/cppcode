@@ -53,7 +53,7 @@ cnt=0
 # 開啟 CSV 檔案
 x=[]
 y=[]
-for i in range(1,5000):
+for i in range(1,500):
     x.append(i)
     if(i>1): y.append(i*math.log(i,1.641)*math.log(i,1.64067))
     else : y.append(1)
@@ -104,9 +104,9 @@ ax.plot(x3, y3,color='red',markersize=1)
 def zoom(event):
     axtemp=event.inaxes
     x_min, x_max = axtemp.get_xlim()
-    xrang = (x_max - x_min) / 10
+    xrang = (x_max - x_min) / 30
     y_min, y_max = axtemp.get_ylim()
-    yrang = (y_max - y_min) / 10
+    yrang = (y_max - y_min) / 30
     if event.button == 'up':
         ax.set_xlim(ax.get_xlim()[0] +xrang, ax.get_xlim()[1] -xrang)
         ax.set_ylim(ax.get_ylim()[0] +yrang, ax.get_ylim()[1] -yrang)
