@@ -55,7 +55,7 @@ x=[]
 y=[]
 for i in range(1,5000):
     x.append(i)
-    if(i>1): y.append(i*math.log(i,1.641)*math.log(i,1.64067))
+    if(i>1): y.append(i*math.log(i,1.641)*math.log(i,1.64067)*math.log(i,1.64067))
     else : y.append(1)
 # with open('graph1.csv', newline='') as csvfile:
 #     # 讀取 CSV 檔案內容
@@ -78,7 +78,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
     for row in data:
         cnt+=1
         # if(cnt>1000):break
-        x2.append(int(float(row[0])/max(1,math.log(cnt,1.64067))))  # 第一列為 X 座標
+        x2.append(int(float(row[0])))# /max(1,math.log(cnt,1.64067))))  # 第一列為 X 座標
         y2.append(float(row[1]))  # 第二列為 Y 座標
 
     # 提取 X 和 Y 座標
