@@ -84,7 +84,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
     # 提取 X 和 Y 座標
     x3 = []
     y3 = []
-    for i in range(1,100):
+    for i in range(1,1000):
         x3.append(i)  # 第一列為 X 座標
         y3.append(i*i)  # 第二列為 Y 座標
 # 生成一些隨機數據
