@@ -53,7 +53,7 @@ cnt=0
 # 開啟 CSV 檔案
 x=[]
 y=[]
-for i in range(1,500):
+for i in range(1,100):
     x.append(i)
     if(i>1): y.append(i*math.log(i,1.641)*math.log(i,1.64067))
     else : y.append(1)
@@ -84,7 +84,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
     # 提取 X 和 Y 座標
     x3 = []
     y3 = []
-    for i in range(1,1000):
+    for i in range(1,100):
         x3.append(i)  # 第一列為 X 座標
         y3.append(i*math.sqrt(i))  # 第二列為 Y 座標
 # 生成一些隨機數據
