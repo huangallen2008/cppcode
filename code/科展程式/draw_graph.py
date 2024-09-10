@@ -86,7 +86,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
     y3 = []
     for i in range(1,900):
         x3.append(i)  # 第一列為 X 座標
-        y3.append(i*i)  # 第二列為 Y 座標
+        y3.append(i*i*math.log(i,math.e))  # 第二列為 Y 座標
 # 生成一些隨機數據
 # x = np.linspace(0, 10, 100)
 # y = np.sin(x)
