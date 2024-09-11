@@ -93,7 +93,7 @@ signed main() {
     int an=0;
     while(n--) {
         int x=read();
-        out(p[x-1]);
+        op("T")out(p[x-1]);
     }
     return 0;
 }
