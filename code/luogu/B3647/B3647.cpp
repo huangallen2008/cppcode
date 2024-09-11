@@ -49,10 +49,6 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<Vi> dis(n,Vi(n,inf));
-    REP(i,n) {
-        REP(j,n) cout<<dis[i][j]<<' ';
-        cout<<'\n';
-    }
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
