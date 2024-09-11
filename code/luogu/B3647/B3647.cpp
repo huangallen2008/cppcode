@@ -49,6 +49,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<Vi> dis(n,Vi(n,inf));
+    REP(i,n) dis[i][i]=0;
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
