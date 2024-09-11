@@ -45,8 +45,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #ifdef LOCAL
-#define GU _getchar_nolock()
-#define PU _putchar_nolock
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
 #else 
 #define GC getchar_unlocked()
 #define PC putchar_unlocked()
