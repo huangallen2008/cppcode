@@ -57,7 +57,7 @@ inline int read()
 }
 inline string reads()
 {
-    string s=0;
+    string s='';
     char c=GC;
     while(c<'0'||c>'9')c=GC;
     while(c>='0'&&c<='9') s+=c,c=GC;
