@@ -63,5 +63,6 @@ signed main() {
         int x=read();
         an+=x;
     }
+    cout<<an<<'\n';
     return 0;
 }
