@@ -49,7 +49,7 @@ int rd(int l,int r) {
 #define PC _putchar_nolock
 #else 
 #define GC getchar_unlocked()
-#define PC putchar_unlocked()
+#define PC putchar_unlocked
 #endif
 inline int read()
 {
