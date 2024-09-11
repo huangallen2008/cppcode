@@ -49,7 +49,8 @@ void solve() {
     cin>>n;
     vector<ull> stk;
     REP(i,n) {
-        string s=reads();
+        string s;
+        cin>>s;
         if(s[0]=='p') {
             if(s[1]=='u') {
                 ull x;
