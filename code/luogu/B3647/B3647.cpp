@@ -48,12 +48,12 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<Vi> d(n,Vi(n,inf));
+    vector<Vi> dis(n,Vi(n,inf));
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        chmin(d[u][v],w);
-        chmin(d[v][u],w);
+        chmin(dis[u][v],w);
+        chmin(dis[v][u],w);
     }
     REP(i,n) {
         REP(j,n) {
@@ -63,7 +63,7 @@ signed main() {
         }
     }
     REP(i,n) {
-        REP(j,n) cout<<d[i][j]<<' ';
+        REP(j,n) cout<<dis[i][j]<<' ';
         cout<<'\n';
     }
     return 0;
