@@ -73,7 +73,7 @@ inline void out(int x) {
         x/=10;
     } while(x);
     for(it--;it>=str;it--) PC(*it);
-    PC(' ');
+    PC('\n');
 }
 signed main() {
     IOS();
