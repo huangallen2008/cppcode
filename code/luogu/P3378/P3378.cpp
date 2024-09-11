@@ -56,9 +56,7 @@ signed main() {
             cin>>x;
             pq.push(x);
         }
-        if(opt==2) {
-            cout<<pq.top()<<'\n';;
-        }
+        if(opt==2) cout<<pq.top()<<'\n';
         if(opt==3) pq.pop();
     }
     return 0;
