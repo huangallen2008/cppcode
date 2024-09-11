@@ -124,8 +124,13 @@ void out(int x) {
     PC(' ');
 }
 ////////////////////
-#define GC getchar()
-#define PC putchar
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
 inline int read()
 {
     int x=0;
@@ -148,5 +153,5 @@ inline void out(int x) {
         x/=10;
     } while(x);
     for(it--;it>=str;it--) PC(*it);
-    PC(' ');
+    PC('\n');
 }
