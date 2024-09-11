@@ -133,13 +133,13 @@ inline int read()
     char c=GC;
     while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
     while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=(~x)+1;
+    if(neg) x=-x;
     return x;
 }
 inline void out(int x) {
     if(x<0) {
         PC('-');
-        x=~(x-1);
+        x=-x;
     }
     char str[18];
 	auto it=str;
