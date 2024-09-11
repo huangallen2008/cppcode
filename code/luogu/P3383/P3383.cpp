@@ -77,6 +77,7 @@ inline void out(int x) {
 }
 signed main() {
     IOS();
+    read();
     vector<int> p,lpf(maxn);
     for(int i=2;i<maxn;i++) {
         if(lpf[i]==0) {
