@@ -60,7 +60,7 @@ inline string reads()
     string s="";
     char c=GC;
     while(c<'0'||c>'9')c=GC;
-    while(c>='0'&&c<='9') s+=c,c=GC;
+    while(c>='a'&&c<='z') s+=c,c=GC;
     return s;
 }
 inline void out(int x) {
