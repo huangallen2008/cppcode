@@ -79,12 +79,12 @@ inline void out(int x) {
 }
 void solve() {
     int n=read();
-    vector<int> stk;
+    vector<string> stk;
     REP(i,n) {
         string s=reads();
         if(s[0]=='p') {
             if(s[1]=='u') {
-                int x=read();
+                string x=reads();
                 stk.pb(x);
             }
             else {
