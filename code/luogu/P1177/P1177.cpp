@@ -51,6 +51,7 @@ signed main() {
     vector<int> a(n);
     REP(i,n) cin>>a[i];
     sort(ALL(a));
-    REP(i,n) cout<<a[i]<<'\n';
+    REP(i,n) cout<<a[i]<<' ';
+    cout<<'\n';
     return 0;
 }
