@@ -60,7 +60,7 @@ signed main() {
             chmin(dpl[l][r],dpr[l][r-1]+(p[n]-p[r]+p[l-1])*(x[r]-x[l]+x[r]-x[r-1])+w[r]*(x[r]-x[r-1]));//x_l->x_r->x_r-1
             chmin(dpl[l][r],dpl[l+1][r]+(p[n]-p[r]+p[l])*(x[l+1]-x[l]));//x_l->x_r->x_l
             chmin(dpr[l][r],dpl[l+1][r]+(p[n]-p[r]+p[l-1])*(x[r]-x[l]+x[l+1]-x[l])+w[l]*(x[l+1]-x[l]));//x_l->x_r->x_r-1
-            chmin(dpr[l][r],dpr[l][r-1]+(p[n]-p[r]+p[l])*(x[r]-x[r-1]));//x_l->x_r->x_l
+            chmin(dpr[l][r],dpr[l][r-1]+(p[n]-p[r-1]+p[l-1])*(x[r]-x[r-1]));//x_l->x_r->x_l
         }
     }
     int an=min(dpl[1][n],dpr[1][n]);
