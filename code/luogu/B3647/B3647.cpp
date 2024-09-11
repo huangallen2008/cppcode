@@ -55,7 +55,10 @@ signed main() {
         chmin(dis[u][v],w);
         chmin(dis[v][u],w);
     }
-    REP(i,n) REP(j,n) cout<<dis[i][j]<<' ';
+    REP(i,n) {
+        REP(j,n) cout<<dis[i][j]<<' ';
+        cout<<'\n';
+    }
     REP(i,n) {
         REP(j,n) {
             REP(k,n) {
