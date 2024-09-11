@@ -43,48 +43,17 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define GC getchar()
-#define PC putchar
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
-}
-inline string reads()
-{
-    string s="";
-    char c=GC;
-    while(c<'a'||c>'z')c=GC;
-    while(c>='a'&&c<='z') s+=c,c=GC;
-    return s;
-}
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
-    }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC(' ');
-}
+#define ull unsigned long long
 void solve() {
-    int n=read();
-    vector<string> stk;
+    int n;
+    cin>>n;
+    vector<ull> stk;
     REP(i,n) {
         string s=reads();
         if(s[0]=='p') {
             if(s[1]=='u') {
-                string x=reads();
+                ull x;
+                cin>>x;
                 stk.pb(x);
             }
             else {
@@ -101,7 +70,8 @@ void solve() {
 }
 signed main() {
     IOS();
-    int T=read();
+    int T;
+    cin>>T;
     while(T--) solve();
     return 0;
 }
