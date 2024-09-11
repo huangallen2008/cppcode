@@ -57,6 +57,6 @@ signed main() {
     IOS();
     int a,b,p;
     cin>>a>>b>>p;
-    cout<<pw(a,b,p)<<'\n';
+    cout<<a<<"^"<<b<<" mod "<<p<<"="<<pw(a,b,p)<<'\n';
     return 0;
 }
