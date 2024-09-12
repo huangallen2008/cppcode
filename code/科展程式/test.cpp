@@ -46,10 +46,13 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("F_I_star_data.txt","r",stdin);
+    freopen("F_I_star_data_small.txt","w",stdout);
     int x,y;
     char c;
+    int cnt=0;
     while(cin>>x>>c>>y) {
-        if(y==x-1) ope(x)
+        if(cnt++>=10000) break;
+        cout<<x<<' '<<c<<' '<<y<<'\n';
     }
     return 0;
 }
