@@ -46,7 +46,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("F_I_star_data.txt","r",stdin);
-    freopen("F_I_star_data_small.txt","w",stdout);
+    freopen("F_I_star_data_small.csv","w",stdout);
     int x,y;
     char c;
     int cnt=0;
