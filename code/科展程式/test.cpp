@@ -52,7 +52,7 @@ signed main() {
     int cnt=0;
     while(cin>>x>>c>>y) {
         if(cnt++>=10000) break;
-        cout<<x<<' '<<c<<' '<<y<<'\n';
+        cout<<x<<' '<<y<<'\n';
     }
     return 0;
 }
