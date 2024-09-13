@@ -44,33 +44,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n,q;
-    cin>>n>>q;
-    vector<int> a(n*3+1);
-    REP1(i,n) cin>>a[i];
-    for(int i=n+1;i<n*2+1;i++) a[i]=a[i-n];
-    for(int i=n*2+1;i<n*3+1;i++) a[i]=a[i-n];
-    vector<int>p(n<<1|1);
-    REP1(i,n*3) p[i]=p[i-1]+a[i];
-    REP(i,q) {
-        int l,r;
-        cin>>l>>r;
-        int antt=(r/n*n-l/n*n);
-        ope("ok")
-        int an=(r/n*n-l/n*n)/n*p[n];
-        l--;
-        an+=-(p[n*2+1-(l/n)+(l-l/n*n)]-p[n*2+1-(l/n)])+(p[n*2+1-(r/n)+r-r/n*n]-p[n*2+1-(r/n)]);
-        cout<<an<<'\n';
-    }
-    // entr
-}
 signed main() {
     IOS(); 
-    int T;
-    cin>>T;
-    while(T--) {
-        solve();
-    }
+    
     return 0;
 }

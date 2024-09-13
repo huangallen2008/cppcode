@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -46,35 +46,25 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int l,w,n;
-    cin>>l>>w>>n;
-    vector<pii> a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    a.pb({0,0});
-    a.pb({l,w});
-    sort(ALL(a));
-    n+=2;
-    int an=0;
+    int n;
+    cin>>n;
+    set<pii> s;
     REP(i,n) {
-        int mn=0,mx=w;
-        for(int j=i+1;j<n;j++) {
-            chmax(an,(a[j].f-a[i].f)*(mx-mn));
-            if(a[j].s>=a[i].s) chmin(mx,a[j].s);
-            else chmax(mn,a[j].s);
+        string opt;
+        pii x;
+        cin>>opt>>x.f>>x.s;
+        if(opt[0]=='a') {
+            s.insert(x);
+        }
+        else if(opt[0]=='r') {
+            s.erase(x);
+        }
+        else {
+            x.f++;
+            auto it=s.lower_bound(x);
+            if(it==s.end()) cout<<"-1\n";
+            else cout<<it->f<<' '<<it->s<<'\n';
         }
     }
-    RREP(i,n) {
-        int mn=0,mx=w;
-        for(int j=i-1;j>=0;j--) {
-            chmax(an,(a[i].f-a[j].f)*(mx-mn));
-            if(a[j].s>=a[i].s) chmin(mx,a[j].s);
-            else chmax(mn,a[j].s);
-        }
-    }
-    vector<int> y;
-    REP(i,n) y.pb(a[i].s);
-    sort(ALL(y));
-    REP1(i,n-1) chmax(an,(y[i]-y[i-1])*l);
-    cout<<an<<'\n';
     return 0;
 }

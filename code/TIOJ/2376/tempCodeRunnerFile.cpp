@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,42 +39,41 @@ using namespace std;
 #endif
 const int mod=998244353;
 const int maxn=1e8+5;
-const int inf=(1ll<<61);
+const int inf=(1<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 signed main() {
     IOS();
-    int l,w,n;
-    cin>>l>>w>>n;
-    vector<pii> a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    a.pb({0,0});
-    a.pb({l,w});
-    sort(ALL(a));
-    n+=2;
+    int n,k;
+    cin>>n>>k;
+    vector<int> a(n+1);
+    REP1(i,n) cin>>a[i];
+    vector<pii> stk,b;
+    stk.pb({inf,0});
+    REP1(i,n) {
+        // for(auto [x,y]:stk) cout<<"{"<<x<<","<<y<<"} ";entr
+        while(a[i]>=stk.back().f) {
+            if(stk.size()>2) b.pb({i-stk[stk.size()-2].s-1,a[i]>=stk[stk.size()-2].f?stk[stk.size()-2].f-stk.back().f:a[i]-stk.back().f});
+            stk.pop_back();
+        }
+        stk.pb({a[i],i});
+    }
     int an=0;
-    REP(i,n) {
-        int mn=0,mx=w;
-        for(int j=i+1;j<n;j++) {
-            chmax(an,(a[j].f-a[i].f)*(mx-mn));
-            if(a[j].s>=a[i].s) chmin(mx,a[j].s);
-            else chmax(mn,a[j].s);
+    REP1(i,n-1) an+=abs(a[i]-a[i+1]);
+    // for(auto &[x,y]:b) cout<<x<<' '<<y<<'\n';
+    sort(ALL(b));
+    REP(i,b.size()) {
+        if(k>=b[i].f*b[i].s) {
+            an-=b[i].s*2;
+            k-=b[i].f*b[i].s;
+        }
+        else {
+            an-=(k/b[i].f)*2;
+            break;
         }
     }
-    RREP(i,n) {
-        int mn=0,mx=w;
-        for(int j=i-1;j>=0;j--) {
-            chmax(an,(a[i].f-a[j].f)*(mx-mn));
-            if(a[j].s>=a[i].s) chmin(mx,a[j].s);
-            else chmax(mn,a[j].s);
-        }
-    }
-    vector<int> y;
-    REP(i,n) y.pb(a[i].s);
-    sort(ALL(y));
-    REP1(i,n-1) chmax(an,(y[i]-y[i-1])*l);
     cout<<an<<'\n';
     return 0;
 }
