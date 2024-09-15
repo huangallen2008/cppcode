@@ -92,7 +92,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
 # y = np.sin(x)
 # 創建一個子圖
 fig, ax = plt.subplots()
-ax.plot(x2, y2,color='blue',markersize=1)
+ax.plot(x2, y2,color='blue',markersize=5)
 # ax.plot(x, y,color='red',markersize=1)
 # ax.plot(x3, y3,color='red',markersize=1)
 
