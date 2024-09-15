@@ -1,0 +1,21 @@
+<h2>{{grade}}年{{classid}}班{{number}}號   日期:{{date}}</h2>
+<h1>確認餐點</h1>
+    <h2>餐點</h2>
+    <textarea rows="10" cols="50" readonly>
+{% for i in range(1,mlsz) %}{% if(cart[i]>0) %}{{ i }}. {{ menu[i][:-1].split(' ')[1] }} ${{ menu[i][:-1].split(' ')[2] }}  x  {{ cart[i] }}
+{% endif%}{% endfor %}
+    </textarea>
+<form method="post" action="{{ url_for('accept') }}">
+    <input type="hidden" name="grade" value="{{grade}}">
+    <input type="hidden" name="class" value="{{classid}}">
+    <input type="hidden" name="number" value="{{number}}">
+    <input type="hidden" name="date" value="{{date}}">
+    <button type="submit">提交餐點</button>
+</form>
+<form method="post" action="{{ url_for('student_order') }}">
+    <input type="hidden" name="grade" value="{{grade}}">
+    <input type="hidden" name="class" value="{{classid}}">
+    <input type="hidden" name="number" value="{{number}}">
+    <input type="hidden" name="date" value="{{date}}">
+    <button type="submit">繼續點餐</button>
+</form>

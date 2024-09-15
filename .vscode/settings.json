@@ -1,0 +1,38 @@
+{
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.postCommitCommand": "sync",
+    "gitdoc.commitMessageFormat": "coding",
+    "gitdoc.pushMode": "push",
+<<<<<<< HEAD
+    "gitdoc.enabled": false,
+=======
+    "gitdoc.enabled": true,
+>>>>>>> 8b6bc397d6a153ebc6589e091befa961a1e59f99
+    "gitdoc.autoCommitDelay": 300,
+    "files.associations": {
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "random": "cpp",
+        "bitset": "cpp",
+        "functional": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

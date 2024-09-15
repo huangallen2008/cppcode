@@ -1,0 +1,42 @@
+    <form method="post" action="{{ url_for('order_search') }}">
+    年級:
+    <select name="grade">
+        <option value=0>grade</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+    </select>
+
+    班級:
+    <select name="class">
+        <option value="0">value</option>
+    {% for i in range(1,22) %}
+        <option value={{i}}>{{i}}</option>
+    {% endfor %}
+    </select>
+
+    座號:
+    <select name="number">
+
+    {% for i in range(41) %}
+        <option value={{i}}>{{i}}</option>
+    {% endfor %}
+    </select>
+
+    日期:
+    <input type="date" name="date">
+
+    付款狀態:
+    <select name="is_payed">
+        <option value=0>不限</option>
+        <option value=1>已付款</option>
+        <option value=2>未付款</option>
+    </select>
+
+    <button type="submit">submit</button>
+    <br>
+    <button type="submit">確認勾選</button>
+    <form method="post" action="{{ url_for('admin') }}">
+        <button type="submit">back to /admin</button>
+
+    

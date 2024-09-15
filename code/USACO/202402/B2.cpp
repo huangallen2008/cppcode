@@ -1,0 +1,85 @@
+#include<bits/stdc++.h>
+using namespace std;
+#pragma GCC optimize("O3")
+#define int long long
+#define REP(i,n) for(int i=0;i<n;i++)
+#define REP1(i,n) for(int i=1;i<=n;i++)
+#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
+#define RREP1(i,n) for(int i=(n);i>=1;i--)
+#define f first
+#define s second
+#define pb push_back
+#define ALL(x) x.begin(),x.end()
+#define SZ(x) (int)(x.size())
+#define SQ(x) (x)*(x)
+#define pii pair<int,int>
+#define pipii pair<int,pii>
+#define Graph vector<vector<int>>
+#define IOS() ios::sync_with_stdio(0),cin.tie(0)
+#define md(x) (((x)%(mod)+(mod))%(mod))
+#ifdef LOCAL
+#define op(x) cout<<#x<<"="<<x<<", ";
+#define ope(x) cout<<#x<<"="<<x<<endl;
+#define oparr(x) cout<<#x<<":";REP(i,x.size()) cout<<x[i]<<" ";cout<<" size="<<x.size()<<endl;
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
+const int mod=1e9+7;
+const int maxn=1e5+5;
+const int inf=(1ll<<62);
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
+}
+//shuffle(a,a+n,rng)
+signed main() {
+    IOS();
+    int n,m;
+    cin>>n>>m;
+    vector<bool> s0(n);
+    vector<int> a0(n);
+    REP(i,n) {
+        char c;
+        cin>>c;
+        s0[i]=(c=='L');
+    }
+    REP(i,n) cin>>a0[i];
+    int sum=0;
+    REP(i,n) sum+=a0[i];
+    vector<bool> s;
+    vector<int> a;
+    while(s0.size()&&s0[0]==s0.back()) {
+        s.pb(s0.back());
+        s0.pop_back();
+        a.pb(a0.back());
+        a0.pop_back();
+    }
+    if(s0.size()==0) cout<<sum<<'\n';
+    else {
+        reverse(ALL(s)),reverse(ALL(a));
+        REP(i,s0.size()) {
+            s.pb(s0[i]);
+            a.pb(a0[i]);
+        }
+        s.pb(s[0]),a.pb(0);
+        n++;
+        int l=0,mi=0,lsum=0;
+        REP(i,n-1) {
+            lsum+=a[i];
+            if(s[i]^s[i+1]) {
+                if(i!=l) {
+                    if(s[i]) mi+=min(m,lsum-a[l]);
+                    else mi+=min(m,lsum-a[i]);
+                }
+                l=i+1;
+                lsum=0;
+            }
+        }
+        cout<<sum-mi<<'\n';
+    }
+    return 0;
+}
