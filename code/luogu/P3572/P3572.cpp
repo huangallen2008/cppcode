@@ -51,12 +51,12 @@ void solve(int k) {
     deque<int> dq;
     dq.pb(0);
     REP1(i,n-1) {
-        oparr(dq)
         while(dq.front()<i-k) dq.pop_front();
         dp[i]=dp[dq.front()]+(d[i]>=d[dq.front()]);
         while(dq.size()&&(dp[dq.back()]>dp[i]||(dp[dq.back()]==dp[i]&&d[dq.back()]<=d[i]))) {
             dq.pop_back();
         }
+        dq.pb(i);
     }
     cout<<dp[n-1]<<'\n';
 }
