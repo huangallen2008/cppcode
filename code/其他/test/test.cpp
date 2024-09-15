@@ -59,8 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-<<<<<<< HEAD
-<<<<<<< HEAD
     ope(clock())
     ld x=log(2);
     int d=0;
@@ -69,11 +67,5 @@ signed main() {
     cout<<fixed<<setprecision(10)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
     ope(CLOCKS_PER_SEC)
     cout<<fixed<<setprecision(30)<<x<<'\n';
-=======
-    
->>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
-=======
-    
->>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
     return 0;
 }
