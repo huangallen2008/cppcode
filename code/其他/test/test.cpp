@@ -3,10 +3,6 @@
 using namespace __gnu_pbds;
 using namespace std;
 #pragma GCC optimize("O0")
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
-using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
-using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
