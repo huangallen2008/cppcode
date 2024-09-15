@@ -2,7 +2,11 @@
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma GCC target("avx2,sse4,bmi2,popcnt")
+=======
+// #pragma GCC target("avx2,sse4,bmi,popcnt")
+>>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
 =======
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 >>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
