@@ -1,19 +1,13 @@
 #include<bits/stdc++.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include<bits/extc++.h>
 using namespace __gnu_pbds;
 using namespace std;
 #pragma GCC optimize("O0")
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
-=======
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
->>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
-=======
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
->>>>>>> 78541cbc0a0b07e855f7a8b89d63696cc483800d
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
