@@ -78,7 +78,7 @@ with open('F_I_star_data.csv', newline='') as csvfile:
     for row in data:
         cnt+=1
         # if(cnt>1000):break
-        x2.append(float(row[0]))#/max(1,math.log(cnt,1.64067))))  # 第一列為 X 座標
+        x2.append(math.sqrt(float(row[0])*8))#/max(1,math.log(cnt,1.64067))))  # 第一列為 X 座標
         y2.append(float(row[1]))  # 第二列為 Y 座標
 
     # 提取 X 和 Y 座標
