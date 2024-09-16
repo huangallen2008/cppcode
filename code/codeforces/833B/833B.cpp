@@ -63,7 +63,7 @@ inline int read()
 }
 #define int16 int16_t
 struct SEG {
-    int s[maxn];
+    int16 s[maxn];
     int lc[maxn];
     int rc[maxn];
     int n;
@@ -96,14 +96,14 @@ struct SEG {
             las[a[i]]=i;
         }
     }
-    int _qu(int &w,int l,int r,int &ql,int &qr) {
+    int16 _qu(int &w,int l,int r,int &ql,int &qr) {
         if(!w) return 0;
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return 0;
         int m=l+r>>1;
         return _qu(lc[w],l,m,ql,qr)+_qu(rc[w],m+1,r,ql,qr);
     }
-    int qu(int l,int r) {
+    int16 qu(int l,int r) {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
