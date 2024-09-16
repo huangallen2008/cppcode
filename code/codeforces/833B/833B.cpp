@@ -57,7 +57,7 @@ struct SEG {
     int _ud(int w,int l,int r,int u,int v) {
         int nn=node_id++;
         if(!w) w=nn;
-        lc[nn]=lc[w],rc[nn]=rc[w];
+        lc[nn]=lc[w],rc[nn]=rc[w],s[nn]=s[w];
         if(l==r) {
             s[nn]+=v;
             return nn;
