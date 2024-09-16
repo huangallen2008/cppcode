@@ -95,7 +95,7 @@ struct SEG {
             las[a[i]]=i;
         }
     }
-    int _qu(int w,int l,int r,int ql,int qr) {
+    int _qu(int &w,int &l,int &r,int &ql,int &qr) {
         if(!w) return 0;
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return 0;
