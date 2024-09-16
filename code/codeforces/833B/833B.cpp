@@ -116,8 +116,8 @@ void _solve(int l,int r,int mn,int mx) {
         return;
     }
     int m=l+r>>1;
-    int id=0,lim=min(mx,m-1);
-    for(int i=mn;i<=lim;i++) {
+    int16 id=0,lim=min(mx,m-1);
+    for(int16 i=mn;i<=lim;i++) {
         int16 nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
