@@ -88,6 +88,7 @@ struct SEG {
     }
     void init(int _n,Vi &a) {
         n=_n+1;
+        ope(n)
         ver=Vi(_n+1);
         ver[0]=1;
         Vi las(n);
