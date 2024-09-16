@@ -59,7 +59,7 @@ struct SEG {
         if(!w) w=nn;
         lc[nn]=lc[w],rc[nn]=rc[w];
         if(l==r) {
-            s[w]-=v;
+            s[w]+=v;
             return nn;
         }
         int m=l+r>>1;
