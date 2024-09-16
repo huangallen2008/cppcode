@@ -77,6 +77,7 @@ struct SEG {
         ver[0]=1;
         Vi las(n);
         REP1(i,_n) {
+            op(las[a[i]])op(-1)op(i)ope(1)
             ver[i]=ud(ud(ver[i-1],las[a[i]],-1),i,1);
             las[a[i]]=i;
         }
