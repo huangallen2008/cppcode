@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -68,9 +68,6 @@ struct SEG {
     int n;
     int node_id=1;
     Vi ver;
-    void pull(int w) {
-        s[w]=s[lc[w]]+s[rc[w]];
-    }
     int _ud(int w,int l,int r,int u,int v) {
         int nn=node_id++;
         if(!w) w=nn;
@@ -82,7 +79,7 @@ struct SEG {
         int m=l+r>>1;
         if(u<=m) lc[nn]=_ud(lc[nn],l,m,u,v);
         else rc[nn]=_ud(rc[nn],m+1,r,u,v);
-        pull(nn);
+        s[nn]=s[lc[nn]]+s[rc[nn]];
         return nn;
     }
     int ud(int root,int u,int v) {
