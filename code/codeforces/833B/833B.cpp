@@ -63,7 +63,7 @@ inline int read()
 }
 #define int16 int16_t
 struct SEG {
-    int16 s[maxn];
+    int s[maxn];
     int lc[maxn];
     int rc[maxn];
     int16 n;
