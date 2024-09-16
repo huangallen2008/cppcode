@@ -77,8 +77,10 @@ struct SEG {
         ver[0]=1;
         Vi las(n);
         REP1(i,_n) {
+            op(las[a[i]])ope(i)
             ver[i]=ud(ud(ver[i-1],las[a[i]],-1),i,1);
             las[a[i]]=i;
+
         }
     }
     int _qu(int w,int l,int r,int ql,int qr) {
