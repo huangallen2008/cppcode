@@ -132,6 +132,7 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
+    ndp=Vi(n+1);
 }
 signed main() {
     IOS(); 
@@ -144,7 +145,6 @@ signed main() {
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
-    if(n==35000) assert(0);
     dp=ndp=Vi(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
