@@ -86,7 +86,7 @@ struct SEG {
     int ud(int root,int u,int v) {
         return _ud(root,0,n-1,u,v);
     }
-    void init(int16 _n,Vi &a) {
+    void init(int _n,Vi &a) {
         n=_n+1;
         ver=Vi(_n+1);
         ver[0]=1;
