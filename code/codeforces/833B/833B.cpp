@@ -144,6 +144,7 @@ signed main() {
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
+    if(n==35000) assert(0);
     dp=ndp=Vi(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
