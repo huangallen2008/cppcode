@@ -95,6 +95,7 @@ struct SEG {
 Vi dp,ndp;
 int n,k;
 void _solve(int l,int r,int mn,int mx) {
+    op(l)op(r)op(mn)ope(mx)
     if(l>r) return;
     if(mn==mx) {
         for(int i=l;i<=r;i++) ndp[i]=mn;
