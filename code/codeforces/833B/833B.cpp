@@ -98,7 +98,7 @@ void _solve(int l,int r,int mn,int mx) {
     op(l)op(r)op(mn)ope(mx)
     if(l>r) return;
     if(mn==mx) {
-        for(int i=l;i<=r;i++) ndp[i]=mn;
+        for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
         return;
     }
     int m=l+r>>1;
