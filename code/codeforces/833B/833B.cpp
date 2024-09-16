@@ -77,10 +77,8 @@ struct SEG {
         ver[0]=1;
         Vi las(n);
         REP1(i,_n) {
-            op(las[a[i]])op(-1)op(i)ope(1)
             ver[i]=ud(ud(ver[i-1],las[a[i]],-1),i,1);
             las[a[i]]=i;
-            ope(qu(1,i))
         }
     }
     int _qu(int w,int l,int r,int ql,int qr) {
@@ -117,7 +115,6 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    oparr(dp)
 }
 signed main() {
     IOS(); 
