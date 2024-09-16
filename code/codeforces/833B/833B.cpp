@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -77,10 +77,8 @@ struct SEG {
         ver[0]=1;
         Vi las(n);
         REP1(i,_n) {
-            // op(las[a[i]])ope(i)
             ver[i]=ud(ud(ver[i-1],las[a[i]],-1),i,1);
             las[a[i]]=i;
-            // ope(qu(1,6))
         }
     }
     int _qu(int w,int l,int r,int ql,int qr) {
@@ -97,30 +95,26 @@ struct SEG {
 Vi dp,ndp;
 int n,k;
 void _solve(int l,int r,int mn,int mx) {
-    // op(l)op(r)op(mn)ope(mx)
     if(l>r) return;
     if(mn==mx) {
         for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
         return;
     }
     int m=l+r>>1;
-    int id=0;
-    for(int i=mn;i<=min(mx,m-1);i++) {
+    int id=0,lim=min(mx,m-1);
+    for(int i=mn;i<=lim;i++) {
         int nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
             id=i;
         }
-        // op(i)op(nv)
     }
-    // op(m)ope(id)
     _solve(l,m-1,mn,id);
     _solve(m+1,r,id,mx);
 }
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    // oparr(dp)
 }
 signed main() {
     IOS(); 
