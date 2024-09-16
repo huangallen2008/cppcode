@@ -140,13 +140,13 @@ signed main() {
     // cin>>n>>k;
     n=read(),k=read();
     Vi a(n+1);
-    ope(n)
     REP1(i,n) a[i]=read();
     Vi t(n);
     REP1(i,n) t[i-1]=a[i];
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
+    ope(n)
     dp=ndp=vector<int16>(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
