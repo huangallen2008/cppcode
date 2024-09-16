@@ -145,8 +145,8 @@ signed main() {
     REP1(i,n) t[i-1]=a[i];
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    seg.init(n,a);
     ope(n)
+    seg.init(n,a);
     dp=ndp=vector<int16>(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
