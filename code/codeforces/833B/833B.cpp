@@ -118,7 +118,7 @@ void _solve(int l,int r,int mn,int mx) {
     int m=l+r>>1;
     int id=0,lim=min(mx,m-1);
     for(int i=mn;i<=lim;i++) {
-        int nv=dp[i]+seg.qu(i+1,m);
+        int16 nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
             id=i;
@@ -145,7 +145,6 @@ signed main() {
     REP1(i,n) t[i-1]=a[i];
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    ope(n)
     seg.init(n,a);
     dp=ndp=vector<int16>(n+1);
     REP(i,k) solve();
