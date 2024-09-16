@@ -49,7 +49,9 @@ struct SEG {
     int lc[maxn];
     int rc[maxn];
     int n;
-    void f(){REP(i,10){op(i)ope(lc[i])}}
+    void f(){
+        REP(i,10){op(i)ope(lc[i])}
+    }
     void init(int _n,Vi &a) {
 
     }
