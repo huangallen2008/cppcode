@@ -61,9 +61,8 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
-#define int16 int16_t
 struct SEG {
-    int16 s[maxn];
+    int s[maxn];
     int lc[maxn];
     int rc[maxn];
     int n;
@@ -96,18 +95,24 @@ struct SEG {
             las[a[i]]=i;
         }
     }
-    int16 _qu(int &w,int l,int r,int &ql,int &qr) {
+    int _qu(int &w,int l,int r,int &ql,int &qr) {
         if(!w) return 0;
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return 0;
         int m=l+r>>1;
         return _qu(lc[w],l,m,ql,qr)+_qu(rc[w],m+1,r,ql,qr);
     }
-    int16 qu(int l,int r) {
+    int qu(int l,int r) {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
-vector<int16> dp,ndp;
+unordered_map<pii,int> mp[35001];
+int qur(int l,int r) {
+    if(l>r) return 0;
+    if(mp[l].find(r)!=mp[l].end()) return mp[l][r];
+    return mp[l][r]=seg.qu(l,r);
+}
+vector<int> dp,ndp;
 int n,k;
 void _solve(int l,int r,int mn,int mx) {
     if(l>r) return;
@@ -118,7 +123,7 @@ void _solve(int l,int r,int mn,int mx) {
     int m=l+r>>1;
     int id=0,lim=min(mx,m-1);
     for(int i=mn;i<=lim;i++) {
-        int16 nv=dp[i]+seg.qu(i+1,m);
+        int nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
             id=i;
@@ -130,7 +135,7 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    ndp=vector<int16>(n+1);
+    ndp=vector<int>(n+1);
 }
 signed main() {
     IOS(); 
@@ -146,7 +151,7 @@ signed main() {
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
-    dp=ndp=vector<int16>(n+1);
+    dp=ndp=vector<int>(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
     #ifdef LOCAL
