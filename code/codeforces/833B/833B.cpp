@@ -109,14 +109,14 @@ struct SEG {
 }seg;
 vector<int16> dp,ndp;
 int n,k;
-void _solve(int l,int r,int16 mn,int16 mx) {
+void _solve(int l,int r,int mn,int mx) {
     if(l>r) return;
     if(mn==mx) {
         for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
         return;
     }
-    int16 m=l+r>>1;
-    int16 id=0,lim=min(mx,m-1);
+    int m=l+r>>1;
+    int id=0,lim=min(mx,m-1);
     for(int16 i=mn;i<=lim;i++) {
         int16 nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
