@@ -66,7 +66,7 @@ struct SEG {
     int s[maxn];
     int lc[maxn];
     int rc[maxn];
-    int16 n;
+    int n;
     int node_id=1;
     Vi ver;
     int _ud(int w,int l,int r,int u,int v) {
@@ -88,7 +88,6 @@ struct SEG {
     }
     void init(int _n,Vi &a) {
         n=_n+1;
-        ope(n)
         ver=Vi(_n+1);
         ver[0]=1;
         Vi las(n);
