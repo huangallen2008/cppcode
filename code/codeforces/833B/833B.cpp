@@ -48,7 +48,7 @@ struct SEG {
     int s[maxn];
     int lc[maxn];
     int rc[maxn];
-    // int n;
+    int n;
     int node_id=1;
     Vi ver;
     void pull(int w) {
