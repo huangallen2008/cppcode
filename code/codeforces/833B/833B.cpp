@@ -3,7 +3,6 @@ using namespace std;
 #pragma GCC optimize("Ofast,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
-#define int int16_t
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -62,11 +61,12 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
+#define int16 int16_t
 struct SEG {
-    int s[maxn];
+    int16 s[maxn];
     int lc[maxn];
     int rc[maxn];
-    int n;
+    int16 n;
     int node_id=1;
     Vi ver;
     int _ud(int w,int l,int r,int u,int v) {
@@ -86,7 +86,7 @@ struct SEG {
     int ud(int root,int u,int v) {
         return _ud(root,0,n-1,u,v);
     }
-    void init(int _n,Vi &a) {
+    void init(int16 _n,Vi &a) {
         n=_n+1;
         ver=Vi(_n+1);
         ver[0]=1;
@@ -107,7 +107,7 @@ struct SEG {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
-Vi dp,ndp;
+vector<int16> dp,ndp;
 int n,k;
 void _solve(int l,int r,int mn,int mx) {
     if(l>r) return;
@@ -130,7 +130,7 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    ndp=Vi(n+1);
+    ndp=vector<int16>(n+1);
 }
 signed main() {
     IOS(); 
@@ -146,7 +146,7 @@ signed main() {
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
-    dp=ndp=Vi(n+1);
+    dp=ndp=vector<int16>(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
     #ifdef LOCAL
