@@ -133,7 +133,9 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    freopen("in.txt","r",stdin);
+    #ifdef LOCAL
+        freopen("in.txt","r",stdin);
+    #endif
     // cin>>n>>k;
     n=read(),k=read();
     Vi a(n+1);
