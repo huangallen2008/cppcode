@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -43,6 +43,23 @@ const int inf=(1<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
 }
 struct SEG {
     int s[maxn];
@@ -118,9 +135,10 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    cin>>n>>k;
+    // cin>>n>>k;
+    n=read(),k=read();
     Vi a(n+1);
-    REP1(i,n) cin>>a[i];
+    REP1(i,n) a[i]=read();
     Vi t(n);
     REP1(i,n) t[i-1]=a[i];
     sort(ALL(t));
