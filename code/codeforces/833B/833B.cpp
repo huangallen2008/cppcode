@@ -102,7 +102,7 @@ void _solve(int l,int r,int mn,int mx) {
     }
     int m=l+r>>1;
     int id=0;
-    for(int i=mn,i<=min(mx,m-1);i++) {
+    for(int i=mn;i<=min(mx,m-1);i++) {
         int nv=dp[i]+seg.qu(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
