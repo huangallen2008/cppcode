@@ -109,8 +109,9 @@ void _solve(int l,int r,int mn,int mx) {
             ndp[m]=nv;
             id=i;
         }
+        op(i)op(nv)
     }
-    ope(id)
+    op(m)ope(id)
     _solve(l,m-1,mn,id);
     _solve(m+1,r,id,mx);
 }
