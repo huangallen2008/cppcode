@@ -115,6 +115,7 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
+    oparr(dp)
 }
 signed main() {
     IOS(); 
