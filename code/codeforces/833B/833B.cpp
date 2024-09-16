@@ -128,7 +128,7 @@ signed main() {
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
     dp=ndp=Vi(n+1);
-    REP(i,n) solve();
+    REP(i,k) solve();
     cout<<dp[n]<<'\n';
     return 0;
 }
