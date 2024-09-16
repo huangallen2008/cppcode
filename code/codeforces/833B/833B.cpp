@@ -146,5 +146,6 @@ signed main() {
     dp=ndp=Vi(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
+    cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
     return 0;
 }
