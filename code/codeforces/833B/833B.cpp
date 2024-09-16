@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("Ofast,unroll-loops,fast-math")
-#pragma GCC target("avx2,sse4,bmi2,popcnt")
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -106,7 +106,7 @@ struct SEG {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
-unordered_map<int,int> mp[35001];
+map<int,int> mp[35001];
 int qur(int l,int r) {
     if(l>r) return 0;
     if(mp[l].find(r)!=mp[l].end()) return mp[l][r];
