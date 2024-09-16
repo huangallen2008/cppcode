@@ -117,13 +117,13 @@ int n,k;
 void _solve(int l,int r,int mn,int mx) {
     if(l>r) return;
     if(mn==mx) {
-        for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
+        for(int i=l;i<=r;i++) ndp[i]=dp[mn]+qur(mn+1,i);
         return;
     }
     int m=l+r>>1;
     int id=0,lim=min(mx,m-1);
     for(int i=mn;i<=lim;i++) {
-        int nv=dp[i]+seg.qu(i+1,m);
+        int nv=dp[i]+qur(i+1,m);
         if(nv>ndp[m]) {
             ndp[m]=nv;
             id=i;
