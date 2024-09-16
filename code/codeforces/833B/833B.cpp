@@ -139,8 +139,8 @@ signed main() {
     #endif
     // cin>>n>>k;
     n=read(),k=read();
-    ope(n)
     Vi a(n+1);
+    ope(n)
     REP1(i,n) a[i]=read();
     Vi t(n);
     REP1(i,n) t[i-1]=a[i];
