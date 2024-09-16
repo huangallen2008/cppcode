@@ -77,10 +77,10 @@ struct SEG {
         ver[0]=1;
         Vi las(n);
         REP1(i,_n) {
-            op(las[a[i]])ope(i)
+            // op(las[a[i]])ope(i)
             ver[i]=ud(ud(ver[i-1],las[a[i]],-1),i,1);
             las[a[i]]=i;
-            ope(qu(1,6))
+            // ope(qu(1,6))
         }
     }
     int _qu(int w,int l,int r,int ql,int qr) {
@@ -97,7 +97,7 @@ struct SEG {
 Vi dp,ndp;
 int n,k;
 void _solve(int l,int r,int mn,int mx) {
-    op(l)op(r)op(mn)ope(mx)
+    // op(l)op(r)op(mn)ope(mx)
     if(l>r) return;
     if(mn==mx) {
         for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
@@ -111,16 +111,16 @@ void _solve(int l,int r,int mn,int mx) {
             ndp[m]=nv;
             id=i;
         }
-        op(i)op(nv)
+        // op(i)op(nv)
     }
-    op(m)ope(id)
+    // op(m)ope(id)
     _solve(l,m-1,mn,id);
     _solve(m+1,r,id,mx);
 }
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    oparr(dp)
+    // oparr(dp)
 }
 signed main() {
     IOS(); 
@@ -132,7 +132,6 @@ signed main() {
     sort(ALL(t));
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
-    ope(seg.qu(1,6))
     dp=ndp=Vi(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
