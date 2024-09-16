@@ -106,7 +106,7 @@ struct SEG {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
-unordered_map<pii,int> mp[35001];
+unordered_map<int,int> mp[35001];
 int qur(int l,int r) {
     if(l>r) return 0;
     if(mp[l].find(r)!=mp[l].end()) return mp[l][r];
