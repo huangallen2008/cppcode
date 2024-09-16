@@ -110,6 +110,7 @@ void _solve(int l,int r,int mn,int mx) {
             id=i;
         }
     }
+    ope(id)
     _solve(l,m-1,mn,id);
     _solve(m+1,r,id,mx);
 }
