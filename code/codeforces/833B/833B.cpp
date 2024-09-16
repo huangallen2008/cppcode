@@ -130,7 +130,7 @@ void _solve(int l,int r,int mn,int mx) {
 void solve() {
     _solve(1,n,0,n-1);
     dp.swap(ndp);
-    ndp=vector<int16>(n+1);
+    // ndp=vector<int16>(n+1);
 }
 signed main() {
     IOS(); 
