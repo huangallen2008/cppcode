@@ -146,9 +146,9 @@ signed main() {
     REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     seg.init(n,a);
     dp=ndp=Vi(n+1);
-    cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
+    // cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
-    cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
+    // cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
     return 0;
 }
