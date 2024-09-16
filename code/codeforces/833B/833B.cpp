@@ -109,7 +109,7 @@ struct SEG {
 }seg;
 vector<int16> dp,ndp;
 int n,k;
-void _solve(int l,int r,int mn,int mx) {
+void _solve(int l,int r,int16 mn,int16 mx) {
     if(l>r) return;
     if(mn==mx) {
         for(int i=l;i<=r;i++) ndp[i]=dp[mn]+seg.qu(mn+1,i);
