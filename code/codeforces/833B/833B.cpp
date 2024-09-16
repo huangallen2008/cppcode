@@ -148,7 +148,7 @@ signed main() {
     dp=ndp=Vi(n+1);
     REP(i,k) solve();
     cout<<dp[n]<<'\n';
-    #ifedf LOCAL
+    #ifdef LOCAL
         cout<<fixed<<setprecision(3)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
     #endif
     return 0;
