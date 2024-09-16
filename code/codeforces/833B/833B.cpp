@@ -60,12 +60,13 @@ struct SEG {
         lc[nn]=lc[w],rc[nn]=rc[w];
         if(l==r) {
             s[w]-=v;
-            return;
+            return nn;
         }
         int m=l+r>>1;
         if(u<=m) lc[nn]=_ud(lc[nn],l,m,u,v);
         else rc[nn]=_ud(rc[nn],m+1,r,u,v);
         pull(nn);
+        return nn;
     }
     int ud(int root,int u,int v) {
         return _ud(root,0,n-1,u,v);
