@@ -92,7 +92,42 @@ struct SEG {
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
+Vi dp,ndp;
+int n,k;
+void _solve(int l,int r,int mn,int mx) {
+    if(l>r) return;
+    if(mn==mx) {
+        for(int i=l;i<=r;i++) ndp[i]=mn;
+        return;
+    }
+    int m=l+r>>1;
+    int id=0;
+    for(int i=mn,i<=min(mx,m-1);i++) {
+        int nv=dp[i]+seg.qu(i+1,m);
+        if(nv>ndp[m]) {
+            ndp[m]=nv;
+            id=i;
+        }
+    }
+    _solve(l,m-1,mn,id);
+    _solve(m+1,r,id,mx);
+}
+void solve() {
+    _solve(1,n,0,n-1);
+    dp.sawp(ndp);
+}
 signed main() {
     IOS(); 
+    cin>>n>>k;
+    Vi a(n+1);
+    REP1(i,n) cin>>a[i];
+    Vi t(n);
+    REP1(i,n) t[i-1]=a[i];
+    sort(ALL(t));
+    REP1(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
+    seg.init(n,a);
+    dp=ndp=Vi(n+1);
+    REP(i,n) solve();
+    cout<<dp[n]<<'\n';
     return 0;
 }
