@@ -77,7 +77,7 @@ struct BIT {
         return r;
     }
     ull qu(int l,int r) {
-        return _qu(r)-_qu(l-1)*po[n-l];
+        return (_qu(r)-_qu(l-1))*po[n-l];
     }
 }hbit1,hbit2;
 signed main() {
