@@ -51,9 +51,9 @@ bool isp(int n) {
     for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
     return 1;
 }
+ #define DEBUG(...) {printf("# ");printf(__VA_ARGS__);puts("")};
 signed main() {
-    IOS(); 
-    printf(__VA_ARGS__);
+    IOS(); DEBUG(vergver)
     // for(int i=1e9+10;;i++) {
     //     if(isp(i)) {
     //         ope(i)
