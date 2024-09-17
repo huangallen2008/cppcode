@@ -84,12 +84,12 @@ bool cmp(pii a,pii b) {
     return a.f*po[b.s-a.s]%mod==b.f;
 }
 signed main() {
-    po=Vi(n+1);
-    po[0]=1;
-    REP1(i,n) po[i]=po[i-1]*maxc%mod;
     IOS(); 
     int n,m;
     cin>>n>>m;
+    po=Vi(n+1);
+    po[0]=1;
+    REP1(i,n) po[i]=po[i-1]*maxc%mod;
     string str;
     cin>>str;
     str="$"+str+"$";
