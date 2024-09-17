@@ -54,7 +54,7 @@ struct BIT {
     vector<ull> b;
     int n;
     string s;
-    void _ud(int u,ull v) {
+    void _ud(int16_t u,ull v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     void init(int _n,string &_s) {
@@ -65,18 +65,18 @@ struct BIT {
             _ud(i,po[i]*toi(s[i]));
         }
     }
-    void ud(int u,char c) {
+    void ud(int16_t u,char c) {
         _ud(u,po[u]*(toi(c)-toi(s[u])));
         s[u]=c;
     }
-    ull _qu(int u){
+    ull _qu(int16_t u){
         ull r=0;
         for(;u>0;u-=u&-u) {
             r+=b[u];
         }
         return r;
     }
-    ull qu(int l,int r) {
+    ull qu(int16_t l,int16_t r) {
         return (_qu(r)-_qu(l-1))*po[n-l];
     }
 }hbit1,hbit2;
