@@ -74,7 +74,7 @@ signed main() {
                 if(mark[v]==q) an++;
             }
         }
-        cout<<an<<'\n';
+        cout<<an-k<<'\n';
     }
     return 0;
 }
