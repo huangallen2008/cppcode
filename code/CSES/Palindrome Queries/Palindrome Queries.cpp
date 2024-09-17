@@ -107,7 +107,7 @@ signed main() {
         upd2(u,c);
     };
     auto qur1=[&](int l,int r) {
-        return hbit.qu(l,r);
+        return hbit1.qu(l,r);
     };
     auto qur2=[&](int l,int r) {
         return hbit2.qu(n+1-r,n+1-l);
