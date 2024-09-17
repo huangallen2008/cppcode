@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
-#include<bits/extc++.h>
-using namespace __gnu_pbds;
 using namespace std;
-#pragma GCC optimize("O0")
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
@@ -41,31 +38,28 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5;
-const int inf=(1ll<<50);
+const int maxn=1e5+1;
+const int maxb=17;
+const int inf=(1ll<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int sol(int n,int k) {
-    int cnt=0;
-    while(n>0) {
-        cout<<n<<' ';
-    n=((-k)%n+n)%n;
-    cnt++;
-    }
-    cout<<'\n';
-    return cnt;
-}
 signed main() {
     IOS(); 
-    int k=20,n=100;
-    // REP1(k,30) {
-        REP(i,k) {
-            // cout<<sol(i,k)<<' ';
-            sol(i,k);
-        }
-        cout<<'\n';
-    // }
+    int n,k;
+    cin>>n>>k;
+    Vi a(n);
+    REP(i,n) {
+        int x,y;
+        cin>>x>>y,y--;
+        a[y]=-x;
+    }
+    Vi d(n+1,inf);
+    REP(i,n) {
+        *lower_bound(ALL(d),a[i])=a[i];
+    }
+    int an=lower_bound(ALL(d),inf)-d.begin();
+    cout<<an<<'\n';
     return 0;
 }
