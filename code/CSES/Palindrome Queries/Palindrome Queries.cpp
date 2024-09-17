@@ -37,20 +37,43 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=1e9+21;
 const int maxn=5;
+const int maxc=29;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int toi(char c) { return c-'a'+1; }
+struct BIT {
+    Vi b;
+    int n;
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+        s=string(n+1);
+    }
+    void _ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    void ud(int u,char c) {
+
+    }
+    int qu(int u,int )
+}
 signed main() {
     IOS(); 
-    int a=5+ //erfvef
-    5;
-    ope(a)
     int n,m;
     cin>>n>>m;
+    string str;
+    cin>>str;
+    str="$"+str;
+    Vi p(n+1),s(n+2),po(n+1);
+    po[0]=1;
+    REP1(i,n) po[i]=po[i-1]*maxc%mod;
+    REP1(i,n) p[i]=(p[i-1]+toi(str[i])*po[i])%mod;
+    RREP1(i,n) s[i]=(s[i+1]+toi(str[i])*po[i])%mod;
 
     return 0;
 }
