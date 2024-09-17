@@ -47,15 +47,17 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+bool isp(int n) {
+    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
+    return 1;
+}
 signed main() {
     IOS(); 
-    ope(clock())
-    ld x=log(2);
-    int d=0;
-    REP(i,1000000000) d++;
-    cout<<fixed<<setprecision(10)<<(ld)clock()<<'\n';
-    cout<<fixed<<setprecision(10)<<(ld)clock()/CLOCKS_PER_SEC<<'\n';
-    ope(CLOCKS_PER_SEC)
-    cout<<fixed<<setprecision(30)<<x<<'\n';
+    for(int i=1e9+10;;i++) {
+        if(isp(i)) {
+            ope(i)
+            break;
+        }
+    }
     return 0;
 }
