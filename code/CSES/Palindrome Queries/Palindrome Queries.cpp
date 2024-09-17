@@ -98,23 +98,23 @@ signed main() {
     hbit2.init(n,str);
     auto upd1=[&](int u,char c) {
         hbit1.ud(u,c);
-    }
+    };
     auto upd2=[&](int u,char c) {
         hbit2.ud(n+1-u,c);
-    }
+    };
     auto upd=[&](int u,char c) {
         upd1(u,c);
         upd2(u,c);
-    }
+    };
     auto qur1=[&](int l,int r) {
         return hbit.qu(l,r);
-    }
+    };
     auto qur2=[&](int l,int r) {
         return hbit2.qu(n+1-r,n+1-l);
-    }
+    };
     auto com=[&](int l,int r) {
         return cmp(qur1(l,r),qur2(l,r));
-    }
+    };
     REP(i,m) {
         int opt;   
         cin>>opt;
