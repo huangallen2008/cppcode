@@ -45,36 +45,85 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+Vi po;
 int toi(char c) { return c-'a'+1; }
 struct BIT {
     Vi b;
     int n;
     string s;
-    void init(int _n) {
+    void _ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]=(b[u]+v)%mod;
+    }
+    void init(int _n,string &_s) {
+        s=_s;
         n=_n;
         b=Vi(n+1);
-        s=string(n+1);
-    }
-    void _ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]+=v;
+        REP1(i,n) {
+            _ud(i,po[i]*toi(s[i])%mod);
+        }
     }
     void ud(int u,char c) {
-
+        _ud(u,po[u]*(toi(c)-toi(s[u]))%mod);
+        s[u]=c;
     }
-    int qu(int u,int c){}
-};
+    int _qu(int u){
+        int r=0;
+        for(;u>0;u-=u&-u) {
+            addmod(r,b[u]);
+        }
+        return r;
+    }
+    pii qu(int l,int r) {
+        int ret=_qu(r)-_qu(l-1);
+        ret=(ret%mod+mod)%mod;
+        return {ret,l};
+    }
+}hbit1,hbit2;
+bool cmp(pii a,pii b) {
+    if(a.s>b.s) swap(a,b);
+    return a.f*po[b.s-a.s]%mod==b.f;
+}
 signed main() {
+    po=Vi(n+1);
+    po[0]=1;
+    REP1(i,n) po[i]=po[i-1]*maxc%mod;
     IOS(); 
     int n,m;
     cin>>n>>m;
     string str;
     cin>>str;
-    str="$"+str;
-    Vi p(n+1),s(n+2),po(n+1);
-    po[0]=1;
-    REP1(i,n) po[i]=po[i-1]*maxc%mod;
-    REP1(i,n) p[i]=(p[i-1]+toi(str[i])*po[i])%mod;
-    RREP1(i,n) s[i]=(s[i+1]+toi(str[i])*po[i])%mod;
-
+    str="$"+str+"$";
+    hbit1.init(n,str);
+    reverse(ALL(str));
+    hbit2.init(n,str);
+    auto upd1=[&](int u,char c) {
+        hbit1.ud(u,c);
+    }
+    auto upd2=[&](int u,char c) {
+        hbit2.ud(n+1-u,c);
+    }
+    auto upd=[&](int u,char c) {
+        upd1(u,c);
+        upd2(u,c);
+    }
+    auto qur1=[&](int l,int r) {
+        return hbit.qu(l,r);
+    }
+    auto qur2=[&](int l,int r) {
+        return hbit2.qu(n+1-r,n+1-l);
+    }
+    auto com=[&](int l,int r) {
+        return cmp(qur1(l,r),qur2(l,r));
+    }
+    REP(i,m) {
+        int opt;   
+        cin>>opt;
+        if(opt==1) {
+            int u;
+            char c;
+            cin>>u>>c;
+            upd1(u,c);
+        }
+    }
     return 0;
 }
