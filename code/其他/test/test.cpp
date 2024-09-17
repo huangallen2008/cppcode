@@ -53,11 +53,12 @@ bool isp(int n) {
 }
 signed main() {
     IOS(); 
-    for(int i=1e9+10;;i++) {
-        if(isp(i)) {
-            ope(i)
-            break;
-        }
-    }
+    ope(__VA__ARGS__)
+    // for(int i=1e9+10;;i++) {
+    //     if(isp(i)) {
+    //         ope(i)
+    //         break;
+    //     }
+    // }
     return 0;
 }
