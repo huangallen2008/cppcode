@@ -61,16 +61,19 @@ signed main() {
     REP(u,n) {
         for(int v:g0[u]) if(g0[u].size()<g0[v].size()||(g0[u].size()==g0[v].size()&&u<v)) g[u].pb(v);
     }
-    REP(u,n) {
-        for(int v:g[u]) {cout<<u<<' '<<v<<'\n';}
-    }
+    // REP(u,n) {
+    //     for(int v:g[u]) {cout<<u<<' '<<v<<'\n';}
+    // }
     int an=0;
     Vi mark(n,-1);
     REP(u,n) {
         for(int v:g[u]) mark[v]=u;
         for(int v:g[u]) {
             for(int v0:g[u]) {
-                if(mark[v0]==u) an+=max({a[u],a[v],a[v0]});
+                if(mark[v0]==u) {
+                    an+=max({a[u],a[v],a[v0]});
+                    op(u)op(v)ope(v0)
+                }
             }
         }
     }
