@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 #define ull unsigned long long
 #define Vull vector<ull>
-#define pui pair<ull,i>
+#define pui pair<ull,int>
 vector<ull> po;
 int toi(char c) { return c-'a'+1; }
 struct BIT {
