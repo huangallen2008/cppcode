@@ -49,6 +49,8 @@ signed main() {
     int n,m;
     cin>>n>>m;
     Graph g0(n);
+    Vi a(n);
+    REP(i,n) cin>>a[i];
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
@@ -65,7 +67,7 @@ signed main() {
         for(int v:g[u]) mark[v]=u;
         for(int v:g[u]) {
             for(int v0:g[u]) {
-                if(mark[v0]==u) an++;
+                if(mark[v0]==u) an+=max({a[u],a[v],a[v0]});
             }
         }
     }
