@@ -45,51 +45,52 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi po;
+#define ull unsigned long long
+#define Vull vector<ull>
+#define pui pair<ull,i>
+vector<ull> po;
 int toi(char c) { return c-'a'+1; }
 struct BIT {
-    Vi b;
+    vector<ull> b;
     int n;
     string s;
-    void _ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]=(b[u]+v)%mod;
+    void _ud(int u,ull v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
     }
     void init(int _n,string &_s) {
         s=_s;
         n=_n;
-        b=Vi(n+1);
+        b=Vull(n+1);
         REP1(i,n) {
-            _ud(i,po[i]*toi(s[i])%mod);
+            _ud(i,po[i]*toi(s[i]));
         }
     }
     void ud(int u,char c) {
-        _ud(u,po[u]*(toi(c)-toi(s[u]))%mod);
+        _ud(u,po[u]*(toi(c)-toi(s[u])));
         s[u]=c;
     }
-    int _qu(int u){
-        int r=0;
+    ull _qu(int u){
+        ull r=0;
         for(;u>0;u-=u&-u) {
-            addmod(r,b[u]);
+            r+=b[u];
         }
         return r;
     }
-    pii qu(int l,int r) {
-        int ret=_qu(r)-_qu(l-1);
-        ret=(ret%mod+mod)%mod;
-        return {ret,l};
+    pui qu(int l,int r) {
+        return {_qu(r)-_qu(l-1),l};
     }
 }hbit1,hbit2;
-bool cmp(pii a,pii b) {
+bool cmp(pui a,pui b) {
     if(a.s>b.s) swap(a,b);
-    return a.f*po[b.s-a.s]%mod==b.f;
+    return a.f*po[b.s-a.s]==b.f;
 }
 signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
-    po=Vi(n+1);
+    po=vector<ull>(n+1);
     po[0]=1;
-    REP1(i,n) po[i]=po[i-1]*maxc%mod;
+    REP1(i,n) po[i]=po[i-1]*maxc;
     string str;
     cin>>str;
     str="$"+str+"$";
