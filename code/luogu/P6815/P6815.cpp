@@ -61,9 +61,6 @@ signed main() {
     REP(u,n) {
         for(int v:g0[u]) if(g0[u].size()<g0[v].size()||(g0[u].size()==g0[v].size()&&u<v)) g[u].pb(v);
     }
-    // REP(u,n) {
-    //     for(int v:g[u]) {cout<<u<<' '<<v<<'\n';}
-    // }
     int an=0;
     Vi mark(n,-1);
     REP(u,n) {
