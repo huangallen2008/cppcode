@@ -69,10 +69,9 @@ signed main() {
     REP(u,n) {
         for(int v:g[u]) mark[v]=u;
         for(int v:g[u]) {
-            for(int v0:g[ㄒ]) {
+            for(int v0:g[v]) {
                 if(mark[v0]==u) {
                     an+=max({a[u],a[v],a[v0]});
-                    op(u)op(v)ope(v0)
                 }
             }
         }
