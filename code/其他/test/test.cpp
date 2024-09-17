@@ -53,7 +53,8 @@ bool isp(int n) {
 }
  #define DEBUG(...) {printf("# ");printf(__VA_ARGS__);puts("")};
 signed main() {
-    IOS(); DEBUG(vergver)
+    IOS(); 
+    DEBUG(1)
     // for(int i=1e9+10;;i++) {
     //     if(isp(i)) {
     //         ope(i)
