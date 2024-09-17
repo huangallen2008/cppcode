@@ -54,7 +54,7 @@ struct BIT {
     vector<ull> b;
     int n;
     string s;
-    void _ud(int u,ull v) {
+    void _ud(int16_t u,ull v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     void init(int _n,string &_s) {
@@ -69,21 +69,17 @@ struct BIT {
         _ud(u,po[u]*(toi(c)-toi(s[u])));
         s[u]=c;
     }
-    ull _qu(int u){
+    ull _qu(int16_t u){
         ull r=0;
         for(;u>0;u-=u&-u) {
             r+=b[u];
         }
         return r;
     }
-    pui qu(int l,int r) {
-        return {_qu(r)-_qu(l-1),l};
+    ull qu(int l,int r) {
+        return _qu(r)-_qu(l-1)*po[n-l];
     }
 }hbit1,hbit2;
-bool cmp(pui a,pui b) {
-    if(a.s>b.s) swap(a,b);
-    return a.f*po[b.s-a.s]==b.f;
-}
 signed main() {
     IOS(); 
     int n,m;
@@ -114,7 +110,7 @@ signed main() {
         return hbit2.qu(n+1-r,n+1-l);
     };
     auto com=[&](int l,int r) {
-        return cmp(qur1(l,r),qur2(l,r));
+        return qur1(l,r)==qur2(l,r);
     };
     REP(i,m) {
         int opt;   
