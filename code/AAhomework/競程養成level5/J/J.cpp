@@ -51,7 +51,7 @@ signed main() {
     Graph g0(n);
     REP(i,m) {
         int u,v;
-        cin>>u>>v,u--,v--;
+        cin>>u>>v;
         g0[u].pb(v);
         g0[v].pb(u);
     }
