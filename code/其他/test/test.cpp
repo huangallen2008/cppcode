@@ -53,7 +53,7 @@ bool isp(int n) {
 }
 signed main() {
     IOS(); 
-    ope(__VA__ARGS__)
+    ope(__VA_ARGS__)
     // for(int i=1e9+10;;i++) {
     //     if(isp(i)) {
     //         ope(i)
