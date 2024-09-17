@@ -49,6 +49,7 @@ int toi(char c) { return c-'a'+1; }
 struct BIT {
     Vi b;
     int n;
+    string s;
     void init(int _n) {
         n=_n;
         b=Vi(n+1);
