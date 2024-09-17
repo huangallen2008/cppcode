@@ -63,6 +63,7 @@ signed main() {
     }
     REP(u,n) {
         op(u)oparr(g[u])
+        for(int v:g[u]) op(v)entr
     }
     int an=0;
     Vi mark(n,-1);
