@@ -48,6 +48,7 @@ signed main() {
     IOS(); 
     int a=5+
     5;
+    ope(a)
     int n,m;
     cin>>n>>m;
 
