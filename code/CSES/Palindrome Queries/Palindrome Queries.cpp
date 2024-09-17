@@ -60,8 +60,8 @@ struct BIT {
     void ud(int u,char c) {
 
     }
-    int qu(int u,int )
-}
+    int qu(int u,int c){}
+};
 signed main() {
     IOS(); 
     int n,m;
