@@ -122,7 +122,15 @@ signed main() {
             int u;
             char c;
             cin>>u>>c;
-            upd1(u,c);
+            upd(u,c);
+        }
+        else {
+            int l,r;
+            cin>>l>>r;
+            if(com(l,r)) {
+                cout<<"YES\n";
+            }
+            else cout<<"NO\n";
         }
     }
     return 0;
