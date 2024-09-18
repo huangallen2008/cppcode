@@ -53,7 +53,6 @@ signed main() {
     Vi dp(n+1),cnt(n+1);
     cnt[0]=1;
     REP1(i,k) {
-        ndp=ncnt=Vi(n+1);
         REP(j,n+1) {
             if(j>=i) addmod(dp[j],dp[j-i]+(j*2-i)*cnt[j-i]),addmod(cnt[j],cnt[j-i]);
         }
