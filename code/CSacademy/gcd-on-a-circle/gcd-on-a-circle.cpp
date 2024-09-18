@@ -101,6 +101,7 @@ signed main() {
     ST st;
     st.init(n);
     int an=solve();
+    ope(an)
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve())%mod;
