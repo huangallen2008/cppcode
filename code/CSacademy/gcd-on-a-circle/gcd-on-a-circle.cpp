@@ -90,7 +90,7 @@ int solve() {
     }
     // oparr(dp)
     la0=a[1];
-    // oparr(dp)
+    oparr(dp)
     return dp[n-1];
 }
 signed main() {
@@ -98,7 +98,7 @@ signed main() {
     n=400;
     // cin>>n;
     a=Vi(n+1);a[0]=1;
-    REP1(i,n) a[i]=2;
+    REP1(i,n) a[i]=5;
     // REP1(i,n) cin>>a[i];
     ST st;
     st.init(n);
