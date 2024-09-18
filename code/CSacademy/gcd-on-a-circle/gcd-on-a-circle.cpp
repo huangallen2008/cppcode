@@ -99,6 +99,7 @@ signed main() {
     cin>>n;
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
+    oparr(a)
     int an=solve();
     op(a[1])ope(a.back())
     while(__gcd(a[1],a.back())>1) {
