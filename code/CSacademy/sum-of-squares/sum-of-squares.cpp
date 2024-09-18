@@ -68,6 +68,10 @@ signed main() {
         REP(j,k+1) cout<<dp[i][j]<<' ';
         cout<<'\n';
     }
+    REP(i,n+1 ){
+        REP(j,k+1) cout<<cnt[i][j]<<' ';
+        cout<<'\n';
+    }
     cout<<dp[n][k]<<'\n';
     return 0;
 }
