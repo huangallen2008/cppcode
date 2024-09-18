@@ -91,7 +91,7 @@ int solve() {
     //     else dp[i]=(p[i-1]-p[r-1])%mod;
     //     p[i]=(p[i-1]+dp[i])%mod;
     // }
-    // la0=a[1];
+    la0=a[1];
     return dp[n-1];
 }
 void ff() {
