@@ -88,6 +88,7 @@ int solve() {
         else dp[i]=(p[i-1]-p[r-1])%mod;
         p[i]=(p[i-1]+dp[i])%mod;
     }
+    // oparr(dp)
     la0=a[1];
     return dp[n-1];
 }
@@ -99,9 +100,18 @@ signed main() {
     ST st;
     st.init(n);
     int an=solve();
+    int gcd=a[1];
+    REP1(i,n) gcd=__gcd(gcd,a[i]);
+    if(gcd>1) {
+        if(n>=2)an=(an+p[n-2]-n+2)%mod;
+        cout<<an<<'\n';
+        return 0;
+    }
+    // op(a[1])op(a.back())ope(__gcd(a[1],a.back()))
     while(a.size()>2&&__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
-        an=(an+solve()-1)%mod;
+        // oparr(a)
+        an=(an+solve())%mod;
     }
     cout<<an<<'\n';
     return 0;
