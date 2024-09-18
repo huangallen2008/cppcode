@@ -79,6 +79,7 @@ int solve() {
     if(a[1]==la0) return dp[a.size()-1];
     int n=a.size();
     dp=p=Vi(n);
+    ope("ok")
     ST st;
     st.init(n-1);
     dp[0]=p[0]=1;
@@ -97,7 +98,6 @@ signed main() {
     cin>>n;
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
-    ope("ok")
     int an=solve();
     op(a[1])ope(a.back())
     while(__gcd(a[1],a.back())>1) {
