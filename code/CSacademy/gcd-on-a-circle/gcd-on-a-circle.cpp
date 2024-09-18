@@ -89,7 +89,7 @@ int solve() {
         p[i]=(p[i-1]+dp[i])%mod;
     }
     la0=a[1];
-    oparr(dp)
+    op(n)oparr(dp)
     return dp[n-1];
 }
 signed main() {
