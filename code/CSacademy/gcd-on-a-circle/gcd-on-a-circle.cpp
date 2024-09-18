@@ -80,7 +80,6 @@ int solve() {
     ope(n)
     oparr(a)
     if(a[1]==la0) return dp[a.size()-1];
-    int n=a.size();
     ope("ok")
     dp=p=Vi(n);
     ST st;
