@@ -109,13 +109,10 @@ signed main() {
         return 0;
     }
     // op(a[1])op(a.back())ope(__gcd(a[1],a.back()))
-    while(a.size()>2&&__gcd(a[1],a.back())>1) {
+    while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         // oparr(a)
         an=(an+solve())%mod;
-        int gcd=a[1];
-        for(int i=1;i<a.size();i++) gcd=__gcd(gcd,a[i]);
-        if(gcd>1) an=(an+mod-1)%mod;
     }
     cout<<an<<'\n';
     return 0;
