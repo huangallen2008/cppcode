@@ -90,7 +90,7 @@ int solve() {
     }
     // oparr(dp)
     la0=a[1];
-    oparr(dp)
+    // oparr(dp)
     return dp[n-1];
 }
 signed main() {
@@ -115,6 +115,7 @@ signed main() {
         // oparr(a)
         an=(an+solve())%mod;
     }
+    an=(an+mod)%mod;
     cout<<an<<'\n';
     return 0;
 } 
