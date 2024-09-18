@@ -52,6 +52,7 @@ signed main() {
     vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
     cnt[1][1]=1;
     dp[1][1]=1;
+    REP(i,k+1) cnt[0][i]=1;
     REP(i,n+1) {
         REP1(j,k) {
             if(i+j<=n){
