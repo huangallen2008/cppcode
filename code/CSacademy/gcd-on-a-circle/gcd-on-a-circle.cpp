@@ -104,7 +104,7 @@ signed main() {
     int gcd=a[1];
     REP1(i,n) gcd=__gcd(gcd,a[i]);
     if(gcd>1) {
-        if(n>=2)an=(an+p[n-2]-n+2)%mod;
+        if(n>=2)an=(an+p[n-1]-n+2)%mod;
         cout<<an<<'\n';
         return 0;
     }
