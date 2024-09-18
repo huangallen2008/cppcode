@@ -47,10 +47,11 @@ int rd(int l,int r) {
 }
 Vi a;
 int n;
+    int s[maxb][xmaxn];
 struct ST {
-    int s[maxb][maxn];
     int n;
     void init(int _n) {
+        memset(s,0,sizeof(s));
         n=_n+1;
         REP(i,n) s[0][i]=a[i];
         REP1(i,maxb-1) {
