@@ -75,11 +75,12 @@ struct ST {
 int la0=-1;
 Vi dp,p;
 int solve() {
+    ope("pl")
     oparr(a)
     if(a[1]==la0) return dp[a.size()-1];
     int n=a.size();
-    dp=p=Vi(n);
     ope("ok")
+    dp=p=Vi(n);
     ST st;
     st.init(n-1);
     dp[0]=p[0]=1;
