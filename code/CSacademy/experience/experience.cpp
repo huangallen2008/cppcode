@@ -73,6 +73,7 @@ signed main() {
     }
     dp[0]=dp[1]=Vi(n);
     dfs(0,-1);
-    cout<<dp[0][0]<<'\n';
+    int an=max(dp[0][0],dp[1][0]);
+    cout<<an<<'\n';
     return 0;
 }
