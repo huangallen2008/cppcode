@@ -75,6 +75,7 @@ struct ST {
 int la0=-1;
 Vi dp,p;
 int solve() {
+    ope(n)
     ope("pl")
     oparr(a)
     if(a[1]==la0) return dp[a.size()-1];
