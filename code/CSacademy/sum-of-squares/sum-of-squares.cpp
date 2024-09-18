@@ -49,17 +49,20 @@ signed main() {
     IOS(); 
     int n,k;
     cin>>n>>k;
-    vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
-    cnt[0][0]=1;
-    REP(i,n+1) {
-        REP1(j,k) {
-            if(i>=j) addmod(dp[i][j],dp[i-j][j]+(i*2-j)*cnt[i-j][j]),addmod(cnt[i][j],cnt[i-j][j]);
-            addmod(dp[i][j],dp[i][j-1]),addmod(cnt[i][j],cnt[i][j-1]);
+    // vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
+    Vi dp(n+1),cnt(n+1);
+    cnt[0]=1;
+    Vi ndp(n+1),ncnt(n+1);
+    REP1(i,k) {
+        ndp=ncnt=Vi(n+1);
+        REP(j,n+1) {
+            if(j>=i) addmod(ndp[j],ndp[j-i]+(j*2-i)*ncnt[j-i]),addmod(ncnt[j],ncnt[j-i]);
+            addmod(ndp[j],dp[j]),addmod(ncnt[j],cnt[j]);
         }
+        ndp.swap(dp);
+        ncnt.swap(cnt);
     }
-    REP(i,n+1) {
-        for(int j=k;j>0;j--) dp[i][j]=(dp[i][j]+mod-dp[i][j-1])%mod;
-    }
-    cout<<dp[n][k]<<'\n';
+    dp[n]=(dp[n]+mod-ndp[n])%mod;
+    cout<<dp[n]<<'\n';
     return 0;
 }
