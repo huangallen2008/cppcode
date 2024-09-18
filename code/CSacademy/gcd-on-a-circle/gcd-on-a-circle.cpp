@@ -76,12 +76,8 @@ struct ST {
 int la0=-1;
 Vi dp,p;
 int solve() {
-    cout<<"wrewree"<<endl;
-    // ope("pl")
-    // oparr(a)
-    // if(a[1]==la0) return dp[a.size()-1];
-    // int n=a.size();
-    // ope("ok")
+    if(a[1]==la0) return dp[a.size()-1];
+    int n=a.size();
     dp=p=Vi(n);
     ST st;
     st.init(n-1);
