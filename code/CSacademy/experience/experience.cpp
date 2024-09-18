@@ -49,6 +49,7 @@ int n;
 Graph g;
 Vi dp,a;
 void dfs(int u,int fa) {
+    op(u)
     int d=0,d0=0;
     for(int v:g[u]) {
         if(v==fa) continue;
