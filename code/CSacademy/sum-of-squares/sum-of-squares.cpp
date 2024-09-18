@@ -50,20 +50,11 @@ signed main() {
     int n,k;
     cin>>n>>k;
     vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
-    cnt[1][1]=1;
-    dp[1][1]=1;
-    REP(i,k+1) cnt[0][i]=1;
+    cnt[0][0]=1;
     REP(i,n+1) {
         REP1(j,k) {
-            if(i+j<=n){
-                addmod(dp[i+j][j],dp[i][j]+(i*2+j)*cnt[i][j]);
-                op(i+j)op(i)op(j)op(cnt[i][j])ope(dp[i+j][j])
-                addmod(cnt[i+j][j],cnt[i][j]);
-            }
-            if(j<k) {
-                addmod(dp[i][j+1],dp[i][j]);
-                addmod(cnt[i][j+1],cnt[i][j]);
-            }
+            if(i>=j) addmod(dp[i][j],dp[i-j][j]+(i*2-j)*cnt[i-j][j]),addmod(cnt[i][j],cnt[i-j][j]);
+            addmod(dp[i][j],dp[i][j-1]),addmod(cnt[i][j],cnt[i][j-1]);
         }
     }
     REP(i,n+1 ){
