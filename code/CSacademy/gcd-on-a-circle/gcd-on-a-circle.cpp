@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 Vi a;
 int n;
-    int s[maxb][xmaxn];
+    int s[maxb][maxn];
 struct ST {
     int n;
     void init(int _n) {
