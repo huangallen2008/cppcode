@@ -71,9 +71,8 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    dp=Vi(n);
+    dp[0]=dp[1]=Vi(n);
     dfs(0,-1);
-    oparr(dp)
     cout<<dp[0][0]<<'\n';
     return 0;
 }
