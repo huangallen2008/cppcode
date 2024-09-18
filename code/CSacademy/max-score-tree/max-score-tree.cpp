@@ -56,6 +56,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         t.pb(dp[1][v]);
     }
+    oparr(t)
     sort(t.begin()+1,t.end(),greater<int>());
     REP1(i,t.size()-1) {
         t[i]+=t[i-1];
