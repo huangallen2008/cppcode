@@ -52,11 +52,13 @@ signed main() {
     // vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
     Vi dp(n+1),cnt(n+1);
     cnt[0]=1;
+    int val;
     REP1(i,k) {
         REP(j,n+1) {
             if(j>=i) addmod(dp[j],dp[j-i]+(j*2-i)*cnt[j-i]),addmod(cnt[j],cnt[j-i]);
         }
+        if(i==k-1) val=dp[n];
     }
-    cout<<dp[n]<<'\n';
+    cout<<(dp[n]-val+mod)%mod<<'\n';
     return 0;
 }
