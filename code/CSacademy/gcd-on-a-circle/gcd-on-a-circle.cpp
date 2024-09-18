@@ -94,12 +94,16 @@ int solve() {
     la0=a[1];
     return dp[n-1];
 }
+void ff() {
+    ope(n)
+}
 signed main() {
     IOS(); 
     cin>>n;
     ope(n)
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
+    ff();
     int an;
     oparr(a)
     solve();
