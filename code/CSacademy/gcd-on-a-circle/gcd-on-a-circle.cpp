@@ -104,7 +104,7 @@ signed main() {
     ope(an)
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
-        an=(an+solve())%mod;
+        an=(an+solve()-1)%mod;
     }
     cout<<an<<'\n';
     return 0;
