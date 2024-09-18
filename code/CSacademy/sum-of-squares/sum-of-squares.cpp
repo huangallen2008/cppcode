@@ -53,7 +53,7 @@ signed main() {
     cnt[0][1]=1;
     REP(i,n+1) {
         REP1(j,k) {
-            if(i+j<=n){
+            if(i+j<=n&&j<=i){
                 addmod(dp[i+j][j],dp[i][j]+(i*2+j)*cnt[i][j]);
                 op(i+j)op(i)op(j)op(cnt[i][j])ope(dp[i+j][j])
                 addmod(cnt[i+j][j],cnt[i][j]);
