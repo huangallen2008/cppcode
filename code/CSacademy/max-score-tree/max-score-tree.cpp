@@ -60,7 +60,7 @@ void dfs(int u,int fa) {
         t[i]+=t[i-1];
     }
     REP(i,t.size()) chmax(dp[0][u],t[i]+a[i]);
-    REP(i,t.size()-1) chmax(dp[1][u],t[i]+a[i+1]);
+    REP(i,t.size()) chmax(dp[1][u],t[i]+a[i+1]);
     op(u)oparr(t)
 }
 signed main() {
