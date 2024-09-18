@@ -61,7 +61,6 @@ void dfs(int u,int fa) {
         t[i]+=t[i-1];
     }
     REP(i,t.size()) chmax(dp[0][u],t[i]+a[i]);
-    oparr(t)
     REP(i,t.size()-1) chmax(dp[1][u],t[i]+a[i+1]);
 }
 signed main() {
@@ -76,6 +75,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
+    dp[0]=pd[1]=Vi(n);
     dfs(0,-1);
     int an=*max_element(ALL(dp[0]));
     cout<<an<<'\n';
