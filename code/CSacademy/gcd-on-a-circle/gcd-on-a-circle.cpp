@@ -95,11 +95,10 @@ int solve() {
 }
 signed main() {
     IOS(); 
-    n=400;
-    // cin>>n;
+    freopen("in.txt","r",stdin);
+    cin>>n;
     a=Vi(n+1);a[0]=1;
-    REP1(i,n) a[i]=5;
-    // REP1(i,n) cin>>a[i];
+    REP1(i,n) cin>>a[i];
     ST st;
     st.init(n);
     int an=solve();
