@@ -101,7 +101,8 @@ signed main() {
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
     oparr(a)
-    int an=solve();
+    int an;
+    solve();
     op(a[1])ope(a.back())
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
