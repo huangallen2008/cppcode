@@ -75,7 +75,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    dp[0]=pd[1]=Vi(n);
+    dp[0]=dp[1]=Vi(n);
     dfs(0,-1);
     int an=*max_element(ALL(dp[0]));
     cout<<an<<'\n';
