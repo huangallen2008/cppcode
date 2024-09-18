@@ -100,9 +100,7 @@ signed main() {
     REP1(i,n) cin>>a[i];
     ST st;
     st.init(n);
-    int an;
-    oparr(a)
-    an=solve();
+    int an=solve();
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve())%mod;
