@@ -89,10 +89,8 @@ int solve() {
         p[i]=(p[i-1]+dp[i])%mod;
     }
     la0=a[1];
+    oparr(dp)
     return dp[n-1];
-}
-void ff() {
-    ope(n)oparr(a)
 }
 signed main() {
     IOS(); 
@@ -102,12 +100,9 @@ signed main() {
     REP1(i,n) cin>>a[i];
     ST st;
     st.init(n);
-    ope("ok")
-    REP1(i,n) cout<<st.qu(i)<<' ';entr
     int an;
     oparr(a)
     an=solve();
-    op(a[1])ope(a.back())
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve())%mod;
