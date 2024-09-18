@@ -106,6 +106,7 @@ signed main() {
     ST st;
     st.init(n);
     ope("ok")
+    REP1(i,n) cout<<qt.qu(i)<<' ';entr
     int an;
     oparr(a)
     an=solve();
