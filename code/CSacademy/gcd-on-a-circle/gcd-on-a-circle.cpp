@@ -75,6 +75,7 @@ struct ST {
 int la0=-1;
 Vi dp,p;
 int solve() {
+    cout<<"wrewree"<<endl;
     ope("pl")
     ope(n)
     oparr(a)
