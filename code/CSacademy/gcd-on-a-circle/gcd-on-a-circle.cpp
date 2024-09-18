@@ -113,6 +113,9 @@ signed main() {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         // oparr(a)
         an=(an+solve())%mod;
+        int gcd=a[1];
+        for(int i=1;i<a.size();i++) gcd=__gcd(gcd,a[i]);
+        if(gcd>1) an=(an+mod-1)%mod;
     }
     cout<<an<<'\n';
     return 0;
