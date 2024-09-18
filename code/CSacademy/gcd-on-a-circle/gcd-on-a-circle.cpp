@@ -95,7 +95,7 @@ int solve() {
     return dp[n-1];
 }
 void ff() {
-    ope(n)
+    ope(n)oparr(a)
 }
 signed main() {
     IOS(); 
