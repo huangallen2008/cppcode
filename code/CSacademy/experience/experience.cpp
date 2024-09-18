@@ -47,18 +47,17 @@ int rd(int l,int r) {
 }
 int n;
 Graph g;
-Vi dp,a;
+Vi dp[2],a;
 void dfs(int u,int fa) {
-    op(u)
-    int d=0,d0=0;
+    int t=0;
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
-        d=max(d+dp[v],d0+a[u]-a[v]+dp[v]);
-        d0+=dp[v];
+        int mv=max(dp[0][v],dp[1][v]);
+        dp[0][u]=max(dp[0][u]+mv,t+a[u]-a[v]+dp[0][v]);
+        dp[1][u]=max(dp[1][u]+mv,t+a[v]-a[u]+dp[1][v]);
+        t+=mv;
     }
-    chmax(d,d0);
-    dp[u]=d;
 }
 signed main() {
     IOS(); 
@@ -75,6 +74,6 @@ signed main() {
     dp=Vi(n);
     dfs(0,-1);
     oparr(dp)
-    cout<<dp[0]<<'\n';
+    cout<<dp[0][0]<<'\n';
     return 0;
 }
