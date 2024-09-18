@@ -107,8 +107,7 @@ signed main() {
     ff();
     int an;
     oparr(a)
-    cout<<"fuck!!"<<endl;
-    solve();
+    an=solve();
     op(a[1])ope(a.back())
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
