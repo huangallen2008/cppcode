@@ -57,6 +57,9 @@ signed main() {
             addmod(dp[i][j],dp[i][j-1]),addmod(cnt[i][j],cnt[i][j-1]);
         }
     }
+    REP(i,n+1) {
+        for(int j=k;j>0;j--) dp[i][j]=(dp[i][j]+mod-dp[i][j-1])%mod;
+    }
     REP(i,n+1 ){
         REP(j,k+1) cout<<dp[i][j]<<' ';
         cout<<'\n';
