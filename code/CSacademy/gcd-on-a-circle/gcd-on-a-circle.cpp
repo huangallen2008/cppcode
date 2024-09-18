@@ -99,6 +99,7 @@ signed main() {
     ope("ok")
     int an=solve();
     while(__gcd(a[1],a.back())>1) {
+        ope(a[1])
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve())%mod;
     }
