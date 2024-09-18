@@ -53,7 +53,7 @@ void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
-        d=max(d+d[v],d0+a[u]-a[v]+d[v]);
+        d=max(d+dp[v],d0+a[u]-a[v]+dp[v]);
         d0+=d[v];
     }
     chmax(d,d0);
