@@ -52,7 +52,7 @@ signed main() {
     vector<Vi> dp(n+1,Vi(k+1)),cnt(n+1,Vi(k+1));
     cnt[1][1]=1;
     dp[1][1]=1;
-    REP1(i,n+1) {
+    REP1(i,n) {
         REP1(j,k) {
             if(i+j<=n){
                 addmod(dp[i+j][j],dp[i][j]+(i*2+j)*cnt[i][j]);
