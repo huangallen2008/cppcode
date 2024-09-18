@@ -96,7 +96,6 @@ int solve() {
 }
 signed main() {
     IOS(); 
-    int n;
     cin>>n;
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
