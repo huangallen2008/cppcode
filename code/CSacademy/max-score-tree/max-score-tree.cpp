@@ -57,10 +57,10 @@ void dfs(int u,int fa) {
         t.pb(dp[1][v]);
     }
     sort(t.begin()+1,t.end(),greater<int>());
-    oparr(t)
     REP1(i,t.size()-1) {
         t[i]+=t[i-1];
     }
+    oparr(t)
     REP(i,t.size()) chmax(dp[0][u],t[i]+a[i]);
     REP(i,t.size()-1) chmax(dp[1][u],t[i]+a[i+1]);
 }
