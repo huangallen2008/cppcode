@@ -89,19 +89,16 @@ int solve() {
         p[i]=(p[i-1]+dp[i])%mod;
     }
     la0=a[1];
-    op(n)oparr(dp)
     return dp[n-1];
 }
 signed main() {
     IOS(); 
     cin>>n;
-    ope(n)
     a=Vi(n+1);a[0]=1;
     REP1(i,n) cin>>a[i];
     ST st;
     st.init(n);
     int an=solve();
-    ope(an)
     while(__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve()-1)%mod;
