@@ -86,10 +86,9 @@ int solve() {
     st.init(n-1);
     dp[0]=p[0]=1;
     REP1(i,n-1) {
-        int r=0;
-        // int r=st.qu(i);
-        if(r==0) dp[i]=p[i-1];
-        else dp[i]=(p[i-1]-p[r-1])%mod;
+        int r=st.qu(i);
+        // if(r==0) dp[i]=p[i-1];
+        // else dp[i]=(p[i-1]-p[r-1])%mod;
         p[i]=(p[i-1]+dp[i])%mod;
     }
     la0=a[1];
