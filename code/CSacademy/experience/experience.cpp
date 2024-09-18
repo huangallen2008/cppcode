@@ -73,6 +73,7 @@ signed main() {
     }
     dp=Vi(n);
     dfs(0,-1);
+    oparr(dp)
     cout<<dp[0]<<'\n';
     return 0;
 }
