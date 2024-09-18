@@ -99,7 +99,7 @@ signed main() {
     ST st;
     st.init(n);
     int an=solve();
-    while(__gcd(a[1],a.back())>1) {
+    while(a.size()>2&&__gcd(a[1],a.back())>1) {
         a[1]=__gcd(a[1],a.back()),a.pop_back();
         an=(an+solve()-1)%mod;
     }
