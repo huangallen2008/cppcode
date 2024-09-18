@@ -90,7 +90,7 @@ int solve() {
     }
     // oparr(dp)
     la0=a[1];
-    oparr(dp)
+    // oparr(dp)
     return dp[n-1];
 }
 signed main() {
