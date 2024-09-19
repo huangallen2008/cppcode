@@ -62,7 +62,7 @@ signed main() {
     }
     auto qu=[&](int l,int r) {
         int d=__lg(r-l+1);
-        return max(s[lg][l],s[lg][r-(1<<lg)+1]);
+        return max(s[d][l],s[d][r-(1<<d)+1]);
     };
     int an=inf;
     REP(i,k) {
