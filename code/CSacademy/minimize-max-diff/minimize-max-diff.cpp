@@ -38,7 +38,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5e3+5;
+const int maxn=1e5+5;
 const int maxb=17;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -69,5 +69,4 @@ signed main() {
         chmin(an,qu(i,n+i-k-2));
     }
     cout<<an<<'\n';
-    return 0;
-} 
+    return 0;1}5
