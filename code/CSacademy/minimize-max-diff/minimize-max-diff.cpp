@@ -69,4 +69,5 @@ signed main() {
         chmin(an,qu(i,n+i-k-2));
     }
     cout<<an<<'\n';
-    return 0;1}5
+    return 0;
+}
