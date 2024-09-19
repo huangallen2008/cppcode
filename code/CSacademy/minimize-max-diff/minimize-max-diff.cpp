@@ -67,7 +67,7 @@ signed main() {
     int an=inf;
     REP(i,k+1) {
         op(i)ope(n-i-1)
-        chmin(an,qu(i,n-i-1));
+        chmin(an,qu(i,n+i-k));
     }
     cout<<an<<'\n';
     return 0;
