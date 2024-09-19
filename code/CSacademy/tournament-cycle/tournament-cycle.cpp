@@ -76,7 +76,6 @@ signed main() {
         REP1(j,i-1) {
             addmod(c[i],(-C(i,j)*c[j]%mod)*pw(2,C(i-j,2))%mod);
         }
-        c[i]=(c[i]+mod)%mod;
     }
     Vi dp0(n+1),dp1(n+1);
     dp0[0]=1;
