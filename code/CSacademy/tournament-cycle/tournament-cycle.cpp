@@ -59,6 +59,8 @@ int inv(int x) {
     return pw(x,mod-2);
 }
 int C(int n,int k) {
+    if(k>n) return 0;
+    if(n<0) return k==0;
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 signed main() {
