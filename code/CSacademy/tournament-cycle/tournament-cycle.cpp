@@ -78,7 +78,6 @@ signed main() {
         }
         c[i]=(c[i]+mod)%mod;
     }
-    oparr(c)
     Vi dp0(n+1),dp1(n+1);
     dp0[0]=1;
     REP1(i,n) {
@@ -90,7 +89,6 @@ signed main() {
             addmod(dp1[i],((dp0[i-j]+dp1[i-j])*C(i,j)%mod)*c[j]%mod);
         }
     }
-    oparr(dp0)oparr(dp1)
     dp1[n]=(dp1[n]+mod)%mod;
     cout<<dp1[n]<<'\n';
     return 0;
