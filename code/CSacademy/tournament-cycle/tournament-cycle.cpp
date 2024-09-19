@@ -71,6 +71,7 @@ signed main() {
     c[0]=1;
     REP1(i,n) {
         c[i]=pw(2,i);
+        ope(c[i])
         REP1(j,i-1) {
             addmod(c[i],(-C(i,j)*c[j]%mod)*pw(2,C(i-j,2)));
         }
