@@ -72,11 +72,21 @@ signed main() {
     REP1(i,n) {
         c[i]=pw(2,C(i,2));
         REP1(j,i-1) {
-            addmod(c[i],(-C(i,j)*c[j]%mod)*pw(2,C(i-j,2)));
+            addmod(c[i],(-C(i,j)*c[j]%mod)*pw(2,C(i-j,2))%mod);
         }
         c[i]=(c[i]+mod)%mod;
     }
-    oparr(c)
     Vi dp0(n+1),dp1(n+1);
+    REP1(i,n) {
+        for(int j=1;j<k&&j<=i;j++) {
+            addmod(dp0[i],(dp0[i-j]*C(i,j)%mod)*c[j]%mod);
+            addmod(dp1[i],(dp1[i-j]*C(i,j)%mod)*c[j]%mod);
+        }
+        for(int j=k;j<=i;j++) {
+            addmod(dp1[i],(dp0[i-j]*C(i,j)%mod)*c[j]%mod);
+        }
+    }
+    dp1[n]=(dp1[n]+mod)%mod;
+    cout<<dp1[n]<<'\n';
     return 0;
 } 
