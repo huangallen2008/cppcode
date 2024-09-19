@@ -80,7 +80,7 @@ signed main() {
     }
     oparr(c)
     Vi dp0(n+1),dp1(n+1);
-    dp0[0]=dp1[0]=1;
+    dp0[0]=1;
     REP1(i,n) {
         for(int j=1;j<k&&j<=i;j++) {
             addmod(dp0[i],(dp0[i-j]*C(i,j)%mod)*c[j]%mod);
