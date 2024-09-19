@@ -53,7 +53,7 @@ int pw(int x,int p) {
         x=x*x%mod;
         p>>=1;
     }
-    return p;
+    return r;
 }
 int inv(int x) {
     return pw(x,mod-2);
