@@ -65,6 +65,9 @@ signed main() {
     IOS(); 
     fac[0]=infac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod,infac[i]=inv(fac[i]);
+    REP(i,10) {
+        cout<<fac[i]<<' '<<infac[i]<<'\n';
+    }
     int n,k;
     cin>>n>>k;
     Vi c(n+1);
