@@ -87,7 +87,7 @@ signed main() {
             addmod(dp1[i],(dp1[i-j]*C(i,j)%mod)*c[j]%mod);
         }
         for(int j=k;j<=i;j++) {
-            addmod(dp1[i],(dp0[i-j]*C(i,j)%mod)*c[j]%mod);
+            addmod(dp1[i],((dp0[i-j]+dp1[i-j])*C(i,j)%mod)*c[j]%mod);
         }
     }
     oparr(dp0)oparr(dp1)
