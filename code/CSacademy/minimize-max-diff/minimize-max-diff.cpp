@@ -65,7 +65,7 @@ signed main() {
         return max(s[d][l],s[d][r-(1<<d)+1]);
     };
     int an=inf;
-    REP(i,k) {
+    REP(i,k+1) {
         op(i)ope(n-i-1)
         chmin(an,qu(i,n-i-1));
     }
