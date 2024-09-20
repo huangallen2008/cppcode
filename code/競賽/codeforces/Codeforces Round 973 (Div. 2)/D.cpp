@@ -53,7 +53,7 @@ void solve() {
     int ss=0;
     for(int i=n-1;i>=0;i--) {
         ss+=a[i];
-        chmax(mx,(ss+n-i+1)/(n-i));
+        chmax(mx,(ss+n-i-1)/(n-i));
     }
     int mn=inf;
     int ps=0;
