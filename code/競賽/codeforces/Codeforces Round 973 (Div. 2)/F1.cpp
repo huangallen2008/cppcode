@@ -82,6 +82,7 @@ void dfs(int u,int fa) {
             chmax(ana,lev[u]+dep[v]+1);
         }
         chmax(dep[u],dep[v]+1);
+        op(u)op(v)op(ana)ope(anb)
     }
 }
 void solve() {
