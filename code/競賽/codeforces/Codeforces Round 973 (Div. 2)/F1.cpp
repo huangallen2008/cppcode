@@ -54,7 +54,7 @@ void dfs0(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         lev[v]=lev[u]+1;
-        dfs(v,u);
+        dfs0(v,u);
     }
     out[u]=dfnc++;
 }
