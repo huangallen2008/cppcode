@@ -104,6 +104,8 @@ void solve() {
         cout<<"Alice\n";
     }
     else cout<<"Bob\n";
+    ope(isa(b,1))
+    entr
 }
 signed main() {
     IOS(); 
