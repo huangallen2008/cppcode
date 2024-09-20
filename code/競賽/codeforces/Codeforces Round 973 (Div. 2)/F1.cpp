@@ -69,6 +69,7 @@ void dfs(int u,int fa) {
         // op(u)op(b)op(isa(u,b))ope(isa(b,u))
         if(isa(u,b)) {
             if(lev[u]<=(lev[b]>>1)) {
+                chmax(ana,lev[u]);
                 if(!isa(v,b)) chmax(ana,lev[v]+dep[v]);
             }
             else {
@@ -106,7 +107,7 @@ void solve() {
     dfs0(0,-1);
     ana=anb=0;
     dfs(0,-1);
-    op(ana)ope(anb)
+    // op(ana)ope(anb)
     if(ana>=anb) {
         cout<<"Alice\n";
     }
