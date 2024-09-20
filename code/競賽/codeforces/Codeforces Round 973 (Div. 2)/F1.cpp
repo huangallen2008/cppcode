@@ -93,7 +93,7 @@ void solve() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    cin>>b,b--;
+    cin>>b>>b,b--;
     in=out=lev=dep=Vi(n);
     dfs0(0,-1);
     ana=anb=0;
