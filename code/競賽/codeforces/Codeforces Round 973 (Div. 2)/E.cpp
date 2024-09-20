@@ -71,6 +71,7 @@ void solve() {
         gcd=__gcd(gcd,b[id]);
         for(int j=id;j<b.size()-1;j++) b[j]=__gcd(b[j+1],gcd);
         b.pop_back();
+        oparr(b)
     }
     oparr(an)
     int sum=0;
