@@ -73,6 +73,7 @@ void solve() {
             if(!ok) {
                 c1=i-1;
             }
+            s+='1';
         }
         string an="";
         REP(i,c1) an+='1';
