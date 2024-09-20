@@ -59,6 +59,7 @@ int sol(int n,int k) {
 }
 signed main() {
     IOS(); 
+    ope(__gcd(0,34))
     int k=20,n=100;
     // REP1(k,30) {
         REP(i,k) {
