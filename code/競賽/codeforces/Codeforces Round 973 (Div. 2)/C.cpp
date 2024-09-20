@@ -86,12 +86,17 @@ void solve() {
     bool inv=0;
     for(int i=0;i<n-2;i++) {
         if(an.size()>=n) break;
-        bool i1=qur(an+'0');
+        string s;
+        s=an+'0';
+    if(inv) reverse(ALL(s));
+        bool i1=qur(s);
         if(i1) {
             an+='0';
             continue;
         }
-        bool i2=qur(an+'1');
+        s=an+'1';
+        if(inv) reverse(ALL(s));
+        bool i2=qur(s);
         if(i2) {
             an+='1';
             continue;
