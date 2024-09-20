@@ -69,6 +69,7 @@ void solve() {
             break;
         }
         gcd=__gcd(gcd,b[id]);
+        REP(j,id) b[i]=__gcd(b[i],gcd);
         for(int j=id;j<b.size()-1;j++) b[j]=__gcd(b[j+1],gcd);
         b.pop_back();
         op(gcd)oparr(b)
