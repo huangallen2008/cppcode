@@ -49,11 +49,11 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vi b=a;
     int gcd0=a[0];
     REP(i,n) gcd0=__gcd(gcd0,a[i]);
     int f0=gcd0;
     REP(i,n) a[i]/=gcd0;
+    Vi b=a;
     int gcd=0;
     Vi an(n,-1);
     REP(i,n) {
