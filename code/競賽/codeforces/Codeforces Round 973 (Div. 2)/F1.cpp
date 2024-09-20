@@ -66,6 +66,7 @@ void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
+        op(u)op(b)op(isa(u,b))ope(isa(b,u))
         if(isa(u,b)) {
             if(lev[u]<=(lev[b]>>1)) {
                 if(!isa(v,b)) chmax(ana,lev[v]+dep[v]);
