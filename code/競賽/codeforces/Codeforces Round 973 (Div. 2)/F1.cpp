@@ -95,6 +95,7 @@ void solve() {
     }
     cin>>b>>b,b--;
     in=out=lev=dep=Vi(n);
+    dfnc=0;
     dfs0(0,-1);
     ana=anb=0;
     dfs(0,-1);
