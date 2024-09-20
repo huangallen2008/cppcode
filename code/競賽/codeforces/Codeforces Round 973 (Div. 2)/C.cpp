@@ -72,6 +72,7 @@ void solve() {
             bool ok=qur(s);
             if(!ok) {
                 c1=i-1;
+                break;
             }
             s+='1';
         }
