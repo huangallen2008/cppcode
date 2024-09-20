@@ -76,6 +76,7 @@ void solve() {
     int sum=0;
     REP(i,n) sum+=an[i];
     cout<<sum*f0<<'\n';
+    entr
 }
 signed main() {
     IOS(); 
