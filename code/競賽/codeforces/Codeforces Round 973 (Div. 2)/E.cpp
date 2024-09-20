@@ -55,7 +55,7 @@ void solve() {
     REP(i,n) a[i]/=gcd0;
     Vi b=a;
     int gcd=0;
-    Vi an(n,-1);
+    Vi an(n,1);
     REP(i,n) {
         int id=0,mn=b[0];
         REP(j,b.size()) {
