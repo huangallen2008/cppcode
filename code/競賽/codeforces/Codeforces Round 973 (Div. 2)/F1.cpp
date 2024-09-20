@@ -66,7 +66,7 @@ void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
-        op(u)op(b)op(isa(u,b))ope(isa(b,u))
+        // op(u)op(b)op(isa(u,b))ope(isa(b,u))
         if(isa(u,b)) {
             if(lev[u]<=(lev[b]>>1)) {
                 if(!isa(v,b)) chmax(ana,lev[v]+dep[v]);
@@ -76,15 +76,15 @@ void dfs(int u,int fa) {
                 else chmax(anb,lev[b]-lev[u]);
             }
         }
-        else if(isa(b,u)) {
-            op(anb)ope("wvefve")
+        if(isa(b,u)) {
+            // op(anb)ope("wvefve")
             chmax(anb,lev[v]-lev[b]+dep[v]);
         }
-        else {
+        if(!isa(b,u)&&!isa(u,b)) {
             chmax(ana,lev[u]+dep[v]+1);
         }
         chmax(dep[u],dep[v]+1);
-        op(u)op(v)op(ana)ope(anb)
+        // op(u)op(v)op(ana)ope(anb)
     }
 }
 void solve() {
@@ -106,8 +106,8 @@ void solve() {
         cout<<"Alice\n";
     }
     else cout<<"Bob\n";
-    ope(isa(b,1))
-    entr
+    // ope(isa(b,1))
+    // entr
 }
 signed main() {
     IOS(); 
