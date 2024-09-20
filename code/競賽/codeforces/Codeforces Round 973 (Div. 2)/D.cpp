@@ -61,6 +61,7 @@ void solve() {
         ps+=a[i];
         chmin(mn,(ps)/(i+1));
     }
+    op(mx)op(mn)
     int an=max(0ll,mx-mn);
     cout<<an<<'\n';
 }
