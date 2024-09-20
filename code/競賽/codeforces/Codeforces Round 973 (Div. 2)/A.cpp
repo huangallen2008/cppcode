@@ -47,7 +47,7 @@ int rd(int l,int r) {
 void solve() {
     int n,x,y;
     cin>>n>>x>>y;
-    int r=max(x,y);
+    int r=min(x,y);
     int an=(n+r-1)/r;
     cout<<an<<'\n';
 }
