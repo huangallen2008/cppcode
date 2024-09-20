@@ -1,71 +1,30 @@
-# # import matplotlib.pyplot as plt
-# import csv
+t = int(input())
+for tt in range(t):
+    n = int(input())
+    
+    ans = ""
+    ended = 0
 
-# from matplotlib import pyplot as plt
+    while len(ans) < n:
 
-# # 開啟 CSV 檔案
-# with open('F_I_star_data.csv', newline='') as csvfile:
-#     # 讀取 CSV 檔案內容
-#     data = csv.reader(csvfile)
-#     # 提取 X 和 Y 座標
-#     x = []
-#     y = []
-#     for row in data:
-#         x.append(float(row[0]))  # 第一列為 X 座標
-#         y.append(float(row[1]))  # 第二列為 Y 座標
+        if not ended: t1 = ans + "0"
+        else: t1 = "0" + ans
+        print("?", t1)
+        q = int(input())
+        if q:
+            ans = t1
+            continue
+        elif ended:
+            ans = "1" + ans
+            continue
 
-# # 繪製數據點
-# plt.scatter(x, y)
-# plt.xlabel('X 軸標籤')
-# plt.ylabel('Y 軸標籤')
-# plt.title('數據點分佈')
-# plt.grid(True)  # 添加網格線
+        if not ended: t1 = ans + "1"
+        print("?", t1)
+        q = int(input())
+        if q:
+            ans = t1
+            continue
 
-# from matplotlib.widgets import Button, Slider
+        ended = 1
 
-# # 創建一個子圖
-# fig, ax = plt.subplots()
-# line, = ax.plot(x, y)
-# ax.set_xlim(0, 10)
-# ax.set_ylim(-1, 1)
-# # 定義放大和縮小函數
-# def zoom(event):
-#     if event.button == 'up':
-#         ax.set_xlim(ax.get_xlim()[0] * 1.1, ax.get_xlim()[1] * 1.1)
-#         ax.set_ylim(ax.get_ylim()[0] * 1.1, ax.get_ylim()[1] * 1.1)
-#     elif event.button == 'down':
-#         ax.set_xlim(ax.get_xlim()[0] * 0.9, ax.get_xlim()[1] * 0.9)
-#         ax.set_ylim(ax.get_ylim()[0] * 0.9, ax.get_ylim()[1] * 0.9)
-#     plt.draw()
-
-# # 連接滑鼠滾輪事件
-# fig.canvas.mpl_connect('scroll_event', zoom)
-
-# plt.show()
-
-
-import math
-import matplotlib.pyplot as plt
-from matplotlib.widgets import Button, Slider
-import numpy as np
-import csv
-cnt=0
-with open('F_I_star_data.csv', newline='') as csvfile:
-    # 讀取 CSV 檔案內容
-    data = csv.reader(csvfile)
-    # 提取 X 和 Y 座標
-    x2 = []
-    y2 = []
-    for row in data:
-        cnt+=1
-        x2.append((math.sqrt(float(row[0])*8))) # 第一列為 X 座標 用sqrt(x*8)代替
-        y2.append(float(row[1]))  # 第二列為 Y 座標
-
-fig, ax = plt.subplots()
-ax.plot(x2, y2,color='blue',markersize=1)
-fig.canvas.mpl_connect('scroll_event', zoom)
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title('data')
-plt.grid(True)  # 添加網格線
-plt.show()
+    print("!", ans)
