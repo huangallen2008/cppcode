@@ -72,6 +72,7 @@ void solve() {
         for(int j=id;j<b.size()-1;j++) b[j]=__gcd(b[j+1],gcd);
         b.pop_back();
     }
+    oparr(an)
     int sum=0;
     REP(i,n) sum+=an[i];
     cout<<sum*f0<<'\n';
