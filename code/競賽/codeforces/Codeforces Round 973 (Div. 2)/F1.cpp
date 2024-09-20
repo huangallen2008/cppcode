@@ -97,6 +97,10 @@ void solve() {
         g[v].pb(u);
     }
     cin>>b>>b,b--;
+    if(b==0) {
+        cout<<"Alice\n";
+        return;
+    }
     in=out=lev=dep=Vi(n);
     dfnc=0;
     dfs0(0,-1);
