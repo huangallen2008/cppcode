@@ -73,7 +73,7 @@ void dfs(int u,int fa) {
                 if(!isa(v,b)) chmax(ana,lev[v]+dep[v]);
             }
             else {
-                if(isa(v,b)) chmax(anb,lev[b]-lev[u]+dep[v]+1);
+                if(!isa(v,b)) chmax(anb,lev[b]-lev[u]+dep[v]+1);
                 else chmax(anb,lev[b]-lev[u]);
             }
         }
