@@ -72,13 +72,13 @@ void solve() {
         REP(j,id) b[j]=__gcd(b[j],gcd);
         for(int j=id;j<b.size()-1;j++) b[j]=__gcd(b[j+1],gcd);
         b.pop_back();
-        op(gcd)oparr(b)
+        // op(gcd)oparr(b)
     }
-    oparr(an)
+    // oparr(an)
     int sum=0;
     REP(i,n) sum+=an[i];
     cout<<sum*f0<<'\n';
-    entr
+    // entr
 }
 signed main() {
     IOS(); 
