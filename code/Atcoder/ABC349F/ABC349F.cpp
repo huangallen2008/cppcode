@@ -98,15 +98,15 @@ signed main() {
     }
     REP(i,1<<fc) v[i]=(pw(2,cnt[i])+mod-1)%mod;
     Vi dp(1<<fc);
-    dp[0]=v[0]+1;
+    dp[0]=(v[0]+1)%mod;
     int all=(1<<fc)-1;
     for(int i=1;i<1<<fc;i++) {
         RREP(j,1<<fc) {
             dp[j|i]=(dp[j|i]+dp[j]*v[i])%mod;
         }
     }
-    if(m==1) dp[all]--;
     int an=(dp[all]+mod)%mod;
+    if(m==1) an=(an-1+mod)%mod;
     cout<<an<<'\n';
     return 0;
 }
