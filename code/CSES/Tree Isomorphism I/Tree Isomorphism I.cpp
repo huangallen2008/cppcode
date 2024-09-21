@@ -23,7 +23,7 @@ signed main() {
         cin>>n;
         auto F=[&](){
             g=G(n);
-            for(int i=0;i<n;i++) {
+            for(int i=1;i<n;i++) {
                 I u,v;
                 cin>>u>>v,u--,v--;  
                 g[u].push_back(v);
