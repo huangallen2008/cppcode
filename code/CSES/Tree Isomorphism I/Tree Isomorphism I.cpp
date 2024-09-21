@@ -37,7 +37,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=998244353;
+const int mod=1e9+9;
 const int maxn=5;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -49,7 +49,7 @@ int f(Graph &g,int u,int fa) {
     int ret=1;
     for(int v:g[u]) {
         if(v==fa) continue;
-        ret=(ret*(AL+f(g,v,u)))%mod;
+        ret=ret*(AL+f(g,v,u))%mod;
     }
     return ret;
 }
