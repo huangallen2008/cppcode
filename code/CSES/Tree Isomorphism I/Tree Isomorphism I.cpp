@@ -3,7 +3,7 @@ using namespace std;
 #define L int64_t
 #define I int
 #define G vector<vector<I>>
-#define K(x) int x;cin>>x;
+#define K(x) I x;cin>>x;
 const L X=666666,M=1e9+9;
 G g;
 L f(I u,I fa) {
