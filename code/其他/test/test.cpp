@@ -58,7 +58,7 @@ int sol(int n,int k) {
     return cnt;
 }
 #define C(x) int z
-C(i);
+C(f)(){};
 signed main() {
     IOS(); 
     int a,b;
