@@ -37,14 +37,14 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=5;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-const int AL=1314520;
+const int AL=666666;
 int f(Graph &g,int u,int fa) {
     int ret=1;
     for(int v:g[u]) {
