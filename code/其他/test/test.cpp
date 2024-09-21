@@ -57,6 +57,8 @@ int sol(int n,int k) {
     cout<<'\n';
     return cnt;
 }
+#define C(x) int z
+C(i);
 signed main() {
     IOS(); 
     int a,b;
