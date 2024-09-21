@@ -57,6 +57,7 @@ signed main() {
                 cnt++;
             }
             f.pb({i,cnt});
+            op(i)ope(cnt)
         }
     }
     Vi a(n);
@@ -82,6 +83,7 @@ signed main() {
                 fo^=1<<j;
             }
         }
+        
         if(t>1) ok=0;
         if(!ok) continue;
         b.pb(fo);
