@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using z = int,y=yy;
+using z = int;
 z t, n, u, v;
 vector<set<z>> e;
 z f(z x) {
@@ -16,8 +16,4 @@ z g() {
     cin >> u >> v, e[u].insert(v), e[v].insert(u);
   return f(1);
 }
-z main() {
-  cin >> t;
-  while (t--)
-    cin >> n, cout << (g() ^ g() ? "NO\n" : "YES\n");
-}
+main() { for (cin >> t; t--; puts((cin >> n, g() == g() ? "YES" : "NO"))); }
