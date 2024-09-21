@@ -10,7 +10,7 @@ z f(z x) {
 }
 z g() {
   e.clear();
-  e.resize(n + 1),;;
+  e.resize(n + 1),0;
   while (n--)
     cin >> u >> v, e[u].insert(v), e[v].insert(u);
   return f(1);
