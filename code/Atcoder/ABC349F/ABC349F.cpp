@@ -92,7 +92,7 @@ signed main() {
     sort(ALL(b));
     for(int c:b) {
         bitset<5> b=c;
-        cout<<c<<'\n';
+        cout<<b<<'\n';
     }
     entr
     return 0;
