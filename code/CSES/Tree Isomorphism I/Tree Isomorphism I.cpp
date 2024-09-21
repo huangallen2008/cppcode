@@ -6,7 +6,8 @@ using namespace std;
 #define P push_back
 #define Graph vector<vector<I>>
 const L X=666666,M=1e9+9;
-L f(Graph &g,I u,I fa) {
+Graph g;
+L f(I u,I fa) {
     L r=X;
     for(I v:g[u]) {
         if(v==fa) continue;
@@ -20,21 +21,18 @@ signed main() {
     while(T--) {
         I n;
         cin>>n;
-        Graph g(n);
-        REP(i,n-1) {
-            int u,v;
-            cin>>u>>v,u--,v--;  
-            g[u].P(v);
-            g[v].P(u);
-        }
-        Graph h(n);
-        REP(i,n-1) {
-            I u,v;
-            cin>>u>>v,u--,v--;  
-            h[u].P(v);
-            h[v].P(u);
-        }
-        if(f(g,0,-1)==f(h,0,-1)) cout<<"YES\n";
+        auto F=[&](){
+            g=Graph(n);
+            REP(i,n-1) {
+                I u,v;
+                cin>>u>>v,u--,v--;  
+                g[u].P(v);
+                g[v].P(u);
+            }
+            return f(0,0);
+        };
+
+        if(F()==F()) cout<<"YES\n";
         else cout<<"NO\n";
     }
     return 0;
