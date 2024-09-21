@@ -11,7 +11,7 @@ L f(I u,I fa) {
     L r=X;
     for(I v:g[u]) {
         if(v==fa) continue;
-        r=r*(X+f(g,v,u))%M;
+        r=r*(X+f(v,u))%M;
     }
     return r;
 }
