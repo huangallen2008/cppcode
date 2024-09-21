@@ -20,6 +20,7 @@ I main() {
         K(n)
         auto F=[&](){
             g=G(++n);
+            cout<<n<<endl;
             for(int i=2;i<n;i++) {
                 K(u)K(v) 
                 g[u].push_back(v);
