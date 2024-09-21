@@ -5,7 +5,7 @@ using namespace std;
 #define REP(i,n) for(I i=0;i<(n);i++)
 #define P push_back
 #define Graph vector<vector<I>>
-const I X=666666,M=1e9+9;
+const L X=666666,M=1e9+9;
 L f(Graph &g,I u,I fa) {
     L r=X;
     for(I v:g[u]) {
