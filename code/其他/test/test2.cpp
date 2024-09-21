@@ -9,11 +9,10 @@ z f(z x) {
   return r;
 }
 z g() {
-//   e.clear();
   e.assign(n + 1,{});
-  z i = 1;
-  while (i++ < n)
-    cin >> u >> v, e[u].insert(v), e[v].insert(u);
+  for(z i=1;i++<n,cin >> u >> v, e[u].insert(v), e[v].insert(u););
   return f(1);
 }
-main() { for (cin >> t; t--; puts((cin >> n, g() == g() ? "YES" : "NO"))); }
+main() { 
+    for (cin >> t; t--; puts((cin >> n, g() == g() ? "YES" : "NO"))); 
+}
