@@ -9,8 +9,8 @@ z f(z x) {
   return r;
 }
 z g() {
-  e.clear();
-  e.resize(n + 1);
+//   e.clear();
+  e.assign(n + 1,{});
   z i = 1;
   while (i++ < n)
     cin >> u >> v, e[u].insert(v), e[v].insert(u);
