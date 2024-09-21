@@ -2,6 +2,7 @@
 using namespace std;
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
+#define pb push_back
 #define Graph vector<vector<int>>
 const int mod=1e9+9;
 const int maxn=5;
