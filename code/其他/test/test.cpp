@@ -60,6 +60,6 @@ int sol(int n,int k) {
 signed main() {
     IOS(); 
     int a,b;
-    cin>>a=b;
+    cin>>(a=b);
     return 0;
 }
