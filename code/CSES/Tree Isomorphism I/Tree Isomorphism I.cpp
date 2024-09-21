@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 using z = int;
+#define R return 
 z t, n, u, v;
 vector<set<z>> e;
 z f(z x) {
   z r = 9;
   for (z y : e[x]) e[y].erase(x), r *= 9 + f(y) % 959;
-  return r;
+  R r;
 }
 z g() {
   e.clear();
