@@ -11,8 +11,9 @@ z f(z x) {
 z g() {
   e.clear();
   e.resize(n + 1);
-  z i = 1;
-  while (i++ < n)
+//   z i = 1;
+n-=2;
+  while (n--)
     cin >> u >> v, e[u].insert(v), e[v].insert(u);
   return f(1);
 }
