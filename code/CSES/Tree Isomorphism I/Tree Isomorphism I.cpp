@@ -70,8 +70,6 @@ void solve() {
         g2[u].pb(v);
         g2[v].pb(u);
     }
-    op(f(g1,0,-1))op(f(g2,0,-1))
-     cout<<"YES\n";
     if(f(g1,0,-1)==f(g2,0,-1)) cout<<"YES\n";
     else cout<<"NO\n";
 }
