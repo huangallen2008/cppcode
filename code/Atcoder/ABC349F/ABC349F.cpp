@@ -96,7 +96,7 @@ signed main() {
         if(!ok) continue;
         cnt[fo]++;
     }
-    REP(i,1<<fc) v[i]=pw(2,cnt[i])-1;
+    REP(i,1<<fc) v[i]=(pw(2,cnt[i])+mod-1)%mod;
     Vi dp(1<<fc);
     dp[0]=v[0]+1;
     int all=(1<<fc)-1;
