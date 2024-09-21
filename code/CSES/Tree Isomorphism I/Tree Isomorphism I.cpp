@@ -4,7 +4,7 @@ using namespace std;
 #define I int
 #define G vector<vector<I>>
 #define K(x) I x;cin>>x;
-const L X=666666,M=1e9+9;
+L X=666666,M=1e9+9;
 G g;
 L f(I u,I fa) {
     L r=X;
@@ -14,22 +14,18 @@ L f(I u,I fa) {
     }
     return r;
 }
-signed main() {
-    I T;
-    cin>>T;
-    // K(T)
+I main() {
+    K(T)
     while(T--) {
-        I n;
-        cin>>n;
+        K(n)
         auto F=[&](){
-            g=G(n);
-            for(int i=1;i<n;i++) {
-                I u,v;
-                cin>>u>>v,u--,v--;  
+            g=G(++n);
+            for(int i=2;i<n;i++) {
+                K(u)K(v) 
                 g[u].push_back(v);
                 g[v].push_back(u);
             }
-            return f(0,0);
+            return f(1,1);
         };
         cout<<(F()==F()?"YES\n":"NO\n");
     }
