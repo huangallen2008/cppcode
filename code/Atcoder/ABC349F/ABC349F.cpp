@@ -61,7 +61,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     if(m==1) {
         int cnt1=0;
-        for(int c:a[i]) if(c==1) cnt1++;
+        for(int c:a) if(c==1) cnt1++;
         int an=pw(2,cnt1);
         if(cnt1)an=(an-1+mod)%mod;
         cout<<an<<'\n';
