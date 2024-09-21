@@ -6,7 +6,7 @@ using namespace std;
 #define K(x) I x;cin>>x;
 L X=666666,M=1e9+9;
 G g;
-L f(I u,I fa) {
+L d,f(I u,I fa) {
     L r=X;
     for(I v:g[u]) if(v!=fa) r=r*(X+f(v,u))%M;
     return r;
