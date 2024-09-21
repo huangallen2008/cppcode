@@ -59,14 +59,7 @@ int sol(int n,int k) {
 }
 signed main() {
     IOS(); 
-    ope(__gcd(0,34))
-    int k=20,n=100;
-    // REP1(k,30) {
-        REP(i,k) {
-            // cout<<sol(i,k)<<' ';
-            sol(i,k);
-        }
-        cout<<'\n';
-    // }
+    int a,b;
+    cin>>a=b;
     return 0;
 }
