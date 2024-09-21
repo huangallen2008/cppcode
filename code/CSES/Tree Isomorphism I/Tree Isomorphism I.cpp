@@ -15,9 +15,9 @@ L f(I u,I fa) {
     return r;
 }
 signed main() {
-    // I T;
-    // cin>>T;
-    K(T)
+    I T;
+    cin>>T;
+    // K(T)
     while(T--) {
         I n;
         cin>>n;
