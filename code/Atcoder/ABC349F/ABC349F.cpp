@@ -72,7 +72,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int fc=f.size();
-    Vi b;
+    Vi cnt(1<<fc),v(1<<fc);
     REP(i,n) {
         int fo=0;
         int t=a[i];
@@ -92,21 +92,17 @@ signed main() {
                 fo^=1<<j;
             }
         }
-        
         if(t>1) ok=0;
         if(!ok) continue;
-        b.pb(fo);
+        cnt[fo]++;
     }
-    sort(ALL(b));
-    Vi cnt(1<<fc),v(1<<fc);
-    for(int x:b) cnt[x]++;
     REP(i,1<<fc) v[i]=pw(2,cnt[i])-1;
     Vi dp(1<<fc);
     dp[0]=v[0]+1;
     int all=(1<<fc)-1;
     for(int i=1;i<1<<fc;i++) {
         RREP(j,1<<fc) {
-            dp[j]=(dp[j]+dp[j&(all^i)]*v[i])%mod;
+            dp[j|i]=(dp[j|i]+dp[j]*v[i])%mod;
         }
     }
     int an=(dp[all]+mod)%mod;
