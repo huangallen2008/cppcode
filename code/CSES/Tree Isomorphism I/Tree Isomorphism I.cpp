@@ -31,7 +31,7 @@ signed main() {
             }
             return f(0,0);
         };
-        cout<<F()==F()?"YES\n":"NO\n";
+        cout<<(F()==F()?"YES\n":"NO\n");
     }
     return 0;
 }
