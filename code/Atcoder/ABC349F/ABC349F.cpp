@@ -102,7 +102,7 @@ signed main() {
     int all=(1<<fc)-1;
     for(int i=1;i<1<<fc;i++) {
         RREP(j,1<<fc) {
-            if(cnt[i])dp[j|i]=(dp[j|i]+dp[j]*v[i])%mod;
+            dp[j|i]=(dp[j|i]+dp[j]*v[i])%mod;
         }
     }
     int an=(dp[all]+mod)%mod;
