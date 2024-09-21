@@ -37,12 +37,21 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=5;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
 }
 signed main() {
     IOS(); 
@@ -57,7 +66,6 @@ signed main() {
                 cnt++;
             }
             f.pb({i,cnt});
-            op(i)ope(cnt)
         }
     }
     if(m>1) f.pb({m,1});
@@ -90,10 +98,18 @@ signed main() {
         b.pb(fo);
     }
     sort(ALL(b));
-    for(int c:b) {
-        bitset<5> b=c;
-        cout<<b<<'\n';
+    Vi cnt(1<<fc),v(1<<fc);
+    for(int x:b) cnt[x]++;
+    REP(i,1<<fc) v[i]=pw(2,cnt[i])-1;
+    Vi dp(1<<fc);
+    dp[0]=v[0]+1;
+    int all=(1<<fc)-1;
+    for(int i=1;i<1<<fc;i++) {
+        RREP(j,1<<fc) {
+            dp[j]=(dp[j]+dp[j&(all^i)]*v[i])%mod;
+        }
     }
-    entr
+    int an=(dp[all]+mod)%mod;
+    cout<<an<<'\n';
     return 0;
 }
