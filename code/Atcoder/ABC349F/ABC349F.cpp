@@ -105,6 +105,7 @@ signed main() {
             dp[j|i]=(dp[j|i]+dp[j]*v[i])%mod;
         }
     }
+    if(m==1) an--;
     int an=(dp[all]+mod)%mod;
     cout<<an<<'\n';
     return 0;
