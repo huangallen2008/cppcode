@@ -60,6 +60,7 @@ signed main() {
             op(i)ope(cnt)
         }
     }
+    if(m>1) f.pb({m,1});
     Vi a(n);
     REP(i,n) cin>>a[i];
     int fc=f.size();
