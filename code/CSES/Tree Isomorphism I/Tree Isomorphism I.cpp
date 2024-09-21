@@ -8,10 +8,7 @@ L X=666666,M=1e9+9;
 G g;
 L f(I u,I fa) {
     L r=X;
-    for(I v:g[u]) {
-        if(v==fa) continue;
-        r=r*(X+f(v,u))%M;
-    }
+    for(I v:g[u]) if(v!=fa) r=r*(X+f(v,u))%M;
     return r;
 }
 I main() {
@@ -21,7 +18,8 @@ I main() {
         ++n;
         auto F=[&](){
             g=G(n);
-            for(int i=2;i<n;i++) {
+            I S=n-3;
+            while(S--) {
                 K(u)K(v) 
                 g[u].push_back(v);
                 g[v].push_back(u);
