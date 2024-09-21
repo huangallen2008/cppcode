@@ -18,6 +18,7 @@ I main() {
     K(T)
     while(T--) {
         K(n)
+        cout<<"N="<<n<<endl;
         auto F=[&](){
             g=G(++n);
             cout<<n<<endl;
