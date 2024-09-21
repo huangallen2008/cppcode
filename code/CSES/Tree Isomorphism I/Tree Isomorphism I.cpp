@@ -1,32 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define L int64_t
-#define I int
-#define G vector<vector<I>>
-#define K(x) I x;cin>>x;
-L X=666666,M=1e9+9;
-G g;
-L d,f(I u,I fa) {
-    L r=X;
-    for(I v:g[u]) if(v!=fa) r=r*(X+f(v,u))%M;
-    return r;
+using z = int;
+z t, n, u, v;
+vector<set<z>> e;
+z f(z x) {
+  z r = 9;
+  for (z y : e[x]) e[y].erase(x), r *= 9 + f(y) % 959;
+  return r;
 }
-I main() {
-    K(T)
-    while(T--) {
-        K(n)
-        ++n;
-        auto F=[&](){
-            g=G(n);
-            I S=n-2;
-            while(S--) {
-                K(u)K(v) 
-                g[u].push_back(v);
-                g[v].push_back(u);
-            }
-            return f(1,1);
-        };
-        cout<<(F()==F()?"YES\n":"NO\n");
-    }
-    return 0;
+z g() {
+  e.clear();
+  e.resize(n + 1),.;
+  while (n--)
+    cin >> u >> v, e[u].insert(v), e[v].insert(u);
+  return f(1);
+}
+z main() {
+  cin >> t;
+  while (t--)
+    cin >> n, cout << (g() ^ g() ? "NO\n" : "YES\n");
 }
