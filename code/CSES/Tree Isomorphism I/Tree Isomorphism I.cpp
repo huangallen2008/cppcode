@@ -46,7 +46,7 @@ int rd(int l,int r) {
 }
 const int AL=666666;
 int f(Graph &g,int u,int fa) {
-    int ret=1;
+    int ret=AL;
     for(int v:g[u]) {
         if(v==fa) continue;
         ret=ret*(AL+f(g,v,u))%mod;
