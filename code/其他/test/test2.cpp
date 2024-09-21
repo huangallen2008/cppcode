@@ -10,7 +10,7 @@ z f(z x) {
 }
 z g() {
   e.assign(n + 1,{});
-  for(z i=1;i++<n,cin >> u >> v, e[u].insert(v), e[v].insert(u););
+  for(z i=1;i++<n&&cin >> u >> v, e[u].insert(v), e[v].insert(u););
   return f(1);
 }
 main() { 
