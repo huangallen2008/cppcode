@@ -18,7 +18,7 @@ I main() {
         ++n;
         auto F=[&](){
             g=G(n);
-            I S=n-3;
+            I S=n-2;
             while(S--) {
                 K(u)K(v) 
                 g[u].push_back(v);
