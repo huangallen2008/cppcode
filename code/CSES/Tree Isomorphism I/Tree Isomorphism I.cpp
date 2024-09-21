@@ -18,10 +18,9 @@ I main() {
     K(T)
     while(T--) {
         K(n)
-        cout<<"N="<<n<<endl;
+        ++n;
         auto F=[&](){
-            g=G(++n);
-            cout<<n<<endl;
+            g=G(n);
             for(int i=2;i<n;i++) {
                 K(u)K(v) 
                 g[u].push_back(v);
