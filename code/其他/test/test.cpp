@@ -61,5 +61,6 @@ signed main() {
     IOS(); 
     int a,b;
     cin>>(a=b);
+    op(a)ope(b)
     return 0;
 }
