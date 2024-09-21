@@ -57,6 +57,15 @@ signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    if(m==1) {
+        int cnt1=0;
+        for(int c:a[i]) if(c==1) cnt1++;
+        int an=(pw(2,cnt1)-1+mod)%mod;
+        cout<<an<<'\n';
+        return 0;
+    }
     vector<pii> f;
     for(int i=2;i*i<=m;i++) {
         if(m%i==0) {
@@ -69,8 +78,6 @@ signed main() {
         }
     }
     if(m>1) f.pb({m,1});
-    Vi a(n);
-    REP(i,n) cin>>a[i];
     int fc=f.size();
     Vi cnt(1<<fc),v(1<<fc);
     REP(i,n) {
