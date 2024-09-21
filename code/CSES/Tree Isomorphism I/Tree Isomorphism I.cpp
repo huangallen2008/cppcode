@@ -5,7 +5,7 @@ using namespace std;
 #define G vector<vector<I>>
 #define K(x) int x;cin>>x;
 const L X=666666,M=1e9+9;
-Graph g;
+G g;
 L f(I u,I fa) {
     L r=X;
     for(I v:g[u]) {
