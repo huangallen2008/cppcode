@@ -15,7 +15,7 @@ L f(Graph &g,I u,I fa) {
     return r;
 }
 signed main() {
-    int T;
+    I T;
     cin>>T;
     while(T--) {
         I n;
@@ -29,7 +29,7 @@ signed main() {
         }
         Graph h(n);
         REP(i,n-1) {
-            int u,v;
+            I u,v;
             cin>>u>>v,u--,v--;  
             h[u].P(v);
             h[v].P(u);
