@@ -2,7 +2,7 @@
 using namespace std;
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
-#define pb push_back
+#define P push_back
 #define Graph vector<vector<int>>
 const int mod=1e9+9;
 const int maxn=5;
@@ -26,21 +26,21 @@ signed main() {
     while(T--) {
         int n;
         cin>>n;
-        Graph g1(n);
+        Graph g(n);
         REP(i,n-1) {
             int u,v;
             cin>>u>>v,u--,v--;  
-            g1[u].pb(v);
-            g1[v].pb(u);
+            g[u].P(v);
+            g[v].P(u);
         }
-        Graph g2(n);
+        Graph h(n);
         REP(i,n-1) {
             int u,v;
             cin>>u>>v,u--,v--;  
-            g2[u].pb(v);
-            g2[v].pb(u);
+            h[u].P(v);
+            h[v].P(u);
         }
-        if(f(g1,0,-1)==f(g2,0,-1)) cout<<"YES\n";
+        if(f(g,0,-1)==f(h,0,-1)) cout<<"YES\n";
         else cout<<"NO\n";
     }
     return 0;
