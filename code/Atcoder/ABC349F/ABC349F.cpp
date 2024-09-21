@@ -63,7 +63,7 @@ signed main() {
         int cnt1=0;
         for(int c:a) if(c==1) cnt1++;
         int an=pw(2,cnt1);
-        if(cnt1)an=(an-1+mod)%mod;
+        an=(an-1+mod)%mod;
         cout<<an<<'\n';
         return 0;
     }
