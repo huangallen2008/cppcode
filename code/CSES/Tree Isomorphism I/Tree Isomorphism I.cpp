@@ -44,7 +44,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-const int AL=666666;
+const int AL=666667;
 int f(Graph &g,int u,int fa) {
     int ret=1;
     for(int v:g[u]) {
