@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define L int16_t
+#define L int64_t
 #define I int
 #define REP(i,n) for(I i=0;i<(n);i++)
 #define P push_back
