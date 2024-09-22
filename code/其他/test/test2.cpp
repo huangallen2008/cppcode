@@ -67,7 +67,7 @@ void f2() {
     pr2[0]=pr2[1]=1;
     for(int i=2;i<sn;i++) {
         if(!pr2[i]) {
-            for(int j=i*i;j<=maxn;j++) {
+            for(int j=i*i;j<=maxn;j+=i) {
                 // if(!pr2[j]) {
                     pr2[j]=1;
                 // }
