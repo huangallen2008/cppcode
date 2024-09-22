@@ -40,7 +40,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=8e7;
-const int sn=sqrt(maxn);
+const int sn=sqrt(maxn)+1;
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -51,7 +51,7 @@ bitset<maxn> p1,p2;
 void f1() {
     auto st=clock();
     pr1[0]=pr1[1]=1;
-    for(int i=2;i<maxn;i++) {
+    for(int i=2;i<sn;i++) {
         if(!pr1[i]) {
             for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
                 if(!pr1[j]) {
@@ -65,7 +65,7 @@ void f1() {
 void f2() {
     auto st=clock();
     pr2[0]=pr2[1]=1;
-    for(int i=2;i<maxn;i++) {
+    for(int i=2;i<sn;i++) {
         if(!pr2[i]) {
             for(int j=i*i;j<=maxn;j++) {
                 // if(!pr2[j]) {
@@ -79,7 +79,7 @@ void f2() {
 void f3() {
     auto st=clock();
     p1[0]=p1[1]=1;
-    for(int i=2;i<maxn;i++) {
+    for(int i=2;i<sn;i++) {
         if(!p1[i]) {
             for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
                 if(!p1[j]) {
@@ -93,7 +93,7 @@ void f3() {
 void f4() {
     auto st=clock();
     p2[0]=p2[1]=1;
-    for(int i=2;i<maxn;i++) {
+    for(int i=2;i<sn;i++) {
         if(!p2[i]) {
             for(int j=i*i;j<=maxn;j++) {
                 // if(!pr2[j]) {
