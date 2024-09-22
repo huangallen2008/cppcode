@@ -1,8 +1,5 @@
 #include<bits/stdc++.h>
-#include<bits/extc++.h>
-using namespace __gnu_pbds;
 using namespace std;
-#pragma GCC optimize("O0")
 #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
@@ -43,26 +40,16 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int inf=(1ll<<50);
+int n;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int sol(int n,int k) {
-    int cnt=0;
-    while(n>0) {
-        cout<<n<<' ';
-    n=((-k)%n+n)%n;
-    cnt++;
-    }
-    cout<<'\n';
-    return cnt;
-}
-#define C(x) int z
-C(f)(){};
 signed main() {
-    IOS(); 
-    int a,b;
-    cin>>(a=b);
-    op(a)ope(b)
+    // IOS(); 
+    cin>>n;
+    cout<<n<<'\n';;
+    cin>>n;
+    cout<<n<<'\n';;
     return 0;
 }
