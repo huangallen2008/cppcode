@@ -66,6 +66,7 @@ void solve(int C) {
 }
 signed main() {
     IOS(); 
+    freopen("out.txt","w",stdout);
     int T;
     cin>>T;
     REP1(i,T) solve(i);
