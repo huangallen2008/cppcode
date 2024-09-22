@@ -58,10 +58,10 @@ void solve(int C) {
         }
     }
     if(n>1) {
-        k=min(n,k+1);
+        cnt=min(n,cnt+1);
     }
     cout<<"Case #"<<C<<": ";
-    if(k==n) cout<<"YES\n";
+    if(cnt==n) cout<<"YES\n";
     else cout<<"NO\n";
 }
 signed main() {
