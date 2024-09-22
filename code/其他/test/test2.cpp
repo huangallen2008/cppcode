@@ -110,10 +110,10 @@ signed main() {
     op(2)f2();
     op(3)f3();
     op(4)f4();
-    int N=20;
-    REP(i,N) cout<<pr1[i];cout<<'\n';
-    REP(i,N) cout<<pr2[i];cout<<'\n';
-    REP(i,N) cout<<p1[i];cout<<'\n';
-    REP(i,N) cout<<p2[i];cout<<'\n';
+    // int N=20;
+    // REP(i,N) cout<<pr1[i];cout<<'\n';
+    // REP(i,N) cout<<pr2[i];cout<<'\n';
+    // REP(i,N) cout<<p1[i];cout<<'\n';
+    // REP(i,N) cout<<p2[i];cout<<'\n';
     return 0;
 }
