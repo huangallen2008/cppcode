@@ -64,6 +64,7 @@ signed main() {
             REP(j,n) s+=((i>>j)&1?'(':')');
             if(ok) cout<<s<<'\n';
         }
+        cout<<'\n';
     }
     return 0;
 }
