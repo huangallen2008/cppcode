@@ -46,6 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 bool pr1[maxn],pr2[maxn];
+bitset<maxn> p1,p2;
 void f1() {
     auto st=clock();
     pr1[0]=pr1[1]=1;
@@ -74,9 +75,39 @@ void f2() {
     }
     cout<<fixed<<setprecision(3)<<(ld)(clock()-st)/CLOCKS_PER_SEC<<'\n';
 }
+void f3() {
+    auto st=clock();
+    p1[0]=p1[1]=1;
+    for(int i=2;i<maxn;i++) {
+        if(!p1[i]) {
+            for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
+                if(!p1[j]) {
+                    p1[k]=1;
+                }
+            }
+        }
+    }
+    cout<<fixed<<setprecision(3)<<(ld)(clock()-st)/CLOCKS_PER_SEC<<'\n';
+}
+void f4() {
+    auto st=clock();
+    p2[0]=p2[1]=1;
+    for(int i=2;i<maxn;i++) {
+        if(!p2[i]) {
+            for(int j=i*i;j<=maxn;j++) {
+                // if(!pr2[j]) {
+                    p2[j]=1;
+                // }
+            }
+        }
+    }
+    cout<<fixed<<setprecision(3)<<(ld)(clock()-st)/CLOCKS_PER_SEC<<'\n';
+}
 signed main() {
     IOS(); 
     f1();
     f2();
+    f3();
+    f4();
     return 0;
 }
