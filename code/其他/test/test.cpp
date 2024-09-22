@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 signed main() {
-    // IOS(); 
+    IOS(); 
     cin>>n;
     cout<<n<<'\n';;
     cin>>n;
