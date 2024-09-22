@@ -106,9 +106,9 @@ void f4() {
 }
 signed main() {
     IOS(); 
-    op(1)f1();
-    op(2)f2();
     op(3)f3();
     op(4)f4();
+    op(1)f1();
+    op(2)f2();
     return 0;
 }
