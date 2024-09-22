@@ -128,16 +128,17 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     bit.init(maxv);
-    Vi b(maxn,inf);
+    vector<pii> b(n);
     REP(i,n) {
-        b[a[i]]=i-bit.qu(max(0ll,a[i]-k),min(maxv-1,a[i]+k));
+        b[i]={a[i],i-bit.qu(max(0ll,a[i]-k),min(maxv-1,a[i]+k))};
         bit.ud(a[i],1);
     }
-    seg.init(maxn,b);
+    sort(ALL(b));
+    seg.init(n,b);
     Vi an(n);
     REP(i,n) {
         int id=seg.qu();
-        an[i]=id;
+        an[i]=b[id].f;
         seg.ud(0,max(0ll,id-k-1),-1);
         seg.ud(min(maxv-1,id+1+k),maxv-1,-1);
         seg.ud(id,id,inf);
