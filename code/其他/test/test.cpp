@@ -76,7 +76,7 @@ inline void out(int x) {
     for(it--;it>=str;it--) PC(*it);
     PC('\n');
 }
-inline void outs(string &x) {
+inline void outs(string &s) {
     for(char &c:s) PC(c);
     PC('\n');
 }
