@@ -110,5 +110,9 @@ signed main() {
     op(2)f2();
     op(3)f3();
     op(4)f4();
+    REP(i,10) cout<<pr1[i];cout<<'\n';
+    REP(i,10) cout<<pr2[i];cout<<'\n';
+    REP(i,10) cout<<p1[i];cout<<'\n';
+    REP(i,10) cout<<p2[i];cout<<'\n';
     return 0;
 }
