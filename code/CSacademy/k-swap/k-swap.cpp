@@ -63,9 +63,9 @@ struct SEG {
     }
     vector<Seg> s;
     int n;
-    void build(int w,int l,int r,Vi &a) {
+    void build(int w,int l,int r,vector<pii> &a) {
         if(l==r) {
-            s[w].mn=a[l];
+            s[w].mn=a[l].s;
             return;
         }
         int m=l+r>>1;
@@ -73,7 +73,7 @@ struct SEG {
         build(w<<1|1,m+1,r,a);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int _n,Vi &a) {
+    void init(int _n,vector<pii> &a) {
         n=_n;
         s=vector<Seg>(n<<2);
         build(1,0,n-1,a);
