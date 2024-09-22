@@ -40,6 +40,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=8e7;
+const int sn=sqrt(maxn);
 const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -52,7 +53,12 @@ void f1() {
     pr1[0]=pr1[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!pr1[i]) {
-            for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
+            // for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
+            //     if(!pr1[j]) {
+            //         pr1[k]=1;
+            //     }
+            // }
+            for(int j=i,k=i*i;k>=i;j++,k+=i) {
                 if(!pr1[j]) {
                     pr1[k]=1;
                 }
