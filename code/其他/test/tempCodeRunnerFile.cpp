@@ -1,4 +1,4 @@
-#pragma GCC optimize("Ofast,fast-math,unroll-loops,no-stack-protector")
+// #pragma GCC optimize("Ofast,fast-math,unroll-loops,no-stack-protector")
 #include<bits/stdc++.h>
 #define int long long
 #define fastio ios_base::sync_with_stdio(0),cin.tie(0)
