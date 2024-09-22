@@ -39,7 +39,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e8;
+const int maxn=8e7;
 const int sqn=sqrt(maxn)+1;
 const int sn=sqn;//sqrt(maxn)+1;
 // const int nn=;
