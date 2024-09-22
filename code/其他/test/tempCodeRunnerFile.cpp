@@ -6,27 +6,29 @@ using namespace std;
 
 
 int n;
-char c[30];
+// char c[30];
+string s;
 void f(int t,int l,int r)
 {
     if(t==2*n)
     {
-        for(int i=0;i<2*n;i++)
-        {
-            cout<<c[i];
-        }
+        cout<<s;
         cout<<'\n';
         return ;
     }
     if(l<n)
     {
-        c[t]='(';
+        // c[t]='(';
+        s+='(';
         f(t+1,l+1,r);
+        s.pop_back();
     }
     if(r<l)
     {
-        c[t]=')';
+        s+=')';
+        // c[t]=')';
         f(t+1,l,r+1);
+        s.pop_back();
     }
     return ;
 }
