@@ -47,8 +47,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 bool pr1[maxn],pr2[maxn];
-// bitset<maxn> p1,p2;
-vector<bool> p1(maxn),p2(maxn);
+bitset<maxn> p1,p2;
 void f1() {
     auto st=clock();
     pr1[0]=pr1[1]=1;
