@@ -96,9 +96,9 @@ signed main() {
             }
             if(p) ok=0;
             REP(j,n) s+=((i>>j)&1?'(':')');
-            if(ok) cout<<s<<'\n';
+            if(ok) outs(s);
         }
-        cout<<'\n';
+        PC('\n');
     }
     return 0;
 }
