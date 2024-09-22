@@ -53,7 +53,7 @@ void solve(int C) {
         cin>>x;
         chmin(mn,x);
     }
-    int t=mn*max(n*2-3,1);
+    int t=mn*max(n*2-3,1ll);
     cout<<"Case #"<<C<<": ";
     if(t<=k) cout<<"YES\n";
     else cout<<"NO\n";
