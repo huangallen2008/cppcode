@@ -53,15 +53,10 @@ void f1() {
     pr1[0]=pr1[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!pr1[i]) {
-            // for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
-            //     if(!pr1[j]) {
-            //         pr1[k]=1;
-            //     }
-            // }
-            for(int k=i*i;k<maxn;k+=i) {
-                // if(!pr1[j]) {
+            for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
+                if(!pr1[j]) {
                     pr1[k]=1;
-                // }
+                }
             }
         }
     }
