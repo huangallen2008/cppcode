@@ -134,6 +134,7 @@ signed main() {
         bit.ud(a[i],1);
     }
     sort(ALL(b));
+    for(auto [x,y]:b) cout<<"{"<<x<<' '<<y<<"} ";entr
     seg.init(n,b);
     Vi an(n);
     REP(i,n) {
