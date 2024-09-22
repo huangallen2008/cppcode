@@ -133,6 +133,7 @@ signed main() {
         b[a[i]]=bit.qu(max(0ll,a[i]-k),min(maxv-1,a[i]+k));
         bit.ud(a[i],1);
     }
+    REP1(i,4) cout<<b[i]<<' ';entr
     seg.init(maxn,b);
     Vi an(n);
     REP(i,n) {
