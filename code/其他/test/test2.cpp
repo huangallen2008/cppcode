@@ -59,9 +59,9 @@ void f1() {
             //     }
             // }
             for(int j=i,k=i*i;k<maxn;j++,k+=i) {
-                if(!pr1[j]) {
+                // if(!pr1[j]) {
                     pr1[k]=1;
-                }
+                // }
             }
         }
     }
