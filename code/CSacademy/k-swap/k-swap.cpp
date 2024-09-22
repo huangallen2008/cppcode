@@ -140,8 +140,10 @@ signed main() {
     REP(i,n) {
         int id=seg.qu();
         an[i]=b[id].f;
-        seg.ud(0,max(0ll,id-k-1),-1);
-        seg.ud(min(maxv-1,id+1+k),maxv-1,-1);
+        int il=lower_bound(ALL(b),pii{id-k,-inf})-b.begin()-1;
+        int ir=lower_bound(ALL(b),pii{id+k,inf})-b.begin();
+        seg.ud(0,il,-1);
+        seg.ud(ir,n-1,-1);
         seg.ud(id,id,inf);
     }
     REP(i,n) cout<<an[i]<<' ';
