@@ -106,8 +106,6 @@ void f4() {
 }
 signed main() {
     IOS(); 
-    op(sizeof(p1))
-    op(sizeof(pr1))
     op(1)f1();
     op(2)f2();
     op(3)f3();
