@@ -48,7 +48,7 @@ int rd(int l,int r) {
 bool pr1[maxn],pr2[maxn];
 void f1() {
     auto st=clock();
-    pr[0]=pr[1]=1;
+    pr1[0]=pr1[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!pr1[i]) {
             for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
