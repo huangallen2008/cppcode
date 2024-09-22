@@ -65,7 +65,7 @@ struct SEG {
     int n;
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            s[w]=a[l];
+            s[w].mn=a[l];
             return;
         }
         int m=l+r>>1;
