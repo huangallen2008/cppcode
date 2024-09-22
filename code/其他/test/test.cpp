@@ -44,63 +44,30 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
-}
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
+void solve(int C) {
+    int n,k;
+    cin>>n>>k;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    sort(ALL(a));
+    int cnt=0;
+    REP(i,n) {
+        if(k>=a[i]) {
+            k-=a[i];
+            cnt++;
+        }
     }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC('\n');
-}
-inline void outs(string &s) {
-    for(char &c:s) PC(c);
-    PC('\n');
-}
-int n;
-string s;
-void f(int u,int p) {
-    if(p<0||p>(n-u)) return;
-    if(u==n) {
-        cout<<s<<'\n';;
-        return;
+    if(n>1) {
+        k=min(n,k+1);
     }
-    s+='(';
-    f(u+1,p+1);
-    s.pop_back();
-    s+=')';
-    f(u+1,p-1);
-    s.pop_back();
+    cout<<"Case #"<<C<<": ";
+    if(k==n) cout<<"YES\n";
+    else cout<<"NO\n";
 }
 signed main() {
-    // IOS(); 
-    while(cin>>n)
-    {
-        n<<=1;
-        f(0,0);
-        cout<<'\n';
-    }
+    IOS(); 
+    int T;
+    cin>>T;
+    REP1(i,T) solve(i);
     return 0;
 }
