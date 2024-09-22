@@ -84,7 +84,7 @@ string s;
 void f(int u,int p) {
     if(p<0||p>(n-u)) return;
     if(u==n) {
-        outs(s);
+        cout<<s<<'\n';;
         return;
     }
     s+='(';
@@ -100,7 +100,7 @@ signed main() {
     {
         n<<=1;
         f(0,0);
-        PC('\n');
+        cout<<'\n';
     }
     return 0;
 }
