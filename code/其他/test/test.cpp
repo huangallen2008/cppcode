@@ -50,6 +50,7 @@ signed main() {
     IOS(); 
     while(cin>>n)
     {
+        n<<=1;
         REP(i,1<<n) {
             string s;
             int p=0;
