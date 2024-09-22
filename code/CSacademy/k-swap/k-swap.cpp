@@ -134,7 +134,6 @@ signed main() {
         bit.ud(a[i],1);
     }
     sort(ALL(b));
-    for(auto [x,y]:b) cout<<"{"<<x<<' '<<y<<"} ";entr
     seg.init(n,b);
     Vi an(n);
     REP(i,n) {
@@ -145,7 +144,6 @@ signed main() {
         seg.ud(0,il,-1);
         seg.ud(ir,n-1,-1);
         seg.ud(id,id,inf);
-        op(il)op(ir)ope(id)
     }
     REP(i,n) cout<<an[i]<<' ';
     cout<<'\n';
