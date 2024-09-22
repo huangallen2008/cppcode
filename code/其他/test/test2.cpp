@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 bool pr1[maxn],pr2[maxn];
-void f1(int n) {
+void f1() {
     auto st=clock();
     pr[0]=pr[1]=1;
     for(int i=2;i<maxn;i++) {
@@ -60,7 +60,7 @@ void f1(int n) {
     }
     cout<<fixed<<setprecision(3)<<(ld)(clock()-st)/CLOCKS_PER_SEC<<'\n';
 }
-void f2(int n) {
+void f2() {
     auto st=clock();
     pr2[0]=pr2[1]=1;
     for(int i=2;i<maxn;i++) {
