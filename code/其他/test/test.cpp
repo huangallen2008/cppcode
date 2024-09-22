@@ -47,21 +47,15 @@ int rd(int l,int r) {
 void solve(int C) {
     int n,k;
     cin>>n>>k;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    sort(ALL(a));
-    int cnt=0;
+    int mn=inf;
     REP(i,n) {
-        if(k>=a[i]) {
-            k-=a[i];
-            cnt++;
-        }
+        int x;
+        cin>>x;
+        chmin(mn,x);
     }
-    if(n>1) {
-        cnt=min(n,cnt+1);
-    }
+    int t=mn*(n*2-1);
     cout<<"Case #"<<C<<": ";
-    if(cnt==n) cout<<"YES\n";
+    if(t<=k) cout<<"YES\n";
     else cout<<"NO\n";
 }
 signed main() {
