@@ -95,7 +95,7 @@ void f(int u,int p) {
     s.pop_back();
 }
 signed main() {
-    IOS(); 
+    // IOS(); 
     while(cin>>n)
     {
         n<<=1;
