@@ -16,3 +16,7 @@ z g() {
 main() { 
     for (cin >> t; t--; puts((cin >> n, g() == g() ? "YES" : "NO"))); 
 }
+/*
+  code from Alphanumeric (https://cses.fi/problemset/hack/1700/entry/10552080/) 
+  & tingpeng1055 (https://cses.fi/problemset/hack/1700/entry/10550884/)
+*/
