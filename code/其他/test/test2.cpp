@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-using namespace std,z = int;
+using namespace std;
+using z = int;
 z t, n, u, v;
 vector<set<z>> e;
 z f(z x) {
@@ -13,5 +14,5 @@ z g() {
   return f(1);
 }
 main() { 
-    for (cin >> t; t--; puts((cin >> n, g() ^ g() ? "NO" : "YES"))); 
+    for (cin >> t; t--; puts(cin >> n, g() ^ g() ? "NO" : "YES")); 
 }
