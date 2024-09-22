@@ -51,7 +51,7 @@ void f1() {
     pr[0]=pr[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!pr1[i]) {
-            for(int j=(maxsn-1)/i,k=j*i;k>=i;j--,k-=i) {
+            for(int j=(maxn-1)/i,k=j*i;k>=i;j--,k-=i) {
                 if(!pr1[j]) {
                     pr1[k]=1;
                 }
