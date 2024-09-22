@@ -139,8 +139,8 @@ signed main() {
     REP(i,n) {
         int id=seg.qu();
         an[i]=id;
-        seg.ud(0,max(0ll,id-k),-1);
-        seg.ud(min(maxv-1,id+k),maxv-1,-1);
+        seg.ud(0,max(0ll,id-k-1),-1);
+        seg.ud(min(maxv-1,id+1+k),maxv-1,-1);
         seg.ud(id,id,inf);
     }
     REP(i,n) cout<<an[i]<<' ';
