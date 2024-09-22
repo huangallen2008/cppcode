@@ -39,7 +39,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=5;
-const int maxv=1e5+5;
+const int maxv=5e5+5;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
