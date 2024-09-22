@@ -99,7 +99,7 @@ signed main() {
     while(cin>>n)
     {
         n<<=1;
-        f(0,n);
+        f(0,0);
         PC('\n');
     }
     return 0;
