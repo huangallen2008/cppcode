@@ -130,7 +130,7 @@ signed main() {
     bit.init(maxv);
     Vi b(maxn,inf);
     REP(i,n) {
-        b[a[i]]=bit.qu(max(0ll,a[i]-k),min(maxv-1,a[i]+k));
+        b[a[i]]=i-bit.qu(max(0ll,a[i]-k),min(maxv-1,a[i]+k));
         bit.ud(a[i],1);
     }
     REP1(i,4) cout<<b[i]<<' ';entr
