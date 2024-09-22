@@ -140,8 +140,8 @@ signed main() {
     REP(i,n) {
         int id=seg.qu();
         an[i]=b[id].f;
-        int il=lower_bound(ALL(b),pii{id-k,-inf})-b.begin()-1;
-        int ir=lower_bound(ALL(b),pii{id+k,inf})-b.begin();
+        int il=lower_bound(ALL(b),pii{b[id].f-k,-inf})-b.begin()-1;
+        int ir=lower_bound(ALL(b),pii{b[id].f+k,inf})-b.begin();
         seg.ud(0,il,-1);
         seg.ud(ir,n-1,-1);
         seg.ud(id,id,inf);
