@@ -40,7 +40,6 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int inf=(1ll<<50);
-int n;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -80,24 +79,27 @@ inline void outs(string &s) {
     for(char &c:s) PC(c);
     PC('\n');
 }
+int n;
+string s;
+void f(int u,int p) {
+    if(p<0||p>(n-u)) return;
+    if(u==n) {
+        outs(s);
+        return;
+    }
+    s+='(';
+    f(u+1,p+1);
+    s.pop_back();
+    s+=')';
+    f(u+1,p-1);
+    s.pop_back();
+}
 signed main() {
     IOS(); 
     while(cin>>n)
     {
         n<<=1;
-        REP(i,1<<n) {
-            string s;
-            int p=0;
-            bool ok=1;
-            REP(j,n) {
-                if((i>>j)&1) p++;
-                else p--;
-                if(p<0) ok=0;
-            }
-            if(p) ok=0;
-            REP(j,n) s+=((i>>j)&1?'(':')');
-            if(ok) outs(s);
-        }
+        f(0,n);
         PC('\n');
     }
     return 0;
