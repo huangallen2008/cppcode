@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=2e7;
 const int sqn=sqrt(maxn)+1;
-const int sn=sqn;//sqrt(maxn)+1;
+const int sn=maxn;//sqrt(maxn)+1;
 // const int nn=;
 
 const int inf=(1ll<<50);
