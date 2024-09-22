@@ -95,7 +95,7 @@ void f4() {
     p2[0]=p2[1]=1;
     for(int i=2;i<sn;i++) {
         if(!p2[i]) {
-            for(int j=i*i;j<=maxn;j++) {
+            for(int j=i*i;j<=maxn;j+=i) {
                 // if(!pr2[j]) {
                     p2[j]=1;
                 // }
