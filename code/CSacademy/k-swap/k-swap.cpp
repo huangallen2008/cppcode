@@ -140,7 +140,7 @@ signed main() {
         an[i]=id;
         seg.ud(0,max(0ll,id-k),-1);
         seg.ud(min(maxv-1,id+k),maxv-1,-1);
-        seg.ud(id,inf);
+        seg.ud(id,id,inf);
     }
     REP(i,n) cout<<an[i]<<' ';
     cout<<'\n';
