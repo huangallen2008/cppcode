@@ -54,7 +54,7 @@ signed main() {
             string s;
             int p=0;
             bool ok=1;
-            REP(i,n) {
+            REP(j,n) {
                 if((i>>j)&1) p++;
                 else p--;
                 if(p<0) ok=0;
