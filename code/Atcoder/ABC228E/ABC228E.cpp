@@ -55,6 +55,7 @@ int pw(int x,int p) {
     return r;
 }
 int pwm(int x,int p) {
+    if(x==0) return 0;
     int r=1;
     while(p>0) {
         if(p&1) r=r*x%modm;
