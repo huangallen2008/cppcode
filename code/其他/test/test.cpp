@@ -44,28 +44,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve(int C) {
-    int n,k;
-    cin>>n>>k;
-    int mn=inf;
-    REP(i,n) {
-        int x;
-        cin>>x;
-        chmin(mn,x);
-    }
-    int t=mn*max(n*2-3,1ll);
-    cout<<"Case #"<<C<<": ";
-    if(t<=k) cout<<"YES\n";
-    else cout<<"NO\n";
-}
 signed main() {
     IOS(); 
-    #ifdef LOCAL
-        freopen("in1.txt","r",stdin);
-        freopen("out.txt","w",stdout);
-    #endif
-    int T;
-    cin>>T;
-    REP1(i,T) solve(i);
+    int x,an=0;
+    while(cin>>x) an^=x;
+    cout<<an<<'\n';
     return 0;
 }
