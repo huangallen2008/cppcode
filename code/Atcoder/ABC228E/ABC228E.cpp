@@ -46,6 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int pw(int x,int p) {
+    x%=mod;
     if(x==0) return 0;
     int r=1;
     while(p>0) {
@@ -56,6 +57,7 @@ int pw(int x,int p) {
     return r;
 }
 int pwm(int x,int p) {
+    x%=modm;
     if(x==0) return 0;
     int r=1;
     while(p>0) {
@@ -69,8 +71,6 @@ signed main() {
     IOS(); 
     int n,m,k;
     cin>>n>>k>>m;
-    m%=mod;
-    k%=modm;
     cout<<pw(m,pwm(k,n))<<'\n';
     return 0;
 }
