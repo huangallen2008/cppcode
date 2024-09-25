@@ -67,6 +67,6 @@ signed main() {
     IOS(); 
     int n,m,k;
     cin>>n>>k>>m;
-    cout<<pw(m,pwm(n,k))<<'\n';
+    cout<<pw(m,pwm(k,n))<<'\n';
     return 0;
 }
