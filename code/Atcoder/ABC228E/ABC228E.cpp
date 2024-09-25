@@ -70,6 +70,7 @@ signed main() {
     cin>>n>>k>>m;
     m%=mod;
     k%=modm;
+    op(n)op(m)op(k)
     cout<<pw(m,pwm(k,n))<<'\n';
     return 0;
 }
