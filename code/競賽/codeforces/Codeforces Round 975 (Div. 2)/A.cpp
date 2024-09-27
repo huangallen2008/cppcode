@@ -54,7 +54,7 @@ void solve() {
     int an=1;
     REP(i,n) {
         if(a[i]==mx) {
-            chmax(an,1+(i>>1)+(n-i-1>>1));
+            chmax(an,mx+1+(i>>1)+(n-i-1>>1));
         }
     }
     cout<<an<<'\n';
