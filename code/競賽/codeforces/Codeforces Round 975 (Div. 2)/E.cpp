@@ -45,12 +45,28 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dep;
+Vi dep,val;
 Graph g;
-void dfs(int u,int pa) {
+void dfs0(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
-        dep[v]=dep[u]+1;
+        lev[v]=lev[u]+1;
+        dfs(v,u);
+        chmax(dep[u],dep[v]+1);
+    }
+}
+void dfs(int u,int pa) {
+    int mx=0;
+    for(int v:g[u]) if(v!=pa) chmax(mx,dep[v]);
+    for(int v:g[u]) {
+        if(v==pa) continue;
+        if(dep[v]==mx) {
+            val[v]=val[u]+1;
+            break;
+        }
+    }
+    for(int v:g[u]) {
+        if(v==pa) continue;
         dfs(v,u);
     }
 }
@@ -58,21 +74,20 @@ void solve() {
     int n;
     cin>>n;
     g=Graph(n);
-    dep=Vi(n);
+    dep=lev=Vi(n);
+    val=Vi(n,1);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
         g[u].pb(v);
         g[v].pb(u);
     }
+    dfs0(0,-1);
     dfs(0,-1);
-    int mn=inf;
-    REP1(i,n-1) {
-        if(g[i].size()==1) chmin(mn,dep[i]);
-    }
-    int cnt=0;
-    REP(i,n) cnt+=dep[i]>mn;
-    cout<<cnt<<'\n';
+    Vi c(n);
+    REP(i,n) c[lev[i]]+=val[i];
+    int an=*max_element(ALL(c));
+    cout<<an<<'\n';
 }
 signed main() {
     IOS(); 
