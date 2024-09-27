@@ -45,7 +45,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dep,val;
+Vi dep,val,lev;
 Graph g;
 void dfs0(int u,int pa) {
     for(int v:g[u]) {
