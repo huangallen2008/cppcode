@@ -56,7 +56,6 @@ void solve() {
         chmax(mx[a[i]],i);
         chmin(mn[a[i]],i);
     }
-    oparr(mx)oparr(mn)
     bool ok=1;
     int an=-1;
     int tx=0,tn=inf;
