@@ -84,7 +84,7 @@ void solve() {
     }
     dfs0(0,-1);
     dfs(0,-1);
-    oparr(val)oparr(lev)
+    // oparr(val)oparr(lev)
     Vi c(n);
     REP(i,n) c[lev[i]]+=val[i];
     int an=n-*max_element(ALL(c));
