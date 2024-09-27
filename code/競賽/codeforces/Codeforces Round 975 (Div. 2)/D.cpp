@@ -72,11 +72,11 @@ void solve() {
         if(tx-tn>i) an.f=inf;
         int dif=i-(tx-tn);
         upd(tn-dif,tx+dif);
-        cout<<an.f<<' '<<an.s<<'\n';
+        // cout<<an.f<<' '<<an.s<<'\n';
     }
     int ans=max(0ll,an.s-an.f+1);
     cout<<ans<<'\n';
-    entr
+    // entr
 }
 signed main() {
     IOS(); 
