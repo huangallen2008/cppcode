@@ -67,6 +67,7 @@ void solve() {
             ok=0;
             break;
         }
+        op(i)op(tx-tn)entr
         if(tx-tn==i) {
             if(an!=-1) {
                 an=tx-tn+1;
