@@ -70,7 +70,6 @@ void solve() {
         if(tx-tn==i) {
             if(an==-1) {
                 an=tx-tn+1;
-                ope(an)
             }
         }
     }
