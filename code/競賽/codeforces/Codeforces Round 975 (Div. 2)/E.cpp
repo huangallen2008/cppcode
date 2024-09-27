@@ -51,7 +51,7 @@ void dfs0(int u,int pa) {
     for(int v:g[u]) {
         if(v==pa) continue;
         lev[v]=lev[u]+1;
-        dfs(v,u);
+        dfs0(v,u);
         chmax(dep[u],dep[v]+1);
     }
 }
