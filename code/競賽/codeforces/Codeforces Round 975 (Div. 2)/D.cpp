@@ -61,19 +61,19 @@ void solve() {
     bool ok=1;
     int an=-1;
     int tx=0,tn=inf;
+    pii an={0,n-1};
+    auto upd=[&](int l,int r) {
+        chmax(an.f,l);
+        chmin(an.s,r);
+    };
     REP(i,n) {
         chmax(tx,mx[i]);
         chmin(tn,mn[i]);
-        if(tx-tn>i) {
-            ok=0;
-            break;
-        }
-        if(tx-tn<=i) {
-            an=i+1;
-        }
+        int dif=i-(tx-tn);
+        upd(tn-dif,tx+dif);
     }
-    if(!ok) an=0;
-    cout<<an<<'\n';
+    int ans=max(0ll,an.s-an.f);
+    cout<<ans<<'\n';
 }
 signed main() {
     IOS(); 
