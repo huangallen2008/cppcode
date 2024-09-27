@@ -48,30 +48,27 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi a(n),c(n);
+    Vi a(n);
     REP(i,n) cin>>a[i],a[i]--;
     Vi mx(n+1);
     Vi mn(n+1,inf);
     REP(i,n) {
         chmax(mx[a[i]],i);
         chmin(mn[a[i]],i);
-        c[a[i]]++;
         op(i)op(mx[a[i]])ope(mn[a[i]])
     }
     // oparr(mx)oparr(mn)
     bool ok=1;
     int an=-1;
     int tx=0,tn=inf;
-    int cnt=0;
     REP(i,n) {
-        cnt+=c[i];
         chmax(tx,mx[i]);
         chmin(tn,mn[i]);
-        if(tx-tn>cnt) {
+        if(tx-tn>i) {
             ok=0;
             break;
         }
-        if(tx-tn==cnt) {
+        if(tx-tn==i) {
             if(an==-1) {
                 an=tx-tn+1;
             }
