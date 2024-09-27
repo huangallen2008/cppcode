@@ -73,7 +73,7 @@ void solve() {
         upd(tn-dif,tx+dif);
         cout<<an.f<<' '<<an.s<<'\n';
     }
-    int ans=max(0ll,an.s-an.f);
+    int ans=max(0ll,an.s-an.f+1);
     cout<<ans<<'\n';
     entr
 }
