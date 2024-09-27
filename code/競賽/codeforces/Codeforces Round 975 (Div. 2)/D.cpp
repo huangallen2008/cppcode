@@ -59,7 +59,7 @@ void solve() {
     }
     // oparr(mx)oparr(mn)
     bool ok=1;
-    int an=-1;
+    // int an=-1;
     int tx=0,tn=inf;
     pii an={0,n-1};
     auto upd=[&](int l,int r) {
