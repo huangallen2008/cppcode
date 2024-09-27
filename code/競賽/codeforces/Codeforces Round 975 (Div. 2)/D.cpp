@@ -67,9 +67,8 @@ void solve() {
             ok=0;
             break;
         }
-        op(i)op(tx-tn)entr
         if(tx-tn==i) {
-            if(an!=-1) {
+            if(an==-1) {
                 an=tx-tn+1;
                 ope(an)
             }
@@ -77,7 +76,6 @@ void solve() {
     }
     if(!ok) an=0;
     cout<<an<<'\n';
-    entr
 }
 signed main() {
     IOS(); 
