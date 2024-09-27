@@ -71,9 +71,11 @@ void solve() {
         chmin(tn,mn[i]);
         int dif=i-(tx-tn);
         upd(tn-dif,tx+dif);
+        cout<<an.f<<' '<<an.s<<'\n';
     }
     int ans=max(0ll,an.s-an.f);
     cout<<ans<<'\n';
+    entr
 }
 signed main() {
     IOS(); 
