@@ -87,7 +87,7 @@ void solve() {
     oparr(val)oparr(lev)
     Vi c(n);
     REP(i,n) c[lev[i]]+=val[i];
-    int an=*max_element(ALL(c));
+    int an=n-*max_element(ALL(c));
     cout<<an<<'\n';
 }
 signed main() {
