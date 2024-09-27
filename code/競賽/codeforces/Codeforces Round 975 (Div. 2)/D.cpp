@@ -68,11 +68,15 @@ void solve() {
             break;
         }
         if(tx-tn==i) {
-            if(an!=-1) an=tx-tn+1;
+            if(an!=-1) {
+                an=tx-tn+1;
+                ope(an)
+            }
         }
     }
     if(!ok) an=0;
     cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS(); 
