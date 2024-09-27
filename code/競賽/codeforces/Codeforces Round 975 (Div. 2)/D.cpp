@@ -57,7 +57,7 @@ void solve() {
         chmin(mn[a[i]],i);
         op(i)op(mx[a[i]])ope(mn[a[i]])
     }
-    oparr(mx)oparr(mn)
+    // oparr(mx)oparr(mn)
     bool ok=1;
     int an=-1;
     int tx=0,tn=inf;
