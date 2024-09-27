@@ -55,7 +55,7 @@ void solve() {
     int re=0;
     REP(i,n) re+=mx-a[i];
     RREP1(i,n) {
-        int add=i-sum%i;
+        int add=((-sum)%i+i)%i;
         if(add>k) continue;
         int nx=mx+(max(0ll,add-re)+n-1)/n;
         if((sum+add)/i>=nx) {
