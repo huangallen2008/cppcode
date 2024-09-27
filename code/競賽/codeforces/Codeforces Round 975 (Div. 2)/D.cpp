@@ -55,7 +55,7 @@ void solve() {
     REP(i,n) {
         chmax(mx[a[i]],i);
         chmin(mn[a[i]],i);
-        op(i)op(mx[a[i]])ope(mn[a[i]])
+        // op(i)op(mx[a[i]])ope(mn[a[i]])
     }
     // oparr(mx)oparr(mn)
     bool ok=1;
