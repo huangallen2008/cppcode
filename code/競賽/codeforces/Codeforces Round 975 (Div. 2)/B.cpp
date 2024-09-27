@@ -52,7 +52,10 @@ void solve() {
     REP(i,n) cin>>a[i];
     map<int,int> mp;
     REP1(i,n-1) {
-        mp[i*(n-i)]+=a[i]-a[i-1];
+        mp[i*(n-i)]+=a[i]-a[i-1]-1;
+    }
+    REP(i,n) {
+        mp[(i+1)*(n-i)-1]++;
     }
     REP(i,q) {
         int m;
