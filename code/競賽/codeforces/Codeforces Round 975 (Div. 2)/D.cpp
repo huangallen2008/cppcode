@@ -68,14 +68,11 @@ void solve() {
             ok=0;
             break;
         }
-        if(tx-tn==i) {
-            if(an==-1) {
-                an=tx-tn+1;
-            }
+        if(tx-tn<=i) {
+            an=i+1;
         }
     }
     if(!ok) an=0;
-    if(an==-1) an=n;
     cout<<an<<'\n';
 }
 signed main() {
