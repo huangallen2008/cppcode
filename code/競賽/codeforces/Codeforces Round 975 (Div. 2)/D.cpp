@@ -75,6 +75,7 @@ void solve() {
         }
     }
     if(!ok) an=0;
+    if(an==-1) an=n;
     cout<<an<<'\n';
 }
 signed main() {
