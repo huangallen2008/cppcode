@@ -57,6 +57,7 @@ void solve() {
     RREP1(i,n) {
         int add=((-sum)%i+i)%i;
         if(add>k) continue;
+        add=add+(k-add)/i*i;
         int nx=mx+(max(0ll,add-re)+n-1)/n;
         if((sum+add)/i>=nx) {
             cout<<i<<'\n';
