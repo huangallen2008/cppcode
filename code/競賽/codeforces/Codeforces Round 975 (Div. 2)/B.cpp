@@ -57,8 +57,9 @@ void solve() {
     REP(i,q) {
         int m;
         cin>>m;
-        cout<<mp[m]<<'\n';
+        cout<<mp[m]<<' ';
     }
+    cout<<'\n';
 }
 signed main() {
     IOS(); 
