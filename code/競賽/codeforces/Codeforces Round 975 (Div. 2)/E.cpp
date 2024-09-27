@@ -57,7 +57,7 @@ void dfs(int u,int pa) {
 void solve() {
     int n;
     cin>>n;
-    g=graph(n);
+    g=Graph(n);
     dep=Vi(n);
     REP(i,n-1) {
         int u,v;
