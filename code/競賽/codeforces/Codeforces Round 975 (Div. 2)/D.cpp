@@ -69,6 +69,7 @@ void solve() {
     REP(i,n) {
         chmax(tx,mx[i]);
         chmin(tn,mn[i]);
+        if(tx-tn>i) an.f=inf;
         int dif=i-(tx-tn);
         upd(tn-dif,tx+dif);
         cout<<an.f<<' '<<an.s<<'\n';
