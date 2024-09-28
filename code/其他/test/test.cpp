@@ -66,7 +66,7 @@ signed main() {
             }
             else {
                 int ic=id[c],ib=id[b];
-                for(int i=ic+1;i<=ib;i++) {
+                for(int i=ic+1;i<ib;i++) {
                     swap(id[a[i]],id[a[i-1]]);
                     swap(a[i],a[i-1]);
 
