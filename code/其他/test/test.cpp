@@ -46,8 +46,16 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    int x,an=0;
-    while(cin>>x) an^=x;
-    cout<<an<<'\n';
+    int a,b,k;
+    cin>>a>>b>>k;
+    if(a>b) swap(a,b);
+    if(k>b-a) cout<<1e9+1<<'\n';
+    else if(k==b-a) cout<<b+1<<'\n';
+    else {
+        if((b-a-k)&1) cout<<1e9+1<<'\n';
+        else {
+            cout<<a+(b-a-k>>1)<<'\n';
+        }
+    }
     return 0;
 }
