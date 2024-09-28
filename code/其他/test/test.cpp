@@ -50,7 +50,7 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n+1),id(n+1);
-    REP(i,n) a[i]=i,id[i]=i;
+    REP1(i,n) a[i]=i,id[i]=i;
     int opt;
     while(cin>>opt) {
         if(opt==3) break;
