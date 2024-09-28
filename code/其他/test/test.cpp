@@ -66,7 +66,7 @@ signed main() {
     int an=1;
     REP1(x2,n-1) {
         REP(x1,x2) {
-            chmax(an,__gcd(__gcd(qu(0,x1-1),qu(x1+1,x2-1)),qu(x2+1,n-1);));
+            chmax(an,__gcd(__gcd(qu(0,x1-1),qu(x1+1,x2-1)),qu(x2+1,n-1)));
         }
     }
     cout<<an<<'\n';
