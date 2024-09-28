@@ -58,6 +58,7 @@ signed main() {
         if(opt==1) {
             int x,y;
             cin>>x>>y;
+            if(x==y) continue;
             int nx=nxt[x],px=pre[x];
             nxt[x]=y;
             pre[x]=pre[y];
@@ -75,6 +76,6 @@ signed main() {
         }
         // REP1(i,n) cout<<a[i]<<' ';entr
     }
-    oparr(nxt)oparr(pre)
+    // oparr(nxt)oparr(pre)
     return 0;
 }
