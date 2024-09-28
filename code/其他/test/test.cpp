@@ -78,7 +78,7 @@ signed main() {
             cin>>p;
             cout<<a[p]<<'\n';
         }
-        REP1(i,n) cout<<a[i]<<' ';entr
+        // REP1(i,n) cout<<a[i]<<' ';entr
     }
     return 0;
 }
