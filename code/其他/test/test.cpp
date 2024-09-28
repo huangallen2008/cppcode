@@ -58,7 +58,7 @@ signed main() {
             s[i][j]=__gcd(s[i-1][j],s[i-1][min(j+(1<<i-1),n-1)]);
         }
     }
-    auto qu=[&](int l,int r) {
+    int qu=[&](int l,int r) {
         if(l>r) return 0;
         int lg=__lg(r-l+1);
         return __gcd(s[lg][l],s[lg][r-(1<<lg)+1]);
