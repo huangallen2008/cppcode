@@ -49,8 +49,8 @@ signed main() {
     IOS(); 
     int n;
     cin>>n;
-    Vi nxt(n+1),pre(n+1);
-    nxt[0]=1;
+    Vi nxt(n+2),pre(n+2);
+    nxt[0]=1,pre[n+1]=n;
     REP1(i,n) nxt[i]=i+1,pre[i]=i-1;
     int opt;
     while(cin>>opt) {
