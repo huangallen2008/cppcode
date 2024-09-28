@@ -45,24 +45,26 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+vector<Vi> s;
+int qu(int l,int r) {
+    if(l>r) return 0;
+    int lg=__lg(r-l+1);
+    return (int)(__gcd(s[lg][l],s[lg][r-(1<<lg)+1]));
+}
 signed main() {
     IOS(); 
     int n;
     cin>>n;
     Vi a(n+1);
     REP(i,n) cin>>a[i];
-    vector<Vi> s(maxb,Vi(n));
+    // vector<Vi> 
+    s=vector<Vi>(maxb,Vi(n));
     REP(i,n) s[0][i]=a[i];
     REP1(i,maxb-1) {
         REP(j,n) {
             s[i][j]=__gcd(s[i-1][j],s[i-1][min(j+(1<<i-1),n-1)]);
         }
     }
-    auto qu=[&](int l,int r) {
-        if(l>r) return 0;
-        int lg=__lg(r-l+1);
-        return (int)(__gcd(s[lg][l],s[lg][r-(1<<lg)+1]));
-    };
     int an=1;
     REP1(x2,n-1) {
         REP(x1,x2) {
