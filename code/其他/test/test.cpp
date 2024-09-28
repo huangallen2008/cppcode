@@ -49,34 +49,29 @@ signed main() {
     IOS(); 
     int n;
     cin>>n;
-    Vi a(n+1),id(n+1);
-    REP1(i,n) a[i]=i,id[i]=i;
+    Vi nxt(n+1),pre(n+1);
+    nxt[0]=1;
+    REP1(i,n) nxt[i]=i+1,pre[i]=i-1;
     int opt;
     while(cin>>opt) {
         if(opt==3) break;
         if(opt==1) {
-            int c,b;
-            cin>>c>>b;
-            if(id[c]>id[b]) {
-                int ia=id[c],ib=id[b];
-                for(int i=ia;i>ib;i--) {
-                    swap(id[a[i]],id[a[i-1]]);
-                    swap(a[i],a[i-1]);
-                }
-            }
-            else {
-                int ic=id[c],ib=id[b];
-                for(int i=ic+1;i<ib;i++) {
-                    swap(id[a[i]],id[a[i-1]]);
-                    swap(a[i],a[i-1]);
-
-                }
-            }
+            int x,y;
+            cin>>x>>y;
+            int nx=nxt[x],px=pre[x];
+            nxt[x]=y;
+            pre[x]=pre[y];
+            nxt[pre[y]]=x;
+            pre[y]=x;
+            nxt[px]=nx;
+            pre[nx]=px;
         }
         if(opt==2) {
             int p;
             cin>>p;
-            cout<<a[p]<<'\n';
+            int t=0;
+            REP(i,p) t=nxt[t];
+            cout<<t<<'\n';
         }
         // REP1(i,n) cout<<a[i]<<' ';entr
     }
