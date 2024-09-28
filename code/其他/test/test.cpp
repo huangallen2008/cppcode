@@ -58,7 +58,7 @@ signed main() {
         if(opt==1) {
             int x,y;
             cin>>x>>y;
-            if(x==y) continue;
+            if(nxt[x]==y) continue;
             int nx=nxt[x],px=pre[x];
             nxt[x]=y;
             pre[x]=pre[y];
