@@ -50,7 +50,6 @@ signed main() {
     cin>>a>>b>>k;
     if(a>b) swap(a,b);
     if(k>b-a) cout<<inf<<'\n';
-    else if(k==b-a) cout<<b+1<<'\n';
     else {
         if((b-a-k)&1) cout<<inf<<'\n';
         else {
