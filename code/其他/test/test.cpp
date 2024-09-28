@@ -45,32 +45,31 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-vector<Vi> s;
-int qu(int l,int r) {
-    if(l>r) return 0;
-    int lg=__lg(r-l+1);
-    return (int)(__gcd(s[lg][l],s[lg][r-(1<<lg)+1]));
-}
 signed main() {
     IOS(); 
     int n;
     cin>>n;
-    Vi a(n+1);
-    REP(i,n) cin>>a[i];
-    // vector<Vi> 
-    s=vector<Vi>(maxb,Vi(n));
-    REP(i,n) s[0][i]=a[i];
-    REP1(i,maxb-1) {
-        REP(j,n) {
-            s[i][j]=(s[i-1][j]|s[i-1][min(j+(1<<i-1),n-1)]);
+    Vi a(n+1),id(n+1);
+    REP(i,n) a[i]=i,id[i]=i;
+    int opt;
+    while(cin>>opt) {
+        if(opt==3) break;
+        if(opt==1) {
+            int a,b;
+            cin>>a>>b;
+            if(id[a]>id[b]) {
+                int ia=id[a],ib=id[b];
+                for(int i=ia;i>ib;i--) {
+                    swap(id[a[i]],id[a[i-1]]);
+                    swap(a[i],a[i-1]);
+                }
+            }
         }
-    }
-    int q;
-    cin>>q;
-    REP(i,q) {
-        int l,r;
-        cin>>l>>r,l--,r--;
-        cout<<qu(l,r)<<'\n';
+        if(opt==2) {
+            int p;
+            cin>>p;
+            cout<<a[p]<<'\n';
+        }
     }
     return 0;
 }
