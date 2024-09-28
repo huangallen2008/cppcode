@@ -39,6 +39,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=5;
+const int maxb=13;
 const int inf=1e9+1;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -46,15 +47,28 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    int a,b,k;
-    cin>>a>>b>>k;
-    if(a>b) swap(a,b);
-    if(k>b-a) cout<<inf<<'\n';
-    else {
-        if((b-a-k)&1) cout<<inf<<'\n';
-        else {
-            cout<<a+(b-a-k>>1)<<'\n';
+    int n;
+    cin>>n;
+    Vi a(n+1);
+    REP(i,n) cin>>a[i];
+    vector<Vi> s(maxb,Vi(n));
+    REP(i,n) s[0][i]=a[i];
+    REP1(i,maxb-1) {
+        REP(j,n) {
+            s[i][j]=__gcd(s[i-1][j],s[i-1][min(j+(1<<i-1),n-1)])
         }
     }
+    auto qu=[&](int l,int r) {
+        if(l>r) return 0;
+        int lg=__lg(r-l+1);
+        return __gcd(s[lg][l],s[lg][r-(1<<lg)+1]);
+    };
+    int an=1;
+    REP1(x2,n-1) {
+        REP(x1,x2) {
+            chmax(an,__gcd(__gcd(qu(0,x1-1),qu(x1+1,x2-1)),qu(x2+1,n-1)));
+        }
+    }
+    cout<<an<<'\n';
     return 0;
 }
