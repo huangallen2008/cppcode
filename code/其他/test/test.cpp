@@ -75,5 +75,6 @@ signed main() {
         }
         // REP1(i,n) cout<<a[i]<<' ';entr
     }
+    oparr(nxt)oparr(pre)
     return 0;
 }
