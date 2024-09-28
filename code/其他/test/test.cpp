@@ -39,7 +39,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=5;
-const int inf=(1ll<<50);
+const int inf=1e9+1;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -49,10 +49,10 @@ signed main() {
     int a,b,k;
     cin>>a>>b>>k;
     if(a>b) swap(a,b);
-    if(k>b-a) cout<<1e9+1<<'\n';
+    if(k>b-a) cout<<inf<<'\n';
     else if(k==b-a) cout<<b+1<<'\n';
     else {
-        if((b-a-k)&1) cout<<1e9+1<<'\n';
+        if((b-a-k)&1) cout<<inf<<'\n';
         else {
             cout<<a+(b-a-k>>1)<<'\n';
         }
