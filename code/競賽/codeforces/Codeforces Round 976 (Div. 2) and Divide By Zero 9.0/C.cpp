@@ -57,7 +57,7 @@ void solve() {
             ok=0;
             break;
         }
-        if(ci==di) an|=1<<i; 
+        if(ci==di) an|=1ll<<i; 
     }
     if(ok)cout<<an<<'\n';
     else cout<<"-1\n";
