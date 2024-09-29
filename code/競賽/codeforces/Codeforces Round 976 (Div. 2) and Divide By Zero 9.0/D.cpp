@@ -84,7 +84,7 @@ void solve() {
     REP1(d,10) {
         REP(id,d) {
             int pr=0;
-            REP(i,n) {
+            REP(i,n/d+1) {
                 pr+=p[d][id][i];
                 if(pr>0) dsu.merge(i*d+id,(i+1)*d+id);
             }
