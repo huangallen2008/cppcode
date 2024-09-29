@@ -71,6 +71,20 @@ signed main() {
             for(int j=i+i;j<maxv;j+=i) isp[j]=0;
         }
     }
+    REP1(i,100) {
+        cout<<i<<": "; 
+        REP1(j,i) {
+            if(isp[j]&&i%j==0) {
+                int cnt=0;
+                while(i%j==0) {
+                    i/=j;
+                    cnt++;
+                }
+                cout<<cnt<<", ";
+            }
+        }
+        cout<<'\n';
+    }
     int T;
     cin>>T;
     while(T--) solve();
