@@ -82,7 +82,7 @@ void solve() {
     }
     dsu.init(n);
     REP1(d,10) {
-        REP1(id,d) {
+        REP(id,d) {
             int pr=0;
             REP(i,n) {
                 pr+=p[d][id][i];
