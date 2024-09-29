@@ -67,16 +67,19 @@ void solve() {
         p0[i]=(10000-p[i])*ii%mod;
         p1[i]=(p[i])*ii%mod;
     }
-    vector<Vi> dp(n+1,Vi(1024));
-    dp[0][0]=1;
+    // vector<Vi> dp(n+1,Vi(1024));
+    vector<int> dp(1024);
+    dp[0]=1;
     REP1(i,n) {
+        Vi ndp(1024);
         REP(j,1024) {
-            dp[i][j]=(dp[i-1][j]*p0[i]+dp[i-1][j^a[i]]*p1[i])%mod;
+            ndp[j]=(dp[j]*p0[i]+dp[j^a[i]]*p1[i])%mod;
         }
+        dp.swap(ndp);
     }
     int an=0;
     REP(i,1024) {
-        an=(an+dp[n][i]*i*i)%mod;
+        an=(an+dp[i]*i*i)%mod;
     }
     cout<<an<<'\n';
 }
