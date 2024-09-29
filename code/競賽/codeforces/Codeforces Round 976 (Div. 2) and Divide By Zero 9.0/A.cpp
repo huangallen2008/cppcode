@@ -48,6 +48,10 @@ int rd(int l,int r) {
 void solve() {
     int n,k;
     cin>>n>>k;
+    if(k==1) {
+        cout<<n<<'\n';
+        return;
+    }
     int an=0;
     while(n>0) {
         an+=n%k;
