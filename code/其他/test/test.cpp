@@ -48,13 +48,14 @@ int rd(int l,int r) {
 bitset<mod> isp;
 signed main() {
     IOS(); 
+    freopen("out.txt","w",stdout);
     isp.set();
     isp[0]=isp[1]=0;
     for(int i=2;i*i<mod;i++) {
         if(isp[i]){
+            cout<<i<<",";
             for(int j=i+i;j<mod;j+=i) isp[j]=0;
         }
     }
-    cout<<"ouo"<<endl;;
     return 0;
 }
