@@ -52,6 +52,7 @@ void solve() {
     while(l<r) {
         m=l+r>>1;
         int t=m-sqrt(m);
+        op(m)ope(t)
         if(t>=n) r=m;
         else l=m+1;
     }
