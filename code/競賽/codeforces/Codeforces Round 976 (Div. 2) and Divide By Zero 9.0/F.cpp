@@ -83,6 +83,7 @@ signed main() {
                 }
                 cout<<cnt<<", ";
             }
+            else if(isp[j]) cout<<" , ";
         }
         cout<<'\n';
     }
