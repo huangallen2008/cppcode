@@ -51,7 +51,7 @@ signed main() {
     freopen("out.txt","w",stdout);
     isp.set();
     isp[0]=isp[1]=0;
-    for(int i=2;i*i<mod;i++) {
+    for(int i=2;i<mod;i++) {
         if(isp[i]){
             cout<<i<<",";
             for(int j=i+i;j<mod;j+=i) isp[j]=0;
