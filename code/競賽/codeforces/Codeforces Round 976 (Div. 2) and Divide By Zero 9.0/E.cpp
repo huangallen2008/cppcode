@@ -60,19 +60,23 @@ const int ii=inv(10000);
 void solve() {
     int n;
     cin>>n;
-    Vi a(n+1),p(n+1);
+    Vi a(n+1),p(n+1),p0(n+1),p1(n+1);
     REP1(i,n) cin>>a[i];
     REP1(i,n) cin>>p[i];
+    REP1(i,n) {
+        p0[i]=(10000-p[i])*ii%mod;
+        p1[i]=(p[i])*ii%mod;
+    }
     vector<Vi> dp(n+1,Vi(1024));
     dp[0][0]=1;
     REP1(i,n) {
         REP(j,1024) {
-            dp[i][j]=(dp[i-1][j]*(10000-p[i])%mod*ii%mod+dp[i-1][j^a[i]]*(p[i])%mod*ii%mod)%mod;
+            dp[i][j]=(dp[i-1][j]*p0[i]+dp[i-1][j^a[i]]*p1[i])%mod;
         }
     }
     int an=0;
     REP(i,1024) {
-        an=(an+dp[n][i]*i*i%mod)%mod;
+        an=(an+dp[n][i]*i*i)%mod;
     }
     cout<<an<<'\n';
 }
