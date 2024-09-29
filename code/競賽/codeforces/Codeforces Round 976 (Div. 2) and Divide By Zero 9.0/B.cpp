@@ -51,8 +51,7 @@ void solve() {
     int l=1,r=2e18,m;
     while(l<r) {
         m=l+r>>1;
-        int t=m-sqrt(m);
-        op(m)ope(t)
+        int t=m-(int)sqrt(m);
         if(t>=n) r=m;
         else l=m+1;
     }
