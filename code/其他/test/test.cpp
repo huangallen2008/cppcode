@@ -50,9 +50,9 @@ signed main() {
     IOS(); 
     isp.set();
     isp[0]=isp[1]=0;
-    for(int i=2;i*i<maxv;i++) {
+    for(int i=2;i*i<mod;i++) {
         if(isp[i]){
-            for(int j=i+i;j<maxv;j+=i) isp[j]=0;
+            for(int j=i+i;j<mod;j+=i) isp[j]=0;
         }
     }
     cout<<"ouo"<<endl;;
