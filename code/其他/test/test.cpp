@@ -53,6 +53,7 @@ int qu(int l,int r) {
 }
 signed main() {
     IOS(); 
+    ope(sqrt(1e9))
     int n;
     cin>>n;
     Vi a(n+1);
