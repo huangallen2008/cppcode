@@ -74,10 +74,11 @@ signed main() {
     REP1(i,100) {
         cout<<i<<": "; 
         REP1(j,i) {
-            if(isp[j]&&i%j==0) {
+            int t=i;
+            if(isp[j]&&t%j==0) {
                 int cnt=0;
-                while(i%j==0) {
-                    i/=j;
+                while(t%j==0) {
+                    t/=j;
                     cnt++;
                 }
                 cout<<cnt<<", ";
