@@ -77,10 +77,10 @@ void solve(int C) {
         if(ok(s[i-1],s[i])) dp[i]=(dp[i]+dp[i-2])%mod;
         if(s[i]!='0')dp[i]=(dp[i]+dp[i-1])%mod;
     }
-    entr
-    oparr(dp)
+    // entr
+    // oparr(dp)
     cout<<dp[n]<<'\n';
-    entr
+    // entr
 }
 signed main() {
     IOS(); 
