@@ -54,7 +54,7 @@ int rd(int l,int r) {
 #endif
 bool ok(char c1,char c2) {
     int t=(c1-'0')*10+(c2-'0');
-    if(1<=t&&t<=26) return 1;
+    if(1<=t&&t<=26&&c1!='0') return 1;
     return 0;
 }
 void solve(int C) {
