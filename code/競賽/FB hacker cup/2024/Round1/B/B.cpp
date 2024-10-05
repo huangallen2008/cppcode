@@ -66,7 +66,7 @@ void solve(int C) {
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL
+    #ifdef LOCAL_
         freopen("in/in.txt","r",stdin);
         freopen("out.txt","w",stdout);
     #endif
