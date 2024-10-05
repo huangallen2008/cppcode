@@ -66,6 +66,23 @@ void solve(int C) {
     k--;
     int n=s.size();
     int cnt=0;
+    //n=1
+    if(s.back()=='?') {
+        if(s[n-2]=='?') {
+
+        }
+        else {
+            int t=s[n-2]-'0';
+            if(t!=2) {
+                s[n-1]='0'+k%9;
+                k/=9;
+            }
+            if(t==2) {
+                s[n-1]='0'+k%6;
+                k/=6;
+            }
+        }
+    }
     RREP(i,n) {
         if(s[i]=='?') s[i]='2'-((k>>cnt++)&1);
     }
@@ -85,7 +102,7 @@ void solve(int C) {
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL
+    #ifdef LOCAL_
         freopen("vin.txt","r",stdin);
         freopen("vout.txt","w",stdout);
     #endif
