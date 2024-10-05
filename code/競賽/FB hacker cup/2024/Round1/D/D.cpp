@@ -37,7 +37,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=1e7+1;
 const int maxv=1e6+5;
 const int inf=1e9+1;
@@ -52,6 +52,11 @@ int rd(int l,int r) {
 #define GC getchar_unlocked()
 #define PC putchar_unlocked
 #endif
+bool ok(char c1,char c2) {
+    int t=(c1-'0')*10+(c2-'0');
+    if(1<=t&&t<=26) return 1;
+    return 0;
+}
 void solve(int C) {
     cout<<"Case #"<<C<<": ";
     string s;
@@ -60,12 +65,19 @@ void solve(int C) {
     cin>>k;
     k--;
     int n=s.size();
-    s="$"+s;
     int cnt=0;
-    RREP1(i,n) {
+    RREP(i,n) {
         if(s[i]=='?') s[i]='2'-((k>>cnt++)&1);
     }
-    cout<<s<<'\n';
+    cout<<s<<' ';
+    s="$"+s;
+    Vi dp(n+1);
+    dp[0]=1;
+    REP1(i,n) {
+        if(ok(s[i-1],s[i])) dp[i]=(dp[i]+dp[i-2])%mod;
+        dp[i]=(dp[i]+dp[i-1])%mod;
+    }
+    cout<<dp[n]<<'\n';
 }
 signed main() {
     IOS(); 
