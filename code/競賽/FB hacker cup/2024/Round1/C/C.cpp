@@ -56,7 +56,7 @@ void solve(int C) {
     cout<<"Case #"<<C<<": ";
     int g,w,l;
     cin>>g>>w>>l;
-    int an=((l<<1|1)%mod)*(g-w)%mod;
+    int an=(((l<<1|1)%mod)*(g-w)%mod+mod)%mod;
     cout<<an<<'\n';
 }
 signed main() {
