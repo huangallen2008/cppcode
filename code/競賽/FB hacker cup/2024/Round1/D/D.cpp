@@ -69,7 +69,16 @@ void solve(int C) {
     //n=1
     if(s.back()=='?') {
         if(s[n-2]=='?') {
-
+            int rr=k%15;
+            k/=15;
+            if(rr>5) {
+                s[n-2]='1';
+                s[n-1]='0'+15-rr;
+            }
+            else {
+                s[n-2]='2';
+                s[n-1]='0'+6-rr;
+            }
         }
         else {
             int t=s[n-2]-'0';
