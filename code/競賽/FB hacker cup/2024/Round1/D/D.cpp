@@ -118,9 +118,9 @@ void solve(int C) {
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL_
-        freopen("vin.txt","r",stdin);
-        freopen("vout.txt","w",stdout);
+    #ifdef LOCAL
+        freopen("in/in.txt","r",stdin);
+        freopen("out.txt","w",stdout);
     #endif
     int T;
     cin>>T;
