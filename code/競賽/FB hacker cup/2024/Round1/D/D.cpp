@@ -92,7 +92,10 @@ void solve(int C) {
             }
         }
     }
-    RREP(i,n) {
+    RREP(i,n-1) {
+        if(s[i]=='?'&&s[i+1]!='?'&&s[i+1]-'0'>6) s[i]='1';
+    }
+    RREP(i,n-1) {
         if(s[i]=='?') s[i]='2'-((k>>cnt++)&1);
     }
     cout<<s<<' ';
