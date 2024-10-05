@@ -69,8 +69,8 @@ void solve(int C) {
 signed main() {
     IOS(); 
     #ifdef LOCAL
-        freopen("vin.txt","r",stdin);
-        freopen("vout.txt","w",stdout);
+        freopen("in/in.txt","r",stdin);
+        freopen("out.txt","w",stdout);
     #endif
     int T;
     cin>>T;
