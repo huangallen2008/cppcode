@@ -75,7 +75,7 @@ void solve(int C) {
     dp[0]=1;
     REP1(i,n) {
         if(ok(s[i-1],s[i])) dp[i]=(dp[i]+dp[i-2])%mod;
-        dp[i]=(dp[i]+dp[i-1])%mod;
+        if(s[i]!='0')dp[i]=(dp[i]+dp[i-1])%mod;
     }
     entr
     oparr(dp)
