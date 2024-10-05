@@ -79,10 +79,22 @@ inline void out(int x) {
 bitset<mod> isp;
 signed main() {
     IOS(); 
+<<<<<<< HEAD
     int t=5;
     int a=t++&1;
     cout<<a<<'\n';
     a=++t&1;
     cout<<a;
+=======
+    freopen("out.txt","w",stdout);
+    isp.set();
+    isp[0]=isp[1]=0;
+    for(int i=2;i<mod;i++) {
+        if(isp[i]){
+            out(i);
+            for(int j=i+i;j<mod;j+=i) isp[j]=0;
+        }
+    }
+>>>>>>> 961277bad31ba2c70f80a55a07a09c7a4594a887
     return 0;
 }

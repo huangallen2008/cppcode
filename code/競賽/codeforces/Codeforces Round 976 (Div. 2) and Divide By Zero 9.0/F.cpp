@@ -71,10 +71,15 @@ signed main() {
             for(int j=i+i;j<maxv;j+=i) isp[j]=0;
         }
     }
+<<<<<<< HEAD
     map<Vi,int>mp;
     REP1(i,maxv-1) {
         // cout<<i<<": "; 
             Vi v;
+=======
+    REP1(i,100) {
+        cout<<i<<": "; 
+>>>>>>> 961277bad31ba2c70f80a55a07a09c7a4594a887
         REP1(j,i) {
             int t=i;
             if(isp[j]&&t%j==0) {
@@ -83,6 +88,7 @@ signed main() {
                     t/=j;
                     cnt++;
                 }
+<<<<<<< HEAD
                 v.pb(cnt);
                 // cout<<cnt<<", ";
             }
@@ -95,6 +101,14 @@ signed main() {
        cout<<"{"; for(int t:x) cout<<t<<' ';cout<<"} ";cout<<y<<'\n';
     }
     cout<<"owo"<<endl;
+=======
+                cout<<cnt<<", ";
+            }
+            else if(isp[j]) cout<<" , ";
+        }
+        cout<<'\n';
+    }
+>>>>>>> 961277bad31ba2c70f80a55a07a09c7a4594a887
     int T;
     cin>>T;
     while(T--) solve();
