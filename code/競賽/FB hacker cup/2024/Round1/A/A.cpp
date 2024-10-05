@@ -60,6 +60,7 @@ void solve() {
     ld l=0,r=maxv,m;
     ld an=0;
     REP1(i,n) chmax(an,i/(ld)a[i].s);
+    bool ok=1;
     REP1(i,n) if((ld)a[i].f*an>i) ok=0;
     if(ok) cout<<fixed<<setprecision(10)<<(ld)(an)<<'\n';
     else cout<<"-1\n";
