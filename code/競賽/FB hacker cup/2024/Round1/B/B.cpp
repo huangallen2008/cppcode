@@ -75,6 +75,7 @@ signed main() {
     isp[0]=isp[1]=0;
     for(int i=2;i<maxn;i++) if(isp[i]) for(int j=i+i;j<maxn;j+=i) isp[j]=0;
     for(int i=2;i<maxn;i++) an[i]=an[i-1]+(isp[i]&&isp[i-2]);
+    REP(i,10) cout<<an[i]<<' ';entr
     int T;
     cin>>T;
     REP1(t,T) solve(t);
