@@ -58,17 +58,10 @@ void solve() {
     vector<pii> a(n+1);
     REP1(i,n) cin>>a[i].f>>a[i].s;
     ld l=0,r=maxv,m;
-    int time=100;
-    while(time--) {
-        m=(l+r)/2;
-        bool ok=1;
-        REP1(i,n) if((ld)a[i].s<m*i) ok=0;
-        if(ok) l=m;
-        else r=m;
-    }
-    bool ok=1;
-    REP1(i,n) if((ld)a[i].f>l*i) ok=0;
-    if(ok) cout<<fixed<<setprecision(10)<<(ld)(1/l)<<'\n';
+    ld an=0;
+    REP1(i,n) chmax(an,i/(ld)a[i].s);
+    REP1(i,n) if((ld)a[i].f*an>i) ok=0;
+    if(ok) cout<<fixed<<setprecision(10)<<(ld)(an)<<'\n';
     else cout<<"-1\n";
 }
 signed main() {
