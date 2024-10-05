@@ -56,13 +56,13 @@ void solve(int C) {
     cout<<"Case #"<<C<<": ";
     int g,w,l;
     cin>>g>>w>>l;
-    int an=((l<<1|1)%mod)*(g0w)%mod;
+    int an=((l<<1|1)%mod)*(g-w)%mod;
     cout<<an<<'\n';
 }
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL
+    #ifdef LOCAL_
         freopen("in/in.txt","r",stdin);
         freopen("out.txt","w",stdout);
     #endif
