@@ -111,7 +111,7 @@ void solve(int C) {
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL
+    #ifdef LOCAL_
         freopen("vin.txt","r",stdin);
         freopen("vout.txt","w",stdout);
     #endif
