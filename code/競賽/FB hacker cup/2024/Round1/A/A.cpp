@@ -52,7 +52,8 @@ int rd(int l,int r) {
 #define GC getchar_unlocked()
 #define PC putchar_unlocked
 #endif
-void solve() {
+void solve(int C) {
+    cout<<"Case #"<<C<<": ";
     int n;
     cin>>n;
     vector<pii> a(n+1);
@@ -73,6 +74,6 @@ signed main() {
     #endif
     int T;
     cin>>T;
-    while(T--) solve();
+    REP1(i,T) solve(T);
     return 0;
 }
