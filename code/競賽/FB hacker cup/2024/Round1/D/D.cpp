@@ -66,7 +66,11 @@ void solve(int C) {
     k--;
     int n=s.size();
     int cnt=0;
-    //n=1
+    if(n==1) {
+        if(s[0]=='?') s[0]='9'-k;
+        cout<<s<<" 1\n";
+        return;
+    }
     if(s.back()=='?') {
         if(s[n-2]=='?') {
             int rr=k%15;
@@ -114,7 +118,7 @@ void solve(int C) {
 signed main() {
     IOS(); 
 
-    #ifdef LOCAL
+    #ifdef LOCAL_
         freopen("vin.txt","r",stdin);
         freopen("vout.txt","w",stdout);
     #endif
