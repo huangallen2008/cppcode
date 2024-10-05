@@ -63,7 +63,7 @@ void solve(int C) {
     s="$"+s;
     int cnt=0;
     RREP1(i,n) {
-        if(s[i]=='?') s[i]=(k>>cnt++)&1;
+        if(s[i]=='?') s[i]='2'-((k>>cnt++)&1);
     }
     cout<<s<<'\n';
 }
