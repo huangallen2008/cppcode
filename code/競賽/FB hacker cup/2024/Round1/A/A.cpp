@@ -62,12 +62,12 @@ void solve() {
     while(time--) {
         m=(l+r)/2;
         bool ok=1;
-        REP1(i,n) if((ld)a[i].s<m*i) ok=0;
+        REP1(i,n) if((ld)a[i].s*m<i) ok=0;
         if(ok) l=m;
         else r=m;
     }
     bool ok=1;
-    REP1(i,n) if((ld)a[i].f>l*i) ok=0;
+    REP1(i,n) if((ld)a[i].f*l>i) ok=0;
     if(ok) cout<<l<<'\n';
     else cout<<"-1\n";
 }
