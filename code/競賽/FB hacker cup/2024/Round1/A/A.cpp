@@ -74,6 +74,6 @@ signed main() {
     #endif
     int T;
     cin>>T;
-    REP1(i,T) solve(T);
+    REP1(t,T) solve(t);
     return 0;
 }
