@@ -98,7 +98,6 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         dsu.merge(id(u,w),id(v,w));
     }
-    ope("ok")
     REP(i,n) {
         int k;
         cin>>k;
@@ -112,6 +111,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     REP(i,q) {
         int u,v;
         cin>>u>>v,u--,v--;
