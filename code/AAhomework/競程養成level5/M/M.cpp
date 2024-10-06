@@ -60,7 +60,6 @@ Vi lpf(maxn);
 void solve() {
     int a,b;
     cin>>a>>b;
-    op(a)ope(b)
     int A=a,B=b;
     int g=__gcd(a,b);
     if(g!=1) {
