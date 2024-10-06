@@ -132,7 +132,7 @@ signed main() {
     }
     vector<vector<qur>> qu(n);
     REP(i,q) {
-        int u,v;
+        int u,v,w;
         cin>>u>>v>>w,u--,v--;
         qu[v].pb({u,w});
     }
