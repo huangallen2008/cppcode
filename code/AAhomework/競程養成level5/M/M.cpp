@@ -91,11 +91,7 @@ void solve() {
         x=-x,y=-y;
     }
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    // assert(x*b*B-y*f1*B==A*f1*b);
-    if(x*b*B-y*f1*B!=A*f1*b) {
-        op(A)ope(B)
-        exit(0);
-    }
+    assert(x*b*B-y*f1*B==A*f1*b);
 }
 signed main() {
     IOS();
