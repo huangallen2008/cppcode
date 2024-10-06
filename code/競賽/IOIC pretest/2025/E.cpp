@@ -75,30 +75,30 @@ struct DSU {
             return 1;
         }){}
     S find(S u) {
-        return p[u]==u?u:p[u]=find(p[u]);
+        return p.val(u)==u?u:p[u]=find(p.val(u));
     }
     void merge(S a,S b) {
         S x=find(a),y=find(b);
         if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
+        if(sz.val(x)>sz.val(y)) swap(x,y);
         p[x]=y;
-        sz[y]+=sz[x];
+        sz[y]+=sz.val(x);
     }
     S find2(S u) {
-        return p[u]==u?u:find2(p[u]);
+        return p.val(u)==u?u:find2(p.val(u));
     }
     void merge2(S a,S b) {
         S x=find2(a),y=find2(b);
         if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
+        if(sz.val(x)>sz.val(y)) swap(x,y);
         p[x]=y;
-        sz[y]+=sz[x];
+        sz[y]+=sz.val(x);
         stk.pb({x,y});
     }
     void cl() {
         for(auto [x,y]:stk) {
             p[x]=x;
-            sz[y]-=sz[x];
+            sz[y]-=sz.val(x);
         }
         stk.clear();
     }
