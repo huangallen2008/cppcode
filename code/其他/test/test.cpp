@@ -81,12 +81,13 @@ public:
         return map<int,int>::operator[](key);
     }
 };
-int n=5;
+int n;
 int fun(int x) {
     return x*n;
 }
 signed main() {
     IOS(); 
+    cin>>n;
     CustomMap mp(fun);
     REP(i,5) cout<<mp[i]<<'\n';
     return 0;
