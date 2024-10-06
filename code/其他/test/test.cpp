@@ -51,7 +51,7 @@ public:
     V default_value;
 
     // 構造函數，設定自定的預設值
-    CustomMap(V default_value) : default_value(default_value) {}
+    CustomMap(V _default_value) : default_value(_default_value) {}
 
     // 重載 operator[]，實現自定義預設值
     V& operator[](const K& key) {
@@ -65,6 +65,6 @@ public:
 signed main() {
     IOS(); 
     Map<int,int> mp;
-    
+
     return 0;
 }
