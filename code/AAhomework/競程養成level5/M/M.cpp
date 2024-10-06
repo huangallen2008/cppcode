@@ -90,7 +90,10 @@ void solve() {
         swap(x,y);
     }
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    assert(x*b*B-y*f1*B==A*f1*b);
+    // assert(x*b*B-y*f1*B==A*f1*b);
+    if(x*b*B-y*f1*B!=A*f1*b) {
+        op(A)ope(B)
+    }
 }
 signed main() {
     IOS();
