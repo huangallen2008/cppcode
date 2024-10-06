@@ -47,10 +47,10 @@ int rd(int l,int r) {
 }
 template<typename K, typename V>
 class Map : public map<K, V> {
-    V dv;
+    V dv=1;
 
     // 構造函數，設定自定的預設值
-    Map(V _dv) : dv(_dv) {}
+    // Map(V _dv) : dv(_dv) {}
 
     // 重載 operator[]，實現自定義預設值
     V& operator[](const K& key) {
