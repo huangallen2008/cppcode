@@ -14,6 +14,10 @@ signed main() {
     mp[0] = 0;
     mp[n+1] = 0;
     while (m--) {
+            for(const auto& pair:mp)
+            {
+                cout<<"("<<pair.first<<","<<pair.second<<"), ";
+            }
         int q, l, r, x;
         long long sum = 0;
         cin >> q;
@@ -78,10 +82,6 @@ signed main() {
             cout<<endl;
             cout << sum << endl;
         }
-            for(const auto& pair:mp)
-            {
-                cout<<"("<<pair.first<<","<<pair.second<<"), ";
-            }
     }
     return 0;
 }
