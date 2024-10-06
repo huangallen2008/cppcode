@@ -45,37 +45,47 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<typename K, typename V>
-struct Map : public map<K, V> {
-    public:
-    V dv=0;
+// template<typename K, typename V>
+// struct Map : public map<K, V> {
+//     public:
+//     V dv=0;
 
-    // 構造函數，設定自定的預設值
-    Map() {}
-    Map(V _dv) : dv(_dv) {}
+//     // 構造函數，設定自定的預設值
+//     Map() {}
+//     Map(V _dv) : dv(_dv) {}
 
-    // 重載 operator[]，實現自定義預設值
-    V& operator[](const K& key) {
+//     // 重載 operator[]，實現自定義預設值
+//     V& operator[](const K& key) {
+//         if (this->find(key) == this->end()) {
+//             // 如果 key 不存在，插入自定義預設值
+//             this->insert({key, dv});
+//         }
+//         return map<K, V>::operator[](key);
+//     }
+// };
+class CustomMap : public map<int, int> {
+private:
+    function<int(int)> func;  // 儲存傳入的函數
+
+public:
+    // 構造函數，接收一個函數作為參數
+    CustomMap(function<int(int)> f) : func(f) {}
+
+    // 重載operator[]
+    int& operator[](int key) {
+        // 如果key不在map裡，則初始化為func(key)
         if (this->find(key) == this->end()) {
-            // 如果 key 不存在，插入自定義預設值
-            this->insert({key, dv});
+            (*this)[key] = func(key);
         }
-        return map<K, V>::operator[](key);
+        return (*this)[key];
     }
 };
-struct S {
-    int operator!() {
-        return 1;
-    }
-};
+int n=5;
+int fun(int x) {
+    return x*n;
+}
 signed main() {
     IOS(); 
-    S x;
-    cout<<(!x)<<'\n';
-    Map<int,int> mp(1);
-    REP(i,5) mp[i]=i;
-    REP(i,10) cout<<mp[i]<<' ';
-    map<int,int> mp2;
-    mp2[8+8]=2;
+    
     return 0;
 }
