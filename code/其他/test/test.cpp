@@ -64,14 +64,14 @@ struct Map : public map<K, V> {
     }
 };
 struct S {
-    int operator^() {
+    int operator+() {
         return 1;
     }
 };
 signed main() {
     IOS(); 
     S x;
-    cout<<(^x)<<'\n';
+    cout<<(+x)<<'\n';
     Map<int,int> mp(1);
     REP(i,5) mp[i]=i;
     REP(i,10) cout<<mp[i]<<' ';
