@@ -53,7 +53,7 @@ void solve() {
     // priority_queue<int,Vi,greater<int>> pq;
     // REP(i,n) pq.push(a[i]);
     vector<int> t(n+1);
-    REP(i,n) t[a[i]]++;
+    REP(i,n) if(a[i]<=n)t[a[i]]++;
     int cnt=0;
     REP(i,n+1) {
         if(t[i]==0) {
