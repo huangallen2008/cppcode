@@ -60,7 +60,8 @@ public:
     }
 };
 struct DSU {
-    Map<int,int> p([&](int x) {
+    Map<int,int> p;
+    DSU(int n):p([&](int x) {
         return x;
     });
 };
