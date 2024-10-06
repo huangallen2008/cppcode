@@ -100,7 +100,7 @@ struct DSU {
         stk.clear();
     }
     bool same(int a,int b) { 
-        op(q)op(a)ope(b)
+        op("q")op(a)ope(b)
         return find(a)==find(b); 
     }
 }dsu;
