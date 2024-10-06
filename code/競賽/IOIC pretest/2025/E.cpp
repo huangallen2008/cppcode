@@ -124,14 +124,10 @@ signed main() {
     REP(i,n) {
         int k;
         cin>>k;
-        if(k>0) {
-            int x;
-            cin>>x;
-            REP(j,k-1) {
-                int y;
-                cin>>y;
-                dsu.merge(id(i,x),id(i,y));
-            }
+        REP(j,k) {
+            int y;
+            cin>>y;
+            dsu.merge(id(i,maxv),id(i,y));
         }
     }
     vector<vector<qur>> qu(n);
