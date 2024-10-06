@@ -60,6 +60,7 @@ Vi lpf(maxn);
 void solve() {
     int a,b;
     cin>>a>>b;
+    int A=a,B=b;
     int g=__gcd(a,b);
     if(g!=1) {
         a/=g,b/=g;
@@ -84,6 +85,7 @@ void solve() {
     exgcd(b,f1,x,y);
     y=-y*a;x=x*a;
     cout<<y<<' '<<f1<<' '<<x<<' '<<b<<'\n';
+    if(y*b*B-x*f1*B==A*f1*b) cout<<"ok!\n";
 }
 signed main() {
     IOS();
