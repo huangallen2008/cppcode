@@ -48,18 +48,19 @@ int rd(int l,int r) {
 template<typename K,typename V> 
 struct Map:public map<K,V>{
     public:
-    V dv=0;
+    auto fun=0;
     Map(){}
-    Map(V _dv) : dv(_dv) {}
+    Map(auto _fun) : fun(_fun) {}
     V& operator[](const K key) {
         if(this->find==this->end()) {
-            this->insert({key,dv});
+            (*this)[key]=fun(key);
         }
         return map<K,V>::operator[](key);
     }
 };
 struct DSU {
 
+    Map<int,int> p,sz(1)
 };
 signed main() {
     IOS(); 
