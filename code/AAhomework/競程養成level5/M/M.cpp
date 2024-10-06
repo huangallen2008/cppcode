@@ -81,6 +81,7 @@ void solve() {
         return;
     }
     if(f1>b) swap(f1,b);
+    op(b)ope(f1)
     int x,y;
     exgcd(b,f1,x,y);
     y=-y*a;x=x*a;
