@@ -96,7 +96,7 @@ signed main() {
     // cout<<"100\n";
     // REP1(i,10) REP1(j,10) cout<<i<<' '<<j<<'\n';
     #ifdef LOCAL 
-        freopen("in.txt","r",stdin);
+        freopen("out.txt","r",stdin);
     #endif
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
