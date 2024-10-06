@@ -84,8 +84,11 @@ void solve() {
     // op(b)ope(f1)
     int x,y;
     exgcd(b,f1,x,y);
-    // op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
+    if(x<0) {
+        swap(b,f1);
+        swap(x,y);
+    }
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
     assert(x*b*B-y*f1*B==A*f1*b);
 }
