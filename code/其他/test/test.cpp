@@ -75,9 +75,10 @@ public:
     int& operator[](int key) {
         // 如果key不在map裡，則初始化為func(key)
         if (this->find(key) == this->end()) {
-            (*this)[key] = func(key);
+            // (*this)[key] = func(key);
+            this->insert({key,func(key)});
         }
-        return (*this)[key];
+        return map<int,int>::operator[](key);
     }
 };
 int n=5;
