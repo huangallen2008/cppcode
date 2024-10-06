@@ -87,7 +87,7 @@ void solve() {
     // op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    // assert(x*b*B-y*f1*B==A*f1*b);
+    assert(x*b*B-y*f1*B==A*f1*b);
 }
 signed main() {
     IOS();
@@ -95,7 +95,7 @@ signed main() {
     // cout<<"100\n";
     // REP1(i,10) REP1(j,10) cout<<i<<' '<<j<<'\n';
     #ifdef LOCAL 
-        // freopen("out.txt","r",stdin);
+        freopen("out.txt","r",stdin);
     #endif
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
