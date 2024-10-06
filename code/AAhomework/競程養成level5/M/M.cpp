@@ -87,7 +87,7 @@ void solve() {
     op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    if(y*f1*B-x*b*B!=A*f1*b) {
+    if(-y*f1*B+x*b*B!=A*f1*b) {
         op("!!!")cout<<A<<' '<<B<<'\n';;
     }
 }
