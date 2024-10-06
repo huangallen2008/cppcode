@@ -64,7 +64,7 @@ struct Map : public map<K, V> {
     }
 };
 struct S {
-    int operator-()() {
+    int operator-() {
         return 1;
     }
 };
