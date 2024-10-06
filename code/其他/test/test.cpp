@@ -45,56 +45,26 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
-}
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
+template<typename K, typename V>
+class Map : public map<K, V> {
+public:
+    V default_value;
+
+    // 構造函數，設定自定的預設值
+    CustomMap(V default_value) : default_value(default_value) {}
+
+    // 重載 operator[]，實現自定義預設值
+    V& operator[](const K& key) {
+        if (this->find(key) == this->end()) {
+            // 如果 key 不存在，插入自定義預設值
+            this->insert({key, default_value});
+        }
+        return map<K, V>::operator[](key);
     }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC(',');PC(' ');
-}
-bitset<mod> isp;
+};
 signed main() {
     IOS(); 
-<<<<<<< HEAD
-    int t=5;
-    int a=t++&1;
-    cout<<a<<'\n';
-    a=++t&1;
-    cout<<a;
-=======
-    freopen("out.txt","w",stdout);
-    isp.set();
-    isp[0]=isp[1]=0;
-    for(int i=2;i<mod;i++) {
-        if(isp[i]){
-            out(i);
-            for(int j=i+i;j<mod;j+=i) isp[j]=0;
-        }
-    }
->>>>>>> 961277bad31ba2c70f80a55a07a09c7a4594a887
+    Map<int,int> mp;
+    
     return 0;
 }
