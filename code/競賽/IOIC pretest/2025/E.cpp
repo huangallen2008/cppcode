@@ -39,7 +39,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=5;
-const int maxv=1e9+1;
+const int maxv=1e9+5;
 const int inf=1ll<<62;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -61,7 +61,7 @@ public:
 };
 struct DSU {
     Map<int,int> p,sz;
-    int n;
+    vector<pii> stk;
     DSU():
         p([&](int x) {
             return x;
@@ -69,10 +69,6 @@ struct DSU {
         sz([&](int x) {
             return 1;
         }){}
-    
-    void init(int _n) {
-        n=_n;
-    }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
     }
@@ -83,19 +79,42 @@ struct DSU {
         p[x]=y;
         sz[y]+=sz[x];
     }
+    int find2(int u) {
+        return p[u]==u?u:find(p[u]);
+    }
+    void merge2(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        stk.pb({x,y});
+    }
+    void cl() {
+        for(auto [x,y]:stk) {
+            p[x]=x;
+            sz[y]-=sz[x];
+        }
+        stk.clear();
+    }
     bool same(int a,int b) { return find(a)==find(b); }
 }dsu;
 int id(int u,int v) {
     return u*maxv+v;
 }
+struct qur {
+    int v,w;
+};
 signed main() {
     IOS(); 
     int n,m,q;
     cin>>n>>m>>q;
-    dsu.init(maxv*n);
+    Graphw g(n);
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
+        g[u].pb({v,w});
+        g[v].pb({u,w});
         dsu.merge(id(u,w),id(v,w));
     }
     REP(i,n) {
@@ -111,12 +130,21 @@ signed main() {
             }
         }
     }
-    ope("ok")
+    vector<vector<qur>> qu(n);
     REP(i,q) {
         int u,v;
-        cin>>u>>v,u--,v--;
-        if(dsu.same(u,v)) cout<<"Yes\n";
-        else cout<<"No\n";
+        cin>>u>>v>>w,u--,v--;
+        qu[v].pb({u,w});
+    }
+    REP(u,n) {
+        for(auto [v,w]:g[u]) {
+            dsu.merge2(id(u,w),id(u,maxv));
+        }
+        for(auto [v,w]:qu) {
+            if(dsu.same(id(v,w),id(maxv,u))) cout<<"Yes\n";
+            else cout<<"No\n";
+        }
+        dsu.cl();
     }
     return 0;
 }
