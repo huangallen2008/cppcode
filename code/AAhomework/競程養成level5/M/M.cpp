@@ -79,6 +79,7 @@ void solve() {
         cout<<"-1 -1 -1 -1\n";
         return;
     }
+    if(f1>b) swap(f1,b);
     int x,y;
     exgcd(b,f1,x,y);
     y=-y*a;x=x*a;
