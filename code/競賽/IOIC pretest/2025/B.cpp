@@ -69,6 +69,7 @@ int qur(int l,int r) {
     mp[r]=0;
     int an=0;
     for(auto &[x,y]:cnt) an+=y*y;
+    for(auto &[x,y]:cnt) cout<<"{"<<x<<' '<<y<<"} ";entr
     return an;
 }
 void init() {
