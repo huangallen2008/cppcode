@@ -84,7 +84,9 @@ int fun(int x) {
 signed main() {
     IOS(); 
     cin>>n;
-    Map<int,int> mp(fun);
+    Map<int,int> mp([&](int x){
+        return x;
+    });
     REP(i,5) cout<<mp[i]<<'\n';
     return 0;
 }
