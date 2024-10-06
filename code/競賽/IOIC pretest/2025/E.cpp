@@ -81,7 +81,7 @@ struct DSU {
         sz[y]+=sz[x];
     }
     int find2(int u) {
-        return p[u]==u?u:find(p[u]);
+        return p[u]==u?u:find2(p[u]);
     }
     void merge2(int a,int b) {
         // op(2)op(a)ope(b)
