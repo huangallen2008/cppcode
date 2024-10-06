@@ -63,19 +63,15 @@ struct Map : public map<K, V> {
         return map<K, V>::operator[](key);
     }
 };
-// template<const int mod>
-struct intmod :public int {
-    int operator+(const int x) {
-        this+=x;
-        if(this>=mod) this-=mod;
+struct S {
+    int operator() {
+        return 1;
     }
-    // int operator-(const int x) {
-    //     this+=x;
-    //     if(this>=mod) this-=mod;
-    // }
 };
 signed main() {
     IOS(); 
+    S x;
+    cout<<x<<'\n';
     Map<int,int> mp(1);
     REP(i,5) mp[i]=i;
     REP(i,10) cout<<mp[i]<<' ';
