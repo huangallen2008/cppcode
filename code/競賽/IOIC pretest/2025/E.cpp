@@ -105,7 +105,8 @@ struct DSU {
         // op("q")op(a)ope(b)
         return find2(a)==find2(b); 
     }
-}dsu;
+};
+DSU<int> dsu;
 // struct DSU {
 //     Map<int,int> p,sz;
 //     vector<pii> stk;
