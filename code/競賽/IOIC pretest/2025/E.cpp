@@ -127,10 +127,10 @@ signed main() {
         cin>>k;
         if(k>0) {
             int x;
-            cin>>x,x--;
+            cin>>x;
             REP(j,k-1) {
                 int y;
-                cin>>y,y--;
+                cin>>y;
                 dsu.merge(id(i,x),id(i,y));
             }
         }
