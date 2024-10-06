@@ -70,16 +70,16 @@ struct DSU {
     void init(int _n) {
         n=_n;
     }
-    int find(int u) {
-        return p[u]==u?u:p[u]=find(p[u]);
-    }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        p[x]=y;
-        sz[y]+=sz[x];
-    }
+    // int find(int u) {
+    //     return p[u]==u?u:p[u]=find(p[u]);
+    // }
+    // void merge(int a,int b) {
+    //     int x=find(a),y=find(b);
+    //     if(x==y) return;
+    //     if(sz[x]>sz[y]) swap(x,y);
+    //     p[x]=y;
+    //     sz[y]+=sz[x];
+    // }
 };
 signed main() {
     IOS(); 
