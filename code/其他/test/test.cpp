@@ -51,7 +51,7 @@ class Map : public map<K, V> {
     V dv=0;
 
     // 構造函數，設定自定的預設值
-    Map()  {}
+    Map() {}
     Map(V _dv) : dv(_dv) {}
 
     // 重載 operator[]，實現自定義預設值
@@ -65,7 +65,7 @@ class Map : public map<K, V> {
 };
 signed main() {
     IOS(); 
-    Map<int,int> mp;
+    Map<int,int> mp(1);
     REP(i,5) mp[i]=i;
     REP(i,10) cout<<mp[i]<<' ';
     return 0;
