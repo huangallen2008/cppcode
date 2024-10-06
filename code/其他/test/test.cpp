@@ -63,22 +63,18 @@ int rd(int l,int r) {
 //         return map<K, V>::operator[](key);
 //     }
 // };
-class CustomMap : public map<int, int> {
+template<typename K,typename V>
+struct Map : public map<int, int> {
 private:
-    function<int(int)> func;  // 儲存傳入的函數
+    function<K(V)> func;  // 儲存傳入的函數
 
 public:
-    // 構造函數，接收一個函數作為參數
-    CustomMap(function<int(int)> f) : func(f) {}
-
-    // 重載operator[]
-    int& operator[](int key) {
-        // 如果key不在map裡，則初始化為func(key)
+    Map(function<K(V)> f) : func(f) {}
+    V& operator[](K key) {
         if (this->find(key) == this->end()) {
-            // (*this)[key] = func(key);
             this->insert({key,func(key)});
         }
-        return map<int,int>::operator[](key);
+        return map<K,V>::operator[](key);
     }
 };
 int n;
