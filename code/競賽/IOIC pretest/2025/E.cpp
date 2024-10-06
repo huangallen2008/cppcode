@@ -102,6 +102,7 @@ signed main() {
         int k;
         cin>>k;
         if(k>0) {
+            int x;
             cin>>x,x--;
             REP(j,k-1) {
                 int y;
