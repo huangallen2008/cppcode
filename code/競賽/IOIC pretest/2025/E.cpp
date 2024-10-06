@@ -67,7 +67,7 @@ struct DSU {
         return x;
     }),
     sz([&](int x) {
-        return (int)1;
+        return 1;
     })
     {}
     void init(int _n) {
