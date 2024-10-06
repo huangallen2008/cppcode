@@ -134,12 +134,13 @@ signed main() {
         }
     }
     vector<vector<qur>> qu(n);
+    Vi an(q);
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        qu[v].pb({u,w,i});
+        if(u==v) an[i]=1;
+        else qu[v].pb({u,w,i});
     }
-    Vi an(q);
     REP(u,n) {
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
