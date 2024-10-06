@@ -48,16 +48,16 @@ int rd(int l,int r) {
 template<typename K, typename V>
 class Map : public map<K, V> {
 public:
-    V default_value;
+    V dv;
 
     // 構造函數，設定自定的預設值
-    Map(V _default_value) : default_value(_default_value) {}
+    Map(V _dv) : dv(_dv) {}
 
     // 重載 operator[]，實現自定義預設值
     V& operator[](const K& key) {
         if (this->find(key) == this->end()) {
             // 如果 key 不存在，插入自定義預設值
-            this->insert({key, default_value});
+            this->insert({key, dv});
         }
         return map<K, V>::operator[](key);
     }
