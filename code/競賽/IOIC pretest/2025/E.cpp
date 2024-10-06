@@ -47,9 +47,8 @@ int rd(int l,int r) {
 }
 template<typename K,typename V>
 struct Map : public map<K, V> {
-// private:
 public:
-    function<K(V)> func;  // 儲存傳入的函數
+    function<K(V)> func; 
 
     Map(function<K(V)> f) : func(f) {}
     V& operator[](K key) {
@@ -75,7 +74,6 @@ struct DSU {
         return p[u]==u?u:p[u]=find(p[u]);
     }
     void merge(S a,S b) {
-        // op(a)ope(b)
         S x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
@@ -86,7 +84,6 @@ struct DSU {
         return p[u]==u?u:find2(p[u]);
     }
     void merge2(S a,S b) {
-        // op(2)op(a)ope(b)
         S x=find2(a),y=find2(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
@@ -102,56 +99,9 @@ struct DSU {
         stk.clear();
     }
     bool same(S a,S b) { 
-        // op("q")op(a)ope(b)
         return find2(a)==find2(b); 
     }
 };
-DSU<int> dsu;
-// struct DSU {
-//     Map<int,int> p,sz;
-//     vector<pii> stk;
-//     DSU():
-//         p([&](int x) {
-//             return x;
-//         }),
-//         sz([&](int x) {
-//             return 1;
-//         }){}
-//     int find(int u) {
-//         return p[u]==u?u:p[u]=find(p[u]);
-//     }
-//     void merge(int a,int b) {
-//         // op(a)ope(b)
-//         int x=find(a),y=find(b);
-//         if(x==y) return;
-//         if(sz[x]>sz[y]) swap(x,y);
-//         p[x]=y;
-//         sz[y]+=sz[x];
-//     }
-//     int find2(int u) {
-//         return p[u]==u?u:find2(p[u]);
-//     }
-//     void merge2(int a,int b) {
-//         // op(2)op(a)ope(b)
-//         int x=find2(a),y=find2(b);
-//         if(x==y) return;
-//         if(sz[x]>sz[y]) swap(x,y);
-//         p[x]=y;
-//         sz[y]+=sz[x];
-//         stk.pb({x,y});
-//     }
-//     void cl() {
-//         for(auto [x,y]:stk) {
-//             p[x]=x;
-//             sz[y]-=sz[x];
-//         }
-//         stk.clear();
-//     }
-//     bool same(int a,int b) { 
-//         // op("q")op(a)ope(b)
-//         return find2(a)==find2(b); 
-//     }
-// }dsu;
 int id(int u,int v) {
     return u*maxv+v;
 }
@@ -160,6 +110,7 @@ struct qur {
 };
 signed main() {
     IOS(); 
+    DSU<int> dsu;
     int n,m,q;
     cin>>n>>m>>q;
     Graphw g(n);
@@ -192,7 +143,6 @@ signed main() {
         else qu[v].pb({u,w,i});
     }
     REP(u,n) {
-        // ope(u)
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv-1));
         }
