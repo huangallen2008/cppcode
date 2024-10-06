@@ -51,6 +51,7 @@ void sep(int x) {
     if(it->f!=x) mp[x]=it->s;
 }
 void ins(int l,int r,int x) {
+    l--;
     sep(l);sep(r);
     auto it_l=mp.find(l);
     auto it_r=mp.find(r);
