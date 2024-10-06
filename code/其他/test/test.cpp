@@ -63,7 +63,7 @@ struct Map : public map<K, V> {
         return map<K, V>::operator[](key);
     }
 };
-template<const int mod>
+// template<const int mod>
 struct intmod :public int {
     int operator+(const int x) {
         this+=x;
