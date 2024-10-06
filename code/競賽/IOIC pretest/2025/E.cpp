@@ -144,6 +144,7 @@ signed main() {
         else qu[v].pb({u,w,i});
     }
     REP(u,n) {
+        ope(u)
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
         }
