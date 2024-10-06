@@ -51,10 +51,14 @@ public:
     function<V(K)> func; 
 
     Map(function<V(K)> f) : func(f) {}
-    V& operator[](K key) {
+    V& operator[](const K key) {
         if (this->find(key) == this->end()) {
             this->insert({key,func(key)});
         }
+        return map<K,V>::operator[](key);
+    }
+    V val(const K key) {
+        if(this->find(key)==this->end()) return func(key);
         return map<K,V>::operator[](key);
     }
 };
