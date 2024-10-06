@@ -50,23 +50,19 @@ void solve() {
     cin>>n>>x;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    priority_queue<int,Vi,greater<int>> pq;
-    REP(i,n) pq.push(a[i]);
+    // priority_queue<int,Vi,greater<int>> pq;
+    // REP(i,n) pq.push(a[i]);
+    vector<int> t(n+1);
+    REP(i,n) t[a[i]]++;
     int cnt=0;
-    while(pq.size()) {
-        int u=pq.top();
-        pq.pop();
-        if(u<cnt) {
-            pq.push(u+x);
-            continue;
+    REP(i,n+1) {
+        if(t[i]==0) {
+            cout<<i<<'\n';
+            break;
         }
-        if(u==cnt) {
-            cnt++;
-            continue;
-        }
-        if(u>cnt) break;
+        if(i+x<=n)t[i+x]+=t[i]-1;
     }
-    cout<<cnt<<'\n';
+    // cout<<cnt<<'\n';
 }
 signed main() {
     IOS();
