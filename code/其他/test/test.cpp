@@ -64,7 +64,7 @@ class Map : public map<K, V> {
 };
 signed main() {
     IOS(); 
-    Map<int,int> mp(1);
+    Map<int,int> mp;
 
     return 0;
 }
