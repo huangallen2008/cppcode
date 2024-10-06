@@ -73,7 +73,7 @@ struct DSU {
         return p[u]==u?u:p[u]=find(p[u]);
     }
     void merge(int a,int b) {
-        op(a)ope(b)
+        // op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
@@ -84,7 +84,7 @@ struct DSU {
         return p[u]==u?u:find(p[u]);
     }
     void merge2(int a,int b) {
-        op(2)op(a)ope(b)
+        // op(2)op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
@@ -100,7 +100,7 @@ struct DSU {
         stk.clear();
     }
     bool same(int a,int b) { 
-        op("q")op(a)ope(b)
+        // op("q")op(a)ope(b)
         return find(a)==find(b); 
     }
 }dsu;
@@ -144,7 +144,7 @@ signed main() {
         else qu[v].pb({u,w,i});
     }
     REP(u,n) {
-        ope(u)
+        // ope(u)
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
         }
