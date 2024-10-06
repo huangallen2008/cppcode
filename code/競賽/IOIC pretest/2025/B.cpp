@@ -59,6 +59,7 @@ void ins(int l,int r,int x) {
     mp[r]=x;
 }
 int qur(int l,int r) {
+    l--;
     sep(l);sep(r);
     auto it_l=mp.find(l);
     auto it_r=mp.find(r);
