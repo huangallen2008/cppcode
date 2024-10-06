@@ -86,7 +86,7 @@ void solve() {
     exgcd(b,f1,x,y);
     op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
-    cout<<y<<' '<<f1<<' '<<x<<' '<<b<<'\n';
+    cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
     if(y*b*B-x*f1*B!=A*f1*b) {
         op("!!!")cout<<A<<' '<<B<<'\n';;
     }
