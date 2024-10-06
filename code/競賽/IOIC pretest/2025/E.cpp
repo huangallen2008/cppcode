@@ -108,7 +108,7 @@ int id(int u,int v) {
     return u*maxv+v;
 }
 struct qur {
-    int v,w;
+    int v,w,id;
 };
 signed main() {
     IOS(); 
@@ -137,17 +137,22 @@ signed main() {
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        qu[v].pb({u,w});
+        qu[v].pb({u,w,id});
     }
+    Vi an(q);
     REP(u,n) {
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
         }
-        for(auto [v,w]:qu[u]) {
-            if(dsu.same(id(v,w),id(u,maxv))) cout<<"Yes\n";
-            else cout<<"No\n";
+        for(auto [v,w,id]:qu[u]) {
+            if(dsu.same(id(v,w),id(u,maxv))) an[id]=1;
+            else an[id]=0;
         }
         dsu.cl();
+    }
+    REP(i,q) {
+        if(an[i]) cout<<"Yes\n";
+        else cout<<"No\n";
     }
     return 0;
 }
