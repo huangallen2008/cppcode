@@ -75,13 +75,13 @@ signed main() {
                 if(pair.first)
                     sum+=v*v;
             }
+            cout<<endl;
+            cout << sum << endl;
+        }
             for(const auto& pair:mp)
             {
                 cout<<"("<<pair.first<<","<<pair.second<<"), ";
             }
-            cout<<endl;
-            cout << sum << endl;
-        }
     }
     return 0;
 }
