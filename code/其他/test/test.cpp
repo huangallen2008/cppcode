@@ -86,6 +86,6 @@ int fun(int x) {
 }
 signed main() {
     IOS(); 
-    
+    CustomMap mp(fun);
     return 0;
 }
