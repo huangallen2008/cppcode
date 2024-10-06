@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 template<typename K,typename V>
-struct Map : public map<int, int> {
+struct Map : public map<K, V> {
 private:
     function<K(V)> func;  // 儲存傳入的函數
 
@@ -62,7 +62,8 @@ public:
 struct DSU {
     Map<int,int> p(auto [&](int x) {
         return x;
-    }),sz(auto [&](int x) {
+    });
+    Map<int,int>sz(auto [&](int x) {
         return 1;
     });
     int n;
