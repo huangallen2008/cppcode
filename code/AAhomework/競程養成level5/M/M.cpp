@@ -93,6 +93,7 @@ void solve() {
     // assert(x*b*B-y*f1*B==A*f1*b);
     if(x*b*B-y*f1*B!=A*f1*b) {
         op(A)ope(B)
+        exit(0);
     }
 }
 signed main() {
