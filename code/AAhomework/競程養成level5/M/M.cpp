@@ -88,6 +88,7 @@ void solve() {
     if(x<0) {
         swap(b,f1);
         swap(x,y);
+        x=-x,y=-y;
     }
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
     // assert(x*b*B-y*f1*B==A*f1*b);
