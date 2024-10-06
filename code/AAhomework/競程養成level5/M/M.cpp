@@ -91,12 +91,12 @@ void solve() {
 }
 signed main() {
     IOS();
-    freopen("out.txt","w",stdout);
-    cout<<"100\n";
-    REP1(i,10) REP1(j,10) cout<<i<<' '<<j<<'\n';
-    // #ifdef LOCAL 
-    //     freopen("in.txt","r",stdin);
-    // #endif
+    // freopen("out.txt","w",stdout);
+    // cout<<"100\n";
+    // REP1(i,10) REP1(j,10) cout<<i<<' '<<j<<'\n';
+    #ifdef LOCAL 
+        freopen("in.txt","r",stdin);
+    #endif
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
             for(int j=i;j<maxn;j+=i) lpf[j]=i;
