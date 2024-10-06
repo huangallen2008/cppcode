@@ -60,29 +60,30 @@ public:
     }
 };
 struct DSU {
-    Map<int,int> p;
-    DSU(int n):p([&](int x) {
+    Map<int,int> p,sz;
+    int n;
+    DSU(int _n):n(_n),
+    p([&](int x) {
         return x;
-    }){}
+    }),
+    sz([&](int x) {
+        return (int)1;
+    })
+    {}
+    void init(int _n) {
+        n=_n;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+    }
 };
-    // Map<int,int> sz([&](int x) {
-    //     return (int)1;
-    // });
-    // int n;
-    // void init(int _n) {
-    //     n=_n;
-    // }
-    // int find(int u) {
-    //     return p[u]==u?u:p[u]=find(p[u]);
-    // }
-    // void merge(int a,int b) {
-    //     int x=find(a),y=find(b);
-    //     if(x==y) return;
-    //     if(sz[x]>sz[y]) swap(x,y);
-    //     p[x]=y;
-    //     sz[y]+=sz[x];
-    // }
-// };
 signed main() {
     IOS(); 
 
