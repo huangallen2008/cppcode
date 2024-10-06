@@ -56,11 +56,11 @@ template<const int mod>
 inline int read()
 {
     int x=0;
-    // bool neg=0;
+    bool neg=0;
     char c=GC;
     while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
     while(c>='0'&&c<='9') x=((x<<3)+(x<<1)+(c^48))%mod,c=GC;
-    // if(neg) x=-x;
+    if(neg) x=(mod-x)%mod;
     return x;
 }
 inline void out(int x) {
