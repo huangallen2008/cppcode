@@ -65,6 +65,7 @@ class Map : public map<K, V> {
 signed main() {
     IOS(); 
     Map<int,int> mp;
-
+    REP(1,5) mp[i]=i;
+    REP(i,10) cout<<mp[i]<<' ';
     return 0;
 }
