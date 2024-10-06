@@ -73,7 +73,7 @@ struct DSU {
         return p[u]==u?u:p[u]=find(p[u]);
     }
     void merge(int a,int b) {
-        op(a)op(b)
+        op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
