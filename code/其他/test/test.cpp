@@ -47,6 +47,7 @@ int rd(int l,int r) {
 }
 template<typename K, typename V>
 class Map : public map<K, V> {
+    public:
     V dv=0;
 
     // 構造函數，設定自定的預設值
