@@ -137,16 +137,16 @@ signed main() {
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        qu[v].pb({u,w,id});
+        qu[v].pb({u,w,i});
     }
     Vi an(q);
     REP(u,n) {
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
         }
-        for(auto [v,w,id]:qu[u]) {
-            if(dsu.same(id(v,w),id(u,maxv))) an[id]=1;
-            else an[id]=0;
+        for(auto [v,w,ii]:qu[u]) {
+            if(dsu.same(id(v,w),id(u,maxv))) an[ii]=1;
+            else an[ii]=0;
         }
         dsu.cl();
     }
