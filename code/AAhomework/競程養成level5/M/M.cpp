@@ -66,11 +66,21 @@ void solve() {
         cout<<a+b<<' '<<b<<' '<<1<<' '<<1<<'\n';
         return;
     }
-
+    int lf=lpf[b],f1=1;
+    while(b%lf==0) {
+        b/=lf;
+        f1*=lf;
+    }
+    if(b==1) {
+        cout<<"-1 -1 -1 -1\n";
+        return;
+    }
+    int x,y;
+    exgcd(b,f1,x,y);
+    cout<<y<<' '<<f1<<' '<<x<<' '<<b<<'\n';
 }
 signed main() {
     IOS();
-    int x,y;exgcd(5,7,x,y);op(x)ope(y)
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
             for(int j=i;j<maxn;j+=i) lpf[j]=i;
