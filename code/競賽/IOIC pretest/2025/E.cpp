@@ -86,6 +86,7 @@ struct DSU {
 };
 signed main() {
     IOS(); 
-
+    DSU dsu(5);
+    dsu.merge(1,2);
     return 0;
 }
