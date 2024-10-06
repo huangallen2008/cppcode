@@ -88,6 +88,8 @@ struct DSU {
 signed main() {
     IOS(); 
     DSU dsu;
+    int n;
+    cin>>n;
     dsu.init(n);
     dsu.merge(1,2);
     return 0;
