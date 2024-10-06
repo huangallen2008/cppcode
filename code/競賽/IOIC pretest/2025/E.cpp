@@ -101,7 +101,7 @@ struct DSU {
     }
     bool same(int a,int b) { 
         // op("q")op(a)ope(b)
-        return find(a)==find(b); 
+        return find2(a)==find2(b); 
     }
 }dsu;
 int id(int u,int v) {
