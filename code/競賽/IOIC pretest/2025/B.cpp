@@ -54,7 +54,7 @@ void ins(int l,int r,int x) {
     sep(l);sep(r);
     auto it_l=mp.find(l);
     auto it_r=mp.find(r);
-    mp.erase(it_l,it_r);
+    mp.erase(next(it_l),it_r);
     mp[r]=x;
 }
 int qur(int l,int r) {
@@ -65,7 +65,7 @@ int qur(int l,int r) {
     for(auto it=next(it_l);it!=next(it_r);it++) {
         if(it->s!=0) cnt[it->s]+=it->f-prev(it)->f;
     }
-    mp.erase(it_l,it_r);
+    mp.erase(next(it_l),it_r);
     mp[r]=0;
     int an=0;
     for(auto &[x,y]:cnt) an+=y*y;
