@@ -64,10 +64,10 @@ struct DSU {
     Map<S,int>sz;
     vector<pair<S,S>> stk;
     DSU():
-        p([&](S x) {
+        p([](S x) {
             return x;
         }),
-        sz([&](S x) {
+        sz([](S x) {
             return 1;
         }){}
     S find(S u) {
