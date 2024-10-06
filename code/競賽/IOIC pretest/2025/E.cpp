@@ -47,10 +47,10 @@ int rd(int l,int r) {
 }
 template<typename K,typename V>
 struct Map : public map<K, V> {
-private:
+// private:
+public:
     function<K(V)> func;  // 儲存傳入的函數
 
-public:
     Map(function<K(V)> f) : func(f) {}
     V& operator[](K key) {
         if (this->find(key) == this->end()) {
@@ -63,7 +63,7 @@ struct DSU {
     Map<int,int> p([&](int x) {
         return x;
     });
-    Map<int,int>sz([&](int x) {
+    Map<int,int> sz([&](int x) {
         return (int)1;
     });
     int n;
