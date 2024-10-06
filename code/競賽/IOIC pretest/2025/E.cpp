@@ -62,6 +62,7 @@ public:
 struct DSU {
     Map<int,int> p,sz;
     int n;
+    DSU() {}
     void init(int _n) {
         n=_n,
         p=Map<int,int>([&](int x) {
