@@ -45,11 +45,41 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC('\n');
+}
 template<typename K,typename V>
 struct Map : public map<K, V> {
 public:
     function<V(K)> func; 
-
     Map(function<V(K)> f) : func(f) {}
     V& operator[](const K key) {
         if (this->find(key) == this->end()) {
@@ -113,21 +143,24 @@ signed main() {
     IOS(); 
     DSU<pii> dsu;
     int n,m,q;
-    cin>>n>>m>>q;
+    // cin>>n>>m>>q;
+    n=read(),m=read(),q=read();
     Graphw g(n);
     REP(i,m) {
         int u,v,w;
-        cin>>u>>v>>w,u--,v--;
+        // cin>>u>>v>>w,u--,v--;
+        u=read()-1,v=read()-1,w=read();
         g[u].pb({v,w});
         g[v].pb({u,w});
         dsu.merge({u,w},{v,w});
     }
     REP(i,n) {
         int k;
-        cin>>k;
+        // cin>>k;
+        k=read();
         REP(j,k) {
-            int y;
-            cin>>y;
+            int y=read();
+            // cin>>y;
             dsu.merge({i,maxv},{i,y});
         }
     }
@@ -135,7 +168,8 @@ signed main() {
     Vi an(q);
     REP(i,q) {
         int u,v,w;
-        cin>>u>>v>>w,u--,v--;
+        // cin>>u>>v>>w,u--,v--;
+        u=read()-1,v=read()-1,w=read();
         if(u==v) an[i]=1;
         else qu[v].pb({u,w,i});
     }
