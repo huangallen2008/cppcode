@@ -60,7 +60,7 @@ struct Map:public map<K,V>{
 };
 struct DSU {
 
-    Map<int,int> p,sz(1)
+    // Map<int,int> p,sz;
 };
 signed main() {
     IOS(); 
