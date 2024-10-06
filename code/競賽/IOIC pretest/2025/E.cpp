@@ -64,7 +64,7 @@ struct DSU {
         return x;
     });
     Map<int,int>sz([&](int x) {
-        return 1;
+        return (int)1;
     });
     int n;
     void init(int _n) {
