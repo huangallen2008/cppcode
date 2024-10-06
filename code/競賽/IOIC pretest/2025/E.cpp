@@ -39,7 +39,7 @@ using namespace std;
 #endif
 const int mod=1e9+7;
 const int maxn=5;
-const int maxb=20;
+const int maxv=1e9+1;
 const int inf=1ll<<62;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -83,13 +83,38 @@ struct DSU {
         p[x]=y;
         sz[y]+=sz[x];
     }
-};
+    bool same(int a,int b) { return find(a)==find(b); }
+}dsu;
+int id(int u,int v) {
+    return u*maxv+v;
+}
 signed main() {
     IOS(); 
-    DSU dsu;
-    int n;
-    cin>>n;
-    dsu.init(n);
-    dsu.merge(1,2);
+    int n,m,q;
+    cin>>n>>m>>q;
+    dsu.init(maxv*n);
+    REP(i,m) {
+        int u,v,w;
+        cin>>u>>v>>w,u--,v--;
+        dsu.merge(id(u,w),id(v,w));
+    }
+    REP(i,n) {
+        int k;
+        cin>>k;
+        if(k>0) {
+            cin>>x,x--;
+            REP(j,k-1) {
+                int y;
+                cin>>y,y--;
+                dsu.merge(id(i,x),id(i,y));
+            }
+        }
+    }
+    REP(i,q) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        if(dsu.same(u,v)) cout<<"Yes\n";
+        else cout<<"No\n";
+    }
     return 0;
 }
