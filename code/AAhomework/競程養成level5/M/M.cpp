@@ -81,15 +81,15 @@ void solve() {
         return;
     }
     if(f1>b) swap(f1,b);
-    op(b)ope(f1)
+    // op(b)ope(f1)
     int x,y;
     exgcd(b,f1,x,y);
     op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    if(-y*f1*B+x*b*B!=A*f1*b) {
-        op("!!!")cout<<A<<' '<<B<<'\n';;
-    }
+    // if(-y*f1*B+x*b*B!=A*f1*b) {
+    //     op("!!!")cout<<A<<' '<<B<<'\n';;
+    // }
 }
 signed main() {
     IOS();
