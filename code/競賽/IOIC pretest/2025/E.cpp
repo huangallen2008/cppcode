@@ -125,7 +125,7 @@ signed main() {
         if(k>0) {
             REP(j,k) {
                 int y;
-                cin>>y,y--;
+                cin>>y;
                 dsu.merge(id(i,maxv),id(i,y));
             }
         }
