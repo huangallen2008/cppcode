@@ -71,9 +71,6 @@ struct DSU {
             return 1;
         });
     }
-    void init(int _n) {
-        n=_n;
-    }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
     }
