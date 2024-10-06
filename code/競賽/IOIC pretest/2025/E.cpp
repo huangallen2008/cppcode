@@ -45,22 +45,40 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<typename K,typename V> 
-struct Map:public map<K,V>{
-    public:
-    auto fun=0;
-    Map(){}
-    Map(auto _fun) : fun(_fun) {}
-    V& operator[](const K key) {
-        if(this->find==this->end()) {
-            (*this)[key]=fun(key);
+template<typename K,typename V>
+struct Map : public map<int, int> {
+private:
+    function<K(V)> func;  // 儲存傳入的函數
+
+public:
+    Map(function<K(V)> f) : func(f) {}
+    V& operator[](K key) {
+        if (this->find(key) == this->end()) {
+            this->insert({key,func(key)});
         }
         return map<K,V>::operator[](key);
     }
 };
 struct DSU {
-
-    // Map<int,int> p,sz;
+    Map<int,int> p(auto [&](int x) {
+        return x;
+    }),sz(auto [&](int x) {
+        return 1;
+    });
+    int n;
+    void init(int _n) {
+        n=_n;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y-find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+    }
 };
 signed main() {
     IOS(); 
