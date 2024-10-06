@@ -146,10 +146,10 @@ signed main() {
     REP(u,n) {
         // ope(u)
         for(auto [v,w]:g[u]) {
-            dsu.merge2(id(u,w),id(u,maxv));
+            dsu.merge2(id(u,w),id(u,maxv-1));
         }
         for(auto [v,w,ii]:qu[u]) {
-            if(dsu.same(id(v,w),id(u,maxv))) an[ii]=1;
+            if(dsu.same(id(v,w),id(u,maxv-1))) an[ii]=1;
             else an[ii]=0;
         }
         dsu.cl();
