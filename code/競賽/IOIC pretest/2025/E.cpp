@@ -110,7 +110,7 @@ struct qur {
 };
 signed main() {
     IOS(); 
-    DSU<int> dsu;
+    DSU<pii> dsu;
     int n,m,q;
     cin>>n>>m>>q;
     Graphw g(n);
@@ -119,7 +119,7 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         g[u].pb({v,w});
         g[v].pb({u,w});
-        dsu.merge(id(u,w),id(v,w));
+        dsu.merge({u,w},{v,w});
     }
     REP(i,n) {
         int k;
@@ -127,7 +127,7 @@ signed main() {
         REP(j,k) {
             int y;
             cin>>y;
-            dsu.merge(id(i,maxv),id(i,y));
+            dsu.merge({i,maxv},{i,y});
         }
     }
     vector<vector<qur>> qu(n);
@@ -140,10 +140,10 @@ signed main() {
     }
     REP(u,n) {
         for(auto [v,w]:g[u]) {
-            dsu.merge2(id(u,w),id(u,maxv-1));
+            dsu.merge2({u,w},{u,maxv-1});
         }
         for(auto [v,w,ii]:qu[u]) {
-            if(dsu.same(id(v,w),id(u,maxv-1))) an[ii]=1;
+            if(dsu.same({v,w},{u,maxv-1})) an[ii]=1;
             else an[ii]=0;
         }
         dsu.cl();
