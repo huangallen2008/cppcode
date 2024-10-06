@@ -140,7 +140,7 @@ signed main() {
         for(auto [v,w]:g[u]) {
             dsu.merge2(id(u,w),id(u,maxv));
         }
-        for(auto [v,w]:qu) {
+        for(auto [v,w]:qu[u]) {
             if(dsu.same(id(v,w),id(maxv,u))) cout<<"Yes\n";
             else cout<<"No\n";
         }
