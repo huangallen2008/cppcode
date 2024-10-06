@@ -81,6 +81,7 @@ void solve() {
     }
     int x,y;
     exgcd(b,f1,x,y);
+    y=y*a;x=-x*a;
     cout<<y<<' '<<f1<<' '<<x<<' '<<b<<'\n';
 }
 signed main() {
