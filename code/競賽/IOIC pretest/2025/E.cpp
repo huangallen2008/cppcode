@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -96,7 +96,7 @@ struct DSU {
         stk.pb({x,y});
     }
     void cl() {
-        for(auto [x,y]:stk) {
+        for(auto &[x,y]:stk) {
             p[x]=x;
             sz[y]-=sz.val(x);
         }
@@ -140,10 +140,10 @@ signed main() {
         else qu[v].pb({u,w,i});
     }
     REP(u,n) {
-        for(auto [v,w]:g[u]) {
+        for(auto &[v,w]:g[u]) {
             dsu.merge2({u,w},{u,maxv-1});
         }
-        for(auto [v,w,ii]:qu[u]) {
+        for(auto &[v,w,ii]:qu[u]) {
             if(dsu.same({v,w},{u,maxv-1})) an[ii]=1;
             else an[ii]=0;
         }
