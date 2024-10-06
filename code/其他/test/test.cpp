@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 template<typename K, typename V>
-class Map : public map<K, V> {
+struct Map : public map<K, V> {
     public:
     V dv=0;
 
