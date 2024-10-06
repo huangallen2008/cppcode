@@ -94,7 +94,7 @@ signed main() {
     freopen("out.txt","w",stdout);
     cout<<"10000\n";
     REP1(i,100) REP1(j,100) cout<<i<<' '<<j<<'\n';
-    #ifdef LOCAL 
+    #ifdef LOCAL_
         freopen("out.txt","r",stdin);
     #endif
     for(int i=2;i<maxn;i++) {
