@@ -60,16 +60,17 @@ public:
     }
 };
 struct DSU {
-    Map<int,int> p([](int x) {
+    Map<int,int> p([&](int x) {
         return x;
     });
+};
     // Map<int,int> sz([&](int x) {
     //     return (int)1;
     // });
-    int n;
-    void init(int _n) {
-        n=_n;
-    }
+    // int n;
+    // void init(int _n) {
+    //     n=_n;
+    // }
     // int find(int u) {
     //     return p[u]==u?u:p[u]=find(p[u]);
     // }
@@ -80,7 +81,7 @@ struct DSU {
     //     p[x]=y;
     //     sz[y]+=sz[x];
     // }
-};
+// };
 signed main() {
     IOS(); 
 
