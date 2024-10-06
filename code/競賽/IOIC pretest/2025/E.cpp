@@ -62,14 +62,15 @@ public:
 struct DSU {
     Map<int,int> p,sz;
     int n;
-    DSU(int _n):n(_n),
-    p([&](int x) {
-        return x;
-    }),
-    sz([&](int x) {
-        return 1;
-    })
-    {}
+    void init(int _n) {
+        n=_n,
+        p=auto([&](int x) {
+            return x;
+        }),
+        sz=auto([&](int x) {
+            return 1;
+        });
+    }
     void init(int _n) {
         n=_n;
     }
