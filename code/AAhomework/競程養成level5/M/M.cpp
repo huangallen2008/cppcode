@@ -66,6 +66,10 @@ void solve() {
         cout<<a+b<<' '<<b<<' '<<1<<' '<<1<<'\n';
         return;
     }
+    if(b==1) {
+        cout<<"-1 -1 -1 -1\n";
+        return;
+    }
     int lf=lpf[b],f1=1;
     while(b%lf==0) {
         b/=lf;
@@ -81,7 +85,6 @@ void solve() {
 }
 signed main() {
     IOS();
-    lpf[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
             for(int j=i;j<maxn;j+=i) lpf[j]=i;
