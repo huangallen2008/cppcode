@@ -64,10 +64,10 @@ struct DSU {
     int n;
     void init(int _n) {
         n=_n,
-        p=auto([&](int x) {
+        p=Map<int,int>([&](int x) {
             return x;
         }),
-        sz=auto([&](int x) {
+        sz=Map<int,int>([&](int x) {
             return 1;
         });
     }
