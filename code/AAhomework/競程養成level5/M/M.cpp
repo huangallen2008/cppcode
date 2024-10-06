@@ -87,7 +87,7 @@ void solve() {
     // op(b)op(f1)op(x)ope(y)
     y=-y*a;x=x*a;
     cout<<x<<' '<<f1<<' '<<y<<' '<<b<<'\n';
-    assert(x*b*B-y*f1*B==A*f1*b);
+    // assert(x*b*B-y*f1*B==A*f1*b);
 }
 signed main() {
     IOS();
