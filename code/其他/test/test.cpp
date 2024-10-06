@@ -63,8 +63,22 @@ int rd(int l,int r) {
 //         return map<K, V>::operator[](key);
 //     }
 // };
+// template<typename K,typename V>
+// struct Map : public map<int, int> {
+// private:
+//     function<K(V)> func;  // 儲存傳入的函數
+
+// public:
+//     Map(function<K(V)> f) : func(f) {}
+//     V& operator[](K key) {
+//         if (this->find(key) == this->end()) {
+//             this->insert({key,func(key)});
+//         }
+//         return map<K,V>::operator[](key);
+//     }
+// };
 template<typename K,typename V>
-struct Map : public map<int, int> {
+struct Map : public map<K, V> {
 private:
     function<K(V)> func;  // 儲存傳入的函數
 
