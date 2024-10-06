@@ -48,9 +48,9 @@ int rd(int l,int r) {
 template<typename K,typename V>
 struct Map : public map<K, V> {
 public:
-    function<K(V)> func; 
+    function<V(K)> func; 
 
-    Map(function<K(V)> f) : func(f) {}
+    Map(function<V(K)> f) : func(f) {}
     V& operator[](K key) {
         if (this->find(key) == this->end()) {
             this->insert({key,func(key)});
