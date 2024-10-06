@@ -62,15 +62,15 @@ public:
 struct DSU {
     Map<int,int> p,sz;
     int n;
-    DSU() {}
-    void init(int _n) {
-        n=_n,
-        p=Map<int,int>([&](int x) {
+    DSU():
+        p([&](int x) {
             return x;
         }),
-        sz=Map<int,int>([&](int x) {
+        sz([&](int x) {
             return 1;
-        });
+        }){}
+    void init(int _n) {
+        n=_n,
     }
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
