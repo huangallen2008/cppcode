@@ -59,33 +59,35 @@ public:
         return map<K,V>::operator[](key);
     }
 };
+template<typename S>//S:operator==
 struct DSU {
-    Map<int,int> p,sz;
-    vector<pii> stk;
+    Map<S,S> p;
+    Map<S,int>sz;
+    vector<pair<S,S>> stk;
     DSU():
-        p([&](int x) {
+        p([&](S x) {
             return x;
         }),
-        sz([&](int x) {
+        sz([&](S x) {
             return 1;
         }){}
-    int find(int u) {
+    S find(S u) {
         return p[u]==u?u:p[u]=find(p[u]);
     }
-    void merge(int a,int b) {
+    void merge(S a,S b) {
         // op(a)ope(b)
-        int x=find(a),y=find(b);
+        S x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
         sz[y]+=sz[x];
     }
-    int find2(int u) {
+    S find2(S u) {
         return p[u]==u?u:find2(p[u]);
     }
-    void merge2(int a,int b) {
+    void merge2(S a,S b) {
         // op(2)op(a)ope(b)
-        int x=find2(a),y=find2(b);
+        S x=find2(a),y=find2(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
@@ -99,11 +101,56 @@ struct DSU {
         }
         stk.clear();
     }
-    bool same(int a,int b) { 
+    bool same(S a,S b) { 
         // op("q")op(a)ope(b)
         return find2(a)==find2(b); 
     }
 }dsu;
+// struct DSU {
+//     Map<int,int> p,sz;
+//     vector<pii> stk;
+//     DSU():
+//         p([&](int x) {
+//             return x;
+//         }),
+//         sz([&](int x) {
+//             return 1;
+//         }){}
+//     int find(int u) {
+//         return p[u]==u?u:p[u]=find(p[u]);
+//     }
+//     void merge(int a,int b) {
+//         // op(a)ope(b)
+//         int x=find(a),y=find(b);
+//         if(x==y) return;
+//         if(sz[x]>sz[y]) swap(x,y);
+//         p[x]=y;
+//         sz[y]+=sz[x];
+//     }
+//     int find2(int u) {
+//         return p[u]==u?u:find2(p[u]);
+//     }
+//     void merge2(int a,int b) {
+//         // op(2)op(a)ope(b)
+//         int x=find2(a),y=find2(b);
+//         if(x==y) return;
+//         if(sz[x]>sz[y]) swap(x,y);
+//         p[x]=y;
+//         sz[y]+=sz[x];
+//         stk.pb({x,y});
+//     }
+//     void cl() {
+//         for(auto [x,y]:stk) {
+//             p[x]=x;
+//             sz[y]-=sz[x];
+//         }
+//         stk.clear();
+//     }
+//     bool same(int a,int b) { 
+//         // op("q")op(a)ope(b)
+//         return find2(a)==find2(b); 
+//     }
+// }dsu;
 int id(int u,int v) {
     return u*maxv+v;
 }
