@@ -130,7 +130,7 @@ signed main() {
             cin>>x,x--;
             REP(j,k-1) {
                 int y;
-                cin>>y;
+                cin>>y,y--;
                 dsu.merge(id(i,x),id(i,y));
             }
         }
