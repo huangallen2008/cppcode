@@ -81,6 +81,7 @@ void solve() {
 }
 signed main() {
     IOS();
+    lpf[1]=1;
     for(int i=2;i<maxn;i++) {
         if(!lpf[i]) {
             for(int j=i;j<maxn;j+=i) lpf[j]=i;
