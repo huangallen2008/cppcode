@@ -59,14 +59,14 @@ signed main() {
     REP1(i,n) bas+=b[i];
     REP1(i,n) {
         p+=c[i];
-        if(p<mn) {
-            mn=p;
-            id=i;
-        }
         if(p-mn+bas>an) {
             an=p-mn+bas;
             li=id;
             ri=i;
+        }
+        if(p<mn) {
+            mn=p;
+            id=i;
         }
     }
     mn=0,id=0,p=0;
@@ -74,13 +74,13 @@ signed main() {
     REP1(i,n) bas+=a[i];
     REP1(i,n) {
         p-=c[i];
-        if(p<mn) {
-            mn=p;
-            id=i;
-        }
         if(p-mn+bas>an) {
             an=p-mn+bas;
             li=id,ri=i;
+        }
+        if(p<mn) {
+            mn=p;
+            id=i;
         }
     }
     cout<<an<<' ';
