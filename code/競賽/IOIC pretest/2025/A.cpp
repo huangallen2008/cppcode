@@ -55,27 +55,31 @@ signed main() {
     REP1(i,n) c[i]=a[i]-b[i];
     int mn=0,id=0,p=0;
     int an=0,li=0,ri=0;
+    int bas=0;
+    REP1(i,n) bas+=b[i];
     REP1(i,n) {
         p+=c[i];
         if(p<mn) {
             mn=p;
             id=i;
         }
-        if(p-mn>an) {
-            an=p-mn;
+        if(p-mn+bas>an) {
+            an=p-mn+bas;
             li=id;
             ri=i;
         }
     }
     mn=0,id=0,p=0;
+    bas=0;
+    REP1(i,n) bas+=a[i];
     REP1(i,n) {
         p-=c[i];
         if(p<mn) {
             mn=p;
             id=i;
         }
-        if(p-mn>an) {
-            an=p-mn;
+        if(p-mn+bas>an) {
+            an=p-mn+bas;
             li=id,ri=i;
         }
     }
