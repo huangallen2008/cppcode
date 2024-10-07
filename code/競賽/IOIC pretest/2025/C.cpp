@@ -49,13 +49,15 @@ signed main() {
     IOS(); 
     int n,x0,y0;
     cin>>n>>x0>>y0;
-    map<double,int> mp;
+    // map<double,int> mp;
+    vector<pair<double,int>> mp;
     REP(i,n) {
         int x1,x2,y;
         cin>>x1>>x2>>y;
-        mp[x0+(double)(x1-x0)*(y0)/(y0-y)]++;
-        mp[x0+(double)(x2-x0)*(y0)/(y0-y)]--;
+        mp.pb({x0+(double)(x1-x0)*(y0)/(y0-y),1});
+        mp.pb({x0+(double)(x2-x0)*(y0)/(y0-y),-1});
     }
+    sort(ALL(mp));
     double an=0;
     int p=0;
     double l=0;
