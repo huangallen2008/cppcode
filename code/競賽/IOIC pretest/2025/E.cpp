@@ -105,7 +105,7 @@ struct DSU {
     }
 }dsu;
 int id(int u,int v) {
-    return u<<30+v;
+    return (u<<30)+v;
 }
 struct qur {
     int v,w,id;
