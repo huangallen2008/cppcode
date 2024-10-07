@@ -80,7 +80,7 @@ signed main() {
         }
     }
     cout<<an<<' ';
-    if(ri==0) cout<<"-1\n";
+    if(ri==0) cout<<"-1 -1\n";
     else cout<<li+1<<' '<<ri<<'\n';
     return 0;
 }
