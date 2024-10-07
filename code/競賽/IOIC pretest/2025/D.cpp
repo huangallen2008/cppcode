@@ -74,7 +74,6 @@ signed main() {
             else dp[l][r]=dp[l+1][r]+dp[l][r-1]-dp[l+1][r-1]+p[l][r];
         }
     }
-    REP1(i,n)
     REP(i,q) {
         int l,r;
         cin>>l>>r;
