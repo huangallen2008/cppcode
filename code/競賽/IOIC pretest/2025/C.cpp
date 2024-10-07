@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -49,15 +49,16 @@ signed main() {
     IOS(); 
     int n,x0,y0;
     cin>>n>>x0>>y0;
-    map<ld,int> mp;
+    map<double,int> mp;
     REP(i,n) {
         int x1,x2,y;
         cin>>x1>>x2>>y;
-        mp[x0+(ld)(x1-x0)*(y0)/(y0-y)]++;
-        mp[x0+(ld)(x2-x0)*(y0)/(y0-y)]--;
+        mp[x0+(double)(x1-x0)*(y0)/(y0-y)]++;
+        mp[x0+(double)(x2-x0)*(y0)/(y0-y)]--;
     }
-    ld an=0,p=0;
-    ld l=0;
+    double an=0;
+    int p=0;
+    double l=0;
     for(auto [x,y]:mp) {
         if(p!=0) an+=x-l;
         p+=y;
