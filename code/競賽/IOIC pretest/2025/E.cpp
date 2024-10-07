@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -45,140 +45,111 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
-}
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
-    }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC('\n');
-}
 template<typename K,typename V>
-struct Map : public map<K, V> {
+struct Map : public unordered_map<K, V> {
+// private:
 public:
-    function<V(K)> func; 
-    Map(function<V(K)> f) : func(f) {}
-    V& operator[](const K key) {
+    function<K(V)> func; 
+
+    Map(function<K(V)> f) : func(f) {}
+    V& operator[](K key) {
         if (this->find(key) == this->end()) {
             this->insert({key,func(key)});
         }
-        return map<K,V>::operator[](key);
-    }
-    V val(const K key) {
-        if(this->find(key)==this->end()) return func(key);
-        return map<K,V>::operator[](key);
+        return unordered_map<K,V>::operator[](key);
     }
 };
-template<typename S>//S:operator==
 struct DSU {
-    Map<S,S> p;
-    Map<S,int>sz;
-    vector<pair<S,S>> stk;
+    Map<int,int> p,sz;
+    vector<pii> stk;
     DSU():
-        p([&](S x) {
+        p([&](int x) {
             return x;
         }),
-        sz([&](S x) {
+        sz([&](int x) {
             return 1;
         }){}
-    S find(S u) {
-        return p.val(u)==u?u:p[u]=find(p.val(u));
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
     }
-    void merge(S a,S b) {
-        S x=find(a),y=find(b);
+    void merge(int a,int b) {
+        // op(a)ope(b)
+        int x=find(a),y=find(b);
         if(x==y) return;
-        if(sz.val(x)>sz.val(y)) swap(x,y);
+        if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
-        sz[y]+=sz.val(x);
+        sz[y]+=sz[x];
     }
-    S find2(S u) {
-        return p.val(u)==u?u:find2(p.val(u));
+    int find2(int u) {
+        return p[u]==u?u:find2(p[u]);
     }
-    void merge2(S a,S b) {
-        S x=find2(a),y=find2(b);
+    void merge2(int a,int b) {
+        // op(2)op(a)ope(b)
+        int x=find2(a),y=find2(b);
         if(x==y) return;
-        if(sz.val(x)>sz.val(y)) swap(x,y);
+        if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
-        sz[y]+=sz.val(x);
+        sz[y]+=sz[x];
         stk.pb({x,y});
     }
     void cl() {
-        for(auto &[x,y]:stk) {
+        for(auto [x,y]:stk) {
             p[x]=x;
-            sz[y]-=sz.val(x);
+            sz[y]-=sz[x];
         }
         stk.clear();
     }
-    bool same(S a,S b) { 
+    bool same(int a,int b) { 
+        // op("q")op(a)ope(b)
         return find2(a)==find2(b); 
     }
-};
+}dsu;
+int id(int u,int v) {
+    return u<<30+v;
+}
 struct qur {
     int v,w,id;
 };
 signed main() {
     IOS(); 
-    DSU<pii> dsu;
     int n,m,q;
-    // cin>>n>>m>>q;
-    n=read(),m=read(),q=read();
+    cin>>n>>m>>q;
     Graphw g(n);
     REP(i,m) {
         int u,v,w;
-        // cin>>u>>v>>w,u--,v--;
-        u=read()-1,v=read()-1,w=read();
+        cin>>u>>v>>w,u--,v--;
         g[u].pb({v,w});
         g[v].pb({u,w});
-        dsu.merge({u,w},{v,w});
+        dsu.merge(id(u,w),id(v,w));
     }
     REP(i,n) {
         int k;
-        // cin>>k;
-        k=read();
-        REP(j,k) {
-            int y=read();
-            // cin>>y;
-            dsu.merge({i,maxv},{i,y});
+        cin>>k;
+        if(k>0) {
+            int x;
+            cin>>x;
+            REP(j,k-1) {
+                int y;
+                cin>>y;
+                dsu.merge(id(i,x),id(i,y));
+            }
         }
     }
     vector<vector<qur>> qu(n);
     Vi an(q);
     REP(i,q) {
         int u,v,w;
-        // cin>>u>>v>>w,u--,v--;
-        u=read()-1,v=read()-1,w=read();
+        cin>>u>>v>>w,u--,v--;
         if(u==v) an[i]=1;
         else qu[v].pb({u,w,i});
     }
     REP(u,n) {
-        for(auto &[v,w]:g[u]) {
-            dsu.merge2({u,w},{u,maxv-1});
+        // ope(u)
+        for(auto [v,w]:g[u]) {
+            dsu.merge2(id(u,w),id(u,maxv-1));
         }
-        for(auto &[v,w,ii]:qu[u]) {
-            if(dsu.same({v,w},{u,maxv-1})) an[ii]=1;
+        for(auto [v,w,ii]:qu[u]) {
+            if(dsu.same(id(v,w),id(u,maxv-1))) an[ii]=1;
             else an[ii]=0;
         }
         dsu.cl();
