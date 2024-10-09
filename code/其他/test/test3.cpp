@@ -53,7 +53,10 @@ signed main() {
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    sort(ALL(v),cmp());
+    int x=5,y=6;
+    int r=cmp(x,y);
+    ope(r)
+    sort(ALL(v),cmp);
     oparr(v)
     return 0;
 }
