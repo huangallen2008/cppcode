@@ -52,6 +52,7 @@ signed main() {
         a++;
     };
     _(a);
+    ope(a)
     Vi x(5);
     int k;
     REP(i,5) cin>>x[i];
