@@ -2,5 +2,5 @@
 using namespace std;
 template<int T> int c=c<T/2>+1;
 main() {
-    cout<<c<7471>;
+    cout<<c<65536>;
 }
