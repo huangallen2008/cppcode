@@ -56,6 +56,6 @@ signed main() {
     IOS(); 
     ope(sum(1,2.0,3,4,5))
     ope(sum(5))
-    ope(sum())
+    // ope(sum())
     return 0;
 }
