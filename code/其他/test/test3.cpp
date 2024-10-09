@@ -58,7 +58,7 @@ struct S {
 }*ss;
 signed main() {
     IOS(); 
-    int n=10;
+    int *n=10;
     ope(&*n)
     // Vi v(n);
     // REP(i,n) v[i]=rd(0,n);
