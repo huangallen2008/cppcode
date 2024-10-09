@@ -65,8 +65,8 @@ signed main() {
     ope(c<0>);
     ope(c<2>);
     ope(c<3>);
-    ope(c<4>);
-    ope(c<5>);
+    ope(*c<4>);
+    ope(*c<5>);
     int a=(5>4?4:5);
     ope(a)
     // c<0>;
