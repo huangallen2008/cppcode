@@ -56,10 +56,10 @@ struct S {
     // template<typename T> cmp(T a,T b) { return a<b; }
     cmp(int a,int b) { return a<b; }
 }*ss;
-signed main() {
-    IOS(); 
     int b=9;
     int *n=&b;
+signed main() {
+    IOS(); 
     ope(&*n)
     ope(*&n)
     ope(&n)
