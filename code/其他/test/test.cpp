@@ -50,8 +50,8 @@ signed main() {
     int a=1;
     auto _=[=]() {
         a++;
-    };
-    _();
+    }();
+    
     ope(a)
     Vi x(5);
     int k;
