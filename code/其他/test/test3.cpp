@@ -47,12 +47,12 @@ int rd(int l,int r) {
 }
 // template<string S>
 // void ff() {cout<<S<<endl;}
+    template<int S>
+    int n=S;
 signed main() {
     IOS(); 
-    template<typename S>
-    int n=10;
-    Vi v(n);
-    REP(i,n) v[i]=rd(0,n-1);
+    Vi v(n<10>);
+    REP(i,n<10>) v[i]=rd(0,n-1);
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
