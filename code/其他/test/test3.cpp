@@ -53,7 +53,7 @@ signed main() {
     IOS(); 
     Vi v(n<10>);
     REP(i,n<10>) v[i]=rd(0,n<5>-1);
-    function<auto<auto>> cc;
+    function<auto<auto,auto >> cc;
     cc=[&](auto a,auto b) {
         return a<b;
     };
