@@ -2,5 +2,5 @@
 using namespace std;
 template<int T> int c=(T<=1?T:c<T-1>+c<T-2>);
 main() {
-    cout<<c<10>;
+    cout<<c<3>;
 }
