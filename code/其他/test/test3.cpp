@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-template<int T> int *c=&c<max(T-1,0)>;
+template<int T> int c=c<T/2>+1;
 main() {
-    c<7472>;
+    cout<<c<7471>;
 }
