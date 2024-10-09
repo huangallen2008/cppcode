@@ -2,5 +2,5 @@
 using namespace std;
 template<int T> int *c=&c<max(T-1,0)>;
 main() {
-    c<6000>;
+    c<7000>;
 }
