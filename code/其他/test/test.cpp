@@ -70,7 +70,6 @@ signed main() {
             }
         }
     }
-    oparr(dis)
     int an=0;
     REP(i,x[0]) if(k>=dis[i]) an+=(k-dis[i])/x[0]+1;
     cout<<an<<'\n';
