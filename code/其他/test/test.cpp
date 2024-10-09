@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -37,7 +37,6 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-#include"Cpp_template/NTT"
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
@@ -46,62 +45,30 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-// template<typename K, typename V>
-// struct Map : public map<K, V> {
-//     public:
-//     V dv=0;
-
-//     // 構造函數，設定自定的預設值
-//     Map() {}
-//     Map(V _dv) : dv(_dv) {}
-
-//     // 重載 operator[]，實現自定義預設值
-//     V& operator[](const K& key) {
-//         if (this->find(key) == this->end()) {
-//             // 如果 key 不存在，插入自定義預設值
-//             this->insert({key, dv});
-//         }
-//         return map<K, V>::operator[](key);
-//     }
-// };
-// template<typename K,typename V>
-// struct Map : public map<int, int> {
-// private:
-//     function<K(V)> func;  // 儲存傳入的函數
-
-// public:
-//     Map(function<K(V)> f) : func(f) {}
-//     V& operator[](K key) {
-//         if (this->find(key) == this->end()) {
-//             this->insert({key,func(key)});
-//         }
-//         return map<K,V>::operator[](key);
-//     }
-// };
-template<typename K,typename V>
-struct Map : public map<K, V> {
-private:
-    function<K(V)> func;  // 儲存傳入的函數
-
-public:
-    Map(function<K(V)> f) : func(f) {}
-    V& operator[](K key) {
-        if (this->find(key) == this->end()) {
-            this->insert({key,func(key)});
-        }
-        return map<K,V>::operator[](key);
-    }
-};
-int n;
-int fun(int x) {
-    return x*n;
-}
 signed main() {
     IOS(); 
-    cin>>n;
-    Map<int,int> mp([&](int x){
-        return x;
-    });
-    REP(i,5) cout<<mp[i]<<'\n';
+    Vi x(5),k;
+    REP(i,5) cin>>x[i];
+    cin>>k;
+    sort(ALL(x));
+    Vi dis(x[0],inf);
+    dis[0]=0;
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
+    pq.push({0,0});
+    vector<bool> vis(x[0]);
+    while(pq.size()) {
+        int u=pq.top();
+        pq.pop();
+        if(vis[u]) continue;
+        vis[u]=1;
+        REP1(i,4) {
+            int v=(u+x[i])%x[0],w=x[i];
+            if(dis[v]>dis[u]+w) {
+                dis[v]=dis[u]+w;
+                pq.push({v,dis[v]});
+            }
+        }
+    }
+    oparr(dis)
     return 0;
 }
