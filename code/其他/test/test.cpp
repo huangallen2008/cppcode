@@ -47,7 +47,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    Vi x(5),k;
+    Vi x(5);
+    int k;
     REP(i,5) cin>>x[i];
     cin>>k;
     sort(ALL(x));
