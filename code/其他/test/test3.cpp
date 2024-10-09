@@ -48,14 +48,19 @@ int rd(int l,int r) {
 // template<string S>
 // void ff() {cout<<S<<endl;}
 template<typename T> T sum(T a){ return a; }
-template<typename T,T ... arg>
+template<typename T,typename ... arg>
 T sum(T a,arg ... args) {
     return a+sum(args...);
 }
+struct S {
+    template<typename T> cmp(T a,T b) { return a<b; }
+}ss;
 signed main() {
     IOS(); 
-    ope(sum(1,2.0,3,4,5))
-    ope(sum(5,6.6666))
-    // ope(sum())
+    int n=10;
+    Vi v(n);
+    REP(i,n) v[i]=rd(0,n);
+    // sort(ALL(v),ss<int>);
+    oparr(v)
     return 0;
 }
