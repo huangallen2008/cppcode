@@ -49,17 +49,10 @@ int rd(int l,int r) {
 // void ff() {cout<<S<<endl;}
 template<typename T,typename ... arg>
 T sum(T a,arg ... arg) {
-    return a+sum(arg);
+    return a+sum(arg...);
 }
 signed main() {
     IOS(); 
-    Vi v(n<10>);
-    REP(i,n<10>) v[i]=rd(0,n<5>-1);
-    auto cmp=[&](auto a,auto b) {
-        return a<b;
-    };
-    // ff<"765">();
-    sort(ALL(v),cmp);
-    oparr(v)
+
     return 0;
 }
