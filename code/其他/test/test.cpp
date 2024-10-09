@@ -58,7 +58,7 @@ signed main() {
     pq.push({0,0});
     vector<bool> vis(x[0]);
     while(pq.size()) {
-        int u=pq.top().f;
+        int u=pq.top().s;
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
@@ -66,7 +66,7 @@ signed main() {
             int v=(u+x[i])%x[0],w=x[i];
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
-                pq.push({v,dis[v]});
+                pq.push({dis[v],v});
             }
         }
     }
