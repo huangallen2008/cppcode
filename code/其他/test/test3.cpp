@@ -5,5 +5,5 @@ template<int T> int c=(T<=1?T:0ll)+c<max(T-1,0ll)>+c<max(T-2,0ll)>;
 main() {
     cout<<c<3>;
     cout<<c<1><<endl;
-    cout<<c<50>;
+    cout<<c<56>;
 }
