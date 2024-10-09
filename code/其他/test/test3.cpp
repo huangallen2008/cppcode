@@ -58,7 +58,7 @@ struct S {
 }*ss;
     int b=9;
     int *n=&b;
-    template<int T> int  n=n<T-1>;
+    template<int T> int c;
 signed main() {
     IOS(); 
     ope(&*n)
