@@ -49,13 +49,13 @@ int rd(int l,int r) {
 // void ff() {cout<<S<<endl;}
 signed main() {
     IOS(); 
+    template<typename S>
     int n=10;
     Vi v(n);
     REP(i,n) v[i]=rd(0,n-1);
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    cmp&7;
     // ff<"765">();
     // sort(ALL(v),cmp);
     // oparr(v)
