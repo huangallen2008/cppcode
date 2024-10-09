@@ -72,7 +72,7 @@ signed main() {
     }
     oparr(dis)
     int an=0;
-    REP(i,x[0]) an+=max((k-i)/x[0]-(dis[i]-1-i)/x[0],0ll);
+    REP(i,x[0]) if(k>=dis[i]) an+=(k-dis[i])/x[0]+1;
     cout<<an<<'\n';
     return 0;
 }
