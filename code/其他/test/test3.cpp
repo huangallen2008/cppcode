@@ -55,7 +55,7 @@ T sum(T a,arg ... args) {
 signed main() {
     IOS(); 
     ope(sum(1,2.0,3,4,5))
-    ope(sum(5))
+    ope(sum(5,6.6666))
     // ope(sum())
     return 0;
 }
