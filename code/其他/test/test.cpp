@@ -57,7 +57,7 @@ signed main() {
     pq.push({0,0});
     vector<bool> vis(x[0]);
     while(pq.size()) {
-        int u=pq.top();
+        int u=pq.top().f;
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
