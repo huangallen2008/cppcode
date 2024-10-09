@@ -53,7 +53,7 @@ signed main() {
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    sort(ALL(v),cmp);
+    sort(ALL(v),cmp());
     oparr(v)
     return 0;
 }
