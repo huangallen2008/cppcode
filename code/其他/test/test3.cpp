@@ -55,9 +55,7 @@ signed main() {
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    int x=5,y=6;
-    int r=cmp()<int,int>(x,y);
-    ope(r)
+    ff<int>();
     sort(ALL(v),cmp);
     oparr(v)
     return 0;
