@@ -61,7 +61,7 @@ signed main() {
     int n=10;
     Vi v(n);
     REP(i,n) v[i]=rd(0,n);
-    sort(ALL(v),*ss->&cmp);
+    sort(ALL(v),&*ss->cmp);
     oparr(v)
     return 0;
 }
