@@ -55,13 +55,13 @@ T sum(T a,arg ... args) {
 struct S {
     // template<typename T> cmp(T a,T b) { return a<b; }
     cmp(int a,int b) { return a<b; }
-}ss;
+}*ss;
 signed main() {
     IOS(); 
     int n=10;
     Vi v(n);
     REP(i,n) v[i]=rd(0,n);
-    sort(ALL(v),ss.*cmp);
+    sort(ALL(v),*ss.cmp);
     oparr(v)
     return 0;
 }
