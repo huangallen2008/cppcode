@@ -55,7 +55,7 @@ signed main() {
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    cmp++;
+    cmp&7;
     // ff<"765">();
     // sort(ALL(v),cmp);
     // oparr(v)
