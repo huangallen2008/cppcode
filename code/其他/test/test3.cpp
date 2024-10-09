@@ -47,6 +47,7 @@ int rd(int l,int r) {
 }
 // template<string S>
 // void ff() {cout<<S<<endl;}
+template<typename T> T sum(T a){ return a; }
 template<typename T,typename ... arg>
 T sum(T a,arg ... args) {
     return a+sum(args...);
