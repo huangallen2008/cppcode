@@ -70,6 +70,7 @@ signed main() {
     int a=(5>4?4:5);
     ope(a)
     // c<0>;
+    ope(&n)
     ope(&*n)
     ope(*&n)
     ope(&n)
