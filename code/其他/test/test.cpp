@@ -49,7 +49,7 @@ signed main() {
     IOS(); 
     int a=1;
     auto _=[=]() {
-        a++;
+        a;
     }();
     
     ope(a)
