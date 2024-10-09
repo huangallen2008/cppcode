@@ -61,7 +61,7 @@ signed main() {
     int b=9;
     int *n=&b;
     ope(&*n)
-    ope(***n)
+    ope(*&n)
     // Vi v(n);
     // REP(i,n) v[i]=rd(0,n);
     // sort(ALL(v),&*ss->cmp);
