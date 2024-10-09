@@ -2,5 +2,5 @@
 using namespace std;
 template<int T> int *c=&c<T-1>;
 main() {
-    c<890>;
+    c<-1e9>;
 }
