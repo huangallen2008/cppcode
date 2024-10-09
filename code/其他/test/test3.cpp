@@ -57,9 +57,9 @@ struct S {
     cmp(int a,int b) { return a<b; }
 }*ss;
     int *b=9;
-    // int *n=&b;
+    int *n=&b;
     // template<int T> int c=(T==1?c<T-1>:5);
-    template<int T> int *c=(T==0?5ll:c<max(T-1,0ll)>);
+    template<int T> int *c=(T==0?n:c<max(T-1,0ll)>);
 signed main() {
     IOS(); 
     ope(c<0>);
