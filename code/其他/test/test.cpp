@@ -47,6 +47,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
+    int a=1;
+    auto _=[&](int a) {
+        a++;
+    }(a);
     Vi x(5);
     int k;
     REP(i,5) cin>>x[i];
