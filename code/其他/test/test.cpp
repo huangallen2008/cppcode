@@ -50,7 +50,8 @@ signed main() {
     int a=1;
     auto _=[&](int a) {
         a++;
-    }(a);
+    };
+    _(a);
     Vi x(5);
     int k;
     REP(i,5) cin>>x[i];
