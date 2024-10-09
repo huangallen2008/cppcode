@@ -59,7 +59,7 @@ struct S {
     int b=9;
     int *n=&b;
     // template<int T> int c=(T==1?c<T-1>:5);
-    template<int T> int *c=(T==0?&b:c<max(T-1,0ll)>);
+    template<int T> int *c=(T==0?&b:&c<max(T-1,0ll)>);
 signed main() {
     IOS(); 
     ope(c<0>);
@@ -67,18 +67,8 @@ signed main() {
     ope(&c<3>);
     ope(&c<4>);
     ope(&c<5>);
-    ope(&c<906>);
+    ope(&c<905>);
     int a=(5>4?4:5);
     ope(a)
-    // c<0>;
-    ope(&n)
-    ope(&*n)
-    ope(*&n)
-    ope(&n)
-    ope(&*&*&*&*&*&*&*&*&**&*&*&*&*&*&*&*&*&n)
-    // Vi v(n);
-    // REP(i,n) v[i]=rd(0,n);
-    // sort(ALL(v),&*ss->cmp);
-    // oparr(v)
     return 0;
 }
