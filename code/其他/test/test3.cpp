@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 template<typename S>
-void ff() {cout<<(#S)<<endl;}
+void ff() {cout<<(S)<<endl;}
 signed main() {
     IOS(); 
     int n=10;
