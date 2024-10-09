@@ -48,7 +48,7 @@ int rd(int l,int r) {
 signed main() {
     IOS(); 
     int a=1;
-    auto _=[&]() {
+    auto _=[=]() {
         a++;
     };
     _();
