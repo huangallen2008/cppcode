@@ -59,7 +59,7 @@ struct S {
     int b=9;
     int *n=&b;
     // template<int T> int c=(T==1?c<T-1>:5);
-    template<int T> int c=(T==1?c<T/2>:5);
+    template<int T> int c=(T==1?c<max(T-1,0)>:5);
 signed main() {
     IOS(); 
     ope(c<0>);
