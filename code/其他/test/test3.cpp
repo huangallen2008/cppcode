@@ -48,8 +48,8 @@ int rd(int l,int r) {
 // template<string S>
 // void ff() {cout<<S<<endl;}
 template<typename T,typename ... arg>
-T sum(T a,arg ... arg) {
-    return a+sum(arg...);
+T sum(T a,arg ... args) {
+    return a+sum(args...);
 }
 signed main() {
     IOS(); 
