@@ -53,6 +53,6 @@ T sum(T a,arg ... args) {
 }
 signed main() {
     IOS(); 
-
+    ope(sum(1,2,3,4,5))
     return 0;
 }
