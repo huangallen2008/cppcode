@@ -54,7 +54,7 @@ signed main() {
         return a<b;
     };
     int x=5,y=6;
-    int r=cmp<int,int>()(x,y);
+    int r=cmp()<int,int>(x,y);
     ope(r)
     sort(ALL(v),cmp);
     oparr(v)
