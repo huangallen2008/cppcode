@@ -61,6 +61,7 @@ struct S {
     template<int T> int c=c<T-1>;
 signed main() {
     IOS(); 
+    c<1>;
     ope(&*n)
     ope(*&n)
     ope(&n)
