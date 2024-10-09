@@ -58,10 +58,12 @@ struct S {
 }*ss;
     int b=9;
     int *n=&b;
-    template<int T> int c=(T==1?c<T-1>:5);
+    // template<int T> int c=(T==1?c<T-1>:5);
+    template<int T> int c=(T==1?6:5);
 signed main() {
     IOS(); 
-    c<0>;
+    ope(c<0>);
+    ope(c<1>);
     int a=(5>4?4:5);
     ope(a)
     // c<0>;
