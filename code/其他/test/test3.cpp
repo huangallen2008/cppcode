@@ -63,7 +63,7 @@ struct S {
 signed main() {
     IOS(); 
     ope(c<0>);
-    ope(c<1>);
+    ope(c<2>);
     int a=(5>4?4:5);
     ope(a)
     // c<0>;
