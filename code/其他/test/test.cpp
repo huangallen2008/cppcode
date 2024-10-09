@@ -48,10 +48,10 @@ int rd(int l,int r) {
 signed main() {
     IOS(); 
     int a=1;
-    auto _=[&](int a) {
+    auto _=[&]() {
         a++;
     };
-    _(a);
+    _();
     ope(a)
     Vi x(5);
     int k;
