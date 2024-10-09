@@ -47,15 +47,14 @@ int rd(int l,int r) {
 }
 // template<string S>
 // void ff() {cout<<S<<endl;}
-    template<int S>
-    int n=S;
+template<typename T,typename ... arg>
+T sum(T a,arg ... arg) {
+    return a+sum(arg);
+}
 signed main() {
     IOS(); 
     Vi v(n<10>);
     REP(i,n<10>) v[i]=rd(0,n<5>-1);
-    function<bool(auto,int)> cc=[&](auto a,auto b) {
-        return a<b;
-    };
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
