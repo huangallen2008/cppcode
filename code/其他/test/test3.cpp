@@ -45,8 +45,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<string S>
-void ff() {cout<<S<<endl;}
+// template<string S>
+// void ff() {cout<<S<<endl;}
 signed main() {
     IOS(); 
     int n=10;
@@ -55,8 +55,9 @@ signed main() {
     auto cmp=[&](auto a,auto b) {
         return a<b;
     };
-    ff<"765">();
-    sort(ALL(v),cmp);
-    oparr(v)
+    cmp++;
+    // ff<"765">();
+    // sort(ALL(v),cmp);
+    // oparr(v)
     return 0;
 }
