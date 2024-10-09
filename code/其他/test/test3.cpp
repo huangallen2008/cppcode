@@ -61,6 +61,8 @@ struct S {
     template<int T> int c=(T>0?c<T-1>:5);
 signed main() {
     IOS(); 
+    int a=(5>4?4:5);
+    ope(a)
     // c<0>;
     ope(&*n)
     ope(*&n)
