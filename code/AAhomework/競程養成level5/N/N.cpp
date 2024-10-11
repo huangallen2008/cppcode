@@ -128,8 +128,9 @@ void solve() {
     }
     // oparr(dis)
     REP(i,m) {
-        ll q=readl()/k;
+        ll p=readl();
         // cin>>p;
+        ll q=p/k;
         if(q>=dis[p-q*k]) PC('Y');//cout<<"Y";
         else PC('N');//cout<<"N";
     }
