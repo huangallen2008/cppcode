@@ -130,7 +130,7 @@ void solve() {
     REP(i,m) {
         ll p=readl();
         // cin>>p;
-        if(p>=dis[p%k]*k) PC('Y');//cout<<"Y";
+        if((ld)p/k>=(ld)dis[p%k]) PC('Y');//cout<<"Y";
         else PC('N');//cout<<"N";
     }
     PC('\n');
