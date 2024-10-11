@@ -59,6 +59,7 @@ void solve() {
     vector<bool> vis(n);
     while(pq.size()) {
         int u=pq.top().s;
+        ope(u)
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
