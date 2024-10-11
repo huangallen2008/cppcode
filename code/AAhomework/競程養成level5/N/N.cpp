@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -52,8 +53,9 @@ void solve() {
     REP(i,n) cin>>c[i];
     sort(ALL(c));
     int k=c.back();
-    Vi dis(k,inf);
-    priority_queue<pii,vector<pii>,greater<pii>> pq;
+    vector<ll> dis(k,inf);
+    #define pli pair<ll,int>
+    priority_queue<pli,vector<pli>,greater<pli>> pq;
     dis[0]=0;
     pq.push({0,0});
     vector<bool> vis(k);
@@ -71,9 +73,8 @@ void solve() {
         }
     }
     REP(i,m) {
-        int p;
+        ll p;
         cin>>p;
-        int rr=p%k;
         if(p>=dis[p%k]) cout<<"Y";
         else cout<<"N";
     }
