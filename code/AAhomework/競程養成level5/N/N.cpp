@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const ll inf=(1ll<<62);
+const ll inf=(ll)1e12;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -137,7 +137,7 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    int T=read()-1;
+    int T=read();
     // cin>>T;
     while(T--) solve();
     return 0;
