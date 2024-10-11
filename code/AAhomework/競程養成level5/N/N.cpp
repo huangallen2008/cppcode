@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const int inf=(1<<30);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -87,6 +87,7 @@ inline void out(int x) {
     for(it--;it>=str;it--) PC(*it);
     PC('\n');
 }
+#define pli pair<ll,int>
 void solve() {
     int n=read(),m=read();
     // cin>>n>>m;
@@ -96,7 +97,6 @@ void solve() {
     sort(ALL(c));
     int k=c.back();
     vector<ll> dis(k,inf);
-    #define pli pair<ll,int>
     priority_queue<pli,vector<pli>,greater<pli>> pq;
     dis[0]=0;
     pq.push({0,0});
@@ -107,8 +107,8 @@ void solve() {
         if(vis[u]) continue;
         vis[u]=1;
         REP(i,n-1) {
-            int v=(u+c[i])%k,w=c[i];
-            // if(v>=k) v-=k;
+            int v=u+c[i],w=c[i];
+            if(v>=k) v-=k;
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 pq.push({dis[v],v});
