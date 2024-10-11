@@ -50,7 +50,7 @@ void solve() {
     cin>>n>>m;
     Vi c(n);
     REP(i,n) cin>>c[i];
-    sort(ALL(c[i]));
+    sort(ALL(c));
     int k=c.back();
     Vi dis(k,inf);
     priority_queue<pii,vector<pii>,greater<pii>> pq;
