@@ -125,7 +125,6 @@ void solve() {
             }
         }
     }
-    oparr(dis)
     REP(i,m) {
         ll p=readl();
         // cin>>p;
