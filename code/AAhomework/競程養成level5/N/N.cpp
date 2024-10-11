@@ -125,6 +125,7 @@ void solve() {
             }
         }
     }
+    oparr(dis)
     REP(i,m) {
         ll p=readl();
         // cin>>p;
@@ -136,7 +137,7 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    int T=read();
+    int T=read();T--;
     // cin>>T;
     while(T--) solve();
     return 0;
