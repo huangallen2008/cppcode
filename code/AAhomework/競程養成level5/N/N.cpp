@@ -97,21 +97,31 @@ void solve() {
     sort(ALL(c));
     int k=c.back();
     vector<ll> dis(k,inf);
-    priority_queue<pli,vector<pli>,greater<pli>> pq;
+    // priority_queue<pli,vector<pli>,greater<pli>> pq;
+    deque<ll> dq;
     dis[0]=0;
-    pq.push({0,0});
+    // pq.push
+    dq.pb(0);
     vector<bool> vis(k);
-    while(pq.size()) {
-        int u=pq.top().s;
-        pq.pop();
+    while(dq.size()) {
+        int u=dq.front();
+        pq.pop_front();
         if(vis[u]) continue;
         vis[u]=1;
         REP(i,n-1) {
-            int v=u+c[i],w=c[i];
-            if(v>=k) v-=k;
-            if(dis[v]>dis[u]+w) {
-                dis[v]=dis[u]+w;
-                pq.push({dis[v],v});
+            int v=u+c[i];
+            if(v>=k) {
+                v-=k;
+                if(dis[v]>dis[u]+1) {
+                    dis[v]=dis[u]+1;
+                    dq.pb({dis[v]);
+                }
+            }
+            else {
+                if(dis[v]>dis[u]) {
+                    dis[v]=dis[u];
+                    dp.push_front(v);
+                }
             }
         }
     }
