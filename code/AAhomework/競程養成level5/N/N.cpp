@@ -56,10 +56,9 @@ void solve() {
     priority_queue<pii,vector<pii>,greater<pii>> pq;
     dis[0]=0;
     pq.push({0,0});
-    vector<bool> vis(n);
+    vector<bool> vis(k);
     while(pq.size()) {
         int u=pq.top().s;
-        ope(u)
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
