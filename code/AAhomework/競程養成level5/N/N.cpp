@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -126,7 +126,7 @@ void solve() {
             }
         }
     }
-    oparr(dis)
+    // oparr(dis)
     REP(i,m) {
         ll p=readl();
         // cin>>p;
@@ -138,7 +138,7 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    int T=read();T--;
+    int T=read();
     // cin>>T;
     while(T--) solve();
     return 0;
