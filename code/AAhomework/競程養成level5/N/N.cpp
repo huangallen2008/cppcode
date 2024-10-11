@@ -98,7 +98,7 @@ void solve() {
     int k=c.back();
     vector<ll> dis(k,inf);
     // priority_queue<pli,vector<pli>,greater<pli>> pq;
-    deque<ll> dq;
+    deque<int> dq;
     dis[0]=0;
     // pq.push
     dq.pb(0);
