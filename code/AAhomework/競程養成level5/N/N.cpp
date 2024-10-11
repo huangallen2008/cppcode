@@ -105,7 +105,7 @@ void solve() {
     vector<bool> vis(k);
     while(dq.size()) {
         int u=dq.front();
-        pq.pop_front();
+        dq.pop_front();
         if(vis[u]) continue;
         vis[u]=1;
         REP(i,n-1) {
