@@ -115,7 +115,7 @@ void solve() {
         }
     }
     REP(i,m) {
-        ll p=raedl();
+        ll p=readl();
         // cin>>p;
         if(p>=dis[p%k]) cout<<"Y";
         else cout<<"N";
