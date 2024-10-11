@@ -46,13 +46,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
+// #ifdef LOCAL
 #define GC _getchar_nolock()
 #define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
+// #else 
+// #define GC getchar_unlocked()
+// #define PC putchar_unlocked
+// #endif
 inline int read()
 {
     int x=0;
