@@ -77,7 +77,7 @@ void solve() {
         if(p>=dis[p%k]) cout<<"Y";
         else cout<<"N";
     }
-    cout<<'\n';
+    cout<<'\n';entr
 }
 signed main() {
     IOS(); 
