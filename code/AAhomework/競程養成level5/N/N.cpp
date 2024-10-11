@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const int inf=(1ll<<62);
+const ll inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -97,7 +97,6 @@ void solve() {
     sort(ALL(c));
     int k=c.back();
     vector<ll> dis(k,inf);
-    REP(i,5) cout<<dis[i]<<' ';entr
     priority_queue<pli,vector<pli>,greater<pli>> pq;
     dis[0]=0;
     pq.push({0,0});
