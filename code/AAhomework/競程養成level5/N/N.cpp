@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const ll inf=(ll)1e18;
+const ll inf=1ll<<62;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
