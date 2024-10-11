@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define ll long long
@@ -128,9 +128,8 @@ void solve() {
     }
     // oparr(dis)
     REP(i,m) {
-        ll p=readl();
+        ll q=readl()/k;
         // cin>>p;
-        int q=p/k;
         if(q>=dis[p-q*k]) PC('Y');//cout<<"Y";
         else PC('N');//cout<<"N";
     }
