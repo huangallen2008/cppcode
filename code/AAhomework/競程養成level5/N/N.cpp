@@ -108,7 +108,7 @@ void solve() {
         dq.pop_front();
         if(vis[u]) continue;
         vis[u]=1;
-        op(u)ope(dis[u])
+        // op(u)ope(dis[u])
         REP(i,n-1) {
             int v=u+c[i];
             if(v>=k) {
