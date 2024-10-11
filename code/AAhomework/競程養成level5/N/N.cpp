@@ -97,6 +97,7 @@ void solve() {
     sort(ALL(c));
     int k=c.back();
     vector<ll> dis(k,inf);
+    REP(i,5) cout<<dis[i]<<' ';entr
     priority_queue<pli,vector<pli>,greater<pli>> pq;
     dis[0]=0;
     pq.push({0,0});
