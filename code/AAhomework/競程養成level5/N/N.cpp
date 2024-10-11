@@ -114,13 +114,13 @@ void solve() {
                 v-=k;
                 if(dis[v]>dis[u]+1) {
                     dis[v]=dis[u]+1;
-                    dq.pb({dis[v]);
+                    dq.pb(dis[v]);
                 }
             }
             else {
                 if(dis[v]>dis[u]) {
                     dis[v]=dis[u];
-                    dp.push_front(v);
+                    dq.push_front(v);
                 }
             }
         }
