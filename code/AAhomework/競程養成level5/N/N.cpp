@@ -107,8 +107,8 @@ void solve() {
         if(vis[u]) continue;
         vis[u]=1;
         REP(i,n-1) {
-            int v=u+c[i],w=c[i];
-            if(v>=k) v-=k;
+            int v=(u+c[i])%k,w=c[i];
+            // if(v>=k) v-=k;
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 pq.push({dis[v],v});
@@ -118,10 +118,11 @@ void solve() {
     REP(i,m) {
         ll p=readl();
         // cin>>p;
-        if(p>=dis[p%k]) cout<<"Y";
-        else cout<<"N";
+        if(p>=dis[p%k]) PC('Y');//cout<<"Y";
+        else PC('N');//cout<<"N";
     }
-    cout<<'\n';
+    PC('\n');
+    // cout<<'\n';
 }
 signed main() {
     IOS(); 
