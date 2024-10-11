@@ -114,7 +114,7 @@ void solve() {
                 v-=k;
                 if(dis[v]>dis[u]+1) {
                     dis[v]=dis[u]+1;
-                    dq.pb(dis[v]);
+                    dq.pb(v);
                 }
             }
             else {
