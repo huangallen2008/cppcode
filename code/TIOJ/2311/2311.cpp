@@ -81,6 +81,7 @@ struct SEG {
         if(l==r) {
             if(a[l]<0) s[w].x={0,a[l],0,0};
             else s[w].x={a[l],0,0,0};
+            oparr(s[w])
             return;
         }
         int m=l+r>>1;
