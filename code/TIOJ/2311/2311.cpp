@@ -70,7 +70,7 @@ struct SEG {
         else mx1=*max_element(d.begin(),d.begin()+id);
         if(id==7) mx2=0;
         else mx2=*max_element(d.begin()+id+1,d.end());
-        oparr(d)op(id)op(mx1)ope(mx2)
+        // oparr(d)op(id)op(mx1)ope(mx2)
         a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
         return a;
     }
@@ -87,7 +87,7 @@ struct SEG {
         int m=l+r>>1;
         build(w<<1,l,m,a);
         build(w<<1|1,m+1,r,a);
-        op(l)ope(r)
+        // op(l)ope(r)
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,int _m,vector<int> &a) {
