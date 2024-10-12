@@ -58,8 +58,13 @@ struct SEG {
         Seg a;
         //b[0],b[1],b[2]+b[3]+c[0],c[1],c[2],c[3];
         int t=min(b[2]+b[3]+c[0],m);
-        if(t+c[1]>0) a.x={b[0],b[1],t,c[1]+c[2],c[3]};
-        else a.x={b[0]+b[1]+t,c[1],c[2],c[3]};
+        if(t+c[1]>0) {
+            a.x={b[0],b[1],t,c[1]+c[2],c[3]};
+        }
+        else {
+            if(b[1]+t>0)a.x={b[0]+b[1]+t,c[1],c[2],c[3]};
+            else a.x={b[0],b[1]+t+c[1],c[2],c[3]};
+        }
         // Vi d(8);
         // REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
         // // oparr(d)
