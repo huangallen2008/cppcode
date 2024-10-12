@@ -91,8 +91,8 @@ struct SEG {
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    int qu(int l,int r) {
-        return -_qu(1,0,n-1,l,r).f;
+    int qu(int l,int r,int y) {
+        return -merge({0,y},_qu(1,0,n-1,l,r)).f;
     }
 }seg;
 signed main() {
@@ -111,9 +111,9 @@ signed main() {
             seg.ud(p,x);
         }
         else {
-            int l,r;
-            cin>>l>>r,l--,r--;
-            cout<<seg.qu(l,r)<<'\n';
+            int l,r,y;
+            cin>>l>>r>>y,l--,r--;
+            cout<<seg.qu(l,r,y)<<'\n';
         }
     }
     return 0;
