@@ -73,21 +73,6 @@ inline ll readl()
     if(neg) x=-x;
     return x;
 }
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
-    }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC('\n');
-}
-#define pli pair<ll,int>
 void solve() {
     int n=read(),m=read();
     // cin>>n>>m;
