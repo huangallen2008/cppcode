@@ -56,7 +56,8 @@ struct SEG {
     vector<Seg> s;
     Seg merge(Seg b,Seg c) {
         Seg a;
-        //b[0],b[1]
+        //b[0],b[1],b[2]+b[3]+c[0],c[1],c[2],c[3];
+        int t=b[2]+b[3]+c[0];
         Vi d(8);
         REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
         // oparr(d)
