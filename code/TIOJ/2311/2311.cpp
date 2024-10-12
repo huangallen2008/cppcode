@@ -54,16 +54,7 @@ struct SEG {
     vector<Seg> s;
     Seg merge(Seg b,Seg c) {
         Seg a;
-        //b.u1,b.d,b1.u2+c.u1,c.d,c.u2
-        int t=min(b.u2+c.u1,m);
-        if(t+c.d<0) {
-            if(t+b.d>0)a={b.u1+b.d+t,c.d,c.u2};
-            else a={b.u1,b.d+t+c.d,c.u2};
-        }
-        else {
-            a={b.u1,b.d,t+c.d+c.u2};
-        chmin(a.u1,m);
-        chmin(a.u2,m);
+        
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
