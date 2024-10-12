@@ -95,10 +95,10 @@ struct SEG {
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r,int y) {
-        op(_qu(1,0,n-1,l,r).f);
-        ope(_qu(1,0,n-1,l,r).s);
-        op(merge({0,y},_qu(1,0,n-1,l,r)).f);
-        ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
+        // op(_qu(1,0,n-1,l,r).f);
+        // ope(_qu(1,0,n-1,l,r).s);
+        // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
+        // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
         return -merge({0,y},_qu(1,0,n-1,l,r)).f;
     }
 }seg;
@@ -122,8 +122,8 @@ signed main() {
             cin>>l>>r>>y,l--,r--,y=min(y,m);
             cout<<seg.qu(l,r,y)<<'\n';
         }
-        REP1(i,10) cout<<seg.s[i].f<<' ';entr
-        REP1(i,10) cout<<seg.s[i].s<<' ';entr entr
+        // REP1(i,10) cout<<seg.s[i].f<<' ';entr
+        // REP1(i,10) cout<<seg.s[i].s<<' ';entr entr
     }
     return 0;
 }
