@@ -71,7 +71,7 @@ struct SEG {
         Vi d0=d;
         // oparr(d)
         REP1(i,7) d[i]=max(min(d[i]+d[i-1],m),0ll);
-        int mn=0,id=0,rid=0;
+        int mn=inf,id=0,rid=0;
         REP(i,8) {
             if(d[i]==mn) rid=i;
             if(d[i]<mn) {
