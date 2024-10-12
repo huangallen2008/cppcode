@@ -55,7 +55,22 @@ struct SEG {
     vector<Seg> s;
     Seg merge(Seg b,Seg c) {
         Seg a;
-
+        Vi d(8);
+        REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
+        REP1(i,7) d[i]+=d[i-1];
+        int mn=0,id=0;
+        REP(i,8) {
+            if(d[i]<mn) {
+                mn=d[i];
+                id=i;
+            }
+        }
+        int mx1=0,mx2=0;
+        if(id==0) mx1=0;
+        else mx1=*max_element(d.begin(),d.begin()+id);
+        if(id==7) mx2=0;
+        else mx2=*max_element(d.begin()+id+1,d.end());
+        a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
