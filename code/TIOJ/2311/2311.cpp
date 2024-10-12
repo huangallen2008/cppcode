@@ -70,6 +70,7 @@ struct SEG {
         else mx1=*max_element(d.begin(),d.begin()+id);
         if(id==7) mx2=0;
         else mx2=*max_element(d.begin()+id+1,d.end());
+        op(mx1)ope(mx2)
         a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
         return a;
     }
