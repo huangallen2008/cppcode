@@ -57,6 +57,7 @@ struct SEG {
         Seg a;
         Vi d(8);
         REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
+        oparr(d)
         REP1(i,7) d[i]+=d[i-1];
         int mn=0,id=0;
         REP(i,8) {
