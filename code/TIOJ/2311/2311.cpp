@@ -121,7 +121,7 @@ signed main() {
             cout<<seg.qu(l,r,y)<<'\n';
         }
         REP1(i,10) cout<<seg.s[i].f<<' ';entr
-        REP1(i,10) cout<<seg.s[i].s<<' ';entr
+        REP1(i,10) cout<<seg.s[i].s<<' ';entr entr
     }
     return 0;
 }
