@@ -127,9 +127,7 @@ struct SEG {
         oparr(ret0.x)
         Seg ret=merge(Seg({y,0,0,0}),ret0);
         oparr(ret.x)
-        int sum=0;
-        for(int x:ret.x) sum+=x;
-        return {max(-ret.x[0]-ret.x[1],0ll),sum};
+        return {max(-ret.x[0]-ret.x[1],0ll),max(ret.x[0]+ret.x[1],0ll)+ret.x[2]+ret.x[3]};
     }
 }seg;
 signed main() {
