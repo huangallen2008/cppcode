@@ -121,7 +121,7 @@ struct SEG {
         // ope(_qu(1,0,n-1,l,r).u2);
         // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
         // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
-        Seg ret=merge(Seg({y,0,0}),_qu(1,0,n-1,l,r));
+        Seg ret=merge(Seg({y,0,0,0}),_qu(1,0,n-1,l,r));
         oparr(ret.x)
         return ret.x[0]+ret.x[1];
     }
