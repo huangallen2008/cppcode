@@ -46,22 +46,28 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SEG {
+    struct Seg {
+        int u1,d,u2;
+    };
     int n,m;
-    vector<pii> s;
-    pii merge(pii b,pii c) {
-        pii a;
-        if(b.s+c.f<0) a={b.f+b.s+c.f,c.s};
-        else a={b.f,b.s+c.f+c.s};
-        if(a.s>m) a.s=m;
+    vector<Seg> s;
+    Seg merge(Seg b,Seg c) {
+        Seg a;
+        //b.u1,b.d,b1.u2+c.u1,c.d,c.u2
+        int t=min(b.u2+c.u1,m);
+        if(t+c.d<0) a={b.u1+b.d+t,c.d,c.u2};
+        else a={b.u1,b.d,t+c.d+c.u2};
+        chmin(a.u1,m);
+        chmin(a.u2,m);
         return a;
     }
-    void pull(pii &a,pii &b,pii &c) {
+    void pull(Seg &a,Seg &b,Seg &c) {
         a=merge(b,c);
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            if(a[l]<0) s[w]={a[l],0};
-            else s[w]={0,a[l]};
+            if(a[l]<0) s[w]={0,a[l],0};
+            else s[w]={a[l],0,0};
             return;
         }
         int m=l+r>>1;
@@ -71,13 +77,13 @@ struct SEG {
     }
     void init(int _n,int _m,vector<int> &a) {
         n=_n,m=_m;
-        s=vector<pii>(n<<2);
+        s=vector<Seg>(n<<2);
         build(1,0,n-1,a);
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            if(v<0) s[w]={v,0};
-            else s[w]={0,v};
+            if(v<0) s[w]={0,v,0};
+            else s[w]={v,0,0};
             return;
         }
         int m=l+r>>1;
@@ -88,18 +94,19 @@ struct SEG {
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    pii _qu(int w,int l,int r,int ql,int qr) {
+    Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return {0,0};
+        if(ql>r||qr<l) return {0,0,0};
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r,int y) {
-        op(_qu(1,0,n-1,l,r).f);
-        ope(_qu(1,0,n-1,l,r).s);
-        op(merge({0,y},_qu(1,0,n-1,l,r)).f);
-        ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
-        return -merge({0,y},_qu(1,0,n-1,l,r)).f;
+        // op(_qu(1,0,n-1,l,r).f);
+        // ope(_qu(1,0,n-1,l,r).s);
+        // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
+        // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
+        Seg ret=merge({y,0,0},_qu(1,0,n-1,l,r));
+        return ret.d;
     }
 }seg;
 signed main() {
