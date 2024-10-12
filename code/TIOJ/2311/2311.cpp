@@ -109,6 +109,7 @@ struct SEG {
         int m=l+r>>1;
         build(w<<1,l,m,a);
         build(w<<1|1,m+1,r,a);
+        op(l)ope(r)
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,int _m,vector<int> &a) {
