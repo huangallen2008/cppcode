@@ -97,8 +97,8 @@ struct SEG {
     int qu(int l,int r,int y) {
         op(_qu(1,0,n-1,l,r).f);
         ope(_qu(1,0,n-1,l,r).s);
-        op(merge({0,y},_qu(1,0,n-1,l,r).f));
-        ope(merge({0,y},_qu(1,0,n-1,l,r).s));
+        op(merge({0,y},_qu(1,0,n-1,l,r)).f);
+        ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
         return -merge({0,y},_qu(1,0,n-1,l,r)).f;
     }
 }seg;
