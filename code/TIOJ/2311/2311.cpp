@@ -81,7 +81,7 @@ struct SEG {
         }
         int mx1=0,mx2=0;
         if(id==0) mx1=-1;
-        else mx1=*max_element(d.begin(),d.begin()+id)-d.begin();
+        else mx1=max_element(d.begin(),d.begin()+id)-d.begin();
         if(id==7) mx2=7;
         else mx2=max_element(d.begin()+rid+1,d.end())-d.begin();
         // oparr(d)op(id)op(mx1)ope(mx2)
