@@ -78,8 +78,9 @@ struct SEG {
         // else mx2=*max_element(d.begin()+id+1,d.end());
         // // oparr(d)op(id)op(mx1)ope(mx2)
         // a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
-        chmin(a.x[0],m);
-        chmin(a.x[2],m);
+        chmin(a[0],m);
+        chmin(a[2],m);
+        oparr(a.x)
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
