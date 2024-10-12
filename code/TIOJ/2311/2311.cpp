@@ -50,11 +50,13 @@ struct SEG {
         Vi x;
         Seg(){x=Vi(4);}
         Seg(Vi _x) : x(_x){} 
+        int& operator[](int a) { return  x[a];}
     };
     int n,m;
     vector<Seg> s;
     Seg merge(Seg b,Seg c) {
         Seg a;
+        //b[0],b[1]
         Vi d(8);
         REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
         // oparr(d)
