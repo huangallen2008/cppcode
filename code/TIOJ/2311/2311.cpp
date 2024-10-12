@@ -89,7 +89,7 @@ struct SEG {
         a.x=Vi(4);
         for(int i=0;i<=mx1;i++) a[0]+=d0[i];
         for(int i=mx1+1;i<=rid;i++) a[1]+=d0[i];
-        for(int i=rid+1;i<=mx2;i++) a[2]+=d0[i];
+        for(int i=rid+1;i<=mx2&&i<=7;i++) a[2]+=d0[i];
         for(int i=mx2+1;i<=7;i++) a[3]+=d0[i];
         // chmin(a[0],m);
         // chmin(a[2],m);
