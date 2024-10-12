@@ -77,7 +77,6 @@ struct SEG {
             if(d[i]<mn) {
                 mn=d[i];
                 id=rid=i;
-                ope(i)
             }
         }
         int mx1=0,mx2=0;
