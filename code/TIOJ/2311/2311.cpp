@@ -125,7 +125,6 @@ struct SEG {
         int m=l+r>>1;
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
-        op(l)ope(r)
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
@@ -135,6 +134,7 @@ struct SEG {
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return Seg({0,0,0,0});
         int m=l+r>>1;
+        op(l)ope(r)
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     pii qu(int l,int r,int y) {
