@@ -101,8 +101,9 @@ struct SEG {
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r,int y) {
-        // op(_qu(1,0,n-1,l,r).f);
-        // ope(_qu(1,0,n-1,l,r).s);
+        op(_qu(1,0,n-1,l,r).u1);
+        op(_qu(1,0,n-1,l,r).d);
+        ope(_qu(1,0,n-1,l,r).u2);
         // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
         // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
         Seg ret=merge({y,0,0},_qu(1,0,n-1,l,r));
