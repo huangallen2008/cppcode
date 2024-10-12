@@ -47,8 +47,8 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        Vi x(4);
-        Seg(){}
+        Vi x;
+        Seg(){x=Vi(4);}
         Seg(Vi _x) : x(_x){} 
     };
     int n,m;
