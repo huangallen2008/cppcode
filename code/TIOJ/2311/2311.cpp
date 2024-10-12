@@ -138,7 +138,8 @@ struct SEG {
         // oparr(ret0.x)
         Seg ret=merge(Seg({y,0,0,0}),ret0);
         // oparr(ret.x)
-        return {max(-ret.x[0]-ret.x[1],0ll),max(ret.x[0]+ret.x[1],0ll)+ret.x[2]+ret.x[3]};
+        int v=max(-ret[0]-ret[1],0ll);
+        return {v,min(ret[0]+ret[1]+ret[2]+ret[3]-v,m)};
     }
 }seg;
 signed main() {
