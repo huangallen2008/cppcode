@@ -117,7 +117,7 @@ struct SEG {
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    int qu(int l,int r,int y) {
+    pii qu(int l,int r,int y) {
         // op(_qu(1,0,n-1,l,r).u1);
         // op(_qu(1,0,n-1,l,r).d);
         // ope(_qu(1,0,n-1,l,r).u2);
@@ -127,7 +127,9 @@ struct SEG {
         oparr(ret0.x)
         Seg ret=merge(Seg({y,0,0,0}),ret0);
         oparr(ret.x)
-        return ret.x[0]+ret.x[1];
+        int sum=0;
+        for(int x:ret.x) sum+=x;
+        return {max(-ret.x[0]-ret.x[1],0ll),sum};
     }
 }seg;
 signed main() {
@@ -148,7 +150,8 @@ signed main() {
         else {
             int l,r,y;
             cin>>l>>r>>y,l--,r--,y=min(y,m);
-            cout<<seg.qu(l,r,y)<<'\n';
+            pii ret=seg.qu(l,r,y);
+            cout<<ret.f<<' '<<ret.s<<'\n';
         }
         // REP1(i,10) cout<<seg.s[i].f<<' ';entr
         // REP1(i,10) cout<<seg.s[i].s<<' ';entr entr
