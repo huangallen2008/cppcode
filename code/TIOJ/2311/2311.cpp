@@ -73,11 +73,11 @@ struct SEG {
         REP1(i,7) d[i]=max(min(d[i]+d[i-1],m),0ll);
         int mn=0,id=0,rid=0;
         REP(i,8) {
+            if(d[i]==mn) rid=i;
             if(d[i]<mn) {
                 mn=d[i];
                 id=rid=i;
             }
-            if(d[i]==mn) rid=i;
         }
         int mx1=0,mx2=0;
         if(id==0) mx1=-1;
