@@ -57,33 +57,40 @@ struct SEG {
     Seg merge(Seg b,Seg c) {
         Seg a;
         //b[0],b[1],b[2]+b[3]+c[0],c[1],c[2],c[3];
-        int t=min(b[2]+b[3]+c[0],m);
-        if(t+c[1]>0) {
-            if(c[1]+c[2]<0)a.x={b[0],b[1],t,c[1]+c[2]+c[3]};
-            else a.x={b[0],b[1],t+c[1]+c[2],c[3]};
-        }
-        else {
-            if(b[1]+t>0)a.x={b[0]+b[1]+t,c[1],c[2],c[3]};
-            else a.x={b[0],b[1]+t+c[1],c[2],c[3]};
-        }
-        // Vi d(8);
-        // REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
-        // // oparr(d)
-        // REP1(i,7) d[i]=min(d[i]+d[i-1],m);
-        // int mn=0,id=0;
-        // REP(i,8) {
-        //     if(d[i]<mn) {
-        //         mn=d[i];
-        //         id=i;
-        //     }
+        // int t=min(b[2]+b[3]+c[0],m);
+        // if(t+c[1]>0) {
+        //     if(c[1]+c[2]<0)a.x={b[0],b[1],t,c[1]+c[2]+c[3]};
+        //     else a.x={b[0],b[1],t+c[1]+c[2],c[3]};
         // }
-        // int mx1=0,mx2=0;
-        // if(id==0) mx1=0;
-        // else mx1=*max_element(d.begin(),d.begin()+id);
-        // if(id==7) mx2=0;
-        // else mx2=*max_element(d.begin()+id+1,d.end());
-        // // oparr(d)op(id)op(mx1)ope(mx2)
+        // else {
+        //     if(b[1]+t>0)a.x={b[0]+b[1]+t,c[1],c[2],c[3]};
+        //     else a.x={b[0],b[1]+t+c[1],c[2],c[3]};
+        // }
+        Vi d(8);
+        REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
+        Vi d0=d;
+        // oparr(d)
+        REP1(i,7) d[i]=max(min(d[i]+d[i-1],m),0ll);
+        int mn=0,id=0,rid=0;
+        REP(i,8) {
+            if(d[i]<mn) {
+                mn=d[i];
+                id=rid=i;
+            }
+            if(d[i]==mn) rid=i;
+        }
+        int mx1=0,mx2=0;
+        if(id==0) mx1=-1;
+        else mx1=*max_element(d.begin(),d.begin()+id)-d.begin();
+        if(id==7) mx2=7;
+        else mx2=max_element(d.begin()+idr+1,d.end())-d.begin();
+        // oparr(d)op(id)op(mx1)ope(mx2)
         // a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
+        a.x=Vi(4);
+        for(int i=0;i<=mx1;i++) a[0]+=d0[i];
+        for(int i=mx1+1;i<=rid;i++) a[1]+=d0[i];
+        for(int i=rid+1;i<=mx2;i++) a[2]+=d0[i];
+        for(int i=mx2+1;i<=7;i++) a[3]+=d0[i];
         chmin(a[0],m);
         chmin(a[2],m);
         // oparr(a.x)
