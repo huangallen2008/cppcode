@@ -119,7 +119,7 @@ signed main() {
         }
         else {
             int l,r,y;
-            cin>>l>>r>>y,l--,r--;
+            cin>>l>>r>>y,l--,r--,y=min(y,m);
             cout<<seg.qu(l,r,y)<<'\n';
         }
         REP1(i,10) cout<<seg.s[i].f<<' ';entr
