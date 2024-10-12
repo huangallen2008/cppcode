@@ -139,7 +139,7 @@ struct SEG {
         Seg ret=merge(Seg({y,0,0,0}),ret0);
         // oparr(ret.x)
         int v=max(-ret[0]-ret[1],0ll);
-        return {v,min(ret[0]+ret[1]+ret[2]+ret[3]-v,m)};
+        return {v,min(ret[0]+ret[1]+ret[2]+ret[3]+v,m)};
     }
 }seg;
 signed main() {
