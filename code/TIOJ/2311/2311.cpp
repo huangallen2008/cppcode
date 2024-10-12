@@ -54,7 +54,7 @@ struct SEG {
     vector<Seg> s;
     Seg merge(Seg b,Seg c) {
         Seg a;
-        
+
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
@@ -102,7 +102,7 @@ struct SEG {
         // ope(_qu(1,0,n-1,l,r).u2);
         // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
         // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
-        Seg ret=merge({y,0,0},_qu(1,0,n-1,l,r));
+        Seg ret=merge(Seg({y,0,0}),_qu(1,0,n-1,l,r));
         return ret.d;
     }
 }seg;
