@@ -93,7 +93,7 @@ struct SEG {
         for(int i=mx2+1;i<=7;i++) a[3]+=d0[i];
         chmin(a[0],m);
         chmin(a[2],m);
-        // oparr(a.x)
+        oparr(a.x)
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
