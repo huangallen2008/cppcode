@@ -49,7 +49,7 @@ struct SEG {
     int n,m;
     vector<pii> s;
     pii merge(pii b,pii c) {
-        if(b.s+c.f<0) return {a.f+b.s+c.f,c.s};
+        if(b.s+c.f<0) return pii{a.f+b.s+c.f,c.s};
         else return {a.f,a.s+b.f+b.s};
     }
     void pull(pii &a,pii &b,pii &c) {
