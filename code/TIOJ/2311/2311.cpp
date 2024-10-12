@@ -85,7 +85,7 @@ struct SEG {
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    pii qu(int w,int l,int r,int ql,int qr) {
+    pii _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return {0,0};
         int m=l+r>>1;
