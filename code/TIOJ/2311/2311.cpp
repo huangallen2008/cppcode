@@ -91,8 +91,8 @@ struct SEG {
         for(int i=mx1+1;i<=rid;i++) a[1]+=d0[i];
         for(int i=rid+1;i<=mx2&&i<=7;i++) a[2]+=d0[i];
         for(int i=mx2+1;i<=7;i++) a[3]+=d0[i];
-        // chmin(a[0],m);
-        // chmin(a[2],m);
+        chmin(a[0],m);
+        chmin(a[2],m);
         oparr(d0)oparr(d)op(id)op(mx1)op(rid)op(mx2)
         oparr(a.x)
         return a;
