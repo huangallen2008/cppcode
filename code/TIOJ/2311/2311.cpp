@@ -103,7 +103,7 @@ signed main() {
     int n,m,q;
     cin>>n>>q>>m;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i],a[i]=-a[i];
     seg.init(n,m,a);
     REP(i,q) {
         int opt;
