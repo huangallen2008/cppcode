@@ -143,7 +143,7 @@ signed main() {
         if(opt==1) {
             int p,x;
             cin>>p>>x,p--;
-            seg.ud(p,x);
+            seg.ud(p,-x);
         }
         else {
             int l,r,y;
