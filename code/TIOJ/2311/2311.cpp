@@ -57,7 +57,7 @@ struct SEG {
         Seg a;
         Vi d(8);
         REP(i,4) d[i]=b.x[i],d[i+4]=c.x[i];
-        oparr(d)
+        // oparr(d)
         REP1(i,7) d[i]=min(d[i]+d[i-1],m);
         int mn=0,id=0;
         REP(i,8) {
@@ -71,7 +71,7 @@ struct SEG {
         else mx1=*max_element(d.begin(),d.begin()+id);
         if(id==7) mx2=0;
         else mx2=*max_element(d.begin()+id+1,d.end());
-        oparr(d)op(id)op(mx1)ope(mx2)
+        // oparr(d)op(id)op(mx1)ope(mx2)
         a.x={mx1,mn-mx1,mx2-mn,d.back()-mx2};
         chmin(a.x[0],m);
         chmin(a.x[2],m);
@@ -124,9 +124,9 @@ struct SEG {
         // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
         // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
         Seg ret0=_qu(1,0,n-1,l,r);
-        oparr(ret0.x)
+        // oparr(ret0.x)
         Seg ret=merge(Seg({y,0,0,0}),ret0);
-        oparr(ret.x)
+        // oparr(ret.x)
         return {max(-ret.x[0]-ret.x[1],0ll),max(ret.x[0]+ret.x[1],0ll)+ret.x[2]+ret.x[3]};
     }
 }seg;
