@@ -47,7 +47,8 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int u1,d,u2;
+        Vi x(4);
+        Seg(Vi _x) : x(_x){} 
     };
     int n,m;
     vector<Seg> s;
@@ -55,8 +56,12 @@ struct SEG {
         Seg a;
         //b.u1,b.d,b1.u2+c.u1,c.d,c.u2
         int t=min(b.u2+c.u1,m);
-        if(t+c.d<0) a={b.u1+b.d+t,c.d,c.u2};
-        else a={b.u1,b.d,t+c.d+c.u2};
+        if(t+c.d<0) {
+            if(t+b.d>0)a={b.u1+b.d+t,c.d,c.u2};
+            else a={b.u1,b.d+t+c.d,c.u2};
+        }
+        else {
+            a={b.u1,b.d,t+c.d+c.u2};
         chmin(a.u1,m);
         chmin(a.u2,m);
         return a;
@@ -66,8 +71,8 @@ struct SEG {
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            if(a[l]<0) s[w]={0,a[l],0};
-            else s[w]={a[l],0,0};
+            if(a[l]<0) s[w].x={0,a[l],0,0};
+            else s[w].x={a[l],0,0,0};
             return;
         }
         int m=l+r>>1;
@@ -82,8 +87,8 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            if(v<0) s[w]={0,v,0};
-            else s[w]={v,0,0};
+            if(v<0) s[w].x={0,v,0,0};
+            else s[w].x={v,0,0,0};
             return;
         }
         int m=l+r>>1;
@@ -96,14 +101,14 @@ struct SEG {
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return {0,0,0};
+        if(ql>r||qr<l) return Seg({0,0,0,0});
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r,int y) {
-        op(_qu(1,0,n-1,l,r).u1);
-        op(_qu(1,0,n-1,l,r).d);
-        ope(_qu(1,0,n-1,l,r).u2);
+        // op(_qu(1,0,n-1,l,r).u1);
+        // op(_qu(1,0,n-1,l,r).d);
+        // ope(_qu(1,0,n-1,l,r).u2);
         // op(merge({0,y},_qu(1,0,n-1,l,r)).f);
         // ope(merge({0,y},_qu(1,0,n-1,l,r)).s);
         Seg ret=merge({y,0,0},_qu(1,0,n-1,l,r));
