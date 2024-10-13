@@ -51,7 +51,7 @@ struct SEG {
         pii cal(int y) {
             if(y<x1) return {c0-y,y0};
             if(y<x2) return {c0-x1,y0+y-x1};
-            return {c0-y,y0+x2-x1};
+            return {c0-x1,y0+x2-x1};
         }
     };
     int n,m;
