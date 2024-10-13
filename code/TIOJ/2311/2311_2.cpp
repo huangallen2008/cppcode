@@ -70,7 +70,7 @@ struct SEG {
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            if(a[l]<0) s[w]={-a[l],m,-a[l],0};
+            if(a[l]<0) s[w]={-a[l],m+1,-a[l],0};
             else s[w]={0,m-a[l],0,a[l]};
             return;
         }
@@ -87,7 +87,7 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            if(v<0) s[w]={-v,m,-v,0};
+            if(v<0) s[w]={-v,m+1,-v,0};
             else s[w]={0,m-v,0,v};
             return;
         }
@@ -101,7 +101,7 @@ struct SEG {
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return Seg({0,m,0,0});
+        if(ql>r||qr<l) return Seg({0,m+1,0,0});
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
