@@ -103,12 +103,10 @@ struct SEG {
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return Seg({0,0,0,0});
         int m=l+r>>1;
-        op(l)ope(r)
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     pii qu(int l,int r,int y) {
         Seg ret0=_qu(1,0,n-1,l,r);
-        oparr(ret0.x)
         Seg ret=merge(Seg({y,0,0,0}),ret0);
         return ret.cal(y);
     }
