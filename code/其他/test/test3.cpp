@@ -54,8 +54,8 @@ signed main() {
     REP(i,n) {
         int x;
         cin>>x;
-        if(!b[x]) {
-            b[x]=1;
+        if(!b[x+maxn]) {
+            b[x+maxn]=1;
             cout<<x<<' ';
         }
     }
