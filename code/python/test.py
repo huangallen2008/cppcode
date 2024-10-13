@@ -1,3 +1,3 @@
 import warnings
 t = input()
-warnings.warn(t, DeprecationWarning)
+raise Exception(t)
