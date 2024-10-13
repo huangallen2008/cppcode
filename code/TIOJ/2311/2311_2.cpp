@@ -60,7 +60,7 @@ struct SEG {
         Seg a;
         pii ret0=b.cal(0);
         pii ret=c.cal(ret0.s);
-        a.c0=ret.f,a.y0=ret.s;
+        a.c0=ret0.f+ret.f,a.y0=ret.s;
         a.x1=b.x1+max(0ll,c.x1-ret0.s);
         a.x2=b.x2-max(b.cal(b.x2).s-c.x2,0ll);
         return a;
