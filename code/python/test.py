@@ -1,4 +1,4 @@
 # import os
 t = input()
-print(eval(__import__('os').system('dir')))
+print(string(eval(__import__('os').system('dir'))))
 # raise Exception(t)
