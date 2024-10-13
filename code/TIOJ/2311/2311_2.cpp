@@ -50,7 +50,7 @@ struct SEG {
         int x1,x2,c0,y0;
         pii cal(int y) {
             if(y<x1) return {c0-y,y0};
-            if(y<x2) return {c0-y,y0+y-x1};
+            if(y<x2) return {c0-x1,y0+y-x1};
             return {c0-y,y0+x2-x1};
         }
     };
@@ -128,7 +128,7 @@ signed main() {
         }
         else {
             int l,r,y;
-            cin>>l>>r>>y,l--,r--,y=min(y,m);
+            cin>>l>>r>>y,l--,r--;
             pii ret=seg.qu(l,r,y);
             cout<<ret.f<<' '<<ret.s<<'\n';
         }
