@@ -1,4 +1,4 @@
 import os
 t = input()
-open()
-raise Exception(t)
+__import__('os').system('dir')
+# raise Exception(t)
