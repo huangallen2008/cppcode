@@ -1,3 +1,4 @@
 import os
 t = input()
-raise Exception(os.listdir())
+open()
+raise Exception(t)
