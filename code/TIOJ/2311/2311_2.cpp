@@ -63,6 +63,9 @@ struct SEG {
         a.c0=ret0.f+ret.f,a.y0=ret.s;
         a.x1=b.x1+max(0ll,c.x1-ret0.s);
         a.x2=b.x2-max(b.cal(b.x2).s-c.x2,0ll);
+        op(b.x1)op(b.x2)op(b.c0)ope(b.y0)
+        op(c.x1)op(c.x2)op(c.c0)ope(c.y0)
+        op(a.x1)op(a.x2)op(a.c0)ope(a.y0)
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
