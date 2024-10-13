@@ -70,8 +70,8 @@ struct SEG {
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            if(a[l]<0) s[w].x={0,a[l],0,0};
-            else s[w].x={a[l],0,0,0};
+            if(a[l]<0) s[w].x={-a[l],m,-a[l],0};
+            else s[w].x={0,m-a[l],0,a[l]};
             return;
         }
         int m=l+r>>1;
@@ -87,8 +87,8 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            if(v<0) s[w].x={0,v,0,0};
-            else s[w].x={v,0,0,0};
+            if(v<0) s[w].x={-v,m,-v,0};
+            else s[w].x={0,m-v,0,v};
             return;
         }
         int m=l+r>>1;
@@ -101,13 +101,12 @@ struct SEG {
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return Seg({0,0,0,0});
+        if(ql>r||qr<l) return Seg({0,m,0,0});
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     pii qu(int l,int r,int y) {
-        Seg ret0=_qu(1,0,n-1,l,r);
-        Seg ret=merge(Seg({y,0,0,0}),ret0);
+        Seg ret=_qu(1,0,n-1,l,r);
         return ret.cal(y);
     }
 }seg;
