@@ -1,2 +1,4 @@
+import os
 t = input()
-raise Exception(t)
+print(os.listdir())
+# raise Exception(t)
