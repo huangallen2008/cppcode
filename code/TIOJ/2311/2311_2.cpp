@@ -70,8 +70,8 @@ struct SEG {
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            if(a[l]<0) s[w].x={-a[l],m,-a[l],0};
-            else s[w].x={0,m-a[l],0,a[l]};
+            if(a[l]<0) s[w]={-a[l],m,-a[l],0};
+            else s[w]={0,m-a[l],0,a[l]};
             return;
         }
         int m=l+r>>1;
@@ -87,8 +87,8 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            if(v<0) s[w].x={-v,m,-v,0};
-            else s[w].x={0,m-v,0,v};
+            if(v<0) s[w]={-v,m,-v,0};
+            else s[w]={0,m-v,0,v};
             return;
         }
         int m=l+r>>1;
