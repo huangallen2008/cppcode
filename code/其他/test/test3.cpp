@@ -55,7 +55,7 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
-inline void out(int x) {
+inline void out(ll x) {
     if(x<0) {
         PC('-');
         x=-x;
