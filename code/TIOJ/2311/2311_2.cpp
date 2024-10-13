@@ -62,7 +62,7 @@ struct SEG {
         pii ret2=b.cal(b.x2);
         pii ret=c.cal(ret0.s);
         a.c0=ret0.f+ret.f,a.y0=ret.s;
-        a.x1=b.x1+max(min(b.x2-b.x1,c.x1-ret0.y0),0ll);
+        a.x1=b.x1+max(min(b.x2-b.x1,c.x1-ret0.s),0ll);
         // a.x1=b.x1+max(0ll,c.x1-ret0.s);
         a.x2=b.x2-max(0ll,min(b.x2-b.x1,ret2.s-c.x2));
         op(b.x1)op(b.x2)op(b.c0)ope(b.y0)
