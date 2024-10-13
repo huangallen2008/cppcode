@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("Ofast,unroll-loops,fast-math")
-// #pragma GCC target("avx,avx2,sse4,sse4.1,sse4.2,bmi,bmi2,popcnt")
+#pragma GCC target("avx,avx2,sse4,sse4.1,sse4.2,bmi,bmi2,popcnt")
 //#define int long long
 #define ll long long
 #define REP(i,n) for(int i=0;i<n;i++)
@@ -115,7 +115,7 @@ signed main() {
         shuffle(id,id+n,rng);
         int rd=0;
         ll an=-inf;
-        while((clock())<100&&rd<n) {
+        while((clock())<150&&rd<n) {
 //            long double time=(long double)clock()/CLOCKS_PER_SEC;
 //            cout<<fixed<<setprecision(3)<<time<<endl;
 //            vis=vector<bool>(n);
