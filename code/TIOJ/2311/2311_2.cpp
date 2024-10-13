@@ -107,6 +107,7 @@ struct SEG {
     }
     pii qu(int l,int r,int y) {
         Seg ret=_qu(1,0,n-1,l,r);
+        op(ret.x1)op(ret.x2)op(ret.c0)ope(ret.y0)
         return ret.cal(y);
     }
 }seg;
