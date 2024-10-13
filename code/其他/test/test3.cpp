@@ -41,7 +41,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=1e6+1;
 const int maxb=20;
-const ll inf=1ll<<62;
+const int inf=1ll<<62;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
