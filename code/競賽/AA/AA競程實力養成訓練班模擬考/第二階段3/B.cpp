@@ -87,7 +87,7 @@ signed main() {
         int an=0;
         if(bit0.qu(b[i],b[i])==0)bit0.ud(b[i],1);
         if(las[a[i]]==0) {
-            an=a[i]+bit0.qu(1,b[i]);
+            an=a[i]+bit0.qu(1,b[i]-1);
         }
         else {
             an=bit.qu(las[a[i]],i);
