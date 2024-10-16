@@ -83,7 +83,7 @@ void solve() {
         int x,y;
         exgcd(f1,f2,x,y);
         op(f1)op(f2)op(x)ope(y)
-        if(x<0) {
+        if(x<=0) {
             int tt=(-x+f2)/f2;
             x+=tt*f2,y-=tt*f1;
         }
