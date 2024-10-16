@@ -134,13 +134,12 @@ signed main() {
     REP(i,q) {
         int u,v;
         cin>>u>>v,u--,v--;
-        ope(dsus[0].f.same(u,v))
         if(!dsus.back().f.same(u,v)) cout<<"-1\n";
         else {
             int l=0,r=dsus.size()-1,mid;
             while(l<r) {
                 mid=l+r>>1;
-                if(dsus.back().f.same(u,v)) r=mid;
+                if(dsus[mid].f.same(u,v)) r=mid;
                 else l=mid+1;
             }
             int an=dsus[l].s;
