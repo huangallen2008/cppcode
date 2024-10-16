@@ -45,25 +45,50 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi lpf(maxn);
+Vi lpf(maxn),pm;
+void exgcd(int a,int b,int &x,int &y) {
+    if(b==0) {
+        x=1,y=0;
+        return;
+    }
+    int x1,y1;
+    exgcd(b,a%b,x1,y1);
+    x=y1;
+    y=x1+y1*(a/b);
+}
 void solve() {
     int n,x;
     cin>>n>>x;
+    ///////x=1
+    Vi f;
+    for(int p:pm) {
+        if(x%p==0) {
+            int r=1;
+            while(x%p==0) {
+                x/=p;
+                r*=p;
+            }
+            if(p==2) r*=2;
+            f.pb(r);
+        }
+    }
 
 }
 void init() {
-    int cnt=0;
+    lpf[0]=lpf[1]=1;
     for(int i=2;i<maxn;i++) {
         if(lpf[i]==0) {
-            cnt++;
+            pm.pb(i)
             for(int j=i;j<maxn;j+=i) if(lpf[j]==0) lpf[j]=i;
         }
     }
-    ope(cnt)
 }
 signed main() {
     IOS(); 
     init();
+    int x,y;
+    exgcd(5,6,x,y);
+    op(x)ope(y)
     int T;
     cin>>T;
     while(T--) solve();
