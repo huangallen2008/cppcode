@@ -87,7 +87,7 @@ signed main() {
     IOS(); 
     init();
     int x,y;
-    exgcd(5,6,x,y);
+    exgcd(3,7,x,y);
     op(x)ope(y)
     int T;
     cin>>T;
