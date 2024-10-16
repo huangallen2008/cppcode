@@ -2,7 +2,7 @@
 #include<bits/extc++.h>
 using namespace __gnu_pbds;
 using namespace std;
-using TREE = tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>;
+using pbds = tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
