@@ -88,6 +88,7 @@ void solve() {
                 cnt++;
                 if(allen) {
                     an=(an+C(n2-1+cnt,cnt)*C(n2+n-cnt,n-cnt))%mod;
+                    ope(an)
                 }
             }
             if(cv==n2) allen=1,an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt);
