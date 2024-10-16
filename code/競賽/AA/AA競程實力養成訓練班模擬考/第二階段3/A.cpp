@@ -94,6 +94,7 @@ void solve() {
         an+=rr;
     }
     cout<<an<<'\n';
+    entr
 }
 void init() {
     lpf[0]=lpf[1]=1;
