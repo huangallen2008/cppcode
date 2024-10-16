@@ -86,8 +86,8 @@ signed main() {
         else {
             an=bit.qu(las[a[i]],i);
         }
-        bit.ud(las[a[i]],-1);
         ope(i)ope(las[a[i]])
+        bit.ud(las[a[i]],-1);
         las[a[i]]=i;
         bit.ud(i,1);
         cout<<an<<'\n';
