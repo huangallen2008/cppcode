@@ -91,10 +91,8 @@ struct TCC {
                 if(low[v]>dep[u]) {
                     isb[v]=1;
                 } 
+                else dsu.merge(u,v);
             }
-        }
-        for(auto [v,w]:g[u]) {
-            if(!isb[v]) dsu.merge(u,v);
         }
     }
     void init(Graphw _g) {
