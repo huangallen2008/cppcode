@@ -56,6 +56,7 @@ signed main() {
     REP(i,10) cout<<dp[i]<<' ';entr
     int an=dp[n];
     REP1(i,b-1) an=(an+dp[n-i]*(b-i))%mod;
+    REP1(i,b) an=an*i%mod;
     an=(an+mod)%mod;
     cout<<an<<'\n';
     return 0;
