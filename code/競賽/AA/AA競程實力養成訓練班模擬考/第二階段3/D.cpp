@@ -61,6 +61,7 @@ signed main() {
         while(s[it]!=t[i]) it--;
         b[i]=it--;
     }
+    oparr(a)oparr(b)
     int an=inf;
     for(int i=0;i<m-1;i++) chmin(an,b[i+1]-a[i]);
     cout<<an<<'\n';
