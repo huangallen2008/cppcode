@@ -120,14 +120,14 @@ signed main() {
     tcc.init(gg);
     dsus.pb({tcc.dsu,0});
     for(auto [u,v,w]:e) {
-        op(u)op(v)ope(w)
-        ope(dsus.back().f.same(u,v)) 
+        // op(u)op(v)ope(w)
+        // ope(dsus.back().f.same(u,v)) 
         if(dsus.back().f.same(u,v)) continue;
         gg[u].pb({v,w});
         gg[v].pb({u,w});
         tcc.init(gg);
         dsus.pb({tcc.dsu,w});
-        oparr(tcc.dsu.p)ope(w)
+        // oparr(tcc.dsu.p)ope(w)
     }
     int q;
     cin>>q;
