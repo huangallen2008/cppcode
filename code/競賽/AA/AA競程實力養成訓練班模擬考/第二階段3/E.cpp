@@ -91,7 +91,7 @@ void solve() {
                     ope(an)
                 }
             }
-            if(cv==n2) allen=1,an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt);
+            if(cv==n2) allen=1,an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt),ope(an);
             if(cv==n2+1) break;
         }
         cout<<an<<'\n';
