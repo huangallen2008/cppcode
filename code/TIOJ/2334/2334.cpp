@@ -107,13 +107,43 @@ struct TCC {
         // dep[0]=1;
         REP(i,n) if(!dep[i]) dfs(i,-1);
     }
-};
+}tcc;
 signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
     vector<edge> e(m);
     REP(i,m) cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
-
+    vector<pair<DSU,int>> dsus;
+    sort(ALL(e),[&](edge a,edge b) {
+        return a.w<b.w;
+    });
+    Graphw gg(n);
+    tcc.init(gg);
+    dsus.pb({tcc.dsu,0});
+    for(auto [u,v,w]:e) {
+        if(dsu.back().f.same(u,v)) continue;
+        g[u].pb({v,w});
+        g[v].pb({u,w});
+        tcc.init(gg);
+        dsus.pb({tcc.dsu,w});
+    }
+    int q;
+    cin>>q;
+    REP(i,q) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        if(!dsus.back().f.same(u,v)) cout<<"-1\n";
+        else {
+            int l=0,r=dsus.size()-1,mid;
+            while(l<r) {
+                mid=l+r>>1;
+                if(dsus.back().f.same(u,v)) r=mid;
+                else l=mid+1;
+            }
+            int an=dsus[l].s;
+            cout<<an<<'\n';
+        }
+    }
     return 0;
 }
