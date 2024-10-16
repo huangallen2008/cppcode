@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
-#include<bits/extc++.h>
-using namespace __gnu_pbds;
+// #include<bits/extc++.h>
+// using namespace __gnu_pbds;
 using namespace std;
-using pbds = tree<int,null_type,greater<int>,rb_tree_tag,tree_order_statistics_node_update>;
+// using pbds = tree<int,null_type,greater<int>,rb_tree_tag,tree_order_statistics_node_update>;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
@@ -70,19 +70,24 @@ struct BIT {
 }bit;
 signed main() {
     IOS(); 
-    pbds c;
+    // pbds c;
     int n;
     cin>>n;
     bit.init(n);
-    Vi a(n+1);
+    Vi a(n+1),b(n+1);
     REP1(i,n) cin>>a[i];
+    Vi t=a;
+    sort(ALL(t));
+    REP1(i,n) b[i]=n-lower_bound(ALL(t),a[i])-t.begin();
+    BIT bit0;
+    bit0.init(n);
     unordered_map<int,int> las;
     int cnt=0;
     REP1(i,n) {
         int an=0;
-        c.insert(a[i]);
+        if(bit0.qu(b[i],b[i])==0)bit0.ud(b[i],1);
         if(las[a[i]]==0) {
-            an=a[i]+c.order_of_key(a[i]);
+            an=a[i]+bit0.qu(1,b[i]);
         }
         else {
             an=bit.qu(las[a[i]],i);
