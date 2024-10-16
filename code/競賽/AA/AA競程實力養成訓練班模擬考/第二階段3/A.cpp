@@ -96,6 +96,7 @@ void solve() {
         int r21=(n+1-x*f1)/f2+1,r22=(n-y*f2)/f1+1,rr2=min(r21,r22);
         if(x*f1>n+1||y*f2>n) rr2=0;
         an+=rr2;
+        ope(rr2)
     }
     cout<<an<<'\n';
     entr
