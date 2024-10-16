@@ -80,7 +80,7 @@ void solve() {
     else {
         int cnt=0;
         int cv=0;
-        bool yes=0;
+        bool allen=0;
         int an=0;
         for(int x:r) {
             if(x=='V') cv++;
@@ -98,7 +98,7 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    fac[0]==infac[0]=1;
+    fac[0]=infac[0]=1;
     REP1(i,maxn) fac[i]=fac[i-1]*i%mod;
     REP1(i,maxn) infac[i]=inv(fac[i]);
     int T;
