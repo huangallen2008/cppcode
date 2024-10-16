@@ -95,6 +95,7 @@ void solve() {
             if(cv==n2+1) break;
         }
         cout<<an<<'\n';
+        entr
     }
 }
 signed main() {
