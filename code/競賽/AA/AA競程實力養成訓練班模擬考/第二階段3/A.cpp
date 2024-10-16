@@ -89,8 +89,8 @@ void solve() {
         }
         y=-y;
         if(x==0||y==0) x+=f2,y+=f1;
-        if(x*f1>n||y*f2>n) continue;;
-        int r1=n/f2-x+1,r2=(n+1)/f1-y+1,rr=min(r1,r2);
+        if(x*f1>n||y*f2>n+1) continue;;
+        int r1=(n-x*f1)/f2+1,r2=(n+1=y*f2)/f1+1,rr=min(r1,r2);
         an+=rr;
     }
     cout<<an<<'\n';
