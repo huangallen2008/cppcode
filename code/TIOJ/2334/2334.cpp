@@ -127,7 +127,7 @@ signed main() {
         gg[v].pb({u,w});
         tcc.init(gg);
         dsus.pb({tcc.dsu,w});
-        oparr(tcc.dsu.p)
+        oparr(tcc.dsu.p)ope(w)
     }
     int q;
     cin>>q;
