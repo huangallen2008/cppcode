@@ -97,7 +97,7 @@ struct TCC {
             if(!isb[v]) dsu.merge(u,v);
         }
     }
-    void init(Graph _g) {
+    void init(Graphw _g) {
         g=_g;
         n=g.size();
         isb=vector<bool>(n);
