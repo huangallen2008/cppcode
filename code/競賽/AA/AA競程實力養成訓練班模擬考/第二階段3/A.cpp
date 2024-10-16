@@ -82,13 +82,13 @@ void solve() {
         }
         int x,y;
         exgcd(f1,f2,x,y);
-        op(f1)op(f2)op(x)ope(y)
+        // op(f1)op(f2)op(x)ope(y)
         if(x<=0) {
             int tt=(-x+f2)/f2;
             x+=tt*f2,y-=tt*f1;
         }
         if(x==0||y==0) x+=f2,y+=f1;
-        op(f1)op(f2)op(x)ope(y)
+        // op(f1)op(f2)op(x)ope(y)
         y=-y;
         // int r1=(n-x*f1)/f2+1,r2=(n+1-y*f2)/f1+1,rr=min(r1,r2);
         // if(x*f1>n||y*f2>n+1) rr=0;
@@ -97,7 +97,7 @@ void solve() {
         an+=rr2;
     }
     cout<<an<<'\n';
-    entr
+    // entr
 }
 void init() {
     lpf[0]=lpf[1]=1;
