@@ -72,7 +72,7 @@ void solve() {
             f.pb(r);
         }
     }
-    if(x>1) f.pb(n);
+    if(x>1) f.pb(x);
     int k=f.size();
     int an=0;
     REP(i,1<<k) {
