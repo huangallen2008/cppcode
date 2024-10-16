@@ -90,7 +90,7 @@ void solve() {
         y=-y;
         if(x==0||y==0) x+=f2,y+=f1;
         if(x*f1>n||y*f2>n) continue;;
-        int r1=n/f2-x+1,r2=n/f1-y+1,rr=min(r1,r2);
+        int r1=n/f2-x+1,r2=(n+1)/f1-y+1,rr=min(r1,r2);
         an+=rr;
     }
     cout<<an<<'\n';
