@@ -74,22 +74,21 @@ void solve() {
     }
     int k=f.size();
     int an=0;
-        auto run=[&](int f1,int f2){
-            int x,y;
-            exgcd(f1,f2,x,y);
-            op(f1)op(f2)op(x)ope(y)
-            if(x<=0) {
-                int tt=(-x+f2)/f2;
-                x+=tt*f2,y-=tt*f1;
-            }
-            op(f1)op(f2)op(x)ope(y)
-            y=-y;
-            if(x==0||y==0) x+=f2,y+=f1;
-            if(x*f1>n||y*f2>n+1) return;
-            int r1=(n-x*f1)/f2+1,r2=(n+1-y*f2)/f1+1,rr=min(r1,r2);
-            an+=rr;
-            }
-        };
+    auto run=[&](int f1,int f2){
+        int x,y;
+        exgcd(f1,f2,x,y);
+        op(f1)op(f2)op(x)ope(y)
+        if(x<=0) {
+            int tt=(-x+f2)/f2;
+            x+=tt*f2,y-=tt*f1;
+        }
+        op(f1)op(f2)op(x)ope(y)
+        y=-y;
+        if(x==0||y==0) x+=f2,y+=f1;
+        if(x*f1>n||y*f2>n+1) return;
+        int r1=(n-x*f1)/f2+1,r2=(n+1-y*f2)/f1+1,rr=min(r1,r2);
+        an+=rr;
+    };
     REP(i,1<<k) {
         int f1=1,f2=1;
         REP(j,k) {
