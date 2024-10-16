@@ -71,6 +71,7 @@ signed main() {
     IOS(); 
     pbds x;
     x.insert(2);
+    for(int xx:x) cout<<xx<<' ';entr
     int n;
     cin>>n;
     Vi a(n+1);
