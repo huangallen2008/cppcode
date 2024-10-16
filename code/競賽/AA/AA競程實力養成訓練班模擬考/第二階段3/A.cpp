@@ -54,7 +54,7 @@ void exgcd(int a,int b,int &x,int &y) {
     int x1,y1;
     exgcd(b,a%b,x1,y1);
     x=y1;
-    y=x1+y1*(a/b);
+    y=x1-y1*(a/b);
 }
 void solve() {
     int n,x;
