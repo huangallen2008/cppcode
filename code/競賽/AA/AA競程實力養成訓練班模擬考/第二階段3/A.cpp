@@ -74,14 +74,7 @@ void solve() {
     }
     int k=f.size();
     int an=0;
-    REP(i,1<<k) {
-        int f1=1,f2=1;
-        REP(j,k) {
-            if((i>>j)&1) f1*=f[j];
-            else f2*=f[j];
-        }
-        auto run=[&](bool in){
-            if(in) swap(f1,f2);
+        auto run=[&](int f1,int f2){
             int x,y;
             exgcd(f1,f2,x,y);
             op(f1)op(f2)op(x)ope(y)
@@ -97,7 +90,13 @@ void solve() {
             an+=rr;
             }
         };
-        run(0),run(1);
+    REP(i,1<<k) {
+        int f1=1,f2=1;
+        REP(j,k) {
+            if((i>>j)&1) f1*=f[j];
+            else f2*=f[j];
+        }
+        run(f1,f2),run(f2,f1);
     }
     cout<<an<<'\n';
     entr
