@@ -88,6 +88,7 @@ void solve() {
             x+=tt*f1,y-=tt*f1;
         }
         y=-y;
+        if(x*f2>n||y*f1>n) continue;;
         int r1=n/f2-x+1,r2=n/f1-y+1,rr=min(r1,r2);
         an+=rr;
     }
