@@ -75,6 +75,7 @@ void solve() {
             if(cv==n2+1) break;
         }
         int an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt)%mod;
+        an=(an+mod)%mod;
         cout<<an<<'\n';
     }
     else {
@@ -91,10 +92,11 @@ void solve() {
                 }
             }
             if(cv==n2&&!allen) {
-                allen=1,an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt);
+                allen=1,an=C(n2+cnt,cnt)*C(n2+n-cnt,n-cnt)%mod;
             }
             if(cv==n2+1) break;
         }
+        an=(an+mod)%mod;
         cout<<an<<'\n';
     }
 }
