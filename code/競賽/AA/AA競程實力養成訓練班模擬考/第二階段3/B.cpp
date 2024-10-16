@@ -72,6 +72,7 @@ signed main() {
     pbds c;
     int n;
     cin>>n;
+    bit.init(n);
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
     unordered_map<int,int> las;
