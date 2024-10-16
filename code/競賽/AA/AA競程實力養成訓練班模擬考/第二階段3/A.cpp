@@ -85,9 +85,10 @@ void solve() {
         op(f1)op(f2)op(x)ope(y)
         if(x<0) {
             int tt=(-x+f2-1)/f2;
-            x+=tt*f1,y-=tt*f1;
+            x+=tt*f2,y-=tt*f1;
         }
         y=-y;
+        if(x==0||y==0) x+=f2,y+=f1;
         if(x*f2>n||y*f1>n) continue;;
         int r1=n/f2-x+1,r2=n/f1-y+1,rr=min(r1,r2);
         an+=rr;
