@@ -82,11 +82,11 @@ void solve() {
         }
         int x,y;
         exgcd(f1,f2,x,y);
-        op(f1)op(f2)op(x)ope(y)
         if(x<0) {
             int tt=(-x+f2)/f2;
             x+=tt*f2,y-=tt*f1;
         }
+        op(f1)op(f2)op(x)ope(y)
         y=-y;
         if(x==0||y==0) x+=f2,y+=f1;
         if(x*f1>n||y*f2>n+1) continue;;
