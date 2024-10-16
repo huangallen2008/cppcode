@@ -122,7 +122,7 @@ signed main() {
     tcc.init(gg);
     dsus.pb({tcc.dsu,0});
     for(auto [u,v,w]:e) {
-        if(dsu.back().f.same(u,v)) continue;
+        if(dsus.back().f.same(u,v)) continue;
         g[u].pb({v,w});
         g[v].pb({u,w});
         tcc.init(gg);
