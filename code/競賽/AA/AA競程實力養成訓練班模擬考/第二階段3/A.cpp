@@ -72,7 +72,25 @@ void solve() {
             f.pb(r);
         }
     }
-
+    int k=f.size();
+    int an=0;
+    REP(i,1<<k) {
+        int f1=1,f2=1;
+        REP(j,k) {
+            if((i>>j)&1) f1*=f[j];
+            else f1*=f[j];
+        }
+        int x,y;
+        exgcd(f1,f2,x,y);
+        if(x<0) {
+            int tt=(-x+f2-1)/f2;
+            x+=tt*f1,y-=tt*f1;
+        }
+        y=-y;
+        int r1=n/f2-x+1,r2=n/f1-y+1,rr=min(r1,r2);
+        an+=rr;
+    }
+    cout<<an<<'\n';
 }
 void init() {
     lpf[0]=lpf[1]=1;
@@ -86,9 +104,6 @@ void init() {
 signed main() {
     IOS(); 
     init();
-    int x,y;
-    exgcd(3,7,x,y);
-    op(x)ope(y)
     int T;
     cin>>T;
     while(T--) solve();
