@@ -56,6 +56,7 @@ struct BIT {
         b=Vi(n+1);
     }
     void ud(int u,int v) {
+        ope(u)
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
