@@ -74,10 +74,10 @@ struct TCC {
     Vi dep,low;
     vector<bool> isb;
     int n;
-    Graphw g;
+    Graph g;
     DSU dsu;
     void dfs(int u,int pa) {
-        for(auto [v,w]:g[u]) {
+        for(auto v:g[u]) {
             if(dep[v]) {
                 if(v==pa) {
                     continue;
@@ -95,7 +95,7 @@ struct TCC {
             }
         }
     }
-    void init(Graphw _g) {
+    void init(Graph _g) {
         g=_g;
         n=g.size();
         isb=vector<bool>(n);
@@ -103,7 +103,7 @@ struct TCC {
         low=Vi(n,inf);
         dsu.init(n);
         // dep[0]=1;
-        REP(i,n) if(!dep[i]) dfs(i,-1);
+        REP(i,n) if(!dep[i]) dep[i]=1,dfs(i,-1);
     }
 }tcc;
 signed main() {
@@ -116,15 +116,15 @@ signed main() {
     sort(ALL(e),[&](edge a,edge b) {
         return a.w<b.w;
     });
-    Graphw gg(n);
+    Graph gg(n);
     tcc.init(gg);
     dsus.pb({tcc.dsu,0});
     for(auto [u,v,w]:e) {
         // op(u)op(v)ope(w)
         // ope(dsus.back().f.same(u,v)) 
         if(dsus.back().f.same(u,v)) continue;
-        gg[u].pb({v,w});
-        gg[v].pb({u,w});
+        gg[u].pb(v);
+        gg[v].pb(u);
         tcc.init(gg);
         dsus.pb({tcc.dsu,w});
         // oparr(tcc.dsu.p)ope(w)
