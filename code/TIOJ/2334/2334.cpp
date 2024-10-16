@@ -123,8 +123,8 @@ signed main() {
     dsus.pb({tcc.dsu,0});
     for(auto [u,v,w]:e) {
         if(dsus.back().f.same(u,v)) continue;
-        g[u].pb({v,w});
-        g[v].pb({u,w});
+        gg[u].pb({v,w});
+        gg[v].pb({u,w});
         tcc.init(gg);
         dsus.pb({tcc.dsu,w});
     }
