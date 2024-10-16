@@ -2,7 +2,7 @@
 #include<bits/extc++.h>
 using namespace __gnu_pbds;
 using namespace std;
-using pbds = tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>;
+using pbds = tree<int,null_type,greater<int>,rb_tree_tag,tree_order_statistics_node_update>;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
@@ -69,19 +69,27 @@ struct BIT {
 }bit;
 signed main() {
     IOS(); 
-    pbds x;
-    x.insert(2);
-    x.insert(3);
-    x.insert(2);
-    for(int xx:x) cout<<xx<<' ';entr
+    pbds c;
     int n;
     cin>>n;
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
-    unordered_map<int,int> las,c;
+    unordered_map<int,int> las;
     int cnt=0;
     REP1(i,n) {
-        // c[]
+        int an=0;
+        c.insert(a[i]);
+        if(las[a[i]]==0) {
+            an=a[i]+c.order_of_key(a[i]);
+        }
+        else {
+            an=bit.qu(las[a[i]],i);
+        }
+        bit.ud(las[a[i]],-1);
+        las[a[i]]=i;
+        bit.ud(i,1);
+        cout<<an<<' ';
     }
+    cout<<'\n';
     return 0;
 }
