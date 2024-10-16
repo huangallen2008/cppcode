@@ -78,7 +78,7 @@ signed main() {
     REP1(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
-    REP1(i,n) b[i]=n-lower_bound(ALL(t),a[i])-t.begin();
+    REP1(i,n) b[i]=n-(lower_bound(ALL(t),a[i])-t.begin());
     BIT bit0;
     bit0.init(n);
     unordered_map<int,int> las;
