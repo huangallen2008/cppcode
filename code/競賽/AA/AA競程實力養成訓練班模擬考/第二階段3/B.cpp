@@ -76,7 +76,8 @@ signed main() {
     bit.init(n);
     Vi a(n+1),b(n+1);
     REP1(i,n) cin>>a[i];
-    Vi t=a;
+    Vi t;
+    REP1(i,n) t.pb(a[i]);
     sort(ALL(t));
     REP1(i,n) b[i]=n-(lower_bound(ALL(t),a[i])-t.begin());
     BIT bit0;
