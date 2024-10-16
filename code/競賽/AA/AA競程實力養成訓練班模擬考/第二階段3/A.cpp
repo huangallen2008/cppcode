@@ -78,7 +78,7 @@ void solve() {
         int f1=1,f2=1;
         REP(j,k) {
             if((i>>j)&1) f1*=f[j];
-            else f1*=f[j];
+            else f2*=f[j];
         }
         int x,y;
         exgcd(f1,f2,x,y);
