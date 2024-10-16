@@ -78,7 +78,7 @@ void init() {
     lpf[0]=lpf[1]=1;
     for(int i=2;i<maxn;i++) {
         if(lpf[i]==0) {
-            pm.pb(i)
+            pm.pb(i);
             for(int j=i;j<maxn;j+=i) if(lpf[j]==0) lpf[j]=i;
         }
     }
