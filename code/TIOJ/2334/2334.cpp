@@ -134,6 +134,7 @@ signed main() {
     REP(i,q) {
         int u,v;
         cin>>u>>v,u--,v--;
+        ope(dsus[0].same(u,v))
         if(!dsus.back().f.same(u,v)) cout<<"-1\n";
         else {
             int l=0,r=dsus.size()-1,mid;
