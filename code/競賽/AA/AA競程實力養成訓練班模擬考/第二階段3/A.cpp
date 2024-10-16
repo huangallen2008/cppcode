@@ -90,8 +90,8 @@ void solve() {
         if(x==0||y==0) x+=f2,y+=f1;
         op(f1)op(f2)op(x)ope(y)
         y=-y;
-        int r1=(n-x*f1)/f2+1,r2=(n+1-y*f2)/f1+1,rr=min(r1,r2);
-        if(x*f1>n||y*f2>n+1) rr=0;
+        // int r1=(n-x*f1)/f2+1,r2=(n+1-y*f2)/f1+1,rr=min(r1,r2);
+        // if(x*f1>n||y*f2>n+1) rr=0;
         int r21=(n+1-x*f1)/f2+1,r22=(n-y*f2)/f1+1,rr2=min(r21,r22);
         if(x*f1>n+1||y*f2>n) rr2;
         an+=rr+rr2;
