@@ -102,4 +102,4 @@ struct DSU {
     bool same(S a,S b) { 
         return find2(a)==find2(b); 
     }
-}dsu;
+};
