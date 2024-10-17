@@ -59,7 +59,6 @@ signed main() {
     queue<pii> pq;
     // priority_queue<pii,vector<pii>,greater<pii>> pq;
     pq.push({0,k});
-    // pq.push({0,k});
     vector<bool> vis(n);
     while(pq.size()) {
         int u=pq.front().s;
@@ -73,7 +72,7 @@ signed main() {
             if(dis[v]>dis[u]+1) {
                 dis[v]=dis[u]+1;
                 las[v]={u,t};
-                pq.pb({dis[v],v});
+                pq.push({dis[v],v});
             }
         };
         _(u*10%n,0);
