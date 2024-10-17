@@ -77,6 +77,7 @@ signed main() {
         an+='0'+las[tu].s;
         tu=las[tu].f;
     }
+    an+='0'+k;
     cout<<an<<'\n';
     return 0;
 }
