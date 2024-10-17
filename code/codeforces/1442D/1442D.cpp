@@ -80,7 +80,7 @@ signed main() {
     REP(i,n) {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
-        REP1(j,sz[i]) op(i),cin>>a[i][j];
+        REP1(j,sz[i]) cin>>a[i][j],op(j);
         ope("ok")
         REP1(j,sz[i])a[i][j]+=a[i][j-1];
     }
