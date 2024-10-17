@@ -52,6 +52,7 @@ int an=0;
 Vi dp;
 void dfs(int l,int r) {
     if(l==r) {
+    oparr(dp)
         REP(i,min(sz[l]+1,k)) {
             chmax(an,a[l][i]+dp[k-i]);
             op(l)op(i)ope(an)
@@ -79,7 +80,6 @@ signed main() {
     IOS(); 
     cin>>n>>k;
     dp=Vi(k+1);
-    oparr(dp)
     a=vector<Vi>(n);
     sz=Vi(n);
     REP(i,n) {
