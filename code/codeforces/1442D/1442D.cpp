@@ -81,6 +81,7 @@ signed main() {
     dp=Vi(k+1);
     a=vector<Vi>(n+1);
     sz=Vi(n+1);
+    a[n].pb(0);
     REP(i,n) {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
