@@ -65,13 +65,13 @@ signed main() {
         if(vis[u]) continue;
         vis[u]=1;
         auto _=[&](int v,int w,int t){
-            cout<<u<<' '<<v<<' '<<t<<'\n';
+            // cout<<u<<' '<<v<<' '<<t<<'\n';
             //v=,w=,t
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 las[v]={u,t};
                 pq.push({dis[v],v});
-                // op(v)op(u)op(t)ope(dis[v])
+                op(u)op(v)op(t)ope(dis[v])
             }
         };
         _(u*10%n,1,0);
