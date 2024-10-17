@@ -74,6 +74,7 @@ signed main() {
     int tu=0;
     string an;
     while(tu!=k) {
+        ope(an)
         an+='0'+las[tu].s;
         tu=las[tu].f;
     }
