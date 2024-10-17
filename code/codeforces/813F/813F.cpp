@@ -69,7 +69,7 @@ struct DSU {
         auto [x,dx]=find(a);
         auto [y,dy]=find(b);
         if(x==y) {
-            if(dx^dy!=1) {
+            if(dx^dy!=1&&is_bip) {
                 is_bip=0;
                 stk.pb({-2,-2});
             }
