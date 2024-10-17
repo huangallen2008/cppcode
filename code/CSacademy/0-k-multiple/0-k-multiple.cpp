@@ -56,26 +56,28 @@ signed main() {
     Vi dis(n,inf);
     vector<pii> las(n,{-1,-1});
     dis[k]=0;
-    priority_queue<pii,vector<pii>,greater<pii>> pq;
-    pq.push({0,k});
+    queue<pii> pq;
+    // priority_queue<pii,vector<pii>,greater<pii>> pq;
+    pq.pb({0,k});
+    // pq.push({0,k});
     vector<bool> vis(n);
     while(pq.size()) {
-        int u=pq.top().s;
+        int u=pq.front().s;
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
-        auto _=[&](int v,int w,int t){
+        auto _=[&](int v,int t){
             // cout<<u<<' '<<v<<' '<<t<<'\n';
                 op(u)op(v)op(t)ope(dis[v])
             //v=,w=,t
-            if(dis[v]>dis[u]+w) {
-                dis[v]=dis[u]+w;
+            if(dis[v]>dis[u]+1) {
+                dis[v]=dis[u]+1;
                 las[v]={u,t};
-                pq.push({dis[v],v});
+                pq.pb({dis[v],v});
             }
         };
-        _(u*10%n,1,0);
-        _((u*10+k)%n,1,k);
+        _(u*10%n,0);
+        _((u*10+k)%n,k);
     }
     oparr(dis)
     int tu=0;
