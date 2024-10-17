@@ -67,6 +67,9 @@ signed main() {
                 pq.push({v,dis[v]});
             }
         };
+        _(u*10%n,1,0);
+        _((u*10+k)%n,1,k);
     }
+    
     return 0;
 }
