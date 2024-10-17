@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 struct edge {
     int u,v;
-}
+};
 struct DSU {
     Vi p,sz,d;
     vector<pii> stk;
