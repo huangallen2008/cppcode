@@ -49,10 +49,11 @@ signed main() {
     IOS(); 
     int n,k;
     cin>>n>>k;
-    Vi dis(n,inf),las(n,-1);
-    dis[0]=0;
+    Vi dis(n,inf);
+    vector<pii> las(n,{-1,-1});
+    dis[k]=0;
     priority_queue<pii,vector<pii>,greater<pii>> pq;
-    pq.push({0,0});
+    pq.push({0,k});
     vector<bool> vis(n);
     while(pq.size()) {
         int u=pq.top().s;
@@ -63,13 +64,19 @@ signed main() {
             //v=,w=,t
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
-                las[v]=t;
+                las[v]={u,t};
                 pq.push({v,dis[v]});
             }
         };
         _(u*10%n,1,0);
         _((u*10+k)%n,1,k);
     }
-    
+    int tu=0;
+    string an;
+    while(tu!=k) {
+        an+='0'+las[tu].s;
+        tu=las[tu].f;
+    }
+    cout<<an<<'\n';
     return 0;
 }
