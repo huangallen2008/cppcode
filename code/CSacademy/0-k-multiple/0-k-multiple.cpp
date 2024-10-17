@@ -65,7 +65,7 @@ signed main() {
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 las[v]={u,t};
-                pq.push({v,dis[v]});
+                pq.push({dis[v],v});
             }
         };
         _(u*10%n,1,0);
