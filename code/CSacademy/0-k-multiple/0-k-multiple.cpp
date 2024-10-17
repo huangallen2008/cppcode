@@ -73,11 +73,11 @@ signed main() {
     }
     int tu=0;
     string an;
+    an+='0'+k;
     while(tu!=k) {
         an+='0'+las[tu].s;
         tu=las[tu].f;
     }
-    an+='0'+k;
     cout<<an<<'\n';
     return 0;
 }
