@@ -55,7 +55,7 @@ void dfs(int l,int r) {
     if(l==r) {
         REP(i,min(sz[l]+1,k)) {
             chmax(an,a[l][i]+dp[k-i]);
-            op(l)op(i)ope(an)
+            // op(l)op(i)ope(an)
         }
         return;
     }
@@ -63,14 +63,14 @@ void dfs(int l,int r) {
     auto tmp=dp;
     for(int i=m+1;i<=r;i++) {
         for(int j=k;j>=sz[i];j--) {
-            chmax(dp[j],dp[j-sz[i]]+a[i][j]);
+            chmax(dp[j],dp[j-sz[i]]+a[i][sz[i]]);
         }
     }
     dfs(l,m);
     dp=tmp;
     for(int i=l;i<=m;i++) {
         for(int j=k;j>=sz[i];j--) {
-            chmax(dp[j],dp[j-sz[i]]+a[i][j]);
+            chmax(dp[j],dp[j-sz[i]]+a[i][sz[i]]);
         }
     }
     dfs(m+1,r);
