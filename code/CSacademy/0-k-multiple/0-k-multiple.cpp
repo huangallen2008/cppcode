@@ -71,7 +71,6 @@ signed main() {
         _(u*10%n,1,0);
         _((u*10+k)%n,1,k);
     }
-    // oparr(dis)
     int tu=0;
     string an;
     while(tu!=k) {
