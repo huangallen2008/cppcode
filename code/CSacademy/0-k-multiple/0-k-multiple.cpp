@@ -49,7 +49,7 @@ signed main() {
     IOS(); 
     int n,k;
     cin>>n>>k;
-    Vi dis(n,inf);
+    Vi dis(n,inf),las(n,-1);
     dis[0]=0;
     priority_queue<pii,vector<pii>,greater<pii>> pq;
     pq.push({0,0});
