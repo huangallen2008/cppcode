@@ -51,7 +51,7 @@ signed main() {
     cin>>n>>k;
     if(k==n) {
         cout<<n<<'\n';
-        return;
+        return 0;
     }
     Vi dis(n,inf);
     vector<pii> las(n,{-1,-1});
