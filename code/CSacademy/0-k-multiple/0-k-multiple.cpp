@@ -67,7 +67,7 @@ signed main() {
         vis[u]=1;
         auto _=[&](int v,int t){
             // cout<<u<<' '<<v<<' '<<t<<'\n';
-                op(u)op(v)op(t)ope(dis[v])
+                // op(u)op(v)op(t)ope(dis[v])
             //v=,w=,t
             if(dis[v]>dis[u]+1) {
                 dis[v]=dis[u]+1;
@@ -78,7 +78,7 @@ signed main() {
         _(u*10%n,0);
         _((u*10+k)%n,k);
     }
-    oparr(dis)
+    // oparr(dis)
     int tu=0;
     string an;
     while(tu!=k) {
