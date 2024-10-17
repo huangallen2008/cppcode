@@ -70,7 +70,7 @@ signed main() {
                 dis[v]=dis[u]+w;
                 las[v]={u,t};
                 pq.push({dis[v],v});
-                op(v)op(u)ope(dis[v])
+                op(v)op(u)op(t)ope(dis[v])
             }
         };
         _(u*10%n,1,0);
