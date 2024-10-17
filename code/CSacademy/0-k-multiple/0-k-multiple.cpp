@@ -71,14 +71,14 @@ signed main() {
         _(u*10%n,1,0);
         _((u*10+k)%n,1,k);
     }
-    int tu=0;
-    string an;
-    while(tu!=k) {
-        ope(an)
-        an+='0'+las[tu].s;
-        tu=las[tu].f;
-    }
-    an+='0'+k;
-    cout<<an<<'\n';
+    oparr(dis)
+    // int tu=0;
+    // string an;
+    // while(tu!=k) {
+    //     an+='0'+las[tu].s;
+    //     tu=las[tu].f;
+    // }
+    // an+='0'+k;
+    // cout<<an<<'\n';
     return 0;
 }
