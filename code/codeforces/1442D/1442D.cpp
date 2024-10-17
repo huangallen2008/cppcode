@@ -55,6 +55,7 @@ void dfs(int l,int r) {
         REP(i,min(sz[l]+1,k)) {
             chmax(an,a[l][i]+dp[k-i]);
         }
+        op(l)op(r)oparr(dp)
         return;
     }
     int m=l+r>>1;
