@@ -80,7 +80,8 @@ signed main() {
     REP(i,n) {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
-        REP1(j,sz[i]) cin>>a[i][j],a[i][j]+=a[i][j-1];
+        REP1(j,sz[i]) cin>>a[i][j];
+        REP1(j,sz[i])a[i][j]+=a[i][j-1];
     }
     dfs(0,n-1);
     cout<<an<<'\n';
