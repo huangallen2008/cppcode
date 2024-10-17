@@ -163,7 +163,7 @@ signed main() {
             las[t]=i;
         }
         else {
-            tseg.ud(las[t],i-1);
+            tseg.ud(las[t],i-1,e);
             las[t]=0;
         }
     }
