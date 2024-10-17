@@ -51,11 +51,9 @@ vector<vector<int>> a;
 int an=0;
 Vi dp;
 void dfs(int l,int r) {
-    op(l)op(r)oparr(dp)
     if(l==r) {
         REP(i,min(sz[l]+1,k)) {
             chmax(an,a[l][i]+dp[k-i]);
-            // op(l)op(i)ope(an)
         }
         return;
     }
@@ -63,14 +61,14 @@ void dfs(int l,int r) {
     auto tmp=dp;
     for(int i=m+1;i<=r;i++) {
         for(int j=k;j>=sz[i];j--) {
-            chmax(dp[j],dp[j-sz[i]]+a[i][sz[i]]);
+            chmax(dp[j],dp[j-sz[i]]+a[i].back());
         }
     }
     dfs(l,m);
     dp=tmp;
     for(int i=l;i<=m;i++) {
         for(int j=k;j>=sz[i];j--) {
-            chmax(dp[j],dp[j-sz[i]]+a[i][sz[i]]);
+            chmax(dp[j],dp[j-sz[i]]+a[i].back());
         }
     }
     dfs(m+1,r);
@@ -85,8 +83,7 @@ signed main() {
     REP(i,n) {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
-        REP1(j,sz[i]) cin>>a[i][j];
-        REP1(j,sz[i])a[i][j]+=a[i][j-1];
+        REP1(j,sz[i]) cin>>a[i][j],,a[i][j]+=a[i][j-1];
     }
     dfs(0,n-1);
     cout<<an<<'\n';
