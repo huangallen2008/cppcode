@@ -146,7 +146,7 @@ struct TSEG {
 }tseg;
 int n,q;
 int id(edge e) {
-    return e.f*n+e.s;
+    return e.u*n+e.v;
 }
 signed main() {
     IOS(); 
@@ -156,7 +156,7 @@ signed main() {
     vector<edge> es;
     REP1(i,q) {
         edge e;
-        cin>>e.u>>e.v;
+        cin>>e.u>>e.v,e.u--,e.v--;
         es.pb(e);
         int t=id(e);
         if(las[t]==0) {
