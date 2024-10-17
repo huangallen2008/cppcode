@@ -58,7 +58,7 @@ signed main() {
     dis[k]=0;
     queue<pii> pq;
     // priority_queue<pii,vector<pii>,greater<pii>> pq;
-    pq.pb({0,k});
+    pq.push({0,k});
     // pq.push({0,k});
     vector<bool> vis(n);
     while(pq.size()) {
