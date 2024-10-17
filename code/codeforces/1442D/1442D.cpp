@@ -52,6 +52,7 @@ int an=0;
 Vi dp;
 void dfs(int l,int r) {
     if(l==r) {
+        op(an)
         REP(i,min(sz[l]+1,k)) chmax(an,a[l][i]+dp[k-i]);
         return;
     }
