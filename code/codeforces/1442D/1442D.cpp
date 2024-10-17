@@ -79,6 +79,7 @@ signed main() {
     IOS(); 
     cin>>n>>k;
     dp=Vi(k+1);
+    oparr(dp)
     a=vector<Vi>(n);
     sz=Vi(n);
     REP(i,n) {
