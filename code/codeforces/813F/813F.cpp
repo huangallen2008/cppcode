@@ -156,7 +156,7 @@ signed main() {
     vector<edge> es;
     REP1(i,q) {
         edge e;
-        cin>>e.f>>e.s;
+        cin>>e.u>>e.v;
         es.pb(e);
         int t=id(e);
         if(las[t]==0) {
