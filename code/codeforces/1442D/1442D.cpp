@@ -81,6 +81,7 @@ signed main() {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
         REP1(j,sz[i]) cin>>a[i][j];
+        ope("ok")
         REP1(j,sz[i])a[i][j]+=a[i][j-1];
     }
     dfs(0,n-1);
