@@ -49,7 +49,10 @@ signed main() {
     IOS(); 
     int n,k;
     cin>>n>>k;
-    k%=n;
+    if(k==n) {
+        cout<<n<<'\n';
+        return;
+    }
     Vi dis(n,inf);
     vector<pii> las(n,{-1,-1});
     dis[k]=0;
