@@ -51,11 +51,11 @@ vector<vector<int>> a;
 int an=0;
 Vi dp;
 void dfs(int l,int r) {
+        op(l)op(r)oparr(dp)
     if(l==r) {
         REP(i,min(sz[l]+1,k)) {
             chmax(an,a[l][i]+dp[k-i]);
         }
-        op(l)op(r)oparr(dp)
         return;
     }
     int m=l+r>>1;
