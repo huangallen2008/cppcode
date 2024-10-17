@@ -78,15 +78,14 @@ signed main() {
     IOS(); 
     cin>>n>>k;
     dp=Vi(k+1);
-    a=vector<Vi>(n+1);
-    sz=Vi(n+1);
-    a[n].pb(0);
+    a=vector<Vi>(n);
+    sz=Vi(n);
     REP(i,n) {
         cin>>sz[i];
         a[i]=Vi(sz[i]+1);
         REP1(j,sz[i]) cin>>a[i][j],a[i][j]+=a[i][j-1];
     }
-    dfs(0,n);
+    dfs(0,n-1);
     cout<<an<<'\n';
     return 0;
 }
