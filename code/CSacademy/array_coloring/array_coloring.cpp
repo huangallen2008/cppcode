@@ -50,13 +50,11 @@ Vi a,las,nxt;
 int f(int l,int r) {
     if(l>r) return 0;
     if(l==r) return 1;
-    op(l)ope(r)
     int mx=0;
     int t=l;
     int cnt=0;
     while(t<=r) {
         if(nxt[t]!=n) {
-            op(t)ope(nxt[t])
             chmax(mx,f(t+1,nxt[t]-1));
             t=nxt[t];
         }
