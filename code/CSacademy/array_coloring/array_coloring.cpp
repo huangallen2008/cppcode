@@ -62,7 +62,7 @@ int f(int l,int r) {
         cnt++;
     }
     op(l)op(r)op(mx)ope(cnt)
-    return mx+cnt-1;
+    return mx+cnt;
 }
 signed main() {
     IOS(); 
