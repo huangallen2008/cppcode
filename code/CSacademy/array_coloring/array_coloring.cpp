@@ -61,6 +61,7 @@ int f(int l,int r) {
         t++;
         cnt++;
     }
+    op(l)op(r)op(mx)ope(cnt)
     return mx+cnt-1;
 }
 signed main() {
