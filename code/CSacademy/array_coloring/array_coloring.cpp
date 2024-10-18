@@ -74,6 +74,7 @@ signed main() {
         nxt[i]=las[a[i]];
         las[a[i]]=i;
     }
-    cout<<f(0,n-1)<<'\n';
+    oparr(las)oparr(nxt)
+    // cout<<f(0,n-1)<<'\n';
     return 0;
 }
