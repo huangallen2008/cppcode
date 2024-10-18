@@ -70,7 +70,7 @@ signed main() {
     a=nxt=Vi(n);
     las=Vi(m,n);
     REP(i,n) cin>>a[i],a[i]--;
-    REP(i,n) {
+    RREP(i,n) {
         nxt[i]=las[a[i]];
         las[a[i]]=i;
     }
