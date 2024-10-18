@@ -77,6 +77,8 @@ signed main() {
         nxt[i]=las[a[i]];
         las[a[i]]=i;
     }
-    cout<<f(0,n-1)<<'\n';
+    int cnt0=0;
+    REP(i,m) if(las[i]==n) cnt0++;
+    cout<<f(0,n-1)+cnt0<<'\n';
     return 0;
 }
