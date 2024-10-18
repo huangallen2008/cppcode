@@ -50,7 +50,6 @@ Vi a,las,nxt;
 int f(int l,int r) {
     if(l>r) return 0;
     if(l==r) return 1;
-    op(l)ope(r)
     int mx=0;
     int t=l;
     int cnt=0;
