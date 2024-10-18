@@ -48,7 +48,6 @@ int rd(int l,int r) {
 int n,m;
 Vi a,las,nxt;
 int f(int l,int r) {
-    op(l)ope(r)
     if(l>r) return 0;
     if(l==r) return 1;
     int mx=0;
@@ -74,7 +73,6 @@ signed main() {
         nxt[i]=las[a[i]];
         las[a[i]]=i;
     }
-    oparr(las)oparr(nxt)
-    // cout<<f(0,n-1)<<'\n';
+    cout<<f(0,n-1)<<'\n';
     return 0;
 }
