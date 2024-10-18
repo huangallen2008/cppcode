@@ -50,7 +50,7 @@ Vi a,las,nxt;
 int f(int l,int r) {
     if(l>r) return 0;
     if(l==r) return 1;
-    int mx=0;
+    int mx=1;
     int t=l;
     int cnt=0;
     while(t<=r) {
