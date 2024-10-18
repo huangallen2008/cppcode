@@ -48,6 +48,7 @@ int rd(int l,int r) {
 int n,m;
 Vi a,las,nxt;
 int f(int l,int r) {
+    op(l)ope(r)
     if(l>r) return 0;
     if(l==r) return 1;
     int mx=0;
