@@ -55,6 +55,7 @@ int f(int l,int r) {
     int cnt=0;
     while(t<=r) {
         while(nxt[t]!=n) {
+            if(t>r) ope(t)
             chmax(mx,f(t+1,nxt[t]-1));
             t=nxt[t];
         }
