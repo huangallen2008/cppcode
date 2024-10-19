@@ -67,7 +67,7 @@ int bs(int i,int j) {//i<j, last t : cost(i+1,t)>cost(j+1,t)
     int l=j+1,r=n,mid;
     while(l<r) {
         mid=l+r+1>>1;
-        if(dp[i]+cost(i+1,mid,m)>dp[j]+cost(j+1,mid,m)) l=mid;
+        if(dp[i]+cost(i+1,mid)>dp[j]+cost(j+1,mid)) l=mid;
         else r=mid-1;
     }
     return l;
