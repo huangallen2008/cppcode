@@ -94,7 +94,7 @@ void solve(int C) {
     cout<<"Case #"<<C<<": ";
     int r,c,k;
     cin>>r>>c>>k;
-    bit.init(max(r,c));
+    bit.init(max(r,c)+1);
     vector<Vi> a(r,Vi(c));
     vector<vector<pii>> b(r*c);
     REP(i,r) {
