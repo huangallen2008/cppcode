@@ -94,9 +94,9 @@ signed main() {
     cin>>n>>k;
     a=Vi(n+1);
     REP1(i,n) cin>>a[i];
-    int l=0,r=???,mid;
+    int l=0,r=1e10,mid;
     while(l<r) {
-        mid=l+r>>1;
+        mid=l+r+1>>1;
         if(check(mid).s>k) l=mid;
         else r=mid-1;
     }
