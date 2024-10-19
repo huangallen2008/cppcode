@@ -75,7 +75,7 @@ int check(Vi x) {
     }
     return -1;
 }
-const int maxd=100;//823543;
+const int maxd=823543;
 void solve(int C) {
     cout<<"Case #"<<C<<": ";
     g=vector<Vi>(7,Vi(6));
@@ -93,7 +93,7 @@ void solve(int C) {
     vector<int> pos(maxd,-1);
     pos[0]=0;
     bool posir[2];
-    REP(i,maxd) {
+    REP(i,100){//maxd) {
         if(pos[i]==-1) continue;
         Vi x;
         int t=i;
