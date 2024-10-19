@@ -69,6 +69,7 @@ struct BIT2 {
     }
     int qu(int x,int y) {
         x++,y++;
+        op(x)ope(y)
         chmin(x,n);
         chmin(y,n);
         int r=0;
