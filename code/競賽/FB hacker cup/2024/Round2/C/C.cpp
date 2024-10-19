@@ -91,7 +91,7 @@ void solve(int C) {
     cin>>r>>c;
     bit.init(max(r,c));
     vector<Vi> a(r,Vi(c));
-    vector<pii> b(r*c);
+    vector<vector<pii>> b(r*c);
     REP(i,r) {
         REP(j,c) {
             cin>>a[i][j],a[i][j]--;
