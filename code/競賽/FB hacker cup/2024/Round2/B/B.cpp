@@ -92,6 +92,7 @@ void solve(int C) {
     bool posir[2];
     REP(i,maxd) {
         if(pos[i]==-1) continue;
+        op(i)ope(pos[i])
         Vi x;
         REP(j,7) {
             x.pb(i%7),i/=7;
