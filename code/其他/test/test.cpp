@@ -48,8 +48,8 @@ int rd(int l,int r) {
 
 signed main() {
     IOS(); 
-    for(auto [x,y]:{{1,2},{4,5},{7,6}}) {
-        
+    for(auto [x,y]:vector<pii>{{1,2},{4,5},{7,6}}) {
+
     }
     return 0;
 }
