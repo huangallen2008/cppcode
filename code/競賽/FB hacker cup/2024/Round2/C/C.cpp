@@ -109,6 +109,7 @@ void solve(int C) {
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c);
+                op(x1)op(x2)op(y1)ope(y2)
                 re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
             }
             ope(i)
