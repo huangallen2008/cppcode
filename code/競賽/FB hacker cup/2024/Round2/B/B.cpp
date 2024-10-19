@@ -92,10 +92,10 @@ void solve(int C) {
     bool posir[2];
     REP(i,maxd) {
         if(pos[i]==-1) continue;
-        op(i)ope(pos[i])
         Vi x;
+        int t=i;
         REP(j,7) {
-            x.pb(i%7),i/=7;
+            x.pb(t%7),t/=7;
         }
         int ret=check(x);
         if(ret==-1) {
