@@ -81,16 +81,16 @@ pii check(int _m) {
     REP1(i,n) {
         while(i>dq.front().s) dq.pop_front();
         int j=dq.front().f;
-        op(i)ope(j)
-        for(auto [x,y]:dq) cout<<"{"<<x<<","<<y<<"} ";entr
+        // op(i)ope(j)
+        // for(auto [x,y]:dq) cout<<"{"<<x<<","<<y<<"} ";entr
         dp[i]=dp[j]+cost(j+1,i);
         t[i]=t[j]+1;
         while(dq.size()>1&&bs(dq.back().f,i)<=dq[SZ(dq)-2].s) dq.pop_back();
         dq.back().s=bs(dq.back().f,i);
         dq.pb({i,n+1});
     }
-    op(m)oparr(dp)
-    op(m)op(dp[n])ope(t[n])
+    // op(m)oparr(dp)
+    // op(m)op(dp[n])ope(t[n])
     return {dp[n],t[n]};
 }
 signed main() {
@@ -101,13 +101,13 @@ signed main() {
     st_init();
     check(0);
     // for(int i=-5;i<=5;i++) check(i);
-    // int l=-1e10,r=1e10,mid;
-    // while(l<r) {
-    //     mid=(r-l+1>>1)+l;
-    //     if(check(mid).s>=k) l=mid;
-    //     else r=mid-1;
-    // }
-    // ope(l)
-    // cout<<check(l).f+k*l<<'\n';
+    int l=-1e10,r=1e10,mid;
+    while(l<r) {
+        mid=(r-l+1>>1)+l;
+        if(check(mid).s>=k) l=mid;
+        else r=mid-1;
+    }
+    ope(l)
+    cout<<check(l).f+k*l<<'\n';
     return 0;
 }
