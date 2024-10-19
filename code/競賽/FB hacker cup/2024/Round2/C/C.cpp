@@ -73,7 +73,7 @@ struct BIT2 {
         chmin(x,n);
         chmin(y,n);
         int r=0;
-        for(int p=x;p>0;p=p&-p) {
+        for(int p=x;p>0;p-=p&-p) {
             for(int q=y;q>0;q-=q&-q) {
                 r+=b[p][q];
             }
