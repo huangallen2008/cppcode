@@ -100,7 +100,7 @@ signed main() {
     st_init();
     int l=0,r=1e10,mid;
     while(l<r) {
-        mid=(r+>>1);
+        mid=(r+l>>1);
         if(check(mid).s<=k) r=mid;
         else l=mid+1;
     }
