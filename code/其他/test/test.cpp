@@ -45,39 +45,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+
 signed main() {
     IOS(); 
-    int a=1;
-    auto _=[=]() {
-        a;
-    }();
-    
-    ope(a)
-    Vi x(5);
-    int k;
-    REP(i,5) cin>>x[i];
-    cin>>k;
-    sort(ALL(x));
-    Vi dis(x[0],inf);
-    dis[0]=0;
-    priority_queue<pii,vector<pii>,greater<pii>> pq;
-    pq.push({0,0});
-    vector<bool> vis(x[0]);
-    while(pq.size()) {
-        int u=pq.top().s;
-        pq.pop();
-        if(vis[u]) continue;
-        vis[u]=1;
-        REP1(i,4) {
-            int v=(u+x[i])%x[0],w=x[i];
-            if(dis[v]>dis[u]+w) {
-                dis[v]=dis[u]+w;
-                pq.push({dis[v],v});
-            }
-        }
+    for(auto [x,y]:{{1,2},{4,5},{7,6}}) {
+        
     }
-    int an=0;
-    REP(i,x[0]) if(k>=dis[i]) an+=(k-dis[i])/x[0]+1;
-    cout<<an<<'\n';
     return 0;
 }
