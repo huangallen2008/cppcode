@@ -60,6 +60,7 @@ int check(Vi x) {
             }
             if(x[i]>j&&x[i+1]>j&&x[i+2]>j&&x[i+3]>j) {
                 bool ret=same({g[i][j],g[i+1][j],g[i+2][j],g[i+3][j]});
+                op(g[i][j])op(g[i+1][j])op(g[i+2][j])ope(g[i+3][j]);
                 if(!ret) return g[i][j];
             }
             if(j<=2&&x[i]>j&&x[i+1]>j+1&&x[i+2]>j+2&&x[i+3]>j+3) {
@@ -68,7 +69,6 @@ int check(Vi x) {
             }
         }
     }
-    ope("ok")
     REP(i,7) {
         REP(j,3) {
             if(x[i]>j+3&&same({g[i][j],g[i][j+1],g[i][j+2],g[i][j+3]})) return g[i][j];
