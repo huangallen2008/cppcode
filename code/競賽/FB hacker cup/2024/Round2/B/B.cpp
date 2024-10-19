@@ -115,7 +115,7 @@ void solve(int C) {
             }
         }
         else {
-            // op(i)ope(ret)
+            op(i)ope(ret)
             posir[ret]=1;
         }
     }
