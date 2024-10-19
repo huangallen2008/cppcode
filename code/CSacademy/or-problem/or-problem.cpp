@@ -58,7 +58,7 @@ int qur(int l,int r) {
     int lg=__lg(r-l+1);
     return st[lg][l]|st[lg][r-(1<<lg)+1];
 }
-Vi dp;
+Vi dp,t;
 int m;
 int cost(int l,int r) {
     return qur(l,r)-m;
@@ -67,15 +67,14 @@ int bs(int i,int j) {//i<j, last t : cost(i+1,t)>cost(j+1,t)
     int l=j+1,r=n,mid;
     while(l<r) {
         mid=l+r+1>>1;
-        if(dp[i]+cost(i+1,mid)>=dp[j]+cost(j+1,mid)) l=mid;
+        if(dp[i]+cost(i+1,mid)>=dp[j]+cost(j+1,mid)+(t[i]>t[j])) l=mid;
         else r=mid-1;
     }
     return l;
 }
 pii check(int _m) {
     m=_m;
-    dp=Vi(n+1);
-    Vi t(n+1);
+    dp=t=Vi(n+1);
     deque<pii> dq;
     dq.push_back({0,n+1});
     REP1(i,n) {
