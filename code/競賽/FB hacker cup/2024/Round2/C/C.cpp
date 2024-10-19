@@ -120,7 +120,7 @@ void solve(int C) {
                 // op(i)ope(re)
             }
             // for(auto &[x,y]:b[i]) bit.ud(x,y,-1);
-            // ope(i)
+            ope(i)
             bit.clean();
         }
         // op(lb)op(rb)
