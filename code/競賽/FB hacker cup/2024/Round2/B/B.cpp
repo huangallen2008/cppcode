@@ -60,7 +60,7 @@ int check(Vi x) {
             }
             if(x[i]>j&&x[i+1]>j&&x[i+2]>j&&x[i+3]>j) {
                 bool ret=same({g[i][j],g[i+1][j],g[i+2][j],g[i+3][j]});
-                op(g[i][j])op(g[i+1][j])op(g[i+2][j])ope(g[i+3][j]);
+                op(g[i][j])op(g[i+1][j])op(g[i+2][j])op(g[i+3][j]);ope(ret)
                 if(!ret) return g[i][j];
             }
             if(j<=2&&x[i]>j&&x[i+1]>j+1&&x[i+2]>j+2&&x[i+3]>j+3) {
