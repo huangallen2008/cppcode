@@ -68,6 +68,7 @@ int check(Vi x) {
             }
         }
     }
+    ope("ok")
     REP(i,7) {
         REP(j,3) {
             if(x[i]>j+3&&same({g[i][j],g[i][j+1],g[i][j+2],g[i][j+3]})) return g[i][j];
@@ -93,32 +94,32 @@ void solve(int C) {
     vector<int> pos(maxd,-1);
     pos[0]=0;
     bool posir[2];
-    REP(i,801){//maxd) {
-        if(pos[i]==-1) continue;
-        Vi x;
-        int t=i;
-        REP(j,7) {
-            x.pb(t%7),t/=7;
-        }
-        op(i)oparr(x)
-        int ret=check(x);
-        if(ret==-1) {
-            REP(j,7) {
-                if(x[j]!=6&&g[j][x[j]]==pos[i]) {
-                    x[j]++;
-                    int id=0;
-                    for(int k=6;k>=0;k--) id=id*7+x[k];
-                    pos[id]=pos[i]^1;
-                    // ope(id)
-                    x[j]--;
-                }
-            }
-        }
-        else {
-            op(i)ope(ret)
-            posir[ret]=1;
-        }
-    }
+    // REP(i,801){//maxd) {
+    //     if(pos[i]==-1) continue;
+    //     Vi x;
+    //     int t=i;
+    //     REP(j,7) {
+    //         x.pb(t%7),t/=7;
+    //     }
+    //     op(i)oparr(x)
+    //     int ret=check(x);
+    //     if(ret==-1) {
+    //         REP(j,7) {
+    //             if(x[j]!=6&&g[j][x[j]]==pos[i]) {
+    //                 x[j]++;
+    //                 int id=0;
+    //                 for(int k=6;k>=0;k--) id=id*7+x[k];
+    //                 pos[id]=pos[i]^1;
+    //                 // ope(id)
+    //                 x[j]--;
+    //             }
+    //         }
+    //     }
+    //     else {
+    //         op(i)ope(ret)
+    //         posir[ret]=1;
+    //     }
+    // }
     if(posir[0]) {
         if(posir[1]) cout<<"?\n";
         else cout<<"C\n";
