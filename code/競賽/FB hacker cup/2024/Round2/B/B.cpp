@@ -93,7 +93,7 @@ void solve(int C) {
     vector<int> pos(maxd,-1);
     pos[0]=0;
     bool posir[2];
-    REP(i,maxd){//maxd) {
+    REP(i,401){//maxd) {
         if(pos[i]==-1) continue;
         Vi x;
         int t=i;
