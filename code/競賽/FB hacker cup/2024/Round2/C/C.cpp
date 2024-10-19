@@ -87,8 +87,8 @@ struct BIT2 {
 }bit;
 void solve(int C) {
     cout<<"Case #"<<C<<": ";
-    int r,c;
-    cin>>r>>c;
+    int r,c,k;
+    cin>>r>>c>>k;
     bit.init(max(r,c));
     vector<Vi> a(r,Vi(c));
     vector<vector<pii>> b(r*c);
