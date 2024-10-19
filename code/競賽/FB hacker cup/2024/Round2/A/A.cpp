@@ -58,9 +58,9 @@ void solve(int C) {
 }
 signed main() {
     IOS(); 
-    #ifdef LOCAL_
-        freopen("in/in.txt","r",stdin);
-        freopen("out.txt","w",stdout);
+    #ifdef LOCAL
+        freopen("rin.txt","r",stdin);
+        freopen("rout.txt","w",stdout);
     #endif
     REP1(i,9) {
         REP(j,9-i+1) {
