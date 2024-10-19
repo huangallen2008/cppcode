@@ -89,7 +89,7 @@ pii check(int _m) {
         dq.pb({i,n+1});
     }
     // op(m)oparr(dp)oparr(t)
-    op(m)op(dp[n])ope(t[n])
+    // op(m)op(dp[n])ope(t[n])
     return {dp[n],t[n]};
 }
 signed main() {
@@ -100,9 +100,9 @@ signed main() {
     st_init();
     int l=0,r=1e10,mid;
     while(l<r) {
-        mid=(r-l+1>>1)+l;
-        if(check(mid).s>=k) l=mid;
-        else r=mid-1;
+        mid=(r+>>1);
+        if(check(mid).s<=k) r=mid;
+        else l=mid+1;
     }
     cout<<check(l).f+k*l<<'\n';
     return 0;
