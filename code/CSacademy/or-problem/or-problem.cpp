@@ -81,6 +81,7 @@ pii check(int _m) {
     REP1(i,n) {
         while(i>dq.front().s) dq.pop_front();
         int j=dq.front().f;
+        op(i)ope(j)
         dp[i]=dp[j]+cost(j+1,i);
         t[i]=t[j]+1;
         while(dq.size()>1&&bs(dq.back().f,i)<=dq[SZ(dq)-2].s) dq.pop_back();
@@ -97,14 +98,15 @@ signed main() {
     a=Vi(n+1);
     REP1(i,n) cin>>a[i];
     st_init();
-    for(int i=-5;i<=5;i++) check(i);
-    int l=-1e10,r=1e10,mid;
-    while(l<r) {
-        mid=(r-l+1>>1)+l;
-        if(check(mid).s>=k) l=mid;
-        else r=mid-1;
-    }
-    ope(l)
-    cout<<check(l).f+k*l<<'\n';
+    check(0);
+    // for(int i=-5;i<=5;i++) check(i);
+    // int l=-1e10,r=1e10,mid;
+    // while(l<r) {
+    //     mid=(r-l+1>>1)+l;
+    //     if(check(mid).s>=k) l=mid;
+    //     else r=mid-1;
+    // }
+    // ope(l)
+    // cout<<check(l).f+k*l<<'\n';
     return 0;
 }
