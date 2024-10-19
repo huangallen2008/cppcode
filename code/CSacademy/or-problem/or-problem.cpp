@@ -81,7 +81,7 @@ pii check(int _m) {
     REP1(i,n) {
         while(i>dq.front().s) dq.pop_front();
         int j=dq.front().f;
-        dp[i]=dp[j]+cost(j+1,i,m);
+        dp[i]=dp[j]+cost(j+1,i);
         t[i]=t[j]+1;
         while(dq.size()>1&&bs(dq.back().f,i)<=dq[SZ(dq)-2].s) dq.pop_back();
         dq.back().s=bs(dq.back().f,i);
