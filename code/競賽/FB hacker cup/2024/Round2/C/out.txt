@@ -1,1 +1,21 @@
-Case #1: 
+Case #1: 362
+Case #2: 535
+Case #3: 628
+Case #4: 168
+Case #5: 1
+Case #6: 26
+Case #7: 3
+Case #8: 43
+Case #9: 13
+Case #10: 405
+Case #11: 1
+Case #12: 383
+Case #13: 799
+Case #14: 4
+Case #15: 2
+Case #16: 2
+Case #17: 2
+Case #18: 1
+Case #19: 59
+Case #20: 322
+Case #21: 
