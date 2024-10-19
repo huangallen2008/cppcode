@@ -87,7 +87,8 @@ pii check(int _m) {
         dq.back().s=bs(dq.back().f,i);
         dq.pb({i,n});
     }
-    op(m)oparr(dp)op(dp[n])ope(t[n])
+    // op(m)oparr(dp)
+    op(m)op(dp[n])ope(t[n])
     return {dp[n],t[n]};
 }
 signed main() {
