@@ -86,14 +86,14 @@ void solve(int C) {
             if(c=='F') g[j][i]=1;
         }
     }
-    REP(i,7) {
-        oparr(g[i])
-    }
+    // REP(i,7) {
+    //     oparr(g[i])
+    // }
     Vi dp(maxd);
     vector<int> pos(maxd,-1);
     pos[0]=0;
     bool posir[2];
-    REP(i,801){//maxd) {
+    REP(i,maxd){//maxd) {
         if(pos[i]==-1) continue;
         Vi x;
         int t=i;
