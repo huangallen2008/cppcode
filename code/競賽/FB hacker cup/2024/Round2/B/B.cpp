@@ -86,6 +86,9 @@ void solve(int C) {
             if(c=='F') g[j][i]=1;
         }
     }
+    REP(i,7) {
+        oparr(g[i])
+    }
     Vi dp(maxd);
     vector<int> pos(maxd,-1);
     pos[0]=0;
