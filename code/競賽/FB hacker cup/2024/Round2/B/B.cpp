@@ -93,14 +93,14 @@ void solve(int C) {
     vector<int> pos(maxd,-1);
     pos[0]=0;
     bool posir[2];
-    REP(i,100){//maxd) {
+    REP(i,maxd){//maxd) {
         if(pos[i]==-1) continue;
         Vi x;
         int t=i;
         REP(j,7) {
             x.pb(t%7),t/=7;
         }
-        op(i)oparr(x)
+        // op(i)oparr(x)
         int ret=check(x);
         if(ret==-1) {
             REP(j,7) {
