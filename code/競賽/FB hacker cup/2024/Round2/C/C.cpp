@@ -101,7 +101,7 @@ void solve(int C) {
     int lb=0,rb=max(r,c),mb;
     while(lb<rb) {//fir mb that r >= k 
         mb=lb+rb+1>>1;
-        int r=0;//number of val <= mb 
+        int re=0;//number of val <= mb 
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
                 bit.ud(x,y,1);
@@ -110,12 +110,12 @@ void solve(int C) {
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c);
-                r+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
+                re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
             }
             bit.clean();
         }
         op(mb)ope(r)
-        if(r>=k) lb=mb;
+        if(re>=k) lb=mb;
         else rb=mb-1;
     }
     cout<<lb<<'\n';
