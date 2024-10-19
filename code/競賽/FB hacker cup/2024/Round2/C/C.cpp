@@ -54,6 +54,7 @@ struct BIT2 {
     int n;
     void init(int _n) {
         n=_n;
+        ope(n)
         b=vector<Vi>(n+1,Vi(n+1));
     }
     void ud(int x,int y,int v) {
