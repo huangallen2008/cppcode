@@ -49,7 +49,7 @@ Vi li;
 signed main() {
     IOS(); 
     REP1(i,9) {
-        REP1(j,9-i+1) {
+        REP(j,9-i+1) {
             int x=0;
             for(int k=i;k<=i+j;k++) x=x*10+k;
             for(int k=i+j-1;k>=i;k--) x=x*10+k;
