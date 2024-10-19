@@ -109,9 +109,11 @@ void solve(int C) {
     ope(mb)
         int re=0;//number of val <= mb 
         REP(i,r*c) {
+            if(i<66178) continue;
             for(auto &[x,y]:b[i]) {
                 bit.ud(x,y,1);
             }
+            ope(i)
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r-1);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c-1);
