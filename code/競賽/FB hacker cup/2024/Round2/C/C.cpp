@@ -105,7 +105,7 @@ void solve(int C) {
     }
     int lb=0,rb=max(r,c),mb;
     while(lb<rb) {//fir mb that r >= k 
-        mb=lb+rb+1>>1;
+        mb=lb+rb>>1;
         int re=0;//number of val <= mb 
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
@@ -124,8 +124,8 @@ void solve(int C) {
         }
         op(lb)op(rb)
         op(mb)ope(re)
-        if(re>=k) lb=mb;
-        else rb=mb-1;
+        if(re>=k) rb=mb;
+        else lb=mb+1;
     }
     cout<<lb<<'\n';
 }
