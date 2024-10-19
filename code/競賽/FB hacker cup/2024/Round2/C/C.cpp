@@ -104,16 +104,14 @@ void solve(int C) {
         int re=0;//number of val <= mb 
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
-                op(x)ope(y)
                 bit.ud(x,y,1);
-                op(x)ope(y)
             }
-            ope(i)
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c);
                 re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
             }
+            ope(i)
             bit.clean();
         }
         op(mb)ope(r)
