@@ -103,11 +103,11 @@ void solve(int C) {
         mb=lb+rb+1>>1;
         int re=0;//number of val <= mb 
         REP(i,r*c) {
-            ope(i)
             for(auto &[x,y]:b[i]) {
                 bit.ud(x,y,1);
                 op(x)ope(y)
             }
+            ope(i)
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c);
