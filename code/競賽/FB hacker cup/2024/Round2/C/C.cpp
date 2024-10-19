@@ -57,10 +57,10 @@ struct BIT2 {
         b=vector<Vi>(n+1,Vi(n+1));
     }
     void ud(int x,int y,int v) {
+        stk.pb({x,y,v});
         x++,y++;
         // chmin(x,n);
         // chmin(y,n);
-        stk.pb({x,y,v});
         for(int p=x;p<=n;p+=p&-p) {
             for(int q=y;q<=n;q+=q&-q) {
                 b[p][q]+=v;
@@ -115,8 +115,10 @@ void solve(int C) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r-1);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c-1);
                 // op(x1)op(x2)op(y1)ope(y2)
-                re+=(x2-x1)*(y2-y1)-bit.qu(x1,x2,y1,y2);
+                re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
+                // op(i)ope(re)
             }
+            // for(auto &[x,y]:b[i]) bit.ud(x,y,-1);
             // ope(i)
             bit.clean();
         }
