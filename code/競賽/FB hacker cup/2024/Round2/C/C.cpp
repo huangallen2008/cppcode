@@ -104,6 +104,7 @@ void solve(int C) {
         int re=0;//number of val <= mb 
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
+                op(x)ope(y)
                 bit.ud(x,y,1);
                 op(x)ope(y)
             }
