@@ -51,7 +51,7 @@ void solve() {
     cin>>a>>b>>m;
     int an=0;
     for(int x:li) {
-        if(a<=x&&x<=b%%x%m==0) an++;
+        if(a<=x&&x<=b&&x%m==0) an++;
     } 
     cout<<an<<'\n';
 }
