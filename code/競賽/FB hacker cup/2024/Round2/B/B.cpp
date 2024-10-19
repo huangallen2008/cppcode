@@ -127,6 +127,7 @@ void solve(int C) {
         if(posir[1]) cout<<"F\n";
         else cout<<"0\n";
     }
+    ope(check({1,1,1,1,0,0,0}))
 }
 signed main() {
     IOS(); 
