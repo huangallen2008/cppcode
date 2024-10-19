@@ -105,6 +105,7 @@ void solve(int C) {
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
                 bit.ud(x,y,1);
+                op(x)ope(y)
             }
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r);
