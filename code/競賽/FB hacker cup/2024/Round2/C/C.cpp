@@ -109,11 +109,11 @@ void solve(int C) {
     ope(mb)
         int re=0;//number of val <= mb 
         REP(i,r*c) {
-            if(i<66178) continue;
+            // if(i<66178) continue;
             for(auto &[x,y]:b[i]) {
                 bit.ud(x,y,1);
             }
-            ope(i)
+            // ope(i)
             for(auto &[x,y]:b[i]) {
                 int x1=max(x-mb,0ll),x2=min(x+mb,r-1);
                 int y1=max(y-mb,0ll),y2=min(y+mb,c-1);
@@ -121,12 +121,12 @@ void solve(int C) {
                 re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
                 // op(i)ope(re)
             }
-            // for(auto &[x,y]:b[i]) bit.ud(x,y,-1);
-            ope(i)
-            bit.clean();
+            for(auto &[x,y]:b[i]) bit.ud(x,y,-1);
+            // ope(i)
+            // bit.clean();
         }
         // op(lb)op(rb)
-        // op(mb)ope(re)
+        op(mb)ope(re)
         if(re>=k) rb=mb;
         else lb=mb+1;
     }
