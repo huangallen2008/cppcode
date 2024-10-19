@@ -139,3 +139,8 @@ signed main() {
     REP1(i,T) solve(i);
     return 0;
 }
+/*
+1
+1 4 12
+1 2 3 4
+*/
