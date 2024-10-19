@@ -109,7 +109,7 @@ void solve(int C) {
                     int id=0;
                     for(int k=6;k>=0;k--) id=id*7+x[k];
                     pos[id]=pos[i]^1;
-                    ope(id)
+                    // ope(id)
                     x[j]--;
                 }
             }
