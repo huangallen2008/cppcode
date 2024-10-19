@@ -92,7 +92,6 @@ void solve(int C) {
     bool posir[2];
     REP(i,maxd) {
         if(pos[i]==-1) continue;
-        op(i)ope(pos[i])
         Vi x;
         int t=i;
         REP(j,7) {
@@ -111,6 +110,7 @@ void solve(int C) {
             }
         }
         else {
+            op(i)ope(ret)
             posir[ret]=1;
         }
     }
