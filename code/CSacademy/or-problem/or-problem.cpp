@@ -99,7 +99,6 @@ signed main() {
     a=Vi(n+1);
     REP1(i,n) cin>>a[i];
     st_init();
-    check(0);
     int l=0,r=1e10,mid;
     while(l<r) {
         mid=(r-l+1>>1)+l;
