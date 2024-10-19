@@ -79,7 +79,7 @@ const int maxd=823543;
 void solve(int C) {
     cout<<"Case #"<<C<<": ";
     g=vector<Vi>(7,Vi(6));
-    REP(i,6) {
+    RREP(i,6) {
         REP(j,7) {
             char c;
             cin>>c;
