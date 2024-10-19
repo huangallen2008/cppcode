@@ -100,7 +100,6 @@ signed main() {
     REP1(i,n) cin>>a[i];
     st_init();
     check(0);
-    // for(int i=-5;i<=5;i++) check(i);
     int l=0,r=1e10,mid;
     while(l<r) {
         mid=(r-l+1>>1)+l;
