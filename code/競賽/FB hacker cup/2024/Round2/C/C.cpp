@@ -116,14 +116,14 @@ void solve(int C) {
                 int y1=max(y-mb,0ll),y2=min(y+mb,c-1);
                 // op(x1)op(x2)op(y1)ope(y2)
                 re+=(x2-x1+1)*(y2-y1+1)-bit.qu(x1,x2,y1,y2);
-                op(i)ope(re)
+                // op(i)ope(re)
             }
             // for(auto &[x,y]:b[i]) bit.ud(x,y,-1);
             // ope(i)
             bit.clean();
         }
-        op(lb)op(rb)
-        op(mb)ope(re)
+        // op(lb)op(rb)
+        // op(mb)ope(re)
         if(re>=k) rb=mb;
         else lb=mb+1;
     }
