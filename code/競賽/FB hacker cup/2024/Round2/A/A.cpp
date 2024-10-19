@@ -46,7 +46,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Vi li;
-void solve() {
+void solve(int C) {
+    cout<<"Case #"<<C<<": ";
     int a,b,m;
     cin>>a>>b>>m;
     int an=0;
@@ -57,6 +58,10 @@ void solve() {
 }
 signed main() {
     IOS(); 
+    #ifdef LOCAL_
+        freopen("in/in.txt","r",stdin);
+        freopen("out.txt","w",stdout);
+    #endif
     REP1(i,9) {
         REP(j,9-i+1) {
             int x=0;
@@ -67,6 +72,6 @@ signed main() {
     }
     int T;
     cin>>T;
-    while(T--) solve();
+    REP1(i,T) solve(i);
     return 0;
 }
