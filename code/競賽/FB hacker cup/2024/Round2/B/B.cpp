@@ -135,3 +135,12 @@ signed main() {
     REP1(i,T) solve(i);
     return 0;
 }
+/*
+1
+FFFFFFF
+CCCCCCC
+FFFFFFF
+CCCCCCC
+FFFFFFF
+CCCCCCC
+*/
