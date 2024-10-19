@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -106,7 +106,7 @@ void solve(int C) {
     int lb=0,rb=max(r,c),mb;
     while(lb<rb) {//fir mb that r >= k 
         mb=lb+rb>>1;
-    ope(mb)
+    // ope(mb)
         int re=0;//number of val <= mb 
         REP(i,r*c) {
             // if(i<66178) continue;
@@ -126,7 +126,8 @@ void solve(int C) {
             // bit.clean();
         }
         // op(lb)op(rb)
-        op(mb)ope(re)
+        // op(mb)ope(re)
+        cerr<<1;
         if(re>=k) rb=mb;
         else lb=mb+1;
     }
