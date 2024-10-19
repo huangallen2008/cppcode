@@ -58,8 +58,8 @@ struct BIT2 {
     }
     void ud(int x,int y,int v) {
         x++,y++;
-        chmin(x,n);
-        chmin(y,n);
+        // chmin(x,n);
+        // chmin(y,n);
         stk.pb({x,y,v});
         for(int p=x;p<=n;p+=p&-p) {
             for(int q=y;q<=n;q+=q&-q) {
@@ -69,9 +69,9 @@ struct BIT2 {
     }
     int qu(int x,int y) {
         x++,y++;
-        op(x)ope(y)
-        chmin(x,n);
-        chmin(y,n);
+        // op(x)ope(y)
+        // chmin(x,n);
+        // chmin(y,n);
         int r=0;
         for(int p=x;p>0;p-=p&-p) {
             for(int q=y;q>0;q-=q&-q) {
