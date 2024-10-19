@@ -96,13 +96,12 @@ signed main() {
     a=Vi(n+1);
     REP1(i,n) cin>>a[i];
     st_init();
-    int l=-1e10,r=1e10,mid;
-    REP(i,10) check(i);
-    // while(l<r) {
-    //     mid=l+r+1>>1;
-    //     if(check(mid).s>k) l=mid;
-    //     else r=mid-1;
-    // }
-    // cout<<check(l).f+k*l<<'\n';
+    int l=0,r=1e10,mid;
+    while(l<r) {
+        mid=l+r+1>>1;
+        if(check(mid).s>k) l=mid;
+        else r=mid-1;
+    }
+    cout<<check(l).f+k*l<<'\n';
     return 0;
 }
