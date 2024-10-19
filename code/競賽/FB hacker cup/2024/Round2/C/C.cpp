@@ -113,6 +113,7 @@ void solve(int C) {
             }
             bit.clean();
         }
+        op(mb)ope(r)
         if(r>=k) lb=mb;
         else rb=mb-1;
     }
