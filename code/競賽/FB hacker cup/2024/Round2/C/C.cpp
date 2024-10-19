@@ -106,6 +106,7 @@ void solve(int C) {
     int lb=0,rb=max(r,c),mb;
     while(lb<rb) {//fir mb that r >= k 
         mb=lb+rb>>1;
+    ope(mb)
         int re=0;//number of val <= mb 
         REP(i,r*c) {
             for(auto &[x,y]:b[i]) {
@@ -132,7 +133,7 @@ void solve(int C) {
 signed main() {
     IOS(); 
     #ifdef LOCAL
-        freopen("in/in.txt","r",stdin);
+        freopen("in.txt","r",stdin);
         freopen("out.txt","w",stdout);
     #endif
     int T;
