@@ -77,7 +77,7 @@ pii check(int _m) {
     dp=Vi(n+1);
     Vi t(n+1);
     deque<pii> dq;
-    dq.push_back({0,n});
+    dq.push_back({0,n+1});
     REP1(i,n) {
         while(i>dq.front().s) dq.pop_front();
         int j=dq.front().f;
@@ -85,7 +85,7 @@ pii check(int _m) {
         t[i]=t[j]+1;
         while(dq.size()>1&&bs(dq.back().f,i)<=dq[SZ(dq)-2].s) dq.pop_back();
         dq.back().s=bs(dq.back().f,i);
-        dq.pb({i,n});
+        dq.pb({i,n+1});
     }
     op(m)oparr(dp)
     op(m)op(dp[n])ope(t[n])
