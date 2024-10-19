@@ -46,6 +46,15 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Vi li;
+void solve() {
+    int a,b,m;
+    cin>>a>>b>>m;
+    int an=0;
+    for(int x:li) {
+        if(a<=x&&x<=b%%x%m==0) an++;
+    } 
+    cout<<an<<'\n';
+}
 signed main() {
     IOS(); 
     REP1(i,9) {
@@ -56,6 +65,8 @@ signed main() {
             li.pb(x);
         }
     }
-    oparr(li)
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
