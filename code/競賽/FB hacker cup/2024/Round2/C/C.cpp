@@ -122,6 +122,7 @@ void solve(int C) {
             // ope(i)
             bit.clean();
         }
+        op(lb)op(rb)
         op(mb)ope(re)
         if(re>=k) lb=mb;
         else rb=mb-1;
