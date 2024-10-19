@@ -101,7 +101,7 @@ signed main() {
     int l=-1e10,r=1e10,mid;
     while(l<r) {
         mid=(r-l+1>>1)+l;
-        if(check(mid).s>k) l=mid;
+        if(check(mid).s>=k) l=mid;
         else r=mid-1;
     }
     ope(l)
