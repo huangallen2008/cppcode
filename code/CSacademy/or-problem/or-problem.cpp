@@ -82,6 +82,7 @@ pii check(int _m) {
         while(i>dq.front().s) dq.pop_front();
         int j=dq.front().f;
         op(i)ope(j)
+        for(auto [x,y]:dq) cout<<"{"<<x<<","<<y<<"} ";entr
         dp[i]=dp[j]+cost(j+1,i);
         t[i]=t[j]+1;
         while(dq.size()>1&&bs(dq.back().f,i)<=dq[SZ(dq)-2].s) dq.pop_back();
