@@ -104,6 +104,7 @@ signed main() {
         if(check(mid).s>k) l=mid;
         else r=mid-1;
     }
+    ope(l)
     cout<<check(l).f+k*l<<'\n';
     return 0;
 }
