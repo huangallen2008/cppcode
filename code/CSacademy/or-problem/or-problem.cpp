@@ -51,7 +51,7 @@ Vi a;
 void st_init() {
     REP1(i,n) st[0][i]=a[i];
     REP1(i,maxb-1) {
-        REP1(j,n-(1<<i)) st[i][j]=st[i-1][j]|st[i-1][j+(1<<i-1)];
+        REP1(j,n-(1<<i-1)) st[i][j]=st[i-1][j]|st[i-1][j+(1<<i-1)];
     }
 }
 int qur(int l,int r) {
