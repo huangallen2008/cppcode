@@ -95,6 +95,7 @@ signed main() {
     cin>>n>>k;
     a=Vi(n+1);
     REP1(i,n) cin>>a[i];
+    st_init();
     int l=-1e10,r=1e10,mid;
     REP(i,10) check(i);
     // while(l<r) {
