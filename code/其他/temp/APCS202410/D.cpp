@@ -71,6 +71,7 @@ signed main() {
     int n,m;
     cin>>n>>m>>p;
     Vi t;
+    bit.init(n*2+5)
     t.pb(-1);
     t.pb(0);
     t.pb(m);
