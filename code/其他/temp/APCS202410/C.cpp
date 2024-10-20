@@ -58,7 +58,7 @@ pii nxt(pii x,int dd)   {
 }
 signed main() {
     IOS(); 
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     cin>>n>>m>>Q;
     vector<Vi> a(n,Vi(m));
     REP(i,n) REP(j,m) cin>>a[i][j];
