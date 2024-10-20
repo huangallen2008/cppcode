@@ -60,6 +60,7 @@ void solve() {
         cin>>u>>v,u--,v--;
         ga[u].pb(v);
     }
+    REP(i,n) cin>>b[i];
     cin>>mb;
     REP(i,mb) {
         int u,v;
