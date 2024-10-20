@@ -130,6 +130,10 @@ void solve() {
     REP(i,ob.size()) {
         dib.pb(((ib[(i+1)%ib.size()]-ib[i])%k+k)%k);
     }
+    oparr(doa)
+    oparr(dob)
+    oparr(dia)
+    oparr(dib)
     int oas=doa.size()-1;
     int ias=dia.size()-1;
     int obs=dob.size()-1;
