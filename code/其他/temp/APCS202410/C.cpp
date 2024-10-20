@@ -88,7 +88,7 @@ signed main() {
                     pii nnn=nxt(nn,di);
                     if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
                         dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
-                        stk.push(nnn);
+                        stk.pb(nnn);
                         qq.push(nnn);
                     }
                 }
