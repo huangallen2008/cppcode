@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -58,7 +58,7 @@ pii nxt(pii x,int dd)   {
 }
 signed main() {
     IOS(); 
-    // freopen("in.txt","r",stdin);
+    freopen("in.txt","r",stdin);
     cin>>n>>m>>Q;
     vector<Vi> a(n,Vi(m));
     REP(i,n) REP(j,m) cin>>a[i][j];
