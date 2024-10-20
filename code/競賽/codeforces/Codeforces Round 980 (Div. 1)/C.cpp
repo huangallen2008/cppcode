@@ -99,6 +99,7 @@ void solve() {
         cout<<"NO\n";
         return;
     }
+    depa[0]=depb[0]=0;
     dfsa(0);
     dfsb(0);
     oparr(depa)oparr(depb)
