@@ -48,9 +48,9 @@ int rd(int l,int r) {
 Graph ga,gb;
 Vi depa,depb,a,b;
 int ma,mb;
+int n,k;
 void solve() {
-    int n;
-    cin>>n;
+    cin>>n>>k;
     a=b=Vi(n);
     ga=gb=Graph(n);
     REP(i,n) cin>>a[i];
