@@ -72,6 +72,7 @@ int pw(int x,int f) {
     }
     return r;
 }
+const int C=48763;
 void solve() {
     cin>>n>>k;
     a=b=Vi(n);
@@ -150,16 +151,16 @@ void solve() {
         for(int x:t) dib.pb(x);
     }
     int N=n*2+1;
-    REP1(i,doa.size()-1) doa[i]=(doa[i-1]+doa[i]*pw(k,i))%k;
-    REP1(i,dob.size()-1) dob[i]=(dob[i-1]+dob[i]*pw(k,i))%k;
-    REP1(i,dia.size()-1) dia[i]=(dia[i-1]+dia[i]*pw(k,i))%k;
-    REP1(i,dib.size()-1) dib[i]=(dib[i-1]+dib[i]*pw(k,i))%k;
+    REP1(i,doa.size()-1) doa[i]=(doa[i-1]+doa[i]*pw(C,i))%k;
+    REP1(i,dob.size()-1) dob[i]=(dob[i-1]+dob[i]*pw(C,i))%k;
+    REP1(i,dia.size()-1) dia[i]=(dia[i-1]+dia[i]*pw(C,i))%k;
+    REP1(i,dib.size()-1) dib[i]=(dib[i-1]+dib[i]*pw(C,i))%k;
     unordered_map<int,int> moa,mia;
-    REP(i,doa.size()-oas) moa[((doa[i+oas]-doa[i])*pw(N-i)%k+k)%k]=i+1;
-    REP(i,dia.size()-ias) mia[((dia[i+ias]-dia[i])*pw(N-i)%k+k)%k]=i+1;
+    REP(i,doa.size()-oas) moa[((doa[i+oas]-doa[i])*pw(C,N-i)%k+k)%k]=i+1;
+    REP(i,dia.size()-ias) mia[((dia[i+ias]-dia[i])*pw(C,N-i)%k+k)%k]=i+1;
     Vi iaok,oaok;
-    REP(i,dob.size()-obs) if(mia[((dob[i+obs]-dob[i])*pw(N-i)%k+k)%k]) iaok.pb(((i+1-mia[((dob[i+obs]-dob[i])*pw(N-i)%k+k)%k])%k+k)%k);
-    REP(i,dib.size()-ibs) if(moa[((dib[i+ibs]-dib[i])*pw(N-i)%k+k)%k]) oaok.pb(((i+1-moa[((dib[i+ibs]-dib[i])*pw(N-i)%k+k)%k])%k+k)%k);
+    REP(i,dob.size()-obs) if(mia[((dob[i+obs]-dob[i])*pw(C,N-i)%k+k)%k]) iaok.pb(((i+1-mia[((dob[i+obs]-dob[i])*pw(C,N-i)%k+k)%k])%k+k)%k);
+    REP(i,dib.size()-ibs) if(moa[((dib[i+ibs]-dib[i])*pw(C,N-i)%k+k)%k]) oaok.pb(((i+1-moa[((dib[i+ibs]-dib[i])*pw(C,N-i)%k+k)%k])%k+k)%k);
     oparr(iaok)oparr(oaok)
 }
 signed main() {
