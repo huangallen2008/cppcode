@@ -76,13 +76,13 @@ signed main() {
             auto [u,v]=q.front();
             q.pop();
             queue<pii> qq;
-            op(u)ope(v)
+            // op(u)ope(v)
             qq.push({u,v});
             dis[u][v]=0;
             stk.pb({u,v});
             while(qq.size()) {
                 auto nn=qq.front();
-                op(nn.f)ope(nn.s)
+                // op(nn.f)ope(nn.s)
                 qq.pop();
                 if(dis[nn.f][nn.s]>=(u==r&&v==c?mb:a[u][v])) {
                     continue;
