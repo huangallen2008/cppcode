@@ -161,7 +161,13 @@ void solve() {
     Vi iaok,oaok;
     REP(i,dob.size()-obs) if(mia[((dob[i+obs]-dob[i])*pw(C,N-i)%k+k)%k]) iaok.pb(((i+1-mia[((dob[i+obs]-dob[i])*pw(C,N-i)%k+k)%k])%k+k)%k);
     REP(i,dib.size()-ibs) if(moa[((dib[i+ibs]-dib[i])*pw(C,N-i)%k+k)%k]) oaok.pb(((i+1-moa[((dib[i+ibs]-dib[i])*pw(C,N-i)%k+k)%k])%k+k)%k);
-    oparr(iaok)oparr(oaok)
+    // oparr(iaok)oparr(oaok)
+    unordered_map<int,int> oo;
+    for(int x:iaok) oo[((k-2-x)%k+k)%k]=1;
+    bool an=0;
+    for(int x:oaok) if(oo[x]) an=1;
+    if(an) cout<<"YES\n";
+    else cout<<"NO\n";
 }
 signed main() {
     IOS(); 
