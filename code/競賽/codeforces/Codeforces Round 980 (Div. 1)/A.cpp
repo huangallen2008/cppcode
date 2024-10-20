@@ -51,7 +51,9 @@ void solve() {
     vector<pii> a(n);
     REP(i,n) cin>>a[i].f>>a[i].s;
     sort(ALL(a),[&](pii a,pii b) {
-        return (a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s)<(a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s);
+        int rr=-((a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s))+((a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s));
+        if(rr==0) return max(a.f,a.s)<max(b.f,b.s);
+        else return rr>0;
     });
     for(auto [x,y]:a) cout<<x<<' '<<y<<' ';
     cout<<'\n';
