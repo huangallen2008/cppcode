@@ -101,9 +101,9 @@ void solve() {
     }
     dfsa(0);
     dfsb(0);
+    oparr(depa)oparr(depb)
     REP(i,n) depa[i]=(depa[i]%k+k)%k;
     REP(i,n) depb[i]=(depb[i]%k+k)%k;
-    oparr(depa)oparr(depb)
     Vi oa,ob,ia,ib;
     REP(i,n) {
         if(a[i]) oa.pb(depa[i]);
