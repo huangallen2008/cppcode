@@ -54,7 +54,7 @@ void solve() {
     sort(ALL(a),[&](pii a,pii b) {
         if(a.f==b.f) return a.s<b.s;
         if(a.s==b.s) return a.f<b.f;
-        return (a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s)>(a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s);
+        return (a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s)<(a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s);
     });
     for(auto [x,y]:a) cout<<x<<' '<<y<<' ';
     cout<<'\n';
