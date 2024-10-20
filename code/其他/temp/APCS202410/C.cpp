@@ -89,8 +89,8 @@ signed main() {
                 }
                 // ope("ok")
                 REP(di,4) {
-                    ope(di)
                     pii nnn=nxt(nn,di);
+                    ope(di)
                     if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
                         dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
                         stk.pb(nnn);
