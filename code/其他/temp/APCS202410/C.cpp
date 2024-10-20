@@ -68,6 +68,7 @@ signed main() {
         mb=lb+rb>>1;
         vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
         queue<pii> q;
+        ope(mb)
         q.push({r,c});
         o[r][c]=1;
         vector<pii> stk;
