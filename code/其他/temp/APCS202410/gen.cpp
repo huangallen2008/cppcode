@@ -58,60 +58,16 @@ pii nxt(pii x,int dd)   {
 }
 signed main() {
     IOS(); 
-    freopen("in.txt","r",stdin);
-    cin>>n>>m>>Q;
-    vector<Vi> a(n,Vi(m));
-    REP(i,n) REP(j,m) cin>>a[i][j];
-    int r,c;
-    REP(i,n) REP(j,m) if(a[i][j]==-2) r=i,c=j;
-    int lb=0,rb=n*m,mb;
-    while(lb<rb) {
-        mb=lb+rb>>1;
-        vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
-        queue<pii> q;
-        q.push({r,c});
-        o[r][c]=1;
-        vector<pii> stk;
-        int re=0;
-        while(q.size()) {
-            auto [u,v]=q.front();
-            q.pop();
-            queue<pii> qq;
-            // op(u)ope(v)
-            qq.push({u,v});
-            dis[u][v]=0;
-            stk.pb({u,v});
-            while(qq.size()) {
-                auto nn=qq.front();
-                // op(nn.f)ope(nn.s)
-                qq.pop();
-                if(dis[nn.f][nn.s]>=(u==r&&v==c?mb:a[u][v])) {
-                    continue;
-                }
-                // ope("ok")
-                REP(di,4) {
-                    pii nnn=nxt(nn,di);
-                    if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
-                        dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
-                        stk.pb(nnn);
-                        qq.push(nnn);
-                    }
-                }
-            }
-            while(stk.size()) {
-                auto [x,y]=stk.back();
-                stk.pop_back();
-                dis[x][y]=inf;
-                if(!o[x][y]) {
-                    o[x][y]=1;
-                    q.push({x,y});
-                }
-            }
+    freopen("in.txt","w",stdout);
+    int n=500,m=500,q=2500;
+    cout<<n<<" "<<m<<' '<<q<<'\n';
+    REP(i,n) {
+        REP(j,m) {
+            if(i==0&&j==0) cout<<"-2 ";
+            else if(/*230<=i&&i<=260&&230<=j&&j<=280*/i%17==0&&j%10==0) cout<<"30 ";
+            else cout<<"0 ";
         }
-        REP(i,n) REP(j,m) re+=o[i][j];
-        if(re>=Q) rb=mb;
-        else lb=mb+1;
+        cout<<'\n';
     }
-    cout<<lb<<'\n';
     return 0;
 }
