@@ -50,7 +50,7 @@ pii p;
 int n,m,Q;
 vector<Vi> a;
 bool ok(pii x) {
-    if(x.f<0||x.f>=n||x.s<0||x.s>=m||a[x.f][x.s]==-1) return 0;
+    if(x.f<0||x.f>=n||x.s<0||x.s>=m) return 0;
     return 1;
 }
 pii nxt(pii x,int dd)   {
@@ -90,7 +90,6 @@ signed main() {
                 // ope("ok")
                 REP(di,4) {
                     pii nnn=nxt(nn,di);
-                    ope(di)
                     if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
                         dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
                         stk.pb(nnn);
