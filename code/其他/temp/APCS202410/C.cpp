@@ -56,9 +56,55 @@ bool ok(pii x) {
 pii nxt(pii x,int dd)   {
     return {x.f+dir[dd].f,x.s+dir[dd].s};
 }
-int nd=0;
 signed main() {
     IOS(); 
-    cin>>n>>m>>k>>p.f>>p.s;
+    cin>>n>>m>>Q;
+    vector<Vi> a(n,Vi(m));
+    REP(i,n) REP(j,m) cin>>a[i][j];
+    int r,c;
+    REP(i,n) REP(j,m) if(a[i][j]==-1) r=i,c=j;
+    int lb=0,rb=n*m,mb;
+    while(lb<rb) {
+        mb=lb+rb>>1;
+        queue<pii> q;
+        q.push({r,c});
+        vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
+        o[r][c]=1;
+        vector<pii> stk;
+        while(q.size()) {
+            auto [u,v]=q.front();
+            queue<pii> qq;
+            qq.push({u,v});
+            dis[u][v]=0;
+            stk.pb({u,v});
+            while(qq.size()) {
+                auto nn=qq.front();
+                qq.pop();
+                if(dis[nn.f][nn.s]>=(u==r&&v==c?mb:a[u][v])) {
+                    continue;
+                }
+                REP(di,4) {
+                    pii nnn=nxt(nn,di);
+                    if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
+                        dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
+                        qq.push(nnn);
+                    }
+                }
+            }
+            while(stk.size()) {
+                auto [x,y]=stk.back();
+                stk.pop_back();
+                dis[x][y]=inf;
+                if(!o[x][y]) {
+                    o[x][y]=1;
+                    q.push({x,y});
+                }
+            }
+        }
+        REP(i,n) REP(j,m) re+=o[i][j];
+        if(re>=Q) rb=mb;
+        else lb=mb+1;
+    }
+    cout<<lb<<'\n';
     return 0;
 }
