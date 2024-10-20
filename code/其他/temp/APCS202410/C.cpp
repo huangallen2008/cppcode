@@ -71,6 +71,7 @@ signed main() {
         vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
         o[r][c]=1;
         vector<pii> stk;
+        int re=0;
         while(q.size()) {
             auto [u,v]=q.front();
             queue<pii> qq;
