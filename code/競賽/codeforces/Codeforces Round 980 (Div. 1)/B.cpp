@@ -53,9 +53,11 @@ struct BIT {
         b=Vi(n+1,inf);
     }
     void ud(int u,int v) {
+        u++;
         for(;u<=n;u+=u&-u) chmin(b[u],v);
     }
     int qu(int u) {
+        u++;
         int r=inf;
         for(;u>0;u-=u&-u) chmin(r,b[u]);
         return r;
