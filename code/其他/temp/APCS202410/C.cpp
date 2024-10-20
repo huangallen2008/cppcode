@@ -63,15 +63,16 @@ signed main() {
     REP(i,n) REP(j,m) cin>>a[i][j];
     int r,c;
     REP(i,n) REP(j,m) if(a[i][j]==-1) r=i,c=j;
+    op(r)ope(c)
     int lb=0,rb=n*m,mb;
     while(lb<rb) {
         mb=lb+rb>>1;
         vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
         queue<pii> q;
         q.push({r,c});
+        ope(mb)
         o[r][c]=1;
         vector<pii> stk;
-        ope(mb)
         int re=0;
         while(q.size()) {
             auto [u,v]=q.front();
