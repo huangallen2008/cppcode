@@ -69,7 +69,7 @@ signed main() {
         an++;
         if(sc%k==0) nd=(nd+1)%4;
         while(!ok(nxt(p,nd))) nd=(nd+1)%4;
-        p=nct(p,nd);
+        p=nxt(p,nd);
     }
     cout<<an<<'\n';
     return 0;
