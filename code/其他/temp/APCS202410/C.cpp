@@ -82,6 +82,7 @@ signed main() {
             stk.pb({u,v});
             while(qq.size()) {
                 auto nn=qq.front();
+                op(nn.f)ope(nn.s)
                 qq.pop();
                 if(dis[nn.f][nn.s]>=(u==r&&v==c?mb:a[u][v])) {
                     continue;
