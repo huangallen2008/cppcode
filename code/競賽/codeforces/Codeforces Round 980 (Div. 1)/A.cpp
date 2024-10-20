@@ -56,7 +56,8 @@ void solve() {
         if(a.s==b.s) return a.f<b.f;
         return (a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s)>(a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s);
     });
-    for(auto [x,y]:a) cout<<x<<' '<<y<<'\n';
+    for(auto [x,y]:a) cout<<x<<' '<<y<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS(); 
