@@ -62,7 +62,7 @@ signed main() {
     vector<Vi> a(n,Vi(m));
     REP(i,n) REP(j,m) cin>>a[i][j];
     int r,c;
-    REP(i,n) REP(j,m) if(a[i][j]==-1) r=i,c=j;
+    REP(i,n) REP(j,m) if(a[i][j]==-2) r=i,c=j;
     op(r)ope(c)
     int lb=0,rb=n*m,mb;
     while(lb<rb) {
