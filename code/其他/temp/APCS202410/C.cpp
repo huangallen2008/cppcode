@@ -74,11 +74,12 @@ signed main() {
         int re=0;
         while(q.size()) {
             auto [u,v]=q.front();
+            q.pop();
+            op(u)ope(v)
             queue<pii> qq;
             qq.push({u,v});
             dis[u][v]=0;
             stk.pb({u,v});
-            op(u)ope(v)
             while(qq.size()) {
                 auto nn=qq.front();
                 qq.pop();
