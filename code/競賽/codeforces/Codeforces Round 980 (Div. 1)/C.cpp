@@ -49,9 +49,33 @@ Graph ga,gb;
 Vi depa,depb,a,b;
 int ma,mb;
 int n,k;
+void dfsa(int u) {
+    for(int v:ga[u]) {
+        if(depa[v]!=-1) continue;
+        depa[v]=depa[u]+1;
+        dfsa(v);
+    }
+}
+void dfsb(int u) {
+    for(int v:gb[u]) {
+        if(depb[v]!=-1) continue;
+        depb[v]=depb[u]+1;
+        dfsb(v);
+    }
+}
+int pw(int x,int f) {
+    int r=1;
+    while(f>0) {
+        if(f&1) r=r*x%k;
+        x=x*x%k;
+        f>>=1;
+    }
+    return r;
+}
 void solve() {
     cin>>n>>k;
     a=b=Vi(n);
+    depa=depb=Vi(n,-1);
     ga=gb=Graph(n);
     REP(i,n) cin>>a[i];
     cin>>ma;
@@ -67,6 +91,76 @@ void solve() {
         cin>>u>>v,u--,v--;
         gb[u].pb(v);
     }
+    int cnta0=0,cntb1=0;
+    REP(i,n) cnta0+=a[i]==0;
+    REP(i,n) cntb1+=b[i]==1;
+    if(cnta0!=cntb1) {
+        cout<<"NO\n";
+        return;
+    }
+    dfsa(0);
+    dfsb(0);
+    REP(i,n) depa[i]=(depa[i]%k+k)%k;
+    REP(i,n) depb[i]=(depb[i]%k+k)%k;
+    Vi oa,ob,ia,ib;
+    REP(i,n) {
+        if(a[i]) oa.pb(depa[i]);
+        else ia.pb(depa[i]);
+    }
+    REP(i,n) {
+        if(b[i]) ob.pb(depb[i]);
+        else ib.pb(depb[i]);
+    }
+    sort(ALL(oa));
+    sort(ALL(ob));
+    sort(ALL(ia));
+    sort(ALL(ib));
+    Vi doa,dob,dia,dib;
+    doa=dob=dia=dib={0};
+    REP(i,oa.size()) {
+        doa.pb(((oa[(i+1)%oa.size()]-oa[i])%k+k)%k);
+    }
+    REP(i,ob.size()) {
+        dob.pb(((ob[(i+1)%ob.size()]-ob[i])%k+k)%k);
+    }
+    REP(i,ia.size()) {
+        dia.pb(((ia[(i+1)%ia.size()]-ia[i])%k+k)%k);
+    }
+    REP(i,ob.size()) {
+        dib.pb(((ib[(i+1)%ib.size()]-ib[i])%k+k)%k);
+    }
+    int oas=doa.size()-1;
+    int ias=dia.size()-1;
+    int obs=dob.size()-1;
+    int ibs=dib.size()-1;
+    {
+        Vi t=doa;t.erase(t.begin());
+        for(int x:t) doa.pb(x);
+    }
+    {
+        Vi t=dob;t.erase(t.begin());
+        for(int x:t) dob.pb(x);
+    }
+    {
+        Vi t=dia;t.erase(t.begin());
+        for(int x:t) dia.pb(x);
+    }
+    {
+        Vi t=dib;t.erase(t.begin());
+        for(int x:t) dib.pb(x);
+    }
+    int N=n*2+1;
+    REP1(i,doa.size()-1) doa[i]=(doa[i-1]+doa[i]*pw(k,i))%k;
+    REP1(i,dob.size()-1) dob[i]=(dob[i-1]+dob[i]*pw(k,i))%k;
+    REP1(i,dia.size()-1) dia[i]=(dia[i-1]+dia[i]*pw(k,i))%k;
+    REP1(i,dib.size()-1) dib[i]=(dib[i-1]+dib[i]*pw(k,i))%k;
+    unordered_map<int,int> moa,mia;
+    REP(i,doa.size()-oas) moa[((doa[i+oas]-doa[i])*pw(N-i)%k+k)%k]=i+1;
+    REP(i,dia.size()-ias) mia[((dia[i+ias]-dia[i])*pw(N-i)%k+k)%k]=i+1;
+    Vi iaok,oaok;
+    REP(i,dob.size()-obs) if(mia[((dob[i+obs]-dob[i])*pw(N-i)%k+k)%k]) iaok.pb(((i+1-mia[((dob[i+obs]-dob[i])*pw(N-i)%k+k)%k])%k+k)%k);
+    REP(i,dib.size()-ibs) if(moa[((dib[i+ibs]-dib[i])*pw(N-i)%k+k)%k]) oaok.pb(((i+1-moa[((dib[i+ibs]-dib[i])*pw(N-i)%k+k)%k])%k+k)%k);
+    oparr(iaok)oparr(oaok)
 }
 signed main() {
     IOS(); 
