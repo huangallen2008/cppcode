@@ -50,7 +50,6 @@ void solve() {
     cin>>n;
     vector<pii> a(n);
     REP(i,n) cin>>a[i].f>>a[i].s;
-    // REP(i,n) if(a[i].f>a[i].s) swap(a[i].f,a[i].s);
     sort(ALL(a),[&](pii a,pii b) {
         return (a.f>b.f)+(a.f>b.s)+(a.s>b.f)+(a.s>b.s)<(a.f<b.f)+(a.f<b.s)+(a.s<b.f)+(a.s<b.s);
     });
