@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 vector<pii> dir={{0,1},{1,0},{0,-1},{-1,0}};
 pii p;
-int n,m,k;
+int n,m,Q;
 vector<Vi> a;
 bool ok(pii x) {
     if(x.f<0||x.f>=n||x.s<0||x.s>=m||a[x.f][x.s]==-1) return 0;
