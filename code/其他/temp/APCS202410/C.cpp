@@ -66,9 +66,9 @@ signed main() {
     int lb=0,rb=n*m,mb;
     while(lb<rb) {
         mb=lb+rb>>1;
+        vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
         queue<pii> q;
         q.push({r,c});
-        vector<Vi> o(n,Vi(m)),dis(n,Vi(m,inf));
         o[r][c]=1;
         vector<pii> stk;
         int re=0;
@@ -88,6 +88,7 @@ signed main() {
                     pii nnn=nxt(nn,di);
                     if(ok(nnn)&&a[nnn.f][nnn.s]!=-1&&dis[nnn.f][nnn.s]==inf) {
                         dis[nnn.f][nnn.s]=dis[nn.f][nn.s]+1;
+                        stk.push(nnn);
                         qq.push(nnn);
                     }
                 }
