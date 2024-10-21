@@ -88,9 +88,7 @@ signed main() {
                 bit.ud(a[l++].s,1);
             }
             r+=bit.qur(a[i].s,mb);
-            op(i)op(l)ope(r)
         }
-        op(mb)ope(r)entr
         if(r>=k) lb=mb;
         else rb=mb-1;
     }
