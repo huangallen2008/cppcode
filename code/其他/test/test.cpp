@@ -48,8 +48,9 @@ int rd(int l,int r) {
 
 signed main() {
     IOS(); 
-    for(auto [x,y]:{{1,2},{4,5},{7,6}}) {
-        op(x)ope(y)
+    int n;
+    while(cin>>n) {
+        ope(n>>1)
     }
     return 0;
 }
