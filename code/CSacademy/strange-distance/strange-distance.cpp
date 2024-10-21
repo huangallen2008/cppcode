@@ -87,16 +87,18 @@ signed main() {
             while(l<n&&a[l].f+mb<=a[i].f) {
                 bit.ud(a[l++].s,1);
             }
+            op(i)ope(l)
             r+=bit.qur(a[i].s,mb);
         }
-        l=n-1;
+        l=n-1;entr
         RREP(i,n) {
             while(l>=0&&a[l].f-mb<=a[i].f) {
                 bit.ud(a[l--].s,1);
             }
+            op(i)ope(l)
             r+=bit.qur(a[i].s,mb);
         }
-        op(mb)ope(r)
+        op(mb)ope(r)entr
         if(r>=k) lb=mb;
         else rb=mb-1;
     }
