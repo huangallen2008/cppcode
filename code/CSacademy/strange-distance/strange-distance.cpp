@@ -96,9 +96,9 @@ signed main() {
             }
             r+=bit.qu(a[i].s,mb);
         }
-        if(r>=k) l=mb;
-        else r=mb-1;
+        if(r>=k) lb=mb;
+        else rb=mb-1;
     }
-    cout<<l<<'\n';
+    cout<<lb<<'\n';
     return 0;
 }
