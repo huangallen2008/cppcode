@@ -92,7 +92,7 @@ signed main() {
         }
         l=n-1;entr
         RREP(i,n) {
-            while(l>=0&&a[l].f-mb<=a[i].f) {
+            while(l>=0&&a[l].f-mb>=a[i].f) {
                 bit.ud(a[l--].s,1);
             }
             op(i)ope(l)
