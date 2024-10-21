@@ -90,14 +90,6 @@ signed main() {
             r+=bit.qur(a[i].s,mb);
             op(i)op(l)ope(r)
         }
-        l=n-1;entr
-        RREP(i,n) {
-            while(l>=0&&a[l].f-mb>=a[i].f) {
-                bit.ud(a[l--].s,1);
-            }
-            r+=bit.qur(a[i].s,mb);
-            op(i)op(l)ope(r)
-        }
         op(mb)ope(r)entr
         if(r>=k) lb=mb;
         else rb=mb-1;
