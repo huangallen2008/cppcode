@@ -50,7 +50,7 @@ struct BIT {
     Vi b;
     void init(int _n) {
         n=_n;
-        b=Bi(n+1);
+        b=Vi(n+1);
     }
     void ud(int u,int v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
@@ -92,7 +92,7 @@ signed main() {
         l=n-1;
         RREP(i,n) {
             while(l>=0&&a[l]-mb<=a[i].f) {
-                bit.ud(a[l++].s,1);
+                bit.ud(a[l--].s,1);
             }
             r+=bit.qur(a[i].s,mb);
         }
