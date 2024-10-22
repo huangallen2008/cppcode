@@ -108,6 +108,7 @@ signed main() {
             mll.del(a[j+1]);
             mll.del(a[j+2]);
             an+=(i+1)*(ll)(j+1)*mll.get_m();
+            ope(an)
         }
     }
     cout<<an<<'\n';
