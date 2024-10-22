@@ -96,6 +96,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     Vl t=a;
     sort(ALL(t));
+    t.insert(t.begin(),0);
     // mll.init(n,a);
     ll an=0;
     REP(i,n) {
@@ -108,7 +109,6 @@ signed main() {
             mll.del(a[j+1]);
             mll.del(a[j+2]);
             an+=(i+1)*(ll)(j+1)*mll.get_m();
-            op(i)op(j)ope(an)
         }
     }
     cout<<an<<'\n';
