@@ -97,7 +97,8 @@ signed main() {
     REP(i,n) {
         int R=n-1-(n-1-i&1);
         mll.init(n,t);
-        if(n-1>R) mll.del(a[n-1]);
+        REP(j,i) nll.del(a[j]);
+        if(n-1>R) nll.del(a[n-1]);
         an+=(i+1)*(R+1)*mll.get_m();
         op(i+1)op(R+1)ope(mll.get_m())
         for(int j=R-2;j>=i;j-=2) {
