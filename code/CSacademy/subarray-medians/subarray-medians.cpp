@@ -99,7 +99,7 @@ signed main() {
         mll.init(n,t);
         if(n-1>R) mll.del(a[n-1]);
         an+=(i+1)*(R+1)*mll.get_m();
-        op(i)op(R)ope(mll.get_m())ope(an)
+        op(i+1)op(R+1)ope(mll.get_m())
         for(int j=R-2;j>=i;j-=2) {
             mll.del(a[j+1]);
             mll.del(a[j]);
