@@ -101,7 +101,7 @@ signed main() {
         cin>>x;
         seg.ud(x,1);
     }
-    REP1(i,3) ope(seg.qu(1,0,n-1,i))
+    REP1(i,3) ope(seg.qu(1,0,maxv-1,i))
     if(seg.mx().f>(n+1>>1)) {
         cout<<"-1\n";
         return 0;
@@ -112,7 +112,7 @@ signed main() {
         if(ret.f>(n-i>>1)) {
             an.pb(ret.f);
             seg.ud(ret.f,-1);
-            op(ret.f)ope(seg.qu(1,0,n-1,ret.f))
+            op(ret.f)ope(seg.qu(1,0,maxv-1,ret.f))
         }
         else {
             int t=seg.fir();
