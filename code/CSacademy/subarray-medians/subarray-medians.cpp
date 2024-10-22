@@ -93,19 +93,17 @@ signed main() {
     int n;
     cin>>n;
     Vl a(n);
-    REP1(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i];
     Vl t=a;
     sort(ALL(t));
     // mll.init(n,a);
     ll an=0;
-    ope("ok")
     REP(i,n) {
         int R=n-1-(n-1-i&1);
         mll.init(n,t);
         REP(j,i) mll.del(a[j]);
         if(n-1>R) mll.del(a[n-1]);
         an+=(i+1)*(ll)(R+1)*mll.get_m();
-        ope(i)
         for(int j=R-2;j>=i;j-=2) {
             mll.del(a[j+1]);
             mll.del(a[j+2]);
