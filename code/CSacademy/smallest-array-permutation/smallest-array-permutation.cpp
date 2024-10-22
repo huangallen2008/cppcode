@@ -60,7 +60,7 @@ struct SEG {
         int m=l+r>>1;
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
-        s[w]=max(s[w],s[w<<1],s[w<<1|1]);
+        s[w]=max(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
