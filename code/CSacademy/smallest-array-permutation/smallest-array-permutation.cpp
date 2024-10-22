@@ -110,7 +110,7 @@ signed main() {
         if(ret.f>(n-i>>1)) {
             an.pb(ret.f);
             seg.ud(ret.f,-1);
-            op(t)ope(seg.qu(1,0,n-1,t))
+            op(ret.f)ope(seg.qu(1,0,n-1,ret.f))
         }
         else {
             int t=seg.fir();
