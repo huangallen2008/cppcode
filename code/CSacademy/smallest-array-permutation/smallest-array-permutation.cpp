@@ -110,9 +110,8 @@ signed main() {
     REP(i,n) {
         pii ret=seg.mx();
         if(ret.f>(n-i>>1)) {
-            an.pb(ret.f);
-            seg.ud(ret.f,-1);
-            op(ret.f)ope(seg.qu(1,0,maxv-1,ret.f))
+            an.pb(ret.s);
+            seg.ud(ret.s,-1);
         }
         else {
             int t=seg.fir();
