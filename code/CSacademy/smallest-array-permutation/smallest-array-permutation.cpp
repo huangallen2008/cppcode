@@ -45,6 +45,31 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    char c=GC;
+    while(c<'0'||c>'9'){c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    return x;
+}
+inline void out(int x) {
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC(' ');
+}
 struct SEG {
     int n;
     Vi s;
@@ -95,42 +120,42 @@ struct SEG {
 }seg;
 signed main() {
     IOS(); 
-    int n;
-    cin>>n;
+    int n=read();
+    // cin>>n;
     seg.init(maxv);
     REP(i,n) {
-        int x;
-        cin>>x;
+        int x=read();
+        // cin>>x;
         seg.ud(x,1);
     }
     if(seg.mx().f>(n+1>>1)) {
         cout<<"-1\n";
         return 0;
     }
-    Vi an;
+    Vi an(n);
     REP(i,n) {
         pii ret=seg.mx();
         if(ret.f>(n-i>>1)) {
-            an.pb(ret.s);
+            an[i]=ret.s;
             seg.ud(ret.s,-1);
         }
         else {
             int t=seg.fir();
-            if(an.size()&&t==an.back()) {
+            if(i&&t==an[i-1]) {
                 int tv=seg.qu(t);
                 seg.ud(t,-tv);
                 int tt=seg.fir();
-                an.pb(tt);
+                an[i]=tt;
                 seg.ud(tt,-1);
                 seg.ud(t,tv);
             }
             else {
-                an.pb(t);
+                an[i]=t;
                 seg.ud(t,-1);
             }
         }
     }
-    for(int x:an) cout<<x<<' ';
-    cout<<'\n';
+    for(int &x:an) out(x);
+    PC('\n');
     return 0;
 }
