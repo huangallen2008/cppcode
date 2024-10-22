@@ -63,6 +63,7 @@ struct SEG {
         s[w]=max(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
+        op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
     pii _mx(int w,int l,int r) {
