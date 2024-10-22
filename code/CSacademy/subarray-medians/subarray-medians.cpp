@@ -73,9 +73,13 @@ struct median_linklist {
         }
         nxt[pre[u]]=nxt[u];
         pre[nxt[u]]=pre[u];
-        if(mi>(n+1>>1)) {
+        while(mi>(n+1>>1)) {
             mi--;
             mid=pre[mid];
+        }
+        while(mi<(n+1>>1)) {
+            mi++;
+            mid=nxt[mid];
         }
     }
     int get_m() { return a[mid]; }
