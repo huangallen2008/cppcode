@@ -86,7 +86,7 @@ struct median_linklist {
 }mll;
 signed main() {
     IOS(); 
-    ope(1+1&1)
+    ope(1+1|1)
     int n;
     cin>>n;
     Vi a(n);
