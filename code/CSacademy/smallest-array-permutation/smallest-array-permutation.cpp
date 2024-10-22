@@ -63,7 +63,6 @@ struct SEG {
         s[w]=max(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
-        op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
     pii _mx(int w,int l,int r) {
@@ -101,7 +100,6 @@ signed main() {
         cin>>x;
         seg.ud(x,1);
     }
-    REP1(i,3) ope(seg.qu(1,0,maxv-1,i))
     if(seg.mx().f>(n+1>>1)) {
         cout<<"-1\n";
         return 0;
@@ -117,7 +115,6 @@ signed main() {
             int t=seg.fir();
             an.pb(t);
             seg.ud(t,-1);
-            op(t)ope(seg.qu(1,0,n-1,t))
         }
     }
     for(int x:an) cout<<x<<' ';
