@@ -88,7 +88,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     mll.init(n,a);
     cout<<mll.get_m()<<' ';
-    REP1(i,5) {
+    REP1(i,n) {
         mll.del(i);
         ope(mll.get_m())
     }
