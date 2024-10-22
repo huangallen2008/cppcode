@@ -101,6 +101,7 @@ signed main() {
         cin>>x;
         seg.ud(x,1);
     }
+    REP1(i,3) ope(seg.qu(1,0,n-1,i))
     if(seg.mx().f>(n+1>>1)) {
         cout<<"-1\n";
         return 0;
