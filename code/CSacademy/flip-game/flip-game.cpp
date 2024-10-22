@@ -60,7 +60,7 @@ signed main() {
         }
     }
     int an=(1ll<<m-1)*n;
-    REP(i,m-1) an+=(1ll<<i)*max(c[j],n-c[j]);
+    REP(i,m-1) an+=(1ll<<i)*max(c[i],n-c[i]);
     cout<<an<<'\n';
     return 0;
 }
