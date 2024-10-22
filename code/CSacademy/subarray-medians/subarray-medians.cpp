@@ -50,25 +50,20 @@ int rd(int l,int r) {
 struct median_linklist {
     Vi nxt,pre;
     Vl a;
-    unordered_map<ll,int> id;
     int n,mi,mid;
-    void init(int _n,Vl _a) {
+    void init(int _n) {
         n=_n;
         mi=n+1>>1;
         mid=n+1>>1;
-        a=_a;
-        id.clear();
         // sort(ALL(a));
         // a.insert(a.begin(),0);
-        REP1(i,n) id[a[i]]=i;
         nxt=pre=Vi(n+2);
         REP(i,n+1) nxt[i]=i+1;
         REP1(i,n+1) pre[i]=i-1;
         pre[0]=0,nxt[n+1]=n+1;
     }
-    void del(ll x) {
+    void del(ll u) {
         n--;
-        int u=id[x];
         if(u==mid) {
             mid=nxt[mid];
         }
@@ -86,7 +81,7 @@ struct median_linklist {
             mid=nxt[mid];
         }
     }
-    ll get_m() { return a[mid]; }
+    ll get_m() { return mid; }
 }mll;
 signed main() {
     IOS(); 
@@ -101,7 +96,7 @@ signed main() {
     ll an=0;
     REP(i,n) {
         int R=n-1-(n-1-i&1);
-        mll.init(n,t);
+        mll.init(n);
         REP(j,i) mll.del(a[j]);
         if(n-1>R) mll.del(a[n-1]);
         an+=(i+1)*(ll)(R+1)*mll.get_m();
