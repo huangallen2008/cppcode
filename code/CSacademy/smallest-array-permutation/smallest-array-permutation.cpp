@@ -83,11 +83,14 @@ struct SEG {
     int fir() {
         return _fir(1,0,n-1);
     }
-    int qu(int w,int l,int r,int u) {
+    int _qu(int w,int l,int r,int u) {
         if(l==r) return s[w];
         int m=l+r>>1;
-        if(u<=m) return qu(w<<1,l,m,u);
-        else return qu(w<<1|1,m+1,r,u);
+        if(u<=m) return _qu(w<<1,l,m,u);
+        else return _qu(w<<1|1,m+1,r,u);
+    }
+    int qu(int u) {
+        return _qu(1,0,n-1,u);
     }
 }seg;
 signed main() {
@@ -113,8 +116,18 @@ signed main() {
         }
         else {
             int t=seg.fir();
-            an.pb(t);
-            seg.ud(t,-1);
+            if(a.size()&&t==a.back()) {
+                int tv=seg.qu(t);
+                seg.ud(t,-tv);
+                int tt=seg.fir();
+                an.pb(tt);
+                seg.ud(tt,-1);
+                seg.ud(t,tv);
+            }
+            else {
+                an.pb(t);
+                seg.ud(t,-1);
+            }
         }
     }
     for(int x:an) cout<<x<<' ';
