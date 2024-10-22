@@ -87,6 +87,10 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     mll.init(n,a);
-    cout<<mll.get_m();
+    cout<<mll.get_m()<<' ';
+    REP1(i,5) {
+        mll.del(i);
+        ope(mll.get_m())
+    }
     return 0;
 }
