@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -45,25 +46,27 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#define Vl vector<ll>
 struct median_linklist {
-    Vi nxt,pre,a;
-    unordered_map<int,int> id;
+    Vi nxt,pre;
+    Vl a;
+    unordered_map<ll,int> id;
     int n,mi,mid;
-    void init(int _n,Vi _a) {
+    void init(int _n,Vl _a) {
         n=_n;
         mi=n+1>>1;
         mid=n+1>>1;
         a=_a;
         id.clear();
         // sort(ALL(a));
-        a.insert(a.begin(),0);
+        // a.insert(a.begin(),0);
         REP1(i,n) id[a[i]]=i;
         nxt=pre=Vi(n+2);
         REP(i,n+1) nxt[i]=i+1;
         REP1(i,n+1) pre[i]=i-1;
         pre[0]=0,nxt[n+1]=n+1;
     }
-    void del(int x) {
+    void del(ll x) {
         n--;
         int u=id[x];
         if(u==mid) {
@@ -83,28 +86,28 @@ struct median_linklist {
             mid=nxt[mid];
         }
     }
-    int get_m() { return a[mid]; }
+    ll get_m() { return a[mid]; }
 }mll;
 signed main() {
     IOS(); 
     int n;
     cin>>n;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    Vi t=a;
+    Vl a(n);
+    REP1(i,n) cin>>a[i];
+    Vl t=a;
     sort(ALL(t));
     // mll.init(n,a);
-    int an=0;
+    ll an=0;
     REP(i,n) {
         int R=n-1-(n-1-i&1);
         mll.init(n,t);
         REP(j,i) mll.del(a[j]);
         if(n-1>R) mll.del(a[n-1]);
-        an+=(i+1)*(R+1)*mll.get_m();
+        an+=(i+1)*(ll)(R+1)*mll.get_m();
         for(int j=R-2;j>=i;j-=2) {
             mll.del(a[j+1]);
             mll.del(a[j+2]);
-            an+=(i+1)*(j+1)*mll.get_m();
+            an+=(i+1)*(ll)(j+1)*mll.get_m();
         }
     }
     cout<<an<<'\n';
