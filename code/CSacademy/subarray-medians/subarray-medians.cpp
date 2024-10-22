@@ -98,6 +98,7 @@ signed main() {
     sort(ALL(t));
     // mll.init(n,a);
     ll an=0;
+    ope("ok")
     REP(i,n) {
         int R=n-1-(n-1-i&1);
         mll.init(n,t);
