@@ -100,12 +100,10 @@ signed main() {
         REP(j,i) mll.del(a[j]);
         if(n-1>R) mll.del(a[n-1]);
         an+=(i+1)*(R+1)*mll.get_m();
-        op(i+1)op(R+1)ope(mll.get_m())
         for(int j=R-2;j>=i;j-=2) {
             mll.del(a[j+1]);
             mll.del(a[j+2]);
             an+=(i+1)*(j+1)*mll.get_m();
-            op(i+1)op(j+1)ope(mll.get_m())
         }
     }
     cout<<an<<'\n';
