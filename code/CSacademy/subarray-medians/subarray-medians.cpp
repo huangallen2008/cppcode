@@ -54,6 +54,7 @@ struct median_linklist {
         mi=n+1>>1;
         mid=n+1>>1;
         a=_a;
+        id.clear();
         // sort(ALL(a));
         a.insert(a.begin(),0);
         REP1(i,n) id[a[i]]=i;
