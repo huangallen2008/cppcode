@@ -116,7 +116,7 @@ signed main() {
         }
         else {
             int t=seg.fir();
-            if(a.size()&&t==a.back()) {
+            if(an.size()&&t==an.back()) {
                 int tv=seg.qu(t);
                 seg.ud(t,-tv);
                 int tt=seg.fir();
