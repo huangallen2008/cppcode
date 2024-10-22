@@ -86,15 +86,25 @@ struct median_linklist {
 }mll;
 signed main() {
     IOS(); 
-    ope(1+1|1)
     int n;
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    sort(ALL(a));
-    mll.init(n,a);
+    Vi t=a;
+    sort(ALL(t));
+    // mll.init(n,a);
+    int an=0;
     REP(i,n) {
-        // int R=n-1-(n-1)        
+        int R=n-1-(n-1-i&1);
+        mll.init(n,t);
+        if(n-1>R) mll.del(a[n-1]);
+        an+=(i+1)*(R+1)*mll.get_m();
+        for(int j=R-2;j>=i;j-=2) {
+            mll.del(a[j+1]);
+            mll.del(a[j]);
+            an+=(i+1)*(j+1)*mll.get_m();
+        }
     }
+    cout<<an<<'\n';
     return 0;
 }
