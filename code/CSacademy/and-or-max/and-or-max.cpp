@@ -54,6 +54,13 @@ struct SEG {
         a.mx=max(b.mx,c.mx);
         a.no=b.no&c.no&(b.mx^c.mx^all);
     }
+    void addtag(Seg a,Seg b) {
+        a.mx=((a.mx&(b.no^all)))|(b.mx&b.no);
+    }
+    void push(Seg &a,Seg &b,Seg &c) {
+        addtag(b,a);
+        addtag(c,a);
+    }
     int n;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
@@ -78,6 +85,7 @@ struct SEG {
         }
         if(ql>r||qr<l) return;
         int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
         _and(w<<1,l,m,ql,qr,v);
         _and(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
@@ -92,6 +100,7 @@ struct SEG {
         }
         if(ql>r||qr<l) return ;
         int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
         _or(w<<1,l,m,ql,qr,v);
         _or(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
@@ -103,6 +112,7 @@ struct SEG {
         if(ql<=l&&r<=qr) return s[w].mx;
         if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
         return max(_mx(w<<1,l,m,ql,qr),_mx(w<<1|1,m+1,r,ql,qr));
     }
     int mx(int l,int r) {
