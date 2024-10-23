@@ -82,9 +82,9 @@ signed main() {
         vector<Vi> ndp(n+1,Vi(n*n));
         REP1(j,n) {
             REP(k,n*n) {
-                if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]);
-                addmod(ndp[j][k],dp[j-1][k]);
-                if(k>=i*2&&j<n) addmod(ndp[j][k],dp[j+1][k-i*2]);
+                if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*j*2);
+                addmod(ndp[j][k],dp[j-1][k]*j);
+                if(k>=i*2&&j<n) addmod(ndp[j][k],dp[j+1][k-i*2]*j);
             }
         }
         swap(dp,ndp);
