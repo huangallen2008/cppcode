@@ -82,10 +82,10 @@ struct SEG {
         _and(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void and(int l,int r,int v) {
+    void ran(int l,int r,int v) {
         _and(1,0,n-1,l,r,v);
     }
-    void _or(){}
+    void ror(){}
 };
 signed main() {
     IOS(); 
