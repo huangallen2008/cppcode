@@ -79,7 +79,7 @@ signed main() {
     dp[0][1]=1;
     REP1(i,n) {
         vector<Vi> ndp(n+1,Vi(n*n));
-        int R=min(n*n,(i*(i+5)>>1)+1);
+        int R=min(n*n,i*(i+1)+1);
         REP1(j,i) {
             REP(k,R) {
                 if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*(j<<1));
