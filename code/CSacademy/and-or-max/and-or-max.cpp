@@ -53,7 +53,6 @@ struct SEG {
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mx=max(b.mx,c.mx);
         a.no=b.no&c.no&(b.mx^c.mx^all);
-        ope(all)
     }
     int n;
     vector<Seg> s;
@@ -88,7 +87,7 @@ struct SEG {
     }
     void _or(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr&&((s[w].no|(v))==s[w].no)) {
-            op(w)ope(v)
+            op(l)op(r)op(w)ope(v)
             s[w].mx|=v;
             return;
         }
