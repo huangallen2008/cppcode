@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -40,10 +40,35 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const int inf=(1ll<<62);
+const int inf=(1<<25);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    char c=GC;
+    while(c<'0'||c>'9'){c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    return x;
+}
+inline void out(int x) {
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC('\n');
 }
 struct SEG {
     const int all=(1<<20)-1;
@@ -121,28 +146,29 @@ struct SEG {
 }seg;
 signed main() {
     IOS(); 
-    int n,q;
-    cin>>n>>q;
+    int n=read(),q=read();
+    // cin>>n>>q;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) a[i]=read();//cin>>a[i];
     seg.init(n,a);
     REP(i,q) {
-        int opt;
-        cin>>opt;
+        int opt=read();
+        // cin>>opt;
         if(opt==1) {
-            int l,r,x;
-            cin>>l>>r>>x,l--,r--;
+            int l=read()-1,r=read()-1,x=read();
+            // cin>>l>>r>>x,l--,r--;
             seg.rand(l,r,x);
         }
         if(opt==2) {
-            int l,r,x;
-            cin>>l>>r>>x,l--,r--;
+            int l=read()-1,r=read()-1,x=read();
+            // cin>>l>>r>>x,l--,r--;
             seg.ror(l,r,x);
         }
         if(opt==3) {
-            int l,r;
-            cin>>l>>r,l--,r--;
-            cout<<seg.mx(l,r)<<'\n';
+            int l=read()-1,r=read()-1;
+            // cin>>l>>r,l--,r--;
+            out(seg.mx(l,r));
+            // cout<<seg.mx(l,r)<<'\n';
         }
     }
     return 0;
