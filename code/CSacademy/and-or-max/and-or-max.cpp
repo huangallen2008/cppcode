@@ -58,7 +58,7 @@ struct SEG {
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            s[w]={s[l],0};
+            s[w]=Seg{s[l],0};
             return;
         }
         int m=l+r>>1;
