@@ -92,7 +92,7 @@ signed main() {
     int an=0;
     oparr(dp[1])
     REP(i,n*n) {
-        if(i<x)addmod(an,H(n+1,x-i-1)*dp[1][i]);
+        if(i<=x)addmod(an,H(n+1,x-i)*dp[1][i]);
     }
     an=(an+mod)%mod;
     cout<<an<<'\n';
