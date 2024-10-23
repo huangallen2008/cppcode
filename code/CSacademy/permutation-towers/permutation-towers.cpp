@@ -76,10 +76,10 @@ signed main() {
     auto H=[&](int n,int k) {
         return C(n+k-1,k);
     };
-    vector<vector<ll>> dp(n+1,Vi(n*n));
+    vector<vector<ll>> dp(n+1,vector<ll>(n*n));
     dp[0][1]=1;
     REP1(i,n) {
-        vector<vector<ll>> ndp(n+1,Vi(n*n));
+        vector<vector<ll>> ndp(n+1,vector<ll>(n*n));
         REP1(j,i) {
             REP(k,n*n) {
                 if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*(j<<1));
