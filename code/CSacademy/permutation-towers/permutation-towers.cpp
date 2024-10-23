@@ -78,7 +78,7 @@ signed main() {
     vector<Vi> dp(n+1,Vi(n*n));
     dp[0][1]=1;
     REP1(i,n) {
-        int R=min(n*n,(i*(i+5)>>1)+1);
+        int R=min(n*n,(i*(i+5)>>1)+2);
         vector<Vi> ndp(n+1,Vi(R));
         REP1(j,i) {
             REP(k,R) {
