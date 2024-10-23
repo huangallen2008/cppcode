@@ -69,7 +69,7 @@ struct SEG {
     void init(int _n,Vi a) {
         n=_n;
         s=vector<Seg>(n<<2);
-        build(1,0,n-1);
+        build(1,0,n-1,a);
     }
     void _and(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr&&((s[w].no|(v^all))==s[w].no)) {
