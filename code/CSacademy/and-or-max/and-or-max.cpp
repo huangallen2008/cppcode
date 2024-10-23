@@ -134,7 +134,7 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.mx(l,r)<<'\n';
         }
-        REP(j,n) cout<<seg.mx(j,j)<<' ';entr
+        cout<<"a:";REP(j,n) cout<<seg.mx(j,j)<<' ';entr
     }
     return 0;
 }
