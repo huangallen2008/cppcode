@@ -82,7 +82,7 @@ struct SEG {
         _and(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void ran(int l,int r,int v) {
+    void rand(int l,int r,int v) {
         _and(1,0,n-1,l,r,v);
     }
     void _or(int w,int l,int r,int ql,int qr,int v) {
