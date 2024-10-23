@@ -122,12 +122,12 @@ signed main() {
         if(opt==1) {
             int l,r,x;
             cin>>l>>r>>x,l--,r--;
-            seg.ror(l,r,x);
+            seg.rand(l,r,x);
         }
         if(opt==2) {
             int l,r,x;
             cin>>l>>r>>x,l--,r--;
-            seg.rand(l,r,x);
+            seg.ror(l,r,x);
         }
         if(opt==3) {
             int l,r;
