@@ -85,11 +85,55 @@ struct SEG {
     void ran(int l,int r,int v) {
         _and(1,0,n-1,l,r,v);
     }
-    void ror(){}
-};
+    void _or(int w,int l,int r,int ql,int qr,int v) {
+        if(ql<=l&&r<=qr&&((s[w].no|(v))==s[w].no)) {
+            s[w].mx|=v;
+            return;
+        }
+        if(ql>r||qr<l) return ;
+        int m=l+r>>1;
+        _or(w<<1,l,m,ql,qr,v);
+        _or(w<<1|1,m+1,r,ql,qr,v);
+        pull(s[w],s[w<<1],s[w<<1|1]);
+    }
+    void ror(int l,int r,int v){
+        _or(1,0,n-1,l,r,v);
+    }
+    int _mx(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].mx;
+        if(ql>r||qr<l) return -inf;
+        int m=l+r>>1;
+        return max(_mx(w<<1,l,m,ql,qr),_mx(w<<1|1,m+1,r,ql,qr));
+    }
+    int mx(int l,int r) {
+        return _mx(1,0,n-1,l,r);
+    }
+}seg;
 signed main() {
     IOS(); 
-    int n;
-    cin>>n;
+    int n,q;
+    cin>>n>>q;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    seg.init(n,a);
+    REP(i,q) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int l,r,x;
+            cin>>l>>r>>x,l--,r--;
+            seg.ror(l,r,x);
+        }
+        if(opt==2) {
+            int l,r,x;
+            cin>>l>>r>>x,l--,r--;
+            seg.rand(l,r,x);
+        }
+        if(opt==3) {
+            int l,r;
+            cin>>l>>r,l--,r--;
+            cout<<seg.mx(l,r)<<'\n';
+        }
+    }
     return 0;
 }
