@@ -57,7 +57,6 @@ struct SEG {
     int n;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
-        op(l)ope(r)
         if(l==r) {
             s[w]={a[l],0};
             return;
@@ -87,7 +86,7 @@ struct SEG {
         _and(1,0,n-1,l,r,v);
     }
     void _or(int w,int l,int r,int ql,int qr,int v) {
-        // op(l)ope(r)
+        op(l)op(r)ope(s[w].no)
         if(ql<=l&&r<=qr&&((s[w].no|(v))==s[w].no)) {
             ope(s[w].mx)
             s[w].mx|=v;
