@@ -73,7 +73,6 @@ signed main() {
         return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
     };
     auto H=[&](int n,int k) {
-        op(n)ope(k)ope(C(n+k-1,k))
         return C(n+k-1,k);
     };
     vector<Vi> dp(n+1,Vi(n*n));
@@ -90,7 +89,6 @@ signed main() {
         swap(dp,ndp);
     }
     int an=0;
-    oparr(dp[1])
     REP(i,n*n) {
         if(i<=x)addmod(an,H(n+1,x-i)*dp[1][i]);
     }
