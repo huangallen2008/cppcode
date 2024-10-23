@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -81,9 +81,9 @@ signed main() {
         vector<Vi> ndp(n+1,Vi(n*n));
         REP1(j,i) {
             REP(k,n*n) {
-                if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*j*2);
+                if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*(j<<1));
                 addmod(ndp[j][k],dp[j-1][k]*j);
-                if(k>=i*2&&j<n) addmod(ndp[j][k],dp[j+1][k-i*2]*j);
+                if(k>=(i<<1)&&j<n) addmod(ndp[j][k],dp[j+1][k-(i<<1)]*j);
             }
         }
         swap(dp,ndp);
