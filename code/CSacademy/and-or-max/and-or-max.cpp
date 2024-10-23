@@ -89,6 +89,7 @@ struct SEG {
 };
 signed main() {
     IOS(); 
-
+    int n;
+    cin>>n;
     return 0;
 }
