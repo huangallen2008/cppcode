@@ -73,7 +73,7 @@ signed main() {
         return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
     };
     auto H=[&](int n,int k) {
-        op(n)ope(k)
+        op(n)ope(k)ope(C(n+k-1,k))
         return C(n+k-1,k);
     };
     vector<Vi> dp(n+1,Vi(n*n));
