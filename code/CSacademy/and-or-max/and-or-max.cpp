@@ -53,6 +53,7 @@ struct SEG {
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mx=max(b.mx,c.mx);
         a.no=b.no&c.no&(b.mx^c.mx^all);
+        ope(all)
     }
     int n;
     vector<Seg> s;
