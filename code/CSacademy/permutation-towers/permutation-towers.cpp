@@ -80,7 +80,7 @@ signed main() {
     REP1(i,n) {
         vector<Vi> ndp(n+1,Vi(n*n));
         REP1(j,i) {
-            REP(k,(i*(i+1)>>1)+2) {
+            REP(k,n*n) {
                 if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*j*2);
                 addmod(ndp[j][k],dp[j-1][k]*j);
                 if(k>=i*2&&j<n) addmod(ndp[j][k],dp[j+1][k-i*2]*j);
