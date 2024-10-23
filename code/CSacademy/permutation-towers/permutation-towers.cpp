@@ -47,7 +47,6 @@ int rd(int l,int r) {
 }
 // int dp[maxn][maxn*maxn];
 // int ndp[maxn][maxn*maxn];
-int fac[maxx];
 int mod;
 int pw(int x,int p) {
     int r=1;
@@ -65,7 +64,8 @@ signed main() {
     IOS(); 
     int n,x;
     cin>>n>>x>>mod;
-    f[0]=1;
+    Vi fac(maxx),infac(maxx);
+    fac[0]=1;
     REP1(i,maxx-1) fac[i]=fac[i-1]*i%mod;
     infac[maxx-1]=inv(fac[maxx-1]);
     RREP(i,maxx-1) infac[i]=infac[i+1]*(i+1)%mod;
