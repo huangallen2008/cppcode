@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SEG {
-    const int all=1<<20;
+    const int all=(1<<20)-1;
     struct Seg {
         int mx,no;
     };
