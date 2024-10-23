@@ -54,7 +54,7 @@ struct SEG {
         a.mx=max(b.mx,c.mx);
         a.no=b.no&c.no&(b.mx^c.mx^all);
     }
-    void addtag(Seg a,Seg b) {
+    void addtag(Seg &a,Seg b) {
         a.mx=((a.mx&(b.no^all)))|(b.mx&b.no);
     }
     void push(Seg &a,Seg &b,Seg &c) {
