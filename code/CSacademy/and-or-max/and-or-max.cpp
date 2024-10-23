@@ -87,8 +87,8 @@ struct SEG {
     }
     void _or(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr&&((s[w].no|(v))==s[w].no)) {
-            op(l)op(r)op(w)ope(v)
             s[w].mx|=v;
+            op(l)op(r)op(w)op(v)ope(s[w].mx)
             return;
         }
         if(ql>r||qr<l) return ;
