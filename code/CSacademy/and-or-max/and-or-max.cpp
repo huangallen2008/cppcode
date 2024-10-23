@@ -86,11 +86,8 @@ struct SEG {
         _and(1,0,n-1,l,r,v);
     }
     void _or(int w,int l,int r,int ql,int qr,int v) {
-        op(l)op(r)ope(s[w].no)
         if(ql<=l&&r<=qr&&((s[w].no|(v))==s[w].no)) {
-            ope(s[w].mx)
             s[w].mx|=v;
-            op(l)op(r)op(w)op(v)ope(s[w].mx)
             return;
         }
         if(ql>r||qr<l) return ;
@@ -137,8 +134,6 @@ signed main() {
             cin>>l>>r,l--,r--;
             cout<<seg.mx(l,r)<<'\n';
         }
-        cout<<"a:";REP(j,n) cout<<seg.mx(j,j)<<' ';entr
-        REP(j,20) cout<<seg.s[j].mx<<' ';entr
     }
     return 0;
 }
