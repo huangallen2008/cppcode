@@ -90,7 +90,7 @@ signed main() {
     }
     int an=0;
     REP(i,n*n) {
-        if(i<x)addmod(an,H(n+1,x-i-1));
+        if(i<x)addmod(an,H(n+1,x-i-1)*dp[1][i]);
     }
     an=(an+mod)%mod;
     cout<<an<<'\n';
