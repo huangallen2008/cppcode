@@ -46,6 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SEG {
+    const int all=1<<20;
     struct Seg {
         int mx,no;
     };
@@ -54,7 +55,6 @@ struct SEG {
         a.no=b.no&c.no&(b.mx^c.mx^all);
     }
     int n;
-    const int all=1<<20;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
