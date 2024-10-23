@@ -1,9 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
-#define ll long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -49,8 +48,8 @@ int rd(int l,int r) {
 // int dp[maxn][maxn*maxn];
 // int ndp[maxn][maxn*maxn];
 int mod;
-ll pw(ll x,int p) {
-    ll r=1;
+int pw(int x,int p) {
+    int r=1;
     while(p>0) {
         if(p&1) r=r*x%mod;
         x=x*x%mod;
@@ -58,14 +57,14 @@ ll pw(ll x,int p) {
     }
     return r;
 }
-ll inv(ll x) {
+int inv(int x) {
     return pw(x,mod-2);
 }
 signed main() {
     IOS(); 
     int n,x;
     cin>>n>>x>>mod;
-    vector<ll> fac(maxx),infac(maxx);
+    Vi fac(maxx),infac(maxx);
     fac[0]=1;
     REP1(i,maxx-1) fac[i]=fac[i-1]*i%mod;
     infac[maxx-1]=inv(fac[maxx-1]);
@@ -76,10 +75,10 @@ signed main() {
     auto H=[&](int n,int k) {
         return C(n+k-1,k);
     };
-    vector<vector<ll>> dp(n+1,vector<ll>(n*n));
+    vector<Vi> dp(n+1,Vi(n*n));
     dp[0][1]=1;
     REP1(i,n) {
-        vector<vector<ll>> ndp(n+1,vector<ll>(n*n));
+        vector<Vi> ndp(n+1,Vi(n*n));
         REP1(j,i) {
             REP(k,n*n) {
                 if(k>=i&&j>0) addmod(ndp[j][k],dp[j][k-i]*(j<<1));
@@ -89,7 +88,7 @@ signed main() {
         }
         swap(dp,ndp);
     }
-    ll an=0;
+    int an=0;
     REP(i,n*n) {
         if(i<=x)addmod(an,H(n+1,x-i)*dp[1][i]);
     }
