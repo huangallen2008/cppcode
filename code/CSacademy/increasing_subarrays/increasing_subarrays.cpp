@@ -54,6 +54,7 @@ struct SEG {
     }
     void addtag(Seg &a,int t) {
         a.sum=t*a.len;
+        a.t=t;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         if(a.t!=-1) {
