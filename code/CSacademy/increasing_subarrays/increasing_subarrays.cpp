@@ -86,7 +86,6 @@ struct SEG {
         build(1,1,n,a);
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
-        op(l)ope(r)
         if(ql<=l&&r<=qr) {
             addtag(s[w],v);
             return;
@@ -154,8 +153,8 @@ signed main() {
     RREP1(i,n) {
         int ret=seg2.qu(a[i]);
         seg.ud(i,ret-1,a[i]);
-        ope(i)
         an+=seg.qu(m);
+        op(i)ope(seg.qu(m))
         seg2.ud(i,a[i]);
     }
     cout<<an<<'\n';
