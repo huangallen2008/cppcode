@@ -91,7 +91,7 @@ struct SEG {
             addtag(s[w],v);
             return;
         }
-        if(ql<r||qr<l) return;
+        if(ql>r||qr<l) return;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         _ud(w<<1,l,m,ql,qr,v);
