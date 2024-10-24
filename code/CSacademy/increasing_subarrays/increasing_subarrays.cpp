@@ -86,6 +86,7 @@ struct SEG {
         build(1,1,n,a);
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
+        op(l)ope(r)
         if(ql<=l&&r<=qr) {
             addtag(s[w],v);
             return;
@@ -103,6 +104,7 @@ struct SEG {
     int _qu(int w,int l,int r,int k) {
         if(l==r) return l;
         int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
         if(s[w<<1].sum-(p[m]-p[l-1])>=k) return _qu(w<<1,l,m,k);
         else return _qu(w<<1|1,m+1,r,k);
     }
