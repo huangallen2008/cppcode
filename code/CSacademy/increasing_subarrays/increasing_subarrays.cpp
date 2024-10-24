@@ -70,7 +70,7 @@ struct SEG {
     }
     int n;
     vector<Seg> s;
-    Vi p;
+    Vl p;
     void build(int w,int l,int r,Vl &a) {
         s[w].len=r-l+1;
         s[w].t=-1;
