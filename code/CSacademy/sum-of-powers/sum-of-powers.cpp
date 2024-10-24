@@ -65,6 +65,7 @@ signed main() {
             dp[i][j]=(dp[i-1][j-1]+dp[i][j-i])%mod;
         }
     }
+    int an=0;
     REP1(i,n) {
         int b=pw(i,m);
         for(int cnt=1;cnt*i<=k&&cnt<=n;cnt++) {
