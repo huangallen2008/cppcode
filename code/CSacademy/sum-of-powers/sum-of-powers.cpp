@@ -64,6 +64,7 @@ signed main() {
         REP1(j,k) {
             dp[i][j]=(dp[i-1][j-1]+dp[i][j-i])%mod;
         }
+        oparr(dp[i])
     }
     int an=0;
     REP1(i,n) {
