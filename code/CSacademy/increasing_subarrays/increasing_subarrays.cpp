@@ -153,6 +153,7 @@ signed main() {
     seg2.init(n+2);seg2.ud(n+1,inf);
     int an=0;
     RREP1(i,n) {
+        ope(i)
         int ret=seg2.qu(a[i]-a[i-1]);
         seg.ud(i,ret-1,a[i]-a[i-1]);
         // op(i)op(ret-1)ope(a[i])
