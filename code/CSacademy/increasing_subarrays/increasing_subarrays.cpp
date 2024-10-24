@@ -85,9 +85,9 @@ struct SEG {
         n=_n;
         p=_a;
         oparr(p)ope(n)
-        REP1(i,n) p[i]=p[i-1]+p[i];
         s=vector<Seg>(n<<2);
         build(1,1,n,a);
+        REP1(i,n) p[i]=p[i-1]+p[i];
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr) {
