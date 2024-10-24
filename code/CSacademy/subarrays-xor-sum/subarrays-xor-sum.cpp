@@ -54,7 +54,7 @@ signed main() {
     vector<Vi> px,p[2];
     px=p[0]=p[1]=vector<Vi>(30,Vi(n+1));
     REP1(i,n) {
-        REP(j,30) px[j][i]=(a[i]>>j&1)^p[j][i-1],p[0][j][i]=p[0][j][i-1]+px[j][i],p[1][j][i]=p[1][j][i-1]+(px[j][i]^1);
+        REP(j,30) px[j][i]=(a[i]>>j&1)^px[j][i-1],p[0][j][i]=p[0][j][i-1]+px[j][i],p[1][j][i]=p[1][j][i-1]+(px[j][i]^1);
     }
     int an=0;
     REP1(i,n) {
