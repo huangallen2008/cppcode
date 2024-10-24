@@ -58,7 +58,7 @@ signed main() {
     }
     int an=0;
     REP1(i,n) {
-        REP(j,30) {
+        REP(j,3) {
             int b=px[0][j][i];
             an+=p[b][j][min(i+R,n)]-p[b][j][min(i+L-1,n)]<<j;
             ope(an)
