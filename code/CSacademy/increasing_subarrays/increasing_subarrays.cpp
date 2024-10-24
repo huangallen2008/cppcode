@@ -84,7 +84,7 @@ struct SEG {
     void init(int _n,Vi _a) {
         n=_n;
         p=_a;
-        s=vector<Seg>(n<<2);
+        s=vector<Seg>(n*3);
         build(1,1,n,p);
         REP1(i,n) p[i]=p[i-1]+p[i];
     }
@@ -120,7 +120,7 @@ struct SEG2 {
     Vi s;
     void init(int _n) {
         n=_n;
-        s=Vi(n<<2);
+        s=Vi(n*3);
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
