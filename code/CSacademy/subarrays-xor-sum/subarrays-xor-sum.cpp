@@ -60,7 +60,7 @@ signed main() {
     REP1(i,n) {
         REP(j,30) {
             int b=px[0][j][i];
-            an+=p[b][j][min(i+R,n)]-p[b][j][min(i+L-1,n)];
+            an+=p[b][j][min(i+R,n)]-p[b][j][min(i+L-1,n)]<<j;
         }
     }
     cout<<an<<'\n';
