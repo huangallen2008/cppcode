@@ -77,7 +77,7 @@ struct SEG {
         build(w<<1|1,m+1,r);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int n,Vi _a) {
+    void init(int _n,Vi _a) {
         n=_n;
         a=_a;
         p=Vi(n+1);
