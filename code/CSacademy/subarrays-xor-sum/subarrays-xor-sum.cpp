@@ -52,10 +52,18 @@ signed main() {
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
     Vi x[2][30];
-    Vi p[2][30];
-    REP(i,30)x[0][i]=x[1][i]=Vi(n+1);
+    vector<Vi> x[2],p[2],px[2];
+    x[0]=x[1]=p[0]=p[1]=px[0]=px[1]=vector<Vi>(30,Vi(n+1));
     REP1(i,n) {
-        REP(j,30)x[0][j][i]=(a[i]>>j)&1;
+        REP(j,30) x[0][j][i]=(a[i]>>j)&1,x[1][j][i]=x[0][j][i]^1,px[0][j][i]=px[0][j][i-1]^x[0][j][i],px[1][j][i]=px[1][j][i-1]^x[1][j][i],ps[0][j][i]=ps[0][j][i-1]+x[0][j][i],ps[1][j][i]=ps[1][j][i-1]+x[1][j][i];
     }
+    int an=0;
+    REP1(i,n) {
+        REP(j,30) {
+            int b=px[0][j][i];
+            an+=ps[b][j][min(i+R,n)]-ps[b][j][min(i+L-1,n)];
+        }
+    }
+    cout<<an<<'\n';
     return 0;
 }
