@@ -68,7 +68,7 @@ struct SEG {
     }
     int n;
     vector<Seg> s;
-    Vi a,p;
+    Vi p;
     void build(int w,int l,int r,Vi &a) {
         s[w].len=r-l+1;
         s[w].t=-1;
@@ -86,7 +86,7 @@ struct SEG {
         p=_a;
         oparr(p)ope(n)
         s=vector<Seg>(n<<2);
-        build(1,1,n,a);
+        build(1,1,n,p);
         REP1(i,n) p[i]=p[i-1]+p[i];
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
