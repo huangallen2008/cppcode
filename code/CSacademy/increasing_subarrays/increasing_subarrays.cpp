@@ -104,7 +104,7 @@ struct SEG {
         if(l==r) return l;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        // op(s[w<<1].sum)op(p[m]-p[l-1])ope(k)
+        op(s[w<<1].sum)op(p[m]-p[l-1])ope(k)
         if(s[w<<1].sum-(p[m]-p[l-1])>=k) return _qu(w<<1,l,m,k);
         else return _qu(w<<1|1,m+1,r,k-s[w<<1].sum+(p[m]-p[l-1]));
     }
