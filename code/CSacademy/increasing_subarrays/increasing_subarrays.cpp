@@ -2,9 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
-// #define iint int32_t
-#define ll long long
+#define int long long
+#define iint int32_t
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -47,17 +46,16 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define Vl vector<ll>
 struct SEG {
     struct Seg {
-        ll sum;
-        int len;
-        ll t;
+        int sum;
+        iint len;
+        int t;
     };
     void pull(Seg &a,Seg &b,Seg &c) {
         a.sum=b.sum+c.sum;
     }
-    void addtag(Seg &a,ll t) {
+    void addtag(Seg &a,int t) {
         a.sum=t*a.len;
         a.t=t;
     }
@@ -70,8 +68,7 @@ struct SEG {
     }
     int n;
     vector<Seg> s;
-    Vl p;
-    void build(int w,int l,int r,Vl &a) {
+    void build(int w,int l,int r,Vi &a) {
         s[w].len=r-l+1;
         s[w].t=-1;
         if(l==r) {
@@ -83,14 +80,12 @@ struct SEG {
         build(w<<1|1,m+1,r,a);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int _n,Vl _a) {
+    void init(int _n,Vi &a) {
         n=_n;
-        p=_a;
+        build(1,1,n,a);
         s=vector<Seg>(n<<2);
-        build(1,1,n,p);
-        REP1(i,n) p[i]=p[i-1]+p[i];
     }
-    void _ud(int w,int l,int r,int ql,int qr,ll v) {
+    void _ud(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr) {
             addtag(s[w],v);
             return;
@@ -102,10 +97,10 @@ struct SEG {
         _ud(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void ud(int l,int r,ll v) {
+    void ud(int l,int r,int v) {
         _ud(1,1,n,l,r,v);
     }
-    int _qu(int w,int l,int r,ll k) {
+    int _qu(int w,int l,int r,int k,Vi &p) {
         if(l==r) return r+(s[w].sum-p[r]+p[l-1]<=k);
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
@@ -113,18 +108,18 @@ struct SEG {
         if(s[w<<1].sum-(p[m]-p[l-1])>k) return _qu(w<<1,l,m,k);
         else return _qu(w<<1|1,m+1,r,k-s[w<<1].sum+(p[m]-p[l-1]));
     }
-    int qu(ll k) {
+    int qu(int k,Vi &p) {
         return _qu(1,1,n,k);
     }
 }seg;
 struct SEG2 {
     int n;
-    Vl s;
+    Vi s;
     void init(int _n) {
         n=_n;
-        s=Vl(n<<2);
+        s=Vi(n<<2);
     }
-    void _ud(int w,int l,int r,int u,ll v) {
+    void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
             s[w]=v;
             return;
@@ -134,16 +129,16 @@ struct SEG2 {
         else _ud(w<<1|1,m+1,r,u,v);
         s[w]=max(s[w<<1],s[w<<1|1]);
     }
-    void ud(int u,ll v) {
+    void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    int _qu(int w,int l,int r,ll k) {
+    int _qu(int w,int l,int r,int k) {
         if(l==r) return l;
         int m=l+r>>1;
         if(s[w<<1]>=k) return _qu(w<<1,l,m,k);
         else return _qu(w<<1|1,m+1,r,k);
     }
-    int qu(ll k) {
+    int qu(int k) {
         return _qu(1,0,n-1,k);
     }
 }seg2;
@@ -151,18 +146,19 @@ signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
-    Vl a(n+1);
+    Vi a(n+1);
     REP1(i,n) cin>>a[i];
     seg.init(n,a);
+    REP1(i,n) a[i]+=a[i-1];
     seg2.init(n+2);seg2.ud(n+1,inf);
-    ll an=0;
+    int an=0;
     RREP1(i,n) {
-        int ret=seg2.qu(a[i]);
-        seg.ud(i,ret-1,a[i]);
+        int ret=seg2.qu(a[i]-a[i-1]);
+        seg.ud(i,ret-1,a[i]-a[i-1]);
         // op(i)op(ret-1)ope(a[i])
-        an+=seg.qu(m)-i;
+        an+=seg.qu(m,a)-i;
         // op(i)ope(seg.qu(m))
-        seg2.ud(i,a[i]);
+        seg2.ud(i,a[i]-a[i-1]);
     }
     cout<<an<<'\n';
     return 0;
