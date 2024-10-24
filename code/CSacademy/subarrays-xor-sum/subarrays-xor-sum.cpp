@@ -47,14 +47,14 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    int n,a,b;
-    cin>>n>>a>>b;
+    int n,L,R;
+    cin>>n>>L>>R;
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
     Vi x[2][30];
     Vi p[2][30];
     x[0]=x[1]=Vi(n+1);
-    REP(i,n) {
+    REP1(i,n) {
         REP(j,30)x[0][j][i]=(a[i]>>j)&1;
     }
     return 0;
