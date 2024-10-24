@@ -61,7 +61,7 @@ signed main() {
     vector<Vi> dp(n+1,Vi(k+1));
     dp[0][0]=1;
     REP1(i,n) {
-        REP1(j,k) {
+        for(int j=i;j<=k;j++) {
             dp[i][j]=(dp[i-1][j-1]+dp[i][j-i])%mod;
         }
         oparr(dp[i])
