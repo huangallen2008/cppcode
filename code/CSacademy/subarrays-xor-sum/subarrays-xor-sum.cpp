@@ -61,7 +61,7 @@ signed main() {
         REP(j,3) {
             int b=px[0][j][i];
             an+=p[b][j][min(i+R,n)]-p[b][j][min(i+L-1,n)]<<j;
-            ope(an)
+            op(i)op(j)ope(an)
         }
     }
     cout<<an<<'\n';
