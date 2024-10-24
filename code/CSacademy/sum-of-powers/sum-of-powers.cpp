@@ -57,7 +57,7 @@ int pw(int x,int p) {
 signed main() {
     IOS(); 
     int n,k,m;
-    cin>>n>>k>>m;
+    cin>>k>>n>>m;
     vector<Vi> dp(n+1,Vi(k+1));
     dp[0][0]=1;
     REP1(i,n) {
