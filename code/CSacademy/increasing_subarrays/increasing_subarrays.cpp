@@ -148,7 +148,7 @@ signed main() {
     Vi a(n+1),p(n+1);
     REP1(i,n) cin>>a[i],p[i]=p[i-1]+a[i];
     seg.init(n,a);
-    seg2.init(n+1);seg2.ud(n,inf);
+    seg2.init(n+2);seg2.ud(n+1,inf);
     int an=0;
     RREP1(i,n) {
         int ret=seg2.qu(a[i]);
