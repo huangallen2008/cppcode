@@ -109,7 +109,7 @@ struct SEG {
         else return _qu(w<<1|1,m+1,r,k-s[w<<1].sum+(p[m]-p[l-1]),p);
     }
     int qu(int k,Vi &p) {
-        return _qu(1,1,n,k);
+        return _qu(1,1,n,k,p);
     }
 }seg;
 struct SEG2 {
