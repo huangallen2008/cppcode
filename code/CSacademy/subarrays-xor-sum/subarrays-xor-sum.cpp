@@ -59,7 +59,7 @@ signed main() {
     int an=0;
     REP1(i,n) {
         REP(j,30) {
-            int b=x[0][j][i-1];
+            int b=px[0][j][i-1];
             an+=p[b][j][min(i+R-1,n)]-p[b][j][min(i+L-2,n)]<<j;
             // if(j<7){op(i)ope(an)op(b)oparr(p[b][j])}
             if(j<4){op(b)op(j)oparr(p[b][j])}
