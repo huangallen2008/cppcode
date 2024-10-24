@@ -59,7 +59,7 @@ signed main() {
     int an=0;
     REP1(i,n) {
         REP(j,30) {
-            int b=px[0][j][i-1];
+            int b=px[j][i-1];
             an=(an+(p[b][j][min(i+R-1,n)]-p[b][j][min(i+L-2,n)]<<j))%mod;
         }
     }
