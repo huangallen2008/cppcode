@@ -94,7 +94,7 @@ struct SEG {
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         _ud(w<<1,l,m,ql,qr,v);
-        _ud(w<<1|1,,+1,r,ql,qr,v);
+        _ud(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
