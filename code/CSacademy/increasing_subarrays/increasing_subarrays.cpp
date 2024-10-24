@@ -104,7 +104,6 @@ struct SEG {
         if(l==r) return r+(s[w].sum-a[r]<=k);
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        op(l)op(r)op(s[w<<1].sum)op(p[m]-p[l-1])ope(k)
         if(s[w<<1].sum-(p[m]-p[l-1])>k) return _qu(w<<1,l,m,k);
         else return _qu(w<<1|1,m+1,r,k-s[w<<1].sum+(p[m]-p[l-1]));
     }
@@ -154,9 +153,7 @@ signed main() {
     RREP1(i,n) {
         int ret=seg2.qu(a[i]);
         seg.ud(i,ret-1,a[i]);
-        op(i)op(ret-1)ope(a[i])
         an+=seg.qu(m)-i;
-        op(i)ope(seg.qu(m))
         seg2.ud(i,a[i]);
     }
     cout<<an<<'\n';
