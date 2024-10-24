@@ -3,6 +3,7 @@ using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
+#define iint int32_t
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -47,7 +48,9 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int sum,len,t;
+        int sum;
+        iint len;
+        int t;
     };
     void pull(Seg &a,Seg &b,Seg &c) {
         a.sum=b.sum+c.sum;
