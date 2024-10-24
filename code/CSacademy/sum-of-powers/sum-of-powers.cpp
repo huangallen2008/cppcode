@@ -64,10 +64,9 @@ signed main() {
         for(int j=i;j<=k;j++) {
             dp[i][j]=(dp[i-1][j-1]+dp[i][j-i])%mod;
         }
-        oparr(dp[i])
     }
     int an=0;
-    REP1(i,n) {
+    REP1(i,k) {
         int b=pw(i,m);
         for(int cnt=1;cnt*i<=k&&cnt<=n;cnt++) {
             an=(an+b*dp[n-cnt][k-cnt*i])%mod;
