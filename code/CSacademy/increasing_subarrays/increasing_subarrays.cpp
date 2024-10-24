@@ -83,9 +83,8 @@ struct SEG {
     }
     void init(int _n,Vi _a) {
         n=_n;
-        a=_a;
-        p=Vi(n+1);
-        REP1(i,n) p[i]=p[i-1]+a[i];
+        p=_a;
+        REP1(i,n) p[i]=p[i-1]+p[i];
         s=vector<Seg>(n<<2);
         build(1,1,n,a);
     }
