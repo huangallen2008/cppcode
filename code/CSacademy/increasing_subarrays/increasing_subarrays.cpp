@@ -106,7 +106,7 @@ struct SEG {
         push(s[w],s[w<<1],s[w<<1|1]);
         op(s[w<<1].sum)op(p[m]-p[l-1])ope(k)
         if(s[w<<1].sum-(p[m]-p[l-1])>=k) return _qu(w<<1,l,m,k);
-        else return _qu(w<<1|1,m+1,r,k);
+        else return _qu(w<<1|1,m+1,r,k-s[w<<1].sum+(p[m]-p[l-1]));
     }
     int qu(int k) {
         return _qu(1,1,n,k);
