@@ -150,6 +150,7 @@ signed main() {
     seg2.init(n+1);seg2.ud(n,inf);
     int an=0;
     RREP1(i,n) {
+        ope(i)
         int ret=seg2.qu(a[i]);
         seg.ud(i,ret-1,a[i]);
         an+=seg.qu(m);
