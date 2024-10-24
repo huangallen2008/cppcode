@@ -82,7 +82,7 @@ struct SEG {
     }
     void init(int _n,Vi &a) {
         n=_n;
-        s=vector<Seg>(n*3.5);
+        s=vector<Seg>(n*3.6);
         build(1,1,n,a);
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
@@ -117,7 +117,7 @@ struct SEG2 {
     Vi s;
     void init(int _n) {
         n=_n;
-        s=Vi(n*3.5);
+        s=Vi(n*3.6);
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
