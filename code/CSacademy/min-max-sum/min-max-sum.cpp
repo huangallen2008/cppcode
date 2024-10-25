@@ -185,6 +185,7 @@ signed main() {
         REP(j,10) cout<<seg.s[j].s<<' ';entr
         REP(j,10) cout<<seg.s[j].mx<<' ';entr
         REP(j,10) cout<<seg.s[j].mn<<' ';entr
+        REP(j,10) cout<<seg.s[j].val<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
