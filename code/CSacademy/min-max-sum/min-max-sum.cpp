@@ -38,19 +38,32 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=100+5;
+const int maxn=1e5+5;
 const int maxx=2e5+5;
 const int inf=(1<<25);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) {
+    return pw(x,mod-2);
+}
+Vi pw2(maxn);
 struct SEG {
     struct Tag {
         int mx,mn;
     };
     struct Seg {
-        int len,mx,mn,smx,smn,s;
+        int len,mx,mn,smx,smn,s,val;
         Tag t;
     };
     void pull(Seg &a,Seg &b,Seg &c) {
@@ -63,11 +76,11 @@ struct SEG {
     void addtag(Seg &a,Tag t) {
         if(t.mx!=-1) {
             a.mx=t.mx;
-            a.smx=t.mx*a.len;
+            a.smx=t.mx*a.len*a.val;
         }
         if(t.mn!=-1) {
             a.mn=t.mn;
-            a.smn=t.mn*a.len;
+            a.smn=t.mn*a.len*a.val;
         }
         if(t.mx!=-1) a.s=t.mx*a.smn;
         else if(t.mn!=-1) a.s=t.mn*a.smx;
@@ -82,11 +95,15 @@ struct SEG {
     int n;
     vector<Seg> s;
     void build(int w,int l,int r) {
-        s[w]={r-l+1,-inf,inf,-inf,inf,0,{-1,-1}};
-        if(l==r) return;
+        s[w]={r-l+1,-inf,inf,-inf,inf,0,0,{-1,-1}};
+        if(l==r) {
+            s[w].val=pw[n-l];
+            return;
+        }
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
+        s[w].val=s[w<<1].val+s[w<<1|1].val;
     }
     void init(int _n) {
         n=_n;
@@ -144,6 +161,23 @@ struct SEG {
 }seg;
 signed main() {
     IOS(); 
-    ope("6")
+    pw2[0]=1;
+    REP1(i,maxn-1) pw2[i]=pw2[i-1]*i%mod;
+    int n;
+    cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    seg.init(n);
+    vector<pii> mx,mn; 
+    mx.pb({inf,-1});
+    mn.pb({-inf,-1});
+    REP1(i,n-2) {
+        while(mx.back().f<a[i]) mx.pop_back();
+        while(mn.back().f>a[i]) mn.pop_back();
+        seg.ud_mx(mx.back().s+1,i,a[i]);
+        seg.ud_mn(mn.back().s+1,i,a[i]);
+        an+=seg.qu(0,i);
+    }
+    cout<<an<<'\n';
     return 0;
 }
