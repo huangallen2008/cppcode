@@ -84,6 +84,6 @@ struct SEG {
 };
 signed main() {
     IOS(); 
-
+    ope("6")
     return 0;
 }
