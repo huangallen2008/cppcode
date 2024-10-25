@@ -74,10 +74,15 @@ struct SEG {
         a.t.mx=t.mx;
         a.t.mn=t.mn;
     }
+    void push(Seg &a,Seg &b,Seg &c) {
+        addtag(b,a.t);
+        addtag(c,a.t);
+        a.t={-1,-1};
+    }
     int n;
     vector<Seg> s;
     void build(int w,int l,int r) {
-        s[w]={r-l+1,0,0,0,0,0,{-1,-1}};
+        s[w]={r-l+1,-inf,inf,-inf,inf,0,{-1,-1}};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
@@ -88,7 +93,55 @@ struct SEG {
         s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
-};
+    void _ud(int w,int l,int r,int ql,int qr,Tag t) {
+        if(ql<=l&&r<=qr) {
+            addtag(s[w],t);
+            return;
+        }
+        if(ql>r||qr<l) return;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        _ud(w<<1,l,m,ql,qr,t);
+        _ud(w<<1|1,m+1,r,ql,qr,t);
+        pull(s[w],s[w<<1],s[w<<1|1]);
+    }
+    void ud_mx(int l,int r,int v) {
+        _ud(1,0,n-1,l,r,{v,-1});
+    }
+    void ud_mn(int l,int r,int v) {
+        _ud(1,0,n-1,l,r,{-1,v});
+    }
+    int _qu_mx(int w,int l,int r,int v) {
+        if(l==r) return l;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        if(s[w<<1].mn<v) return _qu_mx(w<<1,l,m,v);
+        else return _qu_mx(w<<1|1,m+1,r,v);
+    }
+    int qu_mx(int v) {
+        return _qu_mx(1,0,n-1,v);
+    }
+    int _qu_mn(int w,int l,int r,int v) {
+        if(l==r) return l;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        if(s[w<<1].mx>v) return _qu_mn(w<<1,l,m,v);
+        else return _qu_mn(w<<1|1,m+1,r,v);
+    }
+    int qu_mn(int v) {
+        return _qu_mn(1,0,n-1,v);
+    }
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].s;
+        if(ql>r||qr<l) return 0;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r);
+    }
+}seg;
 signed main() {
     IOS(); 
     ope("6")
