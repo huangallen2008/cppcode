@@ -123,9 +123,11 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud_mx(int l,int r,int v) {
+        op("x")op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,{v,-1});
     }
     void ud_mn(int l,int r,int v) {
+        op("n")op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,{-1,v});
     }
     int _qu_mx(int w,int l,int r,int v) {
