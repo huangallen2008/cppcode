@@ -179,6 +179,7 @@ signed main() {
         seg.ud_mn(mn.back().s+1,i,a[i]);
         an+=seg.qu(0,i)*pw(inv(2),n-i-3)%mod;
         ope(an)
+        cout<<"seg: ";REP(j,n) cout<<seg.qu(j,j)<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
