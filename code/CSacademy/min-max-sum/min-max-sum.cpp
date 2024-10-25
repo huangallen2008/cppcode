@@ -177,7 +177,7 @@ signed main() {
         while(mn.back().f>a[i]) mn.pop_back();
         seg.ud_mx(mx.back().s+1,i,a[i]);
         seg.ud_mn(mn.back().s+1,i,a[i]);
-        an+=seg.qu(0,i)*pw(inv(2),n-i-3);
+        an+=seg.qu(0,i)*pw(inv(2),n-i-3)%mod;
         ope(an)
     }
     cout<<an<<'\n';
