@@ -48,7 +48,7 @@ int rd(int l,int r) {
 struct SEG {
     struct Tag {
         int mx,mn;
-    }
+    };
     struct Seg {
         int len,mx,mn,smx,smn,s;
         Tag t;
@@ -81,7 +81,7 @@ struct SEG {
         s=Vi(n<<2);
         build(1,0,n-1);
     }
-}
+};
 signed main() {
     IOS(); 
 
