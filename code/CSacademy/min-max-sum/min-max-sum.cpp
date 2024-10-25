@@ -51,7 +51,7 @@ struct SEG {
     };
     struct Seg {
         int len,mx,mn,smx,smn,s;
-        // Tag t;
+        Tag t;
     };
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mx=max(b.mx,c.mx);
@@ -68,7 +68,7 @@ struct SEG {
         a.smn=t.mn*a.len;
     }
     int n;
-    Vi s;
+    vector<Seg> s;
     void build(int w,int l,int r) {
         s[w]={r-l+1,0,0,0,0,0};
         s[w].t={-1,-1};
@@ -79,7 +79,7 @@ struct SEG {
     }
     void init(int _n) {
         n=_n;
-        s=Vi(n<<2);
+        s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
 };
