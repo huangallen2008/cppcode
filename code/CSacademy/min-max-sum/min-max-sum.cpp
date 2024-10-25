@@ -97,7 +97,7 @@ struct SEG {
     void build(int w,int l,int r) {
         s[w]={r-l+1,-inf,inf,-inf,inf,0,0,{-1,-1}};
         if(l==r) {
-            s[w].val=pw[n-l];
+            s[w].val=pw2[n-l];
             return;
         }
         int m=l+r>>1;
