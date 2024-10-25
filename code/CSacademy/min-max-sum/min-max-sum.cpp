@@ -162,8 +162,7 @@ struct SEG {
 signed main() {
     IOS(); 
     pw2[0]=1;
-    REP1(i,maxn-1) pw2[i]=pw2[i-1]*i%mod;
-    REP(i,10) cout<<pw2[i]<<' ';entr
+    REP1(i,maxn-1) pw2[i]=pw2[i-1]*2%mod;
     int n;
     cin>>n;
     Vi a(n);
