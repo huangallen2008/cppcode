@@ -70,7 +70,8 @@ struct SEG {
     int n;
     Vi s;
     void build(int w,int l,int r) {
-        s[w]={r-l+1,0,0,0,0,0,Tag{-1,-1}};
+        s[w]={r-l+1,0,0,0,0,0};
+        s[w].t={-1,-1};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
