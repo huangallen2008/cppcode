@@ -180,6 +180,7 @@ signed main() {
         an+=seg.qu(0,i)*pw(inv(2),n-i-3)%mod;
         ope(an)ope(seg.qu(0,i))
         cout<<"seg: ";REP(j,n) cout<<seg.qu(j,j)<<' ';entr
+        REP(j,10) cout<<seg.s[j].s<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
