@@ -178,6 +178,7 @@ signed main() {
         seg.ud_mx(mx.back().s+1,i,a[i]);
         seg.ud_mn(mn.back().s+1,i,a[i]);
         an+=seg.qu(0,i);
+        ope(an)
     }
     cout<<an<<'\n';
     return 0;
