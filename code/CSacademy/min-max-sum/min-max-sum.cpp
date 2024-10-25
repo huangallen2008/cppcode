@@ -61,11 +61,18 @@ struct SEG {
         a.s=b.s+c.s;
     }
     void addtag(Seg &a,Tag t) {
-        
-        a.mx=t.mx;
-        a.smx=t.mx*a.len;
-        a.mn=t.mn;
-        a.smn=t.mn*a.len;
+        if(t.mx!=-1) {
+            a.mx=t.mx;
+            a.smx=t.mx*a.len;
+        }
+        if(t.mn!=-1) {
+            a.mn=t.mn;
+            a.smn=t.mn*a.len;
+        }
+        if(t.mx!=-1) a.s=t.mx*a.smn;
+        else if(t.mn!=-1) a.s=t.mn*a.smx;
+        a.t.mx=t.mx;
+        a.t.mn=t.mn;
     }
     int n;
     vector<Seg> s;
