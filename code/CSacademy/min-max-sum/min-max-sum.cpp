@@ -171,6 +171,7 @@ signed main() {
     vector<pii> mx,mn; 
     mx.pb({inf,-1});
     mn.pb({-inf,-1});
+    int an=0;
     REP1(i,n-2) {
         while(mx.back().f<a[i]) mx.pop_back();
         while(mn.back().f>a[i]) mn.pop_back();
