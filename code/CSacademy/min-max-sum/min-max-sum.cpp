@@ -181,6 +181,8 @@ signed main() {
         ope(an)ope(seg.qu(0,i))
         cout<<"seg: ";REP(j,n) cout<<seg.qu(j,j)<<' ';entr
         REP(j,10) cout<<seg.s[j].s<<' ';entr
+        REP(j,10) cout<<seg.s[j].mx<<' ';entr
+        REP(j,10) cout<<seg.s[j].mn<<' ';entr
     }
     cout<<an<<'\n';
     return 0;
