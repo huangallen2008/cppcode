@@ -51,7 +51,7 @@ struct SEG {
     };
     struct Seg {
         int len,mx,mn,smx,smn,s;
-        Tag t;
+        // Tag t;
     };
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mx=max(b.mx,c.mx);
