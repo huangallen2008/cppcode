@@ -123,6 +123,7 @@ signed main() {
             r=r*2%t[i];
             tt++;
         }
+        op(t[i])op(ccc)op(mp[r])ope(ccc-mp[r]+1)
         chmax(bas,ccc-mp[r]+1);
         while(tt>1) {
             int f=lpf[tt];
