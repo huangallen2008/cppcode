@@ -77,6 +77,7 @@ signed main() {
     cin>>n;
     g=Graph(n);
     inc=a=Vi(n);
+    ope("ok")
     REP(i,n) {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
