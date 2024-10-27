@@ -65,7 +65,7 @@ void dfs0(int u,int fa) {
         sz[u]+=sz[v];
     }
 }
-void dfs1(int u,int fa) {
+int dfs1(int u,int fa) {
     int r=0;
     for(int v:g[u]) {
         if(v==fa) continue;
@@ -73,7 +73,7 @@ void dfs1(int u,int fa) {
     }
     return r;
 }
-void dfs2(int u,int fa) {
+int dfs2(int u,int fa) {
     int r=0;
     for(int v:g[u]) {
         if(v==fa) continue;
