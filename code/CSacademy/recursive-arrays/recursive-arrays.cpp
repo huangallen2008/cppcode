@@ -47,17 +47,22 @@ int rd(int l,int r) {
 }
 int n;
 Graph g;
-Vi inc,a,dep;
+Vi inc,a,dep,vis;
 void dfs1(int u,int fa,int ori) {
+    vis[u]=1;
+    int ret=-1;
     for(int v:g[u]) {
         if(v==fa) continue;
         if(v==ori) {
             inc[u]=1;
+            ret=1;
             continue;
         }
-        dfs1(v,u,ori);
+        int rr=dfs1(v,u,ori);
+        if(rr!=-1) ret=rr+1;
         if(inc[v])inc[u]=1;
     }
+    return ret;
 }
 void dfs2(int u,int fa,int ori) {
     if(inc[u]) dep[u]=0;
@@ -76,8 +81,11 @@ signed main() {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
     }
-    dfs1(0,0,0);
-    dfs2(0,0,0);
-    
+    Vi t;
+    REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
+    dfs2(0,-1,0);
+    int mxd=0;
+    REP(i,n) chmax(mxd,dep[i]);
+
     return 0;
 }
