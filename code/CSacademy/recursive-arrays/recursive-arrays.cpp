@@ -68,8 +68,7 @@ int dfs1(int u,int fa,int ori) {
         }
         if(v==fa) continue;
         int rr=dfs1(v,u,ori);
-        if(rr!=-1) ret=rr+1;
-        if(inc[v])inc[u]=1;
+        if(inc[v])inc[u]=1,ret=rr+1;
     }
     return ret;
 }
@@ -94,6 +93,7 @@ void init_lpf() {
     }
 }
 signed main() {
+    ope(__lg(5))
     IOS(); 
     init_lpf();
     cin>>n;
@@ -105,7 +105,6 @@ signed main() {
     }
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
-    oparr(inc)
     vis=Vi(n);
     REP(i,n) if(inc[i]&&!vis[i])  {
         dfs2(i,-1,i);
@@ -114,7 +113,6 @@ signed main() {
     REP(i,n) chmax(mxd,dep[i]);
     unordered_map<int,int> lcm;
     REP(i,t.size()) {
-        ope(t[i])
         if(t[i]<=1) continue;
         int tt=0,r=1;
         unordered_map<int,int> mp;
