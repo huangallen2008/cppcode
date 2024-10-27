@@ -65,6 +65,7 @@ int dfs1(int u,int fa,int ori) {
     return ret;
 }
 void dfs2(int u,int fa,int ori) {
+    ope(u)
     if(inc[u]) dep[u]=0;
     for(int v:g[u]) {
         if(v==fa||v==ori) continue;
