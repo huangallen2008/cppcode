@@ -130,7 +130,7 @@ signed main() {
     for(auto [x,y]:lcm) {
         an=an*pw(x,y)%mod;
     }
-    an=(an+(mxd>0?__lg(mxd-1)+1:0))%mod;
+    an=(an+(mxd>1?__lg(mxd-1)+1:mxd))%mod;
     cout<<an<<'\n';
     return 0;
 }
