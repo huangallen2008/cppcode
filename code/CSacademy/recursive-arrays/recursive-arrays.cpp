@@ -112,7 +112,6 @@ signed main() {
     REP(i,t.size()) {
         int tt=t[i];
         while(tt>1) {
-            ope(tt)
             int f=lpf[tt];
             int cnt=0;
             while(tt%f==0) {
