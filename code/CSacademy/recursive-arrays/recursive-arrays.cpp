@@ -122,7 +122,7 @@ signed main() {
             r=r*2%t[i];
             tt++;
         }
-        chmax(bas,mp[r]);
+        chmax(bas,mp[r]-1);
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
