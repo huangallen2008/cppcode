@@ -86,6 +86,7 @@ signed main() {
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
+    ope(t.size())
     oparr(t);
     return 0;
 }
