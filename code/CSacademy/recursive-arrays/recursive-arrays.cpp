@@ -38,12 +38,21 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=1e5+5;
 const int maxb=20;
 const int inf=(1ll<<62); 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
 }
 int n;
 Graph g;
@@ -72,8 +81,20 @@ void dfs2(int u,int fa,int ori) {
         dfs2(v,u,ori);
     }
 }
+Vi lpf(maxn);
+void init_lpf() {
+    lpf[0]=lpf[1]=1;
+    for(int i=2;i<maxn;i++) {
+        if(!lpf[i]) {
+            for(int j=i;j<maxn;j+=i) {
+                if(!lpf[j]) lpf[j]=i;
+            }
+        }
+    }
+}
 signed main() {
     IOS(); 
+    init_lpf();
     cin>>n;
     g=Graph(n);
     inc=a=vis=dep=Vi(n);
@@ -86,7 +107,23 @@ signed main() {
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
-    ope(t.size())
-    oparr(t);
+    unordered_map<int,int> mp;
+    REP(i,n) {
+        int tt=t[i];
+        while(tt>1) {
+            int f=lpf[tt];
+            int cnt=0;
+            while(tt%f==0) {
+                tt/=f;
+                cnt++;
+            }
+            chmax(mp[f],cnt);
+        }
+    }
+    int an=1;
+    for(auto [x,y]:mp) {
+        an=an*pw(x,y)%mod;
+    }
+    cout<<an<<'\n';
     return 0;
 }
