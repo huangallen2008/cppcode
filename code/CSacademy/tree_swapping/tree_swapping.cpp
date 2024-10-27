@@ -73,7 +73,8 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    dfs(0);
+    dfs(0,-1);
     REP(i,n) (bc[i]?cnt1:cnt0)++;
+
     return 0;
 }
