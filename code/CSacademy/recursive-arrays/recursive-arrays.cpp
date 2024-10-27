@@ -48,7 +48,7 @@ int rd(int l,int r) {
 int n;
 Graph g;
 Vi inc,a,dep,vis;
-void dfs1(int u,int fa,int ori) {
+int dfs1(int u,int fa,int ori) {
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
@@ -86,6 +86,6 @@ signed main() {
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
-
+    oparr(t);
     return 0;
 }
