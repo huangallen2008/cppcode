@@ -58,11 +58,9 @@ int n;
 Graph g;
 Vi inc,a,dep,vis;
 int dfs1(int u,int fa,int ori) {
-    ope(u)
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
-        op(u)ope(v)
         if(v==ori) {
             inc[u]=1;
             ret=1;
@@ -121,7 +119,6 @@ signed main() {
         int tt=0,r=1;
         unordered_map<int,int> mp;
         while(!mp[r]) {
-            ope(r)
             mp[r]=1;
             r=r*2%t[i];
             tt++;
