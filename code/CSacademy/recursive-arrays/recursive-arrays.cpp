@@ -113,6 +113,7 @@ signed main() {
     REP(i,n) chmax(mxd,dep[i]);
     unordered_map<int,int> lcm;
     REP(i,t.size()) {
+        ope(t[i])
         if(t[i]<=1) continue;
         int tt=0,r=1;
         unordered_map<int,int> mp;
