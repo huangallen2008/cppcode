@@ -107,7 +107,7 @@ signed main() {
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
     vis=Vi(n);
     REP(i,n) if(inc[i]&&!vis[i])  {
-        dfs2(0,-1,0);
+        dfs2(i,-1,i);
     }
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
