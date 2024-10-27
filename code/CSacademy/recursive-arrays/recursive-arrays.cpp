@@ -70,7 +70,7 @@ void dfs2(int u,int fa,int ori) {
     for(int v:g[u]) {
         if(v==fa||v==ori) continue;
         dep[v]=dep[u]+1;
-        dfs2(v,u,fa);
+        dfs2(v,u,ori);
     }
 }
 signed main() {
