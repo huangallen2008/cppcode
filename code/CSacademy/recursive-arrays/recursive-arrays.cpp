@@ -94,6 +94,7 @@ void init_lpf() {
 }
 signed main() {
     IOS(); 
+    ope(__lg(0))
     init_lpf();
     cin>>n;
     g=Graph(n);
