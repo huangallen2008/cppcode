@@ -48,7 +48,7 @@ int rd(int l,int r) {
 int n;
 Graph g;
 Vi inc,a,dep;
-void dfs1(int u,int fa,int ori=u) {
+void dfs1(int u,int fa,int ori) {
     for(int v:g[u]) {
         if(v==fa) continue;
         if(v==ori) {
@@ -59,21 +59,25 @@ void dfs1(int u,int fa,int ori=u) {
         if(inc[v])inc[u]=1;
     }
 }
-void dfs2(int u,int fa,int ori=u) {
+void dfs2(int u,int fa,int ori) {
+    if(inc[u]) dep[u]=0;
     for(int v:g[u]) {
         if(v==fa||v==ori) continue;
+        dep[v]=dep[u]+1;
         dfs2(v,u,fa);
     }
 }
 signed main() {
     IOS(); 
     cin>>n;
-    g=Grpah(n);
+    g=Graph(n);
     inc=a=Vi(n);
     REP(i,n) {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
     }
-
+    dfs1(0,0,0);
+    dfs2(0,0,0);
+    
     return 0;
 }
