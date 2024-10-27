@@ -93,7 +93,6 @@ void init_lpf() {
     }
 }
 signed main() {
-    ope(__lg(5))
     IOS(); 
     init_lpf();
     cin>>n;
