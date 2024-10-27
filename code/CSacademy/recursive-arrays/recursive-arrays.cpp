@@ -110,9 +110,9 @@ signed main() {
     REP(i,n) if(inc[i]&&!vis[i])  {
         dfs2(i,-1,i);
     }
-    int bas=(mxd>1?__lg(mxd-1)+1:mxd);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
+    int bas=(mxd>1?__lg(mxd-1)+1:mxd);
     unordered_map<int,int> lcm;
     REP(i,t.size()) {
         if(t[i]<=1) continue;
