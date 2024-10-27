@@ -104,7 +104,7 @@ signed main() {
     dfs(0,-1);
     dfs0(0,-1);
     int an=inf;
-    op(cnt1)op(cnt2)ope(cntR)
+    op(cnt1)op(cnt0)ope(cntR)
     if(cntR==cnt1) {
         chmin(an,dfs1(0,-1));
     }
