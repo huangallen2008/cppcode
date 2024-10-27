@@ -65,7 +65,6 @@ int dfs1(int u,int fa,int ori) {
     return ret;
 }
 void dfs2(int u,int fa,int ori) {
-    ope(u)
     if(inc[u]) dep[u]=0;
     for(int v:g[u]) {
         if(v==fa||v==ori) continue;
@@ -77,7 +76,7 @@ signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    inc=a=vis=Vi(n);
+    inc=a=vis=dep=Vi(n);
     REP(i,n) {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
