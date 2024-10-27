@@ -110,6 +110,7 @@ signed main() {
     REP(i,n) if(inc[i]&&!vis[i])  {
         dfs2(i,-1,i);
     }
+    int bas=(mxd>1?__lg(mxd-1)+1:mxd);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
     unordered_map<int,int> lcm;
@@ -117,12 +118,13 @@ signed main() {
         if(t[i]<=1) continue;
         int tt=0,r=1;
         unordered_map<int,int> mp;
+        int ccc=1;
         while(!mp[r]) {
-            mp[r]=1;
+            mp[r]=ccc++;
             r=r*2%t[i];
             tt++;
         }
-        ope(tt)
+        chmax(bas,ccc-mp[r]);
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
@@ -137,7 +139,7 @@ signed main() {
     for(auto [x,y]:lcm) {
         an=an*pw(x,y)%mod;
     }
-    an=(an+(mxd>1?__lg(mxd-1)+1:mxd))%mod;
-    cout<<an<<'\n';
+    an=(an+)%mod;
+    cout<<an+bas<<'\n';
     return 0;
 }
