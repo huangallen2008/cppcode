@@ -111,6 +111,7 @@ signed main() {
     if(cntR==cnt0) {
         chmin(an,dfs2(0,-1));
     }
-    cout<<an<<'\n';
+    if(an==inf) cout<<"-1\n";
+    else cout<<an<<'\n';
     return 0;
 }
