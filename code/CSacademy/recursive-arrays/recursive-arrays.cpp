@@ -62,13 +62,13 @@ int dfs1(int u,int fa,int ori) {
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
-        if(v==fa) continue;
         op(u)ope(v)
         if(v==ori) {
             inc[u]=1;
             ret=1;
             continue;
         }
+        if(v==fa) continue;
         int rr=dfs1(v,u,ori);
         if(rr!=-1) ret=rr+1;
         if(inc[v])inc[u]=1;
