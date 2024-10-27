@@ -105,7 +105,6 @@ signed main() {
     }
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
-    oparr(t)
     vis=Vi(n);
     REP(i,n) if(inc[i]&&!vis[i])  {
         dfs2(i,-1,i);
@@ -124,7 +123,7 @@ signed main() {
             r=r*2%t[i];
             tt++;
         }
-        chmax(bas,ccc-mp[r]);
+        chmax(bas,ccc-mp[r]+1);
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
