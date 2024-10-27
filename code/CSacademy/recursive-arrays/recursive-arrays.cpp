@@ -107,6 +107,7 @@ signed main() {
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
+    ope("ok")
     unordered_map<int,int> mp;
     REP(i,n) {
         int tt=t[i];
@@ -124,6 +125,7 @@ signed main() {
     for(auto [x,y]:mp) {
         an=an*pw(x,y)%mod;
     }
+    an=(an+mxd)%mod;
     cout<<an<<'\n';
     return 0;
 }
