@@ -58,10 +58,12 @@ int n;
 Graph g;
 Vi inc,a,dep,vis;
 int dfs1(int u,int fa,int ori) {
+    ope(u)
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
         if(v==fa) continue;
+        op(u)ope(v)
         if(v==ori) {
             inc[u]=1;
             ret=1;
