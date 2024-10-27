@@ -105,6 +105,7 @@ signed main() {
     }
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
+    oparr(inc)
     vis=Vi(n);
     REP(i,n) if(inc[i]&&!vis[i])  {
         dfs2(i,-1,i);
