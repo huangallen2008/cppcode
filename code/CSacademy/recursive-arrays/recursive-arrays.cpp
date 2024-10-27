@@ -107,7 +107,6 @@ signed main() {
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
-    ope("ok")
     unordered_map<int,int> lcm;
     REP(i,t.size()) {
         int tt=0,r=1;
