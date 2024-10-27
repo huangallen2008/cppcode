@@ -110,6 +110,7 @@ signed main() {
     ope("ok")
     unordered_map<int,int> mp;
     REP(i,n) {
+        ope(i)
         int tt=t[i];
         while(tt>1) {
             int f=lpf[tt];
