@@ -109,8 +109,7 @@ signed main() {
     REP(i,n) chmax(mxd,dep[i]);
     ope("ok")
     unordered_map<int,int> mp;
-    REP(i,n) {
-        ope(i)
+    REP(i,t.size()) {
         int tt=t[i];
         while(tt>1) {
             ope(tt)
@@ -123,10 +122,8 @@ signed main() {
             chmax(mp[f],cnt);
         }
     }
-    ope("ok")
     int an=1;
     for(auto [x,y]:mp) {
-        op(x)ope(y)
         an=an*pw(x,y)%mod;
     }
     an=(an+mxd)%mod;
