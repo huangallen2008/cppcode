@@ -117,6 +117,7 @@ signed main() {
         int tt=0,r=1;
         unordered_map<int,int> mp;
         while(!mp[r]) {
+            ope(r)
             mp[r]=1;
             r=r*2%t[i];
             tt++;
