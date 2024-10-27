@@ -109,6 +109,7 @@ signed main() {
     REP(i,n) chmax(mxd,dep[i]);
     unordered_map<int,int> lcm;
     REP(i,t.size()) {
+        if(t[i]<=1) continue;
         int tt=0,r=1;
         unordered_map<int,int> mp;
         while(!mp[r]) {
@@ -130,7 +131,6 @@ signed main() {
     for(auto [x,y]:lcm) {
         an=an*pw(x,y)%mod;
     }
-    ope(an)
     an=(an+(mxd>1?__lg(mxd-1)+1:mxd))%mod;
     cout<<an<<'\n';
     return 0;
