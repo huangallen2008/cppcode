@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n;
-Vi col,bc;
+Vi col,bc,sz;
 int cnt0=0,cnt1=0;
 Graph g;
 void dfs(int u,int fa) {
@@ -56,12 +56,37 @@ void dfs(int u,int fa) {
         dfs(v,u);
     }
 }
+void dfs0(int u,int fa) {
+    for(int v:g[u]) {
+        if(v==fa) continue;
+        dfs0(v,u);
+        col[u]+=col[v];
+        bc[u]+=bc[v];
+        sz[u]+=sz[v];
+    }
+}
+void dfs1(int u,int fa) {
+    int r=0;
+    for(int v:g[u]) {
+        if(v==fa) continue;
+        r+=dfs1(v,u)+abs(col[v]-bc[v]);
+    }
+    return r;
+}
+void dfs2(int u,int fa) {
+    int r=0;
+    for(int v:g[u]) {
+        if(v==fa) continue;
+        r+=dfs2(v,u)+abs(sz[v]-col[v]-bc[v]);
+    }
+    return r;
+}
 signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    col=Vi(n);
-    bc=Vi(n);
+    col=bc=Vi(n);
+    sz=Vi(n,1);
     REP(i,n) {
         char c;
         cin>>c;
@@ -73,8 +98,18 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    dfs(0,-1);
     REP(i,n) (bc[i]?cnt1:cnt0)++;
-
+    int cntR=0;
+    REP(i,n) cntR+=col[i];
+    dfs(0,-1);
+    dfs0(0,-1);
+    int an=inf;
+    if(cntR==cnt1) {
+        chmin(an,dfs1(0,-1));
+    }
+    if(cntR==cnt0) {
+        chmin(an,dfs2(0,-1));
+    }
+    cout<<an<<'\n';
     return 0;
 }
