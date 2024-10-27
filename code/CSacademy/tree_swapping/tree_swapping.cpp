@@ -98,10 +98,10 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
+    dfs(0,-1);
     REP(i,n) (bc[i]?cnt1:cnt0)++;
     int cntR=0;
     REP(i,n) cntR+=col[i];
-    dfs(0,-1);
     dfs0(0,-1);
     int an=inf;
     op(cnt1)op(cnt0)ope(cntR)
