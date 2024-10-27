@@ -94,7 +94,6 @@ void init_lpf() {
 }
 signed main() {
     IOS(); 
-    ope(__lg(0))
     init_lpf();
     cin>>n;
     g=Graph(n);
@@ -123,8 +122,7 @@ signed main() {
             r=r*2%t[i];
             tt++;
         }
-        op(t[i])op(ccc)op(mp[r])ope(ccc-mp[r]+1)
-        chmax(bas,ccc-mp[r]+1);
+        chmax(bas,mp[r]);
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
