@@ -120,6 +120,7 @@ signed main() {
             r=r*2%t[i];
             tt++;
         }
+        ope(tt)
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
