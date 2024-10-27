@@ -122,6 +122,7 @@ signed main() {
             chmax(mp[f],cnt);
         }
     }
+    ope("ok")
     int an=1;
     for(auto [x,y]:mp) {
         op(x)ope(y)
