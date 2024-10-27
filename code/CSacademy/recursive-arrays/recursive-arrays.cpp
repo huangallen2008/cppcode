@@ -124,6 +124,7 @@ signed main() {
     }
     int an=1;
     for(auto [x,y]:mp) {
+        op(x)ope(y)
         an=an*pw(x,y)%mod;
     }
     an=(an+mxd)%mod;
