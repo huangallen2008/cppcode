@@ -49,7 +49,6 @@ int n;
 Graph g;
 Vi inc,a,dep,vis;
 int dfs1(int u,int fa,int ori) {
-    ope(u)
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
@@ -77,12 +76,11 @@ signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    inc=a=Vi(n);
+    inc=a=vis=Vi(n);
     REP(i,n) {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
     }
-    ope("ok")
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
     dfs2(0,-1,0);
