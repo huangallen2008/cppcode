@@ -77,13 +77,13 @@ signed main() {
     cin>>n;
     g=Graph(n);
     inc=a=Vi(n);
-    ope("ok")
     REP(i,n) {
         cin>>a[i],a[i]--;
         g[a[i]].pb(i);
     }
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
+    ope("ok")
     dfs2(0,-1,0);
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
