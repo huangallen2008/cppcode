@@ -49,7 +49,6 @@ int n;
 Graph g;
 Vi inc,a,dep,vis;
 int dfs1(int u,int fa,int ori) {
-    ope(u)
     vis[u]=1;
     int ret=-1;
     for(int v:g[u]) {
