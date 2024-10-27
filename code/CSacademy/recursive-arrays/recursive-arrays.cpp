@@ -74,6 +74,7 @@ int dfs1(int u,int fa,int ori) {
     return ret;
 }
 void dfs2(int u,int fa,int ori) {
+    vis[u]=1;
     if(inc[u]) dep[u]=0;
     for(int v:g[u]) {
         if(v==fa||v==ori) continue;
@@ -104,7 +105,10 @@ signed main() {
     }
     Vi t;
     REP(i,n) if(!vis[i]) t.pb(dfs1(i,-1,i));
-    dfs2(0,-1,0);
+    vis=Vi(n);
+    REP(i,n) if(inc[i]&&!vis[i])  {
+        dfs2(0,-1,0);
+    }
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
     unordered_map<int,int> lcm;
@@ -131,7 +135,6 @@ signed main() {
     for(auto [x,y]:lcm) {
         an=an*pw(x,y)%mod;
     }
-    oparr(dep)oparr(inc)
     an=(an+(mxd>1?__lg(mxd-1)+1:mxd))%mod;
     cout<<an<<'\n';
     return 0;
