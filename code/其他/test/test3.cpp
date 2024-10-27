@@ -19,6 +19,10 @@ lli gcd_vector(vector<lli>& a, lli b) {
 }
 
 int main() {
+    int n;
+    cin>>n;
+    T=vector<lli>(n);
+    for(int i=0;i<n;i++) cin>>T[i];
     lli answer = 1;
     for(int i=1; i<=1000; i++) {
         lli factor = i/gcd_vector(T, i); 
