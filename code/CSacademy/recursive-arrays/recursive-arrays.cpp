@@ -108,9 +108,15 @@ signed main() {
     int mxd=0;
     REP(i,n) chmax(mxd,dep[i]);
     ope("ok")
-    unordered_map<int,int> mp;
+    unordered_map<int,int> lcm;
     REP(i,t.size()) {
-        int tt=t[i];
+        int tt=0,r=1;
+        unordered_map<int,int> mp;
+        while(!mp[r]) {
+            mp[r]=1;
+            r=r*2%t[i];
+            tt++;
+        }
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
@@ -118,11 +124,11 @@ signed main() {
                 tt/=f;
                 cnt++;
             }
-            chmax(mp[f],cnt);
+            chmax(lcm[f],cnt);
         }
     }
     int an=1;
-    for(auto [x,y]:mp) {
+    for(auto [x,y]:lcm) {
         an=an*pw(x,y)%mod;
     }
     an=(an+mxd)%mod;
