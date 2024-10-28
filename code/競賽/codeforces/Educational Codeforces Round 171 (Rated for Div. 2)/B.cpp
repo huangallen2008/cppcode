@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -50,6 +50,9 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+  if(n==1) {
+    cout<<"1\n";return;
+  }
     if(n&1) {
         Vi p(n),s(n);
         int an=inf;
@@ -58,12 +61,13 @@ void solve() {
             else p[i]=p[i-1];
         }
         RREP(i,n-1) {
-            if(n-i&1) p[i]=p[i+1];
-            else p[i]=max(p[i+1],a[i+1]-a[i]);
+            if(n-i&1) s[i]=s[i+1];
+            else s[i]=max(s[i+1],a[i+1]-a[i]);
         }
         REP(i,n) {
-            if(i&1) chmin(an,max(p[i],s[i+1]));
+            if(~i&1) chmin(an,max(p[i],s[i+1]));
         }
+        chmax(an,1ll);
         cout<<an<<'\n';
     }
     else {
