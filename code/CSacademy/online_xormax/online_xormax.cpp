@@ -109,6 +109,7 @@ signed main() {
             chmax(an,it->s.get_an());
             mp.erase(it);
         }
+        for(auto [x,y]:mp) cout<<x<<' ';entr
         ans[i]=an;
     }
     REP(i,n) cout<<ans[i]<<' ';cout<<'\n';
