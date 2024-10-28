@@ -87,7 +87,7 @@ signed main() {
     TRIE_init();
     cin>>n;
     Vi a(n+1),d(n);
-    REP1(i,n) cin>>a[i];
+    REP1(i,n) cin>>a[i],a[i]^=a[i-1];
     map<int,TRIE> mp;
     mp[n+1];
     REP(i,n+1) {
