@@ -48,6 +48,7 @@ int rd(int l,int r) {
 
 signed main() {
     IOS(); 
+    ope(5>>1&1)
     int n;
     while(cin>>n) {
         ope(n>>1)
