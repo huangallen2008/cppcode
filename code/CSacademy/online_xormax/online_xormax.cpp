@@ -102,18 +102,16 @@ signed main() {
         if(it->f-prev(it)->f>next(it)->f-it->f) {
             for(int j=it->f;j<next(it)->f;j++) prev(it)->s.add(a[j]);
             chmax(an,prev(it)->s.get_an());
-            op(prev(it)->f)ope(prev(it)->s.get_an())
             mp.erase(it);
         }
         else {
             for(int j=prev(it)->f;j<it->f;j++) it->s.add(a[j]);
             chmax(an,it->s.get_an());
-            op(it->f)ope(it->s.get_an())
             swap(it->s,prev(it)->s);
             mp.erase(it);
         }
         ans[i]=an;
     }
-    REP(i,n) cout<<ans[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<ans[i]<<'\n';
     return 0;
 }
