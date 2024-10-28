@@ -65,7 +65,7 @@ void solve() {
             else s[i]=max(s[i+1],a[i+1]-a[i]);
         }
         REP(i,n) {
-            if(~i&1) chmin(an,max(p[i],s[i+1]));
+            if(~i&1) chmin(an,max(p[i],s[i]));
         }
         chmax(an,1ll);
         cout<<an<<'\n';
