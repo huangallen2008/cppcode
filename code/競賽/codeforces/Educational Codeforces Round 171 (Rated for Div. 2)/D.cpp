@@ -75,6 +75,7 @@ void solve() {
         return s[n-x.s+1]-a[n-x.f-1]*x.s;
     };
     auto cost=[&](int x) {
+        if(x<=0) return 0ll;
         auto ff=id(x);
         // cout<<ff.f<<' '<<ff.s<<'\n';
         return cost_s(ff.f)+cost_p(ff);
@@ -82,7 +83,7 @@ void solve() {
     };
     // oparr(s)oparr(ss)oparr(sm)
     int all=n*(n+1)>>1;
-    REP1(i,all) cout<<cost(i)<<" ";entr
+    //REP1(i,all) cout<<cost(i)<<" ";entr
     REP(i,q) {
         int l,r;
         cin>>l>>r;
