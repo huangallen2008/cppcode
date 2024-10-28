@@ -81,6 +81,7 @@ void solve() {
     };
     oparr(s)oparr(ss)oparr(sm)
     int all=n*(n+1)>>1;
+    REP1(i,all) cout<<cost(i)<<' ';entr
     REP(i,q) {
         int l,r;
         cin>>l>>r;
