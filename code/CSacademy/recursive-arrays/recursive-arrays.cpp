@@ -123,6 +123,7 @@ signed main() {
             tt++;
         }
         chmax(bas,mp[r]-1);
+        tt=ccc-mp[r];
         while(tt>1) {
             int f=lpf[tt];
             int cnt=0;
