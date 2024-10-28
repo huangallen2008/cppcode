@@ -65,6 +65,7 @@ void solve() {
         if(j>>i&1) dp[j]+=dp[j^(1<<i)];
     }
     }
+    oparr(dp)
     int an=-inf;
     REP(i,1<<7) chmax(an,dp[i]-i);
     an+=bas;
