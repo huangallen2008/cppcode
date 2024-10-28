@@ -72,7 +72,7 @@ void solve() {
         return ss[n-x+1]-sm[n-x];
     };
     auto cost_p=[&](pii x) {
-        return s[n-x.s+1]-a[n-x.f]*x.s;
+        return s[n-x.s+1]-a[n-x.f-1]*x.s;
     };
     auto cost=[&](int x) {
         auto ff=id(x);
