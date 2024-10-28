@@ -74,8 +74,9 @@ void solve() {
     auto cost_p=[&](pii x) {
         return s[n-x.s+1]-a[n-x.f]*x.s;
     };
-    auto cost=[&](pii x) {
-        return cost_s(x.f)+cost_p(x);
+    auto cost=[&](int x) {
+        auto ff=id(x);
+        return cost_s(id.f)+cost_p(id);
 
     };
     int all=n*(n+1)>>1;
