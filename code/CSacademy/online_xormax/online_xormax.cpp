@@ -105,7 +105,7 @@ signed main() {
             mp.erase(it);
         }
         else {
-            for(int j=it->f;j<next(it)->f;j++) it->s.add(a[j]);
+            for(int j=prev(it)->f;j<it->f;j++) it->s.add(a[j]);
             chmax(an,it->s.get_an());
             mp.erase(it);
         }
