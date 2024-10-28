@@ -66,7 +66,7 @@ void solve() {
             else r=m-1;
         }
         int i1=l,i2=x-(l*(l+1)>>1);
-        return {i1,i2};
+        return pii{i1,i2};
     };
     auto cost_s=[&](int x) {
         return ss[n-x+1]-sm[n-x];
