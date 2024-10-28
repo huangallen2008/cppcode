@@ -54,8 +54,9 @@ void TRIE_init() {
     memset(ch,-1,sizeof(ch));
 }
 struct TRIE {
-    int root;
+    int root,an;
     void init() {
+        an=0;
         root=node_id++;
     }
     void ud(int u,int v) {
@@ -77,13 +78,39 @@ struct TRIE {
         }
         return an;
     }
+    void add(int u) { ud(u,1),chmax(an,mx(u)); }
+    void del(int u) { ud(u,-1); }
+    int get_an() { return an; }
 };
 signed main() {
     IOS(); 
     TRIE_init();
     cin>>n;
-    Vi a(n+1);
+    Vi a(n+1),d(n);
     REP1(i,n) cin>>a[i];
     map<int,TRIE> mp;
+    mp[n+1];
+    REP(i,n+1) {
+        mp[i].init();
+        mp[i].add(a[i]);
+    }
+    REP(i,n) cin>>d[i];
+    int an=0;
+    Vi ans(n);
+    RREP(i,n) {
+        auto it=mp.find(d[i]);
+        if(it->f-prev(it)->f>next(it)->f-it->f) {
+            for(int j=it->f;j<next(it)->f;j++) prv(it)->s.add(a[j]);
+            chmax(an,prev(it)->s.get_an());
+            mp.erase(it);
+        }
+        else {
+            for(int j=it->f;j<next(it)->f;j++) it->s.add(a[j]);
+            chmax(an,it->s.get_an());
+            mp.erase(it);
+        }
+        ans[i]=an;
+    }
+    REP(i,n) cout<<ans[i]<<' ';cout<<'\n';
     return 0;
 }
