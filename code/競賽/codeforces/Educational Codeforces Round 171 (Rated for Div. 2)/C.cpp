@@ -51,22 +51,27 @@ void solve() {
     string s;
     cin>>s;
     s="$"+s;
-    priority_queue<int,Vi,greater<int>> pq;
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
     int cost=0;
     REP1(i,n) {
         if(s[i]-'0') {
-            if(pq.size()&&pq.top()<i) {
-                cost+=pq.top();
+            if(pq.size()&&pq.top().f<i) {
+                auto [x,y]=pq.top();
+                cost+=x;
                 pq.pop();
+                if(y!=-1) {
+                    pq.push(y);
+                    cost-=y;
+                }
                 pq.push(i);
             }
             else {
                 cost+=i;
-                pq.push(0);
+                pq.push({0,-1});
             }
         }
         else {
-            pq.push(0);
+            pq.push({0,-1});
             cost+=i;
         }
     }
