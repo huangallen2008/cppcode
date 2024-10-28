@@ -55,7 +55,7 @@ void solve() {
     int cost=n*(n+1)>>1;
     Vi a;
     REP1(i,n) if(s[i]-'0')a.pb(i);
-    REP(i,n) if(!(s[i]-'0')) cost-=a.back(),a.pop_back();
+    REP1(i,n) if(!(s[i]-'0')) cost-=a.back(),a.pop_back();
     REP(i,a.size()>>1) cost-=a[a.size()-1-i];
     // REP1(i,n) {
     //     if(s[i]-'0') {
