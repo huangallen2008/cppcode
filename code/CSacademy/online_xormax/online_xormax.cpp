@@ -72,7 +72,7 @@ struct TRIE {
         int w=root,an=0;
         RREP(i,maxb) {
             int ui=u>>i&1;
-            if(cnt[w][ui^1]==0) w=ch[w][ui];
+            if(cnt[ch[w][ui^1]]==0) w=ch[w][ui];
             else w=ch[w][ui^1],an|=1<<i;
         }
         return an;
