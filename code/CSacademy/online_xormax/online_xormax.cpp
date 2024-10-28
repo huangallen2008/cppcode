@@ -107,9 +107,9 @@ signed main() {
         else {
             for(int j=prev(it)->f;j<it->f;j++) it->s.add(a[j]);
             chmax(an,it->s.get_an());
+            swap(it,prev(it));
             mp.erase(it);
         }
-        for(auto [x,y]:mp) cout<<x<<' ';entr
         ans[i]=an;
     }
     REP(i,n) cout<<ans[i]<<' ';cout<<'\n';
