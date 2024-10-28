@@ -52,7 +52,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     if(n&1) {
         Vi p(n),s(n);
-        int an=1;
+        int an=inf;
         REP1(i,n-1) {
             if(i&1) p[i]=max(p[i-1],a[i]-a[i-1]);
             else p[i]=p[i-1];
@@ -62,9 +62,9 @@ void solve() {
             else p[i]=max(p[i+1],a[i+1]-a[i]);
         }
         REP(i,n) {
-            if(i&1) chmax(an,max(p[i],s[i+1]));
+            if(i&1) chmin(an,max(p[i],s[i+1]));
         }
-        cut<<an<<'\n';
+        cout<<an<<'\n';
     }
     else {
         int an=0;
