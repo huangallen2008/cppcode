@@ -56,17 +56,17 @@ void solve() {
     REP1(i,n) {
         if(s[i]-'0') {
             if(pq.size()&&pq.top()<i) {
-                cost+=i-pq.top();
+                cost+=pq.top();
                 pq.pop();
                 pq.push(i);
             }
             else {
                 cost+=i;
-                pq.push(i);
+                pq.push(0);
             }
         }
         else {
-            pq.push(i);
+            pq.push(0);
             cost+=i;
         }
     }
