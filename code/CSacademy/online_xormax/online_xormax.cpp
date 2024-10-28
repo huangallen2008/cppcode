@@ -100,7 +100,7 @@ signed main() {
     RREP(i,n) {
         auto it=mp.find(d[i]);
         if(it->f-prev(it)->f>next(it)->f-it->f) {
-            for(int j=it->f;j<next(it)->f;j++) prv(it)->s.add(a[j]);
+            for(int j=it->f;j<next(it)->f;j++) prev(it)->s.add(a[j]);
             chmax(an,prev(it)->s.get_an());
             mp.erase(it);
         }
