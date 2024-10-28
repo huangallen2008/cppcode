@@ -88,7 +88,7 @@ void solve() {
         cin>>l>>r;
         l=all-l+1;
         r=all-r+1;
-        int an=cost(l)-cost(r+1);
+        int an=cost(l)-cost(r-1);
         cout<<an<<'\n';
     }
 }
