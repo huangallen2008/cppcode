@@ -51,23 +51,24 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     if(n&1) {
-        int mx=0,mx2=0;
-        REP(i,n-1) {
-            int v=a[i+1]-a[i];
-            if(v>mx) {
-                mx2=mx;
-                mx=v;
-            }
-            else if(v>mx2) {
-                mx2=v;
-            }
+        Vi p(n),s(n);
+        int an=1;
+        REP1(i,n-1) {
+            if(i&1) p[i]=max(p[i-1],a[i]-a[i-1]);
+            else p[i]=p[i-1];
         }
-        int an=max(mx2,mx+1>>1);
+        RREP(i,n-1) {
+            if(n-i&1) p[i]=p[i+1];
+            else p[i]=max(p[i+1],a[i+1]-a[i]);
+        }
+        REP(i,n) {
+            if(i&1) chmax(an,max(p[i],s[i+1]));
+        }
         cut<<an<<'\n';
     }
     else {
         int an=0;
-        REP(i,n-1) chmax(an,a[i+1]-a[i]);
+        for(int i=1;i<n;i+=2) chmax(an,a[i]-a[i-1]);
         cout<<an<<'\n';
     }
 }
