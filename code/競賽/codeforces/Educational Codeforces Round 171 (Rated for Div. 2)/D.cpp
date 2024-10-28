@@ -91,8 +91,8 @@ void solve() {
 }
 signed main() {
     IOS(); 
-    int T;
-    cin>>T;
+    int T=1;
+    // cin>>T;
     while(T--) solve();
     return 0;
 }
