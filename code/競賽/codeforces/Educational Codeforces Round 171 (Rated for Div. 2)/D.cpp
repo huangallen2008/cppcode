@@ -76,9 +76,10 @@ void solve() {
     };
     auto cost=[&](int x) {
         auto ff=id(x);
-        return cost_s(id.f)+cost_p(id);
+        return cost_s(ff.f)+cost_p(ff);
 
     };
+    oparr(s)oparr(ss)oparr(sm)
     int all=n*(n+1)>>1;
     REP(i,q) {
         int l,r;
