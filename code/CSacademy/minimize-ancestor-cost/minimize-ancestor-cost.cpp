@@ -84,7 +84,6 @@ Vi an;
 int en=0;
 inline void dfs(int u) {
     int tmp_en=en;
-    int lar=en;
     for(int &v:g[u]) {
         dep[v]=dep[u]+1;
         // while(en>=2) {
@@ -92,7 +91,7 @@ inline void dfs(int u) {
         //     if((c[v]-c[la])*(long long)(dep[la]-dep[la2])>(c[la]-c[la2])*(long long)(dep[v]-dep[la])) break;
         //     en--;
         // }
-        int lb=2,rb=lar,mb; 
+        int lb=2,rb=en,mb; 
         while(lb<rb) {
             mb=lb+rb+1>>1;
             int la=stk[mb-1],la2=stk[mb-2];
