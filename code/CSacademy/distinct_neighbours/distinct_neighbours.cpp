@@ -54,6 +54,7 @@ signed main() {
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
     sort(ALL1(a));
+    a.pb(inf);
     Vi cnt(n+1);
     REP1(i,n) cnt[i]=a[i]==a[i-1]?cnt[i-1]+1:1;
     dp[1][0][0]=1;
