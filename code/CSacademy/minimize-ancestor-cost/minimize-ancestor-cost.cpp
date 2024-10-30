@@ -75,7 +75,7 @@ void dfs(int u) {
         dfs(v);
         stk[tmp.f]=tmp.s;
     }
-    for(auto [x,y]:tmp) stk[x]=y;
+    // for(auto [x,y]:tmp) stk[x]=y;
     en=tmp_en;
 }
 signed main() {
