@@ -108,8 +108,8 @@ signed main() {
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
-        if(dep[u]>dep[v]) swap(u,v);
-        if(dep[v]>dep[w]) swap(v,w);
+        if(dep[u]<dep[v]) swap(u,v);
+        if(dep[v]<dep[w]) swap(v,w);
         int t=get_lca(u,v).s;
         int an;
         if(!ispa(t,w)) {
