@@ -101,17 +101,17 @@ signed main() {
     n=read();
     // cin>>n;
     g=Graph(n);
+    Graph g0(n);
     c=an=dep=Vi(n);
     REP(i,n) c[i]=read();//cin>>c[i];
     REP1(i,n-1) {
         int u=read()-1;
         // cin>>u,u--;
-        g[u].pb(i);
+        g0[u].pb({c[i],i});
     }
     REP(i,n) {
-        sort(ALL(g[i]),[&](int &a,int &b) {
-            return c[a]>c[b];
-        });
+        sort(ALL(g0[i]));
+        for(auto &[x,y]:g0[i]) g[i].pb(y);
     }
     stk[en++]={c[0],0};
     dfs(0);
