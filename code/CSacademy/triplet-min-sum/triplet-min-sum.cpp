@@ -68,7 +68,6 @@ pii st[maxb][maxn2];
 void st_init() {
     int n0=dfn.size();
     REP(i,n0) st[0][i]={dep[dfn[i]],dfn[i]};
-    REP(i,n0) cout<<dep[dfn[i]]<<' ';entr
     REP1(i,maxb-1) {
         REP(j,n0) {
             st[i][j]=min(st[i-1][j],st[i-1][min(j+(1<<i-1),n0-1)]);
@@ -84,7 +83,6 @@ pii get_lca(int a,int b) {
     return st_qu(id[a],id[b]);
 }
 int lca_dep(int a,int b) {
-    op(a)op(b)ope(get_lca(a,b).f)
     return get_lca(a,b).f;
 }
 int dis(int a,int b) {
@@ -105,16 +103,14 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(dfn)oparr(dfn2)oparr(dep)oparr(in)oparr(out)oparr(id)
+    // oparr(dfn)oparr(dfn2)oparr(dep)oparr(in)oparr(out)oparr(id)
     st_init();
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
         int t=get_lca(u,v).s;
         int an;
-        ope(ispa(t,w))
         if(!ispa(t,w)) {
-            ope("1")
             an=t;
         }
         else if(ispa(v,w)) {
@@ -124,18 +120,15 @@ signed main() {
             an=u;
         }
         else if(ispa(w,u)||ispa(w,v)) {
-            ope("2")
             an=w;
         }
         else {
-            ope("3")
             int r1=get_lca(u,w).s,r2=get_lca(u,v).s;
             if(r1==t) an=r2;
             else an=r1;
         }
         int ans=dis(an,u)+dis(an,v)+dis(an,w);
-        op("!!!")cout<<an+1<<' '<<ans<<'\n';
-        op(u)op(v)op(w)op(t)op(an)op(dis(u,an))op(dis(v,an))op(dis(w,an))ope(ans)
+        cout<<an+1<<' '<<ans<<'\n';
     }
     return 0;
 }
