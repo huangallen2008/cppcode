@@ -103,6 +103,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    oparr(dfn)oparr(dfn2)oparr(in)oparr(out)oparr(id)
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
