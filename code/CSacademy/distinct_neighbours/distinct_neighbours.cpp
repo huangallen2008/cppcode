@@ -95,7 +95,7 @@ signed main() {
         }
     }
     int an=dp[n][0][0];
-    for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod,op(cnt[i]);
+    for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod;
     cout<<dp[n][0][0]<<'\n';
     return 0;
 }
