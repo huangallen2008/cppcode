@@ -109,7 +109,7 @@ signed main() {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
         pii r1=get_lca(u,v),r2=get_lca(u,w),r3=get_lca(v,w);
-        int mn=min({r1.f,r2.f,r3.f});
+        int mn=max({r1.f,r2.f,r3.f});
         int an;
         if(r1.f==mn) {
             an=r1.s;
