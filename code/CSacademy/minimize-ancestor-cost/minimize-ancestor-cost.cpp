@@ -87,7 +87,8 @@ void dfs(int u) {
     for(int &v:g[u]) {
         dep[v]=dep[u]+1;
         int tmp;
-        while(en>=2&&(c[v]-c[stk[en-1]])*(long long)(dep[stk[en-1]]-dep[stk[en-2]])<=(c[stk[en-1]]-c[stk[en-2]])*(long long)(dep[v]-dep[stk[en-1]])) en--;
+        int tmp1;
+        while(en>=2&&(c[v]-(tmp1=c[stk[en-1]]))*(long long)(dep[stk[en-1]]-dep[stk[en-2]])<=(tmp1-c[stk[en-2]])*(long long)(dep[v]-dep[stk[en-1]])) en--;
         an[v]=stk[en-1];
         tmp=stk[en];
         stk[en++]=v;
@@ -109,7 +110,7 @@ signed main() {
         g[u].pb(i);
     }
     REP(i,n) {
-        sort(ALL(g[i])[&](int a,int b) {
+        sort(ALL(g[i]),[&](int a,int b) {
             return c[a]>c[b];
         });
     }
