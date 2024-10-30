@@ -77,7 +77,7 @@ signed main() {
         g[u].pb(i);
     }
     REP(i,n) {
-        sort(ALL(g[i]),[&](int a,int b) {
+        sort(ALL(g[i]),[&](int &a,int &b) {
             return c[a]>c[b];
         });
     }
