@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
-Vi v;
+Vi c;
 int n;
 vector<pii> stk(maxn);
 Vi an;
@@ -76,8 +76,8 @@ signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    v=an=Vi(n);
-    REP(i,n) cin>>v[i];
+    c=an=Vi(n);
+    REP(i,n) cin>>c[i];
     REP1(i,n-1) {
         int u;
         cin>>u,u--;
@@ -85,7 +85,7 @@ signed main() {
     }
     REP(i,n) {
         sort(ALL(g[i]),[&](int a,int b) {
-            return v[a]>v[b];
+            return c[a]>c[b];
         });
     }
     dfs(0);
