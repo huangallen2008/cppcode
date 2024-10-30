@@ -63,16 +63,16 @@ signed main() {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
                     addmod(dp[i+1][j+1][k+1],dp[i][j][k]*(cnt[i]*2-k));
                     if(j>0)addmod(dp[i+1][j-1][k],dp[i][j][k]*(j-k));
-                    addmod(dp[i+1][j][k],dp[i][j][k]*(i-1-j+k-cnt[i]*2+k));
+                    addmod(dp[i+1][j][k],dp[i][j][k]*(i-1-j+k-cnt[i]*2+k));//i-vuuyugbyubgui
                 }
             }
         }
         else {
             REP(j,n) {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
-                    addmod(dp[i+1][j+1][0],dp[i][j][k]*(cnt[i]*2-k));
-                    if(j>0)addmod(dp[i+1][j-1][0],dp[i][j][k]*(j-k));
-                    addmod(dp[i+1][j][0],dp[i][j][k]*(i-1-j+k-cnt[i]*2+k));
+                    // addmod(dp[i+1][j+1][0],dp[i][j][k]*(cnt[i]*2-k));
+                    if(j>0)addmod(dp[i+1][j-1][0],dp[i][j][k]*(j));
+                    addmod(dp[i+1][j][0],dp[i][j][k]*(i-1-j));
                 }
             }
         }
