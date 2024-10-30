@@ -78,17 +78,19 @@ signed main() {
     REP1(i,n-1) {
         vector<Vi> ndp(n+1,Vi(n+1));
         if(a[i+1]==a[i]) {
-            REP(j,n) {
-                REP(k,j+1) {//cnt[i]+cnt[i]-k
-                    addmod(ndp[j+1][k+1],dp[j][k]*(cnt[i]*2-k));
+            REP(j,i) {
+                int R=min(cnt[i],j+1);
+                REP(k,R) {//cnt[i]+cnt[i]-k
+                    addmod(ndp[j+1][k+1],dp[j][k]*((cnt[i]<<1)-k));
                     if(j>0)addmod(ndp[j-1][k],dp[j][k]*(j-k));
-                    addmod(ndp[j][k],dp[j][k]*(i+1-j+k-cnt[i]*2+k));//i-vuuyugbyubgui
+                    addmod(ndp[j][k],dp[j][k]*(i+1-j+(k-cnt[i]<<1)));//i-vuuyugbyubgui
                 }
             }
         }
         else {
-            REP(j,n) {
-                REP(k,j+1) {//cnt[i]+cnt[i]-k
+            REP(j,i) {
+                int R=min(cnt[i],j+1);
+                REP(k,R) {//cnt[i]+cnt[i]-k
                     // addmod(ndp[j+1][0],dp[j][k]*(cnt[i]*2-k));
                     if(j>0)addmod(ndp[j-1][0],dp[j][k]*(j));
                     addmod(ndp[j][0],dp[j][k]*(i+1-j));
