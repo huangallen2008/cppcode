@@ -88,7 +88,8 @@ signed main() {
             return c[a]>c[b];
         });
     }
+    stk[en++]={c[0],0};
     dfs(0);
-    REP1(i,n) cout<<an[i]+1<<'\n';
+    REP1(i,n-1) cout<<an[i]+1<<'\n';
     return 0;
 }
