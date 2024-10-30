@@ -83,6 +83,7 @@ signed main() {
     }
     stk[en++]={c[0],0};
     dfs(0);
+    oparr(dep)
     REP1(i,n-1) cout<<an[i]+1<<'\n';
     return 0;
 }
