@@ -47,8 +47,24 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int dp[maxn][maxn][maxn];
+int fac[maxn],infac[maxn];
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) {
+    return pw(x,mod-2);
+}
 signed main() {
     IOS(); 
+    fac[0]=1,infac[0]=1;
+    for(int i=1;i<maxn;i++) fac[i]=fac[i-1]*i%mod;
+    for(int i=1;i<maxn;i++) infac[i]=inv(fac[i]);
     int n;
     cin>>n;
     Vi a(n+1);
@@ -78,6 +94,8 @@ signed main() {
             }
         }
     }
+    int an=dp[n][0][0];
+    for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod;
     cout<<dp[n][0][0]<<'\n';
     return 0;
 }
