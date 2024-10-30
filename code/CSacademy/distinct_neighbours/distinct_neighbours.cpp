@@ -72,11 +72,11 @@ signed main() {
     sort(ALL1(a));
     a.pb(inf);
     Vi cnt(n+1);
-    vector<Vi> dp(n,Vi(n));
+    vector<Vi> dp(n+1,Vi(n+1));
     REP1(i,n) cnt[i]=a[i]==a[i-1]?cnt[i-1]+1:1;
     dp[0][0]=1;
     REP1(i,n-1) {
-        vector<Vi> ndp(n,Vi(n));
+        vector<Vi> ndp(n+1,Vi(n+1));
         if(a[i+1]==a[i]) {
             REP(j,n) {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
@@ -95,6 +95,7 @@ signed main() {
                 }
             }
         }
+        swap(ndp,dp);
     }
     int an=dp[0][0];
     for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod;
