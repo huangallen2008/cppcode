@@ -81,9 +81,10 @@ signed main() {
             REP(j,i) {
                 int R=min(cnt[i],j+1);
                 REP(k,R) {//cnt[i]+cnt[i]-k
-                    addmod(ndp[j+1][k+1],dp[j][k]*((cnt[i]<<1)-k));
-                    if(j>0)addmod(ndp[j-1][k],dp[j][k]*(j-k));
-                    addmod(ndp[j][k],dp[j][k]*(i+1-j+(k-cnt[i]<<1)));//i-vuuyugbyubgui
+                    dp[j][k]%=mod;
+                    (ndp[j+1][k+1]+=dp[j][k]*((cnt[i]<<1)-k));
+                    if(j>0)(ndp[j-1][k]+=dp[j][k]*(j-k));
+                    (ndp[j][k]+=dp[j][k]*(i+1-j+(k-cnt[i]<<1)));//i-vuuyugbyubgui
                 }
             }
         }
@@ -91,15 +92,16 @@ signed main() {
             REP(j,i) {
                 int R=min(cnt[i],j+1);
                 REP(k,R) {//cnt[i]+cnt[i]-k
+                    dp[j][k]%=mod;
                     // addmod(ndp[j+1][0],dp[j][k]*(cnt[i]*2-k));
-                    if(j>0)addmod(ndp[j-1][0],dp[j][k]*(j));
-                    addmod(ndp[j][0],dp[j][k]*(i+1-j));
+                    if(j>0)(ndp[j-1][0]+=dp[j][k]*(j));
+                    (ndp[j][0]+=dp[j][k]*(i+1-j));
                 }
             }
         }
         swap(ndp,dp);
     }
-    int an=dp[0][0];
+    int an=dp[0][0]%mod;
     for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod;
     cout<<an<<'\n';
     return 0;
