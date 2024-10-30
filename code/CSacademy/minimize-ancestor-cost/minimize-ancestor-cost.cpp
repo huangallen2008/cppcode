@@ -73,7 +73,7 @@ void dfs(int u) {
         }
         an[v]=stk[en-2].s;
         dfs(v);
-        stk[--end]=tmp.s;
+        stk[--en]=tmp.s;
     }
     // for(auto [x,y]:tmp) stk[x]=y;
     en=tmp_en;
