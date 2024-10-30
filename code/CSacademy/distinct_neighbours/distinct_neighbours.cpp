@@ -72,11 +72,11 @@ signed main() {
     sort(ALL1(a));
     a.pb(inf);
     Vi cnt(n+1);
-    vector<Vi> dp(n+1,Vi(n+1));
+    vector<Vi> dp(2,Vi(2));
     REP1(i,n) cnt[i]=a[i]==a[i-1]?cnt[i-1]+1:1;
     dp[0][0]=1;
     REP1(i,n-1) {
-        vector<Vi> ndp(n+1,Vi(n+1));
+        vector<Vi> ndp(i+1,Vi(cnt[i]+1));
         if(a[i+1]==a[i]) {
             REP(j,i) {
                 int R=min(cnt[i],j+1);
