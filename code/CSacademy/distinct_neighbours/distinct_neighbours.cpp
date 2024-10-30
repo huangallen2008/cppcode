@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -65,6 +65,8 @@ signed main() {
     fac[0]=1,infac[0]=1;
     for(int i=1;i<maxn;i++) fac[i]=fac[i-1]*i%mod;
     for(int i=1;i<maxn;i++) infac[i]=inv(fac[i]);
+    REP(i,10) cout<<fac[i]<<'\n';
+    REP(i,10) cout<<i*infac[i]%mod<<'\n';
     int n;
     cin>>n;
     Vi a(n+1);
