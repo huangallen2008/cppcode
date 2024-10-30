@@ -108,6 +108,7 @@ signed main() {
         cin>>u>>v>>w,u--,v--,w--;
         int t=get_lca(u,v).s;
         int an;
+        ope(ispa(t,w))
         if(!ispa(t,w)) {
             an=t;
         }
