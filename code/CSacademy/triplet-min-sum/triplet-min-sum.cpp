@@ -108,28 +108,40 @@ signed main() {
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
-        if(dep[u]<dep[v]) swap(u,v);
-        if(dep[v]<dep[w]) swap(v,w);
-        int t=get_lca(u,v).s;
-        int an;
-        if(!ispa(t,w)) {
-            an=t;
+        pii r1=get_lca(u,v),r2=get_lca(u,w),r3=get_lca(v,w);
+        int mn=min({r1.f,r2.f,r3.f});
+        int an,ans;
+        if(r1.f==mn) {
+            [an,ans]=r1;
         }
-        else if(ispa(v,w)) {
-            an=v;
-        }
-        else if(ispa(u,w)) {
-            an=u;
-        }
-        else if(ispa(w,u)||ispa(w,v)) {
-            an=w;
+        else if(r2.f==mn) {
+            [an,ans]=r2;
         }
         else {
-            int r1=get_lca(u,w).s,r2=get_lca(u,v).s;
-            if(r1==t) an=r2;
-            else an=r1;
+            [an,ans]=r3;
         }
-        int ans=dis(an,u)+dis(an,v)+dis(an,w);
+        // if(dep[u]<dep[v]) swap(u,v);
+        // if(dep[v]<dep[w]) swap(v,w);
+        // int t=get_lca(u,v).s;
+        // int an;
+        // if(!ispa(t,w)) {
+        //     an=t;
+        // }
+        // else if(ispa(v,w)) {
+        //     an=v;
+        // }
+        // else if(ispa(u,w)) {
+        //     an=u;
+        // }
+        // else if(ispa(w,u)||ispa(w,v)) {
+        //     an=w;
+        // }
+        // else {
+        //     int r1=get_lca(u,w).s,r2=get_lca(u,v).s;
+        //     if(r1==t) an=r2;
+        //     else an=r1;
+        // }
+        // int ans=dis(an,u)+dis(an,v)+dis(an,w);
         cout<<an+1<<' '<<ans<<'\n';
     }
     return 0;
