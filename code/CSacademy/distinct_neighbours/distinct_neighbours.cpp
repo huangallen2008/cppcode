@@ -46,7 +46,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int dp[maxn][maxn][maxn];
+// int dp[maxn][maxn][maxn];
 int fac[maxn],infac[maxn];
 int pw(int x,int p) {
     int r=1;
@@ -72,30 +72,32 @@ signed main() {
     sort(ALL1(a));
     a.pb(inf);
     Vi cnt(n+1);
+    vector<Vi> dp(n,Vi(n));
     REP1(i,n) cnt[i]=a[i]==a[i-1]?cnt[i-1]+1:1;
-    dp[1][0][0]=1;
+    dp[0][0]=1;
     REP1(i,n-1) {
+        vector<Vi> ndp(n,Vi(n));
         if(a[i+1]==a[i]) {
             REP(j,n) {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
-                    addmod(dp[i+1][j+1][k+1],dp[i][j][k]*(cnt[i]*2-k));
-                    if(j>0)addmod(dp[i+1][j-1][k],dp[i][j][k]*(j-k));
-                    addmod(dp[i+1][j][k],dp[i][j][k]*(i+1-j+k-cnt[i]*2+k));//i-vuuyugbyubgui
+                    addmod(ndp[j+1][k+1],dp[j][k]*(cnt[i]*2-k));
+                    if(j>0)addmod(ndp[j-1][k],dp[j][k]*(j-k));
+                    addmod(ndp[j][k],dp[j][k]*(i+1-j+k-cnt[i]*2+k));//i-vuuyugbyubgui
                 }
             }
         }
         else {
             REP(j,n) {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
-                    // addmod(dp[i+1][j+1][0],dp[i][j][k]*(cnt[i]*2-k));
-                    if(j>0)addmod(dp[i+1][j-1][0],dp[i][j][k]*(j));
-                    addmod(dp[i+1][j][0],dp[i][j][k]*(i+1-j));
+                    // addmod(ndp[j+1][0],dp[j][k]*(cnt[i]*2-k));
+                    if(j>0)addmod(ndp[j-1][0],dp[j][k]*(j));
+                    addmod(ndp[j][0],dp[j][k]*(i+1-j));
                 }
             }
         }
     }
-    int an=dp[n][0][0];
+    int an=dp[0][0];
     for(int i=1;i<=n;i++) if(a[i]!=a[i+1]) an=(an*infac[cnt[i]])%mod;
-    cout<<dp[n][0][0]<<'\n';
+    cout<<an<<'\n';
     return 0;
 }
