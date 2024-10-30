@@ -52,22 +52,15 @@ vector<pii> stk(maxn);
 Vi an;
 int en=0;
 void dfs(int u) {
-    ope(u)
-    for(int i=0;i<en;i++) cout<<"{"<<stk[i].f<<' '<<stk[i].s<<"} ";entr
-    // vector<pipii> tmp;
     int tmp_en=en;
     for(int v:g[u]) {
         pipii tmp;
         if(en<=1) {
             tmp={en,stk[en]};
-            // tmp.pb({en,stk[en]});
             stk[en++]={c[v],v};
         }
         else {
-            while(en>1&&c[v]-stk[en-1].f<=stk[en-1].f-stk[en-2].f) {
-                en--;
-            }
-            // tmp.pb({en,stk[en]});
+            while(en>1&&c[v]-stk[en-1].f<=stk[en-1].f-stk[en-2].f) en--;
             tmp={en,stk[en]};
             stk[en++]={c[v],v};
         }
@@ -75,7 +68,6 @@ void dfs(int u) {
         dfs(v);
         stk[--en]=tmp.s;
     }
-    // for(auto [x,y]:tmp) stk[x]=y;
     en=tmp_en;
 }
 signed main() {
