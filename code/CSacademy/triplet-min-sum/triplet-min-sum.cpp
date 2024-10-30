@@ -112,13 +112,13 @@ signed main() {
         int mn=min({r1.f,r2.f,r3.f});
         int an,ans;
         if(r1.f==mn) {
-            [an,ans]=r1;
+            an=r1.s;
         }
         else if(r2.f==mn) {
-            [an,ans]=r2;
+            an=r2.s;
         }
         else {
-            [an,ans]=r3;
+            an=r3.s;
         }
         // if(dep[u]<dep[v]) swap(u,v);
         // if(dep[v]<dep[w]) swap(v,w);
@@ -141,7 +141,7 @@ signed main() {
         //     if(r1==t) an=r2;
         //     else an=r1;
         // }
-        // int ans=dis(an,u)+dis(an,v)+dis(an,w);
+        int ans=dis(an,u)+dis(an,v)+dis(an,w);
         cout<<an+1<<' '<<ans<<'\n';
     }
     return 0;
