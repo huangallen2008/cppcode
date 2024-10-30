@@ -50,27 +50,27 @@ Vi v;
 int n;
 vector<pii> stk(maxn);
 Vi an;
-int end=0;
+int en=0;
 void dfs(int u) {
     vector<pipii> tmp;
-    int tmp_end=end;
+    int tmp_en=en;
     for(int v:g[u]) {
-        if(end<=1) {
-            tmp.pb({end,stk[end]});
-            stk[end++]={c[v],v};
+        if(en<=1) {
+            tmp.pb({en,stk[en]});
+            stk[en++]={c[v],v};
         }
         else {
-            while(end>1&&c[v]-stk[end-1]<=stk[end-1]-stk[end-2]) {
-                end--;
+            while(en>1&&c[v]-stk[en-1]<=stk[en-1]-stk[en-2]) {
+                en--;
             }
-            tmp.pb({end,stk[end]});
-            stk[end++]={c[v],v};
+            tmp.pb({en,stk[en]});
+            stk[en++]={c[v],v};
         }
-        an[v]=stk[end-2].s;
+        an[v]=stk[en-2].s;
         dfs(v);
     }
     for(auto [x,y]:tmp) stk[x]=y;
-    end=tmp_end;
+    en=tmp_en;
 }
 signed main() {
     IOS(); 
