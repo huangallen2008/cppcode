@@ -58,7 +58,7 @@ signed main() {
     Vi cnt(n+1);
     REP1(i,n) cnt[i]=a[i]==a[i-1]?cnt[i-1]+1:1;
     dp[1][0][0]=1;
-    REP1(i,n) {
+    REP1(i,n-1) {
         if(a[i+1]==a[i]) {
             REP(j,n) {
                 REP(k,j+1) {//cnt[i]+cnt[i]-k
@@ -78,6 +78,6 @@ signed main() {
             }
         }
     }
-    cout<<dp[n+1][0][0]<<'\n';
+    cout<<dp[n][0][0]<<'\n';
     return 0;
 }
