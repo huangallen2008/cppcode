@@ -83,7 +83,7 @@ pii get_lca(int a,int b) {
     return st_qu(id[a],id[b]);
 }
 int lca_dep(int a,int b) {
-    op(a)op(b)ope(get_lcs(a,b).f)
+    op(a)op(b)ope(get_lca(a,b).f)
     return get_lca(a,b).f;
 }
 int dis(int a,int b) {
