@@ -79,18 +79,18 @@ inline void out(int x) {
 Graph g;
 Vi c,dep;
 int n;
-vector<pii> stk(maxn);
+Vi stk(maxn);
 Vi an;
 int en=0;
 void dfs(int u) {
     int tmp_en=en;
-    for(int v:g[u]) {
+    for(int &v:g[u]) {
         dep[v]=dep[u]+1;
-        pii tmp;
-        while(en>=2&&(c[v]-stk[en-1].f)*(long long)(dep[stk[en-1].s]-dep[stk[en-2].s])<=(stk[en-1].f-stk[en-2].f)*(long long)(dep[v]-dep[stk[en-1].s])) en--;
-        an[v]=stk[en-1].s;
+        int tmp;
+        while(en>=2&&(c[v]-c[stk[en-1]])*(long long)(dep[stk[en-1]]-dep[stk[en-2]])<=(c[stk[en-1]]-c[stk[en-2]])*(long long)(dep[v]-dep[stk[en-1]])) en--;
+        an[v]=stk[en-1];
         tmp=stk[en];
-        stk[en++]={c[v],v};
+        stk[en++]=v;
         dfs(v);
         stk[--en]=tmp;
     }
@@ -101,7 +101,7 @@ signed main() {
     n=read();
     // cin>>n;
     g=Graph(n);
-    Graph g0(n);
+    Graphw g0(n);
     c=an=dep=Vi(n);
     REP(i,n) c[i]=read();//cin>>c[i];
     REP1(i,n-1) {
@@ -110,7 +110,7 @@ signed main() {
         g0[u].pb({c[i],i});
     }
     REP(i,n) {
-        sort(ALL(g0[i]));
+        sort(ALL(g0[i]),greater<pii>());
         for(auto &[x,y]:g0[i]) g[i].pb(y);
     }
     stk[en++]={c[0],0};
