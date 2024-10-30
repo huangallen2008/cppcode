@@ -48,17 +48,35 @@ int rd(int l,int r) {
 Graph g;
 Vi v;
 int n;
-Vi stk;
+vector<pii> stk(maxn);
+Vi an;
+int end=0;
 void dfs(int u) {
+    vector<pipii> tmp;
+    int tmp_end=end;
     for(int v:g[u]) {
-
+        if(end<=1) {
+            tmp.pb({end,stk[end]});
+            stk[end++]={c[v],v};
+        }
+        else {
+            while(end>1&&c[v]-stk[end-1]<=stk[end-1]-stk[end-2]) {
+                end--;
+            }
+            tmp.pb({end,stk[end]});
+            stk[end++]={c[v],v};
+        }
+        an[v]=stk[end-2].s;
+        dfs(v);
     }
+    for(auto [x,y]:tmp) stk[x]=y;
+    end=tmp_end;
 }
 signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    v=Vi(n);
+    v=an=Vi(n);
     REP(i,n) cin>>v[i];
     REP1(i,n-1) {
         int u;
@@ -70,6 +88,7 @@ signed main() {
             return v[a]>v[b];
         });
     }
-    
+    dfs(0);
+    REP1(i,n) cout<<an[i]+1<<'\n';
     return 0;
 }
