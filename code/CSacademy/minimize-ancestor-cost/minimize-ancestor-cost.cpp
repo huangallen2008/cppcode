@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
-Vi c;
+Vi c,dep;
 int n;
 vector<pii> stk(maxn);
 Vi an;
@@ -54,19 +54,14 @@ int en=0;
 void dfs(int u) {
     int tmp_en=en;
     for(int v:g[u]) {
-        pipii tmp;
-        if(en<=1) {
-            tmp={en,stk[en]};
-            stk[en++]={c[v],v};
-        }
-        else {
-            while(en>1&&c[v]-stk[en-1].f<=stk[en-1].f-stk[en-2].f) en--;
-            tmp={en,stk[en]};
-            stk[en++]={c[v],v};
-        }
-        an[v]=stk[en-2].s;
+        pii tmp;
+        while(en>=2&&(c[v]-stk[en-1].f)*(dep[stk[en-1].s]-dep[stk[en-2].s])<=(stk[en-1].f-stk[en-2].f)*(dep[v]-dep[stk[en-1].s])) en--;
+        an[v]=stk[en-1].s;
+        tmp=stk[en];
+        stk[en++]={c[v],v};
+        dep[v]=dep[u]+1;
         dfs(v);
-        stk[--en]=tmp.s;
+        stk[--en]=tmp;
     }
     en=tmp_en;
 }
@@ -74,7 +69,7 @@ signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    c=an=Vi(n);
+    c=an=dep=Vi(n);
     REP(i,n) cin>>c[i];
     REP1(i,n-1) {
         int u;
