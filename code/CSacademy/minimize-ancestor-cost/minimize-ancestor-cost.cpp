@@ -60,7 +60,7 @@ void dfs(int u) {
             stk[en++]={c[v],v};
         }
         else {
-            while(en>1&&c[v]-stk[en-1]<=stk[en-1]-stk[en-2]) {
+            while(en>1&&c[v]-stk[en-1].f<=stk[en-1].f-stk[en-2].f) {
                 en--;
             }
             tmp.pb({en,stk[en]});
