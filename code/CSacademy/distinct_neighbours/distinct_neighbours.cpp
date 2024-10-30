@@ -65,8 +65,6 @@ signed main() {
     fac[0]=1,infac[0]=1;
     for(int i=1;i<maxn;i++) fac[i]=fac[i-1]*i%mod;
     for(int i=1;i<maxn;i++) infac[i]=inv(fac[i]);
-    REP(i,10) cout<<fac[i]<<'\n';
-    REP(i,10) cout<<i*infac[i]%mod<<'\n';
     int n;
     cin>>n;
     Vi a(n+1);
