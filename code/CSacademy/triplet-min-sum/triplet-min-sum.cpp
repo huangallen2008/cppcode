@@ -113,6 +113,12 @@ signed main() {
             ope("1")
             an=t;
         }
+        else if(ispa(v,w)) {
+            an=v;
+        }
+        else if(ispa(u,w)) {
+            an=u;
+        }
         else if(ispa(w,u)||ispa(w,v)) {
             ope("2")
             an=w;
@@ -124,7 +130,7 @@ signed main() {
             else an=r1;
         }
         int ans=dis(an,u)+dis(an,v)+dis(an,w);
-        cout<<an+1<<' '<<ans<<'\n';
+        op("!!!")cout<<an+1<<' '<<ans<<'\n';
         op(u)op(v)op(w)op(t)op(an)op(dis(u,an))op(dis(v,an))op(dis(w,an))ope(ans)
     }
     return 0;
