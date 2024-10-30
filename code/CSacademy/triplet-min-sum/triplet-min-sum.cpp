@@ -110,12 +110,15 @@ signed main() {
         int an;
         ope(ispa(t,w))
         if(!ispa(t,w)) {
+            ope("1")
             an=t;
         }
         else if(ispa(w,u)||ispa(w,v)) {
+            ope("2")
             an=w;
         }
         else {
+            ope("3")
             int r1=get_lca(u,w).s,r2=get_lca(u,v).s;
             if(r1==t) an=r2;
             else an=r1;
