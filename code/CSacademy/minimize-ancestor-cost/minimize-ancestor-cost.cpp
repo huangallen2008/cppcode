@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -54,12 +54,12 @@ int en=0;
 void dfs(int u) {
     int tmp_en=en;
     for(int v:g[u]) {
+        dep[v]=dep[u]+1;
         pii tmp;
-        while(en>=2&&(c[v]-stk[en-1].f)*(dep[stk[en-1].s]-dep[stk[en-2].s])<=(stk[en-1].f-stk[en-2].f)*(dep[v]-dep[stk[en-1].s])) en--;
+        while(en>=2&&(c[v]-stk[en-1].f)*(long long)(dep[stk[en-1].s]-dep[stk[en-2].s])<=(stk[en-1].f-stk[en-2].f)*(long long)(dep[v]-dep[stk[en-1].s])) en--;
         an[v]=stk[en-1].s;
         tmp=stk[en];
         stk[en++]={c[v],v};
-        dep[v]=dep[u]+1;
         dfs(v);
         stk[--en]=tmp;
     }
