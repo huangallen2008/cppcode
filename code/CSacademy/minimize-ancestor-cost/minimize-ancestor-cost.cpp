@@ -53,7 +53,7 @@ Vi an;
 int en=0;
 void dfs(int u) {
     ope(u)
-    for(int i=0;i<en;i++) cout<<"{"<<stk[i].f<<' '<<stk.s<<"} ";entr
+    for(int i=0;i<en;i++) cout<<"{"<<stk[i].f<<' '<<stk[i].s<<"} ";entr
     vector<pipii> tmp;
     int tmp_en=en;
     for(int v:g[u]) {
