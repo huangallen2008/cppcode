@@ -68,6 +68,7 @@ pii st[maxb][maxn2];
 void st_init() {
     int n0=dfn.size();
     REP(i,n0) st[0][i]={dep[dfn[i]],dfn[i]};
+    REP(i,n0) cout<<dep[dfn[i]]<<' ';entr
     REP1(i,maxb-1) {
         REP(j,n0) {
             st[i][j]=min(st[i-1][j],st[i-1][min(j+(1<<i-1),n0-1)]);
@@ -104,7 +105,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(dfn)oparr(dfn2)oparr(in)oparr(out)oparr(id)
+    oparr(dfn)oparr(dfn2)oparr(dep)oparr(in)oparr(out)oparr(id)
     REP(i,q) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--,w--;
