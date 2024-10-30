@@ -117,7 +117,7 @@ signed main() {
     dfs(0);
     oparr(dep)
     REP1(i,n-1) {
-        out(an[i]);
+        out(an[i]+1);
         // cout<<an[i]+1<<'\n';
     }
     return 0;
