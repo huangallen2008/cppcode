@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC optimize("Ofast,unroll-loops,fast-math")
+#pragma GCC target("avx,avx2,sse4,sse4.1,sse4.2,bmi,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -82,15 +82,26 @@ int n;
 Vi stk(maxn);
 Vi an;
 int en=0;
-void dfs(int u) {
+inline void dfs(int u) {
     int tmp_en=en;
+    int lar=en;
     for(int &v:g[u]) {
         dep[v]=dep[u]+1;
-        int tmp;
-        int tmp1,tmp2;
-        while(en>=2&&(c[v]-(tmp1=c[stk[en-1]]))*(long long)((tmp2=dep[stk[en-1]])-dep[stk[en-2]])<=(tmp1-c[stk[en-2]])*(long long)(dep[v]-tmp2)) en--;
+        // while(en>=2) {
+        //     int la=stk[en-1],la2=stk[en-2];
+        //     if((c[v]-c[la])*(long long)(dep[la]-dep[la2])>(c[la]-c[la2])*(long long)(dep[v]-dep[la])) break;
+        //     en--;
+        // }
+        int lb=2,rb=lar,mb; 
+        while(lb<rb) {
+            mb=lb+rb+1>>1;
+            int la=stk[mb-1],la2=stk[mb-2];
+            if((c[v]-c[la])*(long long)(dep[la]-dep[la2])<=(c[la]-c[la2])*(long long)(dep[v]-dep[la])) lb=mb;
+            else rb=mb-1;
+        }
+        en=lb;
         an[v]=stk[en-1];
-        tmp=stk[en];
+        int tmp=stk[en];
         stk[en++]=v;
         dfs(v);
         stk[--en]=tmp;
@@ -116,7 +127,7 @@ signed main() {
     }
     stk[en++]=0;
     dfs(0);
-    oparr(dep)
+    // oparr(dep)
     REP1(i,n-1) {
         out(an[i]+1);
         // cout<<an[i]+1<<'\n';
