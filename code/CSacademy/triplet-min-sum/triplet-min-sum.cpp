@@ -83,7 +83,7 @@ pii get_lca(int a,int b) {
     return st_qu(id[a],id[b]);
 }
 int lca_dep(int a,int b) {
-    return get_lcs(a,b).f;
+    return get_lca(a,b).f;
 }
 int dis(int a,int b) {
     return dep[a]+dep[b]-(lca_dep(a,b)<<1);
@@ -121,6 +121,7 @@ signed main() {
         }
         int ans=dis(an,u)+dis(an,v)+dis(an,w);
         cout<<an+1<<' '<<ans<<'\n';
+        op(u)op(v)op(w)op(t)op(an)op(dis(u,an))op(dis(v,an))op(dis(w,an))ope(ans)
     }
     return 0;
 }
