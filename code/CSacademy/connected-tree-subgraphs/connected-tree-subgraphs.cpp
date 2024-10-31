@@ -73,7 +73,7 @@ void dfs(int u,int fa) {
         sz[u]+=sz[v];
         dp[u]=(dp[u]*dp[v]%mod)*infac[sz[v]]%mod;
     }
-    dp[u]=dp[u]*(sz[u]-1)%mod;
+    if(sz[u]>1)dp[u]=dp[u]*(sz[u]-1)%mod;
 }
 void dfs2(int u,int fa) {
     if(fa==-1) rdp[u]=dp[u];
