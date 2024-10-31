@@ -48,11 +48,10 @@ int rd(int l,int r) {
 
 signed main() {
     IOS(); 
-    freopen(__FILE__,"r",stdout);
-    ope(__FILE__)
+    freopen(__FILE__,"r",stdin);
     string s;
     while(getline(cin,s)) {
-        cout<<s<<' ';
+        cout<<s<<'\n';
     }
     return 0;
 }
