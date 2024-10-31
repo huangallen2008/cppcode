@@ -104,8 +104,11 @@ signed main() {
     }
     dfs(0,-1);
     dfs2(0,-1);
-    oparr(dp)
-    oparr(udp)
-    oparr(rdp)
+    // oparr(dp)
+    // oparr(udp)
+    // oparr(rdp)
+    int an=0;
+    REP(i,n) an=(an+rdp[i])%mod;
+    cout<<an<<'\n';
     return 0;
 }
