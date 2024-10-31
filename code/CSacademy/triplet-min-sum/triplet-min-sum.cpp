@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC optimize("Ofast,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -47,30 +47,63 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC(' ');
+}
 Graph g;
 int n,q;
-Vi dfn,dfn2,in,out,id,dep;
+int dfn2=0;
+Vi dfn,in,out,id,dep;
 void dfs(int u,int fa) {
     id[u]=dfn.size();
     dfn.pb(u);
-    in[u]=dfn2.size();
-    dfn2.pb(u);
+    in[u]=dfn2++;
     for(int v:g[u]) {
         if(v==fa) continue;
         dep[v]=dep[u]+1;
         dfs(v,u);
         dfn.pb(u);
     }
-    out[u]=dfn2.size();
-    dfn2.pb(u);
+    out[u]=dfn2++;
 }
+pii min(pii a,pii b) { return a<b?a:b; }
+int min(int a,int b) { return a<b?a:b; }
 pii st[maxb][maxn2];
 void st_init() {
     int n0=dfn.size();
     REP(i,n0) st[0][i]={dep[dfn[i]],dfn[i]};
     REP1(i,maxb-1) {
-        REP(j,n0) {
-            st[i][j]=min(st[i-1][j],st[i-1][min(j+(1<<i-1),n0-1)]);
+        int R=n0-(1<<i);
+        REP(j,R) {
+            st[i][j]=min(st[i-1][j],st[i-1][j+(1<<i-1)]);
         }
     } 
 }
@@ -82,32 +115,29 @@ pii get_lca(int a,int b) {
     if(id[a]>id[b]) swap(a,b);
     return st_qu(id[a],id[b]);
 }
-int lca_dep(int a,int b) {
-    return get_lca(a,b).f;
-}
 int dis(int a,int b) {
-    return dep[a]+dep[b]-(lca_dep(a,b)<<1);
+    return dep[a]+dep[b]-(get_lca(a,b).f<<1);
 }
 bool ispa(int u,int v) {//is_parent or the same vertix
     return in[u]<=in[v]&&out[v]<=out[u];
 }
 signed main() {
     IOS(); 
-    cin>>n>>q;
+    n=read(),q=read();
+    // cin>>n>>q;
     g=Graph(n);
     id=in=out=dep=Vi(n);
     REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
+        int u=read()-1,v=read()-1;
+        // cin>>u>>v,u--,v--;
         g[u].pb(v);
         g[v].pb(u);
     }
     dfs(0,-1);
-    // oparr(dfn)oparr(dfn2)oparr(dep)oparr(in)oparr(out)oparr(id)
     st_init();
     REP(i,q) {
-        int u,v,w;
-        cin>>u>>v>>w,u--,v--,w--;
+        int u=read()-1,v=read()-1,w=read()-1;
+        // cin>>u>>v>>w,u--,v--,w--;
         pii r1=get_lca(u,v),r2=get_lca(u,w),r3=get_lca(v,w);
         int mn=max({r1.f,r2.f,r3.f});
         int an;
@@ -120,29 +150,9 @@ signed main() {
         else {
             an=r3.s;
         }
-        // if(dep[u]<dep[v]) swap(u,v);
-        // if(dep[v]<dep[w]) swap(v,w);
-        // int t=get_lca(u,v).s;
-        // int an;
-        // if(!ispa(t,w)) {
-        //     an=t;
-        // }
-        // else if(ispa(v,w)) {
-        //     an=v;
-        // }
-        // else if(ispa(u,w)) {
-        //     an=u;
-        // }
-        // else if(ispa(w,u)||ispa(w,v)) {
-        //     an=w;
-        // }
-        // else {
-        //     int r1=get_lca(u,w).s,r2=get_lca(u,v).s;
-        //     if(r1==t) an=r2;
-        //     else an=r1;
-        // }
         int ans=dis(an,u)+dis(an,v)+dis(an,w);
-        cout<<an+1<<' '<<ans<<'\n';
+        out(an+1),out(ans),PC('\n');
+        // cout<<an+1<<' '<<ans<<'\n';
     }
     return 0;
 }
