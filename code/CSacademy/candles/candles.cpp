@@ -107,7 +107,6 @@ struct SEG {
     }
     int _val(int w,int l,int r,int u) {
         if(l==r) {
-            op(u)op(l)op(r)op(w)ope(s[w].mn)
             return s[w].mn;
         }
         int m=l+r>>1;
@@ -139,7 +138,7 @@ signed main() {
     sort(ALL(h),greater<int>());
     seg.init(n,h);
     REP(i,m) {
-        REP(j,n) cout<<seg.val(i)<<' ';entr
+        REP(j,n) cout<<seg.val(j)<<' ';entr
         int v=seg.val(c[i]-1);
         if(v==0) {
             cout<<i<<'\n';
