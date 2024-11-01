@@ -50,8 +50,8 @@ int rd(int l,int r) {
 struct SEG {
     struct Seg {
         int mn,t;
-    }
-    Vi s;
+    };
+    vector<Seg> s;
     int n;
     void addtag(Seg &a,int t) {
         a.mn+=t;
@@ -77,7 +77,7 @@ struct SEG {
     }
     void init(int _n,Vi a) {
         n=_n;
-        s=Vi(n<<2);
+        s=vector<Seg>(n<<2);
         build(1,0,n-1,a);
     }
     void _ud(int w,int l,int r,int ql,int qr,int v) {
@@ -124,6 +124,7 @@ signed main() {
     REP(i,n) cin>>h[i];
     REP(i,m) cin>>c[i];
     sort(ALL(h),greater<int>());
-    
+    seg.init(n,h);
+
     return 0;
 }
