@@ -60,8 +60,8 @@ void solve() {
         cout<<n<<'\n';
     }
     else {
-        cout<<1<<' ';
-        RREP1(i,k*2-2) cout<<n-i+1<<' ';
+        cout<<n-k*2<<' ';
+        RREP1(i,(n-k+1)*2-2) cout<<n-i+1<<' ';
         cout<<'\n';
     }
 }
