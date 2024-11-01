@@ -75,13 +75,15 @@ void solve() {
     set<int> st;
     for(int x:p0) st.insert(s);
     for(int i=fir;i<n;i++) {
-        for(int &pp:st) {
+        for(int pp:st) {
             if(qur(pp,i)) {
                 an[i]=pp;
-                
+                st.insert(i);
             }
+            st.erase(pp);
         }
     }
+    ans(p);
 }
 signed main() {
     IOS(); 
