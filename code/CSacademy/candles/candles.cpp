@@ -148,7 +148,7 @@ signed main() {
         op(i)op(v)op(lv)ope(lv2)
         seg.ud(0,lv-1,-1);
         int len=c[i]-lv;
-        seg.ud(lv2-len+1,lv2,-1);
+        seg.ud(lv2-len,lv2-1,-1);
     }
     cout<<m<<'\n';
     return 0;
