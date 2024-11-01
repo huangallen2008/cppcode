@@ -136,6 +136,7 @@ signed main() {
     sort(ALL(h),greater<int>());
     seg.init(n,h);
     REP(i,m) {
+        REP(j,n) cout<<seg.val(i)<<' ';entr
         int v=seg.val(c[i]-1);
         if(v==0) {
             cout<<i<<'\n';
