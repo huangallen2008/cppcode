@@ -145,6 +145,7 @@ signed main() {
             return 0;
         }
         int lv=seg.qu(v),lv2=seg.qu(v-1);
+        op(i)op(v)op(lv)ope(lv2)
         seg.ud(0,lv-1,-1);
         int len=c[i]-lv;
         seg.ud(lv2-len+1,lv2,-1);
