@@ -67,7 +67,6 @@ struct SEG {
     }
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            op(w)op(l)ope(a[l])
             s[w]={a[l],0};
             return;
         }
@@ -107,7 +106,10 @@ struct SEG {
         return _mn(1,0,n-1,l,r);
     }
     int _val(int w,int l,int r,int u) {
-        if(l==r) return s[w].mn;
+        if(l==r) {
+            op(u)op(l)op(r)op(w)ope(s[w].mn)
+            return s[w].mn;
+        }
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         if(u<=m) return _val(w<<1,l,m,u);
