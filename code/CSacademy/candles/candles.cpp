@@ -103,12 +103,11 @@ struct SEG {
         return min(_mn(w<<1,l,m,ql,qr),_mn(w<<1|1,m+1,r,ql,qr));
     }
     int mn(int l,int r) {
+        if(l>r) return;
         return _mn(1,0,n-1,l,r);
     }
     int _val(int w,int l,int r,int u) {
-        if(l==r) {
-            return s[w].mn;
-        }
+        if(l==r) return s[w].mn;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         if(u<=m) return _val(w<<1,l,m,u);
@@ -145,7 +144,6 @@ signed main() {
             return 0;
         }
         int lv=seg.qu(v),lv2=seg.qu(v-1);
-        op(i)op(v)op(lv)ope(lv2)
         seg.ud(0,lv-1,-1);
         int len=c[i]-lv;
         seg.ud(lv2-len,lv2-1,-1);
