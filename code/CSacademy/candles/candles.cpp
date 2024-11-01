@@ -93,6 +93,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
+        if(l>r) return;
         _ud(1,0,n-1,l,r,v);
     }
     int _mn(int w,int l,int r,int ql,int qr) {
@@ -103,7 +104,6 @@ struct SEG {
         return min(_mn(w<<1,l,m,ql,qr),_mn(w<<1|1,m+1,r,ql,qr));
     }
     int mn(int l,int r) {
-        if(l>r) return;
         return _mn(1,0,n-1,l,r);
     }
     int _val(int w,int l,int r,int u) {
@@ -137,7 +137,6 @@ signed main() {
     sort(ALL(h),greater<int>());
     seg.init(n,h);
     REP(i,m) {
-        REP(j,n) cout<<seg.val(j)<<' ';entr
         int v=seg.val(c[i]-1);
         if(v==0) {
             cout<<i<<'\n';
