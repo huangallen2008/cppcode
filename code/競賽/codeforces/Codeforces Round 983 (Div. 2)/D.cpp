@@ -73,14 +73,15 @@ void solve() {
     int fir=p0.back()+2;
     p[fir-1]=1;
     set<int> st;
-    for(int x:p0) st.insert(s);
+    for(int x:p0) st.insert(x);
     for(int i=fir;i<n;i++) {
         for(int pp:st) {
-            if(qur(pp,i)) {
-                an[i]=pp;
-                st.insert(i);
-            }
             st.erase(pp);
+            if(!qur(pp,i)) {
+                p[i]=pp;
+                st.insert(i);
+               break;
+            }
         }
     }
     ans(p);
