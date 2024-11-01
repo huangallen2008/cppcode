@@ -105,6 +105,16 @@ struct SEG {
     int mn(int l,int r) {
         return _mn(1,0,n-1,l,r);
     }
+    int _val(int w,int l,int r,int u) {
+        if(l==r) return s[w].mn;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        if(u<=m) return _val(w<<1,l,m,u);
+        else return _val(w<<1|1,m+1,r,u);
+    }
+    int val(int u) {
+        return _val(1,0,n-1,u);
+    }
     int _qu(int w,int l,int r,int k) {//first i , a[i]<=k
         if(l==r) return l;
         int m=l+r>>1;
@@ -125,6 +135,17 @@ signed main() {
     REP(i,m) cin>>c[i];
     sort(ALL(h),greater<int>());
     seg.init(n,h);
-
+    REP(i,m) {
+        int v=seg.val(c[i]-1);
+        if(v==0) {
+            cout<<i<<'\n';
+            return 0;
+        }
+        int lv=seg.qu(v),lv2=seg.qu(v-1);
+        seg.ud(0,lv-1,-1);
+        int len=c[i]-lv;
+        seg.ud(lv2-len+1,lv2,-1);
+    }
+    cout<<m<<'\n';
     return 0;
 }
