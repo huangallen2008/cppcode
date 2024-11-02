@@ -69,10 +69,10 @@ bool isp(int n) {
 signed main() {
     IOS();
     int tt=0; 
-    REP(a,5) 
-    REP(b,5) 
-    REP(c,5) 
-    REP(d,5) tt+=(a^b^c^d)==0;
+    REP(a,3) 
+    REP(b,3) 
+    REP(c,3) 
+    REP(d,3) tt+=(a^b^c^d)==0;
     ope(tt)
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
