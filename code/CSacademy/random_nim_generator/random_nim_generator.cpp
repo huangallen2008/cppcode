@@ -68,7 +68,14 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int tt=0,t2=5+1; 
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+    int n,k;
+    cin>>n>>k;
+
+    int tt=0,t2=k+1; 
     REP(a,t2) 
     REP(b,t2) 
     REP(c,t2) 
@@ -77,12 +84,7 @@ signed main() {
     // REP(f,t2) 
     tt+=(a^b^c^d^e)==0;
     ope(tt)
-    fac[0]=1;
-    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    infac[maxn-1]=inv(fac[maxn-1]);
-    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
-    int n,k;
-    cin>>n>>k;
+    
     REP(i,n) cout<<fac[i]<<' ';entr
     REP(i,n) cout<<(infac[i]*fac[i])%mod<<' ';entr
     int r=0;
