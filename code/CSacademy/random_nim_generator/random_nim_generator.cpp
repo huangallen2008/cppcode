@@ -67,14 +67,11 @@ bool isp(int n) {
     for(int i=2;i*i<=n;i++) if(n%i==0) return 0;return 1;
 }
 int dp(int n,int k) {
-    op(n)ope(k)
     if(k<0) return 0;
     if(k==0) return 1;
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
-    // op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
-        // op(pw(y+1,i))ope(C(n,i))
         addmod(r,(i==n?dp(i,y):pw(y+1,i)*pw(2,x*(n-i-1)))*C(n,i));ope(r)
     }
     return r;
@@ -88,10 +85,6 @@ signed main() {
     int n,k;
     cin>>n>>k;
     int r=dp(n,k);
-    // REP(i,n+1) cout<<fac[i]<<' ';entr
-    // REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
-    // ope(r)ope(tt)
-    ope(r)
     int an=pw(k+1,n)-r;
     an=(an+mod)%mod;
     cout<<an<<'\n';
