@@ -85,7 +85,7 @@ signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
-    REP(i,maxb) dsu[i].init(n-(1<<i)+1);
+    REP(i,maxb) dsu[i].init(n);
     REP(i,m) {
         int l,x,y;
         cin>>l>>x>>y,x--,y--;
