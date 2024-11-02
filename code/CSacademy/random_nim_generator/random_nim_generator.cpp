@@ -81,8 +81,8 @@ signed main() {
     REP(c,t2) 
     REP(d,t2) 
     REP(e,t2) 
-    // REP(f,t2) 
-    tt+=(a^b^c^d^e)==0;tt%=mod;
+    REP(f,t2) 
+    tt+=(a^b^c^d^e^f)==0;tt%=mod;
     ope(tt)
 
     REP(i,n) cout<<fac[i]<<' ';entr
