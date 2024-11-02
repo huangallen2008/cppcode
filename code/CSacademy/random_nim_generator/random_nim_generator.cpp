@@ -70,9 +70,9 @@ int dp(int n,int k) {
 
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
-    op(x)ope(y)
+    // op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
-        op(pw(y+1,i))ope(C(n,i))
+        // op(pw(y+1,i))ope(C(n,i))
         addmod(r,(i==n?dp(i,y):pw(2,x*(n-i-1)))*C(n,i));//ope(r)
     }
     return r;
@@ -95,12 +95,12 @@ signed main() {
     REP(f,t2) 
     tt+=(a^b^c^d^e^f)==0;tt%=mod;
     ope(tt)
-
-    REP(i,n+1) cout<<fac[i]<<' ';entr
-    REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
-    ope(r)ope(tt)
-    // int an=pw(k+1,n)-r;
-    // an=(an+mod)%mod;
-    // cout<<an<<'\n';
+    int r=dp(n,k);
+    // REP(i,n+1) cout<<fac[i]<<' ';entr
+    // REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
+    // ope(r)ope(tt)
+    int an=pw(k+1,n)-r;
+    an=(an+mod)%mod;
+    cout<<an<<'\n';
     return 0;
 }
