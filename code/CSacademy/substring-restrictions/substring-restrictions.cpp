@@ -82,6 +82,7 @@ signed main() {
         int lg=__lg(l);
         dsu[lg].merge(x,y);
         dsu[lg].merge(x+(1<<lg),y+(1<<lg));
+        ope(i)
     }
     ope("ok")
     RREP(i,maxb-1) {
