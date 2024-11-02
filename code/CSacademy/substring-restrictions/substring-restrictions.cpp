@@ -71,8 +71,8 @@ struct DSU {
     }
     int get_cc() { return cc; }
 };
-int pw(int x,int p) {
-    int r=1;
+ll pw(ll x,int p) {
+    ll r=1;
     while(p>0) {
         if(p&1) r=r*x%mod;
         x=x*x%mod;
@@ -85,7 +85,7 @@ signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
-    REP(i,maxb) dsu[i].init(n);
+    REP(i,maxb) dsu[i].init(n-(1<<i)+1);
     REP(i,m) {
         int l,x,y;
         cin>>l>>x>>y,x--,y--;
