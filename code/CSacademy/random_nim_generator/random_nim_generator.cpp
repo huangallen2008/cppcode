@@ -71,9 +71,8 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n,k;
     cin>>n>>k;
-    k++;
     int r=0;
-    int x=__lg(k),y=k-(1<<x);
+    int x=__lg(k-1),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
         addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
