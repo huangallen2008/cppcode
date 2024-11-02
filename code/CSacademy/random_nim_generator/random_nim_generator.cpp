@@ -72,7 +72,7 @@ int dp(int n,int k) {
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
-        addmod(r,(i==n?dp(i,y):pw(y+1,i)*pw(2,x*(n-i-1)))*C(n,i));ope(r)
+        addmod(r,(i==n?dp(i,y):pw(y+1,i)*pw(2,x*(n-i-1)))*C(n,i));
     }
     return r;
 }
