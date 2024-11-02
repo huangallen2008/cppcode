@@ -72,8 +72,7 @@ signed main() {
     REP(a,5) 
     REP(b,5) 
     REP(c,5) 
-    REP(d,5) 
-    REP(e,5) tt+=(a^b^c^d^e)==0;
+    REP(d,5) tt+=(a^b^c^d)==0;
     ope(tt)
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
