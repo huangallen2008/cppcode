@@ -91,6 +91,9 @@ signed main() {
             dsu[i].merge(x+(1<<i),y+(1<<i));
         }
     }
-    cout<<dsu[0].get_cc()<<'\n';
+    int cnt=dsu[0].get_cc();
+    int an=1;
+    REP(i,cnt) an=an*26%mod;
+    cout<<an<<'\n';
     return 0;
 }
