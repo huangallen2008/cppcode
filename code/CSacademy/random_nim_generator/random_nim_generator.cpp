@@ -77,6 +77,7 @@ signed main() {
     for(int i=0;i<=n;i+=2) {
         addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
+    ope(r)
     int an=pw(k+1,n)-r;
     an=(an+mod)%mod;
     cout<<an<<'\n';
