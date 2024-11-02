@@ -85,8 +85,8 @@ signed main() {
     tt+=(a^b^c^d^e^f)==0;tt%=mod;
     ope(tt)
 
-    REP(i,n) cout<<fac[i]<<' ';entr
-    REP(i,n) cout<<(infac[i]*fac[i])%mod<<' ';entr
+    REP(i,n+1) cout<<fac[i]<<' ';entr
+    REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
     op(x)ope(y)
