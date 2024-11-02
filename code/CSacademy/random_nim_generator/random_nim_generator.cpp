@@ -68,13 +68,13 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int tt=0; 
-    REP(a,5) 
-    REP(b,5) 
-    REP(c,5) 
-    REP(d,5) 
-    REP(e,5) 
-    REP(f,5) 
+    int tt=0,t2=6+1; 
+    REP(a,t2) 
+    REP(b,t2) 
+    REP(c,t2) 
+    REP(d,t2) 
+    REP(e,t2) 
+    REP(f,t2) 
     tt+=(a^b^c^d^e^f)==0;
     ope(tt)
     fac[0]=1;
