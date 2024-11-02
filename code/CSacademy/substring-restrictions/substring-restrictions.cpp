@@ -71,6 +71,15 @@ struct DSU {
     }
     int get_cc() { return cc; }
 };
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
 vector<DSU> dsu(maxb);
 signed main() {
     IOS(); 
@@ -92,8 +101,6 @@ signed main() {
         }
     }
     int cnt=dsu[0].get_cc();
-    ll an=1;
-    REP(i,cnt) an=an*26%mod;
-    cout<<an<<'\n';
+    cout<<pw(26,cnt)<<'\n';
     return 0;
 }
