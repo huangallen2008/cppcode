@@ -68,7 +68,7 @@ bool isp(int n) {
 }
 int dp(int n,int k) {
     op(n)ope(k)
-    if(k<0) return 0;
+    if(k<0) return 1;
     if(k==0) return 1;
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
