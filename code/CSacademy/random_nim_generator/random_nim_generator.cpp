@@ -63,16 +63,13 @@ Vi fac(maxn),infac(maxn);
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
-bool isp(int n) {
-    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;return 1;
-}
 int dp(int n,int k) {
     if(k<0) return 0;
     if(k==0) return 1;
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
-        addmod(r,(i==n?dp(i,y):pw(y+1,i)*pw(2,x*(n-i-1)))*C(n,i));
+        addmod(r,(i==n?dp(i,y):pw(y+1,i)*pw(2,x*(n-i-1))%mod)*C(n,i));
     }
     return r;
 }
