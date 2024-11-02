@@ -73,6 +73,7 @@ struct DSU {
 vector<DSU> dsu(maxb);
 signed main() {
     IOS(); 
+    ope(dsu.size())
     int n,m;
     cin>>n>>m;
     REP(i,maxb) dsu[i].init(n);
@@ -80,7 +81,6 @@ signed main() {
         int l,x,y;
         cin>>l>>x>>y,x--,y--;
         int lg=__lg(l);
-        ope(lg)
         dsu[lg].merge(x,y);
         dsu[lg].merge(x+(1<<lg),y+(1<<lg));
     }
