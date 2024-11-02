@@ -71,6 +71,7 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n,k;
     cin>>n>>k;
+    k++;
     int r=0;
     int x=__lg(k),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
