@@ -39,7 +39,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=1e5+5;
+const int maxn=2e4+5;
 const int maxn2=2e5+5;
 const int maxb=20;
 const int inf=(1ll<<62); 
@@ -56,17 +56,28 @@ int pw(int x,int p) {
     }
     return r;
 }
+int inv(int x) { 
+    return pw(x,mod-2);
+}
+Vi fac(maxn),infac(maxn);
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
 int sum_dp(int n,int k) {
     if(k==0) return 1;
     int r=0;
     int x=__lg(k),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
-        addmod(r,/*sum_dp(n-i,y)*/pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1))));
+        addmod(r,/*sum_dp(n-i,y)*/pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
     return r;
 }
 signed main() {
     IOS(); 
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     ope(sum_dp(3,2))
     int n,k;
     cin>>n>>k;
