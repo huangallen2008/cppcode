@@ -82,7 +82,7 @@ signed main() {
     REP(d,t2) 
     REP(e,t2) 
     REP(f,t2) 
-    tt+=(a^b^c^d^e^f)==0;//tt%=mod;
+    tt+=(a^b^c^d^e^f)==0;tt%=mod;
     ope(tt)
 
     REP(i,n) cout<<fac[i]<<' ';entr
@@ -92,7 +92,7 @@ signed main() {
     op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
         op(pw(y+1,i))ope(C(n,i))
-        addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
+        addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));ope(r)
     }
     ope(r)ope(tt)
     // int an=pw(k+1,n)-r;
