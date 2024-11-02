@@ -91,6 +91,7 @@ signed main() {
     // REP(i,n+1) cout<<fac[i]<<' ';entr
     // REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
     // ope(r)ope(tt)
+    ope(r)
     int an=pw(k+1,n)-r;
     an=(an+mod)%mod;
     cout<<an<<'\n';
