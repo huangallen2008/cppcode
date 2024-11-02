@@ -85,16 +85,6 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n,k;
     cin>>n>>k;
-
-    int tt=0,t2=k+1; 
-    REP(a,t2) 
-    REP(b,t2) 
-    REP(c,t2) 
-    REP(d,t2) 
-    REP(e,t2) 
-    REP(f,t2) 
-    tt+=(a^b^c^d^e^f)==0;tt%=mod;
-    ope(tt)
     int r=dp(n,k);
     // REP(i,n+1) cout<<fac[i]<<' ';entr
     // REP(i,n+1) cout<<(infac[i]*fac[i])%mod<<' ';entr
