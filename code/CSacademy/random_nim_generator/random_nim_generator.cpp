@@ -68,7 +68,7 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int tt=0,t2=4+1; 
+    int tt=0,t2=5+1; 
     REP(a,t2) 
     REP(b,t2) 
     REP(c,t2) 
@@ -92,7 +92,7 @@ signed main() {
         op(pw(y+1,i))ope(C(n,i))
         addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
-    ope(r)ope(t)
+    ope(r)ope(tt)
     // int an=pw(k+1,n)-r;
     // an=(an+mod)%mod;
     // cout<<an<<'\n';
