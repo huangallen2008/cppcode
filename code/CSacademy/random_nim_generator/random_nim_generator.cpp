@@ -67,7 +67,14 @@ bool isp(int n) {
     for(int i=2;i*i<=n;i++) if(n%i==0) return 0;return 1;
 }
 signed main() {
-    IOS(); 
+    IOS();
+    int tt=0; 
+    REP(a,5) 
+    REP(b,5) 
+    REP(c,5) 
+    REP(d,5) 
+    REP(e,5) tt+=(a^b^c^d^e)!=0;
+    ope(tt)
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
     infac[maxn-1]=inv(fac[maxn-1]);
