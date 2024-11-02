@@ -80,9 +80,9 @@ signed main() {
         int l,x,y;
         cin>>l>>x>>y,x--,y--;
         int lg=__lg(l);
+        ope(lg)
         dsu[lg].merge(x,y);
         dsu[lg].merge(x+(1<<lg),y+(1<<lg));
-        ope(i)
     }
     ope("ok")
     RREP(i,maxb-1) {
