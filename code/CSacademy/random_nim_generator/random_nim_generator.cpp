@@ -61,12 +61,12 @@ int sum_dp(int n,int k) {
     int r=0;
     int x=__lg(k),y=k-(1<<x);
     for(int i=0;i<=n;i+=2) {
-        addmod(r,sumdp(i,y)*(i==0?1:pw(2,x*(i-1))));
+        addmod(r,sum_dp(i,y)*(i==0?1:pw(2,x*(i-1))));
     }
     return r;
 }
 signed main() {
     IOS(); 
-
+    ope(sum_dp(3,2))
     return 0;
 }
