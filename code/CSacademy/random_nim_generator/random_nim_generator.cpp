@@ -68,7 +68,7 @@ bool isp(int n) {
 }
 signed main() {
     IOS();
-    int tt=0,t2=5+1; 
+    int tt=0,t2=4+1; 
     REP(a,t2) 
     REP(b,t2) 
     REP(c,t2) 
