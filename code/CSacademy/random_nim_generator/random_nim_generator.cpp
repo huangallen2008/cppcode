@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops,fast-math")
+#pragma GCC optimize("Ofast,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -81,8 +81,7 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n,k;
     cin>>n>>k;
-    int r=dp(n,k);
-    int an=pw(k+1,n)-r;
+    int an=pw(k+1,n)-dp(n,k);
     an=(an+mod)%mod;
     cout<<an<<'\n';
     return 0;
