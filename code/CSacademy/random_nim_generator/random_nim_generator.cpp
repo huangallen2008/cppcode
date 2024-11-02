@@ -48,6 +48,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int pw(int x,int p) {
+    if(x==0) return 0;
     int r=1;
     while(p>0) {
         if(p&1) r=r*x%mod;
