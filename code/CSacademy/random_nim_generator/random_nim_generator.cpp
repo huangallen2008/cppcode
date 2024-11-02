@@ -73,11 +73,9 @@ signed main() {
     cin>>n>>k;
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
-    op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
         addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
-    ope(r)
     int an=pw(k+1,n)-r;
     an=(an+mod)%mod;
     cout<<an<<'\n';
