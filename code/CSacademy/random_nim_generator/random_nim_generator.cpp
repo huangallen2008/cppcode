@@ -75,7 +75,7 @@ int dp(int n,int k) {
     // op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
         // op(pw(y+1,i))ope(C(n,i))
-        addmod(r,(i==n?dp(i,y):pw(2,x*(n-i-1)))*C(n,i));//ope(r)
+        addmod(r,(i==n?dp(i,y):pw(2,x*(n-i-1)))*C(n,i));ope(r)
     }
     return r;
 }
