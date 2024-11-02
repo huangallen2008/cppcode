@@ -41,65 +41,36 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=1e5+5;
 const int maxn2=2e5+5;
-const int maxb=19;
+const int maxb=60;
 const int inf=(1ll<<62); 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n;
-int qur(int a,int b) {
-    cout<<"? "<<a<<" "<<b<<"\n";
-    cout.flush();
-    int x;
-    cin>>x;
-    return x;
-}
-int ans(Vi an) {
-    cout<<"! ";
-    REP1(i,n-1) cout<<an[i]<<' ';
-    cout<<'\n';
-    cout.flush();
-}
-void solve() {
-    cin>>n;
-    Vi p0;
-    Vi p(n);
-    p[1]=0;
-    for(int i=2;i<n;i++) {
-        if(qur(1,i)) p0.pb(i),p[i]=0;
-        else break;
-    }
-    int fir=p0.back()+2;
-    p[fir-1]=1;
-    p0.pb(fir-1);
-    set<int> st;
-    for(int x:p0) st.insert(x);
-    for(int i=fir;i<n;i++) {
-        Vi t;
-        for(int pp:st) t.pb(pp);
-        for(int pp:t) {
-            st.erase(pp);
-            if(pp==t.back()) {
-                p[i]=pp;
-                st.insert(i);
-                break;
+int basis[maxb];
+void add(int x) {
+    RREP(i,maxb) {
+        if(x>>i&1) {
+            if(!basis[i]) {
+                basis[i]=x;
+                return;
             }
-            if(!qur(pp,i)) {
-                p[i]=pp;
-                st.insert(i);
-               break;
-            }
+            x^=basis[i];
         }
     }
-    ans(p);
 }
 signed main() {
     IOS(); 
-    int T;
-    cin>>T;
-    while(T--) {
-        solve();
+    int n;
+    cin>>n;
+    REP(i,n) {
+        int x;
+        cin>>x;
+        add(x);
     }
+    int cnt=0;
+    REP(i,maxb) cnt+=basis[i]!=0;
+    int an=(1ll<<cnt)-n;
+    cout<<an<<'\n';
     return 0;
 }

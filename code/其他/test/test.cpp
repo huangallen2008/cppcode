@@ -45,13 +45,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-
+// int pw(int x,int p )
 signed main() {
     IOS(); 
-    freopen(__FILE__,"r",stdin);
-    string s;
-    while(getline(cin,s)) {
-        cout<<s<<'\n';
+    int r=1;
+    REP1(i,15) {
+        r=r*26%mod;
+        op(i)ope(r)
     }
     return 0;
 }

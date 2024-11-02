@@ -93,7 +93,6 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
-        if(l>r) return;
         _ud(1,0,n-1,l,r,v);
     }
     int _mn(int w,int l,int r,int ql,int qr) {
@@ -107,7 +106,9 @@ struct SEG {
         return _mn(1,0,n-1,l,r);
     }
     int _val(int w,int l,int r,int u) {
-        if(l==r) return s[w].mn;
+        if(l==r) {
+            return s[w].mn;
+        }
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         if(u<=m) return _val(w<<1,l,m,u);
@@ -137,12 +138,18 @@ signed main() {
     sort(ALL(h),greater<int>());
     seg.init(n,h);
     REP(i,m) {
+        if(c[i]>n) {
+            cout<<i<<'\n';
+            return 0;
+        }
+       // REP(j,n) cout<<seg.val(j)<<' ';entr
         int v=seg.val(c[i]-1);
         if(v==0) {
             cout<<i<<'\n';
             return 0;
         }
         int lv=seg.qu(v),lv2=seg.qu(v-1);
+        if(seg.val(n-1)==v) lv2=n;
         seg.ud(0,lv-1,-1);
         int len=c[i]-lv;
         seg.ud(lv2-len,lv2-1,-1);
