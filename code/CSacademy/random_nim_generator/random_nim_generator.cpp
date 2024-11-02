@@ -63,6 +63,9 @@ Vi fac(maxn),infac(maxn);
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
+bool isp(int n) {
+    for(int i=2;i*i<=n;i++) if(n%i==0) return 0;return 1;
+}
 signed main() {
     IOS(); 
     fac[0]=1;
@@ -71,10 +74,13 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n,k;
     cin>>n>>k;
+    REP(i,n) cout<<fac[i]<<' ';entr
+    REP(i,n) cout<<(infac[i]*fac[i])%mod<<' ';entr
     int r=0;
     int x=__lg(k+1),y=k-(1<<x);
     op(x)ope(y)
     for(int i=0;i<=n;i+=2) {
+        op(pw(y+1,i))ope(C(n,i))
         addmod(r,pw(y+1,i)*(i==n?1:pw(2,x*(n-i-1)))*C(n,i));
     }
     ope(r)
