@@ -91,7 +91,7 @@ signed main() {
     sort(ALL(t));
     for(auto [x,y]:mp) {
         if(y>=2) {
-            an=((an*(t[0]==x?1:H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))%mod);
+            an=((an*(H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))%mod);
         }
     }
     cout<<an<<'\n';
