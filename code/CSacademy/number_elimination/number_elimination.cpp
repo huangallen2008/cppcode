@@ -89,10 +89,8 @@ signed main() {
     }
     int cnt=0;
     Vi t;
-    for(auto [x,y]:mp) {
-        t.pb(x);
-    }
     sort(ALL(t));
+    t.resize(unique(ALL(t))-t.begin());
     for(auto [x,y]:mp) {
         if(y>=2) {
             an=(an*H((lower_bound(ALL(t),x)-t.begin())+1,y-1))%mod;
