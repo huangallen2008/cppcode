@@ -94,7 +94,7 @@ signed main() {
     }
     for(auto [x,y]:mp) {
         if(y>=2) {
-            an=(an*H((lower_bound(ALL(t),x)-t.begin())+1,y-1))%mod
+            an=(an*H((lower_bound(ALL(t),x)-t.begin())+1,y-1))%mod;
         }
     }
     ope(an)
