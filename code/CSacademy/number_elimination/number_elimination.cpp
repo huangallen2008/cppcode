@@ -87,6 +87,7 @@ signed main() {
     int cnt=0;
     for(auto [x,y]:mp) cnt+=y-1,an=an*infac[y-1]%mod;
     ope(an)
+    op(cnt)
     an=an*infac[n-1-cnt]%mod;
     cout<<an<<'\n';
     return 0;
