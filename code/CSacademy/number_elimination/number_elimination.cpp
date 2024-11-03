@@ -93,7 +93,7 @@ signed main() {
     // t.resize(unique(ALL(t))-t.begin());
     for(auto [x,y]:mp) {
         if(y>=2) {
-            an=(an*H((upper_bound(ALL(t),x)-t.begin()),y-1)%mod)*inv(y)%mod;
+            an=(an*H((upper_bound(ALL(t),x)-t.begin()),y-1)%mod)*inv(y-1)%mod;
             op(x)op(y)op(H(upper_bound(ALL(t),x)-t.begin(),y-1))ope(an)
         }
     }
