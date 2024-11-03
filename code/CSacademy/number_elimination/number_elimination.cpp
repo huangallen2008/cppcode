@@ -64,6 +64,9 @@ Vi fac(maxn),infac(maxn);
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
+int H(int n,int k) {
+    return C(n+k-1,k);
+}
 signed main() {
     IOS();
     fac[0]=1;
@@ -85,10 +88,18 @@ signed main() {
         op(i)ope(an)
     }
     int cnt=0;
-    for(auto [x,y]:mp) cnt+=y-1,an=an*infac[y-1]%mod,ope(y);
+    Vi t;
+    for(auto [x,y]:mp) {
+        t.pb(x);
+    }
+    for(auto [x,y]:mp) {
+        if(y>=2) {
+            an=(an*H((lower_bound(ALL(t),x)-t.begin())+1,y-1))%mod
+        }
+    }
     ope(an)
     op(cnt)
-    an=an*infac[n-cnt]%mod;
+    // an=an*infac[n-cnt]%mod;
     cout<<an<<'\n';
     return 0;
 }
