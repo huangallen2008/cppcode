@@ -94,7 +94,7 @@ signed main() {
     for(auto [x,y]:mp) {
         if(y>=2) {
             an=(an*(t[0]==x?(y-1):H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))*inv(y-1)%mod;
-            op(x)op(y)op(H(upper_bound(ALL(t),x)-t.begin(),y-1))ope(an)
+            op(x)op(y)op(H(lower_bound(ALL(t),x)-t.begin(),y-1))ope(an)
         }
     }
     ope(an)
