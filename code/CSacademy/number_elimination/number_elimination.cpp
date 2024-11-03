@@ -76,11 +76,13 @@ signed main() {
     REP(i,n) cin>>a[i];
     unordered_map<int,int> mp;
     int an=fac[n-1];
+    ope(an)
     REP(i,n) {
         mp[a[i]]++;
         if(mp[a[i]]>=2) {
             an=(an*mp[a[i]]*(mp[a[i]]-1)%mod)*inv2%mod;
         }
+        op(i)ope(an)
     }
     int cnt=0;
     for(auto [x,y]:mp) cnt+=y-1,an=an*infac[y]%mod;
