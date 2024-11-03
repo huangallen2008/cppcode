@@ -78,7 +78,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     unordered_map<int,int> mp;
-    int an=fac[n-1];
+    int an=1;
     ope(an)
     REP(i,n) {
         mp[a[i]]++;
