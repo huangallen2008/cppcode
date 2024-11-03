@@ -82,8 +82,8 @@ signed main() {
     ope(an)
     REP(i,n) {
         mp[a[i]]++;
-        if(mp[a[i]]>=3) {
-            an=(an*(mp[a[i]]-2)*(mp[a[i]]-1)%mod)*inv2%mod;
+        if(mp[a[i]]>=2) {
+            an=(an*mp[a[i]]*(mp[a[i]]-1)%mod)*inv2%mod;
         }
         op(i)ope(an)
     }
@@ -93,8 +93,7 @@ signed main() {
     // t.resize(unique(ALL(t))-t.begin());
     for(auto [x,y]:mp) {
         if(y>=2) {
-            an=an*y%mod;
-            an=((an*(t[0]==x?1:H((lower_bound(ALL(t),x)-t.begin())+2,y-1)*inv(y-1)%mod))%mod);
+            an=((an*(t[0]==x?1:H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))%mod);
             op(x)op(y)op(H(lower_bound(ALL(t),x)-t.begin()+2,y-1))ope(an)
         }
     }
