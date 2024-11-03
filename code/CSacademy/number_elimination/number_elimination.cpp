@@ -88,7 +88,7 @@ signed main() {
         op(i)ope(an)
     }
     int cnt=0;
-    Vi t;
+    Vi t=a;
     sort(ALL(t));
     t.resize(unique(ALL(t))-t.begin());
     for(auto [x,y]:mp) {
