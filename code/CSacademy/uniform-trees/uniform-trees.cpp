@@ -56,7 +56,7 @@ signed main() {
     cin>>n;
     v=p=Vi(n);
     g=Graph(n);
-    dp=auto(n);
+    dp=vector<unordered_map<int,int>>(n);
     REP(i,n) {
         cin>>p[i]>>v[i];
         if(i) g[p[i]].pb(i);
