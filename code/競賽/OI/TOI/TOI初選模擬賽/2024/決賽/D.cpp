@@ -57,7 +57,9 @@ void ins(int x) {
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
+        op(u)op(c)
     }
+    entr
 }
 signed main() {
     IOS();
