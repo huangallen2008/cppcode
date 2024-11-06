@@ -51,7 +51,7 @@ int cnt[maxn];
 int ch[maxn][2];
 int node_id=2;
 void ins(int x) {
-    int u=0;
+    int u=1;
     RREP(i,maxb) {
         int c=x>>i&1;
         if(!ch[u][c]) ch[u][c]=node_id++;
@@ -71,7 +71,7 @@ signed main() {
         int k;
         cin>>k;
         int an=0;
-        Vi id(n);
+        Vi id(n,1);
         RREP(i,maxb) {
             int val1=0;
             REP(j,n) {
