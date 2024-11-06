@@ -51,6 +51,15 @@ Graph g;
 Vi c,p,sz,sum;
 vector<unordered_map<int,int>> dp;
 int an=0;
+
+void AD(int &x,int y) {
+    x+=y;
+    if(x>=mod) x-=mod;
+}
+void MI(int &x,int y) {
+    x-=y;
+    if(x<0) x+=mod;
+}
 void dfs(int u) {
     int mxs=0,id=-1;
     for(int v:g[u]) {
@@ -69,11 +78,11 @@ void dfs(int u) {
     else {
         for(int v:g[u]) {
             if(v==id) continue;
-            for(auto [x,y]:dp[v]) addmod(sum[id],-dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,addmod(sum[id],dp[id][x]);
+            for(auto [x,y]:dp[v]) Mi(sum[id],dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,AD(sum[id],dp[id][x]);
         }
-        addmod(an,sum[id]+1);
-        addmod(dp[id][c[u]],sum[id]+1);
-        sum[id]=(sum[id]<<1|1)%mod;
+        AD(an,sum[id]+1);
+        AD(dp[id][c[u]],sum[id]+1);
+        AD(sum[id],sum[id]+1);
         swap(dp[u],dp[id]);
         swap(sum[u],sum[id]);
         // op(u)for(auto [x,y]:dp[u]) cout<<"{"<<x<<' '<<y<<"} ";entr
