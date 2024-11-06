@@ -75,6 +75,7 @@ void dfs(int u) {
         sum[id]<<=1;
         swap(dp[u],dp[id]);
         swap(sum[u],sum[id]);
+        op(u)for(auto [x,y]:dp[u]) cout<<"{"<<x<<' '<<y<<"} ";entr
     }
 }
 signed main() {
