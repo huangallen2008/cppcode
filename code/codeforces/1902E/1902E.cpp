@@ -81,10 +81,10 @@ signed main() {
     REP(i,n) cin>>a[i];
     REP(i,n) ins(a[i]);
     int an=0;
-    REP(i,n) an+=SZ(a[i])*(n);
+    REP(i,n) an+=SZ(a[i])*n*2;
     REP(i,n) {
         reverse(ALL(a[i]));
-        // an-=qu(a[i])<<1;
+        an-=qu(a[i])<<1;
     }
     cout<<an<<'\n';
     return 0;
