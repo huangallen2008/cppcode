@@ -39,7 +39,7 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=30011;
-const int maxn=1e6+5;
+const int maxn=3e6+5;
 const int maxc=26;
 const int maxb=30;
 const int inf=(1ll<<62); 
