@@ -57,6 +57,7 @@ void ins(string s) {
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
+        ope(u)
     }
 }
 int qu(string s) {
@@ -66,6 +67,7 @@ int qu(string s) {
         if(!ch[u][c]) break;
         u=ch[u][c];
         r+=cnt[u];
+        op("")ope(u)
     }
     return r;
 }
@@ -80,7 +82,7 @@ signed main() {
     REP(i,n) an+=SZ(a[i])*(n-1);
     REP(i,n) {
         reverse(ALL(a[i]));
-        an+=qu(a[i])<<1;
+        an-=qu(a[i])<<1;
     }
     cout<<an<<'\n';
     return 0;
