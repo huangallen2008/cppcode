@@ -65,25 +65,25 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    REP(i,n) ins(a[i]);
+    Vi a(n+1);
+    REP1(i,n) cin>>a[i],a[i]^=a[i-1];
+    REP(i,n+1) ins(a[i]);
     int q;
     cin>>q;
     while(q--) {
         int k;
         cin>>k;
         int an=0;
-        Vi id(n,1);
+        Vi id(n+1,1);
         RREP(i,maxb) {
             int val1=0;
-            REP(j,n) {
+            REP(j,n+1) {
                 int c=a[j]>>i&1;
                 val1+=cnt[ch[id[j]][c^1]];
             }
             op(i)ope(val1)
             if(val1>=k) {
-                REP(j,n) {
+                REP(j,n+1) {
                     int c=a[j]>>i&1;
                     id[j]=ch[id[j]][c^1];
                 }
@@ -91,7 +91,7 @@ signed main() {
             }
             else {
                 k-=val1;
-                REP(j,n) {
+                REP(j,n+1) {
                     int c=a[j]>>i&1;
                     id[j]=ch[id[j]][c];
                 }
