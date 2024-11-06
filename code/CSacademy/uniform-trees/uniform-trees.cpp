@@ -38,7 +38,7 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=30011;
+const int mod=1e9+7;
 const int maxn=3e6+5;
 const int maxc=26;
 const int maxb=30;
@@ -69,11 +69,11 @@ void dfs(int u) {
     else {
         for(int v:g[u]) {
             if(v==id) continue;
-            for(auto [x,y]:dp[v]) sum[id]-=dp[id][x],dp[id][x]=(dp[id][x]+1)*(dp[v][x]+1)-1,sum[id]+=dp[id][x];
+            for(auto [x,y]:dp[v]) addmod(sum[id],dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,addmod(sum[id],dp[id][x]);
         }
-        an+=sum[id]+1;
-        dp[id][c[u]]+=sum[id]+1;
-        sum[id]=sum[id]<<1|1;
+        addmod(an,sum[id]+1);
+        addmod(dp[id][c[u]],sum[id]+1);
+        sum[id]=(sum[id]<<1|1)%mod;
         swap(dp[u],dp[id]);
         swap(sum[u],sum[id]);
         // op(u)for(auto [x,y]:dp[u]) cout<<"{"<<x<<' '<<y<<"} ";entr
