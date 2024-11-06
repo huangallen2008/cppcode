@@ -62,7 +62,7 @@ void ins(string s) {
 }
 int qu(string s) {
     ope(s)
-    int r=0,u=1;
+    int r=0,u=0;
     for(char _c:s) {
         int c=_c-'a';
         op(u)ope(c)
