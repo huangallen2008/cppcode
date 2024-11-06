@@ -84,7 +84,7 @@ signed main() {
     REP(i,n) an+=SZ(a[i])*(n);
     REP(i,n) {
         reverse(ALL(a[i]));
-        an-=qu(a[i])<<1;
+        // an-=qu(a[i])<<1;
     }
     cout<<an<<'\n';
     return 0;
