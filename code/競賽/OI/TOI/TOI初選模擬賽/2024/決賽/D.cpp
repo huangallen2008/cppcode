@@ -65,6 +65,7 @@ signed main() {
     cin>>n;
     Vi a(n+1);
     REP1(i,n) cin>>a[i],a[i]^=a[i-1];
+    sort(ALL(a));
     REP(i,n+1) ins(a[i]);
     int q;
     cin>>q;
