@@ -48,18 +48,48 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
-Vi v,p;
+Vi c,p,sz,sum;
 vector<unordered_map<int,int>> dp;
+int an=0;
+void dfs(int u) {
+    int mxs=0,id=-1;
+    for(int v:g[u]) {
+        dfs(v);
+        sz[u]+=sz[v];
+        if(sz[v]>mxs) {
+            mxs=sz[v];
+            id=v;
+        }
+    }
+    if(id==-1) {
+        dp[u][c[i]]=1;
+        sum[u]=1;
+    }
+    else {
+        for(int v:g[u]) {
+            if(v==id) continue;
+            for(auto [x,y]:dp[v]) sum[id]-=dp[id][x],dp[id][x]=(dp[id][x]+1)*(dp[v][x]+1)-1,sum[id]+=dp[id][x];
+        }
+        an+=sum[id];
+        dp[id][c[u]]+=sum[id];
+        sum[id]<<=1;
+        swap(dp[u],dp[id]);
+        swap(sum[u],sum[id]);
+    }
+}
 signed main() {
     IOS();
     int n;
     cin>>n;
-    v=p=Vi(n);
+    c=p=sum=Vi(n);
+    sz=Vi(n,1);
     g=Graph(n);
     dp=vector<unordered_map<int,int>>(n);
     REP(i,n) {
-        cin>>p[i]>>v[i];
+        cin>>p[i]>>c[i],c[i]--,p[i]--;
         if(i) g[p[i]].pb(i);
     }
+    dfs(0);
+    cout<<an<<'\n';
     return 0;
 }
