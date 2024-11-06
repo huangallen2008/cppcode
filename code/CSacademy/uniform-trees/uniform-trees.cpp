@@ -92,6 +92,7 @@ signed main() {
         if(i) g[p[i]].pb(i);
     }
     dfs(0);
+    an=(an+mod)%mod;
     cout<<an<<'\n';
     return 0;
 }
