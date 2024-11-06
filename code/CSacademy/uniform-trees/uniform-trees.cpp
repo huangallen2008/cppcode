@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops,fast-math")
+#pragma GCC optimize("Ofast,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -109,7 +109,7 @@ void dfs(int u) {
     else {
         for(int v:g[u]) {
             if(v==id) continue;
-            for(auto [x,y]:dp[v]) Mi(sum[id],dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,AD(sum[id],dp[id][x]);
+            for(auto [x,y]:dp[v]) MI(sum[id],dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,AD(sum[id],dp[id][x]);
         }
         AD(an,sum[id]+1);
         AD(dp[id][c[u]],sum[id]+1);
