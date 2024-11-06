@@ -86,12 +86,11 @@ signed main() {
             an=(an*mp[a[i]]*(mp[a[i]]-1)%mod)*inv2%mod;
         }
     }
-    int cnt=0;
     Vi t=a;
     sort(ALL(t));
     for(auto [x,y]:mp) {
         if(y>=2) {
-            an=((an*(H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))%mod);
+            an=((an*(t[0]==x?1:H((lower_bound(ALL(t),x)-t.begin())+2,y-1)%mod))%mod);
         }
     }
     cout<<an<<'\n';
