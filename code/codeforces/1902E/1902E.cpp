@@ -81,7 +81,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     REP(i,n) ins(a[i]);
     int an=0;
-    REP(i,n) an+=SZ(a[i])*(n-1);
+    REP(i,n) an+=SZ(a[i])*(n);
     REP(i,n) {
         reverse(ALL(a[i]));
         an-=qu(a[i])<<1;
