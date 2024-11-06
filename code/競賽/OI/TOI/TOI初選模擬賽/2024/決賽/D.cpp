@@ -82,7 +82,7 @@ signed main() {
                 val1+=cnt[ch[id[j]][c^1]];
             }
             val1>>=1;
-            op(i)ope(val1)
+            // op(i)ope(val1)
             if(val1>=k) {
                 REP(j,n+1) {
                     int c=a[j]>>i&1;
