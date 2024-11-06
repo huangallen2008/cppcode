@@ -88,7 +88,7 @@ signed main() {
                 k-=lval;
                 REP(j,n) {
                     int c=a[j]>>i&1;
-                    id[j]=ch[id[j][c^1]];
+                    id[j]=ch[ch[j][c^1]];
                 }
                 an^=1<<i;
             }
