@@ -57,19 +57,15 @@ void ins(string s) {
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
-        ope(u)
     }
 }
 int qu(string s) {
-    ope(s)
     int r=0,u=0;
     for(char _c:s) {
         int c=_c-'a';
-        op(u)ope(c)
         if(!ch[u][c]) break;
         u=ch[u][c];
         r+=cnt[u];
-        op("")ope(u)
     }
     return r;
 }
