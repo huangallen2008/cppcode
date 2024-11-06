@@ -64,6 +64,7 @@ void dfs(int u) {
     if(id==-1) {
         dp[u][c[u]]=1;
         sum[u]=1;
+        an++;
     }
     else {
         for(int v:g[u]) {
@@ -71,8 +72,8 @@ void dfs(int u) {
             for(auto [x,y]:dp[v]) sum[id]-=dp[id][x],dp[id][x]=(dp[id][x]+1)*(dp[v][x]+1)-1,sum[id]+=dp[id][x];
         }
         an+=sum[id];
-        dp[id][c[u]]+=sum[id];
-        sum[id]<<=1;
+        dp[id][c[u]]+=sum[id]+1;
+        sum[id]=sum[id]<<1|1;
         swap(dp[u],dp[id]);
         swap(sum[u],sum[id]);
         op(u)for(auto [x,y]:dp[u]) cout<<"{"<<x<<' '<<y<<"} ";entr
