@@ -65,6 +65,7 @@ int qu(string s) {
     int r=0,u=1;
     for(char _c:s) {
         int c=_c-'a';
+        op(u)ope(c)
         if(!ch[u][c]) break;
         u=ch[u][c];
         r+=cnt[u];
