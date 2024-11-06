@@ -81,7 +81,7 @@ signed main() {
             if(lval>=k) {
                 REP(j,n) {
                     int c=a[j]>>i&1;
-                    id[j]=ch[id[j][c]];
+                    id[j]=ch[id[j]][c];
                 }
             }
             else {
