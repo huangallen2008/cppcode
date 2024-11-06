@@ -73,24 +73,24 @@ signed main() {
         int an=0;
         Vi id(n);
         RREP(i,maxb) {
-            int lval=0;
+            int val1=0;
             REP(j,n) {
                 int c=a[j]>>i&1;
-                lval+=cnt[ch[id[j]][c]];
+                val1+=cnt[ch[id[j]][c^1]];
             }
-            if(lval>=k) {
-                REP(j,n) {
-                    int c=a[j]>>i&1;
-                    id[j]=ch[id[j]][c];
-                }
-            }
-            else {
-                k-=lval;
+            if(val1>=k) {
                 REP(j,n) {
                     int c=a[j]>>i&1;
                     id[j]=ch[id[j]][c^1];
                 }
                 an^=1<<i;
+            }
+            else {
+                k-=val1;
+                REP(j,n) {
+                    int c=a[j]>>i&1;
+                    id[j]=ch[id[j]][c];
+                }
             }
         }
         cout<<an<<'\n';
