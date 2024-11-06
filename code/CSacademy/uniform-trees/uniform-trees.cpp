@@ -71,7 +71,7 @@ void dfs(int u) {
             if(v==id) continue;
             for(auto [x,y]:dp[v]) sum[id]-=dp[id][x],dp[id][x]=(dp[id][x]+1)*(dp[v][x]+1)-1,sum[id]+=dp[id][x];
         }
-        an+=sum[id];
+        an+=sum[id]+1;
         dp[id][c[u]]+=sum[id]+1;
         sum[id]=sum[id]<<1|1;
         swap(dp[u],dp[id]);
