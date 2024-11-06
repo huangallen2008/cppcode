@@ -61,6 +61,7 @@ void ins(string s) {
     }
 }
 int qu(string s) {
+    ope("p")
     int r=0,u=1;
     for(char _c:s) {
         int c=_c-'a';
