@@ -57,9 +57,9 @@ void ins(int x) {
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
-        op(u)op(c)
+        // op(u)op(c)
     }
-    entr
+    // entr
 }
 signed main() {
     IOS();
@@ -67,6 +67,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    REP(i,n) ins(a[i]);
     int q;
     cin>>q;
     while(q--) {
@@ -80,7 +81,7 @@ signed main() {
                 int c=a[j]>>i&1;
                 val1+=cnt[ch[id[j]][c^1]];
             }
-            op(i)ope(val1)
+            // op(i)ope(val1)
             if(val1>=k) {
                 REP(j,n) {
                     int c=a[j]>>i&1;
