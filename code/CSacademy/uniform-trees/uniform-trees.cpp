@@ -62,7 +62,7 @@ void dfs(int u) {
         }
     }
     if(id==-1) {
-        dp[u][c[i]]=1;
+        dp[u][c[u]]=1;
         sum[u]=1;
     }
     else {
