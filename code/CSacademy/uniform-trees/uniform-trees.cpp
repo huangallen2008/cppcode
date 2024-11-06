@@ -69,7 +69,7 @@ void dfs(int u) {
     else {
         for(int v:g[u]) {
             if(v==id) continue;
-            for(auto [x,y]:dp[v]) addmod(sum[id],dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,addmod(sum[id],dp[id][x]);
+            for(auto [x,y]:dp[v]) addmod(sum[id],-dp[id][x]),dp[id][x]=((dp[id][x]+1)*(dp[v][x]+1)-1)%mod,addmod(sum[id],dp[id][x]);
         }
         addmod(an,sum[id]+1);
         addmod(dp[id][c[u]],sum[id]+1);
