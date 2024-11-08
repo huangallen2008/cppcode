@@ -54,7 +54,7 @@ signed main() {
     int lg=__lg(k);
     Vi cnt(lg);
     int la=lg;
-    RREP(i,lg) {
+    RREP(i,lg) if(k>>i&1) {
         cnt[i]=la-i;
         la=i;
     }
