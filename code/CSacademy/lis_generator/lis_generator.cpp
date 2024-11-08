@@ -51,6 +51,10 @@ signed main() {
     IOS();
     int k;
     cin>>k;
+    if(k==1){
+        cout<<"1\n";
+        return;
+    }
     int lg=__lg(k);
     Vi cnt(lg);
     int la=lg;
