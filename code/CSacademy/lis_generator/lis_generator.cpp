@@ -53,7 +53,7 @@ signed main() {
     cin>>k;
     if(k==1){
         cout<<"1\n";
-        return;
+        return 0;
     }
     int lg=__lg(k);
     Vi cnt(lg);
