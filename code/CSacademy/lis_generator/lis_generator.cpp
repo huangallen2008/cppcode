@@ -65,7 +65,7 @@ signed main() {
     REP(i,lg) {
         REP(tt,2)cout<<((i+1)*(lg+1)+1)<<' ';
     }
-    REP(i,lg) REP1(j,cnt[i]) cout<<(i*(lg+1)+j)<<' ';
+    REP(i,lg) REP1(j,cnt[i]) cout<<(i*(lg+1)+1+j)<<' ';
     cout<<'\n'; 
     return 0;
 }
