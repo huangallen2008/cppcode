@@ -52,16 +52,16 @@ signed main() {
     int k;
     cin>>k;
     int lg=__lg(k);
-    Vi cnt(lg-1);
-    int la=lg-1;
-    RREP(i,lg-1) {
+    Vi cnt(lg);
+    int la=lg;
+    RREP(i,lg) {
         cnt[i]=la-i;
         la=i;
     }
     REP(i,lg) {
         cout<<(i*lg+1)<<' '<<(i*lg+1)<<' ';
     }
-    REP(i,lg-1) REP1(j,cnt[i]) cout<<(i*lg+1+j)<<' ';
+    REP(i,lg) REP1(j,cnt[i]) cout<<(i*lg+1+j)<<' ';
     cout<<'\n'; 
     return 0;
 }
