@@ -117,7 +117,7 @@ struct MO {
         sol.init(n,a);
         int l=0,r=0;
         for(auto [nl,nr,id]:q) {
-            op(nl)op(nl)op(l)op(r)ope(id)
+            op(nl)op(nr)op(l)op(r)ope(id)
             while(l>nl) sol.add(l--);
             while(r<nr) sol.add(r++);
             while(l<nl) sol.del(l++);
