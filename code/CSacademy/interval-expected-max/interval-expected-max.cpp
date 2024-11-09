@@ -131,7 +131,7 @@ struct MO {
             an[id]=sol.getan()/(nr-nl+1)/(nr-nl+1);
         }
     }
-    Vi getan() { return an; }
+    vector<ld> getan() { return an; }
 }mo;
 signed main() {
     IOS();
@@ -143,10 +143,8 @@ signed main() {
     vector<pii> qu(q);
     REP(i,q) cin>>qu[i].f>>qu[i].s,qu[i].f--,qu[i].s--;
     mo.solve(n,q,a,qu);
-    Vi an=mo.getan();
-    vector<ld> ans(q);
-    REP(i,q) ans[i]=an[i]/(qu[i].s-qu[i])
-    REP(i,q) cout<<an[i]<<' ';
-    cout<<'\n';
+    vector<ld> an=mo.getan();
+    cout<<fixed<<setprecision(10)<<'\n';
+    REP(i,q) cout<<an[i]<<'\n';
     return 0;
 }
