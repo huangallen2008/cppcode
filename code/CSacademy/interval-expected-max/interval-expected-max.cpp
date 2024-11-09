@@ -114,8 +114,8 @@ struct MO {
             if(ss[a.l]!=ss[b.l]) return ss[a.l]<ss[b.l];
             return ss[a.l]&1?a.r<b.r:a.r>b.r;
         });
-        ope("ok")
         sol.init(n,a);
+        ope("ok")
         int l=0,r=0;
         for(auto [nl,nr,id]:q) {
             while(l>nl) sol.add(l--);
