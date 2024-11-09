@@ -140,7 +140,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     vector<pii> qu(q);
-    REP(i,q) cin>>qu[i].f>>qu[i].s;
+    REP(i,q) cin>>qu[i].f>>qu[i].s,qu[i].f--,qu[i].s--;
     mo.solve(n,q,a,qu);
     Vi an=mo.getan();
     REP(i,q) cout<<an[i]<<' ';
