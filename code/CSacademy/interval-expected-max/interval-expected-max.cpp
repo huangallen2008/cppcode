@@ -121,9 +121,9 @@ struct MO {
             op(nl)op(nr)op(l)op(r)ope(id)
             while(l>nl) sol.add(l--);
             while(r<nr) sol.add(r++);
-            while(l<nl) sol.del(l++);
+            while(l<nl) sol.del(++l);
             op(l)ope(r)
-            while(r>nr) sol.del(r--);
+            while(r>nr) sol.del(--r);
             an[id]=sol.getan();
         }
     }
