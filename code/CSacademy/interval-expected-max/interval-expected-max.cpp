@@ -111,8 +111,8 @@ struct MO {
         an=Vi(Q);
         REP(i,Q) q[i]={_qu[i].f,_qu[i].s,i};
         sort(ALL(q),[&](qur a,qur b) {
-            if(ss[a.f]!=ss[b.f]) return ss[a.f]<ss[b.f];
-            return ss[a.f]&1?a.s<b.s:a.s>b.s;
+            if(ss[a.l]!=ss[b.l]) return ss[a.l]<ss[b.l];
+            return ss[a.l]&1?a.r<b.r:a.r>b.r;
         });
         sol.init(n,a);
         int l=0,r=0;
@@ -121,7 +121,7 @@ struct MO {
             while(r<nr) sol.add(r++);
             while(l<nl) sol.del(l++);
             while(r>nr) sol.del(r--);
-            an[id]=sel.getan();
+            an[id]=sol.getan();
         }
     }
     Vi getan() { return an; }
