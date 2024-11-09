@@ -123,10 +123,10 @@ struct MO {
         int l=0,r=-1;
         for(auto [nl,nr,id]:q) {
             op(nl)op(nr)ope(id)
-            while(l>nl) sol.add(l--);
-            while(r<nr) sol.add(r++);
-            while(l<nl) sol.del(++l);
-            while(r>nr) sol.del(--r);
+            while(l>nl) sol.add(--l);
+            while(r<nr) sol.add(++r);
+            while(l<nl) sol.del(l++);
+            while(r>nr) sol.del(r--);
             an[id]=sol.getan();
         }
     }
