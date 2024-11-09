@@ -94,7 +94,7 @@ struct SOL {
         sum-=v[u];
         op("del")op(u)ope(an)
     }
-    int getan() { op(an)ope(sum)return an*2+sum; }
+    int getan() { op(an)ope(sum)return an*2-sum; }
 };
 Vi ss(maxn);
 void init_ss() {
