@@ -85,16 +85,14 @@ struct SOL {
         bitv.ud(a[u],v[u]);
         an+=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
         sum+=v[u];
-        op("add")op(u)ope(an)
     }
     void del(int u) {
         an-=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
         bitv.ud(a[u],-v[u]);
         bit.ud(a[u],-1);
         sum-=v[u];
-        op("del")op(u)ope(an)
     }
-    int getan() { op(an)ope(sum)return an*2-sum; }
+    int getan() { return an*2-sum; }
 };
 Vi ss(maxn);
 void init_ss() {
@@ -107,7 +105,6 @@ struct MO {
     };
     SOL sol;
     vector<qur> q;
-    // Vi an;
     vector<ld> an;
     int Q;
     void solve(int _n,int _Q,Vi a,vector<pii> _qu) {
