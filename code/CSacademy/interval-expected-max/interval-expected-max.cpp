@@ -85,7 +85,7 @@ struct SOL {
         an+=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
     }
     void del(int u) {
-        op(a[u])op(v[u])ope(n)
+        op(u)op(a[u])op(v[u])ope(n)
         an-=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
         bitv.ud(a[u],-v[u]);
         bit.ud(a[u],-1);
