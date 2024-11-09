@@ -115,9 +115,9 @@ struct MO {
             return ss[a.l]&1?a.r<b.r:a.r>b.r;
         });
         sol.init(n,a);
-        ope("ok")
         int l=0,r=0;
         for(auto [nl,nr,id]:q) {
+            op(nl)op(nl)op(l)op(r)ope(id)
             while(l>nl) sol.add(l--);
             while(r<nr) sol.add(r++);
             while(l<nl) sol.del(l++);
