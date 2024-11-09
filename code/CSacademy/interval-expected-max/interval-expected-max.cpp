@@ -119,10 +119,12 @@ struct MO {
         for(auto [nl,nr,id]:q) {
             op(nl)op(nr)op(l)op(r)ope(id)
             while(l>nl) sol.add(l--);
+            ope("ok2")
             while(r<nr) sol.add(r++);
+            ope("ok1")
             while(l<nl) sol.del(l++);
-            while(r>nr) sol.del(r--);
             ope("ok")
+            while(r>nr) sol.del(r--);
             an[id]=sol.getan();
         }
     }
