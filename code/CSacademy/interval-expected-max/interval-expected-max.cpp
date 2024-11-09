@@ -70,6 +70,7 @@ struct SOL {
     Vi a,v;
     int n;
     int an=0;
+    int sum=0;
     void init(int _n,Vi _a) {
         n=_n;
         v=a=_a;
@@ -83,15 +84,17 @@ struct SOL {
         bit.ud(a[u],1);
         bitv.ud(a[u],v[u]);
         an+=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
+        sum+=v[u];
         op("add")op(u)ope(an)
     }
     void del(int u) {
         an-=bit.pre(a[u])*v[u]+bitv.qu(a[u]+1,n);
         bitv.ud(a[u],-v[u]);
         bit.ud(a[u],-1);
+        sum-=v[u];
         op("del")op(u)ope(an)
     }
-    int getan() { return an; }
+    int getan() { return an*2+sum; }
 };
 Vi ss(maxn);
 void init_ss() {
