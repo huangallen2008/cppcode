@@ -107,13 +107,14 @@ struct MO {
     };
     SOL sol;
     vector<qur> q;
-    Vi an;
+    // Vi an;
+    vector<ld> an;
     int Q;
     void solve(int _n,int _Q,Vi a,vector<pii> _qu) {
         n=_n;
         Q=_Q;
         q=vector<qur>(Q);
-        an=Vi(Q);
+        an=vector<ld>(Q);
         REP(i,Q) q[i]={_qu[i].f,_qu[i].s,i};
         sort(ALL(q),[&](qur a,qur b) {
             if(ss[a.l]!=ss[b.l]) return ss[a.l]<ss[b.l];
@@ -127,7 +128,7 @@ struct MO {
             while(r<nr) sol.add(++r);
             while(l<nl) sol.del(l++);
             while(r>nr) sol.del(r--);
-            an[id]=sol.getan();
+            an[id]=sol.getan()/(nr-nl+1)/(nr-nl+1);
         }
     }
     Vi getan() { return an; }
@@ -143,6 +144,8 @@ signed main() {
     REP(i,q) cin>>qu[i].f>>qu[i].s,qu[i].f--,qu[i].s--;
     mo.solve(n,q,a,qu);
     Vi an=mo.getan();
+    vector<ld> ans(q);
+    REP(i,q) ans[i]=an[i]/(qu[i].s-qu[i])
     REP(i,q) cout<<an[i]<<' ';
     cout<<'\n';
     return 0;
