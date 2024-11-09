@@ -128,7 +128,7 @@ struct MO {
             while(r<nr) sol.add(++r);
             while(l<nl) sol.del(l++);
             while(r>nr) sol.del(r--);
-            an[id]=sol.getan()/(nr-nl+1)/(nr-nl+1);
+            an[id]=sol.getan()/(ld)(nr-nl+1)/(nr-nl+1);
         }
     }
     vector<ld> getan() { return an; }
