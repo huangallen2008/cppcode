@@ -54,6 +54,7 @@ signed main() {
     Vi a(n);
     int c1=0,c2=0;
     REP(i,n) cin>>a[i],(a[i]==1?c1++:c2++);
-
+    int an=max(0ll,n*(n-1)*(n-2)*(n-3)*(n-4)*(n-5)/24)+max(0ll,c2*(c2-1)*(c2-2)/6)+max(0ll,c2*(n-1)*(n-2)*(n-3)*(n-4)/8)+max(0ll,c2*(c2-1)*(n-2)*(n-1)/4);
+    cout<<an<<'\n';
     return 0;
 }
