@@ -75,7 +75,7 @@ struct SOL {
         v=a=_a;
         Vi t=a;
         sort(ALL(t));
-        for(int &x:a) a=lower_bound(ALL(t),x)-t.begin()+1;
+        for(int &x:a) x=(lower_bound(ALL(t),x)-t.begin())+1;
         bit.init(n);
         bitv.init(n);
     }
