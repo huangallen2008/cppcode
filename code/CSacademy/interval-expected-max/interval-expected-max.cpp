@@ -122,6 +122,7 @@ struct MO {
             while(r<nr) sol.add(r++);
             while(l<nl) sol.del(l++);
             while(r>nr) sol.del(r--);
+            ope("ok")
             an[id]=sol.getan();
         }
     }
