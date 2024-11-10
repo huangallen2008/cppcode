@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops,fast-math")
+#pragma GCC optimize("Ofast,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -72,14 +72,21 @@ void init(int N, int M) {
     n=(N>>maxb)+10;
 }
 int lowbit(int x) {
-    int lg=__lg(x&-x)/maxb*maxb;
+    // int lg=;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return x&(all)<<(lg);
+    return 1<<(__lg(x&-x)/maxb*maxb);
 }
 int lowbit2(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return 1<<(lg);
+    return (1<<lg+maxb)-(x&(all)<<(lg));
+}
+int nxt(int x) {
+    int lg=__lg(x&-x)/maxb*maxb;
+    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
+    x&=~(all<<lg);
+    // cout<<x<<' '<<lg<<'\n';
+    return x+lowbit(x);
 }
 void flipPosition(int u) {
     // u++;
@@ -89,8 +96,8 @@ void flipPosition(int u) {
     // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        // cout<<u<<" ty+ ";
-        for(;u<=n;u+=lowbit2(u)) {
+        cout<<u<<" ty+ ";
+        for(;u<=n;u=nxt(u)) {
             // cout<<u<<' ';
             // ope(u)
             b[u]++;
@@ -98,8 +105,8 @@ void flipPosition(int u) {
     }
     else {
         u>>=maxb;
-        // cout<<u<<" ty- ";
-        for(;u<=n;u+=lowbit2(u)) {
+        cout<<u<<" ty- ";
+        for(;u<=n;u=nxt(u)) {
             // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
@@ -118,7 +125,7 @@ int pre(int u) {
     u1>>=maxb;
     // op(u)op(u1)ope(r)
             // int r0=r;
-    for(;u1>0;u1^=lowbit(u1)) r+=b[u1];
+    for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
     // if(r<0){op(u)op(u1)op(r0)ope(r)}
     // ope("op2")
     return r;
