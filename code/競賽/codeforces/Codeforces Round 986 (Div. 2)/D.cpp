@@ -153,13 +153,13 @@ void solve() {
     //     }
     //     stk.pb({c[i],i});
     // }
-    REP(i,n) {
-        op(i)
-        for(auto [v,w]:g[i]) {
-            cout<<v<<' '<<w<<' ';
-        }
-        entr
-    }
+    // REP(i,n) {
+    //     op(i)
+    //     for(auto [v,w]:g[i]) {
+    //         cout<<v<<' '<<w<<' ';
+    //     }
+    //     entr
+    // }
     Vi dis(n,inf);
     queue<int> q;
     q.push(0);
@@ -178,7 +178,7 @@ void solve() {
             }
         }
     }
-    oparr(dis)oparr(pre)oparr(val)
+    // oparr(dis)oparr(pre)oparr(val)
     if(dis[n-1]==inf) {
         cout<<"No\n";
         return;
