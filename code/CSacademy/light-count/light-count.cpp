@@ -96,8 +96,8 @@ void flipPosition(int u) {
             b[u]--;
             // if(b[u]<0) ope(u)
         }
-    ope("f2")
     }
+    ope("f2")
     // cout<<'\n';
 }
 int pre(int u) {
