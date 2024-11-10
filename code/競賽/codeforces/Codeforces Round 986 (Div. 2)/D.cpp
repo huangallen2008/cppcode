@@ -86,7 +86,7 @@ void solve() {
     REP(i,n) {
         op(i)
         for(auto [v,w]:g[i]) {
-            cout<<v<<' ';
+            cout<<v<<' '<<w<<' ';
         }
         entr
     }
