@@ -111,7 +111,7 @@ int pre(int u) {
     u1>>=maxb;
     // op(u)op(u1)ope(r)
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
-    // if(1){op(u)op(u1)ope(r)}
+    if(r<0){op(u)op(u1)ope(r)}
     // ope("op2")
     return r;
 }
