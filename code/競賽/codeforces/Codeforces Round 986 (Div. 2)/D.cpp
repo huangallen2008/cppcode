@@ -93,6 +93,7 @@ void solve() {
     Vi dis(n,inf);
     queue<int> q;
     q.push(0);
+    dis[0]=0;
     Vi pre(n),val(n);
     while(q.size()) {
         int u=q.front();
