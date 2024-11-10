@@ -93,7 +93,7 @@ int pre(int u) {
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
-    for(;u1>0;u1^=u&-u) r+=b[u1];
+    for(;u1>0;u1-=u&-u) r+=b[u1];
     return r;
 }
 int getCount(int st, int fn) {
