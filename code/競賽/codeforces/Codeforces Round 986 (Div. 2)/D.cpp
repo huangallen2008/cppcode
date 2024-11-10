@@ -50,39 +50,105 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi a(n),b(n),c(n);
+    Vi (n),b(n),c(n);
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
     REP(i,n) cin>>c[i];
+    reverse();
     // Vi stk;
     vector<pii> stk;
     Graphw g(n);
-    RREP(i,n) {
-        while(stk.size()&&stk.back().f<a[i]) {
-            //add edge i->stk.back().s
-            g[i].pb({stk.back().s,0});
-            stk.pop_back();
+    int ll=-1,lr=0;
+    {
+        Vi a=a0;
+    REP1(i,n-1) {
+        //!!ll=-1
+        if(a[i]<a[i-1]) {
+            ll=lr,lr=i+1;
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,0});
         }
-        stk.pb({a[i],i});
-    }
-    stk.clear();
-    RREP(i,n) {
-        while(stk.size()&&stk.back().f<b[i]) {
-            //add edge i->stk.back().s
-            g[i].pb({stk.back().s,1});
-            stk.pop_back();
+        else {
+            if(ll!=-1) {
+                ////
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,0});
+            }
+            g[n-i-1].pb({n-(i-1)-1,0});
         }
-        stk.pb({b[i],i});
     }
-    stk.clear();
-    RREP(i,n) {
-        while(stk.size()&&stk.back().f<c[i]) {
-            //add edge i->stk.back().s
-            g[i].pb({stk.back().s,2});
-            stk.pop_back();
+    }
+    {
+        Vi a=b;
+    REP1(i,n-1) {
+        //!!ll=-1
+        if(a[i]<a[i-1]) {
+            ll=lr,lr=i+1;
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,1});
         }
-        stk.pb({c[i],i});
+        else {
+            if(ll!=-1) {
+                ////
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,1});
+            }
+            g[n-i-1].pb({n-(i-1)-1,1});
+        }
     }
+    }
+    {
+        Vi a=c;
+    REP1(i,n-1) {
+        //!!ll=-1
+        if(a[i]<a[i-1]) {
+            ll=lr,lr=i+1;
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,2});
+        }
+        else {
+            if(ll!=-1) {
+                ////
+            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+            if(id<ll) continue;
+            g[n-i-1].pb({n-(id)-1,2});
+            }
+            g[n-i-1].pb({n-(i-1)-1,2});
+        }
+    }
+    }
+
+    // RREP(i,n) {
+    //     while(stk.size()&&stk.back().f>a[i]) {
+    //         //add edge i->stk.back().s
+    //         g[i].pb({stk.back().s,0});
+    //         stk.pop_back();
+    //     }
+    //     stk.pb({a[i],i});
+    // }
+    // stk.clear();
+    // RREP(i,n) {
+    //     while(stk.size()&&stk.back().f<b[i]) {
+    //         //add edge i->stk.back().s
+    //         g[i].pb({stk.back().s,1});
+    //         stk.pop_back();
+    //     }
+    //     stk.pb({b[i],i});
+    // }
+    // stk.clear();
+    // RREP(i,n) {
+    //     while(stk.size()&&stk.back().f<c[i]) {
+    //         //add edge i->stk.back().s
+    //         g[i].pb({stk.back().s,2});
+    //         stk.pop_back();
+    //     }
+    //     stk.pb({c[i],i});
+    // }
     // REP(i,n) {
     //     op(i)
     //     for(auto [v,w]:g[i]) {
