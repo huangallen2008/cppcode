@@ -98,6 +98,7 @@ void flipPosition(int u) {
     cout<<'\n';
 }
 int pre(int u) {
+    cout<<"b:";REP(i,10) cout<<b[i]<<' ';entr
     int u1=(u>>maxb)<<maxb;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
