@@ -104,7 +104,7 @@ int pre(int u) {
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
-    // op(u)op(u1)ope(r)
+    op(u)op(u1)ope(r)
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
     // if(1){op(u)op(u1)ope(r)}
     return r;
