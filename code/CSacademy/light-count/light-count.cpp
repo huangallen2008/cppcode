@@ -67,10 +67,8 @@ struct RandGen {
 #define int8 int8_t
 int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
-int n;
 void init(int N, int M) {
-    // n=N+(2<<maxb);
-    n=maxnb;
+
 }
 int lowbit(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
@@ -91,7 +89,7 @@ void flipPosition(int u) {
     if(a[u]) {
         u>>=maxb;
         // cout<<u<<" ty+ ";
-        for(;u<=n;u+=lowbit2(u)) {
+        for(;u<=maxnb;u+=lowbit2(u)) {
             // cout<<u<<' ';
             // ope(u)
             b[u]++;
@@ -100,7 +98,7 @@ void flipPosition(int u) {
     else {
         u>>=maxb;
         // cout<<u<<" ty- ";
-        for(;u<=n;u+=lowbit2(u)) {
+        for(;u<=maxnb;u+=lowbit2(u)) {
             // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
