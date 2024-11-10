@@ -106,8 +106,9 @@ int pre(int u) {
 }
 int getCount(int st, int fn) {
     st++,fn++;
-    cout<<st<<' '<<st<<' '<<pre(fn)-pre(st-1)<<'\n';
-    return pre(fn)-pre(st-1);
+    int ret=pre(fn)-pre(st-1);
+    cout<<st<<' '<<st<<' '<<ret<<'\n';
+    return ret;
 }
 int main() {
     IOS();
