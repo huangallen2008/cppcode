@@ -69,30 +69,20 @@ int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
 int n;
 void init(int N, int M) {
-    n=(N>>maxb)+5;
-}
-int lowbit(int x) {
-    int lg=__lg(x&-x);///maxb*maxb;
-    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return x&(1)<<(lg);
-}
-int lowbit2(int x) {
-    int lg=__lg(x&-x);///maxb*maxb;
-    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return 1<<(lg);
+    // n=(N>>maxb)+5;
 }
 void flipPosition(int u) {
     u+=1<<maxb;
     a[u]=a[u]^1;
     if(a[u]) {
         u>>=maxb;
-        for(;u<=n;u+=lowbit2(u)) {
+        for(;u<=maxnb;u+=u&-u) {
             b[u]++;
         }
     }
     else {
         u>>=maxb;
-        for(;u<=n;u+=lowbit2(u)) {
+        for(;u<=maxnb;u+=u&-u) {
             b[u]--;
         }
     }
@@ -103,7 +93,7 @@ int pre(int u) {
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
-    for(;u1>0;u1^=lowbit(u1)) r+=b[u1];
+    for(;u1>0;u1^=u&-u) r+=b[u1];
     return r;
 }
 int getCount(int st, int fn) {
