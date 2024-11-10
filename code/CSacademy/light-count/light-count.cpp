@@ -69,20 +69,20 @@ int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
 int n;
 void init(int N, int M) {
-    // n=(N>>maxb)+5;
+    n=(N>>maxb)+5;
 }
 void flipPosition(int u) {
     u+=1<<maxb;
     a[u]=a[u]^1;
     if(a[u]) {
         u>>=maxb;
-        for(;u<=maxnb;u+=u&-u) {
+        for(;u<=n;u+=u&-u) {
             b[u]++;
         }
     }
     else {
         u>>=maxb;
-        for(;u<=maxnb;u+=u&-u) {
+        for(;u<=n;u+=u&-u) {
             b[u]--;
         }
     }
