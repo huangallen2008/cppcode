@@ -66,7 +66,7 @@ void solve() {
     Vi pdp(n+1);
     REP1(i,n) pdp[i]=pdp[i-1]+dp[i];
     oparr(dp)oparr(rdp)oparr(pdp)
-    int an=inf;
+    int an=0;
     REP1(i,n) {
         int rcnt=rdp[i+1];
         int lid=lower_bound(ALL(pdp),m-rcnt)-pdp.begin();
