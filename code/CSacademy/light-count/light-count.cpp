@@ -41,6 +41,7 @@ using namespace std;
 // const int mod=30011;
 const int maxn=5e7+5;
 const int maxb=2;
+const int all=(1<<maxb)-1;
 const int maxnb=maxn>>maxb;
 // const int maxc=26;
 // const int inf=(1ll<<62); 
@@ -71,7 +72,11 @@ void init(int N, int M) {
 }
 int lowbit(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
-    assert(lg%maxb==0);
+    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
+    return x&(all)<<(lg);
+}
+int lowbit2(int x) {
+    int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     return 1<<(lg);
 }
@@ -84,7 +89,7 @@ void flipPosition(int u) {
     if(a[u]) {
         u>>=maxb;
         // cout<<u<<" ty+ ";
-        for(;u<=maxnb;u+=lowbit(u)) {
+        for(;u<=maxnb;u+=lowbit2(u)) {
             // cout<<u<<' ';
             // ope(u)
             b[u]++;
@@ -93,7 +98,7 @@ void flipPosition(int u) {
     else {
         u>>=maxb;
         // cout<<u<<" ty- ";
-        for(;u<=maxnb;u+=lowbit(u)) {
+        for(;u<=maxnb;u+=lowbit2(u)) {
             // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
