@@ -102,6 +102,7 @@ void flipPosition(int u) {
     // cout<<'\n';
 }
 int pre(int u) {
+    if(u<0) return 0;
     // ope("op1")
     // cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
     int u1=((u>>maxb)<<maxb)-1;
