@@ -71,49 +71,49 @@ void init(int N, int M) {
 }
 int lowbit(int x) {
     int lg=__lg(x&-x);
-    op("lb")op(x)ope(1<<(lg/maxb*maxb))
+    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     return 1<<(lg/maxb*maxb);
 }
 void flipPosition(int u) {
     u++;
     // u+=maxb;
     a[u]=a[u]^1;
-    REP(i,10) cout<<a[i];cout<<'\n';
+    // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        cout<<u<<" ty+ ";
+        // cout<<u<<" ty+ ";
         for(;u<=maxnb;u+=lowbit(u)) {
-            cout<<u<<' ';
+            // cout<<u<<' ';
             b[u]++;
         }
     }
     else {
         u>>=maxb;
-        cout<<u<<" ty- ";
+        // cout<<u<<" ty- ";
         for(;u<=maxnb;u+=lowbit(u)) {
-            cout<<u<<' ';
+            // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
         }
     }
-    cout<<'\n';
+    // cout<<'\n';
 }
 int pre(int u) {
-    cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
+    // cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
     int u1=((u>>maxb)<<maxb)-1;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
-    op(u)op(u1)ope(r)
+    // op(u)op(u1)ope(r)
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1],op(u1);
-    if(1){op(u)op(u1)ope(r)}
+    // if(1){op(u)op(u1)ope(r)}
     return r;
 }
 int getCount(int st, int fn) {
     st++,fn++;
     // st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    cout<<st<<' '<<fn<<' '<<ret<<'\n';
+    // cout<<st<<' '<<fn<<' '<<ret<<'\n';
     return ret;
 }
 int main() {
