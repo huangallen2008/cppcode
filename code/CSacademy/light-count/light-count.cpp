@@ -77,16 +77,16 @@ void flipPosition(int u) {
     u++;
     a[u]=a[u]^1;
     if(a[u]) {
-        cout<<u<<" ty1 ";
         u>>=maxb;
+        cout<<u<<" ty1 ";
         for(;u<=maxnb;u+=lowbit(u)) {
             cout<<u<<' ';
             b[u]++;
         }
     }
     else {
-        cout<<u<<" ty-1 ";
         u>>=maxb;
+        cout<<u<<" ty-1 ";
         for(;u<=maxnb;u+=lowbit(u)) {
             cout<<u<<' ';
             b[u]--;
