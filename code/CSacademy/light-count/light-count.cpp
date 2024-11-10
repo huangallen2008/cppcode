@@ -116,6 +116,7 @@ int pre(int u) {
     return r;
 }
 int getCount(int st, int fn) {
+    op(st)ope(fn)
     // st++,fn++;
     st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
