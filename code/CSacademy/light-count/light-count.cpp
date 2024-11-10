@@ -76,6 +76,7 @@ int lowbit(int x) {
 void flipPosition(int u) {
     u++;
     a[u]=a[u]^1;
+    REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
         cout<<u<<" ty+ ";
