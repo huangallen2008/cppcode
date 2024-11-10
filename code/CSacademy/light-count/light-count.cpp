@@ -82,7 +82,7 @@ void flipPosition(int u) {
     // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        // cout<<u<<" ty+ ";
+        cout<<u<<" ty+ ";
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             b[u]++;
@@ -90,7 +90,7 @@ void flipPosition(int u) {
     }
     else {
         u>>=maxb;
-        // cout<<u<<" ty- ";
+        cout<<u<<" ty- ";
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             b[u]--;
