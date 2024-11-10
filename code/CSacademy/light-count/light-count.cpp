@@ -76,6 +76,7 @@ int lowbit(int x) {
 }
 void flipPosition(int u) {
     u++;
+    ope("f1")
     // u+=maxb;
     a[u]=a[u]^1;
     // REP(i,10) cout<<a[i];cout<<'\n';
@@ -95,6 +96,7 @@ void flipPosition(int u) {
             b[u]--;
             // if(b[u]<0) ope(u)
         }
+    ope("f2")
     }
     // cout<<'\n';
 }
