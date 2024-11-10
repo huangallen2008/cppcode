@@ -89,6 +89,7 @@ void flipPosition(int u) {
     }
 }
 int pre(int u) {
+    u++;
     int u1=(u>>maxb)<<maxb;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[u];
@@ -97,9 +98,26 @@ int pre(int u) {
     return r;
 }
 int getCount(int st, int fn) {
+    st++,fn++;
     return pre(fn)-pre(st);
 }
+// int main() {
+//     int n,m;
+//     cin>>n>>m;
+//     REP(i,m) {
+//         int opt;
+//         cin>>opt;
+//         if(opt==0) {
+//             int u;
+//             cin>>u;
+//             flipPosition(u);
+//         }
+//         else {
+//             int l,r;
 
+//         }
+//     }
+// }
 int main() {
     IOS();
     int N, M;
