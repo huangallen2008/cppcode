@@ -107,6 +107,7 @@ void solve() {
             }
         }
     }
+    oparr(dis)
     if(dis[n-1]==inf) {
         cout<<"No\n";
         return;
