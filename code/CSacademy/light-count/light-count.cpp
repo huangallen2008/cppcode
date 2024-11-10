@@ -70,7 +70,6 @@ bitset<maxn> a;
 int n;
 void init(int N, int M) {
     n=(N>>maxb)+10;
-    ope(maxnb)ope(n)
 }
 int lowbit(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
