@@ -80,6 +80,7 @@ void solve() {
         }
         stk.pb({c[i],i});
     }
+    ope("ok")
     Vi dis(n,inf);
     queue<int> q;
     q.push(0);
