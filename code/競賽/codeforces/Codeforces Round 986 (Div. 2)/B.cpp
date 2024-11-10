@@ -52,13 +52,13 @@ void solve() {
     cin>>n>>d>>a;
     int la=a+(n-1)*d;
     if(d==0) {
-        if(a<n-2) cout<<"NO\n";
+        if(a<n-2) cout<<"-1\n";
         else {
             cout<<n<<'\n';
         }
     }
     else {
-        int cnt=(n-a)/d+1;
+        int cnt=(n-1-a)/d+1;
         cout<<n-cnt<<'\n';
     }
 }
