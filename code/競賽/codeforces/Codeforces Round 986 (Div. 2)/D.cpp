@@ -121,6 +121,7 @@ void solve() {
         t=pre[t];
     }
     reverse(ALL(an));
+    cout<<an.size()<<'\n';
     for(auto [x,y]:an) {
         if(y==0) cout<<"q ";
         if(y==1) cout<<"k ";
