@@ -70,9 +70,9 @@ void init(int N, int M) {
 
 }
 int lowbit(int x) {
-    int lg=__lg(x&-x);
+    int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return 1<<(lg/maxb*maxb);
+    return 1<<(lg);
 }
 void flipPosition(int u) {
     // u++;
