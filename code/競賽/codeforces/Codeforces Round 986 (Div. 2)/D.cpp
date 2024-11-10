@@ -128,31 +128,34 @@ void solve() {
     // }
 
     REP(i,n) {
-        while(stk.size()&&stk.back().f>a[i]) {
+        while(stk.size()&&stk.back().f<a[i]) {
             //add edge i->stk.back().s
-            g[stk.back().s].pb({i,0});
             stk.pop_back();
         }
+        if(stk.size())
+            g[stk.back().s].pb({i,0});
         stk.pb({a[i],i});
     }
     stk.clear();
     REP(i,n) {
-        while(stk.size()&&stk.back().f>b[i]) {
+        while(stk.size()&&stk.back().f<b[i]) {
             //add edge i->stk.back().s
             // g[i].pb({stk.back().s,1});
-            g[stk.back().s].pb({i,1});
             stk.pop_back();
         }
+        if(stk.size())
+            g[stk.back().s].pb({i,1});
         stk.pb({b[i],i});
     }
     stk.clear();
     REP(i,n) {
-        while(stk.size()&&stk.back().f>c[i]) {
+        while(stk.size()&&stk.back().f<c[i]) {
             //add edge i->stk.back().s
-            g[stk.back().s].pb({i,2});
             // g[i].pb({stk.back().s,2});
             stk.pop_back();
         }
+        if(stk.size())
+            g[stk.back().s].pb({i,2});
         stk.pb({c[i],i});
     }
     // REP(i,n) {
