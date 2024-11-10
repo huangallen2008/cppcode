@@ -74,7 +74,7 @@ int lowbit(int x) {
     return 1<<(lg/maxb*maxb);
 }
 void flipPosition(int u) {
-    a[u]^=1;
+    a[u]=a[u]^1;
     if(a[u]) {
         u>>=maxb;
         for(;u<=maxnb;u+=lowbit(u)) {
