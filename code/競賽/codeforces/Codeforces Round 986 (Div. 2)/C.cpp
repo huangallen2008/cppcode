@@ -64,13 +64,14 @@ void solve() {
         if(id>n+1) continue;
         rdp[i]=rdp[id]+1;
     }
-    Vi pdp(n+1);
-    REP1(i,n) pdp[i]=pdp[i-1]+dp[i];
-    oparr(p)oparr(dp)oparr(rdp)oparr(pdp)
+    // Vi pdp(n+1);
+    // REP1(i,n) pdp[i]=pdp[i-1]+dp[i];
+    oparr(p)oparr(dp)oparr(rdp)
+    // oparr(pdp)
     int an=0;
     REP1(i,n) {
         int rcnt=rdp[i+1];
-        int lid=lower_bound(ALL(pdp),m-rcnt)-pdp.begin();
+        int lid=lower_bound(ALL(dp),m-rcnt)-dp.begin();
         chmax(an,p[i]-p[lid]);
     }
     cout<<an<<'\n';
