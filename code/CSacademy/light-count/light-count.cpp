@@ -90,6 +90,7 @@ void flipPosition(int u) {
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             b[u]--;
+            if(b[u]<0) ope(u)
         }
     }
     // cout<<'\n';
@@ -100,7 +101,7 @@ int pre(int u) {
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
-    op(u)op(u1)ope(r)
+    // op(u)op(u1)ope(r)
     return r;
 }
 int getCount(int st, int fn) {
