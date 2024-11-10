@@ -75,7 +75,8 @@ int lowbit(int x) {
     return 1<<(lg/maxb*maxb);
 }
 void flipPosition(int u) {
-    // u+=1<<maxb;
+    u++;
+    // u+=maxb;
     a[u]=a[u]^1;
     REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
@@ -109,9 +110,10 @@ int pre(int u) {
     return r;
 }
 int getCount(int st, int fn) {
+    st++,fn++;
     // st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    op("!!!!!!!!!!!!!!!!!!!!!")cout<<st<<' '<<fn<<' '<<ret<<'\n';
+    cout<<st<<' '<<fn<<' '<<ret<<'\n';
     return ret;
 }
 int main() {
