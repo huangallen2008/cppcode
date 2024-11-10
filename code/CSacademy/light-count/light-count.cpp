@@ -80,7 +80,7 @@ void flipPosition(int u) {
         // cout<<u<<" ty1 ";
         u>>=maxb;
         for(;u<=maxnb;u+=lowbit(u)) {
-            cout<<lowbit(u)<<' ';
+            // cout<<lowbit(u)<<' ';
             b[u]++;
         }
     }
@@ -90,10 +90,10 @@ void flipPosition(int u) {
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             b[u]--;
-            if(b[u]<0) ope(u)
+            // if(b[u]<0) ope(u)
         }
     }
-    cout<<'\n';
+    // cout<<'\n';
 }
 int pre(int u) {
     int u1=(u>>maxb)<<maxb;
