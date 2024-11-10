@@ -85,7 +85,7 @@ void flipPosition(int u) {
         cout<<u<<" ty+ ";
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
-            ope(u)
+            // ope(u)
             b[u]++;
         }
     }
