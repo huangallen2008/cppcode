@@ -59,8 +59,11 @@ void solve() {
         }
     }
     else {
-        int cnt=(n-1-a)/d+1;
-        cout<<n-cnt<<'\n';
+        if(n<=a) cout<<n<<'\n';
+        else {
+            int cnt=(n-1-a)/d+1;
+            cout<<n-cnt<<'\n';
+        }
     }
 }
 signed main() {
