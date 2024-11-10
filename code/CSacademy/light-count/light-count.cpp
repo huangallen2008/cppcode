@@ -93,7 +93,7 @@ void flipPosition(int u) {
             if(b[u]<0) ope(u)
         }
     }
-    // cout<<'\n';
+    cout<<'\n';
 }
 int pre(int u) {
     int u1=(u>>maxb)<<maxb;
