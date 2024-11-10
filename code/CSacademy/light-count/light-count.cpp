@@ -110,9 +110,9 @@ int pre(int u) {
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
     // op(u)op(u1)ope(r)
-            int r0=r;
+            // int r0=r;
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
-    if(r<0){op(u)op(u1)op(r0)ope(r)}
+    // if(r<0){op(u)op(u1)op(r0)ope(r)}
     // ope("op2")
     return r;
 }
