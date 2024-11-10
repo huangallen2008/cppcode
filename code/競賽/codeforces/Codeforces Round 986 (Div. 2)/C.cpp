@@ -60,19 +60,19 @@ void solve() {
     }
     RREP1(i,n) {
         int id=(lower_bound(ALL(p),p[i-1]+v)-p.begin())+1;
-        op(i)ope(id)
+        // op(i)ope(id)
         if(id>n+1) continue;
         rdp[i]=rdp[id]+1;
     }
     // Vi pdp(n+1);
     // REP1(i,n) pdp[i]=pdp[i-1]+dp[i];
-    oparr(p)oparr(dp)oparr(rdp)
+    // oparr(p)oparr(dp)oparr(rdp)
     // oparr(pdp)
     int an=-1;
-    REP1(i,n) {
+    REP(i,n+1) {
         int rcnt=rdp[i+1];
         int lid=lower_bound(ALL(dp),m-rcnt)-dp.begin();
-        chmax(an,p[i]-p[lid]);
+        if(i>=lid)chmax(an,p[i]-p[lid]);
     }
     cout<<an<<'\n';
 }
