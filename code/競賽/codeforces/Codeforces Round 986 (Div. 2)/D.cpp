@@ -54,7 +54,9 @@ void solve() {
     REP(i,n) cin>>a0[i];
     REP(i,n) cin>>b[i];
     REP(i,n) cin>>c[i];
-    reverse();
+    reverse(ALL(a0));
+    reverse(ALL(b));
+    reverse(ALL(c));
     // Vi stk;
     vector<pii> stk;
     Graphw g(n);
