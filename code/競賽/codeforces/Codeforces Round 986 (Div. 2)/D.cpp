@@ -50,116 +50,118 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi a0(n),b(n),c(n);
-    REP(i,n) cin>>a0[i];
+    Vi a(n),b(n),c(n);
+    REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
     REP(i,n) cin>>c[i];
-    reverse(ALL(a0));
-    reverse(ALL(b));
-    reverse(ALL(c));
-    // Vi stk;
     vector<pii> stk;
     Graphw g(n);
-    {
-    int ll=-1,lr=0;
-        Vi a=a0;
-    REP1(i,n-1) {
-        //!!ll=-1
-        if(a[i]<a[i-1]) {
-            ll=lr,lr=i+1;
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,0});
-        }
-        else {
-            if(ll!=-1) {
-                ////
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,0});
-            }
-            g[n-i-1].pb({n-(i-1)-1,0});
-        }
-    }
-    }
-    {
-    int ll=-1,lr=0;
-        Vi a=b;
-    REP1(i,n-1) {
-        //!!ll=-1
-        if(a[i]<a[i-1]) {
-            ll=lr,lr=i+1;
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,1});
-        }
-        else {
-            if(ll!=-1) {
-                ////
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,1});
-            }
-            g[n-i-1].pb({n-(i-1)-1,1});
-        }
-    }
-    }
-    {
-    int ll=-1,lr=0;
-        Vi a=c;
-    REP1(i,n-1) {
-        //!!ll=-1
-        if(a[i]<a[i-1]) {
-            ll=lr,lr=i+1;
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,2});
-        }
-        else {
-            if(ll!=-1) {
-                ////
-            int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
-            if(id<ll) continue;
-            g[n-i-1].pb({n-(id)-1,2});
-            }
-            g[n-i-1].pb({n-(i-1)-1,2});
-        }
-    }
-    }
+    // reverse(ALL(a0));
+    // reverse(ALL(b));
+    // reverse(ALL(c));
+    // // Vi stk;
+    // {
+    // int ll=-1,lr=0;
+    //     Vi a=a0;
+    // REP1(i,n-1) {
+    //     //!!ll=-1
+    //     if(a[i]<a[i-1]) {
+    //         ll=lr,lr=i+1;
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,0});
+    //     }
+    //     else {
+    //         if(ll!=-1) {
+    //             ////
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,0});
+    //         }
+    //         g[n-i-1].pb({n-(i-1)-1,0});
+    //     }
+    // }
+    // }
+    // {
+    // int ll=-1,lr=0;
+    //     Vi a=b;
+    // REP1(i,n-1) {
+    //     //!!ll=-1
+    //     if(a[i]<a[i-1]) {
+    //         ll=lr,lr=i+1;
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,1});
+    //     }
+    //     else {
+    //         if(ll!=-1) {
+    //             ////
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,1});
+    //         }
+    //         g[n-i-1].pb({n-(i-1)-1,1});
+    //     }
+    // }
+    // }
+    // {
+    // int ll=-1,lr=0;
+    //     Vi a=c;
+    // REP1(i,n-1) {
+    //     //!!ll=-1
+    //     if(a[i]<a[i-1]) {
+    //         ll=lr,lr=i+1;
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,2});
+    //     }
+    //     else {
+    //         if(ll!=-1) {
+    //             ////
+    //         int id=(upper_bound(a.begin()+ll,a.begin()+lr,a[i])-a.begin())-1;
+    //         if(id<ll) continue;
+    //         g[n-i-1].pb({n-(id)-1,2});
+    //         }
+    //         g[n-i-1].pb({n-(i-1)-1,2});
+    //     }
+    // }
+    // }
 
-    // RREP(i,n) {
-    //     while(stk.size()&&stk.back().f>a[i]) {
-    //         //add edge i->stk.back().s
-    //         g[i].pb({stk.back().s,0});
-    //         stk.pop_back();
-    //     }
-    //     stk.pb({a[i],i});
-    // }
-    // stk.clear();
-    // RREP(i,n) {
-    //     while(stk.size()&&stk.back().f<b[i]) {
-    //         //add edge i->stk.back().s
-    //         g[i].pb({stk.back().s,1});
-    //         stk.pop_back();
-    //     }
-    //     stk.pb({b[i],i});
-    // }
-    // stk.clear();
-    // RREP(i,n) {
-    //     while(stk.size()&&stk.back().f<c[i]) {
-    //         //add edge i->stk.back().s
-    //         g[i].pb({stk.back().s,2});
-    //         stk.pop_back();
-    //     }
-    //     stk.pb({c[i],i});
-    // }
-    // REP(i,n) {
-    //     op(i)
-    //     for(auto [v,w]:g[i]) {
-    //         cout<<v<<' '<<w<<' ';
-    //     }
-    //     entr
-    // }
+    REP(i,n) {
+        while(stk.size()&&stk.back().f>a[i]) {
+            //add edge i->stk.back().s
+            g[stk.back().s].pb({i,0});
+            stk.pop_back();
+        }
+        stk.pb({a[i],i});
+    }
+    stk.clear();
+    REP(i,n) {
+        while(stk.size()&&stk.back().f<b[i]) {
+            //add edge i->stk.back().s
+            // g[i].pb({stk.back().s,1});
+            g[stk.back().s].pb({i,1});
+            stk.pop_back();
+        }
+        stk.pb({b[i],i});
+    }
+    stk.clear();
+    REP(i,n) {
+        while(stk.size()&&stk.back().f<c[i]) {
+            //add edge i->stk.back().s
+            g[stk.back().s].pb({i,2});
+            // g[i].pb({stk.back().s,2});
+            stk.pop_back();
+        }
+        stk.pb({c[i],i});
+    }
+    REP(i,n) {
+        op(i)
+        for(auto [v,w]:g[i]) {
+            cout<<v<<' '<<w<<' ';
+        }
+        entr
+    }
     Vi dis(n,inf);
     queue<int> q;
     q.push(0);
