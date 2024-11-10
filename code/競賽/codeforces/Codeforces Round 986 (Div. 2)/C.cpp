@@ -69,7 +69,7 @@ void solve() {
     REP1(i,n) {
         int rcnt=rdp[i+1];
         int lid=lower_bound(ALL(pdp),m-rcnt)-pdp.begin();
-        chmax(p[i]-p[lid]);
+        chmax(an,p[i]-p[lid]);
     }
     cout<<an<<'\n';
 }
