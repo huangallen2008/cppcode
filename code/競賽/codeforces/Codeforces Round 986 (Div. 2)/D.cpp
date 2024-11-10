@@ -60,8 +60,8 @@ void solve() {
     // Vi stk;
     vector<pii> stk;
     Graphw g(n);
-    int ll=-1,lr=0;
     {
+    int ll=-1,lr=0;
         Vi a=a0;
     REP1(i,n-1) {
         //!!ll=-1
@@ -83,6 +83,7 @@ void solve() {
     }
     }
     {
+    int ll=-1,lr=0;
         Vi a=b;
     REP1(i,n-1) {
         //!!ll=-1
@@ -104,6 +105,7 @@ void solve() {
     }
     }
     {
+    int ll=-1,lr=0;
         Vi a=c;
     REP1(i,n-1) {
         //!!ll=-1
