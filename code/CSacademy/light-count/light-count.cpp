@@ -71,7 +71,7 @@ void init(int N, int M) {
 
 }
 int lowbit(int x) {
-    int lg=__lg(x&-x)>>maxb<<maxb;
+    int lg=(__lg(x&-x)>>maxb)<<maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     return x&(all)<<(lg);
 }
