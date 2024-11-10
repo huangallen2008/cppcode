@@ -68,7 +68,7 @@ void solve() {
         if(c=='S') tt.pb(2);
         if(c=='W') tt.pb(3);
     }
-    REP(i,11) {
+    REP(i,50) {
         for(int x:tt) d.pb(x);
     }
     for(int dd:d) {
