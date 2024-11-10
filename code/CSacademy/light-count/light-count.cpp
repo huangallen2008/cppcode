@@ -72,12 +72,12 @@ void init(int N, int M) {
     n=(N>>maxb)+5;
 }
 int lowbit(int x) {
-    int lg=__lg(x&-x)/maxb*maxb;
+    int lg=__lg(x&-x);///maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return x&(all)<<(lg);
+    return x&(1)<<(lg);
 }
 int lowbit2(int x) {
-    int lg=__lg(x&-x)/maxb*maxb;
+    int lg=__lg(x&-x);///maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     return 1<<(lg);
 }
