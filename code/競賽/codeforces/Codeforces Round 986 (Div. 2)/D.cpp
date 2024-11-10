@@ -103,6 +103,7 @@ void solve() {
                 dis[v]=dis[u]+1;
                 pre[v]=u;
                 val[v]=w;
+                q.push(v);
             }
         }
     }
