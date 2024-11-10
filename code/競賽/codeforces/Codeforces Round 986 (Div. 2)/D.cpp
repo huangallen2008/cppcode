@@ -108,7 +108,7 @@ void solve() {
             }
         }
     }
-    oparr(dis)
+    oparr(dis)oparr(pre)oparr(val)
     if(dis[n-1]==inf) {
         cout<<"No\n";
         return;
@@ -125,7 +125,7 @@ void solve() {
         if(y==0) cout<<"q ";
         if(y==1) cout<<"k ";
         if(y==2) cout<<"j ";
-        cout<<x<<'\n';
+        cout<<x+1<<'\n';
     }
 }
 signed main() {
