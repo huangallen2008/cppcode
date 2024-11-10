@@ -104,7 +104,7 @@ int pre(int u) {
 }
 int getCount(int st, int fn) {
     st++,fn++;
-    cout<<st<<' '<<st<<' '<<pre(fn)-pre(st)<<'\n';
+    cout<<st<<' '<<st<<' '<<pre(fn)-pre(st-1)<<'\n';
     return pre(fn)-pre(st-1);
 }
 // int main() {
