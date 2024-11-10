@@ -64,6 +64,7 @@ void solve() {
         }
         stk.pb({a[i],i});
     }
+    ope("ok")
     stk.clear();
     RREP(i,n) {
         while(stk.size()&&stk.back().f<b[i]) {
@@ -80,7 +81,6 @@ void solve() {
         }
         stk.pb({c[i],i});
     }
-    ope("ok")
     Vi dis(n,inf);
     queue<int> q;
     q.push(0);
