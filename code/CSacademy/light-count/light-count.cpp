@@ -64,7 +64,7 @@ struct RandGen {
     }
 };
 #define int8 int8_t
-int8 b[maxnb+1];
+int b[maxnb+1];
 bitset<maxn> a;
 void init(int N, int M) {
 
