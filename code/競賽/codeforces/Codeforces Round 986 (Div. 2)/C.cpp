@@ -66,7 +66,7 @@ void solve() {
     }
     Vi pdp(n+1);
     REP1(i,n) pdp[i]=pdp[i-1]+dp[i];
-    oparr(dp)oparr(rdp)oparr(pdp)
+    oparr(p)oparr(dp)oparr(rdp)oparr(pdp)
     int an=0;
     REP1(i,n) {
         int rcnt=rdp[i+1];
