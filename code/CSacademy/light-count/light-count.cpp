@@ -76,17 +76,22 @@ int lowbit(int x) {
 void flipPosition(int u) {
     a[u]=a[u]^1;
     if(a[u]) {
+        cout<<u<<" ty1 ";
         u>>=maxb;
         for(;u<=maxnb;u+=lowbit(u)) {
+            cout<<u<<' ';
             b[u]++;
         }
     }
     else {
+        cout<<u<<" ty-1 ";
         u>>=maxb;
         for(;u<=maxnb;u+=lowbit(u)) {
+            cout<<u<<' ';
             b[u]--;
         }
     }
+    cout<<'\n';
 }
 int pre(int u) {
     u++;
@@ -99,6 +104,7 @@ int pre(int u) {
 }
 int getCount(int st, int fn) {
     st++,fn++;
+    cout<<pre(fn)-pre(st)<<'\n';
     return pre(fn)-pre(st);
 }
 // int main() {
