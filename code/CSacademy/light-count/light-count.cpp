@@ -40,7 +40,7 @@ using namespace std;
 #endif
 // const int mod=30011;
 const int maxn=5e7+5;
-const int maxb=1;
+const int maxb=2;
 const int all=(1<<maxb)-1;
 const int maxnb=maxn>>maxb;
 // const int maxc=26;
