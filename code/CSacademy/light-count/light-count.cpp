@@ -67,22 +67,22 @@ struct RandGen {
 #define int8 int8_t
 int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
-int n;
+// int n;
 void init(int N, int M) {
-    n=(N>>maxb)+5;
+    // n=(N>>maxb)+5;
 }
 void flipPosition(int u) {
     u+=1<<maxb;
     a[u]=a[u]^1;
     if(a[u]) {
         u>>=maxb;
-        for(;u<=n;u+=u&-u) {
+        for(;u<=maxnb;u+=u&-u) {
             b[u]++;
         }
     }
     else {
         u>>=maxb;
-        for(;u<=n;u+=u&-u) {
+        for(;u<=maxnb;u+=u&-u) {
             b[u]--;
         }
     }
