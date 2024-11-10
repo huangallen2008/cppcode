@@ -48,7 +48,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int n,v;
+    int n,m,v;
     cin>>n>>m>>v;
     Vi a(n+1),p(n+1);
     REP1(i,n) cin>>a[i],p[i]=p[i-1]+a[i];
