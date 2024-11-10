@@ -61,7 +61,7 @@ void solve() {
     RREP1(i,n) {
         int id=(lower_bound(ALL(p),p[i-1]+v)-p.begin())+1;
         op(i)ope(id)
-        if(id>n) continue;
+        if(id>n+1) continue;
         rdp[i]=rdp[id]+1;
     }
     Vi pdp(n+1);
