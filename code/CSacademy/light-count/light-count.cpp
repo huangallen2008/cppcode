@@ -97,7 +97,7 @@ void flipPosition(int u) {
 int pre(int u) {
     int u1=(u>>maxb)<<maxb;
     int r=0;
-    for(int i=u1+1;i<=u;i++) r+=a[u];
+    for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
     op(u)op(u1)ope(r)
