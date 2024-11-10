@@ -91,7 +91,7 @@ signed main() {
     REP(i,m) if(!vis[n+i]) ok2=0;
     if(!ok1&&!ok2) {
         cout<<"-1\n";
-        return;
+        return 0;
     }
     return 0;
 }
