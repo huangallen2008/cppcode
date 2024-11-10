@@ -74,6 +74,7 @@ int lowbit(int x) {
     return 1<<(lg/maxb*maxb);
 }
 void flipPosition(int u) {
+    u++;
     a[u]=a[u]^1;
     if(a[u]) {
         cout<<u<<" ty1 ";
@@ -94,7 +95,6 @@ void flipPosition(int u) {
     cout<<'\n';
 }
 int pre(int u) {
-    u++;
     int u1=(u>>maxb)<<maxb;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[u];
