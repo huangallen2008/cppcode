@@ -96,7 +96,7 @@ void flipPosition(int u) {
     // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        cout<<u<<" ty+ ";
+        // cout<<u<<" ty+ ";
         for(;u<=n;u=nxt(u)) {
             // cout<<u<<' ';
             // ope(u)
