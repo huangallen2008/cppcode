@@ -69,7 +69,7 @@ int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
 int n;
 void init(int N, int M) {
-    n=N+(1<<maxb)+100;
+    n=(N>>maxnb)+10;
     // n=maxnb;
     ope(n)
 }
