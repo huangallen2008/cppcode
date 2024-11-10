@@ -101,6 +101,7 @@ int getCount(int st, int fn) {
 }
 
 int main() {
+    IOS();
     int N, M;
     RandGen rng;
     cin >> N >> M >> rng.x >> rng.y >> rng.z;
@@ -125,10 +126,4 @@ int main() {
     }
 
     cout << hashSol << "\n";
-}
-
-
-signed main() {
-    IOS();
-    return 0;
 }
