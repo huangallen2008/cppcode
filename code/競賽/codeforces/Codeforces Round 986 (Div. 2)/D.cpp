@@ -167,7 +167,7 @@ void solve() {
     Vi pre(n),val(n);
     while(q.size()) {
         int u=q.front();
-        ope(u)
+        // ope(u)
         q.pop();
         for(auto [v,w]:g[u]) {
             if(dis[v]>dis[u]+1) {
