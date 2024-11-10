@@ -137,7 +137,7 @@ void solve() {
     }
     stk.clear();
     REP(i,n) {
-        while(stk.size()&&stk.back().f<b[i]) {
+        while(stk.size()&&stk.back().f>b[i]) {
             //add edge i->stk.back().s
             // g[i].pb({stk.back().s,1});
             g[stk.back().s].pb({i,1});
@@ -147,7 +147,7 @@ void solve() {
     }
     stk.clear();
     REP(i,n) {
-        while(stk.size()&&stk.back().f<c[i]) {
+        while(stk.size()&&stk.back().f>c[i]) {
             //add edge i->stk.back().s
             g[stk.back().s].pb({i,2});
             // g[i].pb({stk.back().s,2});
