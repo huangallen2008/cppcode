@@ -85,8 +85,8 @@ int nxt(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     x&=~(all<<lg);
-    cout<<x<<' '<<lg<<'\n';entr
-    return x+lowbit(x);
+    // cout<<x<<' '<<lg<<'\n';entr
+    return x+(1<<lg+maxb);
 }
 void flipPosition(int u) {
     // u++;
