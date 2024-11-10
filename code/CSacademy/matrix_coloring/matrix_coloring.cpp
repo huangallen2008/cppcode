@@ -93,5 +93,19 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
+    int cnt=1;
+    unordered_map<string,int> mp1,mp2;
+    REP(i,n) {
+        string t;
+        REP(j,m) t+=c[i][j];
+        chmax(cnt,++mp1[t]);
+    }
+    REP(i,m) {
+        string t;
+        REP(j,n) t+=c[j][i];
+        chmax(cnt,++mp2[t]);
+    }
+    int an=n+m-cnt;
+    cout<<an<<'\n';
     return 0;
 }
