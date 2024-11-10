@@ -100,7 +100,7 @@ void flipPosition(int u) {
 }
 int pre(int u) {
     cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
-    int u1=(u>>maxb)<<maxb;
+    int u1=((u>>maxb)<<maxb)-1;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
