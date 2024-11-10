@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("Ofast,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
+// #pragma GCC target("avx,avx2,sse4.1,sse4.2,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -69,73 +69,46 @@ int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
 int n;
 void init(int N, int M) {
-    n=(N>>maxb)+10;
+    n=(N>>maxb)+5;
 }
 int lowbit(int x) {
-    // int lg=;
+    int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return 1<<(__lg(x&-x)/maxb*maxb);
+    return x&(all)<<(lg);
 }
 int lowbit2(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    return (1<<lg+maxb)-(x&(all)<<(lg));
-}
-int nxt(int x) {
-    int lg=__lg(x&-x)/maxb*maxb;
-    // op("lb")op(x)ope(1<<(lg/maxb*maxb))
-    x&=~(all<<lg);
-    // cout<<x<<' '<<lg<<'\n';entr
-    return x+(1<<lg+maxb);
+    return 1<<(lg);
 }
 void flipPosition(int u) {
-    // u++;
-    // ope("f1")
     u+=1<<maxb;
     a[u]=a[u]^1;
-    // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        // cout<<u<<" ty+ ";
-        for(;u<=n;u=nxt(u)) {
-            // cout<<u<<' ';
-            // ope(u)
+        for(;u<=n;u+=lowbit2(u)) {
             b[u]++;
         }
     }
     else {
         u>>=maxb;
-        cout<<u<<" ty- ";
-        for(;u<=n;u=nxt(u)) {
-            // cout<<u<<' ';
+        for(;u<=n;u+=lowbit2(u)) {
             b[u]--;
-            // if(b[u]<0) ope(u)
         }
     }
-    // ope("f2")
-    // cout<<'\n';
 }
 int pre(int u) {
     if(u<0) return 0;
-    // ope("op1")
-    // cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
     int u1=((u>>maxb)<<maxb)-1;
     int r=0;
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
-    // op(u)op(u1)ope(r)
-            // int r0=r;
-    for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
-    // if(r<0){op(u)op(u1)op(r0)ope(r)}
-    // ope("op2")
+    for(;u1>0;u1^=lowbit(u1)) r+=b[u1];
     return r;
 }
 int getCount(int st, int fn) {
-    // op(st)ope(fn)
-    // st++,fn++;
     st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    // if(ret<0)cout<<st<<' '<<fn<<' '<<ret<<' '<<pre(fn)<<' '<<pre(st-1)<<'\n';
     return ret;
 }
 int main() {
