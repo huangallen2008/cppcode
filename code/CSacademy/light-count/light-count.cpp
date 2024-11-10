@@ -76,13 +76,13 @@ int lowbit(int x) {
 }
 void flipPosition(int u) {
     // u++;
-    ope("f1")
+    // ope("f1")
     u+=1<<maxb;
     a[u]=a[u]^1;
     // REP(i,10) cout<<a[i];cout<<'\n';
     if(a[u]) {
         u>>=maxb;
-        cout<<u<<" ty+ ";
+        // cout<<u<<" ty+ ";
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             // ope(u)
@@ -91,18 +91,18 @@ void flipPosition(int u) {
     }
     else {
         u>>=maxb;
-        cout<<u<<" ty- ";
+        // cout<<u<<" ty- ";
         for(;u<=maxnb;u+=lowbit(u)) {
             // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
         }
     }
-    ope("f2")
+    // ope("f2")
     // cout<<'\n';
 }
 int pre(int u) {
-    ope("op1")
+    // ope("op1")
     // cout<<"b:";REP(i,10) cout<<(int)b[i]<<' ';entr
     int u1=((u>>maxb)<<maxb)-1;
     int r=0;
@@ -111,7 +111,7 @@ int pre(int u) {
     // op(u)op(u1)ope(r)
     for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
     // if(1){op(u)op(u1)ope(r)}
-    ope("op2")
+    // ope("op2")
     return r;
 }
 int getCount(int st, int fn) {
