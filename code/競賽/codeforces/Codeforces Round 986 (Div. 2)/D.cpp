@@ -117,7 +117,7 @@ void solve() {
     int t=n-1;
     vector<pii> an;
     while(t!=0) {
-        an.pb({val[t],t});
+        an.pb({t,val[t]});
         t=pre[t];
     }
     reverse(ALL(an));
