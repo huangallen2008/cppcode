@@ -121,7 +121,7 @@ int getCount(int st, int fn) {
     // st++,fn++;
     st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    cout<<st<<' '<<fn<<' '<<ret<<'\n';
+    // cout<<st<<' '<<fn<<' '<<ret<<'\n';
     return ret;
 }
 int main() {
