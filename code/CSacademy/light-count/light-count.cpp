@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
+#pragma GCC optimize("Ofast,unroll-loops,fast-math")
+// #pragma GCC target("avx2,sse4.1,sse4.2,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -40,7 +40,7 @@ using namespace std;
 #endif
 // const int mod=30011;
 const int maxn=5e7+5;
-const int maxb=5;
+const int maxb=6;
 const int all=(1<<maxb)-1;
 const int maxnb=maxn>>maxb;
 // const int maxc=26;
@@ -67,8 +67,9 @@ struct RandGen {
 #define int8 int8_t
 int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
+int n;
 void init(int N, int M) {
-
+    n=N+(2<<maxb);
 }
 int lowbit(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
@@ -89,7 +90,7 @@ void flipPosition(int u) {
     if(a[u]) {
         u>>=maxb;
         // cout<<u<<" ty+ ";
-        for(;u<=maxnb;u+=lowbit2(u)) {
+        for(;u<=n;u+=lowbit2(u)) {
             // cout<<u<<' ';
             // ope(u)
             b[u]++;
@@ -98,7 +99,7 @@ void flipPosition(int u) {
     else {
         u>>=maxb;
         // cout<<u<<" ty- ";
-        for(;u<=maxnb;u+=lowbit2(u)) {
+        for(;u<=n;u+=lowbit2(u)) {
             // cout<<u<<' ';
             b[u]--;
             // if(b[u]<0) ope(u)
@@ -116,8 +117,8 @@ int pre(int u) {
     for(int i=u1+1;i<=u;i++) r+=a[i];
     u1>>=maxb;
     // op(u)op(u1)ope(r)
-            int r0=r;
-    for(;u1>0;u1-=lowbit(u1)) r+=b[u1];
+            // int r0=r;
+    for(;u1>0;u1^=lowbit(u1)) r+=b[u1];
     // if(r<0){op(u)op(u1)op(r0)ope(r)}
     // ope("op2")
     return r;
@@ -127,7 +128,7 @@ int getCount(int st, int fn) {
     // st++,fn++;
     st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    if(ret<0)cout<<st<<' '<<fn<<' '<<ret<<' '<<pre(fn)<<' '<<pre(st-1)<<'\n';
+    // if(ret<0)cout<<st<<' '<<fn<<' '<<ret<<' '<<pre(fn)<<' '<<pre(st-1)<<'\n';
     return ret;
 }
 int main() {
