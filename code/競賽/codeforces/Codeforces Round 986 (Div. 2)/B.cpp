@@ -54,7 +54,8 @@ void solve() {
     if(d==0) {
         if(a<n-2) cout<<"-1\n";
         else {
-            cout<<n<<'\n';
+            if(a<=n-1) cout<<n-1<<'\n';
+            else cout<<n<<'\n';
         }
     }
     else {
