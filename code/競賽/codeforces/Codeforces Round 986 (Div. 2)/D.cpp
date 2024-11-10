@@ -50,8 +50,8 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi (n),b(n),c(n);
-    REP(i,n) cin>>a[i];
+    Vi a0(n),b(n),c(n);
+    REP(i,n) cin>>a0[i];
     REP(i,n) cin>>b[i];
     REP(i,n) cin>>c[i];
     reverse();
