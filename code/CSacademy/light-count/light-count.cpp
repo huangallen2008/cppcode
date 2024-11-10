@@ -108,23 +108,6 @@ int getCount(int st, int fn) {
     // cout<<st<<' '<<st<<' '<<pre(fn)-pre(st-1)<<'\n';
     return pre(fn)-pre(st-1);
 }
-// int main() {
-//     int n,m;
-//     cin>>n>>m;
-//     REP(i,m) {
-//         int opt;
-//         cin>>opt;
-//         if(opt==0) {
-//             int u;
-//             cin>>u;
-//             flipPosition(u);
-//         }
-//         else {
-//             int l,r;
-
-//         }
-//     }
-// }
 int main() {
     IOS();
     int N, M;
