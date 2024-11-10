@@ -64,13 +64,14 @@ struct RandGen {
     }
 };
 #define int8 int8_t
-int b[maxnb+1];
+int b[maxnb+1];/////////////////int8
 bitset<maxn> a;
 void init(int N, int M) {
 
 }
 int lowbit(int x) {
     int lg=__lg(x&-x)/maxb*maxb;
+    assert(lg%maxb==0);
     // op("lb")op(x)ope(1<<(lg/maxb*maxb))
     return 1<<(lg);
 }
