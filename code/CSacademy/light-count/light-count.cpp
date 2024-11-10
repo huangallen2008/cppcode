@@ -121,7 +121,7 @@ int getCount(int st, int fn) {
     // st++,fn++;
     st+=1<<maxb,fn+=1<<maxb;
     int ret=pre(fn)-pre(st-1);
-    if(ret<0)cout<<st<<' '<<fn<<' '<<ret<<'\n';
+    if(ret<0)cout<<st<<' '<<fn<<' '<<ret<<' '<<pre(fn)<<' '<<pre(st-1)<<'\n';
     return ret;
 }
 int main() {
