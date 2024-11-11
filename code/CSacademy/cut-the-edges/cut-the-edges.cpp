@@ -141,13 +141,13 @@ signed main() {
         g[u].pb({v,i});
         g[v].pb({u,i});
     }
+    ope("ok")
     dfs(0,-1);
     REP(i,n) if(inc[i]) dfs1(i,-1);
     int id=-1;
     REP(i,n) if(inc[i]) id=i;
     vis=Vi(n);  
     dfs2(id,-1);
-    ope("ok")
     int nn=a.size();
     REP(i,nn) a.pb(a[i]);
     int n2=nn<<1;
