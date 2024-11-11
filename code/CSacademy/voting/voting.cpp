@@ -71,7 +71,7 @@ signed main() {
     int na=0;
     REP1(i,n-1) {
         //a[i]/i>na/(i-1)
-        if(a[i]*(i)>na*(i+1)) na++;
+        if(a[i]*(i)>na*(n)) na++;
         b[i+1]=suf_mnc(i+1,na);
     }
     ope(na)
