@@ -47,7 +47,6 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define matrix vector<Vi>
-#define matrix(x,y) vector<Vi>(x,Vi(y))
 
 signed main() {
     IOS(); 
