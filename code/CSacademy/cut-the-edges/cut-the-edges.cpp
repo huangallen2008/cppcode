@@ -165,14 +165,15 @@ signed main() {
         qp.push(p[i]);
         qs.push(s[i]);
     }
-    Vi an;
+    Vi an(n,-1);
     // int an=0;
-    an[0]=qp.mx()+qs.mx();
+    an[a[0].f]=qp.mx()+qs.mx();
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
-        an[i-nn+1]=qp.mx()+qs.mx();
+        an[a[i-nn+1].f]=qp.mx()+qs.mx();
     }
-    cout<<an<<'\n';
+    REP(i,n) cout<<an[i]<<' ';cout<<'\n';
+    // cout<<an<<'\n';
     return 0;
 }
