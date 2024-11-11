@@ -79,10 +79,10 @@ void solve() {
     unordered_map<mat,int,mhash> mp;
     mat t=y;
     REP1(i,sm) {
-        oparr(t[0])
         t=t*r;
         mp[t]=i;
-        // op(i)
+        op(i)
+        oparr(t[0])
     }
     // entr
     mat bigr=pw(r,sm);
