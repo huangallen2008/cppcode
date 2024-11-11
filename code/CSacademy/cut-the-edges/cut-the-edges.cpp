@@ -145,7 +145,6 @@ signed main() {
         g[v].pb({u,i});
     }
     dfs(0,-1);
-    ope("ok")
     REP(i,n) if(inc[i]) dfs1(i,-1);
     int id=-1;
     REP(i,n) if(inc[i]) id=i;
@@ -159,6 +158,7 @@ signed main() {
         p[i]=i+a[i].s;
         s[i]=n2-i+a[i].s;
     }
+    oparr(p)oparr(s)
     myq qp,qs;
     REP(i,nn) {
         qp.push(p[i]);
