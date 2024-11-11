@@ -162,6 +162,7 @@ signed main() {
         p[i]=i+a[i].s;
         s[i]=n2-i+a[i].s;
     }
+    REP(i,nn) cout<<a[i].f<<' ';entr
     oparr(p)oparr(s)
     myq qp,qs;
     REP(i,nn) {
