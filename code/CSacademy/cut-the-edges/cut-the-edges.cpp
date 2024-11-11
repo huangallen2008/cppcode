@@ -159,7 +159,7 @@ signed main() {
         p[i]=i+a[i].s;
         s[i]=n2-i+a[i].s;
     }
-    oparr(p)oparr(s)
+    // oparr(p)oparr(s)
     myq qp,qs;
     REP(i,nn) {
         qp.push(p[i]);
