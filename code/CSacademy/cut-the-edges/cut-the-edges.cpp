@@ -49,7 +49,6 @@ int n;
 Graphw g;
 Vi vis,pre,inc,lev,dep,dp;
 void dfs(int u,int fa) {
-    ope(u)
     vis[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
@@ -116,7 +115,7 @@ struct mys {
         return val;
     }
     int size() { return a.size(); }
-    int mx() { return a.size()?stk.size():0; }
+    int mx() { return a.size()?stk.back():0; }
 };
 struct myq {
     mys s1,s2;
