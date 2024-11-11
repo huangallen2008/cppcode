@@ -85,9 +85,9 @@ void solve() {
     }
     // entr
     mat bigr=pw(r,sm);
-    t=x;
+    t=x*bigr;
     int an=-1;
-    REP(i,sm) {
+    REP1(i,sm) {
         // op(i*sm)oparr(t[0])
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
