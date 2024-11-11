@@ -48,10 +48,7 @@ int rd(int l,int r) {
 // int pw(int x,int p )
 signed main() {
     IOS(); 
-    int r=1;
-    REP1(i,15) {
-        r=r*26%mod;
-        op(i)ope(r)
-    }
+    Vi a={1,2,3};
+    cout<<(*(a.rbegin()+1))<<'\n';
     return 0;
 }
