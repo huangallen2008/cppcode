@@ -70,8 +70,40 @@ struct mhash {
         return a[0][0]*maxmod+a[0][1];
     }
 };
-signed main() {
-    IOS(); 
+void solve() {
+    int a,b;
+    cin>>mod>>a>>b;
+    mat x={{0,1}},y={{a,b}},r={{0,1},{1,1}};
+    int sm=sqrt(6*mod)+5;
     unordered_map<mat,int,mhash> mp;
+    mat t=y;
+    REP1(i,sm) {
+        t=t*r;
+        mp[t]=i;
+    }
+    int bigr=pw(r,sm);
+    t=x;
+    int an=-1;
+    REP(i,sm) {
+        if(mp.find(t)!=mp.end()) {
+            an=i*sm-mp[t];
+        }
+        t=t*bigr;
+    }
+    if(an==-1) {
+        cout<<"-1\n";
+    }
+    else if(x*pw(r,an)==y) {
+        cout<<an<<'\n';
+    }
+    else {
+        
+    }
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve(); 
     return 0;
 }
