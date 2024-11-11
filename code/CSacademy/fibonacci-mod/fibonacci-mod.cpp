@@ -80,17 +80,19 @@ void solve() {
     REP1(i,sm) {
         t=t*r;
         mp[t]=i;
+        op(i)
     }
+    entr
     mat bigr=pw(r,sm);
     t=x;
     int an=-1;
     REP(i,sm) {
+        op(i)
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
         }
         t=t*bigr;
     }
-    ope(an)
     if(an==-1) {
         cout<<"-1\n";
     }
