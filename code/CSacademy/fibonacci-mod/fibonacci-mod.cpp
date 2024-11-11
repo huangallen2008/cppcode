@@ -52,6 +52,7 @@ mat operator*(mat a,mat b) {
     int n=a.size(),m=b.size(),k=b[0].size();
     mat c(n,Vi(k));
     REP(i,n) REP(j,m) REP(l,k) (c[i][l]+=a[i][j]*b[j][l])%mod;
+    REP(i,n) REP(j,k) cout<<c[i][j]<<' ';entr
     return c;
 }
 mat pw(mat x,int p) {
