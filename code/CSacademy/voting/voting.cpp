@@ -52,7 +52,7 @@ signed main() {
     cin>>n>>x;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    sort(ALL(a),greater<int>);
+    sort(ALL(a),greater<int>());
     auto suf_mnc=[&](int u,int bas=0) {
         int l=u-1,r=n-1,m;
         while(l<r) {//last t : bas+n-1-t>=a[t]
