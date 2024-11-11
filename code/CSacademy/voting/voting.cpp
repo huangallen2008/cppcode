@@ -59,7 +59,7 @@ signed main() {
         while(l<r) {//last t : (bas+n-1-t)*n>=a[t]*(u+n-1-t)
             m=l+r+1>>1;
             op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
-            if((bas+n-1-m)*n>=a[m]*(u+n-m)) l=m;
+            if((bas+n-1-m)*n>=a[m]*(u+n-1-m)) l=m;
             else r=m-1;
         }
         return bas+n-1-l;
