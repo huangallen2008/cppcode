@@ -52,7 +52,7 @@ signed main() {
     cin>>n>>x;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    sort(ALL(a));
+    sort(ALL(a),greater<int>);
     auto suf_mnc=[&](int u,int bas=0) {
         int l=u-1,r=n-1,m;
         while(l<r) {//last t : bas+n-1-t>=a[t]
@@ -73,6 +73,7 @@ signed main() {
         if(a[i]*(i)>na*(i+1)) na++;
         b[i+1]=suf_mnc(i+1,na);
     }
+    ope(na)
     if(x<b[0]) {
         RREP(i,n) cout<<a[i]<<' ';
         cout<<'\n';
