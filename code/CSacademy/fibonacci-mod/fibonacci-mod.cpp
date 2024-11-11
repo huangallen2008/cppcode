@@ -89,7 +89,7 @@ void solve() {
     t=x;
     int an=-1;
     REP(i,sm) {
-        // op(i)
+        op(i*sm)oparr(t[0])
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
         }
