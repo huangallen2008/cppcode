@@ -141,8 +141,8 @@ signed main() {
         g[u].pb({v,i});
         g[v].pb({u,i});
     }
-    ope("ok")
     dfs(0,-1);
+    ope("ok")
     REP(i,n) if(inc[i]) dfs1(i,-1);
     int id=-1;
     REP(i,n) if(inc[i]) id=i;
