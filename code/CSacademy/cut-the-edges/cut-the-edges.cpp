@@ -177,6 +177,7 @@ signed main() {
     Vi an(n,-1);
     // int an=0;
     an[a[0].f]=qp.mx()+qs.mx()-n2;
+        op(qp.mx())ope(qs.mx())
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
