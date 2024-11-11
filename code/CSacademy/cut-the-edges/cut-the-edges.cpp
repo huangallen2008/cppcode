@@ -54,7 +54,7 @@ void dfs(int u,int fa) {
         if(v==fa) continue;
         if(vis[v]) {
             int t=u;
-            inv[v]=1;
+            inc[v]=1;
             while(t!=v) {
                 inc[t]=1;
                 t=pre[t];
@@ -128,7 +128,7 @@ struct myq {
         }
     }
     int size() { return s1.size()+s2.size(); }
-    int mx() { return size()?-inf:max(s1.mx(),s2.mx()) };
+    int mx() { return size()?-inf:max(s1.mx(),s2.mx()); };
 };
 signed main() {
     IOS(); 
@@ -165,7 +165,7 @@ signed main() {
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
-        chmax(an,qp.mx(),+qs.mx());
+        chmax(an,qp.mx()+qs.mx());
     }
     cout<<an<<'\n';
     return 0;
