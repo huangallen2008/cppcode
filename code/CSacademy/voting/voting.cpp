@@ -66,6 +66,7 @@ signed main() {
     b[0]=suf_mnc(0,-1);
     ope(suf_mnc(0,-1))
     ope(suf_mnc(0))
+    ope(suf_mnc(1))
     b[1]=suf_mnc(1);
     int na=0;
     REP1(i,n-1) {
