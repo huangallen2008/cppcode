@@ -81,15 +81,14 @@ void solve() {
     REP1(i,sm) {
         t=t*r;
         mp[t]=i;
-        op(i)
-        oparr(t[0])
+        // op(i)oparr(t[0])
     }
     // entr
     mat bigr=pw(r,sm);
     t=x;
     int an=-1;
     REP(i,sm) {
-        op(i*sm)oparr(t[0])
+        // op(i*sm)oparr(t[0])
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
             break;
