@@ -48,7 +48,7 @@ int rd(int l,int r) {
 signed main() {
     IOS(); 
     freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
+    // freopen("out.txt","w",stdout);
     int n,x;
     cin>>n>>x;
     Vi a(n);
@@ -60,12 +60,14 @@ signed main() {
         while(l<r) {//last t : (bas+n-1-t)*n>=a[t]*(u+n-1-t)
             m=l+r+1>>1;
             // op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
-            if((bas+n-1-m)*n>=a[m]*(u+n-m)) l=m;
+            if((bas+n-1-m)*n>=a[m]*(u+n-1-m)) l=m;
             else r=m-1;
         }
         return bas+n-1-l;
     };
-    // ope(suf_mnc(0,-1));
+    ope(suf_mnc(0,-1));
+    ope(suf_mnc(0));
+    ope(suf_mnc(1));
     
     Vi b(n+1);
     b[0]=suf_mnc(0,-1);
