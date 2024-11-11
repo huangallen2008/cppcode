@@ -72,6 +72,6 @@ struct mhash {
 };
 signed main() {
     IOS(); 
-    unordered_map<matrix,int,mhash> mp;
+    unordered_map<mat,int,mhash> mp;
     return 0;
 }
