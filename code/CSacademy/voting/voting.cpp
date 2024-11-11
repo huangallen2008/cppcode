@@ -65,7 +65,7 @@ signed main() {
         return bas+n-1-l;
     };
     ope(suf_mnc(0,-1));
-    /*
+    
     Vi b(n+1);
     b[0]=suf_mnc(0,-1);
     b[1]=suf_mnc(1);
@@ -95,6 +95,6 @@ signed main() {
         }
     }
     oparr(b)
-    */
+    
     return 0;
 }
