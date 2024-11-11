@@ -52,7 +52,7 @@ mat operator*(mat a,mat b) {
     int n=a.size(),m=b.size(),k=b[0].size();
     mat c(n,Vi(k));
     REP(i,n) REP(j,m) REP(l,k) (c[i][l]+=a[i][j]*b[j][l])%=mod;
-    REP(i,n) REP(j,k) cout<<c[i][j]<<' ';entr
+    // REP(i,n) REP(j,k) cout<<c[i][j]<<' ';entr
     return c;
 }
 mat pw(mat x,int p) {
@@ -79,17 +79,17 @@ void solve() {
     unordered_map<mat,int,mhash> mp;
     mat t=y;
     REP1(i,sm) {
-        oparr(t[0])
+        // oparr(t[0])
         t=t*r;
         mp[t]=i;
-        op(i)
+        // op(i)
     }
-    entr
+    // entr
     mat bigr=pw(r,sm);
     t=x;
     int an=-1;
     REP(i,sm) {
-        op(i)
+        // op(i)
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
         }
