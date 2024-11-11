@@ -89,6 +89,6 @@ signed main() {
             }
         }
     }
-    // oparr(b)
+    oparr(b)
     return 0;
 }
