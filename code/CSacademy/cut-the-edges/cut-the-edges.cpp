@@ -123,8 +123,8 @@ struct myq {
         s1.push(x);
     }
     int pop() {
-        for(int x:s1.a) cout<<x<<' ';
-        for(int x:s2.a) cout<<x<<' ';entr
+        // for(int x:s1.a) cout<<x<<' ';
+        // for(int x:s2.a) cout<<x<<' ';entr
         if(s2.size()) return s2.pop();
         else {
             while(s1.size()) s2.push(s1.pop());
@@ -167,11 +167,11 @@ signed main() {
     }
     Vi an(n,-1);
     // int an=0;
-    an[a[0].f]=qp.mx()+qs.mx()-n2;
+    an[a[0].f]=qp.mx()+qs.mx()-n2-1;
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
-        an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2;
+        an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2-1;
     }
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
     // cout<<an<<'\n';
