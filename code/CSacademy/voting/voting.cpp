@@ -58,7 +58,7 @@ signed main() {
         int l=u-1,r=n-1,m;
         while(l<r) {//last t : (bas+n-1-t)*n>=a[t]*(u+n-1-t)
             m=l+r+1>>1;
-            op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
+            // op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
             if((bas+n-1-m)*n>=a[m]*(u+n-1-m)) l=m;
             else r=m-1;
         }
