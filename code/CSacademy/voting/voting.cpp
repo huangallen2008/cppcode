@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     int n,x;
     cin>>n>>x;
     Vi a(n);
@@ -64,9 +64,6 @@ signed main() {
     };
     Vi b(n+1);
     b[0]=suf_mnc(0,-1);
-    ope(suf_mnc(0,-1))
-    ope(suf_mnc(0))
-    ope(suf_mnc(1))
     b[1]=suf_mnc(1);
     int na=0;
     REP1(i,n-1) {
@@ -74,7 +71,7 @@ signed main() {
         if(a[i]*(i)>na*(n)) na++;
         b[i+1]=suf_mnc(i+1,na);
     }
-    ope(na)
+    // ope(na)
     if(x<b[0]) {
         RREP(i,n) cout<<a[i]<<' ';
         cout<<'\n';
