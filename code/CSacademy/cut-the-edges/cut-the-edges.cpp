@@ -120,10 +120,11 @@ struct mys {
 struct myq {
     mys s1,s2;
     void push(int x) {
-        ope(x)
         s1.push(x);
     }
     int pop() {
+        for(int x:s1.a) cout<<x<<' ';
+        for(int x:s2.a) cout<<x<<' ';entr
         if(s2.size()) return s2.pop();
         else {
             while(s1.size()) s2.push(s1.pop());
