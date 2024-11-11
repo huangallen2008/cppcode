@@ -81,7 +81,7 @@ void solve() {
         t=t*r;
         mp[t]=i;
     }
-    int bigr=pw(r,sm);
+    mat bigr=pw(r,sm);
     t=x;
     int an=-1;
     REP(i,sm) {
@@ -97,7 +97,7 @@ void solve() {
         cout<<an<<'\n';
     }
     else {
-        
+
     }
 }
 signed main() {
