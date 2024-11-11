@@ -62,8 +62,8 @@ signed main() {
         return bas+n-1-l;
     };
     Vi b(n+1);
-    b[0]=sufmnc(0,-1);
-    b[1]=sufmnc(1);
+    b[0]=suf_mnc(0,-1);
+    b[1]=suf_mnc(1);
     int na=0;
     REP1(i,n-1) {
         //a[i]/i>na/(i-1)
