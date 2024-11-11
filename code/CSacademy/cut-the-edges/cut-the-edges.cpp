@@ -85,6 +85,7 @@ void dfs1(int u,int fa) {
     }
     chmax(dp[u],mx+mx2);
 }
+int anb=0;
 vector<pii> a;
 void dfs2(int u,int fa) {
     vis[u]=1;
@@ -92,10 +93,12 @@ void dfs2(int u,int fa) {
         if(v==fa) continue;
         if(!inc[v]) continue;
         if(vis[v]) {
-            a.pb({id,dp[v]});
+            chmax(anb,dp[v])
+            a.pb({id,dep[v]});
             continue;
         }
-        a.pb({id,dp[v]});
+        chmax(anb,dp[v])
+        a.pb({id,dep[v]});
         dfs2(v,u);
     }
 }
@@ -159,7 +162,7 @@ signed main() {
         p[i]=i+a[i].s;
         s[i]=n2-i+a[i].s;
     }
-    oparr(p)oparr(s)
+    // oparr(p)oparr(s)
     myq qp,qs;
     REP(i,nn) {
         qp.push(p[i]);
@@ -174,6 +177,7 @@ signed main() {
         op(qp.mx())ope(qs.mx())
         an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2-1;
     }
+    REP(i,n) if(an[i]!=-1) chmax(an[i],anb);
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
     // cout<<an<<'\n';
     return 0;
