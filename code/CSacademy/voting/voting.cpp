@@ -48,12 +48,13 @@ int rd(int l,int r) {
 signed main() {
     IOS(); 
     freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     int n,x;
     cin>>n>>x;
     Vi a(n);
     REP(i,n) cin>>a[i];
     sort(ALL(a));
-    oparr(a)
+    // oparr(a)
     auto suf_mnc=[&](int u,int bas=0) {
         int l=u-1,r=n-1,m;
         while(l<r) {//last t : (bas+n-1-t)*n>=a[t]*(u+n-1-t)
@@ -64,7 +65,7 @@ signed main() {
         }
         return bas+n-1-l;
     };
-    ope(suf_mnc(0,-1));
+    // ope(suf_mnc(0,-1));
     
     Vi b(n+1);
     b[0]=suf_mnc(0,-1);
@@ -94,7 +95,7 @@ signed main() {
             }
         }
     }
-    oparr(b)
+    // oparr(b)
     
     return 0;
 }
