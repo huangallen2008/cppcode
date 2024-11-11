@@ -57,11 +57,14 @@ signed main() {
         int l=u-1,r=n-1,m;
         while(l<r) {//last t : bas+n-1-t>=a[t]
             m=l+r+1>>1;
+            op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
             if(bas+n-1-m>=a[m]) l=m;
             else r=m-1;
         }
         return bas+n-1-l;
     };
+    ope(suf_mnc(0,-1));
+    /*
     Vi b(n+1);
     b[0]=suf_mnc(0,-1);
     b[1]=suf_mnc(1);
@@ -91,5 +94,6 @@ signed main() {
         }
     }
     oparr(b)
+    */
     return 0;
 }
