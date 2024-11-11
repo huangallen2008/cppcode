@@ -37,7 +37,8 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
+int mod;
+// const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
 const int inf=(1ll<<62);
@@ -45,9 +46,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-// int pw(int x,int p )
+#define matrix vector<Vi>
+#define matrix(x,y) vector<Vi>(x,Vi(y))
+
 signed main() {
     IOS(); 
-    unordered_map<vector<Vi>,int> mp;
+    // unordered_map<vector<Vi>,int> mp;
     return 0;
 }
