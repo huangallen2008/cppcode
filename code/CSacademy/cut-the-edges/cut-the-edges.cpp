@@ -89,6 +89,7 @@ int anb=0;
 vector<pii> a;
 void dfs2(int u,int fa) {
     vis[u]=1;
+    ope(u)
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         if(!inc[v]) continue;
