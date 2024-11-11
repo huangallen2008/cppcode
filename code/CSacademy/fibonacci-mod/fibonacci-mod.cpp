@@ -102,7 +102,7 @@ void solve() {
         cout<<an<<'\n';
     }
     else {
-
+        ope(an)
     }
 }
 signed main() {
