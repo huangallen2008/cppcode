@@ -49,6 +49,7 @@ int n;
 Graphw g;
 Vi vis,pre,inc,lev,dep,dp;
 void dfs(int u,int fa) {
+    ope(u)
     vis[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
