@@ -74,7 +74,7 @@ signed main() {
         REP(i,n ) cin>>a[i];
         int na=0;
         REP1(i,n-1){
-            if(a[i]*(i)>na*n) na++;
+            if(a[i]*(i)>na*(i+1)) na++;
             if(i==500) ope(na)
         }
         ope(na)
