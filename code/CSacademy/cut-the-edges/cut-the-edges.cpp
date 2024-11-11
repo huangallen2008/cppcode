@@ -53,10 +53,10 @@ void dfs(int u,int fa) {
     vis[u]=1;
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
-        if(vis[v]&&!inc[u]) {
+        if(vis[v]) {
+            if(inc[u]) continue;
             int t=u;
             inc[v]=1;
-            op(u)ope(v)
             while(t!=v) {
                 // ope(t)
                 inc[t]=1;
