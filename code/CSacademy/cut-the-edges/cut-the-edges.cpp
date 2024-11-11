@@ -230,7 +230,7 @@ signed main() {
         // op(qp.mx())ope(qs.mx())
         // an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2;
         an[a[i-nn].f]=seg.qu(i-nn,i-1)-n2;
-        oparr(seg.qu(i-nn,i))
+        ope(seg.qu(i-nn,i-1))
     }
     REP(i,n) if(an[i]!=-1) chmax(an[i],anb);
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
