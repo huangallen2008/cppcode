@@ -50,7 +50,7 @@ int rd(int l,int r) {
 
 signed main() {
     IOS(); 
-    matrix a=matrix(1,4);
+    matrix a=matrix(1,Vi(4));
     // unordered_map<vector<Vi>,int> mp;
     return 0;
 }
