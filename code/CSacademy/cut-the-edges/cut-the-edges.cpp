@@ -93,11 +93,11 @@ void dfs2(int u,int fa) {
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         if(!inc[v]) continue;
-        if(vis[v]) {
+        if(vis[v]&&fa!=-1) {
             op(u)op(fa)op(v)op(dp[v])ope(dep[v])
             chmax(anb,dp[v]);
             a.pb({id,dep[v]});
-            break;
+            continue;;
         }
         op(u)ope(v)
             ope(v)ope(dp[v])ope(dep[v])
