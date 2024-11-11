@@ -142,6 +142,50 @@ struct myq {
     int size() { return s1.size()+s2.size(); }
     int mx() { return size()?max(s1.mx(),s2.mx()):-inf; };
 };
+struct SEG {
+    struct Seg {
+        int mp,ms,ma;
+    }zr={-inf,-inf,-inf};
+    Seg merge(Seg b,Seg c) {
+        Seg a;
+        a.mp=max(b.mp,c.mp);
+        a.ms=max(b.ms,c.ms);
+        a.ma=max({b.ma,c.ma,b.mp+c.ms,b.ms+c.mp});
+        return a;
+    }
+    void pull(Seg &a,Seg &b,Seg &c) {
+        a=merge(b,c);
+    }
+    vector<Seg> s;
+    int n;
+    void init(int _n) {
+        n=_n;
+        s=vector<Seg>(n<<2);
+    }
+    void _ud(int w,int l,int r,int u,pii v) {
+        if(l==r) {
+            s[w].mp=v.f;
+            s[w].ms=v.s;
+            return;
+        }
+        int m=l+r>>1;
+        if(u<=m) _ud(w<<1,l,m,u,v);
+        else _ud(w<<1|1,m+1,r,u,v);
+        pull(s[w],s[w<<1],s[w<<1|1]);
+    }
+    void ud(int u,pii v) {
+        _ud(1,0,n-1,u,v);
+    }
+    Seg _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql<r||qr<=l) return zr;
+        int m=l+r>>1;
+        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r).ma;
+    }
+}seg;
 signed main() {
     IOS(); 
     cin>>n;
@@ -167,6 +211,8 @@ signed main() {
         p[i]=i+a[i].s;
         s[i]=n2-i+a[i].s;
     }
+    seg.init(n2);
+    REP(i,n2) seg.ud(i,{p[i],s[i]});
     REP(i,nn<<1) cout<<a[i].s<<' ';entr
     oparr(p)oparr(s)
     myq qp,qs;
@@ -176,13 +222,14 @@ signed main() {
     }
     Vi an(n,-1);
     // int an=0;
-    an[a[0].f]=qp.mx()+qs.mx()-n2;
-        op(qp.mx())ope(qs.mx())
+    // an[a[0].f]=qp.mx()+qs.mx()-n2;
+    //     op(qp.mx())ope(qs.mx())
     for(int i=nn;i<n2;i++) {
-        qp.pop(),qs.pop();
-        qp.push(p[i]),qs.push(s[i]);
-        op(qp.mx())ope(qs.mx())
-        an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2;
+        // qp.pop(),qs.pop();
+        // qp.push(p[i]),qs.push(s[i]);
+        // op(qp.mx())ope(qs.mx())
+        // an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2;
+        an[a[i-nn].f]=seg.qu(i-nn,i-1)-n2;
     }
     REP(i,n) if(an[i]!=-1) chmax(an[i],anb);
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
