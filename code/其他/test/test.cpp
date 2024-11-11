@@ -64,6 +64,7 @@ signed main() {
         int na=0;
         REP1(i,n-1){
             if(a[i]*(i)>na*n) na++;
+            if(i==500) ope(na)
         }
         ope(na)
     }
@@ -74,6 +75,7 @@ signed main() {
         int na=0;
         REP1(i,n-1){
             if(a[i]*(i)>na*n) na++;
+            if(i==500) ope(na)
         }
         ope(na)
     }
