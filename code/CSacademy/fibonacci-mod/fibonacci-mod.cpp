@@ -80,6 +80,7 @@ void solve() {
     REP1(i,sm) {
         t=t*r;
         mp[t]=i;
+        oparr(t[0])
         op(i)
     }
     entr
