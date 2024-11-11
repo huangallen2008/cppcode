@@ -78,9 +78,9 @@ void solve() {
     unordered_map<mat,int,mhash> mp;
     mat t=y;
     REP1(i,sm) {
+        oparr(t[0])
         t=t*r;
         mp[t]=i;
-        oparr(t[0])
         op(i)
     }
     entr
