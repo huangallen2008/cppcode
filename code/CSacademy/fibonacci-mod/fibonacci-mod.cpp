@@ -66,7 +66,7 @@ mat pw(mat x,int p) {
     return r;
 }
 struct mhash {
-    int operator()(mat a) {
+    int operator()(const mat a) const{
         return a[0][0]*maxmod+a[0][1];
     }
 };
