@@ -99,6 +99,7 @@ void dfs2(int u,int fa) {
             a.pb({id,dep[v]});
             break;
         }
+        op(u)ope(v)
             ope(v)ope(dp[v])ope(dep[v])
         chmax(anb,dp[v]);
         a.pb({id,dep[v]});
