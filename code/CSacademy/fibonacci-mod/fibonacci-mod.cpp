@@ -50,7 +50,7 @@ int rd(int l,int r) {
 #define mat vector<Vi>
 mat operator*(mat a,mat b) {
     int n=a.size(),m=b.size(),k=b[0].size();
-    matrix c(n,Vi(k));
+    mat c(n,Vi(k));
     REP(i,n) REP(j,m) REP(l,k) (c[i][l]+=a[i][j]*b[j][l])%mod;
     return c;
 }
