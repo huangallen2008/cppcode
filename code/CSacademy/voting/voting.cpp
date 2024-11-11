@@ -80,14 +80,14 @@ signed main() {
         cout<<'\n';
     }
     else {
-        REP(i,n) {
-            if(b[i]==x) {
-                REP(j,i) cout<<a[j]<<' ';
-                for(int j=n-1;j>=i;j++) cout<<a[j]<<' ';
-                cout<<'\n';
-                break;
-            }
-        }
+        // REP(i,n) {
+        //     if(b[i]==x) {
+        //         REP(j,i) cout<<a[j]<<' ';
+        //         for(int j=n-1;j>=i;j++) cout<<a[j]<<' ';
+        //         cout<<'\n';
+        //         break;
+        //     }
+        // }
     }
     oparr(b)
     return 0;
