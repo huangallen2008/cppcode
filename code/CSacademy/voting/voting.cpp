@@ -56,7 +56,7 @@ signed main() {
     sort(ALL(a));
     // oparr(a)
     auto suf_mnc=[&](int u,int bas=0) {
-        int l=u-1,r=n-1,m;
+        int l=u-1,r=n-2,m;
         while(l<r) {//last t : (bas+n-1-t)*n>=a[t]*(u+n-1-t)
             m=l+r+1>>1;
             // op(l)op(r)op(m)op(bas+n-1-m)ope(a[m])
