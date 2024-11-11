@@ -53,7 +53,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     sort(ALL(a));
     auto suf_mnc=[&](int u,int bas=0) {
-        int l=u-1,r=n,m;
+        int l=u-1,r=n-1,m;
         while(l<r) {//last t : bas+n-1-t>=a[t]
             m=l+r+1>>1;
             if(bas+n-1-m>=a[m]) l=m;
@@ -61,6 +61,15 @@ signed main() {
         }
         return bas+n-1-l;
     };
-    
+    Vi b(n+1);
+    b[0]=sufmnc(0,-1);
+    b[1]=sufmnc(1);
+    int na=0;
+    REP1(i,n-1) {
+        //a[i]/i>na/(i-1)
+        if(a[i]*(i-1)>na*i) na++;
+        b[i+1]=suf_mnc(i+1,na);
+    }
+    oparr(b)
     return 0;
 }
