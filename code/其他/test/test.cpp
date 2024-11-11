@@ -48,7 +48,14 @@ int rd(int l,int r) {
 // int pw(int x,int p )
 signed main() {
     IOS(); 
-    Vi a={1,2,3};
-    cout<<(*(a.rbegin()+1))<<'\n';
+    freopen("in.txt","r",stdin);
+    int n=1000;
+    Vi a(n);
+    REP(i,n ) cin>>a[i];
+    int na=0;
+    REP1(i,n-1){
+        if(a[i]*(i)>na*n) na++;
+    }
+    ope(na)
     return 0;
 }
