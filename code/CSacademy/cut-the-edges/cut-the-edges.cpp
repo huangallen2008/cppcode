@@ -213,7 +213,7 @@ signed main() {
     }
     seg.init(n2);
     REP(i,n2) seg.ud(i,{p[i],s[i]});
-    REP(i,nn<<1) cout<<a[i].s<<' ';entr
+    // REP(i,nn<<1) cout<<a[i].s<<' ';entr
     oparr(p)oparr(s)
     myq qp,qs;
     REP(i,nn) {
