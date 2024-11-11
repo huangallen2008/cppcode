@@ -176,12 +176,12 @@ signed main() {
     }
     Vi an(n,-1);
     // int an=0;
-    an[a[0].f]=qp.mx()+qs.mx()-n2-1;
+    an[a[0].f]=qp.mx()+qs.mx()-n2;
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
         op(qp.mx())ope(qs.mx())
-        an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2-1;
+        an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2;
     }
     REP(i,n) if(an[i]!=-1) chmax(an[i],anb);
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
