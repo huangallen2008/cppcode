@@ -147,6 +147,7 @@ signed main() {
     REP(i,n) if(inc[i]) id=i;
     vis=Vi(n);  
     dfs2(id,-1);
+    ope("ok")
     int nn=a.size();
     REP(i,nn) a.pb(a[i]);
     int n2=nn<<1;
