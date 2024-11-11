@@ -132,7 +132,7 @@ struct myq {
         }
     }
     int size() { return s1.size()+s2.size(); }
-    int mx() { return size()?-inf:max(s1.mx(),s2.mx()); };
+    int mx() { return size()?max(s1.mx(),s2.mx()):-inf; };
 };
 signed main() {
     IOS(); 
