@@ -57,6 +57,7 @@ void dfs(int u,int fa) {
             int t=u;
             inc[v]=1;
             while(t!=v) {
+                ope(t)
                 inc[t]=1;
                 t=pre[t];
             }
