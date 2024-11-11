@@ -165,12 +165,13 @@ signed main() {
         qp.push(p[i]);
         qs.push(s[i]);
     }
-    int an=0;
-    chmax(an,qp.mx()+qs.mx());
+    Vi an;
+    // int an=0;
+    an[0]=qp.mx()+qs.mx();
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
-        chmax(an,qp.mx()+qs.mx());
+        an[i-nn+1]=qp.mx()+qs.mx();
     }
     cout<<an<<'\n';
     return 0;
