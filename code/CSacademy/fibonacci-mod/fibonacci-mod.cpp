@@ -92,6 +92,7 @@ void solve() {
         op(i*sm)oparr(t[0])
         if(mp.find(t)!=mp.end()) {
             an=i*sm-mp[t];
+            break;
         }
         t=t*bigr;
     }
