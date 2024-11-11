@@ -171,6 +171,7 @@ signed main() {
     for(int i=nn;i<n2;i++) {
         qp.pop(),qs.pop();
         qp.push(p[i]),qs.push(s[i]);
+        op(qp.mx())ope(qs.mx())
         an[a[i-nn+1].f]=qp.mx()+qs.mx()-n2-1;
     }
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
