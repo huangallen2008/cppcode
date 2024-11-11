@@ -120,6 +120,7 @@ struct mys {
 struct myq {
     mys s1,s2;
     void push(int x) {
+        ope(x)
         s1.push(x);
     }
     int pop() {
