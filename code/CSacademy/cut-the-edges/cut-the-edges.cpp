@@ -121,7 +121,7 @@ struct myq {
     mys s1,s2;
     void push(int x) {
         ope(x)
-        cout<<(#x)<<endl;
+        cout<<(x)<<endl;
         s1.push(x);
     }
     int pop() {
