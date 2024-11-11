@@ -39,6 +39,7 @@ using namespace std;
 #endif
 int mod;
 // const int mod=1e9+7;
+const int maxmod=(1<<30)+5;
 const int maxn=5;
 const int maxb=20;
 const int inf=(1ll<<62);
@@ -46,11 +47,31 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define matrix vector<Vi>
-
+#define mat vector<Vi>
+mat operator*(mat a,mat b) {
+    int n=a.size(),m=b.size(),k=b[0].size();
+    matrix c(n,Vi(k));
+    REP(i,n) REP(j,m) REP(l,k) (c[i][l]+=a[i][j]*b[j][l])%mod;
+    return c;
+}
+mat pw(mat x,int p) {
+    int n=x.size();
+    mat r(n,Vi(n));
+    REP(i,n) r[i][i]=1;
+    while(p>0) {
+        if(p&1) r=r*x;
+        x=x*x;
+        p>>=1;
+    }
+    return r;
+}
+struct mhash {
+    int operator()(mat a) {
+        return a[0][0]*maxmod+a[0][1];
+    }
+};
 signed main() {
     IOS(); 
-    matrix a=matrix(1,Vi(4));
-    // unordered_map<vector<Vi>,int> mp;
+    unordered_map<matrix,int,mhash> mp;
     return 0;
 }
