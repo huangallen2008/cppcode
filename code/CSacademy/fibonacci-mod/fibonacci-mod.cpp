@@ -90,6 +90,7 @@ void solve() {
         }
         t=t*bigr;
     }
+    ope(an)
     if(an==-1) {
         cout<<"-1\n";
     }
