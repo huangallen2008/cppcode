@@ -70,6 +70,24 @@ signed main() {
         if(a[i]*(i)>na*(i+1)) na++;
         b[i+1]=suf_mnc(i+1,na);
     }
+    if(x<b[0]) {
+        RREP(i,n) cout<<a[i]<<' ';
+        cout<<'\n';
+    }
+    else if(x>b.back()) {
+        REP(i,n) cout<<a[i]<<' ';
+        cout<<'\n';
+    }
+    else {
+        REP(i,n) {
+            if(b[i]==x) {
+                REP(j,i) cout<<a[j]<<' ';
+                for(int j=n-1;j>=i;j++) cout<<a[j]<<' ';
+                cout<<'\n';
+                break;
+            }
+        }
+    }
     oparr(b)
     return 0;
 }
