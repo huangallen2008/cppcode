@@ -123,8 +123,8 @@ signed main() {
             chmin(pn,a[i]);
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,n-i-2))%=mod;
-            op(i)op(pn)ope(px)
         }
+            ope(an)
     }
     {
         int px=-inf,pn=inf;
@@ -132,7 +132,7 @@ signed main() {
             chmin(pn,a[i]);
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,i-1))%=mod;
-            op(i)op(pn)ope(px)
+            ope(an)
         }
     }
     ope(an)
