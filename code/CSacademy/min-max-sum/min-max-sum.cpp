@@ -73,7 +73,7 @@ struct SEG {
         a.t=1;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
-        a.s=b.s+c.s;
+        a.s=(b.s+c.s)%mod;
     }
     vector<Seg> s;
     int n;
@@ -110,7 +110,7 @@ struct SEG {
         if(ql>r||qr<l) return 0;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
+        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr)%mod;
     }
     int qu(int l,int r) {
         return _qu(1,0,n-1,l,r);
