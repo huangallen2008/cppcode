@@ -122,12 +122,16 @@ signed main() {
     int an=0;
     seg.ud(0,n-1,pw(2,n));
     REP1(i,n-2) {
+        int la=i;
         while(mx.back().f<a[i]) {
-            seg.ud(mx.back().s+1,i,a[i]* (mx.size()==1?1:inv(mx.back().f))%mod );
+            seg.ud(mx.back().s+1,la,a[i]* (mx.size()==1?1:inv(mx.back().f))%mod );
+            la=mx.back().s;
             mx.pop_back();
         }
+        la=i;
         while(mn.back().f>a[i]) {
             seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
+            la=mn.back().s;
             mn.pop_back();
         }
         mx.pb({a[i],i});
