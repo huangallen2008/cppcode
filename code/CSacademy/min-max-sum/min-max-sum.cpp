@@ -168,8 +168,9 @@ signed main() {
         seg.ud(i,i,a[i]*a[i]%mod);
         mx.pb({a[i],i});
         mn.pb({a[i],i});
-        REP(j,10) cout<<seg.s[j].s<<' ';entr
+        REP(j,n) cout<<seg.qu(j,j)<<' ';entr
         an+=seg.qu(1,i);
+        // ope(seg.qu())
         seg.ud(0,i,inv2);
     }
     cout<<an<<'\n';
