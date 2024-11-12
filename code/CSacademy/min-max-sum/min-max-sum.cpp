@@ -115,7 +115,8 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int an=0;
+    int mxe=*max_element(ALL(a)),mne=*min_element(ALL(a));
+    int an=mxe*mne;
     {
         int px=-inf,pn=inf;
         REP(i,n-1) {
@@ -126,7 +127,7 @@ signed main() {
     }
     {
         int px=-inf,pn=inf;
-        RREP(i,n) {
+        RREP1(i,n-1) {
             chmin(pn,a[i]);
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,i-1))%=mod;
