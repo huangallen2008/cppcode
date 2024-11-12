@@ -57,110 +57,55 @@ int pw(int x,int p) {
 int inv(int x) {
     return pw(x,mod-2);
 }
+const int inv2=inv(2);
 Vi pw2(maxn);
 struct SEG {
-    struct Tag {
-        int mx,mn;
-    };
     struct Seg {
-        int len,mx,mn,smx,smn,s,val;
-        Tag t;
+        int s,t;
     };
-    void pull(Seg &a,Seg &b,Seg &c) {
-        a.mx=max(b.mx,c.mx);
-        a.mn=max(b.mn,c.mn);
-        a.smx=b.smx+c.smx;
-        a.smn=b.smn+c.smn;
-        a.s=b.s+c.s;
-    }
-    void addtag(Seg &a,Tag t) {
-        if(t.mx!=-1) {
-            a.mx=t.mx;
-            a.smx=t.mx*a.len*a.val;
-        }
-        if(t.mn!=-1) {
-            a.mn=t.mn;
-            a.smn=t.mn*a.len*a.val;
-        }
-        if(t.mx!=-1) a.s=t.mx*a.smn;
-        else if(t.mn!=-1) a.s=t.mn*a.smx;
-        a.t.mx=t.mx;
-        a.t.mn=t.mn;
+    void addtag(Seg &a,int t) {
+        (a.s*=t)%=mod;
+        (a.t*=t)%=mod;
     }
     void push(Seg &a,Seg &b,Seg &c) {
         addtag(b,a.t);
         addtag(c,a.t);
-        a.t={-1,-1};
+        a.t=1;
     }
-    int n;
+    void pull(Seg &a,Seg &b,Seg &c) {
+        a.s=b.s+c.s;
+    }
     vector<Seg> s;
+    int n;
     void build(int w,int l,int r) {
-        s[w]={r-l+1,-inf,inf,-inf,inf,0,0,{-1,-1}};
-        if(l==r) {
-            s[w].val=pw2[n-l];
-            return;
-        }
+        s[w]={r-l+1,1};
+        if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
-        s[w].val=s[w<<1].val+s[w<<1|1].val;
     }
     void init(int _n) {
         n=_n;
         s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
-    void _ud(int w,int l,int r,int ql,int qr,Tag t) {
+    void _ud(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr) {
-            addtag(s[w],t);
+            addtag(s[w],v);
             return;
         }
         if(ql>r||qr<l) return;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        _ud(w<<1,l,m,ql,qr,t);
-        _ud(w<<1|1,m+1,r,ql,qr,t);
+        _ud(w<<1,l,m,ql,qr,v);
+        _ud(w<<1|1,m+1,r,ql,qr,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void ud_mx(int l,int r,int v) {
-        op("x")op(l)op(r)ope(v)
-        _ud(1,0,n-1,l,r,{v,-1});
+    void ud(int l,int r,int v) {
+        _ud(1,0,n-1,l,r,v);
     }
-    void ud_mn(int l,int r,int v) {
-        op("n")op(l)op(r)ope(v)
-        _ud(1,0,n-1,l,r,{-1,v});
-    }
-    int _qu_mx(int w,int l,int r,int v) {
-        if(l==r) return l;
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        if(s[w<<1].mn<v) return _qu_mx(w<<1,l,m,v);
-        else return _qu_mx(w<<1|1,m+1,r,v);
-    }
-    int qu_mx(int v) {
-        return _qu_mx(1,0,n-1,v);
-    }
-    int _qu_mn(int w,int l,int r,int v) {
-        if(l==r) return l;
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        if(s[w<<1].mx>v) return _qu_mn(w<<1,l,m,v);
-        else return _qu_mn(w<<1|1,m+1,r,v);
-    }
-    int qu_mn(int v) {
-        return _qu_mn(1,0,n-1,v);
-    }
-    int _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w].s;
-        if(ql>r||qr<l) return 0;
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
-    }
-    int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r);
-    }
-}seg;
+    int sum() { return s[0]; }
+}
 signed main() {
     IOS(); 
     pw2[0]=1;
@@ -174,18 +119,18 @@ signed main() {
     mx.pb({inf,-1});
     mn.pb({-inf,-1});
     int an=0;
+    seg.ud(0,n-1,pw(2,n));
     REP1(i,n-2) {
-        while(mx.back().f<a[i]) mx.pop_back();
-        while(mn.back().f>a[i]) mn.pop_back();
-        seg.ud_mx(mx.back().s+1,i,a[i]);
-        seg.ud_mn(mn.back().s+1,i,a[i]);
-        an+=seg.qu(0,i)*pw(inv(2),n-i-3)%mod;
-        ope(an)ope(seg.qu(0,i))
-        cout<<"seg: ";REP(j,n) cout<<seg.qu(j,j)<<' ';entr
-        REP(j,10) cout<<seg.s[j].s<<' ';entr
-        REP(j,10) cout<<seg.s[j].mx<<' ';entr
-        REP(j,10) cout<<seg.s[j].mn<<' ';entr
-        REP(j,10) cout<<seg.s[j].val<<' ';entr
+        while(mx.back().f<a[i]) {
+            seg.ud(mx.back().s+1,i,a[i]* (mx.size()==1?1:inv(mx.back().f)) )
+            mx.pop_back();
+        }
+        while(mn.back().f>a[i]) {
+            seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f)) )
+            mn.pop_back();
+        }
+        an+=seg.sum();
+        seg.ud(0,n-1,inv2)
     }
     cout<<an<<'\n';
     return 0;
