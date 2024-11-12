@@ -132,6 +132,7 @@ signed main() {
             (an+=(pn*px%mod)*pw(2,i-1))%=mod;
         }
     }
+    ope(an)
     seg.init(n);
     vector<pii> mx,mn; 
     mx.pb({inf,-1});
