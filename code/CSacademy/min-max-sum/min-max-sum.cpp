@@ -137,8 +137,8 @@ signed main() {
     }
     ope(an)
     seg.init(n);
-    seg.ud(1,0);
-    seg.ud(n-1,0);
+    seg.ud(1,1,0);
+    seg.ud(n-1,n-1,0);
     vector<pii> mx,mn; 
     mx.pb({inf,0});
     mn.pb({-inf,0});
