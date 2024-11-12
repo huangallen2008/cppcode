@@ -150,11 +150,11 @@ signed main() {
     seg.ud(n-1,n-1,0);
     REP1(i,n-2) {
         ope(i)
-        while(mx.back().f<a[i]) {
+        while(mx.back().f<=a[i]) {
             if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
             mx.pop_back();
         }
-        while(mn.back().f>a[i]) {
+        while(mn.back().f>=a[i]) {
             if(mn.size()>=2)seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
             mn.pop_back();
         }
