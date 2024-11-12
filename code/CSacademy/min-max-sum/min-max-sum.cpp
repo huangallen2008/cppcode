@@ -125,7 +125,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int mxe=*max_element(ALL(a)),mne=*min_element(ALL(a));
-    int an=mxe*mne;
+    int an=mxe*mne%mod;
     {
         int px=-inf,pn=inf;
         REP(i,n-1) {
