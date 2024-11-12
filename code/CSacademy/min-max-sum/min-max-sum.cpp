@@ -167,5 +167,6 @@ signed main() {
         seg.ud(0,i,inv2);
     }
     cout<<an<<'\n';
+    entr
     return 0;
 }
