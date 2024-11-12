@@ -140,7 +140,7 @@ signed main() {
     vector<pii> mx,mn; 
     mx.pb({inf,-1});
     mn.pb({-inf,-1});
-    seg.ud(0,n-1,pw(2,n-2));
+    seg.ud(0,n-1,pw(2,n-1));
     REP1(i,n-2) {
         int la=i;
         while(mx.back().f<a[i]) {
