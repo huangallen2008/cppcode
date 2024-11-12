@@ -56,7 +56,7 @@ void dfs(int u,int fa) {
         if(ac[v]) bc[u]=1;
         else acc++;
     }
-    if(acc==g[u].size()) ac[u]=1;
+    if(acc==g[u].size()-1) ac[u]=1;
 }
 signed main() {
     IOS(); 
