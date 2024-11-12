@@ -104,7 +104,7 @@ struct SEG {
     void ud(int l,int r,int v) {
         _ud(1,0,n-1,l,r,v);
     }
-    int sum() { return s[0].s; }
+    int sum() { return s[1].s; }
 }seg;
 signed main() {
     IOS(); 
