@@ -126,7 +126,7 @@ signed main() {
     }
     {
         int px=-inf,pn=inf;
-        RREP(i,n) {
+        RREP1(i,n-1) {
             chmin(pn,a[i]);
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,i-1))%=mod;
