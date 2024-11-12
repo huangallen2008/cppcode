@@ -130,6 +130,8 @@ signed main() {
             seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
             mn.pop_back();
         }
+        mx.pb({a[i],i});
+        mn.pb({a[i],i});
         REP(j,10) cout<<seg.s[j].s<<' ';entr
         an+=seg.sum();
         seg.ud(0,n-1,inv2);
