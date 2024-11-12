@@ -106,6 +106,16 @@ struct SEG {
         _ud(1,0,n-1,l,r,v);
     }
     int sum() { return s[1].s; }
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w].s;
+        if(ql>r||qr<l) return 0;
+        int m=l+r>>1;
+        push(s[w],s[w<<1],s[w<<1|1]);
+        return _qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr);
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r);
+    }
 }seg;
 signed main() {
     IOS(); 
@@ -159,7 +169,7 @@ signed main() {
         mx.pb({a[i],i});
         mn.pb({a[i],i});
         REP(j,10) cout<<seg.s[j].s<<' ';entr
-        an+=seg.sum();
+        an+=seg.qu(0,i);
         seg.ud(0,i,inv2);
     }
     cout<<an<<'\n';
