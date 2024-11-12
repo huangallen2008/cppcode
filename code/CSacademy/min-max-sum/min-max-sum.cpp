@@ -169,7 +169,7 @@ signed main() {
         mx.pb({a[i],i});
         mn.pb({a[i],i});
         REP(j,10) cout<<seg.s[j].s<<' ';entr
-        an+=seg.qu(0,i);
+        an+=seg.qu(1,i);
         seg.ud(0,i,inv2);
     }
     cout<<an<<'\n';
