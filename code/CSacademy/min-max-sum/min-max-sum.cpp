@@ -102,7 +102,6 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
-        op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,v);
     }
     int sum() { return s[1].s; }
@@ -134,7 +133,6 @@ signed main() {
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,n-i-2))%=mod;
         }
-            ope(an)
     }
     {
         int px=-inf,pn=inf;
@@ -142,10 +140,8 @@ signed main() {
             chmin(pn,a[i]);
             chmax(px,a[i]);
             (an+=(pn*px%mod)*pw(2,i-1))%=mod;
-            ope(an)
         }
     }
-    ope(an)
     seg.init(n);
     vector<pii> mx,mn; 
     mx.pb({inf,0});
@@ -156,19 +152,16 @@ signed main() {
     REP1(i,n-2) {
         while(mx.back().f<a[i]) {
             if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
-            // la=mx.back().s;
             mx.pop_back();
         }
         while(mn.back().f>a[i]) {
             if(mn.size()>=2)seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
-            // seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
-            // la=mn.back().s;
             mn.pop_back();
         }
         seg.ud(i,i,a[i]*a[i]%mod);
         mx.pb({a[i],i});
         mn.pb({a[i],i});
-        REP(j,n) cout<<seg.qu(j,j)<<' ';entr
+        // REP(j,n) cout<<seg.qu(j,j)<<' ';entr
         an+=seg.qu(1,i);
         // ope(seg.qu())
         seg.ud(0,i,inv2);
