@@ -141,7 +141,6 @@ signed main() {
         }
     }
     seg.init(n);
-    ope("ok")
     vector<pii> mx,mn; 
     mx.pb({inf,0});
     mn.pb({-inf,0});
@@ -150,6 +149,7 @@ signed main() {
     seg.ud(n-1,n-1,0);
     REP1(i,n-2) {
         ope(i)
+        1/0;
         while(mx.back().f<=a[i]) {
             if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
             mx.pop_back();
