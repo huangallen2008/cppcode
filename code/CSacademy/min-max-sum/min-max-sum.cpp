@@ -138,22 +138,22 @@ signed main() {
     ope(an)
     seg.init(n);
     vector<pii> mx,mn; 
-    mx.pb({-inf,-1});
-    mn.pb({inf,-1});
+    mx.pb({inf,-1});
+    mn.pb({-inf,-1});
     seg.ud(0,n-1,pw(2,n-1));
     REP1(i,n-2) {
-        int la=i;
         while(mx.back().f<a[i]) {
-            seg.ud(mx.back().s+1,la,a[i]* (mx.size()==1?1:inv(mx.back().f))%mod );
+            if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
             la=mx.back().s;
             mx.pop_back();
         }
-        la=i;
         while(mn.back().f>a[i]) {
-            seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
+            if(mn.size()>=2)seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
+            // seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
             la=mn.back().s;
             mn.pop_back();
         }
+        seg.ud(i,i,a[i]*a[i]%mod);
         mx.pb({a[i],i});
         mn.pb({a[i],i});
         REP(j,10) cout<<seg.s[j].s<<' ';entr
