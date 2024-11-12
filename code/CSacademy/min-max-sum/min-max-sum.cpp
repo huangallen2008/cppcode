@@ -158,7 +158,7 @@ signed main() {
         mn.pb({a[i],i});
         REP(j,10) cout<<seg.s[j].s<<' ';entr
         an+=seg.sum();
-        seg.ud(0,i,inv2);
+        seg.ud(1,i,inv2);
     }
     cout<<an<<'\n';
     return 0;
