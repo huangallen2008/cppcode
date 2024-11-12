@@ -130,7 +130,7 @@ signed main() {
             mn.pop_back();
         }
         an+=seg.sum();
-        seg.ud(0,n-1,inv2)
+        seg.ud(0,n-1,inv2);
     }
     cout<<an<<'\n';
     return 0;
