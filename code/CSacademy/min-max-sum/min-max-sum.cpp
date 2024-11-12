@@ -115,11 +115,27 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    int an=0;
+    {
+        int px=-inf,pn=inf;
+        REP(i,n) {
+            chmin(pn,a[i]);
+            chmax(px,a[i]);
+            (an+=(pn*px%mod)*pw(2,n-i-2))%=mod;
+        }
+    }
+    {
+        int px=-inf,pn=inf;
+        RREP(i,n) {
+            chmin(pn,a[i]);
+            chmax(px,a[i]);
+            (an+=(pn*px%mod)*pw(2,i-1))%=mod;
+        }
+    }
     seg.init(n);
     vector<pii> mx,mn; 
     mx.pb({inf,-1});
     mn.pb({-inf,-1});
-    int an=0;
     seg.ud(0,n-1,pw(2,n));
     REP1(i,n-2) {
         int la=i;
