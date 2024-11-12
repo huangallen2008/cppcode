@@ -138,8 +138,8 @@ signed main() {
     ope(an)
     seg.init(n);
     vector<pii> mx,mn; 
-    mx.pb({inf,-1});
-    mn.pb({-inf,-1});
+    mx.pb({inf,0});
+    mn.pb({-inf,0});
     seg.ud(1,n-2,pw(2,n-1));
     REP1(i,n-2) {
         while(mx.back().f<a[i]) {
