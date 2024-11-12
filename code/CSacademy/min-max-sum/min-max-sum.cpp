@@ -40,7 +40,7 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=1e5+5;
 const int maxx=2e5+5;
-const int inf=(1<<25);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -58,7 +58,6 @@ int inv(int x) {
     return pw(x,mod-2);
 }
 const int inv2=inv(2);
-Vi pw2(maxn);
 struct SEG {
     struct Seg {
         int s,t;
@@ -149,20 +148,19 @@ signed main() {
     seg.ud(n-1,n-1,0);
     REP1(i,n-2) {
         ope(i)
-        int tt=1/0;ope(tt)
         while(mx.back().f<=a[i]) {
-            if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
+            seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
             mx.pop_back();
         }
         while(mn.back().f>=a[i]) {
-            if(mn.size()>=2)seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
+            seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
             mn.pop_back();
         }
         seg.ud(i,i,a[i]*a[i]%mod);
         mx.pb({a[i],i});
         mn.pb({a[i],i});
         // REP(j,n) cout<<seg.qu(j,j)<<' ';entr
-        an+=seg.qu(1,i);
+        (an+=seg.qu(1,i))%=mod;
         // ope(seg.qu())
         seg.ud(0,i,inv2);
     }
