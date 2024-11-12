@@ -102,6 +102,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
+        op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,v);
     }
     int sum() { return s[1].s; }
@@ -122,11 +123,11 @@ signed main() {
     seg.ud(0,n-1,pw(2,n));
     REP1(i,n-2) {
         while(mx.back().f<a[i]) {
-            seg.ud(mx.back().s+1,i,a[i]* (mx.size()==1?1:inv(mx.back().f)) );
+            seg.ud(mx.back().s+1,i,a[i]* (mx.size()==1?1:inv(mx.back().f))%mod );
             mx.pop_back();
         }
         while(mn.back().f>a[i]) {
-            seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f)) );
+            seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
             mn.pop_back();
         }
         REP(j,10) cout<<seg.s[j].s<<' ';entr
