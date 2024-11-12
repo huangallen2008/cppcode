@@ -144,13 +144,13 @@ signed main() {
     REP1(i,n-2) {
         while(mx.back().f<a[i]) {
             if(mx.size()>=2)seg.ud(mx[mx.size()-2].s+1,mx.back().s,a[i]*inv(mx.back().f)%mod );
-            la=mx.back().s;
+            // la=mx.back().s;
             mx.pop_back();
         }
         while(mn.back().f>a[i]) {
             if(mn.size()>=2)seg.ud(mn[mn.size()-2].s+1,mn.back().s,a[i]*inv(mn.back().f)%mod );
             // seg.ud(mn.back().s+1,i,a[i]* (mn.size()==1?1:inv(mn.back().f))%mod );
-            la=mn.back().s;
+            // la=mn.back().s;
             mn.pop_back();
         }
         seg.ud(i,i,a[i]*a[i]%mod);
