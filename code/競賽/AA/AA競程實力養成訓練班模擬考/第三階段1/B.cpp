@@ -100,6 +100,7 @@ signed main() {
     Vs a(n);
     REP(i,n) cin>>a[i];
     REP(i,n) ins(a[i],1);
+    cout<<med()<<'\n';
     while(q--) {
         int u;
         cin>>u;
