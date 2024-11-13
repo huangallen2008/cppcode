@@ -47,12 +47,12 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    Vi dp(100);
-    dp[1]=1,dp[2]=2;
-    for(int i=3;i<100;i++) dp[i]=i+dp[i-1]+dp[i-2];
-    oparr(dp)
-    REP(i,100) {
-        op(i)op(dp[i])ope(dp[i]>(1e18))
+    int w,h;
+    cin>>w>>h;
+    if(h==2) {
+        if(w==1) cout<<1<<'\n';
+        if(w==2) cout<<3<<'\n';
+        else cout<<2<<'\n';
     }
     return 0;
 }
