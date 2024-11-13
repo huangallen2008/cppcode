@@ -47,7 +47,7 @@ int rd(int l,int r) {
 }
 Vi dp0(100);
 int dp(int n) {
-    return n<=84?dp[n]:inf;
+    return n<=84?dp0[n]:inf;
 }
 void f(int n,int l,int r) {
     if(n<=2) {
