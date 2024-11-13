@@ -48,9 +48,6 @@ int rd(int l,int r) {
 int n,T;
 vector<bitset<maxn>> bas;
 bool ins(bitset<maxn> x) {
-    REP(i,n) {
-        REP(j,n) cout<<bas[i][j];cout<<'\n';
-    }entr
     if(x==0) return 0;
     REP(i,n) if(x[i]) {
         if(bas[i]==0) {
@@ -79,7 +76,7 @@ signed main() {
     Vi nok;
     REP(i,n) if(bas[i]==0) nok.pb(i);
     int cnt=0;
-    oparr(ok)oparr(nok)
+    // oparr(ok)oparr(nok)
     REP(i,n) if(!ok[i]) {
         // op(i)
         // int x=nok[cnt++];
