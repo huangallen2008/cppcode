@@ -52,6 +52,7 @@ string operator^(string a,string b) {
 string x000;
 #define Vs vector<string>
 int n,l,q;
+int nn;
 int cnt[maxn];
 int ch[maxn][2];
 // int swp[maxn];
