@@ -69,6 +69,27 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int w,h;
     cin>>w>>h;
+
+    Vi fi(w+1);
+    fi[1]=1;fi[2]=2;
+    for(int i=2;i<=w;i++) fi[i]=(fi[i-1]+fi[i-2])%mod;
+    vector<Vi> dp(w+1,Vi(w+1));
+    Vi an(w+1);an[1]=0;dp[1][0]=1;
+    REP1(i,w) {
+        REP1(j,w) {
+            REP1(k,i-1) {
+                addmod(dp[i][j],dp[k][0]*dp[i-k][j-1]);
+            }
+        }
+        dp[i][0]=fi[i];
+        REP1(j,w) {
+            addmod(dp[i][0],pw(-1,j)*dp[i][j]*C(w,j));
+        }
+    }
+    dp[w][0]=(dp[w][0]+mod)%mod;
+    cout<<dp[w][0]<<'\n';
+
+
     Vi dp(h+1);dp[0]=1;
     REP1(i,w-1) {
         Vi ndp(h+1);
