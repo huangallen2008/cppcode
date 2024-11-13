@@ -107,7 +107,7 @@ signed main() {
         cin>>u,u--;
         string s=a[u]^swp;
         a[u]=x000;
-        swp=a[u];
+        swp=swp^s;
         // rev(s);
         ins(s,1);
         ins(x000,-1);
