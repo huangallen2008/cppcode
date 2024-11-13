@@ -79,6 +79,7 @@ signed main() {
             }
         }
         dp.swap(ndp);
+        oparr(dp)
     }
     int an=0;
     REP(i,h+1) addmod(an,dp[i]);
