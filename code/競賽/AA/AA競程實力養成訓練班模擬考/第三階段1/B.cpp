@@ -78,7 +78,7 @@ string med() {
     string an;
     REP(i,l) {
         int c0=swp[i]^'0';
-        op(i)op(c0)op(cnt[ch[u][c0]])ope(k)
+        op(i)op(an)op(c0)op(cnt[ch[u][c0]])ope(k)
         if(cnt[ch[u][c0]]>=k) {
             u=ch[u][c0];
             an+='0';
