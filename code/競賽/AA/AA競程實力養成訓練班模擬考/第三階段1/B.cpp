@@ -71,7 +71,6 @@ void ins(string s,int v) {
 void rev(string s) {
     // swp[1]=swp[1]^s;
     swp=swp^s;
-    ope("ok")
 }
 string med() {
     int u=1;
@@ -107,7 +106,7 @@ signed main() {
         string s=a[u];
         rev(s);
         ins(s,1);
-        ins(0,-1);
+        ins(x000,-1);
         cout<<med()<<'\n';
     }
     return 0;
