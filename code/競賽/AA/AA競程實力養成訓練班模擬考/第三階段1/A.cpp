@@ -74,7 +74,7 @@ signed main() {
         Vi ndp(h+1);
         REP(i,h+1) {
             //h-i
-            REP1(j,h-i) {
+            REP1(j,h-i-1) {
                 addmod(ndp[j],C(h-i,j)*dp[i]);
             }
         }
