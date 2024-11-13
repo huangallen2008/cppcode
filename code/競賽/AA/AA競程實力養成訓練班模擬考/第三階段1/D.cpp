@@ -55,7 +55,13 @@ void f(int n,int l,int r) {
         return;
     }
     if(dp(n-2)>=r) f(n-2,l,r);
-    else if(dp(n-2)<l) f(n-1,l-dp(n-2),r-dp(n-2));
+    else if(dp(n-2)<l) {
+        if(r>dp(n-1)+dp(n-2)) {
+            f(n-1,l-dp(n-2),dp(n-1));
+            REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
+        }
+        else f(n-1,l-dp(n-2),r-dp(n-2));
+    }
     else {
         f(n-2,l,dp(n-2));
         if(r>dp(n-1)+dp(n-2)) {
