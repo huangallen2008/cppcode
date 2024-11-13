@@ -108,7 +108,7 @@ signed main() {
         string s=a[u]^swp;
         swp=a[u];
         // rev(s);
-        ins(s,1);
+        ins(a[u],1);
         ins(x000,-1);
         a[u]=s;
         cout<<med()<<'\n';
