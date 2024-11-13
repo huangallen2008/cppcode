@@ -80,7 +80,7 @@ signed main() {
     IOS(); 
     dp0[1]=1,dp0[2]=2;
     for(int i=3;i<100;i++) dp0[i]=i+dp0[i-1]+dp0[i-2];
-    oparr(dp0)
+    // oparr(dp0)
     int n,l,r;
     cin>>n>>l>>r;
     if(n>=85) n=84+(n&1);
