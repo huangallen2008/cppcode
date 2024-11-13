@@ -93,7 +93,7 @@ signed main() {
     dsu.init(n);
     vector<pii> t(m);
     REP(i,m) t[i]={w[i],i};
-    sort(ALL(t));
+    sort(ALL(t),greater<int>());
     int an=0;
     for(auto [x,id]:t) {
         an+=x*(SZ(a[id])*(SZ(a[id])-1)>>1);
