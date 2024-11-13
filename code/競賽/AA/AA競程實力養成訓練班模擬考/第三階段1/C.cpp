@@ -71,19 +71,21 @@ signed main() {
             a[i][j]=tt-'0';
         }
     }
-    if(1) {
-        Vi ok(n);
-        REP(i,n) ok[i]=ins(a[i]);
-        Vi nok;
-        REP(i,n) if(bas[i]==0) nok.pb(i);
-        int cnt=0;
-        // oparr(ok)oparr(nok)
-        REP(i,n) if(!ok[i]) {
-            // op(i)
-            // int x=nok[cnt++];
-            // a[i][x]=a[i][x]^1;
-            a[i].flip(nok[cnt++]);
-        }
+    // if(n==1) {
+    //     cout<<a[0][0]<<'\n';
+    //     return;
+    // }
+    Vi ok(n);
+    REP(i,n) ok[i]=ins(a[i]);
+    Vi nok;
+    REP(i,n) if(bas[i]==0) nok.pb(i);
+    int cnt=0;
+    // oparr(ok)oparr(nok)
+    REP(i,n) if(!ok[i]) {
+        // op(i)
+        // int x=nok[cnt++];
+        // a[i][x]=a[i][x]^1;
+        a[i].flip(nok[cnt++]);
     }
     if(T==1) {
         cout<<nok.size()<<'\n';
