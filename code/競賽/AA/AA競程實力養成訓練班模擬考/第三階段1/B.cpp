@@ -49,6 +49,7 @@ string operator^(string a,string b) {
     REP(i,b.size()) if(b[i]=='1') a[i]^=1;
     return a;
 }
+string x000;
 #define Vs vector<string>
 int n,l,q;
 int cnt[maxn];
@@ -58,20 +59,22 @@ vector<string> swp;
 int node_id=2;
 void ins(string s,int v) {
     int u=1;
+    string bas=x000;
     REP(i,l) {
-        int c=s[i]-'0';
+        bas=bas^swp[u];
+        int c=(s[i]-'0')^(bas[i]^'0');
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
     }
 }
 void rev(string s) {
-
+    swp[1]=swp[1]^s;
 }
 signed main() {
     IOS(); 
     cin>>n>>l>>q;
-    string x000;REP(i,l) x000+='0';
+    REP(i,l) x000+='0';
     swp=Vs(n,x000);
     Vs a(n);
     REP(i,n) cin>>a[i];
