@@ -82,6 +82,7 @@ signed main() {
                 addmod(dp[i][j],dp[k][0]*dp[i-k][j-1]);
             }
         }
+        oparr(dp[i])
         dp[i][0]=pw(fi[i],h);
         REP1(j,w) {
             addmod(dp[i][0],(pw(-1,j)*dp[i][j]%mod)*C(w,j));
