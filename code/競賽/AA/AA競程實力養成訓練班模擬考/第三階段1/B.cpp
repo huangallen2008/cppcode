@@ -106,7 +106,7 @@ signed main() {
         int u;
         cin>>u,u--;
         string s=a[u]^swp;
-        a[u]=a[u]^swp;
+        a[u]=x000;
         swp=swp^s;
         // rev(s);
         ins(s,1);
