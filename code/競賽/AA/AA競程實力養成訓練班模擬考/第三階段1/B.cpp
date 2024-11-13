@@ -71,6 +71,7 @@ void ins(string s,int v) {
 void rev(string s) {
     // swp[1]=swp[1]^s;
     swp=swp^s;
+    ope("ok")
 }
 string med() {
     int u=1;
