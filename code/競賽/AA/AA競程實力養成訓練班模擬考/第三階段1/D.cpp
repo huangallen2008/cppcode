@@ -51,7 +51,8 @@ int dp(int n) {
 }
 void f(int n,int l,int r) {
     if(n<=2) {
-        //
+        for(int i=l;i<=r;i++) cout<<i<<'\n';
+        return;
     }
     if(dp(n-2)>=r) f(n-2,l,r);
     else if(dp(n-2)<l) f(n-1,l-dp(n-2),r-dp(n-2));
