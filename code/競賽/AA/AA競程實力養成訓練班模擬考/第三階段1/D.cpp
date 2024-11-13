@@ -45,17 +45,37 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dp(100);
+Vi dp0(100);
+int dp(int n) {
+    return n<=84?dp[n]:inf;
+}
 void f(int n,int l,int r) {
-
+    if(n<=2) {
+        //
+    }
+    if(dp(n-2)>=r) f(n-2,l,r);
+    else if(dp(n-2)<l) f(n-1,l-dp(n-2),r-dp(n-2));
+    else {
+        f(n-2,l,dp(n-2));
+        if(r>dp(n-1)+dp(n-2)) {
+            f(n-1,1,dp(n-1));
+            REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
+        }
+        else f(n-1,1,r-dp(n-2));
+    }
 }
 signed main() {
     IOS(); 
-    dp[1]=1,dp[2]=2;
-    for(int i=3;i<100;i++) dp[i]=i+dp[i-1]+dp[i-2];
-    oparr(dp)
-    REP(i,100) {
-        op(i)op(dp[i])ope(dp[i]>(1e18))
-    }
+    dp0[1]=1,dp0[2]=2;
+    for(int i=3;i<100;i++) dp0[i]=i+dp0[i-1]+dp0[i-2];
+
+    int n,l,r;
+    cin>>n>>l>>r;
+    if(n>=85) n=84+(n&1);
+    f(n,l,r);
+    // oparr(dp)
+    // REP(i,100) {
+    //     op(i)op(dp[i])ope(dp[i]>(1e18))
+    // }
     return 0;
 }
