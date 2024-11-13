@@ -54,12 +54,31 @@ int pw(int x,int p) {
     }
     return r;
 }
+Vi fac(maxn),infac(maxn);
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
 signed main() {
     IOS(); 
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int w,h;
     cin>>w>>h;
-    if(w==2) {
-        cout<<pw(2,h)-1<<'\n';
+    Vi dp(h+1);dp[0]=1;
+    REP1(i,w) {
+        Vi ndp(h+1);
+        REP(i,h+1) {
+            //h-i
+            REP(j,h-i+1) {
+                addmod(dp[j],C(h-i,j)*dp[i]);
+            }
+        }
+        dp.swap(ndp);
     }
+    int an=0;
+    REP(i,h+1) addmod(an,dp[i]);
+    cout<<an<<'\n';
     return 0;
 }
