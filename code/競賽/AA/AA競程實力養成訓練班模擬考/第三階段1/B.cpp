@@ -105,8 +105,10 @@ signed main() {
     while(q--) {
         int u;
         cin>>u,u--;
-        string s=a[u];
-        rev(s);
+        string s=a[u]^swp;
+        a[u]=a[u]^swp;
+        swp=swp^s;
+        // rev(s);
         ins(s,1);
         ins(x000,-1);
         cout<<med()<<'\n';
