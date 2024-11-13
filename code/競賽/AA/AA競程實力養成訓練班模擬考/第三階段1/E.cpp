@@ -96,7 +96,7 @@ signed main() {
     sort(ALL(t));
     int an=0;
     for(auto [x,id]:t) {
-        an+=SZ(a[id])*(SZ(a[id])-1)>>1;
+        an+=x*(SZ(a[id])*(SZ(a[id])-1)>>1);
         REP1(i,SZ(a[id])-1) {
             dsu.merge({a[id][i-1],a[id][i],x});
         }
