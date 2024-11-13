@@ -55,26 +55,49 @@ void f(int n,int l,int r) {
         return;
     }
     if(dp(n-2)>=r) f(n-2,l,r);
-    else if(dp(n-2)<l) {
-        if(l>dp(n-1)+dp(n-2)) {
-            for(int i=l-dp(n-1)-dp(n-2);i<=r-dp(n-1)-dp(n-2);i++) cout<<i<<'\n';
+    else if(r<=dp(n-1)+dp(n-2)) {
+        if(l>dp(n-2)) {
+            f(n-1,l-dp(n-2),r-dp(n-2));
         }
         else {
-            if(r>dp(n-1)+dp(n-2)) {
-                f(n-1,l-dp(n-2),dp(n-1));
-                REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
-            }
-            f(n-1,l-dp(n-2),r-dp(n-2));
+            f(n-2,l,dp(n-2));
+            f(n-1,1,r-dp(n-2));
         }
     }
     else {
-        f(n-2,l,dp(n-2));
-        if(r>dp(n-1)+dp(n-2)) {
+        if(l<=dp(n-2)) {
+            f(n-2,l,dp(n-2));
             f(n-1,1,dp(n-1));
             REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
         }
-        else f(n-1,1,r-dp(n-2));
+        else if(l<=dp(n-1)+dp(n-2)) {
+            f(n-1,l-dp(n-2),dp(n-1));
+            REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
+        }
+        else {
+            for(int i=l-dp(n-1)-dp(n-2);i<=r-dp(n-1)-dp(n-2);i++) cout<<i<<'\n';
+        }
     }
+    // else if(dp(n-2)<l) {
+    //     if(l>dp(n-1)+dp(n-2)) {
+    //         for(int i=l-dp(n-1)-dp(n-2);i<=r-dp(n-1)-dp(n-2);i++) cout<<i<<'\n';
+    //     }
+    //     else {
+    //         if(r>dp(n-1)+dp(n-2)) {
+    //             f(n-1,l-dp(n-2),dp(n-1));
+    //             REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
+    //         }
+    //         f(n-1,l-dp(n-2),r-dp(n-2));
+    //     }
+    // }
+    // else {
+    //     f(n-2,l,dp(n-2));
+    //     if(r>dp(n-1)+dp(n-2)) {
+    //         f(n-1,1,dp(n-1));
+    //         REP1(i,r-dp(n-1)-dp(n-2)) cout<<i<<'\n';
+    //     }
+    //     else f(n-1,1,r-dp(n-2));
+    // }
 }
 signed main() {
     IOS(); 
