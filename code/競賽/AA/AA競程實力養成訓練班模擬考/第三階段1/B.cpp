@@ -49,10 +49,12 @@ string operator^(string a,string b) {
     REP(i,b.size()) if(b[i]=='1') a[i]^=1;
     return a;
 }
+#define Vs vector<string>
 int n,l,q;
 int cnt[maxn];
 int ch[maxn][2];
-int swp[maxn];
+// int swp[maxn];
+vector<string> swp;
 int node_id=2;
 void ins(string s,int v) {
     int u=1;
@@ -69,7 +71,9 @@ void rev(string s) {
 signed main() {
     IOS(); 
     cin>>n>>l>>q;
-    vector<string> a(n);
+    string x000;REP(i,l) x000+='0';
+    swp=Vs(n,x000);
+    Vs a(n);
     REP(i,n) cin>>a[i];
 
     return 0;
