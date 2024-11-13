@@ -75,7 +75,7 @@ signed main() {
     Vi nok;
     REP(i,n) if(bas[i]==0) nok.pb(i);
     int cnt=0;
-    oparr(ok)
+    oparr(ok)oparr(nok)
     REP(i,n) if(!ok[i]) a[i].flip(nok[cnt++]);
     if(T==1) {
         cout<<nok.size()<<'\n';
