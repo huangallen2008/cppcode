@@ -104,7 +104,7 @@ signed main() {
     cout<<med()<<'\n';
     while(q--) {
         int u;
-        cin>>u;
+        cin>>u,u--;
         string s=a[u];
         rev(s);
         ins(s,1);
