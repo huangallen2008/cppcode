@@ -50,7 +50,7 @@ vector<bitset<maxn>> bas;
 bool ins(bitset<maxn> x) {
     REP(i,n) {
         REP(j,n) cout<<bas[i][j];cout<<'\n';
-    }
+    }entr
     if(x==0) return 0;
     REP(i,n) {
         if(bas[i]==0) {
