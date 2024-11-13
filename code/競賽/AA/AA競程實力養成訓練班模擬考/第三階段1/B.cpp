@@ -105,12 +105,12 @@ signed main() {
     while(q--) {
         int u;
         cin>>u,u--;
-        string s=a[u];
+        string s=a[u]^swp;
         swp=a[u];
-        a[u]=x000;
         // rev(s);
         ins(s,1);
         ins(x000,-1);
+        a[u]=s;
         cout<<med()<<'\n';
     }
     return 0;
