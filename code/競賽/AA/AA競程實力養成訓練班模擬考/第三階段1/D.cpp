@@ -106,7 +106,7 @@ signed main() {
     // oparr(dp0)
     int n,l,r;
     cin>>n>>l>>r;
-    if(n>=85) n=84+(n&1);
+    if(n>85) n=84+(n&1);
     f(n,l,r);
     // oparr(dp)
     // REP(i,100) {
