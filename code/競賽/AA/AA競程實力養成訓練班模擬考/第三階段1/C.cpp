@@ -74,6 +74,6 @@ signed main() {
     Vi nok;
     REP(i,n) if(bas[i]==0) nok.pb(i);
     int cnt=0;
-    REP(i,n) if(!ok) bas[i].flip(nok[cnt++]);
+    REP(i,n) if(!ok[i]) bas[i].flip(nok[cnt++]);
     return 0;
 }
