@@ -55,29 +55,58 @@ int n,l,q;
 int cnt[maxn];
 int ch[maxn][2];
 // int swp[maxn];
-vector<string> swp;
+// vector<string> swp;
+string swp;
 int node_id=2;
 void ins(string s,int v) {
     int u=1;
-    string bas=x000;
     REP(i,l) {
-        bas=bas^swp[u];
-        int c=(s[i]-'0')^(bas[i]^'0');
+        int c=(s[i]-'0')^(swp[i]^'0');
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
         cnt[u]++;
     }
 }
 void rev(string s) {
-    swp[1]=swp[1]^s;
+    // swp[1]=swp[1]^s;
+    swp=swp^s;
+}
+string med() {
+    int u=1;
+    int k=nn;
+    string an;
+    REP(i,l) {
+        int c0=swp[i]^'0';
+        if(cnt[ch[u][c0]]<=k) {
+            u=ch[u][c0];
+            an+='0';
+        }
+        else {
+            k-=cnt[ch[u][c0]];
+            u=ch[u][c0^1];
+            an+='1';
+        }
+    }
+    return an;
 }
 signed main() {
     IOS(); 
     cin>>n>>l>>q;
+    nn=(n>>1)+1;
     REP(i,l) x000+='0';
-    swp=Vs(n,x000);
+    swp=x000;
+    // swp=Vs(n,x000);
     Vs a(n);
     REP(i,n) cin>>a[i];
-
+    REP(i,n) ins(a[i],1);
+    while(q--) {
+        int u;
+        cin>>u;
+        string s=a[u];
+        rev(s);
+        ins(s,1);
+        ins(0,-1);
+        cout<<med()<<'\n';
+    }
     return 0;
 }
