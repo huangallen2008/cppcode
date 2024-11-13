@@ -76,11 +76,10 @@ signed main() {
             //h-i
             REP1(j,h-i) {
                 addmod(ndp[j],C(h-i,j)*dp[i]);
-                op(j)op(h-i)op(j)ope(C(h-i,j))
             }
         }
         dp.swap(ndp);
-        oparr(dp)
+        // oparr(dp)
     }
     int an=0;
     REP(i,h+1) addmod(an,dp[i]);
