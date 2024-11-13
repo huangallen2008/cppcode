@@ -76,7 +76,7 @@ signed main() {
     Vi nok;
     REP(i,n) if(bas[i]==0) nok.pb(i);
     int cnt=0;
-    oparr(ok)oparr(nok)
+    // oparr(ok)oparr(nok)
     REP(i,n) if(!ok[i]) {
         // op(i)
         // int x=nok[cnt++];
