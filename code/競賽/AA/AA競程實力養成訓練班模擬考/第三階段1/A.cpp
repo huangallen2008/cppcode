@@ -75,7 +75,7 @@ signed main() {
         REP(i,h+1) {
             //h-i
             REP(j,h-i+1) {
-                addmod(dp[j],C(h-i,j)*dp[i]);
+                addmod(ndp[j],C(h-i,j)*dp[i]);
             }
         }
         dp.swap(ndp);
