@@ -70,7 +70,7 @@ signed main() {
     int w,h;
     cin>>w>>h;
     Vi dp(h+1);dp[0]=1;
-    REP1(i,w) {
+    REP1(i,w-1) {
         Vi ndp(h+1);
         REP(i,h+1) {
             //h-i
