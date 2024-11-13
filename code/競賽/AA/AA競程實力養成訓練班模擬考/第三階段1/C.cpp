@@ -48,7 +48,7 @@ int rd(int l,int r) {
 vector<bitset<maxn>> bas;
 bool ins(bitset<maxn> x) {
     REP(i,n) {
-        if(!bas[i]) {
+        if(bas[i]==0) {
             bas[i]=x;
             return 1;
         }
