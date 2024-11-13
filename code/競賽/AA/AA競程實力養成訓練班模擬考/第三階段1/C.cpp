@@ -48,7 +48,9 @@ int rd(int l,int r) {
 int n,T;
 vector<bitset<maxn>> bas;
 bool ins(bitset<maxn> x) {
-    oparr(bas)
+    REP(i,n) {
+        REP(j,n) cout<<bas[i][j];cout<<'\n';
+    }
     if(x==0) return 0;
     REP(i,n) {
         if(bas[i]==0) {
