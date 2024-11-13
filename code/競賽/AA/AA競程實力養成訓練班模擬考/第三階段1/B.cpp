@@ -46,7 +46,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 string operator^(string a,string b) {
-    REP(i,b.size()) if(b[i]=='1') a[i]='0'+((a[i]-'0')^1);
+    REP(i,b.size()) if(b[i]=='1') a[i]^=1;
     return a;
 }
 int n,l,q;
@@ -68,7 +68,6 @@ void rev(string s) {
 }
 signed main() {
     IOS(); 
-    ope((int)'0')
     cin>>n>>l>>q;
     vector<string> a(n);
     REP(i,n) cin>>a[i];
