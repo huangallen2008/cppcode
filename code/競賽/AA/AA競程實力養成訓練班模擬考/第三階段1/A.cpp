@@ -69,44 +69,45 @@ signed main() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int w,h;
     cin>>w>>h;
-
-    Vi fi(w+1);
-    fi[1]=1;fi[2]=2;
-    for(int i=3;i<=w;i++) fi[i]=(fi[i-1]+fi[i-2])%mod;
-    vector<Vi> dp(w+1,Vi(w+1));
-    Vi an(w+1);an[1]=0;dp[1][0]=1;
-    oparr(fi)
-    for(int i=2;i<=w;i++) {
-        REP1(j,w) {
-            REP1(k,i-1) {
-                addmod(dp[i][j],dp[k][0]*dp[i-k][j-1]);
+    if(w<=700) {
+        Vi fi(w+1);
+        fi[1]=1;fi[2]=2;
+        for(int i=3;i<=w;i++) fi[i]=(fi[i-1]+fi[i-2])%mod;
+        vector<Vi> dp(w+1,Vi(w+1));
+        dp[1][0]=1;
+        oparr(fi)
+        for(int i=2;i<=w;i++) {
+            REP1(j,w) {
+                REP1(k,i-1) {
+                    addmod(dp[i][j],dp[k][0]*dp[i-k][j-1]);
+                }
             }
+            dp[i][0]=pw(fi[i],h);
+            REP1(j,i-1) {
+                addmod(dp[i][0],(-dp[i][j]));
+            }
+            // oparr(dp[i])
         }
-        dp[i][0]=pw(fi[i],h);
-        REP1(j,i-1) {
-            addmod(dp[i][0],(-dp[i][j]%mod));
-        }
-        oparr(dp[i])
+        dp[w][0]=(dp[w][0]+mod)%mod;
+        cout<<dp[w][0]<<'\n';
     }
-    dp[w][0]=(dp[w][0]+mod)%mod;
-    cout<<dp[w][0]<<'\n';
-
-
-    // Vi dp(h+1);dp[0]=1;
-    // REP1(i,w-1) {
-    //     Vi ndp(h+1);
-    //     REP(i,h+1) {
-    //         //h-i
-    //         REP1(j,h-i) {
-    //             addmod(ndp[j],C(h-i,j)*dp[i]);
-    //         }
-    //     }
-    //     dp.swap(ndp);
-    //     // oparr(dp)
-    // }
-    // int an=0;
-    // REP(i,h+1) addmod(an,dp[i]);
-    // an=(an+mod)%mod;
-    // cout<<an<<'\n';
+    else {
+        Vi dp(h+1);dp[0]=1;
+        REP1(i,w-1) {
+            Vi ndp(h+1);
+            REP(i,h+1) {
+                //h-i
+                REP1(j,h-i) {
+                    addmod(ndp[j],C(h-i,j)*dp[i]);
+                }
+            }
+            dp.swap(ndp);
+            // oparr(dp)
+        }
+        int an=0;
+        REP(i,h+1) addmod(an,dp[i]);
+        an=(an+mod)%mod;
+        cout<<an<<'\n';
+    }
     return 0;
 }
