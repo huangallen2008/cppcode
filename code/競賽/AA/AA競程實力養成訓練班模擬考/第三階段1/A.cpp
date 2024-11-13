@@ -90,21 +90,21 @@ signed main() {
     cout<<dp[w][0]<<'\n';
 
 
-    Vi dp(h+1);dp[0]=1;
-    REP1(i,w-1) {
-        Vi ndp(h+1);
-        REP(i,h+1) {
-            //h-i
-            REP1(j,h-i) {
-                addmod(ndp[j],C(h-i,j)*dp[i]);
-            }
-        }
-        dp.swap(ndp);
-        // oparr(dp)
-    }
-    int an=0;
-    REP(i,h+1) addmod(an,dp[i]);
-    an=(an+mod)%mod;
-    cout<<an<<'\n';
+    // Vi dp(h+1);dp[0]=1;
+    // REP1(i,w-1) {
+    //     Vi ndp(h+1);
+    //     REP(i,h+1) {
+    //         //h-i
+    //         REP1(j,h-i) {
+    //             addmod(ndp[j],C(h-i,j)*dp[i]);
+    //         }
+    //     }
+    //     dp.swap(ndp);
+    //     // oparr(dp)
+    // }
+    // int an=0;
+    // REP(i,h+1) addmod(an,dp[i]);
+    // an=(an+mod)%mod;
+    // cout<<an<<'\n';
     return 0;
 }
