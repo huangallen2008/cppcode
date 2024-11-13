@@ -71,10 +71,10 @@ signed main() {
             a[i][j]=tt-'0';
         }
     }
-    // if(n==1) {
-    //     cout<<a[0][0]<<'\n';
-    //     return;
-    // }
+    if(n==1) {
+        cout<<(T==1?0:a[0][0])<<'\n';
+        return;
+    }
     Vi ok(n);
     REP(i,n) ok[i]=ins(a[i]);
     Vi nok;
