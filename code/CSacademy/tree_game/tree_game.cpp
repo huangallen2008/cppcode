@@ -48,6 +48,7 @@ int rd(int l,int r) {
 int n;
 Graph g;
 Vi ac,bc;
+Vi dp[2];
 void dfs(int u,int fa) {
     int acc=0;
     for(auto v:g[u]) {
@@ -56,13 +57,12 @@ void dfs(int u,int fa) {
         if(ac[v]) bc[u]=1;
         else acc++;
     }
-    if(acc==g[u].size()-1) ac[u]=1;
 }
 signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    ac=bc=Vi(n);
+    dp[0]=dp[1]=Vi(n,inf);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
