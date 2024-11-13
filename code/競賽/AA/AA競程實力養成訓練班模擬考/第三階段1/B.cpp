@@ -110,7 +110,7 @@ signed main() {
         // rev(s);
         ins(s,1);
         ins(x000,-1);
-        a[u]=x000;
+        a[u]=s;
         cout<<med()<<'\n';
         ope(swp)
         oparr(a)
