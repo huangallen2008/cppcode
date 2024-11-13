@@ -52,7 +52,7 @@ bool ins(bitset<maxn> x) {
         REP(j,n) cout<<bas[i][j];cout<<'\n';
     }entr
     if(x==0) return 0;
-    REP(i,n) if(x>>i&1) {
+    REP(i,n) if(x[i]) {
         if(bas[i]==0) {
             bas[i]=x;
             return 1;
