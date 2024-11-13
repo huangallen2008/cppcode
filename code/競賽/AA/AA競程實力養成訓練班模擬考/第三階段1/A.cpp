@@ -51,7 +51,7 @@ signed main() {
     dp[1]=1,dp[2]=2;
     for(int i=3;i<100;i++) dp[i]=i+dp[i-1]+dp[i-2];
     oparr(dp)
-    REP(i,40) {
+    REP(i,100) {
         op(i)op(dp[i])ope(dp[i]>(1e18))
     }
     return 0;
