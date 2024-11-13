@@ -54,6 +54,9 @@ int pw(int x,int p) {
     }
     return r;
 }
+int inv(int x) {
+    return pw(x,mod-2);
+}
 Vi fac(maxn),infac(maxn);
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
