@@ -78,7 +78,7 @@ string med() {
     string an;
     REP(i,l) {
         int c0=swp[i]^'0';
-        op(i)op(an)op(c0)op(cnt[ch[u][c0]])ope(k)
+        // op(i)op(an)op(c0)op(cnt[ch[u][c0]])ope(k)
         if(cnt[ch[u][c0]]>=k) {
             u=ch[u][c0];
             an+='0';
@@ -101,13 +101,13 @@ signed main() {
     Vs a(n);
     REP(i,n) cin>>a[i];
     REP(i,n) ins(a[i],1);
-    cout<<med()<<'\n';
+    // cout<<med()<<'\n';
     while(q--) {
         int u;
         cin>>u,u--;
         string s=a[u]^swp;
         a[u]=x000;
-        swp=swp^s;
+        swp=a[u];
         // rev(s);
         ins(s,1);
         ins(x000,-1);
