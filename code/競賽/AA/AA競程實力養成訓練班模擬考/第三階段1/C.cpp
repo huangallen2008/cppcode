@@ -78,10 +78,10 @@ signed main() {
     int cnt=0;
     oparr(ok)oparr(nok)
     REP(i,n) if(!ok[i]) {
-        op(i)
-        int x=nok[cnt++];
-        a[i][x]=a[i][x]^1;
-        // a[i].flip(nok[cnt++]);
+        // op(i)
+        // int x=nok[cnt++];
+        // a[i][x]=a[i][x]^1;
+        a[i].flip(nok[cnt++]);
     }
     if(T==1) {
         cout<<nok.size()<<'\n';
