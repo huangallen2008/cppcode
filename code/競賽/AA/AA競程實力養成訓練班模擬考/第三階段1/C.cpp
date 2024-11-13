@@ -65,9 +65,9 @@ signed main() {
     vector<bitset<maxn>> a(n);
     REP(i,n) {
         REP(j,n) {
-            int tt;
+            char tt;
             cin>>tt;
-            a[i][j]=tt;
+            a[i][j]=tt-'0';
         }
     }
     Vi ok(n);
