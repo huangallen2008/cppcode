@@ -75,7 +75,7 @@ signed main() {
         for(int i=3;i<=w;i++) fi[i]=(fi[i-1]+fi[i-2])%mod;
         vector<Vi> dp(w+1,Vi(w+1));
         dp[1][0]=1;
-        oparr(fi)
+        // oparr(fi)
         for(int i=2;i<=w;i++) {
             REP1(j,w) {
                 REP1(k,i-1) {
