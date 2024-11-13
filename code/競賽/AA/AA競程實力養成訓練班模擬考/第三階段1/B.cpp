@@ -112,8 +112,8 @@ signed main() {
         ins(x000,-1);
         a[u]=a[u]^s;
         cout<<med()<<'\n';
-        ope(swp)
-        oparr(a)
+        // ope(swp)
+        // oparr(a)
     }
     return 0;
 }
