@@ -45,14 +45,21 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
 signed main() {
     IOS(); 
     int w,h;
     cin>>w>>h;
-    if(h==2) {
-        if(w==1) cout<<1<<'\n';
-        else if(w==2) cout<<3<<'\n';
-        else cout<<2<<'\n';
+    if(w==2) {
+        cout<<pw(2,h)-1<<'\n';
     }
     return 0;
 }
