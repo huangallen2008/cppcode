@@ -105,7 +105,7 @@ signed main() {
     while(q--) {
         int u;
         cin>>u,u--;
-        string s=a[u]^swp;
+        string s=swp;
         swp=a[u];
         // rev(s);
         ins(s,1);
