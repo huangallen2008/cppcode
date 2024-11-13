@@ -65,7 +65,7 @@ void ins(string s,int v) {
         int c=(s[i]-'0')^(swp[i]^'0');
         if(!ch[u][c]) ch[u][c]=node_id++;
         u=ch[u][c];
-        cnt[u]++;
+        cnt[u]+=v;
     }
 }
 void rev(string s) {
