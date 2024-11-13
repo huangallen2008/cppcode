@@ -45,6 +45,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int n,T;
 vector<bitset<maxn>> bas;
 bool ins(bitset<maxn> x) {
     REP(i,n) {
@@ -59,7 +60,6 @@ bool ins(bitset<maxn> x) {
 }
 signed main() {
     IOS(); 
-    int n,T;
     cin>>n>>T;
     bas=vector<bitset<maxn>>(n);
     REP(i,n) {
@@ -71,5 +71,9 @@ signed main() {
     }
     Vi ok(n);
     REP(i,n) ok[i]=ins(bas[i]);
+    Vi nok;
+    REP(i,n) if(bas[i]==0) nok.pb(i);
+    int cnt=0;
+    REP(i,n) if(!ok) bas[i][nok[cnt++]]^=1;
     return 0;
 }
