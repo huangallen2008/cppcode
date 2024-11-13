@@ -75,7 +75,7 @@ signed main() {
     for(int i=2;i<=w;i++) fi[i]=(fi[i-1]+fi[i-2])%mod;
     vector<Vi> dp(w+1,Vi(w+1));
     Vi an(w+1);an[1]=0;dp[1][0]=1;
-    REP1(i,w) {
+    for(int i=2;i<=w;i++) {
         REP1(j,w) {
             REP1(k,i-1) {
                 addmod(dp[i][j],dp[k][0]*dp[i-k][j-1]);
