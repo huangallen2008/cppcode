@@ -51,7 +51,7 @@ signed main() {
     cin>>w>>h;
     if(h==2) {
         if(w==1) cout<<1<<'\n';
-        if(w==2) cout<<3<<'\n';
+        else if(w==2) cout<<3<<'\n';
         else cout<<2<<'\n';
     }
     return 0;
