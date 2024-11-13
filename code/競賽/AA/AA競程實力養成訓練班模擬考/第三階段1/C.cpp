@@ -62,18 +62,28 @@ signed main() {
     IOS(); 
     cin>>n>>T;
     bas=vector<bitset<maxn>>(n);
+    vector<bitset<maxn>> a(n);
     REP(i,n) {
         REP(j,n) {
             int tt;
             cin>>tt;
-            bas[i][j]=tt;
+            a[i][j]=tt;
         }
     }
     Vi ok(n);
-    REP(i,n) ok[i]=ins(bas[i]);
+    REP(i,n) ok[i]=ins(a[i]);
     Vi nok;
     REP(i,n) if(bas[i]==0) nok.pb(i);
     int cnt=0;
-    REP(i,n) if(!ok[i]) bas[i].flip(nok[cnt++]);
+    REP(i,n) if(!ok[i]) a[i].flip(nok[cnt++]);
+    if(T==1) {
+        cout<<nok.size()<<'\n';
+    }
+    else {
+        REP(i,n) {
+            REP(j,n) cout<<a[i][j];
+            cout<<'\n';
+        }
+    }
     return 0;
 }
