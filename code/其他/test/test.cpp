@@ -33,7 +33,7 @@ using namespace std;
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto &mken:(x)) cout<<mken<<" ";cout<<" size="<<(x).size()<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto &allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
 #define entr cout<<endl;
 #else
 #define op(x) ;
