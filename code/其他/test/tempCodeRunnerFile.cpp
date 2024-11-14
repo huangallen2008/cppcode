@@ -1,2 +1,1 @@
-);
-    op(4)f4(
+/CLOCKS_PER_SEC<
