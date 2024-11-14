@@ -49,12 +49,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-// int pw(int x,int p )
 signed main() {
     IOS();
-    crope a="01234",b="56789";
-    a.insert(4,b);
-    crope c=a.substr(4,-3);
-    cout<<c<<'\n';
+    gp_hash_table<int,int> mp;
+    mp[2]=3;
+    mp[1]=2;
+    for(auto [x,y]:mp) cout<<x<<' '<<y<<'\n';
     return 0;
 }
