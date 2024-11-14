@@ -49,12 +49,22 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+
+typedef trie<
+    string,                        // key type（可以是字串或其他容器）
+    null_type,                     // mapped-policy（若是 map 則設定值的型別）
+    trie_string_access_traits<>,   // 字串存取方式
+    pat_trie_tag,                  // 樹結構選項，選擇 PAT trie
+    trie_order_statistics_node_update // 更新策略
+> pbds_trie;
+typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
+
 signed main() {
     IOS();
     int n=10;
     // tree<int,>
-    __gnu_pbds::trie<int,null_type,less<int>,pat_trie_tag,null_node_update> tri;
-    tri.~trie();
+    pbds_trie tr;
+    ordered_map mpp;
 
     gp_hash_table<int,int> mp;
     REP(i,n) mp[i]=rd(1,n);
