@@ -64,12 +64,12 @@ signed main() {
     // tree<int,>
     rope<int> a;
     REP(i,n) a.pb(i);
-    REP(i,n) {
+    // REP(i,n) {
         rope<int> b=a;
         b.substr(0,n);
         b.erase(0,n);
         // a.substr(0,1);a.erase(0,n);
-    }
+    // }
     cout<<clock()<<'\n';
     // oparr(a)oparr(b)
     return 0;
