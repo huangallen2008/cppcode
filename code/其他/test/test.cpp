@@ -47,37 +47,12 @@ int rd(int l,int r) {
 }
 // int pw(int x,int p )
 signed main() {
-    IOS(); 
-    freopen("in.txt","r",stdin);
-    // int n=1000;
-    // Vi a(n);
-    // REP(i,n ) cin>>a[i];
-    // int na=0;
-    // REP1(i,n-1){
-    //     if(a[i]*(i)>na*n) na++;
-    // }
-    // ope(na)
-    {
-        int n=1000;
-        Vi a(n);
-        REP(i,n ) cin>>a[i];
-        int na=0;
-        REP1(i,n-1){
-            if(a[i]*(i)>na*(i+1)) na++;
-            if(i==300) ope(na)
-        }
-        ope(na)
-    }
-    {
-        int n=1000;
-        Vi a(n);
-        REP(i,n ) cin>>a[i];
-        int na=0;
-        REP1(i,n-1){
-            if(a[i]*(i)>na*(i+1)) na++;
-            if(i==500) ope(na)
-        }
-        ope(na)
-    }
+    IOS();
+    int n=10; 
+    Vi a(10);
+    REP(i,n) a[i]=i;
+    oparr(a);
+    nth_element(a.begin(),a.begin()+5,a.end());
+    oparr(a)
     return 0;
 }
