@@ -54,6 +54,7 @@ signed main() {
     IOS();
     crope a="01234",b="56789";
     a.insert(4,b);
-    cout<<a<<'\n';
+    crope c=a.substr(4,-3);
+    cout<<c<<'\n';
     return 0;
 }
