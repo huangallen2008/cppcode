@@ -1,3 +1,7 @@
+#include<bits/extc++.h>
+using namespace __gnu_cxx;
+using namespace __gnu_pbds;
+
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
@@ -48,11 +52,8 @@ int rd(int l,int r) {
 // int pw(int x,int p )
 signed main() {
     IOS();
-    int n=10; 
-    Vi a(10);
-    REP(i,n) a[i]=rd(1,n);
-    oparr(a);
-    nth_element(a.begin(),a.begin()+5,a.end());
-    oparr(a)
+    crope a="01234",b="56789";
+    a.insert(5,b);
+    cout<<a<<'\n';
     return 0;
 }
