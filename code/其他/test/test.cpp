@@ -60,11 +60,13 @@ typedef trie<
 typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
-    int n=10;
+    int n=100000;
     // tree<int,>
     rope<int> a;
     REP(i,n) a.pb(i);
-    rope<int> b=a.substr(0,3);a.erase(0,3);
-    oparr(a)oparr(b)
+    REP(i,n) {
+        rope<int> b=a.substr(0,1);a.erase(0,1);
+    }
+    // oparr(a)oparr(b)
     return 0;
 }
