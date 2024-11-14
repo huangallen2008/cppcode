@@ -64,9 +64,9 @@ signed main() {
     int n=10;
     // tree<int,>
     pbds_trie tr;
-    ordered_map mpp;
+    ordered_map mp;
 
-    gp_hash_table<int,int> mp;
+    // gp_hash_table<int,int> mp;
     REP(i,n) mp[i]=rd(1,n);
     for(auto [x,y]:mp) cout<<x<<' '<<y<<'\n';
     return 0;
