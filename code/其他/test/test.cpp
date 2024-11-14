@@ -4,7 +4,7 @@ using namespace __gnu_pbds;
 
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("Ofast,unroll-loops,fast-math")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -60,7 +60,7 @@ typedef trie<
 typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
-    int n=1000000;
+    int n=500000;
     // tree<int,>
     rope<int> a;
     REP(i,n) a.pb(i);
