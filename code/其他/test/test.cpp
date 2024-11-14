@@ -62,7 +62,8 @@ signed main() {
     IOS();
     int n=10;
     // tree<int,>
-    rope<int> a={1,2,3,4,5};
+    rope<int> a;
+    REP(i,n) a.pb(i);
     rope<int> b=a.substr(0,3);a.erase(0,3);
     oparr(a)oparr(b)
     return 0;
