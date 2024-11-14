@@ -51,9 +51,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    int n=10;
     gp_hash_table<int,int> mp;
-    mp[2]=3;
-    mp[1]=2;
+    REP(i,n) mp[i]=rd(1,n);
     for(auto [x,y]:mp) cout<<x<<' '<<y<<'\n';
     return 0;
 }
