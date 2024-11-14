@@ -64,6 +64,7 @@ signed main() {
     // tree<int,>
     rope<int> a;
     REP(i,n) a.pb(i);
+    cout<<clock()<<'\n';
     // REP(i,n) {
         rope<int> b=a;
         b.substr(0,n);
