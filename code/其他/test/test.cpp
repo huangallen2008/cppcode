@@ -58,18 +58,12 @@ typedef trie<
     trie_order_statistics_node_update // 更新策略
 > pbds_trie;
 typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
-
 signed main() {
     IOS();
     int n=10;
     // tree<int,>
-    pbds_trie tr;
-    ordered_map mp;
-    lldiv_t res=lldiv(5,4);
-    ope(llabs(-345))
-    // __gnu_cxx::
-    // gp_hash_table<int,int> mp;
-    REP(i,n) mp[i]=rd(1,n);
-    for(auto [x,y]:mp) cout<<x<<' '<<y<<'\n';
+    rope<int> a={1,2,3,4,5};
+    rope<int> b=a.substr(0,3);a.erase(0,3);
+    oparr(a)oparr(b)
     return 0;
 }
