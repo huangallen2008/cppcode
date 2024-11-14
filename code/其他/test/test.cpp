@@ -52,7 +52,10 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n=10;
-    __gnu_pbds::trie<int> tr;
+    // tree<int,>
+    __gnu_pbds::trie<int,null_type,less<int>,pat_trie_tag,null_node_update> tri;
+    tri.~trie();
+
     gp_hash_table<int,int> mp;
     REP(i,n) mp[i]=rd(1,n);
     for(auto [x,y]:mp) cout<<x<<' '<<y<<'\n';
