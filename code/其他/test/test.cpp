@@ -53,7 +53,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     crope a="01234",b="56789";
-    a.insert(5,b);
+    a.insert(4,b);
     cout<<a<<'\n';
     return 0;
 }
