@@ -50,7 +50,7 @@ signed main() {
     IOS();
     int n=10; 
     Vi a(10);
-    REP(i,n) a[i]=i;
+    REP(i,n) a[i]=n-i;
     oparr(a);
     nth_element(a.begin(),a.begin()+5,a.end());
     oparr(a)
