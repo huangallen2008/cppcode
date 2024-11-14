@@ -65,9 +65,9 @@ signed main() {
     rope<int> a;
     REP(i,n) a.pb(i);
     REP(i,n) {
-        rope<int> b=a.substr(0,1);a.erase(0,1);
+        a.substr(0,1);a.erase(0,1);
     }
-    cout<<(ld)clock()<<'\n';
+    cout<<clock()<<'\n';
     // oparr(a)oparr(b)
     return 0;
 }
