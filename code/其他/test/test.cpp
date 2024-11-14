@@ -67,6 +67,7 @@ signed main() {
     REP(i,n) {
         rope<int> b=a.substr(0,1);a.erase(0,1);
     }
+    cout<<clock()/CLOCKS_PER_SEC<<'\n';
     // oparr(a)oparr(b)
     return 0;
 }
