@@ -88,7 +88,7 @@ int merge(Vi a,int b) {
     int ran=inf;
     for(int x:r) ins(x);
     for(int x:l) chmin(ran,mn_xor(x));
-    if(ran==inf) ran=0;
+    if(r.empty()||l.empty()) ran=0;
     trie_clear();
     ope(an)
     an+=ran;
