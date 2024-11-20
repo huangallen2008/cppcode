@@ -79,7 +79,6 @@ void trie_clear() {
 }
 int merge(Vi a,int b) {
     if(a.size()<=1||b<0) return 0;
-    oparr(a)ope(b)
     Vi l,r;
     REP(i,a.size()) {
         if(a[i]>>b&1) r.pb(a[i]);
@@ -92,6 +91,7 @@ int merge(Vi a,int b) {
     if(ran==inf) ran=0;
     trie_clear();
     an+=ran;
+    oparr(a)ope(b)
     ope(an)
     return an;
 }
