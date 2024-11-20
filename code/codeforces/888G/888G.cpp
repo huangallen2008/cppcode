@@ -78,6 +78,7 @@ void trie_clear() {
     }
 }
 int merge(Vi a,int b) {
+    oparr(a)ope(b)
     if(a.size()<=1||b<0) return 0;
     Vi l,r;
     REP(i,a.size()) {
