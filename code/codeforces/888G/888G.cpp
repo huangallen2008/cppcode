@@ -52,7 +52,7 @@ vector<pii> stk;
 void init_trie() {
 
 }
-void ins(int x,int v=1,bool is_add=1) {
+void ins(int x,int v=1) {
     int r=1;
     RREP(i,maxb) {
         int c=x>>i&1;
@@ -86,8 +86,9 @@ int merge(Vi a,int b) {
     }
     int an=merge(l,b-1)+merge(r,b-1);
     int ran=inf;
-    for(int x:r) ins(x);
+    for(int x:r) ins(x,1);
     for(int x:l) chmin(ran,mn_xor(x));
+    for(int x:r) ins(x,-1);
     if(r.empty()||l.empty()) ran=0;
     trie_clear();
     ope(an)
