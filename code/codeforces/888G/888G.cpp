@@ -90,10 +90,10 @@ int merge(Vi a,int b) {
     for(int x:r) ins(x,-1);
     if(r.empty()||l.empty()) ran=0;
     // trie_clear();
-    ope(an)
+    // ope(an)
     an+=ran;
-    oparr(a)oparr(l)oparr(r)ope(b)
-    ope(an)
+    // oparr(a)oparr(l)oparr(r)ope(b)
+    // ope(an)
     return an;
 }
 signed main() {
