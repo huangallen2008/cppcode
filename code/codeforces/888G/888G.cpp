@@ -90,7 +90,7 @@ int merge(Vi a,int b) {
     for(int x:l) chmin(ran,mn_xor(x));
     for(int x:r) ins(x,-1);
     if(r.empty()||l.empty()) ran=0;
-    trie_clear();
+    // trie_clear();
     ope(an)
     an+=ran;
     oparr(a)oparr(l)oparr(r)ope(b)
