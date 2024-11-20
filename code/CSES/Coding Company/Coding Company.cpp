@@ -55,10 +55,10 @@ signed main() {
     dp[0][0][maxv]=1;
     REP(i,n) {
         for(int j=0;j<n;j++) {
-            for(int k=t[i];k+t[i]<10010;k++) {
-                if(j<n-1)addmod(dp[i+1][j+1][k-t[i]],dp[i][j][k]);
+            for(int k=0;k<10010;k++) {
+                if(j<n-1&&k>=t[i])addmod(dp[i+1][j+1][k-t[i]],dp[i][j][k]);
                 addmod(dp[i+1][j][k],dp[i][j][k]*(j+1));
-                if(j>0)addmod(dp[i+1][j-1][k+t[i]],dp[i][j][k]*j);
+                if(j>0&&k<10010-t[i])addmod(dp[i+1][j-1][k+t[i]],dp[i][j][k]*j);
             }
         }
     }
