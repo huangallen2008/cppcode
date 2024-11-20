@@ -92,6 +92,7 @@ int merge(Vi a,int b) {
     if(ran==inf) ran=0;
     trie_clear();
     an+=ran;
+    ope(an)
     return an;
 }
 signed main() {
