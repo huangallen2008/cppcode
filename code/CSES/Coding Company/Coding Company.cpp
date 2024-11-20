@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops,fast-math")
-#pragma GCC target("avx2,bmi,popcnt")
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC target("avx2,bmi,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<n;i++)
 #define REP1(i,n) for(int i=1;i<=n;i++)
@@ -46,6 +46,7 @@ int rd(int l,int r) {
 int dp[105][55][10010];//dp[i][j][k]
 signed main() {
     IOS();
+    freopen("in.txt","r",stdin);
     int n,x;
     cin>>n>>x;
     vector<int> t(n);
