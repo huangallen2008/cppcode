@@ -46,7 +46,7 @@ int rd(int l,int r) {
 int dp[105][55][10010];//dp[i][j][k]
 signed main() {
     IOS();
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     int n,x;
     cin>>n>>x;
     vector<int> t(n);
