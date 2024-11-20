@@ -43,7 +43,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int dp[105][105][10010];//dp[i][j][k]
+int dp[105][55][10010];//dp[i][j][k]
 signed main() {
     IOS();
     freopen("in.txt","r",stdin);
@@ -54,7 +54,7 @@ signed main() {
     sort(ALL(t));
     dp[0][0][maxv]=1;
     REP(i,n) {
-        for(int j=0;j<n;j++) {
+        for(int j=0;j*2<=n;j++) {
             for(int k=0;k<10010;k++) {
                 if(j<n-1&&k>=t[i])addmod(dp[i+1][j+1][k-t[i]],dp[i][j][k]);
                 addmod(dp[i+1][j][k],dp[i][j][k]*(j+1));
