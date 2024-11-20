@@ -84,7 +84,7 @@ int merge(Vi a,int b) {
         if(a[i]>>b&1) r.pb(a[i]);
         else l.pb(a[i]);
     }
-    int ret=merge(l,b-1)+merge(r,b-1);
+    int an=merge(l,b-1)+merge(r,b-1);
     int ran=inf;
     for(int x:r) ins(x);
     for(int x:l) chmin(ran,mn_xor(x));
