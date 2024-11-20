@@ -60,7 +60,6 @@ void ins(int x,int v=1) {
         r=ch[r][c];
         cnt[r]+=v;
     }
-    if(is_add)stk.pb({x,v});
 }
 int mn_xor(int x) {
     int r=1,an=0;
@@ -73,7 +72,7 @@ int mn_xor(int x) {
 }
 void trie_clear() {
     while(stk.size()) {
-        ins(stk.back().f,-stk.back().s,0);
+        ins(stk.back().f,-stk.back().s);
         stk.pop_back();
     }
 }
