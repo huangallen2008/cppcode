@@ -38,31 +38,49 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=1000+5;
 const int maxb=20;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+Vi fac(maxn),infac(maxn);
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
+int cnt(Vi a) {
+    if(a.size()==0) return 1;
+    Vi l,r;
+    for(int i=1;i<a.size();i++) {
+        if(a[i]<a[0]) l.pb(a[i]);
+        else r.pb(a[i]);
+    }
+    int rl=cnt(l),rr=cnt(r);
+    return (rl*rr%mod)*C(l.size()+r.size(),l.size())%mod;
+}
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) {
+    return pw(x,mod-2);
+}
 signed main() {
     IOS();
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
     int n;
     cin>>n;
-    vector<int> a(n),s(n);
-    REP(i,n) {
-        int k;
-        cin>>k;
-        s[i]=k;
-        REP(j,k) {
-            int x;
-            cin>>x;
-            chmax(a[i],x);
-        }
-    }
-    int mx=*max_element(ALL(a));
-    int an=0;
-    REP(i,n) an+=(mx-a[i])*s[i];
-    cout<<an<<'\n';
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    cout<<cnt(a)<<'\n';
     return 0;
 }

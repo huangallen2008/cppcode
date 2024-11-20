@@ -45,24 +45,62 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+// Vi vis;
+// Graph g;
+struct DSU {
+    Vi p,sz,is;
+    int n;
+    void init(int _n) {
+        n=_n;
+        p=is=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) {
+            is[x]=1;
+            return;
+        }
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        is[y]|=is[x];
+    }
+}dsu;
+// bool dfs(int u,int fa) {
+//     vis[u]=1;
+//     bool an=0;
+//     for(int v:g[u]) {
+//         if(v==fa) continue;
+//         if(vis[v]) {
+//             return 1;
+//         }
+//         an|=dfs(v,u);
+//     }
+//     return an;
+// }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    vector<int> a(n),s(n);
-    REP(i,n) {
-        int k;
-        cin>>k;
-        s[i]=k;
-        REP(j,k) {
-            int x;
-            cin>>x;
-            chmax(a[i],x);
-        }
+    int n,m;
+    cin>>n>>m;
+    dsu.init(n);
+    // g=Graph(n);
+    // vis=Vi(n);
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v;
+        dsu.merge(u,v);
+        // if(u==v) continue;
+        // g[u].pb(v);
+        // g[v].pb(u);
     }
-    int mx=*max_element(ALL(a));
-    int an=0;
-    REP(i,n) an+=(mx-a[i])*s[i];
-    cout<<an<<'\n';
+    int an[2]={0,0};
+    REP(i,n) if(dsu.p[i]==i) an[dsu.is[i]]++;
+    // REP(i,n) if(!vis[i]) an[dfs(i,-1)]++;
+    cout<<an[1]<<' '<<an[0]<<'\n';
     return 0;
 }
