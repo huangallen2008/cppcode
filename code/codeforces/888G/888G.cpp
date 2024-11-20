@@ -92,7 +92,7 @@ int merge(Vi a,int b) {
     trie_clear();
     ope(an)
     an+=ran;
-    oparr(a)ope(b)
+    oparr(a)oparr(l)oparr(r)ope(b)
     ope(an)
     return an;
 }
