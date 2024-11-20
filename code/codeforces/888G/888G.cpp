@@ -64,7 +64,7 @@ void ins(int x,int v=1) {
 int mn_xor(int x) {
     int r=1,an=0;
     RREP(i,maxb) {
-        int c=~x>>i&1;
+        int c=x>>i&1;
         if(cnt[ch[r][c]]==0) r=ch[r][c^1],an^=1<<i;
         else r=ch[r][c];
     }
