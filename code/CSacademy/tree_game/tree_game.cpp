@@ -48,7 +48,7 @@ int rd(int l,int r) {
 int n;
 Graph g;
 Vi ac,bc;
-Vi dp[4];//0:no path to alex 1:have one path.. 2.alex  3.
+Vi dp[2];//0:no path to alex 1:have one path.. 2.alex  3.
 void dfs(int u,int fa) {
     int mx=0;//max dp[1]-dp[0]
     int mx2=-inf;//max dp[1]=max(dp[0],dp[1])
@@ -70,7 +70,7 @@ signed main() {
     g=Graph(n);
     dp[0]=Vi(n,1);
 
-    dp[1]=dp[2]=Vi(n);
+    dp[1]=Vi(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
@@ -78,7 +78,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(dp[0])oparr(dp[1])//oparr(dp[3])
+    // oparr(dp[0])oparr(dp[1])//oparr(dp[3])
     //g[0] sz=1->b[0]=0;
     int an=max(dp[1][0],dp[0][0]);
     cout<<an<<'\n';
