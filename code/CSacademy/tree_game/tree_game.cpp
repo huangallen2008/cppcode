@@ -51,7 +51,7 @@ Vi ac,bc;
 Vi dp[2];//0:no path to alex 1:have one path.. 2.alex  3.
 void dfs(int u,int fa) {
     int mx=0;//max dp[1]-dp[0]
-    int mx2=-inf;//max dp[1]=max(dp[0],dp[1])
+    int mx2=-inf;//max dp[1]-max(dp[0],dp[1])
     for(auto v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
