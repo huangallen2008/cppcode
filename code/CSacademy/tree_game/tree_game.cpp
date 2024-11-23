@@ -65,9 +65,9 @@ void dfs(int u,int fa) {
         dp[2][u]+=max(dp[1][v],dp[2][v]);
     }
     dp[0][u]+=mxf;
-    // if(SZ(g[u])-(fa==-1)==1) dp[0][u]=0;
+    if(SZ(g[u])-(fa!=-1)==0) dp[0][u]=0;
     dp[2][u]+=mxf+mxs;
-    // if(SZ(g[u])<=2) dp[2][u]=0;
+    if(SZ(g[u])-(fa!=-1)<=1) dp[2][u]=0;
     dp[1][u]+=mx;
 }
 signed main() {
