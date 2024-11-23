@@ -67,6 +67,7 @@ void dfs(int u,int fa) {
     dp[1][u]+=1+mx1+mx2;
     chmax(dp[1][u],dp[2][u]);
     dp[2][u]+=mx;
+    chmax(dp[2][u],-1);
 }
 signed main() {
     IOS(); 
