@@ -50,7 +50,7 @@ Graph g;
 Vi ac,bc;
 Vi dp[4];//0:no path to alex 1:have one path.. 2.alex  3.
 void dfs(int u,int fa) {
-    int mx=-inf;//max dp[1]-dp[0]
+    int mx=0;//max dp[1]-dp[0]
     for(auto v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
