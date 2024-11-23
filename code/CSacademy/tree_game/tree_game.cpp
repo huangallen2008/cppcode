@@ -74,9 +74,9 @@ signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    dp[0]=Vi(n,1);
+    dp[0]=dp[2]=Vi(n,1);
 
-    dp[1]=dp[2]=Vi(n);
+    dp[1]=Vi(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
