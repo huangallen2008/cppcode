@@ -69,7 +69,7 @@ signed main() {
     g=Graph(n);
     dp[3]=Vi(n,1);
 
-    dp[0]=dp[1]=Vi(n);
+    dp[0]=dp[1]=dp[2]=Vi(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
