@@ -58,6 +58,7 @@ void dfs(int u,int fa) {
         chmax(mx,dp[1][v]-dp[0][v]);
         dp[0][u]+=dp[1][v];
     }
+    if(SZ(g[u])==1) dp[0][u]=0;
     dp[1][u]+=mx;
 }
 signed main() {
