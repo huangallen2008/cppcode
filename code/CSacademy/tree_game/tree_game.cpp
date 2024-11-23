@@ -74,7 +74,7 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(dp[1])oparr(dp[2])oparr(dp[3])
+    oparr(dp[0])oparr(dp[1])//oparr(dp[3])
     //g[0] sz=1->b[0]=0;
     int an=max(dp[1][0],dp[0][0]);
     cout<<an<<'\n';
