@@ -61,13 +61,12 @@ void dfs(int u,int fa) {
         chmax(mx,max(dp[0][v],dp[2][v])-dp[1][v]);
         int val=max(dp[0][v],dp[2][v])-max({dp[0][v],dp[1][v],dp[2][v]});
         dp[1][u]+=max({dp[0][v],dp[1][v],dp[2][v]});
-        if(val>mx) mx2=mx,mx=val;
+        if(val>mx1) mx2=mx,mx1=val;
         else if(val>mx2) mx2=val;
     }
     dp[1][u]+=1+mx1+mx2;
     chmax(dp[1][u],dp[2][u]);
     dp[2][u]+=mx;
-    chmax(dp[2][u],-1ll);
 }
 signed main() {
     IOS(); 
