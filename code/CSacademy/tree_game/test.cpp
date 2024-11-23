@@ -85,9 +85,9 @@ int main() {
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
+    dfs(0);
     for(int i=0;i<n;i++) cout<<dp[i][0]<<' ';cout<<'\n';
     for(int i=0;i<n;i++) cout<<dp[i][1]<<' ';cout<<'\n';
     for(int i=0;i<n;i++) cout<<dp[i][2]<<' ';cout<<'\n';
-    dfs(0);
     cout << max(max(dp[0][0], dp[0][1]), dp[0][2]) << "\n";
 }
