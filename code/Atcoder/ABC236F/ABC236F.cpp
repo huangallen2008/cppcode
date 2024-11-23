@@ -61,10 +61,10 @@ signed main() {
     int n;
     cin>>n;
     vector<pii> a(1<<n);
-    REP(i,1<<n) cin>>a[i].f,a[i].s=i;
-    sort(ALL(a));
+    for(int i=1;i<1<<n;i++) cin>>a[i].f,a[i].s=i;
+    sort(1+ALL(a));
     int an=0;
-    REP(i,1<<n) an+=ins(a[i].s)*a[i].f;
+    for(int i=1;i<1<<n;i++) an+=ins(a[i].s)*a[i].f;
     cout<<an<<'\n'; 
     return 0;
 }
