@@ -61,7 +61,7 @@ void dfs(int u,int fa) {
         int val=dp[1][v]-max(dp[1][v],dp[2][v]);
         if(val>mxf) mxs=mxf,mxf=val;
         else if(val>mxs) mxs=val;
-        dp[0][u]+=max(dp[0][v],dp[2][v]);
+        dp[0][u]+=max(dp[1][v],dp[2][v]);
     }
     dp[0][u]+=mxf;
     if(SZ(g[u])==1) dp[0][u]=0;
