@@ -48,28 +48,25 @@ int rd(int l,int r) {
 int n;
 Graph g;
 Vi ac,bc;
-Vi dp[4];//0:sub 1:clear path to alex choose 2.parent alex 3.ben choose
+Vi dp[4];//0:no path to alex 1:have one path.. 2.alex  3.
 void dfs(int u,int fa) {
-    int mx=0;//max dp[1]-dp[2]
+    int mx=-inf;//max dp[1]-dp[0]
     for(auto v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
-        dp[1][u]+=dp[2][u];
-        chmax(mx,dp[1][v]-dp[2][v]);
-        dp[2][u]+=dp[2][u];
-        dp[3][u]+=dp[1][u];
+        dp[1][u]+=dp[0][v];
+        chmax(mx,dp[1][v]-dp[0][v]);
+        dp[0][u]+=dp[1][v];
     }
-    //dp[3]++
-    chmin(dp[2][u],dp[3][u]);
     dp[1][u]+=mx;
 }
 signed main() {
     IOS(); 
     cin>>n;
     g=Graph(n);
-    dp[3]=Vi(n,1);
+    dp[0]=Vi(n,1);
 
-    dp[0]=dp[1]=dp[2]=Vi(n);
+    dp[1]=dp[2]=Vi(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
@@ -79,7 +76,7 @@ signed main() {
     dfs(0,-1);
     oparr(dp[1])oparr(dp[2])oparr(dp[3])
     //g[0] sz=1->b[0]=0;
-    int an=max(dp[1][0],min(dp[2][0],dp[3][0]));
+    int an=max(dp[1][0],dp[0][0]);
     cout<<an<<'\n';
     return 0;
 }
