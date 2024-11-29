@@ -83,7 +83,7 @@ struct SEG {
         M_z=Mat(ms,Vi(ms));
         REP(i,ms) M_z[i][i]=1;
         s=vector<Mat>(n<<2);
-        build(1,0,n-1);
+        build(1,0,n-1,a);
     }   
     void _qu(int w,int l,int r,int ql,int qr,Mat &an) {
         if(ql<=l&&r<=qr) {
