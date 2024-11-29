@@ -80,8 +80,6 @@ struct SEG {
     void init(int _n,int _ms,vector<Mat> a) {
         n=_n;
         ms=_ms;
-        M_z=Mat(ms,Vi(ms));
-        REP(i,ms) M_z[i][i]=1;
         s=vector<Mat>(n<<2);
         build(1,0,n-1,a);
     }   
@@ -96,8 +94,8 @@ struct SEG {
         _qu(w<<1|1,m+1,r,ql,qr,an);
     }
     Mat qu(int l,int r) {
-        Mat an(ms,Vi(1));
-        an.back()[0]=1;
+        Mat an(1,Vi(ms));
+        an[0].back()=1;
         _qu(1,0,n-1,l,r,an);
         return an;
     }
@@ -107,9 +105,22 @@ signed main() {
     string s;
     cin>>s;
     int n=s.size();
-    
+    M_z=Mat(10,Vi(10));
+    REP(i,10) M_z[i][i]=1;
+    vector<Mat> ch(9,M_z);
+    REP(i,10) REP(j,10) ch[i][j][i]=1;
+    vector<Mat> a(n);
+    REP(i,n) a[i]=ch[s[i]-'a'];
+    seg.init(n,10,a);
     int q;
     cin>>q;
-
+    while(q--) {
+        int l,r;
+        cin>>l>>r,l--,r--;
+        Mat ret=seg.qu(l,r);
+        int sum=0;
+        REP(i,9) (sum+=ret[0][i])%=mod;
+        cout<<sum<<'\n';
+    }
     return 0;
 }
