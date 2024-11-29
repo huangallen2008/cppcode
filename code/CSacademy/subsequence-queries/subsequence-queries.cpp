@@ -108,7 +108,7 @@ signed main() {
     M_z=Mat(10,Vi(10));
     REP(i,10) M_z[i][i]=1;
     vector<Mat> ch(9,M_z);
-    REP(i,10) REP(j,10) ch[i][j][i]=1;
+    REP(i,9) REP(j,10) ch[i][j][i]=1;
     vector<Mat> a(n);
     REP(i,n) a[i]=ch[s[i]-'a'];
     seg.init(n,10,a);
