@@ -57,6 +57,7 @@ signed main() {
     REP(i,m) cin>>a[i],a[i]--;
     Vi c(m);
     REP(i,m) c[a[i]]++;
+    oparr(c)
     REP(i,m-2) {
         if(c[i]<0) {
             cout<<"0\n";
@@ -80,7 +81,6 @@ signed main() {
                 }
             }
         }
-        ope("ok")
         swap(dp,ndp);
         REP(j,c[i-1]+1) {
             op(j)oparr(dp[j])
