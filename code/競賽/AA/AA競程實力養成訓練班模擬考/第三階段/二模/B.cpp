@@ -53,7 +53,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     if(n==2) {
         if(a[0]>=a[1]) cout<<a[0]*2-a[1]<<'\n';
-        else cout<<""
+        else cout<<"-1\n";
     }
     auto check=[&](int m) {
         Vi v=a;
@@ -80,25 +80,31 @@ signed main() {
         int lb=mx-a[n-1]+1>>1,rb=1e15,mb;
         while(lb<rb) {
             mb=lb+rb>>1;
-            Vi v=a;
-            int m=mb*2+a[n-1];
-            int c2=0;
-            REP(i,n-2) {
-                if(v[i]+c2*2>m) {
-                    int tt=(m-v[i])/2;
-                    v[i]+=tt*2;
-                    c2-=tt;
-                }else {
-                    v[i]+=c2*2;
-                    c2=0;
-                }
-                if(v[i]<m) {
-                    c2+=m-v[i];
-                }
-            }
-            if((m-v[n-2])&1) v[n-2]++,c2++;
-            if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
-            else rb=mb;
+            // Vi v=a;
+            // int m=mb*2+a[n-1];
+            // int c2=0;
+            // REP(i,n-2) {
+            //     if(v[i]+c2*2>m) {
+            //         int tt=(m-v[i])/2;
+            //         v[i]+=tt*2;
+            //         c2-=tt;
+            //     }else {
+            //         v[i]+=c2*2;
+            //         c2=0;
+            //     }
+            //     if(v[i]<m) {
+            //         c2+=m-v[i];
+            //     }
+            // }
+            // if((m-v[n-2])&1) v[n-2]++,c2++;
+            // if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
+            // else rb=mb;
+            if(check(mb*2+a[n-1])) rb=mb;
+            else lb=mb+1;
+        }
+        if(!check(lb*2+a[n-1])){
+            cout<<"-1\n";
+            return 0;
         }
         ope(lb)
         cout<<lb*2+a[n-1]<<'\n';
@@ -116,25 +122,31 @@ signed main() {
         if(rr<mx%6)lb++;
         while(lb<rb) {
             mb=lb+rb>>1;
-            Vi v=a;
-            int m=lb*6+rr;
-            int c2=0;
-            REP(i,n-2) {
-                if(v[i]+c2*2>m) {
-                    int tt=(m-v[i])/2;
-                    v[i]+=tt*2;
-                    c2-=tt;
-                }else {
-                    v[i]+=c2*2;
-                    c2=0;
-                }
-                if(v[i]<m) {
-                    c2+=m-v[i];
-                }
-            }
-            if((m-v[n-2])&1) v[n-2]++,c2++;
-            if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
-            else rb=mb;
+            // Vi v=a;
+            // int m=lb*6+rr;
+            // int c2=0;
+            // REP(i,n-2) {
+            //     if(v[i]+c2*2>m) {
+            //         int tt=(m-v[i])/2;
+            //         v[i]+=tt*2;
+            //         c2-=tt;
+            //     }else {
+            //         v[i]+=c2*2;
+            //         c2=0;
+            //     }
+            //     if(v[i]<m) {
+            //         c2+=m-v[i];
+            //     }
+            // }
+            // if((m-v[n-2])&1) v[n-2]++,c2++;
+            // if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
+            // else rb=mb;
+            if(check(lb*6+rr)) rb=mb;
+            else lb=mb+1;
+        }
+        if(!check(lb*6+rr)) {
+            cout<<"-1\n";
+            return 0;
         }
         op(lb)ope(rr)
         cout<<lb*6+rr<<'\n';
