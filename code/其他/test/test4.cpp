@@ -65,14 +65,14 @@ int height_limit(int m) {
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace {
+//  namespace {
     long long M, h;
     int count;
     void wa(const char* msg) {
         printf("Wrong Answer: %s\n", msg);
         exit(0);
     }
-}
+// }
 
 int is_broken(long long k) {
     ++count;
