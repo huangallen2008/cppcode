@@ -90,6 +90,7 @@ signed main() {
                     c2+=m-v[i];
                 }
             }
+            op(m)ope(c2)
             // if((m-v[n-2])&1) v[n-2]++,c2++;
             // bool ok1=c2<=(m-v[n-2]+m-v[n-1]>>1);
             bool ok1=c2<=(m-v[n-1]>>1);
