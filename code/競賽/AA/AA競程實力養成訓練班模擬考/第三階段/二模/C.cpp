@@ -47,6 +47,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
+    freopen("in.txt","r",stdin);
     int n,m;
     cin>>n>>m;
     if(m==1) {
