@@ -170,7 +170,7 @@ signed main() {
             // if((m-v[n-2])&1) v[n-2]++,c2++;
             // if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
             // else rb=mb;
-            if(check(lb*6+rr)) rb=mb;
+            if(check(mb*6+rr)) rb=mb;
             else lb=mb+1;
         }
         if(!check(lb*6+rr)) {
