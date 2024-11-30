@@ -65,7 +65,7 @@ int height_limit(int m) {
 #include <stdio.h>
 #include <stdlib.h>
 
-namespace {
+using namespace {
     long long M, h;
     int count;
     void wa(const char* msg) {
