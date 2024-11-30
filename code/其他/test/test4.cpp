@@ -83,7 +83,7 @@ int is_broken(long long k) {
     return k > h;
 }
 
-int main() {
+signed main() {
     assert(2 == scanf("%lld %lld", &M, &h));
     long long rt = height_limit(M);
     if (rt == h)
