@@ -56,7 +56,7 @@ signed main() {
     Vi a(n);
     REP(i,m) cin>>a[i],a[i]--;
     Vi c(m);
-    REP(i,m) c[a[i]]++;
+    REP(i,n) c[a[i]]++;
     oparr(c)
     REP(i,m-2) {
         if(c[i]<0) {
