@@ -70,15 +70,15 @@ signed main() {
                     v[i]+=c2*2;
                     int au=c2;
                     int xx=m-v[i]>>1;
-                    if(use*2<=xx) {
-                        v[i]+=use*4;
-                        au+=use*2;
+                    if(use*3<=xx) {
+                        v[i]+=use*6;
+                        au+=use*3;
                         use=0;
                     }
                     else {
-                        int tt=xx+1>>1;
+                        int tt=(xx+2)/3;
                         use-=tt;
-                        c2+=tt*2;
+                        c2+=tt*3;
                         c2-=xx;
                         v[i]+=xx*2;
                         au+=xx;
