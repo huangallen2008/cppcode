@@ -75,7 +75,7 @@ signed main() {
         vector<Vi> ndp(c[i-1]+1,Vi(c[i]+1));
         REP(j,c[i-1]+1) {
             REP(k,c[i]+1) {
-                for(int x=0;k+x<=c[i]&&j+x<=c[i-1]&&x<=c[i-2]) {
+                for(int x=0;k+x<=c[i]&&j+x<=c[i-1]&&x<=c[i-2];x++) {
                     (ndp[j][k]+=dp[x][j+x])%mod;
                 }
             }
