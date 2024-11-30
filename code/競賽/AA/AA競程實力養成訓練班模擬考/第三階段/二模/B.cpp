@@ -150,6 +150,7 @@ signed main() {
         if(rr<mx%6)lb++;
         while(lb<rb) {
             mb=lb+rb>>1;
+            ope(mb)
             // Vi v=a;
             // int m=lb*6+rr;
             // int c2=0;
