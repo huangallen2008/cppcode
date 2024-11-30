@@ -1,3 +1,4 @@
+// #include "Egg.h"
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
@@ -45,15 +46,48 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
-    int n;
-    while(cin>>n) {
-        Vi a(n);
-        REP(i,n) cin>>a[i];
-        sort(ALL(a));
-        REP(i,n) cout<<a[i]<<' ';
-        cout<<'\n';
+int height_limit(int m) {
+    int lb=1,rb=m,mb;
+    while(lb<rb) {
+        mb=lb+rb+1>>1;
+        if(is_broken(mb)) r=m-1;
+        else l=m;
     }
-    return 0;
+    return l;
+}
+// signed main() {
+//     IOS();
+
+//     return 0;
+// }
+
+#include <cassert>
+#include <stdio.h>
+#include <stdlib.h>
+
+namespace {
+    long long M, h;
+    int count;
+    void wa(const char* msg) {
+        printf("Wrong Answer: %s\n", msg);
+        exit(0);
+    }
+}
+
+int is_broken(long long k) {
+    ++count;
+    if (count > 60)
+        wa("too many queries");
+    if (k <= 0 || k > M)
+        wa("invalid broken query");
+    return k > h;
+}
+
+int main() {
+    assert(2 == scanf("%lld %lld", &M, &h));
+    long long rt = height_limit(M);
+    if (rt == h)
+        printf("Accepted: %d\n", count);
+    else
+        wa("incorrect height");
 }
