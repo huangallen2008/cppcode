@@ -107,7 +107,7 @@ signed main() {
     REP(i,n) sum+=a[i];
     if(n%3==0) {
         int rr=a[n-1]%2;
-        int lb=mx/2,rb=1e15,mb;
+        int lb=mx/2,rb=1e17,mb;
         if(rr<mx%2) lb++;
         while(lb<rb) {
             mb=lb+rb>>1;
@@ -149,7 +149,7 @@ signed main() {
             }
         }
 
-        int lb=mx/6,rb=1e15,mb;
+        int lb=mx/6,rb=1e17,mb;
         if(rr<mx%6)lb++;
         while(lb<rb) {
             mb=lb+rb>>1;
