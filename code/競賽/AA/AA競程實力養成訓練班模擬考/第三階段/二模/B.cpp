@@ -54,6 +54,7 @@ signed main() {
     if(n==2) {
         if(a[0]>=a[1]) cout<<a[0]*2-a[1]<<'\n';
         else cout<<"-1\n";
+        return 0;
     }
     auto check=[&](int m) {
         Vi v=a;
