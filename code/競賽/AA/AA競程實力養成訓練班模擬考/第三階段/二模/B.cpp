@@ -53,7 +53,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     int sum=0,mx=*max_element(ALL(a));
     REP(i,n) sum+=a[i];
-    if(n%3) {
+    if(n%3==0) {
         int lb=mx-a[n-1]+1>>1,rb=1e15,mb;
         while(lb<rb) {
             mb=lb+rb>>1;
