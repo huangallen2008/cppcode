@@ -1,4 +1,4 @@
-// #include "Egg.h"
+#include "Egg.h"
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
@@ -50,44 +50,14 @@ int height_limit(int m) {
     int lb=1,rb=m,mb;
     while(lb<rb) {
         mb=lb+rb+1>>1;
-        if(is_broken(mb)) r=m-1;
-        else l=m;
+        if(is_broken(mb)) rb=mb-1;
+        else lb=mb;
     }
-    return l;
+    return lb;
 }
-// signed main() {
-//     IOS();
-
-//     return 0;
-// }
-
-#include <cassert>
-#include <stdio.h>
-#include <stdlib.h>
-
-//  namespace {
-    long long M, h;
-    int count;
-    void wa(const char* msg) {
-        printf("Wrong Answer: %s\n", msg);
-        exit(0);
-    }
-// }
-
-int is_broken(long long k) {
-    ++count;
-    if (count > 60)
-        wa("too many queries");
-    if (k <= 0 || k > M)
-        wa("invalid broken query");
-    return k > h;
-}
-
 signed main() {
-    assert(2 == scanf("%lld %lld", &M, &h));
-    long long rt = height_limit(M);
-    if (rt == h)
-        printf("Accepted: %d\n", count);
-    else
-        wa("incorrect height");
+    IOS();
+
+    return 0;
 }
+
