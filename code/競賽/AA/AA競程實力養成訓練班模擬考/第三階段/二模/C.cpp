@@ -80,6 +80,7 @@ signed main() {
                 }
             }
         }
+        ope("ok")
         swap(dp,ndp);
         REP(j,c[i-1]+1) {
             op(j)oparr(dp[j])
