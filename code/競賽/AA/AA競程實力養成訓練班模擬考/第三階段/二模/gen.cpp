@@ -49,7 +49,7 @@ signed main() {
     IOS(); 
     freopen("in.txt","w",stdout);
     int n=4998;
-    cout<<n<<'\n';
+    cout<<n<<' '<<n<<'\n';
     REP(i,n/3) cout<<"1 ";
     REP(i,n/3) cout<<"2 ";
     REP(i,n/3) cout<<"3 ";
