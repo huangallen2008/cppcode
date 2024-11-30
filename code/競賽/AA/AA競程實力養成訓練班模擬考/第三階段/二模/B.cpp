@@ -135,7 +135,7 @@ signed main() {
             return 0;
         }
         ope(lb)
-        cout<<lb*2+a[n-1]<<'\n';
+        cout<<lb*2+rr<<'\n';
     }else {
         //an*n%3==sum%3
         int rr=0;
