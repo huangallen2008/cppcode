@@ -58,14 +58,32 @@ signed main() {
     }
     auto check=[&](int m) {
         Vi v=a;
+        int use=0;
         int c2=0;
             REP(i,n-1) {
                 if(v[i]+c2*2>m) {
                     int tt=(m-v[i])/2;
                     v[i]+=tt*2;
                     c2-=tt;
+                    use+=tt;
                 }else {
                     v[i]+=c2*2;
+                    int au=c2;
+                    int xx=m-v[i]>>1;
+                    if(use*2<=xx) {
+                        v[i]+=use*4;
+                        au+=use*2;
+                        use=0;
+                    }
+                    else {
+                        int tt=xx+1>>1;
+                        use-=tt;
+                        c2+=tt*2;
+                        c2-=xx;
+                        v[i]+=xx*2;
+                        au+=xx;
+                    }
+                    use+=au;
                     c2=0;
                 }
                 if(v[i]<m) {
