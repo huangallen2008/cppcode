@@ -60,7 +60,7 @@ signed main() {
         Vi v=a;
         int use=0;
         int c2=0;
-            REP(i,n-1) {
+            REP(i,n) {
                 if(v[i]+c2*2>m) {
                     int tt=(m-v[i])/2;
                     v[i]+=tt*2;
@@ -70,14 +70,14 @@ signed main() {
                     v[i]+=c2*2;
                     int au=c2;
                     int xx=m-v[i]>>1;
-                    if(use*3<=xx) {
                         c2=0;
+                    if(use*3<=xx) {
                         v[i]+=use*6;
                         au+=use*3;
                         use=0;
                     }
                     else {
-                        c2=0;
+                        // c2=0;
                         int tt=(xx+2)/3;
                         use-=tt;
                         c2+=tt*3;
@@ -94,7 +94,9 @@ signed main() {
             // op(m)ope(c2)
             // if((m-v[n-2])&1) v[n-2]++,c2++;
             // bool ok1=c2<=(m-v[n-2]+m-v[n-1]>>1);
-            bool ok1=c2<=(m-v[n-1]>>1);
+
+            // bool ok1=c2<=(m-v[n-1]>>1);
+            bool ok1=c2>=0;
             int c22=0;
             Vi v2=a;
             REP(i,n-1) c22+=m-v2[i];
