@@ -147,7 +147,7 @@ signed main() {
         }
 
         int lb=mx/6,rb=1e15,mb;
-        if(rr<mx%6)lb++;
+        if(rr<mx%6)lb++y;
         while(lb<rb) {
             mb=lb+rb>>1;
             // ope(mb)
