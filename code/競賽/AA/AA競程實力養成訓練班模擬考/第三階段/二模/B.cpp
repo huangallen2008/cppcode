@@ -78,7 +78,7 @@ signed main() {
             else rb=mb;
         }
         ope(lb)
-        cout<<lb<<'\n';
+        cout<<lb*2+a[n-1]<<'\n';
     }else {
         //an*n%3==sum%3
         int rr=0;
@@ -114,7 +114,7 @@ signed main() {
             else rb=mb;
         }
         op(lb)ope(rr)
-        cout<<lb<<'\n';
+        cout<<lb*6+rr<<'\n';
     }
     return 0;
 }
