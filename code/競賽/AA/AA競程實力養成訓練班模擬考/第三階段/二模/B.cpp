@@ -77,6 +77,7 @@ signed main() {
             if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
             else rb=mb;
         }
+        ope(lb)
         cout<<lb<<'\n';
     }else {
         //an*n%3==sum%3
