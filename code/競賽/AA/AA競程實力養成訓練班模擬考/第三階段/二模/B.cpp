@@ -51,6 +51,29 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    if(n==2) {
+        if(a[0]>=a[1]) cout<<a[0]*2-a[1]<<'\n';
+        else cout<<""
+    }
+    auto check=[&](int m) {
+        Vi v=a;
+        int c2=0;
+            REP(i,n-2) {
+                if(v[i]+c2*2>m) {
+                    int tt=(m-v[i])/2;
+                    v[i]+=tt*2;
+                    c2-=tt;
+                }else {
+                    v[i]+=c2*2;
+                    c2=0;
+                }
+                if(v[i]<m) {
+                    c2+=m-v[i];
+                }
+            }
+            if((m-v[n-2])&1) v[n-2]++,c2++;
+            return c2<=(m-v[n-2]+m-v[n-1]>>1);
+    };
     int sum=0,mx=*max_element(ALL(a));
     REP(i,n) sum+=a[i];
     if(n%3==0) {
