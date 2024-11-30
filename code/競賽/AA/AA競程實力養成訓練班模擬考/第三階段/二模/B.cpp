@@ -71,11 +71,13 @@ signed main() {
                     int au=c2;
                     int xx=m-v[i]>>1;
                     if(use*3<=xx) {
+                        c2=0;
                         v[i]+=use*6;
                         au+=use*3;
                         use=0;
                     }
                     else {
+                        c2=0;
                         int tt=(xx+2)/3;
                         use-=tt;
                         c2+=tt*3;
@@ -84,7 +86,6 @@ signed main() {
                         au+=xx;
                     }
                     use+=au;
-                    c2=0;
                 }
                 if(v[i]<m) {
                     c2+=m-v[i];
