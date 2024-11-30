@@ -59,7 +59,7 @@ signed main() {
     auto check=[&](int m) {
         Vi v=a;
         int c2=0;
-            REP(i,n-2) {
+            REP(i,n-1) {
                 if(v[i]+c2*2>m) {
                     int tt=(m-v[i])/2;
                     v[i]+=tt*2;
@@ -72,8 +72,9 @@ signed main() {
                     c2+=m-v[i];
                 }
             }
-            if((m-v[n-2])&1) v[n-2]++,c2++;
-            bool ok1=c2<=(m-v[n-2]+m-v[n-1]>>1);
+            // if((m-v[n-2])&1) v[n-2]++,c2++;
+            // bool ok1=c2<=(m-v[n-2]+m-v[n-1]>>1);
+            bool ok1=c2<=(m-v[n-1]>>1);
             int c22=0;
             Vi v2=a;
             REP(i,n-1) c22+=m-v2[i];
