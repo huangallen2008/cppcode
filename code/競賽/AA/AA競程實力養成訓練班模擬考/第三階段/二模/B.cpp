@@ -148,7 +148,7 @@ signed main() {
             cout<<"-1\n";
             return 0;
         }
-        op(lb)ope(rr)
+        // op(lb)ope(rr)
         cout<<lb*6+rr<<'\n';
     }
     return 0;
