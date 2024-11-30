@@ -78,7 +78,9 @@ signed main() {
     int sum=0,mx=*max_element(ALL(a));
     REP(i,n) sum+=a[i];
     if(n%3==0) {
-        int lb=mx-a[n-1]+1>>1,rb=1e15,mb;
+        int rr=a[n-1]%2;
+        int lb=mx/2,rb=1e15,mb;
+        if(rr<mx%2) lb++;
         while(lb<rb) {
             mb=lb+rb>>1;
             // Vi v=a;
@@ -100,10 +102,10 @@ signed main() {
             // if((m-v[n-2])&1) v[n-2]++,c2++;
             // if(c2>(m-v[n-2]+m-v[n-1]>>1)) lb=mb+1;
             // else rb=mb;
-            if(check(mb*2+a[n-1])) rb=mb;
+            if(check(mb*2+rr)) rb=mb;
             else lb=mb+1;
         }
-        if(!check(lb*2+a[n-1])){
+        if(!check(lb*2+rr)){
             cout<<"-1\n";
             return 0;
         }
