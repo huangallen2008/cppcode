@@ -77,7 +77,7 @@ signed main() {
             int c22=0;
             Vi v2=a;
             REP(i,n-1) c22+=m-v2[i];
-            bool ok2=c22>=(m-v2[n-1]>>1);//ok2=1; 
+            bool ok2=c22>=(m-v2[n-1]>>1);ok2=1; 
             return ok1&&ok2;
     };
     int sum=0,mx=*max_element(ALL(a));
