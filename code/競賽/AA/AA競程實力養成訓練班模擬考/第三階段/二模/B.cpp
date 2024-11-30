@@ -73,7 +73,11 @@ signed main() {
                 }
             }
             if((m-v[n-2])&1) v[n-2]++,c2++;
-            return c2<=(m-v[n-2]+m-v[n-1]>>1);
+            bool ok1=c2<=(m-v[n-2]+m-v[n-1]>>1);
+            int c22=0;
+            REP(i,n-1) c22+=m-v[i];
+            bool ok2=c22>=(m-v[n-1]>>1);// 
+            return ok1&&ok2;
     };
     int sum=0,mx=*max_element(ALL(a));
     REP(i,n) sum+=a[i];
