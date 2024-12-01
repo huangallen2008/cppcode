@@ -82,6 +82,7 @@ void dfs1(int u,int fa) {
         auto [v,w]=g[u][i];
         if(v==fa) continue;
         udp[v]=min(udp[u],nd[i])+w;
+        op(v)ope(ndp[v])
         dfs1(v,u);
     }
 }
