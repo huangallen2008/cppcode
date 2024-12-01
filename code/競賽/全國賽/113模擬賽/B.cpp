@@ -72,13 +72,13 @@ signed main() {
         int id=p[i];
         auto [x1,y1]=*mp.lower_bound(id);//y1-
         auto [x2,y2]=*prev(mp.lower_bound(id));
-        op(id)op(x1)op(y1)op(x2)ope(y2)
+        // op(id)op(x1)op(y1)op(x2)ope(y2)
         int dif1=(x1>n?inf:pd[x1-1])-pd[id-1],dif2=pd[id-1]-(x2<1?-inf:pd[x2-1]);
         int l1=y1-dif1,r1=y1+dif1,l2=y2-dif2,r2=y2+dif2;
         int l=1,r=b[id];
         chmax(l,max(l1,l2));
         chmin(r,min(r1,r2));
-        op(i)op(id)op(l1)op(r1)op(l2)op(r2)op(l)ope(r)
+        // op(i)op(id)op(l1)op(r1)op(l2)op(r2)op(l)ope(r)
         if(x[i]==1) mp[id]=l;
         else mp[id]=r;
     }
