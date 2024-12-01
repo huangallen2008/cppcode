@@ -128,7 +128,6 @@ signed main()
     seg1.init(n1,d1);
     int an=inf;
     auto cost=[&](int i) {
-        
         int l=i,r=i+k-1;
         int l0=id(l+l%2),r0=id(r-r%2);
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
@@ -139,7 +138,7 @@ signed main()
     };
     // Vi dp(n);
     for(int i=0;i+k-1<n;i++) {
-        chmax(an,cost(i));
+        chmin(an,cost(i));
         // dp[i]=max(dp[i-1],)
     }
     cout<<an<<"\n";
