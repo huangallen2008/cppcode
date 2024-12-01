@@ -82,7 +82,7 @@ void dfs1(int u,int fa) {
         auto [v,w]=g[u][i];
         if(v==fa) continue;
         udp[v]=min(udp[u],nd[i])+w;
-        dfs(v,u);
+        dfs1(v,u);
     }
 }
 signed main() {
