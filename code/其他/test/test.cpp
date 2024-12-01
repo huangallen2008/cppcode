@@ -49,7 +49,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int a,b,c,d,e,f,g;
-    op(a)op(b)op(c)op(d)op(e)op(f)op(g)
+    pii a={1,2},b={3,4};
+    cout<<a<<b<<'\n';
     return 0;
 }
