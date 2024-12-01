@@ -87,6 +87,20 @@ void dfs1(int u,int fa) {
         dfs1(v,u);
     }
 }
+Vi mxd,dia;
+void dfs0(int u,int fa) {
+    int mx1=-inf,mx2=-inf;
+    for(auto [v,w]:g[u]) {
+        if(v==fa) continue;
+        dfs0(v,u);
+        int val=mxd[v]+w;
+        chmax(dia[u],dia[v])
+        chmax(mxd[u],val);
+        if(val>mx) mx2=mx,mx=val;
+        else if(val>mx2) mx2=val;
+    }
+    chmax(dia[u],mx1+mx2);
+}
 signed main() {
     IOS(); 
     int n;
@@ -105,6 +119,8 @@ signed main() {
     dfs1(0,-1);
     oparr(dp)oparr(ndp)oparr(udp)
     int mna=*min_element(ALL(ndp));
-    cout<<mna<<'\n';
+    dia=mxd=Vi(n);
+    dfs0(0,-1);
+    cout<<dia[0]<<' '<<mna<<'\n';
     return 0;
 }
