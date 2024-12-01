@@ -64,6 +64,7 @@ signed main() {
     Vi h(n);
     REP(i,n) p[a[i].s]=i;
     REP(i,n) h[a[i].s]=a[i].f;
+    cout<<"Yes\n";
     REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
     REP(i,n) cout<<h[i]<<' ';cout<<'\n';
     return 0;
