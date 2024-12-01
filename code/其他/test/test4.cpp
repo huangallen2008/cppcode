@@ -9,7 +9,7 @@ z f(z x, z s = 9) {
 }
 z g() {
   e.assign(n + 1, {});
-  for (z i = 0; i<=n; e[u].insert(v), e[v].insert(u)) cin >> u >> v,cout<<i<<' ';
+  for (z i = 0; i<=n; e[u].insert(v), e[v].insert(u)) cin >> u >> v,cout<<"i"<<i<<endl;
   return f(1);
 }
 main() {
