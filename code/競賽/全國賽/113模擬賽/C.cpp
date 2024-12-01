@@ -63,6 +63,7 @@ void dfs1(int u,int fa) {
         if(val<mn1) mn2=mn1,mn1=val;
         else if(val<mn2) mn2=val;
     }
+    ndp[u]=mn1+mn2;
     Vi hv;
     for(auto [v,w]:g[u]) {
         if(v==fa) hv.pb(inf);
