@@ -69,6 +69,7 @@ struct SEG {
         return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r) {
+        if(l>r) return 0;
         return _qu(1,0,n-1,l,r);
     }
 }seg0,seg1;
