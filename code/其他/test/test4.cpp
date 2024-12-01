@@ -4,7 +4,7 @@ using z = int;
 z t, n, u, v;
 deque<set<z>> e;
 z f(z x) {
-  z s = 9
+  z s = 9;
   for (z y : e[x]) e[y].erase(x), s *= 9 + f(y) % 959;
   return s;
 }
