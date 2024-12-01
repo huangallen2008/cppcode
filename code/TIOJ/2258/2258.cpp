@@ -14,6 +14,7 @@ using namespace std;
 #define SQ(x) (x)*(x)
 #define pii pair<int,int>
 #define Graph vector<vector<int>>
+#define Vi vector<int>
 #define IOS() cin.sync_with_stdio(0),cin.tie(0),cout.tie(0)
 const int inf=(1ll<<63)-1;
 const int maxn=6e5+5;
