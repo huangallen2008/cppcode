@@ -24,7 +24,7 @@ struct seg {
     int l,r;
     int v;
 };
-seg s0[maxn*4],s1[maxn*4];//d[i]=abs([i+1]-[i])
+seg s0[maxn*2],s1[maxn*2];//d[i]=abs([i+1]-[i])
 void build0(int w,int l,int r) {
     s0[w]={l,r,0};
     if(l==r) {
