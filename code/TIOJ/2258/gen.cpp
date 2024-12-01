@@ -52,7 +52,7 @@ signed main() {
     freopen("in.txt","w",stdout);
     int n=100;
     cout<<n<<' '<<n<<" 1 \n";
-    REP(i,n) cout<<rd(1,100)<<' ';
+    REP(i,n) cout<<rd(1,100000)<<' ';
     cout<<'\n';
     return 0;
 }
