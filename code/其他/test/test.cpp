@@ -65,6 +65,6 @@ signed main() {
     raise(0);
     int a[10];
     REP(i,10) cout<<a[i]<<' ';
-    exit(872350);
-    return 0;
+    // exit(872350);
+    return 2354;
 }
