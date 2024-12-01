@@ -56,7 +56,7 @@ signed main() {
     Vi l(n);
     REP(i,n) cin>>l[i];
     Vi t(m);
-    REP(i,n) cin>>t[i];
+    REP(i,m) cin>>t[i];
     vector<pii> v(m);
     REP(i,m) {
         int x;
