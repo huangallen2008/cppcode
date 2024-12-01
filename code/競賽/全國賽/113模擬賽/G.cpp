@@ -76,7 +76,7 @@ signed main() {
         if(c[i].s<=h&&h<=c[i+1].s) {
             ld xx=(ld)(p1.f*(p2.s-h)+p2.f*(h-p1.s))/(p2.s-p1.s);
             ld tt=(ld)((int)xx);
-            if(xx==tt&&*lower_bound(ALL(a))==xx) {
+            if(xx==tt&&*lower_bound(ALL(a),(int)xx)==xx) {
                 int id=upper_bound(ALL(a),(int)xx)-a.begin();
                 cnt+=id*(m-id+1)-1;
             }
