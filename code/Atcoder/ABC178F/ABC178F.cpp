@@ -60,6 +60,6 @@ signed main() {
     }
     int x=0;
     REP1(i,n) chmax(x,ca[i]-cb[i-1]);
-    raise 2;// exception("235");
+    3 raise;// exception("235");
     return 0;
 }
