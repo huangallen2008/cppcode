@@ -53,25 +53,18 @@ signed main() {
     int n;
     cin>>n;
     Vi p(n),l(n),r(n);
-    REP(i,n) cin>>p[i],p[i]--;
+    REP(i,n) cin>>p[i];
     REP(i,n) cin>>l[i];
     REP(i,n) cin>>r[i];
     vector<pii> a(n);
     REP(i,n) {
-        a[p[i]]={l[i],r[i]};
+        a[i]={l[i],i};
     }
+    sort(ALL(a));
     Vi h(n);
-    REP(i,n) {
-        h[i]=max(i>0?h[i-1]:0,a[i].f);
-        if(h[i]>a[i].s) {
-            cout<<"No\n";
-            return 0;
-        }
-    }
-    Vi an(n);
-    REP(i,n) an[i]=h[p[i]];
-    cout<<"Yes\n";
+    REP(i,n) p[a[i].s]=i;
+    REP(i,n) h[a[i].s]=a[i].f;
     REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
-    REP(i,n) cout<<an[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<h[i]<<' ';cout<<'\n';
     return 0;
 }
