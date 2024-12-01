@@ -66,6 +66,6 @@ typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update
 signed main() {
     IOS();
     pii a={1,3};
-    cout<<a;
+    cout<<a<<endl;
     return 0;
 }
