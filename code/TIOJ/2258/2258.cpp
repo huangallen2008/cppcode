@@ -109,7 +109,7 @@ signed main()
     oparr(co)
     int lb=0,rb=1e9,mb;
     while(lb<rb) {
-        mb=lb+rb+1>>1;//last mb : cnt(mb)<=p , cnt(mb)=number of team cost <= mb
+        mb=lb+rb>>1;//fir mb : cnt(mb)>=p , cnt(mb)=number of team cost <= mb
         int cnt=0;
         for(int i=0;i<nn;i++) {
             if(co[i]<=mb) {
@@ -117,8 +117,8 @@ signed main()
                 i=i+k-1;
             }
         }
-        if(cnt<=p) lb=mb;
-        else rb=mb-1;
+        if(cnt>=p) rb=mb;
+        else lb=mb+1;
     }
     // oparr(co)
     cout<<lb<<"\n";
