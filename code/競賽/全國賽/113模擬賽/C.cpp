@@ -115,7 +115,7 @@ void dfs1(int u,int fa) {
     }
     chmin(dib[u],mn1+mn2);
     op(u)op(mn1)op(mn2)ope(dib[u])
-    if(g[u].size()==0) mnd[u]=0;
+    if(g[u].size()==1) mnd[u]=0;
 }
 signed main() {
     IOS(); 
