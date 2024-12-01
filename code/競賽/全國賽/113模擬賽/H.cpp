@@ -69,19 +69,19 @@ signed main() {
             Vi ndp(2);
             ndp[0]=cnt[i-1]*co[0]+cnt[i-2]*co[1];
             ndp[1]=cnt[i-1]*co[1]+cnt[i-2]*co[0];
-            oparr(ndp)
+            // oparr(ndp)
             if(fir!=-1) {
                 int dif=((i-fir)&1)^1;
-                ope(dif)
+                // ope(dif)
                 ndp[0]+=min(dp[0^dif]+co[0^dif]*hco(s[fir],s[fir-2]),dp[1^dif]);
                 ndp[1]+=min(dp[1^dif]+co[1^dif]*hco(s[fir],s[fir-2]),dp[0^dif]);
             }
-            op(i)oparr(cnt)oparr(dp)oparr(ndp)entr
+            // op(i)oparr(cnt)oparr(dp)oparr(ndp)entr
             swap(ndp,dp);
             fir=i+1;
         }
     }
-    oparr(cnt)
+    // oparr(cnt)
     int an=min(dp[0],dp[1]);
     cout<<an<<'\n';
     return 0;
