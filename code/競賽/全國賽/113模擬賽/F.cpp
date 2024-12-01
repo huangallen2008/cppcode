@@ -109,23 +109,23 @@ signed main() {
         }
     }
 
-    Vi nf(n);
-    REP(i,n) if(g[i].size()==0||(i==0&&g[i].size()==1)) nf[i]=1;
-    for(auto [u,v]:edge) {
-        if(g2[v].size()==0) swap(u,v);
-        if(g2[u].size()!=0) continue;
-        if(v==0) {
-            bool is=1;
-            REP(i,n) {
-                if(i!=u&&g[i].size()!=1) is=0;
-            }
-            if(is) nf[u]=0;
-            else nf[u]=nf[0]=0;
-        }else {
-            nf[u]=0;
-        }
-    }
-    int an=0;
+    // Vi nf(n);
+    // REP(i,n) if(g[i].size()==0||(i==0&&g[i].size()==1)) nf[i]=1;
+    // for(auto [u,v]:edge) {
+    //     if(g2[v].size()==0) swap(u,v);
+    //     if(g2[u].size()!=0) continue;
+    //     if(v==0) {
+    //         bool is=1;
+    //         REP(i,n) {
+    //             if(i!=u&&g[i].size()!=1) is=0;
+    //         }
+    //         if(is) nf[u]=0;
+    //         else nf[u]=nf[0]=0;
+    //     }else {
+    //         nf[u]=0;
+    //     }
+    // }
+    // int an=0;
 
     return 0;
 }
