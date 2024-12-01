@@ -77,7 +77,7 @@ void dfs1(int u,int fa) {
     Vi nd(cc);
     REP(i,cc) nd[i]=min(i>0?p[i-1]:inf,i<cc-1?s[i+1]:inf);
     if(cc==1) nd[0]=0;
-    op(u)oparr(hv)oparr(p)oparr(s)oparr(nd)
+    op(u)oparr(hv)oparr(p)oparr(s)oparr(nd)entr
     REP(i,cc) {
         auto [v,w]=g[u][i];
         if(v==fa) continue;
