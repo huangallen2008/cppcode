@@ -62,8 +62,10 @@ signed main() {
     }
     Vi h(n);
     REP(i,n) {
-        h[i]=max(i>0?h[i-1]:0,l[i]);
+        h[i]=max(i>0?h[i-1]:0,a[i].f);
     }
+    Vi an(n);
+    REP(i,n) an[i]=h[p[i]];
     REP(i,n) {
         if(h[i]>r[i]) {
             cout<<"No\n";
