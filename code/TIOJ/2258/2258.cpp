@@ -128,9 +128,9 @@ signed main()
 //    REP(i,n1) cout<<d1[i]<<" ";cout<<endl;
     // build0(1,0,n0-1);
     // build1(1,0,n1-1);
+    ope("ok")
     seg0.init(n0-1,d0);
     seg1.init(n1-1,d1);
-    ope("ok")
     int an=inf;
     for(int i=0;i+k-1<n;i++) {
         int l=i,r=i+k-1;
