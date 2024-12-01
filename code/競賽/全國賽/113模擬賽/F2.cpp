@@ -68,7 +68,7 @@ void dfs(int u,int fa) {
     for(auto [v,w]:g[u]) {
         if(v==fa) continue;
         if(vis[v]){
-            an[w]=co;
+            if(fa!=-1)an[w]=co;
             continue;
         }
         an[w]=co;
