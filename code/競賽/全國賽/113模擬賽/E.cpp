@@ -72,7 +72,7 @@ signed main() {
     int lim=0;
     REP(i,n) {
         if(a[i].f==-inf) {
-            while(it<n&&hor[it].l<=smnr[i]) pq.push({hor[it].r,hor[it].id}),it++;
+            while(it<hor.size()&&hor[it].l<=smnr[i]) pq.push({hor[it].r,hor[it].id}),it++;
             if(pq.size()==0) {
                 cout<<"No\n";
                 return 0;
