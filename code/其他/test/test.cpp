@@ -49,6 +49,7 @@ int rd(int l,int r) {
 }
 bool g(){return 1;}
 main() {
+    int n,t;
   for (cin >> t; t--; puts((cin >> n, g() ^ g() ? "NO" : "YES")));
 }
 // signed main() {
