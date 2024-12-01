@@ -49,7 +49,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    freopen("in.txt","r",stdout);
+    freopen("in.txt","w",stdout);
     int n=100;
     cout<<n<<' '<<n<<" 1 \n";
     REP(i,n) cout<<rd(1,100)<<' ';
