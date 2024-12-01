@@ -76,13 +76,13 @@ void dfs1(int u,int fa) {
     RREP(i,cc-1) chmin(s[i],s[i+1]);
     Vi nd(cc);
     REP(i,cc) nd[i]=min(i>0?p[i-1]:inf,i<cc-1?s[i+1]:inf);
-    if(cc==2) nd[0]=0;
-    op(u)oparr(hv)oparr(p)oparr(s)oparr(nd)entr
+    if(cc==2) nd[0]=0;//all = 0
+    ope(u)oparr(hv)oparr(p)oparr(s)oparr(nd)
     REP(i,cc) {
         auto [v,w]=g[u][i];
         if(v==fa) continue;
         udp[v]=min(udp[u],nd[i])+w;
-        op(v)ope(ndp[v])
+        op(v)ope(udp[v])
         dfs1(v,u);
     }
 }
