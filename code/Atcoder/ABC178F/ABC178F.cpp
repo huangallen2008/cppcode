@@ -60,6 +60,9 @@ signed main() {
     }
     int x=0;
     REP1(i,n) chmax(x,ca[i]-cb[i-1]);
-    raise(1);// exception("235");
+    Vi an(n);
+    REP(i,n) an[(i+x)%n]=b[i];
+    REP(i,b) cout<<an[i]+1<<' ';
+    cout<<'\n';
     return 0;
 }
