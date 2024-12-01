@@ -62,8 +62,7 @@ typedef trie<
 typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
-    map<int,int> mp;
-    REP1(i,10) mp[rd(1,10)]=rd(1,10);
-    oparr(mp)
+    int a[5];
+    REP(i,5) cout<<a[i]<<' ';
     return 0;
 }
