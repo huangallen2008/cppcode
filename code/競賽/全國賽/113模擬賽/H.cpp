@@ -73,6 +73,7 @@ signed main() {
                 ndp[0]+=min(dp[0^dif]+co[0^dif]*hco(s[fir],s[fir-2]),dp[1^dif]);
                 ndp[1]+=min(dp[1^dif]+co[1^dif]*hco(s[fir],s[fir-2]),dp[0^dif]);
             }
+            cnt[i-1]=0;
             op(i)oparr(dp)oparr(ndp)entr
             swap(ndp,dp);
             fir=i+1;
