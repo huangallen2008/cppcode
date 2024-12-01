@@ -62,14 +62,18 @@ Vi vis,ong2;
 // }
 Vi c;
 Vi an,is0,sis0;
-void dfs(int u) {
+void dfs(int u,int fa) {
     vis[u]=1;
     int co=c[u]^1;
     for(auto [v,w]:g[u]) {
-        if(vis[v])continue;
+        if(v==fa) continue;
+        if(vis[v]){
+            an[w]=co;
+            continue;
+        }
         an[w]=co;
         c[v]=co;
-        dfs(v);
+        dfs(v,u);
         co=co^1;
     }
 }
@@ -115,12 +119,12 @@ signed main() {
     int cycs=0;
     REP(i,n) cycs+=inc[i];
     if(cycs==n) {
-        dfs(0);
+        dfs(0,-1);
     }
     else {
         REP(i,n) {
             if(g[i].size()>2&&inc[i]) {
-                dfs(i);
+                dfs(i,-1);
                 break;
             }
         }
