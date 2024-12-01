@@ -95,10 +95,13 @@ signed main() {
     cout<<"Yes\n";
     REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
     int x=0;
+    Vi ha(n);
     REP(i,n) {
         chmax(x,a[i].f);
-        cout<<x<<' ';
+        ha[i]=x;
     }
-    cout<<'\n';
+    Vi h(n);
+    REP(i,n) h[i]=ha[p[i]];
+    REP(i,n) cout<<h[i]<<' ';cout<<'\n';
     return 0;
 }
