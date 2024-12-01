@@ -53,7 +53,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         chmin(dp[u],dp[v]+w);
     }
-    if(g[u].size()==1) dp[u]=0;
+    if(g[u].size()==1&&fa!=-1) dp[u]=0;
 }
 void dfs1(int u,int fa) {
     int mn1=udp[u],mn2=inf;
