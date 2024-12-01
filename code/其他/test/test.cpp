@@ -42,7 +42,7 @@ using namespace std;
 #define entr ;
 #endif
 template<typename T1,typename T2>
-iostream& operator<<(iostream& os,pair<T1,T2> p) {
+ostream& operator<<(ostream& os,pair<T1,T2> p) {
     os<<'{'<<p.f<<','<<p.s<<"} ";
 }
 const int mod=1e9+7;
