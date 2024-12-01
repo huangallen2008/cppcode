@@ -87,6 +87,7 @@ struct SEG {
     Vi s;
     int n;
     void build(int w,int l,int r,Vi &a) {
+        op(w)op(l)ope(r)
         if(l==r) {
             s[w]=a[l];
             return;
