@@ -125,7 +125,8 @@ signed main() {
             }
         }
     }
-    REP(i,m) cout<<an[i]+1<<'\n';
+    REP(i,m) cout<<(an[i]?'R':'B');
+    cout<<'\n';
     return 0;
 
 }
