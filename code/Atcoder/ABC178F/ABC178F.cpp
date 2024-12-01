@@ -58,6 +58,7 @@ signed main() {
         cout<<"No\n";
         return 0;
     }
+    REP1(i,n) ca[i]+=ca[i-1],cb[i]+=cb[i-1];
     int x=0;
     REP1(i,n) chmax(x,ca[i]-cb[i-1]);
     Vi an(n);
