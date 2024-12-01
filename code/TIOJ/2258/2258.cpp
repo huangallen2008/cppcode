@@ -102,11 +102,7 @@ signed main()
     };
     int nn=n-k+1;
     Vi co(nn);
-    for(int i=0;i<nn;i++) {
-        chmin(an,cost(i));
-        co[i]=cost(i);
-    }
-    oparr(co)
+    for(int i=0;i<nn;i++) co[i]=cost(i);
     int lb=0,rb=1e9,mb;
     while(lb<rb) {
         mb=lb+rb>>1;//fir mb : cnt(mb)>=p , cnt(mb)=number of team cost <= mb
