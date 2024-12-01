@@ -56,7 +56,7 @@ void dfs(int u) {
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
         g2[u].pb({v,w});
-        dfs(v,u);
+        dfs(v);
     }
 }
 Vi c;
