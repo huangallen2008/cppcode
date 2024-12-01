@@ -53,19 +53,46 @@ signed main() {
     int n;
     cin>>n;
     Vi p(n),l(n),r(n);
-    REP(i,n) cin>>p[i];
+    REP(i,n) cin>>p[i],p[i]--;
     REP(i,n) cin>>l[i];
     REP(i,n) cin>>r[i];
-    vector<pii> a(n);
+    vector<S> hor;
+    vector<pii> a(n,{-inf,inf});
     REP(i,n) {
-        a[i]={l[i],i};
+        if(p[i]==-1) hor.pb({l[i],r[i],i});
+        else a[p[i]]={l[i],r[i]};
     }
-    sort(ALL(a));
-    Vi h(n);
-    REP(i,n) p[a[i].s]=i;
-    REP(i,n) h[a[i].s]=a[i].f;
+    sort(ALL(hor),[&](S a,S b) {
+        return a.l<b.l;
+    });
+    Vi smnr(n);smnr[n-1]=a[n-1].s;
+    RREP(i,n-1) smnr[i]=min(smnr[i+1],a[i].s);
+    int it=0;
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
+    int lim=0;
+    REP(i,n) {
+        if(a[i].f==-inf) {
+            while(it<n&&hor[it].l<=smnr[i]) pq.push({hor[it].r,hor[it].id});
+            if(pq.size()==0) {
+                cout<<"No\n";
+                return 0;
+            }
+            auto [val,id]=pq.top();
+            pq.pop();
+            if(val<lim) {
+                cout<<"No\n";
+                return 0;
+            }
+            a[i].f={l[id],val};
+            p[id]=i;
+        }
+        if(a[i].f>smnr[i]||a[i].s<lim) {
+            cout<<"No\n";
+            return 0;
+        } 
+        chmax(lim,a[i].f);
+    }
     cout<<"Yes\n";
-    REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
-    REP(i,n) cout<<h[i]<<' ';cout<<'\n';
+    oparr(p)
     return 0;
 }
