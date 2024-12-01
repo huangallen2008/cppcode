@@ -44,7 +44,7 @@ using namespace std;
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) {
     // cout<<p.f<<endl;
-    return os<<'{'<<p.f<<','<<p.s<<"} ";
+    return os<<'{'<<p.f<<','<<p.s<<'}';
 }
 const int mod=1e9+7;
 const int maxn=5;
