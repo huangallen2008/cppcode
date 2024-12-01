@@ -66,8 +66,8 @@ signed main() {
         chmin(vt,b[i]);
         vt+=d[i-1];
     }
-    map<int,int> an;
-    an[-inf]=0,an[inf]=0;
+    map<int,int> mp;
+    mp[-inf]=0,mp[inf]=0;
     REP1(i,n) {
         int id=p[i];
         auto [x1,y1]=mp.lower_bound(id);//y1-
