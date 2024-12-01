@@ -61,7 +61,7 @@ signed main() {
     };
     REP(i,n) {
         if(i>=2) {
-            cnt[i]=cnt[i-2]+hco(s[i],s[i-2]);
+            if(hco(s[i],s[i-2])) cnt[i]=cnt[i-2]+1;
         }
         if(s[i]=='.') {
             if(i==0) continue;
