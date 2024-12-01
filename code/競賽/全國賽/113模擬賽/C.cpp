@@ -56,7 +56,7 @@ void dfs(int u,int fa) {
     if(g[u].size()==1&&fa!=-1) dp[u]=0;
 }
 void dfs1(int u,int fa) {
-    int mn1=udp[u],mn2=inf;
+    int mn1=udp[u],mn2=0;
     for(auto [v,w]:g[u]) {
         if(v==fa) continue;
         int val=dp[v]+w;
