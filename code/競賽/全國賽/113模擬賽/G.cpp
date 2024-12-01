@@ -70,7 +70,7 @@ signed main() {
     REP(i,m) {
         REP(j,i) {
             REP(k,n-1) {
-                cnt+=bana(c[i],c[i+1],d[i],d[j]);
+                cnt+=bana(c[k],c[k+1],d[i],d[j]);
             }
         }
     }
