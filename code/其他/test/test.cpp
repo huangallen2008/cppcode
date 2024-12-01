@@ -1,7 +1,3 @@
-#include<bits/extc++.h>
-using namespace __gnu_cxx;
-using namespace __gnu_pbds;
-
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
@@ -51,20 +47,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-
-// typedef trie<
-//     string,                        // key type（可以是字串或其他容器）
-//     null_type,                     // mapped-policy（若是 map 則設定值的型別）
-//     trie_string_access_traits<>,   // 字串存取方式
-//     pat_trie_tag,                  // 樹結構選項，選擇 PAT trie
-//     trie_order_statistics_node_update // 更新策略
-// > pbds_trie;
-// typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
-    raise(0);
-    int a[10];
-    REP(i,10) cout<<a[i]<<' ';
-    // exit(872350);
-    return 2354;
+    string s;
+    cin>>s;
+    int a,b;
+    cin>>a>>b;
+    swap(s[a-1],s[b-1]);
+    cout<<s<<'\n';
+    return 0;
 }
