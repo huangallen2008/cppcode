@@ -50,7 +50,7 @@ int rd(int l,int r) {
 bool g(){return 1;}
 main() {
     int n,t;
-  for (cin >> t; t--; puts((g() ^ g() ? "NO" : "YES")))cin>>n;
+  for (cin >> t; t--; puts(g() ^ g() ? "NO" : "YES"))cin>>n;
 }
 // signed main() {
 //     IOS();
