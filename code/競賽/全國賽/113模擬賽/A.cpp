@@ -47,6 +47,28 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS(); 
-    
+    int n,m;
+    cin>>n>>m;
+    if(m<n) {
+        cout<<"-1\n";
+        return 0;
+    }
+    Vi l(n);
+    REP(i,n) cin>>l[i];
+    Vi t(m);
+    REP(i,n) cin>>t[i];
+    vector<pii> v(m);
+    REP(i,m) {
+        int x;
+        cin>>x;
+        v[i]={x+t[i],i};
+    }
+    sort(ALL(v),greater<pii>());
+    vector<pii> li(n);
+    REP(i,n) li[i]={l[i],i};
+    sort(ALL(li),greater<pii>());
+    Vi an(n);
+    REP(i,n) an[li[i].s]=v[i].s;
+    REP(i,n) cout<<an[i]+1<<'\n';
     return 0;
 }
