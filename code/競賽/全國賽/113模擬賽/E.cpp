@@ -93,6 +93,12 @@ signed main() {
         chmax(lim,a[i].f);
     }
     cout<<"Yes\n";
-    oparr(p)
+    REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
+    int x=0;
+    REP(i,n) {
+        chmax(x,a[i].f);
+        cout<<x<<' ';
+    }
+    cout<<'\n';
     return 0;
 }
