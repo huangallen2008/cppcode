@@ -96,7 +96,7 @@ void dfs0(int u,int fa) {
         int val=mxd[v]+w;
         chmax(dia[u],dia[v])
         chmax(mxd[u],val);
-        if(val>mx) mx2=mx,mx=val;
+        if(val>mx1) mx2=mx1,mx1=val;
         else if(val>mx2) mx2=val;
     }
     chmax(dia[u],mx1+mx2);
