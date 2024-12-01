@@ -57,7 +57,7 @@ bool onl(pii a,pii b,pii p) {
 bool bana(pii a,pii b,pii c,pii d) {//a-b c-d
 // op(a.f)op(a.s)op(b.f)op(b.s)op(c.f)op(c.s)op(d.f)ope(d.s)
     if(onl(a,b,c)||onl(a,b,d)||onl(c,d,a)||onl(c,d,b)) return 1;
-    return sig(cros(to(a,b),to(a,c)))*sig(cros(to(a,b),to(a,d)))<0&&sig(cros(to(c,d),to(c,a)))*sig(cros(to(c,d),to(c,b)))<0;
+    return sig(cros(b-a,c-a))*sig(cros(to(a,b),to(a,d)))<0&&sig(cros(to(c,d),to(c,a)))*sig(cros(to(c,d),to(c,b)))<0;
 }
 signed main() {
     IOS(); 
