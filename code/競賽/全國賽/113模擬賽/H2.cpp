@@ -62,8 +62,8 @@ signed main() {
             dp[0][i]=dp[1][i-1]+co[0]*hco(s[i],s[i-2]);
             dp[1][i]=dp[0][i-1]+co[1]*hco(s[i],s[i-2]);
         }else {
-            dp[0][i]=max(dp[0][i-2]+co[0]*hco(s[i],s[i-2]),dp[1][i-2]);
-            dp[1][i]=max(dp[1][i-2]+co[1]*hco(s[i],s[i-2]),dp[0][i-2]);
+            dp[0][i]=min(dp[0][i-2]+co[0]*hco(s[i],s[i-2]),dp[1][i-2]);
+            dp[1][i]=min(dp[1][i-2]+co[1]*hco(s[i],s[i-2]),dp[0][i-2]);
         }
     }
     oparr(dp[0])
