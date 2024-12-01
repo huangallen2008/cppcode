@@ -78,6 +78,10 @@ signed main()
     IOS();
     int n,k,p;
     cin>>n>>k>>p;
+    if(n==1) {
+        cout<<"0\n";
+        return 0;
+    }
     int n0=(n+1)/2-1,n1=n/2-1;
     h=vector<int>(n);
     d0=vector<int>(n);
