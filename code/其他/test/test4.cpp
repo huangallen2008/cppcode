@@ -9,7 +9,7 @@ z f(z x) {
   return s;
 }
 z g() {
-  e.assign(n + 1, {});
+  e.resize(n + 1);
   for (z i = n; --i; e[u].insert(v), e[v].insert(u)) cin >> u >> v;
   return f(1);
 }
