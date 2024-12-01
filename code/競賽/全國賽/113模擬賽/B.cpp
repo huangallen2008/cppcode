@@ -77,7 +77,7 @@ signed main() {
         int l=1,r=b[id];
         chmax(l,max(l1,l2));
         chmin(r,min(r1,r2));
-        op(i)op(id)op(l)ope(r)
+        op(i)op(id)op(l1)op(r1)op(l2)op(r2)op(l)ope(r)
         if(x[i]==1) mp[id]=l;
         else mp[id]=r;
     }
