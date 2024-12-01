@@ -64,5 +64,6 @@ signed main() {
     IOS();
     map<int,int> mp;
     REP1(i,10) mp[rd(1,10)]=rd(1,10);
+    oparr(mp)
     return 0;
 }
