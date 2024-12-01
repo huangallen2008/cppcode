@@ -78,6 +78,7 @@ signed main() {
             fir=i+1;
         }
     }
+    oparr(cnt)
     int an=min(dp[0],dp[1]);
     cout<<an<<'\n';
     return 0;
