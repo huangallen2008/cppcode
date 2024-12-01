@@ -49,7 +49,7 @@ pii operator+(pii a,pii b) { return {a.f+b.f,a.s+b.s}; }
 pii operator-(pii a,pii b) { return {a.f-b.f,a.s-b.s}; }
 pii to(pii a,pii b) { return b-a; }
 int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
-int dot(pii a,pii b) { return a.f*b.f+a.s*b.f; }
+int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
 int sig(int x) { return x<0?-1:(x>0?1:0); }
 bool onl(pii a,pii b,pii p) {
     return dot(to(a,p),to(a,b))>=0&&dot(to(b,p),to(b,a))>=0&&cros(to(a,p),to(a,b))==0;
