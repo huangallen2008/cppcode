@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,50 +39,11 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
-const int inf=(1ll<<63)-1;
+const int inf=(1<<30);
 const int maxn=6e5+5;
 const int mod=1e9+7;
 int id(int x) { return x>>1; }
 vector<int> h,d0,d1;//0:(n+1)/2,1:n/2
-struct seg {
-    int l,r;
-    int v;
-};
-// seg s0[maxn*4],s1[maxn*4];//d[i]=abs([i+1]-[i])
-// void build0(int w,int l,int r) {
-//     s0[w]={l,r,0};
-//     if(l==r) {
-//         s0[w].v=d0[l];
-//         return;
-//     }
-//     int m=(l+r)/2;
-//     build0(w*2,l,m);
-//     build0(w*2+1,m+1,r);
-//     s0[w].v=max(s0[w*2].v,s0[w*2+1].v);
-// }
-// int qu0(int w,int ql,int qr) {
-//     if(ql>qr) return 0;
-//     if(ql<=s0[w].l&&s0[w].r<=qr) return s0[w].v;
-//     if(ql>s0[w].r||qr<s0[w].l) return 0;
-//     return max(qu0(w*2,ql,qr),qu0(w*2+1,ql,qr));
-// }
-// void build1(int w,int l,int r) {
-//     s1[w]={l,r,0};
-//     if(l==r) {
-//         s1[w].v=d1[l];
-//         return;
-//     }
-//     int m=(l+r)/2;
-//     build1(w*2,l,m);
-//     build1(w*2+1,m+1,r);
-//     s1[w].v=max(s1[w*2].v,s1[w*2+1].v);
-// }
-// int qu1(int w,int ql,int qr) {
-//     if(ql>qr) return 0;
-//     if(ql<=s1[w].l&&s1[w].r<=qr) return s1[w].v;
-//     if(ql>s1[w].r||qr<s1[w].l) return 0;
-//     return max(qu1(w*2,ql,qr),qu1(w*2+1,ql,qr));
-// }
 struct SEG {
     Vi s;
     int n;
@@ -131,15 +92,10 @@ signed main()
         int l=i,r=i+k-1;
         int l0=id(l+l%2),r0=id(r-r%2);
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
-//        cout<<l0<<" "<<r0<<"\n";
-//        cout<<"Q"<<qu1(1,l1,r1-1)<<endl;
         return max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
-        // an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
     };
-    // Vi dp(n);
     for(int i=0;i+k-1<n;i++) {
         chmin(an,cost(i));
-        // dp[i]=max(dp[i-1],)
     }
     cout<<an<<"\n";
     return 0;
