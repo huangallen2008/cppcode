@@ -51,7 +51,7 @@ signed main() {
     IOS(); 
     freopen("in.txt","w",stdout);
     int n=100;
-    cout<<n<<' '<<n<<" 1 \n";
+    cout<<n<<' '<<rd(2,n)<<" 1 \n";
     REP(i,n) cout<<rd(1,10000000)<<' ';
     cout<<'\n';
     return 0;
