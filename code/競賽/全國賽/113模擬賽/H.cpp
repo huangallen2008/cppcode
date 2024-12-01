@@ -70,8 +70,8 @@ signed main() {
             ndp[1]=cnt[i]*co[1]+cnt[i-1]*co[0];
             if(fir!=-1) {
                 int dif=((i-fir)&1)^1;
-                ndp[0]+=min(dp[0^dif]+co[0^dif]*hco[s[fir],s[fir-2]],dp[1^dif]);
-                ndp[1]+=min(dp[1^dif]+co[1^dif]*hco[s[fir],s[fir-2]],dp[0^dif]);
+                ndp[0]+=min(dp[0^dif]+co[0^dif]*hco(s[fir],s[fir-2]),dp[1^dif]);
+                ndp[1]+=min(dp[1^dif]+co[1^dif]*hco(s[fir],s[fir-2]),dp[0^dif]);
             }
             swap(ndp,dp);
             fir=i+1;
