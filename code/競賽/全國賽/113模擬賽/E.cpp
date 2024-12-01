@@ -72,6 +72,6 @@ signed main() {
     REP(i,n) an[i]=h[p[i]];
     cout<<"Yes\n";
     REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
-    REP(i,n) cout<<h[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<an[i]<<' ';cout<<'\n';
     return 0;
 }
