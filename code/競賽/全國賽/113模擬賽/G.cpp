@@ -68,7 +68,7 @@ signed main() {
     REP(i,m) cin>>d[i].f>>d[i].s;
     int cnt=0;
     REP(i,m) {
-        REP(j,i) {
+        for(int j=i+1;j<m;j++) {
             REP(k,n-1) {
                 cnt+=bana(c[k],c[k+1],d[i],d[j]);
             }
