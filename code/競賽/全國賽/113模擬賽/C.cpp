@@ -114,6 +114,7 @@ void dfs1(int u,int fa) {
         else if(val<mn2) mn2=val;
     }
     chmin(dib[u],mn1+mn2);
+    if(fa==-1&&g[u].size()==1) chmin(dib[u],mn1);
     op(u)op(mn1)op(mn2)ope(dib[u])
     if(g[u].size()==1) mnd[u]=0;
 }
