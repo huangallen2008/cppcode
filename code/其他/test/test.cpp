@@ -47,18 +47,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bool g(){return 1;}
-main() {
-    int n,t;
-  for (cin >> t; t--; puts(g() ^ g() ? "NO" : "YES"))cin>>n;
+signed main() {
+    IOS();
+    int a;
+    ope(a)
+    return 0;
 }
-// signed main() {
-//     IOS();
-//     string s;
-//     cin>>s;
-//     int a,b;
-//     cin>>a>>b;
-//     swap(s[a-1],s[b-1]);
-//     cout<<s<<'\n';
-//     return 0;
-// }
