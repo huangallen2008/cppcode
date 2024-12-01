@@ -69,6 +69,7 @@ signed main() {
     sort(ALL(li),greater<pii>());
     Vi an(n);
     REP(i,n) an[li[i].s]=v[i].s;
-    REP(i,n) cout<<an[i]+1<<'\n';
+    REP(i,n) cout<<an[i]+1<<' ';
+    cout<<'\n';
     return 0;
 }
