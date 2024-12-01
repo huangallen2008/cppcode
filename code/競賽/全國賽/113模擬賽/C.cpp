@@ -137,6 +137,7 @@ signed main() {
     // int mna=*min_element(ALL(ndp));
     dia=mxd=Vi(n);
     dfs0(0,-1);
+    dfs1(0,-1);
     cout<<dia[0]<<' '<<dib[0]<<'\n';
     return 0;
 }
