@@ -18,7 +18,7 @@ using namespace std;
 const int inf=(1ll<<63)-1;
 const int maxn=6e5+5;
 const int mod=1e9+7;
-int id(int x) { return (x&~1)/2; }
+int id(int x) { return x>>1; }
 vector<int> h,d0,d1;//0:(n+1)/2,1:n/2
 struct seg {
     int l,r;
@@ -59,6 +59,34 @@ int qu1(int w,int ql,int qr) {
     if(ql>s1[w].r||qr<s1[w].l) return 0;
     return max(qu1(w*2,ql,qr),qu1(w*2+1,ql,qr));
 }
+struct SEG {
+    Vi s;
+    int n;
+    void build(int w,int l,int r,Vi &a) {
+        if(l==r) {
+            s[w]=a[l];
+            return;
+        }
+        int m=l+r>>1;
+        build(w<<1,l,r,a);
+        build(w<<1|1,m+1,r,a);
+        s[w]=max(s[w<<1],s[w<<1|1]);
+    }
+    void init(int _n,Vi &a) {
+        n=_n;
+        s=Vi(n<<2);
+        build(1,0,n-1,a);
+    }
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql<r||qr<l) return 0;
+        int m=l+r>>1;
+        return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r);
+    }
+}seg0,seg1;
 signed main()
 {
     IOS();
@@ -74,8 +102,10 @@ signed main()
     REP(i,n1) d1[i]=abs(h[i*2+1]-h[(i+1)*2+1]);
 //    REP(i,n0) cout<<d0[i]<<" ";cout<<endl;
 //    REP(i,n1) cout<<d1[i]<<" ";cout<<endl;
-    build0(1,0,n0-1);
-    build1(1,0,n1-1);
+    // build0(1,0,n0-1);
+    // build1(1,0,n1-1);
+    seg0.init(n0-1,d0);
+    seg1.init(n1-1,d1);
     int an=inf;
     for(int i=0;i+k-1<n;i++) {
         int l=i,r=i+k-1;
@@ -83,7 +113,8 @@ signed main()
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
 //        cout<<l0<<" "<<r0<<"\n";
 //        cout<<"Q"<<qu1(1,l1,r1-1)<<endl;
-        an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
+        an=min(an,max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
+        // an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
     }
     cout<<an<<"\n";
     return 0;
