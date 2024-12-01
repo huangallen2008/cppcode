@@ -62,6 +62,7 @@ int rd(int l,int r) {
 // typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
+    exit(3254);
     raise(0);
     int a[10];
     REP(i,10) cout<<a[i]<<' ';
