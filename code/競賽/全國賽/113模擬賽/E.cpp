@@ -83,7 +83,7 @@ signed main() {
                 cout<<"No\n";
                 return 0;
             }
-            a[i].f={l[id],val};
+            a[i]={l[id],val};
             p[id]=i;
         }
         if(a[i].f>smnr[i]||a[i].s<lim) {
