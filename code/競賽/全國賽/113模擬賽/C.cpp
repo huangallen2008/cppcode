@@ -118,7 +118,7 @@ signed main() {
     dfs(0,-1);
     if(g[0].size()==1) ndp[0]=0;
     dfs1(0,-1);
-    // oparr(dp)oparr(ndp)oparr(udp)
+    oparr(dp)oparr(ndp)oparr(udp)
     int mna=*min_element(ALL(ndp));
     dia=mxd=Vi(n);
     dfs0(0,-1);
