@@ -52,7 +52,8 @@ signed main() {
     cin>>n>>co[0]>>co[1];
     string s;
     cin>>s;
-    //s+='.'
+    s+='.';
+    n++;
     Vi cnt(n);
     Vi dp(2);
     int fir=-1;
