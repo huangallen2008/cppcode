@@ -50,12 +50,13 @@ struct E {
 };
 Graphw g;
 Graphw g2;
-Vi vis;
+Vi vis,ong2;
 void dfs(int u) {
     vis[u]=1;
     for(auto [v,w]:g[u]) {
         if(vis[v]) continue;
         g2[u].pb({v,w});
+        ong2[w]=1;
         dfs(v);
     }
 }
@@ -72,16 +73,21 @@ void dfs1(int u) {
 }
 void dfs2(int u) {
     for(auto [v,w]:g2[u]) {
-        
+        dfs(v);
+        sis0[u]+=sis0[v];
     }
+}
+void dfs3(int u) {
+    for(auto [v,])
 }
 signed main() {
     IOS(); 
+    //two nodes ///////////////////
     int n,m;
     cin>>n>>m;
     an=Vi(m);
     g=Graphw(n);
-    vis=c=is0=Vi(n);
+    vis=c=is0=ong2=Vi(n);
     vector<E> edge;
     REP(i,m) {
         int u,v;
@@ -92,14 +98,42 @@ signed main() {
     }
     dfs(0);
     if(g[0].size()==1) {
+        bool okl=0;
+        int gedge=0;
         for(auto [u,v,w]:edge) {
             if(v==0) swap(u,v);
             if(u!=0) continue;
+            if(ong2[w]) continue;
+            if(g2[v].size()!=0) {
+                okl=1;
+                an[w]=0;
+                gedge=w;
+            }
             is0[u]=1;
+        }
+        if(okl) {
+            dfs1(0);
+            for(auto [u,v,w]:edge) {
+                if(ong2[w]) continue;
+                if(g2[v].size()==0) swap(u,v);
+                if(g2[u].size()!=0) {
+                    continue;
+                }
+                an[w]=c[u]^1;
+            }
+        }
+        else {
+            // sis0=is0;
+            // dfs2(0);
+            for(auto [v,w]:g[0]) {
+                if(ong2[v]) continue;
+
+            }
         }
     }else {
         dfs1(0);
         for(auto [u,v,w]:edge) {
+            if(ong2[w]) continue;
             if(g2[v].size()==0) swap(u,v);
             if(g2[u].size()!=0) {
                 an[w]=0;
@@ -108,7 +142,8 @@ signed main() {
             an[w]=c[u]^1;
         }
     }
-
+    REP(i,m) cout<<(an[i]?'R':'B');
+    cout<<'\n';
     // Vi nf(n);
     // REP(i,n) if(g[i].size()==0||(i==0&&g[i].size()==1)) nf[i]=1;
     // for(auto [u,v]:edge) {
