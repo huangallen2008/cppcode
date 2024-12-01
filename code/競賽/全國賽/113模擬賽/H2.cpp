@@ -66,6 +66,8 @@ signed main() {
             dp[1][i]=max(dp[1][i-2]+co[1]*hco(s[i],s[i-2]),dp[0][i-2]);
         }
     }
+    oparr(dp[0])
+    oparr(dp[1])
     int an=min(dp[0][n-1],dp[1][n-1]);
     cout<<an<<'\n';
     return 0;
