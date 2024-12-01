@@ -63,15 +63,13 @@ signed main() {
     Vi h(n);
     REP(i,n) {
         h[i]=max(i>0?h[i-1]:0,a[i].f);
-    }
-    Vi an(n);
-    REP(i,n) an[i]=h[p[i]];
-    REP(i,n) {
-        if(h[i]>r[i]) {
+        if(h[i]>a[i].s) {
             cout<<"No\n";
             return 0;
         }
     }
+    Vi an(n);
+    REP(i,n) an[i]=h[p[i]];
     cout<<"Yes\n";
     REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
     REP(i,n) cout<<h[i]<<' ';cout<<'\n';
