@@ -89,7 +89,7 @@ void dfs1(int u,int fa) {
 }
 Vi mxd,dia;
 void dfs0(int u,int fa) {
-    int mx1=-inf,mx2=-inf;
+    int mx1=0,mx2=0;
     for(auto [v,w]:g[u]) {
         if(v==fa) continue;
         dfs0(v,u);
