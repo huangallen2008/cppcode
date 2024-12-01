@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-// #define int long long
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,7 +39,7 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
-const int inf=(1<<30);
+const int inf=(1ll<<62);
 const int maxn=6e5+5;
 const int mod=1e9+7;
 int id(int x) { return x>>1; }
@@ -100,12 +100,26 @@ signed main()
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
         return max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
     };
-    Vi co(n);
-    for(int i=0;i+k-1<n;i++) {
+    int nn=n-k+1;
+    Vi co(nn);
+    for(int i=0;i<nn;i++) {
         chmin(an,cost(i));
         co[i]=cost(i);
     }
-    oparr(co)
-    cout<<an<<"\n";
+    int lb=0,rb=1e9,mb;
+    while(lb<rb) {
+        mb=lb+rb+1>>1;//last mb : cnt(mb)<=p , cnt(mb)=number of team cost <= mb
+        int cnt=0;
+        for(int i=0;i<nn;i++) {
+            if(co[i]<=mb) {
+                cnt++;
+                i=i+k-1;
+            }
+        }
+        if(cnt<=p) lb=mb;
+        else rb=mb-1;
+    }
+    // oparr(co)
+    cout<<lb<<"\n";
     return 0;
 }
