@@ -97,7 +97,7 @@ signed main() {
         g[v].pb({u,w});
     }
     dfs(0,-1);
-    oparr(dp)
+    oparr(dp)oparr(ndp)
     if(g[0].size()==1) ndp[0]=0;
     dfs1(0,-1);
     int mna=*min_element(ALL(ndp));
