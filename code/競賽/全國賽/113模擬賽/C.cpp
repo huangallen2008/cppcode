@@ -78,12 +78,12 @@ void dfs1(int u,int fa) {
     Vi nd(cc);
     REP(i,cc) nd[i]=min(i>0?p[i-1]:inf,i<cc-1?s[i+1]:inf);
     if(cc==2-(fa==-1)) nd[0]=0;//all = 0
-    ope(u)oparr(hv)oparr(p)oparr(s)oparr(nd)
+    // ope(u)oparr(hv)oparr(p)oparr(s)oparr(nd)
     REP(i,cc) {
         auto [v,w]=g[u][i];
         if(v==fa) continue;
         udp[v]=min(udp[u],nd[i])+w;
-        op(v)ope(udp[v])
+        // op(v)ope(udp[v])
         dfs1(v,u);
     }
 }
@@ -117,7 +117,7 @@ signed main() {
     dfs(0,-1);
     if(g[0].size()==1) ndp[0]=0;
     dfs1(0,-1);
-    oparr(dp)oparr(ndp)oparr(udp)
+    // oparr(dp)oparr(ndp)oparr(udp)
     int mna=*min_element(ALL(ndp));
     dia=mxd=Vi(n);
     dfs0(0,-1);
