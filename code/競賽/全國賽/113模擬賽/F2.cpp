@@ -63,7 +63,7 @@ Vi vis,ong2;
 Vi c;
 Vi an,is0,sis0;
 void dfs(int u,int fa) {
-    op(u)ope(fa)
+    // op(u)ope(fa)
     vis[u]=1;
     int co=c[u]^1;
     for(auto [v,w]:g[u]) {
@@ -114,7 +114,7 @@ signed main() {
         inc[u]=0;
         for(auto [v,w]:g[u]) {
             deg[v]--;
-            if(deg[v]==0) q.push(v);
+            if(deg[v]==1) q.push(v);
         }
     }
     int cycs=0;
