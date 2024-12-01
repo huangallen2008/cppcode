@@ -3,13 +3,14 @@ using namespace std;
 using z = int;
 z t, n, u, v;
 deque<set<z>> e;
-z f(z x, z s = 9) {
+z f(z x) {
+  z s = 9
   for (z y : e[x]) e[y].erase(x), s *= 9 + f(y) % 959;
   return s;
 }
 z g() {
   e.assign(n + 1, {});
-  for (z i = 0; i<=n; e[u].insert(v), e[v].insert(u)) cin >> u >> v,cout<<"i"<<i<<endl;
+  for (z i = n; --i; e[u].insert(v), e[v].insert(u)) cin >> u >> v;
   return f(1);
 }
 main() {
