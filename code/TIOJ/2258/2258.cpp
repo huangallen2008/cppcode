@@ -75,7 +75,7 @@ struct SEG {
 }seg0,seg1;
 signed main()
 {
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     IOS();
     int n,k,p;
     cin>>n>>k>>p;
