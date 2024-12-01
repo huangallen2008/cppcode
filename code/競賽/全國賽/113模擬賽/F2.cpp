@@ -119,7 +119,7 @@ signed main() {
     }
     else {
         REP(i,n) {
-            if(g[i].size()>1&&inc[i]) {
+            if(g[i].size()>2&&inc[i]) {
                 dfs(i);
                 break;
             }
