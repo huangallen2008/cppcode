@@ -50,6 +50,6 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     pii a={1,2},b={3,4};
-    cout<<a<<b<<'\n';
+    cout<<a<<' '<<b<<'\n';
     return 0;
 }
