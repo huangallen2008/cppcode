@@ -41,6 +41,10 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
+template<typename T1,typename T2>
+iostream& operator<<(iostream& os,pair<T1,T2> p) {
+    os<<'{'<<p.f<<','<<p.s<<"} ";
+}
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
@@ -60,19 +64,5 @@ typedef trie<
 typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_map;
 signed main() {
     IOS();
-    int n=50000000;
-    // tree<int,>
-    rope<int> a;
-    REP(i,n) a.pb(i);
-    cout<<clock()<<'\n';
-    ope(sizeof(a))
-    // REP(i,n) {
-        // rope<int> b=a;
-        a.substr(0,n);
-        a.erase(0,n);
-        // a.substr(0,1);a.erase(0,n);
-    // }
-    cout<<clock()<<'\n';
-    // oparr(a)oparr(b)
     return 0;
 }
