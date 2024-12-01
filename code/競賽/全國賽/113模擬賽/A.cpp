@@ -45,32 +45,36 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct S {
+    int p,q,id;
+};
 signed main() {
     IOS(); 
     int n,m;
     cin>>n>>m;
-    if(m<n) {
+    Vi l(n);
+    REP(i,n) cin>>l[i];
+    Vi v(m),s(m);
+    REP(i,m) cin>>v[i];
+    REP(i,m) cin>>s[i];
+    vector<S> t(m);
+    REP(i,m) {
+        if(v[i]>s[i])t.pb({v[i]*v[i]-s[i]*s[i],v[i],i});
+    }
+    if(t.size()<n) {
         cout<<"-1\n";
         return 0;
     }
-    Vi l(n);
-    REP(i,n) cin>>l[i];
-    Vi t(m);
-    REP(i,m) cin>>t[i];
-    vector<pii> v(m);
-    REP(i,m) {
-        int x;
-        cin>>x;
-        v[i]={x+t[i],i};
-    }
-    sort(ALL(v),greater<pii>());
+    sort(ALL(t),[](S a,S b) {
+        return a.q*b.p<b.q*a.p;
+    });
     vector<pii> li(n);
     REP(i,n) li[i]={l[i],i};
     sort(ALL(li),greater<pii>());
     // for(auto [x,y]:v) cout<<"{"<<x<<","<<y<<"} ";entr
     // for(auto [x,y]:li) cout<<"{"<<x<<","<<y<<"} ";entr
     Vi an(n);
-    REP(i,n) an[li[i].s]=v[i].s;
+    REP(i,n) an[li[i].s]=t[i].id;
     REP(i,n) cout<<an[i]+1<<' ';
     cout<<'\n';
     return 0;
