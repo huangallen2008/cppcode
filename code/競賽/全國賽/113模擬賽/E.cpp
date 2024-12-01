@@ -73,7 +73,7 @@ signed main() {
         }
     }
     cout<<"Yes\n";
-    REP(i,n) cout<<p[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<p[i]+1<<' ';cout<<'\n';
     REP(i,n) cout<<h[i]<<' ';cout<<'\n';
     return 0;
 }
