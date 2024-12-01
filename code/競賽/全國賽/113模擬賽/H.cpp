@@ -69,6 +69,7 @@ signed main() {
             Vi ndp(2);
             ndp[0]=cnt[i]*co[0]+cnt[i-1]*co[1];
             ndp[1]=cnt[i]*co[1]+cnt[i-1]*co[0];
+            oparr(ndp)
             if(fir!=-1) {
                 int dif=((i-fir)&1)^1;
                 ndp[0]+=min(dp[0^dif]+co[0^dif]*hco(s[fir],s[fir-2]),dp[1^dif]);
