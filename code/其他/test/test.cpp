@@ -67,5 +67,6 @@ signed main() {
     IOS();
     pii a={1,3};
     cout<<a<<endl;
+    ope(a)
     return 0;
 }
