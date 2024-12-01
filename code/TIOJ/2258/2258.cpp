@@ -106,6 +106,7 @@ signed main()
         chmin(an,cost(i));
         co[i]=cost(i);
     }
+    oparr(co)
     int lb=0,rb=1e9,mb;
     while(lb<rb) {
         mb=lb+rb+1>>1;//last mb : cnt(mb)<=p , cnt(mb)=number of team cost <= mb
