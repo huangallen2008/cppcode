@@ -63,6 +63,7 @@ Vi vis,ong2;
 Vi c;
 Vi an,is0,sis0;
 void dfs(int u,int fa) {
+    op(u)ope(fa)
     vis[u]=1;
     int co=c[u]^1;
     for(auto [v,w]:g[u]) {
