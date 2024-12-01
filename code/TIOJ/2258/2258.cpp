@@ -83,11 +83,13 @@ struct seg {
 //     if(ql>s1[w].r||qr<s1[w].l) return 0;
 //     return max(qu1(w*2,ql,qr),qu1(w*2+1,ql,qr));
 // }
+int tt=0;
 struct SEG {
     Vi s;
     int n;
     void build(int w,int l,int r,Vi &a) {
         op(w)op(l)ope(r)
+        if(tt++==10)exit(0);
         if(l==r) {
             s[w]=a[l];
             return;
