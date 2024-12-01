@@ -56,13 +56,14 @@ void dfs(int u,int fa) {
     if(g[u].size()==1&&fa!=-1) dp[u]=0;
 }
 void dfs1(int u,int fa) {
-    int mn1=udp[u],mn2=0;
+    int mn1=udp[u],mn2=inf;
     for(auto [v,w]:g[u]) {
         if(v==fa) continue;
         int val=dp[v]+w;
         if(val<mn1) mn2=mn1,mn1=val;
         else if(val<mn2) mn2=val;
     }
+    // if(mn2==inf) mn2=0;
     ndp[u]=mn1+mn2;
     Vi hv;
     for(auto [v,w]:g[u]) {
