@@ -127,14 +127,20 @@ signed main()
     seg0.init(n0,d0);
     seg1.init(n1,d1);
     int an=inf;
-    for(int i=0;i+k-1<n;i++) {
+    auto cost=[&](int i) {
+        
         int l=i,r=i+k-1;
         int l0=id(l+l%2),r0=id(r-r%2);
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
 //        cout<<l0<<" "<<r0<<"\n";
 //        cout<<"Q"<<qu1(1,l1,r1-1)<<endl;
-        an=min(an,max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
+        return max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
         // an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
+    }
+    // Vi dp(n);
+    for(int i=0;i+k-1<n;i++) {
+        chmax(an,cost(i));
+        // dp[i]=max(dp[i-1],)
     }
     cout<<an<<"\n";
     return 0;
