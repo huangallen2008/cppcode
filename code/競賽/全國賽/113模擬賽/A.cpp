@@ -57,7 +57,7 @@ signed main() {
     Vi v(m),s(m);
     REP(i,m) cin>>v[i];
     REP(i,m) cin>>s[i];
-    vector<S> t(m);
+    vector<S> t;
     REP(i,m) {
         if(v[i]>s[i])t.pb({v[i]*v[i]-s[i]*s[i],v[i],i});
     }
