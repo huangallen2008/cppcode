@@ -92,6 +92,7 @@ signed main()
     REP(i,n1) d1[i]=abs(h[i*2+1]-h[(i+1)*2+1]);
     seg0.init(n0,d0);
     seg1.init(n1,d1);
+    ope("ok")
     int an=inf;
     auto cost=[&](int i) {
         int l=i,r=i+k-1;
