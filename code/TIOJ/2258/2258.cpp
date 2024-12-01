@@ -15,7 +15,7 @@ using namespace std;
 #define pii pair<int,int>
 #define Graph vector<vector<int>>
 #define IOS() cin.sync_with_stdio(0),cin.tie(0),cout.tie(0)
-const int inf=(1ll<<62);
+const int inf=(1ll<<63)-1;
 const int maxn=6e5+5;
 const int mod=1e9+7;
 int id(int x) { return (x&~1)/2; }
@@ -70,7 +70,6 @@ signed main()
     d1=vector<int>(n);
     REP(i,n) cin>>h[i];
     sort(ALL(h));
-    cout<<"h:";REP(i,n) cout<<h[i]<<" ";cout<<endl;
     REP(i,n0) d0[i]=abs(h[i*2]-h[(i+1)*2]);
     REP(i,n1) d1[i]=abs(h[i*2+1]-h[(i+1)*2+1]);
 //    REP(i,n0) cout<<d0[i]<<" ";cout<<endl;
@@ -78,25 +77,14 @@ signed main()
     build0(1,0,n0-1);
     build1(1,0,n1-1);
     int an=inf;
-    vector<int> d(n,inf);
     for(int i=0;i+k-1<n;i++) {
         int l=i,r=i+k-1;
         int l0=id(l+l%2),r0=id(r-r%2);
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
 //        cout<<l0<<" "<<r0<<"\n";
 //        cout<<"Q"<<qu1(1,l1,r1-1)<<endl;
-        int tt=max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
-        d[r]=tt;
-        cout<<tt<<" ";
+        an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
     }
-    REP(rd,k-1) {
-        int mt=inf;
-        for(int i=0;i+k-1<n;i++) {
-            mt=min(mt,d[i]);
-            d[i+k-1]+=mt;
-        }
-    }
-    cout<<endl;
     cout<<an<<"\n";
     return 0;
 }
