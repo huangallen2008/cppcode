@@ -25,41 +25,41 @@ struct seg {
     int l,r;
     int v;
 };
-seg s0[maxn*4],s1[maxn*4];//d[i]=abs([i+1]-[i])
-void build0(int w,int l,int r) {
-    s0[w]={l,r,0};
-    if(l==r) {
-        s0[w].v=d0[l];
-        return;
-    }
-    int m=(l+r)/2;
-    build0(w*2,l,m);
-    build0(w*2+1,m+1,r);
-    s0[w].v=max(s0[w*2].v,s0[w*2+1].v);
-}
-int qu0(int w,int ql,int qr) {
-    if(ql>qr) return 0;
-    if(ql<=s0[w].l&&s0[w].r<=qr) return s0[w].v;
-    if(ql>s0[w].r||qr<s0[w].l) return 0;
-    return max(qu0(w*2,ql,qr),qu0(w*2+1,ql,qr));
-}
-void build1(int w,int l,int r) {
-    s1[w]={l,r,0};
-    if(l==r) {
-        s1[w].v=d1[l];
-        return;
-    }
-    int m=(l+r)/2;
-    build1(w*2,l,m);
-    build1(w*2+1,m+1,r);
-    s1[w].v=max(s1[w*2].v,s1[w*2+1].v);
-}
-int qu1(int w,int ql,int qr) {
-    if(ql>qr) return 0;
-    if(ql<=s1[w].l&&s1[w].r<=qr) return s1[w].v;
-    if(ql>s1[w].r||qr<s1[w].l) return 0;
-    return max(qu1(w*2,ql,qr),qu1(w*2+1,ql,qr));
-}
+// seg s0[maxn*4],s1[maxn*4];//d[i]=abs([i+1]-[i])
+// void build0(int w,int l,int r) {
+//     s0[w]={l,r,0};
+//     if(l==r) {
+//         s0[w].v=d0[l];
+//         return;
+//     }
+//     int m=(l+r)/2;
+//     build0(w*2,l,m);
+//     build0(w*2+1,m+1,r);
+//     s0[w].v=max(s0[w*2].v,s0[w*2+1].v);
+// }
+// int qu0(int w,int ql,int qr) {
+//     if(ql>qr) return 0;
+//     if(ql<=s0[w].l&&s0[w].r<=qr) return s0[w].v;
+//     if(ql>s0[w].r||qr<s0[w].l) return 0;
+//     return max(qu0(w*2,ql,qr),qu0(w*2+1,ql,qr));
+// }
+// void build1(int w,int l,int r) {
+//     s1[w]={l,r,0};
+//     if(l==r) {
+//         s1[w].v=d1[l];
+//         return;
+//     }
+//     int m=(l+r)/2;
+//     build1(w*2,l,m);
+//     build1(w*2+1,m+1,r);
+//     s1[w].v=max(s1[w*2].v,s1[w*2+1].v);
+// }
+// int qu1(int w,int ql,int qr) {
+//     if(ql>qr) return 0;
+//     if(ql<=s1[w].l&&s1[w].r<=qr) return s1[w].v;
+//     if(ql>s1[w].r||qr<s1[w].l) return 0;
+//     return max(qu1(w*2,ql,qr),qu1(w*2+1,ql,qr));
+// }
 struct SEG {
     Vi s;
     int n;
@@ -107,6 +107,7 @@ signed main()
     // build1(1,0,n1-1);
     seg0.init(n0-1,d0);
     seg1.init(n1-1,d1);
+    ope("ok")
     int an=inf;
     for(int i=0;i+k-1<n;i++) {
         int l=i,r=i+k-1;
