@@ -70,8 +70,8 @@ signed main() {
     mp[-inf]=0,mp[inf]=0;
     REP1(i,n) {
         int id=p[i];
-        auto [x1,y1]=mp.lower_bound(id);//y1-
-        auto [x2,y2]=prev(mp.lower_bound(id));
+        auto [x1,y1]=*mp.lower_bound(id);//y1-
+        auto [x2,y2]=*prev(mp.lower_bound(id));
         int dif1=pd[x1-1]-pd[id-1],dif2=pd[id-1]-pd[x2-1];
         int l1=y1-dif1,r1=y1+dif1,l2=y2-dif2,r2=y2+dif2;
         int l=1,r=b[id];
