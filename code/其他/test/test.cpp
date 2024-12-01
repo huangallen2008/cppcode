@@ -43,7 +43,7 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) {
-    cout<<p.f<<endl;
+    // cout<<p.f<<endl;
     os<<'{'<<p.f<<','<<p.s<<"} ";
 }
 const int mod=1e9+7;
