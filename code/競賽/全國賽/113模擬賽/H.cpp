@@ -61,7 +61,7 @@ signed main() {
     };
     REP(i,n) {
         if(i>=2) {
-            if(hco(s[i],s[i-2])) cnt[i]=cnt[i-2]+1;
+            if(hco(s[i],s[i-2])&&s[i-1]!='.') cnt[i]=cnt[i-2]+1;
         }
         if(s[i]=='.') {
             if(i==0) continue;
@@ -74,7 +74,6 @@ signed main() {
                 ndp[1]+=min(dp[1^dif]+co[1^dif]*hco(s[fir],s[fir-2]),dp[0^dif]);
             }
             op(i)oparr(cnt)oparr(dp)oparr(ndp)entr
-            cnt[i-1]=0;
             swap(ndp,dp);
             fir=i+1;
         }
