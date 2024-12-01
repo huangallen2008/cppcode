@@ -71,8 +71,8 @@ signed main() {
     vector<pii> li(n);
     REP(i,n) li[i]={l[i],i};
     sort(ALL(li),greater<pii>());
-    for(auto [x,y,z]:t) cout<<"{"<<x<<","<<y<<","<<z<<"} ";entr
-    for(auto [x,y]:li) cout<<"{"<<x<<","<<y<<"} ";entr
+    // for(auto [x,y,z]:t) cout<<"{"<<x<<","<<y<<","<<z<<"} ";entr
+    // for(auto [x,y]:li) cout<<"{"<<x<<","<<y<<"} ";entr
     Vi an(n);
     REP(i,n) an[li[i].s]=t[i].id;
     REP(i,n) cout<<an[i]+1<<' ';
