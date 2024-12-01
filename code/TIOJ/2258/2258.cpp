@@ -124,11 +124,6 @@ signed main()
     sort(ALL(h));
     REP(i,n0) d0[i]=abs(h[i*2]-h[(i+1)*2]);
     REP(i,n1) d1[i]=abs(h[i*2+1]-h[(i+1)*2+1]);
-//    REP(i,n0) cout<<d0[i]<<" ";cout<<endl;
-//    REP(i,n1) cout<<d1[i]<<" ";cout<<endl;
-    // build0(1,0,n0-1);
-    // build1(1,0,n1-1);
-    ope("ok")
     seg0.init(n0,d0);
     seg1.init(n1,d1);
     int an=inf;
