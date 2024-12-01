@@ -72,6 +72,7 @@ signed main() {
             oparr(ndp)
             if(fir!=-1) {
                 int dif=((i-fir)&1)^1;
+                ope(dif)
                 ndp[0]+=min(dp[0^dif]+co[0^dif]*hco(s[fir],s[fir-2]),dp[1^dif]);
                 ndp[1]+=min(dp[1^dif]+co[1^dif]*hco(s[fir],s[fir-2]),dp[0^dif]);
             }
