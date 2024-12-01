@@ -136,7 +136,7 @@ signed main()
 //        cout<<"Q"<<qu1(1,l1,r1-1)<<endl;
         return max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
         // an=min(an,max(max(qu0(1,l0,r0-1),qu1(1,l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2]))));
-    }
+    };
     // Vi dp(n);
     for(int i=0;i+k-1<n;i++) {
         chmax(an,cost(i));
