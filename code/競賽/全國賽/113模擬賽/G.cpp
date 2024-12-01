@@ -67,11 +67,23 @@ signed main() {
     REP(i,n) cin>>c[i].f>>c[i].s;
     REP(i,m) cin>>d[i].f>>d[i].s;
     int cnt=0;
-    REP(i,m) {
-        for(int j=i+1;j<m;j++) {
-            REP(k,n-1) {
-                cnt+=bana(c[k],c[k+1],d[i],d[j]);
+    Vi a(m);
+    REP(i,m) a[i]=d[i].f;
+    sort(ALL(a));
+    int h=d[0].s;
+    REP(i,n-1) {
+        pii p1=c[i],p2=c[i+1];
+        if(c[i].s<=h&&h<=c[i+1].s) {
+            ld xx=(ld)(p1.f*(p2.s-h)+p2.f*(h-p1.s))/(p2.s-p1.s);
+            ld tt=(ld)((int)xx);
+            if(xx==tt&&*lower_bound(ALL(a))==xx) {
+                int id=upper_bound(ALL(a),(int)xx)-a.begin();
+                cnt+=id*(m-id+1)-1;
             }
+            else {
+                int id=upper_bound(ALL(a),(int)xx)-a.begin();
+                cnt+=id*(m-id);
+            } 
         }
     }
     cout<<cnt<<'\n';
