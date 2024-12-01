@@ -65,7 +65,7 @@ signed main() {
             if(hco(s[i],s[i-2])&&s[i-1]!='.') cnt[i]=cnt[i-2]+1;
         }
         if(s[i]=='.') {
-            if(i==0||s[i-1]=='.') continue;
+            if(i<=1||s[i-1]=='.') continue;
             Vi ndp(2);
             ndp[0]=cnt[i-1]*co[0]+cnt[i-2]*co[1];
             ndp[1]=cnt[i-1]*co[1]+cnt[i-2]*co[0];
