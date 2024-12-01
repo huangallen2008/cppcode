@@ -100,6 +100,7 @@ signed main()
         int l1=id(l+(l+1)%2),r1=id(r-(r+1)%2);
         return max(max(seg0.qu(l0,r0-1),seg1.qu(l1,r1-1)),max(abs(h[i]-h[i+1]),abs(h[i+k-1]-h[i+k-2])));
     };
+    oparr(h)
     Vi co(n);
     for(int i=0;i+k-1<n;i++) {
         chmin(an,cost(i));
