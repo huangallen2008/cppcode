@@ -67,8 +67,8 @@ signed main() {
         if(s[i]=='.') {
             if(i==0) continue;
             Vi ndp(2);
-            ndp[0]=cnt[i]*co[0]+cnt[i-1]*co[1];
-            ndp[1]=cnt[i]*co[1]+cnt[i-1]*co[0];
+            ndp[0]=cnt[i-1]*co[0]+cnt[i-2]*co[1];
+            ndp[1]=cnt[i-1]*co[1]+cnt[i-2]*co[0];
             oparr(ndp)
             if(fir!=-1) {
                 int dif=((i-fir)&1)^1;
