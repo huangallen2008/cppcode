@@ -96,6 +96,7 @@ void solve() {
         a[i].f.f=lower_bound(ALL(t),a[i].f.f)-t.begin();
         a[i].f.s=lower_bound(ALL(t),a[i].f.s)-t.begin();
     }
+    oparr(a)
     sort(ALL(a),[&](piii a,piii b) {
         if(a.f.f==b.f.f) return a.f.s>b.f.s;
         return a.f.f<b.f.f;
