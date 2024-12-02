@@ -61,6 +61,7 @@ void solve() {
         sum+=a[i];
         if(sum>=k) {
             cout<<i+2<<'\n';
+            return ;
         }
     }
     cout<<"-1\n";
