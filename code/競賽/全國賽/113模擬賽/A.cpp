@@ -66,7 +66,7 @@ signed main() {
         return 0;
     }
     sort(ALL(t),[](S a,S b) {
-        return a.q*b.p<b.q*a.p;
+        return (ld)a.q/a.p<(ld)b.q/b.p;
     });
     vector<pii> li(n);
     REP(i,n) li[i]={l[i],i};
