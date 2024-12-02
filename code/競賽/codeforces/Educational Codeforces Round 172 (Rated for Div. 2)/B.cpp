@@ -60,7 +60,7 @@ void solve() {
         else if(cnt[i]==2) {
             c2++;
         }
-        else c3++;
+        else if(cnt[i]>=3) c3++;
     }
     int an=2*(c1+1>>1)+c3;
     if(c1&1) an+=c1>>1;
