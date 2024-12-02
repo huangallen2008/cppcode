@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -39,7 +39,7 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
-const int inf=(1ll<<62);
+const int inf=(1<<30);
 const int maxn=6e5+5;
 const int mod=1e9+7;
 int id(int x) { return x>>1; }
