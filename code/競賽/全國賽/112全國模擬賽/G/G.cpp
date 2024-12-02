@@ -59,8 +59,13 @@ bool check(int m) {
     REP(i,n) {
         if(used[i]) continue;
         while(it<n&&vb[it].s.s<=m-v[i].f) pq.push({vb[it].s.f,vb[it].f}),it++;
-        
+        while(pq.size()&&pq.top().s<=i) pq.pop();
+        if(pq.size()==0) return 0;
+        auto [x,y]=pq.top();
+        pq.pop();
+        used[y]=1;
     }
+    return 1;
 }
 signed main() {
     IOS();
