@@ -171,9 +171,9 @@ void solve() {
     REP(i,n) seg.ud(i,{a[i],b[i]});
     int q;
     cin>>q;
-    auto cost=[&](int l,int m,int r) {
-        return seg.qu(l,m)+seg.qu(m+1,r);
-    };
+    // auto cost=[&](int l,int m,int r) {
+    //     return seg.qu(l,m)+seg.qu(m+1,r);
+    // };
     REP(i,q) {
         int opt;
         cin>>opt;
