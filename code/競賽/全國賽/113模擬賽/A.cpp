@@ -40,13 +40,14 @@ using namespace std;
 const int mod=1e9+7;
 const int maxn=5e5+5;
 const int maxb=20;
-const int inf=(1<<30);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct S {
-    int p,q,id;
+    long long p,q;
+    int id;
 };
 signed main() {
     IOS(); 
@@ -66,7 +67,7 @@ signed main() {
         return 0;
     }
     sort(ALL(t),[](S a,S b) {
-        return (ld)a.q/a.p<(ld)b.q/b.p;
+        return a.q*b.p<b.q*a.p;
     });
     vector<pii> li(n);
     REP(i,n) li[i]={l[i],i};
