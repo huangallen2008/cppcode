@@ -53,6 +53,7 @@ vector<pii> v;
 vector<pipii> vb;
 bool check(int m) {
     REP(i,n) if(v[i].f+v[i].s>m) return 0;
+    ope(m)
     priority_queue<pii> pq;
     int it=0;
     Vi used(n);
