@@ -185,6 +185,8 @@ void solve() {
             cout<<seg.qu(l,r)<<'\n';
         }
         REP(j,20) cout<<seg.s[j].ma<<' ';entr
+        REP(j,20) cout<<seg.s[j].mp<<' ';entr
+        REP(j,20) cout<<seg.s[j].ms<<' ';entr entr
     }
 }
 signed main() {
