@@ -163,7 +163,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
     seg.init(n);
-    REP1(i,n) seg.ud(i,{a[i],b[i]});
+    REP(i,n) seg.ud(i,{a[i],b[i]});
     int q;
     cin>>q;
     REP(i,q) {
