@@ -77,6 +77,7 @@ signed main() {
     REP(i,n) cin>>b[i];
     REP(i,n) v[i]={a[i],b[i]};
     sort(ALL(v),greater<pii>());
+    vb=vector<pipii>(n);
     REP(i,n) vb[i]={i,v[i]};
     sort(ALL(vb),[&](pipii a,pipii b) {
         return a.s.s<b.s.s;
