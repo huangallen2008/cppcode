@@ -56,6 +56,7 @@ bool check(int m) {
     priority_queue<pii> pq;
     int it=0;
     Vi used(n);
+    ope(m)
     REP(i,n) {
         if(used[i]) continue;
         while(it<n&&vb[it].s.s<=m-v[i].f) pq.push({vb[it].s.f,vb[it].f}),it++;
@@ -66,6 +67,7 @@ bool check(int m) {
         used[y]=1;
         op(v[i].f)ope(v[i].f+v[y].s)
     }
+    entr
     return 1;
 }
 signed main() {
