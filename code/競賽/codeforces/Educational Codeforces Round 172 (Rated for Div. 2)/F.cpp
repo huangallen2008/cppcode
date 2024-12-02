@@ -48,50 +48,50 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct SEG {
-    struct Seg {
-        int v1,v2,mv;
-    }zr={-inf,inf,-inf};
-    Seg merge(Seg b,Seg c) {
-        Seg a;
-        a.v1=max(b.v1,c.v1);
-        a.v2=min(b.v2,c.v2);
-        a.mv=max({b.mv,c.mv,c.v1-b.v2});
-        return a;
-    }
-    void pull(Seg &a,Seg &b,Seg &c) {
-        a=merge(b,c);
-    }
-    vector<Seg> s;
-    int n;
-    void init(int _n) {
-        n=_n;
-        s=vector<Seg>(n<<2);
-    }
-    void _ud(int w,int l,int r,int u,pii v) {
-        if(l==r) {
-            s[w].v1=v.f;
-            s[w].v2=v.s;
-            return;
-        }
-        int m=l+r>>1;
-        if(u<=m) _ud(w<<1,l,m,u,v);
-        else _ud(w<<1|1,m+1,r,u,v);
-        pull(s[w],s[w<<1],s[w<<1|1]);
-    }
-    void ud(int u,pii v) {
-        _ud(1,0,n-1,u,v);
-    }
-    Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return zr;
-        int m=l+r>>1;
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    }
-    int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r).mv;
-    }
-}seg;
+// struct SEG {
+//     struct Seg {
+//         int v1,v2,mv;
+//     }zr={-inf,inf,-inf};
+//     Seg merge(Seg b,Seg c) {
+//         Seg a;
+//         a.v1=max(b.v1,c.v1);
+//         a.v2=min(b.v2,c.v2);
+//         a.mv=max({b.mv,c.mv,c.v1-b.v2});
+//         return a;
+//     }
+//     void pull(Seg &a,Seg &b,Seg &c) {
+//         a=merge(b,c);
+//     }
+//     vector<Seg> s;
+//     int n;
+//     void init(int _n) {
+//         n=_n;
+//         s=vector<Seg>(n<<2);
+//     }
+//     void _ud(int w,int l,int r,int u,pii v) {
+//         if(l==r) {
+//             s[w].v1=v.f;
+//             s[w].v2=v.s;
+//             return;
+//         }
+//         int m=l+r>>1;
+//         if(u<=m) _ud(w<<1,l,m,u,v);
+//         else _ud(w<<1|1,m+1,r,u,v);
+//         pull(s[w],s[w<<1],s[w<<1|1]);
+//     }
+//     void ud(int u,pii v) {
+//         _ud(1,0,n-1,u,v);
+//     }
+//     Seg _qu(int w,int l,int r,int ql,int qr) {
+//         if(ql<=l&&r<=qr) return s[w];
+//         if(ql>r||qr<l) return zr;
+//         int m=l+r>>1;
+//         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+//     }
+//     int qu(int l,int r) {
+//         return _qu(1,0,n-1,l,r).mv;
+//     }
+// }seg;
 struct SEG {
     struct Seg {
         int mp,ms,ma,sum;
