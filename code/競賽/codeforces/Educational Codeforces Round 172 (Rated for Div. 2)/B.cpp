@@ -63,8 +63,8 @@ void solve() {
         else if(cnt[i]>=3) c3++;
     }
     int an=2*(c1+1>>1)+c3;
-    if(c1&1) an+=c2>>1;
-    else an+=c2+1>>1;
+    if(c1&1) an+=c2*2>>1;
+    else an+=c2*2+1>>1;
     cout<<an<<'\n';
 }
 signed main() {
