@@ -95,12 +95,12 @@ int rd(int l,int r) {
 struct SEG {
     struct Seg {
         int mp,ms,ma,sum;
-    }zr={-inf,-inf,-inf};
+    }zr={-inf,-inf,-inf,0};
     Seg merge(Seg b,Seg c) {
         Seg a;
         a.mp=max(b.mp,b.sum+c.mp);
         a.ms=max(c.sum+b.ms,c.ms);
-        a.ma=max({b.ma,c.ma,b.mp+c.ms,b.ms+c.mp});
+        a.ma=max({b.ma,c.ma,b.ms+c.mp});
         a.sum=b.sum+c.sum;
         return a;
     }
