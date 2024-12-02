@@ -60,7 +60,7 @@ signed main() {
     REP(i,m) cin>>s[i];
     vector<S> t;
     REP(i,m) {
-        if(v[i]>s[i])t.pb({v[i]*v[i]-s[i]*s[i],v[i],i});
+        if(v[i]>s[i])t.pb({v[i]*1ll*v[i]-s[i]*1ll*s[i],v[i],i});
     }
     if(t.size()<n) {
         cout<<"-1\n";
