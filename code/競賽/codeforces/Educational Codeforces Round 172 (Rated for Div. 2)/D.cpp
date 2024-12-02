@@ -79,7 +79,7 @@ struct BIT2 {
     }
     int qu(int u) {
         u=n-u;
-        int r=0;
+        int r=inf;
         for(;u>0;u-=u&-u) chmin(r,b[u]);
         return r;
     }
