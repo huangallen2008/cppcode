@@ -190,7 +190,7 @@ void solve() {
             while(lb<rb) {
                 mb=lb+rb>>1;
                 int r1=cost(l,mb,r),r2=cost(l,mb+1,r);
-                if(r2>=r1) rb=mb;
+                if(r2<=r1) rb=mb;
                 else lb=mb+1;
             }
             cout<<cost(l,lb,r)<<'\n';
