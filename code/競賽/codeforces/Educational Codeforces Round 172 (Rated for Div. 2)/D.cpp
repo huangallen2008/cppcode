@@ -113,6 +113,9 @@ void solve() {
         bit1.ud(r,l);
         bit2.ud(r,r);
     }
+    RREP(i,n-1) {
+        if(a[i].f==a[i+1].f) an[a[i].s]=an[a[i+1].s];
+    }
     REP(i,n) cout<<an[i]<<' ';cout<<'\n';
     entr
     //bit size 2n
