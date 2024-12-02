@@ -1,77 +1,86 @@
 #include<bits/stdc++.h>
 using namespace std;
+// #pragma GCC optimize("O3,unroll-loops,fast-math")
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
-#define FOR(i,a,b) for(int i=a;i<b;i++)
-#define REP(i,n) FOR(i,0,n)
-#define REP1(i,n) FOR(i,1,(n)+1)
+#define REP(i,n) for(int i=0;i<(n);i++)
+#define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
+#define RREP1(i,n) for(int i=(n);i>=1;i--)
 #define f first
 #define s second
 #define pb push_back
-#define ALL(x) x.begin(),x.end()
-#define SZ(x) (int)(x.size())
+#define ALL(x) (x).begin(),(x).end()
+#define SZ(x) (int)((x).size())
 #define SQ(x) (x)*(x)
 #define pii pair<int,int>
 #define pipii pair<int,pii>
 #define Graph vector<vector<int>>
+#define Graphw vector<vector<pii>>
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
-#define md(x) (x%mod+mod)%mod
-#define op(x) cout<<#x<<"="<<x<<", ";
-#define ope(x) cout<<#x<<"="<<x<<endl;
-#define oparr(x) cout<<#x<<":";REP(i,x.size()) cout<<x[i]<<" ";cout<<" size="<<x.size()<<endl;
+#define md(x) (((x)%(mod)+(mod))%(mod))
+#define MD(x,M) (((x)%(M)+(M))%(M))
+#define ld long double
+#define pdd pair<ld,ld>
+#define chmax(x,y) x=max(x,y)
+#define chmin(x,y) x=min(x,y)
+#define addmod(x,y) x=((x+(y))%mod)
+#define Vi vector<int>
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
 #define entr cout<<endl;
-const int inf=(1ll<<62);
-const int maxn=1e5+5;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
+template<typename T1,typename T2>
+ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 const int mod=1e9+7;
-bool so(pii a,pii b) {
-    return a.f>b.f;
+const int maxn=5;
+const int maxb=20;
+const int inf=(1ll<<62);
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
+}
+int n;
+Vi a,b;
+vector<pii> v;
+vector<pipii> vb;
+bool check(int m) {
+    REP(i,n) if(v[i].f+v[i].s>m) return 0;
+    priority_queue<pii> pq;
+    int it=0;
+    Vi used(n);
+    REP(i,n) {
+        if(used[i]) continue;
+        while(it<n&&vb[it].s.s<=m-v[i].f) pq.push({vb[it].s.f,vb[it].f}),it++;
+        
+    }
 }
 signed main() {
     IOS();
-    int n;
     cin>>n;
-    vector<int> a(n),b(n);
+    a=b=Vi(n);
+    v=vector<pii>(n);
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
-//    REP(i,n) a[i].s=i;
-//    REP(i,n) b[i].s=i;
-
-    vector<int> dp(1<<n,inf);
-    dp[0]=0;
-    REP(i,1<<n) {
-        if(i==0) continue;
-        int yi=-1;
-        REP(k,n) {
-            if((i>>k)&1){
-                yi=k;
-                break;
-            }
-        }
-        REP(k,n) {
-            if((i>>k)&1) {
-                if(k==yi) continue;
-                dp[i]=min(dp[i],max(dp[i&~((1<<yi)|(1<<k))],max(a[yi],a[k])+max(b[yi],b[k])));
-            }
-        }
+    REP(i,n) v[i]={a[i],b[i]};
+    sort(ALL(v),greater<pii>());
+    REP(i,n) vb[i]={i,v[i]};
+    sort(ALL(vb),[&](pipii a,pipii b) {
+        return a.s.s<b.s.s;
+    });
+    int lb=0,rb=1e9,mb;
+    while(lb<rb) {
+        mb=lb+rb>>1;//fir mb : check(mb)=1
+        if(check(mb)) rb=mb;
+        else lb=mb+1;
     }
-    cout<<dp[(1<<n)-1]<<'\n';
-//    sort(ALL(a),so);
-//    sort(ALL(b),so);
-//    int ai=0,bi=n-1;
-//    vector<int> aid(n),bid(n);
-//    REP(i,n) aid[a[i].s]=i;
-//    REP(i,n) bid[b[i].s]=i;
-//    vector<bool> aok(n+1),bok(n+1);
-//    int an=0;
-//    REP(rd,n/2) {
-//        while(aok[ai]) ai++;
-//        while(bok[bi]) bi--;
-//        an=max(an,a[ai].f+b[bi].f);
-//        aok[ai]=1,bok[bi]=1;
-//        aok[aid[b[bi].s]]=1,bok[bid[a[ai].s]]=1;
-//    }
-//    cout<<an<<"\n";
-//    cout<<"a:";REP(i,n) cout<<a[i].f<<" ";cout<<endl;
-//    cout<<"b:";REP(i,n) cout<<b[i].f<<" ";cout<<endl;
+    cout<<mb<<'\n';
     return 0;
 }
