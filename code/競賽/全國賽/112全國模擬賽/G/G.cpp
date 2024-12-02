@@ -90,6 +90,6 @@ signed main() {
         if(check(mb)) rb=mb;
         else lb=mb+1;
     }
-    cout<<mb<<'\n';
+    cout<<lb<<'\n';
     return 0;
 }
