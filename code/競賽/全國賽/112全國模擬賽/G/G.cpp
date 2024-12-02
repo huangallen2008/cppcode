@@ -64,6 +64,7 @@ bool check(int m) {
         auto [x,y]=pq.top();
         pq.pop();
         used[y]=1;
+        op(v[i].f)ope(v[i].f+v[y].s)
     }
     return 1;
 }
