@@ -88,7 +88,7 @@ void solve() {
     int n;
     cin>>n;
     vector<piii> a(n);
-    REP(i,n) cin>>a[i].f.f>>a[i].f.f,a[i].s=i;
+    REP(i,n) cin>>a[i].f.f>>a[i].f.s,a[i].s=i;
     Vi t;
     REP(i,n) t.pb(a[i].f.f),t.pb(a[i].f.s);
     sort(ALL(t));
