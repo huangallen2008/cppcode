@@ -106,6 +106,7 @@ void solve() {
     REP(i,n) {
         int l=a[i].f.f,r=a[i].f.s,id=a[i].s;
         int r1=bit1.qu(r),r2=bit2.qu(r);
+        op(i)op(r1)ope(r2)
         if(r2==inf)an[id]=0;
         else an[id]=t[r2]-t[r1]-(t[r]-t[l]);
         bit1.ud(r,l);
