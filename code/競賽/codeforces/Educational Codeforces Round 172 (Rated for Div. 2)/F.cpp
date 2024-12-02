@@ -166,6 +166,9 @@ void solve() {
     REP(i,n) seg.ud(i,{a[i],b[i]});
     int q;
     cin>>q;
+    auto cost=[&](int l,int m,int r) {
+        return seg.qu(l,m)+seg.qu(m+1,r);
+    };
     REP(i,q) {
         int opt;
         cin>>opt;
@@ -182,7 +185,14 @@ void solve() {
         }else {
             int l,r;
             cin>>l>>r,l--,r--;
-            cout<<seg.qu(l,r)<<'\n';
+            int lb=l,rb=r-1,mb;
+            while(lb<rb) {
+                mb=lb+rb>>1;
+                int r1=cost(mb),r2=cost(mb+1);
+                if(r2>=r1) rb=mb;
+                else lb=mb+1;
+            }
+            cout<<cost(lb)<<'\n';
         }
         // REP(j,20) cout<<seg.s[j].ma<<' ';entr
         // REP(j,20) cout<<seg.s[j].mp<<' ';entr
