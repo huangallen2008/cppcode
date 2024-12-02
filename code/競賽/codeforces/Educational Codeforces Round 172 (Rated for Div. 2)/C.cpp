@@ -55,9 +55,10 @@ void solve() {
     Vi a(n+1);
     RREP(i,n) a[i]=a[i+1]+(s[i]=='1'?1:-1);
     a.pop_back();
+    a.erase(a.begin());
     sort(ALL(a),greater<int>());
     int sum=0;
-    REP(i,n) {
+    REP(i,n-1) {
         sum+=a[i];
         if(sum>=k) {
             cout<<i+2<<'\n';
