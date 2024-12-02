@@ -61,7 +61,6 @@ void solve() {
         }
     }
     cout<<k-p<<'\n';
-    cout<<'\n';
 }
 signed main() {
     IOS();
