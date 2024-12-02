@@ -169,7 +169,6 @@ void solve() {
     auto cost=[&](int l,int m,int r) {
         return seg.qu(l,m)+seg.qu(m+1,r);
     };
-    // op(seg.qu(0,1))ope(seg.qu(2,6))
     REP(i,q) {
         int opt;
         cin>>opt;
