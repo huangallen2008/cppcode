@@ -103,7 +103,7 @@ struct SEG {
         a.ma=max({b.ma,c.ma,b.ms+c.mp});
         a.sum=b.sum+c.sum;
         a.pps=max({b.pps+c.sum,c.pps+b.sum,b.mp+c.ms});
-        a.ppm=max({b.sum+c.ppm,b.mp+c.ma,b.pps+c.pm,b.ppm});
+        a.ppm=max({b.sum+c.ppm,b.mp+c.ma,b.pps+c.mp,b.ppm});
         a.mps=max({c.sum+b.mps,c.ms+b.ma,c.pps+b.ms,c.mps});
         a.ms2=max({b.ms2,c.ms2,b.ms+c.ppm,b.ma+c.ma,b.mps+c.mp});
         return a;
