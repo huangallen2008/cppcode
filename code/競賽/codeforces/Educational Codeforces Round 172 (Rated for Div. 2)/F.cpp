@@ -94,14 +94,18 @@ int rd(int l,int r) {
 // }seg;
 struct SEG {
     struct Seg {
-        int mp,ms,ma,sum;
-    }zr={-inf,-inf,-inf,0};
+        int mp,ms,ma,sum,pps,ppm,mps,ms2;
+    }zr={-inf,-inf,-inf,0,-inf,-inf,-inf,-inf};
     Seg merge(Seg b,Seg c) {
         Seg a;
         a.mp=max(b.mp,b.sum+c.mp);
         a.ms=max(c.sum+b.ms,c.ms);
         a.ma=max({b.ma,c.ma,b.ms+c.mp});
         a.sum=b.sum+c.sum;
+        a.pps=max({b.pps+c.sum,c.pps+b.sum,b.mp+c.ms});
+        a.ppm=max({b.sum+c.ppm,b.mp+c.ma,b.pps+c.pm,b.ppm});
+        a.mps=max({c.sum+b.mps,c.ms+b.ma,c.pps+b.ms,c.mps});
+        a.ms2=max({b.ms2,c.ms2,b.ms+c.ppm,b.ma+c.ma,b.mps+c.mp});
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
@@ -119,6 +123,7 @@ struct SEG {
             s[w].ms=v.f+v.s;
             s[w].ma=v.f+v.s*2;
             s[w].sum=v.f;
+            s[w].pps=s[w].mps=s[w].ppm=s[w].ms2=-inf;
             return;
         }
         int m=l+r>>1;
@@ -136,7 +141,7 @@ struct SEG {
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r).ma;
+        return _qu(1,0,n-1,l,r).ms2;
     }
 }seg;
 struct BIT {
@@ -185,14 +190,14 @@ void solve() {
         }else {
             int l,r;
             cin>>l>>r,l--,r--;
-            int lb=l,rb=r-1,mb;
-            while(lb<rb) {
-                mb=lb+rb>>1;
-                int r1=cost(l,mb,r),r2=cost(l,mb+1,r);
-                if(r2<=r1) rb=mb;
-                else lb=mb+1;
-            }
-            cout<<cost(l,lb,r)<<'\n';
+            // int lb=l,rb=r-1,mb;
+            // while(lb<rb) {
+            //     mb=lb+rb>>1;
+            //     int r1=cost(l,mb,r),r2=cost(l,mb+1,r);
+            //     if(r2<=r1) rb=mb;
+            //     else lb=mb+1;
+            // }
+            cout<<seg.qu(l,r)<<'\n';
         }
         // REP(j,20) cout<<seg.s[j].ma<<' ';entr
         // REP(j,20) cout<<seg.s[j].mp<<' ';entr
