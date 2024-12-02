@@ -59,6 +59,7 @@ void solve() {
             cout<<k-p<<'\n';
             return ;
         }
+        p+=a[i];
     }
     cout<<k-p<<'\n';
 }
