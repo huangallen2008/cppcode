@@ -58,24 +58,22 @@ signed main() {
     Vi v(m),s(m);
     REP(i,m) cin>>v[i];
     REP(i,m) cin>>s[i];
-    vector<S> t;
+    vector<pair<ld,int>> t;
     REP(i,m) {
-        if(v[i]>s[i])t.pb({v[i]*1ll*v[i]-s[i]*1ll*s[i],v[i],i});
+        if(v[i]>s[i])t.pb({(ld)v[i]/(v[i]*1ll*v[i]-s[i]*1ll*s[i]),i});
     }
     if(t.size()<n) {
         cout<<"-1\n";
         return 0;
     }
-    sort(ALL(t),[](S a,S b) {
-        return a.q*b.p<b.q*a.p;
-    });
+    sort(ALL(t));
     vector<pii> li(n);
     REP(i,n) li[i]={l[i],i};
     sort(ALL(li),greater<pii>());
     // for(auto [x,y,z]:t) cout<<"{"<<x<<","<<y<<","<<z<<"} ";entr
     // for(auto [x,y]:li) cout<<"{"<<x<<","<<y<<"} ";entr
     Vi an(n);
-    REP(i,n) an[li[i].s]=t[i].id;
+    REP(i,n) an[li[i].s]=t[i].s;
     REP(i,n) cout<<an[i]+1<<' ';
     cout<<'\n';
     return 0;
