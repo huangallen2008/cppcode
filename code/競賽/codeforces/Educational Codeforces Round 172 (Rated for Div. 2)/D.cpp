@@ -100,14 +100,14 @@ void solve() {
         if(a.f.f==b.f.f) return a.f.s>b.f.s;
         return a.f.f<b.f.f;
     });
-    oparr(a)
+    // oparr(a)
     bit1.init(n*2);
     bit2.init(n*2);
     Vi an(n);
     REP(i,n) {
         int l=a[i].f.f,r=a[i].f.s,id=a[i].s;
         int r1=bit1.qu(r),r2=bit2.qu(r);
-        op(i)op(r1)op(r2)ope(id)
+        // op(i)op(r1)op(r2)ope(id)
         if(r2==inf)an[id]=0;
         else an[id]=t[r2]-t[r1]-(t[r]-t[l]);
         bit1.ud(r,l);
@@ -116,8 +116,9 @@ void solve() {
     RREP(i,n-1) {
         if(a[i].f==a[i+1].f) an[a[i].s]=an[a[i+1].s];
     }
-    REP(i,n) cout<<an[i]<<' ';cout<<'\n';
-    entr
+    REP(i,n) cout<<an[i]<<'\n';
+    // cout<<'\n';
+    // entr
     //bit size 2n
 }
 signed main() {
