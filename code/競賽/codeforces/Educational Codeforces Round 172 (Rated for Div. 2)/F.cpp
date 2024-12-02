@@ -188,11 +188,11 @@ void solve() {
             int lb=l,rb=r-1,mb;
             while(lb<rb) {
                 mb=lb+rb>>1;
-                int r1=cost(mb),r2=cost(mb+1);
+                int r1=cost(l,mb,r),r2=cost(l,mb+1,r);
                 if(r2>=r1) rb=mb;
                 else lb=mb+1;
             }
-            cout<<cost(lb)<<'\n';
+            cout<<cost(l,lb,r)<<'\n';
         }
         // REP(j,20) cout<<seg.s[j].ma<<' ';entr
         // REP(j,20) cout<<seg.s[j].mp<<' ';entr
