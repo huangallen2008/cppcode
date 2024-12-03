@@ -118,9 +118,9 @@ signed main() {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(v1,v2));
                     edge++;
-                    if(edge>=n*m*2) {
+                    if(edge>=n1*n2*2) {
                         cout<<"INF\n";
-                        return;
+                        return 0;
                     }
                 }
             }
