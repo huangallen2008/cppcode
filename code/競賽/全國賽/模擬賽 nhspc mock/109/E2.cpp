@@ -81,7 +81,7 @@ int diam(int n,Graph &g) {
             chmax(an,dia[i]);
         }
     }
-    return an;
+    return an+1;
 }
 signed main() {
     IOS();
@@ -116,8 +116,6 @@ signed main() {
                 for(int v2:g2[u2]) {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(v1,v2));
-                    op(tid(u1,u2))
-                    ope(tid(v1,v2))
                 }
             }
         }
