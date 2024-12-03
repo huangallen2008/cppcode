@@ -49,11 +49,17 @@ int rd(int l,int r) {
 }
 Vi v1,v2;
 Graph g1,g2;
-Vi mxd,dia;
+Vi mxd,dia,vis;
+bool ok=1;
 void dfs(int u,int fa,Graph& g) {
     int mx1=0,mx2=0;
+    vis[u]=1;
     for(int v:g[u]) {
         if(v==fa) continue;
+        if(vis[v]) {
+            ok=0;
+            return;
+        }
         dfs(v,u,g);
         int val=mxd[v]+1;
         chmax(mxd[u],val);
@@ -63,9 +69,10 @@ void dfs(int u,int fa,Graph& g) {
     chmax(dia[u],mx1+mx2);
 }
 int diam(int n,Graph &g) {
-    mxd=dia=Vi(n);
+    mxd=dia=vis=Vi(n);
+    ok=1;
     dfs(0,-1,g);
-    return dia[0];
+    return ok?dia[0]:-1;
 }
 signed main() {
     IOS();
@@ -99,7 +106,8 @@ signed main() {
     }
     if(n1==1) cout<<"1\n";
     else if(n1==2) {
-        cout<<diam(n2,g2)<<'\n';
+        int ret=diam(n2,g2);
+        cout<<(ret==-1?"INF":ret)<<'\n';
     }
     else cout<<"INF\n";
     return 0;
