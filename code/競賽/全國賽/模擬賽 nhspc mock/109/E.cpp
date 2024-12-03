@@ -99,7 +99,7 @@ signed main() {
     }
     if(n1==1) cout<<"1\n";
     else if(n1==2) {
-
+        cout<<diam(n2,g2)<<'\n';
     }
     else cout<<"INF\n";
     return 0;
