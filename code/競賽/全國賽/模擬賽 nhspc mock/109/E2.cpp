@@ -109,6 +109,7 @@ signed main() {
     }
     g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
+    int edge=0;
     REP(u1,n1) {
         REP(u2,n2) {
             if(t1[u1]!=t2[u2]) continue;
@@ -116,6 +117,11 @@ signed main() {
                 for(int v2:g2[u2]) {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(v1,v2));
+                    edge++;
+                    if(edge>=n*m*2) {
+                        cout<<"INF\n";
+                        return;
+                    }
                 }
             }
         }
