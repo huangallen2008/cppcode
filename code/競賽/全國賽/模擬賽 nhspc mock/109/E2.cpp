@@ -127,12 +127,17 @@ signed main() {
     auto tid=[&](int a,int b) { return a*n2+b; };
     REP(i,maxx) {
         REP(j,maxx) {
+            if(s1[i][j].size()&&s2[i][j].size()) ook=0;
             for(auto [u1,v1]:s1[i][j]) {
                 for(auto [u2,v2]:s2[i][j]) {
                     g[tid(u1,u2)].pb(tid(v1,v2));
                 }
             }
         }
+    }
+    if(!ook) {
+        cout<<"0\n";
+        return 0;
     }
     int ret=diam(n1*n2,g);
     if(ret==-1) cout<<"INF\n";
