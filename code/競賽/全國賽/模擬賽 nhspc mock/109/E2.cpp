@@ -74,7 +74,7 @@ int diam(int n,Graph &g) {
     mxd=dia=vis=Vi(n);
     ok=1;
     dfs(0,-1,g);
-    return ok?dia[0]:-1;
+    return ok?dia[0]+1:-1;
 }
 signed main() {
     IOS();
