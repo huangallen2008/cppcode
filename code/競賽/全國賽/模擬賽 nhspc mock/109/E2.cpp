@@ -120,7 +120,7 @@ signed main() {
                 for(int v2:g2[u2]) {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(v1,v2));
-                    if(edge++>=n*m*2) {
+                    if(edge++>=n1*n2*2) {
                         cout<<"INF\n";
                         return 0;
                     }
