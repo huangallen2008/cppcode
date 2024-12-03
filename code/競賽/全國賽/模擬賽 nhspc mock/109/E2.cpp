@@ -107,24 +107,24 @@ signed main() {
             if(c=='1') g2[i].pb(j);
         }
     }
+    bool ook=0;
     g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
-    int edge=0;
     REP(u1,n1) {
         REP(u2,n2) {
             if(t1[u1]!=t2[u2]) continue;
+            ook=1;
             for(int v1:g1[u1]) {
                 for(int v2:g2[u2]) {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(v1,v2));
-                    edge++;
-                    if(edge>=n1*n2*2) {
-                        cout<<"INF\n";
-                        return 0;
-                    }
                 }
             }
         }
+    }
+    if(!ook) {
+        cout<<"0\n";
+        return 0;
     }
     int ret=diam(n1*n2,g);
     if(ret==-1) cout<<"INF\n";
