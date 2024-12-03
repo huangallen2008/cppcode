@@ -73,8 +73,15 @@ void dfs(int u,int fa,Graph& g) {
 int diam(int n,Graph &g) {
     mxd=dia=vis=Vi(n);
     ok=1;
-    dfs(0,-1,g);
-    return ok?dia[0]+1:-1;
+    int an=0;
+    REP(i,n) {
+        if(!vis[i]){
+            dfs(i,-1,g);
+            if(!ok) return -1;
+            chmax(an,dia[i]);
+        }
+    }
+    return an;
 }
 signed main() {
     IOS();
