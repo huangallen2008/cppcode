@@ -110,12 +110,12 @@ signed main() {
         }
     }
     bool ook=0;
-    int edge=0;
+    long long edge=0;
     vector<Vi> cnt1(maxx,Vi(maxx));
     vector<Vi> cnt2(maxx,Vi(maxx));
     REP(i,n1) for(int v:g1[i]) cnt1[t1[i]][t1[v]]++;
     REP(i,n2) for(int v:g2[i]) cnt2[t2[i]][t2[v]]++;
-    REP(i,maxx) REP(j,maxx) edge+=cnt1[i][j]*cnt2[i][j];
+    REP(i,maxx) REP(j,maxx) edge+=cnt1[i][j]*1ll*cnt2[i][j];
     if(edge>=n1*n2*2) {
         cout<<"INF\n";
         return 0;
