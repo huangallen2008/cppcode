@@ -125,9 +125,9 @@ signed main() {
     REP(i,n2) for(int v:g2[i]) s2[t2[i]][t2[v]].pb({i,v});
     g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
+    REP(i,n1) REP(j,n2) if(t1[n1]==t2[n2]) ook=0;
     REP(i,maxx) {
         REP(j,maxx) {
-            if(s1[i][j].size()&&s2[i][j].size()) ook=0;
             for(auto [u1,v1]:s1[i][j]) {
                 for(auto [u2,v2]:s2[i][j]) {
                     g[tid(u1,u2)].pb(tid(v1,v2));
