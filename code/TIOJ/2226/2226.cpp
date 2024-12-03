@@ -46,13 +46,23 @@ signed main () {
     Vi an;
     priority_queue<pii> pq;
     REP(i,m) {
-        auto it=a[i].upper_bound({sum[i]-mns,inf});
-        if(it==a[i].end()) {
-            cout<<"-1\n";
-            return 0;
+        if(i>mnid) {
+            auto it=a[i].upper_bound({sum[i]-mns,inf});
+            if(it==a[i].end()) {
+                cout<<"-1\n";
+                return 0;
+            }
+            int val=sum[i]-it->f;
+            pq.push({val,i});
+        }else {
+            auto it=a[i].lower_bound({sum[i]-mns,-inf});
+            if(it==a[i].end()) {
+                cout<<"-1\n";
+                return 0;
+            }
+            int val=sum[i]-it->f;
+            pq.push({val,i});
         }
-        int val=sum[i]-it->f;
-        pq.push({val,i});
     }
     REP(rr,n) {
         auto [vl,id]=pq.top();
