@@ -86,7 +86,7 @@ int diam(int n,Graph &g) {
 }
 signed main() {
     IOS();
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     cin>>n1;
     t1=Vi(n1);
     g1=Graph(n1);
