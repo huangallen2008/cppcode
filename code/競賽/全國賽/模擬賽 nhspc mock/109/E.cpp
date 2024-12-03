@@ -57,7 +57,7 @@ signed main() {
     g1=Graph(n1);
     REP(i,n1) cin>>v1[i];
     REP(i,n1) {
-        REP(j,n) {
+        REP(j,n1) {
             char c;
             cin>>c;
             if(c=='1') g1[i].pb(j);
