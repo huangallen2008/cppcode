@@ -109,6 +109,7 @@ signed main() {
                 REP(v2,n2) if(u2!=v2) {
                     if(t1[v1]!=t2[v2]) continue;
                     g[tid(u1,u2)].pb(tid(u2,v2));
+                    op(tid(u1,u2))ope(tid(u2,v2))
                 }
             }
         }
