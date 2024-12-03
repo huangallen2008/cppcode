@@ -119,7 +119,7 @@ signed main() {
         cout<<"INF\n"l
         return 0;
     }
-    vector<vector<vector<pii>> s1(maxx,vector<vector<pii>>(maxx));
+    vector<vector<vector<pii>>> s1(maxx,vector<vector<pii>>(maxx));
     vector<vector<vector<pii>>> s2(maxx,vector<vector<pii>>(maxx));
     REP(i,n1) for(int v:g1[i]) s1[t1[i]][t1[v]].pb({i,v});
     REP(i,n2) for(int v:g2[i]) s2[t2[i]][t2[v]].pb({i,v});
