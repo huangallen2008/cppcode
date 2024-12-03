@@ -58,6 +58,7 @@ signed main () {
         auto [vl,id]=pq.top();
         pq.pop();
         int val=sum[id]-vl;
+        an.pb(a[id].lower_bound({val,-inf})->s);
         a[id].erase(a[id].lower_bound({val,-inf}));
         sum[id]=vl;
         mns=vl;
