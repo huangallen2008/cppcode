@@ -112,6 +112,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     int ret=diam(n1*n2,g);
     if(ret==-1) cout<<"INF\n";
     else cout<<ret<<'\n';
