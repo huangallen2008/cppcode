@@ -116,7 +116,7 @@ signed main() {
     REP(i,n2) for(int v:g2[i]) cnt2[t2[i]][t2[v]]++;
     REP(i,maxx) REP(j,maxx) edge+=cnt1[i]*cnt2[i];
     if(edge>=n*m*2) {
-        cout<<"INF\n"l
+        cout<<"INF\n";
         return 0;
     }
     vector<vector<vector<pii>>> s1(maxx,vector<vector<pii>>(maxx));
