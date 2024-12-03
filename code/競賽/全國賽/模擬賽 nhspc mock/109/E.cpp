@@ -107,7 +107,8 @@ signed main() {
     if(n1==1) cout<<"1\n";
     else if(n1==2) {
         int ret=diam(n2,g2);
-        cout<<(ret==-1?"INF":ret)<<'\n';
+        if(ret==-1) cout<<"INF\n";
+        else cout<<ret<<'\n';
     }
     else cout<<"INF\n";
     return 0;
