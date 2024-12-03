@@ -61,7 +61,7 @@ signed main () {
         a[id].erase(a[id].lower_bound({val,-inf}));
         sum[id]=vl;
         mns=vl;
-        if(a[id].size())pq.push({vl-*a[id].begin()});
+        if(a[id].size())pq.push({vl-*a[id].begin(),id});
     }
     reverse(ALL(an));
     for(int x:an) cout<<x+1<<' ';cout<<'\n';
