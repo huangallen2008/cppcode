@@ -101,8 +101,8 @@ signed main() {
     }
     g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
-    REP(u1,n) {
-        REP(u2,m) {
+    REP(u1,n1) {
+        REP(u2,n2) {
             if(t1[u1]!=t2[u2]) continue;
             REP(v1,n1) if(v1!=u1) {
                 REP(v2,n2) if(u2!=v2) {
