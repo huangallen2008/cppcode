@@ -99,7 +99,7 @@ signed main() {
             if(c=='1') g2[i].pb(j);
         }
     }
-    g=Graph(n*m);
+    g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
     REP(u1,n) {
         REP(u2,m) {
@@ -112,7 +112,7 @@ signed main() {
             }
         }
     }
-    int ret=diam(n*m,g);
+    int ret=diam(n1*n2,g);
     if(ret==-1) cout<<"INF\n";
     else cout<<ret<<'\n';
     return 0;
