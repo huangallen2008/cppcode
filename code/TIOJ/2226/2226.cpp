@@ -44,41 +44,24 @@ signed main () {
         break;
     }
     Vi an;
-    REP(rr,n) {
-        int nm=-inf,nmid=-1,fid=-1;
-        REP(i,m) {
-            if(i>mnid) {
-                auto it=a[i].upper_bound({sum[i]-mns,inf});
-                if(it==a[i].end()) continue;
-                int val=sum[i]-it->f;
-                if(val>=nm) {
-                    nm=val;
-                    nmid=i;
-                    fid=it->s;
-                }
-            }else {
-                auto it=a[i].lower_bound({sum[i]-mns,-inf});
-                if(it==a[i].end()) continue;
-                int val=sum[i]-it->f;
-                if(val>=nm) {
-                    nm=val;
-                    nmid=i;
-                    fid=it->s;
-                }
-                //lower
-            }
-        }
-        if(nmid==-1) {
+    priority_queue<pii> pq;
+    REP(i,m) {
+        auto it=a[i].upper_bound({sum[i]-mns,inf});
+        if(it==a[i].end()) {
             cout<<"-1\n";
             return 0;
         }
-//        oparr(sum)
-//        op(nm)op(nmid)op(fid)op(mns)ope(mnid)
-        a[nmid].erase({sum[nmid]-nm,fid});
-        sum[nmid]=nm;
-        an.pb(fid);
-        mnid=nmid;
-        mns=nm;
+        int val=sum[i]-it->f;
+        pq.push({val,i});
+    }
+    REP(rr,n) {
+        auto [vl,id]=pq.top();
+        pq.pop();
+        int val=sum[id]-vl;
+        a[id].erase(a[id].lower_bound({val,-inf}));
+        sum[id]=vl;
+        mns=vl;
+        if(a[id].size())pq.push({vl-*a[id].begin()});
     }
     reverse(ALL(an));
     for(int x:an) cout<<x+1<<' ';cout<<'\n';
