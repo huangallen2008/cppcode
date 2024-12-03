@@ -105,10 +105,10 @@ signed main() {
     REP(u1,n1) {
         REP(u2,n2) {
             if(t1[u1]!=t2[u2]) continue;
-            for(int v1:g1[u1]) if(v1!=u1) {
-                for(int v2:g2[u2]) if(u2!=v2) {
+            for(int v1:g1[u1]) {
+                for(int v2:g2[u2]) {
                     if(t1[v1]!=t2[v2]) continue;
-                    g[tid(u1,u2)].pb(tid(u2,v2));
+                    g[tid(u1,u2)].pb(tid(v1,v2));
                 }
             }
         }
