@@ -62,7 +62,7 @@ void dfs(int u,int fa,Graph& g) {
             return;
         }
         dfs(v,u,g);
-        if(!ok) return;
+        // if(!ok) return;
         int val=mxd[v]+1;
         chmax(mxd[u],val);
         if(val>mx1) mx2=mx1,mx1=val;
