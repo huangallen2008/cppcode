@@ -41,7 +41,7 @@ template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 const int mod=1e9+7;
 const int maxn=5;
-const int maxb=20;
+const int maxx=2005;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -109,21 +109,27 @@ signed main() {
         }
     }
     bool ook=0;
+    int edge=0;
+    vector<Vi> cnt1(maxx,Vi(maxx));
+    vector<Vi> cnt2(maxx,Vi(maxx));
+    REP(i,n1) for(int v:g1[i]) cnt1[t1[i]][t1[v]]++;
+    REP(i,n2) for(int v:g2[i]) cnt2[t2[i]][t2[v]]++;
+    REP(i,maxx) REP(j,maxx) edge+=cnt1[i]*cnt2[i];
+    if(edge>=n*m*2) {
+        cout<<"INF\n"l
+        return 0;
+    }
+    vector<vector<Vi>> s1(maxx,Vi(maxx));
+    vector<vector<Vi>> s2(maxx,Vi(maxx));
+    REP(i,n1) for(int v:g1[i]) s1[t1[i]][t1[v]].pb({i,v});
+    REP(i,n2) for(int v:g2[i]) s2[t2[i]][t2[v]].pb({i,v});
     g=Graph(n1*n2);
     auto tid=[&](int a,int b) { return a*n2+b; };
-    int edge=0;
-    REP(u1,n1) {
-        REP(u2,n2) {
-            if(t1[u1]!=t2[u2]) continue;
-            ook=1;
-            for(int v1:g1[u1]) {
-                for(int v2:g2[u2]) {
-                    if(t1[v1]!=t2[v2]) continue;
+    REP(i,maxx) {
+        REP(j,maxx) {
+            for(auto [u1,v1]:s1[i][j]) {
+                for(auto [u2,v2]:s2[i][j]) {
                     g[tid(u1,u2)].pb(tid(v1,v2));
-                    if(edge++>=n1*n2*2) {
-                        cout<<"INF\n";
-                        return 0;
-                    }
                 }
             }
         }
