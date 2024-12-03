@@ -134,10 +134,6 @@ signed main() {
             }
         }
     }
-    if(!ook) {
-        cout<<"0\n";
-        return 0;
-    }
     int ret=diam(n1*n2,g);
     if(ret==-1) cout<<"INF\n";
     else cout<<ret<<'\n';
