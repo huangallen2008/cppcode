@@ -55,7 +55,7 @@ signed main() {//signed = int
     REP(i,n) cin>>a[i];
     vector<ld> b(n);
     REP(i,n) b[i]=a[i]/0.0877;
-    vector<int> c(n-1);
+    vector<ld> c(n-1);
     REP(i,n-1) c[i]=b[i+1]-b[i];
     vector<ld> d(n-1);
     REP(i,n-1) d[i]=c[i]/0.877;
