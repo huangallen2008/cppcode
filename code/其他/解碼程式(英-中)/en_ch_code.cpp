@@ -27,8 +27,9 @@ signed main()
     IOS();
     vector<string> a={" ","�t","�x","��","��","��","��","��","��","��","��","��","�u","�y","�|","��","��","��","��","��","��","��","�v","�z","�}","��","��","��","��","��","��","��","�w","�{","�~","��","��","��","��","��","��","��"};
     string b=" 1234567890-qwertyuiopasdfghjkl;zxcvbnm,./";
-    string s;
-    while(getline(cin,s)) {
+    while(1) {
+        string s;
+        getline(cin,s);
         vector<int> v,g(1000,-1);
         REP(i,b.size()) g[b[i]]=i;
         REP(i,s.size()) v.pb(g[tolower(s[i])]);
