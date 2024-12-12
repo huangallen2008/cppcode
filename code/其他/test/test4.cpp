@@ -42,24 +42,24 @@ struct SEG {
         return _qu(1,0,n-1,l,r);
     }
 }seg;
+#define ld lonf double 
+#define sp(x) fixed<<setprecision(x)
 signed main() {//signed = int
-    int n,q;
-    cin>>n>>q;
-    vector<int> a(n);
-    for(int i=0;i<n;i++) cin>>a[i];
-    seg.init(n,a);
-    for(int i=0;i<q;i++) {
-        int opt;
-        cin>>opt;
-        if(opt==1) {
-            int u,v;
-            cin>>u>>v,u--;
-            seg.ud(u,v);
-        }else {
-            int l,r;
-            cin>>l>>r,l--,r--;
-            cout<<seg.qu(l,r)<<'\n';
-        }
-    }
+    int n=6;
+    vector<ld> a(n);
+    REP(i,n) cin>>a[i];
+    vector<ld> b(n);
+    REP(i,n) b[i]=a[i]/0.0877;
+    vector<int> c(n-1);
+    REP(i,n-1) c[i]=b[i+1]-b[i];
+    vector<ld> d(n-1);
+    REP(i,n-1) d[i]=c[i]/0.877;
+    ld avg=0;
+    REP(i,n-1) avg+=d[i];
+    avg/=n-1;
+    REP(i,n) cout<<sp(3)<<b[i]<<' ';cout<<'\n';
+    REP(i,n-1) cout<<sp(3)<<c[i]<<' ';cout<<'\n';
+    REP(i,n-1) cout<<sp(3)<<d[i]<<' ';cout<<'\n';
+    cout<<sp(3)<<avg<<'\n';
     return 0;
 }
