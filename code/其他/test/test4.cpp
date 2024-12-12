@@ -50,15 +50,15 @@ int rd(int l,int r) {
 #define ld long double 
 #define sp(x) fixed<<setprecision(x)
 signed main() {//signed = int
-    int n=6;
+    int n=8;
     vector<ld> a(n);
     REP(i,n) cin>>a[i];
     vector<ld> b(n);
-    REP(i,n) b[i]=a[i]/0.0877;
+    REP(i,n) b[i]=a[i]/0.035;
     vector<ld> c(n-1);
     REP(i,n-1) c[i]=b[i+1]-b[i];
     vector<ld> d(n-1);
-    REP(i,n-1) d[i]=c[i]/0.877;
+    REP(i,n-1) d[i]=c[i]/0.035;
     ld avg=0;
     REP(i,n-1) avg+=d[i];
     avg=avg/(n-1);
