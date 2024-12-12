@@ -56,7 +56,7 @@ signed main() {//signed = int
     REP(i,n-1) d[i]=c[i]/0.877;
     ld avg=0;
     REP(i,n-1) avg+=d[i];
-    avg/=n-1;
+    avg=avg/(n-1);
     REP(i,n) cout<<sp(3)<<b[i]<<' ';cout<<'\n';
     REP(i,n-1) cout<<sp(3)<<c[i]<<' ';cout<<'\n';
     REP(i,n-1) cout<<sp(3)<<d[i]<<' ';cout<<'\n';
