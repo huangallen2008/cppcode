@@ -42,8 +42,7 @@ struct SEG {
         return _qu(1,0,n-1,l,r);
     }
 }seg;
-signed main() {
-    IOS();
+signed main() {//signed = int
     int n,q;
     cin>>n>>q;
     vector<int> a(n);
