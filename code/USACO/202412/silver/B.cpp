@@ -88,7 +88,7 @@ void solve() {
         }
     }
     int rest=dis[n+1]-dis[1];
-    ope("ok")
+    ope(rest)
     cout<<n-rest<<'\n';
 }
 signed main() {
