@@ -129,19 +129,32 @@ signed main() {
         }else g[go(i,d0[i])].pb(i);
     }
     Vi vis(N);
-    queue<int> qe;
-    qe.push(outs);
-    vis[outs]=1;
-    while(qe.size()) {
-        int u=qe.front();
-        qe.pop();
-        for(int v:g[u]) {
-            if(!vis[v]) {
-                vis[v]=1;
-                qe.push(v);
+    int cnt1=0;
+    RREP(rr,q) {
+        queue<int> qe;
+        qe.push(outs);
+        if(!vis[outs]) {
+            vis[outs]=1;
+            cnt1++;
+        }
+        while(qe.size()) {
+            int u=qe.front();
+            qe.pop();
+            while(g[u].size()) {
+                int v=g[u].size();
+                g[u].pop_back();
+                if(!vis[v]) {
+                    vis[v]=1;
+                    cnt1++;
+                    qe.push(v);
+                }
             }
         }
+        cout<<N-cnt1<<'\n';
+        auto [x,y,di]=qu[rr];
+        int u=hsh({x,y});
+        d0[u]=-1;
+        REP(di,4) g[go(u,di)].pb(u);
     }
-
     return 0;
 }
