@@ -54,7 +54,6 @@ struct edge {
 void solve() {
     int n,k;
     cin>>n>>k;
-    op(n)ope(k)
     Vi a(n+1);
     a[0]=-inf;
     REP1(i,n) cin>>a[i];
@@ -80,6 +79,7 @@ void solve() {
         r=upper_bound(ALL(t),l)-t.begin();
         e.pb({r,l-1,-x});
     }
+    op(n)ope(k)
     Vi dis(N,inf);
     dis[0]=0;
     REP(i,N) {
