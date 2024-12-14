@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -40,9 +40,9 @@ using namespace std;
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=1e5;
 const int maxb=20;
-const int inf=(1ll<<62);
+const int inf=(1<<30);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -50,8 +50,9 @@ int rd(int l,int r) {
 struct edge {
     int u,v,w;
 };
-
+bitset<maxn> vis;
 void solve() {
+    vis.reset();
     int n,k;
     cin>>n>>k;
     Vi a(n+1);
@@ -66,33 +67,22 @@ void solve() {
         cnt[a[i]]++;
     }
     Graphw g(N);
-    // oparr(a)oparr(t)oparr(cnt)
     vector<edge> e;
     for(int i=2;i<N;i++) {
-        // e.pb({i-1,i,cnt[i]});
-        // e.pb({i,i-1,0});
         g[i-1].pb({i,cnt[i]});
         g[i].pb({i-1,0});
     }
-    // oparr(t)
-    // REP1(i,N-1) e.pb({0,i,0});
     REP1(i,N-1) g[0].pb({i,0});
     REP(i,k) {
         int l,r,x;
         cin>>l>>r>>x;
         l=lower_bound(ALL(t),l)-t.begin(),l++;
         r=upper_bound(ALL(t),r)-t.begin();
-        // e.pb({r,l-1,-x});
         g[r].pb({l-1,-x});
     }
     Vi dis(N,inf);
     dis[0]=0;
-    // for(auto [u,v,w]:e) {
-    //     cout<<u<<' '<<v<<' '<<w<<'\n';
-    // }
     queue<int> q;
-    Vi cc(N);
-    Vi vis(N);
     q.push(0);
     vis[0]=1;
     while(q.size()) {
@@ -102,24 +92,10 @@ void solve() {
         for(auto [v,w]:g[u]) {
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
-                cnt[v]++;
                 if(!vis[v]) q.push(v),vis[v]=1;
             }
         }
     }
-    // REP(i,N) {
-    // // op(n)op(k)ope(i)
-    //     shuffle(ALL(e),rng);
-    //     bool ok=0;
-    //     for(auto [u,v,w]:e) {
-    //         if(dis[v]>dis[u]+w) {
-    //             dis[v]=dis[u]+w;
-    //             ok=1;
-    //         }
-    //     }
-    //     if(!ok) break;
-    // }
-    // oparr(dis)ope(n)
     int rest=dis[n+1]-dis[1];
     // ope(rest)
     cout<<n-rest<<'\n';
