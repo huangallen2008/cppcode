@@ -155,8 +155,12 @@ signed main() {
         an[rr]=N-cnt1;
         auto [x,y,di]=qu[rr];
         int u=hsh({x,y});
+        REP(di,4) if(d0[u]!=di) {
+            int uu=go(u,di);
+            if(!vis[uu])g[uu].pb(u);
+            else g[outs].pb(u);
+        }
         d0[u]=-1;
-        REP(di,4) g[go(u,di)].pb(u);
     }
     REP(i,q) {
         cout<<an[i]<<'\n';
