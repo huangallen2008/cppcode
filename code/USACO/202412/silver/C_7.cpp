@@ -105,19 +105,22 @@ signed main() {
         queue<int> qe;
         qe.push(outs);
         vis[outs]=1;
+        int cnt1=0;
+        cnt1++;
         while(qe.size()) {
             int u=qe.front();
             qe.pop();
             for(int v:g[u]) {
                 if(!vis[v]) {
                     vis[v]=1;
+                    cnt1++;
                     qe.push(v);
                 }
             }
         }
-        int cnt=0;
-        REP(i,N) cnt+=vis[i]==0;
-        cout<<cnt<<'\n';
+        // int cnt=0;
+        // REP(i,N) cnt+=vis[i]==0;
+        cout<<N-cnt1<<'\n';
     }
 
     return 0;
