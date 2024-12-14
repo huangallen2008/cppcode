@@ -82,7 +82,7 @@ void solve() {
     Vi dis(N,inf);
     dis[0]=0;
     REP(i,n) {
-        for(auto [u,v,w]:edge) {
+        for(auto [u,v,w]:e) {
             chmin(dis[v],dis[u]+w);
         }
     }
