@@ -81,8 +81,8 @@ void solve() {
     }
     Vi dis(N,inf);
     dis[0]=0;
-    op(n)ope(k)
     REP(i,N) {
+    op(n)op(k)ope(i)
         for(auto [u,v,w]:e) {
             chmin(dis[v],dis[u]+w);
         }
