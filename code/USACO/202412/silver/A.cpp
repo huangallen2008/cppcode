@@ -47,8 +47,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
+void solve() {
     int n;
     cin>>n;
     Vi a(n+1),p(n+1);
@@ -57,5 +56,11 @@ signed main() {
     int an=0;
     for(int i=len;i<=n;i++) chmax(an,p[i]-p[i-len]);
     cout<<an<<'\n';
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
