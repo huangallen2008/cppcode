@@ -79,7 +79,15 @@ void solve() {
         r=upper_bound(ALL(t),l)-t.begin();
         e.pb({r,l-1,-x});
     }
-
+    Vi dis(N,inf);
+    dis[0]=0;
+    REP(i,n) {
+        for(auto [u,v,w]:edge) {
+            chmin(dis[v],dis[u]+w);
+        }
+    }
+    int rest=dis[n+1]-dis[1];
+    cout<<n-rest<<'\n';
 }
 signed main() {
     IOS();
