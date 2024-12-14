@@ -49,13 +49,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int a=1;
-    int an=0;
-    an+=a;
-    REP(i,99) {
-        (a=a*a*a*a*a+1)%=10;
-        an+=a;
-    }
-    ope(an)
+    
     return 0;
 }
