@@ -73,13 +73,13 @@ void solve() {
     }
     REP1(i,N) e.pb({0,i,0});
     REP(i,k) {
-        int l,r,t;
-        cin>>l>>r>>t;
+        int l,r,x;
+        cin>>l>>r>>x;
         l=lower_bound(ALL(t),l)-t.begin(),l++;
         r=upper_bound(ALL(t),l)-t.begin();
-        e.pb({r,l-1,-t});
+        e.pb({r,l-1,-x});
     }
-    
+
 }
 signed main() {
     IOS();
