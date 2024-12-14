@@ -53,9 +53,9 @@ void solve() {
     Vi a(n+1),p(n+1);
     REP1(i,n) cin>>a[i],p[i]=p[i-1]+a[i];
     int len=(n>>1)+1;
-    int an=0;
-    for(int i=len;i<=n;i++) chmax(an,p[i]-p[i-len]);
-    cout<<an<<'\n';
+    int an=inf;
+    for(int i=len;i<=n;i++) chmin(an,p[i]-p[i-len]);
+    cout<<an<<' '<<p[n]-an<<'\n';
 }
 signed main() {
     IOS();
