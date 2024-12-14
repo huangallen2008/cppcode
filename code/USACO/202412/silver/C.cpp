@@ -128,6 +128,7 @@ signed main() {
             REP(di,4) g[go(i,di)].pb(i);
         }else g[go(i,d0[i])].pb(i);
     }
+    Vi vis(N);
     queue<int> qe;
     qe.push(outs);
     vis[u]=1;
