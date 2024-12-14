@@ -57,7 +57,7 @@ void solve() {
     op(n)ope(k)
     Vi a(n+1);
     a[0]=-inf;
-    REP(i,n+1) cin>>a[i];
+    REP1(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
     int N=n+2;
