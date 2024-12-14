@@ -65,7 +65,7 @@ void solve() {
         a[i]=(lower_bound(ALL(t),a[i])-t.begin())+1;
         cnt[a[i]]++;
     }
-    oparr(a)oparr(t)oparr(cnt)
+    // oparr(a)oparr(t)oparr(cnt)
     vector<edge> e;
     for(int i=2;i<N;i++) {
         e.pb({i-1,i,cnt[i]});
@@ -96,7 +96,7 @@ void solve() {
     int rest=dis[n+1]-dis[1];
     // ope(rest)
     cout<<n-rest<<'\n';
-    entr
+    // entr
     // ope("ok")
 }
 signed main() {
@@ -106,7 +106,7 @@ signed main() {
     cin>>T;
     while(T--) {
         solve();
-        ope("ok")
+        // ope("ok")
     }
     return 0;
 }
