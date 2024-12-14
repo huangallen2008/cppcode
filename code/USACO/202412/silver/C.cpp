@@ -49,6 +49,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int n,q;
+int outs;
+    int N;
 int hsh(pii x) {
     return x.f*n+x.s;
 }
@@ -64,7 +66,7 @@ int go(int x,int di) {
     pii x0=uhsh(x);
     x0.f+=dir[di].f;
     x0.s+=dir[di].s;
-    if(!inm(x0)) x0={n,0};
+    if(!inm(x0)) return outs;
     return hsh(x0);
 }
 struct qur {
@@ -79,12 +81,19 @@ int tod(char c) {
 signed main() {
     IOS();
     cin>>n>>q;
+    outs=n*n;
+    N=n*n+1;
     vector<qur> qu(q);
+    vector<Vi> d0(N,-1);
     REP(i,q) {
         int x,y;
         char ch;
         cin>>x>>y>>ch,x--,y--;
+        int u=hsh({x,y});
         qu[i]={x,y,tod(ch)};
     }
+    queue<int> q;
+    q.push(outs);
+
     return 0;
 }
