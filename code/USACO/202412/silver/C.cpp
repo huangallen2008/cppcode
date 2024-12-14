@@ -78,34 +78,34 @@ int tod(char c) {
     if(c=='L') return 2;
     return 3;//'U'
 }
-struct DSU {
-    struct S {
-        int x
-    };  
-    int n;
-    Vi p,sz,ty;
-    void init(int _n) {
-        n=_n;
-        p=ty=Vi(n);
-        sz=Vi(n,1);
-        REP(i,n) p[i]=i;
-    }
-    int find(int u) {
-        return p[u]==u?u:find(p[u]);
-    }
-    bool merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) {
-            //change type
-            return 0;
-        }
-        if(sz[x]>sz[y]) swap(x,y);
-        stk.pb({x,y,ty[y]});
-        p[x]=y;
-        sz[y]+=sz[x];
+// struct DSU {
+//     struct S {
+//         int x
+//     };  
+//     int n;
+//     Vi p,sz,ty;
+//     void init(int _n) {
+//         n=_n;
+//         p=ty=Vi(n);
+//         sz=Vi(n,1);
+//         REP(i,n) p[i]=i;
+//     }
+//     int find(int u) {
+//         return p[u]==u?u:find(p[u]);
+//     }
+//     bool merge(int a,int b) {
+//         int x=find(a),y=find(b);
+//         if(x==y) {
+//             //change type
+//             return 0;
+//         }
+//         if(sz[x]>sz[y]) swap(x,y);
+//         stk.pb({x,y,ty[y]});
+//         p[x]=y;
+//         sz[y]+=sz[x];
 
-    }
-};
+//     }
+// };
 
 signed main() {
     IOS();
