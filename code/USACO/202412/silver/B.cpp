@@ -87,8 +87,8 @@ void solve() {
             chmin(dis[v],dis[u]+w);
         }
     }
-    ope("ok")
     int rest=dis[n+1]-dis[1];
+    ope("ok")
     cout<<n-rest<<'\n';
 }
 signed main() {
