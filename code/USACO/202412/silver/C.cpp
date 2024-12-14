@@ -131,7 +131,7 @@ signed main() {
     Vi vis(N);
     queue<int> qe;
     qe.push(outs);
-    vis[u]=1;
+    vis[outs]=1;
     while(qe.size()) {
         int u=qe.front();
         qe.pop();
