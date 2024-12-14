@@ -48,6 +48,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int n,q;
 int hsh(pii x) {
     return x.f*n+x.s;
 }
@@ -55,7 +56,6 @@ pii uhsh(int x) {
     return {x/n,x%n};
 }
 Vpii dir={{0,1},{1,0},{0,-1},{-1,0}};
-int n,q;
 bool inm(pii x) { 
     if(x.f<0||x.f>=n||x.s<0||x.s>=n) return 0;
     return 1;
