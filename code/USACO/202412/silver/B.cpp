@@ -88,9 +88,15 @@ void solve() {
     // exit(0);
     REP(i,N) {
     // op(n)op(k)ope(i)
+        shuffle(ALL(e),rng);
+        bool ok=0;
         for(auto [u,v,w]:e) {
-            chmin(dis[v],dis[u]+w);
+            if(dis[v]>dis[u]+w) {
+                dis[v]=dis[u]+w;
+                ok=1;
+            }
         }
+        if(!ok) break;
     }
     // oparr(dis)ope(n)
     int rest=dis[n+1]-dis[1];
