@@ -65,39 +65,60 @@ void solve() {
         a[i]=(lower_bound(ALL(t),a[i])-t.begin())+1;
         cnt[a[i]]++;
     }
+    Graphw g(N);
     // oparr(a)oparr(t)oparr(cnt)
     vector<edge> e;
     for(int i=2;i<N;i++) {
-        e.pb({i-1,i,cnt[i]});
-        e.pb({i,i-1,0});
+        // e.pb({i-1,i,cnt[i]});
+        // e.pb({i,i-1,0});
+        g[i-1].pb({i,cnt[i]});
+        g[i].pb({i-1,0});
     }
     // oparr(t)
-    REP1(i,N-1) e.pb({0,i,0});
+    // REP1(i,N-1) e.pb({0,i,0});
+    REP1(i,N-1) g[0].pb({i,0});
     REP(i,k) {
         int l,r,x;
         cin>>l>>r>>x;
         l=lower_bound(ALL(t),l)-t.begin(),l++;
         r=upper_bound(ALL(t),r)-t.begin();
-        e.pb({r,l-1,-x});
+        // e.pb({r,l-1,-x});
+        g[r].pb({l-1,-x});
     }
     Vi dis(N,inf);
     dis[0]=0;
     // for(auto [u,v,w]:e) {
     //     cout<<u<<' '<<v<<' '<<w<<'\n';
     // }
-    // exit(0);
-    REP(i,N) {
-    // op(n)op(k)ope(i)
-        shuffle(ALL(e),rng);
-        bool ok=0;
-        for(auto [u,v,w]:e) {
+    queue<int> q;
+    Vi cc(N);
+    Vi vis(N);
+    q.push(0);
+    vis[0]=1;
+    while(q.size()) {
+        int u=q.front();
+        q.pop();
+        vis[u]=0;
+        for(auto [v,w]:g[u]) {
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
-                ok=1;
+                cnt[v]++;
+                if(!vis[v]) q.push(v),vis[v]=1;
             }
         }
-        if(!ok) break;
     }
+    // REP(i,N) {
+    // // op(n)op(k)ope(i)
+    //     shuffle(ALL(e),rng);
+    //     bool ok=0;
+    //     for(auto [u,v,w]:e) {
+    //         if(dis[v]>dis[u]+w) {
+    //             dis[v]=dis[u]+w;
+    //             ok=1;
+    //         }
+    //     }
+    //     if(!ok) break;
+    // }
     // oparr(dis)ope(n)
     int rest=dis[n+1]-dis[1];
     // ope(rest)
