@@ -84,7 +84,7 @@ signed main() {
     outs=n*n;
     N=n*n+1;
     vector<qur> qu(q);
-    vector<Vi> d0(N,-1);
+    vector<int> d0(N,-1);
     REP(i,q) {
         int x,y;
         char ch;
