@@ -104,6 +104,9 @@ signed main() {
     freopen("out.txt","w",stdout);
     int T;
     cin>>T;
-    while(T--) solve();
+    while(T--) {
+        solve();
+        ope("ok")
+    }
     return 0;
 }
