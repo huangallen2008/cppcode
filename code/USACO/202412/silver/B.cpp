@@ -101,7 +101,7 @@ void solve() {
 }
 signed main() {
     IOS();
-    freopen("out.txt","w",stdout);
+    // freopen("out.txt","w",stdout);
     int T;
     cin>>T;
     while(T--) {
