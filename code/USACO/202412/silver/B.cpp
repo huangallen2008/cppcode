@@ -92,6 +92,7 @@ void solve() {
             chmin(dis[v],dis[u]+w);
         }
     }
+    oparr(dis)ope(n)
     int rest=dis[n+1]-dis[1];
     ope(rest)
     cout<<n-rest<<'\n';
