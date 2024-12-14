@@ -50,7 +50,7 @@ int rd(int l,int r) {
 }
 int n,q;
 int outs;
-    int N;
+int N;
 int hsh(pii x) {
     return x.f*n+x.s;
 }
@@ -104,12 +104,15 @@ signed main() {
         }
         queue<int> qe;
         qe.push(outs);
+        vis[outs]=1;
         while(qe.size()) {
             int u=qe.front();
             qe.pop();
-            vis[u]=1;
             for(int v:g[u]) {
-                if(!vis[v]) qe.push(v);
+                if(!vis[v]) {
+                    vis[v]=1;
+                    qe.push(v);
+                }
             }
         }
         int cnt=0;
