@@ -128,6 +128,7 @@ signed main() {
             REP(di,4) g[go(i,di)].pb(i);
         }else g[go(i,d0[i])].pb(i);
     }
+    Vi an(q);
     Vi vis(N);
     int cnt1=0;
     RREP(rr,q) {
@@ -150,12 +151,15 @@ signed main() {
                 }
             }
         }
-        ope(cnt1)oparr(vis)
-        cout<<N-cnt1<<'\n';
+        // ope(cnt1)oparr(vis)
+        an[i]=N-cnt1;
         auto [x,y,di]=qu[rr];
         int u=hsh({x,y});
         d0[u]=-1;
         REP(di,4) g[go(u,di)].pb(u);
+    }
+    REP(i,q) {
+        cout<<an[i]<<'\n';
     }
     return 0;
 }
