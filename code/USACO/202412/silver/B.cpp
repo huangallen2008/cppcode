@@ -54,6 +54,7 @@ struct edge {
 void solve() {
     int n,k;
     cin>>n>>k;
+    op(n)ope(k)
     Vi a(n+1);
     a[0]=-inf;
     REP(i,n+1) cin>>a[i];
@@ -81,7 +82,7 @@ void solve() {
     }
     Vi dis(N,inf);
     dis[0]=0;
-    REP(i,n) {
+    REP(i,N) {
         for(auto [u,v,w]:e) {
             chmin(dis[v],dis[u]+w);
         }
