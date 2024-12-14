@@ -72,7 +72,7 @@ void solve() {
         e.pb({i,i-1,0});
     }
     // oparr(t)
-    REP1(i,N) e.pb({0,i,0});
+    REP1(i,N-1) e.pb({0,i,0});
     REP(i,k) {
         int l,r,x;
         cin>>l>>r>>x;
