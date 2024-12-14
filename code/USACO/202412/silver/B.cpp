@@ -71,7 +71,7 @@ void solve() {
         e.pb({i-1,i,cnt[i]});
         e.pb({i,i-1,0});
     }
-    oparr(t)
+    // oparr(t)
     REP1(i,N) e.pb({0,i,0});
     REP(i,k) {
         int l,r,x;
@@ -82,9 +82,9 @@ void solve() {
     }
     Vi dis(N,inf);
     dis[0]=0;
-    for(auto [u,v,w]:e) {
-        cout<<u<<' '<<v<<' '<<w<<'\n';
-    }
+    // for(auto [u,v,w]:e) {
+    //     cout<<u<<' '<<v<<' '<<w<<'\n';
+    // }
     // exit(0);
     REP(i,N) {
     // op(n)op(k)ope(i)
@@ -92,11 +92,11 @@ void solve() {
             chmin(dis[v],dis[u]+w);
         }
     }
-    oparr(dis)ope(n)
+    // oparr(dis)ope(n)
     int rest=dis[n+1]-dis[1];
-    ope(rest)
+    // ope(rest)
     cout<<n-rest<<'\n';
-    ope("ok")
+    // ope("ok")
 }
 signed main() {
     IOS();
