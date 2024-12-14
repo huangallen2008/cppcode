@@ -152,7 +152,7 @@ signed main() {
             }
         }
         // ope(cnt1)oparr(vis)
-        an[i]=N-cnt1;
+        an[rr]=N-cnt1;
         auto [x,y,di]=qu[rr];
         int u=hsh({x,y});
         d0[u]=-1;
