@@ -77,7 +77,7 @@ void solve() {
         int l,r,x;
         cin>>l>>r>>x;
         l=lower_bound(ALL(t),l)-t.begin(),l++;
-        r=upper_bound(ALL(t),l)-t.begin();
+        r=upper_bound(ALL(t),r)-t.begin();
         e.pb({r,l-1,-x});
     }
     Vi dis(N,inf);
