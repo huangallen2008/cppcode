@@ -65,6 +65,7 @@ void solve() {
         a[i]=(lower_bound(ALL(t),a[i])-t.begin())+1;
         cnt[a[i]]++;
     }
+    oparr(a)oparr(t)
     Graphw g(N);
     vector<edge> e;
     for(int i=2;i<N;i++) {
