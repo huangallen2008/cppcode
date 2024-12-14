@@ -85,7 +85,7 @@ void solve() {
         op(u)op(v)ope(w)
     }
     REP(i,N) {
-    op(n)op(k)ope(i)
+    // op(n)op(k)ope(i)
         for(auto [u,v,w]:e) {
             chmin(dis[v],dis[u]+w);
         }
