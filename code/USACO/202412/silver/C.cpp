@@ -150,6 +150,7 @@ signed main() {
                 }
             }
         }
+        ope(cnt1)oparr(vis)
         cout<<N-cnt1<<'\n';
         auto [x,y,di]=qu[rr];
         int u=hsh({x,y});
