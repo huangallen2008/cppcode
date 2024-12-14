@@ -96,6 +96,7 @@ void solve() {
     int rest=dis[n+1]-dis[1];
     ope(rest)
     cout<<n-rest<<'\n';
+    ope("ok")
 }
 signed main() {
     IOS();
