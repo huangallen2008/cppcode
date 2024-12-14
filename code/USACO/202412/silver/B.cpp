@@ -82,8 +82,9 @@ void solve() {
     Vi dis(N,inf);
     dis[0]=0;
     for(auto [u,v,w]:e) {
-        op(u)op(v)ope(w)
+        cout<<u<<' '<<v<<' '<<w<<'\n';
     }
+    exit(0);
     REP(i,N) {
     // op(n)op(k)ope(i)
         for(auto [u,v,w]:e) {
