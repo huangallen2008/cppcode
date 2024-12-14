@@ -141,7 +141,7 @@ signed main() {
             int u=qe.front();
             qe.pop();
             while(g[u].size()) {
-                int v=g[u].size();
+                int v=g[u].back();
                 g[u].pop_back();
                 if(!vis[v]) {
                     vis[v]=1;
