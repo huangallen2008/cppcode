@@ -78,6 +78,35 @@ int tod(char c) {
     if(c=='L') return 2;
     return 3;//'U'
 }
+struct DSU {
+    struct S {
+        int x
+    };  
+    int n;
+    Vi p,sz,ty;
+    void init(int _n) {
+        n=_n;
+        p=ty=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:find(p[u]);
+    }
+    bool merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) {
+            //change type
+            return 0;
+        }
+        if(sz[x]>sz[y]) swap(x,y);
+        stk.pb({x,y,ty[y]});
+        p[x]=y;
+        sz[y]+=sz[x];
+
+    }
+};
+
 signed main() {
     IOS();
     cin>>n>>q;
@@ -90,10 +119,28 @@ signed main() {
         char ch;
         cin>>x>>y>>ch,x--,y--;
         int u=hsh({x,y});
+        d0[u]=tod(ch);
         qu[i]={x,y,tod(ch)};
     }
-    queue<int> q;
-    q.push(outs);
+    Graph g(N);
+    REP(i,N) {
+        if(d0[i]==-1) {
+            REP(di,4) g[go(i,di)].pb(i);
+        }else g[go(i,d0[i])].pb(i);
+    }
+    queue<int> qe;
+    qe.push(outs);
+    vis[u]=1;
+    while(qe.size()) {
+        int u=qe.front();
+        qe.pop();
+        for(int v:g[u]) {
+            if(!vis[v]) {
+                vis[v]=1;
+                qe.push(v);
+            }
+        }
+    }
 
     return 0;
 }
