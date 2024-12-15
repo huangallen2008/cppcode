@@ -64,7 +64,7 @@ signed main() {
     dp[0]=1;
     REP1(i,n) {
         for(int x=1;x*2<=i;x++) {
-            if(pr[i]-pr[i-x]==0&&pb[i-x]-pb[i-x-x]==0) dp[i]=(dp[i]+dp[j])%mod;
+            if(pr[i]-pr[i-x]==0&&pb[i-x]-pb[i-x-x]==0) dp[i]=(dp[i]+dp[i-x-x])%mod;
         }
     }
     cout<<dp[n]<<'\n';
