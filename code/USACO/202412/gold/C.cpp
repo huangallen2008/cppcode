@@ -57,6 +57,7 @@ void solve() {
     sort(ALL(a),[&](pii a,pii b) {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
+    if(n<=2000&&mxt<=4000) {
     Vi dp(mxt); 
     REP(i,n) {
         Vi ndp=dp;
@@ -66,6 +67,16 @@ void solve() {
         swap(ndp,dp);
     }
     cout<<dp[mxt-1]<<'\n';
+    }else {
+        int now=0,an=0;
+        REP(i,n) {
+            if(now<=a[i].f) {
+                now+=a[i].s;
+                an++;
+            }
+        }
+        cout<<an<<'\n';
+    }
 }
 signed main() {
     IOS();
