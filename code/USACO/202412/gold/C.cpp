@@ -63,7 +63,7 @@ void solve() {
         REP1(i,n) {
             RREP1(j,i) {
                 if(dp[j-1]<=a[i].f) {
-                    chmin(dp[i],dp[j-1]+a[i].s);
+                    chmin(dp[j],dp[j-1]+a[i].s);
                 }
             }
         }
