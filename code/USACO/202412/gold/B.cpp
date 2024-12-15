@@ -63,6 +63,7 @@ signed main() {
     Vi dp(n+1);
     dp[0]=1;
     REP1(i,n) {
+        if(s[i]=='X') dp[i]=dp[i-1];
         for(int x=1;x*2<=i;x++) {
             if(pr[i]-pr[i-x]==0&&pb[i-x]-pb[i-x-x]==0) dp[i]=(dp[i]+dp[i-x-x])%mod;
         }
