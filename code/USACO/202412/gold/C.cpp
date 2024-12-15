@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=1e9+7;
 const int maxn=1e5;
 const int maxb=20;
-const int inf=(1<<30);
+const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -51,22 +51,31 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vpii a(n);
+    Vpii a(n+1);
     int mxt=0;
-    REP(i,n) cin>>a[i].f>>a[i].s,chmax(mxt,a[i].f+a[i].s+1);
-    sort(ALL(a),[&](pii a,pii b) {
+    REP1(i,n) cin>>a[i].f>>a[i].s,chmax(mxt,a[i].f+a[i].s+1);
+    sort(1+ALL(a),[&](pii a,pii b) {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
-    if(n<=2000&&mxt<=4000) {
-    Vi dp(mxt); 
-    REP(i,n) {
-        Vi ndp=dp;
-        for(int t=a[i].s;t<mxt;t++) {
-            chmax(ndp[t],dp[min(a[i].f,t-a[i].s)]+1);
+    if(n<=2000) {////////
+        vector<Vi> dp(n+1,Vi(n+1,inf));
+        dp[0][0]=0;
+        REP1(i,n) {
+            REP(j,i+1) {
+                dp[i][j]=dp[i-1][j];
+                if(j) {
+                    if(dp[i-1][j-1]<=a[i].f) {
+                        chmin(dp[i][j],dp[i-1][j-1]+a[i].s);
+                    }
+                }
+            }
         }
-        swap(ndp,dp);
-    }
-    cout<<dp[mxt-1]<<'\n';
+        RREP1(i,n) {
+            if(dp[n][i]!=inf) {
+                cout<<i<<'\n';
+                break;
+            }
+        }
     }else {
         int now=0,an=0;
         REP(i,n) {
