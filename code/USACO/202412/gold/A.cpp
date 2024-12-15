@@ -61,7 +61,7 @@ signed main() {
     if(mxa<10) nn=mxa+1;
     auto cal=[&](int i,int x) {
         if(b[i].size()==0) return 0;
-        int id=0,an=1;
+        int id=b[i][0],an=1;
         for(int v:b[i]) {
             if(v>id+x) {
                 id=v;
