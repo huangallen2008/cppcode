@@ -43,7 +43,7 @@ const int mod=1e9+7;
 const int maxn=1e5;
 const int maxb=20;
 const int inf=(1<<30);
-const int B=300;
+const int B=500;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
