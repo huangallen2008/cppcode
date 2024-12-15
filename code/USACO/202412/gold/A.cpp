@@ -53,9 +53,38 @@ signed main() {
     cin>>n;
     vector<Vi> b(n);
     Vi a(n);
-    REP(i,n) cin>>a[i],a[i]--,b[a[i]].pb(i);
-    int nn=10;
+    int mxa=0;
+    REP(i,n) cin>>a[i],a[i]--,b[a[i]].pb(i),mxa=max(mxa,a[i]);
+    int nn=-1;
     if(n<=5000) nn=n;
+    if(mxa<10) nn=mxa+1;
+    auto cal=[&](int i,int x) {
+        if(b[i].size()==0) return 0;
+        int id=0,an=0;
+        while(id<b[i].size()) {
+            id=upper_bound(ALL(b[i]),b[i][id]+x)-b[i].begin();
+            an++;
+        }
+        return an;
+    };
+    auto fnd=[&](int i,int k) {//last t : when x=t,->cal(i,x)>=k
+        int lb=0,rb=n,mb;
+        while(lb<rb) {
+            mb=lb+rb+1>>1;
+            if(cal(i,mb)>=k) lb=mb;
+            else rb=mb-1;
+        }
+        return lb;
+    };
+    if(nn==-1) {
+        Vi an(n+1);
+        REP(i,n) {
+            REP1(j,b[i].size()) an[fnd(i,j)]++;
+        }
+        RREP(i,n) an[i]+=an[i+1];
+        REP1(i,n) cout<<an[i]<<'\n';
+    }
+    else {
     REP1(x,n) {
         int an=0;
         REP(i,nn) {
@@ -69,6 +98,7 @@ signed main() {
             // an+=cnt;
         }
         cout<<an<<'\n';
+    }
     }
     return 0;
 }
