@@ -78,7 +78,7 @@ void solve() {
         }
     }else {
         int now=0,an=0;
-        REP(i,n) {
+        REP1(i,n) {
             if(now<=a[i].f) {
                 now+=a[i].s;
                 an++;
