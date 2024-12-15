@@ -66,6 +66,7 @@ void solve() {
                     chmin(dp[j],dp[j-1]+a[i].s);
                 }
             }
+            oparr(dp)
         }
         RREP1(i,n) {
             if(dp[i]!=inf) {
