@@ -54,5 +54,21 @@ signed main() {
     vector<Vi> b(n);
     Vi a(n);
     REP(i,n) cin>>a[i],a[i]--,b[a[i]].pb(i);
+    int nn=10;
+    if(n<=5000) nn=n;
+    REP1(x,n) {
+        int an=0;
+        REP(i,nn) {
+            if(b[i].size()==0) continue;
+            // int cnt=0;
+            int id=0;
+            while(id<b[i].size()) {
+                id=upper_bound(ALL(b[i]),b[i][id]+x)-b[i].begin();
+                an++;
+            }
+            // an+=cnt;
+        }
+        cout<<an<<'\n';
+    }
     return 0;
 }
