@@ -59,8 +59,8 @@ void solve() {
     });
     int now=0,an=0;
     REP(i,n) {
-        if(now<=a.f) {
-            now+=a.s;
+        if(now<=a[i].f) {
+            now+=a[i].s;
             an++;
         }
     }
