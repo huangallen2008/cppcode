@@ -51,14 +51,14 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vpii a(n+1);
+    Vpii a(n);
     int mxt=0;
     REP(i,n) cin>>a[i].f>>a[i].s,chmax(mxt,a[i].f+a[i].s+1);
-    sort(1+ALL(a),[&](pii a,pii b) {
+    sort(ALL(a),[&](pii a,pii b) {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
     Vi dp(mxt); 
-    REP1(i,n) {
+    REP(i,n) {
         Vi ndp=dp;
         for(int t=a[i].s;t<mxt;t++) {
             chmax(ndp[t],dp[min(a[i].f,t-a[i].s)]+1);
