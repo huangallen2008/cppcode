@@ -51,19 +51,21 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vpii a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    sort(ALL(a),[&](pii a,pii b) {
+    Vpii a(n+1);
+    int mxt=0;
+    REP(i,n) cin>>a[i].f>>a[i].s,chmax(mxt,a[i].f+a[i].s+1);
+    sort(1+ALL(a),[&](pii a,pii b) {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
-    int now=0,an=0;
-    REP(i,n) {
-        if(now<=a[i].f) {
-            now+=a[i].s;
-            an++;
+    Vi dp(mxt); 
+    REP1(i,n) {
+        Vi ndp=dp;
+        for(int t=a[i].s;t<mxt;t++) {
+            chmax(ndp[t],dp[min(a[i].f,t-a[i].s)]+1);
         }
+        swap(ndp,dp);
     }
-    cout<<an<<'\n';
+    cout<<dp[mxt-1]<<'\n';
 }
 signed main() {
     IOS();
