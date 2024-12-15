@@ -76,29 +76,26 @@ signed main() {
         }
         return lb;
     };
-    if(nn==-1) {
-        Vi an(n+1);
-        REP(i,n) {
-            REP1(j,b[i].size()) an[fnd(i,j)]++;
+    Vi an1(n+1),an2(n+1);
+    REP(i,n) {
+        int sz=b[i].size();
+        if(sz<=B) {
+            REP1(j,b[i].size()) an2[fnd(i,j)]++;
+            continue;
         }
-        RREP(i,n) an[i]+=an[i+1];
-        REP1(i,n) cout<<an[i]<<'\n';
-    }
-    else {
-    REP1(x,n) {
-        int an=0;
-        REP(i,nn) {
-            if(b[i].size()==0) continue;
-            // int cnt=0;
+        // int cnt=0;
+        REP1(x,n) {
             int id=0;
             while(id<b[i].size()) {
                 id=upper_bound(ALL(b[i]),b[i][id]+x)-b[i].begin();
-                an++;
+                an1[x]++;
             }
-            // an+=cnt;
         }
-        cout<<an<<'\n';
+        // an+=cnt;
     }
+    RREP(i,n) an2[i]+=an2[i+1];
+    REP1(i,n) {
+        cout<<an1[i]+an2[i]<<'\n';
     }
     return 0;
 }
