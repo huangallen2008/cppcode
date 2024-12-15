@@ -52,12 +52,12 @@ void solve() {
     int n;
     cin>>n;
     Vpii a(n+1);
-    int mxt=0;
-    REP1(i,n) cin>>a[i].f>>a[i].s,chmax(mxt,a[i].f+a[i].s+1);
+    int mx=0,mn=inf;
+    REP1(i,n) cin>>a[i].f>>a[i].s,chmax(mx,a[i].s),chmin(mn,a[i].s);
     sort(1+ALL(a),[&](pii a,pii b) {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
-    if(n<=2000) {////////
+    if(mx!=mn) {////////
         vector<int> dp(n+1,inf);
         dp[0]=0;
         REP1(i,n) {
