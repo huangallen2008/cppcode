@@ -52,13 +52,13 @@ void solve() {
     int n;
     cin>>n;
     Vpii a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s,a[i].f+=a[i].s;
+    REP(i,n) cin>>a[i].f>>a[i].s;
     sort(ALL(a),[&](pii a,pii b) {
-        return min(a.f,b.f-b.s)-a.s>=min(b.f,a.f-a.s)-b.s;
+        return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
     int now=0,an=0;
     REP(i,n) {
-        if(now+a[i].s<=a[i].f) {
+        if(now<=a[i].f) {
             now+=a[i].s;
             an++;
         }
