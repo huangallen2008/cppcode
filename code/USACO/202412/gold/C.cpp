@@ -58,20 +58,17 @@ void solve() {
         return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
     });
     if(n<=2000) {////////
-        vector<Vi> dp(n+1,Vi(n+1,inf));
-        dp[0][0]=0;
+        vector<int> dp(n+1,inf);
+        dp[0]=0;
         REP1(i,n) {
-            REP(j,i+1) {
-                dp[i][j]=dp[i-1][j];
-                if(j) {
-                    if(dp[i-1][j-1]<=a[i].f) {
-                        chmin(dp[i][j],dp[i-1][j-1]+a[i].s);
-                    }
+            RREP1(j,i) {
+                if(dp[j-1]<=a[i].f) {
+                    chmin(dp[i],dp[j-1]+a[i].s);
                 }
             }
         }
         RREP1(i,n) {
-            if(dp[n][i]!=inf) {
+            if(dp[i]!=inf) {
                 cout<<i<<'\n';
                 break;
             }
