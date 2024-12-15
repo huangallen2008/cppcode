@@ -56,8 +56,8 @@ signed main() {
     int mxa=0;
     REP(i,n) cin>>a[i],a[i]--,b[a[i]].pb(i),mxa=max(mxa,a[i]);
     int nn=-1;
-    // if(n<=5000) nn=n;
-    // if(mxa<10) nn=mxa+1;
+    if(n<=5000) nn=n;
+    if(mxa<10) nn=mxa+1;
     auto cal=[&](int i,int x) {
         if(b[i].size()==0) return 0;
         int id=0,an=0;
