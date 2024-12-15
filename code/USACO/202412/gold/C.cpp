@@ -54,7 +54,7 @@ void solve() {
     Vpii a(n);
     REP(i,n) cin>>a[i].f>>a[i].s;
     sort(ALL(a),[&](pii a,pii b) {
-        return min(a.f,b.f-b.s)-a.s<=min(b.f,a.f-a.s)-b.s;
+        return min(a.f,b.f-b.s)-a.s>=min(b.f,a.f-a.s)-b.s;
     });
     int now=0,an=0;
     REP(i,n) {
