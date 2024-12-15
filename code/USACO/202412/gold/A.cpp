@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -61,11 +61,17 @@ signed main() {
     if(mxa<10) nn=mxa+1;
     auto cal=[&](int i,int x) {
         if(b[i].size()==0) return 0;
-        int id=0,an=0;
-        while(id<b[i].size()) {
-            id=upper_bound(ALL(b[i]),b[i][id]+x)-b[i].begin();
-            an++;
+        int id=0,an=1;
+        for(int v:b[i]) {
+            if(v>id+x) {
+                id=v;
+                an++;
+            }
         }
+        // while(id<b[i].size()) {
+        //     id=upper_bound(ALL(b[i]),b[i][id]+x)-b[i].begin();
+        //     an++;
+        // }
         return an;
     };
     auto fnd=[&](int i,int k) {//last t : when x=t,->cal(i,x)>=k
