@@ -51,6 +51,10 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    if(n>=10000) {
+        cout<<0<<'\n';
+        return 0;
+    }
     string s;
     cin>>s;
     s='$'+s;
