@@ -73,9 +73,14 @@ signed main() {
     REP1(i,n) {
         if(i-l[i]<r[i]-i) {
             for(int j=l[i]+1;j<=i;j++) {
-                an+=upper_bound(i+ALL(b),s-a[i]+b[j-1])-b.begin()-i;
+                an+=upper_bound(b.begin()+i,b.begin()+r[i],s-a[i]+b[j-1])-b.begin()-i;
+            }
+        }else {
+            for(int j=i;j<r[i];j++) {
+                an+=-(lower_bound(b.begin()+l[i],b.begin()+i,b[j]-s+a[i])-b.begin())+i;
             }
         }
     }
+    cout<<an<<'\n';
     return 0;
 }
