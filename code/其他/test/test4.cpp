@@ -48,16 +48,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n;
-    cin>>n;
-    Vpii a(n+1);
+int solve(int n,Vpii a) {
     int mx=0,mn=inf;
-    REP1(i,n) cin>>a[i].s;
-    REP1(i,n) cin>>a[i].f,chmax(mx,a[i].s),chmin(mn,a[i].s);
-    sort(1+ALL(a),[&](pii a,pii b) {
-        return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
-    });
+    REP1(i,n) chmax(mx,a[i].s),chmin(mn,a[i].s);
     if(mx!=mn) {////////
         vector<int> dp(n+1,inf);
         dp[0]=0;
@@ -70,8 +63,8 @@ void solve() {
         }
         RREP1(i,n) {
             if(dp[i]!=inf) {
-                cout<<i<<'\n';
-                break;
+                return i;
+                // break;
             }
         }
     }else {
@@ -82,13 +75,28 @@ void solve() {
                 an++;
             }
         }
-        cout<<an<<'\n';
+        return an;
     }
 }
 signed main() {
     IOS();
     int T=1;
     // cin>>T;
-    while(T--) solve();
+    while(T--) {
+        int n;
+        cin>>n;
+        Vpii a(n+1);
+        REP1(i,n) cin>>a[i].s;
+        REP1(i,n) cin>>a[i].f;
+        sort(1+ALL(),[&](pii a,pii b) {
+            return a.f+a.s<b.f+b.s;
+        });
+        int r1=solve(n,a);
+        sort(1+ALL(a),[&](pii a,pii b) {
+            return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
+        });
+        int r2=solve(n,a);
+        op(r1)ope(r2)
+    }
     return 0;
 }
