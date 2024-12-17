@@ -26,6 +26,7 @@ using namespace std;
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
+#define Vpii vector<pii>
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
@@ -40,31 +41,54 @@ using namespace std;
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=1e5;
 const int maxb=20;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define ld long double 
-#define sp(x) fixed<<setprecision(x)
-signed main() {//signed = int
-    int n=8;
-    vector<ld> a(n);
-    REP(i,n) cin>>a[i];
-    vector<ld> b(n);
-    REP(i,n) b[i]=a[i]/0.035;
-    vector<ld> c(n-1);
-    REP(i,n-1) c[i]=b[i+1]-b[i];
-    vector<ld> d(n-1);
-    REP(i,n-1) d[i]=c[i]/0.035;
-    ld avg=0;
-    REP(i,n-1) avg+=d[i];
-    avg=avg/(n-1);
-    REP(i,n) cout<<sp(3)<<b[i]<<' ';cout<<'\n';
-    REP(i,n-1) cout<<sp(3)<<c[i]<<' ';cout<<'\n';
-    REP(i,n-1) cout<<sp(3)<<d[i]<<' ';cout<<'\n';
-    cout<<sp(3)<<avg<<'\n';
+void solve() {
+    int n;
+    cin>>n;
+    Vpii a(n+1);
+    int mx=0,mn=inf;
+    REP1(i,n) cin>>a[i].s;
+    REP1(i,n) cin>>a[i].f,chmax(mx,a[i].s),chmin(mn,a[i].s);
+    sort(1+ALL(a),[&](pii a,pii b) {
+        return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
+    });
+    if(mx!=mn) {////////
+        vector<int> dp(n+1,inf);
+        dp[0]=0;
+        REP1(i,n) {
+            RREP1(j,i) {
+                if(dp[j-1]<=a[i].f) {
+                    chmin(dp[j],dp[j-1]+a[i].s);
+                }
+            }
+        }
+        RREP1(i,n) {
+            if(dp[i]!=inf) {
+                cout<<i<<'\n';
+                break;
+            }
+        }
+    }else {
+        int now=0,an=0;
+        REP1(i,n) {
+            if(now<=a[i].f) {
+                now+=a[i].s;
+                an++;
+            }
+        }
+        cout<<an<<'\n';
+    }
+}
+signed main() {
+    IOS();
+    int T=1;
+    // cin>>T;
+    while(T--) solve();
     return 0;
 }
