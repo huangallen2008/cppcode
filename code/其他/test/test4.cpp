@@ -88,7 +88,7 @@ signed main() {
         Vpii a(n+1);
         REP1(i,n) cin>>a[i].s;
         REP1(i,n) cin>>a[i].f;
-        sort(1+ALL(),[&](pii a,pii b) {
+        sort(1+ALL(a),[&](pii a,pii b) {
             return a.f+a.s<b.f+b.s;
         });
         int r1=solve(n,a);
