@@ -53,7 +53,7 @@ struct BIT {
     vector<int> b;
     void init(int _n) {
         n=_n;
-        b=vector<int>(n);
+        b=vector<int>(n+1);
     }
     void ud(int u,int v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
@@ -84,7 +84,7 @@ signed main() {
         }else {
             int l,r;
             cin>>l>>r;
-            cout<<bit.qu(l,r)<<'\n';
+            cout<<bit.qu(l,r);entr
         }
     }
     return 0;
