@@ -66,7 +66,7 @@ void solve() {
     int len=n-id;
     string an=s;
     id=-1;
-    auto xor=[&](char a,char b) {
+    auto xx=[&](char a,char b) {
         if(a!=b) return '1';
         else return '0';
     };
