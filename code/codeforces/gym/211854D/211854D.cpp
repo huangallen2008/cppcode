@@ -54,8 +54,8 @@ int qur(int a,int b) {
     cin>>res;
     return res;
 }
-void ans(int an) {
-    cout<<an<<'\n'<<flush;
+void ans(int a1,int a2) {
+    cout<<"! "<<a1<<' '<<a2<<'\n'<<flush;
 }
 void f(int l1,int r1,int l2,int r2) {
     if(l1==r1&&l2==r2) {
@@ -76,16 +76,16 @@ void f(int l1,int r1,int l2,int r2) {
         int m2=l2+r2>>1;
         int mn2=inf,id2=0;
         for(int i=l1;i<=m1-1;i++) {
-            int ret=qu(i,m2);
+            int ret=qur(i,m2);
             if(ret<mn2) {
                 mn2=ret;
                 id2=i;
             }
         }
         if(mn2<rr) {
-            if(m2!=l2&&qu(id2,m2-1)<mn2) {
+            if(m2!=l2&&qur(id2,m2-1)<mn2) {
                 f(l1,m1-1,l2,m2-1);
-            }else if(m2!=r2&&qu(id2,m2+1)<mn2) {
+            }else if(m2!=r2&&qur(id2,m2+1)<mn2) {
                 f(l1,m1-1,m2+1,r2);
             }else {
                 ans(id2,m2);
@@ -102,16 +102,16 @@ void f(int l1,int r1,int l2,int r2) {
         int m2=l2+r2>>1;
         int mn2=inf,id2=0;
         for(int i=m1+1;i<=r1;i++) {
-            int ret=qu(i,m2);
+            int ret=qur(i,m2);
             if(ret<mn2) {
                 mn2=ret;
                 id2=i;
             }
         }
         if(mn2<rr) {
-            if(m2!=l2&&qu(id2,m2-1)<mn2) {
+            if(m2!=l2&&qur(id2,m2-1)<mn2) {
                 f(m1+1,r1,l2,m2-1);
-            }else if(m2!=r2&&qu(id2,m2+1)<mn2) {
+            }else if(m2!=r2&&qur(id2,m2+1)<mn2) {
                 f(m1+1,r1,m2+1,r2);
             }else {
                 ans(id2,m2);
