@@ -73,9 +73,8 @@ void solve() {
     REP(i,n-len+1) {
         string t=s;
         REP(j,len) {
-            t[n-len+i]=xx(t[n-len+i],s[i]);
+            t[n-len+j]=xx(t[n-len+j],s[j]);
         }
-        op(i)op(s)ope(t)
         if(t>=an) {
             an=t;
             id=i;
