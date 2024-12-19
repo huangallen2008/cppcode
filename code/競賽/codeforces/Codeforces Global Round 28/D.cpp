@@ -90,6 +90,7 @@ void solve() {
         int an=0;
         for(int i=id0;i<m;i+=k) {
             an+=bit.qu(rat+1,b[i]-1);
+            op(an)
         }
         op(k)ope(an)
         int ans=(cnt+1)*k-an;
