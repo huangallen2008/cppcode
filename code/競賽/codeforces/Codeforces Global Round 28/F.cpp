@@ -49,6 +49,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+    int n;
 Vi a,b;
 int di(int a,int b) { return (a+b-1)/b; }
 pii st[maxb][maxn];
@@ -89,7 +90,6 @@ Vi f(int l,int r) {
     REP1(i,maxo-1) chmin(res[i],di(res[i-1],b[m]));
 }
 void solve() {
-    int n;
     cin>>n;
     a=b=Vi(n);
     REP(i,n) cin>>a[i];
