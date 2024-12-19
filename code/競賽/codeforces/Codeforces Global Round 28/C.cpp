@@ -80,7 +80,7 @@ void solve() {
             id=i;
         }
     }
-    cout<<"1 "<<n<<" "<<id<<" "<<id+len-1<<'\n';
+    cout<<"1 "<<n<<" "<<id+1<<" "<<id+len<<'\n';
     
 }
 signed main() {
