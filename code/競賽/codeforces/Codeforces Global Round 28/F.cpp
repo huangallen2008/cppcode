@@ -91,6 +91,7 @@ Vi f(int l,int r) {
         }
     }
     REP1(i,maxo-1) chmin(res[i],di(res[i-1],b[m]));
+    return res;
 }
 void solve() {
     cin>>n;
