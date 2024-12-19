@@ -69,6 +69,7 @@ int mnid(int l,int r) {
     return st_qu(l,r).s;
 }
 Vi f(int l,int r) {
+    op(l)ope(r)
     if(l>r) {
         Vi res(maxo,1);
         return res;
