@@ -85,7 +85,7 @@ Vi f(int l,int r) {
     Vi res(maxo,inf);
     REP(i,maxo) {
         REP(j,i+1) {
-            chmin(res[i],max(r1[j],r2[i-j]));
+            chmin(res[i],max({r1[j],r2[i-j],a[m]}));
         }
     }
     oparr(res)
