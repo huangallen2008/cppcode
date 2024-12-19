@@ -85,12 +85,12 @@ void solve() {
     int id0=upper_bound(ALL(b),rat)-b.begin();
     int cnt=0;
     REP(i,n) if(a[i]>rat) cnt++;
-    ope(cnt)
+    ope(cnt)ope(id0)
     REP1(k,m) {
         int an=0;
         for(int i=id0;i<m;i+=k) {
             an+=bit.qu(rat+1,b[i]-1);
-            op(an)
+            op(b[i]-1)op(an)
         }
         op(k)ope(an)
         int ans=(cnt+1)*k-an;
