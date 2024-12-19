@@ -88,6 +88,7 @@ Vi f(int l,int r) {
             chmin(res[i],max(r1[j],r2[i-j]));
         }
     }
+    oparr(res)
     REP1(i,maxo-1) chmin(res[i],di(res[i-1],b[m]));
     return res;
 }
