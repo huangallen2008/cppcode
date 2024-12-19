@@ -75,7 +75,7 @@ void solve() {
         REP(j,len) {
             t[n-len+i]=xx(t[n-len+i],s[i]);
         }
-        if(t>an) {
+        if(t>=an) {
             an=t;
             id=i;
         }
