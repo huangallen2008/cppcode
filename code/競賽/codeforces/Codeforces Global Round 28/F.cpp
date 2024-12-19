@@ -98,7 +98,12 @@ void solve() {
     REP(i,n) cin>>b[i];
     st_init();
     Vi an=f(0,n-1);
-    cout<<an[1]<<'\n';
+    REP(i,maxo) {
+        if(an[i]==1) {
+            cout<<i<<'\n';
+            return;
+        }
+    }
 }
 signed main() {
     IOS();
