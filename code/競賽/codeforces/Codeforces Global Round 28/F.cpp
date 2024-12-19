@@ -54,7 +54,7 @@ Vi a,b;
 int di(int a,int b) { return (a+b-1)/b; }
 pii st[maxb][maxn];
 void st_init() {
-    REP(i,n) st[0][i]={a[i],i};
+    REP(i,n) st[0][i]={b[i],i};
     REP1(i,maxb-1) {
         REP(j,n) {
             st[i][j]=min(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
