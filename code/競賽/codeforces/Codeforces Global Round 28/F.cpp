@@ -69,10 +69,8 @@ int mnid(int l,int r) {
     return st_qu(l,r).s;
 }
 Vi f(int l,int r) {
-    op(l)ope(r)
     if(l>r) {
         Vi res(maxo,1);
-        ope("ok1")
         return res;
     }
     if(l==r) {
@@ -100,7 +98,7 @@ void solve() {
     REP(i,n) cin>>b[i];
     st_init();
     Vi an=f(0,n-1);
-    cout<<an[0]<<'\n';
+    cout<<an[1]<<'\n';
 }
 signed main() {
     IOS();
