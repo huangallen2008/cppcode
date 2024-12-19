@@ -81,9 +81,9 @@ Vi f(int l,int r) {
         REP1(i,maxo-1) res[i]=di(res[i-1],b[l]);
         return res;
     }
-    op(l)op(r)ope("ok2")
     int m=mnid(l,r);
     Vi r1=f(l,m-1),r2=f(m+1,r);
+    op(l)ope(r)oparr(r1)oparr(r2)
     Vi res(maxo,inf);
     REP(i,maxo) {
         REP(j,i+1) {
