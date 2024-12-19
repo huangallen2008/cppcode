@@ -59,8 +59,8 @@ void solve() {
     vector<Vi> a(n*2,Vi(m));
     REP(i,m){
         REP(j,n) {
-            a[i][(i+j*2)%(n*2)]=j+1;
-            a[i][(i+j*2+1)%(n*2)]=j+1;
+            a[(i+j*2)%(n*2)][i]=j+1;
+            a[(i+j*2+1)%(n*2)][i]=j+1;
         }
     }
     REP(i,n*2) {
