@@ -91,8 +91,9 @@ void solve() {
             an+=bit.qu(rat+1,b[i]-1);
         }
         int ans=(cnt+1)*k-an;
-        cout<<ans<<'\n';
+        cout<<ans<<' ';
     }
+    cout<<'\n';
 }
 signed main() {
     IOS();
