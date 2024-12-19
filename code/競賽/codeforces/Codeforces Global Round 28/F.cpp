@@ -90,6 +90,7 @@ Vi f(int l,int r) {
     }
     oparr(res)
     REP1(i,maxo-1) chmin(res[i],di(res[i-1],b[m]));
+    oparr(res)
     return res;
 }
 void solve() {
