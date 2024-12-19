@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=1e9+7;
 const int maxn=2e5+5;
 const int maxb=30;
-const int maxo=60;
+const int maxo=20; /////////////////////
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -81,7 +81,7 @@ Vi f(int l,int r) {
     }
     int m=mnid(l,r);
     Vi r1=f(l,m-1),r2=f(m+1,r);
-    // op(l)ope(r)oparr(r1)oparr(r2)
+    op(l)ope(r)oparr(r1)oparr(r2)
     Vi res(maxo,inf);
     REP(i,maxo) {
         REP(j,i+1) {
@@ -104,7 +104,7 @@ void solve() {
             cout<<i<<'\n';
             return;
         }
-    }
+    }  ///////////////remenber maxo=60
 }
 signed main() {
     IOS();
