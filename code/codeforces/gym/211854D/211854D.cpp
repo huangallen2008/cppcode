@@ -57,8 +57,28 @@ int qur(int a,int b) {
 void ans(int an) {
     cout<<an<<'\n'<<flush;
 }
+void f(int l1,int r1,int l2,int r2) {
+    int m1=l1+r1>>1;
+    int mn1=inf,id1=0;
+    for(int i=l2;i<=r2;i++) {
+        int ret=qur(m1,i);
+        if(ret<mn1) {
+            mn1=ret;
+            id1=i;
+        }
+    }
+    int rr;
+    if(m1!=l1&&(rr=qur(m1-1,id1))<mn1) {
+        int m2=l2+r2>>1;
+        for(int i=l1;i<=m1-1;i++) {
+
+        }
+    }
+}
 signed main() {
     IOS();
+    int n,m;
+    cin>>n>>m;
 
     return 0;
 }
