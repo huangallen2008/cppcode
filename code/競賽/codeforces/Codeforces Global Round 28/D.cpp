@@ -77,7 +77,7 @@ void solve() {
     REP(i,m) cin>>b[i],t.pb(b[i]);
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    REP(i,m) b[i]=lower_bound(ALL(t),a[i])-t.begin();
+    REP(i,m) b[i]=lower_bound(ALL(t),b[i])-t.begin();
     int rat=a[0];
     bit.init(n+m);
     REP(i,n) bit.ud(a[i],1);
