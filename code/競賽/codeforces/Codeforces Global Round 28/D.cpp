@@ -85,6 +85,7 @@ void solve() {
     int id0=upper_bound(ALL(b),rat)-b.begin();
     int cnt=0;
     REP(i,n) if(a[i]>rat) cnt++;
+    ope(cnt)
     REP1(k,m) {
         int an=0;
         for(int i=id0;i<m;i+=k) {
