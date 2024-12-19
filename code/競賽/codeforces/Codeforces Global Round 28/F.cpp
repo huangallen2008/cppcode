@@ -71,8 +71,8 @@ int mnid(int l,int r) {
 Vi f(int l,int r) {
     op(l)ope(r)
     if(l>r) {
-        ope("ok1")
         Vi res(maxo,1);
+        ope("ok1")
         return res;
     }
     if(l==r) {
