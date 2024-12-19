@@ -80,6 +80,7 @@ Vi f(int l,int r) {
         return res;
     }
     int m=mnid(l,r);
+    op(l)op(r)ope(m)
     Vi r1=f(l,m-1),r2=f(m+1,r);
     op(l)ope(r)oparr(r1)oparr(r2)
     Vi res(maxo,inf);
