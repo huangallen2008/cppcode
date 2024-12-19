@@ -71,6 +71,7 @@ int mnid(int l,int r) {
 Vi f(int l,int r) {
     op(l)ope(r)
     if(l>r) {
+        ope("ok1")
         Vi res(maxo,1);
         return res;
     }
@@ -80,6 +81,7 @@ Vi f(int l,int r) {
         REP1(i,maxo-1) res[i]=di(res[i-1],b[l]);
         return res;
     }
+    op(l)op(r)ope("ok2")
     int m=mnid(l,r);
     Vi r1=f(l,m-1),r2=f(m+1,r);
     Vi res(maxo,inf);
