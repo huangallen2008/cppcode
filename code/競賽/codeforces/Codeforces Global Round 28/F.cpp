@@ -80,18 +80,18 @@ Vi f(int l,int r) {
         return res;
     }
     int m=mnid(l,r);
-    op(l)op(r)ope(m)
+    // op(l)op(r)ope(m)
     Vi r1=f(l,m-1),r2=f(m+1,r);
-    op(l)ope(r)oparr(r1)oparr(r2)
+    // op(l)ope(r)oparr(r1)oparr(r2)
     Vi res(maxo,inf);
     REP(i,maxo) {
         REP(j,i+1) {
             chmin(res[i],max({r1[j],r2[i-j],a[m]}));
         }
     }
-    oparr(res)
+    // oparr(res)
     REP1(i,maxo-1) chmin(res[i],di(res[i-1],b[m]));
-    oparr(res)
+    // oparr(res)
     return res;
 }
 void solve() {
@@ -101,7 +101,7 @@ void solve() {
     REP(i,n) cin>>b[i];
     st_init();
     Vi an=f(0,n-1);
-    oparr(an)
+    // oparr(an)
     REP(i,maxo) {
         if(an[i]==1) {
             cout<<i<<'\n';
