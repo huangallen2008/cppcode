@@ -85,8 +85,8 @@ void solve() {
     int id0=upper_bound(ALL(b),rat)-b.begin();
     int cnt=0;
     REP(i,n) if(a[i]>rat) cnt++;
-    ope(cnt)ope(id0)
-    oparr(a)oparr(b)
+    // ope(cnt)ope(id0)
+    // oparr(a)oparr(b)
     REP1(k,m) {
         int an=0,cc=0;
         for(int i=id0+m%k;i<m;i+=k) {
@@ -95,7 +95,7 @@ void solve() {
             // op(b[i]-1)op(an)
         }
         an+=cnt*((int)m/k-cc);
-        op(k)ope(an)
+        // op(k)ope(an)
         int ans=(cnt+1)*((int)(m/k))-an;
         cout<<ans<<' ';
     }
