@@ -60,6 +60,7 @@ void answer(int x,int y) {
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) cout<<"AC"<<endl;
     else cout<<"WA\n";
 }
+void run(int a,int b) {}
 signed main() {
     IOS();
     cin>>n>>m;
