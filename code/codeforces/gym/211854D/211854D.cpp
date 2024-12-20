@@ -128,7 +128,7 @@ void f(int l1,int r1,int l2,int r2) {
                 id2=i;
             }
         }
-        if(mn2<rr) {
+        if(mn2<mn1) {
             if(m2!=l2&&qur(id2,m2-1)<mn2) {
                 f(l1,m1-1,l2,m2-1);
             }else if(m2!=r2&&qur(id2,m2+1)<mn2) {
@@ -156,7 +156,7 @@ void f(int l1,int r1,int l2,int r2) {
                 id2=i;
             }
         }
-        if(mn2<rr) {
+        if(mn2<mn1) {
             if(m2!=l2&&qur(id2,m2-1)<mn2) {
                 f(m1+1,r1,l2,m2-1);
             }else if(m2!=r2&&qur(id2,m2+1)<mn2) {
