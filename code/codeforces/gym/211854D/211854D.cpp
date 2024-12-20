@@ -129,10 +129,13 @@ void f(int l1,int r1,int l2,int r2) {
         exit(0);
     }
 }
-signed main() {
-    IOS();
-    int n,m;
-    cin>>n>>m;
+void run(int n,int m) {
     f(1,n,1,m);
-    return 0;
 }
+// signed main() {
+//     IOS();
+//     int n,m;
+//     cin>>n>>m;
+//     f(1,n,1,m);
+//     return 0;
+// }
