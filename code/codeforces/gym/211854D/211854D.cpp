@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "checker.cpp"
+// #include "checker.cpp"
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
