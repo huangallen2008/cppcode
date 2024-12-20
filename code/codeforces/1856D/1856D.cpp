@@ -61,7 +61,7 @@ int f(int l,int r) {
     if(l==r) return l;
     int m=l+r>>1;
     int li=f(l,m),ri=f(m+1,r);
-    if(qur(li,ri-1)==qur(l1,ri)) return ri;
+    if(qur(li,ri-1)==qur(li,ri)) return ri;
     else return li;
 }
 void solve() {
