@@ -72,10 +72,10 @@ void answer(int x,int y) {
 void run(int a,int b);
 signed main() {
     IOS();
-    int T=1;
+    int T=100;
     while(T--) {
-        // n=rd(1,4),m=rd(1,4);
-    cin>>n>>m;
+        n=rd(1,4),m=rd(1,4);
+    // cin>>n>>m;
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
     shuffle(ALL(arr),rng);
