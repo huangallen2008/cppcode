@@ -49,6 +49,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int qur(int l,int r) {
+    if(l==r) return 0;
     cout<<"? "<<l<<' '<<r<<'\n'<<flush;
     int ret;
     cin>>ret;
