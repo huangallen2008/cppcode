@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include "checker.cpp"
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
@@ -49,13 +50,15 @@ const int inf=(1ll<<62);
 //     return uniform_int_distribution<int>(l,r)(rng);
 // }
 int qur(int a,int b) {
-    cout<<"? "<<a<<' '<<b<<'\n'<<flush;
-    int res;
-    cin>>res;
-    return res;
+    return query(a,b);
+    // cout<<"? "<<a<<' '<<b<<'\n'<<flush;
+    // int res;
+    // cin>>res;
+    // return res;
 }
 void ans(int a1,int a2) {
-    cout<<"! "<<a1<<' '<<a2<<'\n'<<flush;
+    answer(a1,a2);
+    // cout<<"! "<<a1<<' '<<a2<<'\n'<<flush;
 }
 void f(int l1,int r1,int l2,int r2) {
     if(l1==r1&&l2==r2) {
