@@ -98,7 +98,8 @@ void ans(int a1,int a2) {
 void f(int l1,int r1,int l2,int r2) {
     if(l1==r1&&l2==r2) {
         ans(l1,l2);
-        exit(0);
+        return ;
+        // exit(0);
     }
     int m1=l1+r1>>1;
     int mn1=inf,id1=0;
@@ -127,7 +128,8 @@ void f(int l1,int r1,int l2,int r2) {
                 f(l1,m1-1,m2+1,r2);
             }else {
                 ans(id2,m2);
-                exit(0);
+                return ;
+                // exit(0);
             }
         }else {
             if(id1<m2) {
@@ -153,7 +155,8 @@ void f(int l1,int r1,int l2,int r2) {
                 f(m1+1,r1,m2+1,r2);
             }else {
                 ans(id2,m2);
-                exit(0);
+                return ;
+                // exit(0);
             }
         }else {
             if(id1<m2) {
@@ -164,7 +167,8 @@ void f(int l1,int r1,int l2,int r2) {
         }
     }else {
         ans(m1,id1);
-        exit(0);
+        return;
+        // exit(0);
     }
 }
 void run(int n,int m) {
