@@ -119,7 +119,6 @@ void f(int l1,int r1,int l2,int r2) {
     int rr;
     ope(m1)
     if(m1!=l1&&(rr=qur(m1-1,id1))<mn1) {
-        ope("o1")
         int m2=l2+r2>>1;
         int mn2=inf,id2=0;
         for(int i=l1;i<=m1-1;i++) {
@@ -147,6 +146,7 @@ void f(int l1,int r1,int l2,int r2) {
             }
         }
     }else if(m1!=r1&&(rr=qur(m1+1,id1))<mn1){
+        ope("o1")
         int m2=l2+r2>>1;
         int mn2=inf,id2=0;
         for(int i=m1+1;i<=r1;i++) {
