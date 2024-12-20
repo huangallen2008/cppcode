@@ -70,10 +70,10 @@ signed main() {
     shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
     REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
-    REP(i,n) {
-        REP(j,m) cout<<a[i][j]<<' ';
-        cout<<'\n';
-    }
+    // REP(i,n) {
+    //     REP(j,m) cout<<a[i][j]<<' ';
+    //     cout<<'\n';
+    // }
     run(n,m);
     return 0;
 }
