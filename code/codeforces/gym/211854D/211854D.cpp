@@ -49,6 +49,27 @@ const int inf=(1ll<<62);
 // int rd(int l,int r) {
 //     return uniform_int_distribution<int>(l,r)(rng);
 // }
+
+vector<Vi> a;
+int query(int x,int y) {
+    return a[x-1][y-1];
+}
+void ans(int x,int y) {
+    x--,y--;
+}
+signed main() {
+    IOS();
+    int n,m;
+    cin>>n>>m;
+    Vi arr(n*m);
+    REP(i,n) arr[i]=i+1;
+    shuffle(ALL(arr),rng);
+    a=vector<Vi> (n,Vi(m));
+    REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
+    run(n,m);
+    return 0;
+}
+
 int qur(int a,int b) {
     return query(a,b);
     // cout<<"? "<<a<<' '<<b<<'\n'<<flush;
