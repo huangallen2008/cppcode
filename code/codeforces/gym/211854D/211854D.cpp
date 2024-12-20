@@ -58,10 +58,16 @@ int query(int x,int y) {
     return a[x-1][y-1];
 }
 void answer(int x,int y) {
-    // op(x)op(y)ope(cntq)
     x--,y--;
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) ;
-    else cout<<"WA\n";
+    else {
+     op(x)op(y)ope(cntq)
+        REP(i,n) {
+            REP(j,m) cout<<a[i][j]<<' ';
+            cout<<'\n';
+        }
+        cout<<"WA\n";
+    }
 }
 void run(int a,int b);
 signed main() {
