@@ -50,16 +50,18 @@ const int inf=(1ll<<62);
 //     return uniform_int_distribution<int>(l,r)(rng);
 // }
 
+    int n,m;
 vector<Vi> a;
 int query(int x,int y) {
     return a[x-1][y-1];
 }
-void ans(int x,int y) {
+void answer(int x,int y) {
     x--,y--;
+    if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) cout<<"AC"<<endl;
+    else cout<<"WA\n";
 }
 signed main() {
     IOS();
-    int n,m;
     cin>>n>>m;
     Vi arr(n*m);
     REP(i,n) arr[i]=i+1;
