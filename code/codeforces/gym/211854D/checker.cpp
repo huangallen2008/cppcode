@@ -39,8 +39,8 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-template<typename T1,typename T2>
-ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
+// template<typename T1,typename T2>
+// ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 // const int mod=1e9+7;
 // const int maxn=5;
 // const int maxb=20;
