@@ -66,7 +66,7 @@ signed main() {
     IOS();
     cin>>n>>m;
     Vi arr(n*m);
-    REP(i,n) arr[i]=i+1;
+    REP(i,n*m) arr[i]=i+1;
     shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
     REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
