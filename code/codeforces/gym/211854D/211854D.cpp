@@ -52,11 +52,13 @@ int rd(int l,int r) {
 
     int n,m;
 vector<Vi> a;
+int cntq=0;
 int query(int x,int y) {
+    cntq++;
     return a[x-1][y-1];
 }
 void answer(int x,int y) {
-    op(x)ope(y)
+    op(x)op(y)ope(cntq)
     x--,y--;
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) cout<<"AC"<<endl;
     else cout<<"WA\n";
