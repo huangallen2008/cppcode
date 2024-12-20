@@ -66,7 +66,10 @@ void answer(int x,int y) {
 void run(int a,int b);
 signed main() {
     IOS();
-    cin>>n>>m;
+    int T=100;
+    while(T--) {
+        n=rd(5,10),m=rd(5,10);
+    // cin>>n>>m;
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
     shuffle(ALL(arr),rng);
@@ -77,6 +80,7 @@ signed main() {
     //     cout<<'\n';
     // }
     run(n,m);
+    }
     return 0;
 }
 
@@ -164,6 +168,7 @@ void f(int l1,int r1,int l2,int r2) {
     }
 }
 void run(int n,int m) {
+    cntq=0;
     f(1,n,1,m);
 }
 // signed main() {
