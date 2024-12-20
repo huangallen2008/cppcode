@@ -56,6 +56,7 @@ int query(int x,int y) {
     return a[x-1][y-1];
 }
 void answer(int x,int y) {
+    op(x)ope(y)
     x--,y--;
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) cout<<"AC"<<endl;
     else cout<<"WA\n";
@@ -69,6 +70,10 @@ signed main() {
     shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
     REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
+    REP(i,n) {
+        REP(j,m) cout<<a[i][j]<<' ';
+        cout<<'\n';
+    }
     run(n,m);
     return 0;
 }
