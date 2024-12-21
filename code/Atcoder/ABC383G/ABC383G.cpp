@@ -91,6 +91,7 @@ vector<vector<Vi>> f(int l,int r) {
     REP(i,k) {
         REP(j,k) {
             REP(l,k) {
+                op(i)op(j)ope(l)
                 upd(an[i][l],merge(lr[i][j],rr[j][l]));
             }
         }
