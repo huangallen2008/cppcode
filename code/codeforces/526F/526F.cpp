@@ -53,10 +53,11 @@ Vi a,pmx,pmn,smx,smn;
 Vi cnt;
 Vi stk;
 int dc(int l,int r) {
-    op(l)ope(r)
     if(l==r) return 0;
     int m=l+r>>1;
     int lan=dc(l,m),ran=dc(m+1,r);
+    op(l)op(r)op(m)op(lan)ope(ran)
+
     smx[m]=smn[m]=a[m];
     for(int i=m-1;i>=l;i--) {
         smx[i]=max(smx[i+1],a[i]);
