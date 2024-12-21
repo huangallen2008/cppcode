@@ -53,7 +53,7 @@ Vi a;
 vector<vector<Vi>> f(int l,int r) {
     if(l==r) {
         vector<vector<Vi>> res(k,vector<Vi>(k));
-        if(k==0) {
+        if(k==1) {
             res[0][0]={0,a[l]};
         }else {
             res[0][0]={0};
@@ -69,8 +69,7 @@ vector<vector<Vi>> f(int l,int r) {
     REP(i,k) REP(j,k)oparr(rr[i][j])
     vector<vector<Vi>> an(k,vector<Vi>(k));
     auto merge=[&](Vi a,Vi b) {
-        if(a.empty()) return b;
-        if(b.empty()) return a;
+        if(a.empty()||b.empty()) return {};
         int n=a.size(),m=b.size();
         Vi r(n+m-1);
         int now=a[0]+b[0];
