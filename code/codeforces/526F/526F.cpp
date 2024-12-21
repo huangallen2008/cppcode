@@ -90,18 +90,15 @@ int dc(int l,int r) {
     }
     oparr(stk)
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
-    ope("ok")
     //smn[i]>pmn[j]
     //smx[i]>pmx[j]
     //smx[i]-pmn[j]=j-i+1 => pmn[j]+j+1=smx[i]+i  
     lb=m,rb=m;
     for(int j=m+1;j<=r;j++){
-        ope(j)
         while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,stk.pb(smx[lb]+lb),lb--;
         while(rb>lb&&smx[rb]<=pmx[j]) cnt[smx[rb]+rb]--,rb--;
         an+=cnt[pmn[j]+j+1];
     }
-    ope("ok")
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
     return an+lan+ran;
 }
