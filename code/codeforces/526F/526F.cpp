@@ -74,7 +74,6 @@ int dc(int l,int r) {
         int j=smx[i]-smn[i]+i-1;
         if(m<j&&j<=r&&smn[i]<pmn[j]&&pmx[j]<smx[i]) an++;
     }
-    ope("ok")
     for(int i=m+1;i<=r;i++) {
         //i-j+1==pmx[i]-pmn[i]
         int j=i+1-pmx[i]+pmn[i];
@@ -89,6 +88,7 @@ int dc(int l,int r) {
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+1+n];
     }
+    ope("ok")
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
     //smn[i]>pmn[j]
     //smx[i]>pmx[j]
