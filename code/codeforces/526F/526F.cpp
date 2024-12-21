@@ -86,7 +86,7 @@ int dc(int l,int r) {
     for(int i=m;i>=l;i--) {
         while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,stk.pb(pmx[rb]-rb+n),rb++;
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
-        an+=cnt[smn[i]-i+1+n];
+        an+=cnt[smn[i]-i+n];
         oparr(cnt)ope(smn[i]-i+1+n)
     }
     ope(an)
@@ -98,7 +98,7 @@ int dc(int l,int r) {
     for(int j=m+1;j<=r;j++){
         while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,stk.pb(smx[lb]+lb),lb--;
         while(rb>lb&&smx[rb]<=pmx[j]) cnt[smx[rb]+rb]--,rb--;
-        an+=cnt[pmn[j]+j+1];
+        an+=cnt[pmn[j]+j];
     }
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
     return an+lan+ran;
