@@ -67,9 +67,9 @@ vector<vector<Vi>> f(int l,int r) {
     vector<vector<Vi>> an(k,vector<Vi>(k));
     auto merge=[&](Vi a,Vi b) {
         int n=a.size(),m=b.size();
-        Vi a(n+m);
+        Vi r(n+m);
         int now=a[0]+b[0];
-        a[0]=now;
+        r[0]=now;
         int it1=0,it2=0;
         REP1(i,n+m-1) {
             int v1=it1<n?a[it1+1]-a[it1]:-inf;
@@ -77,9 +77,9 @@ vector<vector<Vi>> f(int l,int r) {
             if(v1>v2) {
                 now+=v1;
             }else now+=v2;
-            a[i]=now;
+            r[i]=now;
         }
-        return a;
+        return r;
     };
     auto upd=[&](Vi &a,Vi b) {
         a.resize(max(a.szie(),b.size()),-inf);
