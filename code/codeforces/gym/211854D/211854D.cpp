@@ -71,9 +71,9 @@ void answer(int x,int y) {
 void run(int a,int b);
 signed main() {
     IOS();
-    int T=100;
+    int T=10;
     while(T--) {
-        n=rd(1,5000),m=rd(1,5000);
+        n=rd(1,10000),m=rd(1,10000);
     // cin>>n>>m;
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
