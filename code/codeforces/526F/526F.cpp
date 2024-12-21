@@ -70,30 +70,28 @@ int dc(int l,int r) {
     }
     int an=0;
     for(int i=l;i<=m;i++) {
-        //j-i+1==smx[i]-smn[i] ->j=
+        //j-i==smx[i]-smn[i] ->j=
         int j=smx[i]-smn[i]+i;
         if(m<j&&j<=r&&smn[i]<pmn[j]&&pmx[j]<smx[i]) an++;
     }
     for(int i=m+1;i<=r;i++) {
-        //i-j+1==pmx[i]-pmn[i]
+        //i-j==pmx[i]-pmn[i]
         int j=i-pmx[i]+pmn[i];
         if(l<=j&&j<=m&&pmn[i]<smn[j]&&smx[j]<pmx[i]) an++;
     }
     //smn[i]<pmn[j]
     //smx[i]<pmx[j]
-    //pmx[j]-smn[i]=j-i+1 => pmx[j]-j+n=smn[i]-i+1+n
+    //pmx[j]-smn[i]=j-i => pmx[j]-j+n=smn[i]-i+n
     int lb=m+1,rb=m+1;
     for(int i=m;i>=l;i--) {
         while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,stk.pb(pmx[rb]-rb+n),rb++;
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+n];
-        oparr(cnt)ope(smn[i]-i+n)
     }
-    ope(an)
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
     //smn[i]>pmn[j]
     //smx[i]>pmx[j]
-    //smx[i]-pmn[j]=j-i+1 => pmn[j]+j+1=smx[i]+i  
+    //smx[i]-pmn[j]=j-i => pmn[j]+j=smx[i]+i  
     lb=m,rb=m;
     for(int j=m+1;j<=r;j++){
         while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,stk.pb(smx[lb]+lb),lb--;
