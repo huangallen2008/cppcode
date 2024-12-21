@@ -84,7 +84,7 @@ int dc(int l,int r) {
     //pmx[j]-smn[i]=j-i+1 => pmx[j]-j+n=smn[i]-i+1+n
     int lb=m+1,rb=m+1;
     for(int i=m;i>=l;i--) {
-        while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,rb++,stk.pb(pmx[rb]-rb+n);
+        while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,stk.pb(pmx[rb]-rb+n),rb++;
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+1+n];
     }
@@ -97,7 +97,7 @@ int dc(int l,int r) {
     lb=m,rb=m;
     for(int j=m+1;j<=r;j++){
         ope(j)
-        while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,lb--,stk.pb(smx[lb]+lb);
+        while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,stk.pb(smx[lb]+lb),lb--;
         while(rb>lb&&smx[rb]<=pmx[j]) cnt[smx[rb]+rb]--,rb--;
         an+=cnt[pmn[j]+j+1];
     }
