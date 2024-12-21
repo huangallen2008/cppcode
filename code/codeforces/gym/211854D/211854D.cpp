@@ -77,7 +77,7 @@ signed main() {
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
     do {
-        if(a[0]!=1) break;
+        if(arr[0]!=1) break;
         // n=rd(1,10),m=rd(1,10);
     // shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
