@@ -71,7 +71,7 @@ void answer(int x,int y) {
 void run(int a,int b);
 signed main() {
     IOS();
-    int T=100;
+    int T=1000;
     while(T--) {
         n=rd(1,4),m=rd(1,4);
     // cin>>n>>m;
