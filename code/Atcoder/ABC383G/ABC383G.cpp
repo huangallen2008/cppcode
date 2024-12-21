@@ -84,6 +84,7 @@ vector<vector<Vi>> f(int l,int r) {
             }else now+=v2;
             r[i]=now;
         }
+        oparr(a)oparr(b)oparr(r)
         return r;
     };
     auto upd=[&](Vi &a,Vi b) {
