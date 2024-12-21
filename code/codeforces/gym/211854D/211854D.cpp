@@ -59,9 +59,9 @@ int query(int x,int y) {
 }
 void answer(int x,int y) {
     x--,y--;
-     op(x)op(y)ope(cntq)
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) ;
     else {
+     op(x)op(y)ope(cntq)
         REP(i,n) {
             REP(j,m) cout<<a[i][j]<<' ';
             cout<<'\n';
@@ -73,22 +73,22 @@ void run(int a,int b);
 signed main() {
     IOS();
     int T=1;
-    while(T--) {
-        // n=rd(1,10),m=rd(1,10);
     cin>>n>>m;
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
+    do {
+        // n=rd(1,10),m=rd(1,10);
     // shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
     // REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
     REP(i,n) REP(j,m) cin>>a[i][j];
     // REP(i,n) if(i&1) reverse(ALL(a[i]));
-    REP(i,n) {
-        REP(j,m) cout<<a[i][j]<<' ';
-        cout<<'\n';
-    }
+    // REP(i,n) {
+    //     REP(j,m) cout<<a[i][j]<<' ';
+    //     cout<<'\n';
+    // }
     run(n,m);
-    }
+    }while(next_permutation(ALL(arr)));
     return 0;
 }
 
