@@ -80,8 +80,8 @@ signed main() {
         // n=rd(1,10),m=rd(1,10);
     // shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
-    // REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
-    REP(i,n) REP(j,m) cin>>a[i][j];
+    REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
+    // REP(i,n) REP(j,m) cin>>a[i][j];
     // REP(i,n) if(i&1) reverse(ALL(a[i]));
     // REP(i,n) {
     //     REP(j,m) cout<<a[i][j]<<' ';
