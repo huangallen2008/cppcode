@@ -115,6 +115,7 @@ signed main() {
         cin>>x>>y,x--,y--;
         a[x]=y;
     }
+    oparr(a)
     int an=dc(0,n-1);
     cout<<an<<'\n';
     return 0;
