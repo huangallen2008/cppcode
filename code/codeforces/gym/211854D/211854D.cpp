@@ -49,56 +49,56 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 
-//     int n,m;
-// vector<Vi> a;
-// int cntq=0;
-// int query(int x,int y) {
-//     cntq++;
-//     return a[x-1][y-1];
-// }
-// void answer(int x,int y) {
-//     x--,y--;
-//     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) ;
-//     else {
-//      op(x)op(y)ope(cntq)
-//         REP(i,n) {
-//             REP(j,m) cout<<a[i][j]<<' ';
-//             cout<<'\n';
-//         }
-//         cout<<"WA\n";
-//     }
-// }
-// void run(int a,int b);
-// signed main() {
-//     IOS();
-//     int T=1;
-//     while(T--) {
-//         // n=rd(1,4),m=rd(1,4);
-//     cin>>n>>m;
-//     Vi arr(n*m);
-//     REP(i,n*m) arr[i]=i+1;
-//     shuffle(ALL(arr),rng);
-//     a=vector<Vi> (n,Vi(m));
-//     REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
-//     // REP(i,n) {
-//     //     REP(j,m) cout<<a[i][j]<<' ';
-//     //     cout<<'\n';
-//     // }
-//     run(n,m);
-//     }
-//     return 0;
-// }
+    int n,m;
+vector<Vi> a;
+int cntq=0;
+int query(int x,int y) {
+    cntq++;
+    return a[x-1][y-1];
+}
+void answer(int x,int y) {
+    x--,y--;
+    if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) ;
+    else {
+     op(x)op(y)ope(cntq)
+        REP(i,n) {
+            REP(j,m) cout<<a[i][j]<<' ';
+            cout<<'\n';
+        }
+        cout<<"WA\n";
+    }
+}
+void run(int a,int b);
+signed main() {
+    IOS();
+    int T=100;
+    while(T--) {
+        n=rd(1,4),m=rd(1,4);
+    // cin>>n>>m;
+    Vi arr(n*m);
+    REP(i,n*m) arr[i]=i+1;
+    shuffle(ALL(arr),rng);
+    a=vector<Vi> (n,Vi(m));
+    REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
+    // REP(i,n) {
+    //     REP(j,m) cout<<a[i][j]<<' ';
+    //     cout<<'\n';
+    // }
+    run(n,m);
+    }
+    return 0;
+}
 
 int qur(int a,int b) {
-    // return query(a,b);
-    cout<<"? "<<a<<' '<<b<<'\n'<<flush;
-    int res;
-    cin>>res;
-    return res;
+    return query(a,b);
+    // cout<<"? "<<a<<' '<<b<<'\n'<<flush;
+    // int res;
+    // cin>>res;
+    // return res;
 }
 void ans(int a1,int a2) {
-    // answer(a1,a2);
-    cout<<"! "<<a1<<' '<<a2<<'\n'<<flush;
+    answer(a1,a2);
+    // cout<<"! "<<a1<<' '<<a2<<'\n'<<flush;
 }
 void f(int l1,int r1,int l2,int r2) {
     if(l1==r1&&l2==r2) {
@@ -176,14 +176,14 @@ void f(int l1,int r1,int l2,int r2) {
         // exit(0);
     }
 }
-// void run(int n,int m) {
-//     cntq=0;
-//     f(1,n,1,m);
-// }
-signed main() {
-    IOS();
-    int n,m;
-    cin>>n>>m;
+void run(int n,int m) {
+    cntq=0;
     f(1,n,1,m);
-    return 0;
 }
+// signed main() {
+//     IOS();
+//     int n,m;
+//     cin>>n>>m;
+//     f(1,n,1,m);
+//     return 0;
+// }
