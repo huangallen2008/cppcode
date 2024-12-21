@@ -82,7 +82,7 @@ vector<vector<Vi>> f(int l,int r) {
             }else it2++;
             r[i]=a[it1]+b[it2];
         }
-        oparr(a)oparr(b)oparr(r)
+        // oparr(a)oparr(b)oparr(r)
         return r;
     };
     auto upd=[&](Vi &a,Vi b) {
@@ -92,7 +92,7 @@ vector<vector<Vi>> f(int l,int r) {
     REP(i,k) {
         REP(j,k) {
             REP(l,k) {
-                op(i)op(j)ope(l)
+                // op(i)op(j)ope(l)
                 upd(an[i][l],merge(lr[i][j],rr[j][l]));
             }
         }
