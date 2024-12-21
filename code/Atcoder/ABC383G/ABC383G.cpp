@@ -75,8 +75,8 @@ vector<vector<Vi>> f(int l,int r) {
         int it1=0,it2=0;
         r[0]=a[0]+b[0];
         REP1(i,n+m-2) {
-            int v1=it1<n?a[it1+1]-a[it1]:-inf;
-            int v2=it2<m?b[it2+1]-b[it2]:-inf;
+            int v1=it1<n-1?a[it1+1]-a[it1]:-inf;
+            int v2=it2<m-1?b[it2+1]-b[it2]:-inf;
             if(v1>v2) {
                 it1++;
             }else it2++;
