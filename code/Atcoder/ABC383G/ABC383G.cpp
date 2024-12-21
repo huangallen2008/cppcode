@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const int inf=(1ll<<50);
+const int inf=1e18;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -81,9 +81,7 @@ vector<vector<Vi>> f(int l,int r) {
                 it1++;
             }else it2++;
             r[i]=a[it1]+b[it2];
-            if(r[i]<-inf) r[i]=-inf;
         }
-            if(r[0]<-inf) r[0]=-inf;
         oparr(a)oparr(b)oparr(r)
         return r;
     };
