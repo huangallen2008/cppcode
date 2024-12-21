@@ -53,7 +53,7 @@ Vi a,pmx,pmn,smx,smn;
 Vi cnt;
 Vi stk;
 int dc(int l,int r) {
-    if(l==r) return 0;
+    if(l==r) return 1;
     int m=l+r>>1;
     int lan=dc(l,m),ran=dc(m+1,r);
     op(l)op(r)op(m)op(lan)ope(ran)
