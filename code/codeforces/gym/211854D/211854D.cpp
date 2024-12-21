@@ -54,6 +54,7 @@ vector<Vi> a;
 int cntq=0;
 int query(int x,int y) {
     cntq++;
+    op(x)ope(y)
     return a[x-1][y-1];
 }
 void answer(int x,int y) {
