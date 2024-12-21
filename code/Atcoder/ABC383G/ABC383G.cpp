@@ -64,6 +64,7 @@ vector<vector<Vi>> f(int l,int r) {
     }
     int m=l+r>>1;
     vector<vector<Vi>> lr=f(l,m),rr=f(m+1,r);
+    op(l)ope(r)
     vector<vector<Vi>> an(k,vector<Vi>(k));
     auto merge=[&](Vi a,Vi b) {
         int n=a.size(),m=b.size();
