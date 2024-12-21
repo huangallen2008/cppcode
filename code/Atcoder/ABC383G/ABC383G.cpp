@@ -108,7 +108,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<vector<Vi>> an=f(0,n-1);
     int nn=n/k;
-    REP(i,nn) cout<<an[0][0][i]<<' ';
+    REP1(i,nn) cout<<an[0][0][i]<<' ';
     cout<<'\n';
     return 0;
 }
