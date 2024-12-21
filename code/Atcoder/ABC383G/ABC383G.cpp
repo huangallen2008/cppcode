@@ -81,7 +81,7 @@ vector<vector<Vi>> f(int l,int r) {
                 it1++;
             }else it2++;
             r[i]=a[it1]+b[it2];
-            if(r[i]<inf) r[i]=-inf;
+            if(r[i]<-inf) r[i]=-inf;
         }
         oparr(a)oparr(b)oparr(r)
         return r;
