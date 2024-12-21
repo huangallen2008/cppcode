@@ -58,9 +58,9 @@ int query(int x,int y) {
 }
 void answer(int x,int y) {
     x--,y--;
+     op(x)op(y)ope(cntq)
     if((x==0||a[x-1][y]>a[x][y])&&(x==n-1||a[x+1][y]>a[x][y])&&(y==0||a[x][y-1]>a[x][y])&&(y==m-1||a[x][y+1]>a[x][y])) ;
     else {
-     op(x)op(y)ope(cntq)
         REP(i,n) {
             REP(j,m) cout<<a[i][j]<<' ';
             cout<<'\n';
@@ -81,10 +81,10 @@ signed main() {
     a=vector<Vi> (n,Vi(m));
     REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
     REP(i,n) if(i&1) reverse(ALL(a[i]));
-    // REP(i,n) {
-    //     REP(j,m) cout<<a[i][j]<<' ';
-    //     cout<<'\n';
-    // }
+    REP(i,n) {
+        REP(j,m) cout<<a[i][j]<<' ';
+        cout<<'\n';
+    }
     run(n,m);
     }
     return 0;
