@@ -83,6 +83,7 @@ vector<vector<Vi>> f(int l,int r) {
             r[i]=a[it1]+b[it2];
             if(r[i]<-inf) r[i]=-inf;
         }
+            if(r[0]<-inf) r[0]=-inf;
         oparr(a)oparr(b)oparr(r)
         return r;
     };
