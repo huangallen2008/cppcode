@@ -74,6 +74,7 @@ int dc(int l,int r) {
         int j=smx[i]-smn[i]+i-1;
         if(m<j&&j<=r&&smn[i]<pmn[j]&&pmx[j]<smx[i]) an++;
     }
+    ope("ok")
     for(int i=m+1;i<=r;i++) {
         //i-j+1==pmx[i]-pmn[i]
         int j=i+1-pmx[i]+pmn[i];
