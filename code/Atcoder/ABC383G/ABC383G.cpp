@@ -82,7 +82,7 @@ vector<vector<Vi>> f(int l,int r) {
         return r;
     };
     auto upd=[&](Vi &a,Vi b) {
-        a.resize(max(a.szie(),b.size()),-inf);
+        a.resize(max(a.size(),b.size()),-inf);
         REP(i,b.size()) chmax(a[i],b[i]);
     };
     REP(i,k) {
