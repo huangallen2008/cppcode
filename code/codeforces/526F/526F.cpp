@@ -71,12 +71,12 @@ int dc(int l,int r) {
     int an=0;
     for(int i=l;i<=m;i++) {
         //j-i+1==smx[i]-smn[i] ->j=
-        int j=smx[i]-smn[i]+i-1;
+        int j=smx[i]-smn[i]+i;
         if(m<j&&j<=r&&smn[i]<pmn[j]&&pmx[j]<smx[i]) an++;
     }
     for(int i=m+1;i<=r;i++) {
         //i-j+1==pmx[i]-pmn[i]
-        int j=i+1-pmx[i]+pmn[i];
+        int j=i-pmx[i]+pmn[i];
         if(l<=j&&j<=m&&pmn[i]<smn[j]&&smx[j]<pmx[i]) an++;
     }
     //smn[i]<pmn[j]
@@ -87,7 +87,7 @@ int dc(int l,int r) {
         while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,stk.pb(pmx[rb]-rb+n),rb++;
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+n];
-        oparr(cnt)ope(smn[i]-i+1+n)
+        oparr(cnt)ope(smn[i]-i+n)
     }
     ope(an)
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
