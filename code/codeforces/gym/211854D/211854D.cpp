@@ -73,7 +73,7 @@ signed main() {
     IOS();
     int T=1000;
     while(T--) {
-        n=rd(1,4),m=rd(1,4);
+        n=rd(1,5),m=rd(1,5);
     // cin>>n>>m;
     Vi arr(n*m);
     REP(i,n*m) arr[i]=i+1;
