@@ -87,6 +87,7 @@ int dc(int l,int r) {
         while(rb<=r&&smn[i]<pmn[rb]) cnt[pmx[rb]-rb+n]++,stk.pb(pmx[rb]-rb+n),rb++;
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+1+n];
+        oparr(cnt)ope(smn[i]-i+1+n)
     }
     ope(an)
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
