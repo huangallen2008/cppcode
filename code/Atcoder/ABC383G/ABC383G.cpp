@@ -58,7 +58,7 @@ vector<vector<Vi>> f(int l,int r) {
         }else {
             r[0][0]={0};
             REP(i,k-1) r[i][i+1]={a[l]};
-            r[k-1][0]={-inf,a[l]}
+            r[k-1][0]={-inf,a[l]};
         }
         return r;
     }
