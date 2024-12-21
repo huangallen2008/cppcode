@@ -69,6 +69,8 @@ vector<vector<Vi>> f(int l,int r) {
     REP(i,k) REP(j,k)oparr(rr[i][j])
     vector<vector<Vi>> an(k,vector<Vi>(k));
     auto merge=[&](Vi a,Vi b) {
+        if(a.empty()) return b;
+        if(b.empty()) return a;
         int n=a.size(),m=b.size();
         Vi r(n+m);
         int now=a[0]+b[0];
