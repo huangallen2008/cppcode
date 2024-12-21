@@ -79,8 +79,9 @@ signed main() {
     REP(i,n*m) arr[i]=i+1;
     // shuffle(ALL(arr),rng);
     a=vector<Vi> (n,Vi(m));
-    REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
-    REP(i,n) if(i&1) reverse(ALL(a[i]));
+    // REP(i,n) REP(j,m) a[i][j]=arr[i*m+j];
+    REP(i,n) REP(j,m) cin>>a[i][j];
+    // REP(i,n) if(i&1) reverse(ALL(a[i]));
     REP(i,n) {
         REP(j,m) cout<<a[i][j]<<' ';
         cout<<'\n';
