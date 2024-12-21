@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=1e9+7;
 const int maxn=5;
 const int maxb=20;
-const int inf=(1ll<<34);
+const int inf=(1ll<<50);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -64,9 +64,9 @@ vector<vector<Vi>> f(int l,int r) {
     }
     int m=l+r>>1;
     vector<vector<Vi>> lr=f(l,m),rr=f(m+1,r);
-    op(l)ope(r)
-    REP(i,k) REP(j,k)oparr(lr[i][j])
-    REP(i,k) REP(j,k)oparr(rr[i][j])
+    // op(l)ope(r)
+    // REP(i,k) REP(j,k)oparr(lr[i][j])
+    // REP(i,k) REP(j,k)oparr(rr[i][j])
     vector<vector<Vi>> an(k,vector<Vi>(k));
     auto merge=[&](Vi a,Vi b) ->Vi{
         if(a.empty()||b.empty()) return {};
