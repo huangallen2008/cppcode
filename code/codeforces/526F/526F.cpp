@@ -88,12 +88,12 @@ int dc(int l,int r) {
         while(lb<rb&&smx[i]>=pmx[lb]) cnt[pmx[lb]-lb+n]--,lb++;
         an+=cnt[smn[i]-i+1+n];
     }
+    ope("ok")
     while(stk.size()) cnt[stk.back()]=0,stk.pop_back();
     //smn[i]>pmn[j]
     //smx[i]>pmx[j]
     //smx[i]-pmn[j]=j-i+1 => pmn[j]+j+1=smx[i]+i  
     lb=m,rb=m;
-    ope("ok")
     for(int j=m+1;j<=r;j++){
         ope(j)
         while(lb>=l&&smn[lb]>pmn[j]) cnt[smx[lb]+lb]++,lb--,stk.pb(smx[lb]+lb);
