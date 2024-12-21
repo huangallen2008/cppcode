@@ -52,15 +52,15 @@ int n,k;
 Vi a;
 vector<vector<Vi>> f(int l,int r) {
     if(l==r) {
-        vector<vector<Vi>> r(k,vector<Vi>(k));
+        vector<vector<Vi>> res(k,vector<Vi>(k));
         if(k==0) {
-            r[0][0]={0,a[l]};
+            res[0][0]={0,a[l]};
         }else {
-            r[0][0]={0};
-            REP(i,k-1) r[i][i+1]={a[l]};
-            r[k-1][0]={-inf,a[l]};
+            res[0][0]={0};
+            REP(i,k-1) res[i][i+1]={a[l]};
+            res[k-1][0]={-inf,a[l]};
         }
-        return r;
+        return res;
     }
     int m=l+r>>1;
     vector<vector<Vi>> lr=f(l,m),rr=f(m+1,r);
