@@ -97,13 +97,13 @@ pair<Vi,Vi> f(int l,int r) {
     int m=mxid(l,r);
     pair<Vi,Vi> lr=f(l,m-1),rr=f(m+1,r);
     op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
-    Vi an1=msrt(lr.s,rr.s);
-    Vi an2=mpc(lr.f,rr.f);
-    an1.insert(an1.begin(),a[m]);
-    Vi p=an1;
+    Vi an1=mpc(lr.f,rr.f);
+    Vi an2=msrt(lr.s,rr.s);
+    an2.insert(an1.begin(),a[m]);
+    Vi p=an2;
     p[0]-=b[l];
     REP1(i,p.size()-1) p[i]+=p[i-1];
-    REP(i,an2.size()) chmax(an2[i],p[i]);
+    REP(i,an1.size()) chmax(an1[i],p[i]);
     return {an1,an2};
 }  
 signed main() {
