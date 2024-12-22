@@ -96,6 +96,7 @@ pair<Vi,Vi> f(int l,int r) {
     if(l==r) return {{0,a[l]-b[l]},{a[l]}};
     int m=mxid(l,r);
     pair<Vi,Vi> lr=f(l,m-1),rr=f(m+1,r);
+    op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
     Vi an1=msrt(lr.s,rr.s);
     Vi an2=mpc(lr.f,rr.f);
     Vi p=an1;
