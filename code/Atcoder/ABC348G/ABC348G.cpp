@@ -63,24 +63,11 @@ Vi mpc(Vi a,Vi b) {
     }
     return c;
 }
-Vi msrt(Vi a,Vi b) {
-    int n=a.size(),m=b.size();
-    Vi c(n+m);
-    int i1=0,i2=0,it=0;
-    while(i1<n&&i2<m) {
-        if(a[i1]>b[i2]) c[it++]=a[i1++];
-        else c[it++]=b[i2++];
-    }
-    while(i1<n) c[it++]=a[i1++];
-    while(i2<m) c[it++]=b[i2++];
-    return c;
-}
 Vi mx(Vi a,Vi b) {
     REP(i,b.size()) chmax(a[i],b[i]);
     return a;
 }
 pair<Vi,Vi> f(int l,int r) {
-    if(l>r) return {{},{0}};
     if(l==r) return {{-inf,a[l]-b[l]},{0,a[l]}};
     int m=l+r>>1;
     pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
@@ -89,6 +76,19 @@ pair<Vi,Vi> f(int l,int r) {
     // op(l)op(r)ope(m)oparr(lr.f)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
     return {an1,an2};
 }  
+bool real(Vi my_an) {
+    Vi an(n+1,-inf);
+    REP(i,1<<n) {
+        int mx=-inf,sum=0;
+        REP(j,n) if(i>>j&1) {
+            chmax(mx,b[j]);
+            sum+=a[j];
+        }
+        chmax(an[__builtin_popcount(i)],sum-mx);
+    }
+    REP1(i,n)if(my_an[i]!=an[i]) return 0;
+    return 1;
+}
 signed main() {
     IOS();
     cin>>n;
@@ -102,7 +102,8 @@ signed main() {
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
     // oparr(a)oparr(b)oparr(t)
     auto [an,leolin]=f(0,n-1);
-    oparr(an)
+    // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
+    ope(real(an));
     return 0;
 }
