@@ -109,7 +109,7 @@ signed main() {
     // oparr(an)
     // REP1(i,n) cout<<an[i]<<'\n';
     if(!real(an)) {
-        oparr(t)
+        REP(i,n) cout<<t[i].f<<' '<<t[i].s<<'\n';entr
     }
     }
     return 0;
