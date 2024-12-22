@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
-#pragma GCC optimize("O3")
+//#define int long long
+#define ll long long
+#pragma GCC optimize("O3,unroll-loops")
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 #define REP(i,n) FOR(i,0,n)
 #define REP1(i,n) FOR(i,1,(n)+1)
@@ -20,48 +21,51 @@ using namespace std;
 #define op(x) cout<<#x<<"="<<x<<", ";
 #define ope(x) cout<<#x<<"="<<x<<endl;
 #define oparr(x) cout<<#x<<":";REP(i,x.size()) cout<<x[i]<<" ";cout<<" size="<<x.size()<<endl;
-#ifdef local
 #define entr cout<<endl;
+#define maxn (int)(2e5+5)
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
 #endif
-
-const int inf=(1ll<<62);
-const int maxn=2e5+5;
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC('\n');
+}
+const int inf=(1<<30);
+//const int maxn=2e5+5;
 const int mod=1e9+7;
 int n,k1,k2;
-//Graph g;
-int an=0;
+ll an=0;
 vector<int> g[maxn];
-//vector<int> sz;
 int sz[maxn],deg[maxn];
 bool vis[maxn];
 int edgeu[maxn],edgev[maxn];
-//vector<bool> vis;
 int mxd=0;
-struct BIT {
-    vector<int> b={};
-    int n=0;
-    void init(int _n) {
-        n=_n;
-        b=vector<int>(n+1);
-    }
-    void ud(int u,int v) {//zero-base
-        u++;
-        for(;u<=n;u+=u&-u) b[u]+=v;
-    }
-    int qu(int u) {
-        u++;
-//        op(n)ope(u)
-        if(u<=0) return 0;
-        int r=0;
-        for(;u>0;u-=u&-u) r+=b[u];
-        return r;
-    }
-    void to0(int u) {
-        u++;
-        REP1(i,u) b[i]=0;
-    }
-};
-BIT cnt;
+int su=0;
+int ct[maxn];
 inline int get_tree_sz(int u,int p) {
     sz[u]=1;
     for(int &v:g[u]) {
@@ -77,55 +81,52 @@ inline int get_centroid(const int tree_sz,int u,int p) {
     }
     return u;
 }
-inline void get_cnt(int u,int p,int dep,const bool fil) {
+inline void get_cnt1(int u,int p,int dep) {
     if(dep>k2) return;
     mxd=max(mxd,dep);
-    if(!fil) {
-//        op(dep)ope(an)
-//        op(k2-dep)op(cnt.qu(k2-dep))
-        op(k2-dep)ope(k1-dep-1)
-        an+=cnt.qu(k2-dep)-cnt.qu(k1-dep-1);
-        ope(an)
-    }
-    else cnt.ud(dep,1);
+    su-=ct[k2-dep+1];
+    if(dep<=k1) su+=ct[k1-dep];
+    an+=su;
     for(int &v:g[u]) {
         if(vis[v]||v==p) continue;
-        get_cnt(v,u,dep+1,fil);
+        get_cnt1(v,u,dep+1);
+    }
+    su+=ct[k2-dep+1];
+    if(dep<=k1) su-=ct[k1-dep];
+}
+inline void get_cnt2(int u,int p,int dep) {
+    if(dep>k2) return;
+    ct[dep]++;
+    for(int &v:g[u]) {
+        if(vis[v]||v==p) continue;
+        get_cnt2(v,u,dep+1);
     }
 }
 inline void centroid_decomp(int root) {
     int centroid=get_centroid(get_tree_sz(root,-1)>>1,root,-1);
     vis[centroid]=1;
     mxd=0;
-    cnt.ud(0,1);
-//    cnt[0]=1;
     for(int &v:g[centroid]) {
         if(vis[v]) continue;
-        get_cnt(v,-1,1,0);
-        get_cnt(v,-1,1,1);
+        su=0;
+        for(int i=k1;i<=min(mxd,k2);i++) su+=ct[i];
+        get_cnt1(v,-1,1);
+        get_cnt2(v,-1,1);
     }
-    cnt.to0(mxd);
-//    ope(centroid)
-//    fill(cnt+1,cnt+mxd+1,0);
-    op(centroid)ope(an)
+    fill(ct+1,ct+mxd+1,0);
     for(int &v:g[centroid]) {
-//            op(centroid)ope(v)
         if(!vis[v]) centroid_decomp(v);
     }
 }
 signed main() {
     IOS();
-    cin>>n>>k1>>k2;
-    cnt.init(n+2);
-    cnt.ud(0,1);
-//    ope(n)
-//    g=Graph(n);
-//    vis=vector<bool>(n);
-//    sz=vector<int>(n);
+    n=read(),k1=read(),k2=read();
+    // cin>>n>>k1>>k2;
+    ct[0]=1;
     REP(i,n-1) {
-        int u,v;
-        cin>>u>>v;
-        u--,v--;
+        int u=read()-1,v=read()-1;
+        // cin>>u>>v;
+        // u--,v--;
         deg[u]++,deg[v]++;
         edgeu[i]=u;
         edgev[i]=v;
@@ -137,6 +138,5 @@ signed main() {
     }
     centroid_decomp(0);
     cout<<an<<'\n';
-//    ope(1)
     return 0;
 }
