@@ -1,102 +1,104 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
-#define REP(i,n) for(int i=0;i<(n);i++)
-#define REP1(i,n) for(int i=1;i<=(n);i++)
-#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
-#define RREP1(i,n) for(int i=(n);i>=1;i--)
-#define f first
-#define s second
-#define pb push_back
-#define ALL(x) (x).begin(),(x).end()
-#define SZ(x) (int)((x).size())
-#define SQ(x) (x)*(x)
-#define pii pair<int,int>
-#define pipii pair<int,pii>
-#define Graph vector<vector<int>>
-#define Graphw vector<vector<pii>>
-#define IOS() ios::sync_with_stdio(0),cin.tie(0)
-#define md(x) (((x)%(mod)+(mod))%(mod))
-#define MD(x,M) (((x)%(M)+(M))%(M))
-#define ld long double
-#define pdd pair<ld,ld>
-#define chmax(x,y) x=max(x,y)
-#define chmin(x,y) x=min(x,y)
-#define addmod(x,y) x=((x+(y))%mod)
-#define Vi vector<int>
-#define Vpii vector<pii>
-#ifdef LOCAL
-#define op(x) cout<<(#x)<<"="<<(x)<<", ";
-#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
-#define entr cout<<endl;
-#else
-#define op(x) ;
-#define ope(x) ;
-#define oparr(x) ;
-#define entr ;
-#endif
-template<typename T1,typename T2>
-ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
-const int mod=1e9+7;
-const int maxn=1e5;
-const int maxb=20;
-const int inf=(1ll<<62);
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int rd(int l,int r) {
-    return uniform_int_distribution<int>(l,r)(rng);
+using ll = long long;
+
+constexpr ll inf = 1ll << 60;
+
+int n;
+vector<pair<ll, ll>> x; // x : (a, b)
+
+void read() {
+    cin >> n;
+    x.resize(n);
+    for (auto &[a, b] : x) {
+        cin >> a >> b;
+    }
+    sort(x.begin(), x.end(), [&](const auto &a, const auto &b) {
+        return a.second < b.second;
+    });
 }
-int solve(int n,Vpii a) {
-    int mx=0,mn=inf;
-    REP1(i,n) chmax(mx,a[i].s),chmin(mn,a[i].s);
-    if(mx!=mn) {////////
-        vector<int> dp(n+1,inf);
-        dp[0]=0;
-        REP1(i,n) {
-            RREP1(j,i) {
-                if(dp[j-1]<=a[i].f) {
-                    chmin(dp[j],dp[j-1]+a[i].s);
-                }
+
+template <class F>
+vector<ll> monotone_maxima(F &f, int h, int w) {
+    vector<ll> ret(h);
+    auto sol = [&](auto &&self, const int l_i, const int r_i, const int l_j, const int r_j) -> void {
+        const int m_i = (l_i + r_i) / 2;
+        int max_j = l_j;
+        ll max_val = -inf;
+        for (int j = l_j; j <= r_j; ++j) {
+            const ll v = f(m_i, j);
+            if (v > max_val) {
+                max_j = j;
+                max_val = v;
             }
         }
-        RREP1(i,n) {
-            if(dp[i]!=inf) {
-                return i;
-                // break;
-            }
+        ret[m_i] = max_val;
+
+        if (l_i <= m_i - 1) {
+            self(self, l_i, m_i - 1, l_j, max_j);
         }
-    }else {
-        int now=0,an=0;
-        REP1(i,n) {
-            if(now<=a[i].f) {
-                now+=a[i].s;
-                an++;
-            }
+        if (m_i + 1 <= r_i) {
+            self(self, m_i + 1, r_i, max_j, r_j);
         }
-        return an;
+    };
+    sol(sol, 0, h - 1, 0, w - 1);
+    return ret;
+}
+
+vector<ll> max_plus_convolution(const vector<ll> &a, const vector<ll> &b) {
+    const int n = (int)a.size(), m = (int)b.size();
+    auto f = [&](int i, int j) {
+        if (i < j or i - j >= m) {
+            return -inf;
+        }
+        return a[j] + b[i - j];
+    };
+
+    return monotone_maxima(f, n + m - 1, n);
+}
+
+vector<ll> sol(const int l, const int r) {
+    if (r - l == 1) {
+        const vector<ll> ret = {-inf, x[l].first - x[l].second};
+        return ret;
+    }
+    const int m = (l + r) / 2;
+    const auto res_l = sol(l, m);
+    const auto res_r = sol(m, r);
+
+    vector<ll> sorted_l(m - l);
+    for (int i = l; i < m; ++i) {
+        sorted_l[i - l] = x[i].first;
+    }
+    sort(sorted_l.begin(), sorted_l.end(), greater());
+    for (int i = 1; i < m - l; ++i) {
+        sorted_l[i] += sorted_l[i - 1];
+    }
+    sorted_l.insert(sorted_l.begin(), -inf);
+
+    auto res = max_plus_convolution(res_r, sorted_l);
+
+    for (int i = 0; i < (int)res_l.size(); ++i) {
+        res[i] = max(res[i], res_l[i]);
+    }
+    for (int i = 0; i < (int)res_r.size(); ++i) {
+        res[i] = max(res[i], res_r[i]);
+    }
+    return res;
+}
+
+void process() {
+    auto ans = sol(0, n);
+    for (int i = 1; i <= n; ++i) {
+        cout << ans[i] << endl;
     }
 }
-signed main() {
-    IOS();
-    int T=1;
-    // cin>>T;
-    while(T--) {
-        int n;
-        cin>>n;
-        Vpii a(n+1);
-        REP1(i,n) cin>>a[i].s;
-        REP1(i,n) cin>>a[i].f;
-        sort(1+ALL(a),[&](pii a,pii b) {
-            return a.f+a.s<b.f+b.s;
-        });
-        int r1=solve(n,a);
-        sort(1+ALL(a),[&](pii a,pii b) {
-            return min(a.f,b.f-a.s)>=min(b.f,a.f-b.s);
-        });
-        int r2=solve(n,a);
-        op(r1)ope(r2)
-    }
-    return 0;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    read();
+    process();
 }
