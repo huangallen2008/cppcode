@@ -91,13 +91,9 @@ bool real(Vi my_an) {
 }
 signed main() {
     IOS();
-    
-    int T=1000;while(T--){
-    n=rd(1,20);
-    // cin>>n;
+    cin>>n;
     a=b=Vi(n);
-    REP(i,n) a[i]=rd(-1e9,1e9),b[i]=rd(-1e14,1e14);
-    // REP(i,n) cin>>a[i]>>b[i];
+    REP(i,n) cin>>a[i]>>b[i];
     Vpii t(n);
     REP(i,n) t[i]={a[i],b[i]};
     sort(ALL(t),[&](pii a,pii b) {
@@ -107,10 +103,6 @@ signed main() {
     // oparr(a)oparr(b)oparr(t)
     auto [an,leolin]=f(0,n-1);
     // oparr(an)
-    // REP1(i,n) cout<<an[i]<<'\n';
-    if(!real(an)) {
-        oparr(t)
-    }
-    }
+    REP1(i,n) cout<<an[i]<<'\n';
     return 0;
 }
