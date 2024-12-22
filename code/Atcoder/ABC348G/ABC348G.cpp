@@ -106,7 +106,7 @@ pair<Vi,Vi> f(int l,int r) {
     p[0]-=b[m];
     p.insert(p.begin(),0);
     REP1(i,p.size()-1) p[i]+=p[i-1];
-    an1.pb(p[i]);
+    an1.pb(p[n-1]);
     REP(i,an1.size()) chmax(an1[i],p[i]);
     return {an1,an2};
 }  
