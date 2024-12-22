@@ -51,21 +51,6 @@ int rd(int l,int r) {
 int n;
 pii st[maxb][maxn];
 Vi a,b;
-void st_init() {
-    REP(i,n) st[0][i]={b[i],i};
-    REP1(i,maxb-1) {
-        REP(j,n) {
-            st[i][j]=max(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
-        }
-    }
-}
-pii st_qu(int l,int r) {
-    int lg=__lg(r-l+1);
-    return max(st[lg][l],st[lg][r-(1<<lg)+1]);
-}
-int mxid(int l,int r) {
-    return st_qu(l,r).s;
-}
 Vi mpc(Vi a,Vi b) {
     if(a.empty()||b.empty()) return {};
     int n=a.size(),m=b.size();
@@ -93,21 +78,12 @@ Vi msrt(Vi a,Vi b) {
 }
 pair<Vi,Vi> f(int l,int r) {
     if(l>r) return {{},{}};
-    if(l==r) return {{0,a[l]-b[l]},{a[l]}};
-    int m=mxid(l,r);
-    pair<Vi,Vi> lr=f(l,m-1),rr=f(m+1,r);
+    if(l==r) return {{0,a[l]-b[l]},{0,a[l]}};
+    int m=l+r>>1;
+    pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
     op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
-    Vi an1=mpc(lr.f,rr.f);
-    Vi an2=msrt(lr.s,rr.s);
-    oparr(an1)
-    an2.insert(an2.begin(),a[m]);
-    Vi p=an2;
-    oparr(p)
-    p[0]-=b[m];
-    p.insert(p.begin(),0);
-    REP1(i,p.size()-1) p[i]+=p[i-1];
-    an1.pb(p.back());
-    REP(i,an1.size()) chmax(an1[i],p[i]);
+    Vi an1=mpc(lr.s,rr.f);
+    Vi an2=mpc(lr.s,rr.s);
     return {an1,an2};
 }  
 signed main() {
@@ -115,7 +91,12 @@ signed main() {
     cin>>n;
     a=b=Vi(n);
     REP(i,n) cin>>a[i]>>b[i];
-    st_init();
+    Vpii t(n);
+    REP(i,n) t[i]={a[i],b[i]};
+    sort(ALL(t),[&](pii a,pii b) {
+        return a.s>b.s;
+    });
+    REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
     auto [an,leolin]=f(0,n-1);
     oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
