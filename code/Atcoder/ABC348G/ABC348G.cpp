@@ -100,7 +100,7 @@ signed main() {
         return a.s<b.s;
     });
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
-    // oparr(a)oparr(b)oparr(t)
+    oparr(a)oparr(b)oparr(t)
     auto [an,leolin]=f(0,n-1);
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
