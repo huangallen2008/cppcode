@@ -96,11 +96,11 @@ signed main() {
     a=b=Vi(n);
     REP(i,n) cin>>a[i]>>b[i];
     Vpii t;
-    REP(i,n) if(a[i]>0)t.pb({a[i],b[i]});
+    REP(i,n) if(a[i]>0||1)t.pb({a[i],b[i]});
     sort(ALL(t),[&](pii a,pii b) {
         return a.s<b.s;
     });
-    n=t.size();
+    // n=t.size();
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
     oparr(t)
     auto [an,leolin]=f(0,n-1);
