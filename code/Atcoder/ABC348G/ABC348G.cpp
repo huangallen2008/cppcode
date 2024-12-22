@@ -86,6 +86,7 @@ bool real(Vi my_an) {
         }
         chmax(an[__builtin_popcount(i)],sum-mx);
     }
+    oparr(an)
     REP1(i,n)if(my_an[i]!=an[i]) return 0;
     return 1;
 }
@@ -104,5 +105,6 @@ signed main() {
     oparr(a)oparr(b)oparr(t)
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
+    ope(real(an))
     return 0;
 }
