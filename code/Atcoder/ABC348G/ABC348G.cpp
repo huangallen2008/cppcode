@@ -94,7 +94,7 @@ signed main() {
     Vpii t(n);
     REP(i,n) t[i]={a[i],b[i]};
     sort(ALL(t),[&](pii a,pii b) {
-        return a.s>b.s;
+        return a.s<b.s;
     });
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
     oparr(a)oparr(b)oparr(t)
