@@ -102,6 +102,7 @@ pair<Vi,Vi> f(int l,int r) {
     oparr(an1)
     an2.insert(an2.begin(),a[m]);
     Vi p=an2;
+    oparr(p)
     p[0]-=b[l];
     p.insert(p.begin(),0);
     REP1(i,p.size()-1) p[i]+=p[i-1];
