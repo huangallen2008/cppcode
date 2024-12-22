@@ -99,9 +99,9 @@ signed main() {
     sort(ALL(t),[&](pii a,pii b) {
         return a.s<b.s;
     });
-    oparr(a)oparr(b)oparr(t)
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
     auto [an,leolin]=f(0,n-1);
+    oparr(a)oparr(b)oparr(t)
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
     return 0;
