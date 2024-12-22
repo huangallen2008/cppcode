@@ -99,8 +99,9 @@ pair<Vi,Vi> f(int l,int r) {
     op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
     Vi an1=msrt(lr.s,rr.s);
     Vi an2=mpc(lr.f,rr.f);
+    an1.insert(an1.begin(),a[m]);
     Vi p=an1;
-    p.insert(p.begin(),a[m]-b[m]);
+    p[0]-=b[l];
     REP1(i,p.size()-1) p[i]+=p[i-1];
     REP(i,an2.size()) chmax(an2[i],p[i]);
     return {an1,an2};
