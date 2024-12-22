@@ -113,6 +113,6 @@ signed main() {
     if(!real(an)) {
         oparr(t)
     }
-    }while(next_permutation(a));
+    }while(next_permutation(ALL(a)));
     return 0;
 }
