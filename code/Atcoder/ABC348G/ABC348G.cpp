@@ -91,9 +91,13 @@ bool real(Vi my_an) {
 }
 signed main() {
     IOS();
-    cin>>n;
+    
+    int T=100;while(T--){
+    n=rd(1,20);
+    // cin>>n;
     a=b=Vi(n);
-    REP(i,n) cin>>a[i]>>b[i];
+    REP(i,n) a[i]=rd(-1e9,1e9),b[i]=rd(-1e14,1e14);
+    // REP(i,n) cin>>a[i]>>b[i];
     Vpii t(n);
     REP(i,n) t[i]={a[i],b[i]};
     sort(ALL(t),[&](pii a,pii b) {
@@ -105,5 +109,6 @@ signed main() {
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
     ope(real(an));
+    }
     return 0;
 }
