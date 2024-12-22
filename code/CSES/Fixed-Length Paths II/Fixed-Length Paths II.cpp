@@ -2,7 +2,7 @@
 using namespace std;
 //#define int long long
 #define ll long long
-#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("Ofast,unroll-loops")
 #pragma GCC target("avx2,bmi2,sse4")
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 #define REP(i,n) FOR(i,0,n)
