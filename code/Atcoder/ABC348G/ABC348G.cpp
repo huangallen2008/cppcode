@@ -99,7 +99,7 @@ pair<Vi,Vi> f(int l,int r) {
     op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
     Vi an1=mpc(lr.f,rr.f);
     Vi an2=msrt(lr.s,rr.s);
-    an2.insert(an1.begin(),a[m]);
+    an2.insert(an2.begin(),a[m]);
     Vi p=an2;
     p[0]-=b[l];
     REP1(i,p.size()-1) p[i]+=p[i-1];
