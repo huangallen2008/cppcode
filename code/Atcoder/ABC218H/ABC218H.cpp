@@ -99,6 +99,7 @@ signed main() {
     int r;
     cin>>n>>r;
     k=2;
+    n--;
     a=Vi(n);
     REP(i,n) cin>>a[i];
     vector<vector<Vi>> an=f(0,n-1);
