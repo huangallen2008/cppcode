@@ -99,7 +99,7 @@ pair<Vi,Vi> f(int l,int r) {
     Vi an1=msrt(lr.s,rr.s);
     Vi an2=mpc(lr.f,rr.f);
     Vi p=an1;
-    p.insert(0,a[m]-b[m]);
+    p.insert(p.begin(),a[m]-b[m]);
     REP1(i,p.size()-1) p[i]+=p[i-1];
     REP(i,an2.size()) chmax(an2[i],p[i]);
 }  
