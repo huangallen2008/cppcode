@@ -76,14 +76,18 @@ Vi msrt(Vi a,Vi b) {
     while(i2<m) c[it++]=b[i2++];
     return c;
 }
+Vi mx(Vi a,Vi b) {
+    REP(i,b.size()) chmax(a[i],b[i]);
+    return a;
+}
 pair<Vi,Vi> f(int l,int r) {
     if(l>r) return {{},{}};
     if(l==r) return {{-inf,a[l]-b[l]},{0,a[l]}};
     int m=l+r>>1;
     pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
-    Vi an1=mpc(lr.s,rr.f);
+    Vi an1=mx(mpc(lr.s,rr.f),lr.f);
     Vi an2=mpc(lr.s,rr.s);
-    op(l)op(r)ope(m)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
+    op(l)op(r)ope(m)oparr(lr.f)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
     return {an1,an2};
 }  
 signed main() {
