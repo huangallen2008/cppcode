@@ -78,7 +78,7 @@ Vi msrt(Vi a,Vi b) {
 }
 pair<Vi,Vi> f(int l,int r) {
     if(l>r) return {{},{}};
-    if(l==r) return {{0,a[l]-b[l]},{0,a[l]}};
+    if(l==r) return {{-inf,a[l]-b[l]},{0,a[l]}};
     int m=l+r>>1;
     pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
     Vi an1=mpc(lr.s,rr.f);
