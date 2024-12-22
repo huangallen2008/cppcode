@@ -111,6 +111,7 @@ signed main() {
     REP(i,n) cin>>a[i]>>b[i];
     st_init();
     auto [an,leolin]=f(0,n-1);
+    oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
     return 0;
 }
