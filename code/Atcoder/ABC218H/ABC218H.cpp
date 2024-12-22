@@ -96,6 +96,7 @@ vector<vector<Vi>> f(int l,int r) {
 }
 signed main() {
     IOS();
+    int r;
     cin>>n>>r;
     k=2;
     a=Vi(n);
