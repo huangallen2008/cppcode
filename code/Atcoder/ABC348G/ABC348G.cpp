@@ -107,7 +107,7 @@ signed main() {
     // oparr(a)oparr(b)oparr(t)
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
-    // ope(real(an))
+    ope(real(an))
     return 0;
 }
 /*
