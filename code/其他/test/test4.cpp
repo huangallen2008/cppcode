@@ -85,6 +85,8 @@ vector<ll> sol(const int l, const int r) {
     for (int i = 0; i < (int)res_r.size(); ++i) {
         res[i] = max(res[i], res_r[i]);
     }
+    cout<<l<<" "<<r<<" ";
+    for(int i=0;i<res.size();i++) cout<<res[i]<<' ';cout<<'\n';
     return res;
 }
 
