@@ -99,11 +99,12 @@ signed main() {
     int r;
     cin>>n>>r;
     k=2;
+    int tt=min(n-r,r);
     n--;
     a=Vi(n);
     REP(i,n) cin>>a[i];
     vector<vector<Vi>> an=f(0,n-1);
-    cout<<an[0][0][min(r,n-r)]<<' ';
+    cout<<an[0][0][tt]<<' ';
     cout<<'\n';
     return 0;
 }
