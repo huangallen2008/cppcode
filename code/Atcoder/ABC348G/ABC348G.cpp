@@ -73,7 +73,7 @@ pair<Vi,Vi> f(int l,int r) {
     pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
     Vi an1=mx(mpc(lr.s,rr.f),lr.f);
     Vi an2=mpc(lr.s,rr.s);
-    // op(l)op(r)ope(m)oparr(lr.f)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
+    op(l)op(r)ope(m)oparr(lr.f)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
     return {an1,an2};
 }  
 bool real(Vi my_an) {
@@ -95,16 +95,14 @@ signed main() {
     cin>>n;
     a=b=Vi(n);
     REP(i,n) cin>>a[i]>>b[i];
-    Vpii t;
-    REP(i,n) if(a[i]>0||1)t.pb({a[i],b[i]});
+    Vpii t(n);
+    REP(i,n) t[i]={a[i],b[i]};
     sort(ALL(t),[&](pii a,pii b) {
         return a.s<b.s;
     });
-    // n=t.size();
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
-    oparr(t)
     auto [an,leolin]=f(0,n-1);
-    // oparr(a)oparr(b)oparr(t)
+    oparr(a)oparr(b)oparr(t)
     // oparr(an)
     REP1(i,n) cout<<an[i]<<'\n';
     ope(real(an))
