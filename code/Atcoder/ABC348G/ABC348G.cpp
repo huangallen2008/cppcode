@@ -107,8 +107,10 @@ signed main() {
     // oparr(a)oparr(b)oparr(t)
     auto [an,leolin]=f(0,n-1);
     // oparr(an)
-    REP1(i,n) cout<<an[i]<<'\n';
-    ope(real(an));
+    // REP1(i,n) cout<<an[i]<<'\n';
+    if(!real(an)) {
+        oparr(t)
+    }
     }
     return 0;
 }
