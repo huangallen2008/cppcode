@@ -92,8 +92,8 @@ bool real(Vi my_an) {
 signed main() {
     IOS();
     
-    int T=1000;while(T--){
-    n=rd(1,20);
+    int T=10;while(T--){
+    n=rd(1,50);
     // cin>>n;
     a=b=Vi(n);
     REP(i,n) a[i]=rd(-10,10),b[i]=rd(-10,10);
