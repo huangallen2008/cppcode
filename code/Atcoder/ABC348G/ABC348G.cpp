@@ -102,6 +102,7 @@ signed main() {
     });
     n=t.size();
     REP(i,n) a[i]=t[i].f,b[i]=t[i].s;
+    oparr(t)
     auto [an,leolin]=f(0,n-1);
     // oparr(a)oparr(b)oparr(t)
     // oparr(an)
