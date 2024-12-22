@@ -103,8 +103,11 @@ signed main() {
     n--;
     a=Vi(n);
     REP(i,n) cin>>a[i];
+    if(n==1) {
+        cout<<a[0]<<'\n';
+        return 0;
+    }
     vector<vector<Vi>> an=f(0,n-1);
-    cout<<an[0][0][tt]<<' ';
-    cout<<'\n';
+    cout<<an[0][0][tt]<<'\n';
     return 0;
 }
