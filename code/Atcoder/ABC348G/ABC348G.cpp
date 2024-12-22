@@ -102,6 +102,7 @@ pair<Vi,Vi> f(int l,int r) {
     p.insert(p.begin(),a[m]-b[m]);
     REP1(i,p.size()-1) p[i]+=p[i-1];
     REP(i,an2.size()) chmax(an2[i],p[i]);
+    return {an1,an2};
 }  
 signed main() {
     IOS();
@@ -109,5 +110,7 @@ signed main() {
     a=b=Vi(n);
     REP(i,n) cin>>a[i]>>b[i];
     st_init();
+    auto [an,leolin]=f(0,n-1);
+    REP1(i,n) cout<<an[i]<<'\n';
     return 0;
 }
