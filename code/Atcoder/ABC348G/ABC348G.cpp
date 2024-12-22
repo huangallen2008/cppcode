@@ -95,7 +95,7 @@ signed main() {
     cin>>n;
     a=b=Vi(n);
     REP(i,n) cin>>a[i]>>b[i];
-    Vpii t(n);
+    Vpii t;
     REP(i,n) if(a[i]>0)t.pb({a[i],b[i]});
     sort(ALL(t),[&](pii a,pii b) {
         return a.s<b.s;
