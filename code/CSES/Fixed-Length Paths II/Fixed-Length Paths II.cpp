@@ -2,7 +2,8 @@
 using namespace std;
 //#define int long long
 #define ll long long
-#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("avx2,bmi2,sse4")
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 #define REP(i,n) FOR(i,0,n)
 #define REP1(i,n) FOR(i,1,(n)+1)
@@ -23,6 +24,10 @@ using namespace std;
 #define oparr(x) cout<<#x<<":";REP(i,x.size()) cout<<x[i]<<" ";cout<<" size="<<x.size()<<endl;
 #define entr cout<<endl;
 #define maxn (int)(2e5+5)
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
+}
 #ifdef LOCAL
 #define GC _getchar_nolock()
 #define PC _putchar_nolock
@@ -30,6 +35,7 @@ using namespace std;
 #define GC getchar_unlocked()
 #define PC putchar_unlocked
 #endif
+
 inline int read()
 {
     int x=0;
@@ -136,7 +142,7 @@ signed main() {
         g[edgeu[i]].pb(edgev[i]);
         g[edgev[i]].pb(edgeu[i]);
     }
-    centroid_decomp(0);
+    centroid_decomp(rd(1,n));
     cout<<an<<'\n';
     return 0;
 }
