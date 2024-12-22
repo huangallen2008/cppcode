@@ -92,7 +92,7 @@ bool real(Vi my_an) {
 signed main() {
     IOS();
     
-    int T=100;while(T--){
+    int T=600;while(T--){
     n=rd(1,7);
     // cin>>n;
     a=b=Vi(n);
