@@ -81,9 +81,9 @@ pair<Vi,Vi> f(int l,int r) {
     if(l==r) return {{0,a[l]-b[l]},{0,a[l]}};
     int m=l+r>>1;
     pair<Vi,Vi> lr=f(l,m),rr=f(m+1,r);
-    op(l)op(r)ope(m)oparr(lr.f)oparr(rr.f)oparr(lr.s)oparr(rr.s)
     Vi an1=mpc(lr.s,rr.f);
     Vi an2=mpc(lr.s,rr.s);
+    op(l)op(r)ope(m)oparr(lr.s)oparr(rr.f)oparr(an1)oparr(lr.s)oparr(rr.s)oparr(an2)entr
     return {an1,an2};
 }  
 signed main() {
