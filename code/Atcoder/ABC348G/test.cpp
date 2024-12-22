@@ -92,11 +92,13 @@ bool real(Vi my_an) {
 signed main() {
     IOS();
     
-    int T=1000;while(T--){
-    n=rd(1,20);
-    // cin>>n;
+    n=10;
+    // int T=1000;while(T--){
     a=b=Vi(n);
-    REP(i,n) a[i]=rd(-1e9,1e9),b[i]=rd(-1e14,1e14);
+    REP(i,n) b[i]=rd(-10,10);
+    do{
+    // cin>>n;
+    // REP(i,n) a[i]=rd(-1e9,1e;
     // REP(i,n) cin>>a[i]>>b[i];
     Vpii t(n);
     REP(i,n) t[i]={a[i],b[i]};
@@ -111,6 +113,6 @@ signed main() {
     if(!real(an)) {
         oparr(t)
     }
-    }
+    }while(next_permutation(a));
     return 0;
 }
