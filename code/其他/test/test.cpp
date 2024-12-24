@@ -68,7 +68,6 @@ struct SEG {
     void build(int w,int l,int r,Vi &a) {
         op(l)ope(r)
         if(l==r) {
-            s[w][0]={1,0};
             s[w][a[l]]={1,1};
             return;
         }
