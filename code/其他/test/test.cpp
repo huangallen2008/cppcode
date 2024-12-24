@@ -104,7 +104,8 @@ signed main() {
         int l,r;
         cin>>l>>r,l--,r--;
         auto [r1,r2]=seg.qu(l,r);
-        cout<<r1<<' '<<r2<<'\n';
+        if(r2==inf) cout<<"-1\n";
+        else cout<<r-l+1-r2<<' '<<r1<<'\n';
     }
 
     return 0;
