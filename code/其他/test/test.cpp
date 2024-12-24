@@ -89,6 +89,7 @@ struct SEG {
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     pii qu(int l,int r) {
+        oparr(_qu(1,0,n-1,l,r))
         return _qu(1,0,n-1,l,r)[0];
     }
 }seg;
