@@ -49,7 +49,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define pVi pair<Vi,Vi>
-const Vi zero = Vpii(maxb,{0,inf});
+const Vpii zero = Vpii(maxb,{0,inf});
 struct SEG {
     int n;
     vector<Vpii> s;
