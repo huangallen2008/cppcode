@@ -55,8 +55,8 @@ struct SEG {
     Vpii zero;
     Vpii merge(Vpii b,Vpii c) {
         Vpii a(maxb,{0,inf});
-        REP(i,maxb) REP(j,maxb) if(i+j<maxb) chmin(a[i+j].s,b[i].s+c[j].s);
-        REP(i,maxb) REP(j,maxb) if(i+j<maxb) if(b[i].s+c[j].s==a[i+j].s) (a[i+j].f+=b[i].f*c[j].f);
+        REP(i,maxb) REP(j,maxb) chmin(a[i^j].s,b[i].s+c[j].s);
+        REP(i,maxb) REP(j,maxb) if(b[i].s+c[j].s==a[i^j].s) (a[i^j].f+=b[i].f*c[j].f)%=mod;
         return a;
     }
     void pull(Vpii &a,Vpii &b,Vpii &c) {
@@ -65,7 +65,7 @@ struct SEG {
     void build(int w,int l,int r,Vi &a) {
         op(l)ope(r)
         if(l==r) {
-            s[w]=Vpii(maxb,{0,0});
+            s[w][0]={1,0};
             s[w][a[l]]={1,1};
             return;
         }
@@ -80,7 +80,7 @@ struct SEG {
         s=vector<Vpii>(n<<2,Vpii(maxb));
         build(1,0,n-1,a);
         zero=Vpii(n,{0,0});
-        zero[0]={1,1};
+        zero[0]={1,0};
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
