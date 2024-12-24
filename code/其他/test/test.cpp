@@ -54,7 +54,7 @@ struct SEG {
     int n;
     vector<Vpii> s;
     Vpii merge(Vpii b,Vpii c) {
-        Vpii a(maxb,{0,inf});
+        Vpii a=zero;
         REP(i,maxb) chmin(a[i].s,b[i].s),chmin(a[i].s,c[i].s);
         REP(i,maxb) REP(j,maxb) if(b[i].f&&c[j].f)chmin(a[i^j].s,b[i].s+c[j].s);
         oparr(a)oparr(b)oparr(c)
@@ -78,13 +78,13 @@ struct SEG {
     }
     void init(int _n,Vi a) {
         n=_n;
-        s=vector<Vpii>(n<<2,Vpii(maxb,{0,inf}));
+        s=vector<Vpii>(n<<2,zero);
         build(1,0,n-1,a);
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
         op(l)op(r)op(ql)ope(qr)
         if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return Vpii(maxb,{0,inf});
+        if(ql>r||qr<l) return zero;
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
