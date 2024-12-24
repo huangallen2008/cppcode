@@ -67,8 +67,8 @@ signed main() {
     pq.push({0,s});
     dis[s]=0;
     Vi vis(12);
-    while(q.size()) {
-        auto [u,tt]=pq.top();
+    while(pq.size()) {
+        auto [u,mocha]=pq.top();
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
