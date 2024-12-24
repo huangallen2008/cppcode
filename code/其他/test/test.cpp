@@ -83,7 +83,8 @@ struct SEG {
         zero=Vpii(n,{0,inf});
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) {op(w)return s[w]};
+        if(ql<=l&&r<=qr) {op(w) 
+        return s[w]};
         if(ql>r||qr<l) return zero;
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
