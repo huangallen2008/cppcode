@@ -65,6 +65,7 @@ struct SEG {
     void build(int w,int l,int r,Vi &a) {
         op(l)ope(r)
         if(l==r) {
+            s[w]=Vpii(maxb,{0,1});
             s[w][a[l]]={1,1};
             return;
         }
@@ -78,7 +79,7 @@ struct SEG {
         n=_n;
         s=vector<Vpii>(n<<2,Vpii(maxb));
         build(1,0,n-1,a);
-        zero=Vpii(n,{0,0});
+        zero=Vpii(n,{0,1});
         zero[0]={1,1};
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
