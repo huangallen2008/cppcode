@@ -85,7 +85,7 @@ signed main() {
     }
     Vi tps;
     queue<int> q;
-    REP(i,64) if(ind[i]==0) q.push(i);
+    REP(i,64) if(ind[i]==0&&g[i].size()) q.push(i);
     while(q.size()) {
         int u=q.front();
         tps.pb(u);
