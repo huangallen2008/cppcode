@@ -54,7 +54,7 @@ signed main() {
     IOS();
     int s,t;
     cin>>s>>t,s--,t--;
-    Graphw g;
+    Graphw g(12);
     for(auto [u,v]:e) {
         int w;
         cin>>w;
