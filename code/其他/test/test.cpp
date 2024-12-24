@@ -55,9 +55,9 @@ struct SEG {
     Vpii zero;
     Vpii merge(Vpii b,Vpii c) {
         Vpii a(maxb,{0,inf});
-        REP(i,maxb) REP(j,maxb) chmin(a[i^j].s,b[i].s+c[j].s);
+        REP(i,maxb) REP(j,maxb) if(b[i].f&&c[i].f)chmin(a[i^j].s,b[i].s+c[j].s);
         oparr(a)oparr(b)oparr(c)
-        REP(i,maxb) REP(j,maxb) if(b[i].s+c[j].s==a[i^j].s) (a[i^j].f+=b[i].f*c[j].f)%=mod;
+        REP(i,maxb) REP(j,maxb) if(b[i].f&&c[i].f)if(b[i].s+c[j].s==a[i^j].s) (a[i^j].f+=b[i].f*c[j].f)%=mod;
         return a;
     }
     void pull(Vpii &a,Vpii &b,Vpii &c) {
