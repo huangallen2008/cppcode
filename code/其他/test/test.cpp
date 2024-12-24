@@ -43,16 +43,16 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const int inf=(1ll<<60);
+const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define pVi pair<Vi,Vi>
+const Vi zero = Vpii(maxb,{0,inf});
 struct SEG {
     int n;
     vector<Vpii> s;
-    Vpii zero;
     Vpii merge(Vpii b,Vpii c) {
         Vpii a(maxb,{0,inf});
         REP(i,maxb) chmin(a[i].s,b[i].s),chmin(a[i].s,c[i].s);
@@ -80,7 +80,6 @@ struct SEG {
         n=_n;
         s=vector<Vpii>(n<<2,Vpii(maxb,{0,inf}));
         build(1,0,n-1,a);
-        zero=Vpii(n,{0,inf});
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
         op(l)op(r)op(ql)ope(qr)
