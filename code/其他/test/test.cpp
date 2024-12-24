@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
+#pragma GCC optimize("O3,unroll-loops,fast-math")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const int inf=1000;
+const int inf=(1ll<<60);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -84,14 +84,12 @@ struct SEG {
     }
     Vpii _qu(int w,int l,int r,int ql,int qr) {
         op(l)op(r)op(ql)ope(qr)
-        if(ql<=l&&r<=qr) {op(w) 
-        return s[w];}
+        if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return Vpii(maxb,{0,inf});
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     pii qu(int l,int r) {
-        oparr(_qu(1,0,n-1,l,r))
         return _qu(1,0,n-1,l,r)[0];
     }
 }seg;
