@@ -73,7 +73,7 @@ signed main() {
         if(vis[u]) continue;
         vis[u]=1;
         for(auto [v,w]:g[u]) {
-            if(dis[v]>dis[u]+1) {
+            if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 pq.push({dis[v],v});
             }
