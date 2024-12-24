@@ -60,6 +60,25 @@ signed main() {
         cin>>w;
         u--,v--;
         g[u].pb({v,w});
+        g[v].pb({u,w});
     }
+    Vi dis(12,inf);
+    priority_queue<pii,vector<pii>,greater<pii>> pq;
+    q.push({0,s});
+    dis[s]=0;
+    Vi vis(12);
+    while(q.size()) {
+        int u=q.front();
+        q.pop();
+        if(vis[u]) continue;
+        vis[u]=1;
+        for(auto [v,w]:g[u]) {
+            if(dis[v]>dis[u]+1) {
+                dis[v]=dis[u]+w;
+                pq.push({dis[v],v});
+            }
+        }
+    }
+    cout<<dis[t]<<'\n';
     return 0;
 }
