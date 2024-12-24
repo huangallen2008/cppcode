@@ -75,7 +75,7 @@ struct SEG {
     }
     void init(int _n,Vi a) {
         n=_n;
-        s=vector<Vpii>(n,Vpii(maxb));
+        s=vector<Vpii>(n<<2,Vpii(maxb));
         build(1,0,n-1,a);
         zero=Vpii(n,{0,0});
         zero[0]={1,1};
