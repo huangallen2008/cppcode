@@ -57,7 +57,7 @@ struct SEG {
         Vpii a(maxb,{0,inf});
         REP(i,maxb) chmin(a[i].s,b[i].s),chmin(a[i].s,c[i].s);
         REP(i,maxb) REP(j,maxb) if(b[i].f&&c[j].f)chmin(a[i^j].s,b[i].s+c[j].s);
-        // oparr(a)oparr(b)oparr(c)
+        oparr(a)oparr(b)oparr(c)
         REP(i,maxb) REP(j,maxb) if(b[i].f&&c[j].f)if(b[i].s+c[j].s==a[i^j].s) (a[i^j].f+=b[i].f*c[j].f)%=mod;
         REP(i,maxb) (a[i].f+=b[i].f+c[i].f)%=mod;
         return a;
