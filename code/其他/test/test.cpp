@@ -88,18 +88,19 @@ struct SEG {
     pii qu(int l,int r) {
         return _qu(1,0,n-1,l,r)[0];
     }
-}
+}seg;
 signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
-    Vi a(n+1),c0(n+1);
-    REP1(i,n) cin>>a[i];
-    vector<Vpii> qu(n+1);
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    seg.init(n,a);
     REP(i,q) {
         int l,r;
-        cin>>l>>r;
-        qu[r].pb({l,i});
+        cin>>l>>r,l--,r--;
+        auto [r1,r2]=seg.qu(l,r);
+        cout<<r1<<' '<<r2<<'\n';
     }
 
     return 0;
