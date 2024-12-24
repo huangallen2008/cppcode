@@ -68,7 +68,7 @@ struct SEG {
         op(l)ope(r)
         if(l==r) {
             s[w][0]={1,0};
-            s[w][a[l]].s++;
+            s[w][a[l]]={1,1};
             return;
         }
         int m=l+r>>1;
