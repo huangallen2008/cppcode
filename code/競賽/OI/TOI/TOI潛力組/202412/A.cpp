@@ -70,42 +70,42 @@ signed main() {
             if(!i&&!j) continue;
             if(i>=1) {
                 int val=dp[i-1][j]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=2;
                     ll[i][j]={i-1,j};
                 }
             }if(j>=1) {
                 int val=dp[i][j-1]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=3;
                     ll[i][j]={i,j-1};
                 }
             }if(i>=2) {
                 int val=dp[i-2][j]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=4;
                     ll[i][j]={i-2,j};
                 }
             }if(i>=1&&j>=1) {
                 int val=dp[i-1][j-1]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=6;
                     ll[i][j]={i-1,j-1};
                 }
             }if(i>=3) {
                 int val=dp[i-3][j]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=8;
                     ll[i][j]={i-3,j};
                 }
             }if(j>=2) {
                 int val=dp[i][j-2]+1;
-                if(val>dp[i][j]) {
+                if(val<dp[i][j]) {
                     dp[i][j]=val;
                     la[i][j]=9;
                     ll[i][j]={i,j-2};
