@@ -68,7 +68,7 @@ signed main() {
     dis[s]=0;
     Vi vis(12);
     while(q.size()) {
-        int u=pq.top();
+        auto [u,tt]=pq.top();
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
