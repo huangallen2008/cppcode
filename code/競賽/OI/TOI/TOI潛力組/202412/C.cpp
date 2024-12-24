@@ -64,12 +64,12 @@ signed main() {
     }
     Vi dis(12,inf);
     priority_queue<pii,vector<pii>,greater<pii>> pq;
-    q.push({0,s});
+    pq.push({0,s});
     dis[s]=0;
     Vi vis(12);
     while(q.size()) {
-        int u=q.front();
-        q.pop();
+        int u=pq.top();
+        pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
         for(auto [v,w]:g[u]) {
