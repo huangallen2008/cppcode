@@ -62,7 +62,7 @@ struct SEG {
         REP(i,maxb) (a[i].f+=b[i].f+c[i].f)%=mod;
         return a;
     }
-    void pull(Vpii &a,Vpii &b,Vpii &c) {
+    void pull(Vpii &a,Vpii b,Vpii c) {
         a=merge(b,c);
     }
     void build(int w,int l,int r,Vi &a) {
