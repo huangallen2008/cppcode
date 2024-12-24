@@ -86,7 +86,7 @@ struct SEG {
         op(l)op(r)op(ql)ope(qr)
         if(ql<=l&&r<=qr) {op(w) 
         return s[w];}
-        if(ql>r||qr<l) return zero;
+        if(ql>r||qr<l) return Vpii(maxb,{0,inf});
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
