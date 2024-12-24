@@ -63,6 +63,7 @@ struct SEG {
         a=merge(b,c);
     }
     void build(int w,int l,int r,Vi &a) {
+        op(l)ope(r)
         if(l==r) {
             s[w][a[l]]={1,1};
             return;
