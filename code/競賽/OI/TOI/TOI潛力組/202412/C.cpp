@@ -79,6 +79,7 @@ signed main() {
             }
         }
     }
+    oparr(dis)
     cout<<dis[t]<<'\n';
     return 0;
 }
