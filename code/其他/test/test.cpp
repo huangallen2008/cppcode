@@ -30,7 +30,7 @@ using namespace std;
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;
+#define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
 #define entr cout<<endl;
 #else
 #define op(x) ;
@@ -40,52 +40,67 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=5;
-const int maxb=20;
+const int maxb=64;
 const int inf=(1ll<<62);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct BIT {
+#define pVi pair<Vi,Vi>
+struct SEG {
     int n;
-    vector<int> b;
-    void init(int _n) {
+    vector<Vpii> s;
+    Vpii zero;
+    Vpii merge(Vpii b,Vpii c) {
+        Vpii a(maxb,{0,inf});
+        REP(i,maxb) REP(j,maxb) if(i+j<maxb) chmin(a[i+j].s,b[i].s+c[j].s);
+        REP(i,maxb) REP(j,maxb) if(i+j<maxb) if(b[i].s+c[j].s==a[i+j].s) (a[i+j].f+=b[i].f*c[j].f);
+        return a;
+    }
+    void pull(Vpii &a,Vpii &b,Vpii &c) {
+        a=merge(b,c);
+    }
+    void build(int w,int l,int r,Vi &a) {
+        if(l==r) {
+            s[w][a[l]]={1,1};
+            return;
+        }
+        int m=l+r>>1;
+        build(w<<1,l,m,a);
+        build(w<<1|1,m+1,r,a);
+        pull(s[w],s[w<<1],s[w<<1|1]);
+    }
+    void init(int _n,Vi a) {
         n=_n;
-        b=vector<int>(n+1);
+        s=vector<Vpii>(n,Vpii(maxb));
+        build(1,0,n-1,a);
+        zero=Vpii(n,{0,0});
+        zero[0]={1,1};
     }
-    void ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]+=v;
+    Vpii _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql>r||qr<l) return zero;
+        int m=l+r>>1;
+        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    int pre(int u) {
-        int r=0;
-        for(;u>0;u-=u&-u) r+=b[u];
-        return r;
+    pii qu(int l,int r) {
+        return _qu(1,0,n-1,l,r)[0];
     }
-    int qu(int l,int r) {
-        return pre(r)-pre(l-1);
-    }
-}bit;
+}
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    bit.init(n);
-    int q;
-    cin>>q;
-    while(q--) {
-        int opt;
-        cin>>opt;
-        if(opt==1) {
-            int u,v;
-            cin>>u>>v;
-            bit.ud(u,v);
-        }else {
-            int l,r;
-            cin>>l>>r;
-            cout<<bit.qu(l,r);entr
-        }
+    int n,q;
+    cin>>n>>q;
+    Vi a(n+1),c0(n+1);
+    REP1(i,n) cin>>a[i];
+    vector<Vpii> qu(n+1);
+    REP(i,q) {
+        int l,r;
+        cin>>l>>r;
+        qu[r].pb({l,i});
     }
+
     return 0;
 }
