@@ -114,13 +114,16 @@ signed main() {
         }
     }
     int nn=n,nm=m;
+    Vi an;
     while(nn||nm) {
         auto [x,y]=ll[nn][nm];
-        cout<<la[nn][nm]<<' ';
+        an.pb(la[nn][nm]);
         nn=x,nm=y;
     }
-    REP(i,cnt5) cout<<5<<' ';
-    REP(i,cnt7) cout<<7<<' ';
+    REP(i,cnt5) an.pb(5);
+    REP(i,cnt7) an.pb(7);
+    sort(ALL(an));
+    for(int c:an) cout<<c<<' ';
     cout<<'\n';
     return 0;
 }
