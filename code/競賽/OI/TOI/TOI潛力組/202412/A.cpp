@@ -63,7 +63,7 @@ signed main() {
         return 0;
     }
     vector<Vi> dp(n+1,Vi(m+1,inf)),la(n+1,Vi(m+1,-1));
-    vector<Vpii> ll(n+1,Vi(m+1));
+    vector<Vpii> ll(n+1,Vpii(m+1));
     dp[0][0]=0;
     REP(i,n+1) {
         REP(j,m+1) {
