@@ -94,7 +94,7 @@ signed main() {
             if(--ind[v]==0) q.push(v);
         }
     }
-    for(int x:tps) cout<<iot(x)<<' ';
+    for(int x:tps) cout<<iot(x);
     cout<<'\n';
     return 0;
 }
