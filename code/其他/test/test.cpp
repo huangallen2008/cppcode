@@ -43,7 +43,7 @@ ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<
 const int mod=998244353;
 const int maxn=5;
 const int maxb=8;
-const int inf=(1ll<<62);
+const int inf=1e14;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
