@@ -68,11 +68,14 @@ signed main() {
     cin>>n;
     string s1;
     cin>>s1;
+    Vi in(64);
+    for(char c:s1) in[toi(c)]=1;
     Graph g(64);
     Vi ind(64);
     REP(i,n-1) {
         string s2;
         cin>>s2;
+        for(char c:s2) in[toi(c)]=1;
         REP(j,min(s1.size(),s2.size())) {
             if(s1[j]!=s2[j]) {
                 int u=toi(s1[j]),v=toi(s2[j]);
@@ -85,7 +88,7 @@ signed main() {
     }
     Vi tps;
     queue<int> q;
-    REP(i,64) if(ind[i]==0&&g[i].size()) q.push(i);
+    REP(i,64) if(ind[i]==0&&in[i]) q.push(i);
     while(q.size()) {
         int u=q.front();
         tps.pb(u);
