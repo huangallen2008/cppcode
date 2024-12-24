@@ -49,10 +49,52 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int toi(char c) {
-    // if(isdigit(c)) cout<<
+    if(isdigit(c)) return c-'0'; // 10
+    if(isupper(c)) return c-'A'+10; //10+26=36
+    if(islower(c)) return c-'a'+36; //36+26=62
+    if(c=='+') return 62;
+    return 63;
+}
+char iot(int x) {
+    if(x==63) return '/';
+    if(x==62) return '+';
+    if(x>=36) return 'a'+x-36;
+    if(x>=10) return 'A'+x-10;
+    return '0'+x;
 }
 signed main() {
     IOS();
-    ope(isupper('6'))
+    int n;
+    cin>>n;
+    string s1;
+    cin>>s1;
+    Graph g(64);
+    Vi ind(64);
+    REP(i,n-1) {
+        string s2;
+        cin>>s2;
+        REP(j,min(s1.size(),s2.size())) {
+            if(s1[j]!=s2[j]) {
+                int u=toi(s1[j]),v=toi(s2[j]);
+                g[u].pb(v);
+                ind[v]++;
+                break;
+            }
+        }
+        s1=s2;
+    }
+    Vi tps;
+    queue<int> q;
+    REP(i,n) if(ind[i]==0) q.push(i);
+    while(q.size()) {
+        int u=q.front();
+        tps.pb(u);
+        q.pop();
+        for(int v:g[u]) {
+            if(--ind[v]==0) q.push(v);
+        }
+    }
+    for(int x:tps) cout<<iot(x)<<' ';
+    cout<<'\n';
     return 0;
 }
