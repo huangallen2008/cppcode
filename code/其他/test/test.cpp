@@ -97,8 +97,8 @@ struct SEG {
 signed main() {
     IOS();
     int n=3;
-    vector<Vi> a(n,Vi(n));
-    REP(i,n) REP(j,n) a[i][j]=rd(1,5);
+    vector<vector<Vi>> a(n,vector<Vi>(n,Vi(n)));
+    REP(i,n) REP(j,n) REP(k,n) a[i][j][k]=i*n*n+j*n+k;
     cout<<a;
     return 0;
 }
