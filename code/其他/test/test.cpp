@@ -99,6 +99,6 @@ signed main() {
     int n=3;
     vector<Vi> a(n,Vi(n));
     REP(i,n) REP(j,n) a[i][j]=rd(1,5);
-    op(a)
+    cout<<a;
     return 0;
 }
