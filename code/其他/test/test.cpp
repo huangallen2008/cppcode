@@ -96,19 +96,9 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    int n,q;
-    cin>>n>>q;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    seg.init(n,a);
-    REP(i,q) {
-        int l,r;
-        cin>>l>>r,l--,r--;
-        auto [r1,r2]=seg.qu(l,r);
-        op(r1)ope(r2)
-        if(r2==inf) cout<<"-1\n";
-        else cout<<r-l+1-r2<<' '<<r1<<'\n';
-    }
-
+    int n=3;
+    vector<Vi> a(n,Vi(n));
+    REP(i,n) REP(j,n) a[i][j]=rd(1,5);
+    ope(a)
     return 0;
 }
