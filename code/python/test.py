@@ -1,5 +1,4 @@
-import os
-# t = input()
-# __import__('os').system('dir')
-# raise Exception(t)
-print(os.listdir())
+with open("input.txt", "r") as f:
+    input = f.read
+    a = input()
+    print(a)
