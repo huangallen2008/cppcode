@@ -41,7 +41,7 @@ using namespace std;
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 template<typename S>
-ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen; return os; }
+ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen<<' '; os<<'\n'; return os; }
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
