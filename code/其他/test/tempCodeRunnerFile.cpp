@@ -1,1 +1,2 @@
-/CLOCKS_PER_SEC<
+',stdin);
+    // freopen("output.txt",'
