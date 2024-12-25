@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,sse4,bmi2,popcnt")
+// #pragma GCC optimize("O3,unroll-loops")
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -40,6 +40,8 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
+template<typename S>
+ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen; return os; }
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
@@ -62,7 +64,7 @@ struct SEG {
         REP(i,maxb) (a[i].f+=b[i].f+c[i].f)%=mod;
         return a;
     }
-    void pull(Vpii &a,Vpii b,Vpii c) {
+    void pull(Vpii &a,Vpii &b,Vpii &c) {
         a=merge(b,c);
     }
     void build(int w,int l,int r,Vi &a) {
