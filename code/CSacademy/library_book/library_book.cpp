@@ -66,7 +66,7 @@ signed main() {
                 chmin(dp[i][j],max(dp[i-1][j],a[i].f)+a[i].s);
             }
             if(j) {
-                chmin(dp[i][j],max(dp[i][j-1],b[i].f+b[i].s));
+                chmin(dp[i][j],max(dp[i][j-1],b[j].f+b[j].s));
             }
         }
         op(i)oparr(dp[i])
