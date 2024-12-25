@@ -14,11 +14,7 @@ signed main() {
     }
     sort(ve.begin(), ve.end());
     reverse(ve.begin(), ve.end());
-    long long s = 0;
-    for (int i=0;i<k;i++) {
-        s += ve[i].first;
-    }
-    cout << s  << "\n";
+    cout << ve[k-1].first << "\n";
     vector<int> idx;
     for (int i=0;i<k;i++) {
         idx.push_back(ve[i].second);
