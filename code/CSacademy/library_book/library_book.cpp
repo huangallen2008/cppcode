@@ -63,6 +63,7 @@ signed main() {
         REP(j,m+1) {
             if(!i&&!j) continue;
             if(i) {
+                op(i)op(j)ope(max(dp[i-1][j],a[i].f)+a[i].s);
                 chmin(dp[i][j],max(dp[i-1][j],a[i].f)+a[i].s);
             }
             if(j) {
