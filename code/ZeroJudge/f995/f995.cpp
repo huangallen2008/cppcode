@@ -64,10 +64,10 @@ struct LCSEG {
     }
     void _ud(int id,int l,int r,line v) {
         if(v==zr) return;
-//        if(!id) {
-//            s[id=node_id++]=v;
-//            return;
-//        }
+       if(!id) {
+           s[id=node_id++]=v;
+           return;
+       }
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
@@ -75,12 +75,12 @@ struct LCSEG {
         int m=l+r>>1;
         if(v.m>s[id].m) swap(v,s[id]);
         if(cal(v,m)<cal(s[id],m)) {
-            if(!lc[id]) s[lc[id]=node_id++]=zr;
+            // if(!lc[id]) s[lc[id]=node_id++]=zr;
             _ud(lc[id],l,m,v);
         }
         else {
             swap(s[id],v);
-            if(!rc[id]) s[rc[id]=node_id++]=zr;
+            // if(!rc[id]) s[rc[id]=node_id++]=zr;
             _ud(rc[id],m+1,r,v);
         }
     }
