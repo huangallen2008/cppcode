@@ -33,11 +33,11 @@ using namespace std;
 #define entr ;
 #endif
 const int mod=1e9+7;
-const int maxn=7e6;
+const int maxn=1.3e7;
 const int maxn2=3e5;
 const int maxv=1e3+5;
 const int maxs=1e6;
-const int inf=(1ll<<62);
+const int inf=8e18;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -47,14 +47,14 @@ struct line {
     bool operator==(const line x) { return x.m==m&&x.k==k; }
 };
 const line zr={0,-inf};
-int node_id=0;
+int node_id=1;
 line s[maxn];
 int lc[maxn],rc[maxn];
 struct LCSEG {
     int cal(line l,int x) {
         return l.m*x+l.k;
     }
-    line mxl(line &a,line &b,int x) {
+    line mxl(line a,line b,int x) {
         if(cal(a,x)>cal(b,x)) return a;
         else return b;
     }
@@ -62,9 +62,12 @@ struct LCSEG {
     void init() {
         s[root=node_id++]=zr;
     }
-    void _ud(int &id,int l,int r,line &v) {
+    void _ud(int id,int l,int r,line v) {
         if(v==zr) return;
-        if(id==-1) s[id=node_id++]=zr,assert(node_id<maxn);
+//        if(!id) {
+//            s[id=node_id++]=v;
+//            return;
+//        }
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
@@ -72,18 +75,20 @@ struct LCSEG {
         int m=l+r>>1;
         if(v.m>s[id].m) swap(v,s[id]);
         if(cal(v,m)<cal(s[id],m)) {
+            if(!lc[id]) s[lc[id]=node_id++]=zr;
             _ud(lc[id],l,m,v);
         }
         else {
             swap(s[id],v);
+            if(!rc[id]) s[rc[id]=node_id++]=zr;
             _ud(rc[id],m+1,r,v);
         }
     }
-    void ud(int l,int r,line v) {
-        _ud(root,l,r,v);
+    void ud(line v) {
+        _ud(root,-maxv,maxv,v);
     }
     int _qu(int id,int l,int r,int x) {
-        if(id==-1) return -inf;
+        if(!id) return -inf;
         int an=cal(s[id],x);
         if(l==r) return an;
         int m=l+r>>1;
@@ -94,17 +99,19 @@ struct LCSEG {
             return max(an,_qu(rc[id],m+1,r,x));
         }
     }
-    int qu(int l,int r,int x) { return _qu(root,l,r,x); }
+    int qu(int x) { return _qu(root,-maxv,maxv,x); }
 };
 struct SEG_lcseg {
-    LCSEG s[maxn2<<2];
+//    LCSEG s[maxn2<<2];
+    vector<LCSEG> s;
     int n;
     void init(int _n) {
         n=_n;
+        s.resize(n<<2);
         REP(i,n<<2) s[i].init();
     }
     void _ud(int w,int l,int r,int u,line v) {
-        s[w].ud(-maxv,maxv,v);
+        s[w].ud(v);
         if(l==r) return;
         int m=l+r>>1;
         if(u<=m) _ud(w<<1,l,m,u,v);
@@ -115,7 +122,7 @@ struct SEG_lcseg {
     }
     int _qu(int w,int l,int r,int ql,int qr,int x) {
 //        op(w)op(l)op(r)op(ql)op(qr)ope(x)
-        if(ql<=l&&r<=qr) return s[w].qu(-maxv,maxv,x);
+        if(ql<=l&&r<=qr) return s[w].qu(x);
         if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
         return max(_qu(w<<1,l,m,ql,qr,x),_qu(w<<1|1,m+1,r,ql,qr,x));
@@ -124,23 +131,10 @@ struct SEG_lcseg {
         return _qu(1,0,n-1,l,r,x);
     }
 } seg_lct;
-int solve(int n,int k,vector<int> &pa,vector<int> &pla,vector<int> &b) {
-    vector<int> dp(n+1);
-    seg_lct.init(n+1);
-    seg_lct.ud(0,{0,0});
-    REP1(i,n) {
-        dp[i]=pla[i]+seg_lct.qu(max(i-k,0ll),i-1,pa[i]);
-        // op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i])
-        seg_lct.ud(i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)-pla[i]});
-        // op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i])
-    }
-    // oparr(dp)
-    return dp[n];
-}
 signed main() {
-    IOS();    
-    memset(lc,-1,sizeof(lc));
-    memset(rc,-1,sizeof(rc));
+    IOS();
+//    memset(lc,-1,sizeof(lc));
+//    memset(rc,-1,sizeof(rc));
     int n,k;
     cin>>n>>k;
     vector<int> a(n+1),b(n+1),pa(n+1),pla(n+1);
@@ -150,6 +144,16 @@ signed main() {
         pa[i]=pa[i-1]+a[i];
         pla[i]=pla[i-1]+a[i]*i;
     }
-    cout<<solve(n,k,pa,pla,b)<<'\n';;
+    vector<int> dp(n+1);
+    seg_lct.init(n+1);
+    seg_lct.ud(0,{0,0});
+    REP1(i,n) {
+        dp[i]=seg_lct.qu(max(i-k,(int)0),i-1,pa[i]);
+        // op(max(i-k,(int)0))op(i-1)op(pa[i])ope(dp[i])
+        seg_lct.ud(i,{b[i]-i,dp[i]-pa[i]*(b[i]-i)});
+        // op(i)op(b[i]-i)ope(dp[i]-pa[i]*(b[i]-i)-pla[i])
+    }
+//     oparr(dp)
+    cout<<dp[n]+pla[n]<<'\n';;
     return 0;
 }
