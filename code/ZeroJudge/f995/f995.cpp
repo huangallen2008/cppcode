@@ -62,12 +62,12 @@ struct LCSEG {
     void init() {
         s[root=node_id++]=zr;
     }
-    void _ud(int id,int l,int r,line v) {
+    void _ud(int &id,int l,int r,line v) {
         if(v==zr) return;
-       if(!id) {
-           s[id=node_id++]=v;
-           return;
-       }
+        if(!id) {
+            s[id=node_id++]=v;
+            return;
+        }
         if(l==r) {
             s[id]=mxl(s[id],v,l);
             return;
