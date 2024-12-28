@@ -80,14 +80,14 @@ void solve() {
         if(o==1) {
             int v=a[x];
             a[x]++;
-            int id=upper_bound(ALL(c),v)-c.begin()+1;
+            int id=upper_bound(ALL(c),v)-c.begin()-1;
             an=(an*inv(min(c[id],d[id])))%mod;
             c[id]++;
             an=(an*min(c[id],d[id]))%mod;
         }else {
             int v=b[x];
             b[x]++;
-            int id=upper_bound(ALL(d),v)-d.begin()+1;
+            int id=upper_bound(ALL(d),v)-d.begin()-1;
             an=(an*inv(min(c[id],d[id])))%mod;
             d[id]++;
             an=(an*min(c[id],d[id]))%mod;
