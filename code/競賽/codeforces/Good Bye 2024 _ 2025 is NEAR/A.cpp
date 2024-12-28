@@ -55,10 +55,9 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    sort(ALL(a));
     bool ok=0;
     REP(i,n-1) {
-        if(a[i]*2>a[i+1]) ok=1;
+        if(a[i]*2>a[i+1]&&a[i+1]*2>a[i]) ok=1;
     }
     if(ok) cout<<"Yes\n";
     else cout<<"No\n";
