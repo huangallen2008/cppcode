@@ -86,16 +86,16 @@ void dfs(int u,int fa) {
         }
     }
     // ope(cis)
-    ope(cng[u])
+    // ope(cng[u])
     cng[u]+=isng*(g[u].size()-(fa!=-1));
-    ope(cng[u])
+    // ope(cng[u])
     for(int v:g[u]) {
         if(v==fa) continue;
         dp[u]+=(sz[u]-cng[u]-sz[v]+cng[v]+(isng)-1)*cn1[v];
-        op(u)op(v)op(dp[u])op(sz[u])op(sz[v])op(cng[u])op(cng[v])ope(isng)ope(is1[v])
+        // op(u)op(v)op(dp[u])op(sz[u])op(sz[v])op(cng[u])op(cng[v])ope(isng)ope(is1[v])
         if(is1[v]) dp[u]+=cn1[v];
         if((fa!=-1||cis-is1[v])&&mnd[u]!=1) dp[u]+=(sz[v]-cng[v]-(isng));
-        op(u)op(v)ope(dp[u])
+        // op(u)op(v)ope(dp[u])
     }
     if(g[u].size()==1) {
         mnd[u]=0;
@@ -128,9 +128,9 @@ void solve() {
     //choose !leaf as root
     REP(i,n) if(g[i].size()!=1) {
         dfs(i,-1);
-        ope(i)oparr(dp)oparr(mnd)oparr(c1)oparr(cn1)oparr(cng)oparr(sz)
+        // ope(i)oparr(dp)oparr(mnd)oparr(c1)oparr(cn1)oparr(cng)oparr(sz)
         cout<<dp[i]+an<<'\n';
-        entr
+        // entr
         break;
     }
 
