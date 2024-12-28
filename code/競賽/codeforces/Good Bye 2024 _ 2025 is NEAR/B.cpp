@@ -65,7 +65,7 @@ void solve() {
         if(l[i]==r[i]) {
             cout<<(a[l[i]]<=1);
         }else {
-            cout<<(p[r[i]]-p[l[[i]-1]]!=0);
+            cout<<(p[r[i]]-p[l[i]-1]!=0);
         }
     }
     cout<<'\n';
