@@ -60,7 +60,7 @@ void solve() {
     REP(i,n) {
         if(l[i]==r[i]) a[l[i]]++;
     }
-    REP1(i,N-1) p[i]=p[i-1]+a[i];
+    REP1(i,N-1) p[i]=p[i-1]+(a[i]==0);
     REP(i,n) {
         if(l[i]==r[i]) {
             cout<<(a[l[i]]<=1);
