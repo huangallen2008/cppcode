@@ -54,7 +54,7 @@ void solve() {
     int n,k;
     cin>>n>>k;
     int cnt=1,len=n,sum=0,an=0;
-    while(len>0) {
+    while(len>=k) {
         if(len&1) {
             int val=len+1>>1;
             an+=val*cnt+sum;
