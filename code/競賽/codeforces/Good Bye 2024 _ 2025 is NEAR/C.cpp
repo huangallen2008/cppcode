@@ -55,7 +55,7 @@ void solve() {
     cin>>n>>k;
     int cnt=1,len=n,sum=0,an=0;
     while(len>=k) {
-        op(cnt)op(len)op(sum)ope(an)
+        // op(cnt)op(len)op(sum)ope(an)
         if(len&1) {
             int val=len+1>>1;
             an+=val*cnt+sum;
