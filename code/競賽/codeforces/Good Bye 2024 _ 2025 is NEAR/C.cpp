@@ -59,11 +59,11 @@ void solve() {
         if(len&1) {
             int val=len+1>>1;
             an+=val*cnt+sum;
-            sum=sum*2+cnt*(len>>1);
+            sum=sum*2+cnt*(len+1>>1);
             cnt<<=1;
             len>>=1;
         }else {
-            sum=sum*2+cnt*(len>>1);
+            sum=sum*2+cnt*(len+1>>1);
             cnt<<=1;
             len>>=1;
         }
