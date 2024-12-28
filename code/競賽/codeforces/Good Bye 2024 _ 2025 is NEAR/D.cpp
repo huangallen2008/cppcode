@@ -73,7 +73,7 @@ void solve() {
     sort(ALL(d));
     int an=1;
     REP(i,n) an=(an*min(c[i],d[i]))%mod;
-    cout<<an<<'\n';
+    cout<<an<<' ';
     REP(i,q){
         int o,x;
         cin>>o>>x,x--;
@@ -92,8 +92,9 @@ void solve() {
             d[id]++;
             an=(an*min(c[id],d[id]))%mod;
         }
-        cout<<an<<'\n';
+        cout<<an<<' ';
     }
+    cout<<'\n';
 }
 signed main() {
     IOS();
