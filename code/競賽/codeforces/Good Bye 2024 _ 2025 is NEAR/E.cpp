@@ -126,9 +126,9 @@ void solve() {
     //choose !leaf as root
     REP(i,n) if(g[i].size()!=1) {
         dfs(i,-1);
-        // ope(i)oparr(dp)oparr(mnd)oparr(c1)oparr(cn1)oparr(cng)oparr(sz)
+        ope(i)oparr(dp)oparr(mnd)oparr(c1)oparr(cn1)oparr(cng)oparr(sz)
         cout<<dp[i]+an<<'\n';
-        // entr
+        entr
         break;
     }
 
