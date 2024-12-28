@@ -2,8 +2,12 @@
 using namespace std;
 
 signed main() {
-    // freopen("input.txt",'r',stdin);
-    // freopen("output.txt",'w',stdout);
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    .
+    .
+    .
+}
     int n, k;
     cin >> n >> k;
     vector<pair<int, int>> ve;
