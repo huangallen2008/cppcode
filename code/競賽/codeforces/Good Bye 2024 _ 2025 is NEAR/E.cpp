@@ -63,8 +63,9 @@ int inv(int x) {
     return pw(x,mod-2);
 }
 Graph g;
-Vi c1,cn1,mnd,dp,sz,cng;
+Vi c1,cn1,mnd,dp,sz,cng,is1;
 void dfs(int u,int fa) {
+    int cis=0;
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
@@ -74,6 +75,7 @@ void dfs(int u,int fa) {
         chmin(mnd[u],mnd[v]+1);
         c1[u]+=c1[v];
         cn1[u]+=cn1[v];
+        cis+=is1[v];
     }
 
     bool isng=1;
@@ -86,13 +88,15 @@ void dfs(int u,int fa) {
     cng[u]+=isng*(g[u].size()-1);
     for(int v:g[u]) {
         if(v==fa) continue;
-        dp[u]+=(sz[u]-cng[u]-sz[v]+cng[v]-(!isng))*cn1[v];
+        dp[u]+=(sz[u]-cng[u]-sz[v]+cng[v]+(isng))*cn1[v];
+        if(is1[v]) dp[u]+=cn1[v];
+        if(cis-is1[v]&&mnd[u]!=1) dp[u]+=(sz[v]-cng[v]-(isng));
     }
     if(g[u].size()==1) {
         mnd[u]=0;
         sz[u]=0;
     }else {
-        if(mnd[u]==1) c1[u]++;
+        if(mnd[u]==1) c1[u]++,is1[u]=1;
         else cn1[u]++;
     }
 }
@@ -100,7 +104,7 @@ void solve() {
     int n;
     cin>>n;
     g=Graph(n);
-    c1=cn1=dp=cng=Vi(n);
+    c1=cn1=dp=cng=is1=Vi(n);
     mnd=Vi(n,inf);
     sz=Vi(n,1);
     REP(i,n-1) {
