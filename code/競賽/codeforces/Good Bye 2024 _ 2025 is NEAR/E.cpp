@@ -88,7 +88,7 @@ void dfs(int u,int fa) {
     cng[u]+=isng*(g[u].size()-1);
     for(int v:g[u]) {
         if(v==fa) continue;
-        dp[u]+=(sz[u]-cng[u]-sz[v]+cng[v]+(isng)-1)*cn1[v];
+        dp[u]+=(sz[u]-cng[u]-sz[v]+cng[v]+(isng))*cn1[v];
         op(u)op(v)op(dp[u])op(sz[u])op(sz[v])op(cng[u])op(cng[v])ope(isng)
         if(is1[v]) dp[u]+=cn1[v];
         if(cis-is1[v]&&mnd[u]!=1) dp[u]+=(sz[v]-cng[v]-(isng));
