@@ -76,7 +76,7 @@ void solve() {
     cout<<an<<'\n';
     REP(i,q){
         int o,x;
-        cin>>o>>x;
+        cin>>o>>x,x--;
         if(o==1) {
             int v=a[x];
             a[x]++;
