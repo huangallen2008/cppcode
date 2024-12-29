@@ -87,9 +87,10 @@ signed main() {
     po a[3],b[3];
     REP(i,3) cin>>a[i];
     REP(i,3) cin>>b[i];
-    auto diff=[&](po x) {
-        REP(i,3) if(x!=a[i]) return 1; 
-        REP(i,3) if(x!=b[i]) return 1; 
+    auto diff=[&](po v) {
+        op(v)op(a[0])
+        REP(i,3) if(v!=a[i]) return 1; 
+        REP(i,3) if(v!=b[i]) return 1; 
         return 0;
     };
     vector<po> an;
