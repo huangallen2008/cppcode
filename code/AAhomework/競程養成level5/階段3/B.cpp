@@ -63,7 +63,7 @@ struct po{
     po operator+(po b) { return {x+b.x,y+b.y}; }
     po operator*(ld r) { return {x*r,y*r}; }
     po operator/(ld r) { return {x/r,y/r}; }
-    bool operator==(po b) { return a==b.x&&y==b.y; }
+    bool operator==(po b) { return x==b.x&&y==b.y; }
 };
 const po infin={inf,inf};
 const po noin={inf,inf};
