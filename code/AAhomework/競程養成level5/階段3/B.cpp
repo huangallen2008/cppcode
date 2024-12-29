@@ -107,6 +107,6 @@ signed main() {
     });
     cout<<an.size()<<'\n';
     cout<<fixed<<setprecision(10);
-    for(auto x:an) cout<<x<<'\n';
+    for(auto v:an) cout<<v.x<<' '<<x.y<<'\n';
     return 0;
 }
