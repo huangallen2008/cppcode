@@ -95,7 +95,7 @@ signed main() {
                 cout<<"infinite\n";
                 return 0;
             }
-            if(ret!=noin) an.pb(ret);
+            // if(ret!=noin) an.pb(ret);
         }
     }
     return 0;
