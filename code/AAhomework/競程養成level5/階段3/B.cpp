@@ -100,5 +100,11 @@ signed main() {
             if(ret!=noin) an.pb(ret);
         }
     }
+    sort(ALL(an),[&](po a,po b){
+        return a.f==b.f?a.s>b.s:a.f>b.f;
+    });
+    cout<<an.szie()<<'\n';
+    cout<<fixed<<setprecision(10);
+    for(auto x:an) cout<<x<<'\n';
     return 0;
 }
