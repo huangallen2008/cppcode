@@ -112,8 +112,13 @@ signed main() {
     sort(ALL(an),[&](po a,po b){
         return fabs(a.x-b.x)<eps?a.y<b.y:a.x<b.x;
     });
+    vector<po> ans;
+    REP(i,an.size()) {
+        if(i&&an[i]==an[i-1]) continue;
+        ans.pb(an);
+    }
     cout<<fixed<<setprecision(15);
-    cout<<an.size()<<'\n';
-    for(auto v:an) cout<<v.x<<' '<<v.y<<'\n';
+    cout<<ans.size()<<'\n';
+    for(auto v:ans) cout<<v.x<<' '<<v.y<<'\n';
     return 0;
 }
