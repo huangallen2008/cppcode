@@ -92,6 +92,10 @@ signed main() {
         REP(i,3) if(v==b[i]) return 0; 
         return 1;
     };
+    if(cro(a[1]-a[0],a[2]-a[0])==0||cro(b[1]-b[0],b[2]-b[0])==0) {
+        cout<<"0\n";
+        return 0;
+    }
     vector<po> an;
     REP(i,3) {
         REP(j,3) {
