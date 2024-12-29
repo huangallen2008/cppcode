@@ -76,6 +76,7 @@ ld dot(po a,po b) { return a.x*b.x+a.y*b.y; }
 ld cro(po a,po b) { return a.x*b.y-a.y*b.x; }
 po inter_po(po a,po b,po c,po d) {
     ld x=cro(c-a,d-a),y=cro(d-b,c-b);
+    op(x)op(y)
     if(x==0&&y==0) return infin;
     if(x+y==0) return noin;
     return (a*y+b*x)/(x+y);
