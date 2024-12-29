@@ -55,6 +55,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 const ld eps=1e-12;
+bool operator==(ld a,ld b) {
+    return 1;
+}
 struct po{
     ld x,y;
     po(){}
@@ -106,7 +109,7 @@ signed main() {
         }
     }
     sort(ALL(an),[&](po a,po b){
-        return fabs(a.x-b.x)<eps?a.y<b.y:a.x<b.x;
+        return a.x==b.x?a.y<b.y:a.x<b.x;
     });
     cout<<fixed<<setprecision(10);
     cout<<an.size()<<'\n';
