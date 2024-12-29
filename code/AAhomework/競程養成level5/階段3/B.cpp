@@ -87,6 +87,11 @@ signed main() {
     po a[3],b[3];
     REP(i,3) cin>>a[i];
     REP(i,3) cin>>b[i];
+    auto diff=[&](po x) {
+        REP(i,3) if(x!=a[i]) return 1; 
+        REP(i,3) if(x!=b[i]) return 1; 
+        return 0;
+    };
     vector<po> an;
     REP(i,3) {
         REP(j,3) {
@@ -99,7 +104,7 @@ signed main() {
                 cout<<"infinite\n";
                 return 0;
             }
-            if(ret!=noin) an.pb(ret);
+            if(ret!=noin&&diff(ret)) an.pb(ret);
         }
     }
     sort(ALL(an),[&](po a,po b){
