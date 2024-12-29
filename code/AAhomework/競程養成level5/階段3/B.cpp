@@ -93,7 +93,7 @@ signed main() {
             po p2=b[i],v2=b[(i+2)%3]-b[(i+1)%3];
             po ret=inter_po(p1-v1*maxv,p1+v1*maxv,p2-v2*maxv,p2+v2*maxv);
             if(ret==infin) {
-                op(i)ope(j)
+                op(i)op(j)op(p1)op(v1)op(p2)op(v2)
                 cout<<"infinite\n";
                 return 0;
             }
