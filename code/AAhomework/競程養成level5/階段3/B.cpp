@@ -61,6 +61,7 @@ struct po{
     po(pdd p) { x=p.f,y=p.s; }
     po(ld f,ld s) { x=f,y=s; }
     po operator-(po b) { return {x-b.x,y-b.y}; }
+    po operator+(po b) { return {x+b.x,y+b.y}; }
     po operator*(ld r) { return {x*r,y*r}; }
     po operator/(ld r) { return {x/r,y/r}; }
     bool operator==(po b) { return a==b.x&&y==b.y; }
