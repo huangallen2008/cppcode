@@ -55,9 +55,6 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 const ld eps=1e-12;
-bool operator==(ld a,ld b) {
-    return 1;
-}
 struct po{
     ld x,y;
     po(){}
@@ -67,7 +64,7 @@ struct po{
     po operator+(po b) { return {x+b.x,y+b.y}; }
     po operator*(ld r) { return {x*r,y*r}; }
     po operator/(ld r) { return {x/r,y/r}; }
-    bool operator==(po b) { return x==b.x&&y==b.y; }
+    bool operator==(po b) { return fabs(x-b.x)<eps&&fabs(y-b.y)<eps; }
     bool operator!=(po b) { return !(b==*this); }
 };
 const po infin={inf,inf};
