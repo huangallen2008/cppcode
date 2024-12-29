@@ -107,8 +107,8 @@ signed main() {
     sort(ALL(an),[&](po a,po b){
         return a.x==b.x?a.y>b.y:a.x>b.x;
     });
-    cout<<an.size()<<'\n';
     cout<<fixed<<setprecision(10);
+    cout<<an.size()<<'\n';
     for(auto v:an) cout<<v.x<<' '<<v.y<<'\n';
     return 0;
 }
