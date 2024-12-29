@@ -77,8 +77,8 @@ ld dot(po a,po b) { return a.x*b.x+a.y*b.y; }
 ld cro(po a,po b) { return a.x*b.y-a.y*b.x; }
 po inter_po(po a,po b,po c,po d) {
     ld x=cro(c-a,d-a),y=cro(d-b,c-b);
-    if(x==0&&y==0) return infin;
-    if(x+y==0) return noin;
+    if(fabs(x)<eps&&fabs(y)<eps) return infin;
+    if(fabs(x+y)<eps) return noin;
     return (a*y+b*x)/(x+y);
 }
 
@@ -112,7 +112,7 @@ signed main() {
     sort(ALL(an),[&](po a,po b){
         return fabs(a.x-b.x)<eps?a.y<b.y:a.x<b.x;
     });
-    cout<<fixed<<setprecision(10);
+    cout<<fixed<<setprecision(15);
     cout<<an.size()<<'\n';
     for(auto v:an) cout<<v.x<<' '<<v.y<<'\n';
     return 0;
