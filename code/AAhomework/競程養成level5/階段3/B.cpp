@@ -115,7 +115,7 @@ signed main() {
     vector<po> ans;
     REP(i,an.size()) {
         if(i&&an[i]==an[i-1]) continue;
-        ans.pb(an);
+        ans.pb(an[i]);
     }
     cout<<fixed<<setprecision(15);
     cout<<ans.size()<<'\n';
