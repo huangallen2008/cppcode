@@ -88,7 +88,7 @@ signed main() {
     REP(i,3) cin>>a[i];
     REP(i,3) cin>>b[i];
     auto diff=[&](po v) {
-        op(v)op(a[0])
+        op(v)op(b[0])
         REP(i,3) if(v!=a[i]) return 1; 
         REP(i,3) if(v!=b[i]) return 1; 
         return 0;
