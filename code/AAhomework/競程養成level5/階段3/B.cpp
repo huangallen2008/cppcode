@@ -77,7 +77,6 @@ ld cro(po a,po b) { return a.x*b.y-a.y*b.x; }
 po inter_po(po a,po b,po c,po d) {
     ld x=cro(c-a,d-a),y=cro(d-b,c-b);
     if(x==0&&y==0) return infin;
-    op(x)ope(y)
     if(x+y==0) return noin;
     return (a*y+b*x)/(x+y);
 }
@@ -97,10 +96,8 @@ signed main() {
         REP(j,3) {
             po p1=a[i],v1=a[(i+2)%3]-a[(i+1)%3];
             po p2=b[j],v2=b[(j+2)%3]-b[(j+1)%3];
-            op(p1)op(v1)op(p2)ope(v2)
             po ret=inter_po(p1-v1*maxv,p1+v1*maxv,p2-v2*maxv,p2+v2*maxv);
             if(ret==infin) {
-                op(i)op(j)op(p1)op(v1)op(p2)op(v2)
                 cout<<"infinite\n";
                 return 0;
             }
