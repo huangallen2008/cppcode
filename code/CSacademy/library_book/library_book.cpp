@@ -70,17 +70,14 @@ signed main() {
         REP(j,m+1) {
             if(!i&&!j) continue;
             if(i) {
-                op(i)op(j)op("1")ope(max(dp[i-1][j],a[i].f)+a[i].s);
                 chmin(dp0[i][j],max(dp0[i-1][j],a[i].f)+a[i].s);
                 chmin(dp0[i][j],max(dp1[i-1][j],a[i].f)+a[i].s);
             }
             if(j) {
-                op(i)op(j)op("2")ope(max(dp[i][j-1],b[j].f+b[j].s));
                 chmin(dp1[i][j],max(dp0[i][j-1],b[j].f)+b[j].s);
                 chmin(dp1[i][j],max(dp1[i][j-1],b[j].f+b[j].s));
             }
         }
-        // op(i)oparr(dp[i])
     }
     cout<<min(dp0[n][m],dp1[n][m])<<'\n';
     return 0;
