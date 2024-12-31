@@ -57,22 +57,31 @@ signed main() {
     REP1(i,m) cin>>b[i].f>>b[i].s;
     sort(1+ALL(a));
     sort(1+ALL(b));
-    vector<Vi> dp(n+1,Vi(m+1,inf));
-    dp[0][0]=0;
+    Vpii t;
+    int mx=0;
+    RREP(i,b.size()) if(b[i].s>mx) mx=b[i].s,t.pb(b[i]); 
+    t.pb({0,0});
+    reverse(ALL(t));b=t;
+    vector<Vi> dp0(n+1,Vi(m+1,inf));
+    vector<Vi> dp1(n+1,Vi(m+1,inf));
+    dp0[0][0]=0;
+    dp1[0][0]=0;
     REP(i,n+1) {
         REP(j,m+1) {
             if(!i&&!j) continue;
             if(i) {
                 op(i)op(j)op("1")ope(max(dp[i-1][j],a[i].f)+a[i].s);
-                chmin(dp[i][j],max(dp[i-1][j],a[i].f)+a[i].s);
+                chmin(dp0[i][j],max(dp0[i-1][j],a[i].f)+a[i].s);
+                chmin(dp0[i][j],max(dp1[i-1][j],a[i].f)+a[i].s);
             }
             if(j) {
                 op(i)op(j)op("2")ope(max(dp[i][j-1],b[j].f+b[j].s));
-                chmin(dp[i][j],max(dp[i][j-1],b[j].f+b[j].s));
+                chmin(dp1[i][j],max(dp0[i][j-1],b[j].f)+b[j].s);
+                chmin(dp1[i][j],max(dp1[i][j-1],b[j].f+b[j].s));
             }
         }
-        op(i)oparr(dp[i])
+        // op(i)oparr(dp[i])
     }
-    cout<<dp[n][m]<<'\n';
+    cout<<min(dp0[n][m],dp1[n][m])<<'\n';
     return 0;
 }
