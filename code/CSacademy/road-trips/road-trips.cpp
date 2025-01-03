@@ -133,6 +133,7 @@ signed main() {
         REP(j,cl) {
             if(~i>>j&1) {
                 chmax(dp[i^(1<<j)],dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
+                op(dp[i^(1<<j)])ope(dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
             } 
         }
     }
