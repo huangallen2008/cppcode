@@ -141,8 +141,7 @@ signed main() {
             chmax(dp[r+1][i],dp[r][i]);
         }
     }
-    oparr(dp)
-    int an=*max_element(ALL(dp));
+    int an=*max_element(ALL(dp[m-1]));
     cout<<an<<'\n';
     return 0;
 }
