@@ -126,6 +126,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     Vi dp(1<<cl);
     REP(i,1<<cl) {
         int id=__builtin_popcount(i);
