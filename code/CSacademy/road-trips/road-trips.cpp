@@ -85,7 +85,7 @@ signed main() {
     };
     dfs(dfs,0,-1);
     {//st_init
-        REP(i,n) st[i][0]=i;
+        REP(i,n) st[0][i]=i;
         REP1(i,maxb-1) {
             REP(j,n) {
                 st[i][j]=st[i-1][st[i-1][j]];
