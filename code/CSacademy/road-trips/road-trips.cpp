@@ -130,7 +130,7 @@ signed main() {
     }
     oparr(leaf)oparr(c)ope(lcas[1][1])
     vector<Vi> dp(m,Vi(1<<cl));
-    REP(r,m) {
+    REP(r,m-1) {
         REP(i,1<<cl) {
             op(r)ope(i)
             int id=r;
