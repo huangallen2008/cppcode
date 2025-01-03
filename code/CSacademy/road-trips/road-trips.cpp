@@ -123,6 +123,7 @@ signed main() {
                 int l=i^(i&-i);
                 int id=__lg(i&-i);
                 lcas[i][j]=lor(lcas[l][j],lca(leaf[j],leaf[id]));
+                op(i)op(j)ope(lcas[i][j])
             }
         }
     }
