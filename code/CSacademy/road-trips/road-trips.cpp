@@ -47,13 +47,14 @@ ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen<<' ';
 template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 const int mod=998244353;
-const int maxn=5;
-const int maxb=64;
+const int maxn=1e5+5;
+const int maxb=20;
 const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int st[maxb][maxn];
 signed main() {
     IOS();
     int n,m;
@@ -68,15 +69,50 @@ signed main() {
         g[u].pb({v,w});
         g[v].pb({u,w});
     }
-    Vi dep(n);
+    Vi dep(n),par(n),lev(n);//par[0]=0;
+    Vi leaf;
     auto dfs=[&](auto dfs,int u,int fa)->void{
         for(auto [v,w]:g[u]) {
             if(v==fa) continue;
+            par[v]=u;
             dep[v]=dep[u]+w;
+            lev[v]=lev[u]+1;
             dfs(dfs,v,u);
+        }
+        if(g[u].size()==1) {
+            leaf.pb(u);
         }
     };
     dfs(dfs,0,-1);
-    oparr(dep)
+    {//st_init
+        REP(i,n) st[i][0]=i;
+        REP1(i,maxb-1) {
+            REP(j,n) {
+                st[j][i]=st[j-1][st[j-1][i]];
+            }
+        }
+    }
+    auto lca=[&](int a,int b) {
+        if(lev[a]>lev[b]) swap(a,b);
+        int k=lev[b]-lev[a];
+        REP(i,maxb) if(k>>i&1) b=st[i][b];
+        RREP(i,maxb) {
+            if(st[i][a]!=st[i][b]) {
+                a=st[i][a];
+                b=st[i][b];
+            }
+        }
+        if(a!=b) a=st[0][a];
+        return a;
+    };
+    int cl=leaf.size();
+    vector<Vi> lcas(1<<cl,Vi(cl));
+    REP(i,1<<cl) {
+        REP(j,cl) {
+            if(i) {
+                int l=i^(i&-i);
+            }
+        }
+    }
     return 0;
 }
