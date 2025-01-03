@@ -69,7 +69,7 @@ signed main() {
         g[v].pb({u,w});
     }
     Vi dep(n);
-    auto dfs=[&](auto dfs,int u,int fa) {
+    auto dfs=[&](auto dfs,int u,int fa)->viod {
         for(auto [v,w]:g[u]) {
             if(v==fa) continue;
             dep[v]=dep[u]+w;
