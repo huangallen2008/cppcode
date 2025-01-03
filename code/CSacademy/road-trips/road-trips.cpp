@@ -105,14 +105,37 @@ signed main() {
         if(a!=b) a=st[0][a];
         return a;
     };
+    auto lor=[&](int a,int b) {
+        return lev[a]>lev[b]?a:b;
+    };
     int cl=leaf.size();
+    if(m>cl) {
+        reverse(ALL(c));
+        int xx=c.back();
+        while(c.size()>cl-1) c.pop_back();
+        c.pb(xx);
+        reverse(ALL(c));
+    }
     vector<Vi> lcas(1<<cl,Vi(cl));
     REP(i,1<<cl) {
         REP(j,cl) {
             if(i) {
                 int l=i^(i&-i);
+                int id=__lg(i&-i);
+                lcas[i][j]=lor(lcas[l][j],lca(leaf[j],leaf[id]));
             }
         }
     }
+    Vi dp(1<<cl);
+    REP(i,1<<cl) {
+        int id=__builtin_popcount(i);
+        REP(j,cl) {
+            if(~i>>j&1) {
+                chmax(dp[i^(1<<j)],dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
+            } 
+        }
+    }
+    int an=*max_element(ALL(dp));
+    cout<<an<<'\n';
     return 0;
 }
