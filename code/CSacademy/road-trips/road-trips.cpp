@@ -126,6 +126,7 @@ signed main() {
             }
         }
     }
+    oparr(leaf)
     Vi dp(1<<cl);
     REP(i,1<<cl) {
         int id=__builtin_popcount(i);
