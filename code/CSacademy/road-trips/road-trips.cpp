@@ -116,6 +116,7 @@ signed main() {
         c.pb(xx);
         reverse(ALL(c));
     }
+    ope(cl)oparr(leaf)oparr(c)
     vector<Vi> lcas(1<<cl,Vi(cl));
     REP(i,1<<cl) {
         REP(j,cl) {
