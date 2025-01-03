@@ -132,6 +132,7 @@ signed main() {
     vector<Vi> dp(m,Vi(1<<cl));
     REP(r,m) {
         REP(i,1<<cl) {
+            ope("o")
             int id=r;
             REP(j,cl) {
                 if(~i>>j&1) {
