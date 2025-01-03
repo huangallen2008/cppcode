@@ -129,20 +129,21 @@ signed main() {
         }
     }
     oparr(leaf)oparr(c)ope(lcas[1][1])
-    vector<Vi> dp(cl,Vi(1<<cl));
+    Vi dp(1<<cl);
     REP(r,cl-1) {
+        Vi ndp=dp;
         REP(i,1<<cl) {
             op(r)ope(i)
             int id=r;
             REP(j,cl) {
                 if(~i>>j&1) {
-                    chmax(dp[r+1][i^(1<<j)],dp[r][i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
+                    chmax(ndp[i^(1<<j)],dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
                 } 
             }
-            chmax(dp[r+1][i],dp[r][i]);
         }
+        swap(dp,ndp);
     }
-    int an=*max_element(ALL(dp[m-1]));
+    int an=*max_element(ALL(dp));
     cout<<an<<'\n';
     return 0;
 }
