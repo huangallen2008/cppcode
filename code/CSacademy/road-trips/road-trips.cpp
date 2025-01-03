@@ -129,7 +129,7 @@ signed main() {
         }
     }
     oparr(leaf)oparr(c)ope(lcas[1][1])
-    Vi dp(1<<cl);
+    Vi dp(1<<cl,-inf);dp[0]=0;
     REP(r,cl) {
         Vi ndp=dp;
         REP(i,1<<cl) {
