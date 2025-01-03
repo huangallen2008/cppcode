@@ -133,7 +133,6 @@ signed main() {
     REP(r,cl) {
         Vi ndp=dp;
         REP(i,1<<cl) {
-            op(r)ope(i)
             int id=r;
             REP(j,cl) {
                 if(~i>>j&1) {
@@ -142,6 +141,7 @@ signed main() {
             }
         }
         swap(dp,ndp);
+        op(r)oparr(dp)
     }
     int an=*max_element(ALL(dp));
     cout<<an<<'\n';
