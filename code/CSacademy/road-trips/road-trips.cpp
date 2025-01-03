@@ -92,7 +92,6 @@ signed main() {
             }
         }
     }
-    ope("ok")
     auto lca=[&](int a,int b) {
         if(lev[a]>lev[b]) swap(a,b);
         int k=lev[b]-lev[a];
@@ -136,6 +135,7 @@ signed main() {
             } 
         }
     }
+    oparr(dp)
     int an=*max_element(ALL(dp));
     cout<<an<<'\n';
     return 0;
