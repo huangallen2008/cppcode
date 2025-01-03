@@ -129,14 +129,16 @@ signed main() {
         }
     }
     oparr(leaf)oparr(c)ope(lcas[1][1])
-    Vi dp(1<<cl);
-    REP(i,1<<cl) {
-        int id=__builtin_popcount(i);
-        REP(j,cl) {
-            if(~i>>j&1) {
-                chmax(dp[i^(1<<j)],dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
-                op(i)op(j)op(dp[i^(1<<j)])ope(dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
-            } 
+    vector<Vi> dp(m,Vi(1<<cl));
+    REP(r,m) {
+        REP(i,1<<cl) {
+            int id=r;
+            REP(j,cl) {
+                if(~i>>j&1) {
+                    chmax(dp[r+1][i^(1<<j)],dp[r][i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
+                } 
+            }
+            chmax(dp[r+1][i],dp[r][i]);
         }
     }
     oparr(dp)
