@@ -84,7 +84,6 @@ signed main() {
         }
     };
     dfs(dfs,0,-1);
-    ope("ok")
     {//st_init
         REP(i,n) st[i][0]=i;
         REP1(i,maxb-1) {
@@ -93,6 +92,7 @@ signed main() {
             }
         }
     }
+    ope("ok")
     auto lca=[&](int a,int b) {
         if(lev[a]>lev[b]) swap(a,b);
         int k=lev[b]-lev[a];
