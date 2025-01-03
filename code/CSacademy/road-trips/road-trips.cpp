@@ -116,7 +116,6 @@ signed main() {
         c.pb(xx);
         reverse(ALL(c));
     }
-    ope(lca(4,5))
     vector<Vi> lcas(1<<cl,Vi(cl));
     REP(i,1<<cl) {
         REP(j,cl) {
@@ -124,11 +123,11 @@ signed main() {
                 int l=i^(i&-i);
                 int id=__lg(i&-i);
                 lcas[i][j]=lor(lcas[l][j],lca(leaf[j],leaf[id]));
-                op(i)op(j)ope(lcas[i][j])
+                // op(i)op(j)ope(lcas[i][j])
             }
         }
     }
-    oparr(leaf)oparr(c)ope(lcas[1][1])
+    // oparr(leaf)oparr(c)ope(lcas[1][1])
     Vi dp(1<<cl,-inf);dp[0]=0;
     REP(r,cl) {
         Vi ndp(1<<cl,-inf);
@@ -138,12 +137,12 @@ signed main() {
             REP(j,cl) {
                 if(~i>>j&1) {
                     chmax(ndp[i^(1<<j)],dp[i]+c[id]*(dep[leaf[j]]-dep[lcas[i][j]]));
-                    op(r)op(i)op(j)ope(ndp[i^(1<<j)])
+                    // op(r)op(i)op(j)ope(ndp[i^(1<<j)])
                 } 
             }
         }
         swap(dp,ndp);
-        op(r)oparr(dp)
+        // op(r)oparr(dp)
     }
     int an=*max_element(ALL(dp));
     cout<<an<<'\n';
