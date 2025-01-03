@@ -75,7 +75,8 @@ signed main() {
             dep[v]=dep[u]+w;
             dfs(dfs,v,u);
         }
-    }(dfs,0,-1);
+    };
+    dfs(dfs,0,-1);
     oparr(dep)
     return 0;
 }
