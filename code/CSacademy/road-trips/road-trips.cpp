@@ -79,7 +79,7 @@ signed main() {
             lev[v]=lev[u]+1;
             dfs(dfs,v,u);
         }
-        if(g[u].size()==1) {
+        if(g[u].size()==1&&fa!=-1) {
             leaf.pb(u);
         }
     };
@@ -116,7 +116,6 @@ signed main() {
         c.pb(xx);
         reverse(ALL(c));
     }
-    ope(cl)oparr(leaf)oparr(c)
     vector<Vi> lcas(1<<cl,Vi(cl));
     REP(i,1<<cl) {
         REP(j,cl) {
