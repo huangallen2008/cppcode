@@ -108,6 +108,7 @@ signed main() {
     auto lor=[&](int a,int b) {
         return lev[a]>lev[b]?a:b;
     };
+    ope("ok")
     int cl=leaf.size();
     if(m>cl) {
         reverse(ALL(c));
@@ -126,7 +127,6 @@ signed main() {
             }
         }
     }
-    ope("ok")
     Vi dp(1<<cl);
     REP(i,1<<cl) {
         int id=__builtin_popcount(i);
