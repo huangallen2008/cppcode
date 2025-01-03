@@ -88,7 +88,7 @@ signed main() {
         REP(i,n) st[i][0]=i;
         REP1(i,maxb-1) {
             REP(j,n) {
-                st[j][i]=st[j-1][st[j-1][i]];
+                st[i][j]=st[i-1][st[i-1][j]];
             }
         }
     }
