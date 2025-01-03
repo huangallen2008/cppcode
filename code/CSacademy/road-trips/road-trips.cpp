@@ -83,6 +83,7 @@ signed main() {
             leaf.pb(u);
         }
     };
+    ope("ok")
     dfs(dfs,0,-1);
     {//st_init
         REP(i,n) st[i][0]=i;
@@ -108,7 +109,6 @@ signed main() {
     auto lor=[&](int a,int b) {
         return lev[a]>lev[b]?a:b;
     };
-    ope("ok")
     int cl=leaf.size();
     if(m>cl) {
         reverse(ALL(c));
