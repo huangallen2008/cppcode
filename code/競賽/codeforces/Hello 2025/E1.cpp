@@ -89,7 +89,7 @@ void solve() {
     REP(i,q) {
         int u,v,k;
         cin>>u>>v>>k,u--,v--;
-        cout<<an[u][v][min(k+1,n-1)]<<' ';
+        cout<<an[u][v][min(k,n-1)]<<' ';
     }
     cout<<'\n';
     // entr
