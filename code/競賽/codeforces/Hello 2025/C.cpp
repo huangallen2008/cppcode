@@ -66,7 +66,7 @@ void solve() {
     ope(bi=98)
     int l,r;
     cin>>l>>r;
-    int k=(l^r),v=k&-k;
+    int k=(l^r),v=1<<__lg(k);
     ope(bi=k)
     int bb=r&~(v-1);
     int a=bb-1,b=bb-1,c=bb;
