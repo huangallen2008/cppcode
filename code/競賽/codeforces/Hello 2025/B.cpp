@@ -70,7 +70,7 @@ void solve() {
     sort(ALL(a));
     oparr(a)
     REP(i,n) {
-        if(sum+a[i]>n) {
+        if(sum+a[i]>m) {
             cout<<n-i<<'\n';entr
             return;
         }
