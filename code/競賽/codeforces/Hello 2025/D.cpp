@@ -114,7 +114,15 @@ void solve() {
     cout<<max(seg1.qu(),seg2.qu())<<'\n';
     REP(i,q) {
         int u,v;
-        cin>>u>>v;
+        cin>>u>>v,u--;
+        a[u]=v;
+        if(u) {
+            seg1.ud(u-1,a[u]-a[u-1]-1);
+            seg2.ud(u-1,a[u-1]-a[u]-1);
+        }
+        seg1.ud(u,a[u+1]-a[u]-1);
+        seg2.ud(u,a[u]-a[u+1]-1);
+        cout<<max(seg1.qu(),seg2.qu())<<'\n';
     }
 }
 signed main() {
