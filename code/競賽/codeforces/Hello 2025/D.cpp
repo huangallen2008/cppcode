@@ -89,7 +89,7 @@ struct SEG {
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    int qu() { return s[w].ma; }
+    int qu() { return s[0].ma; }
     // Seg _qu(int w,int l,int r,int ql,int qr) {
     //     if(ql<=l&&r<=qr) return s[w];
     //     if(ql>r||qr<l) return zr;
@@ -112,6 +112,10 @@ void solve() {
         seg2.ud(i,a[i]-a[i+1]-1);
     }
     cout<<max(seg1.qu(),seg2.qu())<<'\n';
+    REP(i,q) {
+        int u,v;
+        cin>>u>>v;
+    }
 }
 signed main() {
     IOS();
