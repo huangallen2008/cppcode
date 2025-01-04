@@ -108,7 +108,7 @@ void solve() {
     if(n==1) {
         int x;
         REP(i,q) cin>>x>>x;
-        REP(i,q) cout<<"0\n";
+        REP(i,q+1) cout<<"0\n";
         return;
     }
     seg1.init(n-1);
