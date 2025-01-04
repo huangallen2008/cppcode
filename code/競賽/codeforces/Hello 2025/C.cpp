@@ -58,8 +58,8 @@ int cal(int a,int b,int c) {
     return (a^b)+(b^c)+(c^a);
 }
 void solve() {
-    op(cal(123,121,118))
-    op(cal(123,124,125))
+    op(cal(98,85,76))
+    op(cal(96,97,98))
     // int l,r;
     // cin>>l>>r;
     // int k=(l^r),v=k&-k;
