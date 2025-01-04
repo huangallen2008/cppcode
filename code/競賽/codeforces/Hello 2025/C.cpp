@@ -54,15 +54,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int cal(int a,int b,int c) {
+    return a^b+b^c+c^a;
+}
 void solve() {
-    int l,r;
-    cin>>l>>r;
-    int k=(l^r),v=k&-k;
-    int bb=r&~(v-1);
-    int a=bb-1,b=bb-1,c=bb;
-    if(r>bb) b+=2;
-    else b--;
-    cout<<a<<' '<<b<<' '<<c<<'\n';
+    op(cal(123,121,118))
+    op(cal(123,124,125))
+    // int l,r;
+    // cin>>l>>r;
+    // int k=(l^r),v=k&-k;
+    // int bb=r&~(v-1);
+    // int a=bb-1,b=bb-1,c=bb;
+    // if(r>bb) b+=2;
+    // else b--;
+    // cout<<a<<' '<<b<<' '<<c<<'\n';
 }
 signed main() {
     IOS();
