@@ -73,6 +73,7 @@ void solve() {
             cout<<n-i<<'\n';
             return;
         }
+        sum+=a[i];
     }
     cout<<"1\n";
 }
