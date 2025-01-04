@@ -82,7 +82,7 @@ void solve() {
         REP(i,n) REP(j,n) {
             dis[i][j]=min({dis[i][j],dis[i][u]+dis[v][j],dis[i][v]+dis[u][j]});
         }
-        cout<<dis;
+        // cout<<dis;
     }
     // REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
     REP(i,n) REP(j,n) REP1(k,n-1) chmin(an[i][j][k],an[i][j][k-1]);
