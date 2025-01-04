@@ -60,14 +60,14 @@ int cal(int a,int b,int c) {
 void solve() {
     op(cal(98,85,76))
     ope(cal(96,97,98))
-    bitset<6> bb;
-    ope(bb=96)
-    ope(bb=97)
-    ope(bb=98)
+    bitset<6> bi;
+    ope(bi=96)
+    ope(bi=97)
+    ope(bi=98)
     int l,r;
     cin>>l>>r;
     int k=(l^r),v=k&-k;
-    ope(bb=k)
+    ope(bi=k)
     int bb=r&~(v-1);
     int a=bb-1,b=bb-1,c=bb;
     if(r>bb) b+=2;
