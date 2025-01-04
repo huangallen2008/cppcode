@@ -78,10 +78,10 @@ void solve() {
     for(auto [u,v,w]:es) dis[u][v]=dis[v][u]=1;
     REP(k,n) REP(i,n) REP(j,n) dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
     for(auto [u,v,w]:es) {
-        REP(i,n) REP(j,n) if(i!=j) chmin(an[i][j][dis[i][j]+1],w);
         REP(i,n) REP(j,n) {
             dis[i][j]=min({dis[i][j],dis[i][u]+dis[v][j],dis[i][v]+dis[u][j]});
         }
+        REP(i,n) REP(j,n) if(i!=j) chmin(an[i][j][dis[i][j]+1],w);
         // cout<<dis;
     }
     REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
