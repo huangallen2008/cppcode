@@ -68,10 +68,9 @@ void solve() {
     n=a.size();
     int sum=0;
     sort(ALL(a));
-    oparr(a)
     REP(i,n) {
         if(sum+a[i]>m) {
-            cout<<n-i<<'\n';entr
+            cout<<n-i<<'\n';
             return;
         }
         sum+=a[i];
