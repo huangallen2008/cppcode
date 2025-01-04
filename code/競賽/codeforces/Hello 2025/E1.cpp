@@ -82,13 +82,15 @@ void solve() {
         REP(i,n) REP(j,n) {
             dis[i][j]=min({dis[i][j],dis[i][u]+dis[v][j],dis[i][v]+dis[u][j]});
         }
+        cout<<dis;
     }
     REP(i,n) REP(j,n) REP1(k,n-1) chmin(an[i][j][k],an[i][j][k-1]);
     REP(i,q) {
         int u,v,k;
         cin>>u>>v>>k,u--,v--;
-        cout<<an[u][v][k]<<'\n';
+        cout<<an[u][v][k]<<' ';
     }
+    entr
 }
 signed main() {
     IOS();
