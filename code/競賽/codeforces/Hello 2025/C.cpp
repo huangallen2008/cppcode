@@ -60,6 +60,10 @@ int cal(int a,int b,int c) {
 void solve() {
     op(cal(98,85,76))
     op(cal(96,97,98))
+    bitset<6> bb;
+    ope(bb=96)
+    ope(bb=97)
+    ope(bb=98)
     // int l,r;
     // cin>>l>>r;
     // int k=(l^r),v=k&-k;
