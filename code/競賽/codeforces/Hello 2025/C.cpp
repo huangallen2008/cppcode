@@ -59,8 +59,10 @@ void solve() {
     cin>>l>>r;
     int k=(l^r),v=k&-k;
     int bb=r&~(v-1);
-    cout<<bb-1<<' '<<bb-1<<' '<<bb<<'\n';
-
+    int a=bb-1,b=bb-1,c=bb;
+    if(r>bb) b+=2;
+    else b--;
+    cout<<a<<' '<<b<<' '<<c<<'\n';
 }
 signed main() {
     IOS();
