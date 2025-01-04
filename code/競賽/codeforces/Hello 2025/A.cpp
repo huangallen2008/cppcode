@@ -55,7 +55,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-
+    int n,m;
+    cin>>n>>m;
+    cout<<max(n,m)+1<<'\n';
 }
 signed main() {
     IOS();
