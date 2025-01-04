@@ -64,14 +64,15 @@ void solve() {
     ope(bb=96)
     ope(bb=97)
     ope(bb=98)
-    // int l,r;
-    // cin>>l>>r;
-    // int k=(l^r),v=k&-k;
-    // int bb=r&~(v-1);
-    // int a=bb-1,b=bb-1,c=bb;
-    // if(r>bb) b+=2;
-    // else b--;
-    // cout<<a<<' '<<b<<' '<<c<<'\n';
+    int l,r;
+    cin>>l>>r;
+    int k=(l^r),v=k&-k;
+    ope(bb=k)
+    int bb=r&~(v-1);
+    int a=bb-1,b=bb-1,c=bb;
+    if(r>bb) b+=2;
+    else b--;
+    cout<<a<<' '<<b<<' '<<c<<'\n';
 }
 signed main() {
     IOS();
