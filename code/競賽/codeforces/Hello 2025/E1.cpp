@@ -84,14 +84,15 @@ void solve() {
         }
         cout<<dis;
     }
-    REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
+    // REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
     REP(i,n) REP(j,n) REP1(k,n-1) chmin(an[i][j][k],an[i][j][k-1]);
     REP(i,q) {
         int u,v,k;
         cin>>u>>v>>k,u--,v--;
-        cout<<an[u][v][k+1]<<' ';
+        cout<<an[u][v][min(k+1,n-1)]<<' ';
     }
-    entr
+    cout<<'\n';
+    // entr
 }
 signed main() {
     IOS();
