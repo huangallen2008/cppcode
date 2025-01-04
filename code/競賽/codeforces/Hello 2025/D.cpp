@@ -105,6 +105,12 @@ void solve() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    // if(n==1) {
+    //     int x;
+    //     REP(i,q) cin>>x>>x;
+    //     REP(i,q) cout<<"0\n";
+    //     return;
+    // }
     seg1.init(n-1);
     seg2.init(n-1);
     REP(i,n-1) {
