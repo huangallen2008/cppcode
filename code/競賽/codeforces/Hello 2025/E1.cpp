@@ -57,9 +57,31 @@ int rd(int l,int r) {
 struct edge {
     int u,v,w;
 };
+struct DSU {
+    int n;
+    Vi p,sz;
+    void init(int _n) {
+        n=_n;
+        p=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    bool merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return 0;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        return 1;
+    } 
+}dsu;
 void solve() {
     int n,m,q;
     cin>>n>>m>>q;
+    dsu.init(n);
     Graphw g(n);
     vector<edge> es;
     REP(i,m) {
@@ -78,6 +100,7 @@ void solve() {
     for(auto [u,v,w]:es) dis[u][v]=dis[v][u]=1;
     REP(k,n) REP(i,n) REP(j,n) dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);
     for(auto [u,v,w]:es) {
+        if(!dsu.merge(u,v)) continue;
         REP(i,n) REP(j,n) {
             dis[i][j]=min({dis[i][j],dis[i][u]+dis[v][j],dis[i][v]+dis[u][j]});
         }
