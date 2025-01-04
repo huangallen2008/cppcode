@@ -55,7 +55,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 int cal(int a,int b,int c) {
-    return a^b+b^c+c^a;
+    return (a^b)+(b^c)+(c^a);
 }
 void solve() {
     op(cal(123,121,118))
