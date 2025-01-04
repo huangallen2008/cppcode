@@ -89,7 +89,7 @@ struct SEG {
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    int qu() { return s[0].ma; }
+    int qu() { return s[1].ma; }
     // Seg _qu(int w,int l,int r,int ql,int qr) {
     //     if(ql<=l&&r<=qr) return s[w];
     //     if(ql>r||qr<l) return zr;
