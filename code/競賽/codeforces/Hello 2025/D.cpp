@@ -120,8 +120,10 @@ void solve() {
             seg1.ud(u-1,a[u]-a[u-1]-1);
             seg2.ud(u-1,a[u-1]-a[u]-1);
         }
-        seg1.ud(u,a[u+1]-a[u]-1);
-        seg2.ud(u,a[u]-a[u+1]-1);
+        if(u<n-1) {
+            seg1.ud(u,a[u+1]-a[u]-1);
+            seg2.ud(u,a[u]-a[u+1]-1);
+        }
         cout<<max(seg1.qu(),seg2.qu())<<'\n';
     }
 }
