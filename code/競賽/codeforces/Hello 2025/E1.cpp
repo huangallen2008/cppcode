@@ -84,7 +84,7 @@ void solve() {
         }
         // cout<<dis;
     }
-    // REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
+    REP(i,n) REP(j,n) {op(i)op(j)oparr(an[i][j])}
     REP(i,n) REP(j,n) REP1(k,n-1) chmin(an[i][j][k],an[i][j][k-1]);
     REP(i,q) {
         int u,v,k;
@@ -111,4 +111,17 @@ signed main() {
 3 4 1
 1 4 2
 2 3 1
+
+1
+6 7 3
+1 2 10
+2 3 3
+3 4 9
+4 5 2
+5 6 1
+2 4 10
+4 6 10
+1 6 3
+1 6 2
+2 4 1
 */
