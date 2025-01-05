@@ -72,7 +72,7 @@ signed main() {
     dp[0][0]=0;
     REP1(i,k) {
         REP1(j,n) {
-            REP(l,j) chmin(dp[i][j],dp[i-1][l]+cost(l+1,j));
+            REP(l,j) chmin(dp[i][j],dp[i-1][l]+cc(l+1,j));
         }
     }
     REP1(i,k) cout<<dp[i][n]<<' ';
