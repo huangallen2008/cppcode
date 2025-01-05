@@ -65,15 +65,10 @@ signed main() {
     auto cc=[&](int l,int r) {
         int med=a[l+r>>1];
         int id=l+r>>1;
-        op(l)op(r)op(id)ope(med)
         return p[r]-p[id-1]-(r-id+1)*med+(id-l)*med-(p[id-1]-p[l-1]);
     } ;
     Vi cost(n+1);
     for(int i=k;i<=n;i++) cost[i]=cc(i-k+1,i);
-    oparr(cost)
     Vi d1(n+1,inf),d2(n+1,inf);
     for(int i=k;i<=n;i++) d1[i]=min(d1[i-1],cost[i]);
-    for(int i=k;i<=n;i++) d2[i]=min(d2[i-1],d1[i-k]+cost[i]);
-    cout<<d2[n]<<'\n';
-    return 0;
-}
+    for(int i=k;i<=n;i++) d2[i]=min(d2[i-1],d1[i-k]+cos
