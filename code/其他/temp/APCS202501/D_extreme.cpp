@@ -77,6 +77,7 @@ signed main() {
     }
     Vi dif(k);
     REP1(i,k-1) dif[i]=dp[i][n]-dp[i+1][n];
+    oparr(dif)
     REP1(i,k-1) if(dif[i]<dif[i+1]) {
         cout<<"NO\n";
         return 0;
