@@ -75,7 +75,12 @@ signed main() {
             REP(l,j) chmin(dp[i][j],dp[i-1][l]+cc(l+1,j));
         }
     }
-    REP1(i,k) cout<<dp[i][n]<<' ';
-    cout<<'\n';
+    Vi dif(k);
+    REP1(i,k-1) dif[i]=dp[i][n]-dp[i+1][n];
+    REP1(i,k-1) if(dif[i]<dif[i+1]) {
+        cout<<"NO\n";
+        return 0;
+    }
+    cout<<"YES"<<'\n';
     return 0;
 }
