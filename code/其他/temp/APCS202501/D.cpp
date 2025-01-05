@@ -65,6 +65,7 @@ signed main() {
     auto cc=[&](int l,int r) {
         int med=a[l+r>>1];
         int id=l+r>>1;
+        op(l)op(r)op(id)ope(med)
         return p[r]-p[id]-(r-id+1)*med+(id-l)*med-(p[id-1]-p[l-1]);
     } ;
     Vi cost(n+1);
