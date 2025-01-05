@@ -85,9 +85,9 @@ bool solve(int n) {
 }
 signed main() {
     IOS();
-    int T=10000;
+    int T=1000;
     while(T--) {
-        solve(rd(1,100));
+        solve(rd(1,200));
     }
     return 0;
 }
