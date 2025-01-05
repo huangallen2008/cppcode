@@ -54,12 +54,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bool solve(int n) {
+bool solve(int n,Vi a) {
     // int n;
     // cin>>n;
     int k=n;
-    Vi a(n+1),p(n+1);
-    REP1(i,n) a[i]=rd(1,1000);
+    Vi p(n+1);
+    // Vi a(n+1);
+    // REP1(i,n) a[i]=rd(1,1000);
     // REP1(i,n) cin>>a[i];
     sort(1+ALL(a));
     REP1(i,n) p[i]=p[i-1]+a[i];
@@ -85,9 +86,12 @@ bool solve(int n) {
 }
 signed main() {
     IOS();
-    int T=100000;
+    int T=pow(5,10);
     while(T--) {
-        solve(rd(1,5));
+        Vi a;
+        int tt=T;
+        REP(i,10) a.pb(tt%5),tt/=5;
+        solve(10,a);
     }
     return 0;
 }
