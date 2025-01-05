@@ -60,7 +60,8 @@ signed main() {
     cin>>n;
     int k=n;
     Vi a(n+1),p(n+1);
-    REP1(i,n) cin>>a[i];
+    REP1(i,n) a[i]=rd(1,100);
+    // REP1(i,n) cin>>a[i];
     sort(1+ALL(a));
     REP1(i,n) p[i]=p[i-1]+a[i];
     auto cc=[&](int l,int r) {
@@ -77,7 +78,6 @@ signed main() {
     }
     Vi dif(k);
     REP1(i,k-1) dif[i]=dp[i][n]-dp[i+1][n];
-    oparr(dif)
     REP1(i,k-2) if(dif[i]<dif[i+1]) {
         cout<<"NO\n";
         return 0;
