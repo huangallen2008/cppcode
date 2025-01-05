@@ -86,12 +86,13 @@ bool solve(int n,Vi a) {
 }
 signed main() {
     IOS();
-    int T=pow(5,10);
+    int n=8,val=6;
+    int T=pow(val,n);
     while(T--) {
         Vi a;
         int tt=T;
-        REP(i,10) a.pb(tt%5),tt/=5;
-        solve(10,a);
+        REP(i,n) a.pb(tt%val),tt/=val;
+        solve(n,a);
     }
     return 0;
 }
