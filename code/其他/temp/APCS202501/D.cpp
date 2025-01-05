@@ -71,4 +71,7 @@ signed main() {
     for(int i=k;i<=n;i++) cost[i]=cc(i-k+1,i);
     Vi d1(n+1,inf),d2(n+1,inf);
     for(int i=k;i<=n;i++) d1[i]=min(d1[i-1],cost[i]);
-    for(int i=k;i<=n;i++) d2[i]=min(d2[i-1],d1[i-k]+cos
+    for(int i=k;i<=n;i++) d2[i]=min(d2[i-1],d1[i-k]+cost[i]);
+    cout<<d2[n]<<'\n';
+    return 0;
+}
