@@ -54,10 +54,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
-    int n;
-    cin>>n;
+bool solve(int n) {
+    // int n;
+    // cin>>n;
     int k=n;
     Vi a(n+1),p(n+1);
     REP1(i,n) a[i]=rd(1,10);
@@ -79,9 +78,16 @@ signed main() {
     Vi dif(k);
     REP1(i,k-1) dif[i]=dp[i][n]-dp[i+1][n];
     REP1(i,k-2) if(dif[i]<dif[i+1]) {
-        cout<<"NO\n";
+        oparr(a);
         return 0;
     }
-    cout<<"YES"<<'\n';
+    return 1;
+}
+signed main() {
+    IOS();
+    int T=10000;
+    while(T--) {
+        solve(rd(1,100));
+    }
     return 0;
 }
