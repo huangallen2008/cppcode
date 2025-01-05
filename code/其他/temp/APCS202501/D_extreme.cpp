@@ -59,7 +59,7 @@ bool solve(int n) {
     // cin>>n;
     int k=n;
     Vi a(n+1),p(n+1);
-    REP1(i,n) a[i]=rd(1,10);
+    REP1(i,n) a[i]=rd(1,1000);
     // REP1(i,n) cin>>a[i];
     sort(1+ALL(a));
     REP1(i,n) p[i]=p[i-1]+a[i];
