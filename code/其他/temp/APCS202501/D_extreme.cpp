@@ -87,7 +87,7 @@ signed main() {
     IOS();
     int T=1000;
     while(T--) {
-        solve(rd(1,200));
+        solve(rd(1,5));
     }
     return 0;
 }
