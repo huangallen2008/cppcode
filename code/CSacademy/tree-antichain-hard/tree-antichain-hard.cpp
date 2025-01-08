@@ -74,7 +74,7 @@ void solve() {
         return;
     }
     Vi an;
-    REP(i,n) {
+    REP(i,n-1) {
         for(int u:s) {
             op(i)ope(u)oparr(ds)
             if(an.size()&&g[u].find(an.back())!=g[u].end()) continue;
@@ -97,6 +97,7 @@ void solve() {
             break;
         }
     }    
+    an.pb(*s.begin());
     for(int x:an) cout<<x+1<<' ';
     cout<<'\n';
 }
