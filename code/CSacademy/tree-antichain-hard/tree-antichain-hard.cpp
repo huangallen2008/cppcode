@@ -78,7 +78,7 @@ void solve() {
         for(int u:s) {
             op(i)ope(u)oparr(ds)
             if(an.size()&&g[u].find(an.back())!=g[u].end()) continue;
-            for(int v:g[u]) {
+            for(int v:g[u]) if(s.find(v)!=s.end()) {
                 ds.erase(ds.find(deg[v]));
                 ds.insert(--deg[v]);
             }
