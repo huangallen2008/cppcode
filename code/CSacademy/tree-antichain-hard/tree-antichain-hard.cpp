@@ -84,7 +84,7 @@ void solve() {
             }
             ds.erase(ds.find(deg[u]));
             oparr(ds)
-            if(*ds.rbegin()==n-i-2) {
+            if(*ds.rbegin()==n-i-2&&n-i-2>0) {
                 for(int v:g[u]) {
                     ds.erase(ds.find(deg[v]++));
                     ds.insert(deg[v]);
