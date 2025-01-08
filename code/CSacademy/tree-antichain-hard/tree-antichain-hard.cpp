@@ -93,6 +93,7 @@ void solve() {
             }
             an.pb(u);
             s.erase(u);
+            break;
         }
     }    
     for(int x:an) cout<<x+1<<' ';
