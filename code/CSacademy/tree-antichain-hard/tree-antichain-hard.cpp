@@ -106,16 +106,17 @@ void solve() {
         return;
     }
     Vi an;
+    Vi ali(n,1);
     REP(i,n-1) {
         for(int u:s) {
             if(an.size()&&g[u].find(an.back())!=g[u].end()) continue;
-            for(int v:g[u]) if(s.find(v)!=s.end()) {
+            for(int v:g[u]) if(ali[v]) {
                 ds.erase(ds.find(deg[v]));
                 ds.insert(--deg[v]);
             }
             ds.erase(ds.find(deg[u]));
             if(*ds.rbegin()==n-i-2&&n-i-2>0) {
-                for(int v:g[u]) if(s.find(v)!=s.end()){
+                for(int v:g[u]) if(ali[v]){
                     ds.erase(ds.find(deg[v]++));
                     ds.insert(deg[v]);
                 }
@@ -124,6 +125,7 @@ void solve() {
             }
             an.pb(u);
             s.erase(u);
+            ali[u]=0;
             break;
         }
     }    
