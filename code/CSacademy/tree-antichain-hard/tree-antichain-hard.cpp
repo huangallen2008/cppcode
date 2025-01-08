@@ -76,7 +76,7 @@ void solve() {
     Vi an;
     REP(i,n) {
         for(int u:s) {
-            op(i)ope(u)
+            op(i)ope(u)cout<<deg;
             if(an.size()&&g[u].find(an.back())!=g[u].end()) continue;
             for(int v:g[u]) {
                 ds.erase(ds.find(deg[v]));
