@@ -2,7 +2,7 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -54,14 +54,45 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    // PC('\n');
+}
 void solve() {
-    int n;
-    cin>>n;
+    int n=read();
+    // cin>>n;
     Vi deg(n);
     vector<set<int>> g(n);
     REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
+        int u=read()-1,v=read()-1;
+        // cin>>u>>v,u--,v--;
         deg[u]++,deg[v]++;
         g[u].insert(v);
         g[v].insert(u);
@@ -70,7 +101,8 @@ void solve() {
     multiset<int> ds;
     REP(i,n) s.insert(i),ds.insert(deg[i]);
     if(*ds.rbegin()==n-1) {
-        cout<<"-1\n";
+        out(-1),PC('\n');
+        // cout<<"-1\n";
         return;
     }
     Vi an;
@@ -96,13 +128,14 @@ void solve() {
         }
     }    
     an.pb(*s.begin());
-    for(int x:an) cout<<x+1<<' ';
-    cout<<'\n';
+    for(int x:an) out(x+1),PC(' ');//cout<<x+1<<' ';
+    // cout<<'\n';
+    PC('\n');
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
+    int T=read();
+    // cin>>T;
     while(T--) solve();
     return 0;
 }
