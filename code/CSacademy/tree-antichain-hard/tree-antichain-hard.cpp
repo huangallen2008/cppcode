@@ -124,7 +124,7 @@ void solve() {
                 continue;
             }
             for(int v:g[u]) if(ali[v]) {
-                g[u].erase(v);
+                g[v].erase(u);
             }
             an.pb(u);
             s.erase(u);
