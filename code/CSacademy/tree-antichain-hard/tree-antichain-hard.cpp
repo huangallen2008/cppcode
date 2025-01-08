@@ -123,6 +123,9 @@ void solve() {
                 ds.insert(deg[u]);
                 continue;
             }
+            for(int v:g[u]) if(ali[v]) {
+                g[u].erase(v);
+            }
             an.pb(u);
             s.erase(u);
             ali[u]=0;
