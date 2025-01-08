@@ -76,14 +76,12 @@ void solve() {
     Vi an;
     REP(i,n-1) {
         for(int u:s) {
-            op(i)ope(u)oparr(ds)
             if(an.size()&&g[u].find(an.back())!=g[u].end()) continue;
             for(int v:g[u]) if(s.find(v)!=s.end()) {
                 ds.erase(ds.find(deg[v]));
                 ds.insert(--deg[v]);
             }
             ds.erase(ds.find(deg[u]));
-            oparr(ds)
             if(*ds.rbegin()==n-i-2&&n-i-2>0) {
                 for(int v:g[u]) {
                     ds.erase(ds.find(deg[v]++));
