@@ -116,7 +116,7 @@ signed main() {
         string s=reads();
         // cin>>s;
         REP(j,m) {
-            char c=s[i];
+            char c=s[j];
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
             cout<<c<<" "<<(int)c<<'\n';
