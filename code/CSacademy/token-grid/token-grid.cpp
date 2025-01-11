@@ -108,9 +108,7 @@ signed main() {
             char c=GC;
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
-            op(c)
         }
-        entr
         GC;
     }
     Vi dp(1<<n,1);
@@ -152,7 +150,7 @@ signed main() {
     REP(i,1<<n) {
         addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
-    REP(i,n+1) out((an[i]+mod)%mod);//cout<<(an[i]+mod)%mod<<' ';
+    REP(i,n+1) out((an[i]+mod)%mod),PC(' ');//cout<<(an[i]+mod)%mod<<' ';
     cout<<'\n';
     return 0;
 }
