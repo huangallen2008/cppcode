@@ -86,7 +86,7 @@ signed main() {
         Vi nv(n,1);
         auto upd=[&](int u) {
             op(u)
-            if(now>>u) {
+            if(now>>u&1) {
                 nv[u]>>=1;
                 addmod(sum,-nv[u]);
             }else {
@@ -98,7 +98,7 @@ signed main() {
         d[0]=1;
         for(int j=1;j<1<<n;j++) {
             REP(k,n) {
-                if(j>>k) {
+                if(j>>k&1) {
                     upd(k);
                     break;
                 }
