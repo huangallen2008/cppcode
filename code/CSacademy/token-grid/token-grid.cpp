@@ -96,7 +96,7 @@ inline void out(int x) {
 }
 #define Vll vector<ll>
 int n,m;
-Vi trans(Vi v,int type=1) {
+Vll trans(Vll v,int type=1) {
     REP(i,n) {
         REP(j,1<<n) if(j>>i&1) {
             addmod(v[j],v[j^(1<<i)]*type);
