@@ -70,28 +70,48 @@ Vi merge(Vi a,Vi b) {
 signed main() {
     IOS();
     cin>>n>>m;
-    vector<Vi> a(m,Vi(26));
+    vector<Vi> a(m,Vi(n));
     REP(i,n) {
         REP(j,m) {
             char c;
             cin>>c;
-            if(c!='.') a[j][c-'a']^=(1<<i);
+            if(c!='.') a[j][i]=c-'a';
         }
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
+        int now=0,sum=n;
+        Vi nv(n,1);
+        auto ins=[&](int u) {
+            if(now>>u) {
+                nv[u]>>=1;
+                addmod(sum,-nv[u]);
+            }else {
+                addmod(sum,nv[u]);
+                nv[u]<<=1;
+            }
+            now^=1<<u;
+        };
         d[0]=1;
-        REP(c,26) for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) d[j]=1<<__builtin_popcount(j);
+        for(int j=1;j<1<<n;j++) {
+            REP(k,n) {
+                if(j-1>>k) ins(k,-1);
+                else {
+                    ins(k,1);
+                    break;
+                }
+            }
+            d[j]=sum-n+1;
+        }
         dp=merge(dp,d);
         oparr(d)oparr(dp)
     }
     dp=trans(dp,-1);
-    oparr(dp)
     Vi an(n+1);
     REP(i,1<<n) {
-        addmod(an[n-__builtin_popcount(i)],max(dp[i],0ll));
+        addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
     REP(i,n+1) cout<<an[i]<<' ';
     cout<<'\n';
