@@ -82,10 +82,11 @@ signed main() {
     int all=(1<<n)-1;
     dp[all]=1;
     REP(i,m) {
-        ope(i)
         Vi d(1<<n);
         d[0]=1;
+        ope(i)
         REP(c,26) {
+            ope(c)
             for(int j=a[j][c];j>0;j=(j-1)&a[j][c]) {
                 d[j]=1;
             }
