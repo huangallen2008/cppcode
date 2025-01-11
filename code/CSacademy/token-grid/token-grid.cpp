@@ -106,6 +106,7 @@ Vi merge(Vi a,Vi b) {
 }
 signed main() {
     IOS();
+    ope((char)13)
     n=read(),m=read();
     // cin>>n>>m;
     vector<Vi> a(m,Vi(n,-1));
