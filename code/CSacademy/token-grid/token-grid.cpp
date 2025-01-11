@@ -112,8 +112,8 @@ signed main() {
     // cin>>n>>m;
     vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
-        string s;
-        cin>>s;
+        string s=reads();
+        // cin>>s;
         REP(j,m) {
             char c=s[i];
             // cin>>c;
