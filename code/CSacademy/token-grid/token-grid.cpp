@@ -103,7 +103,11 @@ signed main() {
     oparr(dp)
     Vi an(n);
     oparr(an)
-    REP(i,1<<n) addmod(an[n-__builtin_popcount(i)-1],dp[i]),op(i);
+    REP(i,1<<n) {
+        int id=__builtin_popcount(i);
+        addmod(an[n-id-1],dp[i]),op(i);
+        op(id)ope(an[n-id-1])
+    }
     REP(i,n) cout<<an[i]<<' ';
     return 0;
 }
