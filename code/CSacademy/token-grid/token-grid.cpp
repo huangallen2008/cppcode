@@ -81,6 +81,7 @@ signed main() {
     Vi dp(1<<n);
     int all=(1<<n)-1;
     dp[all]=1;
+    ope("ok")
     REP(i,m) {
         Vi d(1<<n);
         d[0]=1;
@@ -94,6 +95,6 @@ signed main() {
     dp=trans(dp,-1);
     Vi an(n);
     REP(i,1<<n) addmod(an[n-__builtin_popcount(i)],dp[i]);
-    REP(i,n) cout<<an[i]<<'\n';
+    REP(i,n) cout<<an[i]<<' ';
     return 0;
 }
