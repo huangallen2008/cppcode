@@ -70,7 +70,7 @@ Vi merge(Vi a,Vi b) {
 signed main() {
     IOS();
     cin>>n>>m;
-    vector<Vi> a(m,Vi(n));
+    vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
         REP(j,m) {
             char c;
@@ -84,7 +84,8 @@ signed main() {
         Vi d(1<<n);
         int now=0,sum=26;
         Vi nv(26,1);
-        auto upd=[&](int u,bool type) {
+        auto upd=[&](int u,bool type) ->void{
+            if(u==-1) return;
             // op(u)
             if(type) {
                 addmod(sum,nv[u]);
