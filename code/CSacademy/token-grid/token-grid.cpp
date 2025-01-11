@@ -78,10 +78,6 @@ signed main() {
             if(c!='.') a[j][c-'a']^=(1<<i);
         }
     }
-    REP(i,m) {
-        REP(j,26) cout<<a[i][j]<<' ';
-        cout<<'\n';
-    }
     Vi dp(1<<n);
     int all=(1<<n)-1;
     dp[all]=1;
