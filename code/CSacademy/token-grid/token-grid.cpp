@@ -54,6 +54,37 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    PC('\n');
+}
 int n,m;
 Vi trans(Vi v,int type=1) {
     REP(i,n) {
@@ -69,14 +100,16 @@ Vi merge(Vi a,Vi b) {
 }
 signed main() {
     IOS();
-    cin>>n>>m;
+    n=read(),m=read();
+    // cin>>n>>m;
     vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
         REP(j,m) {
-            char c;
-            cin>>c;
+            char c=GC();
+            // cin>>c;
             if(c!='.') a[j][i]=c-'a';
         }
+        GC();
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
@@ -117,7 +150,7 @@ signed main() {
     REP(i,1<<n) {
         addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
-    REP(i,n+1) cout<<(an[i]+mod)%mod<<' ';
+    REP(i,n+1) out((an[i]+mod)%mod);//cout<<(an[i]+mod)%mod<<' ';
     cout<<'\n';
     return 0;
 }
