@@ -114,7 +114,7 @@ signed main() {
             char c=readc();
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
-            cout<<c;
+            cout<<c<<" "<<(int)c<<'\n';
         }
         cout<<'\n';
     }
