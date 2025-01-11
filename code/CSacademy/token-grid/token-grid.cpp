@@ -106,7 +106,7 @@ signed main() {
                     upd(k);
                 }
             }
-            op(j)ope(now)
+            op(j)op(now)ope(sum)
             d[j]=sum-n+1;
         }
         dp=merge(dp,d);
