@@ -105,14 +105,13 @@ signed main() {
                     upd(a[i][k],0);
                 }
             }
-            op(j)op(now)ope(sum)
             d[j]=sum-25;
         }
         dp=merge(dp,d);
-        oparr(d)oparr(dp)
+        // oparr(d)oparr(dp)
     }
     dp=trans(dp,-1);
-    oparr(dp)
+    // oparr(dp)
     Vi an(n+1);
     REP(i,1<<n) {
         addmod(an[n-__builtin_popcount(i)],dp[i]);
