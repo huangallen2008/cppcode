@@ -81,33 +81,19 @@ signed main() {
         }
     }
     Vi dp(1<<n,1);
-    // dp[0]=1;
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
         d[0]=1;
-        ope(i)
-        REP(c,26) {
-            // ope(c)
-            op(a[i][c])
-            for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) {
-                // ope(j)
-                d[j]=1;
-            }
-        }
-        oparr(trans(d))
+        REP(c,26) for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) d[j]=1
         dp=merge(dp,trans(d));
-        oparr(dp)
     }
     dp=trans(dp,-1);
-    oparr(dp)
     Vi an(n+1);
-    oparr(an)
     REP(i,1<<n) {
-        int id=__builtin_popcount(i);
-        addmod(an[n-id],dp[i]),op(i);
-        op(id)op(dp[i])ope(an[n-id])oparr(an)
+        addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
     REP(i,n+1) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
