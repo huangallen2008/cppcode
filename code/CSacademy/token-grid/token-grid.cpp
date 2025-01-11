@@ -87,8 +87,8 @@ signed main() {
         ope(i)
         REP(c,26) {
             ope(c)
-            op(a[j][c])
-            for(int j=a[j][c];j>0;j=(j-1)&a[j][c]) {
+            op(a[i][c])
+            for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) {
                 ope(j)
                 d[j]=1;
             }
