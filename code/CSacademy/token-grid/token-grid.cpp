@@ -94,6 +94,7 @@ signed main() {
             }
         }
         dp=merge(dp,trans(d));
+        oparr(dp)
     }
     dp=trans(dp,-1);
     oparr(dp)
