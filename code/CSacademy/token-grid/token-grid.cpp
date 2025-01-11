@@ -88,6 +88,7 @@ signed main() {
         oparr(d)oparr(dp)
     }
     dp=trans(dp,-1);
+    oparr(dp)
     Vi an(n+1);
     REP(i,1<<n) {
         addmod(an[n-__builtin_popcount(i)],max(dp[i],0ll));
