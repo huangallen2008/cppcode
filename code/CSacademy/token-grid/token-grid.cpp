@@ -82,7 +82,7 @@ signed main() {
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
-        int now=0,sum=26;
+        int now=0,sum=1;
         Vi nv(26,1);
         auto upd=[&](int u,bool type) ->void{
             if(u==-1) return;
@@ -106,7 +106,7 @@ signed main() {
                     upd(a[i][k],0);
                 }
             }
-            d[j]=sum-25;
+            d[j]=sum;
         }
         dp=merge(dp,d);
         // oparr(d)oparr(dp)
