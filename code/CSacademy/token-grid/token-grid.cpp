@@ -64,7 +64,7 @@ Vi trans(Vi v,int type=1) {
     return v;
 }
 Vi merge(Vi a,Vi b) {
-    REP(i,1<<n) a[i]=(a[i]*b[i])%mod;
+    REP(i,1<<n) a[i]=a[i]*b[i]%mod;
     return a; 
 }
 signed main() {
@@ -82,17 +82,17 @@ signed main() {
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
-        int now=0,sum=1;
+        int sum=1;
         Vi nv(26,1);
         auto upd=[&](int u,bool type) ->void{
             if(u==-1) return;
             // op(u)
             if(type) {
-                addmod(sum,nv[u]);
+                sum+=nv[u];
                 nv[u]<<=1;
             }else {
                 nv[u]>>=1;
-                addmod(sum,-nv[u]);
+                sum-=nv[u];
             }
         };
         d[0]=1;
