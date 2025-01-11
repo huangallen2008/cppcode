@@ -99,7 +99,8 @@ signed main() {
     dp=trans(dp,-1);
     oparr(dp)
     Vi an(n);
-    REP(i,1<<n) addmod(an[n-__builtin_popcount(i)],dp[i]);
+
+    REP(i,1<<n) addmod(an[n-__builtin_popcount(i)-1],dp[i]);
     REP(i,n) cout<<an[i]<<' ';
     return 0;
 }
