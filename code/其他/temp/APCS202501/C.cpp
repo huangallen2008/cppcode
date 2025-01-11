@@ -1,3 +1,17 @@
+/*
+乾假解了qwq
+
+input:
+5
+1 1 1 2 2 3 3 4 4 5
+
+output: RE
+
+ans:
+0 1 2 4 5
+0 1 3 4 5
+
+*/
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
