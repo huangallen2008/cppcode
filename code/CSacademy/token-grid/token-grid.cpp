@@ -114,7 +114,9 @@ signed main() {
             char c=readc();
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
+            cout<<c;
         }
+        cout<<'\n';
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
