@@ -71,11 +71,13 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
-inline char readc()
+inline string reads()
 {
     char c=GC;
+    string s;
     while(c==' '||c=='\n')c=GC;
-    return c;
+    while(c!=' '&&c!='\n') s+=c,c=GC;
+    return s;
 }
 inline void out(int x) {
     if(x<0) {
@@ -106,13 +108,14 @@ Vi merge(Vi a,Vi b) {
 }
 signed main() {
     IOS();
-    op((char)13)ope("a")
     n=read(),m=read();
     // cin>>n>>m;
     vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
+        string s;
+        cin>>s;
         REP(j,m) {
-            char c=readc();
+            char c=s[i];
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
             cout<<c<<" "<<(int)c<<'\n';
