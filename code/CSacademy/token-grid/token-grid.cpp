@@ -71,7 +71,7 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
-inline int readc()
+inline char readc()
 {
     char c=GC;
     while(c==' '||c=='\n')c=GC;
