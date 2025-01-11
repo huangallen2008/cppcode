@@ -84,26 +84,25 @@ signed main() {
         Vi d(1<<n);
         int now=0,sum=26;
         Vi nv(26,1);
-        auto upd=[&](int u) {
+        auto upd=[&](int u,bool type) {
             // op(u)
-            if(now>>u&1) {
-                nv[u]>>=1;
-                addmod(sum,-nv[u]);
-            }else {
+            if(type) {
                 addmod(sum,nv[u]);
                 nv[u]<<=1;
+            }else {
+                nv[u]>>=1;
+                addmod(sum,-nv[u]);
             }
-            now^=1<<u;
         };
         d[0]=1;
         for(int j=1;j<1<<n;j++) {
             REP(k,n) {
                 if(j>>k&1) {
-                    upd(a[i][k]);
+                    upd(a[i][k],1);
                     break;
                 }
                 else {
-                    upd(a[i][k]);
+                    upd(a[i][k],0);
                 }
             }
             op(j)op(now)ope(sum)
