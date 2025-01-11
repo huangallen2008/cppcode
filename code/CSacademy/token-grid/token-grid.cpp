@@ -86,14 +86,14 @@ signed main() {
         d[0]=1;
         ope(i)
         REP(c,26) {
-            ope(c)
+            // ope(c)
             op(a[i][c])
             for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) {
-                ope(j)
+                // ope(j)
                 d[j]=1;
             }
         }
-        oparr(d)
+        oparr(trans(d))
         dp=merge(dp,trans(d));
         oparr(dp)
     }
