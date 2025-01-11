@@ -81,8 +81,8 @@ signed main() {
     Vi dp(1<<n);
     int all=(1<<n)-1;
     dp[all]=1;
-    ope("ok")
     REP(i,m) {
+        ope(i)
         Vi d(1<<n);
         d[0]=1;
         REP(c,26) {
