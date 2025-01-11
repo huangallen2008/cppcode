@@ -106,7 +106,7 @@ signed main() {
     REP(i,1<<n) {
         int id=__builtin_popcount(i);
         addmod(an[n-id-1],dp[i]),op(i);
-        op(id)ope(dp[i])ope(an[n-id])
+        op(id)op(dp[i])ope(an[n-id])oparr(an)
     }
     REP(i,n+1) cout<<an[i]<<' ';
     return 0;
