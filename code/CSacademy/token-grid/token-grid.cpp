@@ -90,7 +90,7 @@ signed main() {
     dp=trans(dp,-1);
     Vi an(n+1);
     REP(i,1<<n) {
-        addmod(an[n-__builtin_popcount(i)],dp[i]);
+        addmod(an[n-__builtin_popcount(i)],max(dp[i],0ll));
     }
     REP(i,n+1) cout<<an[i]<<' ';
     cout<<'\n';
