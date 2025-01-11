@@ -82,8 +82,8 @@ signed main() {
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
-        int now=0,sum=n;
-        Vi nv(n,1);
+        int now=0,sum=26;
+        Vi nv(26,1);
         auto upd=[&](int u) {
             // op(u)
             if(now>>u&1) {
@@ -99,15 +99,15 @@ signed main() {
         for(int j=1;j<1<<n;j++) {
             REP(k,n) {
                 if(j>>k&1) {
-                    upd(k);
+                    upd(a[i][k]);
                     break;
                 }
                 else {
-                    upd(k);
+                    upd(a[i][k]);
                 }
             }
             op(j)op(now)ope(sum)
-            d[j]=sum-n+1;
+            d[j]=sum-25;
         }
         dp=merge(dp,d);
         oparr(d)oparr(dp)
