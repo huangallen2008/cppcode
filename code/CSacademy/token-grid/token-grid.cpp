@@ -93,6 +93,7 @@ signed main() {
                 d[j]=1;
             }
         }
+        oparr(d)
         dp=merge(dp,trans(d));
         oparr(dp)
     }
