@@ -80,8 +80,8 @@ signed main() {
             if(c!='.') a[j][c-'a']^=(1<<i);
         }
     }
-    Vi dp(1<<n);
-    dp[0]=1;
+    Vi dp(1<<n,1);
+    // dp[0]=1;
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
