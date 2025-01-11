@@ -84,7 +84,7 @@ signed main() {
         Vi d(1<<n);
         int now=0,sum=n;
         Vi nv(n,1);
-        auto ins=[&](int u) {
+        auto upd=[&](int u) {
             if(now>>u) {
                 nv[u]>>=1;
                 addmod(sum,-nv[u]);
@@ -97,10 +97,12 @@ signed main() {
         d[0]=1;
         for(int j=1;j<1<<n;j++) {
             REP(k,n) {
-                if(j-1>>k) ins(k);
-                else {
-                    ins(k);
+                if(j>>k) {
+                    upd(k);
                     break;
+                }
+                else {
+                    upd(k);
                 }
             }
             op(j)ope(now)
