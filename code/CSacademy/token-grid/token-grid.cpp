@@ -76,7 +76,7 @@ inline string reads()
     char c=GC;
     string s;
     while(c==' '||c=='\n')c=GC;
-    while(c!=' '&&c!='\n') s+=c,c=GC;
+    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
     return s;
 }
 inline void out(int x) {
