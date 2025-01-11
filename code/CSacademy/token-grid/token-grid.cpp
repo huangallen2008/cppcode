@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -93,6 +94,7 @@ inline void out(int x) {
     for(it--;it>=str;it--) PC(*it);
     // PC('\n');
 }
+#define Vll vector<ll>
 int n,m;
 Vi trans(Vi v,int type=1) {
     REP(i,n) {
@@ -102,7 +104,7 @@ Vi trans(Vi v,int type=1) {
     }
     return v;
 }
-Vi merge(Vi a,Vi b) {
+Vll merge(Vll a,Vll b) {
     REP(i,1<<n) a[i]=a[i]*b[i]%mod;
     return a; 
 }
@@ -120,7 +122,7 @@ signed main() {
             if(c!='.') a[j][i]=c-'a';
         }
     }
-    Vi dp(1<<n,1);
+    Vll dp(1<<n,1);
     int all=(1<<n)-1;
     REP(i,m) {
         Vi d(1<<n);
