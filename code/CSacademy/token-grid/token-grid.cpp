@@ -95,6 +95,7 @@ signed main() {
         }
         dp=merge(dp,trans(d));
     }
+    ope("ok")
     dp=trans(dp,-1);
     Vi an(n);
     REP(i,1<<n) addmod(an[n-__builtin_popcount(i)],dp[i]);
