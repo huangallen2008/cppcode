@@ -117,7 +117,7 @@ signed main() {
     REP(i,1<<n) {
         addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
-    REP(i,n+1) cout<<an[i]<<' ';
+    REP(i,n+1) cout<<(an[i]+mod)%mod<<' ';
     cout<<'\n';
     return 0;
 }
