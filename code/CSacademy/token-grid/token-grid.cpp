@@ -151,6 +151,7 @@ signed main() {
         addmod(an[n-__builtin_popcount(i)],dp[i]);
     }
     REP(i,n+1) out((an[i]+mod)%mod),PC(' ');//cout<<(an[i]+mod)%mod<<' ';
-    cout<<'\n';
+    // cout<<'\n';
+    PC('\n');
     return 0;
 }
