@@ -97,9 +97,9 @@ signed main() {
         d[0]=1;
         for(int j=1;j<1<<n;j++) {
             REP(k,n) {
-                if(j-1>>k) ins(k,-1);
+                if(j-1>>k) ins(k);
                 else {
-                    ins(k,1);
+                    ins(k);
                     break;
                 }
             }
