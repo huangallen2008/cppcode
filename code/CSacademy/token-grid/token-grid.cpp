@@ -119,9 +119,7 @@ signed main() {
             char c=s[j];
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
-            cout<<c<<" "<<(int)c<<'\n';
         }
-        cout<<'\n';
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
