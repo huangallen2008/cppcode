@@ -85,7 +85,7 @@ signed main() {
         int now=0,sum=n;
         Vi nv(n,1);
         auto upd=[&](int u) {
-            op(u)
+            // op(u)
             if(now>>u&1) {
                 nv[u]>>=1;
                 addmod(sum,-nv[u]);
