@@ -105,11 +105,11 @@ signed main() {
     vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
         REP(j,m) {
-            char c=GC();
+            char c=GC;
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
         }
-        GC();
+        GC;
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
