@@ -71,6 +71,12 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
+inline int readc()
+{
+    char c=GC;
+    while(c==' '||c=='\n')c=GC;
+    return c;
+}
 inline void out(int x) {
     if(x<0) {
         PC('-');
@@ -105,11 +111,10 @@ signed main() {
     vector<Vi> a(m,Vi(n,-1));
     REP(i,n) {
         REP(j,m) {
-            char c=GC;
+            char c=readc();
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
         }
-        GC;
     }
     Vi dp(1<<n,1);
     int all=(1<<n)-1;
