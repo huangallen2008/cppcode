@@ -83,7 +83,7 @@ inline void out(int x) {
         x/=10;
     } while(x);
     for(it--;it>=str;it--) PC(*it);
-    PC('\n');
+    // PC('\n');
 }
 int n,m;
 Vi trans(Vi v,int type=1) {
@@ -108,7 +108,9 @@ signed main() {
             char c=GC;
             // cin>>c;
             if(c!='.') a[j][i]=c-'a';
+            op(c)
         }
+        entr
         GC;
     }
     Vi dp(1<<n,1);
