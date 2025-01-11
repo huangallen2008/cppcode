@@ -104,7 +104,7 @@ Vll trans(Vll v,int type=1) {
     }
     return v;
 }
-Vll merge(Vll a,Vll b) {
+Vll merge(Vll a,Vi b) {
     REP(i,1<<n) a[i]=a[i]*b[i]%mod;
     return a; 
 }
