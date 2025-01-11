@@ -84,8 +84,8 @@ signed main() {
         Vi d(1<<n);
         d[0]=1;
         REP(c,26) for(int j=a[i][c];j>0;j=(j-1)&a[i][c]) d[j]=1<<__builtin_popcount(j);
-        oparr(d)oparr(dp)
         dp=merge(dp,d);
+        oparr(d)oparr(dp)
     }
     dp=trans(dp,-1);
     Vi an(n+1);
