@@ -58,6 +58,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    ope("ok")
+    pii a={1,2};
+    cout<<a;
     return 0;
 }
