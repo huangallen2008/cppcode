@@ -59,6 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     pii a={1,2};
-    cout<<a+{1,2};
+    pii b=a+{1,2};
+    cout<<b;
     return 0;
 }
