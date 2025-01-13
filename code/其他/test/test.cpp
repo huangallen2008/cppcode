@@ -40,8 +40,14 @@ using namespace std;
 #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
+template<typename T1,typename T2>
+istream& operator>>(istream& os,pair<T1,T2> &p) { return os>>p.f>>p.s; }
 template<typename S>
 ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen<<' ';return os<<'\n'; }
+template<typename S>
+istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
+template<typename T1,typename T2>
+pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
@@ -50,55 +56,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define pVi pair<Vi,Vi>
-const Vpii zero = Vpii(maxb,{0,inf});
-struct SEG {
-    int n;
-    vector<Vpii> s;
-    Vpii merge(Vpii b,Vpii c) {
-        Vpii a=zero;
-        REP(i,maxb) chmin(a[i].s,b[i].s),chmin(a[i].s,c[i].s);
-        REP(i,maxb) REP(j,maxb) if(b[i].f&&c[j].f)chmin(a[i^j].s,b[i].s+c[j].s);
-        oparr(a)oparr(b)oparr(c)
-        REP(i,maxb) REP(j,maxb) if(b[i].f&&c[j].f)if(b[i].s+c[j].s==a[i^j].s) (a[i^j].f+=b[i].f*c[j].f)%=mod;
-        REP(i,maxb) (a[i].f+=b[i].f+c[i].f)%=mod;
-        return a;
-    }
-    void pull(Vpii &a,Vpii &b,Vpii &c) {
-        a=merge(b,c);
-    }
-    void build(int w,int l,int r,Vi &a) {
-        if(l==r) {
-            s[w][a[l]]={1,1};
-            return;
-        }
-        int m=l+r>>1;
-        build(w<<1,l,m,a);
-        build(w<<1|1,m+1,r,a);
-        pull(s[w],s[w<<1],s[w<<1|1]);
-        op(w)oparr(s[w])
-    }
-    void init(int _n,Vi a) {
-        n=_n;
-        s=vector<Vpii>(n<<2,zero);
-        build(1,0,n-1,a);
-    }
-    Vpii _qu(int w,int l,int r,int ql,int qr) {
-        op(l)op(r)op(ql)ope(qr)
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return zero;
-        int m=l+r>>1;
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    }
-    pii qu(int l,int r) {
-        return _qu(1,0,n-1,l,r)[0];
-    }
-}seg;
 signed main() {
     IOS();
-    int n=3;
-    vector<vector<Vi>> a(n,vector<Vi>(n,Vi(n)));
-    REP(i,n) REP(j,n) REP(k,n) a[i][j][k]=i*n*n+j*n+k;
-    cout<<a;
+
     return 0;
 }
