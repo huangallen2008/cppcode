@@ -58,6 +58,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    printf(char"12"[0]);
+    printf("12"s[0]);
     return 0;
 }
