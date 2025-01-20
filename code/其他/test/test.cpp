@@ -58,6 +58,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<("12"[0]);
+    printf(char"12"[0]);
     return 0;
 }
