@@ -58,6 +58,30 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    printf("12"s[0]);
+    freopen("in.txt","w",stdout);
+    // cout<<n<<" "<<'\n';//2~200,399
+    int cnt=0;
+    Vpii e;
+    e.pb({1,2});
+    // cout<<"1 2\n";
+    cnt++;
+    int t=100;
+    int n=(2000-2)/t*t+2;
+    for(int i=2;i<n;i+=t) {//i~i+198
+        // cout<<i<<' '<<i+t<<'\n';
+        e.pb({i,i+t});
+        cnt++;
+        for(int j=i;j<i+t;j++) {
+            for(int k=j+1;k<i+t;k++) {
+                // if(j==k) continue;
+                // cout<<j<<' '<<k<<'\n';
+                e.pb({j,k});
+                cnt++;
+            }
+        }
+    }
+    cout<<n<<' '<<cnt<<'\n';
+    for(auto [x,y]:e) cout<<x<<' '<<y<<'\n';
+    // op(cnt)
     return 0;
 }
