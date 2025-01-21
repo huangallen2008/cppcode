@@ -56,9 +56,29 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct DSU {
+    int n;
+    Vi p,sz;
+    void init(int _n) {
+        n=_n;
+        p=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+    }
+};
 signed main() {
     IOS();
-    freopen("in.txt","w",stdout);
+    // freopen("in.txt","w",stdout);
     // cout<<n<<" "<<'\n';//2~200,399
     int cnt=0;
     Vpii e;
