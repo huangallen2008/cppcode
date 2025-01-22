@@ -87,7 +87,7 @@ signed main() {
     vector<string> s(n);
     REP(i,n) cin>>s[i];
     vector<AC> ac(n);
-    REP(i,n) ac[i].init(s);
+    REP(i,n) ac[i].init(s[i]);
     int an=0;
     REP(j,q) {
         int a,b,x,y;
