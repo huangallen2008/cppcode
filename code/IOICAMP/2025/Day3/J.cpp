@@ -61,7 +61,7 @@ struct SEG {
     struct Seg {
         int v3=0,v4=0,ta=-1,tx=0,a1,an,len; 
         bool operator==(Seg x) {
-            return x.v3==v3&&x.v4==v4&&x.ta==ta&&x.tx==tx&&x.a1==a1&&x.an==an&&a.len==len;
+            return x.v3==v3&&x.v4==v4&&x.ta==ta&&x.tx==tx&&x.a1==a1&&x.an==an&&x.len==len;
         }
     };
     const Seg zero={inf,inf,inf,inf,inf,inf,inf};
