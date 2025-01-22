@@ -102,7 +102,7 @@ signed main() {
         }
         if(opt==2) {
             int y;
-            cin>>y,y--;
+            cin>>y;
             cout<<a[y]<<' '<<b[y]<<'\n';
         }
     }
