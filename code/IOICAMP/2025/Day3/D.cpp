@@ -95,7 +95,7 @@ signed main() {
         int l=0,r=min(s[a].size()-x,s[b].size()-y),m;
         op(l)ope(r)
         while(l<r) {
-            m=l+r>>1;
+            m=l+r+1>>1;
             if((ac[a].gethash(x,x+m-1)-ac[b].gethash(y,y+m-1))==0) l=m;
             else r=m-1;
         }
