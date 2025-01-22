@@ -194,7 +194,7 @@ signed main() {
             cin>>l>>r,l--,r--;
             int an=0;
             if(l<r) an=seg.q3(l,r);
-            else an=seg.q3(l,n-1)^seg.q3(1,r);
+            else an=seg.q3(l,n-1)^seg.q3(0,r);
             cout<<an<<'\n';
         }
         if(opt==4) {
