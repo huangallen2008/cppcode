@@ -144,6 +144,7 @@ void solve() {
     }
     ts.init(n,cons);
     if(ts.ok) {
+        cout<<"YES\n";
         REP1(i,n) cout<<ts.an[i]<<' ';
         cout<<'\n';
     }else cout<<"NO\n";
