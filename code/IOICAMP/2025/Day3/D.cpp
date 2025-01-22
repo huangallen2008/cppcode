@@ -48,7 +48,8 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-// const int mod=998244353;
+const int mod=1234567891;
+const int P=989898989;
 const int maxn=5;
 const int maxb=64;
 const int inf=1e9;
@@ -57,27 +58,48 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define uint uint64_t
-const uint mod=1e9+7,p=131;
+const uint p=131;
 struct AC {
     vector<uint> pow_p,h;
-    AC(string s) : pow_p(1,1),h(s.size()+1,0) {
-        while(pow_p.size()<=s.size()) pow_p.pb(pow_p.back()*p%mod);
-        for(int i=0;i<s.size();i++) h[i+1]=(h[i]*p+(uint)s[i])%mod;
+    void init(string s){
+        pow_p=vector<uint>(1,1);
+        h=vector<uint>(s.size()+1,0);
+        while(pow_p.size()<=s.size()) pow_p.pb(pow_p.back()*p);
+        for(int i=0;i<s.size();i++) h[i+1]=(h[i]*p+(uint)s[i]);
     }
     uint gethash(int l,int r) {
         return (h[r+1]-h[l]*pow_p[r-l+1]);
     }
 };
+int pw(int x,int p) {
+    int r=1;
+    while(p>1) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return x;
+}
 signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
     vector<string> s(n);
     REP(i,n) cin>>s[i];
-    vector<AC> ac(n,AC(s[i]));
-    while(q--) {
+    vector<AC> ac(n);
+    REP(i,n) ac[i].init(s);
+    int an=0;
+    REP(j,q) {
         int a,b,x,y;
         cin>>a>>b>>x>>y;
+        int l=0,r=min(s[a].size()-x,s[b].size()-y),m;
+        while(l<r) {
+            m=l+r>>1;
+            if((ac[a].gethash(x,x+m-1)-ac[b].gethash(y,y+m-1))==0) l=m;
+            else r=m-1;
+        }
+        an=(an+l*pw(P,q-1-j))%mod;
     }
+    cout<<an<<'\n';
     return 0;
 }
