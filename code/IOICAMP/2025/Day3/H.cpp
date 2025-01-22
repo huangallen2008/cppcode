@@ -71,10 +71,17 @@ signed main() {
     }
     int an=0;
     int rr=sum/m,rc=sum/n;
-    REP(i,n) an+=abs(rc-r[i]);
+    int n1=0,n2=0;
+    REP(i,n-1) {
+        n1+=r[i];
+        an+=abs(rc*(i+1)-n1);
+    }
     // oparr(r)oparr(c)
-    REP(i,m) an+=abs(rr-c[i]);
-    an>>=1;
+    REP(i,m) {
+        n2+=c[i];
+        an+=abs(rr*(i+1)-n2);
+    }
+    // an>>=1;
     cout<<an<<'\n';
     return 0;
 }
