@@ -122,6 +122,7 @@ struct TwoSAT {
                 op("ffffffffff")ope(i)
             }
         }
+        oparr(an)
     }
     int id(int x) { return x+n-(x>0); }
 };
