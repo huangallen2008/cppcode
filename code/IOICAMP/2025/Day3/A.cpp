@@ -95,10 +95,10 @@ signed main() {
         if(opt==1) {
             int x,t;
             cin>>x>>t;
-            a[0]+=t,b[x-1]+=t;
+            a[0]+=t,b[x]+=t;
             REP(j,n) if(nxt[j]>=x) {
                 b[j]+=t;
-                a[j-x+1]+=t;
+                a[j-x]+=t;
             }
         }
         if(opt==2) {
