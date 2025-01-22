@@ -69,7 +69,7 @@ struct SEG {
         if(ta==-1) return;
         a.v3=a.len&1?ta:0;
         a.v4=0;
-        a.ta=a;
+        a.ta=ta;
         a.tx=0;
         a.a1=a.an=ta;
     }
