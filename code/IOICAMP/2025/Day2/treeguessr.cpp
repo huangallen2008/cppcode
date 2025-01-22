@@ -1,8 +1,7 @@
-#include<bits/stdc++.h>
+#include "lib0906.h"
+#include <bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops")
-// #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -28,6 +27,7 @@ using namespace std;
 #define Vi vector<int>
 #define Vpii vector<pii>
 #ifdef LOCAL
+#include"grader.cpp"
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
@@ -50,49 +50,58 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxv=1e5+5;
 const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
-    });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
-            stk.pop_back();
+namespace {
+    // int n;
+}
+int qur(int u,Vi s) {
+    for(auto &x:s) x++;
+    u++;
+    // op(u)oparr(s)
+    int rr=query(u,s);
+    // ope(rr)
+    return rr;
+}
+
+vector<pair<int, int>> treeguessr(int n) {
+    // ::n = n;
+    vector<pair<int, int>> e;
+    Graph g(n);
+    Vi per(n);
+    REP(i,n) per[i]=i;
+    shuffle(ALL(per),rng);
+    Vi ok(n);
+    REP(i,n) {
+        Vi vv;
+        REP(j,n) if(!ok[j]&&per[i]!=j) vv.pb(j);
+        if(vv.size()==0) continue;
+        int st=0;
+        while(1) {
+            int l=st,r=vv.size()-1,m;
+            Vi tv;
+            for(int j=st;j<=r;j++) tv.pb(vv[j]);
+            if(tv.size()==0||qur(per[i],tv)!=1) break;
+            while(l<r) {
+                m=l+(r-l)/3;
+                Vi rv;
+                for(int j=st;j<=m;j++) rv.pb(vv[j]);
+                int ret=qur(per[i],rv);
+                // ope(ret)
+                if(ret>1) l=m+1;
+                else r=m;
+            }
+            g[per[i]].pb(vv[l]);
+            g[vv[l]].pb(per[i]);
+            e.pb({per[i],vv[l]});
+            st=l+1;
         }
-        stk.pb({a0[i].s,i});
+        ok[per[i]]=1;
     }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
-    }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
-        }
-    }
-    return 0;
+    // oparr(e)
+    for(auto &[x,y]:e)x++,y++; return e;
 }

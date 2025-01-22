@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxv=1e5+5;
 const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -58,41 +58,33 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
-    });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
-            stk.pop_back();
+    int n,x,y;
+    cin>>n>>x>>y;
+    Vi a(n+1),p(n+1);
+    REP1(i,n) cin>>a[i],p[i]=p[i-1]+a[i];
+    bool hp=0;
+    REP1(i,n) if(a[i]>0) hp=1;
+    if(!hp) {
+        cout<<*max_element(1+ALL(a))<<'\n';
+        return 0;
+    }
+    Vi dp0(n+1),dp1(n+1);
+    int mx0=0;
+    deque<pii> dq;
+    dq.pb({0,0});
+    REP1(i,n) {
+        while(dq.size()&&dq[0].s<i-y) dq.pop_front();
+        if(i-x>=0) {
+            int val=dp1[i-x];
+            while(dq.size()&&dq.back().f<val) dq.pop_back();
+            dq.pb({val,i-x});
         }
-        stk.pb({a0[i].s,i});
+        dp0[i]=dq.front().f;//max (0,...)
+        dp1[i]=mx0+p[i];
+        chmax(mx0,dp0[i]-p[i]);
     }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
-    }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
-        }
-    }
+    int mx=0;
+    REP1(i,n) chmax(mx,dp1[i]);
+    cout<<mx<<'\n';
     return 0;
 }

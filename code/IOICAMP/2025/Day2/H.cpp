@@ -50,49 +50,49 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
-const int inf=1e9;
+const int maxv=1e5+5;
+const int inf=(1ll<<60);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int mx(int a,int b) {
+    Vi v;
+    while(a>0||b>0) {
+        int x=a%10,y=b%10;
+        a/=10,b/=10;
+        v.pb(max(x,y));
+    }
+    reverse(ALL(v));
+    int an=0;
+    for(int x:v) an=an*10+x;
+    return an;
+}
 signed main() {
     IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
-    });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
-            stk.pop_back();
+    int n,q;
+    cin>>n>>q;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    while(q--) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int l,r;
+            cin>>l>>r,l--,r--;
+            int an=0;
+            for(int i=l;i<=r;i++) an=mx(an,a[i]);
+            cout<<an<<'\n';
+        }if(opt==2) {
+            int l,r,v;
+            cin>>l>>r>>v,l--,r--;
+            for(int i=l;i<=r;i++) a[i]=mx(a[i],v);
+        }if(opt==3) {
+            int l,r,v;
+            cin>>l>>r>>v,l--,r--;
+            for(int i=l;i<=r;i++) a[i]=v;
         }
-        stk.pb({a0[i].s,i});
-    }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
-    }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
-        }
+        // oparr(a)
     }
     return 0;
 }

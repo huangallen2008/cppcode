@@ -50,48 +50,83 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
-const int inf=1e9;
+const int maxv=1e5+5;
+const int inf=(1ll<<60);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct LCSEG {
+    struct line {
+        int m,k;
+    };
+    int cal(line l,int x) {
+        return l.m*x+l.k;
+    }
+    line mxl(line a,line b,int x) {
+        if(cal(a,x)>cal(b,x)) return a;
+        else return b;
+    }
+    vector<line> s;
+    int n;
+    void init(int _n) {
+        n=_n;
+        s=vector<line>(n<<2,{0,0});
+    }
+    void _ud(int w,int l,int r,line v) {
+        if(l==r) {
+            s[w]=mxl(s[w],v,l);
+            return;
+        }
+        int m=l+r>>1;
+        if(cal(v,m)>cal(s[w],m)) swap(s[w],v);
+        if(v.m<s[w].m) {
+            _ud(w<<1,l,m,v);
+        }
+        else {
+            _ud(w<<1|1,m+1,r,v);
+        }
+    }
+    void ud(line v) {
+        _ud(1,0,n-1,v);
+    }
+    int _qu(int w,int l,int r,int x) {
+        int an=cal(s[w],x);
+        if(l==r) return an;
+        int m=l+r>>1;
+        if(x<=m) return max(an,_qu(w<<1,l,m,x));
+        else return max(an,_qu(w<<1|1,m+1,r,x));
+    }
+    int qu(int x)  {
+        return _qu(1,0,n-1,x);
+    }
+} lcseg;
 signed main() {
     IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
-    });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
-            stk.pop_back();
-        }
-        stk.pb({a0[i].s,i});
-    }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
-    }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
+    int n,q;
+    cin>>n>>q;
+    // lcseg.init(n+1);
+    Vi a(n+1);
+    REP(i,q) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int x,y;
+            cin>>x>>y;
+            REP1(j,n) chmax(a[j],x*j+y);
+            // lcseg.ud({a,b});
+        }if(opt==3) {
+            int l,r;
+            cin>>l>>r;
+            int mx=0;
+            for(int j=l;j<=r;j++) chmax(mx,a[j]);
+            cout<<mx<<'\n';
+            // int rr=max(lcseg.qu(l),lcseg.qu(r));
+            // cout<<rr<<'\n';
+        }if(opt==2) {
+            int c;
+            cin>>c;
+            REP1(i,n) chmin(a[i],c);
         }
     }
     return 0;

@@ -141,6 +141,14 @@ inline int read()
     if(neg) x=-x;
     return x;
 }
+inline string reads()
+{
+    char c=GC;
+    string s;
+    while(c==' '||c=='\n')c=GC;
+    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
+    return s;
+}
 inline void out(int x) {
     if(x<0) {
         PC('-');
@@ -153,5 +161,5 @@ inline void out(int x) {
         x/=10;
     } while(x);
     for(it--;it>=str;it--) PC(*it);
-    PC('\n');
+    // PC('\n');
 }

@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxv=1e5+5;
 const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -58,41 +58,26 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
-    });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
-            stk.pop_back();
-        }
-        stk.pb({a0[i].s,i});
-    }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
+    int n,m;
+    cin>>n>>m;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    if(m&1) {
+        Vi cnt(maxv),cntm(maxv);
+        REP(i,n) if(a[i]>=0) cnt[a[i]]++;else cntm[-a[i]]++;
+        int an=0;
+        REP1(i,maxv-1) an+=cnt[i]*cnt[i]*cnt[0]*2;
+        REP1(i,maxv-1) an+=cntm[i]*cntm[i]*cnt[0]*2;
+        REP1(i,maxv-1) an+=cnt[i]*cntm[i]*2*cnt[0];
+        an+=cnt[0]*cnt[0]*cnt[0];
+        cout<<an<<'\n';
     }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
-        }
+        Vi cnt(maxv);
+        REP(i,n) cnt[abs(a[i])]++;
+        int r0=0;
+        REP1(i,maxv-1) r0+=cnt[i]*(cnt[i]);
+        int an=r0*cnt[0]*2+cnt[0]*(cnt[0])*(cnt[0]);
+        cout<<an<<'\n';
     }
     return 0;
 }
