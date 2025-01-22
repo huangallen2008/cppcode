@@ -149,15 +149,15 @@ struct SEG {
         _udx(1,0,n-1,l,r,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
-        op(w)op(l)op(r)op(s[w].v4)op(s[w].a1)op(s[w].an)entr
+        // op(w)op(l)op(r)op(s[w].v4)op(s[w].a1)op(s[w].an)entr
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return zero;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        Seg r1=_qu(w<<1,l,m,ql,qr),r2=_qu(w<<1|1,m+1,r,ql,qr);
-        op(w)op(r1.v4)op(r2.v4)ope(merge(r1,r2).v4)
-        return merge(r1,r2);
-        // return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+        // Seg r1=_qu(w<<1,l,m,ql,qr),r2=_qu(w<<1|1,m+1,r,ql,qr);
+        // op(w)op(r1.v4)op(r2.v4)ope(merge(r1,r2).v4)
+        // return merge(r1,r2);
+        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int q3(int l,int r) { return _qu(1,0,n-1,l,r).v3; }
     int q4(int l,int r) { return _qu(1,0,n-1,l,r).v4; }
@@ -177,7 +177,7 @@ signed main() {
         if(opt==1) {
             int l,r,v;
             cin>>l>>r>>v,l--,r--;
-            if(l<r) seg.uda(l,r,v);
+            if(l<=r) seg.uda(l,r,v);
             else {
                 seg.uda(l,n-1,v);
                 seg.uda(0,r,v);
@@ -186,7 +186,7 @@ signed main() {
         if(opt==2) {
             int l,r,v;
             cin>>l>>r>>v,l--,r--;
-            if(l<r)seg.udx(l,r,v);
+            if(l<=r)seg.udx(l,r,v);
             else {
                 seg.udx(l,n-1,v);
                 seg.udx(0,r,v);
@@ -196,7 +196,7 @@ signed main() {
             int l,r;
             cin>>l>>r,l--,r--;
             int an=0;
-            if(l<r) an=seg.q3(l,r);
+            if(l<=r) an=seg.q3(l,r);
             else an=seg.q3(l,n-1)^seg.q3(0,r);
             cout<<an<<'\n';
         }
@@ -204,7 +204,7 @@ signed main() {
             int l,r;
             cin>>l>>r,l--,r--;
             int an=0;
-            if(l<r) an=seg.q4(l,r);
+            if(l<=r) an=seg.q4(l,r);
             else {
                 an=seg.q4(l,n-1)+seg.q4(0,r)+seg.vv4();
             }
