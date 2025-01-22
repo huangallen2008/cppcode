@@ -206,6 +206,7 @@ signed main() {
             }
             cout<<an<<'\n';
         }
+        ope(seg.vv4())
     }
     return 0;
 }
