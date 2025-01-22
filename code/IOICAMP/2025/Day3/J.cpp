@@ -129,7 +129,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void uda(int l,int r,int v) {
-        uda(1,0,n-1,l,r,v);
+        _uda(1,0,n-1,l,r,v);
     }
     void _udx(int w,int l,int r,int ql,int qr,int v){ 
         if(ql<=l&&r<=qr) {
@@ -144,7 +144,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void udx(int l,int r,int v) {
-        udx(1,0,n-1,l,r,v);
+        _udx(1,0,n-1,l,r,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
