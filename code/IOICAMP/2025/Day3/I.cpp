@@ -109,10 +109,10 @@ struct TwoSAT {
             g[id(x)].pb(id(y));
             g[id(-y)].pb(id(-x));
         }
-        oparr(an)
+        // oparr(an)
         SCC scc;
         scc.init(n<<1,g);
-        oparr(scc.sccid)
+        // oparr(scc.sccid)
         REP1(i,n) {
             if(scc.sccid[id(i)]==scc.sccid[id(-i)]) {
                 ok=0;
@@ -120,10 +120,9 @@ struct TwoSAT {
             }
             if(scc.sccid[id(i)]>scc.sccid[id(-i)]) {
                 an[i]=1;
-                op("ffffffffff")ope(i)
             }
         }
-        oparr(an)
+        // oparr(an)
     }
     int id(int x) { return x+n-(x>0); }
 };
