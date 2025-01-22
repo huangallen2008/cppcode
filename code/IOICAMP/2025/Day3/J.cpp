@@ -154,7 +154,10 @@ struct SEG {
         if(ql>r||qr<l) return zero;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+        Seg r1=_qu(w<<1,l,m,ql,qr),r2=_qu(w<<1|1,m+1,r,ql,qr);
+        op(w)op(r1.v4)ope(r2.v4)
+        return merge(r1,r2);
+        // return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     int q3(int l,int r) { return _qu(1,0,n-1,l,r).v3; }
     int q4(int l,int r) { return _qu(1,0,n-1,l,r).v4; }
