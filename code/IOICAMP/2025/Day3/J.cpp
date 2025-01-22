@@ -91,6 +91,8 @@ struct SEG {
         a.ta=-1,a.tx=0;
     }
     Seg merge(Seg b,Seg c) {
+        if(b==zero) return c;
+        if(c==zero) return b;
         Seg a;
         a.len=b.len+c.len;
         a.v3=b.v3^c.v3;
@@ -148,16 +150,61 @@ struct SEG {
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
+        if(ql>r||qr<l) return zero;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
-        
+        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-};
+    int q3(int l,int r) { return _qu(1,0,n-1,l,r).v3; }
+    int q4(int l,int r) { return _qu(1,0,n-1,l,r).v4; }
+    int vv4() { return s[1].an^s[1].a1; }
+}seg;
 signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
+    seg.init(n);
     Vi a(n);
     REP(i,n) cin>>a[i];
+    REP(i,q) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            int l,r,v;
+            cin>>l>>r>>v,l--,r--;
+            if(l<r) seg.uda(l,r,v);
+            else {
+                seg.uda(l,n-1,v);
+                seg.uda(0,r,v);
+            }
+        }
+        if(opt==2) {
+            int l,r,v;
+            cin>>l>>r>>v,l--,r--;
+            if(l<r)seg.udx(l,r,v);
+            else {
+                seg.udx(l,n-1,v);
+                seg.udx(0,r,v);
+            }
+        }
+        if(opt==3) {
+            int l,r;
+            cin>>l>>r,l--,r--;
+            int an=0;
+            if(l<r) an=seg.q3(l,r);
+            else an=seg.q3(l,n-1)^seg.q3(1,r);
+            cout<<an<<'\n';
+        }
+        if(opt==4) {
+            int l,r;
+            cin>>l>>r,l--,r--;
+            int an=0;
+            if(l<r) an=seg.q4(l,r);
+            else {
+                an=seg.q4(l,n-1)+seg.q4(1,r)+seg.vv4();
+            }
+            cout<<an<<'\n';
+        }
+    }
     return 0;
 }
