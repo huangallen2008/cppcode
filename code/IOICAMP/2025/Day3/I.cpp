@@ -104,13 +104,14 @@ struct TwoSAT {
         n=_n;
         an=vector<bool>(n+1);
         g=Graph(n<<1);
-        oparr(an)
         for(auto [x,y]:cons) {
             g[id(x)].pb(id(y));
         }
+        oparr(an)
         SCC scc;
         scc.init(n<<1,g);
         REP1(i,n) {
+            ope(i)
             if(scc.sccid[id(i)]==scc.sccid[id(-i)]) {
                 ok=0;
                 break;
