@@ -118,6 +118,7 @@ struct TwoSAT {
             }
             if(scc.sccid[id(i)]>scc.sccid[id(-i)]) {
                 an[i]=1;
+                op("ffffffffff")ope(i)
             }
         }
     }
