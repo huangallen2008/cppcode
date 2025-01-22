@@ -80,6 +80,7 @@ signed main() {
             dq.pb({val,i-x});
         }
         dp0[i]=dq.front().f;//max (0,...)
+        chmax(dp0[i],0ll);
         dp1[i]=mx0+p[i];
         chmax(mx0,dp0[i]-p[i]);
     }
