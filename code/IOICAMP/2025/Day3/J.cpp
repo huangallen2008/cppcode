@@ -152,7 +152,7 @@ struct SEG {
         push(s[w],s[w<<1],s[w<<1|1]);
         
     }
-}
+};
 signed main() {
     IOS();
     int n,q;
