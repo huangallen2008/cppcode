@@ -167,6 +167,7 @@ signed main() {
     seg.init(n);
     Vi a(n);
     REP(i,n) cin>>a[i];
+    REP(i,n) seg.uda(i,i,a[i]);
     REP(i,q) {
         int opt;
         cin>>opt;
