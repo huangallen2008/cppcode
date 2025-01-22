@@ -149,7 +149,7 @@ struct SEG {
         _udx(1,0,n-1,l,r,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
-        op(w)op(l)op(r)ope(s[w].q4)
+        op(w)op(l)op(r)ope(s[w].v4)
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return zero;
         int m=l+r>>1;
