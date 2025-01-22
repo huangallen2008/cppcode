@@ -105,8 +105,9 @@ struct TwoSAT {
         an=vector<bool>(n+1);
         g=Graph(n<<1);
         for(auto [x,y]:cons) {
-            op(x)ope(y)
+            // op(x)ope(y)
             g[id(x)].pb(id(y));
+            g[id(-y)].pb(id(-x));
         }
         oparr(an)
         SCC scc;
