@@ -111,8 +111,8 @@ struct TwoSAT {
         oparr(an)
         SCC scc;
         scc.init(n<<1,g);
+        oparr(scc.sccid)
         REP1(i,n) {
-            ope(i)
             if(scc.sccid[id(i)]==scc.sccid[id(-i)]) {
                 ok=0;
                 break;
