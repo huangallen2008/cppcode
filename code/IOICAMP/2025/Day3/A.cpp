@@ -87,6 +87,7 @@ signed main() {
         while(j && s[j] != s[i]) j = nxt[j-1];
         if(s[i] == s[j]) j++;
     }
+    oparr(nxt)
     Vi a(n+1),b(n+1);
     REP(i,q) {
         int opt;
