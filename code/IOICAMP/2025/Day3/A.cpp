@@ -84,8 +84,8 @@ signed main() {
     vector<int> nxt(s.size());
     int j = 0;
     for(int i = 1; i < s.size(); nxt[i++] = j) {
-        while(j && b[j] != b[i]) j = nxt[j-1];
-        if(b[i] == b[j]) j++;
+        while(j && s[j] != s[i]) j = nxt[j-1];
+        if(s[i] == s[j]) j++;
     }
     Vi a(n+1),b(n+1);
     REP(i,q) {
