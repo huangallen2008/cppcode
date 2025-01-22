@@ -149,6 +149,7 @@ struct SEG {
         _udx(1,0,n-1,l,r,v);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
+        op(w)op(l)op(r)
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return zero;
         int m=l+r>>1;
@@ -201,7 +202,7 @@ signed main() {
             int an=0;
             if(l<r) an=seg.q4(l,r);
             else {
-                an=seg.q4(l,n-1)+seg.q4(1,r)+seg.vv4();
+                an=seg.q4(l,n-1)+seg.q4(0,r)+seg.vv4();
             }
             cout<<an<<'\n';
         }
