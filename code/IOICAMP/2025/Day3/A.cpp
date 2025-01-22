@@ -97,8 +97,8 @@ signed main() {
             cin>>x>>t;
             a[0]+=t,b[x]+=t;
             REP(j,n) if(nxt[j]>=x) {
-                b[j]+=t;
-                a[j-x]+=t;
+                b[j+1]+=t;
+                a[j-x+1]+=t;
             }
         }
         if(opt==2) {
