@@ -58,14 +58,14 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define uint uint64_t
-const uint p=131;
+const uint B=131;
 struct AC {
     vector<uint> pow_p,h;
     void init(string s){
         pow_p=vector<uint>(1,1);
         h=vector<uint>(s.size()+1,0);
-        while(pow_p.size()<=s.size()) pow_p.pb(pow_p.back()*p);
-        for(int i=0;i<s.size();i++) h[i+1]=(h[i]*p+(uint)s[i]);
+        while(pow_p.size()<=s.size()) pow_p.pb(pow_p.back()*B);
+        for(int i=0;i<s.size();i++) h[i+1]=(h[i]*B+(uint)s[i]);
     }
     uint gethash(int l,int r) {
         return (h[r+1]-h[l]*pow_p[r-l+1]);
