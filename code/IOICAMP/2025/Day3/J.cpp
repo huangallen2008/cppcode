@@ -85,8 +85,8 @@ struct SEG {
             addtagx(b,a.tx);
             addtagx(c,a.tx);
         }else {
-            addtagx(b,a.ta);
-            addtagx(c,a.ta);
+            addtaga(b,a.ta);
+            addtaga(c,a.ta);
         }
         a.ta=-1,a.tx=0;
     }
