@@ -72,7 +72,7 @@ signed main() {
     int an=0;
     int rr=sum/m,rc=sum/n;
     REP(i,n) an+=abs(rr-r[i]);
-    REP(i,m) an+=abs(cc-c[i]);
+    REP(i,m) an+=abs(rc-c[i]);
     an>>=1;
     cout<<an<<'\n';
     return 0;
