@@ -99,7 +99,7 @@ signed main() {
             if((ac[a].gethash(x,x+m-1)-ac[b].gethash(y,y+m-1))==0) l=m;
             else r=m-1;
         }
-        ope(l)
+        // ope(l)
         an=(an+l*pw(P,q-1-j))%mod;
     }
     cout<<an<<'\n';
