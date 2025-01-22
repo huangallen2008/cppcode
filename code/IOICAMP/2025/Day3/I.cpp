@@ -137,8 +137,8 @@ void solve() {
         if(opt==1) {
             int u,x;
             cin>>u>>x;
-            if(x) cons.pb({u,u});
-            else cons.pb({-u,-u});
+            if(!x) u=-u;
+            cons.pb({-u,u});
         }else {
             int u,v,x,y;
             cin>>u>>v>>x>>y;
