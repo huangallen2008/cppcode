@@ -118,7 +118,7 @@ signed main() {
         }if(opt==3) {
             int l,r;
             cin>>l>>r;
-            int mx=0;
+            int mx=-inf;
             for(int j=l;j<=r;j++) chmax(mx,a[j]);
             cout<<mx<<'\n';
             // int rr=max(lcseg.qu(l),lcseg.qu(r));
