@@ -97,7 +97,7 @@ signed main() {
     for(int i=1425;i<1430;i++) cout<<mnf[i]<<' ';entr
     for(int i=2;i<V;i++) {
         if(mnf[i]==i) {
-        // op(i)ope(mnf[i])
+        op(i)ope(mnf[i])
         // op(i)ope(mnf[i])
         // if(i<V) {
             bit[mnp.size()].init(25);
