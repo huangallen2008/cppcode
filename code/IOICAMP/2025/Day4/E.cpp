@@ -105,6 +105,8 @@ signed main() {
         }
     } 
     oparr(dsu.p)oparr(dsu.sz)
+    entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<'\n';
+    entr
     int q;
     cin>>q;
     REP(i,q) {
