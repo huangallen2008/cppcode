@@ -114,6 +114,7 @@ signed main() {
         }
         REP(j,mnp.size()) {
             int f=mnp[j];
+            op(i)ope(f)
             int cc=0;
             while(x%f==0) {
                 x/=f;
