@@ -60,6 +60,10 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    int an=0;
+    REP1(i,n) REP1(j,m) an+=max(min(i-3,j-3),0ll);
+    cout<<an<<'\n';
+    return 0;
     vector<Vi> a(n+1,Vi(m+1));
     REP1(i,n) REP1(j,m) cin>>a[i][j];
     vector<Vi> dr(n+1,Vi(m)),dc(n,Vi(m+1));
