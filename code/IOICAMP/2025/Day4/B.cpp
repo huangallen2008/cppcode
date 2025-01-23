@@ -96,7 +96,7 @@ signed main() {
     Vi mnp,cnt1(maxv);
     for(int i=2;i<V;i++) if(mnf[i]==i) {
         if(i<V) {
-        ope("ok")
+        ope("ok")ope(i)
             bit[mnp.size()].init(25);
             mnp.pb(i);
         }
