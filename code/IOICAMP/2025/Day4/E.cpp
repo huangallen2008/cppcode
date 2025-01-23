@@ -114,13 +114,14 @@ signed main() {
     // entr
     int q;
     cin>>q;
-    vector<Vi> qq(n);
+    vector<Vpii> qq(n);
     REP(i,q) {
         int s,t;
         cin>>s>>t,s--,t--;
-        qq[s].pb(t);
+        qq[s].pb({t,i});
         // cout<<ret<<'\n';
     }
+    Vi ans(q);
     REP(i,n) {
         DSU dsu;
         dsu.init(n);
@@ -142,7 +143,9 @@ signed main() {
             }
             // dsu.merge(i,u);
         }
-        oparr(an)
+        for(auto [t,id]:qq[i]) ans[id]=an[t];
+        // oparr(an)
     }
+    REP(i,q) cout<<ans[i]<<'\n';
     return 0;
 }
