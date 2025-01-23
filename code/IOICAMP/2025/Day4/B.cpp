@@ -107,6 +107,7 @@ signed main() {
         int x=a[i];
         an+=sum;
         while(x>1) {
+            ope(x)
             int f=mnf[x];
             int cc=0;
             while(x%f==0) {
@@ -117,7 +118,7 @@ signed main() {
                 an-=cnt1[f],cnt1[f]++,sum++;
             }
         }
-        op(i)op(sum)ope(an)
+        // op(i)op(sum)ope(an)
     }
     reverse(ALL(a));
     REP(i,n) {
