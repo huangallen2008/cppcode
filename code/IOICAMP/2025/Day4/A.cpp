@@ -68,8 +68,8 @@ signed main() {
         int cnt=0;
         REP(i,n) if(a[i]<m) cnt+=(m-a[i]+c-1)/c;
         op(l)op(r)op(m)ope(cnt)
-        if(cnt<=m) r=m-1;
-        else l=m;
+        if(cnt<=m) l=m;
+        else r=m-1;
     }
     cout<<l<<'\n';
     return 0;
