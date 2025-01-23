@@ -97,7 +97,7 @@ signed main() {
     for(int i=1425;i<1430;i++) cout<<mnf[i]<<' ';entr
     for(int i=2;i<V;i++) {
         if(mnf[i]==i) {
-        op(i)ope(mnf[i])
+        // op(i)ope(mnf[i])
         // op(i)ope(mnf[i])
         // if(i<V) {
             bit[mnp.size()].init(25);
@@ -105,7 +105,7 @@ signed main() {
         // }
         }
     }
-    ope("ok")
+    // ope("ok")
     // REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
@@ -113,7 +113,7 @@ signed main() {
         int x=a[i];
         an+=sum;
         while(x>1) {
-            op(x)ope(mnf[x])
+            // op(x)ope(mnf[x])
             int f=mnf[x];
             int cc=0;
             while(x%f==0) {
