@@ -59,7 +59,7 @@ int rd(int l,int r) {
 // bitset<maxv> isp;
 Vi mnf(maxv);
 void init_isp() {
-    for(int i=2;i*i<=maxv;i++) if(mnf[i]==0) for(int j=i;j<=maxv;j+=i) if(mnf[j]==0) mnf[j]=i;
+    for(int i=2;i*i<maxv;i++) if(mnf[i]==0) for(int j=i;j<maxv;j+=i) if(mnf[j]==0) mnf[j]=i;
 }
 struct BIT {
     int n;
@@ -86,7 +86,7 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i],assert(a[i]<=2e6);
     // oparr(a)
     int V=6;
     vector<BIT> bit(V);
