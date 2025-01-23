@@ -113,7 +113,7 @@ signed main() {
             int l=s,r=n-1,m;
             while(l<r) {
                 m=l+r+1>>1;
-                if(qu(m,s-1)<mx) l=m;
+                if(qu(s+1,m)<mx) l=m;
                 else r=m-1;
             }
             ope(l)
