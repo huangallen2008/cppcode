@@ -98,7 +98,7 @@ signed main() {
         }
     }
     int an=0,sum=0;
-    
+    ope(mnp.size())
     REP(i,n) {
         int x=a[i];
         an+=sum;
