@@ -71,7 +71,7 @@ struct BIT {
     }
     void ud(int u,int v) {
         u++;
-        for(;u<=n;u+=u&-u) b[u]+=v;
+        for(;u<=n;u+=u&-u) b[u]+=v,assert(u>0);
     }
     int qu(int u) {
         u++;
@@ -89,7 +89,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     // oparr(a)
     int V=2000;
-    vector<BIT> bit(V);
+    vector<BIT> bit(224);
     Vi mnp,cnt1(maxv);
     for(int i=2;i<V;i++) if(mnf[i]==i) {
         if(i<V) {
@@ -97,6 +97,7 @@ signed main() {
             mnp.pb(i);
         }
     }
+    REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
     REP(i,n) {
