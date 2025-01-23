@@ -113,7 +113,7 @@ signed main() {
                 an-=cnt1[f],cnt1[f]++,sum++;
             }
         }
-        op(i)op(sum)ope(an)
+        // op(i)op(sum)ope(an)
     }
     reverse(ALL(a));
     REP(i,n) {
