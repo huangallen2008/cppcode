@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops")
+#pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -52,6 +52,45 @@ const int mod=998244353;
 const int maxn=5;
 const int maxv=2e6+5;
 const int inf=1e9;
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline string reads()
+{
+    char c=GC;
+    string s;
+    while(c==' '||c=='\n')c=GC;
+    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
+    return s;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    // PC('\n');
+}
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -90,13 +129,18 @@ struct DSU {
 };
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
+    int n=read(),m=read();
+    // cin>>n>>m;
     vector<edge> e(m),ne;
     Graphw g(n);
     DSU dsu;
     dsu.init(n);
-    REP(i,m) cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
+    REP(i,m) {
+        e[i].u=read()-1;
+        e[i].v=read()-1;
+        e[i].w=read();
+        //cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
+    }
     sort(ALL(e),[&](edge a,edge b) { return a.w<b.w; });
     for(auto ee:e) {
         if(dsu.merge(ee.u,ee.v)) {
@@ -146,6 +190,6 @@ signed main() {
         for(auto [t,id]:qq[i]) ans[id]=an[t];
         // oparr(an)
     }
-    REP(i,q) cout<<ans[i]<<'\n';
+    REP(i,q) out(ans[i]),PC('\n');//cout<<ans[i]<<'\n';
     return 0;
 }
