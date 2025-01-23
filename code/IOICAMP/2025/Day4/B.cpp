@@ -112,6 +112,7 @@ signed main() {
                 else an+=cnt1[f];
             }
         }
+        x=a[i];
         REP(j,mnp.size()) {
             int f=mnp[j];
             #ifdef LOCAL
