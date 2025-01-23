@@ -92,7 +92,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     // oparr(a)
     int V=2000;
-    vector<BIT> bit(224);
+    vector<BIT> bit(V);
     Vi mnp,cnt1(maxv);
     for(int i=1425;i<1430;i++) cout<<mnf[i]<<' ';entr
     for(int i=2;i<V;i++) {
@@ -130,7 +130,7 @@ signed main() {
     REP(i,n) {
         int x=a[i];
         // x=a[i];
-        REP(j,223) {
+        REP(j,mnp.size()) {
             int f=mnp[j];
             // #ifdef LOCAL
             // if(f>2) break;
