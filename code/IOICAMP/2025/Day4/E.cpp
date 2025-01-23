@@ -61,23 +61,22 @@ struct edge {
 };
 struct DSU {
     int n;
-    Vi p,sz,w;
+    Vi p,sz;
     void init(int _n) {
         n=_n;
-        p=w=Vi(n);
+        p=Vi(n);
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
     }
     int find(int u) {
         return p[u]==u?u:find(p[u]);
     }
-    bool merge(int a,int b,int ww) {
+    bool merge(int a,int b) {
         op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return 0;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
-        w[x]=ww;
         sz[y]+=sz[x];
         return 1;
     }
@@ -93,31 +92,51 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<edge> e(m);
+    vector<edge> e(m),ne;
     Graphw g(n);
     DSU dsu;
     dsu.init(n);
     REP(i,m) cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
     sort(ALL(e),[&](edge a,edge b) { return a.w<b.w; });
     for(auto ee:e) {
-        if(dsu.merge(ee.u,ee.v,ee.w)) {
+        if(dsu.merge(ee.u,ee.v)) {
             g[ee.u].pb({ee.v,ee.w});
             g[ee.v].pb({ee.u,ee.w});
+            ne.pb(ee);
         }
     } 
-    entr REP(i,n) {
-        for(auto [v,w]:g[i]) cout<<i<<' '<<v<<' '<<w<<'\n';
-    }entr
-    oparr(dsu.p)oparr(dsu.sz)
-    entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<' '<<dsu.w[i]<<'\n';
-    entr
+
+    // entr REP(i,n) {
+    //     for(auto [v,w]:g[i]) cout<<i<<' '<<v<<' '<<w<<'\n';
+    // }entr
+    // oparr(dsu.p)oparr(dsu.sz)
+    // entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<' '<<dsu.w[i]<<'\n';
+    // entr
     int q;
     cin>>q;
+    vector<Vi> qq(n);
     REP(i,q) {
         int s,t;
         cin>>s>>t,s--,t--;
-        int ret=dsu.val(s,t);
-        cout<<ret<<'\n';
+        qq[s].pb(t);
+        // cout<<ret<<'\n';
+    }
+    REP(i,n) {
+        DSU dsu;
+        dsu.init(n);
+        priority_queue<pii,Vpii,greater<pii>> pq;
+        Vi an(n);
+        int cnt=0;
+        Vi vis(n);
+        vis[i]=1;
+        for(auto [v,w]:g[i]) pq.push({w,v});
+        while(pq.size()) {
+            auto [w,u]=front();
+            pq.pop();
+            cnt++;
+            an[u]=cnt;
+            dsu.merge(i,u);
+        }
     }
     return 0;
 }
