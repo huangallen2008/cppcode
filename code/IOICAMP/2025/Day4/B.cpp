@@ -95,8 +95,8 @@ signed main() {
     vector<BIT> bit(224);
     Vi mnp,cnt1(maxv);
     for(int i=2;i<V;i++) if(mnf[i]==i) {
+        op(i)ope(mnf[i])
         if(i<V) {
-        ope("ok")ope(i)
             bit[mnp.size()].init(25);
             mnp.pb(i);
         }
