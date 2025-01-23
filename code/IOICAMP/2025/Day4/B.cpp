@@ -87,19 +87,20 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    reverse(ALL(a));
     // oparr(a)
     vector<BIT> bit(2000);
     Vi mnp,cnt1(maxv);
-    for(int i=2;i<maxv;i++) if(mnf[i]==i) {
+    for(int i=2;i<2000;i++) if(mnf[i]==i) {
         if(i<2000) {
             bit[mnp.size()].init(25);
             mnp.pb(i);
         }
     }
-    int an=0;
+    int an=0,sum=0;
+    
     REP(i,n) {
         int x=a[i];
+        an+=sum;
         while(x>1) {
             int f=mnf[x];
             int cc=0;
@@ -108,11 +109,14 @@ signed main() {
                 cc++;
             }
             if(f>=2000) {
-                if(cc) cnt1[f]++;
-                else an+=cnt1[f];
+                an-=cnt1[f],cnt1[f]++,sum++;
             }
         }
-        x=a[i];
+    }
+    reverse(ALL(a));
+    REP(i,n) {
+        int x=a[i];
+        // x=a[i];
         REP(j,mnp.size()) {
             int f=mnp[j];
             // #ifdef LOCAL
