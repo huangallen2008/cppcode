@@ -88,10 +88,9 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     reverse(ALL(a));
-    vector<BIT> bit;
+    vector<BIT> bit(2000);
     Vi mnp,mxp;
     for(int i=2;i<maxv;i++) if(mnf[i]==i) {
-        bit[i].pb(BIT());
         bit[i].init(25);
         mnp.pb(i);
     }
