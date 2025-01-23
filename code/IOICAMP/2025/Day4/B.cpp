@@ -83,7 +83,7 @@ struct BIT {
 signed main() {
     IOS();
     #ifdef LOCAL
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
     #endif
     init_isp();
     int n;
