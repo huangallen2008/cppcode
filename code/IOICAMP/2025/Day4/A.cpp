@@ -62,12 +62,11 @@ signed main() {
     cin>>n>>k>>c;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int l=1,r=2e18,m;
+    int l=1,r=2e9,m;
     while(l<r) {
         m=l+r+1>>1;
         __int128 cnt=0;
         REP(i,n) if(a[i]<m) cnt+=(m-a[i]+c-1)/c;
-        op(l)op(r)ope((int)cnt)
         if(cnt<=m) r=m-1;
         else l=m;
     }
