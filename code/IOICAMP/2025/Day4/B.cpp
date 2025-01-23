@@ -95,13 +95,17 @@ signed main() {
     vector<BIT> bit(224);
     Vi mnp,cnt1(maxv);
     for(int i=1425;i<1430;i++) cout<<mnf[i]<<' ';entr
-    for(int i=2;i<V;i++) if(mnf[i]==i) {
+    for(int i=2;i<V;i++) {
+        if(mnf[i]==i) {
         // op(i)ope(mnf[i])
-        if(i<V) {
+        // op(i)ope(mnf[i])
+        // if(i<V) {
             bit[mnp.size()].init(25);
             mnp.pb(i);
+        // }
         }
     }
+    ope("ok")
     // REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
