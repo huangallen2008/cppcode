@@ -100,7 +100,6 @@ signed main() {
             mnp.pb(i);
         }
     }
-    ope("ok")
     // REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
@@ -120,6 +119,7 @@ signed main() {
         }
         // op(i)op(sum)ope(an)
     }
+    ope("ok")
     reverse(ALL(a));
     REP(i,n) {
         int x=a[i];
