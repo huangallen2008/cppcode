@@ -104,7 +104,7 @@ signed main() {
             // g[ee.v].pb({ee.u,ee.w});
         }
     } 
-    ope("ok")
+    oparr(dsu.p)oparr(dsu.sz)
     int q;
     cin>>q;
     REP(i,q) {
