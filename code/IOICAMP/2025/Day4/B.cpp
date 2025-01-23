@@ -94,8 +94,9 @@ signed main() {
     int V=2000;
     vector<BIT> bit(224);
     Vi mnp,cnt1(maxv);
+    for(int i=1425;i<1430;i++) cout<<mnf[i]<<' ';entr
     for(int i=2;i<V;i++) if(mnf[i]==i) {
-        op(i)ope(mnf[i])
+        // op(i)ope(mnf[i])
         if(i<V) {
             bit[mnp.size()].init(25);
             mnp.pb(i);
