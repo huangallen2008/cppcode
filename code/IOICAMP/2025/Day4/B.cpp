@@ -107,7 +107,7 @@ signed main() {
         int x=a[i];
         an+=sum;
         while(x>1) {
-            ope(x)
+            op(x)ope(mnf[x])
             int f=mnf[x];
             int cc=0;
             while(x%f==0) {
