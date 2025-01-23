@@ -62,7 +62,7 @@ signed main() {
     cin>>n>>k>>c;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int l=1,r=2e9,m;
+    int l=1,r=2e18,m;
     while(l<r) {
         m=l+r+1>>1;
         __int128 cnt=0;
