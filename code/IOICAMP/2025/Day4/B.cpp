@@ -70,9 +70,11 @@ struct BIT {
         b=Vi(n+1);
     }
     void ud(int u,int v) {
+        u++;
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int qu(int u) {
+        u++;
         int r=0;
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
@@ -90,7 +92,7 @@ signed main() {
     Vi mnp,mxp;
     for(int i=2;i<maxv;i++) if(mnf[i]==i) {
         bit[i].pb(BIT());
-        bit[i].init(22);
+        bit[i].init(25);
         mnp.pb(i);
     }
     int an=0;
@@ -103,8 +105,8 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            for(int j=cc+1;j<22;j++) an+=cnt[f][i];
-            cnt[f][cc]++;
+            cn+=cnt.qu(cc-1);
+            cnt[f].ud(cc,1);
             op(i)op(x)op(f)op(cc)ope(an)
         }
     }
