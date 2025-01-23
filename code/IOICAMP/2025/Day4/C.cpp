@@ -87,7 +87,7 @@ signed main() {
             if(i<=2||j<=2) continue;
             int l=3,r=min(i,j)+1,mid;
             while(l<r) {
-                op(l)ope(r)
+                op(i)op(j)op(l)ope(r)
                 mid=l+r+1>>1;
                 if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
                 else r=mid-1; 
