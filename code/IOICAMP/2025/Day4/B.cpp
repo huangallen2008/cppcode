@@ -107,15 +107,22 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            if(f<2000) {
-                an+=bit[f].qu(cc-1);
-                bit[f].ud(cc,1);
-                REP(j,22) cout<<bit[f].qu(j+1)-bit[f].qu(j)<<' ';entr
-                op(i)op(x)op(f)op(cc)ope(an)
-            }else {
+            if(f>=2000) {
                 if(cc) cnt1[f]++;
                 else an+=cnt1[f];
             }
+        }
+        REP(j,mnp.size()) {
+            int f=mnp[j];
+            int cc=0;
+            while(x%f==0) {
+                x/=f;
+                cc++;
+            }
+            an+=bit[j].qu(cc-1);
+            bit[j].ud(cc,1);
+            REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
+            op(i)op(x)op(f)op(cc)ope(an)
         }
     }
     cout<<an<<'\n';
