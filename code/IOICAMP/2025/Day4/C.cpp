@@ -87,13 +87,13 @@ signed main() {
             if(i<=2||j<=2) continue;
             int l=3,r=min(i,j),mid;
             while(l<r) {
-                op(i)op(j)op(l)ope(r)
+                // op(i)op(j)op(l)ope(r)
                 mid=l+r+1>>1;
                 if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
                 else r=mid-1; 
             }
-            op(i)op(j)ope(l)
-            if(ok(i-l+1,i,j-l+1,j)) an+=l-3;
+            // op(i)op(j)ope(l)
+            if(ok(i-l+1,i,j-l+1,j)) an+=l-2;
             // for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
         }
     }
