@@ -77,7 +77,7 @@ struct DSU {
         if(x==y) return 0;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
-        w[x]=w;
+        w[x]=ww;
         sz[y]+=sz[x];
         return 1;
     }
@@ -109,7 +109,7 @@ signed main() {
         for(auto [v,w]:g[i]) cout<<i<<' '<<v<<' '<<w<<'\n';
     }entr
     oparr(dsu.p)oparr(dsu.sz)
-    entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<'\n';
+    entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<' '<<dsu.w[i]<<'\n';
     entr
     int q;
     cin>>q;
