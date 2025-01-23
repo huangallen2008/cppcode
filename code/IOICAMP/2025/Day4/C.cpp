@@ -70,6 +70,7 @@ signed main() {
         return a[r2][c2]-a[r1][c2]-a[r2][c1]+a[r1][c1];
     };
     auto same=[&](int r1,int r2,int c1,int c2) {
+        op(r1)op(r2)op(c1)ope(c2)
         return sum2(dr,r1,r2,c1,c2-1)+sum2(dc,r1,r2-1,c1,c2)==0;
     };
     auto samev=[&](Vi v) ->bool{
