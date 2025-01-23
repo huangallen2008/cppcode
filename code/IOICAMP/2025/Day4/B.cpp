@@ -82,6 +82,9 @@ struct BIT {
 };
 signed main() {
     IOS();
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    #endif
     init_isp();
     int n;
     cin>>n;
@@ -97,7 +100,7 @@ signed main() {
             mnp.pb(i);
         }
     }
-    REP(i,10) cout<<mnp[i]<<' ';entr
+    // REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
     REP(i,n) {
