@@ -79,7 +79,7 @@ signed main() {
         return 1;
     };
     auto ok=[&](int r1,int r2,int c1,int c2) {
-        return same(r1+1,r2-1,c1+1,c2-1)&&same(r1+1,r2-1,c1,c1)&&same(r1+1,r2-1,c2,c2)&&same(r1,r1,c1+1,c2-1)&&same(r2,r2,c1+1,c2-1)&&samev(Vi{a[r1][c1],a[r1][c2],a[r2][c1],a[r2][c2]});
+        return same(r1+1,r2-1,c1+1,c2-1)&&same(r1+1,r2-1,c1,c1)&&same(r1+1,r2-1,c2,c2)&&same(r1,r1,c1+1,c2-1)&&same(r2,r2,c1+1,c2-1)&&samev(Vi{a[r1][c1],a[r1][c2],a[r2][c1],a[r2][c2]})&&samev({a[r1][c1+1],a[r1+1][c2],a[r2][c2-1],a[r2-1][c1]});
     };
     int an=0;
     REP1(i,n) {
