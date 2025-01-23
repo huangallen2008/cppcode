@@ -61,7 +61,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     int an=0;
-    REP1(i,n) REP1(j,m) an+=max(min(i-3,j-3),0ll);
+    REP1(i,n) REP1(j,m) an+=max(min(i-2,j-2),0ll);
     cout<<an<<'\n';
     return 0;
     // vector<Vi> a(n+1,Vi(m+1));
