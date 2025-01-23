@@ -61,6 +61,23 @@ Vi mnf(maxv);
 void init_isp() {
     for(int i=2;i*i<=maxv;i++) if(mnf[i]==0) for(int j=i;j<=maxv;j+=i) if(mnf[j]==0) mnf[j]=i;
 }
+struct BIT {
+    int n;
+    Vi b;
+    BIT() {}
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    int qu(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
+    }
+};
 signed main() {
     IOS();
     init_isp();
@@ -68,8 +85,14 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    vector<Vi> cnt(maxv);
-    for(int i=2;i<maxv;i++) if(mnf[i]==i) cnt[i]=Vi(22);
+    reverse(ALL(a));
+    vector<BIT> bit;
+    Vi mnp,mxp;
+    for(int i=2;i<maxv;i++) if(mnf[i]==i) {
+        bit[i].pb(BIT());
+        bit[i].init(22);
+        mnp.pb(i);
+    }
     int an=0;
     REP(i,n) {
         int x=a[i];
