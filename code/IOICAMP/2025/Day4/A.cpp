@@ -67,6 +67,7 @@ signed main() {
         m=l+r+1>>1;
         __int128 cnt=0;
         REP(i,n) if(a[i]<m) cnt+=(m-a[i]+c-1)/c;
+        op(l)op(r)op(m)ope(cnt)
         if(cnt<=m) r=m-1;
         else l=m;
     }
