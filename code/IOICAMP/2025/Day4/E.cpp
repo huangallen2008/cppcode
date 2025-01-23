@@ -156,8 +156,8 @@ signed main() {
     // oparr(dsu.p)oparr(dsu.sz)
     // entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<' '<<dsu.w[i]<<'\n';
     // entr
-    int q;
-    cin>>q;
+    int q=read();
+    // cin>>q;
     vector<Vpii> qq(n);
     REP(i,q) {
         int s=read()-1,t=read()-1;
