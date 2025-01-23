@@ -82,6 +82,7 @@ signed main() {
             }
             REP(j,cc) an+=cnt[f][i];
             cnt[f][cc]++;
+            op(i)op(x)op(f)op(cc)ope(an)
         }
     }
     cout<<an<<'\n';
