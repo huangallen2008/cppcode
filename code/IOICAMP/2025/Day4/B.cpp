@@ -70,6 +70,20 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<Vi> cnt(maxv);
     for(int i=2;i<maxv;i++) if(mnf[i]==i) cnt[i]=Vi(21);
-    
+    int an=0;
+    REP(i,n) {
+        int x=a[i];
+        while(x>1) {
+            int f=mnf[x];
+            int cc=0;
+            while(x%f==0) {
+                x/=f;
+                cc++;
+            }
+            REP(j,cc) an+=cnt[f][i];
+            cnt[f][cc]++;
+        }
+    }
+    cout<<an<<'\n';
     return 0;
 }
