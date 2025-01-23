@@ -117,9 +117,8 @@ signed main() {
                 an-=cnt1[f],cnt1[f]++,sum++;
             }
         }
-        // op(i)op(sum)ope(an)
+        op(i)op(sum)ope(an)
     }
-    ope("ok")
     reverse(ALL(a));
     REP(i,n) {
         int x=a[i];
