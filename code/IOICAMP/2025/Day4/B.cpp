@@ -80,7 +80,7 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            REP(j,cc) an+=cnt[f][i];
+            for(int j=cc+1;j<21;j++) an+=cnt[f][i];
             cnt[f][cc]++;
             op(i)op(x)op(f)op(cc)ope(an)
         }
