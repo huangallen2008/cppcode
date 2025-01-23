@@ -60,6 +60,7 @@ int rd(int l,int r) {
 Vi mnf(maxv);
 void init_isp() {
     for(int i=2;i<maxv;i++) if(mnf[i]==0) for(int j=i;j<maxv;j+=i) if(mnf[j]==0) mnf[j]=i;
+    ope("ok")
 }
 struct BIT {
     int n;
