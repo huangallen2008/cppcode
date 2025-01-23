@@ -103,6 +103,7 @@ signed main() {
             // g[ee.v].pb({ee.u,ee.w});
         }
     } 
+    ope("ok")
     int q;
     cin>>q;
     REP(i,q) {
