@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops")
+#pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -160,8 +160,8 @@ signed main() {
     cin>>q;
     vector<Vpii> qq(n);
     REP(i,q) {
-        int s,t;
-        cin>>s>>t,s--,t--;
+        int s=read()-1,t=read()-1;
+        // cin>>s>>t,s--,t--;
         qq[s].pb({t,i});
         // cout<<ret<<'\n';
     }
