@@ -56,22 +56,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-bitset<maxv> isp;
-Vi mnf(maxv,0);
+// bitset<maxv> isp;
+Vi mnf(maxv);
 void init_isp() {
-    isp.set();
-    isp[0]=isp[1]=0;
     for(int i=2;i*i<=maxv;i++) if(mnf[i]==0) for(int j=i;j<=maxv;j+=i) if(mnf[j]==0) mnf[j]=i;
 }
 signed main() {
     IOS();
     init_isp();
-    int cnt=0;
-    REP(i,10) cout<<mnf[i]<<' ';entr
-    REP(i,2000) cnt+=isp[i];
-    ope(cnt)
-    int cnt2=0;
-    REP(i,maxv) cnt+=isp[i];
-    ope(cnt)
+    int n;
+    cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    vector<Vi> cnt(maxv);
+    for(int i=2;i<maxv;i++) if(mnf[i]==i) cnt[i]=Vi(21);
+    
     return 0;
 }
