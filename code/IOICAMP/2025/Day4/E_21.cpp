@@ -110,7 +110,7 @@ signed main() {
             cout<<t-l+1<<'\n';
         }else {
             int mx=qu(t,s-1);
-            int l=s,r=n,m;
+            int l=s,r=n-1,m;
             while(l<r) {
                 m=l+r+1>>1;
                 if(qu(m,s-1)<mx) l=m;
