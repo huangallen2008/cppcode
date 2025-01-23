@@ -93,17 +93,20 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<edge> e(m);
-    Graph g(n);
+    Graphw g(n);
     DSU dsu;
     dsu.init(n);
     REP(i,m) cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
     sort(ALL(e),[&](edge a,edge b) { return a.w<b.w; });
     for(auto ee:e) {
         if(dsu.merge(ee.u,ee.v)) {
-            // g[ee.u].pb({ee.v,ee.w});
-            // g[ee.v].pb({ee.u,ee.w});
+            g[ee.u].pb({ee.v,ee.w});
+            g[ee.v].pb({ee.u,ee.w});
         }
     } 
+    entr REP(i,n) {
+        for(auto [v,w]:g) cout<<i<<' '<<v<<' '<<w<<'\n';
+    }entr
     oparr(dsu.p)oparr(dsu.sz)
     entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<'\n';
     entr
