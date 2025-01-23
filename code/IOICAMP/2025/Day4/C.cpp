@@ -85,9 +85,9 @@ signed main() {
     REP1(i,n) {
         REP1(j,m) {
             if(i<=2||j<=2) continue;
-            int l=3,r=min(i,j);
+            int l=3,r=min(i,j),mid;
             while(l<r) {
-                int mid=l+r+1>>1;
+                mid=l+r+1>>1;
                 if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
                 else r=mid-1; 
             }
