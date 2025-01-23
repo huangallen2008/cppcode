@@ -69,7 +69,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     vector<Vi> cnt(maxv);
-    for(int i=2;i<maxv;i++) if(mnf[i]==i) cnt[i]=Vi(21);
+    for(int i=2;i<maxv;i++) if(mnf[i]==i) cnt[i]=Vi(22);
     int an=0;
     REP(i,n) {
         int x=a[i];
@@ -80,7 +80,7 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            for(int j=cc+1;j<21;j++) an+=cnt[f][i];
+            for(int j=cc+1;j<22;j++) an+=cnt[f][i];
             cnt[f][cc]++;
             op(i)op(x)op(f)op(cc)ope(an)
         }
