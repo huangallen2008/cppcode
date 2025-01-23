@@ -89,10 +89,12 @@ signed main() {
     REP(i,n) cin>>a[i];
     reverse(ALL(a));
     vector<BIT> bit(2000);
-    Vi mnp,mxp;
+    Vi mnp,cnt1(maxv);
     for(int i=2;i<maxv;i++) if(mnf[i]==i) {
-        bit[i].init(25);
-        mnp.pb(i);
+        if(i<2000) {
+            bit[i].init(25);
+            mnp.pb(i);
+        }
     }
     int an=0;
     REP(i,n) {
@@ -104,9 +106,14 @@ signed main() {
                 x/=f;
                 cc++;
             }
+            if(f<2000) {
             an+=bit[f].qu(cc-1);
             bit[f].ud(cc,1);
             op(i)op(x)op(f)op(cc)ope(an)
+            }else {
+                if(cc) cnt1[f]++;
+                else an+=cnt1[f];
+            }
         }
     }
     cout<<an<<'\n';
