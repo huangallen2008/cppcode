@@ -115,9 +115,9 @@ signed main() {
         x=a[i];
         REP(j,mnp.size()) {
             int f=mnp[j];
-            #ifdef LOCAL
-            if(f>2) break;
-            #endif
+            // #ifdef LOCAL
+            // if(f>2) break;
+            // #endif
             // op(i)ope(f)
             int cc=0;
             while(x%f==0) {
@@ -128,9 +128,9 @@ signed main() {
             bit[j].ud(cc,1);
             // ope("pl")
             // REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
-            op(i)op(x)op(f)op(cc)ope(an)
+            // op(i)op(x)op(f)op(cc)ope(an)
         }
-        ope(an)
+        // ope(an)
     }
     cout<<an<<'\n';
     return 0;
