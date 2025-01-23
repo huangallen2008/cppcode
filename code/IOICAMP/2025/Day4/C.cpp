@@ -72,7 +72,7 @@ signed main() {
     auto same=[&](int r1,int r2,int c1,int c2) {
         return sum2(dr,r1,r2,c1,c2-1)+sum2(dc,r1,r2-1,c1,c2)==0;
     };
-    auto same=[&](Vi v) ->bool{
+    auto samev=[&](Vi v) ->bool{
         return 0;
     };
     auto ok=[&](int r1,int r2,int c1,int c2) {
