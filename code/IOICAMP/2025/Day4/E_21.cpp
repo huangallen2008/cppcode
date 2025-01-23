@@ -110,14 +110,14 @@ signed main() {
             cout<<t-l<<'\n';
         }else {
             int mx=qu(t,s-1);
-            int l=s,r=n-1,m;
+            int l=s,r=n,m;
             while(l<r) {
                 m=l+r+1>>1;
                 if(qu(s,m)<mx) l=m;
                 else r=m-1;
             }
             ope(l)
-            cout<<l-t<<'\n';
+            cout<<l-t+1<<'\n';
         }
     }
 
