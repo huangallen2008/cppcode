@@ -60,38 +60,41 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    vector<Vi> a(n+1,Vi(m+1));
+    REP1(i,n) REP1(j,m) cin>>a[i][j];
+    vector<Vi> dr(n+1,Vi(m)),dc(n,Vi(m+1));
+    REP1(i,n) REP1(j,m-1) dr[i][j]=dr[i-1][j]+dr[i][j-1]-dr[i-1][j-1]+abs(a[i][j]-a[i][j+1]);
+    REP1(i,n-1) REP1(j,m) dc[i][j]=dc[i-1][j]+dc[i][j-1]-dc[i-1][j-1]+abs(a[i][j]-a[i+1][j]);
+    auto sum2=[&](vector<Vi>&a,int r1,int r2,int c1,int c2) {
+        r1--,c1--;
+        return a[r2][c2]-a[r1][c2]-a[r2][c1]+a[r1][c1];
+    };
+    auto same=[&](int r1,int r2,int c1,int c2) {
+        // op(r1)op(r2)op(c1)ope(c2)
+        return sum2(dr,r1,r2,c1,c2-1)+sum2(dc,r1,r2-1,c1,c2)==0;
+    };
+    auto samev=[&](Vi v) ->bool{
+        if(v.size()==0) return 1;
+        for(int x:v) if(x!=v[0]) return 0;
+        return 1;
+    };
+    auto ok=[&](int r1,int r2,int c1,int c2) {
+        return same(r1+1,r2-1,c1+1,c2-1)&&same(r1+1,r2-1,c1,c1)&&same(r1+1,r2-1,c2,c2)&&same(r1,r1,c1+1,c2-1)&&same(r2,r2,c1+1,c2-1)&&samev(Vi{a[r1][c1],a[r1][c2],a[r2][c1],a[r2][c2]})&&samev({a[r1][c1+1],a[r1+1][c2],a[r2][c2-1],a[r2-1][c1]});
+    };
     int an=0;
-    REP1(i,n) REP1(j,m) an+=max(min(i-2,j-2),0ll);
+    REP1(i,n) {
+        REP1(j,m) {
+            if(i<=2||j<=2) continue;
+            int l=3,r=min(i,j);
+            while(l<r) {
+                int mid=l+r+1>>1;
+                if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
+                else r=nid-1; 
+            }
+            an+=mid-l;
+            // for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
+        }
+    }
     cout<<an<<'\n';
-    return 0;
-    // vector<Vi> a(n+1,Vi(m+1));
-    // REP1(i,n) REP1(j,m) cin>>a[i][j];
-    // vector<Vi> dr(n+1,Vi(m)),dc(n,Vi(m+1));
-    // REP1(i,n) REP1(j,m-1) dr[i][j]=dr[i-1][j]+dr[i][j-1]-dr[i-1][j-1]+abs(a[i][j]-a[i][j+1]);
-    // REP1(i,n-1) REP1(j,m) dc[i][j]=dc[i-1][j]+dc[i][j-1]-dc[i-1][j-1]+abs(a[i][j]-a[i+1][j]);
-    // auto sum2=[&](vector<Vi>&a,int r1,int r2,int c1,int c2) {
-    //     r1--,c1--;
-    //     return a[r2][c2]-a[r1][c2]-a[r2][c1]+a[r1][c1];
-    // };
-    // auto same=[&](int r1,int r2,int c1,int c2) {
-    //     // op(r1)op(r2)op(c1)ope(c2)
-    //     return sum2(dr,r1,r2,c1,c2-1)+sum2(dc,r1,r2-1,c1,c2)==0;
-    // };
-    // auto samev=[&](Vi v) ->bool{
-    //     if(v.size()==0) return 1;
-    //     for(int x:v) if(x!=v[0]) return 0;
-    //     return 1;
-    // };
-    // auto ok=[&](int r1,int r2,int c1,int c2) {
-    //     return same(r1+1,r2-1,c1+1,c2-1)&&same(r1+1,r2-1,c1,c1)&&same(r1+1,r2-1,c2,c2)&&same(r1,r1,c1+1,c2-1)&&same(r2,r2,c1+1,c2-1)&&samev(Vi{a[r1][c1],a[r1][c2],a[r2][c1],a[r2][c2]})&&samev({a[r1][c1+1],a[r1+1][c2],a[r2][c2-1],a[r2-1][c1]});
-    // };
-    // int an=0;
-    // REP1(i,n) {
-    //     REP1(j,m) {
-    //         // op(i)ope(j)
-    //         for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
-    //     }
-    // }
-    // cout<<an<<'\n';
     return 0;
 }
