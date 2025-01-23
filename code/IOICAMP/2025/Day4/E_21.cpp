@@ -116,6 +116,7 @@ signed main() {
                 if(qu(m,s-1)<mx) l=m;
                 else r=m-1;
             }
+            ope(l)
             cout<<l-t<<'\n';
         }
     }
