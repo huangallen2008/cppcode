@@ -114,6 +114,9 @@ signed main() {
         }
         REP(j,mnp.size()) {
             int f=mnp[j];
+            #ifdef LOCAL
+            if(f>2) break;
+            #endif
             // op(i)ope(f)
             int cc=0;
             while(x%f==0) {
