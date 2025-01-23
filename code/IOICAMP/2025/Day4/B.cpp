@@ -98,7 +98,7 @@ signed main() {
         }
     }
     int an=0,sum=0;
-    ope(mnp.size())
+    // ope(mnp.size())
     REP(i,n) {
         int x=a[i];
         an+=sum;
@@ -119,7 +119,7 @@ signed main() {
     REP(i,n) {
         int x=a[i];
         // x=a[i];
-        REP(j,mnp.size()) {
+        REP(j,223) {
             int f=mnp[j];
             // #ifdef LOCAL
             // if(f>2) break;
@@ -130,6 +130,7 @@ signed main() {
                 x/=f;
                 cc++;
             }
+            assert(cc>=25);
             an+=bit[j].qu(cc-1);
             bit[j].ud(cc,1);
             // ope("pl")
