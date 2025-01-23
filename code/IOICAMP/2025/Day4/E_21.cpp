@@ -92,6 +92,7 @@ signed main() {
     pra=ra;
     REP1(i,n-1) pa[i]=max(pa[i-1],a[i]);
     REP1(i,n-1) pra[i]=max(pra[i-1],ra[i]);
+    init_st();
     int q;
     cin>>q;
     REP(i,q) {
