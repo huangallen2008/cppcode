@@ -100,6 +100,7 @@ signed main() {
             mnp.pb(i);
         }
     }
+    ope("ok")
     // REP(i,10) cout<<mnp[i]<<' ';entr
     int an=0,sum=0;
     // ope(mnp.size())
