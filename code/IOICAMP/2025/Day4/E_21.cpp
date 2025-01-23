@@ -82,7 +82,7 @@ int rqu(int l,int r) {
 signed main() {
     IOS();
     cin>>n>>mm;
-    a=Vi(n);
+    a=Vi(n+1);
     REP1(i,mm) {
         int xx;cin>>xx>>xx;
         cin>>a[i];
