@@ -121,6 +121,7 @@ signed main() {
                 cc++;
             }
             an+=bit[j].qu(cc-1);
+            ope("pl")
             bit[j].ud(cc,1);
             REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
             op(i)op(x)op(f)op(cc)ope(an)
