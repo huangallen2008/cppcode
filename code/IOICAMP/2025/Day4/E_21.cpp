@@ -97,7 +97,7 @@ signed main() {
     cin>>q;
     REP(i,q) {
         int s,t;
-        cin>>s>>t,s--,t--;
+        cin>>s>>t;
         if(s<t) {
             int mx=qu(s,t-1);
             int l=1,r=s,m;
