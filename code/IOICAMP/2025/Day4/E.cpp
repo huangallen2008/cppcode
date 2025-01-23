@@ -61,22 +61,23 @@ struct edge {
 };
 struct DSU {
     int n;
-    Vi p,sz;
+    Vi p,sz,w;
     void init(int _n) {
         n=_n;
-        p=Vi(n);
+        p=w=Vi(n);
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
     }
     int find(int u) {
         return p[u]==u?u:find(p[u]);
     }
-    bool merge(int a,int b) {
+    bool merge(int a,int b,int ww) {
         op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return 0;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
+        w[x]=w;
         sz[y]+=sz[x];
         return 1;
     }
