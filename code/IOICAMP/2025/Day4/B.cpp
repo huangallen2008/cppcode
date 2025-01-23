@@ -110,6 +110,7 @@ signed main() {
             if(f<2000) {
                 an+=bit[f].qu(cc-1);
                 bit[f].ud(cc,1);
+                REP(j,22) cout<<bit[f].qu(j+1)-bit[f].qu(j)<<' ';entr
                 op(i)op(x)op(f)op(cc)ope(an)
             }else {
                 if(cc) cnt1[f]++;
