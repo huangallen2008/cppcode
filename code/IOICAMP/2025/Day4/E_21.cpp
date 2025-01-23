@@ -117,7 +117,7 @@ signed main() {
                 else r=m-1;
             }
             ope(l)
-            cout<<l-t+1<<'\n';
+            cout<<l-t<<'\n';
         }
     }
 
