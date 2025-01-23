@@ -131,12 +131,18 @@ signed main() {
         vis[i]=1;
         for(auto [v,w]:g[i]) pq.push({w,v});
         while(pq.size()) {
-            auto [w,u]=front();
+            auto [www,u]=pq.top();
             pq.pop();
             cnt++;
             an[u]=cnt;
-            dsu.merge(i,u);
+            vis[u]=1;
+            for(auto [v,w]:g[u]) {
+                if(vis[v]) continue;
+                pq.push({w,v});
+            }
+            // dsu.merge(i,u);
         }
+        oparr(an)
     }
     return 0;
 }
