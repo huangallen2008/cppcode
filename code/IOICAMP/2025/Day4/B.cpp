@@ -88,7 +88,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     // oparr(a)
-    int V=2;
+    int V=3;
     vector<BIT> bit(V);
     Vi mnp,cnt1(maxv);
     for(int i=2;i<V;i++) if(mnf[i]==i) {
