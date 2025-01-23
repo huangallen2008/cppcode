@@ -88,6 +88,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     reverse(ALL(a));
+    oparr(a)
     vector<BIT> bit(2000);
     Vi mnp,cnt1(maxv);
     for(int i=2;i<maxv;i++) if(mnf[i]==i) {
@@ -107,9 +108,9 @@ signed main() {
                 cc++;
             }
             if(f<2000) {
-            an+=bit[f].qu(cc-1);
-            bit[f].ud(cc,1);
-            op(i)op(x)op(f)op(cc)ope(an)
+                an+=bit[f].qu(cc-1);
+                bit[f].ud(cc,1);
+                op(i)op(x)op(f)op(cc)ope(an)
             }else {
                 if(cc) cnt1[f]++;
                 else an+=cnt1[f];
