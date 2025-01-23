@@ -130,7 +130,7 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            assert(cc>=25);
+            assert(cc<=25);
             an+=bit[j].qu(cc-1);
             bit[j].ud(cc,1);
             // ope("pl")
