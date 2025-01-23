@@ -107,7 +107,7 @@ signed main() {
                 else l=m+1;
             }
             ope(l)
-            cout<<t-l<<'\n';
+            cout<<t-l+1<<'\n';
         }else {
             int mx=qu(t,s-1);
             int l=s,r=n-1,m;
