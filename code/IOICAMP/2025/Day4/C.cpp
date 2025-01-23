@@ -91,7 +91,7 @@ signed main() {
                 if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
                 else r=mid-1; 
             }
-            an+=l-2;
+            an+=max(l-3,0ll);
             // for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
         }
     }
