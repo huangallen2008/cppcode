@@ -88,10 +88,11 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     // oparr(a)
-    vector<BIT> bit(2000);
+    int V=2000;
+    vector<BIT> bit(V);
     Vi mnp,cnt1(maxv);
-    for(int i=2;i<2000;i++) if(mnf[i]==i) {
-        if(i<2000) {
+    for(int i=2;i<V;i++) if(mnf[i]==i) {
+        if(i<V) {
             bit[mnp.size()].init(25);
             mnp.pb(i);
         }
@@ -108,7 +109,7 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            if(f>=2000) {
+            if(f>=V) {
                 an-=cnt1[f],cnt1[f]++,sum++;
             }
         }
