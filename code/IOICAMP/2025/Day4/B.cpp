@@ -105,8 +105,8 @@ signed main() {
                 x/=f;
                 cc++;
             }
-            cn+=cnt.qu(cc-1);
-            cnt[f].ud(cc,1);
+            cn+=bit[f].qu(cc-1);
+            bit[f].ud(cc,1);
             op(i)op(x)op(f)op(cc)ope(an)
         }
     }
