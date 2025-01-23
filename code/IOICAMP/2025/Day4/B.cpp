@@ -86,9 +86,9 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n);
-    REP(i,n) cin>>a[i],assert(a[i]<=2e6);
+    REP(i,n) cin>>a[i];
     // oparr(a)
-    int V=6;
+    int V=2000;
     vector<BIT> bit(V);
     Vi mnp,cnt1(maxv);
     for(int i=2;i<V;i++) if(mnf[i]==i) {
