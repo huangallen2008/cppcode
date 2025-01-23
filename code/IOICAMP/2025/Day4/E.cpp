@@ -100,7 +100,7 @@ signed main() {
     REP(i,m) cin>>e[i].u>>e[i].v>>e[i].w,e[i].u--,e[i].v--;
     sort(ALL(e),[&](edge a,edge b) { return a.w<b.w; });
     for(auto ee:e) {
-        if(dsu.merge(ee.u,ee.v)) {
+        if(dsu.merge(ee.u,ee.v,ee.w)) {
             g[ee.u].pb({ee.v,ee.w});
             g[ee.v].pb({ee.u,ee.w});
         }
