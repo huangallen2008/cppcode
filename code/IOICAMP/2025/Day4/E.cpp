@@ -105,7 +105,7 @@ signed main() {
         }
     } 
     entr REP(i,n) {
-        for(auto [v,w]:g) cout<<i<<' '<<v<<' '<<w<<'\n';
+        for(auto [v,w]:g[i]) cout<<i<<' '<<v<<' '<<w<<'\n';
     }entr
     oparr(dsu.p)oparr(dsu.sz)
     entr REP(i,n) cout<<i<<' '<<dsu.p[i]<<'\n';
