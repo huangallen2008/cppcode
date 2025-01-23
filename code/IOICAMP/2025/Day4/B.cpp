@@ -114,7 +114,7 @@ signed main() {
         }
         REP(j,mnp.size()) {
             int f=mnp[j];
-            op(i)ope(f)
+            // op(i)ope(f)
             int cc=0;
             while(x%f==0) {
                 x/=f;
@@ -126,6 +126,7 @@ signed main() {
             // REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
             // op(i)op(x)op(f)op(cc)ope(an)
         }
+        ope(an)
     }
     cout<<an<<'\n';
     return 0;
