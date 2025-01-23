@@ -93,7 +93,7 @@ signed main() {
     Vi mnp,cnt1(maxv);
     for(int i=2;i<maxv;i++) if(mnf[i]==i) {
         if(i<2000) {
-            bit[i].init(25);
+            bit[mnp.size()].init(25);
             mnp.pb(i);
         }
     }
@@ -122,8 +122,8 @@ signed main() {
             }
             an+=bit[j].qu(cc-1);
             bit[j].ud(cc,1);
-            REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
             ope("pl")
+            REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
             op(i)op(x)op(f)op(cc)ope(an)
         }
     }
