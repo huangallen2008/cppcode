@@ -85,7 +85,7 @@ signed main() {
     REP1(i,n) {
         REP1(j,m) {
             op(i)ope(j)
-            for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,j-k+1,i,j)) an++;
+            for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
         }
     }
     cout<<an<<'\n';
