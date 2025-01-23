@@ -122,8 +122,8 @@ signed main() {
             }
             an+=bit[j].qu(cc-1);
             bit[j].ud(cc,1);
-            ope("pl")
             REP(j,22) cout<<bit[j].qu(j+1)-bit[j].qu(j)<<' ';entr
+            ope("pl")
             op(i)op(x)op(f)op(cc)ope(an)
         }
     }
