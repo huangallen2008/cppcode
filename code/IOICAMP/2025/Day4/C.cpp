@@ -73,15 +73,19 @@ signed main() {
         return sum2(dr,r1,r2,c1,c2-1)+sum2(dc,r1,r2-1,c1,c2)==0;
     };
     auto samev=[&](Vi v) ->bool{
-        return 0;
+        if(v.size()==0) return 1;
+        for(int x:v) if(x!=v[0]) return 0;
+        return 1;
     };
     auto ok=[&](int r1,int r2,int c1,int c2) {
-        return 0;
+        return same(r1+1,r2-1,c1+1,c2-1)&&same(r1+1,r2-1,c1,c1)&&same(r1+1,r2-1,c2,c2)&&same(r1,r1,c1+1,c2-1)&&same(r2,r2,c1+1,c2-1)&&samev(Vi{a[r1][c1],a[r1][c2],a[r2][c1],a[r2][c2]});
     };
+    int an=0;
     REP1(i,n) {
         REP1(j,m) {
-
+            for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,j-k+1,i,j)) an++;
         }
     }
+    cout<<an<<'\n';
     return 0;
 }
