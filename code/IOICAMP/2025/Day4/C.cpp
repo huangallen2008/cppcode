@@ -89,9 +89,9 @@ signed main() {
             while(l<r) {
                 int mid=l+r+1>>1;
                 if(ok(i-mid+1,i,j-mid+1,j)) l=mid;
-                else r=nid-1; 
+                else r=mid-1; 
             }
-            an+=mid-l;
+            an+=l-3;
             // for(int k=3;k<=i&&k<=j;k++) if(ok(i-k+1,i,j-k+1,j)) an++;
         }
     }
