@@ -105,6 +105,7 @@ signed main() {
                 if(qu(m,s-1)<mx) r=m;
                 else l=m+1;
             }
+            ope(l)
             cout<<t-l<<'\n';
         }else {
             int mx=qu(t,s-1);
