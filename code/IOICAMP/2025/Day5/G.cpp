@@ -67,7 +67,7 @@ signed main() {
             cin >> a[i][j], a[i][j] += a[i][j-1];
         }
     }
-    vector<int> b(n);
+    vector<int> b(n+1);
     for(int i = 1; i <= n; i++) cin >> b[i];
     vector<vector<int> > dp(n+1, vector<int>(m+1));
     vector<vector<int> > xdp(n+1, vector<int>(m+1));
