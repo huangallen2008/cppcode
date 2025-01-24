@@ -113,6 +113,7 @@ signed main() {
             }
         }
     }
+    oparr(tps)
     Vi nok(n);
     REP(i,n) if(ngb[i].size()>1) nok[i]=1;
     int nn=tps.size();
