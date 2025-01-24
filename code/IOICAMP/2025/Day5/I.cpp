@@ -132,10 +132,13 @@ signed main() {
     REP(i,nn) {
         int u=tps[i];
         if(nok[u]) continue;
+        int lca=u;
         for(int x:ngb[u]) {
-            dp[u]=dp[x]+1;
+            lca=glca(lca,x);
+            // dp[u]=dp[x]+1;
             // op(u)ope(x)
         }
+        dp[u]=dp[lca]+1;
         //lca
         st[0][u]=lca;
         REP1(j,maxb-1) st[j][u]=st[j-1][st[j-1][u]];
