@@ -143,7 +143,7 @@ signed main() {
             // op(u)ope(x)
         }
         // op(u)ope(lca)
-        dp[u]=dp[lca]+1;
+        dp[u]=dp[lca]+!nok[i];
         //lca
         st[0][u]=lca;
         REP1(j,maxb-1) st[j][u]=st[j-1][st[j-1][u]];
