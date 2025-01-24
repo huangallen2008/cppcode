@@ -51,7 +51,7 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const int inf=1e9;
+const int inf=(1ll<<60);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
