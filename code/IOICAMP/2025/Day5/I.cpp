@@ -119,7 +119,7 @@ signed main() {
     Vi dp(n),dep(n);
     auto glca=[&](int a,int b) {
         // op(a)op(b)
-        if(dp[a]>dp[b]) swap(a,b);
+        if(dep[a]>dep[b]) swap(a,b);
         int cc=dep[b]-dep[a];
         REP(i,maxb) if(cc>>i&1) b=st[i][b];
         RREP(i,maxb) {
@@ -159,10 +159,12 @@ signed main() {
     return 0;
 }
 /*
-5 5
+5 7
 1 2 1
 2 3 1
 2 4 1
 3 5 1
 4 5 1
+5 6 2
+3 6 1
 */
