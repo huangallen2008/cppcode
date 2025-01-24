@@ -52,6 +52,8 @@ signed main() {
 		int l, r; cin >> l >> r;
 		if((n&1) && ((l == n/2+1) || (r == n/2+1))) {
 			if(l == n/2+1) swap(l, r);
+            if(l==n/2+1) {cout<<"0\n";
+            continue;}
 			int a = INT_MAX;
 			if(s[r-1] == '0') a = min(a, cnt(r-1, l)+1);
 			if(s[r+1] == '0') a = min(a, cnt(r+1, l)+1);
