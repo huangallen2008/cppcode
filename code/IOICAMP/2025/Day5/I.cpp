@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxb=25;
 const int inf=(1ll<<60);
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -60,6 +60,7 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    vector<Vi> st(maxb,Vi(n));
     Graphw g(n);
     REP(i,m) {
         int u,v,w;
@@ -116,6 +117,18 @@ signed main() {
     REP(i,n) if(ngb[i].size()>1) nok[i]=1;
     int nn=tps.size();
     Vi dp(n);
+    auto glca=[&](int a,int b) {
+        if(dp[a]>dp[b]) swap(a,b);
+        int cc=dp[b]-dp[a];
+        REP(i,maxb) if(cc>>i&1) b=st[i][b];
+        RREP(i,maxb) {
+            if(st[i][a]!=st[i][b]) {
+                a=st[i][a],b=st[i][b];
+            }
+        }
+        if(a!=b) a=st[0][a];
+        return a;
+    };
     REP(i,nn) {
         int u=tps[i];
         if(nok[u]) continue;
@@ -123,6 +136,9 @@ signed main() {
             dp[u]=dp[x]+1;
             // op(u)ope(x)
         }
+        //lca
+        st[0][u]=lca;
+        REP1(j,maxb-1) st[j][u]=st[j-1][st[j-1][u]];
     }
     REP(i,n) {
         if(dis[i]==inf) cout<<"-1 ";
