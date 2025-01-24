@@ -65,7 +65,7 @@ signed main() {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
         g[u].pb({v,w});
-        g[v].pb({u,w});
+        // g[v].pb({u,w});
     }
     priority_queue<pii,vector<pii>,greater<pii>> pq;
     pq.push({0,0});
