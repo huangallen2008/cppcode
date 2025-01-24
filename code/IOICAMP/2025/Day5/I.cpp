@@ -75,6 +75,7 @@ signed main() {
     dis[0]=0;
     while(pq.size()) {
         int u=pq.top().s;
+        op(u)ope(dis[u])
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
