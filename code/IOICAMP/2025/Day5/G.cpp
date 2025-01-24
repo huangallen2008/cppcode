@@ -71,6 +71,7 @@ signed main() {
     for(int i = 1; i <= n; i++) cin >> b[i];
     vector<vector<int> > dp(n+1, vector<int>(m+1));
     vector<vector<int> > xdp(n+1, vector<int>(m+1));
+    vector<Vpii> stk(n+1{{0,0}});
     REP1(i,n) xdp[i][0]=0;
     Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
@@ -83,6 +84,8 @@ signed main() {
         }
         REP1(i,n) cout<<dp[i][j]<<' ';entr
     }
-    cout<<dp[n][m]<<'\n';
+    int an=0;
+    REP1(i,n) chmax(an,dp[i][m]);
+    cout<<an<<'\n';
     return 0;
 }
