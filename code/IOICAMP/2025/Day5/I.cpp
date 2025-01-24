@@ -134,7 +134,6 @@ signed main() {
     REP(i,nn) {
         int u=tps[i];
         if(u==0||dis[u]==inf) continue;
-        if(nok[u]) continue;
         int lca=-1;
         for(int x:ngb[u]) {
             // op(u)ope(x)
