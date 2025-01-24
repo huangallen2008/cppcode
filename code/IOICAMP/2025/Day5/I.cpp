@@ -138,6 +138,7 @@ signed main() {
             // dp[u]=dp[x]+1;
             // op(u)ope(x)
         }
+        op(u)ope(lca)
         dp[u]=dp[lca]+1;
         //lca
         st[0][u]=lca;
