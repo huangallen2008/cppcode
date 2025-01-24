@@ -65,6 +65,17 @@ namespace {
 
 std::vector<int> guessstone(int n) {
     ::N = n;
-    std::vector <int> ans(n, 0);
-    return ans;
+    Vi an(n);
+    int all=0;
+    Vi tt(n);
+    REP(i,n) tt[i]=i;
+    all=query(tt);
+    REP(i,n) {
+        int cc=0;
+        Vi t;
+        REP(j,n) if(i!=j) t.pb(j);
+        cc=query(t);
+        if(cc<all) an[i]=1;
+    }
+    return an;
 }
