@@ -90,6 +90,7 @@ signed main() {
     REP(i,n) {
         for(auto [v,w]:g[i]) {
             if(dis[v]==dis[i]+w) {
+                op(i)op(v)ope(w)
                 ng[i].pb(v),deg[v]++;
                 ngb[v].pb(i);
             }
