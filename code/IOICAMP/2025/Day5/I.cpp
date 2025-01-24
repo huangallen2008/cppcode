@@ -118,6 +118,7 @@ signed main() {
     int nn=tps.size();
     Vi dp(n);
     auto glca=[&](int a,int b) {
+        op(a)op(b)
         if(dp[a]>dp[b]) swap(a,b);
         int cc=dp[b]-dp[a];
         REP(i,maxb) if(cc>>i&1) b=st[i][b];
@@ -127,6 +128,7 @@ signed main() {
             }
         }
         if(a!=b) a=st[0][a];
+        ope(a)
         return a;
     };
     REP(i,nn) {
