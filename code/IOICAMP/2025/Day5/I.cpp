@@ -80,6 +80,7 @@ signed main() {
         if(vis[u]) continue;
         vis[u]=1;
         for(auto [v,w]:g[u]) {
+            op(u)ope(v)
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
                 op(u)op(v)op(w)ope(dis[v])
