@@ -67,7 +67,7 @@ signed main() {
     vector<vector<int> > dp(n+1, vector<int>(m+1,-inf));
     vector<vector<int> > xdp(n+1, vector<int>(m+1,-inf));
     REP1(i,n) xdp[i][0]=0;
-    Vi mdp(m+1),xdp(m+1);
+    Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
             dp[i][j]=xdp[i][j-1];
