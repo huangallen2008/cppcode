@@ -69,7 +69,7 @@ signed main() {
     IOS();
     REP1(i,10) {
 
-        op(pw(i*499122177))
+        op(pw(499122177*i))
     }
     
     return 0;
