@@ -73,7 +73,7 @@ signed main() {
     vector<vector<int> > xdp(n+1, vector<int>(m+1));
     REP1(i,n) xdp[i][0]=0;
     Vi mdp(m+1);
-    for(int j = 2; j <= m; j++) {
+    for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
             dp[i][j]=xdp[i][j-1]+a[i][j];
             chmax(mdp[j],dp[i][j]);
