@@ -82,7 +82,7 @@ signed main() {
         return 0;
     };
     int an=0;
-    REP(i,n) {
+    REP(i,s.size()) {
         REP(j,i+1) {
             if((j-i+1)%4==0&&ok(i,j)) an++;
         }
