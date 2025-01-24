@@ -76,15 +76,15 @@ signed main() {
     Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
-            while(dq[i].size()&&dq.front().s<=j-b[i]-2) dq.pop_front();
+            while(dq[i].size()&&dq.front().s<=j-b[i]-2) dq[i].pop_front();
             dp[i][j]=dq[i].front()+a[i][j];
             chmax(mdp[j],dp[i][j]);
         }
 
         REP1(i,n) {
             //{mdp[j]-a[i][j+1]}
-            while(dq[i].size()&&dq[i].back().f<=mdp[j]-a[i][j+1]) dq.pop_back();
-            dq.pb({mdp[j]-a[i][j+1],j});
+            while(dq[i].size()&&dq[i].back().f<=mdp[j]-a[i][j+1]) dq[i].pop_back();
+            dq[i].pb({mdp[j]-a[i][j+1],j});
             // xdp[i][j]=max(xdp[i][j-1],mdp[j]-a[i][j+1]);
         }
         REP1(i,n) cout<<dp[i][j]<<' ';entr
