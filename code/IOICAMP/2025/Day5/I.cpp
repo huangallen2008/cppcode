@@ -90,7 +90,7 @@ signed main() {
     REP(i,n) {
         for(auto [v,w]:g[i]) {
             if(dis[v]==dis[i]+w) {
-                op(i)op(v)ope(w)
+                // op(i)op(v)ope(w)
                 ng[i].pb(v),deg[v]++;
                 ngb[v].pb(i);
             }
@@ -101,7 +101,7 @@ signed main() {
     REP(i,n) {
         if(deg[i]==0) q.push(i);
     }
-    op(ngb)
+    // op(ngb)
     while(q.size()) {
         int u=q.front();
         q.pop();
@@ -121,7 +121,7 @@ signed main() {
         if(nok[u]) continue;
         for(int x:ngb[u]) {
             dp[u]=dp[x]+1;
-            op(u)ope(x)
+            // op(u)ope(x)
         }
     }
     REP(i,n) {
