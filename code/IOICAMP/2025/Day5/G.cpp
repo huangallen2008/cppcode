@@ -77,7 +77,7 @@ signed main() {
     for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
             while(dq[i].size()&&dq.front().s<=j-b[i]-2) dq[i].pop_front();
-            dp[i][j]=dq[i].front()+a[i][j];
+            dp[i][j]=dq[i].front().f+a[i][j];
             chmax(mdp[j],dp[i][j]);
         }
 
