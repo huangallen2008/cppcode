@@ -39,11 +39,11 @@ signed main() {
 	auto cnt = [&](int l, int r) -> int {
 		if(turn(l) > turn(r)) swap(l, r);
 		if(all.lower_bound(turn(l)*2) != all.end() && (*all.lower_bound(turn(l)*2)) <= turn(r)*2) return -1;
-		else if(turn(r) == turn(l)) return ((r > (n+1)/2) + (l > (n+1)/2) == 1);
+		else if(turn(r) == turn(l)) return ((r > (n)/2) + (l > (n)/2) == 1);
 		else {
 			int ans = pre[turn(r)-1] - pre[turn(l)+1];
 			ans += turn(r)-turn(l);
-			int tmp = ((r > (1+n)/2) != now[turn(r)-1]) + ((l > (n+1)/2) != now[turn(l)+1]);
+			int tmp = ((r > (n)/2) != now[turn(r)-1]) + ((l > (n)/2) != now[turn(l)+1]);
 			ans += tmp;
 			return ans;
 		}
