@@ -88,7 +88,7 @@ signed main() {
     Graph ngb(n);
     Vi deg(n);
     REP(i,n) {
-        for(auto [v,w]:g[u]) {
+        for(auto [v,w]:g[i]) {
             if(dis[v]==dis[i]+w) {
                 ng[i].pb(v),deg[v]++;
                 ngb[v].pb(i);
