@@ -103,9 +103,10 @@ signed main() {
     }
     Vi tps;
     queue<int> q;
-    REP(i,n) {
-        if(deg[i]==0) q.push(i);
-    }
+    // REP(i,n) {
+        // if(deg[i]==0) q.push(i);
+    // }
+    q.push(0);
     // op(ngb)
     while(q.size()) {
         int u=q.front();
