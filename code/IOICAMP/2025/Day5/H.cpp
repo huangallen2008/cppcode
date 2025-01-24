@@ -76,10 +76,10 @@ signed main() {
     cin>>s;
     ac.init(s);
     auto ok=[&](int l,int r) {
-        // op(l)ope(r)
+        op(l)ope(r)
         int len=r-l+1>>2;
         //l~l+len-1 , l+len~l+2len-1, l+2len~l+3len-1, l+3len~l+4len-1
-        if(ac.gethash(l,l+len-1)-ac.gethash(l+3*len,l+4*len-1)==0&&ac.gethash(l+len,l+2*len-1)-ac.gethash(l+2*len,l+3*len-1)==0) return 1;
+        if(ac.gethash(l,l+len-1)-ac.gethash(l+3*len,l+4*len-1)==0&&ac.gethash(l+len,l+2*len-1)-ac.gethash(l+2*len,l+3*len-1)==0) {ope(1)return 1;}
         return 0;
     };
     int an=0;
