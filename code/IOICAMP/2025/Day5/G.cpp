@@ -81,6 +81,7 @@ signed main() {
         REP1(i,n) {
             xdp[i][j]=max(xdp[i][j-1],mdp[j]-a[i][j+1]);
         }
+        REP1(i,n) cout<<dp[i][j]<<' ';entr
     }
     cout<<dp[n][m]<<'\n';
     return 0;
