@@ -73,7 +73,7 @@ signed main() {
     // vector<vector<int> > xdp(n+1, vector<int>(m+1));
     vector<deque<pii>> dq(n+1);
     REP1(i,n) dq[i].pb({-a[i][1],0});
-    REP1(i,n) xdp[i][0]=0;
+    // REP1(i,n) xdp[i][0]=0;
     Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
