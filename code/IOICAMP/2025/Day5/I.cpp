@@ -85,6 +85,7 @@ signed main() {
             }
         }
     }
+    oparr(dis)
     Graph ng(n);
     Graph ngb(n);
     Vi deg(n);
