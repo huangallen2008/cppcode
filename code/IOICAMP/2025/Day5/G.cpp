@@ -58,10 +58,15 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n, m; cin >> n >> m;
+    int n, m; cin >> n >> m;m--;
     vector<vector<int> > a(n+1, vector<int> (m+2));
-    for(int i = 1; i <= n; i++) for(int j = 1; j <= m; j++)
-        cin >> a[i][j], a[i][j] += a[i][j-1];
+    for(int i = 1; i <= n; i++) {
+        int xxx;cin>>xxx;
+        for(int j = 1; j <= m; j++){
+
+            cin >> a[i][j], a[i][j] += a[i][j-1];
+        }
+    }
     vector<int> b(n);
     for(int i = 1; i <= n; i++) cin >> b[i];
     vector<vector<int> > dp(n+1, vector<int>(m+1));
