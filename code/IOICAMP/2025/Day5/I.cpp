@@ -118,7 +118,10 @@ signed main() {
     REP(i,n) {
         int u=tps[i];
         if(nok[u]) continue;
-        for(int x:ngb[u]) dp[u]=dp[x]+1;
+        for(int x:ngb[u]) {
+            dp[u]=dp[x]+1;
+            op(u)ope(x)
+        }
     }
     REP(i,n) {
         if(dis[i]==inf) cout<<"-1 ";
