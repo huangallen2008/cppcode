@@ -87,7 +87,7 @@ signed main() {
             dq[i].pb({mdp[j]-a[i][j+1],j});
             // xdp[i][j]=max(xdp[i][j-1],mdp[j]-a[i][j+1]);
         }
-        REP1(i,n) cout<<dp[i][j]<<' ';entr
+        // REP1(i,n) cout<<dp[i][j]<<' ';entr
     }
     int an=0;
     REP1(i,n) chmax(an,dp[i][m]);
