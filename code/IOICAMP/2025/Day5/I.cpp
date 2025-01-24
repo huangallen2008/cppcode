@@ -82,7 +82,7 @@ signed main() {
         for(auto [v,w]:g[u]) {
             if(dis[v]>dis[u]+w) {
                 dis[v]=dis[u]+w;
-                op(u)op(v)ope(dis[v])
+                op(u)op(v)op(w)ope(dis[v])
                 pq.push({dis[v],v});
             }
         }
