@@ -135,10 +135,11 @@ signed main() {
         int u=tps[i];
         if(u==0) continue;
         if(nok[u]) continue;
-        int lca=u;
+        int lca=-1;
         for(int x:ngb[u]) {
             op(u)ope(x)
-            lca=glca(lca,x);
+            if(lca!=-1)lca=glca(lca,x);
+            else lca=x;
             // dp[u]=dp[x]+1;
             // op(u)ope(x)
         }
