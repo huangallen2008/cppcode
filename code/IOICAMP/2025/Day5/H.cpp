@@ -85,7 +85,7 @@ signed main() {
     int an=0;
     REP(i,s.size()) {
         REP(j,i+1) {
-            if((j-i+1)%4==0&&ok(i,j)) an++;
+            if((i-j+1)%4==0&&ok(j,i)) an++;
         }
     }
     cout<<an<<'\n';
