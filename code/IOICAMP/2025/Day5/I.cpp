@@ -73,7 +73,7 @@ signed main() {
     Vi vis(n);  
     dis[0]=0;
     while(pq.size()) {
-        int u=pq.top();
+        int u=pq.top().s;
         pq.pop();
         if(vis[u]) continue;
         vis[u]=1;
