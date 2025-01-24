@@ -70,7 +70,7 @@ signed main() {
     Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
         for(int i= 1; i <= n; i++) {
-            dp[i][j]=xdp[i][j-1];
+            dp[i][j]=xdp[i][j-1]+a[i][j];
             chmax(mdp[j],dp[i][j]);
         }
         REP1(i,n) {
