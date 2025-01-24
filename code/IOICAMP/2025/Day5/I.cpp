@@ -116,11 +116,11 @@ signed main() {
     Vi nok(n);
     REP(i,n) if(ngb[i].size()>1) nok[i]=1;
     int nn=tps.size();
-    Vi dp(n);
+    Vi dp(n),dep(n);
     auto glca=[&](int a,int b) {
         // op(a)op(b)
         if(dp[a]>dp[b]) swap(a,b);
-        int cc=dp[b]-dp[a];
+        int cc=dep[b]-dep[a];
         REP(i,maxb) if(cc>>i&1) b=st[i][b];
         RREP(i,maxb) {
             if(st[i][a]!=st[i][b]) {
@@ -144,6 +144,7 @@ signed main() {
         }
         // op(u)ope(lca)
         dp[u]=dp[lca]+!nok[i];
+        dep[u]=dep[lca]+1;
         //lca
         st[0][u]=lca;
         REP1(j,maxb-1) st[j][u]=st[j-1][st[j-1][u]];
