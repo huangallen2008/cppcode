@@ -100,6 +100,7 @@ signed main() {
     REP(i,n) {
         if(deg[i]==0) q.push(i);
     }
+    op(ng)
     while(q.size()) {
         int u=q.front();
         q.pop();
