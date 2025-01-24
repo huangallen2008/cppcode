@@ -142,7 +142,7 @@ signed main() {
             // dp[u]=dp[x]+1;
             // op(u)ope(x)
         }
-        // op(u)ope(lca)
+        op(u)ope(lca)
         dp[u]=dp[lca]+!nok[i];
         dep[u]=dep[lca]+1;
         //lca
