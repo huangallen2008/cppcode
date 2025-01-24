@@ -71,7 +71,7 @@ signed main() {
     for(int i = 1; i <= n; i++) cin >> b[i];
     vector<vector<int> > dp(n+1, vector<int>(m+1));
     vector<vector<int> > xdp(n+1, vector<int>(m+1));
-    vector<Vpii> stk(n+1{{0,0}});
+    vector<Vpii> stk(n+1,{{0,0}});
     REP1(i,n) xdp[i][0]=0;
     Vi mdp(m+1);
     for(int j = 1; j <= m; j++) {
