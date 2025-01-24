@@ -116,7 +116,7 @@ signed main() {
     REP(i,n) if(ngb[i].size()>1) nok[i]=1;
     int nn=tps.size();
     Vi dp(n);
-    REP(i,n) {
+    REP(i,nn) {
         int u=tps[i];
         if(nok[u]) continue;
         for(int x:ngb[u]) {
