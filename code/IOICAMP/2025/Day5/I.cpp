@@ -131,6 +131,7 @@ signed main() {
     };
     REP(i,nn) {
         int u=tps[i];
+        if(u==0) continue;
         if(nok[u]) continue;
         int lca=u;
         for(int x:ngb[u]) {
