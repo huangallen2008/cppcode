@@ -56,52 +56,21 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
-    int n;
-    Vi p,sz;
-    void init(int _n) {
-        n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        REP(i,n) p[i]=i;
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
     }
-    int find(int u) {
-        return p[u]==u?u:p[u]=find(p[u]);
-    }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        p[x]=y;
-        sz[y]+=sz[x];
-    }
-};
+    return r;
+}
 signed main() {
     IOS();
-    // freopen("in.txt","w",stdout);
-    // cout<<n<<" "<<'\n';//2~200,399
-    int cnt=0;
-    Vpii e;
-    e.pb({1,2});
-    // cout<<"1 2\n";
-    cnt++;
-    int t=100;
-    int n=(2000-2)/t*t+2;
-    for(int i=2;i<n;i+=t) {//i~i+198
-        // cout<<i<<' '<<i+t<<'\n';
-        e.pb({i,i+t});
-        cnt++;
-        for(int j=i;j<i+t;j++) {
-            for(int k=j+1;k<i+t;k++) {
-                // if(j==k) continue;
-                // cout<<j<<' '<<k<<'\n';
-                e.pb({j,k});
-                cnt++;
-            }
-        }
+    REP1(i,10) {
+
+        op(pw(i*499122177))
     }
-    cout<<n<<' '<<cnt<<'\n';
-    for(auto [x,y]:e) cout<<x<<' '<<y<<'\n';
-    // op(cnt)
+    
     return 0;
 }
