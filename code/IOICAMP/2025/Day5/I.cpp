@@ -137,7 +137,7 @@ signed main() {
         if(nok[u]) continue;
         int lca=-1;
         for(int x:ngb[u]) {
-            op(u)ope(x)
+            // op(u)ope(x)
             if(lca!=-1)lca=glca(lca,x);
             else lca=x;
             // dp[u]=dp[x]+1;
