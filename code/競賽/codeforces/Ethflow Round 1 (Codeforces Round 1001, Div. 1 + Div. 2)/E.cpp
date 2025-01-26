@@ -110,12 +110,13 @@ void solve() {
     sort(ALL(p),[&](int x,int y) {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
-    oparr(p)oparr(in)oparr(out)
+    // oparr(p)oparr(in)oparr(out)
     REP(i,n) {
         int u=p[i];
-        op(i)ope(bit.qu(in[u],out[u]))
+        // op(i)ope(bit.qu(in[u],out[u]))
         if((i-bit.qu(in[u],out[u]))&1) {
-            cout<<u+1<<'\n';entr
+            cout<<u+1<<'\n';
+            // entr
             return;
         }
         bit.ud(in[u],1);
