@@ -70,10 +70,10 @@ signed main() {
             if(a[i][j]=='R') dr[i]=1;
         }
     }
-    queue<pipii> q;
+    queue<pii> q;
     vector<Vi> dis(h,Vi(w,inf));
     dis[0][0]=0;
-    q.push({{0,0}});
+    q.push({0,0});
     auto nco=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         else return a[x][(y+t)%w]=='.';
