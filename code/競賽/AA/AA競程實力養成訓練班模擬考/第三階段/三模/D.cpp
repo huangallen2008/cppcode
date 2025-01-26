@@ -58,6 +58,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+        freopen("in.txt","r",stdin);
+    #endif
     int q,v;
     cin>>q>>v;
     vector<vector<bool>> dp(v+1,vector<bool>(v+1));
@@ -83,8 +86,8 @@ signed main() {
         }
     }
     REP(i,q) {
-        int n;
-        cin>>n;
+        int n,v;
+        cin>>v>>n;
         if(n>v||!dp[v][n]) {
             cout<<"Impossible\n";
             continue;
