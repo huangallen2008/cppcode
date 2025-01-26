@@ -92,9 +92,7 @@ signed main() {
             nx=(nx+h)%h;
             ny=(ny+w)%w;
             if(nco(nx,ny,t+1)) {
-                if(dis[nx][ny]>t+1) {
-                    dis[nx][ny]=t+1;
-                }
+                chmin(dis[nx][ny],t+1);
                 if(!vis[nx][ny][(t+1)%w])q.push({nx,ny,t+1});
             }
         }
