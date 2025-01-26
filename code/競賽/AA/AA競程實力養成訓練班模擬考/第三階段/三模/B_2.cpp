@@ -87,18 +87,22 @@ signed main() {
         return ncc(x,y,t)=='.';
     };
     vector<vector<Vi>> vis(h,vector<Vi>(w,Vi(w)));
+    vis[0][0][0]=1;
     while(q.size()) {
         auto [x,y,t]=q.front();
-        vis[x][y][t%w]=1;
+        // vis[x][y][t%w]=1;
         // op(x)op(y)ope(dis[x][y])
         q.pop();
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
-            nx=(nx+h)%h;
-            ny=(ny+w)%w;
+            nx=(nx%h+h)%h;
+            ny=(ny%w+w)%w;
             if(nco(nx,ny,t+1)) {
                 chmin(dis[nx][ny],t+1);
-                if(!vis[nx][ny][(t+1)%w])q.push({nx,ny,t+1});
+                if(!vis[nx][ny][(t+1)%w]){
+                    q.push({nx,ny,t+1});
+                    vis[nx][ny][(t+1)%w]=1;
+                }
             }
         }
     }
@@ -116,7 +120,7 @@ signed main() {
     REP(i,h) {
         REP(j,w) {
             if(dis[i][j]==inf) cout<<'-';
-            else cout<<dis[i][j]%10;
+            else cout<<(dis[i][j])%10;
         }
         cout<<'\n';
     }
