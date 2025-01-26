@@ -69,26 +69,28 @@ signed main() {
             if(a[i][j]=='R') dr[i]=1;
         }
     }
-    queue<pii> q;
+    queue<pipii> q;
     vector<Vi> dis(h,Vi(w,inf));
     dis[0][0]=0;
-    q.push({0,0});
+    q.push({0,{0,0}});
     auto nco=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         else return a[x][(y+t)%w]=='.';
     };
     while(q.size()) {
-        auto [x,y]=q.front();
+        auto [t,p]=q.front();
+        auto [x,y]=p;
         q.pop();
+        if(t>n*n) continue;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             nx=(nx+h)%h;
             ny=(ny+w)%w;
-            if(nco(nx,ny,dis[x][y]+1)) {
-                if(dis[nx][ny]>dis[x][y]+1) {
-                    dis[nx][ny]=dis[x][y]+1;
-                    q.push({nx,ny});
-                }
+            if(nco(nx,ny,t)) {
+                // if(dis[nx][ny]>dis[x][y]+1) {
+                dis[nx][ny]=dis[x][y]+1;
+                q.push({nx,ny});
+                // }
             }
         }
     }
