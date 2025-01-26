@@ -94,6 +94,11 @@ signed main() {
             }
         }
     }
+    #ifdef LOCAL
+    REP(i,h) {
+        REP(j,w) cout<<dis[i][j]<<' ';entr
+    }
+    #endif
     REP(i,h) {
         REP(j,w) {
             if(dis[i][j]==inf) cout<<'-';
