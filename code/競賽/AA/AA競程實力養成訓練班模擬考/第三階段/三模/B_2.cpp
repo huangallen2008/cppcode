@@ -84,6 +84,7 @@ signed main() {
     vector<vector<Vi>> vis(h,vector<Vi>(w,Vi(w)));
     while(q.size()) {
         auto [x,y,t]=q.front();
+        vis[x][y][t%w]=1;
         // op(x)op(y)ope(dis[x][y])
         q.pop();
         for(auto [dx,dy]:dir) {
