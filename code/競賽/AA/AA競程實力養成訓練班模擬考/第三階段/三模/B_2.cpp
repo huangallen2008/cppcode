@@ -76,13 +76,13 @@ signed main() {
     queue<S> q;
     vector<Vi> dis(h,Vi(w,inf));
     dis[0][0]=0;
-    q.push({0,0});
+    q.push({0,0,0});
     auto nco=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         else return a[x][(y+t)%w]=='.';
     };
     while(q.size()) {
-        auto [x,y]=q.front();
+        auto [x,y,t]=q.front();
         op(x)op(y)ope(dis[x][y])
         q.pop();
         for(auto [dx,dy]:dir) {
@@ -92,7 +92,7 @@ signed main() {
             if(nco(nx,ny,dis[x][y]+1)) {
                 if(dis[nx][ny]>dis[x][y]+1) {
                     dis[nx][ny]=dis[x][y]+1;
-                    q.push({nx,ny});
+                    q.push({nx,ny,t+1});
                 }
             }
         }
