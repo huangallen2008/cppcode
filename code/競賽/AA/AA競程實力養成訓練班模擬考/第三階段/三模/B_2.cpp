@@ -77,9 +77,14 @@ signed main() {
     vector<Vi> dis(h,Vi(w,inf));
     dis[0][0]=0;
     q.push({0,0,0});
+    auto ncc=[&](int x,int y,int t) {
+        if(dr[x]) return a[x][((y-t)%w+w)%w];
+        else return a[x][(y+t)%w];
+    }
     auto nco=[&](int x,int y,int t) {
-        if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
-        else return a[x][(y+t)%w]=='.';
+        // if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
+        // else 
+        return ncc(x,y,t)=='.';
     };
     vector<vector<Vi>> vis(h,vector<Vi>(w,Vi(w)));
     while(q.size()) {
