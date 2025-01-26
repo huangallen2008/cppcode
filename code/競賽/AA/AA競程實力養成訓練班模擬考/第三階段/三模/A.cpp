@@ -94,6 +94,7 @@ signed main() {
             addmod(cc2[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
+    oparr(cc2)
     int an=cc[n];
     REP(i,m) {
         an=(an-cc2[n-1]*4%mod+mod)%mod;
