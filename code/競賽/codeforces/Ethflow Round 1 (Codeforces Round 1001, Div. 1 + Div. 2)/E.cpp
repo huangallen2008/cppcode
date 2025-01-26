@@ -90,6 +90,7 @@ struct BIT {
     }
 };
 void solve() {
+    id=0;
     int n;
     cin>>n;
     BIT bit;
