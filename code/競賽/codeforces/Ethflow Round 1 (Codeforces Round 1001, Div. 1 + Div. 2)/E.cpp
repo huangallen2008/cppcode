@@ -124,7 +124,6 @@ void solve() {
         if((cnt-bit.qu(in[u],out[u]))!=0) {
             // cout<<u+1<<' ';
             an.pb(u);
-            bit.
             // ok=1;
             // entr
             // return;
