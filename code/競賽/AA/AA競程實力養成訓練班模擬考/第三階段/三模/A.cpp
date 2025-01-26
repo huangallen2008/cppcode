@@ -83,10 +83,15 @@ signed main() {
     init_fac();
     int n,m;
     cin>>n>>m;
-    Vi cc(n+1);
+    Vi cc(n+1),cc2(n+1);
+    REP1(i,n) {
+        for(int k=3;k<=i;k++) {
+            addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
+        }
+    }
     REP1(i,n) {
         for(int k=2;k<=i;k++) {
-            addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
+            addmod(cc2[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
     int an=cc[n];
