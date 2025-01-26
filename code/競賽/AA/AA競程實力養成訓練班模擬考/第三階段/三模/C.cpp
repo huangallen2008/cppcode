@@ -78,11 +78,6 @@ struct BIT {
 }bit;
 signed main() {
     IOS();
-    #ifdef LOCAL
-    bit.init(5);
-    bit.ud(1,3);
-    ope(bit.qu(-1,-1));
-    #endif
     int n,d;
     cin>>n>>d;
     Vi a(n+1);
@@ -95,7 +90,7 @@ signed main() {
         mv[i]=dp[i]-bit.qu(a[i]-d,a[i]);
         bit.ud(a[i],1);
     }
-    oparr(dp)oparr(mv)
+    // oparr(dp)oparr(mv)
     cout<<dp[n]-1<<'\n';
     return 0;
 }
