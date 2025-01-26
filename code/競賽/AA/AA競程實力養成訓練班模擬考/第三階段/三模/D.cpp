@@ -104,7 +104,7 @@ signed main() {
         assert(n==cs&&v==ck);
         REP(j,an.size()) {
             REP(k,an[j]) {
-                cout<<2;if(k==an[j]-`) cout<<"*";
+                cout<<2;if(k==an[j]-1) cout<<"*";
             }
             cout<<"+\n"[j==an.size()-1];
         }
