@@ -62,7 +62,7 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int an=0;
+    int an=-inf;
     {
         int sum=0;
         REP(i,n) sum+=a[i];
