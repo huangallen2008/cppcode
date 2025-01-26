@@ -75,6 +75,7 @@ signed main() {
     op(_ld)ope(sizeof(_ld));
     op(ll)ope(sizeof(ll))
 
-    op(_f128)ope(sizeof(_f128))
+    // op(_f128)
+    ope(sizeof(_f128))
     return 0;
 }
