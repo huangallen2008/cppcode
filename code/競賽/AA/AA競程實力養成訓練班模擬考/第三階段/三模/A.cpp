@@ -89,6 +89,13 @@ signed main() {
             addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
-    oparr(cc)
+    int an=cc[n];
+    REP(i,m) {
+        an=(an-cc[n-1]*2%mod+mod)%mod;
+        REP1(j,i) {
+            an=(an+(C(i,j)*cc[n-1-j]%mod)*pw(2,j+1))%mod;
+        }
+        cout<<an<<'\n';
+    }
     return 0;
 }
