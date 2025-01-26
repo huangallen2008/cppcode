@@ -75,7 +75,7 @@ void dfs(int u,int fa) {
         val[u]=mx;
     }else {
         val[u]=r[u];
-        add[u]+=mx-val[u];
+        add[u]+=mx-val[u]<<1;
     }
 }
 void solve() {
