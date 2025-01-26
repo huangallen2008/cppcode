@@ -95,17 +95,17 @@ signed main() {
         // vis[x][y][t%w]=1;
         // op(x)op(y)ope(dis[x][y])
         q.pop();
+        int nd=dis[x][y][t]+1;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             nx=(nx%h+h)%h;
             ny=(ny%w+w)%w;
-            int nd=dis[x][y][t]+1;
-            if(nco(nx,ny,nd+1)) {
-                int &nid=dis[nx][ny][(nd+1)%w];
-                if(!vis[nx][ny][(nd+1)%w]){
+            if(nco(nx,ny,t+1)) {
+                int &nid=dis[nx][ny][(t+1)%w];
+                if(!vis[nx][ny][(t+1)%w]){
                     nid=nd;
-                    q.push({nx,ny,nd+1});
-                    vis[nx][ny][(nd+1)%w]=1;
+                    q.push({nx,ny,t+1});
+                    vis[nx][ny][(t+1)%w]=1;
                 }
             }
         }
