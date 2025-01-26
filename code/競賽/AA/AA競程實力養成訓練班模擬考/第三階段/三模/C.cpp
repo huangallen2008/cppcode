@@ -222,7 +222,7 @@ signed main() {
     Vi a(n+1);
     Vi t;
     REP(i,n) cin>>a[i],t.pb(a[i]),t.pb(a[i]+d);
-    a[n]=maxv;
+    a[n]=inf;
     t.pb(a[n]),t.pb(a[n]+d);
     sort(ALL(t));
     Vi nxt(n+1);
