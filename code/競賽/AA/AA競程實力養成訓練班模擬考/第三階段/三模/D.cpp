@@ -71,6 +71,7 @@ signed main() {
         for(int j=1;j<=20;j<=i) {
             dp[i]|=dp[i-j]<<(1<<j);
         }
+        ope(i)
     }
     REP(i,q) {
         int n;
