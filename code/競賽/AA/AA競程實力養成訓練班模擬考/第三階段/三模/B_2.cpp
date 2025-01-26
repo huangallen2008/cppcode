@@ -56,8 +56,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-// Vpii dir={{1,0},{0,1},{-1,0},{0,-1}};
-Vpii dir={{0,0},{-1,1},{-2,0},{-1,-1}};
+Vpii dir={{1,0},{0,1},{-1,0},{0,-1}};
+// Vpii dir={{0,0},{-1,1},{-2,0},{-1,-1}};
 signed main() {
     IOS();
     int h,w;
@@ -81,6 +81,7 @@ signed main() {
         if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         else return a[x][(y+t)%w]=='.';
     };
+    vector<vector<Vi>> vis(h,vector<Vi>(w,Vi(w)));
     while(q.size()) {
         auto [x,y,t]=q.front();
         op(x)op(y)ope(dis[x][y])
@@ -89,11 +90,11 @@ signed main() {
             int nx=x+dx,ny=y+dy;
             nx=(nx+h)%h;
             ny=(ny+w)%w;
-            if(nco(nx,ny,dis[x][y]+1)) {
-                if(dis[nx][ny]>dis[x][y]+1) {
-                    dis[nx][ny]=dis[x][y]+1;
-                    q.push({nx,ny,t+1});
+            if(nco(nx,ny,t+1)) {
+                if(dis[nx][ny]>t+1) {
+                    dis[nx][ny]=t+1;
                 }
+                if(!vis[nx][ny][(t+1)%w])q.push({nx,ny,t+1});
             }
         }
     }
