@@ -95,7 +95,7 @@ signed main() {
     //         addmod(cc2[i],(C(i,k)*fac[k-1]%mod)%mod);
     //     }
     // }
-    // oparr(cc)
+    oparr(cc)
     // oparr(cc2)
     int an=cc[0];
     auto cal=[&](int x) {
