@@ -90,7 +90,7 @@ signed main() {
         bit.ud(a[i],1);
         mv[i]=dp[i]-bit.qu(a[i]-d,a[i]);
     }
-    oparr(dp)oparr(mv)
-    cout<<dp[n-1]<<'\n';
+    // oparr(dp)oparr(mv)
+    cout<<dp[n]<<'\n';
     return 0;
 }
