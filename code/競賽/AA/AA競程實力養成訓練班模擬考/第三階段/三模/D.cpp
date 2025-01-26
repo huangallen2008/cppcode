@@ -68,7 +68,7 @@ signed main() {
     // vector<Vi> la(v+1,Vi(v+1));
     dp[0][0]=1;
     REP1(i,maxn) {
-        REP1(j,min(20,i)) {
+        for(int j=1;j<=20;j<=i) {
             dp[i]|=dp[i-j]<<(1<<j);
         }
     }
