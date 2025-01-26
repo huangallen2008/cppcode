@@ -163,7 +163,7 @@ signed main() {
         seg.ud_a(a[i],a[i]+d,1);
         seg.ud_x(a[i],a[i],mv[i]);
     }
-    // oparr(dp)oparr(mv)
+    oparr(dp)oparr(mv)
     cout<<dp[n]-1<<'\n';
     return 0;
 }
