@@ -96,6 +96,6 @@ signed main() {
         bit.ud(a[i],1);
     }
     oparr(dp)oparr(mv)
-    cout<<dp[n]<<'\n';
+    cout<<dp[n]-1<<'\n';
     return 0;
 }
