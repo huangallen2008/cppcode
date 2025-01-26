@@ -68,12 +68,13 @@ int pw(int x,int p) {
 signed main() {
     IOS();
     // double a=(double)5/3;
-    ld a=(ld)1/30000000000000000;
-    cout<<fixed<<setprecision(50)<<a<<'\n';
-    cout<<sizeof(a);
-    int ii;
-    ope(sizeof(ii))
-    __float128 _f128;
-    ope(sizeof(_f128))
+    ld _ld=(ld)1/3;
+    int ll=(int)1/3;
+    __float128 _f128=(__float128)1/3;
+    cout<<fixed<<setprecision(50);
+    op(_ld)ope(sizeof(_ld));
+    op(ll)ope(sizeof(ll))
+
+    op(_f128)ope(sizeof(_f128))
     return 0;
 }
