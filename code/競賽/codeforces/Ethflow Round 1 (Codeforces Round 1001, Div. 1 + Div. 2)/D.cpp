@@ -64,7 +64,7 @@ void dfs(int u,int fa) {
         if(v==fa) continue;
         dfs(v,u);
         chmax(mx,val[v]);
-        // add[u]+=add[v];
+        add[u]+=add[v];
     }
     // op(u)ope(mx)
     if(mx<=r[u]) {
@@ -73,10 +73,9 @@ void dfs(int u,int fa) {
         val[u]=r[u];
         for(int v:g[u]) {
             if(v==fa) continue;
-            add[u]+=val[v]-val[u];
+            add[u]+=max(val[v]-val[u],0ll);
         }
     }
-    val[u]+=add[u];
 }
 void solve() {
     int n;
@@ -92,7 +91,7 @@ void solve() {
     }
     dfs(0,-1);
     // oparr(val)oparr(add)
-    int an=val[0];
+    int an=val[0]+add[0];
     cout<<an<<'\n';
 }
 signed main() {
