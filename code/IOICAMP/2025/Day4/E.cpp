@@ -100,32 +100,40 @@ struct edge {
 };
 struct DSU {
     int n;
-    Vi p,sz;
+    Vi p,sz,w;
     void init(int _n) {
         n=_n;
-        p=Vi(n);
+        p=w=Vi(n);
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
     }
     int find(int u) {
-        return p[u]==u?u:find(p[u]);
+        if(p[u]==u) return u;
+        int pp=find(p[u]);
+        w[u]+=w[pp];
+        return p[u]=pp;
+        // return p[u]==u?u:find(p[u]);
     }
-    bool merge(int a,int b) {
+    bool merge(int a,int b,int ww) {
         // op(a)ope(b)
         int x=find(a),y=find(b);
         if(x==y) return 0;
         if(sz[x]>sz[y]) swap(x,y);
+        w[x]=ww;
         p[x]=y;
         sz[y]+=sz[x];
         return 1;
     }
     int val(int a,int b) {
+        int an=0;
         while(a!=b) {
             if(sz[a]>sz[b]) swap(a,b);
+            an+=w[a];
             a=p[a];
         }
-        return sz[a];
+        return an;
     }
+    bool same(int a,int b) { return find(a)==find(b); }
 };
 signed main() {
     IOS();
@@ -143,7 +151,7 @@ signed main() {
     }
     sort(ALL(e),[&](edge a,edge b) { return a.w<b.w; });
     for(auto ee:e) {
-        if(dsu.merge(ee.u,ee.v)) {
+        if(dsu.merge(ee.u,ee.v,ee.w)) {
             g[ee.u].pb({ee.v,ee.w});
             g[ee.v].pb({ee.u,ee.w});
             ne.pb(ee);
@@ -169,24 +177,30 @@ signed main() {
     REP(i,n) {
         DSU dsu;
         dsu.init(n);
-        priority_queue<pii,Vpii,greater<pii>> pq;
         Vi an(n);
-        int cnt=0;
-        Vi vis(n);
-        vis[i]=1;
-        for(auto [v,w]:g[i]) pq.push({w,v});
-        while(pq.size()) {
-            auto [www,u]=pq.top();
-            pq.pop();
-            cnt++;
-            an[u]=cnt;
-            vis[u]=1;
-            for(auto [v,w]:g[u]) {
-                if(vis[v]) continue;
-                pq.push({w,v});
+        for(auto [u,v,w]:ne) {
+            if(dsu.same(i,u)) {
+                dsu.merge(i,v,dsu.sz[dsu.find(i)]+1);
             }
-            // dsu.merge(i,u);
+            dsu.pb({u,v,w});
         }
+        // priority_queue<pii,Vpii,greater<pii>> pq;
+        // int cnt=0;
+        // Vi vis(n);
+        // vis[i]=1;
+        // for(auto [v,w]:g[i]) pq.push({w,v});
+        // while(pq.size()) {
+        //     auto [www,u]=pq.top();
+        //     pq.pop();
+        //     cnt++;
+        //     an[u]=cnt;
+        //     vis[u]=1;
+        //     for(auto [v,w]:g[u]) {
+        //         if(vis[v]) continue;
+        //         pq.push({w,v});
+        //     }
+        //     // dsu.merge(i,u);
+        // }
         for(auto [t,id]:qq[i]) ans[id]=an[t];
         // oparr(an)
     }
