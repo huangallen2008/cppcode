@@ -88,8 +88,8 @@ signed main() {
             ny=(ny+w)%w;
             if(nco(nx,ny,t)) {
                 // if(dis[nx][ny]>dis[x][y]+1) {
-                dis[nx][ny]=dis[x][y]+1;
-                q.push({nx,ny});
+                chmin(dis[nx][ny],t+1);
+                q.push({t,{nx,ny}});
                 // }
             }
         }
