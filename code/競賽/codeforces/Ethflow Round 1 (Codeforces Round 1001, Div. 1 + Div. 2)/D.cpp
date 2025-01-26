@@ -70,7 +70,7 @@ void dfs(int u,int fa) {
         if(v==fa) continue;
         chmax(mx,val[v]+add[u]-add[v]);
     }
-    op(u)ope(mx)
+    // op(u)ope(mx)
     if(mx<=r[u]) {
         val[u]=mx;
     }else {
@@ -91,7 +91,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    oparr(val)oparr(add)
+    // oparr(val)oparr(add)
     int an=val[0]+add[0];
     cout<<an<<'\n';
 }
