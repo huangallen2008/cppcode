@@ -59,9 +59,10 @@ int rd(int l,int r) {
 Graph g;
 Vi l,r,val,add;
 void dfs(int u,int fa) {
-    int mx=l[u];
+    int mx=l[u],ch=0;
     for(int v:g[u]) {
         if(v==fa) continue;
+        ch++;
         dfs(v,u);
         chmax(mx,val[v]);
         add[u]+=add[v];
@@ -71,7 +72,7 @@ void dfs(int u,int fa) {
         val[u]=mx;
     }else {
         val[u]=r[u];
-        add[u]+=mx-val[u]<<1;
+        add[u]+=(mx-val[u])*(ch);
     }
 }
 void solve() {
