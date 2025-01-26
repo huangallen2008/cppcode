@@ -86,6 +86,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    oparr(val)oparr(add)
     int an=val[0]+add[0];
     cout<<an<<'\n';
 }
