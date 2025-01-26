@@ -120,7 +120,7 @@ void solve() {
             bit.ud(in[p[it++]],1-t);
             cnt+=1-t;
         }
-        // op(i)op(bit.qu(in[u],out[u]))ope(it)
+        op(i)op(bit.qu(in[u],out[u]))ope(cnt)
         if((cnt-bit.qu(in[u],out[u]))!=0) {
             // cout<<u+1<<' ';
             an.pb(u);
