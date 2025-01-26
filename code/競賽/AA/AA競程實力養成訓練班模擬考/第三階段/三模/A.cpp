@@ -83,10 +83,11 @@ signed main() {
     init_fac();
     int n,m;
     cin>>n>>m;
-    Vi cc(n+1),cc2(n+1);
-    REP1(i,n) {
+    Vi cc(m+1);
+
+    REP(i,m+1) {
         for(int k=3;k<=i;k++) {
-            addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
+            addmod(cc[i],(C(n-i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
     // REP1(i,n) {
@@ -95,11 +96,15 @@ signed main() {
     //     }
     // }
     oparr(cc)oparr(cc2)
-    int an=cc[n];
+    int an=cc[0];
+    auto cal=[&](int x) {
+        return ((cc[x]*pw(2,x)%mod)+C(x,2)*2+x*(n-x))%mod;
+    };
     REP(i,m) {
-        an=(an-cc[n-1]*2%mod-n+2+mod)%mod;
+        an=(an-cal(1)%mod+mod)%mod;
         REP1(j,i) {
-            an=(an+(C(i,j)*cc2[n-1-j]%mod)*pw(2,j+1))%mod;
+            //j+1 chains and 
+            an=(an+(C(i,j)*cal(j+1)%mod));
         }
         cout<<an<<'\n';
     }
