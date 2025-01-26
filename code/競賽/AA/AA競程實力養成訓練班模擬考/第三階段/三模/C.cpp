@@ -80,13 +80,12 @@ signed main() {
     IOS();
     int n,d;
     cin>>n>>d;
-    n++;
-    Vi a(n);
+    Vi a(n+1);
     REP(i,n) cin>>a[i];
-    a[n-1]=maxv-1;
+    a[n]=maxv-1;
     bit.init(maxv);
-    Vi dp(n,1),mv(n);
-    REP(i,n) {
+    Vi dp(n+1,1),mv(n+1);
+    REP(i,n+1) {
         REP(j,i) if(a[j]<a[i])chmax(dp[i],mv[j]+bit.qu(a[j]-d,a[j]));
         bit.ud(a[i],1);
         mv[i]=dp[i]-bit.qu(a[i]-d,a[i]);
