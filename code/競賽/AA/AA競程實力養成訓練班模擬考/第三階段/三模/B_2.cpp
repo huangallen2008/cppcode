@@ -99,7 +99,7 @@ signed main() {
             }
         }
     }
-    #ifdef LOCAL
+    #ifdef LOCAL_
     REP(i,h) {
         REP(j,w) cout<<dis[i][j]<<' ';entr
     }
