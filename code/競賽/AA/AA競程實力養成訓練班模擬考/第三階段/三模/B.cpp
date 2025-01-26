@@ -56,7 +56,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vpii dir={{1,0},{0,1},{-1,0},{0,-1}};
+// Vpii dir={{1,0},{0,1},{-1,0},{0,-1}};
+Vpii dir={{0,0},{-1,1},{-2,0},{-1,-1}};
 signed main() {
     IOS();
     int h,w;
@@ -72,25 +73,23 @@ signed main() {
     queue<pipii> q;
     vector<Vi> dis(h,Vi(w,inf));
     dis[0][0]=0;
-    q.push({0,{0,0}});
+    q.push({{0,0}});
     auto nco=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         else return a[x][(y+t)%w]=='.';
     };
     while(q.size()) {
-        auto [t,p]=q.front();
-        auto [x,y]=p;
+        auto [x,y]=q.front();
         q.pop();
-        if(t>h*w) continue;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             nx=(nx+h)%h;
             ny=(ny+w)%w;
-            if(nco(nx,ny,t)) {
-                // if(dis[nx][ny]>dis[x][y]+1) {
-                chmin(dis[nx][ny],t+1);
-                q.push({t,{nx,ny}});
-                // }
+            if(nco(nx,ny,dis[x][y]+1)) {
+                if(dis[nx][ny]>dis[x][y]+1) {
+                    dis[nx][ny]=dis[x][y]+1;
+                    q.push({nx,ny});
+                }
             }
         }
     }
