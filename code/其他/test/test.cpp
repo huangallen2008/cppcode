@@ -67,10 +67,7 @@ int pw(int x,int p) {
 }
 signed main() {
     IOS();
-    REP1(i,10) {
-
-        op((499122177*i)%mod)
-    }
-    
+    double a=5/3;
+    cout<<fixed<<setprecision(50)<<a<<'\n';
     return 0;
 }
