@@ -71,10 +71,12 @@ signed main() {
     vector<bitset<maxv>> dp(maxn+1);
     // vector<vector<bool>> dp(v+1,vector<bool>(v+1));
     // vector<Vi> la(v+1,Vi(v+1));
+    ope("ok")
     dp[0][0]=1;
     REP1(i,maxn) {
         for(int j=0;j<19;j<=i) {
             dp[i]|=dp[i-j]<<(1<<j);
+
         }
         ope(i)
     }
