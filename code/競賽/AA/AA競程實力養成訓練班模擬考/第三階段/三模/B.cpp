@@ -80,7 +80,24 @@ signed main() {
     while(q.size()) {
         auto [x,y]=q.front();
         q.pop();
-
+        for(auto [dx,dy]:dir) {
+            int nx=x+dx,ny=y+dy;
+            nx=(nx+h)%h;
+            ny=(ny+w)%w;
+            if(nco(nx,ny,dis[x][y]+1)) {
+                if(dis[nx][ny]>dis[x][y]+1) {
+                    dis[nx][ny]=dis[x][y]+1;
+                    q.push({nx,ny});
+                }
+            }
+        }
+    }
+    REP(i,h) {
+        REP(j,w) {
+            if(dis[i][j]==inf) cout<<'-';
+            else cout<<dis[i][j]%10;
+        }
+        cout<<'\n';
     }
     return 0;
 }
