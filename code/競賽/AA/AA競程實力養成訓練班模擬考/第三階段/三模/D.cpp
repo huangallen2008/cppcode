@@ -66,10 +66,11 @@ signed main() {
     REP1(i,v) {
         REP1(j,v) {
             REP1(k,12) {
-                if(i<(1<<k)) break;
+                if(i<(1<<k)||j<k) break;
                 if(dp[i-(1<<k)][j-k]) {
                     la[i][j]=k;
                     dp[i][j]=1;
+                    break;
                 }
             }
             // if(dp[i-1][j-1]) {
