@@ -60,11 +60,6 @@ signed main() {
     IOS();
     int q,v;
     cin>>q>>v;
-    if(v&1) {
-        REP(i,q) cout<<"Impossible\n";
-        return 0;
-    }
-    v/=2;
     vector<vector<bool>> dp(v+1,vector<bool>(v+1));
     vector<Vi> la(v+1,Vi(v+1));
     dp[0][0]=1;
