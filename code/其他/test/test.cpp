@@ -67,7 +67,7 @@ int pw(int x,int p) {
 }
 signed main() {
     IOS();
-    double a=5/3;
+    double a=(double)5/3;
     cout<<fixed<<setprecision(50)<<a<<'\n';
     return 0;
 }
