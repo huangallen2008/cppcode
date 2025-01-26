@@ -71,5 +71,7 @@ signed main() {
     ld a=(ld)1/30000000000000000;
     cout<<fixed<<setprecision(50)<<a<<'\n';
     cout<<sizeof(a);
+    int ii;
+    ope(sizeof(ii))
     return 0;
 }
