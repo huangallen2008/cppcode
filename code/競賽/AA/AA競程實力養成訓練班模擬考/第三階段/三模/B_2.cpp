@@ -105,7 +105,7 @@ signed main() {
             }
         }
     }
-    #ifdef LOCAL_
+    #ifdef LOCAL
     REP1(t,4) {
         
         REP(i,h) {
