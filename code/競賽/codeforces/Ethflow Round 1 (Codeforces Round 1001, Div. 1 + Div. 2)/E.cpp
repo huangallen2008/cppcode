@@ -139,11 +139,6 @@ struct SEG {
         return _qu(1,0,n-1,l,r);
     }
 }seg;
-// struct SEG {
-//     struct Seg
-//     int n;
-//     Vi s;
-// }
 struct BIT {
     int n;
     Vi b;
@@ -169,6 +164,7 @@ void solve() {
     cin>>n;
     BIT bit;
     bit.init(n*2+5);
+    seg.init(n*2+5);
     g=Graph(n);
     a=in=out=Vi(n);
     REP(i,n) cin>>a[i];
@@ -190,12 +186,14 @@ void solve() {
     REP(i,n) {
         int u=p[i];
         while(a[p[it]]>a[u]){
-            int t=bit.qu(in[p[it]],out[p[it]]);
-            bit.ud(in[p[it++]],1-t);
+            int t=seg.qu(in[p[it]],out[p[it]]);
+            // bit.ud(in[p[it++]],1-t);
+            seg.ud_a(in[p[it]]+1,out[p[it]]-1);
+            seg.ud(in[p[it]],1-t);
             cnt+=1-t;
         }
         op(i)op(bit.qu(in[u],out[u]))ope(cnt)
-        if((cnt-bit.qu(in[u],out[u]))!=0) {
+        if((cnt-esg.qu(in[u],out[u]))!=0) {
             // cout<<u+1<<' ';
             an.pb(u);
             // ok=1;
