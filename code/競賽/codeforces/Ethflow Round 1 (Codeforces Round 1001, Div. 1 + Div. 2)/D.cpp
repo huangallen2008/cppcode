@@ -73,7 +73,7 @@ void dfs(int u,int fa) {
         val[u]=r[u];
         for(int v:g[u]) {
             if(v==fa) continue;
-            add[u]+=val[u]-val[v];
+            add[u]+=val[v]-val[u];
         }
     }
 }
