@@ -80,8 +80,10 @@ signed main() {
     IOS();
     int n,d;
     cin>>n>>d;
+    n++;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    a[n-1]=maxv-1;
     bit.init(maxv);
     Vi dp(n,1),mv(n);
     REP(i,n) {
