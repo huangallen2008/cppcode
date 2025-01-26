@@ -49,8 +49,8 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
-const int maxn=5;
-const int maxb=64;
+const int maxv=1e6+5;
+const int maxn=1e3+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -63,45 +63,30 @@ signed main() {
     #endif
     int q,v;
     cin>>q>>v;
-    vector<vector<bool>> dp(v+1,vector<bool>(v+1));
-    vector<Vi> la(v+1,Vi(v+1));
+    vector<bitset<maxv>> dp(maxn+1);
+    // vector<vector<bool>> dp(v+1,vector<bool>(v+1));
+    // vector<Vi> la(v+1,Vi(v+1));
     dp[0][0]=1;
-    REP1(i,v) {
-        REP1(j,v) {
-            REP1(k,12) {
-                if(i<(1<<k)||j<k) break;
-                if(dp[i-(1<<k)][j-k]) {
-                    la[i][j]=k;
-                    dp[i][j]=1;
-                    break;
-                }
-            }
-            // if(dp[i-1][j-1]) {
-            //     la[i][j]=0;
-            //     dp[i][j]=1;
-            // }else if((~i&1)&&dp[i>>1][j]) {
-            //     la[i][j]=1;
-            //     dp[i][j]=1;
-            // }
+    REP1(i,maxn) {
+        REP1(j,min(20,i)) {
+            dp[i]|=dp[i-j]<<(1<<j);
         }
     }
     REP(i,q) {
         int n;
         cin>>n;
-        if(n>v||!dp[v][n]) {
+        if(!dp[n][v]) {
             cout<<"Impossible\n";
             continue;
         }
         Vi an;
-        int ni=v,nj=n,cs=0,ck=0;
+        int ni=n,nj=v;
         while(ni>0) {
-            int t=la[ni][nj];
-            ni-=1<<t,nj-=t;
-            an.pb(t);
-            cs+=t;
-            ck+=1<<t;
+            for(int k=1;k<=20&&k<=ni&&(1<<k)<=nj;k++) if(dp[ni-k][nj-(1<<k)]) {
+                an.pb(k);
+                ni-=k,nj-=1<<k;
+            }
         }
-        assert(n==cs&&v==ck);
         REP(j,an.size()) {
             REP(k,an[j]) {
                 cout<<2;if(k!=an[j]-1) cout<<"*";
