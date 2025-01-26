@@ -49,7 +49,7 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
-const int maxv=2e6+5;
+const int maxv=2e6+10;
 // const int maxn=1e3+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -220,8 +220,16 @@ signed main() {
     int n,d;
     cin>>n>>d;
     Vi a(n+1);
-    REP(i,n) cin>>a[i];
+    Vi t;
+    REP(i,n) cin>>a[i],t.pb(a[i]),t.pb(a[i]+d);
     a[n]=maxv;
+    t.pb(a[n]),t.pb(a[n]+d);
+    sort(ALL(t));
+    Vi nxt(n+1);
+    REP(i,n+1) {
+        nxt[i]=lower_bound(ALL(t),a[i]+d)-t.begin()+1;
+        a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
+    }
     bit.init(maxv);
     // bit2.init(maxv);
     seg.init(maxv);
