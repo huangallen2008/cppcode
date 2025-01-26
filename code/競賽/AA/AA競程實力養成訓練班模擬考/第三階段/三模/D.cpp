@@ -70,13 +70,20 @@ signed main() {
     dp[0][0]=1;
     REP1(i,v) {
         REP1(j,v) {
-            if(dp[i-1][j-1]) {
-                la[i][j]=0;
-                dp[i][j]=1;
-            }else if((~i&1)&&dp[i>>1][j]) {
-                la[i][j]=1;
-                dp[i][j]=1;
+            REP1(k,12) {
+                if(i<(1<<k)) break;
+                if(dp[i-(1<<k)][j-k]) {
+                    la[i][j]=k;
+                    dp[i][j]=1;
+                }
             }
+            // if(dp[i-1][j-1]) {
+            //     la[i][j]=0;
+            //     dp[i][j]=1;
+            // }else if((~i&1)&&dp[i>>1][j]) {
+            //     la[i][j]=1;
+            //     dp[i][j]=1;
+            // }
         }
     }
     REP(i,q) {
@@ -89,13 +96,9 @@ signed main() {
         Vi an;
         int ni=v,nj=n,now=1;
         while(ni>0) {
-            if(la[ni][nj]) {
-                now++;
-                ni>>=1;
-            }else {
-                ni--,nj--;
-                an.pb(now);
-            }
+            int t=la[ni][nj];
+            ni-=1<<t,nj-=t;
+            an.pb(t);
         }
         REP(j,an.size()) {
             REP(k,an[j]) cout<<2<<"*"[k==an[j]-1];
