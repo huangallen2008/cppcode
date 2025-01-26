@@ -112,6 +112,7 @@ void solve() {
     oparr(p)oparr(in)oparr(out)
     REP(i,n) {
         int u=p[i];
+        op(i)ope(bit.qu(in[u],out[u]))
         if((i-bit.qu(in[u],out[u]))&1) {
             cout<<u+1<<'\n';entr
             return;
