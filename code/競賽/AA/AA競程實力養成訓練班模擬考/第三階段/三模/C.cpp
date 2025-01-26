@@ -221,8 +221,8 @@ signed main() {
     Vi dp(n+1,1),mv(n+1);
     REP(i,n+1) {
         chmax(dp[i],seg.qu(0,a[i]-1));
-        mv[i]=dp[i]-bit.qu(a[i]-d,a[i]);
-        bit.ud(a[i],1);
+        mv[i]=dp[i];
+        // bit.ud(a[i],1);
         seg.ud_a(a[i],a[i]+d,1);
         seg.ud_x(a[i],mv[i]);
     }
