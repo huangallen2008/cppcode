@@ -80,6 +80,7 @@ signed main() {
     };
     while(q.size()) {
         auto [x,y]=q.front();
+        op(x)op(y)ope(dis[x][y])
         q.pop();
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
