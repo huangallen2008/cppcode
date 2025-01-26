@@ -99,7 +99,7 @@ signed main() {
     // oparr(cc2)
     int an=cc[0];
     auto cal=[&](int x) {
-        return ((cc[x]*pw(2,x)%mod)+C(x,2)*2+x*(n-x))%mod;
+        return ((cc[x]*pw(2,x)%mod)+x*(x-1)+x*(n-x))%mod;
     };
     REP(i,m+1) ope(cal(i))
     REP(i,m) {
