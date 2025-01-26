@@ -104,9 +104,10 @@ signed main() {
     REP(i,m+1) ope(cal(i))
     REP(i,m) {
         an=(an-cal(1)%mod+mod)%mod;
+        ope(an)
         REP1(j,i) {
             //j+1 chains and 
-            an=(an+(C(i,j+1)*cal(j+1)%mod));
+            an=(an+(C(i,j)*cal(j+1)%mod));
         }
         cout<<an<<'\n';
     }
