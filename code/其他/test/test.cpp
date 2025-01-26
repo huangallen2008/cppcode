@@ -69,11 +69,11 @@ int pw(int x,int p) {
 #include <boost/math/special_functions/gamma.hpp>
 
 using namespace boost::multiprecision;
-void print(__float128 fp) {
-    char buf[32 + sizeof(".e+99999")];
-    int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
-    fwrite(buf, 1, sz, stdout);
-}
+// void print(__float128 fp) {
+//     char buf[32 + sizeof(".e+99999")];
+//     int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
+//     fwrite(buf, 1, sz, stdout);
+// }
 signed main() {
     IOS();
     // double a=(double)5/3;
