@@ -59,7 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     #ifdef LOCAL
-        freopen("in.txt","r",stdin);
+        // freopen("in.txt","r",stdin);
     #endif
     int q,v;
     cin>>q>>v;
