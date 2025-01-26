@@ -58,35 +58,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    Vpii a(n);
-    REP(i,n) cin>>a[i].f>>a[i].s;
-    if(n==1) {
-        cout<<"YES\n";
-        return 0;
-    }
-    sort(ALL(a));
-    REP1(i,n-1) {
-        if(a[i].f==a[i-1].f) {
-            if(a[i].s!=a[i-1].s) {
-                cout<<"NO\n";
-                return 0;
-            }
-        }
-    }
-    if(a[0].f==a.back().f) {
-        cout<<"YES\n";
-        return 0;
-    }
-    int x=a[0].f-a.back().f,y=a.back().s-a[0].s;
-    int val=y*a[0].f+x*a[0].s;
-    REP(i,n) {
-        if(y*a[i].f+x*a[i].s!=val) {
-            cout<<"NO\n";
-            return 0;
-        }
-    }
-    cout<<"YES\n";
+    
     return 0;
 }
