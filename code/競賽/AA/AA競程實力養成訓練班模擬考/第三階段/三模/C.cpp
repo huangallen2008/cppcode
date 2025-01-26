@@ -210,13 +210,13 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
-    #ifdef LOCAL
-        seg.init(5);
-        seg.ud_a(1,3,1);
-        op(seg.qu(1,2))
-        seg.ud_x(1,2);
-        op(seg.qu(1,2))
-    #endif
+    // #ifdef LOCAL
+    //     seg.init(5);
+    //     seg.ud_a(1,3,1);
+    //     op(seg.qu(1,2))
+    //     seg.ud_x(1,2);
+    //     op(seg.qu(1,2))
+    // #endif
     int n,d;
     cin>>n>>d;
     Vi a(n+1);
