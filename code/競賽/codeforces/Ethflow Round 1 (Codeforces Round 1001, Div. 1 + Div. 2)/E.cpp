@@ -125,7 +125,7 @@ void solve() {
             // return;
         }
     }
-    sort(ALL(an));
+    // sort(ALL(an));
     cout<<an.size()<<' ';
     for(int c:an) cout<<c+1<<' ';cout<<'\n';
 
