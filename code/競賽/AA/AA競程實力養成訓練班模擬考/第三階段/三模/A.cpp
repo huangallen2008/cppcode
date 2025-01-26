@@ -96,7 +96,7 @@ signed main() {
     //     }
     // }
     // oparr(cc)
-    oparr(cc2)
+    // oparr(cc2)
     int an=cc[0];
     auto cal=[&](int x) {
         return ((cc[x]*pw(2,x)%mod)+C(x,2)*2+x*(n-x))%mod;
