@@ -70,5 +70,6 @@ signed main() {
     // double a=(double)5/3;
     ld a=(ld)1/30000000000000000;
     cout<<fixed<<setprecision(50)<<a<<'\n';
+    cout<<sizeof(a);
     return 0;
 }
