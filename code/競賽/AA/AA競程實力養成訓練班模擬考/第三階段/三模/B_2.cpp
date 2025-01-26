@@ -104,7 +104,7 @@ signed main() {
                 int &nid=dis[nx][ny][(t+1)%w];
                 if(!vis[nx][ny][(t+1)%w]){
                     nid=nd;
-                    q.push({nx,ny,t+1});
+                    q.push({nx,ny,(t+1)%w});
                     vis[nx][ny][(t+1)%w]=1;
                 }
             }
