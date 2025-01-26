@@ -86,7 +86,7 @@ signed main() {
     Vi cc(n+1);
     REP1(i,n) {
         for(int k=3;k<=i;k++) {
-            addmod(cc[i],(C(n,k)*fac[k-1]%mod)*inv2%mod);
+            addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
     oparr(cc)
