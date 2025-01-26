@@ -111,15 +111,16 @@ void solve() {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
     // oparr(p)oparr(in)oparr(out)
+    int it=0;
     REP(i,n) {
         int u=p[i];
+        while(a[p[it]]<a[p[u]])bit.ud(in[p[it++]],1);
         // op(i)ope(bit.qu(in[u],out[u]))
         if((i-bit.qu(in[u],out[u]))&1) {
             cout<<u+1<<'\n';
             // entr
             return;
         }
-        bit.ud(in[u],1);
     }
     cout<<"0\n";
 
