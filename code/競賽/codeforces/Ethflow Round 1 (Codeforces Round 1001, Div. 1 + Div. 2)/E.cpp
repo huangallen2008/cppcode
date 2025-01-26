@@ -112,17 +112,21 @@ void solve() {
     });
     // oparr(p)oparr(in)oparr(out)
     int it=0;
+    Vi an;
     REP(i,n) {
         int u=p[i];
         while(a[p[it]]>a[u])bit.ud(in[p[it++]],1);
         // op(i)op(bit.qu(in[u],out[u]))ope(it)
         if((it-bit.qu(in[u],out[u]))!=0) {
-            cout<<u+1<<'\n';
+            // cout<<u+1<<' ';
+            an.pb(u);
+            // ok=1;
             // entr
-            return;
+            // return;
         }
     }
-    cout<<"0\n";
+    cout<<an.size()<<' ';
+    for(int c:an) cout<<c+1<<' ';cout<<'\n';
 
 }
 signed main() {
