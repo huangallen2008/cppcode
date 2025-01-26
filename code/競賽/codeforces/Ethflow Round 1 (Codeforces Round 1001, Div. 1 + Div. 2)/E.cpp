@@ -139,11 +139,11 @@ struct SEG {
         return _qu(1,0,n-1,l,r);
     }
 }seg;
-struct SEG {
-    struct Seg
-    int n;
-    Vi s;
-}
+// struct SEG {
+//     struct Seg
+//     int n;
+//     Vi s;
+// }
 struct BIT {
     int n;
     Vi b;
