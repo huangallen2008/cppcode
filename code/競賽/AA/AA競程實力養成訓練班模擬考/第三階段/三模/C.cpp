@@ -210,6 +210,13 @@ struct SEG {
 }seg;
 signed main() {
     IOS();
+    #ifdef LOCAL
+        seg.init(5);
+        seg.ud_a(1,3,1);
+        op(seg.qu(1,2))
+        seg.ud_x(1,2);
+        op(seg.qu(1,2))
+    #endif
     int n,d;
     cin>>n>>d;
     Vi a(n+1);
@@ -224,7 +231,7 @@ signed main() {
         mv[i]=dp[i];
         // bit.ud(a[i],1);
         seg.ud_a(a[i],a[i]+d,1);
-        seg.ud_x(a[i],mv[i]);
+        seg.ud_x(a[i],dp[i]);
     }
     // oparr(dp)oparr(mv)
     cout<<dp[n]<<'\n';
