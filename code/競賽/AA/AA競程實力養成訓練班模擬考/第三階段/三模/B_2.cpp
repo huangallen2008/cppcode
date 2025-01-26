@@ -73,10 +73,8 @@ signed main() {
     struct S{
         int x,y,t;
     };
-    queue<S> q;
-    vector<Vi> dis(h,Vi(w,inf));
-    dis[0][0]=0;
-    q.push({0,0,0});
+    // vector<Vi> dis(h,Vi(w,inf));
+    // dis[0][0]=0;
     auto ncc=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w];
         else return a[x][(y+t)%w];
@@ -87,7 +85,11 @@ signed main() {
         return ncc(x,y,t)=='.';
     };
     vector<vector<Vi>> vis(h,vector<Vi>(w,Vi(w)));
+    vector<vector<Vi>> dis(h,vector<Vi>(w,Vi(w,inf)));
     vis[0][0][0]=1;
+    dis[0][0][0]=0;
+    queue<S> q;
+    q.push({0,0,0});
     while(q.size()) {
         auto [x,y,t]=q.front();
         // vis[x][y][t%w]=1;
@@ -97,11 +99,13 @@ signed main() {
             int nx=x+dx,ny=y+dy;
             nx=(nx%h+h)%h;
             ny=(ny%w+w)%w;
-            if(nco(nx,ny,t+1)) {
-                chmin(dis[nx][ny],t+1);
-                if(!vis[nx][ny][(t+1)%w]){
-                    q.push({nx,ny,t+1});
-                    vis[nx][ny][(t+1)%w]=1;
+            int nd=dis[x][y][t]+1;
+            if(nco(nx,ny,nd+1)) {
+                int &nid=dis[nx][ny][(nd+1)%w];
+                if(!vis[nx][ny][(nd+1)%w]){
+                    nid=nd;
+                    q.push({nx,ny,nd+1});
+                    vis[nx][ny][(nd+1)%w]=1;
                 }
             }
         }
