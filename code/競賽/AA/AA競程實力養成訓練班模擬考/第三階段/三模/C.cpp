@@ -92,8 +92,8 @@ signed main() {
     Vi dp(n+1,1),mv(n+1);
     REP(i,n+1) {
         REP(j,i) if(a[j]<a[i])chmax(dp[i],mv[j]+bit.qu(a[j]-d,a[j]));
-        bit.ud(a[i],1);
         mv[i]=dp[i]-bit.qu(a[i]-d,a[i]);
+        bit.ud(a[i],1);
     }
     oparr(dp)oparr(mv)
     cout<<dp[n]<<'\n';
