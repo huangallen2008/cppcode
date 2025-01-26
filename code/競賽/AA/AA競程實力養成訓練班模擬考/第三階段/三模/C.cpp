@@ -78,6 +78,11 @@ struct BIT {
 }bit;
 signed main() {
     IOS();
+    #ifdef LOCAL
+    bit.init(5);
+    bit.ud(1,3);
+    ope(bit.qu(-1,5));
+    #endif
     int n,d;
     cin>>n>>d;
     Vi a(n+1);
