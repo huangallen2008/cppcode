@@ -81,7 +81,7 @@ signed main() {
         auto [t,p]=q.front();
         auto [x,y]=p;
         q.pop();
-        if(t>n*n) continue;
+        if(t>h*w) continue;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             nx=(nx+h)%h;
