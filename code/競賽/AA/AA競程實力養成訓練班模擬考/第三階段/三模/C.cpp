@@ -238,7 +238,7 @@ signed main() {
         chmax(dp[i],seg.qu(0,a[i]-1)+1);
         mv[i]=dp[i];
         // bit.ud(a[i],1);
-        seg.ud_a(a[i],a[i]+d,1);
+        seg.ud_a(a[i],nxt[i],1);
         seg.ud_x(a[i],dp[i]);
     }
     // oparr(dp)oparr(mv)
