@@ -90,12 +90,15 @@ signed main() {
             continue;
         }
         Vi an;
-        int ni=v,nj=n,now=1;
+        int ni=v,nj=n,cs=0,ck=0;
         while(ni>0) {
             int t=la[ni][nj];
             ni-=1<<t,nj-=t;
             an.pb(t);
+            cs+=t;
+            ck+=1<<t;
         }
+        assert(n==cs&&v==ck);
         REP(j,an.size()) {
             REP(k,an[j]) cout<<2<<"*"[k==an[j]-1];
             cout<<"+\n"[j==an.size()-1];
