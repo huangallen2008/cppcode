@@ -56,7 +56,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vpii dir={{1,0},{0,1},{-1,0},{0,-1}};
+Vpii dir={{0,0},{1,0},{0,1},{-1,0},{0,-1}};
 // Vpii dir={{0,0},{-1,1},{-2,0},{-1,-1}};
 signed main() {
     IOS();
