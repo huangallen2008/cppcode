@@ -65,6 +65,10 @@ int pw(int x,int p) {
     }
     return r;
 }
+#include <boost/multiprecision/float128.hpp>
+#include <boost/math/special_functions/gamma.hpp>
+
+using namespace boost::multiprecision;
 void print(__float128 fp) {
     char buf[32 + sizeof(".e+99999")];
     int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
@@ -79,8 +83,8 @@ signed main() {
     cout<<fixed<<setprecision(50);
     op(_ld)ope(sizeof(_ld));
     op(ll)ope(sizeof(ll))
-    print(_f128);
-    // op(_f128)
+    // print(_f128);
+    op(_f128)
     ope(sizeof(_f128))
     return 0;
 }
