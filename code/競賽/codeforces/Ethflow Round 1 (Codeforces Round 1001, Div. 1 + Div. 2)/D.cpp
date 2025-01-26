@@ -76,6 +76,7 @@ void dfs(int u,int fa) {
             add[u]+=val[v]-val[u];
         }
     }
+    val[u]+=add[u];
 }
 void solve() {
     int n;
@@ -91,7 +92,7 @@ void solve() {
     }
     dfs(0,-1);
     // oparr(val)oparr(add)
-    int an=val[0]+add[0];
+    int an=val[0];
     cout<<an<<'\n';
 }
 signed main() {
