@@ -106,6 +106,12 @@ signed main() {
         }
     }
     #ifdef LOCAL_
+    REP1(t,4) {
+        
+        REP(i,h) {
+            REP(j,w) cout<<ncc(i,j,t);cout<<'\n';
+        }entr
+    }entr
     REP(i,h) {
         REP(j,w) cout<<dis[i][j]<<' ';entr
     }
