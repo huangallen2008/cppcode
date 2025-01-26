@@ -99,6 +99,7 @@ signed main() {
         }
         REP(j,an.size()) {
             REP(k,an[j]) cout<<2<<"*\n"[k==an[j]-1];
+            cout<<"+\n"[j==an.size()-1];
         }
     }
     return 0;
