@@ -124,7 +124,7 @@ signed main() {
     REP(i,h) {
         REP(j,w) {
             if(dis[i][j]==inf) cout<<'-';
-            else cout<<(dis[i][j])%10;
+            else cout<<(*min_element(ALL(dis[i][j])))%10;
         }
         cout<<'\n';
     }
