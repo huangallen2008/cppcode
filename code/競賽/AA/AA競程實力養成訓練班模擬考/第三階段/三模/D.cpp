@@ -86,8 +86,8 @@ signed main() {
         }
     }
     REP(i,q) {
-        int n,v;
-        cin>>v>>n;
+        int n;
+        cin>>n;
         if(n>v||!dp[v][n]) {
             cout<<"Impossible\n";
             continue;
