@@ -88,12 +88,13 @@ void solve() {
     sort(ALL(p),[&](int x,int y) {
         return a[x]>a[y];
     });
+    oparr(p)
     REP1(i,n-1) if(!isa(p[i],p[i-1])) {
         cout<<p[i]<<'\n';
         return;
     }
     cout<<"0\n";
-    
+
 }
 signed main() {
     IOS();
