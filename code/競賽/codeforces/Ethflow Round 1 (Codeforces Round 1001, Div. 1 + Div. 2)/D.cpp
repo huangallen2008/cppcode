@@ -64,7 +64,7 @@ void dfs(int u,int fa) {
         if(v==fa) continue;
         dfs(v,u);
         chmax(mx,val[v]);
-        add[u]+=add[v];
+        // add[u]+=add[v];
     }
     // op(u)ope(mx)
     if(mx<=r[u]) {
