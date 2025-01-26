@@ -98,7 +98,7 @@ signed main() {
     REP(i,m) {
         an=(an-cc[n-1]*4%mod+mod)%mod;
         REP1(j,i) {
-            an=(an+(C(i,j)*cc[n-1-j]%mod)*pw(2,j+2))%mod;
+            an=(an+(C(i,j)*cc2[n-1-j]%mod)*pw(2,j+2))%mod;
         }
         cout<<an<<'\n';
     }
