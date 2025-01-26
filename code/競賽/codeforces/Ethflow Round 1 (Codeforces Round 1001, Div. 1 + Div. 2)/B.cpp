@@ -63,7 +63,7 @@ void solve() {
     REP(i,n) {
         int x;
         cin>>x;
-        int r=max(x,n-x-1);
+        int r=max(i,n-i-1);
         if(x<=r*2) ok=0; 
     }
     if(ok) cout<<"YES\n";
