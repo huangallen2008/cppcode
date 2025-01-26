@@ -169,7 +169,7 @@ struct SEG {
     }
     void _ud_x(int w,int l,int r,int u,int v) {
         if(l==r) {
-            chmax(s[w],v);
+            chmax(s[w].mx,v);
             return;
         }
         int m=l+r>>1;
