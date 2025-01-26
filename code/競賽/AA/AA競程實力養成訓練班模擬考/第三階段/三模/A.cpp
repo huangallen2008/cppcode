@@ -89,15 +89,15 @@ signed main() {
             addmod(cc[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
         }
     }
-    REP1(i,n) {
-        for(int k=2;k<=i;k++) {
-            addmod(cc2[i],(C(i,k)*fac[k-1]%mod)%mod);
-        }
-    }
+    // REP1(i,n) {
+    //     for(int k=2;k<=i;k++) {
+    //         addmod(cc2[i],(C(i,k)*fac[k-1]%mod)%mod);
+    //     }
+    // }
     oparr(cc)oparr(cc2)
     int an=cc[n];
     REP(i,m) {
-        an=(an-cc2[n-1]*2%mod+mod)%mod;
+        an=(an-cc[n-1]*2%mod-n+2+mod)%mod;
         REP1(j,i) {
             an=(an+(C(i,j)*cc2[n-1-j]%mod)*pw(2,j+1))%mod;
         }
