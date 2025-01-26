@@ -90,10 +90,7 @@ signed main() {
     while(q.size()) {
         auto [x,y,t]=q.front();
         vis[x][y][t%w]=1;
-        op(x)op(y)ope(dis[x][y])
-        REP(i,h) {
-            REP(j,w) cout<<ncc(i,j,t);cout<<'\n';
-        }entr
+        // op(x)op(y)ope(dis[x][y])
         q.pop();
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
@@ -105,7 +102,7 @@ signed main() {
             }
         }
     }
-    #ifdef LOCAL
+    #ifdef LOCAL_
     REP1(t,4) {
         
         REP(i,h) {
