@@ -115,7 +115,7 @@ void solve() {
     REP(i,n) {
         int u=p[i];
         while(a[p[it]]>a[u])bit.ud(in[p[it++]],1);
-        op(i)op(bit.qu(in[u],out[u]))ope(it)
+        // op(i)op(bit.qu(in[u],out[u]))ope(it)
         if((it-bit.qu(in[u],out[u]))!=0) {
             cout<<u+1<<'\n';
             // entr
