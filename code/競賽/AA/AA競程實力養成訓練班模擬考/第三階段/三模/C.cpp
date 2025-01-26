@@ -199,7 +199,7 @@ struct SEG {
     }
     int _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].mx;
-        if(ql<r||qr<l) return -inf;
+        if(ql>r||qr<l) return -inf;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
