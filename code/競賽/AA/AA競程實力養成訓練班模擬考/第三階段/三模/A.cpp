@@ -91,7 +91,7 @@ signed main() {
     }
     REP1(i,n) {
         for(int k=2;k<=i;k++) {
-            addmod(cc2[i],(C(i,k)*fac[k-1]%mod)*inv2%mod);
+            addmod(cc2[i],(C(i,k)*fac[k-1]%mod)%mod);
         }
     }
     oparr(cc2)
