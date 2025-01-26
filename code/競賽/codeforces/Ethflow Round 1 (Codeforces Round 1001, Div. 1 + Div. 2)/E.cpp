@@ -111,21 +111,26 @@ void solve() {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
     // oparr(p)oparr(in)oparr(out)
-    int it=0;
+    int it=0,cnt=0;
     Vi an;
     REP(i,n) {
         int u=p[i];
-        while(a[p[it]]>a[u])bit.ud(in[p[it++]],1);
+        while(a[p[it]]>a[u]){
+            int t=bit.qu(in[p[it]],out[p[it]]);
+            bit.ud(in[p[it++]],1-t);
+            cnt+=1-t;
+        }
         // op(i)op(bit.qu(in[u],out[u]))ope(it)
-        if((it-bit.qu(in[u],out[u]))!=0) {
+        if((cnt-bit.qu(in[u],out[u]))!=0) {
             // cout<<u+1<<' ';
             an.pb(u);
+            bit.
             // ok=1;
             // entr
             // return;
         }
     }
-    sort(ALL(an));
+    // sort(ALL(an));
     cout<<an.size()<<' ';
     for(int c:an) cout<<c+1<<' ';cout<<'\n';
 
