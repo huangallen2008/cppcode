@@ -90,7 +90,6 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud_x(int u,int v) {
-        op("x")op(u)ope(v)
         _ud_x(1,0,n-1,u,v);
     }void _ud_a(int w,int l,int r,int ql,int qr,int v) {
         if(ql<=l&&r<=qr) {
@@ -105,7 +104,6 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud_a(int l,int r,int v) {
-        op("a")op(l)op(r)ope(v)
         _ud_a(1,0,n-1,l,r,v);
     }
     int _qu(int w,int l,int r,int ql,int qr) {
