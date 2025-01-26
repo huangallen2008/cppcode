@@ -86,7 +86,7 @@ void solve() {
     Vi p(n);
     REP(i,n) p[i]=i;
     sort(ALL(p),[&](int x,int y) {
-        return a[x]>a[y];
+        return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
     // oparr(p)
     REP1(i,n-1) if(!isa(p[i],p[i-1])) {
