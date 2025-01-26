@@ -109,7 +109,7 @@ void solve() {
     sort(ALL(p),[&](int x,int y) {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
-    oparr(p)
+    // oparr(p)
     REP(i,n) {
         int u=p[i];
         if((i-bit.qu(in[u],out[u]))&1) {
