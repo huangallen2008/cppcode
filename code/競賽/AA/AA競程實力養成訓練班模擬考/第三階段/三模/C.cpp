@@ -147,7 +147,7 @@ struct BIT {
 // }seg;
 struct SEG {
     struct Seg {
-        int mx,ta;
+        int mx=-inf,ta;
     };
     void addtaga(Seg &a,int ta) {
         a.mx+=ta;
