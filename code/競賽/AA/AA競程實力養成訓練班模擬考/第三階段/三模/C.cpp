@@ -156,7 +156,7 @@ struct SEG {
     void push(Seg &a,Seg &b,Seg &c) {
         addtaga(b,a.ta);
         addtaga(c,a.ta);
-        a.ta=0,a.tx=0;
+        a.ta=0;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
         a.mx=max(b.mx,c.mx);
