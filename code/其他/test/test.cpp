@@ -73,5 +73,7 @@ signed main() {
     cout<<sizeof(a);
     int ii;
     ope(sizeof(ii))
+    __float128 _f128;
+    ope(sizeof(_f128))
     return 0;
 }
