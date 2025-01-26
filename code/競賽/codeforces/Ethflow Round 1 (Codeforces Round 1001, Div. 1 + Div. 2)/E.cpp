@@ -193,7 +193,7 @@ void solve() {
             cnt+=1-t;
         }
         op(i)op(bit.qu(in[u],out[u]))ope(cnt)
-        if((cnt-esg.qu(in[u],out[u]))!=0) {
+        if((cnt-seg.qu(in[u],out[u]))!=0) {
             // cout<<u+1<<' ';
             an.pb(u);
             // ok=1;
