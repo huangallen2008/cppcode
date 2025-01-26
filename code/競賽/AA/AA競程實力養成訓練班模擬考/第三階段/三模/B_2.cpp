@@ -80,7 +80,7 @@ signed main() {
     auto ncc=[&](int x,int y,int t) {
         if(dr[x]) return a[x][((y-t)%w+w)%w];
         else return a[x][(y+t)%w];
-    }
+    };
     auto nco=[&](int x,int y,int t) {
         // if(dr[x]) return a[x][((y-t)%w+w)%w]=='.';
         // else 
