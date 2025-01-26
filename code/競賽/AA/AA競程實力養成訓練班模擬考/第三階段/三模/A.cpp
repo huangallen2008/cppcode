@@ -73,7 +73,7 @@ void init_fac() {
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
     infac[maxn-1]=inv(fac[maxn-1]);
-    RREP(i,maxn-1) infac[i]=;infac[i+1]*(i+1)%mod;
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
 }
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
@@ -82,7 +82,7 @@ signed main() {
     IOS();
     init_fac();
     int n,m;
-    cin>n>>m;
+    cin>>n>>m;
     Vi cc(n+1);
     REP1(i,n) {
         for(int k=3;k<=i;k++) {
