@@ -58,7 +58,7 @@ int rd(int l,int r) {
 }
 Graph g;
 Vi a,in,out;
-int id=0;
+int id=1;
 void dfs(int u,int fa) {
     in[u]=id++;
     for(int v:g[u]) {
@@ -70,9 +70,30 @@ void dfs(int u,int fa) {
 bool isa(int u,int v) {
     return in[u]<in[v]&&out[v]<out[u];
 }
+struct BIT {
+    int n;
+    Vi b;
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    int pre(int u) {
+        int r=0;
+        for(;u>0u;u-=u&-u) r+=b[u];
+        return r;
+    }
+    int qu(int l,int r) {
+        return pre(r)-pre(l-1);
+    }
+};
 void solve() {
     int n;
     cin>>n;
+    BIT bit;
+    bit.init(n*2+5);
     g=Graph(n);
     a=in=out=Vi(n);
     REP(i,n) cin>>a[i];
@@ -89,9 +110,13 @@ void solve() {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
     // oparr(p)
-    REP1(i,n-1) if(!isa(p[i],p[i-1])) {
-        cout<<p[i]+1<<'\n';
-        return;
+    REP(i,n) {
+        int u=p[i];
+        if(i-bit.qu(in[u],out[u])&1) {
+            cout<<p[i]+1<<'\n';
+            return;
+        }
+        bit.ud(in[u],1);
     }
     cout<<"0\n";
 
