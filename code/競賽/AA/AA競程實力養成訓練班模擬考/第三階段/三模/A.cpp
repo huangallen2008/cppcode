@@ -101,6 +101,7 @@ signed main() {
     auto cal=[&](int x) {
         return ((cc[x]*pw(2,x)%mod)+C(x,2)*2+x*(n-x))%mod;
     };
+    REP(i,m+1) ope(cal(i))
     REP(i,m) {
         an=(an-cal(1)%mod+mod)%mod;
         REP1(j,i) {
