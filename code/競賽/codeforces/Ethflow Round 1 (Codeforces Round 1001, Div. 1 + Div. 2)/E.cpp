@@ -104,8 +104,6 @@ struct BIT {
 void solve() {
     id=1;
     cin>>n;
-    BIT bit;
-    bit.init(n*2+5);
     g=Graph(n);
     a=in=out=Vi(n);
     REP(i,n) cin>>a[i];
@@ -116,6 +114,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    ope("ok")
     init_st();
     Vi p(n);
     REP(i,n) p[i]=i;
