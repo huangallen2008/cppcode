@@ -49,8 +49,8 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
-const int maxn=5;
-const int maxb=64;
+const int maxn=1e6+5;
+const int maxb=20;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -67,78 +67,20 @@ void dfs(int u,int fa) {
     }
     out[u]=id++;
 }
-struct SEG {
-    struct Seg {
-        int v,ta=0;
-    };
-    void addtaga(Seg &a) {
-        a.v=0;
-        a.ta=1;
-    }
-    void push(Seg &a,Seg &b,Seg &c) {
-        if(a.ta) {
-            addtaga(b);
-            addtaga(c);
+int st[maxb][maxn];
+void init_st() {
+    REP(i,n) st[0][in[i]]=a[i];
+    REP1(i,maxb-1) {
+        REP(j,n<<1|1) {
+            st[i][j]=max(st[i-1][j],st[i-1][min(j+(1<<i-1),n<<1)]) ;
         }
-        a.ta=0;
     }
-    void pull(Seg &a,Seg &b,Seg &c) {
-        a.v=(b.v+c.v);
-    }
-    int n;
-    vector<Seg> s;
-    // void build(int w,int l,int r) {
-    //     s[w]={0,0,r-l+1};
-    //     if(l==r) return;
-    //     int m=l+r>>1;
-    //     build(w<<1,l,m);
-    //     build(w<<1|1,m+1,r);
-    // }
-    void init(int _n) {
-        n=_n;
-        s=vector<Seg>(n<<2);
-        // build(1,0,n-1);
-    }
-    void _ud_a(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) {
-            addtaga(s[w]);
-            return;
-        }
-        if(ql>r||qr<l) return;
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        _ud_a(w<<1,l,m,ql,qr);
-        _ud_a(w<<1|1,m+1,r,ql,qr);
-        pull(s[w],s[w<<1],s[w<<1|1]);
-    }
-    void ud_a(int l,int r) {
-        _ud_a(1,0,n-1,l,r);
-    }
-    void _ud(int w,int l,int r,int u,int v) {
-        if(l==r) {
-            s[w].v+=v;
-            return;
-        }
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        if(u<=m)_ud(w<<1,l,m,u,v);
-        else _ud(w<<1|1,m+1,r,u,v);
-        pull(s[w],s[w<<1],s[w<<1|1]);
-    }
-    void ud(int u,int v) {
-        _ud_a(1,0,n-1,u,v);
-    }
-    int _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w].v;
-        if(ql>r||qr<l) return 0;
-        int m=l+r>>1;
-        push(s[w],s[w<<1],s[w<<1|1]);
-        return (_qu(w<<1,l,m,ql,qr)+_qu(w<<1|1,m+1,r,ql,qr));
-    }
-    int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r);
-    }
-}seg;
+}
+int st_mx(int l,int r) {
+    int lg=__lg(r-l+1);
+    return max(st[lg][l],st[lg][r-(1<<lg)+1]);
+}
+
 struct BIT {
     int n;
     Vi b;
@@ -175,6 +117,7 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    init_st();
     Vi p(n);
     REP(i,n) p[i]=i;
     sort(ALL(p),[&](int x,int y) {
@@ -184,23 +127,26 @@ void solve() {
     int it=0,cnt=0;
     Vi an;
     REP(i,n) {
-        int u=p[i];
-        while(a[p[it]]>a[u]){
-            int t=seg.qu(in[p[it]],out[p[it]]);
-            // bit.ud(in[p[it++]],1-t);
-            seg.ud_a(in[p[it]]+1,out[p[it]]-1);
-            seg.ud(in[p[it]],1-t);
-            cnt+=1-t;
-        }
-        op(i)op(bit.qu(in[u],out[u]))ope(cnt)
-        if((cnt-seg.qu(in[u],out[u]))!=0) {
-            // cout<<u+1<<' ';
-            an.pb(u);
-            // ok=1;
-            // entr
-            // return;
-        }
+        if(max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2))>a[i]) an.pb(i);
     }
+    // REP(i,n) {
+    //     int u=p[i];
+    //     while(a[p[it]]>a[u]){
+    //         int t=seg.qu(in[p[it]]+1,out[p[it]]-1);
+    //         // bit.ud(in[p[it++]],1-t);
+    //         seg.ud_a(in[p[it]]+1,out[p[it]]-1);
+    //         seg.ud(in[p[it]],1-t);
+    //         cnt+=1-t;
+    //     }
+    //     // op(i)op(bit.qu(in[u],out[u]))ope(cnt)
+    //     if((cnt-seg.qu(in[u],out[u]))!=0) {
+    //         // cout<<u+1<<' ';
+    //         an.pb(u);
+    //         // ok=1;
+    //         // entr
+    //         // return;
+    //     }
+    // }
     // sort(ALL(an));
     cout<<an.size()<<' ';
     for(int c:an) cout<<c+1<<' ';cout<<'\n';
