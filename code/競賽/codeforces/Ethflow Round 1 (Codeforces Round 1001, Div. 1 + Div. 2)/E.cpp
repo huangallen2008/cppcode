@@ -106,7 +106,6 @@ void solve() {
     cin>>n;
     BIT bit;
     bit.init(n*2+5);
-    seg.init(n*2+5);
     g=Graph(n);
     a=in=out=Vi(n);
     REP(i,n) cin>>a[i];
