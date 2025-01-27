@@ -79,7 +79,7 @@ void init_st() {
 }
 int st_mx(int l,int r) {
     if(l>r) return -inf;
-    op(l)ope(r)
+    // op(l)ope(r)
     int lg=__lg(r-l+1);
     return max(st[lg][l],st[lg][r-(1<<lg)+1]);
 }
@@ -126,7 +126,7 @@ void solve() {
     int it=0,cnt=0;
     Vi an;
     REP(i,n) {
-    ope(i)
+    // ope(i)
         if(max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2))>a[i]) an.pb(i);
     }
     // REP(i,n) {
