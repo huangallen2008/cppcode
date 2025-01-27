@@ -70,6 +70,7 @@ void dfs(int u,int fa) {
     int n;
 int st[maxb][maxn];
 void init_st() {
+    REP(i,n<<1|1) st[0][i]=0;
     REP(i,n) st[0][in[i]]=a[i];
     REP1(i,maxb-1) {
         REP(j,n<<1|1) {
