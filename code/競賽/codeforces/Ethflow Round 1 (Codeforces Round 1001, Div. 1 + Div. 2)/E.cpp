@@ -127,6 +127,7 @@ void solve() {
     int it=0,cnt=0;
     Vi an;
     REP(i,n<<1|1) cout<<st[0][i]<<' ';entr
+    oparr(in)oparr(out)
     REP(i,n) {
     // ope(i)
         int ret=max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2));
