@@ -114,13 +114,13 @@ void solve() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    ope("ok")
     init_st();
     Vi p(n);
     REP(i,n) p[i]=i;
     sort(ALL(p),[&](int x,int y) {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
+    ope("ok")
     // oparr(p)oparr(in)oparr(out)
     int it=0,cnt=0;
     Vi an;
