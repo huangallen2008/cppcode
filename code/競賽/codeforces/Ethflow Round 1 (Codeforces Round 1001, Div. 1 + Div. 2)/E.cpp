@@ -129,7 +129,7 @@ void solve() {
     REP(i,n) {
     // ope(i)
         int ret=max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2));
-        op(i)ope(ret)
+        // op(i)ope(ret)
         if(ret>a[i]) an.pb(i);
     }
     // REP(i,n) {
