@@ -124,8 +124,8 @@ void solve() {
     int it=0,cnt=0;
     Vi an;
     REP(i,n) {
-        if(max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2))>a[i]) an.pb(i);
     ope(i)
+        if(max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2))>a[i]) an.pb(i);
     }
     // REP(i,n) {
     //     int u=p[i];
