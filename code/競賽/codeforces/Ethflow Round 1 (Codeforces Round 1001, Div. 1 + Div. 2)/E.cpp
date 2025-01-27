@@ -120,12 +120,12 @@ void solve() {
     sort(ALL(p),[&](int x,int y) {
         return a[x]==a[y]?in[x]>in[y]:a[x]>a[y];
     });
-    ope("ok")
     // oparr(p)oparr(in)oparr(out)
     int it=0,cnt=0;
     Vi an;
     REP(i,n) {
         if(max(st_mx(0,in[i]-1),st_mx(out[i]+1,n*2))>a[i]) an.pb(i);
+    ope(i)
     }
     // REP(i,n) {
     //     int u=p[i];
