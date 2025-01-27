@@ -78,6 +78,7 @@ void init_st() {
     }
 }
 int st_mx(int l,int r) {
+    if(r>l) return -inf;
     op(l)ope(r)
     int lg=__lg(r-l+1);
     return max(st[lg][l],st[lg][r-(1<<lg)+1]);
