@@ -67,6 +67,7 @@ void dfs(int u,int fa) {
     }
     out[u]=id++;
 }
+    int n;
 int st[maxb][maxn];
 void init_st() {
     REP(i,n) st[0][in[i]]=a[i];
@@ -102,7 +103,6 @@ struct BIT {
 };
 void solve() {
     id=1;
-    int n;
     cin>>n;
     BIT bit;
     bit.init(n*2+5);
