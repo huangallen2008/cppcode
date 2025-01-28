@@ -182,8 +182,8 @@ signed main() {
             segoy.ud(xy,xx);
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
-            pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)})
-            pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)})
+            pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
+            pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
         }
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
         // oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
