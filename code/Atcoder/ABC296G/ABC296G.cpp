@@ -93,7 +93,7 @@ signed main() {
             continue;
         }
         // op(a[l-1].x)op(a[l-1].y)op(a[l].x)ope(a[l].y)
-        int rr=sig(cro(a[l]-a[l-1],x-a[l-1]));
+        int rr=(cro(a[l]-a[l-1],x-a[l-1]));
         // op(i)op(l)ope(rr)
         if(rr>0) cout<<"IN\n";
         else if(rr==0) cout<<"ON\n";
