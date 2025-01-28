@@ -149,6 +149,7 @@ signed main() {
             segoy.ud(yy,xx);
             segiy.ud(yy,xx);
         }
+        ope("ok")
         int v1,v2;
         while(ox!=(v1=segoy.qu(0,oy))||oy!=(v2=segox.qu(0,ox))) {
             ox=v1,oy=v2;
