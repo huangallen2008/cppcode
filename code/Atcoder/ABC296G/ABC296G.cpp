@@ -82,13 +82,13 @@ signed main() {
             cout<<"ON\n";
             continue;
         }
-        int l=2,r=n-1,m;
+        int l=2,r=n,m;
         while(l<r) {
             m=l+r>>1;
             if(in(a[1]-a[0],a[m]-a[0],x-a[0])) r=m;
             else l=m+1;
         }
-        if(!in(a[1]-a[0],a[l]-a[0],x-a[0])) {
+        if(l==n) {
             cout<<"OUT\n";
             continue;
         }
