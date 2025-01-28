@@ -110,6 +110,7 @@ signed main() {
             dsu.merge(u,v);
         }
     }
+    ope(dsu.an)
     Vi an;
     RREP(i,n) {
         if(s[i]) {
