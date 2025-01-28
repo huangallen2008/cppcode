@@ -86,7 +86,7 @@ struct SEG_mx {
         return _qu(1,0,n-1,l,r);
     }
 };
-struct SEG_mx {
+struct SEG_mn {
     int n;
     Vi s;
     void init(int _n,int init_val) {
