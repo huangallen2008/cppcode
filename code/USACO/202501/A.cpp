@@ -161,7 +161,7 @@ signed main() {
                 chmin(nx,v1);
                 chmin(ny,v2);
             }
-            op(nx)op(ny)op(xx)ope(xy)
+            // op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
@@ -174,7 +174,7 @@ signed main() {
         chmax(ox,segoy.qu(0,segox.qu(0,ox)));
         oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
         chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
-        ope(segiy.qu(ix,maxv))
+        // ope(segiy.qu(ix,maxv))
         iy=good(segox.qu(0,ix-1),segix.qu(ix,maxv),y);
         // int v1,v2;
         // while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
