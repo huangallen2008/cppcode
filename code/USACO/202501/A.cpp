@@ -85,7 +85,7 @@ struct DSU {
         int x=find(u);
         an-=rsz[x]*(rsz[x]-1)>>1;
         rsz[x]+=v;
-        an-=rsz[x]*(rsz[x]-1)>>1;
+        an+=rsz[x]*(rsz[x]-1)>>1;
     }
 }dsu;
 
