@@ -182,12 +182,14 @@ signed main() {
             segoy.ud(xy,xx);
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
+            pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)})
+            pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)})
         }
-        chmax(ox,segoy.qu(0,segox.qu(0,ox)));
-        oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
-        chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
-        // ope(segiy.qu(ix,maxv))
-        iy=good(segox.qu(0,ix-1),segix.qu(ix,maxv),y);
+        // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
+        // oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
+        // chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
+        // // ope(segiy.qu(ix,maxv))
+        // iy=good(segox.qu(0,ix-1),segix.qu(ix,maxv),y);
         // int v1,v2;
         // while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
         //     ox=v1,oy=v2;
@@ -209,7 +211,11 @@ signed main() {
         // }
         // op(ix)op(iy)op(ox)ope(oy)
         // op(ix2)op(iy2)op(ox2)ope(oy2)
-        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy))});
+        auto ok=[&](po p) ->bool {
+            return p.y>=segox.qu(0,p.x-1)&&p.y<=segix.qu(p.x+1,maxv);
+        };
+        while()
+        int an=pq.top().cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
