@@ -192,7 +192,8 @@ signed main() {
         // while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix,maxv))) {
         //     oix=v1,oiy=v2;
         // }
-        op(ix)op(iy)op(ox)op(oy)op(ix2)op(iy2)op(ox2)ope(oy2)
+        op(ix)op(iy)op(ox)ope(oy)
+        // op(ix2)op(iy2)op(ox2)ope(oy2)
         int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy))});
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
