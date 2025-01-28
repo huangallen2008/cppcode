@@ -110,8 +110,8 @@ signed main() {
             dsu.merge(u,v);
         }
     }
-    ope(dsu.an)
-    oparr(dsu.sz)oparr(dsu.rsz)
+    // ope(dsu.an)
+    // oparr(dsu.sz)oparr(dsu.rsz)
     Vi an;
     RREP(i,n) {
         if(s[i]) {
