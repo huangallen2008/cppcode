@@ -120,7 +120,7 @@ int x,y;
 struct po {
     int x1,y1;
     int cal() {
-        return abs(x-x1)+abs(y-y1)+sqrtf(SQ(x1)+SQ(y1));
+        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));
     }
     // bool operator<(const po b) {
     //     return cal()>b.cal();
@@ -144,7 +144,7 @@ signed main() {
         a[tt].pb({_x,_y});
     }
     int ix=x,iy=y,ox=x,oy=y;
-    // int ix2=maxv,iy2=y,ox2=0,oy2=y;
+    int ix2=maxv,iy2=y,ox2=0,oy2=y;
     // iox=x,ioy=y,oix=x,oiy=y;
     SEG_mx segox,segoy;
     SEG_mn segix,segiy;
@@ -185,34 +185,14 @@ signed main() {
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
             // ope("ok")
-            int xx2=segiy.qu(xy+1,maxv),nx2=segoy.qu(0,ny-1);
-            int xy2=segix.qu(xx+1,maxv),ny2=segox.qu(0,nx-1);
-            int xgx=good(xx,xx2,x),xgy=good(xy,xy2,y),ngx=good(nx2,nx,x),ngy=good(ny2,ny,y);
+            int xx2=segiy.qu(xy+1,maxv)-1,nx2=segoy.qu(0,ny-1)+1;
+            int xy2=segix.qu(xx+1,maxv)-1,ny2=segox.qu(0,nx-1)+1;
             // op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
             // pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
-            // op(ngx)op(ngy)op(xgx)ope(xgy)
-            pq.push({ngx,ngy});
-            // pq.push({ngx,ny});
-            // pq.push({ngx,ny2});
-            // pq.push({nx,ngy});
-            // pq.push({nx,ny});
-            // pq.push({nx,ny2});
-            // pq.push({nx2,ngy});
-            // pq.push({nx2,ny});
-            // pq.push({nx2,ny2});
-
-            pq.push({xgx,xgy});
-            // pq.push({xgx,xy});
-            // pq.push({xgx,xy2});
-            // pq.push({xx,xgy});
-            // pq.push({xx,xy});
-            // pq.push({xx,xy2});
-            // pq.push({xx2,xgy});
-            // pq.push({xx2,xy});
-            // pq.push({xx2,xy2});
+            pq.push({good(xx,xx2,x),good(xy,xy2,y)});
             // op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
             // pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
-            // pq.push({,});
+            pq.push({good(nx2,nx,x),good(ny2,ny,y)});
         }
         // auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
@@ -249,7 +229,7 @@ signed main() {
         auto tt=pq.top();
         // op(tt.x1)ope(tt.y1)
         int an=tt.cal();
-                // ope(abs(x-tt.x1)+abs(y-tt.y1)+sqrt(SQ(tt.x1)+SQ(tt.y1)))
+                    // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
     return 0;
