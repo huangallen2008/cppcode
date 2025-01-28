@@ -142,6 +142,7 @@ signed main() {
     segix.ud(x,y);
     segoy.ud(y,x);
     segiy.ud(y,x);
+    ope(segiy.qu(ix,maxv))
     REP(i,t) {
         for(auto [xx,yy]:a[i]) {
             segox.ud(xx,yy);
