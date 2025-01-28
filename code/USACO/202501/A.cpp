@@ -123,13 +123,41 @@ signed main() {
     IOS();
     int n,t;
     cin>>n>>t;
-    int x0,y0;
-    cin>>x0>>y0;
+    int x,y;
+    cin>>x>>y;
     vector<vector<po>> a(t);
     REP(i,n) {
         int tt,_x,_y;
         cin>>tt>>_x>>_y;
         a[tt].pb({_x,_y});
+    }
+    int ix=x,iy=y,ox=x,oy=y;
+    SEG_mx segox,segoy;
+    SEG_mn segix,segiy;
+    segox.init(maxv);
+    segix.init(maxv);
+    segoy.init(maxv);
+    segiy.init(maxv);
+    segox.ud(x,y);
+    segix.ud(x,y);
+    segoy.ud(y,x);
+    segiy.ud(y,x);
+    REP(i,t) {
+        for(auto [xx,yy]:a[i]) {
+            segox.ud(xx,yy);
+            segix.ud(xx,yy);
+            segoy.ud(yy,xx);
+            segiy.ud(yy,xx);
+        }
+        int v1,v2;
+        while(ox!=(v1=segoy.qu(0,oy))||oy!=(v2=segox.qu(0,ox))) {
+            ox=v1,oy=v2;
+        }
+        while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
+            ix=v1,iy=v2;
+        }
+        int an=min(x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy)));
+        cout<<an<<'\n';
     }
     return 0;
 }
