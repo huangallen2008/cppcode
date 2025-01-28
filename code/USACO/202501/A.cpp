@@ -104,7 +104,6 @@ struct SEG_mn {
         s[w]=min(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
-        _ud(1,-,n-1,u,v);
     }
     int _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
