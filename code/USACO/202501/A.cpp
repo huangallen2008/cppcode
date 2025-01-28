@@ -194,21 +194,21 @@ signed main() {
             pq.push({ngx,ny});
             pq.push({ngx,ny2});
             pq.push({nx,ngy});
-            pq.push({nx,ny});
-            pq.push({nx,ny2});
+            // pq.push({nx,ny});
+            // pq.push({nx,ny2});
             pq.push({nx2,ngy});
-            pq.push({nx2,ny});
-            pq.push({nx2,ny2});
+            // pq.push({nx2,ny});
+            // pq.push({nx2,ny2});
 
             pq.push({xgx,xgy});
             pq.push({xgx,xy});
             pq.push({xgx,xy2});
             pq.push({xx,xgy});
-            pq.push({xx,xy});
-            pq.push({xx,xy2});
+            // pq.push({xx,xy});
+            // pq.push({xx,xy2});
             pq.push({xx2,xgy});
-            pq.push({xx2,xy});
-            pq.push({xx2,xy2});
+            // pq.push({xx2,xy});
+            // pq.push({xx2,xy2});
             // op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
             // pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
             // pq.push({,});
