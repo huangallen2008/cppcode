@@ -175,7 +175,7 @@ signed main() {
                 chmin(nx,v1);
                 chmin(ny,v2);
             }
-            // op(nx)op(ny)op(xx)ope(xy)
+            op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
