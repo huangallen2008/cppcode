@@ -122,7 +122,7 @@ struct po {
     int cal() {
         return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));;
     }
-    bool operator>(const po b) {
+    bool operator>(const po b) const {
         return cal()>b.cal();
     }
 };
