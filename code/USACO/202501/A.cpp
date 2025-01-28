@@ -144,7 +144,7 @@ signed main() {
         a[tt].pb({_x,_y});
     }
     int ix=x,iy=y,ox=x,oy=y;
-    int ix2=maxv,iy2=y,ox2=0,oy2=y;
+    // int ix2=maxv,iy2=y,ox2=0,oy2=y;
     // iox=x,ioy=y,oix=x,oiy=y;
     SEG_mx segox,segoy;
     SEG_mn segix,segiy;
