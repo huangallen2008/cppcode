@@ -145,11 +145,19 @@ signed main() {
     // segoy.ud(y,x);
     // segiy.ud(y,x);
     REP(i,t) {
-        for(auto [xx,yy]:a[i]) {
-            segox.ud(xx,yy);
-            segix.ud(xx,yy);
-            segoy.ud(yy,xx);
-            segiy.ud(yy,xx);
+        for(auto [_x,_y]:a[i]) {
+            int xx=_x,xy=_y,nx=_x,ny=_y;
+            int v1,v2;
+            while(xx<(v1=segoy.qu(0,yy))||xy<(v2=segox.qu(0,xx))) {
+                xx=v1,xy=v2;
+            }
+            while(nx>(v1=segiy.qu(ny,maxv))||ny>(v2=segix.qu(nx,maxv))) {
+                nx=v1,ny=v2;
+            }
+            segox.ud(xx,xy);
+            segix.ud(nx,ny);
+            segoy.ud(xy,xx);
+            segiy.ud(ny,nx);
         }
         int v1,v2;
         while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
