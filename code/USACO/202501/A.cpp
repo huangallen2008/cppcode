@@ -140,10 +140,10 @@ signed main() {
     segix.init(maxv);
     segoy.init(maxv);
     segiy.init(maxv);
-    segox.ud(x,y);
-    segix.ud(x,y);
-    segoy.ud(y,x);
-    segiy.ud(y,x);
+    // segox.ud(x,y);
+    // segix.ud(x,y);
+    // segoy.ud(y,x);
+    // segiy.ud(y,x);
     REP(i,t) {
         for(auto [xx,yy]:a[i]) {
             segox.ud(xx,yy);
