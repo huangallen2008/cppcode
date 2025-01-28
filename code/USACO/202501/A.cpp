@@ -189,6 +189,7 @@ signed main() {
             pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
             pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
         }
+        auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
         // oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
         // chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
