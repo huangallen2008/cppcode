@@ -116,11 +116,12 @@ struct SEG_mn {
         return _qu(1,0,n-1,l,r);
     }
 };
+    Vi tx,ty;
 int x,y;
 struct po {
     int x1,y1;
     int cal() {
-        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));
+        return abs(tx[x-1]-tx[x1-1])+abs(ty[y-1]-ty[y1-1])+sqrt(SQ(tx[x1-1])+SQ(ty[y1-1]));
     }
     // bool operator<(const po b) {
     //     return cal()>b.cal();
@@ -138,7 +139,6 @@ signed main() {
     cin>>x>>y;
     priority_queue<po,vector<po>,srt> pq;
     vector<vector<po>> a(t);
-    Vi tx,ty;
     tx.pb(x);
     ty.pb(y);
     REP(i,n) {
@@ -150,12 +150,12 @@ signed main() {
     }
     sort(ALL(tx));
     sort(ALL(ty));
-    // x=lower_bound(ALL(tx),x)-tx.begin()+1;
-    // y=lower_bound(ALL(ty),y)-ty.begin()+1;
+    x=lower_bound(ALL(tx),x)-tx.begin()+1;
+    y=lower_bound(ALL(ty),y)-ty.begin()+1;
     REP(i,t) {
         for(auto &[xx,yy]:a[i]) {
-    // xx=lower_bound(ALL(tx),xx)-tx.begin()+1;
-    // yy=lower_bound(ALL(ty),yy)-ty.begin()+1;
+    xx=lower_bound(ALL(tx),xx)-tx.begin()+1;
+    yy=lower_bound(ALL(ty),yy)-ty.begin()+1;
             // xx=
         }
     }
