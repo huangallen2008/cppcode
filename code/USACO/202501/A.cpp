@@ -187,12 +187,31 @@ signed main() {
             // ope("ok")
             int xx2=segiy.qu(xy+1,maxv),nx2=segoy.qu(0,ny-1);
             int xy2=segix.qu(xx+1,maxv),ny2=segox.qu(0,nx-1);
+            int xgx=good(xx,xx2,x),xgy=good(xy,xy2,y),ngx=good(nx2,nx,x),ngy=good(ny2,ny,y);
             // op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
             // pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
-            pq.push({good(xx,xx2,x),good(xy,xy2,y)});
+            pq.push({ngx,ngy});
+            pq.push({ngx,ny});
+            pq.push({ngx,ny2});
+            pq.push({nx,ngy});
+            pq.push({nx,ny});
+            pq.push({nx,ny2});
+            pq.push({nx2,ngy});
+            pq.push({nx2,ny});
+            pq.push({nx2,ny2});
+
+            pq.push({xgx,xgy});
+            pq.push({xgx,xy});
+            pq.push({xgx,xy2});
+            pq.push({xx,xgy});
+            pq.push({xx,xy});
+            pq.push({xx,xy2});
+            pq.push({xx2,xgy});
+            pq.push({xx2,xy});
+            pq.push({xx2,xy2});
             // op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
             // pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
-            pq.push({good(nx2,nx,x),good(ny2,ny,y)});
+            // pq.push({,});
         }
         // auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
