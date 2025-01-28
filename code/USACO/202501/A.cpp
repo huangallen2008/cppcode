@@ -171,7 +171,7 @@ signed main() {
         //     oix=v1,oiy=v2;
         // }
         // op(ix)op(iy)op(ox)op(oy)op(iox)op(ioy)op(oix)ope(oiy)
-        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy))
+        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy)),
                     abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
