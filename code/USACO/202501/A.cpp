@@ -120,7 +120,7 @@ int x,y;
 struct po {
     int x1,y1;
     int cal() {
-        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));;
+        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));
     }
     // bool operator<(const po b) {
     //     return cal()>b.cal();
@@ -187,6 +187,7 @@ signed main() {
             // ope("ok")
             op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
             pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
+            op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
             pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
         }
         auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
