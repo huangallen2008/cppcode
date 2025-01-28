@@ -59,7 +59,7 @@ int rd(int l,int r) {
 struct SEG_mx {
     int n;
     Vi s;
-    void init(int _n,int init_val) {
+    void init(int _n,int init_val=-inf) {
         n=_n;
         s=Vi(n<<2,init_val);
     }
@@ -89,7 +89,7 @@ struct SEG_mx {
 struct SEG_mn {
     int n;
     Vi s;
-    void init(int _n,int init_val) {
+    void init(int _n,int init_val=inf) {
         n=_n;
         s=Vi(n<<2,init_val);
     }
