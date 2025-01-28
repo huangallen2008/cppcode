@@ -172,10 +172,10 @@ signed main() {
             segiy.ud(xy,nx);
         }
         chmax(ox,segoy.qu(0,segox.qu(0,ox)));
-        oy=good(segoy.qu(0,ox),segiy.qu(ox+1,maxv),y);
+        oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
         chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
         ope(segiy.qu(ix,maxv))
-        iy=good(segoy.qu(0,ix-1),segiy.qu(ix,maxv),y);
+        iy=good(segox.qu(0,ix-1),segix.qu(ix,maxv),y);
         // int v1,v2;
         // while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
         //     ox=v1,oy=v2;
