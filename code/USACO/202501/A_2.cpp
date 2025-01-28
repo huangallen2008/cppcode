@@ -150,12 +150,12 @@ signed main() {
     }
     sort(ALL(tx));
     sort(ALL(ty));
-    x=lower_bound(ALL(tx),x)-tx.begin()+1;
-    y=lower_bound(ALL(ty),y)-ty.begin()+1;
+    // x=lower_bound(ALL(tx),x)-tx.begin()+1;
+    // y=lower_bound(ALL(ty),y)-ty.begin()+1;
     REP(i,t) {
         for(auto &[xx,yy]:a[i]) {
-    xx=lower_bound(ALL(tx),xx)-tx.begin()+1;
-    yy=lower_bound(ALL(ty),yy)-ty.begin()+1;
+    // xx=lower_bound(ALL(tx),xx)-tx.begin()+1;
+    // yy=lower_bound(ALL(ty),yy)-ty.begin()+1;
             // xx=
         }
     }
