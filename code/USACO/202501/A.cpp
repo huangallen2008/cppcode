@@ -154,10 +154,10 @@ signed main() {
             ox=v1,oy=v2;
             
         }
-        ope("ok")
         while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
             ix=v1,iy=v2;
         }
+        ope("ok")
         int an=min(x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy)));
         cout<<an<<'\n';
     }
