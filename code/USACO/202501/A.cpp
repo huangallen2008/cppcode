@@ -249,7 +249,7 @@ signed main() {
         auto tt=pq.top();
         // op(tt.x1)ope(tt.y1)
         int an=tt.cal();
-                    // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
+                ope(abs(x-tt.x1)+abs(y-tt.y1)+sqrt(SQ(tt.x1)+SQ(tt.y1)))
         cout<<an<<'\n';
     }
     return 0;
