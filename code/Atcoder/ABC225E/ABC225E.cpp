@@ -56,74 +56,38 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
-    int n;
-    Vi p,sz,rsz;
-    int an=0;
-    void init(int _n,Vi _rsz) {
-        n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        rsz=_rsz;
-        REP(i,n) p[i]=i;
-    }
-    int find(int u) {
-        return p[u]==u?u:p[u]=find(p[u]);
-    }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        an-=rsz[y]*(rsz[y]-1)>>1;
-        p[x]=y;
-        sz[y]+=sz[x];
-        rsz[y]+=rsz[x];
-        an+=rsz[y]*(rsz[y]-1)>>1;
-    }
-    void ud(int u,int v) {
-        int x=find(u);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        rsz[x]+=v;
-        an+=rsz[x]*(rsz[x]-1)>>1;
-    }
-}dsu;
-
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    string ss;
-    cin>>ss;
-    Vi s(n);
-    REP(i,n) s[i]=ss[i]=='1';
-    Vi _rsz(n);
-    REP(i,n) _rsz[i]=!s[i];
-    dsu.init(n,_rsz);
-    Graph g(n);
-    REP(i,m) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-        if(s[u]&&s[v]) {
-            dsu.merge(u,v);
+    struct frc {
+        int p,q;
+        bool operator<(frc a) {
+            return p*a.q<a.p*q;
         }
-    }
-    // ope(dsu.an)
-    // oparr(dsu.sz)oparr(dsu.rsz)
-    Vi an;
-    RREP(i,n) {
-        if(s[i]) {
-            dsu.ud(i,1);
-        }else {
-            for(auto v:g[i]) {
-                if(s[v]||v>i) dsu.merge(i,v);
-            }
+        bool operator>=(frc a) {
+            return p*a.q>=a.p*q;
         }
-        an.pb(dsu.an);
+    };
+    int n;
+    cin>>n;
+    Vpii a(n);
+    vector<pair<frc,frc>> b(n);
+    REP(i,n) {
+        cin>>a[i].f>>a[i].s;
+        b[i].f={a[i].s-1,a[i].f};
+        b[i].s={a[i].s,a[i].f-1};
     }
-    reverse(ALL(an));
-    for(int x:an) cout<<x<<'\n';
+    sort(ALL(b),[&](auto a,auto b) {
+        return a.s<b.s;
+    });
+    // oparr(b)
+    frc now={0,1};
+    int an=0;
+    for(auto x:b) {
+        if(x.f>=now) {
+            now=x.s;
+            an++;
+        }
+    } 
+    cout<<an<<'\n';
     return 0;
 }

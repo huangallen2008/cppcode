@@ -56,74 +56,48 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
-    int n;
-    Vi p,sz,rsz;
-    int an=0;
-    void init(int _n,Vi _rsz) {
-        n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        rsz=_rsz;
-        REP(i,n) p[i]=i;
-    }
-    int find(int u) {
-        return p[u]==u?u:p[u]=find(p[u]);
-    }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        an-=rsz[y]*(rsz[y]-1)>>1;
-        p[x]=y;
-        sz[y]+=sz[x];
-        rsz[y]+=rsz[x];
-        an+=rsz[y]*(rsz[y]-1)>>1;
-    }
-    void ud(int u,int v) {
-        int x=find(u);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        rsz[x]+=v;
-        an+=rsz[x]*(rsz[x]-1)>>1;
-    }
-}dsu;
-
+struct po {
+    int x,y;
+    po operator+(po b) { return {x+b.x,y+b.y}; }
+    po operator-(po b) { return {x-b.x,y-b.y}; }
+};
+istream& operator>>(istream& os,po &p) { return os>>p.x>>p.y; }
+int sig(int x) { return x<0?-1:(x>0?1:0); }
+int cro(po a,po b) { return a.x*b.y-a.y*b.x; }
+int dot(po a,po b) { return a.x*b.x+a.y*b.y; }
+bool in(po a,po b,po c) { return sig(cro(a,c))*sig(cro(b,c))<=0; }
+bool onl(po a,po b,po c) { return dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0&&cro(b-a,c-a)==0; }
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    string ss;
-    cin>>ss;
-    Vi s(n);
-    REP(i,n) s[i]=ss[i]=='1';
-    Vi _rsz(n);
-    REP(i,n) _rsz[i]=!s[i];
-    dsu.init(n,_rsz);
-    Graph g(n);
-    REP(i,m) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-        if(s[u]&&s[v]) {
-            dsu.merge(u,v);
+    int n;
+    cin>>n;
+    vector<po> a(n);
+    REP(i,n) cin>>a[i];
+    int k;
+    cin>>k;
+    REP(i,k) {
+        po x;
+        cin>>x;
+        if(onl(a[0],a[1],x)||onl(a[0],a[n-1],x)) {
+            cout<<"BOUNDARY\n";
+            continue;
         }
-    }
-    // ope(dsu.an)
-    // oparr(dsu.sz)oparr(dsu.rsz)
-    Vi an;
-    RREP(i,n) {
-        if(s[i]) {
-            dsu.ud(i,1);
-        }else {
-            for(auto v:g[i]) {
-                if(s[v]||v>i) dsu.merge(i,v);
-            }
+        int l=2,r=n-1,m;
+        while(l<r) {
+            m=l+r>>1;
+            if(in(a[1]-a[0],a[m]-a[0],x-a[0])) r=m;
+            else l=m+1;
         }
-        an.pb(dsu.an);
+        if(!in(a[1]-a[0],a[l]-a[0],x-a[0])) {
+            cout<<"OUTSIDE\n";
+            continue;
+        }
+        // op(a[l-1].x)op(a[l-1].y)op(a[l].x)ope(a[l].y)
+        int rr=sig(cro(a[l]-a[l-1],x-a[l-1]));
+        // op(i)op(l)ope(rr)
+        if(rr>0) cout<<"INSIDE\n";
+        else if(rr==0) cout<<"BOUNDARY\n";
+        else cout<<"OUTSIDE\n";
     }
-    reverse(ALL(an));
-    for(int x:an) cout<<x<<'\n';
     return 0;
 }
