@@ -131,7 +131,7 @@ signed main() {
         cin>>tt>>_x>>_y;
         a[tt].pb({_x,_y});
     }
-    int ix=x,iy=maxv,ox=x,oy=0;
+    int ix=x,iy=y,ox=x,oy=y;
     int ix2=maxv,iy2=y,ox2=0,oy2=y;
     // iox=x,ioy=y,oix=x,oiy=y;
     SEG_mx segox,segoy;
