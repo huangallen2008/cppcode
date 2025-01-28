@@ -122,8 +122,8 @@ struct po {
     int cal() {
         return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));;
     }
-    bool operator<(po b) {
-        cal()<b.cal();
+    bool operator>(po b) {
+        return cal()>b.cal();
     }
 };
 // struct srt {
