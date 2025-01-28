@@ -162,6 +162,7 @@ signed main() {
         return v;
     };
     REP(i,t) {
+    ope("ok")
         for(auto [_x,_y]:a[i]) {
             int xx=_x,xy=_y,nx=_x,ny=_y;
             int v1,v2;
