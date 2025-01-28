@@ -49,81 +49,87 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
-const int maxn=5;
-const int maxb=64;
+// const int maxn=5;
+const int maxv=1e6+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
+struct SEG_mx {
     int n;
-    Vi p,sz,rsz;
-    int an=0;
-    void init(int _n,Vi _rsz) {
+    Vi s;
+    void init(int _n,int init_val) {
         n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        rsz=_rsz;
-        REP(i,n) p[i]=i;
+        s=Vi(n<<2,init_val);
     }
-    int find(int u) {
-        return p[u]==u?u:p[u]=find(p[u]);
-    }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        an-=rsz[y]*(rsz[y]-1)>>1;
-        p[x]=y;
-        sz[y]+=sz[x];
-        rsz[y]+=rsz[x];
-        an+=rsz[y]*(rsz[y]-1)>>1;
+    void _ud(int w,int l,int r,int u,int v) {
+        if(l==r) {
+            chmax(s[w],v);
+            return ;
+        }
+        int m=l+r>>1;
+        if(u<=m) _ud(w<<1,l,m,u,v);
+        else _ud(w<<1|1,m+1,r,u,v);
+        s[w]=max(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
-        int x=find(u);
-        an-=rsz[x]*(rsz[x]-1)>>1;
-        rsz[x]+=v;
-        an+=rsz[x]*(rsz[x]-1)>>1;
+        _ud(1,-,n-1,u,v);
     }
-}dsu;
-
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql<r||qr<l) return -inf;
+        int m=l+r>>1;
+        return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r);
+    }
+};
+struct SEG_mx {
+    int n;
+    Vi s;
+    void init(int _n,int init_val) {
+        n=_n;
+        s=Vi(n<<2,init_val);
+    }
+    void _ud(int w,int l,int r,int u,int v) {
+        if(l==r) {
+            chmin(s[w],v);
+            return ;
+        }
+        int m=l+r>>1;
+        if(u<=m) _ud(w<<1,l,m,u,v);
+        else _ud(w<<1|1,m+1,r,u,v);
+        s[w]=min(s[w<<1],s[w<<1|1]);
+    }
+    void ud(int u,int v) {
+        _ud(1,-,n-1,u,v);
+    }
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql<r||qr<l) return inf;
+        int m=l+r>>1;
+        return min(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    }
+    int qu(int l,int r) {
+        return _qu(1,0,n-1,l,r);
+    }
+};
+struct po {
+    int x,y;
+};
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    string ss;
-    cin>>ss;
-    Vi s(n);
-    REP(i,n) s[i]=ss[i]=='1';
-    Vi _rsz(n);
-    REP(i,n) _rsz[i]=!s[i];
-    dsu.init(n,_rsz);
-    Graph g(n);
-    REP(i,m) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-        if(s[u]&&s[v]) {
-            dsu.merge(u,v);
-        }
+    int n,t;
+    cin>>n>>t;
+    int x0,y0;
+    cin>>x0>>y0;
+    vector<vector<po>> a(t);
+    REP(i,n) {
+        int tt,_x,_y;
+        cin>>tt>>_x>>_y;
+        a[tt].pb({_x,_y});
     }
-    // ope(dsu.an)
-    // oparr(dsu.sz)oparr(dsu.rsz)
-    Vi an;
-    RREP(i,n) {
-        if(s[i]) {
-            dsu.ud(i,1);
-        }else {
-            for(auto v:g[i]) {
-                if(s[v]||v>i) dsu.merge(i,v);
-            }
-        }
-        an.pb(dsu.an);
-    }
-    reverse(ALL(an));
-    for(int x:an) cout<<x<<'\n';
     return 0;
 }
