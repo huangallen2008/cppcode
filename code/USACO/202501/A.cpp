@@ -131,7 +131,9 @@ signed main() {
         cin>>tt>>_x>>_y;
         a[tt].pb({_x,_y});
     }
-    int ix=x,iy=y,ox=x,oy=y,iox=x,ioy=y,oix=x,oiy=y;
+    int ix=x,iy=maxv,ox=x,oy=0;
+    int ix2=maxv,iy2=y,ox2=0,oy2=y;
+    // iox=x,ioy=y,oix=x,oiy=y;
     SEG_mx segox,segoy;
     SEG_mn segix,segiy;
     segox.init(maxv);
@@ -150,21 +152,27 @@ signed main() {
             segiy.ud(yy,xx);
         }
         int v1,v2;
-        while(ox!=(v1=segoy.qu(0,oy))||oy!=(v2=segox.qu(0,ox))) {
+        while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
             ox=v1,oy=v2;
         }
-        while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
+        while(ix>(v1=segiy.qu(iy,maxv))||iy>(v2=segix.qu(ix,maxv))) {
             ix=v1,iy=v2;
         }
-        while(iox!=(v1=segiy.qu(ioy,maxv))||ioy!=(v2=segox.qu(0,iox))) {
-            iox=v1,ioy=v2;
+        while(ox2<(v1=segoy.qu(0,oy2))||oy2<(v2=segox.qu(0,ox2))) {
+            ox2=v1,oy2=v2;
         }
-        while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix,maxv))) {
-            oix=v1,oiy=v2;
+        while(ix2>(v1=segiy.qu(iy2,maxv))||iy2>(v2=segix.qu(ix2,maxv))) {
+            ix2=v1,iy2=v2;
         }
+        // while(iox!=(v1=segiy.qu(ioy,maxv))||ioy!=(v2=segox.qu(0,iox))) {
+        //     iox=v1,ioy=v2;
+        // }
+        // while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix,maxv))) {
+        //     oix=v1,oiy=v2;
+        // }
         op(ix)op(iy)op(ox)op(oy)op(iox)op(ioy)op(oix)ope(oiy)
-        int an=min({x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy))
-                    ,x-iox+ioy-y+sqrt(SQ(iox)+SQ(ioy)),oix-x+y-oiy+sqrt(SQ(oix)+SQ(oiy))});
+        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy))
+                    abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
     return 0;
