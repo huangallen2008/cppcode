@@ -153,13 +153,13 @@ signed main() {
         while(ox!=(v1=segoy.qu(0,oy))||oy!=(v2=segox.qu(0,ox))) {
             ox=v1,oy=v2;
         }
-        while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
+        while(ix!=(v1=segiy.qu(iy+1,maxv))||iy!=(v2=segix.qu(ix+1,maxv))) {
             ix=v1,iy=v2;
         }
-        while(iox!=(v1=segiy.qu(ioy,maxv))||ioy!=(v2=segox.qu(0,iox))) {
+        while(iox!=(v1=segiy.qu(ioy+1,maxv))||ioy!=(v2=segox.qu(0,iox))) {
             iox=v1,ioy=v2;
         }
-        while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix,maxv))) {
+        while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix+1,maxv))) {
             oix=v1,oiy=v2;
         }
         op(ix)op(iy)op(ox)op(oy)op(iox)op(ioy)op(oix)ope(oiy)
