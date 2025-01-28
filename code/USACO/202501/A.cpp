@@ -159,7 +159,7 @@ signed main() {
             while(nx>(v1=segiy.qu(ny,maxv))||ny>(v2=segix.qu(nx,maxv))) {
                 nx=v1,ny=v2;
             }
-            op(nx)op(ny)p[(xx)ope(xy)]
+            op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
