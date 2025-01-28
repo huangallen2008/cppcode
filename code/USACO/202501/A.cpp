@@ -116,15 +116,27 @@ struct SEG_mn {
         return _qu(1,0,n-1,l,r);
     }
 };
+int x,y;
 struct po {
-    int x,y;
+    int x1,y1;
+    int cal() {
+        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));;
+    }
+    bool operator<(po b) {
+        cal()<b.cal();
+    }
 };
+// struct srt {
+//     bool operator()(po a,po b) {
+
+//     }
+// }
 signed main() {
     IOS();
     int n,t;
     cin>>n>>t;
-    int x,y;
     cin>>x>>y;
+    priority_queue<po,vector<po>,greater<po>> pq;
     vector<vector<po>> a(t);
     REP(i,n) {
         int tt,_x,_y;
