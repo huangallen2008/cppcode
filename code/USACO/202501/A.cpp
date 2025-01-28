@@ -219,7 +219,8 @@ signed main() {
         };
         while(!ok(pq.top())) pq.pop();
         // ope(i)
-        int an=pq.top().cal();
+        auto tt=pq.top();
+        int an=tt.cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
