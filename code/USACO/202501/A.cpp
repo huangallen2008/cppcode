@@ -247,7 +247,7 @@ signed main() {
         while(!ok(pq.top())) pq.pop();
         // ope(i)
         auto tt=pq.top();
-        // op(tt.x1)ope(tt.y1)
+        op(tt.x1)ope(tt.y1)
         int an=tt.cal();
                 ope(abs(x-tt.x1)+abs(y-tt.y1)+sqrt(SQ(tt.x1)+SQ(tt.y1)))
         cout<<an<<'\n';
