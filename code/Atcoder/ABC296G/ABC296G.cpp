@@ -85,7 +85,7 @@ signed main() {
         int l=2,r=n,m;
         while(l<r) {
             m=l+r>>1;
-            if(cro(a[m]-a[0],x-a[0])<=0) r=m;
+            if(cro(a[m]-a[0],x-a[0])<0) r=m;
             else l=m+1;
         }
         if(l==n) {
