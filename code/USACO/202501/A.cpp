@@ -185,8 +185,8 @@ signed main() {
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
             // ope("ok")
-            int xx2=segiy.qu(xy+1,maxv)-1,nx2=segoy.qu(0,ny-1)+1;
-            int xy2=segix.qu(xx+1,maxv)-1,ny2=segox.qu(0,nx-1)+1;
+            int xx2=segiy.qu(xy+1,maxv),nx2=segoy.qu(0,ny-1);
+            int xy2=segix.qu(xx+1,maxv),ny2=segox.qu(0,nx-1);
             // op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
             // pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
             pq.push({good(xx,xx2,x),good(xy,xy2,y)});
