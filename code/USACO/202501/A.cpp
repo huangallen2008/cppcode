@@ -161,6 +161,7 @@ signed main() {
         if(v>=r) return r;
         return v;
     };
+    pq.push({x,y});
     REP(i,t) {
         for(auto [_x,_y]:a[i]) {
     ope("ok")
