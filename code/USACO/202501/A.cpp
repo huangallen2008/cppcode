@@ -162,8 +162,8 @@ signed main() {
         return v;
     };
     REP(i,t) {
-    ope("ok")
         for(auto [_x,_y]:a[i]) {
+    ope("ok")
             int xx=_x,xy=_y,nx=_x,ny=_y;
             int v1,v2;
             while(xx<(v1=segoy.qu(0,xy))||xy<(v2=segox.qu(0,xx))) {
