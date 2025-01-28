@@ -164,7 +164,7 @@ signed main() {
         }
         op(ix)op(iy)op(ox)ope(oy)
         int an=min({x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy))
-        });
+                    x-iox+ioy-y+sqrt(SQ(iox)+SQ(ioy)),oix-x+y-oiy+sqrt(SQ(oix)+SQ(oiy))});
         cout<<an<<'\n';
     }
     return 0;
