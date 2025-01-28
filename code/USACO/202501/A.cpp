@@ -60,11 +60,11 @@ struct DSU {
     int n;
     Vi p,sz,rsz;
     int an=0;
-    void init(int _n) {
+    void init(int _n,Vi _rsz) {
         n=_n;
         p=Vi(n);
         sz=Vi(n,1);
-        rsz=Vi(n,1);
+        rsz=_rsz;
         REP(i,n) p[i]=i;
     }
     int find(int u) {
@@ -93,11 +93,13 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    dsu.init(n);
     string ss;
     cin>>ss;
     Vi s(n);
     REP(i,n) s[i]=ss[i]=='1';
+    Vi _rsz(n);
+    REP(i,n) _rsz[i]=s[i]=='0';
+    dsu.init(n,_rsz);
     Graph g(n);
     REP(i,m) {
         int u,v;
@@ -105,8 +107,6 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
         if(s[u]&&s[v]) {
-            dsu.ud(u,-1);
-            dsu.ud(v,-1);
             dsu.merge(u,v);
         }
     }
