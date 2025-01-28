@@ -122,7 +122,7 @@ struct po {
     int cal() {
         return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));;
     }
-    bool operator>(const po b) const {
+    bool operator>(const po b) {
         return cal()>b.cal();
     }
 };
@@ -136,7 +136,7 @@ signed main() {
     int n,t;
     cin>>n>>t;
     cin>>x>>y;
-    priority_queue<po,vector<po>,greater<po>> pq;
+    priority_queue<po> pq;
     vector<vector<po>> a(t);
     REP(i,n) {
         int tt,_x,_y;
