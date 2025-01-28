@@ -98,7 +98,7 @@ signed main() {
     Vi s(n);
     REP(i,n) s[i]=ss[i]=='1';
     Vi _rsz(n);
-    REP(i,n) _rsz[i]=s[i]=='0';
+    REP(i,n) _rsz[i]=!s[i];
     dsu.init(n,_rsz);
     Graph g(n);
     REP(i,m) {
