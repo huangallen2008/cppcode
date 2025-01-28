@@ -169,9 +169,9 @@ signed main() {
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
         }
-        ox=segoy.qu(0,segox.qu(0,ox));
+        chmax(ox,segoy.qu(0,segox.qu(0,ox)));
         oy=good(segoy.qu(0,ox),segiy.qu(ox+1,maxv),y);
-        ix=segiy.qu(segix.qu(ox,maxv),maxv);
+        chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
         iy=good(segiy.qu(ix,maxv),segoy.qu(0,ix-1),y);
         // int v1,v2;
         // while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
