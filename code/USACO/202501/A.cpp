@@ -154,10 +154,12 @@ signed main() {
             int xx=_x,xy=_y,nx=_x,ny=_y;
             int v1,v2;
             while(xx<(v1=segoy.qu(0,xy))||xy<(v2=segox.qu(0,xx))) {
-                xx=v1,xy=v2;
+                chmax(xx,v1);
+                chmax(xy,v2);
             }
             while(nx>(v1=segiy.qu(ny,maxv))||ny>(v2=segix.qu(nx,maxv))) {
-                nx=v1,ny=v2;
+                chmin(nx,v1);
+                chmin(ny,v2);
             }
             op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
