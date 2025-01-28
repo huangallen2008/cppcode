@@ -65,7 +65,7 @@ istream& operator>>(istream& os,po &p) { return os>>p.x>>p.y; }
 int sig(int x) { return x<0?-1:(x>0?1:0); }
 int cro(po a,po b) { return a.x*b.y-a.y*b.x; }
 int dot(po a,po b) { return a.x*b.x+a.y*b.y; }
-bool in(po a,po b,po c) { return sig(cro(a,c))*sig(cro(b,c))<=0; }
+bool in(po a,po b,po c) { return sig(cro(a,c))*sig(cro(b,c))<0; }
 bool onl(po a,po b,po c) { return dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0&&cro(b-a,c-a)==0; }
 signed main() {
     IOS();
@@ -78,6 +78,10 @@ signed main() {
     REP(i,k) {
         po x;
         cin>>x;
+        if(cro(a[1]-a[0],x-a[0])<0||cro(a[n-1]-a[0],x-a[0])>0){
+            cout<<"OUT\n";
+            continue;
+        }
         if(onl(a[0],a[1],x)||onl(a[0],a[n-1],x)) {
             cout<<"ON\n";
             continue;
