@@ -156,6 +156,7 @@ signed main() {
         while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
             ix=v1,iy=v2;
         }
+        op(ix)op(iy)op(ox)ope(oy)
         int an=min(x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy)));
         cout<<an<<'\n';
     }
