@@ -214,7 +214,7 @@ signed main() {
         auto ok=[&](po p) ->bool {
             return p.y>=segox.qu(0,p.x-1)&&p.y<=segix.qu(p.x+1,maxv);
         };
-        while()
+        while(!ok(pq.top())) pq.pop();
         int an=pq.top().cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
