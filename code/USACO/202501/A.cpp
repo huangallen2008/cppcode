@@ -212,7 +212,7 @@ signed main() {
         // op(ix)op(iy)op(ox)ope(oy)
         // op(ix2)op(iy2)op(ox2)ope(oy2)
         auto ok=[&](po p) ->bool {
-            return p.y>=segox.qu(0,p.x-1)&&p.y<=segix.qu(p.x+1,maxv);
+            return p.y1>=segox.qu(0,p.x1-1)&&p.y1<=segix.qu(p.x1+1,maxv);
         };
         while(!ok(pq.top())) pq.pop();
         int an=pq.top().cal();
