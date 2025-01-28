@@ -120,7 +120,7 @@ int x,y;
 struct po {
     int x1,y1;
     int cal() {
-        return abs(x-x1)+abs(y-y1)+sqrt(SQ(x1)+SQ(y1));
+        return abs(x-x1)+abs(y-y1)+sqrtf(SQ(x1)+SQ(y1));
     }
     // bool operator<(const po b) {
     //     return cal()>b.cal();
@@ -190,7 +190,7 @@ signed main() {
             int xgx=good(xx,xx2,x),xgy=good(xy,xy2,y),ngx=good(nx2,nx,x),ngy=good(ny2,ny,y);
             // op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
             // pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
-            op(ngx)op(ngy)op(xgx)ope(xgy)
+            // op(ngx)op(ngy)op(xgx)ope(xgy)
             pq.push({ngx,ngy});
             // pq.push({ngx,ny});
             // pq.push({ngx,ny2});
@@ -249,7 +249,7 @@ signed main() {
         auto tt=pq.top();
         op(tt.x1)ope(tt.y1)
         int an=tt.cal();
-                ope(abs(x-tt.x1)+abs(y-tt.y1)+sqrt(SQ(tt.x1)+SQ(tt.y1)))
+                // ope(abs(x-tt.x1)+abs(y-tt.y1)+sqrt(SQ(tt.x1)+SQ(tt.y1)))
         cout<<an<<'\n';
     }
     return 0;
