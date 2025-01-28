@@ -222,12 +222,12 @@ signed main() {
         // op(ix)op(iy)op(ox)ope(oy)
         // op(ix2)op(iy2)op(ox2)ope(oy2)
         auto ok=[&](po p) ->bool {
-            return p.y1>=segox.qu(0,p.x1)&&p.y1<=segix.qu(p.x1,maxv);
+            return p.y1>=segox.qu(0,p.x1-1)&&p.y1<=segix.qu(p.x1+1,maxv);
         };
         while(!ok(pq.top())) pq.pop();
         // ope(i)
         auto tt=pq.top();
-        // op(tt.x1)ope(tt.y1)
+        op(tt.x1)ope(tt.y1)
         int an=tt.cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
