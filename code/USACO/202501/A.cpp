@@ -217,6 +217,7 @@ signed main() {
             return p.y1>=segox.qu(0,p.x1-1)&&p.y1<=segix.qu(p.x1+1,maxv);
         };
         while(!ok(pq.top())) pq.pop();
+        ope(i)
         int an=0;//pq.top().cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
