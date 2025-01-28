@@ -144,6 +144,11 @@ signed main() {
     // segix.ud(x,y);
     // segoy.ud(y,x);
     // segiy.ud(y,x);
+    auto good=[&](int l,int r,int v) {
+        if(v<=l) return l;
+        if(v>=r) return r;
+        return v;
+    };
     REP(i,t) {
         for(auto [_x,_y]:a[i]) {
             int xx=_x,xy=_y,nx=_x,ny=_y;
@@ -154,24 +159,32 @@ signed main() {
             while(nx>(v1=segiy.qu(ny,maxv))||ny>(v2=segix.qu(nx,maxv))) {
                 nx=v1,ny=v2;
             }
+            segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
+            segix.ud(xx,ny);
+            segoy.ud(ny,xx);
             segoy.ud(xy,xx);
             segiy.ud(ny,nx);
+            segiy.ud(xy,nx);
         }
-        int v1,v2;
-        while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
-            ox=v1,oy=v2;
-        }
-        while(ix>(v1=segiy.qu(iy,maxv))||iy>(v2=segix.qu(ix,maxv))) {
-            ix=v1,iy=v2;
-        }
-        while(ox2<(v1=segoy.qu(0,oy2))||oy2<(v2=segox.qu(0,ox2))) {
-            ox2=v1,oy2=v2;
-        }
-        while(ix2>(v1=segiy.qu(iy2,maxv))||iy2>(v2=segix.qu(ix2,maxv))) {
-            ix2=v1,iy2=v2;
-        }
+        ox=segoy.qu(0,segox.qu(0,ox));
+        oy=good(segoy.qu(0,ox),segiy.qu(ox+1,maxv),y);
+        ix=segiy.qu(segix.qu(ox,maxv),maxv);
+        iy.good(segiy.qu(ix,maxv),segoy.qu(0,ix-1));
+        // int v1,v2;
+        // while(ox<(v1=segoy.qu(0,oy))||oy<(v2=segox.qu(0,ox))) {
+        //     ox=v1,oy=v2;
+        // }
+        // while(ix>(v1=segiy.qu(iy,maxv))||iy>(v2=segix.qu(ix,maxv))) {
+        //     ix=v1,iy=v2;
+        // }
+        // while(ox2<(v1=segoy.qu(0,oy2))||oy2<(v2=segox.qu(0,ox2))) {
+        //     ox2=v1,oy2=v2;
+        // }
+        // while(ix2>(v1=segiy.qu(iy2,maxv))||iy2>(v2=segix.qu(ix2,maxv))) {
+        //     ix2=v1,iy2=v2;
+        // }
         // while(iox!=(v1=segiy.qu(ioy,maxv))||ioy!=(v2=segox.qu(0,iox))) {
         //     iox=v1,ioy=v2;
         // }
@@ -179,8 +192,8 @@ signed main() {
         //     oix=v1,oiy=v2;
         // }
         op(ix)op(iy)op(ox)op(oy)op(ix2)op(iy2)op(ox2)ope(oy2)
-        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy)),
-                    abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
+        int an=min({abs(x-ix)+abs(y-iy)+sqrt(SQ(ix)+SQ(iy)),abs(ox-x)+abs(oy-y)+sqrt(SQ(ox)+SQ(oy))});
+                    // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
     }
     return 0;
