@@ -78,6 +78,10 @@ signed main() {
     REP(i,k) {
         po x;
         cin>>x;
+        if(cro(a[1]-a[0],x-a[0])<0||cro(a[n-1]-a[0],x-a[0])>0) {
+            cout<<"OUTSIDE\n";
+            continue;
+        }
         if(onl(a[0],a[1],x)||onl(a[0],a[n-1],x)) {
             cout<<"BOUNDARY\n";
             continue;
