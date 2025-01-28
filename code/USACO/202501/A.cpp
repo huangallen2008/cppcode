@@ -130,7 +130,7 @@ struct srt {
     bool operator()(po a,po b) {
         return a.cal()>b.cal();
     }
-}
+};
 signed main() {
     IOS();
     int n,t;
