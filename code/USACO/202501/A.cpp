@@ -173,7 +173,7 @@ signed main() {
                 chmin(nx,v1);
                 chmin(ny,v2);
             }
-            // op(nx)op(ny)op(xx)ope(xy)
+            op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
@@ -182,7 +182,7 @@ signed main() {
             segoy.ud(xy,xx);
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
-            ope("ok")
+            // ope("ok")
             pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
             pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
         }
