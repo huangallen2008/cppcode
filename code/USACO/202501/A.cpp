@@ -142,7 +142,6 @@ signed main() {
     segix.ud(x,y);
     segoy.ud(y,x);
     segiy.ud(y,x);
-    ope(segiy.qu(iy,maxv))
     REP(i,t) {
         for(auto [xx,yy]:a[i]) {
             segox.ud(xx,yy);
@@ -153,12 +152,10 @@ signed main() {
         int v1,v2;
         while(ox!=(v1=segoy.qu(0,oy))||oy!=(v2=segox.qu(0,ox))) {
             ox=v1,oy=v2;
-            
         }
         while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
             ix=v1,iy=v2;
         }
-        ope("ok")
         int an=min(x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy)));
         cout<<an<<'\n';
     }
