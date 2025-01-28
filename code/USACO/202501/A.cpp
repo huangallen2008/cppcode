@@ -185,10 +185,14 @@ signed main() {
             segiy.ud(ny,nx);
             segiy.ud(xy,nx);
             // ope("ok")
-            op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
-            pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
-            op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
-            pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
+            int xx2=segiy.qu(xy+1,maxv)-1,nx2=segoy.qu(0,ny-1)+1;
+            int xy2=segix.qu(xx+1,maxv)-1,ny2=segox.qu(0,nx-1)+1;
+            // op(xx)ope(good(segox.qu(0,xx),segix.qu(xx+1,maxv),y))
+            // pq.push({xx,good(segox.qu(0,xx),segix.qu(xx+1,maxv),y)});
+            pq.push({good(xx,xx2,x),good(xy,xy2,y)});
+            // op(nx)ope(good(segox.qu(0,nx),segix.qu(nx+1,maxv),y))
+            // pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
+            pq.push({good(nx2,nx,x),good(ny2,ny,y)});
         }
         auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
