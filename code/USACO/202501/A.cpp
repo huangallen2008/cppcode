@@ -164,7 +164,7 @@ signed main() {
     pq.push({x,y});
     REP(i,t) {
         for(auto [_x,_y]:a[i]) {
-    ope("ok")
+    // ope("ok")
             int xx=_x,xy=_y,nx=_x,ny=_y;
             int v1,v2;
             while(xx<(v1=segoy.qu(0,xy))||xy<(v2=segox.qu(0,xx))) {
@@ -175,7 +175,7 @@ signed main() {
                 chmin(nx,v1);
                 chmin(ny,v2);
             }
-            op(nx)op(ny)op(xx)ope(xy)
+            // op(nx)op(ny)op(xx)ope(xy)
             segox.ud(nx,xy);
             segox.ud(xx,xy);
             segix.ud(nx,ny);
@@ -194,7 +194,7 @@ signed main() {
             // pq.push({nx,good(segox.qu(0,nx-1),segix.qu(nx,maxv),y)});
             pq.push({good(nx2,nx,x),good(ny2,ny,y)});
         }
-        auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
+        // auto __=pq.top();op(__.x1)op(__.y1)ope(__.cal())
         // chmax(ox,segoy.qu(0,segox.qu(0,ox)));
         // oy=good(segox.qu(0,ox),segix.qu(ox+1,maxv),y);
         // chmin(ix,segiy.qu(segix.qu(ox,maxv),maxv));
@@ -227,7 +227,7 @@ signed main() {
         while(!ok(pq.top())) pq.pop();
         // ope(i)
         auto tt=pq.top();
-        op(tt.x1)ope(tt.y1)
+        // op(tt.x1)ope(tt.y1)
         int an=tt.cal();
                     // abs(x-ix2)+abs(y-iy2)+sqrt(SQ(ix2)+SQ(iy2)),abs(ox2-x)+abs(oy2-y)+sqrt(SQ(ox2)+SQ(oy2))});
         cout<<an<<'\n';
