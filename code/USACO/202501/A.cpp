@@ -131,7 +131,7 @@ signed main() {
         cin>>tt>>_x>>_y;
         a[tt].pb({_x,_y});
     }
-    int ix=x,iy=y,ox=x,oy=y;
+    int ix=x,iy=y,ox=x,oy=y,iox=x,ioy=y,oix=x,oiy=y;
     SEG_mx segox,segoy;
     SEG_mn segix,segiy;
     segox.init(maxv);
@@ -156,8 +156,15 @@ signed main() {
         while(ix!=(v1=segiy.qu(iy,maxv))||iy!=(v2=segix.qu(ix,maxv))) {
             ix=v1,iy=v2;
         }
+        while(iox!=(v1=segiy.qu(ioy,maxv))||ioy!=(v2=segox.qu(0,iox))) {
+            iox=v1,ioy=v2;
+        }
+        while(oix!=(v1=segoy.qu(0,oiy))||oiy!=(v2=segix.qu(oix,maxv))) {
+            oix=v1,oiy=v2;
+        }
         op(ix)op(iy)op(ox)ope(oy)
-        int an=min(x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy)));
+        int an=min({x+y-ix-iy+sqrt(SQ(ix)+SQ(iy)),ox-x+oy-y+sqrt(SQ(ox)+SQ(oy))
+        });
         cout<<an<<'\n';
     }
     return 0;
