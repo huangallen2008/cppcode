@@ -160,9 +160,10 @@ signed main() {
     f.resize(11);
     for(int i=1;i<=n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
-    dc(1,k);
+    // dc(1,k);
     #ifdef LOCAL
         int N=15;
+        dc(1,N);
         f.resize(N);
         for(int i=n+1;i<N;i++) {
             for(int j=1;j<=n;j++) addmod(f[i],f[i-j]*a[j]);
