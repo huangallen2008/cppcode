@@ -169,13 +169,12 @@ signed main() {
         c[i]=t[m]*infac[i-1]%mod;
         // (cnt[i]*=pw(n,n-2))%=mod;
     }
-    oparr(c)
+    // oparr(c)
     dp[0]=1;
-    REP1(i,10) op(i*ninv[i]%mod)
-    // dc(0,n);
-    REP1(i,n) {
-        REP1(j,i) addmod(dp[i],(dp[i-j]*c[j]%mod)*ninv[i]);
-    }
+    dc(0,n);
+    // REP1(i,n) {
+    //     REP1(j,i) addmod(dp[i],(dp[i-j]*c[j]%mod)*ninv[i]);
+    // }
     // oparr(dp)
     // int an=(dp[n]+mod)%mod;
     // cout<<an<<'\n';
