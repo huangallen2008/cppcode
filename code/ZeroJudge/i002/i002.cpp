@@ -134,8 +134,8 @@ void dc(int l,int r) {
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
     Vi ta(llen+1);
-    REP1(i,llen) ta[i]=a[i];
     if(l==1&&r==15432)ope("owo")
+    REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
         if(l==7714){
             op(l)ope(r)
