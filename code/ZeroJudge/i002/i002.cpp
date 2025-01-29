@@ -146,7 +146,6 @@ void dc(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,k;
     cin>>n>>k;
     f=a=Vi(n+1);
     dp=Vi(k+1);
