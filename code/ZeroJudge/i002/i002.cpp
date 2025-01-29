@@ -20,7 +20,7 @@ using namespace std;
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
 #define md(x) (((x)%(mod)+(mod))%(mod))
 #define MD(x,M) (((x)%(M)+(M))%(M))
-#define ld long double
+// #define ld long double
 #define pdd pair<ld,ld>
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
@@ -48,7 +48,7 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=924844033;
+const int mod=998244353;
 const int maxn=1e5+5;
 const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -69,7 +69,7 @@ int inv(int x) {
 }
 const int N=1<<20;
 namespace NTT {
-    // const int mod=998244353;
+    const int mod=998244353;
     int pw(int x,int p) {
         int r=1;
         while(p>0) {
@@ -121,14 +121,31 @@ namespace NTT {
         return c;
     }
 };
+int n,k;
+Vi f,a,dp;
+void dc(int l,int r) {
+    if(l==r) return;
+    int m=l+r>>1;
+    dc(l,m);
+    int len=r-l+1,llen=m-l+1;
+    Vi ld(llen);
+    for(int i=l;i<=m;i++) ld[i-l]=dp[i];
+    Vi ta(llen+1);
+    REP1(i,llen) ta[i]=a[i];
+    Vi res=NTT::ntt(ld,ta);
+    for(int i=m+1;i<=r;i++) if(i>n) addmod(dp[i],res[i-l]);
+    dc(m+1,r);
+}
 signed main() {
     IOS();
-    int cnt=0;
-    int t=mod-1;
-    while(t%2==0) t/=2,cnt++;
-    op(t)ope(cnt)
-    op(pw(5,mod-1))
-    op(pw(5,mod-1>>1))
-    // REP1(i,10) if(pw(i,mod-1>>1)==mod-1) ope(i)
+    int n,k;
+    cin>>n>>k;
+    f=a=Vi(n+1);
+    dp=Vi(k+1);
+    REP1(i,n) cin>>f[i];
+    REP1(i,n) cin>>a[i];
+    dc(1,k);
+    int an=(dp[k]+mod)%mod;
+    cout<<an<<'\n';
     return 0;
 }
