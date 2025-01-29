@@ -133,8 +133,8 @@ void dc(int l,int r) {
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
     Vi ta(llen+1);
-    op(l)ope(r)
     REP1(i,min(llen,n)) ta[i]=a[i];
+    op(l)ope(r)
     // if(l==1&&r==15432)ope("owo")
     Vi res=NTT::ntt(ld,ta);
         if(l==7714){
