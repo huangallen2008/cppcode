@@ -143,9 +143,9 @@ void dc(int l,int r) {
         //     oparr(res)
         // }
     for(int i=m+1;i<=r;i++) {
-        if(i>n) {
+        if(i>n&&i-l<res.size()) {
             // ope(dp.size())ope(res.size())op(i)ope(i-l)
-            if(i-l<res.size())addmod(dp[i],res[i-l]);
+            addmod(dp[i],res[i-l]);
             // if(r==61/){op(i)ope(r)}
         }
     }
