@@ -157,6 +157,7 @@ void dc(int l,int r) {
 signed main() {
     IOS();
     init_com();
+    REP1(i,10) ope(ninv[i]*i%mod)
     cin>>n>>m;
     dp=c=Vi(n+1);
     REP1(i,n) {
