@@ -171,6 +171,7 @@ signed main() {
     }
     oparr(c)
     dp[0]=1;
+    ope(ninv[2])
     // dc(0,n);
     REP1(i,n) {
         REP1(j,i) addmod(dp[i],(dp[i-j]*c[j]%mod)*ninv[i]);
