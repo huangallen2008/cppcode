@@ -87,6 +87,7 @@ signed main() {
         cnt[i]=pw(i,n);
         REP1(j,i) (cnt[i]-=C(i,j)*cnt[i-j])%=mod;
     }
+    oparr(cnt)
     Vi dp(n+1);
     dp[0]=1;
     REP1(i,n) {
