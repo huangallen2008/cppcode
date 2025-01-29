@@ -133,13 +133,13 @@ void dc(int l,int r) {
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
     Vi ta(len+1);
     REP1(i,min(len,n)) ta[i]=a[i];
-    op(l)ope(r)
+    // op(l)ope(r)
     // if(l==1&&r==15432)ope("owo")
     Vi res=NTT::ntt(ld,ta);
         // if(r==61){
-            op(l)ope(r)
-            oparr(ld)oparr(ta)
-            oparr(res)
+            // op(l)ope(r)
+            // oparr(ld)oparr(ta)
+            // oparr(res)
         // }
     for(int i=m+1;i<=r;i++) {
         if(i>n&&i-l<res.size()) {
