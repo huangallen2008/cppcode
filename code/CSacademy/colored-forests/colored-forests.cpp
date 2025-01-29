@@ -67,22 +67,98 @@ int pw(int x,int p) {
 int inv(int x) {
     return pw(x,mod-2);
 }
-Vi fac(maxn),infac(maxn);
+const int N=1<<20;
+namespace NTT {
+    const int mod=924844033;
+    int pw(int x,int p) {
+        int r=1;
+        while(p>0) {
+            if(p&1) r=r*x%mod;
+            x=x*x%mod;
+            p>>=1;
+        }
+        return r;
+    }
+    int inv(int x) {
+        return pw(x,mod-2);
+    }
+    int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
+    int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
+    const int G=5;
+    const int INVG=inv(G);
+    vector<int> r,c,a,b;
+    int n1,n2,t,lt;
+    void _ntt(vector<int> &a,int opt){
+        for(int i=0;i<t;i++) if(i<r[i]) swap(a[i],a[r[i]]);
+        for(int m=1;m<t;m<<=1){
+            int gn=pw(opt==1?G:INVG,(mod-1)/(m<<1));
+            for(int l=0;l<t;l+=m<<1){
+                int g=1;
+                for(int k=l;k<l+m;k++){
+                    int t1=a[k],t2=a[k+m]*g%mod;
+                    a[k+m]=MM(t1,t2);
+                    a[k]=MA(t1,t2);
+                    g=g*gn%mod;
+                }
+            }
+        }
+    }
+    vector<int>& ntt(vector<int>&_a,vector<int>&_b){
+        a=_a,b=_b;
+        n1=a.size(),n2=b.size();
+        t=1,lt=0;
+        while(t<n1+n2) t<<=1,lt++;
+        while(a.size()<t) a.pb(0);
+        while(b.size()<t) b.pb(0);
+        // assert(t<=(1ll<<24));
+        r=c=vector<int>(t);
+        REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
+        _ntt(a,1),_ntt(b,1);
+        for (int i=0;i<t;i++) c[i]=a[i]*b[i]%mod;
+        _ntt(c,-1);
+        int invn=inv(t);
+        for(int i=0;i<=n1+n2;i++) c[i]=c[i]*invn%mod;
+        while(c.size()&&c.back()==0) c.pop_back();
+        return c;
+    }
+};
+Vi fac(maxn),infac(maxn),ninv(maxn);
 void init_com() {
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
     infac[maxn-1]=inv(fac[maxn-1]);
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+    REP1(i,maxn-1) ninv[i]=fac[i-1]*nifac[i-1]%mod;
 }
 int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
+
+int n,m;
+Vi dp,c;
+void dc(int l,int r) {
+    if(l==r||r<=n) return;
+    int m=l+r>>1;
+    dc(l,m);
+    int len=r-l+1,llen=m-l+1;
+    Vi ld(llen);
+    for(int i=l;i<=m;i++) ld[i-l]=dp[i];
+    Vi ta(len+1);
+    REP1(i,min(len,n)) ta[i]=c[i];
+    Vi res=NTT::ntt(ld,ta);
+    for(int i=m+1;i<=r;i++) {
+        if(i&&i-l<res.size()) {
+            dp[i]+=res[i-l];
+        }
+        dp[i]%=mod;
+    }
+    dc(m+1,r);
+}
 signed main() {
     IOS();
     init_com();
-    int n,m;
     cin>>n>>m;
-    Vi cnt(n+1);
+    dp=c=Vi(n+1);
     REP1(i,n) {
         Vi t(m+1);
         REP1(j,m) {
@@ -90,16 +166,16 @@ signed main() {
             REP1(k,j) (t[j]-=C(j,k)*t[j-k])%=mod;
         }
         op(i)oparr(t)
-        cnt[i]=t[m];
+        c[i]=t[m]*infac[i-1]%mod;
         // (cnt[i]*=pw(n,n-2))%=mod;
     }
-    oparr(cnt)
-    Vi dp(n+1);
+    // oparr(cnt)
     dp[0]=1;
-    REP1(i,n) {
-        REP1(j,i) addmod(dp[i],(dp[i-j]*cnt[j]%mod)*C(i-1,j-1));
-    }
-    oparr(dp)
+    dc(0,n);
+    // REP1(i,n) {
+    //     REP1(j,i) addmod(dp[i],(dp[i-j]*cnt[j]%mod)*C(i-1,j-1));
+    // }
+    // oparr(dp)
     // int an=(dp[n]+mod)%mod;
     // cout<<an<<'\n';
     REP1(i,n) cout<<(dp[i]+mod)%mod<<'\n';
