@@ -164,7 +164,7 @@ signed main() {
     #ifdef LOCAL
         f.resize(15);
         for(int i=11;i<15;i++) {
-            for(int j=1;j<=10;j++) addmod(f[i],f[i-j]*a[j]);
+            for(int j=1;j<=n;j++) addmod(f[i],f[i-j]*a[j]);
             cout<<f[i]<<' ';
         }entr
         for(int i=11;i<15;i++) cout<<dp[i]<<' ';entr
