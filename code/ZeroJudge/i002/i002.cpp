@@ -131,10 +131,10 @@ void dc(int l,int r) {
     int len=r-l+1,llen=m-l+1;
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
-    op(l)op(r)ope("ok")
     Vi ta(llen+1);
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
+    op(l)op(r)ope("ok")
     for(int i=m+1;i<=r;i++) if(i>n) addmod(dp[i],res[i-l]);
     dc(m+1,r);
 }
