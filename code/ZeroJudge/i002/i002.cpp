@@ -127,8 +127,8 @@ signed main() {
     int t=mod-1;
     while(t%2==0) t/=2,cnt++;
     op(t)ope(cnt)
-    op(pw(3,mod-1))
-    op(pw(3,mod-1>>1))
-    REP1(i,10) if(pw(i,mod-1>>1)==mod-1) ope(i)
+    op(pw(5,mod-1))
+    op(pw(5,mod-1>>1))
+    // REP1(i,10) if(pw(i,mod-1>>1)==mod-1) ope(i)
     return 0;
 }
