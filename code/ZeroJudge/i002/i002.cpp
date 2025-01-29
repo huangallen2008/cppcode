@@ -162,7 +162,7 @@ signed main() {
     REP1(i,n) cin>>a[i];
     dc(1,k);
     #ifdef LOCAL
-        int N=100;
+        int N=15;
         f.resize(N);
         for(int i=n+1;i<N;i++) {
             for(int j=1;j<=n;j++) addmod(f[i],f[i-j]*a[j]);
