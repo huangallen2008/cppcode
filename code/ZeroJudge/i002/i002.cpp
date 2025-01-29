@@ -144,8 +144,8 @@ void dc(int l,int r) {
         }
     for(int i=m+1;i<=r;i++) {
         if(i>n) {
-            if(r==61){op(i)ope(r)}
             addmod(dp[i],res[i-l]);
+            if(r==61){op(i)ope(r)}
         }
     }
     if(r==61){op(l)op(r)ope("ok")op(m)ope(r)}
