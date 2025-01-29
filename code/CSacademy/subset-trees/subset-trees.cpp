@@ -98,8 +98,8 @@ signed main() {
         }
         REP(j,a[i].size()) {
             REP(k,j) {
-                op(a[i][j])op(a[i][k])op(i)ope(dp1[a[i][j]-1][a[i][k]-1])
-                addmod(an,dp1[a[i][j]-1][a[i][k]-1]);
+                op(a[i][j])op(a[i][k])op(i)ope(dp1[a[i][k]-1][a[i][j]-1])
+                addmod(an,dp1[a[i][k]-1][a[i][j]-1]);
             }
         }
     }
