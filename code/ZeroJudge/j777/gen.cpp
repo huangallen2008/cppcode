@@ -58,7 +58,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int n=200000,k=2000000;
+    int n=200000,k=5000000;
     cout<<n<<' '<<k<<'\n';
     REP1(i,n) cout<<rd(0,mod-1)<<' ';cout<<'\n';
     REP1(i,n) cout<<rd(0,mod-1)<<' ';cout<<'\n';
