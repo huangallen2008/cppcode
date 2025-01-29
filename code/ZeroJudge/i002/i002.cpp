@@ -145,7 +145,7 @@ void dc(int l,int r) {
     for(int i=m+1;i<=r;i++) {
         if(i>n) {
             // ope(dp.size())ope(res.size())op(i)ope(i-l)
-            addmod(dp[i],res[i-l]);
+            if(i-l<res.size())addmod(dp[i],res[i-l]);
             if(r==61){op(i)ope(r)}
         }
     }
