@@ -159,6 +159,9 @@ signed main() {
     REP1(i,n) cin>>f[i];
     for(int i=1;i<=n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
+    int tt=0;
+    REP1(i,n) addmod(tt,f[i]*a[n-i]);
+    ope(tt)
     oparr(NTT::ntt(f,a))
     // dc(1,k);
     #ifdef LOCAL
