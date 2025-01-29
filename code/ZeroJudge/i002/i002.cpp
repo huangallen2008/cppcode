@@ -131,6 +131,7 @@ void dc(int l,int r) {
     int len=r-l+1,llen=m-l+1;
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
+    op(l)op(r)ope("ok")
     Vi ta(llen+1);
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
