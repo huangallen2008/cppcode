@@ -131,7 +131,7 @@ void dc(int l,int r) {
     int len=r-l+1,llen=m-l+1;
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
-    Vi ta(llen+1);
+    Vi ta(len+1);
     REP1(i,min(len,n)) ta[i]=a[i];
     op(l)ope(r)
     // if(l==1&&r==15432)ope("owo")
