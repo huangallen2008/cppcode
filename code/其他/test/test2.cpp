@@ -1,42 +1,50 @@
-#include <iostream>
-#include <vector>
-#include <random>
-#include <chrono>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-const int MAGIC = 8e7;
+const int N = 6010;
+
+int min_end[N];
+int if_add[N];
+int a[N], b[N];
+pair <int, int> e[N];
 
 int main() {
-    freopen("in.txt","r",stdin);
-    int n, m;
-    cin >> n >> m;
-    vector <vector <int>> adj(n + 1);
-    for (int i = 0, u, v; i < m; ++i) {
-        cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+  int n, k;
+  scanf("%d %d", &n, &k);
+  for (int i = 0; i < n; i++) {
+    scanf("%d %d", &e[i].first, &e[i].second);
+  }
+  sort(e, e + n);
+  for (int i = 0; i < n; i++) {
+    a[i] = e[i].first;
+    b[i] = e[i].second;
+  }
+  min_end[n - 1] = b[n - 1];
+  for (int i = n - 2; i >= 0; i--) {
+    min_end[i] = min(min_end[i + 1], b[i]);
+  }
+  for (int i = 0; i < n - 1; i++) {
+    if_add[i] = max(min_end[i + 1], b[i]) - a[i];
+  }
+  sort(if_add, if_add + n - 1);
+  reverse(if_add, if_add + n - 1);
+  long long ans = min_end[0] - a[n - 1];
+  for (int i = 0; i < k - 1; i++) {
+    ans += if_add[i];
+  }
+  {
+    vector <int> lengths;
+    for (int i = 0; i < n; i++) {
+      lengths.push_back(b[i] - a[i]);
     }
-
-    if (adj[1].empty()) {
-        cout << "No\n";
-        return 0;
+    sort(lengths.rbegin(), lengths.rend());
+    long long other = 0;
+    for (int i = 0; i < k - 1; i++) {
+      other += lengths[i];
     }
-
-    bool found = false;
-    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-    int s = 1;
-
-    for (int j = 0; j < MAGIC; ++j) {
-        s = adj[s][rng() % (int)adj[s].size()];
-        if (s == n) {
-            found = true;
-            break;
-        }
-    }
-
-    if (found) {
-        cout << "Yes\n";
-    } else {
-        cout << "No\n";
-    }
+    ans = max(ans, other);
+  }
+  cout << ans << endl;
+  return 0;
 }
