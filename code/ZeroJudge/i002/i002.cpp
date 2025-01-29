@@ -152,6 +152,7 @@ signed main() {
     REP1(i,n) cin>>f[i];
     REP1(i,n) cin>>a[i];
     dc(1,k);
+    oparr(dp)
     int an=(dp[k]+mod)%mod;
     cout<<an<<'\n';
     return 0;
