@@ -58,41 +58,29 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n0,k;
-    cin>>n0>>k;
-    Vpii a0(n);
-    REP(i,n) cin>>a0[i].f>>a0[i].s;
-    sort(ALL(a0),[&](pii a,pii b) {
-        return a.f==b.f?a.s>b.s:a.f<b.f;
+    int n,k;
+    cin>>n>>k;
+    Vpii a(n);
+    REP(i,n) cin>>a[i].f>>a[i].s;
+    sort(ALL(a),[&](pii a,pii b) {
+        return a.s-a.f>b.s-b.f;
     });
-    Vi cand;
-    Vpii stk={{-inf,-1}};
-    REP1(i,n-1) {
-        while(a0[i].s<=stk.back().f) {
-            cand.pb(stk.back().s);
+    int an1=0;
+    REP(i,k-1) an1+=a[i].s-a[i].f;
+    Vpii stk;
+    sort(ALL(a));
+    Vi t;
+    REP(i,n) {
+        while(stk.size()&&stk.back().s>=a[i].s) {
+            t.pb(stk.back().s-stk.back().f);
             stk.pop_back();
         }
-        stk.pb({a0[i].s,i});
+        stk.pb(a[i]);
     }
-    Vi del(n);
-    if(cand.size()<=n-k) {
-        for(int x:cand) del[x]=1;
-    }else {
-        sort(ALL(cand),[&](int a,int b) {
-            return a0[a].s-a0[a].f<a0[b].s-a0[b].f;
-        });
-        REP(i,n-k) del[cand[i]]=1;
-    }
-    Vpii a;
-    a.pb({0,0});
-    REP(i,n) if(!del[i]) a.pb(a0[i]);
-    int nn=a.size()-1;
-    vector<Vi> dp(k+1,Vi(n+1,-inf));
-    dp[0][0]=0;
-    REP1(i,k) {
-        REP1(j,n) {
-            dp[i][j]=
-        }
-    }
+    int an2=stk[0].s-stk.back().f;
+    REP(i,stk.size()-1) t.pb(-stk[i].f+stk[i+1].s);
+    sort(ALL(t),less<int>());
+    oparr(t)
+    cout<<an<<'\n';
     return 0;
 }
