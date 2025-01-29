@@ -93,7 +93,7 @@ signed main() {
     int an=0;
     REP(i,maxv) {
         for(int l:a[i]) {
-            addmod(an,dp1[l-1][maxv-1]);
+            addmod(an,dp1[l-1][i-1]);
         }
         REP(j,a[i].size()) {
             REP(k,j) {
