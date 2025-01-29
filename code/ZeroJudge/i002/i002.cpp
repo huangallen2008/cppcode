@@ -136,7 +136,7 @@ void dc(int l,int r) {
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
     for(int i=m+1;i<=r;i++) {
-        if(l==7714)ope(i)
+        if(l==7714)oparr(res)
         if(i>n) {
             if(l==7714)ope("oo")
             addmod(dp[i],res[i-l]);
