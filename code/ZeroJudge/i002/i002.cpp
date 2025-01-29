@@ -110,7 +110,7 @@ namespace NTT {
         while(t<n1+n2) t<<=1,lt++;
         while(a.size()<t) a.pb(0);
         while(b.size()<t) b.pb(0);
-        assert(t<=(1ll<<24));
+        assert(t<=(1ll<<23));
         r=c=vector<int>(t);
         REP(i,t) r[i]=(r[i>>1]>>1)|((i&1)<<(lt-1));
         _ntt(a,1),_ntt(b,1);
