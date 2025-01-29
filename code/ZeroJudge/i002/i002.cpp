@@ -161,7 +161,7 @@ signed main() {
     for(int i=1;i<n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
     dc(1,k);
-    oparr(dp)
+    // oparr(dp)
     int an=(dp[k]+mod)%mod;
     cout<<an<<'\n';
     return 0;
