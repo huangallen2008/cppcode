@@ -84,9 +84,9 @@ signed main() {
     cin>>n>>m;
     Vi cnt(m+1);
     REP1(i,m) {
-        cnt[i]=pw(i,n);
+        cnt[i]=pw(i,n)*pw(n,n-2)%mod;
         REP1(j,i) (cnt[i]-=C(i,j)*cnt[i-j])%=mod;
-        (cnt[i]*=pw(n,n-2))%=mod;
+        // (cnt[i]*=pw(n,n-2))%=mod;
     }
     oparr(cnt)
     Vi dp(n+1);
