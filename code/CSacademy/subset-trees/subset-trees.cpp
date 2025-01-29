@@ -86,22 +86,11 @@ signed main() {
                 for(int l:a[i]) {
                     if(l<=j) addmod(dp0[i][j],dp1[l-1][j]);
                     else addmod(dp0[i][j],dp0[l-1][j]);
-                    if(i==3&&j==0) {
-                        op(l)op(j)ope(dp0[i][j])
-                    }
                 }
             }
         }
     }
     int an=0;
-    REP(i,8) {
-        REP(j,8) cout<<dp0[i][j]<<' ';
-        cout<<'\n';
-    }entr
-    REP(i,8) {
-        REP(j,8) cout<<dp1[i][j]<<' ';
-        cout<<'\n';
-    }
     REP(i,maxv) {
         for(int l:a[i]) {
             op(l)op(i)ope(dp1[l-1][i-1])
