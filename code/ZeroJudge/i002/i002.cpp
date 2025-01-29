@@ -125,7 +125,7 @@ int n,k;
 Vi f,a,dp;
 void dc(int l,int r) {
     if(l==r) return;
-    op(l)ope(r)
+    // op(l)ope(r)
     int m=l+r>>1;
     dc(l,m);
     int len=r-l+1,llen=m-l+1;
@@ -135,13 +135,13 @@ void dc(int l,int r) {
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
     for(int i=m+1;i<=r;i++) {
-        ope(i)
+        // ope(i)
         if(i>n) {
-            ope("oo")
+            // ope("oo")
             addmod(dp[i],res[i-l]);
         }
     }
-    op(l)op(r)ope("ok")
+    // op(l)op(r)ope("ok")
     dc(m+1,r);
 }
 signed main() {
