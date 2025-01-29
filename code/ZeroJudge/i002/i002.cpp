@@ -126,13 +126,15 @@ int n,k;
 Vi f,a,dp;
 void dc(int l,int r) {
     if(l==r) return;
-      if(4){op(l)ope(r)}
+    //   if(4){op(l)ope(r)}
     int m=l+r>>1;
     dc(l,m);
-    op(l)ope(r)
+    // op(l)ope(r)
     int len=r-l+1,llen=m-l+1;
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
+    if(l==1&&r==15432)
+    ope("ok")
     Vi ta(llen+1);
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
