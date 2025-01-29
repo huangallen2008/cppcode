@@ -128,5 +128,6 @@ signed main() {
     while(t%2==0) t/=2,cnt++;
     op(t)ope(cnt)
     op(pw(3,mod-1))
+    op(pw(3,mod-1>>1))
     return 0;
 }
