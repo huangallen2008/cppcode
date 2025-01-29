@@ -137,9 +137,9 @@ void dc(int l,int r) {
     // if(l==1&&r==15432)ope("owo")
     Vi res=NTT::ntt(ld,ta);
         // if(r==61){
-        //     op(l)ope(r)
-        //     oparr(ld)oparr(ta)
-        //     oparr(res)
+            op(l)ope(r)
+            oparr(ld)oparr(ta)
+            oparr(res)
         // }
     for(int i=m+1;i<=r;i++) {
         if(i>n&&i-l<res.size()) {
