@@ -100,8 +100,9 @@ signed main() {
         REP1(j,i) addmod(dp[i],(dp[i-j]*cnt[j]%mod)*C(i-1,j-1));
     }
     oparr(dp)
-    int an=(dp[n]+mod)%mod;
-    cout<<an<<'\n';
+    // int an=(dp[n]+mod)%mod;
+    // cout<<an<<'\n';
+    REP1(i,n) cout<<(dp[i]+mod)%mod<<'\n';
     //!!!! ans+mod % mod
     return 0;
 }
