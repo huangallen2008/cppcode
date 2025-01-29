@@ -136,7 +136,10 @@ void dc(int l,int r) {
     Vi res=NTT::ntt(ld,ta);
     for(int i=m+1;i<=r;i++) {
         ope(i)
-        if(i>n) addmod(dp[i],res[i-l]);
+        if(i>n) {
+            ope("oo")
+            addmod(dp[i],res[i-l]);
+        }
     }
     op(l)op(r)ope("ok")
     dc(m+1,r);
