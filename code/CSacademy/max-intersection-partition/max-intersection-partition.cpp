@@ -79,7 +79,7 @@ signed main() {
     }
     int an2=stk[0].s-stk.back().f;
     REP(i,stk.size()-1) t.pb(-stk[i].f+stk[i+1].s);
-    sort(ALL(t),less<int>());
+    sort(ALL(t),greater<int>());
     oparr(t)
     int an=max(an1,an2);
     cout<<an<<'\n';
