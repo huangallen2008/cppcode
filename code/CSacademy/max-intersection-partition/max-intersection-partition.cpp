@@ -81,6 +81,7 @@ signed main() {
     REP(i,stk.size()-1) t.pb(-stk[i].f+stk[i+1].s);
     sort(ALL(t),less<int>());
     oparr(t)
+    int an=max(an1,an2);
     cout<<an<<'\n';
     return 0;
 }
