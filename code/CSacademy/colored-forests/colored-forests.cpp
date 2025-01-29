@@ -87,7 +87,7 @@ signed main() {
         Vi t(m+1);
         REP1(j,m) {
             t[j]=pw(j,i)*pw(i,i-2)%mod;
-            REP1(k,i) (t[j]-=C(j,k)*t[j-k])%=mod;
+            REP1(k,j) (t[j]-=C(j,k)*t[j-k])%=mod;
         }
         op(i)oparr(t)
         cnt[i]=t[m];
