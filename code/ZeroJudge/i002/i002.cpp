@@ -135,8 +135,9 @@ void dc(int l,int r) {
     Vi res=NTT::ntt(ld,ta);
     for(int i=m+1;i<=r;i++) {
         if(i>n&&i-l<res.size()) {
-            addmod(dp[i],res[i-l]);
+            dp[i]+=res[i-l];
         }
+        dp[i]%=mod;
     }
     dc(m+1,r);
 }
