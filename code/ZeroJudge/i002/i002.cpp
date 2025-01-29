@@ -55,6 +55,18 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) {
+    return pw(x,mod-2);
+}
 const int N=1<<20;
 namespace NTT {
     // const int mod=998244353;
