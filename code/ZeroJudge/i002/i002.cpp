@@ -136,6 +136,7 @@ void dc(int l,int r) {
     REP1(i,llen) ta[i]=a[i];
     Vi res=NTT::ntt(ld,ta);
         if(l==7714){
+            op(l)ope(r)
             oparr(ld)oparr(ta)
             oparr(res)
         }
