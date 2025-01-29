@@ -92,6 +92,10 @@ signed main() {
     }
     int an=0;
     REP(i,8) {
+        REP(j,8) cout<<dp0[i][j]<<' ';
+        cout<<'\n';
+    }entr
+    REP(i,8) {
         REP(j,8) cout<<dp1[i][j]<<' ';
         cout<<'\n';
     }
