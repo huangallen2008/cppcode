@@ -83,7 +83,7 @@ signed main() {
                 }
             }else {
                 dp0[i][j]=dp0[i-1][j];
-                for(int l:a[j]) {
+                for(int l:a[i]) {
                     if(l<=j) addmod(dp0[i][j],dp1[l-1][j]);
                     else addmod(dp0[i][j],dp0[l-1][j]);
                     if(i==3&&j==0) {
