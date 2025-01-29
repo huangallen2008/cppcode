@@ -157,9 +157,9 @@ signed main() {
     f=a=Vi(n+1);
     dp=Vi(k+1);
     REP1(i,n) cin>>f[i];
-    f.resize(11);
     for(int i=1;i<=n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
+    oparr(NTT::ntt(f,a))
     // dc(1,k);
     #ifdef LOCAL
         int N=15;
