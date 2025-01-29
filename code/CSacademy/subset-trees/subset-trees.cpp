@@ -93,15 +93,15 @@ signed main() {
     int an=0;
     REP(i,maxv) {
         for(int l:a[i]) {
-            op(l)op(i)ope(dp1[l-1][i-1])
+            // op(l)op(i)ope(dp1[l-1][i-1])
             addmod(an,dp1[l-1][i-1]);
         }
-        // REP(j,a[i].size()) {
-        //     REP(k,j) {
-        //         op(a[i][j])op(a[i][k])op(i)ope(dp1[a[i][k]-1][a[i][j]-1])
-        //         addmod(an,dp1[a[i][k]-1][a[i][j]-1]);
-        //     }
-        // }
+        REP(j,a[i].size()) {
+            REP(k,j) {
+                // op(a[i][j])op(a[i][k])op(i)ope(dp1[a[i][k]-1][a[i][j]-1])
+                addmod(an,dp1[a[i][k]-1][a[i][j]-1]);
+            }
+        }
     }
     cout<<an<<'\n';
     return 0;
