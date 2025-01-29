@@ -165,11 +165,11 @@ signed main() {
             t[j]=pw(j,i)*pw(i,i-2)%mod;
             REP1(k,j) (t[j]-=C(j,k)*t[j-k])%=mod;
         }
-        op(i)oparr(t)
+        // op(i)oparr(t)
         c[i]=t[m]*infac[i-1]%mod;
         // (cnt[i]*=pw(n,n-2))%=mod;
     }
-    // oparr(cnt)
+    oparr(c)
     dp[0]=1;
     dc(0,n);
     // REP1(i,n) {
