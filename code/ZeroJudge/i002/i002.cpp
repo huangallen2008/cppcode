@@ -137,19 +137,19 @@ void dc(int l,int r) {
     // op(l)ope(r)
     // if(l==1&&r==15432)ope("owo")
     Vi res=NTT::ntt(ld,ta);
-        if(r==61){
-            op(l)ope(r)
-            oparr(ld)oparr(ta)
-            oparr(res)
-        }
+        // if(r==61){
+        //     op(l)ope(r)
+        //     oparr(ld)oparr(ta)
+        //     oparr(res)
+        // }
     for(int i=m+1;i<=r;i++) {
         if(i>n) {
             // ope(dp.size())ope(res.size())op(i)ope(i-l)
             if(i-l<res.size())addmod(dp[i],res[i-l]);
-            if(r==61){op(i)ope(r)}
+            // if(r==61/){op(i)ope(r)}
         }
     }
-    if(r==61){op(l)op(r)ope("ok")op(m)ope(r)}
+    // if(r==61){op(l)op(r)ope("ok")op(m)ope(r)}
     dc(m+1,r);
 }
 signed main() {
