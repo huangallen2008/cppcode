@@ -125,7 +125,6 @@ int n,k;
 Vi f,a,dp;
 void dc(int l,int r) {
     if(l==r||r<=n) return;
-    //   if(4){op(l)ope(r)}
     int m=l+r>>1;
     dc(l,m);
     int len=r-l+1,llen=m-l+1;
@@ -133,22 +132,12 @@ void dc(int l,int r) {
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
     Vi ta(len+1);
     REP1(i,min(len,n)) ta[i]=a[i];
-    // op(l)ope(r)
-    // if(l==1&&r==15432)ope("owo")
     Vi res=NTT::ntt(ld,ta);
-        // if(r==61){
-            // op(l)ope(r)
-            // oparr(ld)oparr(ta)
-            // oparr(res)
-        // }
     for(int i=m+1;i<=r;i++) {
         if(i>n&&i-l<res.size()) {
-            // ope(dp.size())ope(res.size())op(i)ope(i-l)
             addmod(dp[i],res[i-l]);
-            // if(r==61/){op(i)ope(r)}
         }
     }
-    // if(r==61){op(l)op(r)ope("ok")op(m)ope(r)}
     dc(m+1,r);
 }
 signed main() {
@@ -159,24 +148,7 @@ signed main() {
     REP1(i,n) cin>>f[i];
     for(int i=1;i<=n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
-    // int tt=0;
-    // REP1(i,n) if(i>=9)addmod(tt,f[i]*a[n+1-i]);
-    // ope(tt)
-    // oparr(NTT::ntt(f,a))
     dc(1,k);
-    #ifdef LOCAL_
-        int N=6;
-        dc(1,N);
-        f.resize(N);
-        for(int i=n+1;i<N;i++) {
-            for(int j=1;j<=n;j++) addmod(f[i],f[i-j]*a[j]);
-            cout<<f[i]<<' ';
-        }entr
-        for(int i=n+1;i<N;i++) cout<<dp[i]<<' ';entr
-        // oparr(f)
-        
-    #endif
-    // oparr(dp)
     int an=(dp[k]+mod)%mod;
     cout<<an<<'\n';
     return 0;
