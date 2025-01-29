@@ -98,7 +98,7 @@ namespace NTT {
                     int t1=a[k],t2=a[k+m]*g%mod;
                     a[k+m]=MM(t1,t2);
                     a[k]=MA(t1,t2);
-                    g*=gn,g%=mod;
+                    g=g*gn%mod;
                 }
             }
         }
