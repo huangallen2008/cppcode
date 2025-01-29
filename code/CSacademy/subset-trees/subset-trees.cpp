@@ -86,6 +86,9 @@ signed main() {
                 for(int l:a[j]) {
                     if(l<=j) addmod(dp0[i][j],dp1[l-1][j]);
                     else addmod(dp0[i][j],dp0[l-1][j]);
+                    if(i==3&&j==0) {
+                        op(l)op(j)ope(dp0[i][j])
+                    }
                 }
             }
         }
