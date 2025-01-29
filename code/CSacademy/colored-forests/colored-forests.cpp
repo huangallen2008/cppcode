@@ -137,7 +137,7 @@ int C(int n,int k) {
 int n,m;
 Vi dp,c;
 void dc(int l,int r) {
-    if(l==r||r<=n) return;
+    if(l==r) return;
     int m=l+r>>1;
     dc(l,m);
     int len=r-l+1,llen=m-l+1;
