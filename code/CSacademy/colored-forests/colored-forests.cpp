@@ -146,6 +146,7 @@ void dc(int l,int r) {
     Vi ta(len+1);
     REP1(i,min(len,n)) ta[i]=c[i];
     Vi res=NTT::ntt(ld,ta);
+    op(l)op(r)ope(res)
     for(int i=m+1;i<=r;i++) {
         if(i&&i-l<res.size()) {
             dp[i]+=res[i-l];
