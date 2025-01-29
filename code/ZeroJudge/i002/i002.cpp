@@ -144,7 +144,7 @@ void dc(int l,int r) {
         }
     for(int i=m+1;i<=r;i++) {
         if(i>n) {
-            if(l==7714)ope("oo")
+            if(r==61)ope("oo")
             addmod(dp[i],res[i-l]);
         }
     }
