@@ -129,6 +129,7 @@ void dc(int l,int r) {
       if(4){op(l)ope(r)}
     int m=l+r>>1;
     dc(l,m);
+    op(l)ope(r)
     int len=r-l+1,llen=m-l+1;
     Vi ld(llen);
     for(int i=l;i<=m;i++) ld[i-l]=dp[i];
