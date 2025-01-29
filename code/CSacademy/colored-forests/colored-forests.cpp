@@ -149,9 +149,8 @@ void dc(int l,int r) {
     op(l)op(r)oparr(ld)oparr(ta)oparr(res)
     for(int i=m+1;i<=r;i++) {
         if(i&&i-l<res.size()) {
-            dp[i]+=res[i-l];
+            addmod(dp[i],res[i-l]*ninv[i]);
         }
-        dp[i]%=mod;
     }
     dc(m+1,r);
 }
