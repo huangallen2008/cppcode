@@ -179,7 +179,7 @@ signed main() {
     // oparr(dp)
     // int an=(dp[n]+mod)%mod;
     // cout<<an<<'\n';
-    REP1(i,n) cout<<(dp[i]+mod)%mod<<'\n';
+    REP1(i,n) cout<<(dp[i]*fac[i]%mod+mod)%mod<<'\n';
     //!!!! ans+mod % mod
     return 0;
 }
