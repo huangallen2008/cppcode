@@ -143,6 +143,9 @@ void dc(int l,int r) {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    #endif
     cin>>n>>k;
     f=a=Vi(n+1);
     dp=Vi(k+1);
