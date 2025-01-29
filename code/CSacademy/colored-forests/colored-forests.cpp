@@ -97,7 +97,7 @@ signed main() {
     Vi dp(n+1);
     dp[0]=1;
     REP1(i,n) {
-        REP1(j,i) addmod(dp[i],dp[i-j]*cnt[j]);
+        REP1(j,i) addmod(dp[i],(dp[i-j]*cnt[j]%mod)*C(i-1,j-1));
     }
     oparr(dp)
     int an=(dp[n]+mod)%mod;
