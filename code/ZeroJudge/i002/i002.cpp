@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=1e5+5;
-const int inf=1e9;
+const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -124,7 +124,7 @@ namespace NTT {
 int n,k;
 Vi f,a,dp;
 void dc(int l,int r) {
-    if(l==r) return;
+    if(l==r||r<=n) return;
     //   if(4){op(l)ope(r)}
     int m=l+r>>1;
     dc(l,m);
