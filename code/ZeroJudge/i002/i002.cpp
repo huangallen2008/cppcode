@@ -125,7 +125,7 @@ int n,k;
 Vi f,a,dp;
 void dc(int l,int r) {
     if(l==r) return;
-    // op(l)ope(r)
+    op(l)ope(r)
     int m=l+r>>1;
     dc(l,m);
     int len=r-l+1,llen=m-l+1;
