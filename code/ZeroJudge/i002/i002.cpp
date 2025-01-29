@@ -149,7 +149,8 @@ signed main() {
     cin>>n>>k;
     f=a=Vi(n+1);
     dp=Vi(k+1);
-    REP1(i,n) cin>>dp[i];
+    REP1(i,n) cin>>f[i];
+    for(int i=1;i<n&&i<=k) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
     dc(1,k);
     oparr(dp)
