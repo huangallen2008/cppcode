@@ -172,13 +172,6 @@ signed main() {
     // oparr(c)
     dp[0]=1;
     dc(0,n);
-    // REP1(i,n) {
-    //     REP1(j,i) addmod(dp[i],(dp[i-j]*c[j]%mod)*ninv[i]);
-    // }
-    // oparr(dp)
-    // int an=(dp[n]+mod)%mod;
-    // cout<<an<<'\n';
-    // REP1(i,n) cout<<(dp[i]%mod+mod)%mod<<'\n';
     REP1(i,n) cout<<(dp[i]*fac[i]%mod+mod)%mod<<'\n';
     //!!!! ans+mod % mod
     return 0;
