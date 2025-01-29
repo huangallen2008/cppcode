@@ -165,7 +165,7 @@ signed main() {
     oparr(NTT::ntt(f,a))
     // dc(1,k);
     #ifdef LOCAL
-        int N=15;
+        int N=6;
         dc(1,N);
         f.resize(N);
         for(int i=n+1;i<N;i++) {
