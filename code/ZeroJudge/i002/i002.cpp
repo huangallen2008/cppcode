@@ -162,12 +162,13 @@ signed main() {
     REP1(i,n) cin>>a[i];
     dc(1,k);
     #ifdef LOCAL
-        f.resize(15);
-        for(int i=11;i<15;i++) {
+        int N=100;
+        f.resize(N);
+        for(int i=n+1;i<N;i++) {
             for(int j=1;j<=n;j++) addmod(f[i],f[i-j]*a[j]);
             cout<<f[i]<<' ';
         }entr
-        for(int i=11;i<15;i++) cout<<dp[i]<<' ';entr
+        for(int i=n+1;i<N;i++) cout<<dp[i]<<' ';entr
         // oparr(f)
         
     #endif
