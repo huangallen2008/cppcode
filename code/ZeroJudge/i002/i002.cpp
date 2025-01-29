@@ -157,9 +157,20 @@ signed main() {
     f=a=Vi(n+1);
     dp=Vi(k+1);
     REP1(i,n) cin>>f[i];
+    f.resize(11);
     for(int i=1;i<=n&&i<=k;i++) dp[i]=f[i];
     REP1(i,n) cin>>a[i];
     dc(1,k);
+    #ifdef LOCAL
+        f.resize(15);
+        for(int i=11;i<15;i++) {
+            for(int j=1;j<=10;j++) addmod(f[i],f[i-j]*a[j]);
+            cout<<f[i]<<' ';
+        }entr
+        for(int i=11;i<15;i++) cout<<dp[i]<<' ';entr
+        // oparr(f)
+        
+    #endif
     // oparr(dp)
     int an=(dp[k]+mod)%mod;
     cout<<an<<'\n';
