@@ -91,6 +91,10 @@ signed main() {
         }
     }
     int an=0;
+    REP(i,8) {
+        REP(j,8) cout<<dp0[i][j]<<' ';
+        cout<<'\n';
+    }
     REP(i,maxv) {
         for(int l:a[i]) {
             op(l)op(i)ope(dp1[l-1][i-1])
