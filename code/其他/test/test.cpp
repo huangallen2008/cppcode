@@ -51,40 +51,13 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const int inf=1e9;
+const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
-#include <boost/multiprecision/float128.hpp>
-#include <boost/math/special_functions/gamma.hpp>
-
-using namespace boost::multiprecision;
-// void print(__float128 fp) {
-//     char buf[32 + sizeof(".e+99999")];
-//     int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
-//     fwrite(buf, 1, sz, stdout);
-// }
 signed main() {
     IOS();
-    // double a=(double)5/3;
-    ld _ld=(ld)1/3;
-    int ll=(int)1/3;
-    __float128 _f128=(__float128)1/3;
-    cout<<fixed<<setprecision(50);
-    op(_ld)ope(sizeof(_ld));
-    op(ll)ope(sizeof(ll))
-    // print(_f128);
-    op(_f128)
-    ope(sizeof(_f128))
+    op((962401797+512236454)%mod)
     return 0;
 }
