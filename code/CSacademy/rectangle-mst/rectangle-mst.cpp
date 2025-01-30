@@ -107,8 +107,9 @@ struct SEG {
         }
         else {
             a.mid=c.mid;
-            a.mp2=min(sg(a.mid,b.mid)?b.mp2:b.mp,c.mp2);
-            if(!sg(a.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
+            a.mp2=min(sg(c.mid,b.mid)?b.mp2:b.mp,c.mp2);
+            op(a.mp2)
+            if(!sg(c.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
             else if(c.mp2==a.mp2)a.mid2=c.mid2;
             else a.mid2=b.mid2;
         }
