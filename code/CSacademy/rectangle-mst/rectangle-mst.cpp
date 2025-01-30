@@ -56,6 +56,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct edge {
+    int u,v,w;
+};
 struct DSU {
     int n,cc,an;
     Vi p,sz;
@@ -78,6 +81,9 @@ struct DSU {
         sz[y]+=sz[x];
         cc--;
         an+=w;
+    }
+    void merge(edge x) {
+        merge(x.u,x.v,x.w);
     }
 };
 struct SEG {
@@ -204,7 +210,7 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
-        Vpii add(n,{-1,-1});
+        vector<edge> add(n,{-1,-1,-1});
             // REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
