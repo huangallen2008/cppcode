@@ -178,7 +178,6 @@ signed main() {
     DSU dsu;
     dsu.init(n);
     while(dsu.cc>1) {
-        ope(dsu.cc)
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
@@ -190,7 +189,6 @@ signed main() {
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             pii ret=seg.qu(i);
-            op(i)op(ret.f)ope(ret.s)
             if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
         }
     }
