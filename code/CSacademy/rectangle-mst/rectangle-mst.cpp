@@ -196,6 +196,7 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
+            REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             REP(j,n) cout<<seg.val(j)<<' ';entr
