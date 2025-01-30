@@ -190,7 +190,7 @@ signed main() {
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             pii ret=seg.qu(i);
-            ope(i)
+            op(i)op(ret.f)ope(ret.s)
             if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
         }
     }
