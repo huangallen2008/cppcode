@@ -219,8 +219,8 @@ signed main() {
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
                 int root=gp[ret.f];
-                if(ret.s<add[root].s) {
-                    add[root]=ret;
+                if(ret.s<add[root].w) {
+                    add[root]={i,ret.f,ret.s};
                 }
                 op(i)op(ret.f)ope(ret.s)
                 // dsu.merge(i,ret.f,ret.s);
