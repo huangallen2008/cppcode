@@ -57,10 +57,12 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct DSU {
-    int n;
+    int n,cc,an;
     Vi p,sz;
     void init(int _n) {
         n=_n;
+        cc=n;
+        an=0;
         p=Vi(n);
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
@@ -68,12 +70,14 @@ struct DSU {
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
     }
-    void merge(int a,int b) {
+    void merge(int a,int b,int w) {
         int x=find(b),y=find(b);
         if(x==y) return ;
         if(sz[x]>sz[y]) swap(x,y);
         p[x]=y;
         sz[y]+=sz[x];
+        cc--;
+        an+=w;
     }
 };
 struct SEG {
@@ -139,14 +143,15 @@ struct SEG {
     void ud(int u,int v) {
         _ud(1,0,n-1,u,v);
     }
-    Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return zero;
-        int m=l+r>>1;
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    }
-    pii qu(int l,int r,int u) {//return {v,w}
-        Seg ret=_qu(1,0,n-1,l,r);
+    // Seg _qu(int w,int l,int r,int ql,int qr) {
+    //     if(ql<=l&&r<=qr) return s[w];
+    //     if(ql>r||qr<l) return zero;
+    //     int m=l+r>>1;
+    //     return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    // }
+    pii qu(int u) {//return {v,w}
+        // Seg ret=_qu(1,0,n-1,l,r);
+        Seg ret=s[1];
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp};
     }
@@ -157,10 +162,6 @@ signed main() {
     cin>>n>>m;
     struct qur {
         int l,r,w;
-    };
-    auto opqu=[&](SEG &seg,qur oo)->void {
-        seg.ud(oo.l,oo.w);
-        seg.ud(oo.r+1,-oo.w);
     };
     vector<vector<qur>> qu(n+1);
     auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
@@ -174,6 +175,23 @@ signed main() {
         adqu(x1,x2,y1,y2,w);
         adqu(y1,y2,x1,x2,w);
     }
-    
+    DSU dsu;
+    dsu.init(n);
+    while(dsu.cc>1) {
+        Vi gp(n);
+        REP(i,n) gp[i]=dsu.find(i);
+        SEG seg;
+        seg.init(n+1,gp);
+        auto opqu=[&](qur oo)->void {
+            seg.ud(oo.l,oo.w);
+            seg.ud(oo.r+1,-oo.w);
+        };
+        REP(i,n) {
+            for(auto oo:qu[i]) opqu(oo);
+            pii ret=seg.qu(i);
+            if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
+        }
+    }
+    cout<<dsu.an<<'\n';
     return 0;
 }
