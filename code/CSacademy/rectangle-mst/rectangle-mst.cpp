@@ -154,7 +154,7 @@ struct SEG {
     pii qu(int u) {//return {v,w}
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
-        op(ret.mid)ope(ret.mp)
+        op(u)op(ret.mid)ope(ret.mp)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp2};
     }
