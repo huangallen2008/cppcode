@@ -204,6 +204,7 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
+        Vpii add(n,{-1,-1});
             // REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
@@ -211,10 +212,15 @@ signed main() {
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
+                int root=gp[ret.f];
+                if(ret.s<add[root].s) {
+                    add[root]=ret;
+                }
                 op(i)op(ret.f)ope(ret.s)
-                dsu.merge(i,ret.f,ret.s);
+                // dsu.merge(i,ret.f,ret.s);
             }
         }
+        REP(i,n) if(add[i].f!=-1) dsu.merge(i,add[i].f,add[i].s)
         entr
     }
     cout<<dsu.an<<'\n';
