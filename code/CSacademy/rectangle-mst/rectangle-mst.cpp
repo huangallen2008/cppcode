@@ -227,7 +227,7 @@ signed main() {
             }
         }
         oparr(add)
-        REP(i,n) if(add[i].f!=-1) dsu.merge(i,add[i].f,add[i].s);
+        REP(i,n) if(add[i].u!=-1) dsu.merge(add[i]);
         entr
     }
     cout<<dsu.an<<'\n';
