@@ -122,7 +122,7 @@ signed main() {
     struct qur {
         int l,r,w;
     };
-    auto opqu=[&](Seg &seg,qur oo)->void {
+    auto opqu=[&](SEG &seg,qur oo)->void {
         seg.ud(oo.l,oo.w);
         seg.ud(oo.r+1,-oo.w);
     };
