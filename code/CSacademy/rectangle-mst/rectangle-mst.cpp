@@ -211,11 +211,11 @@ signed main() {
             seg.ud(oo.r+1,-oo.w);
         };
         vector<edge> add(n,{-1,-1,inf});
-            REP(j,n) cout<<seg.val(j)<<' ';entr
+            // REP(j,n) cout<<seg.val(j)<<' ';entr
             oparr(gp)
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
-            // REP(j,n) cout<<seg.val(j)<<' ';entr
+            REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
