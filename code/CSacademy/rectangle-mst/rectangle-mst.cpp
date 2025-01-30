@@ -144,7 +144,8 @@ struct SEG {
     //     Seg a;
     //     return a;
     // }
-    void pull(Seg &a,Seg &b,Seg &c) {
+    void pull(Seg &a,Seg &b,Seg &_c) {
+        Seg c=_c;
         a.sum=b.sum+c.sum;
         c.mn.f+=b.sum,c.mn2.f+=b.sum;
         a.mn=min(b.mn,c.mn);
