@@ -108,7 +108,6 @@ struct SEG {
         else {
             a.mid=c.mid;
             a.mp2=min(sg(c.mid,b.mid)?b.mp2:b.mp,c.mp2);
-            op(a.mp2)
             if(!sg(c.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
             else if(c.mp2==a.mp2)a.mid2=c.mid2;
             else a.mid2=b.mid2;
@@ -120,7 +119,7 @@ struct SEG {
     }
 
     void build(int w,int l,int r) {
-        s[w]={0,0,-inf,l,l==r?-1:l+1};
+        s[w]={0,0,inf,l,l==r?-1:l+1};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
