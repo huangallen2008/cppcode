@@ -141,6 +141,7 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) {
+        op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
     // Seg _qu(int w,int l,int r,int ql,int qr) {
