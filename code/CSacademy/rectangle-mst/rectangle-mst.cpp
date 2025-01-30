@@ -135,6 +135,7 @@ struct SEG {
         if(l==r) {
             s[w].sum+=v;
             s[w].mp+=v;
+            s[w].mp2+=v;
             return;
         }
         int m=l+r>>1;
