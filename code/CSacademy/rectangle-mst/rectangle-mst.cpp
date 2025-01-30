@@ -82,7 +82,7 @@ struct DSU {
 };
 struct SEG {
     struct Seg {
-        int sum,mp,mid,mid2;
+        int sum,mp,mp2,mid,mid2;
         bool operator==(Seg b) { return sum==b.sum; }
     };
     const Seg zero={inf,inf};
@@ -100,15 +100,15 @@ struct SEG {
         a.mp=min(b.mp,b.sum+c.mp);
         if(a.mp==b.mp) {
             a.mid=b.mid;
-            if(b.mid2!=-1) a.mid2=b.mid2;
-            else if(!sg(b.mid,c.mid)) a.mid2=c.mid;
-            else a.mid2=c.mid2;
+            if(b.mid2!=-1) a.mid2=b.mid2,a.mp2=b.mp2;
+            else if(!sg(b.mid,c.mid)) a.mid2=c.mid,a.mp2=c.mp;
+            else a.mid2=c.mid2,a.mp2=c.mid2;
         }
         else {
             a.mid=c.mid;
-            if(c.mid2!=-1)a.mid2=c.mid2;
-            else if(!sg(a.mid,b.mid))a.mid2=b.mid;
-            else a.mid2=b.mid2;
+            if(c.mid2!=-1)a.mid2=c.mid2,a.mp2=c.mp2;
+            else if(!sg(a.mid,b.mid))a.mid2=b.mid,a.mp2=b.mp;
+            else a.mid2=b.mid2,a.mp2=b.mp2;
         }
         return a;
     }
@@ -117,7 +117,7 @@ struct SEG {
     }
 
     void build(int w,int l,int r) {
-        s[w]={0,0,l,l==r?-1:l+1};
+        s[w]={0,0,0,l,l==r?-1:l+1};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
@@ -154,8 +154,9 @@ struct SEG {
     pii qu(int u) {//return {v,w}
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
+        op(ret.mid)ope(ret.mp)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
-        return {ret.mid2,ret.mp};
+        return {ret.mid2,ret.mp2};
     }
 
     Seg _qu(int w,int l,int r,int ql,int qr) {
