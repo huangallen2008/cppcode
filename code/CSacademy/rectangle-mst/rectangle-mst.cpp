@@ -155,6 +155,13 @@ struct SEG {
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp};
     }
+
+    Seg _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&r<=qr) return s[w];
+        if(ql>r||qr<l) return zero;
+        int m=l+r>>1;
+        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    }int val(int u) { return _qu(1,0,n-1,0,u).sum; }
 };
 signed main() {
     IOS();
