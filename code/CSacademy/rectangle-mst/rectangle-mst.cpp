@@ -126,7 +126,7 @@ signed main() {
         seg.ud(oo.l,oo.w);
         seg.ud(oo.r+1,-oo.w);
     };
-    vector<qur> qu(n+1);
+    vector<vector<qur>> qu(n+1);
     auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
         qu[x1].pb({y1,y2,w});
         qu[x2+1].pb({y1,y2,-w});
