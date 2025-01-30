@@ -124,6 +124,31 @@ void out(int x) {
     PC(' ');
 }
 ////////////////////
+struct IO {
+    static const int SZ = 1 << 17;
+    char inBuf[SZ], *in1, *in2;
+    inline __attribute((always_inline))
+    int read() {
+        if(__builtin_expect(in1 > inBuf + SZ - 32, 0)) {
+            auto len = in2 - in1;
+            memcpy(inBuf, in1, len);
+            in1 = inBuf, in2 = inBuf + len;
+            in2 += fread(in2, 1, SZ - len, stdin);
+            if(in2 != inBuf + SZ) *in2 = 0;
+        }
+        int res = 0;
+        unsigned char c;
+        bool neg = 0;
+        while((c = *in1++) < 48) neg = c == 45;
+        while(res = res * 10 + c - 48, (c = *in1++) >= 48);
+        return neg ? -res : res;
+    }
+    IO() {
+        in1 = inBuf;
+        in2 = in1 + fread(in1, 1, SZ, stdin);
+    }
+} IO;
+////////////////////
 #ifdef LOCAL
 #define GC _getchar_nolock()
 #define PC _putchar_nolock
