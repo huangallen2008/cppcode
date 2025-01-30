@@ -100,15 +100,17 @@ struct SEG {
         a.mp=min(b.mp,b.sum+c.mp);
         if(a.mp==b.mp) {
             a.mid=b.mid;
-            if(b.mid2!=-1) a.mid2=b.mid2,a.mp2=b.mp2;
-            else if(!sg(b.mid,c.mid)) a.mid2=c.mid,a.mp2=c.mp;
-            else a.mid2=c.mid2,a.mp2=c.mid2;
+            a.mp2=min(b.mp2,sg(b.mid,c.mid)?c.mp2:c.mp);
+            if(b.mp2==a.mp2) a.mid2=b.mid2;
+            else if(!sg(b.mid,c.mid)&&a.mp2==c.mp) a.mid2=c.mid;
+            else a.mid2=c.mid2;
         }
         else {
             a.mid=c.mid;
-            if(c.mid2!=-1)a.mid2=c.mid2,a.mp2=c.mp2;
-            else if(!sg(a.mid,b.mid))a.mid2=b.mid,a.mp2=b.mp;
-            else a.mid2=b.mid2,a.mp2=b.mp2;
+            a.mp2=min(sg(a.mid,b.mid)?b.mp2:b.mp,c.mp2);
+            if(c.mp2==a.mp2)a.mid2=c.mid2;
+            else if(!sg(a.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
+            else a.mid2=b.mid2;
         }
         return a;
     }
@@ -117,7 +119,7 @@ struct SEG {
     }
 
     void build(int w,int l,int r) {
-        s[w]={0,0,0,l,l==r?-1:l+1};
+        s[w]={0,0,-inf,l,l==r?-1:l+1};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
