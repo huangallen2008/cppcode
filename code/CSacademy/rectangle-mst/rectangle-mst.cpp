@@ -154,7 +154,7 @@ struct SEG {
     pii qu(int u) {//return {v,w}
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
-        op(u)op(ret.mid)ope(ret.mp)
+        // op(u)op(ret.mid)ope(ret.mp)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp2};
     }
@@ -197,18 +197,18 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
-            REP(j,n) cout<<seg.val(j)<<' ';entr
+            // REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
-            REP(j,n) cout<<seg.val(j)<<' ';entr
+            // REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
-                op(i)op(ret.f)ope(ret.s)
+                // op(i)op(ret.f)ope(ret.s)
                 dsu.merge(i,ret.f,ret.s);
             }
         }
-        entr
+        // entr
     }
     cout<<dsu.an<<'\n';
     return 0;
