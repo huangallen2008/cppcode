@@ -84,14 +84,14 @@ signed main() {
     IOS();
     cin>>n>>mod;
     init_com();
-    Vi dp(n+1);
-    REP(i,n+1) {
+    Vi dp(n);
+    REP(i,n) {
         dp[i]=pw(2,(i+1)*(i+2)>>1);
         REP1(j,i) (dp[i]-=C(i,j)*dp[i-j])%=mod;
         REP(j,i-1) (dp[i]-=C(i,j)*dp[i-j-2]);
     }
     oparr(dp)
-    int an=(dp[n]+mod)%mod;
+    int an=(dp[n-1]+mod)%mod;
     cout<<an<<'\n';
     return 0;
 }
