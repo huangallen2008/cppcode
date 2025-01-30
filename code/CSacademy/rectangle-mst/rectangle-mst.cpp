@@ -131,7 +131,7 @@ struct SEG {
         pii mn,mn2;
         bool operator==(Seg b) { return sum==b.sum; }
     };
-    const Seg zero={inf,inf};
+    const Seg zero={inf};
 
     int n;
     vector<Seg> s;
