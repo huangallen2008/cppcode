@@ -124,7 +124,6 @@ struct SEG {
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
-        // pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,Vi _gp) {
         n=_n;
@@ -146,7 +145,6 @@ struct SEG {
     }
     void ud(int u,int v) {
         if(u>=n) return;
-        // op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
     // Seg _qu(int w,int l,int r,int ql,int qr) {
@@ -158,8 +156,6 @@ struct SEG {
     pii qu(int u) {//return {v,w}
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
-        op(u)op(ret.mid)ope(ret.mp)
-        op(u)op(ret.mid2)ope(ret.mp2)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp2};
     }
@@ -192,9 +188,7 @@ signed main() {
     }
     DSU dsu;
     dsu.init(n);
-        int ttt=0;
     while(dsu.cc>1) {
-        if(ttt++>5) break;
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
@@ -207,8 +201,6 @@ signed main() {
             // REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
-            REP(j,n) cout<<seg.val(j)<<' ';entr
-            // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
                 // op(i)op(ret.f)ope(ret.s)
