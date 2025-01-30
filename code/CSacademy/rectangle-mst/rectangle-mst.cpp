@@ -156,7 +156,7 @@ struct SEG {
         }
         else {
             a.mn=c.mn;
-            if(gp[b.mn.s]==g[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
+            if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
             else a.mn2=min(b.mn,c.mn2);
         }
         // a=merge(b,c);
