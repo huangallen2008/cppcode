@@ -100,14 +100,14 @@ struct SEG {
         a.mp=min(b.mp,b.sum+c.mp);
         if(a.mp==b.mp) {
             a.mid=b.mid;
-            a.mp2=min(b.mp2,sg(b.mid,c.mid)?c.mp2:c.mp);
+            a.mp2=min(b.mp2,b.sum+(sg(b.mid,c.mid)?c.mp2:c.mp));
             if(b.mp2==a.mp2) a.mid2=b.mid2;
             else if(!sg(b.mid,c.mid)&&a.mp2==c.mp) a.mid2=c.mid;
             else a.mid2=c.mid2;
         }
         else {
             a.mid=c.mid;
-            a.mp2=min(sg(c.mid,b.mid)?b.mp2:b.mp,c.mp2);
+            a.mp2=min(sg(c.mid,b.mid)?b.mp2:b.mp,b.sum+c.mp2);
             if(!sg(c.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
             else if(c.mp2==a.mp2)a.mid2=c.mid2;
             else a.mid2=b.mid2;
