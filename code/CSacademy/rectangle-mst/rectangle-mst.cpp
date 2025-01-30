@@ -117,6 +117,24 @@ struct SEG {
 };
 signed main() {
     IOS();
-
+    int n,m;
+    cin>>n>>m;
+    struct qur {
+        int l,r,w;
+    };
+    auto opqu=[&](Seg &seg,qur oo) {
+        seg.ud(oo.l,oo.w);
+        seg.ud(oo.r+1,-oo.w);
+    };
+    vector<qur> qu(n+1);
+    auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
+        qu[x1].pb({y1,y2,w});
+        qu[x2+1].pb({y1,y2,-w});
+    };
+    REP(i,n) adqu(i,i,i,i,inf);
+    REP(i,m) {
+        int x1,x2,y1,y2,w;
+        cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
+    }
     return 0;
 }
