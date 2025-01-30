@@ -220,7 +220,7 @@ signed main() {
                 // dsu.merge(i,ret.f,ret.s);
             }
         }
-        REP(i,n) if(add[i].f!=-1) dsu.merge(i,add[i].f,add[i].s)
+        REP(i,n) if(add[i].f!=-1) dsu.merge(i,add[i].f,add[i].s);
         entr
     }
     cout<<dsu.an<<'\n';
