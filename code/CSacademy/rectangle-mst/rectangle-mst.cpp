@@ -203,7 +203,7 @@ signed main() {
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
-                op(i)ope(ret.f)
+                op(i)op(ret.f)ope(ret.s)
                 dsu.merge(i,ret.f,ret.s);
             }
         }
