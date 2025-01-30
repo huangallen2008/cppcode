@@ -223,7 +223,7 @@ signed main() {
                 if(ret.s<add[root].w) {
                     add[root]={i,ret.f,ret.s};
                 }
-                op(i)op(ret.f)ope(ret.s)
+                op(i)op(root)op(ret.f)ope(ret.s)
                 // dsu.merge(i,ret.f,ret.s);
             }
         }
