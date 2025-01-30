@@ -198,9 +198,9 @@ signed main() {
     }
     DSU dsu;
     dsu.init(n);
-        int ttt=0;
+        // int ttt=0;
     while(dsu.cc>1) {
-        if(ttt++>5) break;
+        // if(ttt++>5) break;
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
