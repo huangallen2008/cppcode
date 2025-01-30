@@ -124,6 +124,7 @@ struct SEG {
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
+        pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,Vi _gp) {
         n=_n;
@@ -135,7 +136,6 @@ struct SEG {
         if(l==r) {
             s[w].sum+=v;
             s[w].mp+=v;
-            s[w].mp2+=v;
             return;
         }
         int m=l+r>>1;
