@@ -229,7 +229,7 @@ signed main() {
         }
         // oparr(add)
         REP(i,n) if(add[i].u!=-1) {
-            op(add[i].u)op(add[i].v)ope(add[i].w)
+            op(i)op(add[i].u)op(add[i].v)ope(add[i].w)
             dsu.merge(add[i]);
         }
         entr
