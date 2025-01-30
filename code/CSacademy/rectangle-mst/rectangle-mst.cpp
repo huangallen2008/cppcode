@@ -188,6 +188,7 @@ signed main() {
             seg.ud(oo.r+1,-oo.w);
         };
         REP(i,n) {
+            ope(i)
             for(auto oo:qu[i]) opqu(oo);
             pii ret=seg.qu(i);
             if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
