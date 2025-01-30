@@ -195,9 +195,11 @@ signed main() {
         };
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
+            REP(j,n) cout<<seg.val(j)<<' ';entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
         }
+        entr
     }
     cout<<dsu.an<<'\n';
     return 0;
