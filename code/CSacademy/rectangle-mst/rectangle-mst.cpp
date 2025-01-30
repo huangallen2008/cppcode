@@ -138,10 +138,13 @@ struct SEG {
     Vi gp;
     bool sg(int a,int b) { return gp[a]==gp[b]; }
 
-    Seg merge(Seg b,Seg c) {
-        if(b==zero) return c;
-        if(c==zero) return b;
-        Seg a;
+    // Seg merge(Seg b,Seg c) {
+    //     if(b==zero) return c;
+    //     if(c==zero) return b;
+    //     Seg a;
+    //     return a;
+    // }
+    void pull(Seg &a,Seg &b,Seg &c) {
         a.sum=b.sum+c.sum;
         c.mn.f+=b.sum,c.mn2.f+=b.sum;
         a.mn=min(b.mn,c.mn);
@@ -155,10 +158,7 @@ struct SEG {
             if(sg(b.mn.s,c.mn.s)) a.mn2=min(b.mn2,c.mn2);
             else a.mn2=min(b.mn,c.mn2);
         }
-        return a;
-    }
-    void pull(Seg &a,Seg &b,Seg &c) {
-        a=merge(b,c);
+        // a=merge(b,c);
     }
 
     void build(int w,int l,int r) {
@@ -207,12 +207,12 @@ struct SEG {
         return ret.mn2;
     }
 
-    Seg _qu(int w,int l,int r,int ql,int qr) {
-        if(ql<=l&&r<=qr) return s[w];
-        if(ql>r||qr<l) return zero;
-        int m=l+r>>1;
-        return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    }int val(int u) { return _qu(1,0,n-1,0,u).sum; }
+    // Seg _qu(int w,int l,int r,int ql,int qr) {
+    //     if(ql<=l&&r<=qr) return s[w];
+    //     if(ql>r||qr<l) return zero;
+    //     int m=l+r>>1;
+    //     return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
+    // }int val(int u) { return _qu(1,0,n-1,0,u).sum; }
 };
 signed main() {
     IOS();
