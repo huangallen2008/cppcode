@@ -90,6 +90,7 @@ signed main() {
         REP1(j,i) (dp[i]-=C(i,j)*dp[i-j])%=mod;
         REP(j,i-1) (dp[i]-=C(i,j)*dp[i-j-2]);
     }
+    oparr(dp)
     int an=(dp[n]+mod)%mod;
     cout<<an<<'\n';
     return 0;
