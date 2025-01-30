@@ -212,6 +212,7 @@ signed main() {
         };
         vector<edge> add(n,{-1,-1,inf});
             // REP(j,n) cout<<seg.val(j)<<' ';entr
+            oparr(gp)
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             REP(j,n) cout<<seg.val(j)<<' ';entr
