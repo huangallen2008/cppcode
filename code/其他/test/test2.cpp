@@ -43,7 +43,7 @@ void setio(){}
 #define debug(x...)
 #endif
 #define TOI_is_so_de ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);setio();
-const int mxn = 1e5 + 5, inf = 1e15;
+const int mxn = 10 + 5, inf = 1e15;
 int n, m, cnt;
 struct DSU{
     int to[mxn], num[mxn];
