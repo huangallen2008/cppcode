@@ -142,7 +142,7 @@ struct SEG {
     }
     void ud(int u,int v) {
         if(u>=n) return;
-        op(u)ope(v)
+        // op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
     // Seg _qu(int w,int l,int r,int ql,int qr) {
@@ -192,7 +192,7 @@ signed main() {
         SEG seg;
         seg.init(n,gp);
         auto opqu=[&](qur oo)->void {
-            op(oo.l)op(oo.r)ope(oo.w)
+            // op(oo.l)op(oo.r)ope(oo.w)
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
@@ -200,7 +200,7 @@ signed main() {
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             REP(j,n) cout<<seg.val(j)<<' ';entr
-            REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
+            // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) dsu.merge(i,ret.f,ret.s);
         }
