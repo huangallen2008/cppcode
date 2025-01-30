@@ -141,7 +141,6 @@ struct SEG {
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
-        op(l)op(r)ope(s[w].mp2)
     }
     void ud(int u,int v) {
         if(u>=n) return;
@@ -198,7 +197,6 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
-            // REP(j,n) cout<<seg.val(j)<<' ';entr
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
             pii ret=seg.qu(i);
