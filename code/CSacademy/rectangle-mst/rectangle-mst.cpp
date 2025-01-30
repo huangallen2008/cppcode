@@ -248,7 +248,7 @@ signed main() {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
-        vector<edge> add(n,{-1,-1,inf});
+        vector<pii> add(n,{inf,-1});
             // REP(j,n) cout<<seg.val(j)<<' ';entr
             // oparr(gp)
         REP(i,n) {
@@ -256,19 +256,19 @@ signed main() {
             // REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
-            if(ret.s!=-1) {
-                int root=gp[i];
-                if(ret.f<add[root].w) {
-                    add[root]={i,ret.s,ret.f};
-                }
+            // if(ret.s!=-1) {
+                // int root=gp[i];
+                // if(ret.f<add[root].w) {
+                    chmin(add[gp[i]],ret);
+                // }
                 // op(i)op(root)op(ret.f)ope(ret.s)
                 // dsu.merge(i,ret.f,ret.s);
-            }
+            // }
         }
         // oparr(add)
-        REP(i,n) if(add[i].u!=-1) {
+        REP(i,n) if(add[i].s!=-1) {
             // op(i)op(add[i].u)op(add[i].v)ope(add[i].w)
-            dsu.merge(add[i]);
+            dsu.merge(i,add[i].s,add[i].f);
         }
         // entr
     }
