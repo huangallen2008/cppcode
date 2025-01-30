@@ -178,7 +178,7 @@ signed main() {
     DSU dsu;
     dsu.init(n);
     while(dsu.cc>1) {
-        ope("ok")
+        ope(dsu.cc)
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
