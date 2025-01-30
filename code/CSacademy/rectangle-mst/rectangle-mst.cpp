@@ -190,6 +190,7 @@ signed main() {
         SEG seg;
         seg.init(n,gp);
         auto opqu=[&](qur oo)->void {
+            op(oo.l)op(oo.r)ope(oo.w)
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
         };
