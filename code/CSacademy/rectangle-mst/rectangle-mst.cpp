@@ -155,6 +155,7 @@ struct SEG {
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
         op(u)op(ret.mid)ope(ret.mp)
+        op(u)op(ret.mid2)ope(ret.mp2)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp2};
     }
