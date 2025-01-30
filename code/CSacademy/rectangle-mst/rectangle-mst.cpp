@@ -178,7 +178,7 @@ struct SEG {
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
             s[w].sum+=v;
-            s[w].mp+=v;
+            s[w].mn.f+=v;
             return;
         }
         int m=l+r>>1;
