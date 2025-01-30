@@ -142,7 +142,7 @@ struct SEG {
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
-        op(l)op(r)ope(s[w].mp2)
+        // op(l)op(r)ope(s[w].mp2)
     }
     void ud(int u,int v) {
         if(u>=n) return;
@@ -158,8 +158,8 @@ struct SEG {
     pii qu(int u) {//return {v,w}
         // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
-        op(u)op(ret.mid)ope(ret.mp)
-        op(u)op(ret.mid2)ope(ret.mp2)
+        // op(u)op(ret.mid)ope(ret.mp)
+        // op(u)op(ret.mid2)ope(ret.mp2)
         if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
         return {ret.mid2,ret.mp2};
     }
