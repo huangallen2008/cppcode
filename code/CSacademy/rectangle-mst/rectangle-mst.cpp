@@ -219,7 +219,7 @@ signed main() {
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
-                int root=gp[ret.f];
+                int root=gp[i];
                 if(ret.s<add[root].w) {
                     add[root]={i,ret.f,ret.s};
                 }
