@@ -212,10 +212,10 @@ signed main() {
         };
         vector<edge> add(n,{-1,-1,inf});
             // REP(j,n) cout<<seg.val(j)<<' ';entr
-            oparr(gp)
+            // oparr(gp)
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
-            REP(j,n) cout<<seg.val(j)<<' ';entr
+            // REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
@@ -223,16 +223,16 @@ signed main() {
                 if(ret.s<add[root].w) {
                     add[root]={i,ret.f,ret.s};
                 }
-                op(i)op(root)op(ret.f)ope(ret.s)
+                // op(i)op(root)op(ret.f)ope(ret.s)
                 // dsu.merge(i,ret.f,ret.s);
             }
         }
         // oparr(add)
         REP(i,n) if(add[i].u!=-1) {
-            op(i)op(add[i].u)op(add[i].v)ope(add[i].w)
+            // op(i)op(add[i].u)op(add[i].v)ope(add[i].w)
             dsu.merge(add[i]);
         }
-        entr
+        // entr
     }
     cout<<dsu.an<<'\n';
     return 0;
