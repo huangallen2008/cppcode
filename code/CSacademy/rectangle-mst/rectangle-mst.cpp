@@ -27,7 +27,7 @@ using namespace std;
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
 #define Vpii vector<pii>
-#ifdef LOCAL
+#ifdef LOCAL_
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
@@ -215,7 +215,7 @@ signed main() {
             oparr(gp)
         REP(i,n) {
             for(auto oo:qu[i]) opqu(oo);
-            REP(j,n) cout<<seg.val(j)<<' ';entr
+            // REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
             if(ret.f!=-1) {
