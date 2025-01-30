@@ -215,7 +215,7 @@ signed main() {
                 dsu.merge(i,ret.f,ret.s);
             }
         }
-        // entr
+        entr
     }
     cout<<dsu.an<<'\n';
     return 0;
