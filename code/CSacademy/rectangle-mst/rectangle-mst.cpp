@@ -194,7 +194,7 @@ signed main() {
     dsu.init(n);
         int ttt=0;
     while(dsu.cc>1) {
-        // if(ttt++>5) break;
+        if(ttt++>5) break;
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
@@ -220,6 +220,7 @@ signed main() {
                 // dsu.merge(i,ret.f,ret.s);
             }
         }
+        oparr(add)
         REP(i,n) if(add[i].f!=-1) dsu.merge(i,add[i].f,add[i].s);
         entr
     }
