@@ -182,7 +182,7 @@ signed main() {
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
-        seg.init(n+1,gp);
+        seg.init(n,gp);
         auto opqu=[&](qur oo)->void {
             seg.ud(oo.l,oo.w);
             seg.ud(oo.r+1,-oo.w);
