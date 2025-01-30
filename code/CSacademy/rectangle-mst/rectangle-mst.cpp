@@ -127,7 +127,8 @@ struct DSU {
 };
 struct SEG {
     struct Seg {
-        int sum,mp,mp2,mid,mid2;
+        int sum;
+        pii mn,mn2;
         bool operator==(Seg b) { return sum==b.sum; }
     };
     const Seg zero={inf,inf};
@@ -164,7 +165,7 @@ struct SEG {
     }
 
     void build(int w,int l,int r) {
-        s[w]={0,0,l==r?inf:0,l,l==r?-1:l+1};
+        s[w]={0,{0,l},{l==r?inf:0,l==r?-1:l+1}};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
