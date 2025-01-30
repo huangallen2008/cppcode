@@ -143,20 +143,17 @@ struct SEG {
         if(c==zero) return b;
         Seg a;
         a.sum=b.sum+c.sum;
-        a.mp=min(b.mp,b.sum+c.mp);
-        if(a.mp==b.mp) {
-            a.mid=b.mid;
-            a.mp2=min(b.mp2,b.sum+(sg(b.mid,c.mid)?c.mp2:c.mp));
-            if(b.mp2==a.mp2) a.mid2=b.mid2;
-            else if(!sg(b.mid,c.mid)&&a.mp2==b.sum+c.mp) a.mid2=c.mid;
-            else a.mid2=c.mid2;
+        c.mn.f+=b.sum,c.mn2.f+=b.sum;
+        a.mn=min(b.mn,c.mn);
+        if(b.mn<c.mn) {
+            a.mn=b.mn;
+            if(sg(b.mn.s,c.mn.s)) a.mn2=min(b.mn2,c.mn2);
+            else a.mn2=min(b.mn2,c.mn);
         }
         else {
-            a.mid=c.mid;
-            a.mp2=min(sg(c.mid,b.mid)?b.mp2:b.mp,b.sum+c.mp2);
-            if(!sg(c.mid,b.mid)&&a.mp2==b.mp)a.mid2=b.mid;
-            else if(b.sum+c.mp2==a.mp2)a.mid2=c.mid2;
-            else a.mid2=b.mid2;
+            a.mn=c.mn;
+            if(sg(b.mn.s,c.mn.s)) a.mn2=min(b.mn2,c.mn2);
+            else a.mn2=min(b.mn,c.mn2);
         }
         return a;
     }
@@ -206,8 +203,8 @@ struct SEG {
         Seg ret=s[1];
         // op(u)op(ret.mid)ope(ret.mp)
         // op(u)op(ret.mid2)ope(ret.mp2)
-        if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
-        return {ret.mid2,ret.mp2};
+        if(!sg(u,ret.mn.s)) return ret.mn;
+        return ret.mn2;
     }
 
     Seg _qu(int w,int l,int r,int ql,int qr) {
@@ -258,10 +255,10 @@ signed main() {
             // REP(j,n) cout<<seg.val(j)<<' ';entr
             // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
             pii ret=seg.qu(i);
-            if(ret.f!=-1) {
+            if(ret.s!=-1) {
                 int root=gp[i];
-                if(ret.s<add[root].w) {
-                    add[root]={i,ret.f,ret.s};
+                if(ret.f<add[root].w) {
+                    add[root]={i,ret.s,ret.f};
                 }
                 // op(i)op(root)op(ret.f)ope(ret.s)
                 // dsu.merge(i,ret.f,ret.s);
