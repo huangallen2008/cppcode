@@ -210,7 +210,7 @@ signed main() {
     // oparr(c)
     dp[0]=1;
     dc(0,n);
-    REP1(i,n) out(dp[i]*fac[i]%mod+mod),PC('\n');
+    REP1(i,n) out((dp[i]*fac[i]%mod+mod)%mod),PC('\n');
     //!!!! ans+mod % mod
     return 0;
 }
