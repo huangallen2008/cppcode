@@ -56,38 +56,68 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct DSU {
+    int n;
+    Vi p,sz;
+    void init(int _n) {
+        n=_n;
+        p=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(b),y=find(b);
+        if(x==y) return ;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+    }
+};
 struct SEG {
     struct Seg {
-        int sum,mp,mid;
-        bool operator==(Seg b) {
-            return sum==b.sum;
-        }
+        int sum,mp,mid,mid2;
+        bool operator==(Seg b) { return sum==b.sum; }
     };
     const Seg zero={inf,inf};
+
+    int n;
+    vector<Seg> s;
+    Vi gp;
+    bool sg(int a,int b) { return gp[a]==gp[b]; }
+
     Seg merge(Seg b,Seg c) {
         if(b==zero) return c;
         if(c==zero) return b;
         Seg a;
         a.sum=b.sum+c.sum;
         a.mp=min(b.mp,b.sum+c.mp);
-        if(a.mp==b.mp) a.mid=b.mid;
-        else a.mid=c.mid;
+        if(a.mp==b.mp) {
+            a.mid=b.mid;
+
+        }
+        else {
+            a.mid=c.mid;
+            a.mid2=c.mid2;
+        }
         return a;
     }
     void pull(Seg &a,Seg &b,Seg &c) {
         a=merge(b,c);
     }
-    int n;
-    vector<Seg> s;
+
     void build(int w,int l,int r) {
-        s[w]={0,0,l};
+        s[w]={0,0,l,l==r?-1:l+1};
         if(l==r) return;
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
     }
-    void init(int _n) {
+    void init(int _n,Vi _gp) {
         n=_n;
+        gp=_gp;
         s=vector<Seg>(n<<2);
         build(1,0,n-1);
     }
@@ -135,6 +165,9 @@ signed main() {
     REP(i,m) {
         int x1,x2,y1,y2,w;
         cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
+        adqu(x1,x2,y1,y2,w);
+        adqu(y1,y2,x1,x2,w);
     }
+    
     return 0;
 }
