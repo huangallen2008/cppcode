@@ -96,11 +96,15 @@ struct SEG {
         a.mp=min(b.mp,b.sum+c.mp);
         if(a.mp==b.mp) {
             a.mid=b.mid;
-
+            if(b.mid2!=-1) a.mid2=b.mid2;
+            else if(!sg(b.mid,c.mid)) a.mid2=c.mid;
+            else a.mid2=c.mid2;
         }
         else {
             a.mid=c.mid;
-            a.mid2=c.mid2;
+            if(c.mid2!=-1)a.mid2=c.mid2;
+            else if(!sg(a.mid,b.mid))a.mid2=b.mid;
+            else a.mid2=b.mid2;
         }
         return a;
     }
@@ -141,8 +145,10 @@ struct SEG {
         int m=l+r>>1;
         return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    int qu(int l,int r) {
-        return _qu(1,0,n-1,l,r).mp;
+    pii qu(int l,int r,int u) {//return {v,w}
+        Seg ret=_qu(1,0,n-1,l,r);
+        if(!sg(u,ret.mid)) return {ret.mid,ret.mp};
+        return {ret.mid2,ret.mp};
     }
 };
 signed main() {
@@ -161,7 +167,7 @@ signed main() {
         qu[x1].pb({y1,y2,w});
         qu[x2+1].pb({y1,y2,-w});
     };
-    REP(i,n) adqu(i,i,i,i,inf);
+    // REP(i,n) adqu(i,i,i,i,inf);
     REP(i,m) {
         int x1,x2,y1,y2,w;
         cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
