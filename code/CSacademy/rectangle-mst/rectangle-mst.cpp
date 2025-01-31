@@ -131,21 +131,13 @@ struct SEG {
         pii mn,mn2;
         bool operator==(Seg b) { return sum==b.sum; }
     };
-    const Seg zero={inf};
+    // const Seg zero={inf};
 
     int n;
     vector<Seg> s;
     Vi gp;
     bool sg(int a,int b) { return gp[a]==gp[b]; }
-
-    // Seg merge(Seg b,Seg c) {
-    //     if(b==zero) return c;
-    //     if(c==zero) return b;
-    //     Seg a;
-    //     return a;
-    // }
-    void pull(Seg &a,Seg &b,Seg &_c) {
-        Seg c=_c;
+    void pull(Seg &a,Seg b,Seg c) {
         a.sum=b.sum+c.sum;
         c.mn.f+=b.sum,c.mn2.f+=b.sum;
         a.mn=min(b.mn,c.mn);
@@ -200,20 +192,10 @@ struct SEG {
     //     return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     // }
     pii qu(int u) {//return {v,w}
-        // Seg ret=_qu(1,0,n-1,l,r);
         Seg ret=s[1];
-        // op(u)op(ret.mid)ope(ret.mp)
-        // op(u)op(ret.mid2)ope(ret.mp2)
-        if(!sg(u,ret.mn.s)) return ret.mn;
+        if(gp[u]!=gp[ret.mn.s]) return ret.mn;
         return ret.mn2;
     }
-
-    // Seg _qu(int w,int l,int r,int ql,int qr) {
-    //     if(ql<=l&&r<=qr) return s[w];
-    //     if(ql>r||qr<l) return zero;
-    //     int m=l+r>>1;
-    //     return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    // }int val(int u) { return _qu(1,0,n-1,0,u).sum; }
 };
 signed main() {
     IOS();
@@ -223,22 +205,24 @@ signed main() {
         int l,r,w;
     };
     vector<vector<qur>> qu(n+1);
-    auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
-        qu[x1].pb({y1,y2,w});
-        qu[x2+1].pb({y1,y2,-w});
-    };
+    // auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
+    //     qu[x1].pb({y1,y2,w});
+    //     qu[x2+1].pb({y1,y2,-w});
+    // };
     // REP(i,n) adqu(i,i,i,i,inf);
     REP(i,m) {
         int x1=read()-1,x2=read()-1,y1=read()-1,y2=read()-1,w=read();
         // cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
-        adqu(x1,x2,y1,y2,w);
-        adqu(y1,y2,x1,x2,w);
+        qu[x1].pb({y1,y2,w});
+        qu[x2+1].pb({y1,y2,-w});
+        qu[y1].pb({x1,x2,w});
+        qu[y2+1].pb({x1,x2,-w});
+        // adqu(x1,x2,y1,y2,w);
+        // adqu(y1,y2,x1,x2,w);
     }
     DSU dsu;
     dsu.init(n);
-        // int ttt=0;
     while(dsu.cc>1) {
-        // if(ttt++>5) break;
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
@@ -249,25 +233,15 @@ signed main() {
             seg.ud(oo.r+1,-oo.w);
         };
         vector<pii> add(n,{inf,-1});
-            // REP(j,n) cout<<seg.val(j)<<' ';entr
-            // oparr(gp)
+        // REP(j,n) cout<<seg.val(j)<<' ';entr
+        // oparr(gp)
         REP(i,n) {
-            for(auto oo:qu[i]) opqu(oo);
+            for(auto &oo:qu[i]) opqu(oo);
             // REP(j,n) cout<<seg.val(j)<<' ';entr
-            // REP(j,n) cout<<seg._qu(1,0,n-1,j,j).sum<<' ';entr entr
-            pii ret=seg.qu(i);
-            // if(ret.s!=-1) {
-                // int root=gp[i];
-                // if(ret.f<add[root].w) {
-                    chmin(add[gp[i]],ret);
-                // }
-                // op(i)op(root)op(ret.f)ope(ret.s)
-                // dsu.merge(i,ret.f,ret.s);
-            // }
+            // pii ret=seg.qu(i);
+            chmin(add[gp[i]],seg.qu(i));
         }
-        // oparr(add)
         REP(i,n) if(add[i].s!=-1) {
-            // op(i)op(add[i].u)op(add[i].v)ope(add[i].w)
             dsu.merge(i,add[i].s,add[i].f);
         }
         // entr
