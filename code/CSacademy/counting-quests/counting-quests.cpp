@@ -84,7 +84,13 @@ signed main() {
     IOS();
     cin>>n>>mod;
     init_com();
-    Vi dp(n);
+    Vi dp(n),c(n);
+    c[2]=1;
+    for(int i=3;i<n;i++) {
+        c[i]=pw(2,i*(i-1)>>1)-1;
+        REP1(j,i) (c[i]-=C(i,j)*c[i-j])%mod;
+    }
+    oparr(c)
     REP(i,n) {
         dp[i]=pw(2,(i+1)*(i+2)>>1);
         REP1(j,i) (dp[i]-=C(i,j)*dp[i-j])%=mod;
