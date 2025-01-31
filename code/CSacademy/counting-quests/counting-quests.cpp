@@ -93,6 +93,7 @@ signed main() {
     oparr(c)
     REP(i,n) {
         dp[i]=pw(2,(i+1)*(i+2)>>1);
+        op(i)ope(dp[i])
         REP1(j,i) (dp[i]-=C(i,j)*dp[i-j])%=mod;
         REP(j,i) (dp[i]-=C(i,j)*c[i-j]*2)%=mod;
     }
