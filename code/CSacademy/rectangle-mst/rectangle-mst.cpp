@@ -226,9 +226,9 @@ signed main() {
     }
     DSU dsu;
     dsu.init(n);
-    int round=0;
+    // int round=0;
     while(dsu.cc>1) {
-        ope(round++)
+        // ope(round++)
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
@@ -251,6 +251,7 @@ signed main() {
             // pii ret=seg.qu(i);
             chmin(add[gp[i]],seg.qu(i));
         }
+        oparr(add)
         REP(i,n) if(add[i].s!=-1) {
             dsu.merge(i,add[i].s,add[i].f);
         }
