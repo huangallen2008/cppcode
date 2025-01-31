@@ -59,7 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int n=1e5,m=1e5;
+    int n=1e4,m=1e4;
     cout<<n<<' '<<m<<'\n';
     REP(i,m) {
         int x1,x2,y1,y2,w;
