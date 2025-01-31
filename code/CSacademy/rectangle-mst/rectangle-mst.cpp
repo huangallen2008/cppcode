@@ -231,9 +231,7 @@ signed main() {
     }
     DSU dsu;
     dsu.init(n);
-    int round=0;
     while(dsu.cc>1) {
-        op(round++)ope(dsu.cc)
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
