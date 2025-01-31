@@ -251,7 +251,7 @@ signed main() {
             // pii ret=seg.qu(i);
             chmin(add[gp[i]],seg.qu(i));
         }
-        oparr(add)
+        // oparr(add)
         REP(i,n) if(add[i].s!=-1) {
             dsu.merge(i,add[i].s,add[i].f);
         }
