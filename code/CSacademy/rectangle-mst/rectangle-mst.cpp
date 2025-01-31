@@ -200,7 +200,7 @@ struct SEG {
 };
 signed main() {
     IOS();
-    #ifdef LOCAL_
+    #ifdef LOCAL
     freopen("in.txt","r",stdin);
     #endif
     int n=read(),m=read();
@@ -228,7 +228,7 @@ signed main() {
     dsu.init(n);
     // int round=0;
     while(dsu.cc>1) {
-        // ope(round++)
+        op(round++)ope(dsu.cc)
         Vi gp(n);
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
