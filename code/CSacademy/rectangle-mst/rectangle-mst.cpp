@@ -141,16 +141,17 @@ struct SEG {
         a.sum=b.sum+c.sum;
         c.mn.f+=b.sum,c.mn2.f+=b.sum;
         a.mn=min(b.mn,c.mn);
-        if(b.mn<c.mn) {
+        if(b.mn>c.mn) swap(b,c);
+        // if(b.mn<c.mn) {
             a.mn=b.mn;
             if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
             else a.mn2=min(b.mn2,c.mn);
-        }
-        else {
-            a.mn=c.mn;
-            if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
-            else a.mn2=min(b.mn,c.mn2);
-        }
+        // }
+        // else {
+        //     a.mn=c.mn;
+        //     if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
+        //     else a.mn2=min(b.mn,c.mn2);
+        // }
         // a=merge(b,c);
     }
 
@@ -162,7 +163,7 @@ struct SEG {
         build(w<<1|1,m+1,r);
         // pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int _n,Vi _gp) {
+    void init(int _n,Vi &_gp) {
         n=_n;
         gp=_gp;
         s=vector<Seg>(n<<2);
@@ -171,7 +172,7 @@ struct SEG {
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
             s[w].sum+=v;
-            s[w].mn.f+=v;
+            s[w].mn.f=s[w].sum;
             return;
         }
         int m=l+r>>1;
