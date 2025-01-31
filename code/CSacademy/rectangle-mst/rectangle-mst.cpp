@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -129,7 +129,6 @@ struct SEG {
     struct Seg {
         int sum;
         pii mn,mn2;
-        bool operator==(Seg b) { return sum==b.sum; }
     };
     // const Seg zero={inf};
 
@@ -142,21 +141,12 @@ struct SEG {
         c.mn.f+=b.sum,c.mn2.f+=b.sum;
         a.mn=min(b.mn,c.mn);
         if(b.mn>c.mn) swap(b,c);
-        // if(b.mn<c.mn) {
-            a.mn=b.mn;
-            if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
-            else a.mn2=min(b.mn2,c.mn);
-        // }
-        // else {
-        //     a.mn=c.mn;
-        //     if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
-        //     else a.mn2=min(b.mn,c.mn2);
-        // }
-        // a=merge(b,c);
+        a.mn=b.mn;
+        if(gp[b.mn.s]==gp[c.mn.s]) a.mn2=min(b.mn2,c.mn2);
+        else a.mn2=min(b.mn2,c.mn);
     }
 
     void build(int w,int l,int r) {
-        // s[w]={0,{0,l},{l==r?inf:0,l==r?-1:l+1}};
         if(l==r) {
             s[w].sum=0;
             s[w].mn={0,l};
@@ -184,19 +174,11 @@ struct SEG {
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
         pull(s[w],s[w<<1],s[w<<1|1]);
-        // op(l)op(r)ope(s[w].mp2)
     }
     void ud(int u,int v) {
         if(u>=n) return;
-        // op(u)ope(v)
         _ud(1,0,n-1,u,v);
     }
-    // Seg _qu(int w,int l,int r,int ql,int qr) {
-    //     if(ql<=l&&r<=qr) return s[w];
-    //     if(ql>r||qr<l) return zero;
-    //     int m=l+r>>1;
-    //     return merge(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
-    // }
     pii qu(int u) {//return {v,w}
         Seg ret=s[1];
         if(gp[u]!=gp[ret.mn.s]) return ret.mn;
@@ -214,11 +196,6 @@ signed main() {
         int l,r,w;
     };
     vector<vector<qur>> qu(n+1);
-    // auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
-    //     qu[x1].pb({y1,y2,w});
-    //     qu[x2+1].pb({y1,y2,-w});
-    // };
-    // REP(i,n) adqu(i,i,i,i,inf);
     REP(i,m) {
         int x1=read()-1,x2=read()-1,y1=read()-1,y2=read()-1,w=read();
         // cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
@@ -226,8 +203,6 @@ signed main() {
         qu[x2+1].pb({y1,y2,-w});
         qu[y1].pb({x1,x2,w});
         qu[y2+1].pb({x1,x2,-w});
-        // adqu(x1,x2,y1,y2,w);
-        // adqu(y1,y2,x1,x2,w);
     }
     DSU dsu;
     dsu.init(n);
@@ -236,29 +211,17 @@ signed main() {
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
         seg.init(n,gp);
-        // auto opqu=[&](qur oo)->void {
-        //     // op(oo.l)op(oo.r)ope(oo.w)
-        //     seg.ud(oo.l,oo.w);
-        //     seg.ud(oo.r+1,-oo.w);
-        // };
         vector<pii> add(n,{inf,-1});
-        // REP(j,n) cout<<seg.val(j)<<' ';entr
-        // oparr(gp)
         REP(i,n) {
             for(auto &oo:qu[i]) {
                 seg.ud(oo.l,oo.w);
                 seg.ud(oo.r+1,-oo.w);
-                // opqu(oo);
             }
-            // REP(j,n) cout<<seg.val(j)<<' ';entr
-            // pii ret=seg.qu(i);
             chmin(add[gp[i]],seg.qu(i));
         }
-        // oparr(add)
         REP(i,n) if(add[i].s!=-1) {
             dsu.merge(i,add[i].s,add[i].f);
         }
-        // entr
     }
     cout<<dsu.an<<'\n';
     return 0;
