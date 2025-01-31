@@ -1,9 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops")
-// #pragma GCC target("avx2,sse4,bmi2,popcnt")
-// #define int long long
-#define ll long long
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx2,sse4,bmi2,popcnt")
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -52,7 +51,7 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const ll inf=1ll<<60;
+const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -100,8 +99,7 @@ struct edge {
     int u,v,w;
 };
 struct DSU {
-    int n,cc;
-    ll an;
+    int n,cc,an;
     Vi p,sz;
     void init(int _n) {
         n=_n;
@@ -127,11 +125,10 @@ struct DSU {
         merge(x.u,x.v,x.w);
     }
 };
-#define pli pair<ll,int>
 struct SEG {
     struct Seg {
-        ll sum;
-        pli mn,mn2;
+        int sum;
+        pii mn,mn2;
     };
     // const Seg zero={inf};
 
@@ -182,7 +179,7 @@ struct SEG {
         if(u>=n) return;
         _ud(1,0,n-1,u,v);
     }
-    pli qu(int u) {//return {v,w}
+    pii qu(int u) {//return {v,w}
         Seg ret=s[1];
         if(gp[u]!=gp[ret.mn.s]) return ret.mn;
         return ret.mn2;
@@ -214,7 +211,7 @@ signed main() {
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
         seg.init(n,gp);
-        vector<pli> add(n,{inf,-1});
+        vector<pii> add(n,{inf,-1});
         REP(i,n) {
             for(auto &oo:qu[i]) {
                 seg.ud(oo.l,oo.w);
