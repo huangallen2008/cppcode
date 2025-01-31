@@ -94,7 +94,7 @@ signed main() {
     REP(i,n) {
         dp[i]=pw(2,(i+1)*(i+2)>>1);
         REP1(j,i) (dp[i]-=C(i,j)*dp[i-j])%=mod;
-        REP(j,i-1) (dp[i]-=C(i,j)*dp[i-j-2]);
+        REP(j,i-1) (dp[i]-=C(i,j)*c[i-j-1]*2);
     }
     oparr(dp)
     int an=(dp[n-1]+mod)%mod;
