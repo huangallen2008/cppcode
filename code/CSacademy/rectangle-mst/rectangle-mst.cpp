@@ -156,12 +156,17 @@ struct SEG {
     }
 
     void build(int w,int l,int r) {
-        s[w]={0,{0,l},{l==r?inf:0,l==r?-1:l+1}};
-        if(l==r) return;
+        // s[w]={0,{0,l},{l==r?inf:0,l==r?-1:l+1}};
+        if(l==r) {
+            s[w].sum=0;
+            s[w].mn={0,l};
+            s[w].mn2={inf,-1};
+            return;
+        }
         int m=l+r>>1;
         build(w<<1,l,m);
         build(w<<1|1,m+1,r);
-        // pull(s[w],s[w<<1],s[w<<1|1]);
+        pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n,Vi &_gp) {
         n=_n;
