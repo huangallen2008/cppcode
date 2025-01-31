@@ -245,9 +245,9 @@ signed main() {
         // REP(j,n) cout<<seg.val(j)<<' ';entr
         // oparr(gp)
         REP(i,n) {
-            for(auto &oo:qu[i]) {
-                seg.ud(oo.l,oo.w);
-                seg.ud(oo.r+1,-oo.w);
+            for(auto &[u,v]:qu[i]) {
+                seg.ud(u,v);
+                // seg.ud(oo.r+1,-oo.w);
                 // opqu(oo);
             }
             // REP(j,n) cout<<seg.val(j)<<' ';entr
