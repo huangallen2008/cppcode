@@ -200,7 +200,7 @@ struct SEG {
 };
 signed main() {
     IOS();
-    #ifdef LOCAL
+    #ifdef LOCAL_
     freopen("in.txt","r",stdin);
     #endif
     int n=read(),m=read();
