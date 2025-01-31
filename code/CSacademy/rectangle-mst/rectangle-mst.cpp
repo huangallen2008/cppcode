@@ -200,6 +200,9 @@ struct SEG {
 };
 signed main() {
     IOS();
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    #endif
     int n=read(),m=read();
     // cin>>n>>m;
     struct qur {
@@ -228,16 +231,20 @@ signed main() {
         REP(i,n) gp[i]=dsu.find(i);
         SEG seg;
         seg.init(n,gp);
-        auto opqu=[&](qur oo)->void {
-            // op(oo.l)op(oo.r)ope(oo.w)
-            seg.ud(oo.l,oo.w);
-            seg.ud(oo.r+1,-oo.w);
-        };
+        // auto opqu=[&](qur oo)->void {
+        //     // op(oo.l)op(oo.r)ope(oo.w)
+        //     seg.ud(oo.l,oo.w);
+        //     seg.ud(oo.r+1,-oo.w);
+        // };
         vector<pii> add(n,{inf,-1});
         // REP(j,n) cout<<seg.val(j)<<' ';entr
         // oparr(gp)
         REP(i,n) {
-            for(auto &oo:qu[i]) opqu(oo);
+            for(auto &oo:qu[i]) {
+                seg.ud(oo.l,oo.w);
+                seg.ud(oo.r+1,-oo.w);
+                // opqu(oo);
+            }
             // REP(j,n) cout<<seg.val(j)<<' ';entr
             // pii ret=seg.qu(i);
             chmin(add[gp[i]],seg.qu(i));
