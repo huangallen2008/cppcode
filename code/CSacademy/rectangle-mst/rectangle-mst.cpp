@@ -208,7 +208,8 @@ signed main() {
     struct qur {
         int l,r,w;
     };
-    vector<vector<qur>> qu(n+1);
+    // vector<vector<qur>> qu(n+1);
+    vector<vector<pii>> qu(n+1);
     // auto adqu=[&](int x1,int x2,int y1,int y2,int w) {
     //     qu[x1].pb({y1,y2,w});
     //     qu[x2+1].pb({y1,y2,-w});
@@ -217,10 +218,14 @@ signed main() {
     REP(i,m) {
         int x1=read()-1,x2=read()-1,y1=read()-1,y2=read()-1,w=read();
         // cin>>x1>>x2>>y1>>y2>>w,x1--,x2--,y1--,y2--;
-        qu[x1].pb({y1,y2,w});
-        qu[x2+1].pb({y1,y2,-w});
-        qu[y1].pb({x1,x2,w});
-        qu[y2+1].pb({x1,x2,-w});
+        qu[x1].pb({y1,w});
+        qu[x1].pb({y2+1,-w});
+        qu[x2+1].pb({y1,-w});
+        qu[x2+1].pb({y2+1,w});
+        qu[y1].pb({x1,w});
+        qu[y1].pb({x2+1,-w});
+        qu[y2+1].pb({x1,-w});
+        qu[y2+1].pb({x2+1,w});
         // adqu(x1,x2,y1,y2,w);
         // adqu(y1,y2,x1,x2,w);
     }
