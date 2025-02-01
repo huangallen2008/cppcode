@@ -119,7 +119,7 @@ int run2(){
 
 signed main(){
     inp();
-    cout<<run2()<<endl;
+    cout<<run()<<endl;
 }
 /*
 5 10 5
