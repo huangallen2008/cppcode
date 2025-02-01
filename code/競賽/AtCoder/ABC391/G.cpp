@@ -69,7 +69,6 @@ signed main() {
     mp[0][d0]=1;
     REP(i,m) {
         for(auto [v,x]:mp[i]) {
-            op(i)oparr(v)ope(x)
             REP(c,26) {
                 Vi nv=v;
                 REP1(i,n) {
