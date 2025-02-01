@@ -59,6 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n,m;
+    cin>>n>>m;
     vector<vector<char>> a(n,vector<char>(n));
     vector<vector<char>> b(m,vector<char>(m));
     REP(i,n) REP(j,n) cin>>a[i][j];
