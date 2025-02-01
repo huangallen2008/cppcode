@@ -72,9 +72,9 @@ signed main() {
         int val() {
             return pval(a[0][id[0]],a[1][id[1]],a[2][id[2]]);
         }
-        bool operator<(const S b) {
-            return val()<b.val();
-        }
+        // bool operator<(const S b) {
+        //     return val()<b.val();
+        // }
     };
     struct srt {
         bool operator()(S a,S b) {
