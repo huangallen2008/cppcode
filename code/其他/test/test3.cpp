@@ -102,7 +102,7 @@ int run(){
             swap(V[i].s,V[j].s);
         }}}
     }
-	// cout<<ans<<' '<<an<<endl;
+	cout<<ans<<' '<<an<<endl;
     return ans==an;
 }
 /*
