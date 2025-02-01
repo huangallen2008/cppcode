@@ -79,14 +79,14 @@ int run(){
 	int an=0;
     auto rrun=[&]() {
         vector<int> ddp(c+1);
-        REP(i,n) {
+        REP1(i,n) {
             for(int j=c;j>=V[i].f;j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
         }
         // oparr(dp)
         return ddp[c];
     };
-    REP(i,n) {
-        REP(j,i) {
+    REP1(i,n) {
+        REP1(j,i-1) {
             swap(V[i].s,V[j].s);
             chmax(an,rrun());
             swap(V[i].s,V[j].s);
