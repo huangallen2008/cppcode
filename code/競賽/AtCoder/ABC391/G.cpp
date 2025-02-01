@@ -56,13 +56,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pval(int a,int b,int c) {
-    return a*b+b*c+c*a;
-}
-Vi a[3];
 signed main() {
     IOS();
     map<Vi,int> mp;
-    
+
     return 0;
 }
