@@ -92,7 +92,7 @@ int run(){
             swap(V[i].s,V[j].s);
         }
     }
-    return ans!=an;
+    return ans==an;
 }
 /*
 int run2(){
