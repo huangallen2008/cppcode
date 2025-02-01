@@ -34,7 +34,7 @@ bool cmp(pii a, pii b){
 }
 
 void inp(){
-	n=rd(1,20),c=rd(1,20),k=2;
+	n=rd(1,200),c=rd(1,20),k=2;
     // cin>>n>>c>>k;
     V = vector<pii> (n+1);
     REP1(i, n) V[i].f=rd(1,20),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
@@ -147,7 +147,7 @@ int run2(){
 
 signed main(){
 	// freopen("in.txt","r",stdin);
-	int T=10000;
+	int T=100;
 	// cin>>T;
 	while(T--) {
     inp();
