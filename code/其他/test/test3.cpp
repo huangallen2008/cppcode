@@ -34,7 +34,7 @@ bool cmp(pii a, pii b){
 }
 
 void inp(){
-	n=rd(5,10),c=rd(5,15),k=1;
+	n=rd(5,10),c=rd(5,15),k=2;
     // cin>>n>>c>>k;
     V = vector<pii> (n+1);
     REP1(i, n) V[i].f=rd(1,16),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
