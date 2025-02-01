@@ -71,14 +71,24 @@ signed main() {
     REP(i,w) {
         REP(j,a[i].size()) cc[a[i][j].s]=j;
     }
-    Vi t(n);
+    Vi t(n,inf);
     REP(i,n) {
-        int mx=i==0?0:t[i-1];
+        int mx=i==0?0:t[i-1]+1;
         bool ok=1;
         REP(j,w) {
             if(i<a[j].size()) chmax(mx,a[j][i].f);
-
+            else ok=0;
         }
+        if(!ok) break;
+        t[i]=mx;
+    }
+    int q;
+    cin>>q;
+    REP(i,q) {
+        int u,x;
+        cin>>u>>x,x--;
+        if(u<=t[cc[x]]) cout<<"Yes\n";
+        else cout<<"No\n";
     }
     return 0;
 }
