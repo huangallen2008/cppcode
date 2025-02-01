@@ -34,10 +34,11 @@ bool cmp(pii a, pii b){
 }
 
 void inp(){
-	n=rd(1,20),c=rd(1,20),k=2;
-    // cin>>n>>c>>k;
+	// n=rd(1,20),c=rd(1,20),k=2;
+    cin>>n>>c>>k;
     V = vector<pii> (n+1);
-    REP1(i, n) V[i].f=rd(1,20),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
+    // REP1(i, n) V[i].f=rd(1,20),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
+    REP1(i, n) cin>>V[i].f>>V[i].s;
 }
 
 int run(){
@@ -101,6 +102,7 @@ int run(){
             swap(V[i].s,V[j].s);
         }}}
     }
+	cout<<ans<<' '<<an<<endl;
     return ans==an;
 }
 /*
