@@ -58,7 +58,26 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    map<Vi,int> mp;
-
+    int n,m;
+    cin>>n>>m;
+    string _s;
+    cin>>_s;
+    Vi s(n+1);
+    REP1(i,n) s[i]=_s[i-1]-'a';
+    vector<map<Vi,int>> mp(m+1);
+    Vi d0(n+1,0);
+    mp[0][d0]=1;
+    REP(i,m) {
+        for(auto [v,x]:mp[i]) {
+            Vi nv=v;
+            REP(c,26) {
+                REP1(i,n) {
+                    chmax(nv[i],nv[i-1]);
+                    if(s[i]==c) chmax(nv[i],v[i-1]);
+                } 
+            }
+            mp[i+1][nv]+=x;
+        }
+    }
     return 0;
 }
