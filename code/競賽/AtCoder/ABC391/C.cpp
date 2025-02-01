@@ -69,9 +69,9 @@ signed main() {
         if(opt==1) {
             int p,h;
             cin>>p>>h,p--,h--;
-            cnt-=--a[id[p]]==0;
+            cnt-=--a[id[p]]==1;
             id[p]=h;
-            cnt+=a[id[p]]++==0;
+            cnt+=a[id[p]]++==1;
         }else {
             cout<<cnt<<'\n';
         }
