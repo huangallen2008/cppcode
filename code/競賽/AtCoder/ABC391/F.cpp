@@ -56,6 +56,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pval(int a,int b,int c) {
+    return a*b+b*c+c*a;
+}
 signed main() {
     IOS();
     int n,k;
@@ -63,9 +66,7 @@ signed main() {
     Vi a[3];
     a[0]=a[1]=a[2]=Vi(n);
     REP(i,3) REP(j,n) cin>>a[i][j];
-    auto pval=[&](int a,int b,int c) {
-        return a*b+b*c+c*a;
-    };
+    
     struct S {
         Vi id;
         int c;
