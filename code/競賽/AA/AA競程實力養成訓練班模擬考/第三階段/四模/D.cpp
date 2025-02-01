@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops")
+#pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -51,7 +51,7 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=5;
 const int maxb=64;
-const int inf=1ll<<60;
+const int inf=1<<29;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -59,7 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     #ifdef LOCAL
-        freopen("in.txt","r",stdin);
+        // freopen("in.txt","r",stdin);
     #endif  
     int n,m;
     cin>>n>>m;
@@ -84,16 +84,16 @@ signed main() {
             int sum=0;
             REP(i,n) {
                 REP(j,n) {
-                    sum+=min({dis[i][j],dis[i][u]+1+dis[v][j],dis[i][v]+1+dis[u][j]});
+                    sum+=min(dis[i][j],1+min(dis[i][u]+dis[v][j],dis[i][v]+dis[u][j]));
                 }
             }
-            cout<<(sum>>1)<<' ';
+            // cout<<(sum>>1)<<' ';
             if(sum<mn) {
                 mn=sum;
                 cnt=1;
             }else if(sum==mn)cnt++;
         }
-        entr
+        // entr
     }
     mn>>=1;
     cnt>>=1;

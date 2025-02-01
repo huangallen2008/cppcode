@@ -58,6 +58,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    op((962401797+512236454)%mod)
+    Vi a(3);
+    REP(i,3) a[i]=i;
+    int x=2;
+    a[x]=a[x=1];
+    oparr(a)
     return 0;
 }
