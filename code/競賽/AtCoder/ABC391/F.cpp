@@ -78,7 +78,7 @@ signed main() {
     };
     struct srt {
         bool operator()(S a,S b) {
-            return a.val()>b.val();
+            return a.val()<b.val();
         }
     };
     priority_queue<S,vector<S>,srt> pq;
