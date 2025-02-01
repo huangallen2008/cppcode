@@ -93,8 +93,8 @@ signed main() {
         REP(j,a[i].size()) {
             int sum=0,mx=0;
             REP(k,3) {
-                op(id)ope(dp[i-1].size())
                 int id=j*2+k;
+                op(id)ope(dp[i-1].size())
                 if(a[i-1][id]==a[i][j]) sum+=dp[i-1][id],chmax(mx,dp[i-1][id]);
             }
             op(i)op(j)op(sum)ope(mx)
