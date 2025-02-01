@@ -80,7 +80,7 @@ int run(){
     auto rrun=[&]() {
         vector<int> ddp(c+1);
         REP(i,n) {
-            for(int j=c;j>=w[i];j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
+            for(int j=c;j>=V[i].f;j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
         }
         // oparr(dp)
         return ddp[c];
