@@ -58,6 +58,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    freopen("in.txt","w",stdout);
     int T=1000;
     cout<<T<<'\n';
     while(T--) {
