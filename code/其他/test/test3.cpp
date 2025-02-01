@@ -81,7 +81,6 @@ int run(){
         }
     }
 	#define chmax(x,y) x=max(x,y)
-	int an=0;
     auto rrun=[&]() {
         vector<int> ddp(c+1);
         REP1(i,n) {
@@ -90,6 +89,7 @@ int run(){
         // oparr(dp)
         return ddp[c];
     };
+	int an=rrun();
     REP1(i,n) {
         REP1(j,i-1) {
 			
