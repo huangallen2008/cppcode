@@ -63,10 +63,19 @@ signed main() {
     Vi a[3];
     a[0]=a[1]=a[2]=Vi(n);
     REP(i,3) REP(j,n) cin>>a[i][j];
-    struct S {
-        Vi id(3);
-        int c;
+    auto pval=[&](int a,int b,int c) {
+        return a*b+b*c+c*a;
     };
-    
+    struct S {
+        Vi id;
+        int c;
+        int val() {
+            return pval(a[0][id[0]],a[1][id[1]],a[2][id[2]]);
+        }
+        bool operator<(S b) {
+            return val()<b.val();
+        }
+    };
+
     return 0;
 }
