@@ -83,5 +83,9 @@ signed main() {
     };
     priority_queue<S,vector<S>,srt> pq;
     pq.push({{0,0,0},0});
+    REP(ttt,k) {
+        auto [v,id]=pq.top();
+        pq.pop();
+    }
     return 0;
 }
