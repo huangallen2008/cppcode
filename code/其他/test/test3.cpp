@@ -91,10 +91,10 @@ int run(){
     };
 	int an=rrun();
     REP1(i,n) {
-        REP1(j,i-1) {
+        REP1(j,i) {
 			
 			REP1(i2,n) {
-				REP1(j2,i2-1) {
+				REP1(j2,i2) {
             swap(V[i].s,V[j].s);
             swap(V[i2].s,V[j2].s);
             chmax(an,rrun());
