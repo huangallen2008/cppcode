@@ -86,6 +86,19 @@ signed main() {
     vector<string> a(n+1);
     cin>>a[0];
     REP1(i,n) a[i]=trans(a[i-1]);
-    
+    vector<Vi> dp(n+1);
+    dp[0]=Vi(a[0].size(),1);
+    REP1(i,n) {
+        dp[i]=Vi(a[i].size(),1);
+        REP(j,a[i].size()) {
+            int sum=0,mx=0;
+            REP(k,3) {
+                int id=j*2+k;
+                if(a[i-1][id]==a[i][j]) sum+=dp[i-1][id],chmax(mx,dp[i-1][id]);
+            }
+            dp[i][j]=sum-mx;
+        }
+    }
+    cout<<dp[n][0]<<'\n';
     return 0;
 }
