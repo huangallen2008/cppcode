@@ -59,11 +59,11 @@ int rd(int l,int r) {
 int pval(int a,int b,int c) {
     return a*b+b*c+c*a;
 }
+Vi a[3];
 signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vi a[3];
     a[0]=a[1]=a[2]=Vi(n);
     REP(i,3) REP(j,n) cin>>a[i][j];
     
