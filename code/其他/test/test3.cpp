@@ -78,7 +78,7 @@ int run(){
 	#define chmax(x,y) x=max(x,y)
 	int an=0;
     auto rrun=[&]() {
-        Vi ddp(c+1);
+        vector<int> ddp(c+1);
         REP(i,n) {
             for(int j=c;j>=w[i];j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
         }
