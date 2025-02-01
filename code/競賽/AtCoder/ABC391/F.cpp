@@ -80,7 +80,7 @@ signed main() {
         bool operator()(S a,S b) {
             return a.val()<b.val();
         }
-    }
+    };
     priority_queue<S,vector<S>,srt> pq;
     pq.push({{0,0,0},0});
     return 0;
