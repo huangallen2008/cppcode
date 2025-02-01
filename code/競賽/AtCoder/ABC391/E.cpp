@@ -98,7 +98,7 @@ signed main() {
             }
             dp[i][j]=sum-mx;
         }
-        oparr(dp[i])
+        oparr(dp[i])ope(a[i])
     }
     cout<<dp[n][0]<<'\n';
     return 0;
