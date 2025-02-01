@@ -139,9 +139,9 @@ int run2(){
 */
 
 signed main(){
-	freopen("in.txt","r",stdin);
-	int T;
-	cin>>T;
+	// freopen("in.txt","r",stdin);
+	int T=100000;
+	// cin>>T;
 	while(T--) {
     inp();
     if(!run()) {
