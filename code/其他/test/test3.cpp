@@ -143,7 +143,7 @@ signed main(){
     if(!run()) {
 		cout<<"WA\n";
 		break;
-	}
+	}else cout<<"AC\n";
 	}
 }
 /*
