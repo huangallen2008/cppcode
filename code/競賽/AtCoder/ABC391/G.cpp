@@ -70,14 +70,14 @@ signed main() {
     REP(i,m) {
         for(auto [v,x]:mp[i]) {
             op(i)oparr(v)ope(x)
-            Vi nv=v;
             REP(c,26) {
+                Vi nv=v;
                 REP1(i,n) {
                     chmax(nv[i],nv[i-1]);
                     if(s[i]==c) chmax(nv[i],v[i-1]+1);
                 } 
+                mp[i+1][nv]+=x;
             }
-            mp[i+1][nv]+=x;
         }
     }
     Vi an(n+1);
