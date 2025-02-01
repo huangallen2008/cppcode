@@ -75,6 +75,7 @@ int run(){
             ans = max(ans, tsm + dp[i+1][c-lb][j+1]);
         }
     }
+	#define chmax(x,y) x=max(x,y);
 	int an=0;
     auto run=[&]() {
         Vi dp(c+1);
