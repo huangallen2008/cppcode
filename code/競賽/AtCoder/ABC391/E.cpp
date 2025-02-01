@@ -96,6 +96,7 @@ signed main() {
                 int id=j*2+k;
                 if(a[i-1][id]==a[i][j]) sum+=dp[i-1][id],chmax(mx,dp[i-1][id]);
             }
+            op(i)op(j)op(sum)ope(mx)
             dp[i][j]=sum-mx;
         }
         oparr(dp[i])ope(a[i])
