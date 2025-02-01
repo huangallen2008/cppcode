@@ -76,7 +76,7 @@ signed main() {
                     chmax(nv[i],nv[i-1]);
                     if(s[i]==c) chmax(nv[i],v[i-1]+1);
                 } 
-                mp[i+1][nv]+=x;
+                (mp[i+1][nv]+=x)%=mod;;
             }
         }
     }
