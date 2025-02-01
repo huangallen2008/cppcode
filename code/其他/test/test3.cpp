@@ -75,6 +75,22 @@ int run(){
             ans = max(ans, tsm + dp[i+1][c-lb][j+1]);
         }
     }
+	int an=0;
+    auto run=[&]() {
+        Vi dp(c+1);
+        REP(i,n) {
+            for(int j=c;j>=w[i];j--) chmax(dp[j],dp[j-V[i].f]+V[i].s);
+        }
+        // oparr(dp)
+        return dp[c];
+    };
+    REP(i,n) {
+        REP(j,i) {
+            swap(V[i].s,V[j].s);
+            chmax(an,run());
+            swap(V[i].s,V[j].s);
+        }
+    }
     return ans;
 }
 /*
@@ -118,8 +134,15 @@ int run2(){
 */
 
 signed main(){
+	int T;
+	cin>>T;
+	while(T--) {
     inp();
-    cout<<run()<<endl;
+    if(!run()) {
+		cout<<"WA\n";
+		break;
+	}
+	}
 }
 /*
 5 10 5
