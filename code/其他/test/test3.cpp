@@ -19,7 +19,10 @@ const ll maxn = 5e3+5;
 const ll maxm = 1e4+5;
 const ll inf = 1ll<<60;
 const ll mod = 1e9+7;
-
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rd(int l,int r) {
+    return uniform_int_distribution<int>(l,r)(rng);
+}
 
 int dp[205][maxm][55];
 int n, c, k;
@@ -31,9 +34,10 @@ bool cmp(pii a, pii b){
 }
 
 void inp(){
-    cin>>n>>c>>k;
+	n=rd(5,10),c=rd(5,15),k=1;
+    // cin>>n>>c>>k;
     V = vector<pii> (n+1);
-    REP1(i, n) cin>>V[i].f>>V[i].s;
+    REP1(i, n) V[i].f=rd(1,16),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
 }
 
 int run(){
