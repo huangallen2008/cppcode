@@ -87,7 +87,7 @@ signed main() {
     REP(i,q) {
         int u,x;
         cin>>u>>x,x--;
-        if(u<t[cc[x]]) cout<<"Yes\n";
+        if(u<=t[cc[x]]) cout<<"Yes\n";
         else cout<<"No\n";
     }
     return 0;
