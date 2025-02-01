@@ -147,7 +147,7 @@ int run2(){
 
 signed main(){
 	// freopen("in.txt","r",stdin);
-	int T=100;
+	int T=10000;
 	// cin>>T;
 	while(T--) {
     inp();
