@@ -141,9 +141,11 @@ signed main(){
 	while(T--) {
     inp();
     if(!run()) {
+		cout<<n<<' '<<c<<' '<<k<<'\n';
+		REP(i,n) cout<<V[i].f<<' '<<V[i].s<<'\n';
 		cout<<"WA\n";
 		break;
-	}else cout<<"AC\n";
+	}
 	}
 }
 /*
