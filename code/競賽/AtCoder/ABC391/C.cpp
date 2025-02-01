@@ -62,7 +62,7 @@ signed main() {
     cin>>n>>q;
     Vi id(n),a(n,1);
     REP(i,n) id[i]=i;
-    int cnt=n;
+    int cnt=0;
     REP(i,q) {
         int opt;
         cin>>opt;
