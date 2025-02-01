@@ -135,6 +135,7 @@ int run2(){
 */
 
 signed main(){
+	freopen("in.txt","r",stdin);
 	int T;
 	cin>>T;
 	while(T--) {
