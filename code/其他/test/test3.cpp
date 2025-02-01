@@ -34,10 +34,10 @@ bool cmp(pii a, pii b){
 }
 
 void inp(){
-	n=rd(1,200),c=rd(1,200),k=1;
+	n=rd(5,20),c=rd(100,200),k=1;
     // cin>>n>>c>>k;
     V = vector<pii> (n+1);
-    REP1(i, n) V[i].f=rd(5,10),V[i].s=rd(1,20);//cin>>V[i].f>>V[i].s;
+    REP1(i, n) V[i].f=rd(5,7),V[i].s=rd(5,7);//cin>>V[i].f>>V[i].s;
     // REP1(i, n) cin>>V[i].f>>V[i].s;
 }
 
