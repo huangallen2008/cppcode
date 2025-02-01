@@ -77,5 +77,6 @@ signed main() {
         }
     };
     priority_queue<S> pq;
+    pq.push({{0,0,0},0});
     return 0;
 }
