@@ -79,5 +79,8 @@ signed main() {
             mp[i+1][nv]+=x;
         }
     }
+    Vi an(n+1);
+    for(auto [v,x]:mp[n]) (an[v.back()]+=x)%=mod;
+    REP(i,n+1) cout<<an[i]<<'\n';
     return 0;
 }
