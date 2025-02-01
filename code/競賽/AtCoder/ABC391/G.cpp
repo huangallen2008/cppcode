@@ -69,6 +69,7 @@ signed main() {
     mp[0][d0]=1;
     REP(i,m) {
         for(auto [v,x]:mp[i]) {
+            op(i)oparr(v)ope(x)
             Vi nv=v;
             REP(c,26) {
                 REP1(i,n) {
@@ -81,6 +82,7 @@ signed main() {
     }
     Vi an(n+1);
     for(auto [v,x]:mp[n]) (an[v.back()]+=x)%=mod;
-    REP(i,n+1) cout<<an[i]<<'\n';
+    REP(i,n+1) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
