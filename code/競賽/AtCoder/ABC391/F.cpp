@@ -66,7 +66,6 @@ signed main() {
     cin>>n>>k;
     a[0]=a[1]=a[2]=Vi(n);
     REP(i,3) REP(j,n) cin>>a[i][j];
-    
     struct S {
         Vi id;
         int c;
@@ -77,6 +76,6 @@ signed main() {
             return val()<b.val();
         }
     };
-
+    priority_queue<S> pq;
     return 0;
 }
