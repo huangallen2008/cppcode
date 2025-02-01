@@ -142,7 +142,7 @@ signed main(){
     inp();
     if(!run()) {
 		cout<<n<<' '<<c<<' '<<k<<'\n';
-		REP(i,n) cout<<V[i].f<<' '<<V[i].s<<'\n';
+		REP1(i,n) cout<<V[i].f<<' '<<V[i].s<<'\n';
 		cout<<"WA\n";
 		break;
 	}
