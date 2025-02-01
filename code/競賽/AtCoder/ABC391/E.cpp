@@ -66,7 +66,7 @@ int pw(int x,int p ){
     return r;
 }
 char freq(char a,char b,char c) {
-    int cnt[2];
+    Vi cnt(2);
     cnt[a-'0']++;
     cnt[b-'0']++;
     cnt[c-'0']++;
