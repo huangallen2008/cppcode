@@ -87,6 +87,7 @@ signed main() {
         auto u=pq.top();
         auto [v,id]=u;
         pq.pop();
+        ope(u.val())
         if(ttt==k-1) {
             cout<<u.val()<<'\n';
             return 0;
