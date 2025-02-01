@@ -84,8 +84,24 @@ signed main() {
     priority_queue<S,vector<S>,srt> pq;
     pq.push({{0,0,0},0});
     REP(ttt,k) {
-        auto [v,id]=pq.top();
+        auto u=pq.top();
+        auto [v,id]=u;
         pq.pop();
+        if(ttt==k-1) {
+            cout<<u.val()<<'\n';
+            return 0;
+        }
+        if(v[id]<n-1) {
+            Vi nv=v;
+            nv[id]++;
+            pq.push({nv,id});
+        }
+        if(id<2) {
+            Vi nv=v;
+            int nid=id+1;
+            nv[nid]++;
+            pq.push({nv,nid});
+        }
     }
     return 0;
 }
