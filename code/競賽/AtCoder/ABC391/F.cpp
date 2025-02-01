@@ -66,6 +66,7 @@ signed main() {
     cin>>n>>k;
     a[0]=a[1]=a[2]=Vi(n);
     REP(i,3) REP(j,n) cin>>a[i][j];
+    REP(i,3) sort(ALL(a[i]));
     struct S {
         Vi id;
         int c;
