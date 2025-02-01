@@ -93,7 +93,7 @@ signed main() {
         REP(j,a[i].size()) {
             int sum=0,mx=0;
             REP(k,3) {
-                int id=j*2+k;
+                int id=j*3+k;
                 op(id)ope(dp[i-1].size())
                 if(a[i-1][id]==a[i][j]) sum+=dp[i-1][id],chmax(mx,dp[i-1][id]);
             }
