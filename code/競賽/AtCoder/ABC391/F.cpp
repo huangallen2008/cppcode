@@ -104,6 +104,12 @@ signed main() {
             nv[nid]++;
             pq.push({nv,nid});
         }
+        if(id<1) {
+            Vi nv=v;
+            int nid=id+2;
+            nv[nid]++;
+            pq.push({nv,nid});
+        }
     }
     return 0;
 }
