@@ -78,12 +78,12 @@ int run(){
 	#define chmax(x,y) x=max(x,y)
 	int an=0;
     auto rrun=[&]() {
-        Vi dp(c+1);
+        Vi ddp(c+1);
         REP(i,n) {
-            for(int j=c;j>=w[i];j--) chmax(dp[j],dp[j-V[i].f]+V[i].s);
+            for(int j=c;j>=w[i];j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
         }
         // oparr(dp)
-        return dp[c];
+        return ddp[c];
     };
     REP(i,n) {
         REP(j,i) {
