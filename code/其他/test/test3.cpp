@@ -75,9 +75,9 @@ int run(){
             ans = max(ans, tsm + dp[i+1][c-lb][j+1]);
         }
     }
-	#define chmax(x,y) x=max(x,y);
+	#define chmax(x,y) x=max(x,y)
 	int an=0;
-    auto run=[&]() {
+    auto rrun=[&]() {
         Vi dp(c+1);
         REP(i,n) {
             for(int j=c;j>=w[i];j--) chmax(dp[j],dp[j-V[i].f]+V[i].s);
@@ -88,7 +88,7 @@ int run(){
     REP(i,n) {
         REP(j,i) {
             swap(V[i].s,V[j].s);
-            chmax(an,run());
+            chmax(an,rrun());
             swap(V[i].s,V[j].s);
         }
     }
