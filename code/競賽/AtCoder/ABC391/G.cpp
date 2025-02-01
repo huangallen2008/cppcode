@@ -82,7 +82,7 @@ signed main() {
     }
     Vi an(n+1);
     for(auto [v,x]:mp[m]) (an[v.back()]+=x)%=mod;
-    REP(i,n+1) cout<<an[i]<<' ';
+    REP(i,n+1) cout<<(an[i]+mod)%mod<<' ';
     cout<<'\n';
     return 0;
 }
