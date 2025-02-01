@@ -1,171 +1,131 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+#define int ll
+#define FOR(i, a, b) for (int i = (a); i < (b); i++)
+#define REP(i, n) FOR(i, 0, n)
+#define REP1(i, n) FOR(i, 1, n+1)
+#define RREP(i, n) for (int i = (n)-1; i >= 0; i--)
+#define RREP1(i, n) for (int i = (n); i >= 1; i--)
+#define pii pair<int, int>
+#define f first
+#define s second
+#define ALL(x) (x).begin(), (x).end()
+#define SZ(x) (int)((x).size())
+#define pb push_back
+#define IOS() ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
 
-const int MAXN=2e6,NIL=-1;
-
-int cnt;
-map<int,int>lg;
-struct vEB{
-	int u,summary;
-	vector<int>cluster;
-	int min,max;
-}vEB[MAXN];
+const ll maxn = 5e3+5;
+const ll maxm = 1e4+5;
+const ll inf = 1ll<<60;
+const ll mod = 1e9+7;
 
 
-inline void Tree_Build(int p,int size){//u=2^size
-	vEB[p].summary=vEB[p].min=vEB[p].max=NIL;
-	if(size<=1){
-		vEB[p].u=2;return;
-	}
-	vEB[p].u=1<<size;
-	int cluster_size=(size>>1)+(size&1);//即ceil(log(u)/2)
-	vEB[p].summary=++cnt;
-	Tree_Build(vEB[p].summary,cluster_size);
-	vEB[p].cluster.resize(1<<cluster_size);	//节省空间用的
-	for(int i=0;i<1<<cluster_size;++i){
-		vEB[p].cluster[i]=++cnt;
-		Tree_Build(vEB[p].cluster[i],size>>1);
-	}
-	
-	return;
-}
+int dp[205][maxm][55];
+int n, c, k;
+vector<pii> V;
 
-void init(){
-	for(int i=0;i<32;++i)lg[1<<i]=i;
-}
-inline int high(int p,int x){
-	int u=1<<(lg[vEB[p].u]>>1);
-	return x/u;
-}
-inline int low(int p,int x){
-	int u=1<<(lg[vEB[p].u]>>1);
-	return x%u;
-}
-inline int index(int p,int x,int y){
-	int u=1<<(lg[vEB[p].u]>>1);
-	return x*u+y;
+bool cmp(pii a, pii b){
+    if (a.f == b.f) return a.s > b.s;
+    return a.f < b.f;
 }
 
-inline int Tree_Minimum(int p){
-	return vEB[p].min;
-}
-inline int Tree_Maximum(int p){
-	return vEB[p].max;
-}
-bool Tree_Member(int p,int x){
-	if(x==vEB[p].min||x==vEB[p].max)return true;
-	if(vEB[p].u==2)return false;
-	return Tree_Member(vEB[p].cluster[high(p,x)],low(p,x));
-}
-int Tree_Successor(int p,int x){
-	if(vEB[p].u==2){
-		if(x==0&&vEB[p].max==1)return 1;
-		return NIL;
-	}
-	if(vEB[p].min!=NIL&&x<vEB[p].min)return vEB[p].min;
-	int offset,max_low=Tree_Maximum(vEB[p].cluster[high(p,x)]);
-	if(max_low!=NIL&&low(p,x)<max_low){
-		offset=Tree_Successor(vEB[p].cluster[high(p,x)],low(p,x));
-		return index(p,high(p,x),offset);
-	}
-	int succ_cluster=Tree_Successor(vEB[p].summary,high(p,x));
-	if(succ_cluster==NIL)return NIL;
-	offset=Tree_Minimum(vEB[p].cluster[succ_cluster]);
-	return index(p,succ_cluster,offset);
-}
-int Tree_Predecessor(int p,int x){
-	if(vEB[p].u==2){
-		if(x==1&&vEB[p].min==0)return 0;
-		return NIL;
-	}
-	if(vEB[p].max!=NIL&&x>vEB[p].max)return vEB[p].max;
-	int offset,min_low=Tree_Minimum(vEB[p].cluster[high(p,x)]);
-	if(min_low!=NIL&&low(p,x)>min_low){
-		offset=Tree_Predecessor(vEB[p].cluster[high(p,x)],low(p,x));
-		return index(p,high(p,x),offset);
-	}
-	int pred_cluster=Tree_Predecessor(vEB[p].summary,high(p,x));
-	if(pred_cluster==NIL){
-		if(vEB[p].min!=NIL&&x>vEB[p].min)return vEB[p].min;
-		return NIL;
-	}
-	offset=Tree_Maximum(vEB[p].cluster[pred_cluster]);
-	return index(p,pred_cluster,offset);
-}
-inline void Empty_Tree_Insert(int p,int x){
-	vEB[p].max=vEB[p].min=x;
-}
-void Tree_Insert(int p,int x){
-	if(vEB[p].min==NIL){
-		Empty_Tree_Insert(p,x);
-		return;
-	}
-	if(x<vEB[p].min)swap(x,vEB[p].min);
-	if(vEB[p].u>2){
-		if(Tree_Minimum(vEB[p].cluster[high(p,x)])==NIL){
-			Tree_Insert(vEB[p].summary,high(p,x));
-			Empty_Tree_Insert(vEB[p].cluster[high(p,x)],low(p,x));
-		}else Tree_Insert(vEB[p].cluster[high(p,x)],low(p,x));
-	}
-	if(x>vEB[p].max)vEB[p].max=x;
-	return;
-}
-void Tree_Delete(int p,int x){
-	if(vEB[p].min==vEB[p].max){
-		vEB[p].min=vEB[p].max=NIL;
-		return;
-	}
-	if(vEB[p].u==2){
-		vEB[p].max=vEB[p].min=!x;
-		return;
-	}
-	if(x==vEB[p].min){
-		int first_cluster=Tree_Minimum(vEB[p].summary);
-		x=index(p,first_cluster,Tree_Minimum(vEB[p].cluster[first_cluster]));
-		vEB[p].min=x;
-	}
-	Tree_Delete(vEB[p].cluster[high(p,x)],low(p,x));
-	if(Tree_Minimum(vEB[p].cluster[high(p,x)])==NIL){
-		Tree_Delete(vEB[p].summary,high(p,x));
-		if(x==vEB[p].max){
-			int summary_max=Tree_Maximum(vEB[p].summary);
-			if(summary_max==NIL)vEB[p].max=vEB[p].min;
-			else vEB[p].max=index(p,summary_max,Tree_Maximum(vEB[p].cluster[summary_max]));
-		}
-	}else if(x==vEB[p].max)vEB[p].max=index(p,high(p,x),Tree_Maximum(vEB[p].cluster[high(p,x)]));
-	return;
+void inp(){
+    cin>>n>>c>>k;
+    V = vector<pii> (n+1);
+    REP1(i, n) cin>>V[i].f>>V[i].s;
 }
 
-int n,m,rt;
-int main(){
-	init();
-//	freopen("std.in","r",stdin);
-//  freopen("my.out","w",stdout);
-	scanf("%d%d",&n,&m);
-	int u=0;for(--n;n;n>>=1,++u);
-	Tree_Build(rt,u);
-	while(m--){
-		int op,x;scanf("%d",&op);
-		if(op==1){
-			scanf("%d",&x);
-			if(!Tree_Member(rt,x))Tree_Insert(rt,x);
-		}else if(op==2){
-			scanf("%d",&x);
-			if(Tree_Member(rt,x))Tree_Delete(rt,x);
-		}else if(op==3){
-			printf("%d\n",Tree_Minimum(rt));
-		}else if(op==4){
-			printf("%d\n",Tree_Maximum(rt));
-		}else if(op==5){
-			scanf("%d",&x);
-			printf("%d\n",Tree_Predecessor(rt,x));
-		}else if(op==6){
-			scanf("%d",&x);
-			printf("%d\n",Tree_Successor(rt,x));
-		}else if(op==7){
-			scanf("%d",&x);
-			printf("%d\n",Tree_Member(rt,x)?1:-1);
-		}
-	}
-	return 0;
+int run(){
+    REP1(i, n+1){
+        REP(j, c+1){
+            REP(x, k+1){
+                dp[i][j][x] = 0;
+            }
+        }
+    }
+    vector<pii> vc = V;
+    sort(ALL(vc), cmp);
+    RREP1(i, n){
+        REP(j, c+1){
+            REP(x, k+1){
+                dp[i][j][x] = dp[i+1][j][x];
+                if (j >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i][j-1][x]);
+                if (x >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i][j][x-1]);
+                if (j >= vc[i].f) dp[i][j][x] = max(dp[i][j][x], dp[i+1][j-vc[i].f][x]+vc[i].s);
+                if (x >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i+1][j][x-1]+vc[i].s);
+            }
+        }
+    }
+
+    int ans = dp[1][c][0];
+
+    int lb = 0, sm = 0;
+    vector<int> oo;
+    REP1(i, n){
+        lb += vc[i].f;
+        sm += vc[i].s;
+        if (lb > c) break;
+        oo.pb(vc[i].s);
+        sort(ALL(oo));
+
+        int tsm = sm;
+        REP(j, min(k, i)){
+            tsm -= oo[j];
+            ans = max(ans, tsm + dp[i+1][c-lb][j+1]);
+        }
+    }
+    return ans;
 }
+/*
+int run2(){
+    REP1(i, n+1){
+        REP(j, c+1){
+            REP(x, k+1){
+                dp[i][j][x] = 0;
+            }
+        }
+    }
+    vector<pii> vc = V;
+
+    RREP1(i, n){
+        REP(j, c+1){
+            REP(z, k+1){
+                dp[i][j][z] = dp[i+1][j][z];
+                if (j >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i][j-1][z]);
+                if (z >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i][j][z-1]);
+                if (j >= vc[i].f) dp[i][j][z] = max(dp[i][j][z], dp[i+1][j-vc[i].f][z] + vc[i].s);
+                if (z >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i+1][j][z-1] + vc[i].s);
+            }
+        }
+    }
+
+
+
+    int ans = dp[1][c][0];
+
+    int lb = 0, sm = 0;
+    vector<int> oo;
+    REP1(i, n){
+        lb += vc[i].f;
+        sm += vc[i-1].s;
+        if (lb > c) break;
+
+        ans = max(ans, dp[i+1][c-lb][1]+sm);
+    }
+    return ans;
+}
+*/
+
+signed main(){
+    inp();
+    cout<<run2()<<endl;
+}
+/*
+5 10 5
+2 1
+3 1
+5 3
+6 101
+7 100
+*/
