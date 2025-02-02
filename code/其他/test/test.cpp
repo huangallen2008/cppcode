@@ -84,6 +84,7 @@ void solve() {
             if(++ij==m) ij=0,ii++;
         }
     }
+    REP(i,n) oparr(c[i])
     cout<<n*m-an<<'\n';
 }
 signed main() {
