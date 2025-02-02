@@ -73,7 +73,7 @@ void solve() {
                 if(++ij==m) ij=0,ii++;
                 uu=1;
             }
-            if(ii==n||(uu&&ii==i)) {
+            if(ii==n||(uu&&ii==i&&i!=0)) {
                 an=i==0?0:c[i-1].back();
                 break;
             }
