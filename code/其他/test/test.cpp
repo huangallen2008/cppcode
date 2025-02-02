@@ -82,7 +82,7 @@ void solve() {
             if(++ij==m) ij=0,ii++;
         }
     }
-    cout<<n*m-cnt<<'\n';
+    cout<<n*m-an<<'\n';
 }
 signed main() {
     IOS();
