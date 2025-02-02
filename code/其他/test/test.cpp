@@ -72,7 +72,7 @@ void solve() {
             while(ii<n&&b[ii][ij]!=a[i][j]) {
                 int cc=c[ii][ij];
                 if(++ij==m) ij=0,ii++;
-                c[ii][ij]=cc;
+                if(ii<n)c[ii][ij]=cc;
                 uu=1;
             }
             if(ii==n||(uu&&ii==i&&i!=0)) {
