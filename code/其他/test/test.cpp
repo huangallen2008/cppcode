@@ -76,6 +76,7 @@ void solve() {
                 uu=1;
             }
             if(ii==n||(uu&&ii==i&&i!=0)) {
+                ope(ii)
                 an=ii==0?0:c[ii-1].back();
                 break;
             }
