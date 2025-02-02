@@ -70,15 +70,17 @@ void solve() {
         REP(j,m) {
             bool uu=0;
             while(ii<n&&b[ii][ij]!=a[i][j]) {
+                int cc=c[ii][ij];
                 if(++ij==m) ij=0,ii++;
+                c[ii][ij]=cc;
                 uu=1;
             }
             if(ii==n||(uu&&ii==i&&i!=0)) {
-                an=i==0?0:c[i-1].back();
+                an=ii==0?0:c[ii-1].back();
                 break;
             }
             cnt++;
-            c[i][j]=cnt;
+            c[ii][ij]++;
             if(++ij==m) ij=0,ii++;
         }
     }
