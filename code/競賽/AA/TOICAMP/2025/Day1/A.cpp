@@ -78,8 +78,8 @@ signed main() {
         cout<<now.f<<' '<<now.s<<'\n';
         op(now)ope(a[now.f][now.s])
         if(a[now.f][now.s]) {
-            if((d&1)^(now.s&1)) d=(d+1)%4;
-            else d=(d+3)%4;
+            if((d&1)^(now.s&1)) d=(d+3)%4;
+            else d=(d+1)%4;
         }
         now.f+=dir[d].f,now.s+=dir[d].s;
     }
