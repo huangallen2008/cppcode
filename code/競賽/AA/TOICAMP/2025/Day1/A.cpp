@@ -63,8 +63,8 @@ signed main() {
     cin>>w>>h;
     w++,h++;
     vector<Vi> a(h,Vi(w));
-    RREP(i,h) {
-        REP(j,w) {
+    RREP(i,w) {
+        REP(j,h) {
             char c;
             cin>>c;
             a[i][j]=c=='#';
