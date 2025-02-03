@@ -75,8 +75,8 @@ signed main() {
     while(now!=pii{1,0}) {
         cout<<now.f<<' '<<now.s<<'\n';
         if(a[now.f][now.s]) {
-            if((d&1)^(now.s&1)) d=(d+3)%4;
-            else d=(d+1)%4;
+            if((d&1)^(now.s&1)) d=(d+1)%4;
+            else d=(d+3)%4;
         }
         now.f+=dir[d].f,now.s+=dir[d].s;
     }
