@@ -82,5 +82,6 @@ signed main() {
         }
         now.f+=dir[d].f,now.s+=dir[d].s;
     }
+    cout<<"1 0\n";
     return 0;
 }
