@@ -76,6 +76,7 @@ signed main() {
     int d=0;
     while(now!=pii{1,0}) {
         cout<<now.f<<' '<<now.s<<'\n';
+        op(now)ope(a[now.f][now.s])
         if(a[now.f][now.s]) {
             if((d&1)^(now.s&1)) d=(d+1)%4;
             else d=(d+3)%4;
