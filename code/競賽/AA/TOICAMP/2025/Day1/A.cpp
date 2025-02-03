@@ -70,6 +70,7 @@ signed main() {
             a[i][j]=c=='#';
         }
     }
+    REP(i,w) oparr(a[i])
     cout<<"1 0\n";
     pii now={2,1};
     int d=0;
