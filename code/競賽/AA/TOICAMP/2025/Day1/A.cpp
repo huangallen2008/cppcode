@@ -63,14 +63,14 @@ signed main() {
     cin>>w>>h;
     w++,h++;
     vector<Vi> a(h,Vi(w));
-    RREP(i,w) {
-        REP(j,h) {
+    RREP(i,h) {
+        REP(j,w) {
             char c;
             cin>>c;
-            a[i][j]=c=='#';
+            a[j][i]=c=='#';
         }
     }
-    REP(i,w) oparr(a[i])
+    // REP(i,w) oparr(a[i])
     cout<<"1 0\n";
     pii now={2,1};
     int d=0;
