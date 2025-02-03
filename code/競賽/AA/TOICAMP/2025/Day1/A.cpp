@@ -62,7 +62,7 @@ signed main() {
     int h,w;
     cin>>w>>h;
     w++,h++;
-    vector<Vi> a(h,Vi(w));
+    vector<Vi> a(w,Vi(h));
     RREP(i,h) {
         REP(j,w) {
             char c;
