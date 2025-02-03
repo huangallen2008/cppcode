@@ -60,7 +60,8 @@ Vpii dir={{1,1},{1,-1},{-1,-1},{-1,1}};
 signed main() {
     IOS();
     int h,w;
-    cin>>h>>w;
+    cin>>w>>h;
+    w++,h++;
     vector<Vi> a(h,Vi(w));
     RREP(i,h) {
         REP(j,w) {
