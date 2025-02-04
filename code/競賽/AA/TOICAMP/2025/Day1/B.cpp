@@ -127,6 +127,7 @@ void solve() {
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // if(itr<cr) ok=0;
             // oparr(c)ope(ok)
+            oparr(c)oparr(r)
             if(itr!=cr||itc!=cc||c.back()!=m+1||r.back()!=n+1) SHIT
             REP(i,cr) REP(j,cc) {
                 if(r[i]-1>n||c[j]-1>m) SHIT
