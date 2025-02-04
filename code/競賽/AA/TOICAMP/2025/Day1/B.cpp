@@ -109,6 +109,7 @@ void solve() {
             oparr(r)oparr(c)entr
         }
     }
+    entr
 }
 signed main() {
     IOS();
