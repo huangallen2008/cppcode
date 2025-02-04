@@ -86,6 +86,10 @@ void solve() {
             REP1(j,m+1) {
                 if(now==pc) {
                     now=0;
+                    if(itc>=cc) {
+                        ok=0;
+                        break;
+                    }
                     c[itc++]=j;
                 }else if(now>pc) {
                     ok=0;
@@ -93,12 +97,17 @@ void solve() {
                 }
                 now+=cnt(1,r1-1,j,j);
             }
+            if(itc<cc) ok=0;
             if(!ok) continue;
             oparr(c)
             now=0;
             REP1(j,n) {
                 if(now==pc) {
                     now=0;
+                    if(itr>=cr) {
+                        ok=0;
+                        break;
+                    }
                     r[itr++]=j;
                 }else if(now>pc) {
                     ok=0;
@@ -106,6 +115,7 @@ void solve() {
                 }
                 now+=cnt(j,j,1,r[0]-1);
             }
+            if(itr<cr) ok=0;
             if(!ok) continue;
             // op(cr)ope(r1)
             oparr(r)oparr(c)entr
