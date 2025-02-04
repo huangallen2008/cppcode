@@ -102,17 +102,17 @@ void solve() {
                 }
                 now+=cnt(1,n,j,j);
             }
-            if(itc<cc) ok=0;
+            // if(itc<cc) ok=0;
             if(!ok) continue;
             now=0;
             REP1(j,n+1) {
                 // ope(j)
                 if(now==pc*cc) {
                     now=0;
-                    if(itr>=cr) {
-                        ok=0;
-                        break;
-                    }
+                    // if(itr>=cr) {
+                    //     ok=0;
+                    //     break;
+                    // }
                     r[itr++]=j;
                 }else if(now>pc*cc) {
                     ok=0;
@@ -121,7 +121,7 @@ void solve() {
                 now+=cnt(j,j,1,m);
             }
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            if(itr<cr) ok=0;
+            // if(itr<cr) ok=0;
             // oparr(c)ope(ok)
             if(!ok) continue;
             REP(i,cr) REP(j,cc) {
