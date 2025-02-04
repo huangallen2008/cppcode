@@ -56,6 +56,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#define SHIT {cout<<"SHIT!\n"; break;}
 void solve() {
     int n,m,k;
     cin>>n>>m>>k;
@@ -91,16 +92,16 @@ void solve() {
             REP1(j,m+1) {
                 if(now==pc*cr) {
                     now=0;
-                    if(itc>=cc) {
-                        ok=0;
-                        break;
-                    }
+                    // if(itc>=cc) {
+                    //     ok=0;
+                    //     break;
+                    // }
                     c[itc++]=j;
                 }else if(now>pc*cr) {
                     ok=0;
                     break;
                 }
-                now+=p[n][j]-p[n][j-1];
+                if(j<=m)now+=p[n][j]-p[n][j-1];
             }
             if(!ok) continue;
             // c[itc]=m+1;
@@ -110,22 +111,23 @@ void solve() {
                 // ope(j)
                 if(now==pc*cc) {
                     now=0;
-                    if(itr>=cr) {
-                        ok=0;
-                        break;
-                    }
+                    // if(itr>=cr) {
+                    //     ok=0;
+                    //     break;
+                    // }
                     r[itr++]=j;
                 }else if(now>pc*cc) {
                     ok=0;
                     break;
                 }
-                now+=p[j][m]-p[j-1][m];
+                if(j<=n)now+=p[j][m]-p[j-1][m];
             }
             if(!ok) continue;
             // r[itr]=n+1;
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // if(itr<cr) ok=0;
             // oparr(c)ope(ok)
+            if(itr!=cr||itc!=cc) SHIT
             REP(i,cr) REP(j,cc) {
                 if(cnt(i==0?1:r[i-1],r[i]-1,j==0?1:c[j-1],c[j]-1)!=pc) {
                     ok=0;
