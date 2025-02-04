@@ -66,11 +66,13 @@ void solve() {
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
+    k+=2;
     int sum=p[n][m];
-    REP(cr,k+1) {
+    REP1(cr,k) {
         int cc=k-cr;
         if(sum%(cc*cr)) continue;
         int pc=sum/cc/cr;
+
         REP1(r1,n+1) {
             bool ok=1;
             Vi r(cr+1),c(cc+1);
