@@ -115,7 +115,7 @@ void solve() {
                 now+=cnt(j,j,1,r[0]-1);
             }
             if(itr<cr) ok=0;
-            oparr(c)
+            oparr(c)ope(ok)
             if(!ok) continue;
             // op(cr)ope(r1)
             oparr(r)oparr(c)entr
