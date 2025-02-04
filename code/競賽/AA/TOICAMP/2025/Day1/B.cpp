@@ -77,7 +77,7 @@ void solve() {
         int cc=k-cr;
         if(sum%(cc*cr)) continue;
         int pc=sum/cc/cr;
-        op(cr)ope(cc)
+        // op(cr)ope(cc)
         REP1(r1,n+1) {
             bool ok=1;
             Vi r(cr),c(cc);
