@@ -72,12 +72,17 @@ void solve() {
     };
     k+=2;
     int sum=p[n][m];
+    if(sum==0) {
+        REP1(i,k) cout<<i<<' ';
+        cout<<'\n';
+        return;
+    }
     Vi an(k-2,inf);
     REP1(cr,k-1) {
         int cc=k-cr;
         if(sum%(cc*cr)) continue;
         int pc=sum/cc/cr;
-        op(cr)ope(cc)ope(pc)
+        // op(cr)ope(cc)ope(pc)
         REP1(r1,n+1) {
             bool ok=1;
             Vi r(cr),c(cc);
