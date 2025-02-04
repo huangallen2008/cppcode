@@ -117,10 +117,10 @@ void solve() {
             }
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if(itr<cr) ok=0;
-            oparr(c)ope(ok)
+            // oparr(c)ope(ok)
             if(!ok) continue;
             // op(cr)ope(r1)
-            oparr(r)oparr(c)entr
+            // oparr(r)oparr(c)entr
             Vi ran;
             REP(i,cr-1) ran.pb(r[i]);
             REP(i,cc-1) ran.pb(c[i]+n-1);
