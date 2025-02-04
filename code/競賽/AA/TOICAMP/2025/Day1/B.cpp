@@ -101,6 +101,7 @@ void solve() {
             if(!ok) continue;
             now=0;
             REP1(j,n) {
+                ope(j)
                 if(now==pc) {
                     now=0;
                     if(itr>=cr) {
@@ -114,6 +115,7 @@ void solve() {
                 }
                 now+=cnt(j,j,1,c[0]-1);
             }
+            //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if(itr<cr) ok=0;
             oparr(c)ope(ok)
             if(!ok) continue;
