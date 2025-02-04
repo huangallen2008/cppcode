@@ -72,6 +72,7 @@ void solve() {
     };
     k+=2;
     int sum=p[n][m];
+    Vi an(k-2,inf);
     REP1(cr,k-1) {
         int cc=k-cr;
         if(sum%(cc*cr)) continue;
@@ -107,8 +108,13 @@ void solve() {
             if(!ok) continue;
             // op(cr)ope(r1)
             oparr(r)oparr(c)entr
+            REP(i,cr-1) ran.pb(r[i]);
+            REP(i,cc-1) ran.pb(c[i]+n-1);
+            chmax(an,ran);
         }
     }
+    REP(i,k-2) cout<<an[i]<<' ';
+    cout<<'\n';
     // entr
 }
 signed main() {
