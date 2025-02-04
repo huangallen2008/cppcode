@@ -100,7 +100,6 @@ void solve() {
             if(itc<cc) ok=0;
             if(!ok) continue;
             now=0;
-            oparr(c)
             REP1(j,n) {
                 if(now==pc) {
                     now=0;
@@ -116,6 +115,7 @@ void solve() {
                 now+=cnt(j,j,1,r[0]-1);
             }
             if(itr<cr) ok=0;
+            oparr(c)
             if(!ok) continue;
             // op(cr)ope(r1)
             oparr(r)oparr(c)entr
