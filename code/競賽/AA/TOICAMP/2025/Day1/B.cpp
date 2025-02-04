@@ -99,8 +99,8 @@ void solve() {
             }
             if(itc<cc) ok=0;
             if(!ok) continue;
-            oparr(c)
             now=0;
+            oparr(c)
             REP1(j,n) {
                 if(now==pc) {
                     now=0;
