@@ -73,7 +73,7 @@ void solve() {
     k+=2;
     int sum=p[n][m];
     if(sum==0) {
-        REP1(i,k) cout<<i<<' ';
+        REP1(i,k-2) cout<<i<<' ';
         cout<<'\n';
         return;
     }
