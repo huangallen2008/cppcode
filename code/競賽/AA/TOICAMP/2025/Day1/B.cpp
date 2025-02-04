@@ -61,7 +61,11 @@ void solve() {
     cin>>n>>m>>k;
     vector<Vi> a(n+2,Vi(n+2));
     vector<Vi> p(n+2,Vi(n+2));
-    REP1(i,n) REP1(j,m) cin>>a[i][j],a[i][j]^=1;
+    REP1(i,n) REP1(j,m) {
+        char ch;
+        cin>>ch;
+        a[i][j]=ch=='0';
+    }
     REP1(i,n+1) REP1(j,m+1) p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
