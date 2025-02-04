@@ -88,7 +88,7 @@ void solve() {
             Vi r(cr),c(cc);
             int itr=0,now=0;
             int itc=0;
-            REP1(j,m) {
+            REP1(j,m+1) {
                 if(now==pc*cr) {
                     now=0;
                     if(itc>=cc) {
@@ -103,10 +103,10 @@ void solve() {
                 now+=p[n][j]-p[n][j-1];
             }
             if(!ok) continue;
-            c[itc]=m+1;
+            // c[itc]=m+1;
             // if(itc<cc) ok=0;
             now=0;
-            REP1(j,n) {
+            REP1(j,n+1) {
                 // ope(j)
                 if(now==pc*cc) {
                     now=0;
@@ -122,7 +122,7 @@ void solve() {
                 now+=p[j][m]-p[j-1][m];
             }
             if(!ok) continue;
-            r[itr]=n+1;
+            // r[itr]=n+1;
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // if(itr<cr) ok=0;
             // oparr(c)ope(ok)
