@@ -89,14 +89,14 @@ void solve() {
             int itr=0,now=0;
             int itc=0;
             REP1(j,m+1) {
-                if(now==pc) {
+                if(now==pc*cr) {
                     now=0;
                     if(itc>=cc) {
                         ok=0;
                         break;
                     }
                     c[itc++]=j;
-                }else if(now>pc*rc) {
+                }else if(now>pc*cr) {
                     ok=0;
                     break;
                 }
