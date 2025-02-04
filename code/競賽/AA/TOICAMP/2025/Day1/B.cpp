@@ -106,7 +106,7 @@ void solve() {
             // if(itc<cc) ok=0;
             if(!ok) continue;
             now=0;
-            REP1(j,n+1) {
+            REP1(j,n) {
                 // ope(j)
                 if(now==pc*cc) {
                     now=0;
