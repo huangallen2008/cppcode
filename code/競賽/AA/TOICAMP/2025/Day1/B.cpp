@@ -83,7 +83,7 @@ void solve() {
         if(sum%(cc*cr)) continue;
         int pc=sum/cc/cr;
         // op(cr)ope(cc)ope(pc)
-        REP1(r1,n+1) {
+        // REP1(r1,n+1) {
             bool ok=1;
             Vi r(cr),c(cc);
             int itr=0,now=0;
@@ -96,29 +96,29 @@ void solve() {
                         break;
                     }
                     c[itc++]=j;
-                }else if(now>pc) {
+                }else if(now>pc*rc) {
                     ok=0;
                     break;
                 }
-                now+=cnt(1,r1-1,j,j);
+                now+=cnt(1,n,j,j);
             }
             if(itc<cc) ok=0;
             if(!ok) continue;
             now=0;
             REP1(j,n+1) {
                 // ope(j)
-                if(now==pc) {
+                if(now==pc*cc) {
                     now=0;
                     if(itr>=cr) {
                         ok=0;
                         break;
                     }
                     r[itr++]=j;
-                }else if(now>pc) {
+                }else if(now>pc*cc) {
                     ok=0;
                     break;
                 }
-                now+=cnt(j,j,1,c[0]-1);
+                now+=cnt(j,j,1,m);
             }
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if(itr<cr) ok=0;
@@ -138,7 +138,7 @@ void solve() {
             REP(i,cr-1) ran.pb(r[i]-1);
             REP(i,cc-1) ran.pb(c[i]+n-2);
             chmin(an,ran);
-        }
+        // }
     }
     if(an[0]==inf) {
         cout<<"Impossible\n";
