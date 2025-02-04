@@ -79,7 +79,7 @@ void solve() {
         op(cr)ope(cc)
         REP1(r1,n+1) {
             bool ok=1;
-            Vi r(cr+1),c(cc+1);
+            Vi r(cr),c(cc);
             int itr=0,now=0;
             int itc=0;
             REP1(j,m+1) {
