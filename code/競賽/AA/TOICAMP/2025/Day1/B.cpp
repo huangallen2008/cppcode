@@ -68,7 +68,7 @@ void solve() {
     };
     k+=2;
     int sum=p[n][m];
-    REP1(cr,k) {
+    REP1(cr,k-1) {
         int cc=k-cr;
         if(sum%(cc*cr)) continue;
         int pc=sum/cc/cr;
