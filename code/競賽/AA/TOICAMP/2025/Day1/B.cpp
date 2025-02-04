@@ -119,6 +119,14 @@ void solve() {
             if(itr<cr) ok=0;
             // oparr(c)ope(ok)
             if(!ok) continue;
+            REP(i,cr) REP(j,cc) {
+                if(cnt(i==0?1:r[i-1],r[i]-1,j==0?1:c[j-1],c[j]-1)!=pc) {
+                    ok=0;
+                    break;
+                }
+            }
+            if(!ok) continue;
+
             // op(cr)ope(r1)
             // oparr(r)oparr(c)entr
             Vi ran;
