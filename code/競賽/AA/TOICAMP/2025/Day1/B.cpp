@@ -105,7 +105,7 @@ void solve() {
                 now+=cnt(j,j,1,r[0]-1);
             }
             if(!ok) continue;
-            op(cr)op(r1)oparr(r)oparr(c)entr
+            oparr(r)oparr(c)entr
         }
     }
 }
