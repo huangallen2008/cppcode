@@ -122,10 +122,14 @@ void solve() {
             // op(cr)ope(r1)
             // oparr(r)oparr(c)entr
             Vi ran;
-            REP(i,cr-1) ran.pb(r[i]);
-            REP(i,cc-1) ran.pb(c[i]+n-1);
+            REP(i,cr-1) ran.pb(r[i]-1);
+            REP(i,cc-1) ran.pb(c[i]+n-2);
             chmin(an,ran);
         }
+    }
+    if(an[0]==inf) {
+        cout<<"Impossible\n";
+        return ;
     }
     REP(i,k-2) cout<<an[i]<<' ';
     cout<<'\n';
