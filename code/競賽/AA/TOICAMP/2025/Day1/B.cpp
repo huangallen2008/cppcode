@@ -129,6 +129,7 @@ void solve() {
             // oparr(c)ope(ok)
             if(itr!=cr||itc!=cc) SHIT
             REP(i,cr) REP(j,cc) {
+                if(r[i]-1>n||c[j]-1>m) SHIT
                 if(cnt(i==0?1:r[i-1],r[i]-1,j==0?1:c[j-1],c[j]-1)!=pc) {
                     ok=0;
                     break;
