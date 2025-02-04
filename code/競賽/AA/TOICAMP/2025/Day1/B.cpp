@@ -108,6 +108,7 @@ void solve() {
             if(!ok) continue;
             // op(cr)ope(r1)
             oparr(r)oparr(c)entr
+            Vi ran;
             REP(i,cr-1) ran.pb(r[i]);
             REP(i,cc-1) ran.pb(c[i]+n-1);
             chmax(an,ran);
