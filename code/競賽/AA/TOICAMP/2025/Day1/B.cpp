@@ -124,7 +124,7 @@ void solve() {
             Vi ran;
             REP(i,cr-1) ran.pb(r[i]);
             REP(i,cc-1) ran.pb(c[i]+n-1);
-            chmax(an,ran);
+            chmin(an,ran);
         }
     }
     REP(i,k-2) cout<<an[i]<<' ';
