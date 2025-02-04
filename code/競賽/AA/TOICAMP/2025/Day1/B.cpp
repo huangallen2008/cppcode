@@ -93,6 +93,7 @@ void solve() {
                 }
                 now+=cnt(1,r1-1,j,j);
             }
+            oparr(c)
             if(!ok) continue;
             now=0;
             REP1(j,n) {
