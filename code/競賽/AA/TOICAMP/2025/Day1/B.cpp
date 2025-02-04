@@ -100,7 +100,7 @@ void solve() {
                     ok=0;
                     break;
                 }
-                now+=cnt(1,n,j,j);
+                now+=p[n][j]-p[n][j-1];
             }
             // if(itc<cc) ok=0;
             if(!ok) continue;
@@ -118,7 +118,7 @@ void solve() {
                     ok=0;
                     break;
                 }
-                now+=cnt(j,j,1,m);
+                now+=p[j][m]-p[j-1][m];
             }
             //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // if(itr<cr) ok=0;
