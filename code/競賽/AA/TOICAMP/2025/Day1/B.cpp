@@ -112,7 +112,7 @@ void solve() {
                     ok=0;
                     break;
                 }
-                now+=cnt(j,j,1,r[0]-1);
+                now+=cnt(j,j,1,c[0]-1);
             }
             if(itr<cr) ok=0;
             oparr(c)ope(ok)
