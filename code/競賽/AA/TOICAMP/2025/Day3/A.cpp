@@ -75,6 +75,7 @@ signed main() {
         }
         int cnt=max(0ll,id[i][0]+n/g-id[i].back()-k/g);
         op(i)ope(cnt)
+        oparr(id[i])
         REP1(j,id[i].size()-1) cnt+=max(0ll,id[i][j]-id[i][j-1]-k/g);
         cout<<n/g-cnt<<' ';
     }
