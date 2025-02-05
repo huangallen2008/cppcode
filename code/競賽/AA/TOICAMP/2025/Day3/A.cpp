@@ -73,7 +73,7 @@ signed main() {
             cout<<"0 ";
             continue;
         }
-        int cnt=max(0ll,id[i][0]+n/g-id[i].back()-1-k/g);
+        int cnt=max(0ll,id[i][0]+n/g-id[i].back()-k/g);
         op(i)ope(cnt)
         REP1(j,id[i].size()-1) cnt+=max(0ll,id[i][j]-id[i][j-1]-k/g);
         cout<<n/g-cnt<<' ';
