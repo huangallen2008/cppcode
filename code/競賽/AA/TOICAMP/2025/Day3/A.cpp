@@ -61,11 +61,22 @@ signed main() {
     int n,m,k;
     cin>>n>>m>>k;
     Vi a(n);
-    REP(i,n) cin>>a[i],a[i]--;
-    int rr=m/gcd(n,m);
-    Vi cnt(m);
-    REP(i,n) cnt[a[i]]+=rr;
-    REP(i,m) cout<<cnt[i]<<' ';
+    vector<Vi> id(m);
+    int g=gcd(n,m);
+    REP(i,n) {
+        cin>>a[i],a[i]--;
+        int t=i/g;
+        if(id[a[i]].size()==0||id[a[i]].back()==t) id[a[i]].pb(t);
+    }
+    REP(i,m) {
+        if(id[i].size()==0) {
+            cout<<"0 ";
+            continue;
+        }
+        int cnt=max(0ll,id[i][0]+n/g-id[i].back()-k/g);
+        REP1(j,g[i].size()-1) cnt+=max(0ll,id[i][j]-id[i][j-1]-k/g);
+        cout<<cnt<<' ';
+    }
     cout<<'\n';
     return 0;
 }
