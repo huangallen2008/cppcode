@@ -62,7 +62,7 @@ signed main() {
     cin>>n>>m>>k;
     Vi a(n);
     vector<Vi> id(m);
-    int g=gcd(n,m);
+    int g=gcd(n,k);
     REP(i,n) {
         cin>>a[i],a[i]--;
         int t=i/g;
