@@ -66,7 +66,7 @@ signed main() {
     REP(i,n) {
         cin>>a[i],a[i]--;
         int t=i/g;
-        if(id[a[i]].size()==0||id[a[i]].back()==t) id[a[i]].pb(t);
+        if(id[a[i]].size()==0||id[a[i]].back()!=t) id[a[i]].pb(t);
     }
     REP(i,m) {
         if(id[i].size()==0) {
