@@ -72,10 +72,10 @@ struct Function {
 };
 template<class Type>
 Function(const Type &) -> Function<Type>;
-#define Auto Function;
+#define Autoo Function;
 signed main() {
     IOS();
-    Auto f=[&](auto f,int c)->int {
+    Autoo f=[&](auto f,int c)->int {
         if(c==0) return 0;
         return c+f(c-1);
     };
