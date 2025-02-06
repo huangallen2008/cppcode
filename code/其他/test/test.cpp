@@ -75,7 +75,7 @@ Function(const Type &) -> Function<Type>;
 #define Autoo Function;
 signed main() {
     IOS();
-    Autoo f=[&](auto f,int c)->int {
+    Function f=[&](auto f,int c)->int {
         if(c==0) return 0;
         return c+f(c-1);
     };
