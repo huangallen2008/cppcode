@@ -67,6 +67,7 @@ void solve() {
     int xx=sqrt(n-1)+1;
     int nx=n/xx;
     int mn=(xx+nx)*2;
+    op(nx)op(xx)ope(mn)
     if(mn<=k&&k<=mx) cout<<"Yes\n";
     else cout<<"No\n";
 }
