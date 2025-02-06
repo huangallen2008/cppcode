@@ -73,7 +73,7 @@ void solve() {
         //1. a[i]->1  2. p[m]-p[i-1] -> m-i+1+k
         if(p[i-1]*n>d) break;
         int rt=d-p[i-1]*n,now=n*(i-1);
-        chmax(an,n*(i-1)+min(n,rt/a[i]));
+        // chmax(an,n*(i-1)+min(n,rt/a[i]));
         int mxcnt=min(n,rt/(p[m]-p[i-1]));
         for(int cnt:Vi{0,mxcnt}) {
             now+=cnt*(m-i+1+k);
