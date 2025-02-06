@@ -90,9 +90,9 @@ void solve() {
 }
 signed main() {
     IOS();
-    auto f=[&]() ->void{
+    auto f=[&]() {
         // return 1;
     };
-    cout<<f()<<'\n';
+    f();
     return 0;
 }
