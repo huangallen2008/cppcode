@@ -1,3 +1,7 @@
+const int maxn=1e6+5;
+const int inf=1ll<<29;
+
+
 struct SEG {//a[u]+=v,sum(l,r)
     int s[maxn];
     int lc[maxn];
@@ -43,3 +47,51 @@ struct SEG {//a[u]+=v,sum(l,r)
         return _qu(ver[r],0,n-1,l,r);
     }
 }seg;
+
+///////////////////////////
+
+struct Seg {
+    int mn,mx,v;
+};
+const Seg zero={inf,-inf,inf};
+Seg s[maxn]={zero};
+int lc[maxn],rc[maxn];
+int node_id=1;
+struct SEG {
+    int n;
+    Vi ver;
+    int cver=0;
+    void pull(int w) {
+        int b=lc[w],c=rc[w];
+        s[w].mn=min(s[b].mn,s[c].mn);
+        s[w].mx=max(s[b].mx,s[c].mx);
+        s[w].v=min({s[b].v,s[c].v,s[c].mn-s[b].mx});
+    }
+    void build(int &w,int l,int r) { if(!w) s[w=node_id++]=zero;
+        if(l==r) return;
+        int m=l+r>>1;
+        build(lc[w],l,m);
+        build(rc[w],m+1,r);
+    }
+    void init(int _n) {
+        n=_n;
+        ver.pb(node_id++);
+        build(ver.back(),0,n-1);
+    }
+    int _ud(int w,int l,int r,int u,int v) {
+        s[w=node_id++]=s[w];
+        if(l==r) {
+            s[w].mn=s[w].mx=v;
+            return w;
+        }
+        int m=l+r>>1;
+        if(u<=m) _ud(lc[w],l,m,u,v);
+        else _ud(rc[w],m+1,r,u,v);
+        pull(w);
+        return w;
+    }
+    void ud(int u,int v) {
+        ver.pb(_ud(ver.back(),0,n-1,u,v));
+    }
+    
+};
