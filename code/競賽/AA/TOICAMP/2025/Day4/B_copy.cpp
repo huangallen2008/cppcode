@@ -80,7 +80,7 @@ void solve() {
             chmax(an,now2);
         };
         // for(int cnt=0;cnt<mxcnt&&cnt<200;cnt++) run(cnt);
-        for(int cnt=mxcnt;cnt>=0&&cnt>=mxcnt-1000;cnt--) run(cnt);
+        for(int cnt=mxcnt;cnt>=0&&cnt>=mxcnt-2000;cnt--) run(cnt);
         int c2= min(n,(d-p[i-1]*n)/a[i]);
         chmax(an,n*(i-1)+c2);
     }
