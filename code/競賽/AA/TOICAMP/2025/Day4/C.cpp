@@ -86,6 +86,9 @@ signed main() {
     dp[2]=Vi(n,2);
     dfs(0,-1);
     int an=min(dp[0][0],dp[2][0])>>1;
+    oparr(dp[0])
+    oparr(dp[1])
+    oparr(dp[2])
     cout<<an<<'\n';
     return 0;
 }
