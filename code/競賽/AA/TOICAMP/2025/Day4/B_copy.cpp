@@ -1,3 +1,4 @@
+//😭😭😭😭😭😭😭
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
@@ -65,6 +66,10 @@ void solve() {
     Vi p(m+1);
     REP1(i,m) p[i]=p[i-1]+a[i];
     int an=0;
+    if(d>=p[m]*n) {
+        cout<<(k+m)*n<<'\n';
+        return ;
+    }
     REP1(i,m) {
         //1. a[i]->1  2. p[m]-p[i-1] -> m-i+1+k
         if(p[i-1]*n>d) break;
@@ -79,8 +84,9 @@ void solve() {
             now2+=min(rt2/a[i],n-cnt);
             chmax(an,now2);
         };
-        // for(int cnt=0;cnt<mxcnt&&cnt<200;cnt++) run(cnt);
-        for(int cnt=mxcnt;cnt>=0&&cnt>=mxcnt-1500;cnt--) run(cnt);
+        run(0),run(mxcnt);
+        // for(int cnt=0;cnt<=mxcnt&&cnt<=200;cnt++) run(cnt);
+        // for(int cnt=mxcnt;cnt>=0&&cnt>=mxcnt-200;cnt--) run(cnt);
         int c2= min(n,(d-p[i-1]*n)/a[i]);
         chmax(an,n*(i-1)+c2);
     }
