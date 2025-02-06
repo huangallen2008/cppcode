@@ -74,7 +74,7 @@ template<class Type>
 Function(const Type &) -> Function<Type>;
 signed main() {
     IOS();
-    auto f=[&](auto &&f,int c)->int {
+    auto f=[](auto &&f,int c)->int {
         if(c==0) return 0;
         return c+f(c-1);
     };
