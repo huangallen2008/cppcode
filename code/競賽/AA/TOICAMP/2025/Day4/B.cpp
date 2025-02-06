@@ -69,11 +69,14 @@ void solve() {
         //1. a[i]->1  2. p[m]-p[i-1] -> m-i+1+k
         if(p[i-1]*n>d) break;
         int rt=d-p[i-1]*n,now=n*(i-1);
-        int cnt=min(n,rt/(p[m]-p[i-1]));
-        now+=cnt*(m-i+1+k);
-        rt-=cnt*(p[m]-p[i-1]);
-        now+=min(rt/a[i],n-cnt);
-        chmax(an,now);
+        // int cnt=min(n,rt/(p[m]-p[i-1]));
+        int mxcnt=min(n,rt/(p[m]-p[i-1]));
+        REP(cnt,mxcnt+1) {
+            now+=cnt*(m-i+1+k);
+            rt-=cnt*(p[m]-p[i-1]);
+            now+=min(rt/a[i],n-cnt);
+            chmax(an,now);
+        }
         chmax(an,n*(i-1)+min(n,(d-p[i-1]*n)/a[i]));
     }
     cout<<an<<'\n';
