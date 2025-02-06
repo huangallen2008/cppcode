@@ -78,57 +78,12 @@ signed main() {
         // oparr(dp)
         return dp[c];
     };
-    vector<Vi> dp(n+1,Vi(c+1));
-    vector<Vi> use(n+1,Vi(c+1));
-    REP1(i,n) {
-        for(int j=c;j>=w[i];j--) {
-            dp[i][j]=dp[i-1][j];
-            if(dp[i-1][j-w[i]]+v[i]>dp[i][j]) {
-                use[i][j]=1;
-                dp[i][j]=dp[i-1][j-w[i]]+v[i];
-            }
+    REP(i,n) {
+        REP(j,i) {
+            swap(v[i],v[j]);
+            chmax(an,run());
+            swap(v[i],v[j]);
         }
-    }
-    Vi uu(n+1);
-    int ni=n,nj=c;
-    while(ni>0) {
-        uu[ni]=use[ni][nj];
-        if(uu[ni]) nj-=w[ni];
-        ni--;
-    }
-    // oparr(uu)
-    int muu=0,mu=inf,an=0;
-    REP1(i,n) if(!uu[i]) chmax(muu,v[i]);
-    REP1(i,n) if(uu[i]) chmin(mu,v[i]),an+=v[i];
-    if(mu==inf) {
-        cout<<"0\n";
-        return 0;
-    }
-    an=an-mu+muu;
-    // int an=0;
-    Vpii stk;
-    Vpii oo;
-    REP1(i,n) {
-        while(stk.size()&&stk.back().f>=v[i]) stk.pop_back();
-        if(stk.size()) {
-        int uu=stk[0].s;
-        swap(v[uu],v[i]);
-        chmax(an,run());
-        swap(v[uu],v[i]);
-        }
-        for(auto [tt,id]:stk) {
-            oo.pb({i,id});
-        }
-        stk.pb({v[i],i});
-    }
-    // oparr(oo)
-    shuffle(ALL(oo),rng);
-    int it=0;
-    while(it<oo.size()&&((int)clock())<=1990) {
-        auto &[v1,v2]=oo[it++];
-        swap(v[v1],v[v2]);
-        chmax(an,run());
-        swap(v[v1],v[v2]);
     }
     cout<<an<<'\n';
     return 0;
