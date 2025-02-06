@@ -72,7 +72,7 @@ struct Function {
 };
 template<class Type>
 Function(const Type &) -> Function<Type>;
-using Auto = Function;
+#define Auto Function;
 signed main() {
     IOS();
     Function f=[&](auto f,int c)->int {
