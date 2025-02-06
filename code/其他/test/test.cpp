@@ -72,7 +72,7 @@ struct Function {
 };
 template<class Type>
 Function(const Type &) -> Function<Type>;
-#define Autoo Function;
+#define Autoo Function
 signed main() {
     IOS();
     Autoo f=[&](auto f,int c)->int {
