@@ -67,7 +67,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         dp[0][u]+=min(dp[2][v]+2,dp[1][v]+1);
         dp[1][u]+=min(dp[2][v]+2,dp[1][v]+1);
-        dp[2][u]+=dp[0][u];
+        dp[2][u]+=dp[0][v];
     }
     REP(i,3) if(dp[i][u]&1) dp[i][u]++;
 }
