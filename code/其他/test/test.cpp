@@ -90,8 +90,9 @@ void solve() {
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    auto f=[&]() {
+        return 1;
+    };
+    cout<<f()<<'\n';
     return 0;
 }
