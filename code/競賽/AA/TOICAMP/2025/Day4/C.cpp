@@ -84,6 +84,7 @@ signed main() {
     dp[0]=Vi(n);
     dp[1]=Vi(n,-1);
     dp[2]=Vi(n,2);
+    ope("ok")
     dfs(0,-1);
     int an=min(dp[0][0],dp[2][0]);
     cout<<an<<'\n';
