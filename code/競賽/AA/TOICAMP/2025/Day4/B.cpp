@@ -71,7 +71,7 @@ void solve() {
         int rt=d-p[i-1]*n,now=n*(i-1);
         // int cnt=min(n,rt/(p[m]-p[i-1]));
         int mxcnt=min(n,rt/(p[m]-p[i-1]));
-        REP(cnt,mxcnt+1) {
+        for(int cnt=mxcnt;cnt>0&&cnt>mxcnt-10;cnt--) {
             int now2=now;
             int rt2=rt;
             now2+=cnt*(m-i+1+k);
