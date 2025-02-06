@@ -72,9 +72,10 @@ void solve() {
         // int cnt=min(n,rt/(p[m]-p[i-1]));
         int mxcnt=min(n,rt/(p[m]-p[i-1]));
         REP(cnt,mxcnt+1) {
+            int rt2=rt;
             now+=cnt*(m-i+1+k);
-            rt-=cnt*(p[m]-p[i-1]);
-            now+=min(rt/a[i],n-cnt);
+            rt2-=cnt*(p[m]-p[i-1]);
+            now+=min(rt2/a[i],n-cnt);
             chmax(an,now);
         }
         chmax(an,n*(i-1)+min(n,(d-p[i-1]*n)/a[i]));
