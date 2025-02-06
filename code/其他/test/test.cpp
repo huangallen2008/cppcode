@@ -56,43 +56,28 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n,m;
-    cin>>n>>m;
-    vector<Vi> a(n,Vi(m));
-    vector<Vi> b(n,Vi(m));
-    vector<Vi> c(n,Vi(m));
-    REP(i,n) REP(j,m) cin>>a[i][j];
-    REP(i,n) REP(j,m) cin>>b[i][j];
-    int ii=0,ij=0,cnt=0,an=0;
+template<class Type>
+struct Function {
+    Type func;
 
-    REP(i,n) {
-        REP(j,m) {
-            bool uu=0;
-            while(ii<n&&b[ii][ij]!=a[i][j]) {
-                int cc=c[ii][ij];
-                if(++ij==m) ij=0,ii++;
-                if(ii<n)c[ii][ij]=cc;
-                uu=1;
-            }
-            if(ii==n||(uu&&ii==i&&i!=0)) {
-                ope(ii)
-                an=ii==0?0:c[ii-1].back();
-                break;
-            }
-            cnt++;
-            c[ii][ij]++;
-            if(++ij==m) ij=0,ii++;
-        }
+    // ReSharper disable once CppNonExplicitConvertingConstructor
+    Function(const Type &func) // NOLINT(*-explicit-constructor)
+        : func(func) {
     }
-    REP(i,n) oparr(c[i])
-    cout<<n*m-an<<'\n';
-}
+
+    template<class... Args>
+    constexpr decltype(auto) operator()(Args &&... args) {
+        return func(*this, forward<Args>(args)...);
+    }
+};
+template<class Type>
+Function(const Type &) -> Function<Type>;
 signed main() {
     IOS();
-    auto f=[&]() {
-        return;
+    auto f=[&](auto f,int c) {
+        if(c==0) return 0;
+        return c+f(c-1);
     };
-    f();
+    cout<<f(5);
     return 0;
 }
