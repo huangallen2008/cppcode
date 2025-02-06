@@ -79,7 +79,8 @@ void solve() {
             now2+=min(rt2/a[i],n-cnt);
             chmax(an,now2);
         }
-        chmax(an,n*(i-1)+min(n,(d-p[i-1]*n)/a[i]));
+        int c2= min(n,(d-p[i-1]*n)/a[i]);
+        chmax(an,n*(i-1)+c2+(c2==n?((d-p[i]*n)/(p[m]-p[i]))*(m-i+k):0));
     }
     cout<<an<<'\n';
 }
