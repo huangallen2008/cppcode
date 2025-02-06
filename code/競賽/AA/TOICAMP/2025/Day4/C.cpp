@@ -77,7 +77,7 @@ signed main() {
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
-        cin>>u>>v;
+        cin>>u>>v,u--,v--;
         g[u].pb(v);
         g[v].pb(u);
     }
