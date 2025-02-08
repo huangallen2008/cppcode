@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("Ofast,unroll-loops")
-#pragma GCC target("avx2,sse4,bmi2,popcnt")
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx,abm,bmi,avx2,sse2,sse3,sse4,bmi2,popcnt")
+#define iint signed
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -117,11 +118,11 @@ signed main() {
     int sx=0,an=0;
     REP(i,k) { //sx+1 -> a[i].f-1
         if(i&&a[i].f==a[i-1].f) continue;
-        set<int> s;
+        set<iint> s;
         s.insert(0);
         s.insert(m+1);
-        auto cost=[&](int len) {
-            return ((len+1)*len%mod)*inv2;
+        auto cost=[&](iint len) {
+            return ((len+1)*(int)len%mod)*inv2;
         };
         int now=cost(m)%mod;
         auto ins=[&](int x) ->void{
@@ -151,7 +152,7 @@ signed main() {
     ope(an)
     REP(i,k) { //sx+1 -> a[i].f-1
         if(i&&a[i].f==a[i-1].f) continue;
-        set<int> s;
+        set<iint> s;
         s.insert(0);
         s.insert(m+1);
         auto cost=[&](int len) {
