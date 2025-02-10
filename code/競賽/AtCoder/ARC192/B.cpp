@@ -56,46 +56,25 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<class Type>
-struct Function {
-    Type func;
-
-    // ReSharper disable once CppNonExplicitConvertingConstructor
-    Function(const Type &func) // NOLINT(*-explicit-constructor)
-        : func(func) {
-    }
-
-    template<class... Args>
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class Type>
-Function(const Type &) -> Function<Type>;
-#define Auto Function
-int pw(int x,int p,int mod=mod) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
 signed main() {
     IOS();
-    REP1(i,11) {
-        ope(i)
-        int la=-1;
-        REP1(j,500) {
-            if(pw(j,j,i)==1) {
-
-                if(la!=-1)cout<<j-la<<' ';
-                la=j;
-            }
-            // cout<<pw(j,j,i)<<' ';
+    int n;
+    cin>>n;
+    Vi c(2);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        c[x&1]++;
+    }
+    if(c[1]&1) {
+        if(c[0]!=c[1]) cout<<"Fennec\n";
+        else cout<<"Snuke\n";
+    }else {
+        if(abs(c[0]-c[1])==1&&n<=3) {
+            // assert(c[0]==c[1]-1);
+            cout<<"Fennec\n";
         }
-        cout<<'\n';
+        else cout<<"Snuke\n";
     }
     return 0;
 }

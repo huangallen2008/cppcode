@@ -56,46 +56,12 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<class Type>
-struct Function {
-    Type func;
-
-    // ReSharper disable once CppNonExplicitConvertingConstructor
-    Function(const Type &func) // NOLINT(*-explicit-constructor)
-        : func(func) {
-    }
-
-    template<class... Args>
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class Type>
-Function(const Type &) -> Function<Type>;
-#define Auto Function
-int pw(int x,int p,int mod=mod) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
 signed main() {
     IOS();
-    REP1(i,11) {
-        ope(i)
-        int la=-1;
-        REP1(j,500) {
-            if(pw(j,j,i)==1) {
-
-                if(la!=-1)cout<<j-la<<' ';
-                la=j;
-            }
-            // cout<<pw(j,j,i)<<' ';
-        }
-        cout<<'\n';
-    }
+    freopen("in.txt","w",stdout);
+    int n=200000;
+    cout<<n<<'\n';
+    REP(i,n) cout<<rd(0,1);
+    cout<<'\n';
     return 0;
 }
