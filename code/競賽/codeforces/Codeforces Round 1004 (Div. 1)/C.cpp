@@ -68,7 +68,7 @@ void solve() {
     mp[0]=1;
     REP1(i,n) {
         pre^=a[i];
-        addmod(mp[pre^a[i]],mp[pre^a[i]]*3+mp[pre]*2);
+        mp[pre^a[i]]=(mp[pre^a[i]]*3+mp[pre]*2)%mod;
     }
     int an=0;
     for(auto [x,y]:mp) {
