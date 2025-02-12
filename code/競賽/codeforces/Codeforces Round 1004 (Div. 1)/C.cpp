@@ -72,7 +72,7 @@ void solve() {
     }
     int an=0;
     for(auto [x,y]:mp) {
-        // op(x)ope(y)
+        op(x)ope(y)
         addmod(an,y);
     }
     cout<<an<<'\n';
