@@ -1,3 +1,4 @@
+//qwqwqwq
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
@@ -48,7 +49,7 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=998244353;
+const int mod=1e9+7;
 const int maxn=5;
 const int maxb=64;
 const int inf=1ll<<60;
@@ -56,24 +57,37 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
+void solve() {
     int n;
     cin>>n;
-    Vi c(2);
-    REP(i,n) {
-        int x;
-        cin>>x;
-        c[x&1]++;
+    Vi a(n+1);
+    REP1(i,n) cin>>a[i];
+    int pre=0;
+    // int base=0;
+    map<int,int> mp;
+    mp[0]=3;
+    REP1(i,n-1) {
+        pre^=a[i];
+        int val=mp[a[i+1]^a[i]];
+        addmod(mp[a[i+1]],val*2);
+        addmod(mp[pre],val);
+        for(auto [x,y]:mp) {
+            op(x)ope(y)
+            // addmod(an,y);
+        }entr
     }
-    if(c[1]&1) {
-        if(c[0]!=c[1]) cout<<"Fennec\n";
-        else cout<<"Snuke\n";
-    }else {
-        if(abs(c[0]-c[1])==1&&n<=3) {
-            cout<<"Fennec\n";
-        }
-        else cout<<"Snuke\n";
+    int an=0;
+    for(auto [x,y]:mp) {
+        op(x)ope(y)
+        addmod(an,y);
     }
+    cout<<an<<'\n';
+    ope(an)
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }

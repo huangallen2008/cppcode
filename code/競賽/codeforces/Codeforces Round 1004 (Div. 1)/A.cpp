@@ -56,24 +56,47 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
     int n;
+int qur(int a,int b) {
+    a++,b++;
+    assert(1<=a&&a<=n&&1<=b&&b<=n);
+    cout<<"? "<<a<<' '<<b<<'\n'<<flush;
+    int ret;
+    cin>>ret;
+    return ret;
+}
+void ans(char ob) {
+    cout<<"! "<<ob<<'\n'<<flush;
+}
+void solve() {
     cin>>n;
-    Vi c(2);
+    Vi a(n),id(n,-1);
+    int t=-1;
     REP(i,n) {
         int x;
         cin>>x;
-        c[x&1]++;
+        x--;
+        id[x]=i;
+        t=x;
     }
-    if(c[1]&1) {
-        if(c[0]!=c[1]) cout<<"Fennec\n";
-        else cout<<"Snuke\n";
-    }else {
-        if(abs(c[0]-c[1])==1&&n<=3) {
-            cout<<"Fennec\n";
+    REP(i,n) {
+        if(id[i]==-1) {
+            if(qur(i,t)==0) ans('A');
+            else ans('B');
+            return;
         }
-        else cout<<"Snuke\n";
     }
+    int r1=qur(id[0],id[n-1]);
+    int r2=qur(id[n-1],id[0]);
+    if(r1!=r2||r1==0||r2==0) ans('A');
+    else if(r1>=n-1) ans('B');
+    else ans('A');
+    // else ans('B');
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }

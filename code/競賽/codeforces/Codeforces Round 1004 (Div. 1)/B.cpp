@@ -56,24 +56,48 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
+void solve() {
     int n;
     cin>>n;
-    Vi c(2);
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    int cntn0=0;
+    int id=-1;
+    REP(i,n) if(a[i]) cntn0++;
     REP(i,n) {
-        int x;
-        cin>>x;
-        c[x&1]++;
-    }
-    if(c[1]&1) {
-        if(c[0]!=c[1]) cout<<"Fennec\n";
-        else cout<<"Snuke\n";
-    }else {
-        if(abs(c[0]-c[1])==1&&n<=3) {
-            cout<<"Fennec\n";
+        if(a[i]==0) {
+            id=i;
+            break;
         }
-        else cout<<"Snuke\n";
     }
+    if(id==-1) cout<<cntn0<<'\n';
+    else {
+        Vi na;
+        REP(i,n) if(i==id||a[i]) na.pb(a[i]);
+        int nn=na.size();
+        Vi mn(nn);
+        mn[0]=na[0];
+        REP1(i,nn-1) mn[i]=min(mn[i-1],na[i]);
+        Vi c(nn+1);
+        int mex=0;
+        bool ok=1;
+        // oparr(mn)
+        for(int i=nn-1;i>0;i--) {
+            int v=na[i];
+            if(v<=nn) {
+                c[v]++;
+                while(c[mex]) mex++;
+            }
+            if(mn[i-1]<mex) ok=0;
+        }
+        if(ok) cntn0++;
+        cout<<cntn0<<'\n';
+    }
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
