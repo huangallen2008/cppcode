@@ -88,9 +88,9 @@ void solve() {
     }
     int r1=qur(id[0],id[n-1]);
     int r2=qur(id[n-1],id[0]);
-    if(r1!=r2||r1==0||r2==0) ans('A');
-    else if(r1>=n-1) ans('B');
-    else ans('A');
+    if(r1!=r2||r1==0||r2==0||r1<n-1) ans('A');
+    else ans('B');
+    // else ans('A');
     // else ans('B');
 }
 signed main() {
