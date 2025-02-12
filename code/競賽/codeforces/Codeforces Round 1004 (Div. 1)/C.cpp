@@ -65,20 +65,14 @@ void solve() {
     int pre=0;
     // int base=0;
     map<int,int> mp;
-    mp[0]=3;
-    REP1(i,n-1) {
+    mp[0]=1;
+    REP1(i,n) {
         pre^=a[i];
-        int val=mp[a[i+1]^a[i]];
-        addmod(mp[a[i+1]],val*2);
-        addmod(mp[pre],val);
-        for(auto [x,y]:mp) {
-            op(x)ope(y)
-            // addmod(an,y);
-        }entr
+        addmod(mp[pre^a[i]],mp[pre^a[i]]*3+mp[pre]*2);
     }
     int an=0;
     for(auto [x,y]:mp) {
-        op(x)ope(y)
+        // op(x)ope(y)
         addmod(an,y);
     }
     cout<<an<<'\n';
