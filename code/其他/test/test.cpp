@@ -59,12 +59,10 @@ int rd(int l,int r) {
 template<class Type>
 struct Function {
     Type func;
-
     // ReSharper disable once CppNonExplicitConvertingConstructor
     Function(const Type &func) // NOLINT(*-explicit-constructor)
         : func(func) {
     }
-
     template<class... Args>
     constexpr decltype(auto) operator()(Args &&... args) {
         return func(*this, forward<Args>(args)...);
@@ -84,18 +82,6 @@ int pw(int x,int p,int mod=mod) {
 }
 signed main() {
     IOS();
-    REP1(i,11) {
-        ope(i)
-        int la=-1;
-        REP1(j,500) {
-            if(pw(j,j,i)==1) {
-
-                if(la!=-1)cout<<j-la<<' ';
-                la=j;
-            }
-            // cout<<pw(j,j,i)<<' ';
-        }
-        cout<<'\n';
-    }
+    cout<<"Hello world!\n";
     return 0;
 }
