@@ -101,6 +101,7 @@ signed main() {
         ope(i)
         Vi r(n);
         int it=0;
+        ope(sz)
         REP(j,n) {
             while(it<sz&&t[it].s<j) it++;
             r[j]=it;
