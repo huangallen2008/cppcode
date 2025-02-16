@@ -75,11 +75,13 @@ void solve() {
             if(a[j]>mx) {
                 mx=a[j];
                 cnt++;
+                ope(j)
             }
         }
         chmax(an,cnt);
     }
     cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS();
