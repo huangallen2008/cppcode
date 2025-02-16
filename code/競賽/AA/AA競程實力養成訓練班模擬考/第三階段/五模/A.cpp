@@ -65,6 +65,7 @@ void solve() {
     Vi p;
     REP(i,n) if(a[i]>pmx) p.pb(i),pmx=a[i];
     p.pb(n);
+    oparr(p)
     int an=p.size();
     REP1(i,SZ(p)-2) {
         int mx=a[p[i-1]];
