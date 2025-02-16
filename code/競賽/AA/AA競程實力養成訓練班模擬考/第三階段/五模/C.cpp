@@ -72,7 +72,7 @@ void solve() {
         oparr(s[i])
         oparr(d[i])
     }
-    vector<Vi> dp(k,Vi(n,-inf));
+    vector<Vi> dp(k+1,Vi(n,-inf));
     auto cnsum=[&](int l,int r) ->int{ 
         if(l>r) return 0;
         return (l+r)*(r-l+1)>>1; 
@@ -90,7 +90,7 @@ void solve() {
         if(x<=mid) return a.s+x-a.f;
         else return b.s+b.f-x;
     };
-    REP(i,k) {
+    REP(i,k+1) {
         REP(j,n) {
             int ht0=s[j][j];
             if(ht0<=i) chmax(dp[i-ht0][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
@@ -105,7 +105,7 @@ void solve() {
     int an=0;
     REP(i,n) {
         int ht=d[i].back()-d[i][i];
-        if(ht<=k-1) chmax(an,dp[k-1-ht][i]+cnsum(a[i].s,a[i].s+l-a[i].s));
+        if(ht<=k) chmax(an,dp[k-ht][i]+cnsum(a[i].s,a[i].s+l-a[i].s));
     }
     cout<<an<<'\n';
 }
