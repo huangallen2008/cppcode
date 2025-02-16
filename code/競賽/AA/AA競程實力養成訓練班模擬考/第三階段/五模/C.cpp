@@ -71,7 +71,7 @@ void solve() {
         }
     }
     vector<Vi> dp(k,Vi(n,-inf));
-    auto cnsum=[&](int l,int r) { 
+    auto cnsum=[&](int l,int r) ->int{ 
         if(l>r) return 0;
         return (l+r)*(r-l+1)>>1; 
     };
@@ -91,7 +91,7 @@ void solve() {
     REP(i,k) {
         REP(j,n) {
             int ht0=s[j][j];
-            if(ht0<=i)  chmax(dp[i-ht0][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
+            if(ht0<=i) chmax(dp[i-ht0][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
             REP(k,j) {
                 // int ht=
             }
