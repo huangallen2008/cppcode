@@ -84,11 +84,40 @@ signed main() {
     REP(i,n) cin>>a[i].f,a[i].s=i;
     sort(ALL(a));
     vector<S> b;
+    vector<Vi> rk;
     for(int i=0;i<n;i+=sn) {
         vector<pii> t;
         for(int j=i;j<i+sn&&j<n;j++) t.pb(a[j]);
+        sort(ALL(t),[&](pii a,pii b){
+            return a.s<b.s;
+        });
+        int sz=t.size();
         b.pb(S(t));
-
+        Vi r(n);
+        int it=0;
+        REP(j,n) {
+            while(it<sz&&t[it]<j) it++;
+            r[j]=it;
+        }
+        rk.pb(r);
+    }
+    int cnt=b.size();
+    int last=0;
+    REP(i,q) {
+        int l,r;
+        cin>>l>>r;
+        l=(l+last)%n;
+        r=(r+last)%n;
+        int an=inf;
+        int pmx=-inf;
+        REP(j,cnt) {
+            int li=rk[j][l],ri=rk[j][r+1]-1;
+            chmin(an,b[j].qu_md(li,ri));
+            chmin(an,b[j].qu_mn(li,ri)-pmx);
+            pmx=b[j].qu_mx(li,ri);
+        }
+        last=an;
+        cout<<an<<'\n';
     }
     return 0;
 }
