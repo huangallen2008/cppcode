@@ -72,6 +72,15 @@ void solve() {
         oparr(s[i])
         oparr(d[i])
     }
+    auto midx=[&](pii a,pii b) {
+        return a.f+b.f+b.s-a.s>>1;
+    };
+    vector<Vi> mdx(n,Vi(n));
+    REP(j,n) {
+        REP(i,j) {
+            mdx[i][j]=upper_bound(ALL(a),pii{midx(a[j],a[i]),inf})-a.begin()-1;
+        }
+    }
     vector<Vi> dp(k+1,Vi(n,-inf));
     auto cnsum=[&](int l,int r) ->int{ 
         if(l>r) return 0;
@@ -81,9 +90,6 @@ void solve() {
         int h1=a.s+b.s+b.f-a.f>>1;
         int h2=a.s+b.s+b.f-a.f-1>>1;
         return cnsum(a.s,h1)+cnsum(b.s,h2)-b.s;
-    };
-    auto midx=[&](pii a,pii b) {
-        return a.f+b.f+b.s-a.s>>1;
     };
     auto ok=[&](pii a,pii b) {
         return abs(a.f-b.f)>=abs(a.s-b.s);
@@ -100,8 +106,9 @@ void solve() {
             op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
             REP(k,j) {
                 if(!ok(a[k],a[j])) continue;
-                int mid=midx(a[k],a[j]);
-                int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
+                // int mid=midx(a[k],a[j]);
+                int mid=mdx[k][j];
+                int ht=s[j][j]-s[j][mid]+d[k][mid]-d[k][k];
                 op(i)op(j)op(a[k])op(a[j])op(mid)ope(k)
                 if(ht<=i) chmax(dp[i][j],dp[i-ht][j]+qusum(a[k],a[j]));
             }
