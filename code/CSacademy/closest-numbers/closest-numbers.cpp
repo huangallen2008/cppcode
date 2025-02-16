@@ -51,12 +51,44 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=1e6+5;
 const int inf=1ll<<60;
+const int sn=200;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct S {
+    int n;
+    vector<vector<int>> mn,mx,md;
+    S(){}
+    S(Vpii a) {
+        n=a.size();
+        mn=mx=md=vector<Vi>(n);
+        REP(i,n-1) mn[i][i+1]=mx[i][i+1]=a[i].f,md[i][i+1]=inf;
+        REP(i,n){
+            REP(j,i-1) {
+                mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
+                mx[i][j]=max(mx[i][j-1],mx[i+1][j]);
+                md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)})
+            }
+        }
+    }
+    int qu_mn(int l,int r) { return mn[l][r]; } 
+    int qu_mx(int l,int r) { return mx[l][r]; } 
+    int qu_md(int l,int r) { return md[l][r]; } 
+};
 signed main() {
     IOS();
-    
+    int n,q;
+    cin>>n>>q;
+    Vpii a(n);
+    REP(i,n) cin>>a[i].f,a[i].s=i;
+    sort(ALL(a));
+    vector<S> b;
+    for(int i=0;i<n;i+=sn) {
+        vector<pii> t;
+        for(int j=i;j<i+sn&&j<n;j++) t.pb(a[j]);
+        b.pb(S(t));
+        
+    }
     return 0;
 }
