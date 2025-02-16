@@ -85,6 +85,9 @@ void solve() {
     auto midx=[&](pii a,pii b) {
         return a.f+b.f+b.s-a.s>>1;
     };
+    auto ok=[&](pii a,pii b) {
+        return abs(a.f-b.f)>=abs(a.s-b.s);
+    };
     auto quh=[&](pii a,pii b,int x) {
         int mid=midx(a,b);
         if(x<=mid) return a.s+x-a.f;
@@ -96,6 +99,7 @@ void solve() {
             if(ht0<=i) chmax(dp[i][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
             op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
             REP(k,j) {
+                if(!ok(a[k],a[j])) continue;
                 op(i)op(j)op(a[k])op(a[j])ope(k)
                 int mid=midx(a[k],a[j]);
                 int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
