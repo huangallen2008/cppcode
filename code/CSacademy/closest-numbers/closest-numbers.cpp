@@ -67,13 +67,12 @@ struct S {
         oparr(a)
         REP(i,n){
             REP(j,i-1) {
-                
+                op(i)ope(j)
                 mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
                 mx[i][j]=max(mx[i][j-1],mx[i+1][j]);
                 md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
-        ope("ok")
     }
     int qu_mn(int l,int r) { return mn[l][r]; } 
     int qu_mx(int l,int r) { return mx[l][r]; } 
