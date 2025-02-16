@@ -92,6 +92,7 @@ void solve() {
     };
     REP(i,k+1) {
         REP(j,n) {
+            op(i)ope(j)
             int ht0=s[j][j];
             if(ht0<=i) chmax(dp[i][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
             op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
