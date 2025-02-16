@@ -85,6 +85,7 @@ signed main() {
     sort(ALL(a));
     vector<S> b;
     vector<Vi> rk;
+    ope("ok")
     for(int i=0;i<n;i+=sn) {
         vector<pii> t;
         for(int j=i;j<i+sn&&j<n;j++) t.pb(a[j]);
