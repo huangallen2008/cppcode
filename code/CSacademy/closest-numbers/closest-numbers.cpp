@@ -62,7 +62,7 @@ struct S {
     S(){}
     S(Vpii a) {
         n=a.size();
-        mn=mx=md=vector<Vi>(n);
+        mn=mx=md=vector<Vi>(n,Vi(n));
         oparr(a)
         REP(i,n-1) mn[i][i+1]=mx[i][i+1]=a[i].f,md[i][i+1]=inf;
         REP(i,n){
