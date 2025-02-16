@@ -94,6 +94,7 @@ void solve() {
         REP(j,n) {
             int ht0=s[j][j];
             if(ht0<=i) chmax(dp[i-ht0][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
+            ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
             REP(k,j) {
                 int mid=midx(a[k],a[j]);
                 int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
