@@ -99,10 +99,10 @@ signed main() {
         int sz=t.size();
         b.pb(S(t));
         ope(i)
-        Vi r(n);
+        Vi r(n+1);
         int it=0;
         ope(sz)
-        REP(j,n) {
+        REP(j,n+1) {
             while(it<sz&&t[it].s<j) it++;
             r[j]=it;
         }
