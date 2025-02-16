@@ -73,9 +73,9 @@ struct S {
                 md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
-        // REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
-        // REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
-        // REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
+        REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
+        REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
+        REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
     }
     int qu_mn(int l,int r) { return mn[l][r]; } 
     int qu_mx(int l,int r) { return mx[l][r]; } 
