@@ -62,8 +62,9 @@ struct S {
     S(){}
     S(Vpii a) {
         n=a.size();
-        mn=mx=md=vector<Vi>(n,Vi(n));
-        REP(i,n) mn[i][i]=mx[i][i]=a[i].f,md[i][i]=inf;
+        mn=md=vector<Vi>(n,Vi(n,inf));
+        mx=vector<Vi>(n,Vi(n,-inf));
+        REP(i,n) mn[i][i]=mx[i][i]=a[i].f;
         // oparr(a)
         REP(j,n){
             RREP(i,j) {
@@ -73,9 +74,9 @@ struct S {
                 md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
-        REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
-        REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
-        REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
     }
     int qu_mn(int l,int r) { return mn[l][r]; } 
     int qu_mx(int l,int r) { return mx[l][r]; } 
@@ -125,7 +126,7 @@ signed main() {
             // ope(an)
             chmin(an,b[j].qu_mn(li,ri)-pmx);
             // ope(an)
-            pmx=b[j].qu_mx(li,ri);
+            chmax(pmx,b[j].qu_mx(li,ri));
         }
         last=an;
         cout<<an<<'\n';
