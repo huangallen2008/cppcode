@@ -121,6 +121,7 @@ signed main() {
         int pmx=-inf;
         REP(j,cnt) {
             int li=rk[j][l],ri=rk[j][r+1]-1;
+            if(li>ri) continue;
             // op(li)ope(ri)
             chmin(an,b[j].qu_md(li,ri));
             // ope(an)
