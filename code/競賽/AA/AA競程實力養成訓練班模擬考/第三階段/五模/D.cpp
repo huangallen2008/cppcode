@@ -57,11 +57,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    // string s,t;
-    // cin>>s>>t;
-    char c='1';
-    char f=c^1;
-    ope(f)
+    string s,t;
+    cin>>s>>t;
+    int cnt=0;
+    REP(i,s.size()-1) {
+        if(s[i]!=t[i]) s[i+1]^=1,cnt++;
+    }
+    cout<<cnt<<'\n';
 }
 signed main() {
     IOS();
