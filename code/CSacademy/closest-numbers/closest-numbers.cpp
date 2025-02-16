@@ -85,13 +85,13 @@ signed main() {
     sort(ALL(a));
     vector<S> b;
     vector<Vi> rk;
-    ope("ok")
     for(int i=0;i<n;i+=sn) {
         vector<pii> t;
         for(int j=i;j<i+sn&&j<n;j++) t.pb(a[j]);
         sort(ALL(t),[&](pii a,pii b){
             return a.s<b.s;
         });
+        ope(i)
         int sz=t.size();
         b.pb(S(t));
         Vi r(n);
