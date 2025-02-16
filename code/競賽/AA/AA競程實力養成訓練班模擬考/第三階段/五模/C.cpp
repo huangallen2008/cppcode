@@ -111,6 +111,7 @@ void solve() {
                 int ht=s[j][j]-s[j][mid]+d[k][mid]-d[k][k];
                 op(i)op(j)op(a[k])op(a[j])op(mid)ope(k)
                 if(ht<=i) chmax(dp[i][j],dp[i-ht][j]+qusum(a[k],a[j]));
+                op(dp[i-ht][j])ope(qusum(a[k],a[j]))
             }
         }
         oparr(dp[i])
@@ -138,5 +139,11 @@ signed main() {
 12345 67890
 123456 7890
 1234567 890
+
+1
+2 2 0
+1 1
+2 1
+
 
 */
