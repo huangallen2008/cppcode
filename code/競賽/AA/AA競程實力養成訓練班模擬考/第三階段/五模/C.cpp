@@ -66,7 +66,7 @@ void solve() {
     REP(i,n) {
         REP(j,n) {
             if(j)s[i][j]=s[i][j-1],d[i][j]=d[i][j-1];
-            if(a[j].s+a[j].s<a[i].s+a[i].f) s[i][j]++;
+            if(a[j].s+a[j].f<a[i].s+a[i].f) s[i][j]++;
             if(a[j].s-a[j].f<a[i].s-a[i].f) d[i][j]++;
         }
         oparr(s[i])
