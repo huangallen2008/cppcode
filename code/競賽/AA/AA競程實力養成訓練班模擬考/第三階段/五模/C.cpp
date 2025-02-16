@@ -69,8 +69,8 @@ void solve() {
             if(a[j].s+a[j].s<a[i].s+a[i].f) s[i][j]++;
             if(a[j].s-a[j].f<a[i].s-a[i].f) d[i][j]++;
         }
-        // oparr(s[i])
-        // oparr(d[i])
+        oparr(s[i])
+        oparr(d[i])
     }
     vector<Vi> dp(k,Vi(n,-inf));
     auto cnsum=[&](int l,int r) ->int{ 
