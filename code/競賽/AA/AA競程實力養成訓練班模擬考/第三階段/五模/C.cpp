@@ -61,6 +61,7 @@ void solve() {
     cin>>n>>l>>k;
     Vpii a(n);
     REP(i,n) cin>>a[i].f>>a[i].s;
+    sort(ALL(a));
     vector<Vi> s(n,Vi(n));//s[i][j]: how many k (k<=j) a[k].s+a[k].f<a[i].s+a[i].f
     vector<Vi> d(n,Vi(n));//d[i][j]: how many k (k<=j) a[k].s-a[k].f<a[i].s-a[i].f
     REP(i,n) {
@@ -78,7 +79,7 @@ void solve() {
     vector<Vi> mdx(n,Vi(n));
     REP(j,n) {
         REP(i,j) {
-            mdx[i][j]=upper_bound(ALL(a),pii{midx(a[j],a[i]),inf})-a.begin()-1;
+            mdx[i][j]=upper_bound(ALL(a),pii{midx(a[i],a[j]),inf})-a.begin()-1;
         }
     }
     vector<Vi> dp(k+1,Vi(n,-inf));
@@ -115,7 +116,7 @@ void solve() {
                 // if(ht<=i){op(dp[i-ht][j])ope(qusum(a[k],a[j]))}
             }
         }
-        oparr(dp[i])
+        // oparr(dp[i])
     }
     int an=0;
     REP(i,n) {
