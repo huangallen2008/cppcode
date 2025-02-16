@@ -100,8 +100,8 @@ void solve() {
             op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
             REP(k,j) {
                 if(!ok(a[k],a[j])) continue;
-                op(i)op(j)op(a[k])op(a[j])ope(k)
                 int mid=midx(a[k],a[j]);
+                op(i)op(j)op(a[k])op(a[j])op(mid)ope(k)
                 int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
                 if(ht<=i) chmax(dp[i][j],dp[i-ht][j]+qusum(a[k],a[j]));
             }
