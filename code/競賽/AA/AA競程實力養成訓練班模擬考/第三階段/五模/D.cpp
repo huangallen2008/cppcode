@@ -59,7 +59,7 @@ int rd(int l,int r) {
 void solve() {
     // string s,t;
     // cin>>s>>t;
-    char c='0';
+    char c='1';
     char f=c^1;
     ope(f)
 }
