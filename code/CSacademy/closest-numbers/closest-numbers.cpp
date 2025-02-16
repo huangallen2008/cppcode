@@ -91,9 +91,9 @@ signed main() {
         sort(ALL(t),[&](pii a,pii b){
             return a.s<b.s;
         });
-        ope(i)
         int sz=t.size();
         b.pb(S(t));
+        ope(i)
         Vi r(n);
         int it=0;
         REP(j,n) {
