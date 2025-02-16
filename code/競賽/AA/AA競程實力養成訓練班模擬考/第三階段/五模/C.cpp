@@ -110,7 +110,7 @@ void solve() {
                 int mid=mdx[k][j];
                 int ht=s[j][j]-s[j][mid]+d[k][mid]-d[k][k];
                 op(i)op(j)op(k)op(a[k])op(a[j])op(mid)ope(ht)
-                if(ht<=i) chmax(dp[i][j],dp[i-ht][j]+qusum(a[k],a[j]));
+                if(ht<=i) chmax(dp[i][j],dp[i-ht][k]+qusum(a[k],a[j]));
                 if(ht<=i){op(dp[i-ht][j])ope(qusum(a[k],a[j]))}
             }
         }
