@@ -114,6 +114,7 @@ signed main() {
         cin>>l>>r;
         l=(l+last)%n;
         r=(r+last)%n;
+        if(l>r) swap(l,r);
         int an=inf;
         int pmx=-inf;
         REP(j,cnt) {
