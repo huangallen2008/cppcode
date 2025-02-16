@@ -106,7 +106,7 @@ void solve() {
     int an=0;
     REP(i,n) {
         int ht=d[i].back()-d[i][i];
-        if(ht<=k) chmax(an,dp[k-ht][i]+cnsum(a[i].s,a[i].s+l-a[i].s));
+        if(ht<=k) chmax(an,dp[k-ht][i]+cnsum(a[i].s,a[i].s+l-a[i].f));
         op(i)op(ht)op(dp[k-ht][i])ope(cnsum(a[i].s,a[i].s+l-a[i].f));
     }
     cout<<an<<'\n';
