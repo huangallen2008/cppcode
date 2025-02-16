@@ -67,15 +67,15 @@ struct S {
         // oparr(a)
         REP(j,n){
             RREP(i,j) {
-                op(i)ope(j)
+                // op(i)ope(j)
                 mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
                 mx[i][j]=max(mx[i][j-1],mx[i+1][j]);
                 md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
-        REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
-        REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
-        REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
+        // REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
     }
     int qu_mn(int l,int r) { return mn[l][r]; } 
     int qu_mx(int l,int r) { return mx[l][r]; } 
@@ -98,10 +98,10 @@ signed main() {
         });
         int sz=t.size();
         b.pb(S(t));
-        ope(i)
+        // ope(i)
         Vi r(n+1);
         int it=0;
-        ope(sz)
+        // ope(sz)
         REP(j,n+1) {
             while(it<sz&&t[it].s<j) it++;
             r[j]=it;
@@ -120,11 +120,11 @@ signed main() {
         int pmx=-inf;
         REP(j,cnt) {
             int li=rk[j][l],ri=rk[j][r+1]-1;
-            op(li)ope(ri)
+            // op(li)ope(ri)
             chmin(an,b[j].qu_md(li,ri));
-            ope(an)
+            // ope(an)
             chmin(an,b[j].qu_mn(li,ri)-pmx);
-            ope(an)
+            // ope(an)
             pmx=b[j].qu_mx(li,ri);
         }
         last=an;
