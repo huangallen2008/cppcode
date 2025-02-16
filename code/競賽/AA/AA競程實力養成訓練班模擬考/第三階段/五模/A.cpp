@@ -70,6 +70,7 @@ void solve() {
     REP1(i,SZ(p)-2) {
         int mx=a[p[i-1]];
         int cnt=p.size()-2;
+        ope(cnt)
         for(int j=p[i]+1;j<p[i+1];j++) {
             if(a[j]>mx) {
                 mx=a[j];
