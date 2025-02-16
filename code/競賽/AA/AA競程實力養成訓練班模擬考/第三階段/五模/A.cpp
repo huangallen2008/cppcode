@@ -65,23 +65,20 @@ void solve() {
     Vi p;
     REP(i,n) if(a[i]>pmx) p.pb(i),pmx=a[i];
     p.pb(n);
-    oparr(p)
+    // oparr(p)
     int an=p.size()-1;
     REP1(i,SZ(p)-2) {
         int mx=a[p[i-1]];
         int cnt=p.size()-2;
-        ope(cnt)
         for(int j=p[i]+1;j<p[i+1];j++) {
             if(a[j]>mx) {
                 mx=a[j];
                 cnt++;
-                ope(j)
             }
         }
         chmax(an,cnt);
     }
     cout<<an<<'\n';
-    entr
 }
 signed main() {
     IOS();
