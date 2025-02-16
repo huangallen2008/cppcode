@@ -65,8 +65,8 @@ struct S {
         mn=mx=md=vector<Vi>(n,Vi(n));
         REP(i,n-1) mn[i][i+1]=mx[i][i+1]=a[i].f,md[i][i+1]=inf;
         oparr(a)
-        REP(i,n){
-            RREP(j,i-1) {
+        REP(j,n){
+            RREP(i,j-1) {
                 op(i)ope(j)
                 mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
                 mx[i][j]=max(mx[i][j-1],mx[i+1][j]);
