@@ -67,8 +67,8 @@ void solve() {
     p.pb(n);
     // oparr(p)
     int an=p.size()-1;
-    REP1(i,SZ(p)-2) {
-        int mx=a[p[i-1]];
+    REP(i,SZ(p)-1) {
+        int mx=i==0?0:a[p[i-1]];
         int cnt=p.size()-2;
         for(int j=p[i]+1;j<p[i+1];j++) {
             if(a[j]>mx) {
