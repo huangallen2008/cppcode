@@ -68,7 +68,7 @@ struct S {
             REP(j,i-1) {
                 mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
                 mx[i][j]=max(mx[i][j-1],mx[i+1][j]);
-                md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)})
+                md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
     }
@@ -88,7 +88,7 @@ signed main() {
         vector<pii> t;
         for(int j=i;j<i+sn&&j<n;j++) t.pb(a[j]);
         b.pb(S(t));
-        
+
     }
     return 0;
 }
