@@ -113,3 +113,10 @@ signed main() {
     while(T--) solve();
     return 0;
 }
+/*
+1
+2 3 1
+1 5
+2 10
+
+*/
