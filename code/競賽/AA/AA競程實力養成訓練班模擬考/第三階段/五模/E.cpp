@@ -59,7 +59,7 @@ int rd(int l,int r) {
 void solve() {
     int n,m;
     cin>>n>>m;
-    map<int,int> mp;
+    map<int,map<int,int>> mp;
     Vi ok(n);
     REP(i,m) {
         int u,v;
