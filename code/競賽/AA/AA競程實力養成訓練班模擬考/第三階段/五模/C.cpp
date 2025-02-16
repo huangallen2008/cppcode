@@ -67,11 +67,10 @@ void solve() {
         REP(j,n) {
             if(j)s[i][j]=s[i][j-1],d[i][j]=d[i][j-1];
             if(a[j].s+a[j].s<a[i].s+a[i].f) s[i][j]++;
-            if(a[j].s-a[j].f<a[i].s-a[i].f) {op(i)ope(j)
-                d[i][j]++;}
+            if(a[j].s-a[j].f<a[i].s-a[i].f) d[i][j]++;
         }
-        oparr(s[i])
-        oparr(d[i])
+        // oparr(s[i])
+        // oparr(d[i])
     }
     vector<Vi> dp(k,Vi(n,-inf));
     auto cnsum=[&](int l,int r) ->int{ 
@@ -101,6 +100,7 @@ void solve() {
                 if(ht<=i) chmax(dp[i-ht][j],qusum(a[k],a[j]));
             }
         }
+        oparr(dp[i])
     }
     int an=0;
     REP(i,n) {
