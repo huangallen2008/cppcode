@@ -78,7 +78,7 @@ void solve() {
     vector<Vi> mdx(n,Vi(n));
     REP(j,n) {
         REP(i,j) {
-            mdx[i][j]=upper_bound(ALL(a),pii{midx(a[j],a[i]),inf})-a.begin()-1;
+            mdx[i][j]=upper_bound(ALL(a),pii{midx(a[j],a[i]),-inf})-a.begin();
         }
     }
     vector<Vi> dp(k+1,Vi(n,-inf));
