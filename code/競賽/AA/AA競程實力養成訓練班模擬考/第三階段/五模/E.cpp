@@ -57,10 +57,20 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int n;
-    cin>>n;
-    if(n>=2) cout<<n<<'\n';
-    else cout<<0<<'\n';
+    int n,m;
+    cin>>n>>m;
+    map<int,int> mp;
+    Vi ok(n);
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        if(u>v) swap(u,v);
+        if(mp[u][v]) ok[u]=ok[v]=1;
+        mp[u][v]=1;
+    }
+    int an=0;
+    REP(i,n) an+=ok[i];
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
