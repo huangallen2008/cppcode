@@ -101,8 +101,8 @@ void solve() {
             REP(k,j) {
                 if(!ok(a[k],a[j])) continue;
                 int mid=midx(a[k],a[j]);
-                op(i)op(j)op(a[k])op(a[j])op(mid)ope(k)
                 int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
+                op(i)op(j)op(a[k])op(a[j])op(mid)ope(k)
                 if(ht<=i) chmax(dp[i][j],dp[i-ht][j]+qusum(a[k],a[j]));
             }
         }
