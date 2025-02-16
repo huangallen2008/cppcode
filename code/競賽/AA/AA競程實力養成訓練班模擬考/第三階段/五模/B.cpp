@@ -71,7 +71,13 @@ void solve() {
     REP(i,n) {
         int mn=*ls.begin();
         while(it<n&&b[it].f<mn) pq.push(b[it++].s);
+        int r=pq.top();
+        pq.pop();
+        an.pb(r);
+        ls.erase(ls.find(h[r]+v[r]));
     }
+    for(int x:an) cout<<x+1<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
