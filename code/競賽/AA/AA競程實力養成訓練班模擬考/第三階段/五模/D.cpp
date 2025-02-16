@@ -59,16 +59,16 @@ int rd(int l,int r) {
 void solve() {
     string s,t;
     cin>>s>>t;
-    int cnt=0;
     REP(i,s.size()-1) {
-        if(s[i]!=t[i]) s[i+1]^=1,cnt++;
+        if(s[i]!=t[i]) s[i+1]^=1,an.pb(i);
     }
-    cout<<cnt<<'\n';
+    cout<<an.size()<<'\n';
+    for(int x:an) cout<<x<<'\n';
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
+    int T=1;
+    // cin>>T;
     while(T--) solve();
     return 0;
 }
