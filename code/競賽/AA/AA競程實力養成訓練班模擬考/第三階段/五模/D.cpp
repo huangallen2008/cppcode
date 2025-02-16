@@ -59,6 +59,7 @@ int rd(int l,int r) {
 void solve() {
     string s,t;
     cin>>s>>t;
+    Vi an;
     REP(i,s.size()-1) {
         if(s[i]!=t[i]) s[i+1]^=1,an.pb(i);
     }
