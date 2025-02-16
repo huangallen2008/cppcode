@@ -64,7 +64,7 @@ struct S {
         n=a.size();
         mn=mx=md=vector<Vi>(n,Vi(n));
         REP(i,n-1) mn[i][i+1]=mx[i][i+1]=a[i].f,md[i][i+1]=inf;
-        oparr(a)
+        // oparr(a)
         REP(j,n){
             RREP(i,j-1) {
                 op(i)ope(j)
@@ -73,6 +73,9 @@ struct S {
                 md[i][j]=min({md[i][j-1],md[i+1][j],abs(a[i].f-a[j].f)});
             }
         }
+        REP(i,n) {REP(j,n) cout<<mn[i][j]<<' ';cout<<'\n';}
+        REP(i,n) {REP(j,n) cout<<mx[i][j]<<' ';cout<<'\n';}
+        REP(i,n) {REP(j,n) cout<<md[i][j]<<' ';cout<<'\n';}
     }
     int qu_mn(int l,int r) { return mn[l][r]; } 
     int qu_mx(int l,int r) { return mx[l][r]; } 
