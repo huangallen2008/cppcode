@@ -67,6 +67,7 @@ void solve() {
     REP(i,n) b[i]={h[i],i};
     sort(ALL(b));
     int it=0;
+    Vi an;
     priority_queue<int,Vi,greater<int>> pq;
     REP(i,n) {
         int mn=*ls.begin();
