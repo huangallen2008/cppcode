@@ -120,7 +120,9 @@ signed main() {
         REP(j,cnt) {
             int li=rk[j][l],ri=rk[j][r+1]-1;
             chmin(an,b[j].qu_md(li,ri));
+            ope(an)
             chmin(an,b[j].qu_mn(li,ri)-pmx);
+            ope(an)
             pmx=b[j].qu_mx(li,ri);
         }
         last=an;
