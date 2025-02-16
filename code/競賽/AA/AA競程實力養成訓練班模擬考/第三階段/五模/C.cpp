@@ -101,18 +101,18 @@ void solve() {
     };
     REP(i,k+1) {
         REP(j,n) {
-            int ht0=s[j][j];
-            if(ht0<=i) chmax(dp[i][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
-            op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
+            // int ht0=s[j][j];
+            if(s[j][j]<=i) chmax(dp[i][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
+            // op(i)op(ht0)ope(cnsum(a[j].s+1,a[j].s+a[j].f-1))
             REP(k,j) {
                 if(!ok(a[k],a[j])) continue;
                 // int mid=midx(a[k],a[j]);
                 int mid=mdx[k][j];
                 assert(k<=mid&&mid<=j);
                 int ht=s[j][j]-s[j][mid]+d[k][mid]-d[k][k];
-                op(i)op(j)op(k)op(a[k])op(a[j])op(mid)ope(ht)
+                // op(i)op(j)op(k)op(a[k])op(a[j])op(mid)ope(ht)
                 if(ht<=i) chmax(dp[i][j],dp[i-ht][k]+qusum(a[k],a[j]));
-                if(ht<=i){op(dp[i-ht][j])ope(qusum(a[k],a[j]))}
+                // if(ht<=i){op(dp[i-ht][j])ope(qusum(a[k],a[j]))}
             }
         }
         oparr(dp[i])
