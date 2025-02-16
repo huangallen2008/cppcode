@@ -96,7 +96,7 @@ signed main() {
         Vi r(n);
         int it=0;
         REP(j,n) {
-            while(it<sz&&t[it]<j) it++;
+            while(it<sz&&t[it].s<j) it++;
             r[j]=it;
         }
         rk.pb(r);
