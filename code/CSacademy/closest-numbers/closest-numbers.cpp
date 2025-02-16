@@ -63,8 +63,8 @@ struct S {
     S(Vpii a) {
         n=a.size();
         mn=mx=md=vector<Vi>(n,Vi(n));
-        oparr(a)
         REP(i,n-1) mn[i][i+1]=mx[i][i+1]=a[i].f,md[i][i+1]=inf;
+        oparr(a)
         REP(i,n){
             REP(j,i-1) {
                 mn[i][j]=min(mn[i][j-1],mn[i+1][j]);
