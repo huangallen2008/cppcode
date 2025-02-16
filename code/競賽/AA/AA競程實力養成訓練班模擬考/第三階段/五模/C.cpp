@@ -93,10 +93,18 @@ void solve() {
             int ht0=s[j][j];
             if(ht0<=i) chmax(dp[i-ht0][j],cnsum(a[j].s+1,a[j].s+a[j].f-1));
             REP(k,j) {
-                // int ht=
+                int mid=midx(a[k],a[j]);
+                int ht=s[j][j]-s[j][mid]+d[k][mid-1]-d[k][k];
+                if(ht<=i) chmax(dp[i-ht][j],qusum(a[k],a[j]));
             }
         }
     }
+    int an=0;
+    REP(i,n) {
+        int ht=d[i].back()-d[i][i];
+        if(ht<=k-1) chmax(an,dp[k-1-ht][i]+cnsum(a[i].s,a[i].s+l-a[i].s));
+    }
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
