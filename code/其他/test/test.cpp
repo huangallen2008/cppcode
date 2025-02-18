@@ -82,6 +82,6 @@ int pw(int x,int p,int mod=mod) {
 }
 signed main() {
     IOS();
-    cout<<"Hello world!\n";
+    if(0||1&&0) ope(1)
     return 0;
 }
