@@ -83,7 +83,7 @@ void dfs2(int u,int fa) {
         ch.pb(v);
         adp[u]=merge(adp[u],upd(dp[v]));
     }
-    Vpii pre(sz+1),suf(sz+1);
+    Vpii pre(sz+2),suf(sz+2);
     REP1(i,sz) pre[i]=merge(pre[i-1],upd(dp[ch[i]]));
     RREP1(i,sz) suf[i]=merge(suf[i+1],upd(dp[ch[i]]));
     REP1(i,sz) udp[ch[i]]=merge(upd(udp[u]),merge(pre[i-1],suf[i+1]));
