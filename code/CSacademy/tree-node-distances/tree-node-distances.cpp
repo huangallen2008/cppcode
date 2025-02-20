@@ -87,6 +87,8 @@ signed main() {
                 dep[id^1]=cnt[id^1];
                 if(cnt[0]>=cnt[1]) dif={0,cnt[0]-cnt[1]};
                 else dif={1,cnt[1]-cnt[0]};
+                ok=1;
+                break;
             }
             else cnt[id]++;
             if(cnt[id]-cnt[id^1]>now[id]) {
@@ -100,5 +102,12 @@ signed main() {
         }
         if(ok) break;
     }
+    int an=dif.s;
+    REP(i,dif.s) F(dif.f);
+    while(!qu()) {
+        an+=2;
+        F(0),F(1);
+    }
+    ans(an);
     return 0;
 }
