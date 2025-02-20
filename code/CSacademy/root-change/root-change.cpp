@@ -96,6 +96,7 @@ signed main() {
     int n;
     cin>>n;
     dp=udp=adp=Vpii(n);
+    udp[0]={-1,0};
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
