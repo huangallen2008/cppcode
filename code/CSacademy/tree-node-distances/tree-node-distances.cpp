@@ -56,11 +56,49 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void F(int x) {
+int F(int x) {
     cout<<"F "<<(x?'B':'A')<<'\n'<<flush;
+    int ret;
+    cin>>ret;
+    return ret;
+}
+int qu() {
+    cout<<"E\n"<<flush;
+    int ret;
+    cin>>ret;
+    return ret;
+}
+void ans(int an) {
+    cout<<"A "<<an<<"\n"<<flush;
+    exit(0);
 }
 signed main() {
     IOS();
-    if((1||0)&&0) ope(1)
+    Vi cnt(2),dep(2,-1),now(2);
+    pii dif={-1,-1};
+    bool ok=0;
+    for(int i=0;;i++) {
+        int id=i&1;
+        int dd=1<<i;
+        while(cnt[id]-cnt[id^1]<dd) {
+            if(!F(id)) {
+                dep[id]=cnt[id];
+                while(F(id^1)) cnt[id^1]++;
+                dep[id^1]=cnt[id^1];
+                if(cnt[0]>=cnt[1]) dif={0,cnt[0]-cnt[1]};
+                else dif={1,cnt[1]-cnt[0]};
+            }
+            else cnt[id]++;
+            if(cnt[id]-cnt[id^1]>now[id]) {
+                if(qu()) {
+                    dif={id,cnt[id]-cnt[id^1]};
+                    ok=1;
+                    break;
+                }
+                now[id]++;
+            }
+        }
+        if(ok) break;
+    }
     return 0;
 }
