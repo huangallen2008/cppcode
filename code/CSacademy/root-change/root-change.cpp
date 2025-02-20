@@ -87,6 +87,7 @@ void dfs2(int u,int fa) {
     REP1(i,sz) pre[i]=merge(pre[i-1],upd(dp[ch[i]]));
     RREP1(i,sz) suf[i]=merge(suf[i+1],upd(dp[ch[i]]));
     REP1(i,sz) udp[ch[i]]=merge(upd(udp[u]),merge(pre[i-1],suf[i+1]));
+    ope(u)oparr(pre)oparr(suf)
     for(int v:g[u]) if(v!=fa) dfs2(v,u);
 }
 signed main() {
