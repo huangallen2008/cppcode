@@ -101,6 +101,7 @@ signed main() {
         g[v].pb(u);
     } 
     dfs(0,-1);
-    cout<<dp[0].s<<'\n';
+    dfs2(0,-1);
+    REP(i,n) cout<<n-1-adp[i].s<<'\n';
     return 0;
 }
