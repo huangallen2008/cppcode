@@ -105,6 +105,7 @@ signed main() {
     } 
     dfs(0,-1);
     dfs2(0,-1);
+    oparr(udp)oparr(adp)
     REP(i,n) cout<<n-1-adp[i].s<<'\n';
     return 0;
 }
