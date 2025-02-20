@@ -57,26 +57,42 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Graph g;
-Vpii dp;
+Vpii dp,udp,adp;
 pii merge(pii a,pii b) {
     if(a.f!=b.f) return max(a,b);
     return {a.f,0};
 }
+pii upd(pii x) { return {x.f+1,x.s+1}; }
 void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
-        pii ret=dp[v];
-        op(u)op(v)ope(ret)
-        ret.f++,ret.s++;
-        dp[u]=merge(dp[u],ret);
+        // pii ret=dp[v];
+        // op(u)op(v)ope(ret)
+        // ret.f++,ret.s++;
+        dp[u]=merge(dp[u],upd(dp[v]));
     }
+}
+void dfs2(int u,int fa) {
+    adp[u]=upd(udp[u]);
+    int sz=0;
+    Vi ch(1);
+    for(int v:g[u]) {
+        if(v==fa) continue;
+        sz++;
+        ch.pb(v);
+        adp[u]=merge(adp[u],upd(dp[v]));
+    }
+    Vpii pre(sz+1),suf(sz+1);
+    REP1(i,sz) pre[i]=merge(pre[i-1],upd(dp[ch[i]]));
+    RREP1(i,sz) suf[i]=merge(suf[i+1],upd(dp[ch[i]]));
+    REP1(i,sz) udp[ch[i]]=merge(upd(udp[u]),merge(pre[i-1],suf[i+1]));
 }
 signed main() {
     IOS();
     int n;
     cin>>n;
-    dp=Vpii(n);
+    dp=udp=adp=Vpii(n);
     g=Graph(n);
     REP(i,n-1) {
         int u,v;
