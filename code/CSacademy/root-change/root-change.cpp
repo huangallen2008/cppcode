@@ -68,7 +68,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         pii ret=dp[v];
         op(u)op(v)ope(ret)
-        ret.f++;
+        ret.f++,ret.s++;
         dp[u]=merge(dp[u],ret);
     }
 }
