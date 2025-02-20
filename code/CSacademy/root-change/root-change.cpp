@@ -66,6 +66,9 @@ void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
         dfs(v,u);
+        int ret=dp[v];
+        ret.f++;
+        dp[u]=merge(dp[u],ret);
     }
 }
 signed main() {
@@ -81,5 +84,6 @@ signed main() {
         g[v].pb(u);
     } 
     dfs(0,-1);
+    cout<<dp[0].s<<'\n';
     return 0;
 }
