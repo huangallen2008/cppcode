@@ -68,6 +68,9 @@ int qu() {
     cin>>ret;
     return ret;
 }
+void RS() {
+    cout<<"R\n"<<flush;
+}
 void ans(int an) {
     cout<<"A "<<an<<"\n"<<flush;
     exit(0);
@@ -102,6 +105,7 @@ signed main() {
         }
         if(ok) break;
     }
+    RS();
     int an=dif.s;
     REP(i,dif.s) F(dif.f);
     while(!qu()) {
