@@ -58,8 +58,8 @@ int rd(int l,int r) {
 }
 int pw(int x,int p) {
     int r=1;
+    op(x)ope(p)
     while(p>0) {
-        op(x)ope(p)
         if(p&1) r=r*x%mod;
         x=x*x%mod;
         p>>=1;
