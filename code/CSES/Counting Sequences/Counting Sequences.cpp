@@ -81,7 +81,7 @@ signed main() {
     int n,k;
     cin>>n>>k;
     int an=0;
-    REP1(i,k) {
+    REP1(i,k) {ope(i)
         (an+=C(k,i)*pw(i,n)*pw(-1,k-i))%=mod;
     }
     an=(an+mod)%mod;
