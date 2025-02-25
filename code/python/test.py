@@ -1,1 +1,27 @@
-print("Everyone says to take chances because you never know what may come of it. But it is not until you actually do that you look back and realize the impact that one decision made on your life. And it brings you to a reflection point where you realize how different things could be, for better or for worse based on that chance you took. I believe in taking chances, big or small, especially in uncertain situations and embracing the outcome as a means of shaping the direction in which your life is headed.As a college transfer student, making the decision and taking the chance to transfer was one of the biggest chances I’ve had to take in my life. I transferred to Syracuse University 3 years ago from a very small liberal arts college. It was not an easy decision to make and even harder to get myself ready to take a chance on a new school, environment and world. I actually delayed the transfer a semester from Spring 2006 to the following Fall 2006 and considered not even going through with it by the end of the academic year. I was comfortable where I was and had made great friends at the school I was at but at the same time I knew that I wasn’t fully enjoying my college experience and felt like I was missing out on something. I was unsure whether what I thought I was missing out on was worth the risk of taking the chance. Looking back on taking a chance on something I knew nothing was about was the most important one I’ve taken in my life so far, and also the one that has impacted me and the path my life is headed down the most.I had to take the chance that it wouldn’t be what I expected, that I may look back and realize I was happy where I was and regret making the decision I had made. These were the fears that held me back for awhile and kept me from taking that leap until I finally felt ready. I think these same fears are what keep others from taking chances as well. The unknown element of taking a chance is what causes hesitation among most people. Since I took this big chance, looking back on the past three years has really solidified my belief in taking a chance on the things that are uncertain and unfamiliar. I’ve learned that if you don’t take chances the regret of not doing what you wanted may be bigger than the regret of taking the chance and seeing where you end up. It may not be easy at first, or the outcome may be different than what you expected but in the end you’ll have the self satisfaction of knowing you took a risk and a chance on something unfamiliar.")
+import numpy as np
+
+# 給定的數據
+X = np.array([5, 4, 3, 2, 1])
+y = np.array([1, 2, 3, 4, 5])
+
+# 計算 x 和 y 的均值
+x_mean = np.mean(X)
+y_mean = np.mean(y)
+
+# 計算 m（斜率）
+m = np.sum((X - x_mean) * (y - y_mean)) / np.sum((X - x_mean)**2)
+
+# 計算 b（截距）
+b = y_mean - m * x_mean
+
+# 顯示結果
+print(f"斜率 (m): {m}")
+print(f"截距 (b): {b}")
+
+# 使用封閉解進行預測
+def predict(x):
+    return m * x + b
+
+# 測試預測
+predictions = predict(X)
+print(f"預測結果: {predictions}")
