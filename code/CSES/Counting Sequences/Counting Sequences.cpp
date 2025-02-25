@@ -59,6 +59,7 @@ int rd(int l,int r) {
 int pw(int x,int p) {
     int r=1;
     while(p>0) {
+        op(x)ope(p)
         if(p&1) r=r*x%mod;
         x=x*x%mod;
         p>>=1;
@@ -81,7 +82,7 @@ signed main() {
     int n,k;
     cin>>n>>k;
     int an=0;
-    REP1(i,k) {ope(i)
+    REP1(i,k) {
         (an+=C(k,i)*pw(i,n)*pw(-1,k-i))%=mod;
     }
     an=(an+mod)%mod;
