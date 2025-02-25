@@ -67,7 +67,7 @@ int pw(int x,int p) {
     return r;
 }
 int inv(int x) { return pw(x,mod-2); }
-Vi fac,infac;
+Vi fac(maxn),infac(maxn);
 void init_com() {
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
@@ -79,6 +79,7 @@ int C(int n,int k) {
 }
 signed main() {
     IOS();
+    init_com();
     int n,k;
     cin>>n>>k;
     int an=0;
