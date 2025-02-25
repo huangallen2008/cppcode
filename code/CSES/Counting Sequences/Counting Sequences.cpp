@@ -49,7 +49,7 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
-const int maxn=5;
+const int maxn=1e6+5;
 const int maxb=64;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -64,6 +64,17 @@ int pw(int x,int p) {
         p>>=1;
     }
     return r;
+}
+int inv(int x) { return pw(x,mod-2); }
+Vi fac,infac;
+void init_com() {
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+}
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 signed main() {
     IOS();
