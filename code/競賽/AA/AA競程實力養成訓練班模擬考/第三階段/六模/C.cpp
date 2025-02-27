@@ -71,7 +71,7 @@ signed main() {
     REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
     int nn=id.size();
     vector<Vi> dp(nn,Vi(n+1));
-    ope("ok")
+    // ope("ok")
     dp[0][1]=1;
     REP1(i,nn-1) {
         int x=max(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
