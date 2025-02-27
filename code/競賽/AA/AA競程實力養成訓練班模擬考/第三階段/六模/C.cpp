@@ -89,7 +89,7 @@ signed main() {
         // }
         REP1(j,n) addmod(dp[i][j],dp[i-1][j-1]+dp[i-1][j]*(j));
         oparr(dp[1])
-        oparr(dp[2])
+        if(i>=2)oparr(dp[2])
     }
     oparr(mx)
     int an=0;
