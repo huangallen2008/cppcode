@@ -75,7 +75,7 @@ signed main() {
     dp[0][1]=1;
     REP1(i,nn-1) {
         for(int j=id[i-1]+1;j<id[i];j++) {
-            if(a[j]==0) dp[i-1].insert(dp[i-1].begin(),0);
+            if(a[j]==-1) dp[i-1].insert(dp[i-1].begin(),0);
             else {
                 REP(k,j) addmod(dp[i-1][k+1],dp[i-1][k]);
             }
