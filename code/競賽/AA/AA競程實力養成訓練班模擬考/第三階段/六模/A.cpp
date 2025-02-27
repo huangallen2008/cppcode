@@ -100,11 +100,11 @@ signed main() {
         cout<<an<<'\n';
         return 0;
     }
+    int s=val(str);
     if(s%10==0) {
         cout<<"0 1\n";
         return 0;
     }
-    int s=val(str);
     cout<<"1 ";
     cout<<cnt(s)<<'\n';
     return 0;
