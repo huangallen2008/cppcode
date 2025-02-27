@@ -74,8 +74,8 @@ signed main() {
     }
     cout<<"1 ";
     int an=0;
-    REP1(i,7) {
-        REP1(j,9) {
+    REP1(i,8) {
+        REP1(j,i==8?1:9) {
             if((s+i*j)%10==0) an++;
         }
     }
