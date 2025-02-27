@@ -67,7 +67,7 @@ signed main() {
     REP(i,n) if(a[i]==-1) id.pb(i);
     Vi mx(n);
     mx[0]=1;
-    REP1(i,n-1) mx[i]=max(mn[i-1],a[i]);
+    REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
     int nn=id.size();
     vector<Vi> dp(nn,Vi(n+1));
     dp[0][1]=1;
