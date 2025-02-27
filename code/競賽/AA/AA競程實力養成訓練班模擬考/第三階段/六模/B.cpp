@@ -111,6 +111,7 @@ signed main() {
             }
         };
         REP1(j,n) {
+            ope(j)
             upd(mx[i],{d2[j][i],j});
         }
     }
