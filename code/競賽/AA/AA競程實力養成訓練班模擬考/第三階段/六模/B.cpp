@@ -96,7 +96,7 @@ signed main() {
                 d2[i][j]=c[i]+c[j];
             }
         }
-        oparr(d2[i])
+        // oparr(d2[i])
     }
     vector<pair<pii,int>> mx(n+1);
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
@@ -113,6 +113,7 @@ signed main() {
             upd(mx[i],{d2[j][i],j});
         }
     }
+    oparr(mx)
     int an=0;
     REP1(i,n) {
         REP1(j,n) {
