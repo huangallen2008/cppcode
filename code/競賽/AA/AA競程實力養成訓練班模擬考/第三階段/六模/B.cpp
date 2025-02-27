@@ -102,7 +102,7 @@ signed main() {
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
     REP1(i,n) {
         auto upd=[&](pair<pii,int> &a,pii x)->void {
-            op(i)ope(x)
+            op(i)op(x)ope(a)
             if(x.f>a.f.f) {
                 a.s=a.f.f;
                 a.f=x;
