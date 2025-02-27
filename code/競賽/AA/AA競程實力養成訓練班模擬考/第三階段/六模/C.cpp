@@ -70,6 +70,14 @@ signed main() {
     // mx[0]=1;
     // REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
     // int nn=id.size();
+    int mx=1;
+    REP(i,n) {
+        if(a[i]>mx) {
+            cout<<"0\n";
+            return 0;
+        }
+        if(a[i]==mx||a[i]==-1) mx++;
+    }
     vector<Vi> dp(n,Vi(n+1));
     // ope("ok")
     dp[0][1]=1;
