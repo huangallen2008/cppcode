@@ -63,11 +63,11 @@ pii tran(char c) {
 }
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    pii r=tran(s[0]);
-    int s=r.f+9*r.s+s[9]-'0';
-    REP1(i,8) s+=(9-i)*(s[i]-'0');
+    string str;
+    cin>>str;
+    pii r=tran(str[0]);
+    int s=r.f+9*r.s+str[9]-'0';
+    REP1(i,8) s+=(9-i)*(str[i]-'0');
     if(s%10==0) {
         cout<<"0 1\n";
         return 0;
