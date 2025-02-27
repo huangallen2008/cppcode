@@ -60,11 +60,12 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a(n);
+    Vi a(n),cnt(n);
     REP(i,n) cin>>a[i];
     a[0]=1;
     Vi id(1);
     REP(i,n) if(a[i]==0) id.pb(i);
+    REP1(i,n) cnt[i]=cnt[i-1]+(a[i]==-1);
     Vi mx(n);
     mx[0]=1;
     REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
@@ -72,7 +73,7 @@ signed main() {
     vector<Vi> dp(nn,Vi(n+1));
     dp[0][1]=1;
     REP1(i,nn-1) {
-        int x=mx[id[i]];
+        int x=max(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
         REP(j,x) addmod(dp[i-1][j+1],dp[i-1][j]),dp[i-1][j]=0;
         // Vi ss=dp[i-1];
         // RREP(i,n) {
