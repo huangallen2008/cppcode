@@ -65,47 +65,23 @@ signed main() {
     IOS();
     string str;
     cin>>str;
-    auto val=[&](string str) {
-        pii r=tran(str[0]);
-        int s=r.f+9*r.s+str[9]-'0';
-        REP1(i,8) s+=(9-i)*(str[i]-'0');
-        return s;
-    };
-    auto cnt=[&](int s) {
-        int an=0;
-        REP1(i,8) {
-            REP1(j,9) {
-                if((s+i*j)%10==0) an++;
-            }
-        }
-        REP1(j,9) {
-            if((s+1*j)%10==0) an++;
-        }
-        return an;
-    };
-    if(str[1]!='1'&&str[1]!='2') {
-        string t=str;
-        t[1]='1';
-        if(val(t)%10==0) {
-            cout<<"1 1\n";
-            return 0;
-        }
-        t[1]='2';
-        if(val(t)%10==0) {
-            cout<<"1 1\n";
-            return 0;
-        }
-        int an=cnt(val(t));
-        t[1]='1';an+=cnt(val(t));
-        cout<<an<<'\n';
-        return 0;
-    }
-    int s=val(str);
+    pii r=tran(str[0]);
+    int s=r.f+9*r.s+str[9]-'0';
+    REP1(i,8) s+=(9-i)*(str[i]-'0');
     if(s%10==0) {
         cout<<"0 1\n";
         return 0;
     }
     cout<<"1 ";
-    cout<<cnt(s)<<'\n';
+    int an=0;
+    REP1(i,7) {
+        REP1(j,9) {
+            if((s+i*j)%10==0) an++;
+        }
+    }
+    REP1(j,9) {
+        if((s+1*j)%10==0) an++;
+    }
+    cout<<an<<'\n';
     return 0;
 }
