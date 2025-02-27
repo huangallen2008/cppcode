@@ -65,10 +65,10 @@ signed main() {
     a[0]=1;
     Vi id(1);
     REP(i,n) if(a[i]==0) id.pb(i);
-    REP1(i,n-1) cnt[i]=cnt[i-1]+(a[i]==-1);
-    Vi mx(n);
-    mx[0]=1;
-    REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
+    // REP1(i,n-1) cnt[i]=cnt[i-1]+(a[i]==-1);
+    // Vi mx(n);
+    // mx[0]=1;
+    // REP1(i,n-1) mx[i]=max(mx[i-1],a[i]);
     int nn=id.size();
     vector<Vi> dp(nn,Vi(n+1));
     // ope("ok")
@@ -88,9 +88,9 @@ signed main() {
         //     addmod(ss[i],ss[i+1]);
         // }
         REP1(j,n) addmod(dp[i][j],dp[i-1][j-1]+dp[i-1][j]*(j));
-        oparr(dp[1])
+        // oparr(dp[1])
     }
-    oparr(mx)
+    // oparr(mx)
     int an=0;
     REP1(i,n) addmod(an,dp[nn-1][i]);
     cout<<an<<'\n';
