@@ -68,5 +68,12 @@ signed main() {
     mi>>=1;
     an-=mi;
     cout<<an<<'\n';
+    REP(i,n) {
+        for(int j=i+1;j<n;j++) {
+            if(j-i>(n>>1)) cout<<"1";
+            else cout<<"0";
+        }
+    }
+    cout<<'\n';
     return 0;
 }
