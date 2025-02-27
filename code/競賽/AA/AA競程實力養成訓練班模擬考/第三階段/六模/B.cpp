@@ -112,15 +112,14 @@ signed main() {
             upd(mx[i],{d2[j][i],j});
         }
     }
+    int an=0;
     REP1(i,n) {
         REP1(j,n) {
-            if(i==j||dis[1][i]>k||dis[i][j]>k) continue;
-            REP1(l,n) {
-                if(l==i||l==j||dis[j][l]>k) continue;
-
-            }
+            if(i==j||dis[i][j]>k) continue;
+            if(mx[i].f.f==mx[j].f.f) chmax(an,max(mx[i].s+mx[j].f.f,mx[i].f.f+mx[j].s));
+            else chmax(an,mx[i].f.f+mx[j].f.f);
         }
     }
-    // cout<<dp[0]<<'\n';
+    cout<<an<<'\n';
     return 0;
 }
