@@ -117,7 +117,7 @@ signed main() {
     int an=0;
     REP1(i,n) {
         REP1(j,n) {
-            if(i==j||dis[i][j]>k) continue;
+            if(i==1||j==1||i==j||dis[i][j]>k) continue;
             if(mx[i].f.f==mx[j].f.f) chmax(an,max(mx[i].s+mx[j].f.f,mx[i].f.f+mx[j].s));
             else chmax(an,mx[i].f.f+mx[j].f.f);
         }
