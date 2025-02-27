@@ -74,15 +74,15 @@ signed main() {
     // ope("ok")
     dp[0][1]=1;
     REP1(i,n-1) {
-        if(a[j]==0){
+        if(a[i]==0){
             REP1(j,n) addmod(dp[i][j],dp[i-1][j-1]+dp[i-1][j]*(j));
         }
-        else if(a[j]==-1) {
+        else if(a[i]==-1) {
             REP1(j,n) dp[i][j]=dp[i-1][j-1];
         }
         else {
             dp[i]=dp[i-1];
-            REP(k,a[j]) addmod(dp[i][k+1],dp[i][k]),dp[i][k]=0;
+            REP(k,a[i]) addmod(dp[i][k+1],dp[i][k]),dp[i][k]=0;
         }
         // chmax(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
         // int x=mx[id[i]];
