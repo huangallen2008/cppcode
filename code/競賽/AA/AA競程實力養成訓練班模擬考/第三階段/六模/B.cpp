@@ -60,20 +60,21 @@ signed main() {
     IOS();
     int n,m,k;
     cin>>n>>m>>k;
-    Graph g(n);
-    Vi c(n);
-    REP1(i,n-1) cin>>c[i];
+    k++;
+    Graph g(n+1);
+    Vi c(n+1);
+    for(int i=2;i<=n;i++) cin>>c[i];
     REP(i,m) {
         int u,v;
-        cin>>u>>v,u--,v--;
+        cin>>u>>v;
         g[u].pb(v);
         g[v].pb(u);
     }
-    vector<Vi> dis(n,Vi(n,-inf));
-    REP(i,n) {
+    vector<Vi> dis(n+1,Vi(n+1,-inf));
+    REP1(i,n) {
         dis[i][i]=0;
         queue<int> q;
-        Vi vis(n);
+        Vi vis(n+1);
         vis[i]=1;
         q.push(i);
         while(q.size()) {
@@ -87,18 +88,39 @@ signed main() {
             }
         }
     }
-    Vi dp(n,-inf);
-    dp[0]=0;
-    REP(___,5) {
-        Vi ndp(n,-inf);
-        REP(i,n) {
-            REP(j,n) {
-                if(i==j||dis[i][j]>k+1) continue;
-                chmax(ndp[i],dp[j]+c[i]);
+    vector<Vi> d2(n+1,Vi(n+1));
+    REP1(i,n) {
+        REP1(j,n) {
+            if(i==j||dis[1][i]>k||dis[i][j]>k) d2[i][j]=-inf;
+            else {
+                d2[i][j]=c[i]+c[j];
             }
         }
-        swap(dp,ndp);
-    }   
+    }
+    vector<pair<pii,int>> mx(n+1);
+    // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
+    REP1(i,n) {
+        auto upd=[&](pair<pii,int> &a,pii x)->void {
+            if(x.f>a.f.f) {
+                a.s=a.f.f;
+                a.f=x;
+            }else if(x.f>a.s) {
+                a.s=x.f;
+            }
+        };
+        REP1(j,n) {
+            upd(mx[i],{dp[j][i],j});
+        }
+    }
+    REP1(i,n) {
+        REP1(j,n) {
+            if(i==j||dis[1][i]>k||dis[i][j]>k) continue;
+            REP1(l,n) {
+                if(l==i||l==j||dis[j][l]>k) continue;
+
+            }
+        }
+    }
     cout<<dp[0]<<'\n';
     return 0;
 }
