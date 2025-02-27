@@ -84,6 +84,7 @@ signed main() {
         REP1(j,n) addmod(dp[i][j],dp[i-1][j-1]+dp[i-1][j]*(j));
         oparr(dp[i])
     }
+    oparr(mx)
     int an=0;
     REP1(i,n) addmod(an,dp[nn-1][i]);
     cout<<an<<'\n';
