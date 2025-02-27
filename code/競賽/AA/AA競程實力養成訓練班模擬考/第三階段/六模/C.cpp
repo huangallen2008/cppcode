@@ -74,9 +74,15 @@ signed main() {
     // ope("ok")
     dp[0][1]=1;
     REP1(i,nn-1) {
-        chmax(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
-        int x=mx[id[i]];
-        REP(j,x) addmod(dp[i-1][j+1],dp[i-1][j]),dp[i-1][j]=0;
+        for(int j=id[i-1]+1;j<id[i];j++) {
+            if(a[j]==0) dp[i-1].insert(dp[i-1].begin(),0);
+            else {
+                REP(k,j) addmod(dp[i-1][k+1],dp[i-1][k]);
+            }
+        }
+        // chmax(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
+        // int x=mx[id[i]];
+        // REP(j,x) addmod(dp[i-1][j+1],dp[i-1][j]),dp[i-1][j]=0;
         // Vi ss=dp[i-1];
         // RREP(i,n) {
         //     addmod(ss[i],ss[i+1]);
