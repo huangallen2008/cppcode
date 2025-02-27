@@ -109,7 +109,7 @@ signed main() {
             }
         };
         REP1(j,n) {
-            upd(mx[i],{dp[j][i],j});
+            upd(mx[i],{d2[j][i],j});
         }
     }
     REP1(i,n) {
@@ -121,6 +121,6 @@ signed main() {
             }
         }
     }
-    cout<<dp[0]<<'\n';
+    // cout<<dp[0]<<'\n';
     return 0;
 }
