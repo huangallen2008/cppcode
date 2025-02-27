@@ -93,6 +93,7 @@ signed main() {
     // oparr(mx)
     int an=0;
     REP1(i,n) addmod(an,dp[nn-1][i]);
+    an=(an+mod)%mod;
     cout<<an<<'\n';
     return 0;
 }
