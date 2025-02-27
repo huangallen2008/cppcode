@@ -77,7 +77,7 @@ signed main() {
         for(int j=id[i-1]+1;j<id[i];j++) {
             if(a[j]==-1) dp[i-1].insert(dp[i-1].begin(),0);
             else {
-                REP(k,j) addmod(dp[i-1][k+1],dp[i-1][k]);
+                REP(k,j) addmod(dp[i-1][k+1],dp[i-1][k]),dp[i-1][k]=0;
             }
         }
         // chmax(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
