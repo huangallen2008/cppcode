@@ -72,9 +72,9 @@ void solve() {
     };
     bool ok=1;
     Vi an(k);
-    ope("ok")
     REP1(rc,k+1) {
         int cc=k+2-rc;
+        op(rc)ope(cc)
         if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
