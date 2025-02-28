@@ -102,7 +102,7 @@ signed main() {
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
     REP1(i,n) {
         auto upd=[&](Vpii &a,pii x)->void {
-            // op(a)op(x)
+            op(a)op(x)
             REP(i,3) {
                 if(x.f>a[i].f) {
                     for(int j=2;j>i;j--) a[j]=a[j-1];
@@ -113,7 +113,7 @@ signed main() {
             ope(a)
         };
         REP1(j,n) {
-            // ope(j)
+            ope(i)
             upd(mx[i],{d2[j][i],j});
         }
     }
