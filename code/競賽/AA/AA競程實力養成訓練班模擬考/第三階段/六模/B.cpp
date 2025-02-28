@@ -70,7 +70,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    vector<Vi> dis(n+1,Vi(n+1,-inf));
+    vector<Vi> dis(n+1,Vi(n+1,inf));
     REP1(i,n) {
         dis[i][i]=0;
         queue<int> q;
