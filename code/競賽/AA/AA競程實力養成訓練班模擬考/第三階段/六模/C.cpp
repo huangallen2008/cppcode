@@ -89,8 +89,10 @@ signed main() {
             REP1(j,n) dp[i][j]=dp[i-1][j-1];
         }
         else {
-            dp[i]=dp[i-1];
-            REP(k,a[i]) addmod(dp[i][k+1],dp[i][k]),dp[i][k]=0;
+            REP1(j,n) {
+                if(j>=a[i]) dp[i][j]=dp[i-1][j];
+                if(j==a[i]) addmod(dp[i][j],dp[i-1][j-1]);
+            }
         }
         // chmax(mx[id[i]],mx[id[i-1]]+cnt[id[i]]-cnt[id[i-1]]);
         // int x=mx[id[i]];
