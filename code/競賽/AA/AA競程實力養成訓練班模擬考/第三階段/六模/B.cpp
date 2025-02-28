@@ -114,6 +114,7 @@ signed main() {
         };
         for(int j=2;j<=n;j++) {
             // ope(i)
+            if(i==j) continue;
             upd(mx[i],{d2[j][i],j});
         }
     }
