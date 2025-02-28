@@ -71,7 +71,7 @@ void solve() {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
     bool ok=1;
-    Vi an(k);
+    Vi an(k,inf);
     REP1(rc,k+1) {
         int cc=k+2-rc;
         int x=p[n][m]/rc/cc;
