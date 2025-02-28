@@ -98,16 +98,15 @@ signed main() {
         }
         oparr(d2[i])
     }
-    vector<pair<pii,int>> mx(n+1);
+    vector<Vpii> mx(n+1,Vpii(3));
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
     REP1(i,n) {
-        auto upd=[&](pair<pii,int> &a,pii x)->void {
-            op(i)op(x)ope(a)
-            if(x.f>a.f.f) {
-                a.s=a.f.f;
-                a.f=x;
-            }else if(x.f>a.s) {
-                a.s=x.f;
+        auto upd=[&](Vpii &a,pii x)->void {
+            REP(i,3) {
+                if(x.f>a[i].f) {
+                    for(int j=2;j>i;j--) a[j]=a[j-1];
+                }
+                a[i]=x;
             }
         };
         REP1(j,n) {
@@ -118,10 +117,13 @@ signed main() {
     oparr(mx)
     int an=0;
     REP1(i,n) {
-        REP1(j,n) {
+        REP1(j,n) {//1,mx[i],i,j,mx[j],1
             if(i==1||j==1||i==j||dis[i][j]>k) continue;
-            if(mx[i].f.f==mx[j].f.f) chmax(an,max(mx[i].s+mx[j].f.f,mx[i].f.f+mx[j].s));
-            else chmax(an,mx[i].f.f+mx[j].f.f);
+            REP(i1,3) REP(i2,3) {
+                pii p1=mx[i][i1],p2=mx[j][i2];
+                if(p1.s==1||p2.s==1||p1.s==j||p1.s==i||p2.s==i||p2.s==j||p1.s==p2.s) continue;
+                chmax(an,p1.f+p2.f);
+            }
         }
     }
     cout<<an<<'\n';
