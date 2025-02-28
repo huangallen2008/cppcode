@@ -74,7 +74,6 @@ void solve() {
     Vi an(k);
     REP1(rc,k+1) {
         int cc=k+2-rc;
-        op(rc)ope(cc)
         int x=p[n][m]/rc/cc;
         int now=0;
         Vi rid(rc+1);
@@ -82,6 +81,7 @@ void solve() {
         int rit=1;
         int cit=1;
         if(p[n][m]%((rc)*(cc))) continue;
+        op(rc)ope(cc)
         REP1(i,n) {
             now+=p[i][n]-p[i-1][n];
             if(now==x*cc) {
