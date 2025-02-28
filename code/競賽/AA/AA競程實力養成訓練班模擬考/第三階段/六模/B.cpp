@@ -88,7 +88,7 @@ signed main() {
             }
         }
     }
-    vector<Vi> d2(n+1,Vi(n+1));
+    vector<Vi> d2(n+1,Vi(n+1,{-inf,1}));
     REP1(i,n) {
         REP1(j,n) {
             if(i==1||j==1||i==j||dis[1][i]>k||dis[i][j]>k) d2[i][j]=-inf;
