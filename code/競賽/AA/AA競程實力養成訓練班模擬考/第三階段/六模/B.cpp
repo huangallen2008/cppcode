@@ -106,9 +106,9 @@ signed main() {
             REP(i,3) {
                 if(x.f>a[i].f) {
                     for(int j=2;j>i;j--) a[j]=a[j-1];
+                    a[i]=x;
+                    break;
                 }
-                a[i]=x;
-                break;
             }
             ope(a)
         };
