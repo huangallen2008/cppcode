@@ -107,8 +107,8 @@ void solve() {
         }
         ope("ok")
         if(!ok) break;
-        REP(i,rc) {
-            REP(j,cc) {
+        REP1(i,rc) {
+            REP1(j,cc) {
                 if(cnt(rid[i-1]+1,rid[i],cid[j-1]+1,cid[j])!=x) {
                     ok=0;
                     break;
