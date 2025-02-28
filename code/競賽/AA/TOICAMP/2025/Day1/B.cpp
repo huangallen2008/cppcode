@@ -93,6 +93,7 @@ void solve() {
                 break;
             }
         }
+        ope("ok")
         if(!ok) break;
         now=0;
         REP1(i,m) {
