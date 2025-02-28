@@ -71,6 +71,7 @@ void solve() {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
     bool ok=1;
+    Vi an(k);
     REP1(rc,k+1) {
         int cc=k+2-rc;
         if(p[n][m]%((rc)*(cc))) continue;
@@ -114,13 +115,16 @@ void solve() {
         }
         if(!ok) break;
         Vi res;
-        REP1(i,rc) res.pb(rid[i]);
-        REP1(i,cc) res.pb(n-1+cid[i]);
+        REP1(i,rc-1) res.pb(rid[i]);
+        REP1(i,cc-1) res.pb(n-1+cid[i]);
+        chmin(an,res);
     }
     if(!ok) {
         cout<<"Impossible\n";
         return;
     }
+    REP(i,k) cout<<an[i]<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
