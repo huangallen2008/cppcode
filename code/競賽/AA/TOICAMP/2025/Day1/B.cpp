@@ -56,7 +56,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define SHIT {cout<<"SHIT!\n"; break;}
 void solve() {
     int n,m,k;
     cin>>n>>m>>k;
@@ -71,89 +70,57 @@ void solve() {
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
-    k+=2;
-    int sum=p[n][m];
-    if(sum==0) {
-        REP1(i,k-2) cout<<i<<' ';
-        cout<<'\n';
+    bool ok=1;
+    REP1(rc,k+1) {
+        int cc=k+2-rc;
+        if(p[n][m]%((rc)*(cc))) continue;
+        int x=p[n][m]/rc/cc;
+        int now=0;
+        Vi rid(rc+1);
+        Vi cid(cc+1);
+        int rit=1;
+        int cit=1;
+        REP1(i,n) {
+            now+=p[i][n]-p[i-1][n];
+            if(now==x*cc) {
+                rid[rit++]=i;
+                now=0;
+            }else if(now>x*cc) {
+                ok=0;
+                break;
+            }
+        }
+        if(!ok) break;
+        now=0;
+        REP1(i,m) {
+            now+=p[n][i]-p[n][i-1];
+            if(now==x*rc) {
+                cid[cit++]=i;
+                now=0;
+            }else if(now>x*rc) {
+                ok=0;
+                break;
+            }
+        }
+        if(!ok) break;
+        REP(i,rc) {
+            REP(j,cc) {
+                if(cnt(rid[i-1]+1,rid[i],cid[j-1]+1,cid[j])!=x) {
+                    ok=0;
+                    break;
+                }
+            }
+            if(!ok) break;
+        }
+        if(!ok) break;
+        Vi res;
+        REP1(i,rc) res.pb(rid[i]);
+        REP1(i,cc) res.pb(n-1+cid[i]);
+    }
+    if(!ok) {
+        cout<<"Impossible\n";
         return;
     }
-    Vi an(k-2,inf);
-    REP1(cr,k-1) {
-        int cc=k-cr;
-        if(sum%(cc*cr)) continue;
-        int pc=sum/cc/cr;
-        // op(cr)ope(cc)ope(pc)
-        // REP1(r1,n+1) {
-            bool ok=1;
-            Vi r(cr),c(cc);
-            int itr=0,now=0;
-            int itc=0;
-            REP1(j,m+1) {
-                if(now==pc*cr) {
-                    now=0;
-                    // if(itc>=cc) {
-                    //     ok=0;
-                    //     break;
-                    // }
-                    c[itc++]=j;
-                }else if(now>pc*cr) {
-                    ok=0;
-                    break;
-                }
-                if(j<=m)now+=p[n][j]-p[n][j-1];
-            }
-            if(!ok) continue;
-            // c[itc]=m+1;
-            // if(itc<cc) ok=0;
-            now=0;
-            REP1(j,n+1) {
-                // ope(j)
-                if(now==pc*cc) {
-                    now=0;
-                    // if(itr>=cr) {
-                    //     ok=0;
-                    //     break;
-                    // }
-                    r[itr++]=j;
-                }else if(now>pc*cc) {
-                    ok=0;
-                    break;
-                }
-                if(j<=n)now+=p[j][m]-p[j-1][m];
-            }
-            if(!ok) continue;
-            // r[itr]=n+1;
-            //check all !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // if(itr<cr) ok=0;
-            // oparr(c)ope(ok)
-            oparr(c)oparr(r)
-            c.back()=m+1,r.back()=n+1;
-            if(itr!=cr||itc!=cc||c.back()!=m+1||r.back()!=n+1) SHIT
-            REP(i,cr) REP(j,cc) {
-                if(r[i]-1>n||c[j]-1>m) SHIT
-                if(cnt(i==0?1:r[i-1],r[i]-1,j==0?1:c[j-1],c[j]-1)!=pc) {
-                    ok=0;
-                    break;
-                }
-            }
-            if(!ok) continue;
-
-            // op(cr)ope(r1)
-            // oparr(r)oparr(c)entr
-            Vi ran;
-            REP(i,cr-1) ran.pb(r[i]-1);
-            REP(i,cc-1) ran.pb(c[i]+n-2);
-            chmin(an,ran);
-        // }
-    }
-    if(an[0]==inf) {
-        cout<<"Impossible\n";
-        return ;
-    }
-    REP(i,k-2) cout<<an[i]<<' ';
-    cout<<'\n';
-    // entr
 }
 signed main() {
     IOS();
