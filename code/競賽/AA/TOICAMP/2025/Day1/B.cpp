@@ -83,6 +83,7 @@ void solve() {
         if(p[n][m]%((rc)*(cc))) continue;
         op(rc)ope(cc)
         REP1(i,n) {
+            ope(i)
             now+=p[i][n]-p[i-1][n];
             if(now==x*cc) {
                 rid[rit++]=i;
