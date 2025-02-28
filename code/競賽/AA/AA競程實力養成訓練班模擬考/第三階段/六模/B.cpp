@@ -108,6 +108,7 @@ signed main() {
                     for(int j=2;j>i;j--) a[j]=a[j-1];
                 }
                 a[i]=x;
+                break;
             }
             ope(a)
         };
