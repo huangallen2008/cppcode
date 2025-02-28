@@ -70,9 +70,9 @@ void solve() {
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
-    bool ok=1;
     Vi an(k,inf);
     REP1(rc,k+1) {
+        bool ok=1;
         int cc=k+2-rc;
         int x=p[n][m]/rc/cc;
         int now=0;
@@ -93,7 +93,7 @@ void solve() {
                 break;
             }
         }
-        if(!ok) break;
+        if(!ok) continue;
         now=0;
         REP1(i,m) {
             now+=p[n][i]-p[n][i-1];
@@ -105,7 +105,7 @@ void solve() {
                 break;
             }
         }
-        if(!ok) break;
+        if(!ok) continue;
         REP1(i,rc) {
             REP1(j,cc) {
                 if(cnt(rid[i-1]+1,rid[i],cid[j-1]+1,cid[j])!=x) {
@@ -115,14 +115,14 @@ void solve() {
             }
             if(!ok) break;
         }
-        if(!ok) break;
+        if(!ok) continue;
         // oparr(rid)oparr(cid)
         Vi res;
         REP1(i,rc-1) res.pb(rid[i]);
         REP1(i,cc-1) res.pb(n-1+cid[i]);
         chmin(an,res);
     }
-    if(!ok) {
+    if(an[0]==inf) {
         cout<<"Impossible\n";
         return;
     }
