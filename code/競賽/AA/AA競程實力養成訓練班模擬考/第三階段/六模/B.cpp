@@ -112,7 +112,7 @@ signed main() {
             }
             // ope(a)
         };
-        REP1(j,n) {
+        for(int j=2;j<=n;j++) {
             // ope(i)
             upd(mx[i],{d2[j][i],j});
         }
