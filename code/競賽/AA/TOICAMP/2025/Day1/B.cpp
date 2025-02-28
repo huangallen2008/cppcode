@@ -93,7 +93,6 @@ void solve() {
                 break;
             }
         }
-        ope("ok")
         if(!ok) break;
         now=0;
         REP1(i,m) {
@@ -106,6 +105,7 @@ void solve() {
                 break;
             }
         }
+        ope("ok")
         if(!ok) break;
         REP(i,rc) {
             REP(j,cc) {
