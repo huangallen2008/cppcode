@@ -96,7 +96,7 @@ signed main() {
                 d2[i][j]=c[i]+c[j];
             }
         }
-        oparr(d2[i])
+        // oparr(d2[i])
     }
     vector<Vpii> mx(n+1,Vpii(3));
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
