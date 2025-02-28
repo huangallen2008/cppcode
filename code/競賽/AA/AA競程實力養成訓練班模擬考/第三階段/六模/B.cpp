@@ -102,7 +102,7 @@ signed main() {
     // vector<Vi> px(n+1,Vi(n+2)),sx(n+1,Vi(n+2));
     REP1(i,n) {
         auto upd=[&](Vpii &a,pii x)->void {
-            op(a)op(x)
+            // op(a)op(x)
             REP(i,3) {
                 if(x.f>a[i].f) {
                     for(int j=2;j>i;j--) a[j]=a[j-1];
@@ -110,21 +110,21 @@ signed main() {
                     break;
                 }
             }
-            ope(a)
+            // ope(a)
         };
         REP1(j,n) {
-            ope(i)
+            // ope(i)
             upd(mx[i],{d2[j][i],j});
         }
     }
-    oparr(mx)
+    // oparr(mx)
     int an=0;
     REP1(i,n) {
         REP1(j,n) {//1,mx[i],i,j,mx[j],1
             if(i==1||j==1||i==j||dis[i][j]>k) continue;
             REP(i1,3) REP(i2,3) {
                 pii p1=mx[i][i1],p2=mx[j][i2];
-                op(i)op(j)op(p1.s)ope(p2.s)
+                // op(i)op(j)op(p1.s)ope(p2.s)
                 if(p1.s==1||p2.s==1||p1.s==j||p1.s==i||p2.s==i||p2.s==j||p1.s==p2.s) continue;
                 chmax(an,p1.f+p2.f);
             }
