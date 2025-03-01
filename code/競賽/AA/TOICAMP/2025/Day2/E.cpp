@@ -78,8 +78,12 @@ int check(int m) {
         if(SZ(q)==0) q.push_front(s[it++].s);
         auto [x,y]=q.front();
         bool ook=1;
-        while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push_front(s[it++].s),ook=0;
+        Vpii tt;
+        while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) tt.pb(s[it++].s),ook=0;
+        reverse(ALL(tt));
+        for(auto x:tt) q.push_front(x);
         if(!ook) continue;
+
         q.pop_back();
         // op(x)op(y)op(d[x][y])ope(it)
         if(vis[x][y]) continue;
