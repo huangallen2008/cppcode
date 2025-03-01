@@ -59,7 +59,27 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    
+    Vi a(n+1),b(n+1),c(n+1);
+    REP1(i,n) cin>>a[i]>>b[i]>>c[i];
+    reverse(1+ALL(a));
+    reverse(1+ALL(b));
+    reverse(1+ALL(c));
+    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-inf)));
+    dp[0][0][0]=0;
+    REP(i,n) {
+        REP(j,n+1) {
+            REP(k,n*n) {
+                if(j+1<n+1&&k+j+1<n*n) chmax(dp[i+1][j+1][k+j+1],dp[i][j][k]+a[i]);
+                if(k+j<n*n) {
+                    chmax(dp[i+1][j][k+j],dp[i][j][k]+j*b[i]);
+                    chmax(dp[i+1][j][k+j],dp[i][j][k]+k*c[i]);
+                }
+            }
+        }
+    }
+    int an=0;
+    REP(i,n+1) REP(j,n*n) chmax(an,dp[n][i][j]);
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
