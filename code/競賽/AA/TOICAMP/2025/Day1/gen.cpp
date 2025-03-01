@@ -63,7 +63,7 @@ signed main() {
     int n=10,m=n;
     cout<<n<<' '<<m<<'\n';
     string s="><^v.#";
-    REP(i,n) REP(j,m) cout<<s[rd(0,5)];
+    REP(i,n) {REP(j,m) cout<<s[rd(0,5)];cout<<"\n";}
     cout<<'\n';
     }
     return 0;
