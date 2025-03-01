@@ -88,9 +88,7 @@ signed main() {
     } 
     vector<Vi> cid(N);
     int coinid=0;
-    ope("ok")
     REP1(i,n) REP1(j,m) if(a0[id(i,j)]=='#') {
-        op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(!ing(nx,ny)) continue;
@@ -120,6 +118,7 @@ signed main() {
     auto addv=[&](Vi v) { for(int x:v) add(x); };
     auto del=[&](int x) { cnt-=--c[x]==0; };
     auto delv=[&](Vi v) { for(int x:v) del(x); };
+    oparr(wid)
     for(int x:wid) {
         ope(x)
         if(vis[x]) continue;
