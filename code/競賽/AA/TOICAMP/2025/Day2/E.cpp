@@ -77,28 +77,31 @@ int check(int m) {
     while(q.size()||it<r*c) {
         if(SZ(q)==0) q.push_front(s[it++].s);
         auto [x,y]=q.front();
-        bool ook=1;
-        Vpii tt;
-        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[x][y]) {
-            // if(vis[s[it].s.f][s[it].s.s]) continue;
-            tt.pb(s[it++].s),ook=0;
-        }
-        reverse(ALL(tt));
-        for(auto x:tt) q.push_front(x);
-        if(!ook) continue;
+        // bool ook=1;
+        // Vpii tt;
+        // while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[x][y]) {
+        //     if(vis[s[it].s.f][s[it].s.s]) continue;
+        //     tt.pb(s[it++].s),ook=0;
+        // }
+        // reverse(ALL(tt));
+        // for(auto x:tt) q.push_front(x);
+        // if(!ook) continue;
         
         q.pop_back();
         if(vis[x][y]) continue;
         // op(x)op(y)op(d[x][y])ope(it)
         // assert(las>=d[x][y]);
         // las=d[x][y];
-        vis[x][y]=1;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
+                vis[nx][ny]=1;
+                while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
+                    q.pb(s[it++]);
+                }
                 q.pb({nx,ny});
             }
         }
