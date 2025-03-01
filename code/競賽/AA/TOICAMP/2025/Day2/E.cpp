@@ -93,13 +93,13 @@ int check(int m) {
         oparr(q)
         if(vis[x][y]) continue;
         vis[x][y]=1;
-        op(x)ope(y)
+        // op(x)ope(y)
         // op(x)op(y)op(d[x][y])ope(it)
         // assert(las>=d[x][y]);
         // las=d[x][y];
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
-            op(x)op(y)op(nx)ope(ny)
+            // op(x)op(y)op(nx)ope(ny)
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
@@ -112,21 +112,21 @@ int check(int m) {
             }
         }
     }
-    ope(it)
+    // ope(it)
     // entr
     int an=0;
     REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
-    REP(i,r) REP(j,c) {
-        int mx=0;
-        REP(x,r) REP(y,c) chmax(mx,a[x][y]-((x-i)*(y-j)<0?max(abs(x-i),abs(y-j)):abs(x-i)+abs(y-j))*m);
-        if(d[i][j]!=mx) {
-            cout<<"WAWAWA!!!\n";
-            cout<<a;
-            cout<<d;
-            op(r)op(c)ope(m)
-            return an;
-        }
-    }
+    // REP(i,r) REP(j,c) {
+    //     int mx=0;
+    //     REP(x,r) REP(y,c) chmax(mx,a[x][y]-((x-i)*(y-j)<0?max(abs(x-i),abs(y-j)):abs(x-i)+abs(y-j))*m);
+    //     if(d[i][j]!=mx) {
+    //         cout<<"WAWAWA!!!\n";
+    //         cout<<a;
+    //         cout<<d;
+    //         op(r)op(c)ope(m)
+    //         return an;
+    //     }
+    // }
     return an;
 }
 void solve() {
@@ -136,7 +136,7 @@ void solve() {
     sort(ALL(s),greater<pipii>());
     int l=0,r=maxv,m;
 
-    check(0);exit(0);
+    // check(0);exit(0);
 
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
