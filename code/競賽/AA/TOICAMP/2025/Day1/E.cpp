@@ -72,6 +72,6 @@ signed main() {
         if(a0[id(i,j)]=='<') to[id(i,j)]=iw[id(i,j-1)]?id(i,j-1):id(i,j);
         if(a0[id(i,j)]=='v') to[id(i,j)]=iw[id(i+1,j)]?id(i+1,j):id(i,j);
     } 
-
+    oparr(to)
     return 0;
 }
