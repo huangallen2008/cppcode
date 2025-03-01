@@ -141,5 +141,6 @@ signed main() {
         for(int u:nid) dfs(u);
         for(int u:nid) delv(cid[u]);
     }
+    for(int x:wid) cout<<an[x]<<'\n';
     return 0;
 }
