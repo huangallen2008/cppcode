@@ -92,7 +92,7 @@ void solve() {
         REP1(i,n) {
             // ope(i)
             now+=p[i][n]-p[i-1][n];
-            if(now==x*cc) {
+            if(now==x*cc&&rit<rc) {
                 rid[rit++]=i;
                 now=0;
             }else if(now>x*cc) {
@@ -100,13 +100,13 @@ void solve() {
                 break;
             }
         }
-        if(rit!=rc+1) continue;
+        // if(rit!=rc+1) continue;
         if(!ok) continue;
         rid[rc]=n;
         now=0;
         REP1(i,m) {
             now+=p[n][i]-p[n][i-1];
-            if(now==x*rc) {
+            if(now==x*rc&&cit<cc) {
                 cid[cit++]=i;
                 now=0;
             }else if(now>x*rc) {
@@ -115,7 +115,7 @@ void solve() {
             }
         }
         cid[cc]=m;
-        if(cit!=cc+1) continue;
+        // if(cit!=cc+1) continue;
         if(!ok) continue;
         REP1(i,rc) {
             REP1(j,cc) {
