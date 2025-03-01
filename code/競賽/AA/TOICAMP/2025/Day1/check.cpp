@@ -75,6 +75,8 @@ signed main() {
         l--,r--;
         if(x==1) sort(p.begin()+l,p.begin()+r+1);
         else sort(p.begin()+l,p.begin()+r+1,greater<int>());
+        op(l)op(r)ope(x)
+        oparr(p)
     }
     if(a==p) cout<<"AC\n";
     else cout<<"WA\n";
