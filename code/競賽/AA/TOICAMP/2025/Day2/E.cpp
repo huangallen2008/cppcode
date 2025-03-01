@@ -93,7 +93,6 @@ signed main() {
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
-        op(m)ope(check(m))
         if(check(m)<=k) r=m;
         else l=m+1;
     }
