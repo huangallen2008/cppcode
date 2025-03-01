@@ -64,14 +64,15 @@ bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
 int check(int m) {
-    vector<Vi> d=a,vis(r,Vi(c));
+    vector<Vi> d(r,Vi(c)),vis(r,Vi(c));
     // priority_queue<pipii> pq;
     int it=1;
     queue<pii> q;
     q.push(s[0].s);
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
-    while(q.size()) {
+    while(q.size()||it<r*c) {
+        if(SZ(q)==0) q.push(s[it++].s);
         auto [x,y]=q.front();
         bool ook=1;
         while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ook=0;
