@@ -80,10 +80,10 @@ void solve() {
     Vi iw(N),to(N);
     REP1(i,n) REP1(j,m) iw[id(i,j)]=a0[id(i,j)]!='.'&&a0[id(i,j)]!='#';
     REP1(i,n) REP1(j,m) if(iw[id(i,j)]) {
-        if(a0[id(i,j)]=='^') to[id(i,j)]=iw[id(i-1,j)]?id(i-1,j):id(i,j);
-        if(a0[id(i,j)]=='>') to[id(i,j)]=iw[id(i,j+1)]?id(i,j+1):id(i,j);
-        if(a0[id(i,j)]=='<') to[id(i,j)]=iw[id(i,j-1)]?id(i,j-1):id(i,j);
-        if(a0[id(i,j)]=='v') to[id(i,j)]=iw[id(i+1,j)]?id(i+1,j):id(i,j);
+        if(a0[id(i,j)]=='^') to[id(i,j)]=ing(i-1,j)&&iw[id(i-1,j)]?id(i-1,j):id(i,j);
+        if(a0[id(i,j)]=='>') to[id(i,j)]=ing(i,j+1)&&iw[id(i,j+1)]?id(i,j+1):id(i,j);
+        if(a0[id(i,j)]=='<') to[id(i,j)]=ing(i,j-1)&&iw[id(i,j-1)]?id(i,j-1):id(i,j);
+        if(a0[id(i,j)]=='v') to[id(i,j)]=ing(i+1,j)&&iw[id(i+1,j)]?id(i+1,j):id(i,j);
     } 
     vector<Vi> cid(N);
     int coinid=0;
