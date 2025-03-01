@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,sse4,bmi2,popcnt")
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
@@ -55,6 +55,45 @@ const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline string reads()
+{
+    char c=GC;
+    string s;
+    while(c==' '||c=='\n')c=GC;
+    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
+    return s;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    // PC('\n');
 }
 int r,c,k;
 vector<Vi> a;
@@ -130,9 +169,10 @@ int check(int m) {
     return an;
 }
 void solve() {
-    cin>>r>>c>>k;
+    r=read(),c=read(),k=read();
+    // cin>>r>>c>>k;
     a=vector<Vi>(r,Vi(c));
-    REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
+    REP(i,r) REP(j,c) a[i][j]=read(),s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
     int l=0,r=maxv,m;
 
