@@ -65,11 +65,11 @@ void solve() {
     reverse(ALL(b));
     reverse(ALL(c));
     int N=(n*(n+1)>>1)+1;
-    vector<Vi> dp(n+1,Vi(N,-inf));
+    vector<Vi> dp(1,Vi(N,-inf));
     dp[0][0]=0;
     REP(i,n) {
-        vector<Vi> ndp(n+1,Vi(N,-inf));
-        REP(j,n+1) {
+        vector<Vi> ndp(i+2,Vi(N,-inf));
+        REP(j,i+1) {
             REP(k,N) {
                 if(j+1<n+1&&k+j+1<N) chmax(ndp[j+1][k+j+1],dp[j][k]+a[i]);
                 if(k+j<N) chmax(ndp[j][k+j],dp[j][k]+max(j*c[i],k*b[i]));
