@@ -89,8 +89,8 @@ int check(int m) {
             int nx=x+dx,ny=y+dy;
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
-                op(x)op(y)op(nx)op(ny)ope(d[nx][ny])
                 d[nx][ny]=d[x][y]-m;
+                op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
                 q.push({nx,ny});
             }
         }
