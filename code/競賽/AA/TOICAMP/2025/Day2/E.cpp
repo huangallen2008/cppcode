@@ -72,8 +72,8 @@ int check(int m) {
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
     int las=inf;
-    oparr(s)
-    ope(m)
+    // oparr(s)
+    // ope(m)
     while(q.size()||it<r*c) {
         if(SZ(q)==0) q.push_front(s[it++].s);
         auto [x,y]=q.front();
@@ -96,7 +96,7 @@ int check(int m) {
             }
         }
     }
-    entr
+    // entr
     int an=0;
     REP(i,r) REP(j,c) an+=d[i][j]-a[i][j],assert(d[i][j]>=a[i][j]);
     return an;
