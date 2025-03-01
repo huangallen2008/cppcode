@@ -73,10 +73,9 @@ int check(int m) {
     // ope("ok")
     while(q.size()) {
         auto [x,y]=q.front();
-        op(x)op(y)ope(it)
-        bool ok=1;
-        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ok=0;
-        if(!ok) continue;
+        bool ook=1;
+        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ook=0;
+        if(!ook) continue;
         q.pop();
         if(vis[x][y]) continue;
         vis[x][y]=1;
