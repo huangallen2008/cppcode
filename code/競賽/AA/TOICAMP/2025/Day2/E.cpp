@@ -81,10 +81,10 @@ int check(int m) {
         while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push_front(s[it++].s),ook=0;
         if(!ook) continue;
         q.pop_back();
-        op(x)op(y)op(d[x][y])ope(it)
+        // op(x)op(y)op(d[x][y])ope(it)
         if(vis[x][y]) continue;
-        assert(las>=d[x][y]);
-        las=d[x][y];
+        // assert(las>=d[x][y]);
+        // las=d[x][y];
         vis[x][y]=1;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
