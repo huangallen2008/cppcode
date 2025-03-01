@@ -107,6 +107,7 @@ void solve() {
         inc[u]=0;
         if(--ind[to[u]]==0) q.push(to[u]);
     }
+    ope("ok")
     Graph g(N);
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
@@ -150,7 +151,7 @@ void solve() {
 signed main() {
     IOS();
     int T=1;
-    #ifdef LOCAL
+    #ifdef LOCAL_
     freopen("in.txt","r",stdin);
     cin>>T;
     #endif
