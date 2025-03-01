@@ -109,6 +109,7 @@ int check(int m) {
             }
         }
     }
+    ope(it)
     // entr
     int an=0;
     REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
