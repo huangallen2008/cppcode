@@ -111,6 +111,7 @@ signed main() {
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
     Vi c(N);
+    Vi an(N);
     int cnt=0;
     auto add=[&](int x) { cnt+=c[x]++==0; };
     auto addv=[&](Vi v) { for(int x:v) add(x); };
