@@ -79,7 +79,7 @@ void solve() {
         bool ok=1;
         int cc=k+2-rc;
         if(rc>n||cc>m) continue;
-        op(rc)ope(cc)
+        op(rc)op(cc)ope(p[n][m])
         if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
