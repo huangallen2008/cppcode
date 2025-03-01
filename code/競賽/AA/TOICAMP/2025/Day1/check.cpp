@@ -66,5 +66,16 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     freopen("out.txt","r",stdin);
+    int t;
+    cin>>t;
+    REP(i,t) {
+        int l,r,x;
+        cin>>l>>r>>x;
+        l--,r--;
+        if(x==1) sort(p.begin()+l,p.begin()+r+1);
+        else sort(p.begin()+l,p.begin()+r+1,greater<int>());
+    }
+    if(a==p) cout<<"AC\n";
+    else cout<<"WA\n";
     return 0;
 }
