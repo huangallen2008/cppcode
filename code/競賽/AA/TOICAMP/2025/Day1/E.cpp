@@ -108,6 +108,7 @@ void solve() {
         if(--ind[to[u]]==0) q.push(to[u]);
     }
     Graph g(N);
+    ope(N)oparr(wid)
     ope("ok")
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
