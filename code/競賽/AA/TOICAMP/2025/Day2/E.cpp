@@ -75,7 +75,7 @@ int check(int m) {
     oparr(s)
     ope(m)
     while(q.size()||it<r*c) {
-        if(SZ(q)==0) q.push(s[it++].s);
+        if(SZ(q)==0) q.push_front(s[it++].s);
         auto [x,y]=q.front();
         bool ook=1;
         while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push_front(s[it++].s),ook=0;
