@@ -101,6 +101,7 @@ void solve() {
         }
         if(rit!=rc+1) continue;
         if(!ok) continue;
+        rid[rc]=n;
         now=0;
         REP1(i,m) {
             now+=p[n][i]-p[n][i-1];
@@ -112,6 +113,7 @@ void solve() {
                 break;
             }
         }
+        rid[rc]=m;
         if(cit!=cc+1) continue;
         if(!ok) continue;
         REP1(i,rc) {
