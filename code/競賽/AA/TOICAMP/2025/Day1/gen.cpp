@@ -59,12 +59,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int n=10,T=n;
-    cout<<n<<' '<<T<<'\n';
-    Vi a(n);
-    REP(i,n) a[i]=i+1;
-    shuffle(ALL(a),rng);
-    REP(i,n)cout<<a[i]<<' ';cout<<'\n';
-    REP(i,n)cout<<a[i]<<' ';cout<<'\n';
+    int n=10,m=n;
+    cout<<n<<' '<<m<<'\n';
+    string s="><^v.#";
+    REP(i,n) REP(j,m) cout<<s[rd(0,5)];
     return 0;
 }
