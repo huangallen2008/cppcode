@@ -123,6 +123,9 @@ int check(int m) {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    #endif
     cin>>r>>c>>k;
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
