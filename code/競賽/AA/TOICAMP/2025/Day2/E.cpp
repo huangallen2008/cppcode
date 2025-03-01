@@ -80,7 +80,7 @@ int check(int m) {
         while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push(s[it++].s),ook=0;
         if(!ook) continue;
         q.pop();
-        op(x)op(y)op(d[x][y])ope(d[s[it].s.f][s[it].s.s])
+        op(x)op(y)op(d[x][y])ope(it)
         if(vis[x][y]) continue;
         assert(las>=d[x][y]);
         las=d[x][y];
