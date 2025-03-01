@@ -64,7 +64,7 @@ signed main() {
     auto id=[&](int a,int b) { return a*(m+1)+b; };
     vector<char> a0(N);
     REP1(i,n) REP1(j,m) cin>>a0[id(i,j)];
-    vector<Vi> iw(N),to(N);
+    Vi iw(N),to(N);
     REP1(i,n) REP1(j,m) iw[id(i,j)]=a0[id(i,j)]!='.'&&a0[id(i,j)]!='#';
     REP1(i,n) REP1(j,m) if(iw[id(i,j)]) {
         if(a0[id(i,j)]=='^') to[id(i,j)]=iw[id(i-1,j)]?id(i-1,j):id(i,j);
@@ -72,6 +72,6 @@ signed main() {
         if(a0[id(i,j)]=='<') to[id(i,j)]=iw[id(i,j-1)]?id(i,j-1):id(i,j);
         if(a0[id(i,j)]=='v') to[id(i,j)]=iw[id(i+1,j)]?id(i+1,j):id(i,j);
     } 
-    
+
     return 0;
 }
