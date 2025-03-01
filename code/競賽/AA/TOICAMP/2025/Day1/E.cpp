@@ -118,6 +118,7 @@ signed main() {
     auto del=[&](int x) { cnt-=--c[x]==0; };
     auto delv=[&](Vi v) { for(int x:v) del(x); };
     for(int x:wid) {
+        ope(x)
         if(vis[x]) continue;
         if(!inc[x]) continue;
         Vi nid;
