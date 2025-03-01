@@ -105,67 +105,27 @@ bool ok(int x,int y) {
 
 
 int check(int m) {
-    vector<Vi> d=a,vis(r,Vi(c));
-    // priority_queue<pipii> pq;
+    vector<Vi> d=a;
     int it=1;
     deque<pii> q;
     q.pb(s[0].s);
-    // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
-    // ope("ok")
-    int las=inf;
-    // oparr(s)
-    // ope(m)
     while(q.size()||it<r*c) {
         if(SZ(q)==0) q.push_front(s[it++].s);
         auto [x,y]=q.front();
-        // bool ook=1;
-        // Vpii tt;
-        // while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[x][y]) {
-        //     if(vis[s[it].s.f][s[it].s.s]) continue;
-        //     tt.pb(s[it++].s),ook=0;
-        // }
-        // reverse(ALL(tt));
-        // for(auto x:tt) q.push_front(x);
-        // if(!ook) continue;
-        
         q.pop_front();
-        // oparr(q)
-        if(vis[x][y]) continue;
-        vis[x][y]=1;
-        // op(x)ope(y)
-        // op(x)op(y)op(d[x][y])ope(it)
-        // assert(las>=d[x][y]);
-        // las=d[x][y];
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             // op(x)op(y)op(nx)ope(ny)
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
-                // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
-                while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
-                    // ope(s[it])
-                    q.pb(s[it++].s);
-                }
+                while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) q.pb(s[it++].s);
                 q.pb({nx,ny});
             }
         }
     }
-    // ope(it)
-    // entr
     int an=0;
     REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
-    // REP(i,r) REP(j,c) {
-    //     int mx=0;
-    //     REP(x,r) REP(y,c) chmax(mx,a[x][y]-((x-i)*(y-j)<0?max(abs(x-i),abs(y-j)):abs(x-i)+abs(y-j))*m);
-    //     if(d[i][j]!=mx) {
-    //         cout<<"WAWAWA!!!\n";
-    //         cout<<a;
-    //         cout<<d;
-    //         op(r)op(c)ope(m)
-    //         return an;
-    //     }
-    // }
     return an;
 }
 void solve() {
@@ -175,12 +135,8 @@ void solve() {
     REP(i,r) REP(j,c) a[i][j]=read(),s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
     int l=0,r=maxv,m;
-
-    // check(0);exit(0);
-
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
-        // op(m)ope(check(m))
         if(check(m)<=k) r=m;
         else l=m+1;
     }
