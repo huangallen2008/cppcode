@@ -75,7 +75,7 @@ int check(int m) {
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(!ok(nx,ny)) continue;
-            if(d[nx][ny]>d[x][y]-m) {
+            if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
                 pq.push({d[nx][ny],{nx,ny}});
             }
