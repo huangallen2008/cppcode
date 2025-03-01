@@ -70,9 +70,10 @@ int check(int m) {
     queue<pii> q;
     q.push(s[0].s);
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
-    ope("ok")
+    // ope("ok")
     while(q.size()) {
         auto [x,y]=q.front();
+        op(x)ope(y)
         while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s);
         continue;
         q.pop();
