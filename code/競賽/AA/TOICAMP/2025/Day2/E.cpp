@@ -79,7 +79,7 @@ int check(int m) {
         while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ook=0;
         if(!ook) continue;
         q.pop();
-        assert(las<=a[x][y]);
+        assert(las>=a[x][y]);
         las=a[x][y];
         if(vis[x][y]) continue;
         vis[x][y]=1;
