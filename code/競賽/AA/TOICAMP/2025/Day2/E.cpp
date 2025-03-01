@@ -105,7 +105,7 @@ int check(int m) {
                 d[nx][ny]=d[x][y]-m;
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
                 while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
-                    ope(s[it])
+                    // ope(s[it])
                     q.pb(s[it++].s);
                 }
                 q.pb({nx,ny});
