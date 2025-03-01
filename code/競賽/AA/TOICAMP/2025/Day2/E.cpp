@@ -99,6 +99,7 @@ signed main() {
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
+    ope(check(maxv))
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
