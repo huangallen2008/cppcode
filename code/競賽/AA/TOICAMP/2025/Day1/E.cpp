@@ -109,6 +109,7 @@ void solve() {
     }
     Graph g(N);
     ope(N)oparr(wid)
+    for(int x:wid) ope(to[x])
     ope("ok")
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
