@@ -116,6 +116,9 @@ int check(int m) {
         REP(x,r) REP(y,c) chmax(mx,a[x][y]-((x-i)*(y-j)<0?max(abs(x-i),abs(y-j)):abs(x-i)+abs(y-j))*m);
         if(d[i][j]!=mx) {
             cout<<"WAWAWA!!!\n";
+            cout<<a;
+            cout<<d;
+            ope(m)
             return an;
         }
     }
