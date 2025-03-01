@@ -129,7 +129,7 @@ signed main() {
             nid.pb(t);
         }
         for(int u:nid) an[u]=cnt;
-        Func dfs=[&](auto dfs,int u) {
+        Func dfs=[&](Func dfs,int u) {
             if(!inc[u]) an[u]=cnt;
             for(int v:g[u]) {
                 if(inc[v]) continue;
