@@ -133,6 +133,7 @@ signed main() {
         }
         for(int u:nid) an[u]=cnt;
         Func dfs=[&](auto dfs,int u) ->void{
+            vis[u]=1;
             if(!inc[u]) an[u]=cnt;
             for(int v:g[u]) {
                 if(inc[v]) continue;
