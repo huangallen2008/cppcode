@@ -64,7 +64,7 @@ void solve() {
     reverse(1+ALL(a));
     reverse(1+ALL(b));
     reverse(1+ALL(c));
-    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-inf)));
+    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-100)));
     dp[0][0][0]=0;
     REP(i,n) {
         REP(j,n+1) {
