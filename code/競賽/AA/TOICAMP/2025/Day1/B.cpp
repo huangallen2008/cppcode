@@ -99,6 +99,7 @@ void solve() {
                 break;
             }
         }
+        if(rit!=rc+1) continue;
         if(!ok) continue;
         now=0;
         REP1(i,m) {
@@ -111,6 +112,7 @@ void solve() {
                 break;
             }
         }
+        if(cit!=cc+1) continue;
         if(!ok) continue;
         REP1(i,rc) {
             REP1(j,cc) {
