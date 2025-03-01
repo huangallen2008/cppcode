@@ -100,7 +100,7 @@ signed main() {
     REP1(i,n) REP1(j,m) if(iw[id(i,j)]) wid.pb(id(i,j));
     for(int x:wid) ind[to[wid]]++;
     queue<int> q;
-    for(int x:wid) if(ind[x]==0) q.push(wid);
+    for(int x:wid) if(ind[x]==0) q.push(x);
     while(q.size()) {
         int u=q.front();
         q.pop();
