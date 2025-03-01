@@ -80,8 +80,8 @@ int check(int m) {
         while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push(s[it++].s),ook=0;
         if(!ook) continue;
         q.pop();
-        op(x)op(y)op(d[x][y])ope(a[x][y])
-        // assert(las>=d[x][y]);
+        // op(x)op(y)op(d[x][y])ope(a[x][y])
+        assert(las>=d[x][y]);
         las=d[x][y];
         if(vis[x][y]) continue;
         vis[x][y]=1;
@@ -90,7 +90,7 @@ int check(int m) {
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
-                op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
+                // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
                 q.push({nx,ny});
             }
         }
