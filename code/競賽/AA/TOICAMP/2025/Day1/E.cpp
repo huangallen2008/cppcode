@@ -108,6 +108,7 @@ void solve() {
         if(--ind[to[u]]==0) q.push(to[u]);
     }
     Graph g(N);
+    ope("ok")
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
     Vi c(N);
@@ -117,7 +118,6 @@ void solve() {
     auto addv=[&](Vi v) { for(int x:v) add(x); };
     auto del=[&](int x) { cnt-=--c[x]==0; };
     auto delv=[&](Vi v) { for(int x:v) del(x); };
-    ope("ok")
     // oparr(wid)
     for(int x:wid) {
         if(vis[x]) continue;
