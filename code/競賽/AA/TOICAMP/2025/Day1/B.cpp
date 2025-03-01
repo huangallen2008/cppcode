@@ -66,7 +66,7 @@ void solve() {
         cin>>ch;
         a[i][j]=ch=='0';
     }
-    REP1(i,n+1) REP1(j,m+1) p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
+    REP1(i,n) REP1(j,m) p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
@@ -75,13 +75,13 @@ void solve() {
         bool ok=1;
         int cc=k+2-rc;
         if(rc>n||cc>m) continue;
+        if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
         Vi rid(rc+1);
         Vi cid(cc+1);
         int rit=1;
         int cit=1;
-        if(p[n][m]%((rc)*(cc))) continue;
         // op(rc)ope(cc)
         REP1(i,n) {
             // ope(i)
@@ -94,6 +94,7 @@ void solve() {
                 break;
             }
         }
+        if(rit!=rc) continue;
         if(!ok) continue;
         now=0;
         REP1(i,m) {
@@ -106,6 +107,7 @@ void solve() {
                 break;
             }
         }
+        if(cit!=cc) continue;
         if(!ok) continue;
         REP1(i,rc) {
             REP1(j,cc) {
