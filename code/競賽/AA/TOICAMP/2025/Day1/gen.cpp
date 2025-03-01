@@ -64,6 +64,7 @@ signed main() {
     Vi a(n);
     REP(i,n) a[i]=i+1;
     shuffle(ALL(a),rng);
-    REP(i,n)cout<<a[i]<<' ';
+    REP(i,n)cout<<a[i]<<' ';cout<<'\n';
+    REP(i,n)cout<<a[i]<<' ';cout<<'\n';
     return 0;
 }
