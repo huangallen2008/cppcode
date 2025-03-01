@@ -67,8 +67,7 @@ struct Func {
 };
 template<class T> Func(const T &) -> Func<T>;
 Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
-signed main() {
-    IOS();
+void solve() {
     int n,m;
     cin>>n>>m;
     auto ing=[&](int x,int y) {
@@ -147,5 +146,14 @@ signed main() {
         for(int u:nid) delv(cid[u]);
     }
     for(int x:wid) cout<<an[x]<<'\n';
+}
+signed main() {
+    IOS();
+    int T=1;
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    cin>>T;
+    #endif
+    while(T--) solve();
     return 0;
 }
