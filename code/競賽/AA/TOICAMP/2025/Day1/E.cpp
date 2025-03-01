@@ -93,7 +93,7 @@ signed main() {
         op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
-            if(!ing(nx.ny)) continue;
+            if(!ing(nx,ny)) continue;
             cid[id(nx,ny)].pb(coinid);
         }
         coinid++;
