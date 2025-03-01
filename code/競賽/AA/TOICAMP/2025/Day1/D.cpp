@@ -80,7 +80,7 @@ signed main() {
     for(int i=n-1;i>0;i--) {
         // if(p[i]==a[i]) continue;
         int id=0;
-        REP(j,i) {
+        REP(j,i+1) {
             if(p[j]==a[i]) {
                 id=j;
                 break;
