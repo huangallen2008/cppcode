@@ -59,7 +59,7 @@ int rd(int l,int r) {
 int r,c,k;
 vector<Vi> a;
 vector<pipii> s;
-Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0}};
+Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{-1,-1},{1,1}};
 bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
