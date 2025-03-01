@@ -79,7 +79,10 @@ int check(int m) {
         auto [x,y]=q.front();
         bool ook=1;
         Vpii tt;
-        while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) tt.pb(s[it++].s),ook=0;
+        while(it<r*c&&(d[s[it].s.f][s[it].s.s]>=d[x][y]||vis[s[it].s.f][s[it].s.s])) {
+            if(vis[s[it].s.f][s[it].s.s]) continue;
+            tt.pb(s[it++].s),ook=0;
+        }
         reverse(ALL(tt));
         for(auto x:tt) q.push_front(x);
         if(!ook) continue;
