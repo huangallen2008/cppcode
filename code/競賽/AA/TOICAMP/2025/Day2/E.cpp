@@ -90,6 +90,7 @@ int check(int m) {
         // if(!ook) continue;
         
         q.pop_front();
+        oparr(q)
         if(vis[x][y]) continue;
         // op(x)op(y)op(d[x][y])ope(it)
         // assert(las>=d[x][y]);
