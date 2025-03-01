@@ -79,7 +79,7 @@ void solve() {
         bool ok=1;
         int cc=k+2-rc;
         if(rc>n||cc>m) continue;
-        op(rc)op(cc)ope(p[n][m])
+        // op(rc)op(cc)ope(p[n][m])
         if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
@@ -124,7 +124,7 @@ void solve() {
             if(!ok) break;
         }
         if(!ok) continue;
-        oparr(rid)oparr(cid)
+        // oparr(rid)oparr(cid)
         Vi res;
         REP1(i,rc-1) res.pb(rid[i]);
         REP1(i,cc-1) res.pb(n-1+cid[i]);
