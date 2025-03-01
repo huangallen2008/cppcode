@@ -56,10 +56,24 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+template<class T>
+struct Func {
+    T func;
+    Func(const T &func):func(func) {}
+    template<class... Args> 
+    constexpr decltype(auto) operator()(Args &&... args) {
+        return func(*this, forward<Args>(args)...);
+    }
+};
+template<class T> Func(const T &) -> Func<T>;
+Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
 signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    // auto ing=[&](int x,int y) {
+    //     return !(x<0||x>=n||y<0||y>=m);
+    // };
     int N=(n+1)*(m+1);
     auto id=[&](int a,int b) { return a*(m+1)+b; };
     vector<char> a0(N);
@@ -72,6 +86,43 @@ signed main() {
         if(a0[id(i,j)]=='<') to[id(i,j)]=iw[id(i,j-1)]?id(i,j-1):id(i,j);
         if(a0[id(i,j)]=='v') to[id(i,j)]=iw[id(i+1,j)]?id(i+1,j):id(i,j);
     } 
-    oparr(to)
+    vector<Vi> cid(N);
+    int coinid=0;
+    REP1(i,n) REP1(j,m) if(a0[id(i,j)]=='#') {
+        for(auto [dx,dy]:dir) {
+            int nx=x+dx,ny=y+dy;
+            cid[nx][ny].pb(coinid);
+        }
+        coinid++;
+    }
+    Vi inc(N,1),ind(N);
+    Vi wid;
+    REP1(i,n) REP1(j,m) if(iw[id(i,j)]) wid.pb(id(i,j));
+    for(int x:wid) ind[to[wid]]++;
+    queue<int> q;
+    for(int x:wid) if(ind[x]==0) q.push(wid);
+    while(q.size()) {
+        int u=q.front();
+        q.pop();
+        inc[u]=0;
+        if(--ind[to[u]]==0) q.push(to[u]);
+    }
+    Vi vis(N);
+    Vi c(N);
+    int cnt=0;
+    auto add=[&](int x) { cnt+=c[x]++==0; };
+    auto del=[&](int x) { cnt-=--c[x]==0; };
+    for(int x:wid) {
+        if(vis[x]) continue;
+        if(!inc[x]) continue;
+        Vi nid;
+        nid.pb(x);
+        for(int u:cid[x]) add(u);
+        int t=to[x];
+        while(t!=x) {
+            for(int u:cid[t]) add(u);
+            nid.pb(t);
+        }
+    }
     return 0;
 }
