@@ -92,6 +92,7 @@ int check(int m) {
         q.pop_front();
         oparr(q)
         if(vis[x][y]) continue;
+        vis[nx][ny]=1;
         op(x)ope(y)
         // op(x)op(y)op(d[x][y])ope(it)
         // assert(las>=d[x][y]);
@@ -103,7 +104,6 @@ int check(int m) {
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
-                vis[nx][ny]=1;
                 while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
                     ope(s[it])
                     q.pb(s[it++].s);
