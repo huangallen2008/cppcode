@@ -64,7 +64,7 @@ bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
 int check(int m) {
-    vector<Vi> d(r,Vi(c)),vis(r,Vi(c));
+    vector<Vi> d=a,vis(r,Vi(c));
     // priority_queue<pipii> pq;
     int it=1;
     queue<pii> q;
