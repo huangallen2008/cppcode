@@ -98,6 +98,7 @@ void solve() {
                 break;
             }
         }
+        oparr(rid)oparr(cid)
         if(!ok) continue;
         now=0;
         REP1(i,m) {
@@ -111,7 +112,6 @@ void solve() {
             }
         }
         if(!ok) continue;
-        oparr(rid)oparr(cid)
         REP1(i,rc) {
             REP1(j,cc) {
                 if(cnt(rid[i-1]+1,rid[i],cid[j-1]+1,cid[j])!=x) {
