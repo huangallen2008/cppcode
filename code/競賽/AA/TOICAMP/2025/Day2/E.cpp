@@ -151,3 +151,9 @@ signed main() {
     while(T--) solve();
     return 0;
 }
+/*
+3 3 100
+10 3 10
+ 5 3 2
+ 8 3 7
+*/
