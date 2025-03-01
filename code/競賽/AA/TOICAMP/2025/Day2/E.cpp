@@ -59,7 +59,7 @@ int rd(int l,int r) {
 int r,c,k;
 vector<Vi> a;
 vector<pipii> s;
-Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{-1,-1},{1,1}};
+Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0}};
 bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
@@ -71,6 +71,7 @@ int check(int m) {
     q.push(s[0].s);
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
+    int las=inf;
     while(q.size()||it<r*c) {
         if(SZ(q)==0) q.push(s[it++].s);
         auto [x,y]=q.front();
@@ -78,6 +79,8 @@ int check(int m) {
         while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ook=0;
         if(!ook) continue;
         q.pop();
+        assert(las<=a[x][y]);
+        las=a[x][y];
         if(vis[x][y]) continue;
         vis[x][y]=1;
         for(auto [dx,dy]:dir) {
