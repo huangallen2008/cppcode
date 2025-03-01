@@ -64,7 +64,7 @@ void solve() {
     reverse(ALL(a));
     reverse(ALL(b));
     reverse(ALL(c));
-    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-100)));
+    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-inf)));
     dp[0][0][0]=0;
     REP(i,n) {
         REP(j,n+1) {
@@ -77,7 +77,7 @@ void solve() {
             }
         }
     }
-    cout<<dp;
+    // cout<<dp;
     int an=0;
     REP(i,n+1) REP(j,n*n) chmax(an,dp[n][i][j]);
     cout<<an<<'\n';
