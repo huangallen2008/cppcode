@@ -79,7 +79,7 @@ void solve() {
     }
     // cout<<dp;
     int an=0;
-    REP(i,n+1) REP(j,N) chmax(an,dp[n][i][j]);
+    REP(i,n+1) REP(j,N) chmax(an,dp[i][j]);
     cout<<an<<'\n';
 }
 signed main() {
