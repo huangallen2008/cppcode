@@ -121,11 +121,7 @@ int check(int m) {
     }
     return an;
 }
-signed main() {
-    IOS();
-    #ifdef LOCAL
-    freopen("in.txt","r",stdin);
-    #endif
+void solve() {
     cin>>r>>c>>k;
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
@@ -138,5 +134,14 @@ signed main() {
         else l=m+1;
     }
     cout<<l<<'\n';
+}
+signed main() {
+    IOS();
+    int T=1;
+    #ifdef LOCAL
+    freopen("in.txt","r",stdin);
+    cin>>T;
+    #endif
+    while(T--) solve();
     return 0;
 }
