@@ -76,6 +76,9 @@ signed main() {
             }
         }
         cout<<id+1<<' '<<i+1<<' '<<(b[id]?"-1":"1")<<'\n';
+        int t=b[id]^1;
+        for(int j=id;j<i;j++) b[j]=t;
+        sort(p.begin()+id,p.begin()+i+1);
     }
     return 0;
 }
