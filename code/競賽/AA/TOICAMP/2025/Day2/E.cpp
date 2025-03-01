@@ -99,6 +99,7 @@ int check(int m) {
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(!ok(nx,ny)) continue;
+            op(x)op(y)op(nx)ope(ny)
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
