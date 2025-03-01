@@ -73,7 +73,7 @@ int check(int m) {
     // ope("ok")
     while(q.size()) {
         auto [x,y]=q.front();
-        op(x)ope(y)
+        op(x)op(y)ope(it)
         while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s);
         continue;
         q.pop();
