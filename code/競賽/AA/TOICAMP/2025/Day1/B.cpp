@@ -59,8 +59,8 @@ int rd(int l,int r) {
 void solve() {
     int n,m,k;
     cin>>n>>m>>k;
-    vector<Vi> a(n+2,Vi(n+2));
-    vector<Vi> p(n+2,Vi(n+2));
+    vector<Vi> a(n+2,Vi(m+2));
+    vector<Vi> p(n+2,Vi(m+2));
     REP1(i,n) REP1(j,m) {
         char ch;
         cin>>ch;
@@ -70,6 +70,10 @@ void solve() {
     auto cnt=[&](int r1,int r2,int c1,int c2) {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
+    if(p[n][m]==0) {
+        REP1(i,k) cout<<i<<'\n';
+        return;
+    }
     Vi an(k,inf);
     REP1(rc,k+1) {
         bool ok=1;
