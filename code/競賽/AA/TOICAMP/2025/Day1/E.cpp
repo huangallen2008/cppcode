@@ -90,6 +90,7 @@ signed main() {
     int coinid=0;
     ope("ok")
     REP1(i,n) REP1(j,m) if(a0[id(i,j)]=='#') {
+        op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             cid[id(nx,ny)].pb(coinid);
