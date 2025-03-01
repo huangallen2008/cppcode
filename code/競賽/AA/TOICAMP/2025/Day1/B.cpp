@@ -114,7 +114,7 @@ void solve() {
                 break;
             }
         }
-        rid[rc]=m;
+        cid[cc]=m;
         if(cit!=cc+1) continue;
         if(!ok) continue;
         REP1(i,rc) {
