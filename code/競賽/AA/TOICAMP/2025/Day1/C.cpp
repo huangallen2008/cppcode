@@ -71,8 +71,8 @@ void solve() {
             REP(k,n*n) {
                 if(j+1<n+1&&k+j+1<n*n) chmax(dp[i+1][j+1][k+j+1],dp[i][j][k]+a[i]);
                 if(k+j<n*n) {
-                    chmax(dp[i+1][j][k+j],dp[i][j][k]+j*b[i]);
-                    chmax(dp[i+1][j][k+j],dp[i][j][k]+k*c[i]);
+                    chmax(dp[i+1][j][k+j],dp[i][j][k]+k*b[i]);
+                    chmax(dp[i+1][j][k+j],dp[i][j][k]+j*c[i]);
                 }
             }
         }
