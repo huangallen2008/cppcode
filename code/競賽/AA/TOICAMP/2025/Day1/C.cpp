@@ -64,19 +64,18 @@ void solve() {
     reverse(ALL(a));
     reverse(ALL(b));
     reverse(ALL(c));
-    int N=n*(n+1)>>1;
-    vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(N,-inf)));
+    int N=(n*(n+1)>>1)+1;
+    vector<Vi> dp(n+1,Vi(N,-inf));
     dp[0][0][0]=0;
     REP(i,n) {
+        vector<Vi> ndp(n+1,Vi(N,-inf));
         REP(j,n+1) {
             REP(k,N) {
-                if(j+1<n+1&&k+j+1<N) chmax(dp[i+1][j+1][k+j+1],dp[i][j][k]+a[i]);
-                if(k+j<N) {
-                    chmax(dp[i+1][j][k+j],dp[i][j][k]+k*b[i]);
-                    chmax(dp[i+1][j][k+j],dp[i][j][k]+j*c[i]);
-                }
+                if(j+1<n+1&&k+j+1<N) chmax(ndp[j+1][k+j+1],dp[j][k]+a[i]);
+                if(k+j<N) chmax(ndp[j][k+j],dp[j][k]+max(j*c[i],k*b[i]));
             }
         }
+        swap(dp,ndp);
     }
     // cout<<dp;
     int an=0;
