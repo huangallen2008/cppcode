@@ -100,8 +100,8 @@ int check(int m) {
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
                 vis[nx][ny]=1;
                 while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
-                    if(vis[s[it].s.f][s[it].s.s]) continue;
-                    q.pb(s[it++].s);
+                    if(!vis[s[it].s.f][s[it].s.s]) q.pb(s[it].s);
+                    it++;
                 }
                 q.pb({nx,ny});
             }
