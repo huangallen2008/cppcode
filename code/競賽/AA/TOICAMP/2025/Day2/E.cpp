@@ -63,6 +63,8 @@ Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0}};
 bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
+
+
 int check(int m) {
     vector<Vi> d=a,vis(r,Vi(c));
     // priority_queue<pipii> pq;
@@ -109,6 +111,14 @@ int check(int m) {
     // entr
     int an=0;
     REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
+    REP(i,r) REP(j,c) {
+        int mx=0;
+        REP(x,r) REP(y,c) chmax(mx,a[x][y]-((x-i)*(y-j)<0?max(abs(x-i),abs(y-j)):abs(x-i)+abs(y-j))*m);
+        if(d[i][j]!=mx) {
+            cout<<"WAWAWA!!!\n";
+            return an;
+        }
+    }
     return an;
 }
 signed main() {
