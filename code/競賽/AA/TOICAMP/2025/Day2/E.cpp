@@ -90,8 +90,8 @@ int check(int m) {
         q.pop_back();
         if(vis[x][y]) continue;
         // op(x)op(y)op(d[x][y])ope(it)
-        // assert(las>=d[x][y]);
-        // las=d[x][y];
+        assert(las>=d[x][y]);
+        las=d[x][y];
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(!ok(nx,ny)) continue;
