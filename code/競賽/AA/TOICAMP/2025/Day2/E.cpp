@@ -90,7 +90,7 @@ int check(int m) {
         }
     }
     int an=0;
-    REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
+    REP(i,r) REP(j,c) an+=d[i][j]-a[i][j],assert(d[i][j]>=a[i][j]);
     return an;
 }
 signed main() {
@@ -99,7 +99,6 @@ signed main() {
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
-    ope(check(maxv))
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
