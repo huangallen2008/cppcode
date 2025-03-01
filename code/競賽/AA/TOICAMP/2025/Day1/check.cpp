@@ -58,14 +58,15 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    freopen("in.txt","r",stdin);
+    // freopen("in.txt","r",stdin);
+    freopen("out.txt","r",stdin);
     int n,T;
     cin>>n>>T;
     Vi p(n);
     REP(i,n) cin>>p[i];
     Vi a(n);
     REP(i,n) cin>>a[i];
-    freopen("out.txt","r",stdin);
+    
     int t;
     cin>>t;
     REP(i,t) {
