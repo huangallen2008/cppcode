@@ -71,7 +71,8 @@ void solve() {
         return p[r2][c2]-p[r2][c1-1]-p[r1-1][c2]+p[r1-1][c1-1];
     };
     if(p[n][m]==0) {
-        REP1(i,k) cout<<i<<'\n';
+        REP1(i,k) cout<<i<<' ';
+        cout<<'\n';
         return;
     }
     Vi an(k,inf);
