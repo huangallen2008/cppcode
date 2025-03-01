@@ -59,11 +59,11 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi a(n+1),b(n+1),c(n+1);
-    REP1(i,n) cin>>a[i]>>b[i]>>c[i];
-    reverse(1+ALL(a));
-    reverse(1+ALL(b));
-    reverse(1+ALL(c));
+    Vi a(n),b(n),c(n);
+    REP(i,n) cin>>a[i]>>b[i]>>c[i];
+    reverse(ALL(a));
+    reverse(ALL(b));
+    reverse(ALL(c));
     vector<vector<Vi>> dp(n+1,vector<Vi>(n+1,Vi(n*n,-100)));
     dp[0][0][0]=0;
     REP(i,n) {
