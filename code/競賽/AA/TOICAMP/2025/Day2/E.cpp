@@ -130,6 +130,9 @@ void solve() {
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
     int l=0,r=maxv,m;
+
+    check(0);exit(0);
+
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
         // op(m)ope(check(m))
