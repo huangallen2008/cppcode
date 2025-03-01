@@ -98,8 +98,8 @@ signed main() {
     sort(ALL(s),greater<pipii>());
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
-        op(l)op(r)ope(m)
         m=l+r>>1;
+        op(l)op(r)ope(m)
         if(check(m)<=k) r=m;
         else l=m+1;
     }
