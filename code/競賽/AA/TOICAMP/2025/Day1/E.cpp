@@ -109,7 +109,7 @@ void solve() {
     }
     Graph g(N);
     // ope(N)oparr(wid)
-    for(int x:wid) ope(to[x])
+    // for(int x:wid) ope(to[x])
     // ope("ok")
     for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
@@ -148,7 +148,7 @@ void solve() {
         for(int u:nid) dfs(u);
         for(int u:nid) delv(cid[u]);
     }
-    for(int x:wid) cout<<an[x]<<'\n';entr
+    for(int x:wid) cout<<an[x]<<'\n';//entr
 }
 signed main() {
     IOS();
