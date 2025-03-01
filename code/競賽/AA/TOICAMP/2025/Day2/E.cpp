@@ -58,18 +58,23 @@ int rd(int l,int r) {
 }
 int r,c,k;
 vector<Vi> a;
+vector<pipii> s;
 Vpii dir={{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0}};
 bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
 int check(int m) {
     vector<Vi> d=a,vis(r,Vi(c));
-    priority_queue<pipii> pq;
-    REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
-    while(pq.size()) {
-        auto [v,pos]=pq.top();
-        pq.pop();
-        auto [x,y]=pos;
+    // priority_queue<pipii> pq;
+    int it=1;
+    queue<pii> q;
+    q.push(s[0].s);
+    // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
+    while(q.size()) {
+        auto [x,y]=q.front();
+        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s);
+        continue;
+        q.pop();
         if(vis[x][y]) continue;
         vis[x][y]=1;
         for(auto [dx,dy]:dir) {
@@ -77,7 +82,7 @@ int check(int m) {
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
-                pq.push({d[nx][ny],{nx,ny}});
+                q.push({d[nx][ny],{nx,ny}});
             }
         }
     }
@@ -89,7 +94,8 @@ signed main() {
     IOS();
     cin>>r>>c>>k;
     a=vector<Vi>(r,Vi(c));
-    REP(i,r) REP(j,c) cin>>a[i][j];
+    REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
+    sort(ALL(a),greater<pipii>());
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
