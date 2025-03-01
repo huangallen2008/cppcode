@@ -145,7 +145,7 @@ void solve() {
         for(int u:nid) dfs(u);
         for(int u:nid) delv(cid[u]);
     }
-    for(int x:wid) cout<<an[x]<<'\n';
+    for(int x:wid) cout<<an[x]<<'\n';entr
 }
 signed main() {
     IOS();
