@@ -79,8 +79,8 @@ void solve() {
         bool ok=1;
         int cc=k+2-rc;
         if(rc>n||cc>m) continue;
-        if(p[n][m]%((rc)*(cc))) continue;
         op(rc)ope(cc)
+        if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
         Vi rid(rc+1);
