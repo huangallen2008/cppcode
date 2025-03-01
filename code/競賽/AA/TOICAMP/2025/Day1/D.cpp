@@ -58,6 +58,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+        freopen("in.txt","r",stdin);
+    #endif
     int n,_;
     cin>>n>>_;
     REP(i,n) cin>>_;
