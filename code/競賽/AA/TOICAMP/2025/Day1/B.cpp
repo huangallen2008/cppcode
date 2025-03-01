@@ -111,6 +111,7 @@ void solve() {
             }
         }
         if(!ok) continue;
+        oparr(rid)oparr(cid)
         REP1(i,rc) {
             REP1(j,cc) {
                 if(cnt(rid[i-1]+1,rid[i],cid[j-1]+1,cid[j])!=x) {
@@ -121,7 +122,6 @@ void solve() {
             if(!ok) break;
         }
         if(!ok) continue;
-        oparr(rid)oparr(cid)
         Vi res;
         REP1(i,rc-1) res.pb(rid[i]);
         REP1(i,cc-1) res.pb(n-1+cid[i]);
