@@ -79,19 +79,19 @@ int check(int m) {
         auto [x,y]=q.front();
         bool ook=1;
         Vpii tt;
-        while(it<r*c&&(d[s[it].s.f][s[it].s.s]>=d[x][y]||vis[s[it].s.f][s[it].s.s])) {
-            if(vis[s[it].s.f][s[it].s.s]) continue;
+        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[x][y]) {
+            // if(vis[s[it].s.f][s[it].s.s]) continue;
             tt.pb(s[it++].s),ook=0;
         }
         reverse(ALL(tt));
         for(auto x:tt) q.push_front(x);
         if(!ook) continue;
-
+        
         q.pop_back();
-        // op(x)op(y)op(d[x][y])ope(it)
         if(vis[x][y]) continue;
-        assert(las>=d[x][y]);
-        las=d[x][y];
+        // op(x)op(y)op(d[x][y])ope(it)
+        // assert(las>=d[x][y]);
+        // las=d[x][y];
         vis[x][y]=1;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
