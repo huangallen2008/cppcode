@@ -71,9 +71,9 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    // auto ing=[&](int x,int y) {
-    //     return !(x<0||x>=n||y<0||y>=m);
-    // };
+    auto ing=[&](int x,int y) {
+        return !(x<0||x>n||y<0||y>m);
+    };
     int N=(n+1)*(m+1);
     auto id=[&](int a,int b) { return a*(m+1)+b; };
     vector<char> a0(N);
@@ -93,6 +93,7 @@ signed main() {
         op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
+            if(!ing(nx.ny)) continue;
             cid[id(nx,ny)].pb(coinid);
         }
         coinid++;
