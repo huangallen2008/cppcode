@@ -71,7 +71,7 @@ void solve() {
         vector<Vi> ndp(i+2,Vi(N,-inf));
         REP(j,i+1) {
             int lb=j*(j+1)>>1,ub=(j+i*2+1)*j>>1;
-            for(int k=lb,k<=ub;k++) {
+            for(int k=lb;k<=ub;k++) {
                 if(k+j+1<N) chmax(ndp[j+1][k+j+1],dp[j][k]+a[i]);
                 if(k+j<N) chmax(ndp[j][k+j],dp[j][k]+max(j*c[i],k*b[i]));
             }
