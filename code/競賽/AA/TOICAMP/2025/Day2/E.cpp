@@ -63,15 +63,27 @@ bool ok(int x,int y) {
     return !(x<0||x>=r||y<0||y>=c);
 }
 int check(int m) {
-    vector<Vi> d(r,Vi(c)),vis(r,Vi(c));
+    vector<Vi> d=a,vis(r,Vi(c));
     priority_queue<pipii,vector<pipii>,greater<pipii>> pq;
     REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     while(pq.size()) {
         auto [v,pos]=pq.top();
         pq.pop();
         auto [x,y]=pos;
-        
+        if(vis[x][y]) continue;
+        vis[x][y]=1;
+        for(auto [dx,dy]:dir) {
+            int nx=x+dx,ny=y+dy;
+            if(!ok(nx,ny)) continue;
+            if(d[nx][ny]>d[x][y]-m) {
+                d[nx][ny]=d[x][y]-m;
+                pq.push({d[nx][ny],{nx,ny}});
+            }
+        }
     }
+    int an=0;
+    REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
+    return an;
 }
 signed main() {
     IOS();
