@@ -98,7 +98,7 @@ signed main() {
     Vi inc(N,1),ind(N);
     Vi wid;
     REP1(i,n) REP1(j,m) if(iw[id(i,j)]) wid.pb(id(i,j));
-    for(int x:wid) ind[to[wid]]++;
+    for(int x:wid) ind[to[x]]++;
     queue<int> q;
     for(int x:wid) if(ind[x]==0) q.push(x);
     while(q.size()) {
