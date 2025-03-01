@@ -107,22 +107,38 @@ signed main() {
         inc[u]=0;
         if(--ind[to[u]]==0) q.push(to[u]);
     }
+    Graph g(N);
+    for(int x:wid) g[to[x]].pb(x);
     Vi vis(N);
     Vi c(N);
     int cnt=0;
     auto add=[&](int x) { cnt+=c[x]++==0; };
+    auto addv=[&](Vi v) { for(int x:v) add(x); };
     auto del=[&](int x) { cnt-=--c[x]==0; };
+    auto delv=[&](Vi v) { for(int x:v) del(x); };
     for(int x:wid) {
         if(vis[x]) continue;
         if(!inc[x]) continue;
         Vi nid;
         nid.pb(x);
-        for(int u:cid[x]) add(u);
+        addv(cid[x]);
         int t=to[x];
         while(t!=x) {
-            for(int u:cid[t]) add(u);
+            addv(cid[t]);
             nid.pb(t);
         }
+        for(int u:nid) an[u]=cnt;
+        Func dfs=[&](auto dfs,int u) {
+            if(!inc[u]) an[u]=cnt;
+            for(int v:g[u]) {
+                if(inc[v]) continue;
+                addv(cid[v]);
+                dfs(v);
+                delv(cid[v]);
+            }
+        };
+        for(int u:nid) dfs(u);
+        for(int u:nid) delv(cid[u]);
     }
     return 0;
 }
