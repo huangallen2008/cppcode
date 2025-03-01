@@ -74,6 +74,7 @@ void solve() {
     REP1(rc,k+1) {
         bool ok=1;
         int cc=k+2-rc;
+        if(rc>n||cc>m) continue;
         int x=p[n][m]/rc/cc;
         int now=0;
         Vi rid(rc+1);
