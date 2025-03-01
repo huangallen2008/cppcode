@@ -118,7 +118,7 @@ int check(int m) {
             cout<<"WAWAWA!!!\n";
             cout<<a;
             cout<<d;
-            ope(m)
+            op(r)op(c)ope(m)
             return an;
         }
     }
