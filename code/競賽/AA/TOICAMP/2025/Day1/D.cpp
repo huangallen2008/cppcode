@@ -59,14 +59,20 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     #ifdef LOCAL
-        freopen("in.txt","r",stdin);
-        freopen("out.txt","w",stdout);
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     #endif
-    int n,_;
-    cin>>n>>_;
-    REP(i,n) cin>>_;
+    int n,T;
+    cin>>n>>T;
+    Vi tt(n);
+    REP(i,n) cin>>tt[i];
     Vi a(n);
     REP(i,n) cin>>a[i];
+    #ifdef LOCAL
+        cout<<n<<' '<<T<<'\n';
+        REP(i,n) cout<<tt[i]<<' ';cout<<'\n';
+        REP(i,n) cout<<a[i]<<' ';cout<<'\n';
+    #endif
     cout<<n<<'\n';
     cout<<"1 "<<n<<" 1\n";
     Vi p(n),b(n,1);
