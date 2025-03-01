@@ -87,7 +87,7 @@ int check(int m) {
         // for(auto x:tt) q.push_front(x);
         // if(!ook) continue;
         
-        q.pop_back();
+        q.pop_front();
         if(vis[x][y]) continue;
         // op(x)op(y)op(d[x][y])ope(it)
         assert(las>=d[x][y]);
@@ -100,6 +100,7 @@ int check(int m) {
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
                 vis[nx][ny]=1;
                 while(it<r*c&&a[s[it].s.f][s[it].s.s]>=d[nx][ny]) {
+                    if(vis[s[it].s.f][s[it].s.s]) continue;
                     q.pb(s[it++].s);
                 }
                 q.pb({nx,ny});
