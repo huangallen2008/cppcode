@@ -95,7 +95,7 @@ void solve() {
         // op(rc)ope(cc)
         REP1(i,n) {
             // ope(i)
-            now+=nr[i];
+            now+=p[i][n]-p[i-1][n];
             if(now==ir&&rit<rc) {
                 rid[rit++]=i;
                 now=0;
@@ -109,7 +109,7 @@ void solve() {
         rid[rc]=n;
         now=0;
         REP1(i,m) {
-            now+=nc[i];
+            now+=p[n][i]-p[n][i-1];
             if(now==ic&&cit<cc) {
                 cid[cit++]=i;
                 now=0;
