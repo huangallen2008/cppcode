@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxv=1e12+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -90,6 +90,12 @@ signed main() {
     cin>>r>>c>>k;
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j];
-
+    int l=0,r=maxv,m;
+    while(l<r) {//first m: check(m)<=k
+        m=l+r>>1;
+        if(check(m)<=k) r=m;
+        else l=m+1;
+    }
+    cout<<l<<'\n';
     return 0;
 }
