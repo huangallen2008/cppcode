@@ -74,8 +74,9 @@ int check(int m) {
     while(q.size()) {
         auto [x,y]=q.front();
         op(x)op(y)ope(it)
-        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s);
-        continue;
+        bool ok=1;
+        while(it<r*c&&a[s[it].s.f][s[it].s.s]>=a[x][y]) q.push(s[it++].s),ok=0;
+        if(!ok) continue;
         q.pop();
         if(vis[x][y]) continue;
         vis[x][y]=1;
@@ -98,7 +99,6 @@ signed main() {
     a=vector<Vi>(r,Vi(c));
     REP(i,r) REP(j,c) cin>>a[i][j],s.pb({a[i][j],{i,j}});
     sort(ALL(s),greater<pipii>());
-    oparr(s)exit(0);
     int l=0,r=maxv,m;
     while(l<r) {//first m: check(m)<=k
         m=l+r>>1;
