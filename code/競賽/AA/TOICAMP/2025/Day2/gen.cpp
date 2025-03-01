@@ -60,6 +60,7 @@ signed main() {
     IOS();
     freopen("in.txt","w",stdout);
     int T=100;
+    cout<<T<<'\n';
     while(T--) {
     int n=3,m=3,k=10;
     cout<<n<<' '<<m<<' '<<k<<'\n';
