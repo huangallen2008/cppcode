@@ -118,7 +118,7 @@ signed main() {
     auto addv=[&](Vi v) { for(int x:v) add(x); };
     auto del=[&](int x) { cnt-=--c[x]==0; };
     auto delv=[&](Vi v) { for(int x:v) del(x); };
-    oparr(wid)
+    // oparr(wid)
     for(int x:wid) {
         if(vis[x]) continue;
         if(!inc[x]) continue;
@@ -131,7 +131,7 @@ signed main() {
             nid.pb(t);
             t=to[t];
         }
-        ope(x)
+        // ope(x)
         for(int u:nid) an[u]=cnt;
         Func dfs=[&](auto dfs,int u) ->void{
             vis[u]=1;
