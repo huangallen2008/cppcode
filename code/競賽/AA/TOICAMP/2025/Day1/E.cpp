@@ -129,6 +129,7 @@ signed main() {
         while(t!=x) {
             addv(cid[t]);
             nid.pb(t);
+            t=to[t];
         }
         ope(x)
         for(int u:nid) an[u]=cnt;
