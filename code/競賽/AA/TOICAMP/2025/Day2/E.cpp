@@ -91,6 +91,7 @@ int check(int m) {
         
         q.pop_front();
         oparr(q)
+        op(x)ope(y)
         if(vis[x][y]) continue;
         // op(x)op(y)op(d[x][y])ope(it)
         // assert(las>=d[x][y]);
