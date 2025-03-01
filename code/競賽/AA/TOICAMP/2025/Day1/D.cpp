@@ -63,11 +63,12 @@ signed main() {
     REP(i,n) cin>>_;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    cout<<"1 n 1";
+    cout<<n<<'\n';
+    cout<<"1 "<<n<<" 1";
     Vi p(n),b(n,1);
     REP(i,n) p[i]=i+1;
     for(int i=n-1;i>0;i--) {
-        if(p[i]==a[i]) continue;
+        // if(p[i]==a[i]) continue;
         int id=0;
         REP(j,i) {
             if(p[j]==a[i]) {
