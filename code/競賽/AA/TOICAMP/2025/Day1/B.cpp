@@ -121,7 +121,7 @@ void solve() {
             if(!ok) break;
         }
         if(!ok) continue;
-        // oparr(rid)oparr(cid)
+        oparr(rid)oparr(cid)
         Vi res;
         REP1(i,rc-1) res.pb(rid[i]);
         REP1(i,cc-1) res.pb(n-1+cid[i]);
