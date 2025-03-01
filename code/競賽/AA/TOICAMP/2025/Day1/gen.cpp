@@ -59,9 +59,12 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
+    int T=10; while(T--) {
     int n=10,m=n;
     cout<<n<<' '<<m<<'\n';
     string s="><^v.#";
     REP(i,n) REP(j,m) cout<<s[rd(0,5)];
+    cout<<'\n';
+    }
     return 0;
 }
