@@ -66,7 +66,7 @@ void solve() {
     reverse(ALL(c));
     int N=(n*(n+1)>>1)+1;
     vector<Vi> dp(n+1,Vi(N,-inf));
-    dp[0][0][0]=0;
+    dp[0][0]=0;
     REP(i,n) {
         vector<Vi> ndp(n+1,Vi(N,-inf));
         REP(j,n+1) {
