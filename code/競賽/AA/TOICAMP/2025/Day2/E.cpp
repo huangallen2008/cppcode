@@ -64,7 +64,7 @@ bool ok(int x,int y) {
 }
 int check(int m) {
     vector<Vi> d=a,vis(r,Vi(c));
-    priority_queue<pipii,vector<pipii>,greater<pipii>> pq;
+    priority_queue<pipii> pq;
     REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     while(pq.size()) {
         auto [v,pos]=pq.top();
