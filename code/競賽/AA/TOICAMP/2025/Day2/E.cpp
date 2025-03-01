@@ -81,9 +81,9 @@ int check(int m) {
         if(!ook) continue;
         q.pop();
         op(x)op(y)op(d[x][y])ope(a[x][y])
+        if(vis[x][y]) continue;
         assert(las>=d[x][y]);
         las=d[x][y];
-        if(vis[x][y]) continue;
         vis[x][y]=1;
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
