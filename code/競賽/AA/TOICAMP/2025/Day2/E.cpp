@@ -98,7 +98,7 @@ int check(int m) {
     }
     // entr
     int an=0;
-    REP(i,r) REP(j,c) an+=d[i][j]-a[i][j],assert(d[i][j]>=a[i][j]);
+    REP(i,r) REP(j,c) an+=d[i][j]-a[i][j];
     return an;
 }
 signed main() {
