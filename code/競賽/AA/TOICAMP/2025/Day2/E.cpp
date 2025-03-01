@@ -141,7 +141,7 @@ void solve() {
 signed main() {
     IOS();
     int T=1;
-    #ifdef LOCAL
+    #ifdef LOCAL_
     freopen("in.txt","r",stdin);
     cin>>T;
     #endif
