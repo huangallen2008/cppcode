@@ -74,7 +74,7 @@ int check(int m) {
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
     int las=inf;
-    // oparr(s)
+    oparr(s)
     // ope(m)
     while(q.size()||it<r*c) {
         if(SZ(q)==0) q.push_front(s[it++].s);
