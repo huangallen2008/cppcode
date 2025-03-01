@@ -68,7 +68,7 @@ int check(int m) {
     // priority_queue<pipii> pq;
     int it=1;
     deque<pii> q;
-    q.push(s[0].s);
+    q.pb(s[0].s);
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
     int las=inf;
