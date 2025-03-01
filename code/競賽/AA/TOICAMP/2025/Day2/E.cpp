@@ -67,7 +67,7 @@ int check(int m) {
     vector<Vi> d=a,vis(r,Vi(c));
     // priority_queue<pipii> pq;
     int it=1;
-    queue<pii> q;
+    deque<pii> q;
     q.push(s[0].s);
     // REP(i,r) REP(j,c) pq.push({a[i][j],{i,j}});
     // ope("ok")
@@ -78,9 +78,9 @@ int check(int m) {
         if(SZ(q)==0) q.push(s[it++].s);
         auto [x,y]=q.front();
         bool ook=1;
-        while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push(s[it++].s),ook=0;
+        while(it<r*c&&d[s[it].s.f][s[it].s.s]>=d[x][y]) q.push_front(s[it++].s),ook=0;
         if(!ook) continue;
-        q.pop();
+        q.pop_back();
         op(x)op(y)op(d[x][y])ope(it)
         if(vis[x][y]) continue;
         assert(las>=d[x][y]);
@@ -92,7 +92,7 @@ int check(int m) {
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
                 // op(x)op(y)op(nx)op(ny)op(d[x][y])ope(d[nx][ny])
-                q.push({nx,ny});
+                q.pb({nx,ny});
             }
         }
     }
