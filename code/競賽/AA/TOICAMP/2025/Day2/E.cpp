@@ -82,7 +82,7 @@ int check(int m) {
             if(!ok(nx,ny)) continue;
             if(d[nx][ny]<d[x][y]-m) {
                 d[nx][ny]=d[x][y]-m;
-                q.push({d[nx][ny],{nx,ny}});
+                q.push({nx,ny});
             }
         }
     }
