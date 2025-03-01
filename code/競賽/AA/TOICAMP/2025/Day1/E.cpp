@@ -120,7 +120,6 @@ signed main() {
     auto delv=[&](Vi v) { for(int x:v) del(x); };
     oparr(wid)
     for(int x:wid) {
-        ope(x)
         if(vis[x]) continue;
         if(!inc[x]) continue;
         Vi nid;
@@ -131,6 +130,7 @@ signed main() {
             addv(cid[t]);
             nid.pb(t);
         }
+        ope(x)
         for(int u:nid) an[u]=cnt;
         Func dfs=[&](auto dfs,int u) ->void{
             vis[u]=1;
