@@ -61,10 +61,13 @@ void solve() {
     cin>>n>>m>>k;
     vector<Vi> a(n+2,Vi(m+2));
     vector<Vi> p(n+2,Vi(m+2));
+    Vi nr(n+1),nc(m+1);
     REP1(i,n) REP1(j,m) {
         char ch;
         cin>>ch;
         a[i][j]=ch=='0';
+        nr[i]+=a[i][j];
+        nc[j]+=a[i][j];
     }
     REP1(i,n) REP1(j,m) p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j];
     auto cnt=[&](int r1,int r2,int c1,int c2) {
@@ -83,6 +86,7 @@ void solve() {
         // op(rc)op(cc)ope(p[n][m])
         if(p[n][m]%((rc)*(cc))) continue;
         int x=p[n][m]/rc/cc;
+        int ir=p[n][m]/rc,ic=p[n][m]/cc;
         int now=0;
         Vi rid(rc+1);
         Vi cid(cc+1);
@@ -91,31 +95,31 @@ void solve() {
         // op(rc)ope(cc)
         REP1(i,n) {
             // ope(i)
-            now+=p[i][n]-p[i-1][n];
-            if(now==x*cc&&rit<rc) {
+            now+=nr[i];
+            if(now==ir&&rit<rc) {
                 rid[rit++]=i;
                 now=0;
-            }else if(now>x*cc) {
+            }else if(now>ir) {
                 ok=0;
                 break;
             }
         }
-        // if(rit!=rc+1) continue;
+        if(now!=ir) continue;
         if(!ok) continue;
         rid[rc]=n;
         now=0;
         REP1(i,m) {
-            now+=p[n][i]-p[n][i-1];
-            if(now==x*rc&&cit<cc) {
+            now+=nc[i];
+            if(now==ic&&cit<cc) {
                 cid[cit++]=i;
                 now=0;
-            }else if(now>x*rc) {
+            }else if(now>ic) {
                 ok=0;
                 break;
             }
         }
         cid[cc]=m;
-        // if(cit!=cc+1) continue;
+        if(now!=ic) continue;
         if(!ok) continue;
         REP1(i,rc) {
             REP1(j,cc) {
