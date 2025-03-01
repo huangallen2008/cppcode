@@ -88,6 +88,7 @@ signed main() {
     } 
     vector<Vi> cid(N);
     int coinid=0;
+    ope("ok")
     REP1(i,n) REP1(j,m) if(a0[id(i,j)]=='#') {
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
@@ -97,7 +98,6 @@ signed main() {
     }
     Vi inc(N,1),ind(N);
     Vi wid;
-    ope("ok")
     REP1(i,n) REP1(j,m) if(iw[id(i,j)]) wid.pb(id(i,j));
     for(int x:wid) ind[to[x]]++;
     queue<int> q;
