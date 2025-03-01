@@ -77,7 +77,7 @@ signed main() {
             }
         }
         cout<<id+1<<' '<<i+1<<' '<<(b[id]?"-1":"1")<<'\n';
-        if(b[id])sort(p.begin()+id,p.begin()+i+1);
+        if(!b[id])sort(p.begin()+id,p.begin()+i+1);
         else sort(p.begin()+id,p.begin()+i+1,greater<int>());
         int t=b[id]^1;
         for(int j=id;j<i;j++) b[j]=t;
