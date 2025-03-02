@@ -64,10 +64,21 @@ signed main() {
     cin>>a;
     struct Mex {
         Vi c;
-        int mex=0;
+        set<int> s;
         Mex(int n) {
-            c=Vi(n);
+            c=Vi(n+1);
+            REP(i,n+1) s.insert(i);
         }
+        void add(int x) {
+            if(c[x]++==0) s.erase(i);
+        }
+        void del(int x) {
+            if(--c[x]==0) s.insert(x);
+        }
+        int mex() { return *s.begin(); }
     };
+    Mex all(n);
+    for(int x:a) all.add(x);
+    int mex=all.mex();
     return 0;
 }
