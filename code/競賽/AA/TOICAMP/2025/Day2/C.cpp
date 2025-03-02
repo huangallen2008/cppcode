@@ -63,8 +63,11 @@ signed main() {
     Vi a(n);
     cin>>a;
     struct Mex {
-        Vi c(n);
+        Vi c;
         int mex=0;
+        Mex() {
+            c=Vi(n);
+        }
     };
     return 0;
 }
