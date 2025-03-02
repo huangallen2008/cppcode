@@ -60,8 +60,8 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a(n);
-    cin>>a;
+    Vi a(n+1);
+    REP1(i,n) cin>>a[i];
     struct Mex {
         Vi c;
         set<int> s;
@@ -78,7 +78,21 @@ signed main() {
         int mex() { return *s.begin(); }
     };
     Mex all(n);
-    for(int x:a) all.add(x);
+    REP1(i,n) all.add(a[i]);
     int mex=all.mex();
+    Mex lb(n),rb(n);
+    int itl=1,itr=1;
+    Vi dp(n+1),pdp(n+1);
+    dp[0]=pdp[0]=1;
+    REP1(i,n) {
+        lb.add(a[i]);
+        rb.add(a[i]);
+        while(itl<=i&&lb.mex()>mex) lb.del(a[itl++]);
+        while(itr<=i&&rb.mex()>=mex) rb.del(a[itr++]);
+        dp[i]=((itr-2>=0?pdp[itr-2]:0)-(itl-2>=0?pdp[itl-2]:0))%mod;
+        pdp[i]=(pdp[i-1]+dp[i])%mod;
+    }
+    int an=dp[n];
+    cout<<an<<'\n';
     return 0;
 }
