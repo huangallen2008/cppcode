@@ -70,7 +70,7 @@ signed main() {
             REP(i,n+1) s.insert(i);
         }
         void add(int x) {
-            if(c[x]++==0) s.erase(i);
+            if(c[x]++==0) s.erase(x);
         }
         void del(int x) {
             if(--c[x]==0) s.insert(x);
