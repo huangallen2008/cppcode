@@ -60,10 +60,36 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    vector<Vi> a(n,Vi(n)),b(n,Vi(n));
+    vector<Vi> a(n,Vi(n)),b(n,Vi(n)),ab(n,Vi(n));
     cin>>a>>b;
-    ope(a)
-    ope(b)
+    REP(i,n) REP(j,b) ab[i][j]=a[j][i];
+    int an=inf;
+    REP(i,n) {
+        auto t=a;
+        auto tb=ab;
+        int cnt=0;
+        REP(j,n) {
+            if(tb[j][0]!=b[i][j]) {
+                cnt++;
+                REP(k,n) if(b[i][j]==tb[k][0]) {
+                    swap(tb[j],tb[k]);
+                    break;
+                }
+            }
+        }
+        REP(j,n) REP(k,n) t[j][k]=tb[k][j];
+        REP(j,n) {
+            if(t[j][0]!=b[j][0]) {
+                cnt++;
+                REP(k,n) if(b[j][0]==t[k][0]) {
+                    swap(t[j],t[k]);
+                }
+            }
+        }
+        if(t==b) chmin(an,cnt);
 
+    }
+    if(an==inf) cout<<"-1\n";
+    else cout<<an<<'\n';
     return 0;
 }
