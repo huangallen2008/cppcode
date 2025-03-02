@@ -65,7 +65,7 @@ signed main() {
     struct Mex {
         Vi c;
         int mex=0;
-        Mex() {
+        Mex(int n) {
             c=Vi(n);
         }
     };
