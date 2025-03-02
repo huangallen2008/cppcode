@@ -62,7 +62,7 @@ signed main() {
     cin>>n;
     vector<Vi> a(n,Vi(n)),b(n,Vi(n)),ab(n,Vi(n));
     cin>>a>>b;
-    REP(i,n) REP(j,b) ab[i][j]=a[j][i];
+    REP(i,n) REP(j,n) ab[i][j]=a[j][i];
     int an=inf;
     REP(i,n) {
         auto t=a;
