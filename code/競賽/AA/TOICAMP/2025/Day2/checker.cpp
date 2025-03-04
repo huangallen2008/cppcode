@@ -58,20 +58,53 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    freopen("in.txt","w",stdout);
-    int T=200;
-    cout<<T<<'\n';
-    while(T--) {
-    int n=5;
-    cout<<n<<' '<<0<<'\n';
-    Vi a(n*3);
-    REP(i,n*3) a[i]=i/3+1;
-    // oparr(a)
-    shuffle(ALL(a),rng);
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","r",stdin);
+    int TT=1;
+    cin>>TT;
+    while(TT--) {
+    int n,T;
+    cin>>n>>T;
+    vector<Vi> a(n,Vi(3));
+    REP(i,n) REP(j,3) cin>>a[i][j];
+    auto a0=a;
+    a.pb({});
+    
+    int t;
+    cin>>t;
+    if(t>n*6) {
+        cout<<"WA!!!\n";
+        continue;
+    }
+    REP(i,t) {
+        int x,y;
+        cin>>x>>y,x--,y--;
+        // op(x)ope(y)
+        if(a[y].size()==3||a[x].size()==0) {
+            op(n)ope(T)ope(a0)
+            ope(a)
+            cout<<"RE!!!\n";
+            entr
+            exit(0);
+            break;
+        }
+        a[y].pb(a[x].back());
+        a[x].pop_back();
+        // ope("ok")
+        // ope(a)
+    }
+    bool ok=1;
     REP(i,n) {
-        REP(j,3) cout<<a[i*3+j]<<' ';
-        entr
+        if(a[i].size()==0||(a[i][0]==a[i][1]&&a[i][0]==a[i][2])) {
+            continue;
+        }else ok=0;
     }
+    if(!ok) {
+        op(n)ope(T)ope(a0)
+        ope(a)
+        cout<<"WA!!!\n";
     }
+    // else cout<<"AC!!!";
+}
     return 0;
 }

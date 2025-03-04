@@ -27,7 +27,7 @@ using namespace std;
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
 #define Vpii vector<pii>
-#ifdef LOCAL
+#ifdef LOCAL_
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
@@ -57,21 +57,64 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 signed main() {
-    IOS();
-    freopen("in.txt","w",stdout);
-    int T=200;
-    cout<<T<<'\n';
-    while(T--) {
-    int n=5;
-    cout<<n<<' '<<0<<'\n';
-    Vi a(n*3);
-    REP(i,n*3) a[i]=i/3+1;
-    // oparr(a)
-    shuffle(ALL(a),rng);
-    REP(i,n) {
-        REP(j,3) cout<<a[i*3+j]<<' ';
-        entr
+    IOS();    
+    int n,_;
+    cin>>n>>_;
+    vector<Vi> a(n,Vi(3));
+    a.pb({});
+    REP(i,n) REP(j,3) cin>>a[i][j];
+    set<int> rest;
+    vector<set<pii>> ai(n+1);
+    REP(i,n) REP(j,3) ai[a[i][j]].insert({i,j});
+    int nid=n;
+    REP(i,n) rest.insert(i);
+    Vpii an;
+    REP(___,n-1) {
+        for(int i:rest) {
+            set<pii> id0=ai[a[i][2]];
+            Vpii id;
+            for(auto [x,y]:id0) id.pb({x,y});
+            sort(ALL(id),[&](pii a,pii b) { return a.s>b.s; });
+            if(id[1].s==0) continue;
+            multiset<int> q;
+            auto move=[&](int x,int y) {
+                if(x==y)return;
+                an.pb({x,y});
+                int val=a[x].back();
+                ai[val].erase({x,SZ(a[x])-1});
+                a[y].pb(val);
+                ai[val].insert({y,SZ(a[y])-1});
+                a[x].pop_back();
+                q.insert(x);
+            };
+            move(id[0].f,nid);
+            int ssz=SZ(a[id[1].f]);
+            auto diff=[&](int x) ->int{
+                if(*q.begin()==x) return *q.rbegin();
+                else return *q.begin();
+            };
+            REP(j,ssz-1-id[1].s) {
+                int val=diff(id[1].f);
+                move(id[1].f,val);
+                q.erase(q.find(val));
+            } 
+            move(id[1].f,nid);
+            int sz=a[id[2].f].size();
+            RREP(j,sz) {
+                if(j==id[2].s) {
+                    move(id[2].f,nid);
+                }else {
+                    int val=diff(id[2].f);
+                    move(id[2].f,val);
+                    q.erase(q.find(val));
+                }
+            } 
+            nid=id[2].f;
+            rest.erase(id[2].f);
+            break;
+        }
     }
-    }
+    cout<<SZ(an)<<'\n';
+    for(auto [x,y]:an) cout<<x+1<<' '<<y+1<<'\n';
     return 0;
 }
