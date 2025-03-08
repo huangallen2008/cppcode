@@ -84,8 +84,8 @@ struct DSU {
         int an=0;
         REP(i,maxb) {
             Vi c(2);
-            for(int [x,_]:a) c[x>>i&1]++;
-            an^=c[1]>c[0]?(1<<i);
+            for(auto [x,_]:a) c[x>>i&1]++;
+            an^=c[1]>c[0]?(1<<i):0;
         }
         return an;
     }
