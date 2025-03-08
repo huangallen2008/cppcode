@@ -94,6 +94,7 @@ signed main() {
         an[m-1]+=y;
         an[m-a[i]-1]+=-x-y;
     }
+    ope("ok")
     // oparr(an)
     bit.init(m);
     RREP(i,m) {
