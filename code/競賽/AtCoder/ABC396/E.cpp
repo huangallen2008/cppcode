@@ -75,6 +75,7 @@ struct DSU {
         oparr(p)oparr(v)
         int x=find(a),y=find(b);
         if(x==y) {
+            op(a)op(b)op(v[a])ope(v[b])
             if(v[a]^v[b]!=v0) return 0;
             return 1;
         }
