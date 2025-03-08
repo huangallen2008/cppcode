@@ -90,7 +90,7 @@ signed main() {
             an[i-1]+=cnt[x][1][i];
         }
         cnt[x][1].erase(cnt[x][1].begin());
-        cnt[x][i].pb(0);
+        cnt[x][1].pb(0);
     };
     auto getan=[&]() {
         int ans=0;
