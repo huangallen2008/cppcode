@@ -80,24 +80,30 @@ struct DSU {
         sz[y]+=sz[x];
         v[x]=val;
     }
-    int mns(Vi a) {
+    int mns(Vpii a) {
         int an=0;
         REP(i,maxb) {
             Vi c(2);
-            for(int x:a) c[x>>i&1]++;
-            an+=min(c[0],c[1])*(1<<i);
+            for(int [x,_]:a) c[x>>i&1]++;
+            an^=c[1]>c[0]?(1<<i);
         }
         return an;
     }
-    int getan() {
-        vector<Vi> a(n);
+    Vi getan() {
+        vector<Vpii> a(n);
         REP(i,n) {
             int x=find(i);
-            a[x].pb(v[i]);
+            a[x].pb({v[i],i});
         }
-        ope("ok")
-        int an=0;
-        REP(i,n) if(p[i]==i) an+=mns(a[i]);
+        // ope("ok")
+        // int an=0;
+        Vi an(n);
+        REP(i,n) if(p[i]==i) {
+            int b=mns(a[i]);
+            for(auto [x,id]:a[i]) {
+                an[id]=b^x;
+            }
+        }
         return an;
     }
 }dsu;
@@ -111,6 +117,8 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         dsu.merge(u,v,w);
     }
-    cout<<dsu.getan()<<'\n';
+    Vi an=dsu.getan();
+    REP(i,n) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
