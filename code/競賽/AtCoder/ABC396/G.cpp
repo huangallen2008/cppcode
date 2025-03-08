@@ -91,6 +91,7 @@ signed main() {
         }
         cnt[x][1].erase(cnt[x][1].begin());
         cnt[x][1].pb(0);
+        swap(cnt[x][0],cnt[x][1]);
     };
     auto getan=[&]() {
         oparr(an)
