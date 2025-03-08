@@ -91,6 +91,7 @@ signed main() {
         an[m-1]+=x;
         an[m-a[i]-1]+=-x-y;
     }
+    bit.init(m);
     RREP(i,m) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
