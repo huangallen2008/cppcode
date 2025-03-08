@@ -97,11 +97,11 @@ signed main() {
         REP(i,w) ans+=min(i,w-i)*an[i];
         return ans;
     };
-    int ans=0;
-    REP1(i,1<<w) {
+    int ans=getan();
+    REP1(i,(1<<w)-1) {
         ope(i)
-        chmin(ans,getan());
         flp(__lg(i&-i));
+        chmin(ans,getan());
     }
     cout<<ans<<'\n';
     return 0;
