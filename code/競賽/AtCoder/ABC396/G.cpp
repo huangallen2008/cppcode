@@ -89,7 +89,18 @@ signed main() {
             an[i]-=cnt[x][1][i];
             an[i-1]+=cnt[x][1][i];
         }
-        cnt[x][0].erase(cnt[x][1].begin());
+        cnt[x][1].erase(cnt[x][1].begin());
+        cnt[x][i].pb(0);
+    };
+    auto getan=[&]() {
+        int ans=0;
+        REP(i,w) ans+=min(i,w-i)*an[i];
     }
+    int ans=0;
+    REP1(i,1<<w) {
+        chmin(ans,getan());
+        flp(__lg(i&-i));
+    }
+    cout<<ans<<'\n';
     return 0;
 }
