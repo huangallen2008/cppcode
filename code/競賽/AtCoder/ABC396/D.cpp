@@ -70,16 +70,24 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    Graph g(n);
+    Graphw g(n);
     REP(i,m) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
+        int u,v,w;
+        cin>>u>>v>>w,u--,v--;
+        g[u].pb({v,w});
+        g[v].pb({u,w});
     }
+    int an=inf;
     Vi vis(n);
-    Func dfs=[&](auto dfs,int u) ->void {
-
+    Func dfs=[&](auto dfs,int u,int x) ->void {
+        vis[u]=1;
+        chmin(an,x);
+        for(auto [v,w]:g[u]) {
+            if(!vis[v]) dfs(v,x^w);
+        }
+        vis[u]=0;
     };
+    REP(i,n) dfs(i,0);
+    cout<<an<<'\n';
     return 0;
 }
