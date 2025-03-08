@@ -87,7 +87,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     bit.init(m);
     Vi an(m);
-    REP(i,m) {
+    REP(i,n) {
         ope(i)
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
@@ -98,7 +98,7 @@ signed main() {
     // ope("ok")
     // oparr(an)
     bit.init(m);
-    RREP(i,m) {
+    RREP(i,n) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
         an[m-a[i]-1]+=x+y;
