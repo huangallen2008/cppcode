@@ -93,6 +93,7 @@ signed main() {
         cnt[x][1].pb(0);
     };
     auto getan=[&]() {
+        oparr(an)
         int ans=0;
         REP(i,w) ans+=min(i,w-i)*an[i];
         return ans;
