@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=5;
-const int maxb=64;
+const int maxb=30;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -76,10 +76,40 @@ struct DSU {
         if(x==y) return ;
         if(sz[x]>sz[y]) swap(x,y);
         int val=v0^v[x]^v[y];
+        p[x]=y;
+        sz[y]+=sz[x];
+        v[x]=val;
     }
-}
+    int mns(Vi a) {
+        int an=0;
+        REP(i,maxb) {
+            Vi c(2);
+            for(int x:a) c[x>>i&1]++;
+            an+=min(c[0],c[1])*(1<<i);
+        }
+        return an;
+    }
+    int getan() {
+        vector<Vi> a;
+        REP(i,n) {
+            int x=find(i);
+            a[x].pb(v[i]);
+        }
+        int an=0;
+        REP(i,n) if(p[i]==i) an+=mns(a);
+        return an;
+    }
+}dsu;
 signed main() {
     IOS();
-
+    int n,m;
+    cin>>n>>m;
+    dsu.init(n);
+    REP(i,m) {
+        int u,v,w;
+        cin>>u>>v>>w,u--,v--;
+        dsu.merge(u,v,w);
+    }
+    cout<<dsu.getan()<<'\n';
     return 0;
 }
