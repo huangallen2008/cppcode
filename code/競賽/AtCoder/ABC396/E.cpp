@@ -90,6 +90,7 @@ struct DSU {
         return an;
     }
     Vi getan() {
+        oparr(p)oparr(v)
         vector<Vpii> a(n);
         REP(i,n) {
             int x=find(i);
