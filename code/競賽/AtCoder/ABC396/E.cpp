@@ -95,6 +95,7 @@ struct DSU {
             int x=find(i);
             a[x].pb(v[i]);
         }
+        ope("ok")
         int an=0;
         REP(i,n) if(p[i]==i) an+=mns(a[i]);
         return an;
