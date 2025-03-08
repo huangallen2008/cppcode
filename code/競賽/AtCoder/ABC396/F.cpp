@@ -88,13 +88,14 @@ signed main() {
     bit.init(m);
     Vi an(m);
     REP(i,m) {
+        ope(i)
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
         // op(i)op(x)ope(y)
         an[m-1]+=y;
         an[m-a[i]-1]+=-x-y;
     }
-    ope("ok")
+    // ope("ok")
     // oparr(an)
     bit.init(m);
     RREP(i,m) {
