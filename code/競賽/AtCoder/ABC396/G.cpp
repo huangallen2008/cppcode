@@ -78,6 +78,7 @@ signed main() {
             cnt[j][a[i][j]][cc[i]]++;
         }
     }
+    oparr(an)
     auto flp=[&](int x) {
         REP(i,h-1) {
             an[i]-=cnt[x][0][i];
