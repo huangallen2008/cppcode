@@ -99,6 +99,7 @@ signed main() {
     };
     int ans=0;
     REP1(i,1<<w) {
+        ope(i)
         chmin(ans,getan());
         flp(__lg(i&-i));
     }
