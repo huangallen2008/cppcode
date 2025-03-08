@@ -96,7 +96,7 @@ struct DSU {
             a[x].pb(v[i]);
         }
         int an=0;
-        REP(i,n) if(p[i]==i) an+=mns(a);
+        REP(i,n) if(p[i]==i) an+=mns(a[i]);
         return an;
     }
 }dsu;
@@ -110,6 +110,7 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         dsu.merge(u,v,w);
     }
+    ope("ok")
     cout<<dsu.getan()<<'\n';
     return 0;
 }
