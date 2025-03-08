@@ -88,7 +88,7 @@ signed main() {
     REP(i,m) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
-        an[m-1]+=x;
+        an[m-1]+=y;
         an[m-a[i]-1]+=-x-y;
     }
     oparr(an)
