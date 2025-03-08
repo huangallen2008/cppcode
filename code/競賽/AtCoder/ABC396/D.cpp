@@ -81,13 +81,16 @@ signed main() {
     Vi vis(n);
     Func dfs=[&](auto dfs,int u,int x) ->void {
         vis[u]=1;
-        chmin(an,x);
+        if(u==n-1) {
+            chmin(an,x);
+            return;
+        }
         for(auto [v,w]:g[u]) {
             if(!vis[v]) dfs(v,x^w);
         }
         vis[u]=0;
     };
-    REP(i,n) dfs(i,0);
+    dfs(0,0);
     cout<<an<<'\n';
     return 0;
 }
