@@ -101,10 +101,12 @@ signed main() {
         return ans;
     };
     int ans=getan();
+    ope(ans)
     REP1(i,(1<<w)-1) {
         ope(i)
         flp(__lg(i&-i));
         chmin(ans,getan());
+        ope(ans)
     }
     cout<<ans<<'\n';
     return 0;
