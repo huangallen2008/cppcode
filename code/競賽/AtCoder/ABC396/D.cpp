@@ -83,6 +83,7 @@ signed main() {
         vis[u]=1;
         if(u==n-1) {
             chmin(an,x);
+            vis[u]=0;
             return;
         }
         for(auto [v,w]:g[u]) {
