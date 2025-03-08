@@ -104,7 +104,7 @@ signed main() {
     ope(ans)
     REP1(i,(1<<w)-1) {
         ope(i)
-        flp(__lg(i&-i));
+        flp(__lg(i&-i)-1);
         chmin(ans,getan());
         ope(ans)
     }
