@@ -90,7 +90,7 @@ struct DSU {
         return an;
     }
     int getan() {
-        vector<Vi> a;
+        vector<Vi> a(n);
         REP(i,n) {
             int x=find(i);
             a[x].pb(v[i]);
@@ -111,7 +111,6 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         dsu.merge(u,v,w);
     }
-    ope("ok")
     cout<<dsu.getan()<<'\n';
     return 0;
 }
