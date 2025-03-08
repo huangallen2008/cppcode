@@ -91,12 +91,14 @@ signed main() {
         an[m-1]+=x;
         an[m-a[i]-1]+=-x-y;
     }
+    oparr(an)
     bit.init(m);
     RREP(i,m) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
         an[m-a[i]-1]+=x+y;
     }
+    oparr(an)
     RREP(i,m-1) an[i]+=an[i+1];
     REP(i,m) cout<<an[i]<<'\n';
     return 0;
