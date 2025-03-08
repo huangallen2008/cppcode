@@ -80,6 +80,7 @@ signed main() {
     }
     oparr(an)
     auto flp=[&](int x) {
+        oparr(cnt[x])
         REP(i,h-1) {
             an[i]-=cnt[x][0][i];
             an[i+1]+=cnt[x][0][i];
