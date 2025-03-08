@@ -77,7 +77,7 @@ struct DSU {
         if(x==y) {
             op(a)op(b)op(v[a])ope(v[b])ope(v0)
             ope(v[a]^v[b]!=v0)
-            if(v[a]^v[b]!=v0) return 0;
+            if((v[a]^v[b])!=v0) return 0;
             return 1;
         }
         if(sz[x]>sz[y]) swap(x,y);
