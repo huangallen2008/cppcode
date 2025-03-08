@@ -58,10 +58,38 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    bitset<5> now;
-    REP(i,1<<5) {
-        now^=i&-i;
-        ope(now)
+    int h,w;
+    cin>>h>>w;
+    vector<vector<Vi>> cnt(w,vector<Vi>(2,Vi(w+1)));
+    Vi an(w+1);
+    vector<Vi> a(h,Vi(w));
+    Vi cc(h);
+    REP(i,h) {
+        REP(j,w) {
+            char c;
+            cin>>c;
+            a[i][j]=c-'0';
+            cc[i]+=a[i][j];
+        }
+    }
+    REP(i,h) an[cc[i]]++;
+    REP(i,h) {
+        REP(j,w) {
+            cnt[j][a[i][j]][cc[i]]++;
+        }
+    }
+    auto flp=[&](int x) {
+        REP(i,h-1) {
+            an[i]-=cnt[x][0][i];
+            an[i+1]+=cnt[x][0][i];
+        }
+        cnt[x][0].insert(cnt[x][0].begin(),0);
+        cnt[x][0].pop_back();
+        REP1(i,h-1) {
+            an[i]-=cnt[x][1][i];
+            an[i-1]+=cnt[x][1][i];
+        }
+        cnt[x][0].erase(cnt[x][1].begin());
     }
     return 0;
 }
