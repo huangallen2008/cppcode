@@ -95,6 +95,7 @@ signed main() {
     auto getan=[&]() {
         int ans=0;
         REP(i,w) ans+=min(i,w-i)*an[i];
+        return ans;
     };
     int ans=0;
     REP1(i,1<<w) {
