@@ -65,7 +65,7 @@ struct BIT {
     }
     void ud(int u,int v) {
         u++;
-        op(u)ope(v)
+        // op(u)ope(v)
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
@@ -75,7 +75,7 @@ struct BIT {
     }
     int qu(int l,int r) {
         l++,r++;
-        op(l)ope(r)
+        // op(l)ope(r)
         return pre(r)-pre(l-1);
     }
 }bit;
@@ -90,18 +90,18 @@ signed main() {
     REP(i,m) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
-        op(i)op(x)ope(y)
+        // op(i)op(x)ope(y)
         an[m-1]+=y;
         an[m-a[i]-1]+=-x-y;
     }
-    oparr(an)
+    // oparr(an)
     bit.init(m);
     RREP(i,m) {
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
         an[m-a[i]-1]+=x+y;
     }
-    oparr(an)
+    // oparr(an)
     RREP(i,m-1) an[i]+=an[i+1];
     REP(i,m) cout<<an[i]<<'\n';
     return 0;
