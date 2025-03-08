@@ -69,7 +69,7 @@ struct BIT {
     }
     int pre(int u) {
         int r=0;
-        for(;u>0u-=u&-u) r+=b[u];
+        for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
     int qu(int l,int r) {
