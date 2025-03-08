@@ -88,7 +88,7 @@ signed main() {
     bit.init(m);
     Vi an(m);
     REP(i,n) {
-        ope(i)
+        // ope(i)
         int x=bit.qu(0,a[i]-1),y=bit.qu(a[i]+1,m-1);
         bit.ud(a[i],1);
         // op(i)op(x)ope(y)
