@@ -75,7 +75,7 @@ struct DSU {
         int x=find(a),y=find(b);
         if(x==y) return ;
         if(sz[x]>sz[y]) swap(x,y);
-        int v=v0^v[x]^v[y];
+        int val=v0^v[x]^v[y];
     }
 }
 signed main() {
