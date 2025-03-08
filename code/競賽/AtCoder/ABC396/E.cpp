@@ -72,6 +72,7 @@ struct DSU {
         return p[u]=pu;
     }
     bool merge(int a,int b,int v0) {
+        oparr(p)oparr(v)
         int x=find(a),y=find(b);
         if(x==y) {
             if(v[a]^v[b]!=v0) return 0;
