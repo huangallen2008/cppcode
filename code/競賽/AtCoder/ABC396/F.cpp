@@ -81,6 +81,8 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
     bit.init(m);
     Vi an(m);
     REP(i,m) {
