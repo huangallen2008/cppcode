@@ -71,14 +71,18 @@ struct DSU {
         v[u]^=v[p[u]];
         return p[u]=pu;
     }
-    void merge(int a,int b,int v0) {
+    bool merge(int a,int b,int v0) {
         int x=find(a),y=find(b);
-        if(x==y) return ;
+        if(x==y) {
+            if(v[a]^v[b]!=v0) return 0;
+            return 1;
+        }
         if(sz[x]>sz[y]) swap(x,y);
         int val=v0^v[a]^v[b];
         p[x]=y;
         sz[y]+=sz[x];
         v[x]=val;
+        return 1;
     }
     int mns(Vpii a) {
         int an=0;
@@ -116,7 +120,10 @@ signed main() {
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        dsu.merge(u,v,w);
+        if(!dsu.merge(u,v,w)) {
+            cout<<"-1\n";
+            return 0;
+        }
     }
     Vi an=dsu.getan();
     REP(i,n) cout<<an[i]<<' ';
