@@ -78,6 +78,7 @@ void solve() {
             // op(i)ope(ca)
         };
         upd(mxa);
+        if(i==m) continue;;
         int mxs=min(n,rt/a[i]);
         int ca2=min(mxs,(rt-mxs*a[i])/(p[m]-p[i]));
         upd(ca2);
