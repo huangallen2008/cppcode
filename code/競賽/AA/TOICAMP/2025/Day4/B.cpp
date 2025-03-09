@@ -70,13 +70,6 @@ void solve() {
         if(p[i-1]*n>d) break;
         int rt=d-p[i-1]*n,now=n*(i-1);
         // chmax(an,n*(i-1)+min(n,rt/a[i]));
-        int mxcnt=min(n,rt/(p[m]-p[i-1]));
-        for(int cnt:Vi{0,mxcnt}) {
-            now+=cnt*(m-i+1+k);
-            rt-=cnt*(p[m]-p[i-1]);
-            now+=min(rt/a[i],n-cnt);
-            chmax(an,now);
-        }
         int mxa=rt/(p[m]-p[i-1]);
         auto upd=[&](int ca) {
             ca=min({n,ca,mxa});
