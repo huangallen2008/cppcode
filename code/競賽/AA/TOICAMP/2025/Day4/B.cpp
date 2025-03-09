@@ -65,10 +65,6 @@ void solve() {
     Vi p(m+1);
     REP1(i,m) p[i]=p[i-1]+a[i];
     int an=0;
-    if(d>=p[m]*n) {
-        cout<<(k+m)*n<<'\n';
-        return ;
-    }
     REP1(i,m) {
         //1. a[i]->1  2. p[m]-p[i-1] -> m-i+1+k
         if(p[i-1]*n>d) break;
@@ -81,6 +77,18 @@ void solve() {
             now+=min(rt/a[i],n-cnt);
             chmax(an,now);
         }
+        int mxa=rt/(p[m]-p[i-1]);
+        auto upd=[&](int ca) {
+            ca=min({n,ca,mxa});
+            ca=max(ca,0ll);
+            chmax(an,now+ca*(m-i+1+k)+min(n-ca,(rt-ca*(p[m]-p[i-1]))/a[i]));
+        };
+        upd(mxa);
+        int mxs=min(n,rt/a[i]);
+        int ca2=min(mxs,(rt-mxs*a[i])/(p[m]-p[i]));
+        upd(ca2);
+        upd(ca2+1);
+        upd(ca2-1);
     }
     cout<<an<<'\n';
 }
