@@ -75,7 +75,7 @@ void solve() {
             ca=min({n,ca,mxa});
             ca=max(ca,0ll);
             chmax(an,now+ca*(m-i+1+k)+min(n-ca,(rt-ca*(p[m]-p[i-1]))/a[i]));
-            op(i)ope(ca)
+            // op(i)ope(ca)
         };
         upd(mxa);
         int mxs=min(n,rt/a[i]);
