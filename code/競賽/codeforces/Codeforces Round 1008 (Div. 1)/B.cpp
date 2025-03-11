@@ -56,75 +56,66 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n,s;
-Vi solve(int n,Vi a,Vi a0) {
-    Vi ans;
-    Vi vis(n);
-    Vi r;
-    REP(i,n) {
-        if(vis[i]||a[i]==i) continue;
-        int t=a[i];
-        Vi rr;
-        if(i)rr.pb(i);
-        vis[i]=1;
-        while(t!=i) {
-            vis[t]=1;
-            rr.pb(t);
-            t=a[t];
+void solve() {
+    int A=1,B=2;
+    int v1=0,v2=0;
+    REP(i,30) {
+        if(i&1) v1^=1<<i;
+        else v2^=1<<i;
+    }
+    int r1,r2;
+    cout<<v1<<"\n"<<flush;
+    #ifdef LOCAL
+    r1=(A|v1)+(B|v1);
+    #else
+    cin>>r1;
+    #endif
+    cout<<v2<<"\n"<<flush;
+    #ifdef LOCAL
+    r2=(A|v2)+(B|v2);
+    #else
+    cin>>r2;
+    #endif
+    cout<<"!\n"<<flush;
+    int m;
+    cin>>m;
+    bitset<30> bb;
+    ope(bb=r1)
+    r1-=v1<<1;
+    ope(bb=r1)
+    r2-=v2<<1;
+    ope(bb=r2)
+    int an=0;
+    REP(i,30) {
+        if(i&1) {
+            int b1=(r2>>i)&1;
+            int b2=(r2>>i+1)&1;
+            op(i)op(b1)ope(b2)
+            if(b2==1) an+=1<<i+1;
+            else {
+                if(m>>i&1) an+=1<<i+1;
+                else an+=b1*(1<<i);
+            }
+        }else {
+            int b1=(r1>>i)&1;
+            int b2=(r1>>i+1)&1;
+            op(i)op(b1)ope(b2)
+            if(b2==1) an+=1<<i+1;
+            else {
+                if(m>>i&1) an+=1<<i+1;
+                else an+=b1*(1<<i);
+            }
         }
-        if(i) rr.pb(i);
-        reverse(ALL(rr));
-        for(int v:rr) r.pb(v);
     }
-    oparr(a0)
-    auto go=[&](int v) {
-        int id=0;
-        REP(i,n-1) if(a0[i]==v) id=i;
-        ans.pb(id+1);
-        // cout<<id+1<<'\n';
-        Vi na;
-        for(int i=id+1;i<n-1;i++) na.pb(a0[i]);
-        na.pb(v);
-        for(int i=0;i<id;i++) na.pb(a0[i]);
-        a0=na;
-        op(v)op(id)oparr(a0)
-    };
-    bool magic=0;
-    oparr(a)oparr(r)
-    if(r.size()&1?s==2:s==1) {
-        // if(n&1) magic=1;
-        // else {
-            return {-inf};
-            // }
-    }
-    // cout<<"Yes\n";
-    // cout<<r.size()+magic*n<<'\n';
-    for(int v:r) go(v);
-    return ans;
+    cout<<an<<'\n';
+    #ifdef LOCAL
+    if(an!=A|m+B|m) cout<<"WA!!!"<<endl;
+    #endif
 }
 signed main() {
     IOS();
-    cin>>n>>s;
-    Vi a(n+1);
-    REP1(i,n) cin>>a[i];
-    Vi a0=a;
-    a0.erase(a0.begin());
-    Vi ans={-inf};
-    REP(i,n) {
-        op(i)oparr(a)
-        Vi an=solve(n+1,a,a0);
-        a.pb(a[0]);
-        a.erase(a.begin());
-        oparr(an)
-        if(an==Vi{-inf}) continue;
-        if(SZ(an)<SZ(ans)||ans==Vi{-inf}) ans=an;
-    }
-    if(ans==Vi{-inf}) {
-        cout<<"No\n";
-        return 0;
-    }
-    cout<<"Yes\n";
-    cout<<SZ(ans)<<'\n';
-    for(int x:ans) cout<<x<<'\n';
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }

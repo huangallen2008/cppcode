@@ -81,13 +81,16 @@ signed main() {
     oparr(an)
     auto flp=[&](int x) {
         oparr(cnt[x])
-        REP(i,h-1) {
+        REP(i,w-1) {
             an[i]-=cnt[x][0][i];
             an[i+1]+=cnt[x][0][i];
+            REP(j,w) {
+                cnt
+            }
         }
         cnt[x][0].insert(cnt[x][0].begin(),0);
         cnt[x][0].pop_back();
-        REP1(i,h-1) {
+        REP1(i,w-1) {
             an[i]-=cnt[x][1][i];
             an[i-1]+=cnt[x][1][i];
         }

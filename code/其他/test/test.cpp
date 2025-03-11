@@ -56,28 +56,18 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<class T>
-struct Func {
-    T func;
-    Func(const T &func):func(func) {}
-    template<class... Args> 
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class T> Func(const T &) -> Func<T>;
+void solve() {
+    int n,m,k;
+    cin>>n>>m>>k;
+    //input
 
-int pw(int x,int p,int mod=mod) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
+    //do something
+    
 }
 signed main() {
     IOS();
-    if((1||0)&&0) ope(1)
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
