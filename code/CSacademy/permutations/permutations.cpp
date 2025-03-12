@@ -77,7 +77,7 @@ int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 namespace NTT {
-    const int mod=998244353;
+    // const int mod=998244353;
     int MA(int a,int b) { int c=a+b; if(c>mod) c-=mod; return c; }
     int MM(int a,int b) { int c=a-b; if(c<0) c+=mod; return c; }
     const int G=3;
@@ -133,8 +133,16 @@ signed main() {
     REP(i,q) {
         int x,y;
         cin>>x>>y;
-        int an=v[y]*cv[y]%mod;
+        int an=v[y]*fac[n-y]%mod;
         cout<<an<<'\n';
+        #ifdef LOCAL
+            int ran=0;
+            for(int j=y;j<=n;j++) addmod(ran,(y-1>>1)*fac[j-1]%mod*infac[j-y]%mod*fac[n-y]%mod);
+            if(ran!=an) {
+                cout<<"WA!!\n";
+                op(n)ope(y)
+            }
+        #endif
     }
     return 0;
 }
