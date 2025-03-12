@@ -143,7 +143,7 @@ signed main() {
             for(int j=y;j<=n;j++) addmod(ran,(y-1>>1)*fac[j-1]%mod*infac[j-y]%mod*fac[n-y]%mod);
             if(ran!=an) {
                 cout<<"WA!!\n";
-                op(n)ope(y)
+                op(n)op(y)op(an)ope(ran)
             }
         #endif
     }
