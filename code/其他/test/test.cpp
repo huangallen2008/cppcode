@@ -11,8 +11,8 @@ using namespace std;
 #define s second
 #define pb push_back
 #define ALL(x) (x).begin(),(x).end()
-#define SZ(x) (int)((x).size())
-#define SQ(x) (x)*(x)
+#define SZ(x) ((int)((x).size()))
+#define SQ(x) ((x)*(x))
 #define pii pair<int,int>
 #define pipii pair<int,pii>
 #define Graph vector<vector<int>>
@@ -49,7 +49,7 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
-const int maxn=5;
+const int maxn=2e5+5;
 const int maxb=64;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -66,6 +66,7 @@ void solve() {
 }
 signed main() {
     IOS();
+    op(1*2%mod*3%mod)
     int T;
     cin>>T;
     while(T--) solve();
