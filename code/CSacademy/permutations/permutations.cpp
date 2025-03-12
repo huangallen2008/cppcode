@@ -126,7 +126,7 @@ signed main() {
     for(int i=2;i<=n;i++) v1[i]=(i-1>>1)*fac[i-2],cv[i]=fac[n-i];
     REP(i,n+1) v2[i]=fac[i];
     reverse(ALL(v1));
-    // oparr(v1)oparr(v2)oparr(cv)
+    oparr(v1)oparr(v2)oparr(cv)
     Vi v=NTT::ntt(v1,v2);
     v.resize(n+1);
     reverse(ALL(v));
