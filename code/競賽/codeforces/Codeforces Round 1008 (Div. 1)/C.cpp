@@ -101,7 +101,7 @@ void solve() {
         cnt[s[u]]--;
         s[u]^=1;
         cnt[s[u]]++;
-        cout<<(pw(2,n-4)*((SQ(cnt[0]-cnt[1])%mod)+n-2)%mod)*inv16%mod<<'\n';
+        cout<<(pw(2,n)*((SQ(cnt[0]-cnt[1])%mod)+n-2)%mod)*inv16%mod<<'\n';
     }
 }
 signed main() {
