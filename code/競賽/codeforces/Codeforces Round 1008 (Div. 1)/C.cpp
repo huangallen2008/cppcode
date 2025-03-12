@@ -66,25 +66,26 @@ int pw(int x,int p) {
     return r;
 }
 int inv(int x) { return pw(x,mod-2); }
-Vi fac(maxn),infac(maxn);
-void com_init() {
-    fac[0]=1;
-    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    infac[maxn-1]=inv(fac[maxn-1]);
-    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
-}
-int C(int n,int k) {
-    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
-}
-int cost(int x) {
-    x=abs(x);
-    return (x>>1)*(x+1>>1);
-}
-int cost_sum(int x,int y) {
-    int an=0;
-    REP(i,x+1) REP(j,y+1) (an+=(C(x,i)*C(y,j)%mod)*cost(i-j))%=mod;
-    return an;
-}
+// Vi fac(maxn),infac(maxn);
+// void com_init() {
+//     fac[0]=1;
+//     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+//     infac[maxn-1]=inv(fac[maxn-1]);
+//     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+// }
+// int C(int n,int k) {
+//     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+// }
+// int cost(int x) {
+//     x=abs(x);
+//     return (x>>1)*(x+1>>1);
+// }
+// int cost_sum(int x,int y) {
+//     int an=0;
+//     REP(i,x+1) REP(j,y+1) (an+=(C(x,i)*C(y,j)%mod)*cost(i-j))%=mod;
+//     return an;
+// }
+const int inv16=inv(16);
 void solve() {
     int n,q;
     cin>>n>>q;
@@ -100,15 +101,12 @@ void solve() {
         cnt[s[u]]--;
         s[u]^=1;
         cnt[s[u]]++;
-        if(n<4) cout<<cost_sum(cnt[0],cnt[1])<<'\n';
-        else {
-            cout<<pw(2,n-4)*((SQ(cnt[0]-cnt[1])%mod)+n-2)%mod<<'\n';
-        }
+        cout<<(pw(2,n-4)*((SQ(cnt[0]-cnt[1])%mod)+n-2)%mod)*inv16%mod<<'\n';
     }
 }
 signed main() {
     IOS();
-    com_init();
+    // com_init();
     int T;
     cin>>T;
     while(T--) solve();
