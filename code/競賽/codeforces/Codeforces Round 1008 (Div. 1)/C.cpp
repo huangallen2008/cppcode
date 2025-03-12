@@ -83,7 +83,7 @@ int cost(int x) {
 int cost_sum(int x,int y) {
     int an=0;
     REP(i,x+1) REP(j,y+1) (an+=(C(x,i)*C(y,j)%mod)*cost(i-j))%=mod;
-    return an;
+    return (an+mod)%mod;
 }
 void solve() {
     int n,q;
@@ -101,7 +101,9 @@ void solve() {
         s[u]^=1;
         cnt[s[u]]++;
         if(n<4) cout<<cost_sum(cnt[0],cnt[1])<<'\n';
-        else cout<<(pw(2,n-4)*((cnt[0]-cnt[1])*(cnt[0]-cnt[1])+n-2)%mod)<<'\n';
+        else {
+            cout<<(pw(2,n-4)*((cnt[0]-cnt[1])*(cnt[0]-cnt[1])+n-2)%mod+mod)%mod<<'\n';
+        }
     }
 }
 signed main() {
