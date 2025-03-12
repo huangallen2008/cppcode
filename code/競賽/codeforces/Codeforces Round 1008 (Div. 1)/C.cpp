@@ -102,7 +102,7 @@ void solve() {
         cnt[s[u]]++;
         if(n<4) cout<<cost_sum(cnt[0],cnt[1])<<'\n';
         else {
-            cout<<(pw(2,n-4)*((cnt[0]-cnt[1])*(cnt[0]-cnt[1])+n-2)%mod+mod)%mod<<'\n';
+            cout<<(pw(2,n-4)*(((cnt[0]-cnt[1])*(cnt[0]-cnt[1])%mod)+n-2)%mod+mod)%mod<<'\n';
         }
     }
 }
