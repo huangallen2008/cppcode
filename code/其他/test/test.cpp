@@ -66,7 +66,7 @@ void solve() {
 }
 signed main() {
     IOS();
-    ope(1*2%mod*3%mod)
+    ope(1*2%mod*3%mod+5%2)
     int T;
     cin>>T;
     while(T--) solve();
