@@ -83,6 +83,7 @@ int cost(int x) {
 int cost_sum(int x,int y) {
     int an=0;
     REP(i,x+1) REP(j,y+1) an+=cost(i-j);
+    op(x)op(y)ope(an)
     return an;
 }
 void solve() {
