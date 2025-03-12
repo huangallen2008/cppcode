@@ -107,6 +107,7 @@ void solve() {
 }
 signed main() {
     IOS();
+    com_init();
     int T;
     cin>>T;
     while(T--) solve();
