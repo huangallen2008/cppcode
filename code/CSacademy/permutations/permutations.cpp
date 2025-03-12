@@ -122,9 +122,9 @@ signed main() {
     com_init();
     int n,q;
     cin>>n>>q;
-    Vi v1(n+1),cv(n+1),v2(n);
+    Vi v1(n+1),cv(n+1),v2(n+1);
     REP1(i,n) v1[i]=(i-1>>1)*fac[i-2],cv[i]=fac[n-i];
-    REP(i,n) v2[i]=fac[i+1];
+    REP(i,n+1) v2[i]=fac[i];
     reverse(ALL(v1));
     oparr(v1)oparr(v2)oparr(cv)
     Vi v=NTT::ntt(v1,v2);
