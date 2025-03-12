@@ -122,6 +122,17 @@ signed main() {
     com_init();
     int n,q;
     cin>>n>>q;
-
+    Vi v1(n+1),cv(n+1),v2(n);
+    REP1(i,n) v1[i]=(i-1>>1)*fac[i-2],cv[i]=fac[n-i];
+    REP(i,n) v2[i]=fac[i+1];
+    Vi v=NTT::ntt(v1,v2);
+    v.resize(n+1);
+    reverse(ALL(v));
+    REP(i,q) {
+        int x,y;
+        cin>>x>>y;
+        int an=v[y]*cv[y]%mod;
+        cout<<an<<'\n';
+    }
     return 0;
 }
