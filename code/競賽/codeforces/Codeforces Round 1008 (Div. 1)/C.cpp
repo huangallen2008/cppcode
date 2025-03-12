@@ -75,7 +75,7 @@ void solve() {
     REP(i,n) s[i]=s0[i]-'0';
     Vi cnt(2);
     REP(i,n) cnt[s[i]]++;
-    const int pw2nmulinv16=pw(2,n)*inv(16);
+    const int pw2nmulinv16=pw(2,n)*inv(16)%mod;
     REP(i,q) {
         int u;
         cin>>u,u--;
