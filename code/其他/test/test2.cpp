@@ -1,138 +1,63 @@
+//#pragma GCC optimize(1)
+//#pragma GCC optimize(2)
+//#pragma GCC optimize(3, "Ofast", "inline")
 #include <bits/stdc++.h>
-using namespace std;
-#define ll long long
-// #define int ll
-#define FOR(i, a, b) for (int i = (a); i < (b); i++)
-#define REP(i, n) FOR(i, 0, n)
-#define RREP(i, n) for (int i = (n)-1; i >= 0; i--)
-#define RREP1(i, n) for (int i = (n); i >= 1; i--)
-#define REP1(i, n) FOR(i, 1, n+1)
-#define pii pair<int, int>
-#define ppi pair<pii, int>
-#define pip pair<int, pii>
-#define f first
-#define s second
-#define pb push_back
-#define ALL(x) (x).begin(), (x).end()
-#define SZ(x) (int)((x).size())
-#define endl '\n'
-#define IOS() ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
+namespace Initial {
+	#define ll long long
+	#define ull unsigned long long
+	#define fi first
+	#define se second
+	#define mkp make_pair
+	#define pir pair <ll, ll>
+	#define pb emplace_back
+	#define i128 __int128
+	using namespace std;
+	template <class T>
+	void rd(T &x) {
+		char ch; bool f = 0;
+		while(!isdigit(ch = getchar()))
+			if(ch == '-') f = 1;
+		x = ch - '0';
+		while(isdigit(ch = getchar()))
+			x = (x << 1) + (x << 3) + ch - '0';
+		if(f) x = -x;
+	}
+	void write(const ll x, const char str[] = "") {
+		if(x > 9) write(x / 10);
+		putchar(x % 10 + '0'), printf("%s", str);
+	}
+	const ll maxn = 310, inf = 1e18; ll mod;
+	ll power(ll a, ll b = mod - 2) {
+		ll s = 1;
+		while(b) {
+			if(b & 1) s = 1ll * s * a %mod;
+			a = 1ll * a * a %mod, b >>= 1;
+		} return s;
+	}
+	template <class T>
+	const ll pls(const T x, const T y) { return x + y >= mod? x + y - mod : x + y; }
+	template <class T>
+	void add(T &x, const T y) { x = x + y >= mod? x + y - mod : x + y; }
+	template <class T>
+	void chkmax(T &x, const T y) { x = x < y? y : x; }
+	template <class T>
+	void chkmin(T &x, const T y) { x = x > y? y : x; }
+} using namespace Initial;
 
-const ll maxn = 1005;
-const ll mod = 998244353;
-const ll inf = (1ll<<60);
-
-ll pw(ll x, ll p, ll m){
-    ll ret = 1;
-    while(p > 0){
-        if (p & 1){
-            ret *= x;
-            ret %= m;
-        }
-        x *= x;
-        x %= m;
-        p >>= 1;
-    }
-    return ret;
-}
-ll inv(ll x, ll m){
-    return pw(x, m-2, m);
-}
-
-int n, m, k;
-
-char arr[maxn][maxn];
-int smr[maxn], smc[maxn];
-int smt = 0;
-vector<int> A, B;
-
-int mp[maxn][maxn];
-bool check(int a, int b){
-    A.clear(); B.clear();
-    if (a >= n || b >= m) return 0;
-    int ndr = smt / (a+1), ndc = smt / (b+1), ndcell = smt / ((a+1)*(b+1));
-
-    int cur = 0;
-    REP1(i, n){
-        cur += smr[i];
-        if (cur > ndr) return 0;
-        if (cur == ndr && SZ(A) < a){
-            A.pb(i);
-            cur = 0;
-        }
-    }
-    if (cur != ndr) return 0;
-    A.pb(n);
-
-    cur = 0;
-    REP1(i, m){
-        cur += smc[i];
-        if (cur > ndc) return 0;
-        if (cur == ndc && SZ(B) < b){
-            B.pb(i);
-            cur = 0;
-        }
-    }
-    if (cur != ndc) return 0;
-    B.pb(m);
-
-    REP(i, SZ(A)) REP(j, SZ(B)) mp[i][j] = 0;
-
-    int Aptr = 0;
-    REP1(i, n){
-        int Bptr = 0;
-        REP1(j, m){
-            mp[Aptr][Bptr] += (arr[i][j] == '0');
-            if (B[Bptr] == j) Bptr++;
-        }
-        if (A[Aptr] == i) Aptr++;
-    }
-
-    REP(i, SZ(A)) REP(j, SZ(B)) if (mp[i][j] != ndcell) return 0;
-    return 1;
-}
-signed main(){
-    IOS();
-    int T; cin>>T;
-    while(T--){
-        cin>>n>>m>>k;
-        REP1(i, n) smr[i] = 0;
-        REP1(i, m) smc[i] = 0;
-
-        smt = 0;
-        REP1(i, n){
-            REP1(j, m){
-                cin>>arr[i][j];
-                smr[i] += (arr[i][j] == '0');
-                smc[j] += (arr[i][j] == '0');
-                smt += (arr[i][j] == '0');
-            }
-        }
-
-        vector<vector<int>> cands;
-        for (int pa = k; pa >= 0; pa--){
-            int pb = k-pa;
-            if (smt % ((pa+1)*(pb+1)) != 0) continue;
-            if (check(pa, pb)){
-                vector<int> tmp;
-                REP(i, pa){
-                    tmp.pb(A[i]);
-                }
-                REP(i, pb){
-                    tmp.pb(B[i]+n-1);
-                }
-                cands.pb(tmp);
-            }
-        }
-
-        sort(ALL(cands));
-        if (SZ(cands) == 0){
-            cout<<"Impossible"<<endl;
-        }
-        else {
-            REP(i, k) cout<<cands[0][i]<<' ';
-            cout<<endl;
-        }
-    }
-
+ll n, ans, C[maxn][maxn], f[maxn], g[maxn][maxn];
+ll pw[maxn * maxn];
+int main() {
+	rd(n), rd(mod), C[0][0] = f[0] = g[0][0] = 1;
+	pw[0] = 1;
+	for(ll i = 1; i <= n * n; i++) pw[i] = pw[i - 1] * 2 %mod;
+	for(ll i = 1; i <= n; i++) {
+		f[i] = pw[i * (i + 1) / 2] %mod;
+		for(ll j = 1; j <= i; j++) {
+			for(ll k = j - 1; k < i; k++)
+				add(g[i][j], g[k][j - 1] * pw[(i - k - 1) * (i - k - 2) / 2] %mod);
+			if(j < i)
+				add(f[i], mod - g[i][j] * f[j] %mod);
+		}
+	} write(f[n], "\n");
+	return 0;
 }
