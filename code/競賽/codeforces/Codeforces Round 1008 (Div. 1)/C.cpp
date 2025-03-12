@@ -11,8 +11,8 @@ using namespace std;
 #define s second
 #define pb push_back
 #define ALL(x) (x).begin(),(x).end()
-#define SZ(x) (int)((x).size())
-#define SQ(x) (x)*(x)
+#define SZ(x) ((int)((x).size()))
+#define SQ(x) ((x)*(x))
 #define pii pair<int,int>
 #define pipii pair<int,pii>
 #define Graph vector<vector<int>>
@@ -83,7 +83,7 @@ int cost(int x) {
 int cost_sum(int x,int y) {
     int an=0;
     REP(i,x+1) REP(j,y+1) (an+=(C(x,i)*C(y,j)%mod)*cost(i-j))%=mod;
-    return (an+mod)%mod;
+    return an;
 }
 void solve() {
     int n,q;
@@ -102,7 +102,7 @@ void solve() {
         cnt[s[u]]++;
         if(n<4) cout<<cost_sum(cnt[0],cnt[1])<<'\n';
         else {
-            cout<<(pw(2,n-4)*(((cnt[0]-cnt[1])*(cnt[0]-cnt[1])%mod)+n-2)%mod+mod)%mod<<'\n';
+            cout<<pw(2,n-4)*((SQ(cnt[0]-cnt[1])%mod)+n-2)%mod<<'\n';
         }
     }
 }
