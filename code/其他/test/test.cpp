@@ -56,19 +56,60 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n,m,k;
-    cin>>n>>m>>k;
-    //input
-
-    //do something
-    
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) { return pw(x,mod-2); }
+Vi fac(maxn),infac(maxn);
+void com_init() {
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+}
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
+int n=10;
+vector<Vi> ldp,hdp;
+void leolin() {
+    ldp=vector<Vi>(n+1,Vi(n+1));
+    ldp[0][0]=1;
+    REP1(i,n) {
+        REP(j,n+1) {
+            ldp[i][j]=(ldp[i-1][j]+(j?(i-1)*ldp[i-1][j-1]:0))%mod;
+        }
+    }
+    oparr(ldp)
+}
+void huangallen() {
+    hdp=vector<Vi>(n+1,Vi(n+1));
+    hdp[0][0]=1;
+    REP1(i,n) {
+        REP1(j,i) {
+            REP(k,i) {
+                addmod(hdp[i][j],hdp[k][j-1]*fac[i-1]%mod*infac[k]%mod);
+            }
+        }
+    }
+    // oparr(hdp)
+}
+bool check() {
+    REP1(i,n) {
+        REP1(j,i) {
+            if(ldp[i][j]!=hdp[i][i-j]) return 0;
+        } 
+    }
+    return 1;
 }
 signed main() {
     IOS();
-    ope(1*2%mod*3%mod+5%2)
-    int T;
-    cin>>T;
-    while(T--) solve();
+    leolin();
     return 0;
 }
