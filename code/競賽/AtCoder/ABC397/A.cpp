@@ -58,7 +58,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    double x
+    double x;
     cin>>x;
     if(x>=38) cout<<1;
     else if(x>=37.5) cout<<2;
