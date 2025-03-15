@@ -65,7 +65,7 @@ signed main() {
         int v=(n/i)-i*i;
         if(v%3) continue;
         v/=3;
-        int l=1,r=v,m;
+        int l=1,r=sqrt(v)+5,m;
         while(l<r) {
             m=l+r>>1;
             if(m*m+m*i>=v) r=m;
