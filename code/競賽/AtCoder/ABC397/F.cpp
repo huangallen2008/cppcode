@@ -133,6 +133,7 @@ signed main() {
     Vi id(n+1,-1);
     id[a[0]]=0;
     oparr(p)oparr(s)
+    seg.init(n);
     for(int i=1;i<n;i++) {
         if(id[a[i]]!=-1) {
             seg.ud(id[a[i]],i-1,1);
