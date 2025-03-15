@@ -65,7 +65,10 @@ int dfs(int u,int fa) {
         int ret=dfs(v,u);
         if(ret==-1) return -1;
         if(ret!=0) {
-            if(now!=0) return -1;
+            if(now!=0) {
+                if(now+ret+1==k) now=k+1;
+                else return -1;
+            }
             now=ret;
         }
     }
