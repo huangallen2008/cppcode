@@ -61,7 +61,7 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n);
-    REP(i,n) cin>a[i];
+    REP(i,n) cin>>a[i];
     Vi c(n+1);
     int cnt=0;
     Vi p(n),s(n);
