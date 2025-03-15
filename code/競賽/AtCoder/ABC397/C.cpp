@@ -62,6 +62,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    ope("ok")
     Vi c(n+1);
     int cnt=0;
     Vi p(n),s(n);
