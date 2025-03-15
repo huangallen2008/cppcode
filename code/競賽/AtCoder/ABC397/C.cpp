@@ -62,7 +62,6 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    ope("ok")
     Vi c(n+1);
     int cnt=0;
     Vi p(n),s(n);
@@ -71,6 +70,7 @@ signed main() {
         p[i]=cnt;
     }
     c=Vi(n);
+    ope("ok")
     cnt=0;
     RREP(i,n) {
         cnt+=c[a[i]]++==0;
