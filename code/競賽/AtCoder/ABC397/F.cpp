@@ -101,7 +101,7 @@ struct SEG {
         return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
     void qu(int l,int r) {
-        return _qu(1,0,n-1,l,r,v);
+        return _qu(1,0,n-1,l,r);
     }
 }seg;
 signed main() {
