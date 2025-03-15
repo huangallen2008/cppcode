@@ -62,6 +62,7 @@ signed main() {
     cin>>n;
     for(int i=1;i*i*i<=n;i++) {
         if(n%i) continue;
+        if(i==276544)ope("ok")
         int v=(n/i)-i*i;
         if(v%3) continue;
         v/=3;
