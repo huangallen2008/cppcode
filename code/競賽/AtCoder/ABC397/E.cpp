@@ -67,7 +67,7 @@ int dfs(int u,int fa) {
         if(ret!=0) {
             if(now!=0) {
                 op(now)ope(ret)
-                if(now+ret+1==k) now=k+1;
+                if(now+ret+1==k) now=k-1;
                 else return -1;
             }
             else now=ret;
