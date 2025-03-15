@@ -133,11 +133,11 @@ signed main() {
     Vi id(n+1,-1);
     id[a[0]]=0;
     oparr(p)oparr(s)
-    for(int i=1;i<n;i++) {
+    for(int i=1;i<n-1;i++) {
         if(id[a[i]]!=-1) {
             seg.ud(id[a[i]],i-1,1);
-            ope(seg.qu_all())
         }
+        ope(seg.qu_all())
         id[a[i]]=i;
         chmax(an,p[i]+s[i+1]+seg.qu_all());
     }
