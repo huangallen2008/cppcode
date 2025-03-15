@@ -62,7 +62,7 @@ signed main() {
     cin>>s;
     int an=0;
     if(s[0]=='o') an++;
-    if(s.back()=='o') an++;
+    if(s.back()=='i') an++;
     REP(i,SZ(s)-1) if(s[i]==s[i+1]) an++;
     cout<<an<<'\n';
     return 0;
