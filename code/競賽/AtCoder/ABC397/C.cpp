@@ -77,7 +77,7 @@ signed main() {
     }
     int an=0;
     REP(i,n-1) chmax(an,p[i]+s[i+1]);
-    ope("ok")
     cout<<an<<'\n';
+    ope("ok")
     return 0;
 }
