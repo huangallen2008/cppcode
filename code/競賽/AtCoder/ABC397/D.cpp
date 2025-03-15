@@ -64,7 +64,6 @@ signed main() {
         if(n%i) continue;
         int v=(n/i)-i*i;
         if(v%3) continue;
-        if(i==276544)ope("ok")
         v/=3;
         int l=1,r=v,m;
         while(l<r) {
@@ -72,6 +71,7 @@ signed main() {
             if(m*m+m*i>=v) r=m;
             else l=m+1;
         } 
+        if(i==276544)ope(l)
         if(l*l+l*i==v) {
             cout<<l+i<<' '<<l<<'\n';
             return 0;
