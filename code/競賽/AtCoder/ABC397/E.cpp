@@ -70,7 +70,7 @@ int dfs(int u,int fa) {
                 if(now+ret+1==k) now=k+1;
                 else return -1;
             }
-            now=ret;
+            else now=ret;
         }
     }
     op(u)ope(now)
