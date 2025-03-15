@@ -69,7 +69,7 @@ signed main() {
         cnt+=c[a[i]]++==0;
         p[i]=cnt;
     }
-    c=Vi(n);
+    c=Vi(n+1);
     cnt=0;
     RREP(i,n) {
         cnt+=c[a[i]]++==0;
@@ -78,6 +78,5 @@ signed main() {
     int an=0;
     REP(i,n-1) chmax(an,p[i]+s[i+1]);
     cout<<an<<'\n';
-    ope("ok")
     return 0;
 }
