@@ -56,6 +56,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int n,k;
 Graph g;
 int dfs(int u,int fa) {
     int now=0;
@@ -69,11 +70,10 @@ int dfs(int u,int fa) {
         }
     }
     op(u)ope(now)
-    return now+1;
+    return now+1==k?0:now+1;
 }
 signed main() {
     IOS();
-    int n,k;
     cin>>n>>k;
     int N=n*k;
     g=Graph(N);
