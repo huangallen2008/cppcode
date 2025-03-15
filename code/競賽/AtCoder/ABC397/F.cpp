@@ -91,7 +91,6 @@ struct SEG {
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void ud(int l,int r,int v) {
-        op(l)op(r)ope(v)
         _ud(1,0,n-1,l,r,v);
     }
     int _qu(int w,int l,int r,int ql,int qr) {
@@ -132,12 +131,10 @@ signed main() {
     int an=0;
     Vi id(n+1,-1);
     id[a[0]]=0;
-    oparr(p)oparr(s)
     for(int i=1;i<n-1;i++) {
         if(id[a[i]]!=-1) {
             seg.ud(id[a[i]],i-1,1);
         }
-        ope(seg.qu_all())
         id[a[i]]=i;
         chmax(an,p[i]+s[i+1]+seg.qu_all());
     }
