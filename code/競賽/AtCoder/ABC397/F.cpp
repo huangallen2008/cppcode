@@ -93,14 +93,14 @@ struct SEG {
     void ud(int l,int r,int v) {
         _ud(1,0,n-1,l,r,v);
     }
-    void _qu(int w,int l,int r,int ql,int qr) {
+    int _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w].mx;
         if(ql>r||qr<l) return 0;
         int m=l+r>>1;
         push(s[w],s[w<<1],s[w<<1|1]);
         return max(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    void qu(int l,int r) {
+    int qu(int l,int r) {
         return _qu(1,0,n-1,l,r);
     }
 }seg;
