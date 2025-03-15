@@ -12,7 +12,7 @@ Vi fac(maxn),infac(maxn);
 void com_init() {
     fac[0]=1;
     REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    infac[maxn-1]=inv(fac[mxn-1]);
+    infac[maxn-1]=inv(fac[maxn-1]);
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
 }
 int C(int n,int k) {
