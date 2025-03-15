@@ -66,14 +66,14 @@ int dfs(int u,int fa) {
         if(ret==-1) return -1;
         if(ret!=0) {
             if(now!=0) {
-                op(now)ope(ret)
+                // op(now)ope(ret)
                 if(now+ret+1==k) now=k-1;
                 else return -1;
             }
             else now=ret;
         }
     }
-    op(u)ope(now)
+    // op(u)ope(now)
     return now+1==k?0:now+1;
 }
 signed main() {
