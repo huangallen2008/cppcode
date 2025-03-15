@@ -60,7 +60,6 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    int an=0;
     for(int i=1;i*i*i<=n;i++) {
         if(n%i) continue;
         int v=(n/i)-i*i;
@@ -72,8 +71,11 @@ signed main() {
             if(m*m+m*i>=v) r=m;
             else l=m+1;
         } 
-        if(l*l+l*i==v) an++;
+        if(l*l+l*i==v) {
+            cout<<l+i<<' '<<l<<'\n';
+            return 0;
+        }
     }
-    cout<<an<<'\n';
+    cout<<"-1\n";
     return 0;
 }
