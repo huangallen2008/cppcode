@@ -103,6 +103,7 @@ struct SEG {
     int qu(int l,int r) {
         return _qu(1,0,n-1,l,r);
     }
+    int qu_all(){ return s[1].mx; }
 }seg;
 signed main() {
     IOS();
@@ -110,5 +111,33 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    seg.init(n);
+    
+    
+    Vi c(n+1);
+    int cnt=0;
+    Vi p(n),s(n);
+    REP(i,n) {
+        cnt+=c[a[i]]++==0;
+        p[i]=cnt;
+    }
+    c=Vi(n+1);
+    cnt=0;
+    RREP(i,n) {
+        cnt+=c[a[i]]++==0;
+        s[i]=cnt;
+    }
+
+    int an=0;
+    Vi id(n+1,-1);
+    id[a[0]]=0;
+    for(int i=1;i<n;i++) {
+        if(id[a[i]]!=-1) {
+            seg.ud(id[a[i]],i-1,1);
+        }
+        id[a[i]]=i;
+        chmax(an,p[i]+s[i+1]+seg.qu_all());
+    }
+    cout<<an<<'\n';
     return 0;
 }
