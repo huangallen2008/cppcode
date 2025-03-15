@@ -68,6 +68,7 @@ int dfs(int u,int fa) {
             now=ret;
         }
     }
+    op(u)ope(now)
     return now+1;
 }
 signed main() {
