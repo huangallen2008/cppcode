@@ -81,7 +81,7 @@ signed main() {
     }
     for(int i=1;i<10;i++) cout<<cnt[i]<<' ';cout<<'\n';
     Vi cnt2(maxv);
-    for(int i=1;i<maxv;i++) cnt2[i]=cnt2[i]*(cnt2[i]-1);
+    for(int i=1;i<maxv;i++) cnt2[i]=cnt[i]*(cnt[i]-1);
     for(int i=1;i<10;i++) cout<<cnt2[i]<<' ';cout<<'\n';
     for(int i=2;i<maxv;i++) {
         if(isp[i]) {
