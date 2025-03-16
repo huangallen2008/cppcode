@@ -69,6 +69,10 @@ signed main() {
     }
     set<pii> s2;
     REP(i,maxv) if(cnt[i]) s.insert({i,cnt[i]}),s2.insert({cnt[i],i});
+    if(s2.rbegin()->f>(n+1>>1)) {
+        cout<<"-1\n";
+        return 0;
+    }
     int las=-1;
     REP(i,n) {
         auto [val,c]=*s.begin();
@@ -76,6 +80,12 @@ signed main() {
             auto pp=*next(s.begin());
             val=pp.f,c=pp.s;
         }
+        if(s2.rbegin()->f>(n-i>>1)) val=s2.rbegin()->s;
+        s.erase({val,cnt[val]});  
+        s2.erase({cnt[val],val});  
+        cnt[val]--;
+        s.insert({val,cnt[val]});  
+        s2.insert({cnt[val],val});  
     }
     return 0;
 }
