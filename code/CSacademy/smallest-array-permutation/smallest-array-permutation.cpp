@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops,fast-math")
-// #pragma GCC target("avx2,sse4,bmi,popcnt")
-// #define int long long
+// #pragma GCC optimize("O3,unroll-loops")
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -11,8 +11,8 @@ using namespace std;
 #define s second
 #define pb push_back
 #define ALL(x) (x).begin(),(x).end()
-#define SZ(x) (int)((x).size())
-#define SQ(x) (x)*(x)
+#define SZ(x) ((int)((x).size()))
+#define SQ(x) ((x)*(x))
 #define pii pair<int,int>
 #define pipii pair<int,pii>
 #define Graph vector<vector<int>>
@@ -26,10 +26,11 @@ using namespace std;
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
+#define Vpii vector<pii>
 #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
-#define oparr(x) cout<<(#x)<<":";for(auto &mken:(x)) cout<<mken<<" ";cout<<" size="<<(x).size()<<endl;
+#define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
 #define entr cout<<endl;
 #else
 #define op(x) ;
@@ -37,125 +38,43 @@ using namespace std;
 #define oparr(x) ;
 #define entr ;
 #endif
-const int mod=1e9+7;
-const int maxn=1e5+1;
-const int maxv=1e5+1;
-const int inf=(1ll<<62);
+template<typename T1,typename T2>
+ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
+template<typename T1,typename T2>
+istream& operator>>(istream& os,pair<T1,T2> &p) { return os>>p.f>>p.s; }
+template<typename S>
+ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen<<' ';return os<<'\n'; }
+template<typename S>
+istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
+template<typename T1,typename T2>
+pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
+const int mod=998244353;
+const int maxn=2e5+5;
+const int maxv=1e5+5;
+const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    char c=GC;
-    while(c<'0'||c>'9'){c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    return x;
-}
-inline void out(int x) {
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    PC(' ');
-}
-struct SEG {
-    int n;
-    Vi s;
-    void init(int _n) {
-        n=_n;
-        s=Vi(n<<2);
-    }
-    void _ud(int w,int l,int r,int u,int v) {
-        if(l==r) {
-            s[w]+=v;
-            return;
-        }
-        int m=l+r>>1;
-        if(u<=m) _ud(w<<1,l,m,u,v);
-        else _ud(w<<1|1,m+1,r,u,v);
-        s[w]=max(s[w<<1],s[w<<1|1]);
-    }
-    void ud(int u,int v) {
-        _ud(1,0,n-1,u,v);
-    }
-    pii _mx(int w,int l,int r) {
-        if(l==r) return {s[w],l};
-        int m=l+r>>1;
-        if(s[w<<1]==s[w]) return _mx(w<<1,l,m);
-        else return _mx(w<<1|1,m+1,r);
-    }
-    pii mx() {
-        return _mx(1,0,n-1);
-    }
-    int _fir(int w,int l,int r) {
-        if(l==r) return l;
-        int m=l+r>>1;
-        if(s[w<<1]>0) return _fir(w<<1,l,m);
-        else return _fir(w<<1|1,m+1,r);
-    }
-    int fir() {
-        return _fir(1,0,n-1);
-    }
-    int _qu(int w,int l,int r,int u) {
-        if(l==r) return s[w];
-        int m=l+r>>1;
-        if(u<=m) return _qu(w<<1,l,m,u);
-        else return _qu(w<<1|1,m+1,r,u);
-    }
-    int qu(int u) {
-        return _qu(1,0,n-1,u);
-    }
-}seg;
 signed main() {
-    IOS(); 
-    int n=read();
-    // cin>>n;
-    seg.init(maxv);
+    IOS();
+    int n;
+    cin>>n;
+    set<pii> s;
+    Vi cnt(maxv);
     REP(i,n) {
-        int x=read();
-        // cin>>x;
-        seg.ud(x,1);
+        int x;
+        cin>>x;
+        cnt[x]++;
     }
-    if(seg.mx().f>(n+1>>1)) {
-        cout<<"-1\n";
-        return 0;
-    }
-    Vi an(n);
+    set<pii> s2;
+    REP(i,maxv) if(cnt[i]) s.insert({i,cnt[i]}),s2.insert({cnt[i],i});
+    int las=-1;
     REP(i,n) {
-        pii ret=seg.mx();
-        if(ret.f>(n-i>>1)) {
-            an[i]=ret.s;
-            seg.ud(ret.s,-1);
-        }
-        else {
-            int t=seg.fir();
-            if(i&&t==an[i-1]) {
-                int tv=seg.qu(t);
-                seg.ud(t,-tv);
-                int tt=seg.fir();
-                an[i]=tt;
-                seg.ud(tt,-1);
-                seg.ud(t,tv);
-            }
-            else {
-                an[i]=t;
-                seg.ud(t,-1);
-            }
+        auto [val,c]=*s.begin();
+        if(val==las) {
+            [val,c]=*next(s.begin());
         }
     }
-    for(int &x:an) out(x);
-    PC('\n');
     return 0;
 }
