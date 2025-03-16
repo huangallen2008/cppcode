@@ -86,6 +86,8 @@ signed main() {
         cnt[val]--;
         s.insert({val,cnt[val]});  
         s2.insert({cnt[val],val});  
+        cout<<val<<' ';
     }
+    cout<<'\n';
     return 0;
 }
