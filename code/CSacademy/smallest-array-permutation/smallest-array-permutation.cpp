@@ -73,7 +73,7 @@ signed main() {
     REP(i,n) {
         auto [val,c]=*s.begin();
         if(val==las) {
-            [val,c]=*next(s.begin());
+            [val,c]={*next(s.begin())};
         }
     }
     return 0;
