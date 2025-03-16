@@ -87,6 +87,7 @@ signed main() {
         s.insert({val,cnt[val]});  
         s2.insert({cnt[val],val});  
         cout<<val<<' ';
+        las=val;
     }
     cout<<'\n';
     return 0;
