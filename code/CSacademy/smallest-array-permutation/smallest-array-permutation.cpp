@@ -83,9 +83,10 @@ signed main() {
         if(s2.rbegin()->f>(n-i>>1)) val=s2.rbegin()->s;
         s.erase({val,cnt[val]});  
         s2.erase({cnt[val],val});  
-        cnt[val]--;
-        s.insert({val,cnt[val]});  
-        s2.insert({cnt[val],val});  
+        if(--cnt[val]) {
+            s.insert({val,cnt[val]});  
+            s2.insert({cnt[val],val});  
+        }
         cout<<val<<' ';
         las=val;
     }
