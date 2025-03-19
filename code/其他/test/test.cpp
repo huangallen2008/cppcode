@@ -58,6 +58,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    ope(random(1))
+    ope(clock())
+    REP(i,100000000) rand()%10;
+    ope(clock())
+    REP(i,100000000) rd(0,9);
+    ope(clock())
     return 0;
 }
