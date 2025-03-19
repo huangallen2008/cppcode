@@ -61,7 +61,7 @@ signed main() {
     srand(time(NULL));
     int cnt=0;
     while(1) {
-        if((ld)rd(1,inf)/inf<=0.0001&&((ld)rd(1,inf)/inf>=0.9999)) ope(cnt++)
+        if((ld)rd(1,inf)/inf<=0.00001&&((ld)rd(1,inf)/inf>=0.99999)) ope(cnt++)
     }
     // ope(clock())
     // REP(i,300000000) rand()%10;
