@@ -50,7 +50,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=998244353;
 const int maxn=2e5+5;
-const int maxv=1e7+5;
+const int mx=1e9+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -61,7 +61,7 @@ signed main() {
     srand(time(NULL));
     int cnt=0;
     while(1) {
-        if((ld)rd(1,inf)/inf<=0.00001&&((ld)rd(1,inf)/inf>=0.99999)) ope(cnt++)
+        if((ld)rd(1,mx)/mx<=0.00001&&((ld)rd(1,mx)/mx>=0.99999)) ope(cnt++)
     }
     // ope(clock())
     // REP(i,300000000) rand()%10;
