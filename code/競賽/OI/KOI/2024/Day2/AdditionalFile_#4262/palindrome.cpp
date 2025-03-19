@@ -1,8 +1,10 @@
+#include "palindrome.h"
+// #include "grader.cpp"
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -56,26 +58,29 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() {
-    IOS();
-    int n;
-    cin>>n;
-    for(int i=1;i*i*i<=n;i++) {
-        if(n%i) continue;
-        int v=(n/i)-i*i;
-        if(v%3) continue;
-        v/=3;
-        int l=1,r=sqrt(v)+5,m;
-        while(l<r) {
-            m=l+r>>1;
-            if(m*m+m*i>=v) r=m;sma
-            else l=m+1;
-        } 
-        if(l*l+l*i==v) {
-            cout<<l+i<<' '<<l<<'\n';
-            return 0;
-        }
+extern int count_pair(int, int, int);
+extern int find_character(int, std::vector<int>);
+
+int guess_palindromicity(int n) {
+    // ope(c1)
+    Vi r;
+    for(int i=1;i<(n>>1);i++) {
+        int ret=count_pair(0,i,n-i-1);
+        if(ret==0) return 0;
+        if(ret==3) continue;
+        r.pb(i);
+        r.pb(n-i-1);
     }
-    cout<<"-1\n";
-    return 0;
+    // oparr(r)
+    if(SZ(r)) {
+        if(find_character(0,r)) return 0;
+        int c1=count_pair(0,n-1,r[0]);
+        if(c1==0) return 0;
+        if(c1==1&&count_pair(r[0],n-r[0]-1,n-1)==3) return 0;
+        return 1;
+    }else {
+        if(find_character(0,{n-1})) return 1;
+        else return 0;
+    }
+	return 1;
 }

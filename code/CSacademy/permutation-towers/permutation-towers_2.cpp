@@ -48,7 +48,7 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=998244353;
+// const int mod=998244353;
 const int maxn=2e5+5;
 const int maxv=1e7+5;
 const int inf=1ll<<60;
@@ -58,24 +58,29 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    for(int i=1;i*i*i<=n;i++) {
-        if(n%i) continue;
-        int v=(n/i)-i*i;
-        if(v%3) continue;
-        v/=3;
-        int l=1,r=sqrt(v)+5,m;
-        while(l<r) {
-            m=l+r>>1;
-            if(m*m+m*i>=v) r=m;sma
-            else l=m+1;
-        } 
-        if(l*l+l*i==v) {
-            cout<<l+i<<' '<<l<<'\n';
-            return 0;
+    int n,x,mod;
+    cin>>n>>x>>mod;
+    int X=x+n+1;
+    vector<Vi> dp(X+1,Vi(n+1)),pdp(X+1,Vi(n+1));
+    // dp[0][0]=1;
+    dp[0]=Vi(n+1,1);dp[0][0]=0;
+    REP(i,n+1) pdp[0][i]=i;
+    REP1(i,X) {
+        RREP(j,n+1) {
+            if(i<=j) {
+                addmod(dp[i][j],1ll);
+                continue;
+            }
+            if(j==n) addmod(dp[i][j],dp[i-1][n]);
+            else addmod(dp[i][j],dp[i][j+1]);
+            //i-1-j
+            // op(i)op(j)ope(dp[i][j])
+            if(i-1-j>=0)addmod(dp[i][j],pdp[i-1-j][j]);
         }
+        // oparr(dp[i])
+        RREP1(j,n) pdp[i][j]=(pdp[i][j-1]+dp[i][j])%mod;
     }
-    cout<<"-1\n";
+    int an=(dp[X][n]+mod)%mod;
+    cout<<an<<'\n';
     return 0;
 }
