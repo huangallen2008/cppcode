@@ -59,9 +59,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     ope(clock())
-    REP(i,100000000) rand()%10;
+    REP(i,300000000) rand()%10;
     ope(clock())
-    REP(i,100000000) rd(0,9);
+    REP(i,300000000) rd(0,9);
     ope(clock())
     return 0;
 }
