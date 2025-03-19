@@ -58,10 +58,14 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    ope(clock())
-    REP(i,300000000) rand()%10;
-    ope(clock())
-    REP(i,300000000) rd(0,9);
-    ope(clock())
+    srand(time(NULL));
+    while(1) {
+        if((ld)rand()/RAND_MAX<=0.00001&&((ld)rand()/RAND_MAX>=0.99999)) ope("ok")
+    }
+    // ope(clock())
+    // REP(i,300000000) rand()%10;
+    // ope(clock())
+    // REP(i,300000000) rd(0,9);
+    // ope(clock())
     return 0;
 }
