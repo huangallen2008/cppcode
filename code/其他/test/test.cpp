@@ -59,8 +59,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     srand(time(NULL));
+    int cnt=0;
     while(1) {
-        if((ld)rand()/RAND_MAX<=0.0001&&((ld)rand()/RAND_MAX>=0.9999)) ope("ok")
+        if((ld)rand()/RAND_MAX<=0.0001&&((ld)rand()/RAND_MAX>=0.9999)) ope(cnt++)
     }
     // ope(clock())
     // REP(i,300000000) rand()%10;
