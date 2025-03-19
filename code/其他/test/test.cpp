@@ -56,42 +56,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi cnt(maxv),isp(maxv,1);
 signed main() {
     IOS();
-    isp[0]=isp[1]=0;
-    for(int i=2;i<maxv;i++) {
-        if(isp[i]) {
-            for(int j=i+i;j<maxv;j+=i) isp[j]=0;
-        }
-    }
-    int n;
-    cin>>n;
-    REP(i,n) {
-        int x;
-        cin>>x;
-        cnt[x]++;
-    }
-    for(int i=2;i<maxv;i++) {
-        if(isp[i]) {
-            for(int j=maxv/i;j>0;j--) {
-                cnt[j]+=cnt[j*i];
-            }
-        }
-    }
-    for(int i=1;i<10;i++) cout<<cnt[i]<<' ';cout<<'\n';
-    Vi cnt2(maxv);
-    for(int i=1;i<maxv;i++) cnt2[i]=cnt[i]*(cnt[i]-1);
-    for(int i=1;i<10;i++) cout<<cnt2[i]<<' ';cout<<'\n';
-    for(int i=2;i<maxv;i++) {
-        if(isp[i]) {
-            for(int j=1;j*i<maxv;j++) {
-                cnt2[j]-=cnt2[j*i];
-            }
-        }
-    }
-    int an=0;
-    for(int i=1;i<maxv;i++) an+=cnt2[i]*(cnt[i]-2);
-    cout<<an<<'\n';
+    ope(random())
     return 0;
 }
