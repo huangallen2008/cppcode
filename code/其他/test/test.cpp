@@ -60,7 +60,7 @@ signed main() {
     IOS();
     srand(time(NULL));
     while(1) {
-        if((ld)rand()/RAND_MAX<=0.00001&&((ld)rand()/RAND_MAX>=0.99999)) ope("ok")
+        if((ld)rand()/RAND_MAX<=0.0001&&((ld)rand()/RAND_MAX>=0.9999)) ope("ok")
     }
     // ope(clock())
     // REP(i,300000000) rand()%10;
