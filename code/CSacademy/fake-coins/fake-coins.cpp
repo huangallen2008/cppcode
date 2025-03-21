@@ -59,6 +59,7 @@ int rd(int l,int r) {
 #ifdef LOCAL
 int mn,mx;
 int qur(Vi a,Vi b) {
+    oparr(a)oparr(b)entr
     int s1=0,s2=0;
     auto cost=[&](int id) { return id==mn?1:(id==mx?3:2); };
     for(int x:a) s1+=cost(x);
@@ -74,7 +75,6 @@ void ans(int a,int b) {
 }
 #else 
 int qur(Vi a,Vi b) {
-    oparr(a)oparr(b)entr
     cout<<"Q "<<SZ(a)<<' '<<SZ(b)<<' ';
     for(int x:a) cout<<x<<' ';
     for(int x:b) cout<<x<<' ';
@@ -113,7 +113,7 @@ void solve() {
     n=rd(10,100);
     mn=rd(1,n);
     while((mx=rd(1,n))==mn);
-    op(mn)ope(mx)
+    op(n)op(mn)ope(mx)
     #else
     cin>>n;
     #endif
