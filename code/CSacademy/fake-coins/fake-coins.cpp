@@ -90,7 +90,7 @@ void ans(int a,int b) {
 #endif
 int sol(Vi a,bool big) {
     assert(SZ(a));
-    // oparr(a)
+    oparr(a)
     if(SZ(a)==1) return a[0]; 
     // if(SZ(a)==2) {
     //     return qur({a[0]},{a[1]})==big?a[1]:a[0]; 
