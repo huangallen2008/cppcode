@@ -88,7 +88,7 @@ void ans(int a,int b) {
     exit(0);
 }
 #endif
-int solve(Vi a,bool big) {
+int sol(Vi a,bool big) {
     // oparr(a)
     if(SZ(a)==1) return a[0]; 
     // if(SZ(a)==2) {
@@ -103,18 +103,19 @@ int solve(Vi a,bool big) {
         else v2.pb(a[i]); 
     }
     int ret=qur(v0,v1);
-    if(ret==0) return solve(v2,big);
-    else if(big?ret==-1:ret==1) return solve(v1,big);
-    else return solve(v0,big);
+    if(ret==0) return sol(v2,big);
+    else if(big?ret==-1:ret==1) return sol(v1,big);
+    else return sol(v0,big);
 }
-signed main() {
-    IOS();
+void solve() {
     int n;
-    cin>>n;
     #ifdef LOCAL
+    n=rd(10,100);
     mn=rd(1,n);
     while((mx=rd(1,n))==mn);
     op(mn)ope(mx)
+    #else
+    cin>>n;
     #endif
     if(n&1) {
         int r1=qur({1},{2});
@@ -127,11 +128,11 @@ signed main() {
             }else if(r1==1&&r2==1) {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
-                ans(solve(id,0),1);
+                ans(sol(id,0),1);
             }else if(r1==-1&&r2==-1) {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
-                ans(1,solve(id,1));
+                ans(1,sol(id,1));
             }
             // else {
             //     int r3=qur({2},{3});
@@ -169,8 +170,14 @@ signed main() {
         }
         assert(cnt<=11);
         if(ret==0) continue;
-        if(ret==-1) ans(solve(v1,0),solve(v2,1));
-        if(ret==1) ans(solve(v2,0),solve(v1,1));
+        if(ret==-1) ans(sol(v1,0),sol(v2,1));
+        if(ret==1) ans(sol(v2,0),sol(v1,1));
     }
+}
+signed main() {
+    IOS();
+    int T=10;
+    // cin>>T;
+    while(T--)solve();
     return 0;
 }
