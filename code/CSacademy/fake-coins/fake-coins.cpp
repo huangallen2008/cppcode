@@ -85,7 +85,7 @@ int qur(Vi a,Vi b) {
 }
 void ans(int a,int b) {
     cout<<"A "<<a<<' '<<b<<'\n'<<flush;
-    exit(0);
+    // exit(0);
 }
 #endif
 int sol(Vi a,bool big) {
@@ -123,16 +123,20 @@ void solve() {
             int r2=qur({1},{3});
             if(r1==-1&&r2==1) {
                 ans(3,2);
+                return;
             }else if(r1==1&&r2==-1) {
                 ans(2,3);
+                return;
             }else if(r1==1&&r2==1) {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
                 ans(sol(id,0),1);
+                return;
             }else if(r1==-1&&r2==-1) {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
                 ans(1,sol(id,1));
+                return;
             }
             // else {
             //     int r3=qur({2},{3});
@@ -165,13 +169,10 @@ void solve() {
         }
         int ret=qur(v1,v2);
         cnt++;
-        if(cnt>11) {
-
-        }
         assert(cnt<=11);
         if(ret==0) continue;
-        if(ret==-1) ans(sol(v1,0),sol(v2,1));
-        if(ret==1) ans(sol(v2,0),sol(v1,1));
+        if(ret==-1) {ans(sol(v1,0),sol(v2,1));return;}
+        if(ret==1) {ans(sol(v2,0),sol(v1,1));return;}
     }
 }
 signed main() {
