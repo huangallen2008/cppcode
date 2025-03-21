@@ -56,24 +56,24 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-int mn,mx;
-int qur(Vi a,Vi b) {
-    oparr(a)oparr(b)entr
-    int s1=0,s2=0;
-    auto cost=[&](int id) { return id==mn?1:(id==mx?3:2); };
-    for(int x:a) s1+=cost(x);
-    for(int x:b) s2+=cost(x);
-    if(s1>s2) return 1;
-    else if(s1<s2) return -1;
-    else return 0;
-}
-void ans(int a,int b) {
-    if(a==mn&&b==mx) cout<<"AC"<<endl;
-    else cout<<"WA"<<endl;
-    // exit(0);
-}
-#else 
+// #ifdef LOCAL
+// int mn,mx;
+// int qur(Vi a,Vi b) {
+//     oparr(a)oparr(b)entr
+//     int s1=0,s2=0;
+//     auto cost=[&](int id) { return id==mn?1:(id==mx?3:2); };
+//     for(int x:a) s1+=cost(x);
+//     for(int x:b) s2+=cost(x);
+//     if(s1>s2) return 1;
+//     else if(s1<s2) return -1;
+//     else return 0;
+// }
+// void ans(int a,int b) {
+//     if(a==mn&&b==mx) cout<<"AC"<<endl;
+//     else cout<<"WA"<<endl;
+//     // exit(0);
+// }
+// #else 
 int qur(Vi a,Vi b) {
     cout<<"Q "<<SZ(a)<<' '<<SZ(b)<<' ';
     for(int x:a) cout<<x<<' ';
@@ -85,16 +85,11 @@ int qur(Vi a,Vi b) {
 }
 void ans(int a,int b) {
     cout<<"A "<<a<<' '<<b<<'\n'<<flush;
-    // exit(0);
+    exit(0);
 }
-#endif
+// #endif
 int sol(Vi a,bool big) {
-    assert(SZ(a));
-    op("a")oparr(a)
     if(SZ(a)==1) return a[0]; 
-    // if(SZ(a)==2) {
-    //     return qur({a[0]},{a[1]})==big?a[1]:a[0]; 
-    // }
     Vi v0,v1,v2;
     int n=a.size();
     int nn=(n+1)/3;
@@ -110,14 +105,14 @@ int sol(Vi a,bool big) {
 }
 void solve() {
     int n;
-    #ifdef LOCAL
-    n=rd(10,100);
-    mn=rd(1,n);
-    while((mx=rd(1,n))==mn);
-    op(n)op(mn)ope(mx)
-    #else
+    // #ifdef LOCAL
+    // n=rd(10,100);
+    // mn=rd(1,n);
+    // while((mx=rd(1,n))==mn);
+    // op(n)op(mn)ope(mx)
+    // #else
     cin>>n;
-    #endif
+    // #endif
     if(n&1) {
         int r1=qur({1},{2});
         if(r1!=0) {
@@ -132,35 +127,15 @@ void solve() {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
                 ans(sol(id,0),1);
-                return;
             }else if(r1==-1&&r2==-1) {
                 Vi id;
                 REP1(i,n) if(i!=1) id.pb(i);
                 ans(1,sol(id,1));
-                return;
             }
-            // else {
-            //     int r3=qur({2},{3});
-            //     if(r1==-1&&r3==-1) {
-            //         ans(1,3);
-            //     }else if(r1==1&&r2==1) {
-            //         ans(3,1);
-            //     }else if(r1==-1&&r2==1) {
-            //         Vi id;
-            //         REP1(i,n) if(i!=2) id.pb(i);
-            //         ans(solve(id,0),2);
-            //     }else if(r1==1&&r2==-1) {
-            //         Vi id;
-            //         REP1(i,n) if(i!=2) id.pb(i);
-            //         ans(1,solve(id,2));
-            //     }
-            // }
         }
     }
     Vi id;
     for(int i=(n&1)+1;i<=n;i++) id.pb(i);
-    oparr(id)
-    int cnt=0;
     while(1) {
         shuffle(ALL(id),rng);
         int nn=n/2;
@@ -170,16 +145,14 @@ void solve() {
             else v2.pb(id[i]);
         }
         int ret=qur(v1,v2);
-        cnt++;
-        assert(cnt<=11);
         if(ret==0) continue;
-        if(ret==-1) {ans(sol(v1,0),sol(v2,1));return;}
-        if(ret==1) {ans(sol(v2,0),sol(v1,1));return;}
+        if(ret==-1) ans(sol(v1,0),sol(v2,1));
+        if(ret==1) ans(sol(v2,0),sol(v1,1));
     }
 }
 signed main() {
     IOS();
-    int T=10;
+    int T=1;
     // cin>>T;
     while(T--)solve();
     return 0;
