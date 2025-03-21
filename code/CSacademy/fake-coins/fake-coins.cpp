@@ -165,7 +165,7 @@ void solve() {
         shuffle(ALL(id),rng);
         int nn=n/2;
         Vi v1,v2;
-        REP(i,n) {
+        REP(i,SZ(id)) {
             if(i<nn) v1.pb(id[i]);
             else v2.pb(id[i]);
         }
