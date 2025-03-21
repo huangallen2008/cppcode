@@ -51,12 +51,27 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=998244353;
 const int maxn=2e5+5;
 const int maxv=2e5+5;
-const int mx=1e9+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#ifdef LOCAL
+int mn,mx;
+int qur(Vi a,Vi b) {
+    int s1=0,s2=0;
+    auto cost=[&](int id) { return id==mn?1:(id==mx?3:2); };
+    for(int x:a) s1+=cost(x);
+    for(int x:b) s2+=cost(x);
+    if(s1>s2) return 1;
+    else if(s1<s2) return -1;
+    else return 0;
+}
+void ans(int a,int b) {
+    if(a==mn&&b==mx) cout<<"AC"<<endl;
+    else cout<<"WA"<<endl;
+}
+#else 
 int qur(Vi a,Vi b) {
     cout<<"Q "<<SZ(a)<<' '<<SZ(b)<<' ';
     for(int x:a) cout<<x<<' ';
@@ -70,6 +85,7 @@ void ans(int a,int b) {
     cout<<"A "<<a<<' '<<b<<'\n'<<flush;
     exit(0);
 }
+#endif
 int solve(Vi a,bool big) {
     // oparr(a)
     if(SZ(a)==1) return a[0]; 
@@ -93,6 +109,10 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    #ifdef LOCAL
+    mn=rd(1,n);
+    while((mx=rd(1,n))==mn);
+    #endif
     if(n&1) {
         int r1=qur({1},{2});
         if(r1!=0) {
