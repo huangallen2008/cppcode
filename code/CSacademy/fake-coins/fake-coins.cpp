@@ -73,6 +73,7 @@ void ans(int a,int b) {
 }
 #else 
 int qur(Vi a,Vi b) {
+    oparr(a)oparr(b)entr
     cout<<"Q "<<SZ(a)<<' '<<SZ(b)<<' ';
     for(int x:a) cout<<x<<' ';
     for(int x:b) cout<<x<<' ';
@@ -112,6 +113,7 @@ signed main() {
     #ifdef LOCAL
     mn=rd(1,n);
     while((mx=rd(1,n))==mn);
+    op(mn)ope(mx)
     #endif
     if(n&1) {
         int r1=qur({1},{2});
@@ -161,6 +163,9 @@ signed main() {
         }
         int ret=qur(v1,v2);
         cnt++;
+        if(cnt>11) {
+
+        }
         assert(cnt<=11);
         if(ret==0) continue;
         if(ret==-1) ans(solve(v1,0),solve(v2,1));
