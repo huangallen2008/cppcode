@@ -159,6 +159,7 @@ void solve() {
     }
     Vi id;
     for(int i=(n&1)+1;i<=n;i++) id.pb(i);
+    oparr(id)
     int cnt=0;
     while(1) {
         shuffle(ALL(id),rng);
