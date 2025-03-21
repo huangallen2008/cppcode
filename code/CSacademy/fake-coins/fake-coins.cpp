@@ -70,6 +70,7 @@ int qur(Vi a,Vi b) {
 void ans(int a,int b) {
     if(a==mn&&b==mx) cout<<"AC"<<endl;
     else cout<<"WA"<<endl;
+    exit(0);
 }
 #else 
 int qur(Vi a,Vi b) {
