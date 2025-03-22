@@ -84,6 +84,7 @@ void answer(int a, int b) {
 }
 
 int main() {
+  freopen("in.txt","r",stdin);
   assert(scanf("%d%d%d%d", &N, &M, &A, &B) == 4);
   assert(N >= 0);
   assert(M >= 0);
