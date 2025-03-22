@@ -70,6 +70,7 @@ struct ST {
         }
     }
     int qu(int l,int r) {
+        if(l>r) return inf;
         int lg=__lg(r-l+1);
         return min(st[lg][l],st[lg][r-(1<<lg)+1]);
     }
