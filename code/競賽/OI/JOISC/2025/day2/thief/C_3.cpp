@@ -100,21 +100,28 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             if(an1!=-1) return;
         }
     };
-    int an2=-1;
     dout(dout,0,-1);
-    auto din=[&](auto din,int u,int fa) {
-        for(auto [v,id]:g[u]) {
+    vector<pipii> dfn;
+    auto gdfn=[&](auto gdfn,int u,int fa) {
+        for(auto [v,w]:g[u]) {
             if(v==fa) continue;
-            if(rint[u]!=rint[v]) {
-                if(rint[u]) an2=u;
-                else an2=v;
-                return;
-            }
-            din(din,v,u);
-            if(an2!=-1) return;
+            dfn.pb({v,w});
+            gdfn(gdfn,v,u);
         }
-    };
-    din(din,0,-1);
-    op(an1)ope(an2)
+    }(gdfn,an1,-1);
+    // auto din=[&](auto din,int u,int fa) {
+    //     for(auto [v,id]:g[u]) {
+    //         if(v==fa) continue;
+    //         if(rint[u]!=rint[v]) {
+    //             if(rint[u]) an2=u;
+    //             else an2=v;
+    //             return;
+    //         }
+    //         din(din,v,u);
+    //         if(an2!=-1) return;
+    //     }
+    // };
+    // din(din,0,-1);
+    // op(an1)ope(an2)
     answer(an1,an2);
 }
