@@ -62,31 +62,57 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     int r1=query(v1);
     ope("ok")
     int an1,an2;
-    {
-        int lb=1,rb=n,mb;
-        while(lb<rb) {
-            mb=lb+rb>>1;
-            Vi vv(n-1);
-            REP(i,m) vv[i]=i>=mb;
-            if(!r1) reverse(ALL(vv));
-            op(mb)ope(query(vv))
-            if(r1^query(vv))rb=mb;
-            else lb=mb+1;
+    if(r1) {
+        {
+            int lb=1,rb=n,mb;
+            while(lb<rb) {
+                mb=lb+rb>>1;
+                Vi vv(n-1);
+                REP(i,m) vv[i]=i>=mb;
+                op(mb)ope(query(vv))
+                if(r1^query(vv))rb=mb;
+                else lb=mb+1;
+            }
+            an2=lb;
         }
-        an2=lb;
-    }entr
-    {
-        int lb=0,rb=n-1,mb;
-        while(lb<rb) {
-            mb=lb+rb+1>>1;
-            Vi vv(n-1);
-            REP(i,n-1) vv[i]=i<mb;
-            if(!r1) reverse(ALL(vv));
-            op(mb)ope(query(vv))
-            if(r1^query(vv))lb=mb;
-            else rb=mb-1;
+        {
+            int lb=0,rb=n-1,mb;
+            while(lb<rb) {
+                mb=lb+rb+1>>1;
+                Vi vv(n-1);
+                REP(i,n-1) vv[i]=i<mb;
+                op(mb)ope(query(vv))
+                if(r1^query(vv))lb=mb;
+                else rb=mb-1;
+            }
+            an1=lb;
         }
-        an1=lb;
+    }
+    else {
+        {
+            int lb=1,rb=n,mb;
+            while(lb<rb) {
+                mb=lb+rb+1>>1;
+                Vi vv(n-1);
+                REP(i,m) vv[i]=i>=mb;
+                op(mb)ope(query(vv))
+                if(!query(vv))rb=mb-1;
+                else lb=mb;
+            }
+            an1=lb;
+        }
+        {
+            int lb=0,rb=n-1,mb;
+            while(lb<rb) {
+                mb=lb+rb>>1;
+                Vi vv(n-1);
+                REP(i,n-1) vv[i]=i<mb;
+                op(mb)ope(query(vv))
+                if(!query(vv))lb=mb+1;
+                else rb=mb;
+            }
+            an2=lb;
+        }
     }
     op(an1)ope(an2)
     if(!r1) an1=n-an1+1,an2=n-an2+1;
