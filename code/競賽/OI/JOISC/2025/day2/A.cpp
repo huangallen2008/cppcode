@@ -91,8 +91,8 @@ signed main() {
             bool ok=1;
             REP(i1,SZ(pv[0][0])) {
                 Vi tt(4);
-                tt[0]+=pv[0][0][i1];
-                tt[1]+=pv[0][0][i2];
+                tt[0]+=pv[0][0][0][i1];
+                tt[1]+=pv[0][0][1].back()-pv[0][0][1][i1];
                 if(tt[0]>T||tt[1]>T) {ok=0;break;}
             }
         }
