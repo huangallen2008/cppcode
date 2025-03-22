@@ -63,8 +63,8 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         g[U[i]].pb({V[i],{i,0}});
         g[V[i]].pb({U[i],{i,1}});
     }
-    Vi voutt(m),vint(m);
-    Vi rout(n),rint(n);
+    Vi voutt(m);//,vint(m);
+    Vi rout(n);//rint(n);
     auto outt=[&](auto outt,int u,int fa)->void{
         for(auto [v,id]:g[u]) {
             if(v==fa) continue;
@@ -73,19 +73,19 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             outt(outt,v,u);
         }
     };
-    auto intt=[&](auto intt,int u,int fa)->void{
-        for(auto [v,id]:g[u]) {
-            if(v==fa) continue;
-            auto [ind,dir]=id;
-            vint[ind]=dir^1;
-            intt(intt,v,u);
-        }
-    };
+    // auto intt=[&](auto intt,int u,int fa)->void{
+    //     for(auto [v,id]:g[u]) {
+    //         if(v==fa) continue;
+    //         auto [ind,dir]=id;
+    //         vint[ind]=dir^1;
+    //         intt(intt,v,u);
+    //     }
+    // };
     REP(i,n) {
         outt(outt,i,-1);
         rout[i]=query(voutt);
-        intt(intt,i,-1);
-        rint[i]=query(vint);
+        // intt(intt,i,-1);
+        // rint[i]=query(vint);
     }
     int an1=-1;
     auto dout=[&](auto dout,int u,int fa) {
