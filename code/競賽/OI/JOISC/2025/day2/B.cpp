@@ -88,7 +88,7 @@ signed main() {
         if(id[a[i]].f==-1) id[a[i]].f=i;
         else id[a[i]].s=i;
     }
-    oparr(id)
+    // oparr(id)
     Vi v(N);
     REP(i,n) v[0]+=id[i].f;
     v[0]-=n*(n-1)>>1;
