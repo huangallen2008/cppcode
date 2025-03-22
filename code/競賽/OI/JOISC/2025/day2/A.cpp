@@ -77,8 +77,18 @@ signed main() {
             sort(ALL(v[1][0]));
             sort(ALL(v[0][0]),[&](pii a,pii b) { return a.s<b.s; });
             sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s<b.s; });
-            Vpii pv[2][2];
-            REP(i,2) REP(j,2) pv[i][j]=v[i][j];
+            Vi pv[2][2][2];
+            REP(i,2) REP(j,2) pv[i][j][0]=pv[i][j][1]=Vi(SZ(v[i][j])+1);
+            REP(k,SZ(v[0][0])) pv[0][0][0][k]=v[0][0][k].f+v[0][0][k].s;
+            REP(k,SZ(v[0][0])) pv[0][0][1][k]=v[0][0][k].f+l-v[0][0][k].s;
+            REP(k,SZ(v[1][0])) pv[1][0][0][k]=v[1][0][k].f+l-v[1][0][k].s;
+            REP(k,SZ(v[1][0])) pv[1][0][1][k]=l-v[1][0][k].f+l-v[1][0][k].s;
+            REP(k,SZ(v[1][1])) pv[1][1][0][k]=l-v[1][1][k].f+l-v[1][1][k].s;
+            REP(k,SZ(v[1][1])) pv[1][1][1][k]=l-v[1][1][k].f+v[1][1][k].s;
+            REP(k,SZ(v[0][1])) pv[0][1][0][k]=l-v[0][1][k].f+v[0][1][k].s;
+            REP(k,SZ(v[0][1])) pv[0][1][1][k]=v[0][1][k].f+v[0][1][k].s;
+            REP(i,2) REP(j,2) REP(tt,2) REP1(k,SZ(pv[i][j])-1) pv[i][j][tt][k]+=pv[i][j][tt][k-1];
+
         }
     }
     return 0;
