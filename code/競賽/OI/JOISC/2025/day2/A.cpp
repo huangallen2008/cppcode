@@ -107,6 +107,10 @@ signed main() {
                 tt[0]+=pv[0][1][1].back()-pv[1][1][1][i4];
                 if(tt[4]>T||tt[3]>T) {ok=0;break;}
                 op(i1)op(i2)op(i3)op(i4)oparr(tt)
+                oparr(v[0][0])
+                oparr(v[1][0])
+                oparr(v[1][1])
+                oparr(v[0][1])
             }
             if(ok) {
                 cout<<"Yes\n";
