@@ -57,22 +57,34 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #include "thief.h"
-
-void solve(int N, int M, std::vector<int> U, std::vector<int> V) {
-  std::vector<int> x;
-  int r;
-
-  x = {0, 1, 0, 0};
-  r = query(x);
-
-  x = {1, 1, 1, 0};
-  r = query(x);
-
-  x = {0, 0, 1, 0};
-  r = query(x);
-
-  x = {0, 0, 1, 1};
-  r = query(x);
-
-  answer(0, 4);
+void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
+    Vi v1(n-1,0);
+    int r1=query(v1);
+    int an1,an2;
+    {
+        int lb=1,rb=n,mb;
+        while(lb<rb) {
+            mb=lb+rb>>1;
+            Vi vv(n-1);
+            REP(i,m) vv[i]=i>=mb;
+            if(!r1) reverse(ALL(vv));
+            if(query(vv))rb=mb;
+            else lb=mb+1;
+        }
+        an1=lb;
+    }
+    {
+        int lb=0,rb=n-1,mb;
+        while(lb<rb) {
+            mb=lb+rb>>1;
+            Vi vv(n-1);
+            REP(i,n-1) vv[i]=i<mb;
+            if(!r1) reverse(ALL(vv));
+            if(query(vv))rb=mb;
+            else lb=mb+1;
+        }
+        an2=lb;
+    }
+    if(!r1) an1=n-an1+1,an2=n-an2+1;
+    answer(an1,an2);
 }
