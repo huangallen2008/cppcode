@@ -125,6 +125,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
         an2=s2[lb];
     }
+    oparr(s1)oparr(s2)op(an1)ope(an2)
     answer(an1,an2);
 }
 /*
