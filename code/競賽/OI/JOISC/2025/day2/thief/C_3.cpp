@@ -108,7 +108,8 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             dfn.pb({v,w});
             gdfn(gdfn,v,u);
         }
-    }(gdfn,an1,-1);
+    };
+    gdfn(gdfn,an1,-1);
     // auto din=[&](auto din,int u,int fa) {
     //     for(auto [v,id]:g[u]) {
     //         if(v==fa) continue;
