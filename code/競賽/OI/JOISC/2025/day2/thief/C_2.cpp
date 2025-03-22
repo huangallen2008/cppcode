@@ -92,6 +92,22 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         Vi aid(n-1);
         REP(i,n-1) aid[i]=i+1;
         shuffle(ALL(aid),rng);
+        REP(i,n-1) {
+            if(i<(n-1>>1)) s1.pb(aid[i]);
+            else s2.pb(aid[i]);
+        }
+        Vi vv(n-1);
+        REP(i,SZ(s1)) vv[s1[i]-1]=1;
+        REP(i,SZ(s2)) vv[s2[i]-1]=0;
+        if(query(vv)) break;
+    }
+    int lb=1,rb=SZ(s1),mb;
+    while(lb<rb) {//first t: qur(t)==0
+        mb=lb+rb>>1;
+        Vi vv(n-1,1);
+        REP(i,mb) vv[i]=0;
+        if(query(vv)==0) rb=mb;
+        else lb=mb+1;
     }
     // answer(an1,an2);
 }
