@@ -73,20 +73,20 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             if(query(vv))rb=mb;
             else lb=mb+1;
         }
-        an1=lb;
+        an2=lb;
     }entr
     {
         int lb=0,rb=n-1,mb;
         while(lb<rb) {
-            mb=lb+rb>>1;
+            mb=lb+rb+1>>1;
             Vi vv(n-1);
             REP(i,n-1) vv[i]=i<mb;
             if(!r1) reverse(ALL(vv));
             op(mb)ope(query(vv))
-            if(query(vv))rb=mb;
-            else lb=mb+1;
+            if(query(vv))lb=mb;
+            else lrb=mb-1;
         }
-        an2=lb;
+        an1=lb;
     }
     if(!r1) an1=n-an1+1,an2=n-an2+1;
     op(an1)ope(an2)
