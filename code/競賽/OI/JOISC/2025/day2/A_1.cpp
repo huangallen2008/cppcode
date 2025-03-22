@@ -70,6 +70,9 @@ signed main() {
             if(mask>>j&1) v1.pb(a[j]);
             else v2.pb(a[j]);
         }
+        if(mask==85) {
+            oparr(v1)oparr(v2)
+        }
         sort(ALL(v1));
         sort(ALL(v2));
         Vi p1(SZ(v1)+1),p2(SZ(v2)+1);
@@ -90,3 +93,20 @@ signed main() {
     cout<<"No\n";
     return 0;
 }
+/*
+
+7 1:
+6 1
+5 1
+4 5
+
+7 7:
+5 5
+6 4
+
+1 7:
+2 4
+
+1 1:
+3 4
+*/
