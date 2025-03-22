@@ -81,6 +81,7 @@ signed main() {
         REP(i,SZ(p1)) if(p1[i]<=T&&s1.back()-s1[i]<=T) ok1=1;
         REP(i,SZ(p2)) if(p2[i]<=T&&s2.back()-s2[i]<=T) ok2=1;
         if(ok1&&ok2) {
+            oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
             cout<<"Yes\n";
             return 0;
         }
