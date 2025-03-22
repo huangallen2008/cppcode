@@ -105,7 +105,7 @@ signed main() {
                 int i4=upper_bound(ALL(pv[0][1][0]),T-tt[3])-pv[0][1][0].begin()-1;
                 tt[3]+=pv[0][1][0][i4];
                 tt[0]+=pv[0][1][1].back()-pv[1][1][1][i4];
-                if(tt[4]>T||tt[3]>T) {ok=0;break;}
+                if(tt[0]>T||tt[3]>T) {ok=0;break;}
                 op(i1)op(i2)op(i3)op(i4)oparr(tt)
                 oparr(v[0][0])
                 oparr(v[1][0])
