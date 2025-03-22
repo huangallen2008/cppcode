@@ -83,8 +83,35 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     };
     REP(i,n) {
         outt(outt,i,-1);
-        rout[i]=query(outt);
+        rout[i]=query(voutt);
         intt(intt,i,-1);
         rint[i]=query(vint);
     }
+    int an1=-1;
+    auto dout=[&](auto dout,int u,int fa) {
+        for(auto [v,id]:g[u]) {
+            if(v==fa) continue;
+            if(rout[u]!=rout[v]) {
+                if(rout[u]) an1=u;
+                else an1=v;
+                return;
+            }
+            dout(dout,v,u);
+            if(an1!=-1) return;
+        }
+    };
+    dout(dout,0,-1);
+    auto din=[&](auto din,int u,int fa) {
+        for(auto [v,id]:g[u]) {
+            if(v==fa) continue;
+            if(rout[u]!=rout[v]) {
+                if(rout[u]) an2=u;
+                else an2=v;
+                return;
+            }
+            din(din,v,u);
+            if(an2!=-1) return;
+        }
+    };
+    answer(an1,an2);
 }
