@@ -100,6 +100,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             if(an1!=-1) return;
         }
     };
+    int an2=-1;
     dout(dout,0,-1);
     auto din=[&](auto din,int u,int fa) {
         for(auto [v,id]:g[u]) {
