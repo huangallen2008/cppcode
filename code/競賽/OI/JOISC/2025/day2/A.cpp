@@ -77,6 +77,8 @@ signed main() {
             sort(ALL(v[1][0]));
             sort(ALL(v[0][0]),[&](pii a,pii b) { return a.s<b.s; });
             sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s<b.s; });
+            Vpii pv[2][2];
+            REP(i,2) REP(j,2) pv[i][j]=v[i][j];
         }
     }
     return 0;
