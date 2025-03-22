@@ -87,5 +87,6 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     }
     if(!r1) an1=n-an1+1,an2=n-an2+1;
     op(an1)ope(an2)
+    cout<<an1<<endl;
     answer(an1,an2);
 }
