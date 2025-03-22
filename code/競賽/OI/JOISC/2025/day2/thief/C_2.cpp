@@ -104,7 +104,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     }
     int an1,an2;
     {
-        int lb=0,rb=SZ(s1),mb;
+        int lb=0,rb=SZ(s1)-1,mb;
         while(lb<rb) {//first t: qur(t)==1
             mb=lb+rb>>1;
             Vi vv(n-1,0);
@@ -115,7 +115,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         an1=s1[lb];
     }
     {
-        int lb=0,rb=SZ(s2),mb;
+        int lb=0,rb=SZ(s2)-1,mb;
         while(lb<rb) {//first t: qur(t)==1
             mb=lb+rb>>1;
             Vi vv(n-1,1);
