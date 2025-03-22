@@ -68,7 +68,10 @@ signed main() {
     sort(ALL(vsum));
     sort(ALL(vdif));
     for(auto ms:vsum) {
-
+        for(auto md:vdif) {
+            Vi v[2][2];
+            ope(v[0][0].size())
+        }
     }
     return 0;
 }
