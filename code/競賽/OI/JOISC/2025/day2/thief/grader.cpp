@@ -67,7 +67,7 @@ int query(std::vector<int> x) {
 }
 
 void answer(int a, int b) {
-  cout<<a<<' '<<b<<'\n';
+  // cout<<a<<' '<<b<<'\n';
   ANSWER_COUNT++;
   if (ANSWER_COUNT > 1) {
     wrong_answer(ANSWER_TWICE);
