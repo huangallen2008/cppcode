@@ -90,6 +90,7 @@ signed main() {
     oparr(id)
     Vi v(N);
     REP(i,n) v[0]+=id[i].f;
+    v[0]-=n*(n-1)>>1;
     REP1(i,N-1) {
         int now=v[i-1];
         now-=(id[a[i-1]].f-(i-1)+N)%N;
@@ -99,6 +100,7 @@ signed main() {
         now+=(id[a[i-1]].f-i+N)%N;ope(now)
         v[i]=now;
     }
+
     oparr(v)
     return 0;
 }
