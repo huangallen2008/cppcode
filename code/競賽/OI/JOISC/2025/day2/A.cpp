@@ -73,10 +73,10 @@ signed main() {
             for(auto [x,y]:a) {
                 v[x+y>ms][x-y>md].pb({x,y});
             }
-            sort(ALL(v[0][1]));
+            sort(ALL(v[0][1]),greater<pii>());
             sort(ALL(v[1][0]));
             sort(ALL(v[0][0]),[&](pii a,pii b) { return a.s<b.s; });
-            sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s<b.s; });
+            sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s>b.s; });
             Vi pv[2][2][2];
             REP(i,2) REP(j,2) pv[i][j][0]=pv[i][j][1]=Vi(SZ(v[i][j])+1);
             REP(k,SZ(v[0][0])) pv[0][0][0][k+1]=v[0][0][k].f-1+v[0][0][k].s-1;
