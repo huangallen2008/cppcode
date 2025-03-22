@@ -65,7 +65,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     int an1,an2;
     if(r1) {
         {
-            int lb=0,rb=n-2,mb;
+            int lb=0,rb=n-1,mb;
             while(lb<rb) {
                 mb=lb+rb>>1;
                 Vi vv(n-1);
@@ -74,10 +74,10 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(query(vv))rb=mb;
                 else lb=mb+1;
             }
-            an1=lb;
+            an2=lb;
         }entr
         {
-            int lb=1,rb=n-1,mb;
+            int lb=0,rb=n-1,mb;
             while(lb<rb) {
                 mb=lb+rb+1>>1;
                 Vi vv(n-1);
@@ -86,12 +86,12 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(query(vv))lb=mb;
                 else rb=mb-1;
             }
-            an2=lb;
+            an1=lb;
         }
     }
     else {
         {
-            int lb=0,rb=n-2,mb;
+            int lb=0,rb=n-1,mb;
             while(lb<rb) {
                 mb=lb+rb+1>>1;
                 Vi vv(n-1);
@@ -103,7 +103,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             an2=lb;
         }entr
         {
-            int lb=1,rb=n-1,mb;
+            int lb=0,rb=n-1,mb;
             while(lb<rb) {
                 mb=lb+rb>>1;
                 Vi vv(n-1);
