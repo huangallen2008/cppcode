@@ -84,6 +84,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             else lb=mb+1;
         }
         answer(lb,0);
+        return;
     }
     Vi s1,s2;
     while(1) {
