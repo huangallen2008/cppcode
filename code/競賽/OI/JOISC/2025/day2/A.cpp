@@ -60,6 +60,7 @@ signed main() {
     IOS();
     int l,n,T;
     cin>>l>>n>>T;
+    T>>=1;
     Vpii a(n);
     REP(i,n) cin>>a[i];
     Vi vsum,vdif;
