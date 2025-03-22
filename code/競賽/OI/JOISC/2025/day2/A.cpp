@@ -93,9 +93,26 @@ signed main() {
                 Vi tt(4);
                 tt[0]+=pv[0][0][0][i1];
                 tt[1]+=pv[0][0][1].back()-pv[0][0][1][i1];
-                if(tt[0]>T||tt[1]>T) {ok=0,break;}
+                if(tt[0]>T||tt[1]>T) {ok=0;break;}
+                int i2=upper_bound(ALL(pv[1][0][0]),T-tt[1])-pv[1][0][0].begin()-1;
+                tt[1]+=pv[1][0][0][i2];
+                tt[2]+=pv[1][0][1].back()-pv[1][0][1][i2];
+                if(tt[1]>T||tt[2]>T) {ok=0;break;}
+                int i3=upper_bound(ALL(pv[1][1][0]),T-tt[2])-pv[1][1][0].begin()-1;
+                tt[2]+=pv[1][1][0][i3];
+                tt[3]+=pv[1][1][1].back()-pv[1][1][1][i3];
+                if(tt[2]>T||tt[3]>T) {ok=0;break;}
+                int i4=upper_bound(ALL(pv[0][1][0]),T-tt[3])-pv[0][1][0].begin()-1;
+                tt[3]+=pv[0][1][0][i4];
+                tt[0]+=pv[0][1][1].back()-pv[1][1][1][i4];
+                if(tt[4]>T||tt[3]>T) {ok=0;break;}
+            }
+            if(ok) {
+                cout<<"Yes\n";
+                return 0;
             }
         }
     }
+    cout<<"No\n";
     return 0;
 }
