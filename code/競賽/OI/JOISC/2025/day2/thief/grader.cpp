@@ -4,7 +4,7 @@
 #include <vector>
 #include<bits/stdc++.h>
 #include "thief.h"
-
+using namespace std;
 namespace {
 
 enum {
