@@ -95,7 +95,7 @@ signed main() {
         now-=(id[a[i-1]].f-(i-1)+n)%n;
         op(i)op(now)
         swap(id[a[i-1]].f,id[a[i-1]].s);
-        now-=(n-1);op(now)op(id[a[i-1]])
+        now-=(n-1);op(now)op(id[a[i-1]]-i+n)
         now+=(id[a[i-1]].f-i+n)%n;ope(now)
         v[i]=now;
     }
