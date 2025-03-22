@@ -88,8 +88,16 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
         an1=lb;
     }
+    op(an1)ope(an2)
     if(!r1) an1=n-an1+1,an2=n-an2+1;
     op(an1)ope(an2)
     // cerr<<an1<<endl;
     answer(an1,an2);
 }
+/*
+5 4 3 1                                                                                                   
+0 1
+1 2
+2 3
+3 4
+*/
