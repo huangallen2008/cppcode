@@ -102,7 +102,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     };
     dout(dout,0,-1);
     vector<pipii> dfn;
-    auto gdfn=[&](auto gdfn,int u,int fa) {
+    auto gdfn=[&](auto gdfn,int u,int fa) ->void{
         for(auto [v,w]:g[u]) {
             if(v==fa) continue;
             dfn.pb({v,w});
@@ -123,5 +123,5 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     // };
     // din(din,0,-1);
     // op(an1)ope(an2)
-    answer(an1,an2);
+    // answer(an1,an2);
 }
