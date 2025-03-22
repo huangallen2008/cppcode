@@ -60,15 +60,31 @@ int rd(int l,int r) {
 void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     vector<vector<pipii>> g(n);
     REP(i,m) {
-        g[U[i]].pb({V[i],{i,1}});
-        g[V[i]].pb({U[i],{i,0}});
+        g[U[i]].pb({V[i],{i,0}});
+        g[V[i]].pb({U[i],{i,1}});
     }
     Vi voutt(m),vint(m);
+    Vi rout(n),rint(n);
     auto outt=[&](auto outt,int u,int fa)->void{
         for(auto [v,id]:g[u]) {
             if(v==fa) continue;
             auto [ind,dir]=id;
-            
+            voutt[ind]=dir;
+            outt(outt,v,u);
         }
+    };
+    auto intt=[&](auto intt,int u,int fa)->void{
+        for(auto [v,id]:g[u]) {
+            if(v==fa) continue;
+            auto [ind,dir]=id;
+            vint[ind]=dir^1;
+            intt(intt,v,u);
+        }
+    };
+    REP(i,n) {
+        outt(i);
+        rout[i]=query(outt);
+        intt(i);
+        rint[i]=query(vint);
     }
 }
