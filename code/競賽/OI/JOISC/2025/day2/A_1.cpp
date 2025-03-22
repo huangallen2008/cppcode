@@ -78,7 +78,7 @@ signed main() {
         REP(i,SZ(v1)) s1[i+1]=s1[i]+l-v1[i].f+v1[i].s-1;
         REP(i,SZ(v2)) p2[i+1]=p2[i]+v2[i].f-1+l-v2[i].s;
         REP(i,SZ(v2)) s2[i+1]=s2[i]+l-v2[i].f+l-v2[i].s;
-        if(mask==85) {
+        if(mask==83) {
             oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
         }
         bool ok1=0,ok2=0;
@@ -97,16 +97,16 @@ signed main() {
 
 7 1:
 6 1
-5 1
-4 5
+3 4
 
 7 7:
-5 5
 6 4
+5 5
 
 1 7:
-2 4
+4 5
 
 1 1:
-3 4
+5 1
+2 4
 */
