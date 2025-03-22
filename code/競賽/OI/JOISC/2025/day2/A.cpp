@@ -58,8 +58,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int l,n,t;
-    cin>>l>>n>>t;
+    int l,n,T;
+    cin>>l>>n>>T;
     Vpii a(n);
     REP(i,n) cin>>a[i];
     Vi vsum,vdif;
@@ -79,16 +79,21 @@ signed main() {
             sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s<b.s; });
             Vi pv[2][2][2];
             REP(i,2) REP(j,2) pv[i][j][0]=pv[i][j][1]=Vi(SZ(v[i][j])+1);
-            REP(k,SZ(v[0][0])) pv[0][0][0][k]=v[0][0][k].f+v[0][0][k].s;
-            REP(k,SZ(v[0][0])) pv[0][0][1][k]=v[0][0][k].f+l-v[0][0][k].s;
-            REP(k,SZ(v[1][0])) pv[1][0][0][k]=v[1][0][k].f+l-v[1][0][k].s;
-            REP(k,SZ(v[1][0])) pv[1][0][1][k]=l-v[1][0][k].f+l-v[1][0][k].s;
-            REP(k,SZ(v[1][1])) pv[1][1][0][k]=l-v[1][1][k].f+l-v[1][1][k].s;
-            REP(k,SZ(v[1][1])) pv[1][1][1][k]=l-v[1][1][k].f+v[1][1][k].s;
-            REP(k,SZ(v[0][1])) pv[0][1][0][k]=l-v[0][1][k].f+v[0][1][k].s;
-            REP(k,SZ(v[0][1])) pv[0][1][1][k]=v[0][1][k].f+v[0][1][k].s;
-            REP(i,2) REP(j,2) REP(tt,2) REP1(k,SZ(pv[i][j])-1) pv[i][j][tt][k]+=pv[i][j][tt][k-1];
-
+            REP(k,SZ(v[0][0])) pv[0][0][0][k+1]=v[0][0][k].f+v[0][0][k].s;
+            REP(k,SZ(v[0][0])) pv[0][0][1][k+1]=v[0][0][k].f+l-v[0][0][k].s;
+            REP(k,SZ(v[1][0])) pv[1][0][0][k+1]=v[1][0][k].f+l-v[1][0][k].s;
+            REP(k,SZ(v[1][0])) pv[1][0][1][k+1]=l-v[1][0][k].f+l-v[1][0][k].s;
+            REP(k,SZ(v[1][1])) pv[1][1][0][k+1]=l-v[1][1][k].f+l-v[1][1][k].s;
+            REP(k,SZ(v[1][1])) pv[1][1][1][k+1]=l-v[1][1][k].f+v[1][1][k].s;
+            REP(k,SZ(v[0][1])) pv[0][1][0][k+1]=l-v[0][1][k].f+v[0][1][k].s;
+            REP(k,SZ(v[0][1])) pv[0][1][1][k+1]=v[0][1][k].f+v[0][1][k].s;
+            REP(i,2) REP(j,2) REP(tt,2) REP1(k,SZ(pv[i][j][tt])-1) pv[i][j][tt][k]+=pv[i][j][tt][k-1];
+            REP(i1,SZ(pv[0][0])) {
+                Vi tt(4);
+                tt[0]+=pv[0][0][i1];
+                tt[1]+=pv[0][0][i2];
+                if(tt[0]>T||tt[1]>T) {ok=0;break;}
+            }
         }
     }
     return 0;
