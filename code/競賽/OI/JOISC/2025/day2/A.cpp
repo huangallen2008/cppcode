@@ -73,6 +73,10 @@ signed main() {
             for(auto [x,y]:a) {
                 v[x+y>ms][x-y>md].pb({x,y});
             }
+            sort(ALL(v[0][1]));
+            sort(ALL(v[1][0]));
+            sort(ALL(v[0][0]),[&](pii a,pii b) { return a.s<b.s; });
+            sort(ALL(v[1][1]),[&](pii a,pii b) { return a.s<b.s; });
         }
     }
     return 0;
