@@ -105,8 +105,8 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     auto din=[&](auto din,int u,int fa) {
         for(auto [v,id]:g[u]) {
             if(v==fa) continue;
-            if(rout[u]!=rout[v]) {
-                if(rout[u]) an2=u;
+            if(rin[u]!=rin[v]) {
+                if(rin[u]) an2=u;
                 else an2=v;
                 return;
             }
