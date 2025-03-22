@@ -66,7 +66,7 @@ signed main() {
     REP(mask,1<<n) {
         Vpii v1,v2;
         REP(j,n) {
-            if(i>>j&1) v1.pb(a[j]);
+            if(mask>>j&1) v1.pb(a[j]);
             else v2.pb(a[j]);
         }
         sort(ALL(v1));
