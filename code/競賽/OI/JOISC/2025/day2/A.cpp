@@ -88,6 +88,7 @@ signed main() {
             REP(k,SZ(v[0][1])) pv[0][1][0][k+1]=l-v[0][1][k].f+v[0][1][k].s;
             REP(k,SZ(v[0][1])) pv[0][1][1][k+1]=v[0][1][k].f+v[0][1][k].s;
             REP(i,2) REP(j,2) REP(tt,2) REP1(k,SZ(pv[i][j][tt])-1) pv[i][j][tt][k]+=pv[i][j][tt][k-1];
+            bool ok=1;
             REP(i1,SZ(pv[0][0])) {
                 Vi tt(4);
                 tt[0]+=pv[0][0][i1];
