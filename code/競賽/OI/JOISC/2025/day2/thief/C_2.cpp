@@ -109,7 +109,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             mb=lb+rb>>1;
             Vi vv(n-1,0);
             REP(i,mb+1) vv[s1[i]-1]=1;
-            op(mb)oparr(vv)ope(query(vv))
+            // op(mb)oparr(vv)ope(query(vv))
             if(query(vv)==1) rb=mb;
             else lb=mb+1;
         }
@@ -126,7 +126,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
         an2=s2[lb];
     }
-    oparr(s1)oparr(s2)op(an1)ope(an2)
+    // oparr(s1)oparr(s2)op(an1)ope(an2)
     answer(an1,an2);
 }
 /*
