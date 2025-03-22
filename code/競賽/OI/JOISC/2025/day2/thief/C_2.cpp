@@ -85,10 +85,10 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
         answer(lb,0);
     }
-    Vi v1,v2;
+    Vi s1,s2;
     while(1) {
-        v1.clear();
-        v2.clear();
+        s1.clear();
+        s2.clear();
         Vi aid(n-1);
         REP(i,n-1) aid[i]=i+1;
         shuffle(ALL(aid),rng);
