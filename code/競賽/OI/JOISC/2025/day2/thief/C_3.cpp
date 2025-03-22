@@ -82,9 +82,9 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
     };
     REP(i,n) {
-        outt(i);
+        outt(outt,i,-1);
         rout[i]=query(outt);
-        intt(i);
+        intt(intt,i,-1);
         rint[i]=query(vint);
     }
 }
