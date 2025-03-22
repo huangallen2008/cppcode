@@ -100,7 +100,26 @@ signed main() {
         now+=(id[a[i-1]].f-i+N)%N;ope(now)
         v[i]=now;
     }
-
-    oparr(v)
+    vector<pipii> t(N);
+    REP(i,N) t[i]={v[i],{c[i],c[i]+x*v[i]}};
+    sort(ALL(t));
+    Vi v1(N),v2(N),vt(N);
+    REP(i,N) vt[i]=t[i].f;
+    REP(i,N) v1[i]=t[i].s.f;
+    REP(i,N) v2[i]=t[i].s.s;
+    ST st1,st2;
+    st1.init(N,v1);
+    st2.init(N,v2);
+    int q;
+    cin>>q;
+    REP(i,q) {
+        int s;
+        cin>>s;
+        s=n*n-s;
+        int it=lower_bound(ALL(vt),s)-vt.begin();
+        int mn1=st1.qu(0,it-1),mn2=st2.qu(it,N-1)-s*x;
+        int an=min(mn1,mn2);
+        cout<<an<<'\n';
+    }
     return 0;
 }
