@@ -110,6 +110,7 @@ signed main() {
     ST st1,st2;
     st1.init(N,v1);
     st2.init(N,v2);
+    oparr(vt)oparr(v1)oparr(v2)
     int q;
     cin>>q;
     REP(i,q) {
