@@ -69,11 +69,12 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             Vi vv(n-1);
             REP(i,m) vv[i]=i>=mb;
             if(!r1) reverse(ALL(vv));
+            op(mb)ope(query(vv))
             if(query(vv))rb=mb;
             else lb=mb+1;
         }
         an1=lb;
-    }
+    }entr
     {
         int lb=0,rb=n-1,mb;
         while(lb<rb) {
@@ -81,6 +82,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             Vi vv(n-1);
             REP(i,n-1) vv[i]=i<mb;
             if(!r1) reverse(ALL(vv));
+            op(mb)ope(query(vv))
             if(query(vv))rb=mb;
             else lb=mb+1;
         }
