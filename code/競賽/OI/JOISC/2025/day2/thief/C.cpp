@@ -71,7 +71,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 Vi vv(n-1);
                 REP(i,m) vv[i]=i>=mb;
                 op(mb)ope(query(vv))
-                if(r1^query(vv))rb=mb;
+                if(query(vv))rb=mb;
                 else lb=mb+1;
             }
             an1=lb;
@@ -83,7 +83,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 Vi vv(n-1);
                 REP(i,n-1) vv[i]=i<mb;
                 op(mb)ope(query(vv))
-                if(r1^query(vv))lb=mb;
+                if(query(vv))lb=mb;
                 else rb=mb-1;
             }
             an2=lb;
