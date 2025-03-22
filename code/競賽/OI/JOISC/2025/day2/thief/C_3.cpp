@@ -110,6 +110,18 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
     };
     gdfn(gdfn,an1,-1);
+    {
+        int nn=SZ(dfn);
+        int lb=0,rb=nn-1,mb;
+        while(lb<rb){
+            mb=lb+rb>>1;
+            Vi vv(m);
+            REP(i,nn) vv[dfn[i].s.f]=dfn[i].s.s^(i>mb);
+            if(query(vv)) rb=mb;
+            else lb=mb+1;
+        }
+        an2=dfn[lb].f;
+    }
     // auto din=[&](auto din,int u,int fa) {
     //     for(auto [v,id]:g[u]) {
     //         if(v==fa) continue;
