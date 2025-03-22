@@ -69,14 +69,22 @@ struct ST {
             REP(j,n) st[i][j]=min(st[i-1][j],st[i-1][min(n-1,j+(1<<i-1))]);
         }
     }
-}
+    int qu(int l,int r) {
+        int lg=__lg(r-l+1);
+        return min(st[lg][l],st[lg][r-(1<<lg)+1]);
+    }
+};
 signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
     Vi a(n),c(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i],a[i]--;
     REP(i,n) cin>>c[i];
-
+    Vpii id(n,{-1,-1});
+    REP(i,n) {
+        if(id[a[i]].f==-1) id[a[i]].f=i;
+        else id[a[i]].s=i;
+    }
     return 0;
 }
