@@ -60,6 +60,7 @@ int rd(int l,int r) {
 void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     Vi v1(n-1,0);
     int r1=query(v1);
+    ope("ok")
     int an1,an2;
     {
         int lb=1,rb=n,mb;
