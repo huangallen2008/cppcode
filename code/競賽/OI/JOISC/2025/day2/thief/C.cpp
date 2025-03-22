@@ -70,7 +70,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             REP(i,m) vv[i]=i>=mb;
             if(!r1) reverse(ALL(vv));
             op(mb)ope(query(vv))
-            if(query(vv))rb=mb;
+            if(r1^query(vv))rb=mb;
             else lb=mb+1;
         }
         an2=lb;
@@ -83,7 +83,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             REP(i,n-1) vv[i]=i<mb;
             if(!r1) reverse(ALL(vv));
             op(mb)ope(query(vv))
-            if(query(vv))lb=mb;
+            if(r1^query(vv))lb=mb;
             else rb=mb-1;
         }
         an1=lb;
