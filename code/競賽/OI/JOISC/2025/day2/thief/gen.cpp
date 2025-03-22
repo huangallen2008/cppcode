@@ -62,7 +62,7 @@ signed main() {
     int n=5,a=rd(1,n),b=rd(1,n);
     while(b==a) b=rd(1,n);
     cout<<n<<' '<<n-1<<' '<<a<<' '<<b<<'\n';
-    REP(i,n-1) cout<<i+1<<
+    REP(i,n-1) cout<<i<<' '<<i+1<<'\n';
     return 0;
 }
 /*
