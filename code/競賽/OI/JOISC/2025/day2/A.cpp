@@ -67,6 +67,8 @@ signed main() {
     REP(i,n) vsum.pb(a[i].f+a[i].s),vdif.pb(a[i].f-a[i].s);
     sort(ALL(vsum));
     sort(ALL(vdif));
-    for(auto [ms]:vsum)
+    for(auto ms:vsum) {
+
+    }
     return 0;
 }
