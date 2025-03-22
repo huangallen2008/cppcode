@@ -70,9 +70,6 @@ signed main() {
             if(mask>>j&1) v1.pb(a[j]);
             else v2.pb(a[j]);
         }
-        if(mask==85) {
-            oparr(v1)oparr(v2)
-        }
         sort(ALL(v1));
         sort(ALL(v2));
         Vi p1(SZ(v1)+1),p2(SZ(v2)+1);
@@ -81,6 +78,9 @@ signed main() {
         REP(i,SZ(v1)) s1[i+1]=s1[i]+l-v1[i].f+v1[i].s-1;
         REP(i,SZ(v2)) p2[i+1]=p2[i]+v2[i].f-1+l-v2[i].s;
         REP(i,SZ(v2)) s2[i+1]=s2[i]+l-v2[i].f+l-v2[i].s;
+        if(mask==85) {
+            oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
+        }
         bool ok1=0,ok2=0;
         REP(i,SZ(p1)) if(p1[i]<=T&&s1.back()-s1[i]<=T) ok1=1;
         REP(i,SZ(p2)) if(p2[i]<=T&&s2.back()-s2[i]<=T) ok2=1;
