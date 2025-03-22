@@ -113,5 +113,6 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             if(an2!=-1) return;
         }
     };
+    din(din,0,-1);
     answer(an1,an2);
 }
