@@ -73,7 +73,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(r1^query(vv))rb=mb;
                 else lb=mb+1;
             }
-            an2=lb;
+            an1=lb;
         }
         {
             int lb=0,rb=n-2,mb;
@@ -85,7 +85,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(r1^query(vv))lb=mb;
                 else rb=mb-1;
             }
-            an1=lb;
+            an2=lb;
         }
     }
     else {
