@@ -88,9 +88,9 @@ signed main() {
         else id[a[i]].s=i;
     }
     oparr(id)
-    Vi v(n);
+    Vi v(N);
     REP(i,n) v[0]+=id[i].f;
-    REP1(i,n-1) {
+    REP1(i,N-1) {
         int now=v[i-1];
         now-=(id[a[i-1]].f-(i-1)+n)%n;
         swap(id[a[i-1]].f,id[a[i-1]].s);
