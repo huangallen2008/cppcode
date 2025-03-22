@@ -59,7 +59,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
-    int n=10,a=rd(0,n-1),b=rd(0,n-1);
+    int n=rd(1,100),a=rd(0,n-1),b=rd(0,n-1);
     while(b==a) b=rd(0,n-1);
     cout<<n<<' '<<n-1<<' '<<a<<' '<<b<<'\n';
     REP(i,n-1) cout<<i<<' '<<i+1<<'\n';
