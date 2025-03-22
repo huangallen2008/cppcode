@@ -95,10 +95,12 @@ signed main() {
     REP1(i,N-1) {
         int now=v[i-1];
         now-=(id[a[i-1]].f-(i-1)+N)%N;
-        op(i)op(now)
+        // op(i)op(now)
         swap(id[a[i-1]].f,id[a[i-1]].s);
-        now-=(n-1);op(now)op(id[a[i-1]].f-i+n)
-        now+=(id[a[i-1]].f-i+N)%N;ope(now)
+        now-=(n-1);
+        // op(now)op(id[a[i-1]].f-i+n)
+        now+=(id[a[i-1]].f-i+N)%N;
+        // ope(now)
         v[i]=now;
     }
     vector<pipii> t(N);
@@ -111,7 +113,7 @@ signed main() {
     ST st1,st2;
     st1.init(N,v1);
     st2.init(N,v2);
-    oparr(vt)oparr(v1)oparr(v2)
+    // oparr(vt)oparr(v1)oparr(v2)
     int q;
     cin>>q;
     REP(i,q) {
