@@ -60,7 +60,7 @@ int rd(int l,int r) {
 void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
     Vi v1(n-1,0);
     int r1=query(v1);
-    ope("ok")
+    // ope("ok")
     int an1,an2;
     if(r1) {
         {
@@ -69,7 +69,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 mb=lb+rb>>1;
                 Vi vv(n-1);
                 REP(i,m) vv[i]=i>=mb;
-                op(mb)ope(query(vv))
+                // op(mb)ope(query(vv))
                 if(r1^query(vv))rb=mb;
                 else lb=mb+1;
             }
@@ -81,7 +81,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 mb=lb+rb+1>>1;
                 Vi vv(n-1);
                 REP(i,n-1) vv[i]=i<mb;
-                op(mb)ope(query(vv))
+                // op(mb)ope(query(vv))
                 if(r1^query(vv))lb=mb;
                 else rb=mb-1;
             }
