@@ -86,5 +86,16 @@ signed main() {
         if(id[a[i]].f==-1) id[a[i]].f=i;
         else id[a[i]].s=i;
     }
+    Vi v(n);
+    REP(i,n) v[0]+=id[i].f;
+    REP1(i,n-1) {
+        int now=v[i-1];
+        now-=(id[a[i-1]].f-(i-1)+n)%n;
+        swap(id[a[i-1]].f,id[a[i-1]].s);
+        now-=(n-1);
+        now-=(id[a[i-1]].f-i+n)%n;
+        v[i]=now;
+    }
+    oparr(v)
     return 0;
 }
