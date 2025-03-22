@@ -98,18 +98,33 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         }
         Vi vv(n-1);
         REP(i,SZ(s1)) vv[s1[i]-1]=1;
-        REP(i,SZ(s2)) vv[s2[i]-1]=0;
+        // REP(i,SZ(s2)) vv[s2[i]-1]=0;
         if(query(vv)) break;
     }
-    int lb=1,rb=SZ(s1),mb;
-    while(lb<rb) {//first t: qur(t)==0
-        mb=lb+rb>>1;
-        Vi vv(n-1,1);
-        REP(i,mb) vv[i]=0;
-        if(query(vv)==0) rb=mb;
-        else lb=mb+1;
+    int an1,an2;
+    {
+        int lb=0,rb=SZ(s1),mb;
+        while(lb<rb) {//first t: qur(t)==1
+            mb=lb+rb>>1;
+            Vi vv(n-1,0);
+            REP(i,mb) vv[s1[i]-1]=1;
+            if(query(vv)==1) rb=mb;
+            else lb=mb+1;
+        }
+        an1=s1[lb];
     }
-    // answer(an1,an2);
+    {
+        int lb=0,rb=SZ(s2),mb;
+        while(lb<rb) {//first t: qur(t)==1
+            mb=lb+rb>>1;
+            Vi vv(n-1,1);
+            REP(i,mb) vv[s2[i]-1]=0;
+            if(query(vv)==1) rb=mb;
+            else lb=mb+1;
+        }
+        an2=s2[lb];
+    }
+    answer(an1,an2);
 }
 /*
 5 4 3 1                                                                                                   
