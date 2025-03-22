@@ -109,6 +109,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             mb=lb+rb>>1;
             Vi vv(n-1,0);
             REP(i,mb) vv[s1[i]-1]=1;
+            oparr(vv)ope(query(vv))
             if(query(vv)==1) rb=mb;
             else lb=mb+1;
         }
