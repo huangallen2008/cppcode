@@ -64,7 +64,7 @@ signed main() {
     Vpii a(n);
     REP(i,n) cin>>a[i];
     REP(mask,1<<n) {
-        ope(mask)
+        // ope(mask)
         Vpii v1,v2;
         REP(j,n) {
             if(mask>>j&1) v1.pb(a[j]);
