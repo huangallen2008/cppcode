@@ -27,17 +27,17 @@ using namespace std;
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
 #define Vpii vector<pii>
-#ifdef LOCAL
+// #ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
 #define entr cout<<endl;
-#else
-#define op(x) ;
-#define ope(x) ;
-#define oparr(x) ;
-#define entr ;
-#endif
+// #else
+// #define op(x) ;
+// #define ope(x) ;
+// #define oparr(x) ;
+// #define entr ;
+// #endif
 template<typename T1,typename T2>
 ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
 template<typename T1,typename T2>
@@ -86,5 +86,6 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         an2=lb;
     }
     if(!r1) an1=n-an1+1,an2=n-an2+1;
+    op(an1)ope(an2)
     answer(an1,an2);
 }
