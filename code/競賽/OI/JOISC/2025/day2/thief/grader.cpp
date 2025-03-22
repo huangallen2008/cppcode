@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
-
+#include<bits/stdc++.h>
 #include "thief.h"
 
 namespace {
