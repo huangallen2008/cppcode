@@ -64,6 +64,7 @@ signed main() {
     Vpii a(n);
     REP(i,n) cin>>a[i];
     REP(mask,1<<n) {
+        ope(mask)
         Vpii v1,v2;
         REP(j,n) {
             if(mask>>j&1) v1.pb(a[j]);
@@ -81,7 +82,7 @@ signed main() {
         REP(i,SZ(p1)) if(p1[i]<=T&&s1.back()-s1[i]<=T) ok1=1;
         REP(i,SZ(p2)) if(p2[i]<=T&&s2.back()-s2[i]<=T) ok2=1;
         if(ok1&&ok2) {
-            oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
+            // oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
             cout<<"Yes\n";
             return 0;
         }
