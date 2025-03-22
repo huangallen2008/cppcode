@@ -78,11 +78,12 @@ signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
-    Vi a(n),c(n);
-    REP(i,n) cin>>a[i],a[i]--;
-    REP(i,n) cin>>c[i];
+    int N=n*2;
+    Vi a(N),c(N);
+    REP(i,N) cin>>a[i],a[i]--;
+    REP(i,N) cin>>c[i];
     Vpii id(n,{-1,-1});
-    REP(i,n) {
+    REP(i,N) {
         if(id[a[i]].f==-1) id[a[i]].f=i;
         else id[a[i]].s=i;
     }
