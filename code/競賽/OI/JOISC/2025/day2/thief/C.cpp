@@ -99,7 +99,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(!query(vv))rb=mb-1;
                 else lb=mb;
             }
-            an1=lb;
+            an2=lb;
         }
         {
             int lb=0,rb=n-1,mb;
@@ -111,7 +111,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 if(!query(vv))lb=mb+1;
                 else rb=mb;
             }
-            an2=lb;
+            an1=lb;
         }
     }
     // cerr<<an1<<endl;
