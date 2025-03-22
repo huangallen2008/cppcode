@@ -84,7 +84,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
             if(!r1) reverse(ALL(vv));
             op(mb)ope(query(vv))
             if(query(vv))lb=mb;
-            else lb=mb-1;
+            else rb=mb-1;
         }
         an1=lb;
     }
