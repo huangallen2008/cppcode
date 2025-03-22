@@ -101,7 +101,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
                 else lb=mb;
             }
             an2=lb;
-        }
+        }entr
         {
             int lb=0,rb=n-2,mb;
             while(lb<rb) {
