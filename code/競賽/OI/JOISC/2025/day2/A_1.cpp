@@ -70,14 +70,15 @@ signed main() {
             if(mask>>j&1) v1.pb(a[j]);
             else v2.pb(a[j]);
         }
-        sort(ALL(v1));
-        sort(ALL(v2));
+        sort(ALL(v1),[&](pii a,pii b){ return a.f+a.s<b.f+b.s; } );
+        sort(ALL(v2),[&](pii a,pii b){ return a.f-a.s<b.f-b.s; } );
+        // sort(ALL(v2));
         Vi p1(SZ(v1)+1),p2(SZ(v2)+1);
         Vi s1(SZ(v1)+1),s2(SZ(v2)+1);
         REP(i,SZ(v1)) p1[i+1]=p1[i]+v1[i].f+v1[i].s-2;
-        REP(i,SZ(v1)) s1[i+1]=s1[i]+l-v1[i].f+v1[i].s-1;
+        REP(i,SZ(v1)) s1[i+1]=s1[i]+l-v1[i].f+l-v1[i].s;
         REP(i,SZ(v2)) p2[i+1]=p2[i]+v2[i].f-1+l-v2[i].s;
-        REP(i,SZ(v2)) s2[i+1]=s2[i]+l-v2[i].f+l-v2[i].s;
+        REP(i,SZ(v2)) s2[i+1]=s2[i]+l-v2[i].f+v2[i].s-1;
         if(mask==83) {
             oparr(v1)oparr(v2)oparr(p1)oparr(p2)oparr(s1)oparr(s2)
         }
