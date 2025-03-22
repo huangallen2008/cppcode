@@ -92,11 +92,11 @@ signed main() {
     REP(i,n) v[0]+=id[i].f;
     REP1(i,N-1) {
         int now=v[i-1];
-        now-=(id[a[i-1]].f-(i-1)+n)%n;
+        now-=(id[a[i-1]].f-(i-1)+N)%N;
         op(i)op(now)
         swap(id[a[i-1]].f,id[a[i-1]].s);
         now-=(n-1);op(now)op(id[a[i-1]].f-i+n)
-        now+=(id[a[i-1]].f-i+n)%n;ope(now)
+        now+=(id[a[i-1]].f-i+N)%N;ope(now)
         v[i]=now;
     }
     oparr(v)
