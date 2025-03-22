@@ -108,7 +108,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         while(lb<rb) {//first t: qur(t)==1
             mb=lb+rb>>1;
             Vi vv(n-1,0);
-            REP(i,mb) vv[s1[i]-1]=1;
+            REP(i,mb+1) vv[s1[i]-1]=1;
             op(mb)oparr(vv)ope(query(vv))
             if(query(vv)==1) rb=mb;
             else lb=mb+1;
@@ -120,7 +120,7 @@ void solve(int n, int m, std::vector<int> U, std::vector<int> V) {
         while(lb<rb) {//first t: qur(t)==1
             mb=lb+rb>>1;
             Vi vv(n-1,1);
-            REP(i,mb) vv[s2[i]-1]=0;
+            REP(i,mb+1) vv[s2[i]-1]=0;
             if(query(vv)==1) rb=mb;
             else lb=mb+1;
         }
