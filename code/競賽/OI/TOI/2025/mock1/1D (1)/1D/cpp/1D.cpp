@@ -68,7 +68,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         swap(a,b);
     }
     auto cal=[&](int dd) ->int{
-        if(dd!=-3) return 0;
+        // if(dd!=-3) return 0;
         // oparr(a)oparr(bb)
         Vi tx;
         int av=-inf,bv=-inf,ita=0,itb=0;
