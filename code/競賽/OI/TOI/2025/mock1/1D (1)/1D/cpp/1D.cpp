@@ -76,14 +76,14 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         int av=-inf,bv=-inf,ita=0,itb=0;
         Vi ax,bx;
         while(1){
-            if(ita==n&&itb==m) break;
+            if(ita==n+1&&itb==m+1) break;
             // op(i)ope(N)
             // op(ita)op(itb)op(n+1)ope(m+1)op(itb==m)ope(ita!=n)
-            if(itb==m||(ita!=n&&a[ita].f<bb[itb].f)) {
+            if(itb==m+1||(ita!=n&&a[ita].f<bb[itb].f)) {
                 // ope(ita)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
-            }else if(ita==n||a[ita].f>b[itb].f){
+            }else if(ita==n+1||a[ita].f>b[itb].f){
                 // ope(itb)
                 tx.pb(bb[itb].f);
                 bv=bb[itb++].s;
@@ -93,8 +93,8 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
                 av=a[ita++].s;
                 bv=bb[itb++].s;
             }
-            ax.pb(tx.back()>a[n].f?-inf:av);
-            bx.pb(tx.back()>bb[m].f?-inf:bv);
+            ax.pb(av);
+            bx.pb(bv);
         }
         int N=tx.size();
         // oparr(tx)oparr(ax)oparr(bx)
