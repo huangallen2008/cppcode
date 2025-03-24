@@ -90,6 +90,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
                 tx.pb(bb[itb].f);
                 bv=bb[itb++].s;
             }else {
+                op(a[ita].f)ope(bb[itb].f)
                 ope("cccccccccccccccccccccccc")
                 // op(ita)ope(itb)
                 tx.pb(a[ita].f);
