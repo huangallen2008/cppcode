@@ -80,15 +80,15 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             // op(i)ope(N)
             // op(ita)op(itb)op(n+1)ope(m+1)op(itb==m)ope(ita!=n)
             if(itb==m||(ita!=n&&a[ita].f<bb[itb].f)) {
-                ope(ita)
+                // ope(ita)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
             }else if(ita==n||a[ita].f>b[itb].f){
-                ope(itb)
+                // ope(itb)
                 tx.pb(bb[itb].f);
                 bv=bb[itb++].s;
             }else {
-                op(ita)ope(itb)
+                // op(ita)ope(itb)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
                 bv=bb[itb++].s;
@@ -97,12 +97,12 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             bx.pb(tx.back()>b[m].f?-inf:bv);
         }
         int N=tx.size();
-        oparr(tx)oparr(ax)oparr(bx)
+        // oparr(tx)oparr(ax)oparr(bx)
         int mx=0,an=0;
         REP(i,N-1) chmax(mx,ax[i]+bx[i]);
-        ope(mx)
+        // ope(mx)
         REP(i,N-1) if(ax[i]+bx[i]==mx) an+=tx[i+1]-tx[i];
-        op(dd)ope(an)
+        // op(dd)ope(an)
         return an;
     };
     int an=0;
