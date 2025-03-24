@@ -113,6 +113,6 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         return an;
     };
     int an=0;
-    for(int dd=-dn;dd<=un;dd++) chmax(an,cal(dd));
+    for(int dd=-un;dd<=dn;dd++) chmax(an,cal(dd));
     return an;
 }
