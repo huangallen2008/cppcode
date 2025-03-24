@@ -61,15 +61,18 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         a[i]={ux[i<<1]-umnx,umxy-uy[i<<1]};
     }
     REP(i,m) {
-        b[i]={dx[i<<1]-dmnx-dn,dmxy+dy[i<<1]};
+        b[i]={dx[i<<1]-dmnx,dmxy+dy[i<<1]};
     }
     if(n>m) {
         swap(n,m);
         swap(a,b);
     }
+    Vpii b0=b;
     auto cal=[&](int dd) ->int{
         // if(dd!=-3) return 0;
         // oparr(a)oparr(bb)
+        Vpii b=b0;
+        REP(i,m+1) b[i].f-=dd;
         Vi tx;
         int av=-inf,bv=-inf,ita=0,itb=0;
         Vi ax,bx;
@@ -106,7 +109,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         ope(mx)
         REP(i,N-1) if(ax[i]+bx[i]==mx) an+=tx[i+1]-tx[i];
         op(dd)ope(an)
-        REP(i,m+1) b[i].f++;
+        // REP(i,m+1) b[i].f++;
         return an;
     };
     int an=0;
