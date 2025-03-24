@@ -94,7 +94,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
                 bv=bb[itb++].s;
             }
             ax.pb(tx.back()>a[n].f?-inf:av);
-            bx.pb(tx.back()>b[m].f?-inf:bv);
+            bx.pb(tx.back()>bb[m].f?-inf:bv);
         }
         int N=tx.size();
         // oparr(tx)oparr(ax)oparr(bx)
