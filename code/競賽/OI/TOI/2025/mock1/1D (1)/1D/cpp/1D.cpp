@@ -72,20 +72,20 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         REP(i,m+1) bb[i].f+=dd;
         Vi tx;
         int av=inf,bv=inf,ita=0,itb=0;
-        int N=n+m+1;
+        int N=n+m;
         Vi ax(N),bx(N);
         REP(i,N) {
             op(i)ope(N)
             op(i)op(ita)op(itb)op(n+1)ope(m+1)
-            if(itb==m+1&&a[ita].f<bb[itb].f) {
+            if(itb==m&&a[ita].f<bb[itb].f) {
                 av=a[++ita].s;
                 tx.pb(a[ita].f);
             }else {
                 bv=bb[++itb].s;
                 tx.pb(bb[itb].f);
             }
-            ax[i]=av;
-            bx[i]=bv;
+            ax[i]=(tx.back()>a[n].f?inf:av);
+            bx[i]=(tx.back()>b[m].f?inf:bv);
         }oparr(tx)
         int mx=0,an=0;
         REP(i,N-1) chmax(mx,ax[i]+bx[i]);
