@@ -88,6 +88,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         int mx=0,an=0;
         REP(i,N-1) chmax(mx,ax[i]+bx[i]);
         REP(i,N-1) if(ax[i]+bx[i]==mx) an+=tx[i+1]-tx[i];
+        op(dd)ope(an)
         return an;
     };
     int an=0;
