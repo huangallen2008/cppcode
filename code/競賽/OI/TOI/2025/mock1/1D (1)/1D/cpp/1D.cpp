@@ -80,11 +80,11 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             // op(i)ope(N)
             op(ita)op(itb)op(n+1)ope(m+1)op(itb==m+1)op(ita!=n+1)ope(a[ita].f<bb[itb].f)
             if(itb==m+1||(ita!=n+1&&a[ita].f<bb[itb].f)) {
-                // ope(ita)
+                ope(ita)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
             }else if(ita==n+1||a[ita].f>b[itb].f){
-                // ope(itb)
+                ope(itb)
                 tx.pb(bb[itb].f);
                 bv=bb[itb++].s;
             }else {
