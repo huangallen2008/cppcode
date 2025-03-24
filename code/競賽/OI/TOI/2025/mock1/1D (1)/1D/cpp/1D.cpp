@@ -48,6 +48,11 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
     // Vpii a(n*2);
     Vi ux(n*2),uy(n*2),dx(m*2),dy(m<<1);
     REP(i,n*2) ux[i]=UX[i],uy[i]=UY[i];
+    if(n>m) {
+        swap(n,m);
+        swap(ux,dx);
+        swap(uy,dy);
+    }
     // Vpii b(m*2);
     REP(i,m*2) dx[i]=DX[i],dy[i]=DY[i];
     int umxy=*max_element(ALL(uy)),dmxy=-*min_element(ALL(dy));
@@ -62,10 +67,6 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
     }
     REP(i,m) {
         b[i]={dx[i<<1]-dmnx,dmxy+dy[i<<1]};
-    }
-    if(n>m) {
-        swap(n,m);
-        swap(a,b);
     }
     Vpii b0=b;
     auto cal=[&](int dd) ->int{
@@ -113,6 +114,6 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         return an;
     };
     int an=0;
-    for(int dd=-un;dd<=dn;dd++) chmax(an,cal(dd));
+    for(int dd=-dn-1;dd<=un+1;dd++) chmax(an,cal(dd));
     return an;
 }
