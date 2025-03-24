@@ -61,7 +61,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         a[i]={ux[i<<1]-umnx,umxy-uy[i<<1]};
     }
     REP(i,m) {
-        b[i]={dx[i<<1]-dmnx,dmxy+dy[i<<1]};
+        b[i]={dx[i<<1]-dmnx-dn,dmxy+dy[i<<1]};
     }
     if(n>m) {
         swap(n,m);
@@ -69,9 +69,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
     }
     auto cal=[&](int dd) ->int{
         if(dd!=-3) return 0;
-        Vpii bb=b;
-        REP(i,m+1) bb[i].f+=dd;
-        oparr(a)oparr(bb)
+        // oparr(a)oparr(bb)
         Vi tx;
         int av=-inf,bv=-inf,ita=0,itb=0;
         Vi ax,bx;
@@ -79,24 +77,24 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         while(1){
             if(ita==n+1&&itb==m+1) break;
             // op(i)ope(N)
-            op(ita)op(itb)op(n+1)ope(m+1)op(itb==m+1)op(ita!=n+1)op(a[ita].f)ope(bb[itb].f)
-            if(itb==m+1||(ita!=n+1&&(a[ita].f<bb[itb].f))) {
-                ope("aaaaaaaaaaaaaaaaaaaaaaaa")
-                ope(ita)
+            // op(ita)op(itb)op(n+1)ope(m+1)op(itb==m+1)op(ita!=n+1)op(a[ita].f)ope(bb[itb].f)
+            if(itb==m+1||(ita!=n+1&&(a[ita].f<b[itb].f))) {
+                // ope("aaaaaaaaaaaaaaaaaaaaaaaa")
+                // ope(ita)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
-            }else if(ita==n+1||a[ita].f>bb[itb].f){
-                ope("bbbbbbbbbbbbbbbbbbbbbbbb")
-                ope(itb)
-                tx.pb(bb[itb].f);
-                bv=bb[itb++].s;
+            }else if(ita==n+1||a[ita].f>b[itb].f){
+                // ope("bbbbbbbbbbbbbbbbbbbbbbbb")
+                // ope(itb)
+                tx.pb(b[itb].f);
+                bv=b[itb++].s;
             }else {
-                op(a[ita].f)ope(bb[itb].f)
-                ope("cccccccccccccccccccccccc")
+                // op(a[ita].f)ope(bb[itb].f)
+                // ope("cccccccccccccccccccccccc")
                 // op(ita)ope(itb)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
-                bv=bb[itb++].s;
+                bv=b[itb++].s;
             }
             ax.pb(av);
             bx.pb(bv);
@@ -108,6 +106,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         ope(mx)
         REP(i,N-1) if(ax[i]+bx[i]==mx) an+=tx[i+1]-tx[i];
         op(dd)ope(an)
+        REP(i,m+1) b[i].f++;
         return an;
     };
     int an=0;
