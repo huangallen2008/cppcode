@@ -46,10 +46,9 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
     int n = UX.size() / 2;
     int m = DX.size() / 2;
     // Vpii a(n*2);
-    clock_t st=clock();
     Vi ux(n*2),uy(n*2),dx(m*2),dy(m<<1);
     REP(i,n*2) ux[i]=UX[i],uy[i]=UY[i];
-    Vpii b(m*2);
+    // Vpii b(m*2);
     REP(i,m*2) dx[i]=DX[i],dy[i]=DY[i];
     int umxy=*max_element(ALL(uy)),dmxy=-*min_element(ALL(dy));
     int umnx=ux[0],umxx=ux.back();
