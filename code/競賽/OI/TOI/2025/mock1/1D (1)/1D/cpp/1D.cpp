@@ -77,6 +77,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         int N=n+m;
         Vi ax(N),bx(N);
         REP(i,N) {
+            if(ita==n&&itb==m) break;
             // op(i)ope(N)
             op(i)op(ita)op(itb)op(n+1)ope(m+1)
             if(itb==m||a[ita].f<bb[itb].f) {
