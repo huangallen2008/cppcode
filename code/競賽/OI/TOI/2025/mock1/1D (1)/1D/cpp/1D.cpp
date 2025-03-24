@@ -82,11 +82,11 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             if(itb==m||a[ita].f<bb[itb].f) {
                 // ope(ita)
                 tx.pb(a[ita].f);
-                av=a[++ita].s;
+                av=a[ita++].s;
             }else {
                 // ope(itb)
                 tx.pb(bb[itb].f);
-                bv=bb[++itb].s;
+                bv=bb[itb++].s;
             }
             ax[i]=(tx.back()>a[n].f?-inf:av);
             bx[i]=(tx.back()>b[m].f?-inf:bv);
