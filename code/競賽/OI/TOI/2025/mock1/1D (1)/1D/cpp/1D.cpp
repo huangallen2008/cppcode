@@ -75,12 +75,12 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         Vi tx;
         int av=-inf,bv=-inf,ita=0,itb=0;
         Vi ax,bx;
-        auto magic=[&](bool x) ->bool { if(x) ope("!!!!!!!!!!") return x; };
+        // auto magic=[&](bool x) ->bool { if(x) ope("!!!!!!!!!!") return x; };
         while(1){
             if(ita==n+1&&itb==m+1) break;
             // op(i)ope(N)
             op(ita)op(itb)op(n+1)ope(m+1)op(itb==m+1)op(ita!=n+1)op(a[ita].f)ope(bb[itb].f)
-            if(itb==m+1||(ita!=n+1&&magic(a[ita].f<bb[itb].f))) {
+            if(itb==m+1||(ita!=n+1&&(a[ita].f<bb[itb].f))) {
                 ope("aaaaaaaaaaaaaaaaaaaaaaaa")
                 ope(ita)
                 tx.pb(a[ita].f);
