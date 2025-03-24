@@ -74,9 +74,8 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         oparr(a)oparr(bb)
         Vi tx;
         int av=-inf,bv=-inf,ita=0,itb=0;
-        int N=n+m;
-        Vi ax(N),bx(N);
-        REP(i,N) {
+        Vi ax,bx;
+        while(1){
             if(ita==n&&itb==m) break;
             // op(i)ope(N)
             op(i)op(ita)op(itb)op(n+1)ope(m+1)
@@ -94,9 +93,10 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
                 av=a[ita++].s;
                 bv=bb[itb++].s;
             }
-            ax[i]=(tx.back()>a[n].f?-inf:av);
-            bx[i]=(tx.back()>b[m].f?-inf:bv);
+            ax.pb(tx.back()>a[n].f?-inf:av);
+            bx.pb(tx.back()>b[m].f?-inf:bv);
         }
+        int N=tx.size();
         oparr(tx)oparr(ax)oparr(bx)
         int mx=0,an=0;
         REP(i,N-1) chmax(mx,ax[i]+bx[i]);
