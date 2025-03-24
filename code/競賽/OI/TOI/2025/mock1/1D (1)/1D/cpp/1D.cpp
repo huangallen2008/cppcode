@@ -71,7 +71,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         Vpii bb=b;
         REP(i,m+1) bb[i].f+=dd;
         Vi tx;
-        int av=0,bv=0,ita=0,itb=0;
+        int av=inf,bv=inf,ita=0,itb=0;
         int N=n+m;
         Vi ax(N),bx(N);
         REP(i,N) {
