@@ -68,7 +68,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         swap(a,b);
     }
     auto cal=[&](int dd) ->int{
-        // if(dd!=-3) return 0;
+        if(dd!=-3) return 0;
         Vpii bb=b;
         REP(i,m+1) bb[i].f+=dd;
         // oparr(a)oparr(bb)
@@ -78,7 +78,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
         while(1){
             if(ita==n+1&&itb==m+1) break;
             // op(i)ope(N)
-            // op(ita)op(itb)op(n+1)ope(m+1)op(itb==m)ope(ita!=n)
+            op(ita)op(itb)op(n+1)ope(m+1)op(itb==m)ope(ita!=n)
             if(itb==m+1||(ita!=n+1&&a[ita].f<bb[itb].f)) {
                 // ope(ita)
                 tx.pb(a[ita].f);
@@ -97,12 +97,12 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             bx.pb(bv);
         }
         int N=tx.size();
-        // oparr(tx)oparr(ax)oparr(bx)
+        oparr(tx)oparr(ax)oparr(bx)
         int mx=0,an=0;
         REP(i,N-1) chmax(mx,ax[i]+bx[i]);
-        // ope(mx)
+        ope(mx)
         REP(i,N-1) if(ax[i]+bx[i]==mx) an+=tx[i+1]-tx[i];
-        // op(dd)ope(an)
+        op(dd)ope(an)
         return an;
     };
     int an=0;
