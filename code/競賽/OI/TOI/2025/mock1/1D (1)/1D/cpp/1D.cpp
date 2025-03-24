@@ -79,7 +79,7 @@ signed maximum_length(const std::vector<signed> &UX, const std::vector<signed> &
             if(ita==n+1&&itb==m+1) break;
             // op(i)ope(N)
             // op(ita)op(itb)op(n+1)ope(m+1)op(itb==m)ope(ita!=n)
-            if(itb==m+1||(ita!=n&&a[ita].f<bb[itb].f)) {
+            if(itb==m+1||(ita!=n+1&&a[ita].f<bb[itb].f)) {
                 // ope(ita)
                 tx.pb(a[ita].f);
                 av=a[ita++].s;
