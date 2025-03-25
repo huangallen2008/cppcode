@@ -65,6 +65,7 @@ int pw(int x,int p) {
     }
     return r;
 }
+int inv(int x) { return pw(x,mod-2); }
 signed main() {
     IOS();
     int n,m;
@@ -97,8 +98,9 @@ signed main() {
     // oparr(mp)
     int ans=0;
     for(auto [x,y]:mp) {
-        (ans+=x*y/n)%=mod;
+        (ans+=x*y%mod*inv(n))%=mod;
     }
+    ans=(ans+mod)%mod;
     cout<<ans<<'\n';
     return 0;
 }
