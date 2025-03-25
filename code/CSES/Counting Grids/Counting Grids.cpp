@@ -69,10 +69,10 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    if(n==1) {
-        cout<<"2\n";
-        return 0;
-    }
+    // if(n==1) {
+    //     cout<<"2\n";
+    //     return 0;
+    // }
     int x=(n>>1)*(n+1>>1);
     int an=pw(2,n*n-2)+pw(2,x*2-2+(n&1))+pw(2,x-1+(n&1));
     an=(an+mod)%mod;
