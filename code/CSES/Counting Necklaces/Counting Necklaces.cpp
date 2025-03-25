@@ -78,7 +78,7 @@ signed main() {
         }
     }
     Vi pfac;
-    for(int i=2;;i++) {
+    for(int i=2;i<=t;i++) {
         if(t%i==0) {
             pfac.pb(i);
             while(t%i==0) t/=i;
