@@ -86,14 +86,14 @@ signed main() {
     }
     map<int,int> mp;
     for(int x:fac) mp[x]=pw(m,n/x);
-    // oparr(mp)
+    oparr(mp)
     for(int p:pfac) {
         for(auto [x,y]:mp) {
             if(n%(x*p)) continue;
             (mp[x]-=mp[x*p])%=mod;
         }
     }
-    // oparr(mp)
+    oparr(mp)
     int ans=0;
     for(auto [x,y]:mp) {
         (ans+=x*y/n)%=mod;
