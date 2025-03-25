@@ -61,9 +61,10 @@ struct BIT {
     Vi b;
     void init(int _n) {
         n=_n;
-        b=Vi(n+1);
+        b=Vi(n+5);
     }
     void ud(int u,int v) {
+        u++;
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
@@ -71,7 +72,7 @@ struct BIT {
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
-    int qu(int l,int r) { return pre(r)-pre(l-1); }
+    int qu(int l,int r) { l++,r++; return pre(r)-pre(l-1); }
 }bit;
 signed main() {
     IOS();
@@ -79,15 +80,18 @@ signed main() {
     cin>>n;
     bit.init(n);
     REP1(i,n) bit.ud(i,1);
-    Vi a(n+1);
-    REP1(i,n) cin>>a[i];
-    Vi id(n+1);
-    REP1(i,n) id[a[i]]=i;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    Vi t=a;
+    sort(ALL(t));
+    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
+    Vi id(n);
+    REP(i,n) id[a[i]]=i;
     oparr(id)
     int an=0;
-    REP1(i,n) {
+    REP(i,n) {
         bit.ud(id[i],-1);
-        an+=min(bit.qu(1,id[i]),bit.qu(id[i],n));
+        an+=min(bit.qu(0,id[i]),bit.qu(id[i],n-1));
     }
     cout<<an<<'\n';
     return 0;
