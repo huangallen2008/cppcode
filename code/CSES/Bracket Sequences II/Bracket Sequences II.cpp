@@ -74,7 +74,7 @@ void com_init() {
     RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
 }
 int C(int n,int k) {
-    if(n<0||n<k) return 0;
+    if(n<0||n<k||k<0) return 0;
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 signed main() {
