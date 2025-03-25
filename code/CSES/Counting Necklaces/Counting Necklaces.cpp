@@ -84,6 +84,7 @@ signed main() {
             while(t%i==0) t/=i;
         }
     }
+    oparr(pfac)
     map<int,int> mp;
     for(int x:fac) mp[x]=pw(m,n/x);
     oparr(mp)
