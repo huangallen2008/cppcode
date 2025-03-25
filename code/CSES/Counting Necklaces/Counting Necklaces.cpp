@@ -96,7 +96,7 @@ signed main() {
     oparr(mp)
     int ans=0;
     for(auto [x,y]:mp) {
-        (ans+=y/(n/x))%=mod;
+        (ans+=x*y/n)%=mod;
     }
     cout<<ans<<'\n';
     return 0;
