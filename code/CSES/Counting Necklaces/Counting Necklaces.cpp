@@ -71,7 +71,7 @@ signed main() {
     cin>>n>>m;
     int t=n;
     Vi fac;
-    for(int i=2;i*i<=n;i++) {
+    for(int i=1;i*i<=n;i++) {
         if(n%i==0) {
             fac.pb(i);
             if(i*i!=n) fac.pb(n/i);
