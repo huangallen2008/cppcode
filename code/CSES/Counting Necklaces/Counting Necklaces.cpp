@@ -94,9 +94,9 @@ signed main() {
         }
     }
     oparr(mp)
-    int ans=pw(m,n);
+    int ans=0;
     for(auto [x,y]:mp) {
-        (ans-=y*(n/x-1))%=mod;
+        (ans+=y/(n/x))%=mod;
     }
     cout<<ans<<'\n';
     return 0;
