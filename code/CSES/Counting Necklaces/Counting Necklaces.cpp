@@ -94,7 +94,7 @@ signed main() {
         }
     }
     oparr(mp)
-    int ans=pw(n,m);
+    int ans=pw(m,n);
     for(auto [x,y]:mp) {
         (ans-=y*(n/x-1))%=mod;
     }
