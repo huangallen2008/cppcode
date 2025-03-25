@@ -9,3 +9,9 @@ struct Func {
 };
 template<class T>
 Func(const T &) -> Func<T>;
+
+/*
+    Func f=[&](auto f)->int {
+        return 0;
+    };
+*/
