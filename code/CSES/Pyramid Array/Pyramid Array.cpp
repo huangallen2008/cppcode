@@ -79,7 +79,7 @@ signed main() {
     int n;
     cin>>n;
     bit.init(n);
-    REP1(i,n) bit.ud(i,1);
+    REP(i,n) bit.ud(i,1);
     Vi a(n);
     REP(i,n) cin>>a[i];
     Vi t=a;
