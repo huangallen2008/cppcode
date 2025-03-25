@@ -92,6 +92,7 @@ signed main() {
         }
     }
     n-=SZ(s);
+    op(n)ope(k)
     int an=C(n*2+k,n)-C(n*2+k,n-1);
     an=(an%mod+mod)%mod;
     cout<<an<<'\n';
