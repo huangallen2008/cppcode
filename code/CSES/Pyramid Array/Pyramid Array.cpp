@@ -83,8 +83,8 @@ signed main() {
     REP1(i,n) cin>>a[i];
     Vi id(n+1);
     REP1(i,n) id[a[i]]=i;
+    oparr(id)
     int an=0;
-    ope("ok")
     REP1(i,n) {
         bit.ud(id[i],-1);
         an+=min(bit.qu(1,id[i]),bit.qu(id[i],n));
