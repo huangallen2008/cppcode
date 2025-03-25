@@ -85,14 +85,11 @@ signed main() {
     Vi t=a;
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    oparr(a)
     Vi id(n);
     REP(i,n) id[a[i]]=i;
-    oparr(id)
     int an=0;
     REP(i,n) {
         bit.ud(id[i],-1);
-        op(id[i])op(bit.qu(0,id[i]))ope(bit.qu(id[i],n-1))
         an+=min(bit.qu(0,id[i]),bit.qu(id[i],n-1));
     }
     cout<<an<<'\n';
