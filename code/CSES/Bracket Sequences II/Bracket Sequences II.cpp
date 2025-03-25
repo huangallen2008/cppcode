@@ -92,6 +92,11 @@ signed main() {
         }
     }
     n-=SZ(s);
+    if(n<k||(n-k&1)) {
+        cout<<"0\n";
+        return 0;
+    }
+    n=n-k>>1;
     op(n)ope(k)
     int an=C(n*2+k,n)-C(n*2+k,n-1);
     an=(an%mod+mod)%mod;
