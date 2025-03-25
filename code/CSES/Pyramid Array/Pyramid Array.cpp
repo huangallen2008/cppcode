@@ -92,7 +92,7 @@ signed main() {
     int an=0;
     REP(i,n) {
         bit.ud(id[i],-1);
-        op(id[i])op(bit.qu(1,id[i]))ope(bit.qu(id[i],n-1))
+        op(id[i])op(bit.qu(0,id[i]))ope(bit.qu(id[i],n-1))
         an+=min(bit.qu(0,id[i]),bit.qu(id[i],n-1));
     }
     cout<<an<<'\n';
