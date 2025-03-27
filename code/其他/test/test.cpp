@@ -67,55 +67,6 @@ bool is_inter(pii a,pii b,pii c,pii d) {
     if(inl(a,b,c)||inl(a,b,d)||inl(c,d,a)||inl(c,d,b)) return 1;
     return sig(cros(b-a,c-a))*sig(cros(b-a,d-a))<0&&sig(cros(d-c,a-c))*sig(cros(d-c,b-c))<0;
 }
-void Solve() {
-    int n;
-    cin>>n;
-    Vpii a(n);
-    REP(i,n) cin>>a[i];
-    sort(ALL(a));
-    auto dis=[&](pii a,pii b) { return SQ(a.s-b.s)+SQ(a.f-b.f); };
-    auto brute=[&]() {
-        int an=inf;
-        REP(i,n) REP(j,i) chmin(an,dis(a[i],a[j]));
-        return an;
-    };
-    auto solve=[&](auto solve,Vpii a) ->int{
-        if(SZ(a)<=1) return inf;
-        Vpii v1,v2;
-        int n=SZ(a);
-        REP(i,n) {
-            if(i<(n>>1)) v1.pb(a[i]);
-            else v2.pb(a[i]);
-        }
-        int mid=a[n>>1].f;
-        int d1=solve(solve,v1),d2=solve(solve,v2);
-        int d=min(d1,d2);
-        Vpii c1,c2;
-        int sd=sqrt(d);
-        for(auto x:v1) if(x.f>=mid-sd) c1.pb(x);
-        for(auto x:v2) if(x.f<=mid+sd) c2.pb(x);
-        sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
-        sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
-        int il=0,ir=0;
-        int n1=SZ(c1),n2=SZ(c2);
-        int an=d;
-        REP(i,n1) {
-            while(ir<n2&&c2[ir].s<=c1[i].s+sd) ir++;
-            while(il<n2&&c2[il].s<c1[i].s-sd) il++;
-            for(int j=il;j<ir;j++) chmin(an,dis(c1[i],c2[j]));
-        }
-        return an;
-    };
-    int ans=solve(solve,a);
-    // #ifdef LOCAL
-    // if(ans!=brute()) {
-    //     oparr(a)
-    //     exit(0);
-    // }
-    // #else
-    cout<<ans<<'\n';
-    // #endif
-}
 signed main() {
     IOS();
     
