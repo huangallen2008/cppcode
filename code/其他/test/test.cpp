@@ -83,6 +83,7 @@ signed main() {
         while(SZ(v2)>1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])>0) v2.pop_back();
         v2.pb(a[i]);
     }
-    oparr(v1)oparr(v2)
+    Vpii an;
+    REP(i,SZ(v1)) an.pb()
     return 0;
 }
