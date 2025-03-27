@@ -84,7 +84,9 @@ signed main() {
                     g[j].pb(i);
                 }
             }
+            if(!ok) break;
         }
+        if(!ok) continue;
         if(g[0].size()<=5) continue;
         // op(mask)ope(g)
         int val=__builtin_popcountll(mask);
