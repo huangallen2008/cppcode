@@ -89,7 +89,8 @@ signed main() {
         for(auto x:v1) if(x.f>=mid-d) c1.pb(x);
         for(auto x:v2) if(x.f<=mid+d) c2.pb(x);
         sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
-        sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
+        sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
+        
     };
     return 0;
 }
