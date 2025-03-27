@@ -94,6 +94,7 @@ signed main() {
         chmax(mx,rr);
     }
     REP(mask,1<<(N)) {
+        if(~mask&1) continue;
         // if(mask!=504) continue;
         int it=0;
         Graph g(n);
