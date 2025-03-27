@@ -63,15 +63,15 @@ signed main() {
     vector<Vi> d(n,Vi(n));
     REP(i,n) REP(j,n) {
         cin>>d[i][j];
-        if(i==j)assert(d[i][j]==0);
-        if(i>j) assert(d[i][j]==d[j][i]);
+        // if(i==j)assert(d[i][j]==0);
+        // if(i>j) assert(d[i][j]==d[j][i]);
     }
     int ans=0;
     REP1(i,n-1) {
-        int mx=d[0][i]*2;
-        REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]);
+        int mx=d[0][i];
+        REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         ans+=mx;
     }
-    cout<<ans<<"\n";
+    cout<<ans*2<<"\n";
     return 0;
 }
