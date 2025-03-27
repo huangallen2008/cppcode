@@ -74,8 +74,9 @@ signed main() {
     Vpii a(n);
     REP(i,n) cin>>a[i];
     sort(ALL(a));
-    Vpii v1;
-    REP(i,n) {
-        while(SZ(v1)>=1&&cros(v1.back()-v1[SZ(v1)-1],a[i]-v1[SZ(v1)-1])) v1.pop_back();
+    Vpii v1,v2;
+    REP(i,n) while(SZ(v1)>=1&&cros(v1.back()-v1[SZ(v1)-1],a[i]-v1[SZ(v1)-1])) v1.pop_back();
+    RREP(i,n) while(SZ(v2)>=1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])) v2.pop_back();
+    oparr(v1)oparr(v2)
     return 0;
 }
