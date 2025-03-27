@@ -91,7 +91,8 @@ void Solve() {
         int d1=solve(solve,v1),d2=solve(solve,v2);
         int d=min(d1,d2);
         Vpii c1,c2;
-        for(auto x:v1) if(x.f>=mid-d) c1.pb(x);
+        int sd=sqrt(d);
+        for(auto x:v1) if(x.f>=mid-sd) c1.pb(x);
         for(auto x:v2) if(x.f<=mid+d) c2.pb(x);
         sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
         sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
