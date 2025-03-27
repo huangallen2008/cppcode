@@ -90,7 +90,8 @@ signed main() {
         for(auto x:v2) if(x.f<=mid+d) c2.pb(x);
         sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
         sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
-        int il,ir;
+        int il=0,ir=0;
+        
     };
     return 0;
 }
