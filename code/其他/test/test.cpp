@@ -62,8 +62,8 @@ signed main() {
     int n;
     cin>>n;
     pii mx={0,-1};
-    int N=n*(n-1)>>1;
-    REP(mask,1ll<<(N)) {
+    int N=(n*(n-1)>>1);
+    for(ll mask=0;mask<(1ll<<N);mask++ ) {
         // if(mask!=504) continue;
         // if(~mask&1) continue;
         // if(~mask>>1&1) continue;
