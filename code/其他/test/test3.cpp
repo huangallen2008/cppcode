@@ -64,12 +64,11 @@ signed main() {
     REP(i,n) REP(j,n) cin>>d[i][j];
     int ans=0;
     REP1(i,n-1) {
-        int mx=0;
+        int mx=inf;
         REP(j,i) {
             chmax(mx,d[0][i]+d[0][j]-d[i][j]);
         }
         ans+=d[0][i]-mx;
-        ope(d[0][i])ope(mx)
     }
     cout<<ans*2<<"\n";
     return 0;
