@@ -61,7 +61,8 @@ signed main() {
     int n;
     cin>>n;
     pii mx={0,-1};
-    REP(mask,1<<(n*(n-1))) {
+    int N=n*(n-1)>>1;
+    REP(mask,1<<(N)) {
         // if(mask!=504) continue;
         int it=0;
         Graph g(n);
