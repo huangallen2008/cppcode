@@ -112,7 +112,9 @@ signed main() {
     IOS();
     int T=1;
     #ifdef LOCAL
-    freopen("in.txt","r","stdout")
+    freopen("in.txt","r","stdin");
+    cin>>T;
     #endif
+    
     return 0;
 }
