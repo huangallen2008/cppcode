@@ -65,7 +65,7 @@ signed main() {
     REP(mask,1ll<<(N)) {
         // if(mask!=504) continue;
         if(~mask&1) continue;
-        if(__builtin_popcount(mask)<=mx.f) continue;
+        if(__builtin_popcountll(mask)<=mx.f) continue;
         int it=0;
         Graph g(n);
         REP(i,n) {
@@ -79,7 +79,7 @@ signed main() {
         }
         // op(mask)ope(g)
         bool ok=1;
-        int val=__builtin_popcount(mask);
+        int val=__builtin_popcountll(mask);
         REP(u,n) {
             for(int v:g[u]) {
                 if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
