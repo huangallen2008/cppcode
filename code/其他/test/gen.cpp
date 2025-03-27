@@ -62,8 +62,8 @@ signed main() {
     int T=100000;
     cout<<T<<'\n';
     while(T--) {
-        int n=rd(3,5),c=rd(5,10),k=1;
-        cout<<n<<' '<<c<<' '<<k<<'\n';
+        int n=rd(3,5);
+        cout<<n<<'\n';
         REP(i,n) {
             int cc=rd(1,10),vv=rd(1,5);
             cout<<cc<<' '<<vv<<'\n';

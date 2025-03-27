@@ -75,6 +75,11 @@ signed main() {
     REP(i,n) cin>>a[i];
     sort(ALL(a));
     auto dis=[&](pii a,pii b) { return SQ(a.s-b.s)+SQ(a.f-b.f); };
+    auto brute=[&]() {
+        int an=inf;
+        REP(i,n) REP(j,i) chmin(an,dis(a[i],a[j]));
+        return an;
+    };
     auto solve=[&](auto solve,Vpii a) ->int{
         if(SZ(a)<=1) return inf;
         Vpii v1,v2;
