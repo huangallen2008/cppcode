@@ -69,6 +69,7 @@ signed main() {
         REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         ans+=mx;
     }
+    if(ans*2!=ban)
     cout<<ans*2<<"\n";
     return 0;
 }
