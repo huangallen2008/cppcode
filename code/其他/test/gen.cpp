@@ -69,7 +69,7 @@ signed main() {
         REP(i,v) REP(j,v) a[i*v+j]={i,j};
         shuffle(ALL(a),rng);
         REP(i,n) {
-            cout<<a
+            cout<<a[i].f<<' '<<a[i].s<<'\n';
         }
     }
     return 0;
