@@ -71,7 +71,7 @@ signed main() {
     REP1(i,n-1) {
         int mx=0;
         REP(j,i) {
-            chmax(mx,lca(i,j));
+            chmax(mx,d[0][i]+d[0][j]-d[i][j]);
         }
         ans+=d[0][i]-mx;
         ope(d[0][i])ope(mx)
