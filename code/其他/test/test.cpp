@@ -69,24 +69,6 @@ bool is_inter(pii a,pii b,pii c,pii d) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    Vpii a(n);
-    REP(i,n) cin>>a[i];
-    sort(ALL(a));
-    Vpii v1,v2;
-    REP(i,n) {
-        while(SZ(v1)>1&&cros(v1.back()-v1[SZ(v1)-2],a[i]-v1[SZ(v1)-2])>0) v1.pop_back();
-        v1.pb(a[i]);
-    }
-    RREP(i,n) {
-        while(SZ(v2)>1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])>0) v2.pop_back();
-        v2.pb(a[i]);
-    }
-    Vpii an;
-    REP(i,SZ(v1)) an.pb(v1[i]);
-    for(int i=1;i<SZ(v2)-1;i++) an.pb(v2[i]);
-    cout<<SZ(an)<<'\n';
-    for(auto [x,y]:an) cout<<x<<' '<<y<<'\n';
+        
     return 0;
 }
