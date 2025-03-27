@@ -62,7 +62,12 @@ signed main() {
     cin>>n;
     REP(mask,1<<(n*(n-1))) {
         int it=0;
-        
+        Graph g(n);
+        REP(i,n) {
+            REP(j,i) {
+                
+            }
+        }
     }
     return 0;
 }
