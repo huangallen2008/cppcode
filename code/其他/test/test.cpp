@@ -74,6 +74,7 @@ signed main() {
     Vpii a(n);
     REP(i,n) cin>>a[i];
     sort(ALL(a));
+    auto dis=[&](pii a,pii b) 
     auto solve=[&](auto solve,Vpii a) ->int{
         if(SZ(a)<=1) return inf;
         Vpii v1,v2;
@@ -95,7 +96,7 @@ signed main() {
         REP(i,n1) {
             while(ir<n2&&c2[ir].s<=c1[i].s+d) ir++;
             while(il<n2&&c2[il].s<c1[i].s-d) il++;
-            
+
         }
     };
     return 0;
