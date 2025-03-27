@@ -106,7 +106,10 @@ void Solve() {
         return an;
     };
     int ans=solve(solve,a);
+    #ifdef LOCAL
+    #else
     cout<<ans<<'\n';
+    #endif
 }
 signed main() {
     IOS();
