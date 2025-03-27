@@ -1,169 +1,146 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx2,sse4,bmi2,popcnt")
+// #define int long long
 #define ll long long
-#define int ll
-#define FOR(i, a, b) for (int i = (a); i < (b); i++)
-#define REP(i, n) FOR(i, 0, n)
-#define REP1(i, n) FOR(i, 1, n+1)
-#define RREP(i, n) for (int i = (n)-1; i >= 0; i--)
-#define RREP1(i, n) for (int i = (n); i >= 1; i--)
-#define pii pair<int, int>
+#define REP(i,n) for(int i=0;i<(n);i++)
+#define REP1(i,n) for(int i=1;i<=(n);i++)
+#define RREP(i,n) for(int i=(n)-1;i>=0;i--)
+#define RREP1(i,n) for(int i=(n);i>=1;i--)
 #define f first
 #define s second
-#define ALL(x) (x).begin(), (x).end()
-#define SZ(x) (int)((x).size())
 #define pb push_back
-#define IOS() ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
-
-const ll maxn = 5e3+5;
-const ll maxm = 1e4+5;
-const ll inf = 1ll<<60;
-const ll mod = 1e9+7;
+#define ALL(x) (x).begin(),(x).end()
+#define SZ(x) ((int)((x).size()))
+#define SQ(x) ((x)*(x))
+#define pii pair<int,int>
+#define pipii pair<int,pii>
+#define Graph vector<vector<int>>
+#define Graphw vector<vector<pii>>
+#define IOS() ios::sync_with_stdio(0),cin.tie(0)
+#define md(x) (((x)%(mod)+(mod))%(mod))
+#define MD(x,M) (((x)%(M)+(M))%(M))
+#define ld long double
+#define pdd pair<ld,ld>
+#define chmax(x,y) x=max(x,y)
+#define chmin(x,y) x=min(x,y)
+#define addmod(x,y) x=((x+(y))%mod)
+#define Vi vector<int>
+#define Vpii vector<pii>
+#ifdef LOCAL
+#define op(x) cout<<(#x)<<"="<<(x)<<", ";
+#define ope(x) cout<<(#x)<<"="<<(x)<<endl;
+#define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
+#define entr cout<<endl;
+#else
+#define op(x) ;
+#define ope(x) ;
+#define oparr(x) ;
+#define entr ;
+#endif
+template<typename T1,typename T2>
+ostream& operator<<(ostream& os,pair<T1,T2> p) { return os<<'{'<<p.f<<','<<p.s<<'}'; }
+template<typename T1,typename T2>
+istream& operator>>(istream& os,pair<T1,T2> &p) { return os>>p.f>>p.s; }
+template<typename S>
+ostream& operator<<(ostream& os,vector<S> p) { for(auto allen:p) os<<allen<<' ';return os<<'\n'; }
+template<typename S>
+istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
+template<typename T1,typename T2>
+pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
+const int mod=998244353;
+const int maxn=2e5+5;
+const int maxv=2e9+5;
+const int inf=1e9;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+signed main() {
+    IOS();
+    int n;
+    cin>>n;
+    pair<ll,ll> mx={0,-1};
+    int N=(n*(n-1)>>1);
+    for(ll mask=0;mask<(1ll<<N);mask++ ) {
+        // if(mask!=504) continue;
+        // if(~mask&1) continue;
+        // if(~mask>>1&1) continue;
+        if(__builtin_popcountll(mask)<=mx.f) continue;
+        if(__builtin_popcountll(mask)<=20) continue;
 
-int dp[205][maxm][55];
-int n, c, k;
-vector<pii> V;
-
-bool cmp(pii a, pii b){
-    if (a.f == b.f) return a.s > b.s;
-    return a.f < b.f;
-}
-
-void inp(){
-	n=rd(5,200),c=rd(100,200),k=1;
-    // cin>>n>>c>>k;
-    V = vector<pii> (n+1);
-    REP1(i, n) V[i].f=rd(1,10),V[i].s=rd(1,100);//cin>>V[i].f>>V[i].s;
-    // REP1(i, n) cin>>V[i].f>>V[i].s;
-}
-
-int run(){
-    REP1(i, n+1){
-        REP(j, c+1){
-            REP(x, k+1){
-                dp[i][j][x] = 0;
+        int it=0;
+        bool ok=1;
+        Graph g(n);
+        REP(i,n) {
+            REP(j,i) {
+                if(j==0&&i<=5&&(~mask>>it&1)) {
+                    ok=0;
+                    break;
+                } 
+                // op(i)op(j)op(it)ope(mask>>it&1)
+                if(mask>>(it++)&1) {
+                    g[i].pb(j);
+                    g[j].pb(i);
+                }
             }
+            if(!ok) break;
         }
-    }
-    vector<pii> vc = V;
-    sort(ALL(vc), cmp);
-    RREP1(i, n){
-        REP(j, c+1){
-            REP(x, k+1){
-                dp[i][j][x] = dp[i+1][j][x];
-                if (j >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i][j-1][x]);
-                if (x >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i][j][x-1]);
-                if (j >= vc[i].f) dp[i][j][x] = max(dp[i][j][x], dp[i+1][j-vc[i].f][x]+vc[i].s);
-                if (x >= 1) dp[i][j][x] = max(dp[i][j][x], dp[i+1][j][x-1]+vc[i].s);
+        if(!ok) continue;
+        // if(g[0].size()<=5) continue;
+        // op(mask)ope(g)
+        int val=__builtin_popcountll(mask);
+        Vi deg(n);
+        REP(i,n) deg[i]=SZ(g[i]);
+        REP(u,n) {
+            for(int v:g[u]) {
+                if(__gcd(deg[u],deg[v])!=1) {
+                    // op(u)ope(v)
+                    ok=0;
+                    break;
+                }
             }
+            if(!ok) break;
         }
+        if(!ok) continue;
+        // op(val)ope(mask)
+        pair<ll,ll> rr={val,mask};
+        chmax(mx,rr);
     }
-
-    int ans = dp[1][c][0];
-
-    int lb = 0, sm = 0;
-    vector<int> oo;
-    REP1(i, n){
-        lb += vc[i].f;
-        sm += vc[i].s;
-        if (lb > c) break;
-        oo.pb(vc[i].s);
-        sort(ALL(oo));
-
-        int tsm = sm;
-        REP(j, min(k, i)){
-            tsm -= oo[j];
-            ans = max(ans, tsm + dp[i+1][c-lb][j+1]);
-        }
-    }
-	#define chmax(x,y) x=max(x,y)
-    auto rrun=[&]() {
-        vector<int> ddp(c+1);
-        REP1(i,n) {
-            for(int j=c;j>=V[i].f;j--) chmax(ddp[j],ddp[j-V[i].f]+V[i].s);
-        }
-        // oparr(dp)
-        return ddp[c];
-    };
-	int an=rrun();
-    REP1(i,n) {
-        REP1(j,i) {
-			
-			// REP1(i2,n) {REP1(j2,i2) {
-            swap(V[i].s,V[j].s);
-            // swap(V[i2].s,V[j2].s);
-            chmax(an,rrun());
-            // swap(V[i2].s,V[j2].s);
-            swap(V[i].s,V[j].s);
-        // }}
-		}
-    }
-	// cout<<ans<<' '<<an<<endl;
-    return ans==an;
+    // REP(mask,1<<(N)) {
+    //     // if(mask!=504) continue;
+    //     int it=0;
+    //     Graph g(n);
+    //     REP(i,n) {
+    //         REP(j,i) {
+    //             // op(i)op(j)op(it)ope(mask>>it&1)
+    //             if(mask>>(it++)&1) {
+    //                 g[i].pb(j);
+    //                 g[j].pb(i);
+    //             }
+    //         }
+    //     }
+    //     // op(mask)ope(g)
+    //     bool ok=1;
+    //     int val=__builtin_popcount(mask);
+    //     REP(u,n) {
+    //         for(int v:g[u]) {
+    //             if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
+    //                 // op(u)ope(v)
+    //                 ok=0;
+    //                 break;
+    //             }
+    //         }
+    //         if(!ok) break;
+    //     }
+    //     if(!ok) continue;
+    //     // op(val)ope(mask)
+    //     pii rr={val,mask};
+    //     if(val==mx.f) {
+    //         oparr(g)
+    //     }
+    // }
+    ope(mx)
+    return 0;
 }
-/*
-int run2(){
-    REP1(i, n+1){
-        REP(j, c+1){
-            REP(x, k+1){
-                dp[i][j][x] = 0;
-            }
-        }
-    }
-    vector<pii> vc = V;
-
-    RREP1(i, n){
-        REP(j, c+1){
-            REP(z, k+1){
-                dp[i][j][z] = dp[i+1][j][z];
-                if (j >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i][j-1][z]);
-                if (z >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i][j][z-1]);
-                if (j >= vc[i].f) dp[i][j][z] = max(dp[i][j][z], dp[i+1][j-vc[i].f][z] + vc[i].s);
-                if (z >= 1) dp[i][j][z] = max(dp[i][j][z], dp[i+1][j][z-1] + vc[i].s);
-            }
-        }
-    }
-
-
-
-    int ans = dp[1][c][0];
-
-    int lb = 0, sm = 0;
-    vector<int> oo;
-    REP1(i, n){
-        lb += vc[i].f;
-        sm += vc[i-1].s;
-        if (lb > c) break;
-
-        ans = max(ans, dp[i+1][c-lb][1]+sm);
-    }
-    return ans;
-}
-*/
-
-signed main(){
-	// freopen("in.txt","r",stdin);
-	int T=50000;
-	// cin>>T;
-	while(T--) {
-    inp();
-    if(!run()) {
-		cout<<n<<' '<<c<<' '<<k<<'\n';
-		REP1(i,n) cout<<V[i].f<<' '<<V[i].s<<'\n';
-		cout<<"WA\n";
-		break;
-	}
-	}
-}
-/*
-5 10 5
-2 1
-3 1
-5 3
-6 101
-7 100
-*/
