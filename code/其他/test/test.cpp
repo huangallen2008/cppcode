@@ -71,6 +71,7 @@ signed main() {
                 }
             }
         }
+        REP()
     }
     return 0;
 }
