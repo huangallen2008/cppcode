@@ -63,7 +63,8 @@ signed main() {
     vector<Vi> d(n,Vi(n));
     REP(i,n) REP(j,n) {
         cin>>d[i][j];
-        if(i==j)assert()
+        if(i==j)assert(d[i][j]==0);
+        if(i>j) assert(d[i][j]==d[j][i]);
     }
     int ans=0;
     REP1(i,n-1) {
