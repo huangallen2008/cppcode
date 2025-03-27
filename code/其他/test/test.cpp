@@ -62,6 +62,7 @@ signed main() {
     cin>>n;
     pii mx={0,-1};
     REP(mask,1<<(n*(n-1))) {
+        if(mask!=252) continue;
         int it=0;
         Graph g(n);
         REP(i,n) {
