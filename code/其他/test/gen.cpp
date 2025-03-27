@@ -66,7 +66,7 @@ signed main() {
         cout<<n<<'\n';
         int v=5;
         Vpii a(v*v);
-        REP(i,v) REP(j,v)
+        REP(i,v) REP(j,v) a[i*v+j]={i,j};
         REP(i,n) {
             int cc=rd(1,5),vv=rd(1,5);
             cout<<cc<<' '<<vv<<'\n';
