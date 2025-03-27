@@ -68,7 +68,7 @@ signed main() {
         if(~mask>>1&1) continue;
         if(__builtin_popcountll(mask)<=mx.f) continue;
         if(__builtin_popcountll(mask)<=20) continue;
-        
+
         int it=0;
         Graph g(n);
         REP(i,n) {
@@ -80,6 +80,7 @@ signed main() {
                 }
             }
         }
+        if(g[0].size()<=5) continue;
         // op(mask)ope(g)
         bool ok=1;
         int val=__builtin_popcountll(mask);
