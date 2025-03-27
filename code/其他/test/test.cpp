@@ -62,7 +62,7 @@ signed main() {
     cin>>n;
     pii mx={0,-1};
     int N=n*(n-1)>>1;
-    REP(mask,1<<(N)) {
+    REP(mask,1ll<<(N)) {
         // if(mask!=504) continue;
         if(~mask&1) continue;
         if(__builtin_popcount(mask)<=mx.f) continue;
