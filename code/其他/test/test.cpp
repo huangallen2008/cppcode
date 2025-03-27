@@ -62,7 +62,7 @@ signed main() {
     cin>>n;
     pii mx={0,-1};
     REP(mask,1<<(n*(n-1))) {
-        if(mask!=252) continue;
+        if(mask!=504) continue;
         int it=0;
         Graph g(n);
         REP(i,n) {
@@ -74,9 +74,7 @@ signed main() {
                 }
             }
         }
-        if(mask==252) {
         op(mask)ope(g)
-        }
         bool ok=0;
         int val=__builtin_popcount(mask);
         REP(u,n) {
