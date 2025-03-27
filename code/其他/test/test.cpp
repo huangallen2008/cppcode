@@ -76,13 +76,14 @@ signed main() {
     sort(ALL(a));
     auto solve=[&](auto solve,Vpii a) ->int{
         if(SZ(a)<=1) return inf;
-        Vpii l,r;
+        Vpii v1,v2;
         int n=SZ(a);
         REP(i,n) {
-            if(i<=(n>>1)) l.pb(a[i]);
-            else r.pb(a[i]);
+            if(i<=(n>>1)) v1.pb(a[i]);
+            else v2.pb(a[i]);
         }
-        int d1=solve(solve,l),d2=solve(solve,v2);
+        int d1=solve(solve,v1),d2=solve(solve,v2);
+        
     };
     return 0;
 }
