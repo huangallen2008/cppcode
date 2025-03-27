@@ -64,7 +64,7 @@ signed main() {
     while(T--) {
         int n=rd(10,20);
         cout<<n<<'\n';
-        int v=500;
+        int v=50;
         Vpii a(v*v);
         REP(i,v) REP(j,v) a[i*v+j]={i,j};
         shuffle(ALL(a),rng);
