@@ -73,6 +73,7 @@ signed main() {
         Graph g(n);
         REP(i,n) {
             REP(j,i) {
+                if(j==0&&i<=5) 
                 // op(i)op(j)op(it)ope(mask>>it&1)
                 if(mask>>(it++)&1) {
                     g[i].pb(j);
