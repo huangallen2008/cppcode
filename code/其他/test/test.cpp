@@ -107,14 +107,14 @@ void Solve() {
         return an;
     };
     int ans=solve(solve,a);
-    #ifdef LOCAL
-    if(ans!=brute()) {
-        oparr(a)
-        exit(0);
-    }
-    #else
+    // #ifdef LOCAL
+    // if(ans!=brute()) {
+    //     oparr(a)
+    //     exit(0);
+    // }
+    // #else
     cout<<ans<<'\n';
-    #endif
+    // #endif
 }
 signed main() {
     IOS();
