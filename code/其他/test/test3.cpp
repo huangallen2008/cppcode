@@ -62,7 +62,12 @@ signed main() {
     cin>>n;
     vector<Vi> d(n,Vi(n));
     REP(i,n) REP(j,n) cin>>d[i][j];
-    
+    Vi x(3);
+    x[0]=d[0][1],x[1]=d[0][2],x[2]=d[1][2];
+    sort(ALL(x));
+    if(x[0]+x[1]==x[2]) {
+        int a
+    }
     int ans=0;
     REP1(i,n-1) {
         int mx=d[0][i];
