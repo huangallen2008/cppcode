@@ -83,6 +83,7 @@ signed main() {
             else v2.pb(a[i]);
         }
         int d1=solve(solve,v1),d2=solve(solve,v2);
+        int d=min(d1,d2);
         
     };
     return 0;
