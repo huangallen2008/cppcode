@@ -115,6 +115,6 @@ signed main() {
     freopen("in.txt","r","stdin");
     cin>>T;
     #endif
-    
+    while(T--) Solve();
     return 0;
 }
