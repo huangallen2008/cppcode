@@ -75,7 +75,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     a[n]=a[0];
     int an2=0;
-    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));=
+    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));
     int a2=0;
     REP(i,n) a2+=cros(a[i],a[i+1]);
     a2=abs(a2);
