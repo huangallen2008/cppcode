@@ -93,6 +93,7 @@ signed main() {
         sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
         int il=0,ir=0;
         int n1=SZ(c1),n2=SZ(c2);
+        int an=d;
         REP(i,n1) {
             while(ir<n2&&c2[ir].s<=c1[i].s+d) ir++;
             while(il<n2&&c2[il].s<c1[i].s-d) il++;
