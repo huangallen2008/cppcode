@@ -76,11 +76,11 @@ signed main() {
     sort(ALL(a));
     Vpii v1,v2;
     REP(i,n) {
-        while(SZ(v1)>1&&cros(v1.back()-v1[SZ(v1)-2],a[i]-v1[SZ(v1)-2])) v1.pop_back();
+        while(SZ(v1)>1&&cros(v1.back()-v1[SZ(v1)-2],a[i]-v1[SZ(v1)-2])>0) v1.pop_back();
         v1.pb(a[i]);
     }
     RREP(i,n) {
-        while(SZ(v2)>1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])) v2.pop_back();
+        while(SZ(v2)>1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])>0) v2.pop_back();
         v2.pb(a[i]);
         oparr(v2)
     }
