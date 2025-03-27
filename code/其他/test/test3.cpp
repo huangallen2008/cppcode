@@ -76,6 +76,6 @@ signed main() {
         }
         ans+=d[0][i]-mx;
     }
-    cout<<ans<<
+    cout<<ans*2<<"\n";
     return 0;
 }
