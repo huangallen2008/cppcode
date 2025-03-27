@@ -64,7 +64,7 @@ signed main() {
     REP(i,n) REP(j,n) cin>>d[i][j];
     int ans=0;
     REP1(i,n-1) {
-        int mx=inf;
+        int mx=d[0][i];
         REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         ans+=mx;
     }
