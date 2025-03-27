@@ -66,7 +66,7 @@ signed main() {
     REP1(i,n-1) {
         int mx=inf;
         REP(j,i) {
-            chmin(mx,d[0][i]+d[0][j]-d[i][j]);
+            chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         }
         ans+=d[0][i]-mx;
     }
