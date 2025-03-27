@@ -60,6 +60,8 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    
+    REP(mask,1<<(n*(n-1))) {
+        
+    }
     return 0;
 }
