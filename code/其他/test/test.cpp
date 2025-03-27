@@ -84,6 +84,9 @@ signed main() {
         v2.pb(a[i]);
     }
     Vpii an;
-    REP(i,SZ(v1)) an.pb()
+    REP(i,SZ(v1)) an.pb(v1[i]);
+    for(int i=1;i<SZ(v2)-1;i++) an.pb(v2[i]);
+    cout<<SZ(an)<<'\n';
+    for(auto [x,y]:an) cout<<x<<' '<<y<<'\n';
     return 0;
 }
