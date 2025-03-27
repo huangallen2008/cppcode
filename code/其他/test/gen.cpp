@@ -62,9 +62,9 @@ signed main() {
     int T=100000;
     cout<<T<<'\n';
     while(T--) {
-        int n=rd(10,20);
+        int n=rd(3,10);
         cout<<n<<'\n';
-        int v=10;
+        int v=7;
         Vpii a(v*v);
         REP(i,v) REP(j,v) a[i*v+j]={i,j};
         shuffle(ALL(a),rng);
