@@ -71,15 +71,18 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vpii a(n+1);
+    Vpii a(n);
     REP(i,n) cin>>a[i];
-    a[n]=a[0];
-    int an2=0;
-    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));
-    int a2=0;
-    REP(i,n) a2+=cros(a[i],a[i+1]);
-    a2=abs(a2);
-    int an1=a2/2-an2/2+1;
-    cout<<an1<<' '<<an2<<'\n';
+    sort(ALL(a));
+    auto solve=[&](auto solve,Vpii a) ->int{
+        if(SZ(a)<=1) return inf;
+        Vpii l,r;
+        int n=SZ(a);
+        REP(i,n) {
+            if(i<=(n>>1)) l.pb(a[i]);
+            else r.pb(a[i]);
+        }
+        int d1=solve(solve,l)
+    };
     return 0;
 }
