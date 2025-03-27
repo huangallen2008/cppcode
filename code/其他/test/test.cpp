@@ -91,7 +91,10 @@ signed main() {
         sort(ALL(c1),[&](pii a,pii b) { return a.s<b.s; });
         sort(ALL(c2),[&](pii a,pii b) { return a.s<b.s; });
         int il=0,ir=0;
-        
+        int n1,n2;
+        REP(i,SZ(c1)) {
+            while(ir<)
+        }
     };
     return 0;
 }
