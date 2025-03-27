@@ -66,7 +66,7 @@ signed main() {
     x[0]=d[0][1],x[1]=d[0][2],x[2]=d[1][2];
     sort(ALL(x));
     if(x[0]+x[1]==x[2]) {
-        int a
+        int ban=x[2]
     }
     int ans=0;
     REP1(i,n-1) {
