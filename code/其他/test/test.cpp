@@ -90,9 +90,11 @@ signed main() {
         // if(g[0].size()<=5) continue;
         // op(mask)ope(g)
         int val=__builtin_popcountll(mask);
+        Vi deg(n);
+        REP(i,n) deg[i]=SZ(g[i]);
         REP(u,n) {
             for(int v:g[u]) {
-                if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
+                if(__gcd(g[u]),SZ(g[v]))!=1) {
                     // op(u)ope(v)
                     ok=0;
                     break;
