@@ -61,12 +61,7 @@ signed main() {
     int n;
     cin>>n;
     vector<Vi> d(n,Vi(n));
-    REP(i,n) {
-        REP(j,n) cin>>d[i][j];
-    }
-    auto lca=[&](int x,int y) {
-        return d[0][x]+d[0][y]-d[x][y]>>1;
-    };
+    REP(i,n) REP(j,n) cin>>d[i][j];
     int ans=0;
     REP1(i,n-1) {
         int mx=0;
