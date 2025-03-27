@@ -112,7 +112,7 @@ signed main() {
     IOS();
     int T=1;
     #ifdef LOCAL
-    
+    freopen("in.txt","r","stdout")
     #endif
     return 0;
 }
