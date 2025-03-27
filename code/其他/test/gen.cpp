@@ -65,7 +65,7 @@ signed main() {
         int n=rd(3,5);
         cout<<n<<'\n';
         REP(i,n) {
-            int cc=rd(1,10),vv=rd(1,5);
+            int cc=rd(1,5),vv=rd(1,5);
             cout<<cc<<' '<<vv<<'\n';
         }
     }
