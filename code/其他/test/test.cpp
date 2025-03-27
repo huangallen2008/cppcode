@@ -69,6 +69,10 @@ bool is_inter(pii a,pii b,pii c,pii d) {
 }
 signed main() {
     IOS();
+    int n;
+    cin>>n;
+    Vpii a(n);
+    REP(i,n) cin>>a[i];
     
     return 0;
 }
