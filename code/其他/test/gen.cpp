@@ -64,6 +64,9 @@ signed main() {
     while(T--) {
         int n=rd(3,5);
         cout<<n<<'\n';
+        int v=5;
+        Vpii a(v*v);
+        REP(i,v) REP(j,v)
         REP(i,n) {
             int cc=rd(1,5),vv=rd(1,5);
             cout<<cc<<' '<<vv<<'\n';
