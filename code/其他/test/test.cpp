@@ -94,7 +94,7 @@ signed main() {
         int n1=SZ(c1),n2=SZ(c2);
         REP(i,n1) {
             while(ir<n2&&c2[ir].s<=c1[i].s+d) ir++;
-            while(il<n2&&c2[ir].s<=c1[i].s+d) ir++;
+            while(il<n2&&c2[ir].s<c1[i].s-d) ir++;
         }
     };
     return 0;
