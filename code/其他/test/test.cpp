@@ -82,6 +82,7 @@ signed main() {
             if(i<=(n>>1)) v1.pb(a[i]);
             else v2.pb(a[i]);
         }
+        int mid=
         int d1=solve(solve,v1),d2=solve(solve,v2);
         int d=min(d1,d2);
         Vpii c1,c2;
