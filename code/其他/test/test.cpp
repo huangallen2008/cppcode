@@ -67,6 +67,7 @@ signed main() {
         REP(i,n) {
             REP(j,i) {
                 if(mask>>(it++)&1) {
+                    op(i)ope(j)
                     g[i].pb(j);
                     g[j].pb(i);
                 }
