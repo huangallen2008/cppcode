@@ -76,6 +76,7 @@ signed main() {
     sort(ALL(a));
     auto dis=[&](pii a,pii b) { return SQ(a.s-b.s)+SQ(a.f-b.f); };
     auto solve=[&](auto solve,Vpii a) ->int{
+        oparr(a)
         if(SZ(a)<=1) return inf;
         Vpii v1,v2;
         int n=SZ(a);
