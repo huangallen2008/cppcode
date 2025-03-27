@@ -67,6 +67,9 @@ bool is_inter(pii a,pii b,pii c,pii d) {
     if(inl(a,b,c)||inl(a,b,d)||inl(c,d,a)||inl(c,d,b)) return 1;
     return sig(cros(b-a,c-a))*sig(cros(b-a,d-a))<0&&sig(cros(d-c,a-c))*sig(cros(d-c,b-c))<0;
 }
+void Solve() {
+
+}
 signed main() {
     IOS();
     int n;
