@@ -107,6 +107,10 @@ void Solve() {
     };
     int ans=solve(solve,a);
     #ifdef LOCAL
+    if(ans!=brute()) {
+        oparr(a)
+        exit(0);
+    }
     #else
     cout<<ans<<'\n';
     #endif
