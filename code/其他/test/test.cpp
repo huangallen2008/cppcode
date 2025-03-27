@@ -93,7 +93,7 @@ signed main() {
         int il=0,ir=0;
         int n1=SZ(c1),n2=SZ(c2);
         REP(i,n1) {
-            while(ir<)
+            while(ir<n2&&c2[n2].)
         }
     };
     return 0;
