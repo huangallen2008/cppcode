@@ -84,6 +84,9 @@ signed main() {
             if(!ok) break;
         }
         if(!ok) continue;
+        pii rr={val,mask};
+        chmax(mx,rr);
     }
+    ope(mx)
     return 0;
 }
