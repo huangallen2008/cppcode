@@ -76,7 +76,7 @@ signed main() {
         REP(u,n) {
             for(int v:g[u]) {
                 if(__gcd(SZ(g[u]),SZ(g[v]))) {
-                    
+
                 }
             }
         }
