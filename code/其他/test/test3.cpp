@@ -69,6 +69,11 @@ signed main() {
         return d[0][x]+d[0][y]-d[x][y]>>1;
     };
     int ans=0;
-    
+    REP1(i,n-1) {
+        int 
+        REP(j,i) {
+
+        }
+    }
     return 0;
 }
