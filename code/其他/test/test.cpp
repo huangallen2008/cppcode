@@ -97,8 +97,9 @@ signed main() {
         REP(i,n1) {
             while(ir<n2&&c2[ir].s<=c1[i].s+d) ir++;
             while(il<n2&&c2[il].s<c1[i].s-d) il++;
-            for(int j=il;j<ir;j++) chmin(an,dis(c1[i],))
+            for(int j=il;j<ir;j++) chmin(an,dis(c1[i],c2[j]));
         }
+        return an;
     };
     return 0;
 }
