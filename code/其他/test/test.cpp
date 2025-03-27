@@ -60,6 +60,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    pii 
     REP(mask,1<<(n*(n-1))) {
         int it=0;
         Graph g(n);
@@ -71,7 +72,6 @@ signed main() {
                 }
             }
         }
-        REP()
+        
     }
-    return 0;
-}
+    re
