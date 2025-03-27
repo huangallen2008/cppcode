@@ -94,7 +94,7 @@ signed main() {
         REP(i,n) deg[i]=SZ(g[i]);
         REP(u,n) {
             for(int v:g[u]) {
-                if(__gcd(g[u]),SZ(g[v]))!=1) {
+                if(__gcd(deg[u],deg[v])!=1) {
                     // op(u)ope(v)
                     ok=0;
                     break;
