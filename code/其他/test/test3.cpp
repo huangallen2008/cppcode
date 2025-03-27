@@ -65,9 +65,7 @@ signed main() {
     int ans=0;
     REP1(i,n-1) {
         int mx=inf;
-        REP(j,i) {
-            chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
-        }
+        REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         ans+=mx;
     }
     cout<<ans*2<<"\n";
