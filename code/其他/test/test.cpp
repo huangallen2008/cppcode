@@ -75,7 +75,7 @@ signed main() {
             }
         }
         op(mask)ope(g)
-        bool ok=0;
+        bool ok=1;
         int val=__builtin_popcount(mask);
         REP(u,n) {
             for(int v:g[u]) {
