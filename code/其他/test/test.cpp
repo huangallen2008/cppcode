@@ -68,10 +68,6 @@ bool is_inter(pii a,pii b,pii c,pii d) {
     return sig(cros(b-a,c-a))*sig(cros(b-a,d-a))<0&&sig(cros(d-c,a-c))*sig(cros(d-c,b-c))<0;
 }
 void Solve() {
-
-}
-signed main() {
-    IOS();
     int n;
     cin>>n;
     Vpii a(n);
@@ -111,5 +107,12 @@ signed main() {
     };
     int ans=solve(solve,a);
     cout<<ans<<'\n';
+}
+signed main() {
+    IOS();
+    int T=1;
+    #ifdef LOCAL
+    
+    #endif
     return 0;
 }
