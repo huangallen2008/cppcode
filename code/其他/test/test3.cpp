@@ -74,6 +74,7 @@ signed main() {
             chmax(mx,lca(i,j));
         }
         ans+=d[0][i]-mx;
+        ope(d[0][i])ope(mx)
     }
     cout<<ans*2<<"\n";
     return 0;
