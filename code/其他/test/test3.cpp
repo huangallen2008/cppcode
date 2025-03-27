@@ -70,9 +70,9 @@ signed main() {
     };
     int ans=0;
     REP1(i,n-1) {
-        int 
+        int mx=0;
         REP(j,i) {
-
+            chmax(mx,lca(i,j));
         }
     }
     return 0;
