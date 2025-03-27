@@ -93,6 +93,37 @@ signed main() {
         pii rr={val,mask};
         chmax(mx,rr);
     }
+    REP(mask,1<<(N)) {
+        // if(mask!=504) continue;
+        int it=0;
+        Graph g(n);
+        REP(i,n) {
+            REP(j,i) {
+                // op(i)op(j)op(it)ope(mask>>it&1)
+                if(mask>>(it++)&1) {
+                    g[i].pb(j);
+                    g[j].pb(i);
+                }
+            }
+        }
+        // op(mask)ope(g)
+        bool ok=1;
+        int val=__builtin_popcount(mask);
+        REP(u,n) {
+            for(int v:g[u]) {
+                if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
+                    // op(u)ope(v)
+                    ok=0;
+                    break;
+                }
+            }
+            if(!ok) break;
+        }
+        if(!ok) continue;
+        // op(val)ope(mask)
+        pii rr={val,mask};
+        chmax(mx,rr);
+    }
     ope(mx)
     return 0;
 }
