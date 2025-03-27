@@ -122,8 +122,10 @@ signed main() {
         if(!ok) continue;
         // op(val)ope(mask)
         pii rr={val,mask};
-        chmax(mx,rr);
+        if(val==mx.f) {
+            oparr(g)
+        }
     }
-    ope(mx)
+    // ope(mx)
     return 0;
 }
