@@ -48,40 +48,30 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=998244353;
-const int maxn=2e5+5;
-const int maxv=2e9+5;
+const int mod=1e9+7;
+const int maxn=2e6+5;
+const int mx=1e9+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-pii operator+(pii a,pii b) { return {a.f+b.f,a.s+b.s}; }
-pii operator-(pii a) { return {-a.f,-a.s}; }
-pii operator-(pii a,pii b) { return {a.f-b.f,a.s-b.s}; }
-int sig(int x) { return x<0?-1:(x>0?1:0); }
-int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
-int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
-bool inl(pii a,pii b,pii c) {  return cros(b-a,c-a)==0&&dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0; }
-bool is_inter(pii a,pii b,pii c,pii d) {
-    if(inl(a,b,c)||inl(a,b,d)||inl(c,d,a)||inl(c,d,b)) return 1;
-    return sig(cros(b-a,c-a))*sig(cros(b-a,d-a))<0&&sig(cros(d-c,a-c))*sig(cros(d-c,b-c))<0;
+void solve() {
+    int n;
+    cin>>n;
+    int x=0;
+    REP(i,n) {
+        int t;
+        cin>>t;
+        x^=t%4;
+    }
+    if(x) cout<<"first\n";
+    else cout<<"second\n";
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    Vpii a(n+1);
-    REP(i,n) cin>>a[i];
-    a[n]=a[0];
-    ope("ok")
-    int an2=0;
-    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));
-    ope(an2)
-    int a2=0;
-    REP(i,n) a2+=cros(a[i],a[i+1]);
-    a2=abs(a2);
-    int an1=a2/2-an2/2+1;
-    cout<<an1<<' '<<an2<<'\n';
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }

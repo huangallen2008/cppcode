@@ -6,6 +6,7 @@
         "vector": "cpp",
         "utility": "cpp",
         "cstdlib": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "iostream": "cpp"
     }
 }

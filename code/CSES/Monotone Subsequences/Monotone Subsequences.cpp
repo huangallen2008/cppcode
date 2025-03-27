@@ -59,12 +59,17 @@ int rd(int l,int r) {
 void solve() {
     int n,k;
     cin>>n>>k;
-    if(k<=(n-1>>1)) {
+    int sn=sqrt(n-1);
+    if(k<=sn) {
         cout<<"IMPOSSIBLE\n";
         return;
     }
-    for(int i=n-k+1;i<=n;i++) cout<<i<<' ';
-    for(int i=1;i<=n-k;i++) cout<<i<<' ';
+    int las=n+1;
+    for(int i=n-k+1;;i=max(i-k,1ll)) {
+        for(int j=i;j<las;j++) cout<<j<<' ';
+        las=i;
+        if(i==1) break;
+    }
     cout<<'\n';
 }
 signed main() {
