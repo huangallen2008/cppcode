@@ -87,7 +87,8 @@ signed main() {
         int d=min(d1,d2);
         Vpii c1,c2;
         for(auto x:v1) if(x.f>=mid-d) c1.pb(x);
-        for(auto x:v1) if(x.f<=mid+d) c1.pb(x);
+        for(auto x:v2) if(x.f<=mid+d) c2.pb(x);
+        sort(ALL(c1),auto [])
     };
     return 0;
 }
