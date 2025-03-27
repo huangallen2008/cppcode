@@ -66,12 +66,9 @@ signed main() {
     int ans=0;
     REP1(i,n-1) {
         int mx=d[0][i];
-        REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
+        REP(j,i) chmin(mx,d[0][i]-d[0][j]+d[i][j]);
         ans+=mx;
     }
-    if(ans*2!=ban) {
-        oparr(d)
-    }
-    cout<<ans*2<<"\n";
+    cout<<ans<<"\n";
     return 0;
 }
