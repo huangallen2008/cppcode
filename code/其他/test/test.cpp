@@ -82,7 +82,7 @@ signed main() {
             if(i<=(n>>1)) l.pb(a[i]);
             else r.pb(a[i]);
         }
-        int d1=solve(solve,l)
+        int d1=solve(solve,l),d2=solve(solve,v2);
     };
     return 0;
 }
