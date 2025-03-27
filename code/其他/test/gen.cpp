@@ -62,7 +62,7 @@ signed main() {
     int T=100000;
     cout<<T<<'\n';
     while(T--) {
-        int n=rd(6,10);
+        int n=rd(10,11);
         cout<<n<<'\n';
         int v=7;
         Vpii a(v*v);
