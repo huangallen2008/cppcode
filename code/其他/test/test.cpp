@@ -68,6 +68,7 @@ signed main() {
         if(~mask>>1&1) continue;
         if(__builtin_popcountll(mask)<=mx.f) continue;
         if(__builtin_popcountll(mask)<=20) continue;
+        
         int it=0;
         Graph g(n);
         REP(i,n) {
