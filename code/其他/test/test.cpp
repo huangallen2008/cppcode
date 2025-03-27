@@ -72,6 +72,7 @@ signed main() {
                 }
             }
         }
+        if(mask==)
         op(mask)ope(g)
         bool ok=0;
         int val=__builtin_popcount(mask);
