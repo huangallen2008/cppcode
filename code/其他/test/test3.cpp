@@ -68,7 +68,7 @@ signed main() {
         REP(j,i) {
             chmin(mx,d[0][i]-d[0][j]+d[i][j]>>1);
         }
-        ans+=d[0][i]-mx;
+        ans+=mx;
     }
     cout<<ans*2<<"\n";
     return 0;
