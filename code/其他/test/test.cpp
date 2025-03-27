@@ -101,5 +101,7 @@ signed main() {
         }
         return an;
     };
+    int ans=solve(solve,a);
+    cout<<ans<<'\n';
     return 0;
 }
