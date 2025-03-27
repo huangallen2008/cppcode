@@ -72,14 +72,18 @@ signed main() {
                 }
             }
         }
+        bool ok=0;
         int val=__builtin_popcount(mask);
         REP(u,n) {
             for(int v:g[u]) {
-                if(__gcd(SZ(g[u]),SZ(g[v]))) {
-                    
+                if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
+                    ok=0;
+                    break;
                 }
             }
+            if(!ok) break;
         }
+        if(!ok) continue;
     }
     return 0;
 }
