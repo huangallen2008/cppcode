@@ -61,6 +61,7 @@ signed main() {
     int n;
     cin>>n;
     REP(mask,1<<(n*(n-1))) {
+        int it=0;
         
     }
     return 0;
