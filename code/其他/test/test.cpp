@@ -119,7 +119,7 @@ signed main() {
     IOS();
     int T=1;
     #ifdef LOCAL
-    freopen("in.txt","r","stdin");
+    freopen("in.txt","r",stdin);
     cin>>T;
     #endif
     while(T--) Solve();
