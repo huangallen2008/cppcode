@@ -65,7 +65,10 @@ signed main() {
         Graph g(n);
         REP(i,n) {
             REP(j,i) {
-                
+                if(mask>>(it++)&1) {
+                    g[i].pb(j);
+                    g[j].pb(i);
+                }
             }
         }
     }
