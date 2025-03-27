@@ -72,6 +72,7 @@ signed main() {
                 }
             }
         }
+        int val=__builtin_popcount(mask);
         
     }
     return 0;
