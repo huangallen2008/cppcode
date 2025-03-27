@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    pii mx={0,-1};
+    pair<ll,ll> mx={0,-1};
     int N=(n*(n-1)>>1);
     for(ll mask=0;mask<(1ll<<N);mask++ ) {
         // if(mask!=504) continue;
@@ -105,7 +105,7 @@ signed main() {
         }
         if(!ok) continue;
         // op(val)ope(mask)
-        pii rr={val,mask};
+        pair<ll,ll> rr={val,mask};
         chmax(mx,rr);
     }
     // REP(mask,1<<(N)) {
