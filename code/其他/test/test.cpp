@@ -82,6 +82,7 @@ signed main() {
     RREP(i,n) {
         while(SZ(v2)>1&&cros(v2.back()-v2[SZ(v2)-2],a[i]-v2[SZ(v2)-2])) v2.pop_back();
         v2.pb(a[i]);
+        oparr(v2)
     }
     oparr(v1)oparr(v2)
     return 0;
