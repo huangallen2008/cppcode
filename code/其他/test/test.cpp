@@ -62,25 +62,25 @@ signed main() {
     cin>>n;
     pii mx={0,-1};
     REP(mask,1<<(n*(n-1))) {
-        if(mask!=504) continue;
+        // if(mask!=504) continue;
         int it=0;
         Graph g(n);
         REP(i,n) {
             REP(j,i) {
-                op(i)op(j)op(it)ope(mask>>it&1)
+                // op(i)op(j)op(it)ope(mask>>it&1)
                 if(mask>>(it++)&1) {
                     g[i].pb(j);
                     g[j].pb(i);
                 }
             }
         }
-        op(mask)ope(g)
+        // op(mask)ope(g)
         bool ok=1;
         int val=__builtin_popcount(mask);
         REP(u,n) {
             for(int v:g[u]) {
                 if(__gcd(SZ(g[u]),SZ(g[v]))!=1) {
-                    op(u)ope(v)
+                    // op(u)ope(v)
                     ok=0;
                     break;
                 }
