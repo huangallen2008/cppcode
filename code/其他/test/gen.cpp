@@ -67,9 +67,9 @@ signed main() {
         int v=5;
         Vpii a(v*v);
         REP(i,v) REP(j,v) a[i*v+j]={i,j};
+        shuffle(ALL(a),rng);
         REP(i,n) {
-            int cc=rd(1,5),vv=rd(1,5);
-            cout<<cc<<' '<<vv<<'\n';
+            cout<<a
         }
     }
     return 0;
