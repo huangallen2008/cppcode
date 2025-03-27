@@ -56,19 +56,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-pii operator+(pii a,pii b) { return {a.f+b.f,a.s+b.s}; }
-pii operator-(pii a) { return {-a.f,-a.s}; }
-pii operator-(pii a,pii b) { return {a.f-b.f,a.s-b.s}; }
-int sig(int x) { return x<0?-1:(x>0?1:0); }
-int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
-int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
-bool inl(pii a,pii b,pii c) {  return cros(b-a,c-a)==0&&dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0; }
-bool is_inter(pii a,pii b,pii c,pii d) {
-    if(inl(a,b,c)||inl(a,b,d)||inl(c,d,a)||inl(c,d,b)) return 1;
-    return sig(cros(b-a,c-a))*sig(cros(b-a,d-a))<0&&sig(cros(d-c,a-c))*sig(cros(d-c,b-c))<0;
-}
 signed main() {
     IOS();
-        
+    int n;
+    cin>>n;
+    
     return 0;
 }
