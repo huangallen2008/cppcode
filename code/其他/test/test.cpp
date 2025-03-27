@@ -70,10 +70,13 @@ signed main() {
         if(__builtin_popcountll(mask)<=20) continue;
 
         int it=0;
+        bool ok=1;
         Graph g(n);
         REP(i,n) {
             REP(j,i) {
-                if(j==0&&i<=5) 
+                if(j==0&&i<=5&&(~mask>>it&1)) {
+                    ok=0;
+                } 
                 // op(i)op(j)op(it)ope(mask>>it&1)
                 if(mask>>(it++)&1) {
                     g[i].pb(j);
@@ -83,7 +86,6 @@ signed main() {
         }
         if(g[0].size()<=5) continue;
         // op(mask)ope(g)
-        bool ok=1;
         int val=__builtin_popcountll(mask);
         REP(u,n) {
             for(int v:g[u]) {
