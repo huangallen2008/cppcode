@@ -76,6 +76,7 @@ signed main() {
             REP(j,i) {
                 if(j==0&&i<=5&&(~mask>>it&1)) {
                     ok=0;
+                    break;
                 } 
                 // op(i)op(j)op(it)ope(mask>>it&1)
                 if(mask>>(it++)&1) {
