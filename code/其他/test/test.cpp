@@ -64,8 +64,8 @@ signed main() {
     int N=n*(n-1)>>1;
     REP(mask,1ll<<(N)) {
         // if(mask!=504) continue;
-        if(~mask&1) continue;
-        if(~mask>>1&1) continue;
+        // if(~mask&1) continue;
+        // if(~mask>>1&1) continue;
         if(__builtin_popcountll(mask)<=mx.f) continue;
         if(__builtin_popcountll(mask)<=20) continue;
 
