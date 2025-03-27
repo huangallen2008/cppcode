@@ -84,7 +84,8 @@ signed main() {
         }
         int d1=solve(solve,v1),d2=solve(solve,v2);
         int d=min(d1,d2);
-        Vpii 
+        Vpii c1,c2;
+        for()
     };
     return 0;
 }
