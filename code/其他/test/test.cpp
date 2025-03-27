@@ -74,10 +74,8 @@ signed main() {
     Vpii a(n+1);
     REP(i,n) cin>>a[i];
     a[n]=a[0];
-    ope("ok")
     int an2=0;
-    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));
-    ope(an2)
+    REP(i,n) an2+=__gcd(abs(a[i].f-a[i+1].f),abs(a[i].s-a[i+1].s));=
     int a2=0;
     REP(i,n) a2+=cros(a[i],a[i+1]);
     a2=abs(a2);
