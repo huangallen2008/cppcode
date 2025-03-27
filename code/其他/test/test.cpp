@@ -86,7 +86,7 @@ signed main() {
         int d1=solve(solve,v1),d2=solve(solve,v2);
         int d=min(d1,d2);
         Vpii c1,c2;
-        for(auto x:v1) if(x.f<=mid)
+        for(auto x:v1) if(x.f<=mid-)
     };
     return 0;
 }
