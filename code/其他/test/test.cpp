@@ -118,11 +118,6 @@ void Solve() {
 }
 signed main() {
     IOS();
-    int T=1;
-    // #ifdef LOCAL
-    // freopen("in.txt","r",stdin);
-    // cin>>T;
-    // #endif
-    while(T--) Solve();
+    
     return 0;
 }
