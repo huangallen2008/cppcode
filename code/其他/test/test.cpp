@@ -76,7 +76,6 @@ signed main() {
     sort(ALL(a));
     Vpii v1;
     REP(i,n) {
-        
-    }
+        while(SZ(v1)>=1&&cros(v1.back()-v1[SZ(v1)-1],a[i]-v1[SZ(v1)-1])) v1.pop_back();
     return 0;
 }
