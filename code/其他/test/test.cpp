@@ -73,6 +73,8 @@ signed main() {
     cin>>n;
     Vpii a(n);
     REP(i,n) cin>>a[i];
+    sort(ALL(a));
+    Vpii v1;
     
     return 0;
 }
