@@ -73,7 +73,13 @@ signed main() {
             }
         }
         int val=__builtin_popcount(mask);
-        
+        REP(u,n) {
+            for(int v:g[u]) {
+                if(__gcd(SZ(g[u]),SZ(g[v]))) {
+                    
+                }
+            }
+        }
     }
     return 0;
 }
