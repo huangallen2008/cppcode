@@ -91,6 +91,7 @@ void solve() {
             sol(n-1,f[n-2]+1,f[n]);
         }
     };
+    ope(mx)
     sol(mx,l,r);
 }
 signed main() {
