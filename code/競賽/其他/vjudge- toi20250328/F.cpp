@@ -61,10 +61,18 @@ void solve() {
     cin>>n>>k;
     int pw10=1;
     REP1(i,n) pw10*=10;
-    auto go=[&]() {
+    auto go=[&]() ->void{
         k=k*k;
         if(k>=pw10) k/=10;
     };
+    map<int,bool> vis;
+    int mx=k;
+    vis[k]=1;
+    while(1) {
+        go();
+        if(vis[k]) break;
+        chmax(mx,k);
+    } 
 }
 signed main() {
     IOS();
