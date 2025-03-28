@@ -93,7 +93,7 @@ void solve() {
         else {
             // ope("!!!")
             sol(n-2,l,f[n-2]);
-            sol(n-1,f[n-2]+1,f[n]);
+            sol(n-1,1,r-f[n-2]);
         }
     };
     // ope(mx)
