@@ -88,6 +88,7 @@ void solve() {
         if(r<=f[n-2]) sol(n-2,l,r);
         else if(l>f[n-2]) sol(n-1,l-f[n-2],r-f[n-2]);
         else {
+            ope("!!!")
             sol(n-2,l,f[n-2]);
             sol(n-1,f[n-2]+1,f[n]);
         }
