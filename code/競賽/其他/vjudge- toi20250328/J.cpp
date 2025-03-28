@@ -56,6 +56,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+Vi f(47);
 void solve() {
     int n,l,r;
     cin>>n>>l>>r;
@@ -63,7 +64,6 @@ void solve() {
 }
 signed main() {
     IOS();  
-    Vi f(47);
     f[0]=f[1]=1;
     for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
     ope((1ll<<31)-1)
