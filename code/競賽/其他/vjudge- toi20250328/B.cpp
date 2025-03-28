@@ -104,7 +104,8 @@ signed main() {
             cin>>p>>q;
             dsu.addv(p,-p);
             dsu.addsz(p,-1);
-            
+            dsu.addv(nid,p);
+            dsu.addv(nid,p);
         }
     }
     return 0;
