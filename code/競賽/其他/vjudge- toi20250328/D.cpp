@@ -74,7 +74,8 @@ void solve(int n) {
         mr[x+w].pb({{y,y+h},i});
         md[y].pb({{x,x+w},i});
         mu[y+h].pb({{x,x+w},i});
-        ml2[x].pb({{y,y+h},i});
+
+        ml2[x].pb({{y+h,y},i});
         mr2[x+w].pb({{y,y+h},i});
         md2[y].pb({{x,x+w},i});
         mu2[y+h].pb({{x,x+w},i});
