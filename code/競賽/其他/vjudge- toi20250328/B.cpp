@@ -91,8 +91,8 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    dsu.init(n+m);
-    int nid=n;
-    
+    dsu.init(n+m+5);
+    int nid=n+1;
+    REP1(i,n) dsu.addv(i,i);
     return 0;
 }
