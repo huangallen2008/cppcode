@@ -73,7 +73,7 @@ void solve() {
         if(x<=0) return 0;
         int c=0;
         for(int p:prime) {
-            c+=((double)log2(x)/log2(p) );
+            c+=((double)log2(x)/log2(p) )-1;
             op(x)op(p)ope(c)
         }
         return c;
