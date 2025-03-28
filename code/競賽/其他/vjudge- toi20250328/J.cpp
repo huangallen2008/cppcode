@@ -63,9 +63,9 @@ void solve() {
 }
 signed main() {
     IOS();  
-    Vi f(45);
+    Vi f(47);
     f[0]=f[1]=1;
-    for(int i=2;i<45;i++) f[i]=f[i-1]+f[i-2];
+    for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
     ope((1ll<<31)-1)
     oparr(f)
     int T;
