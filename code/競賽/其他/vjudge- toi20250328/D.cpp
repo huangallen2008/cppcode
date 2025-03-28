@@ -160,7 +160,7 @@ void solve(int n) {
         }
     }
     cout<<dsu.getan()<<'\n';
-    ope("ok")
+    // ope("ok")
 }
 signed main() {
     IOS();  
