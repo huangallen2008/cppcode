@@ -112,4 +112,5 @@ signed main() {
     int T;
     cin>>T;
     while(T--) solve();
-    return 0
+    return 0;
+}
