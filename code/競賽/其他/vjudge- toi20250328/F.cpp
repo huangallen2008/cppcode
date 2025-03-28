@@ -56,8 +56,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+void solve() {
+    int n,k;
+    cin>>n>>k;
+    int pw10=1;
+    REP1(i,n) pw10*=10;
+    auto go=[&]() {
+        k=k*k;
+        if(k>=pw10) k/=10;
+    };
+}
 signed main() {
     IOS();
-    
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
