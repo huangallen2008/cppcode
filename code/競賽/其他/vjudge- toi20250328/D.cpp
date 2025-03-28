@@ -118,8 +118,8 @@ void solve(int n) {
     for(auto &[id,v]:mrb) sort(ALL(v));
     for(auto &[id,v]:mdb) sort(ALL(v));
     for(auto &[id,v]:mub) sort(ALL(v));
-    ope("ok")
     REP(i,n) {
+        ope(i)
         auto [x1,x2,y1,y2]=a[i];
         {
             auto &v=mr[x1];
