@@ -59,7 +59,11 @@ int rd(int l,int r) {
 void solve() {
     int n,k;
     cin>>n>>k;
-    
+    string las,s;
+    cin>>las;
+    REP(i,n-1) {
+        
+    }
 }
 signed main() {
     IOS();
