@@ -58,6 +58,11 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-
+    int n;
+    while(cin>>n) {
+        if(n==0) break;
+        int x=sqrt(n-1)+1;
+        
+    }
     return 0;
 }
