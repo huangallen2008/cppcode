@@ -66,6 +66,7 @@ void solve(int n) {
         area[i]=w*h;
         ml[x].pb({{y,y+h},i});
         mr[x+h].pb({{y,y+h},i});
+        md
     }
 }
 signed main() {
