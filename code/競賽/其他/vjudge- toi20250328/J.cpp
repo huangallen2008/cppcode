@@ -66,8 +66,6 @@ signed main() {
     IOS();  
     f[0]=f[1]=1;
     for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
-    ope((1ll<<31)-1)
-    oparr(f)
     int T;
     cin>>T;
     while(T--) solve();
