@@ -64,7 +64,7 @@ void solve() {
     REP(i,n-1) {
         cin>>s;
         int an=0;
-        
+        REP1(l,k) if(s.substr(0,l)==las.substr())
         las=s;
     }
 }
