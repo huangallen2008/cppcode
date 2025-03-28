@@ -103,6 +103,8 @@ void solve(int n) {
         mdb[y].pb({{x,x+w},i});
         mub[y+h].pb({{x,x+w},i});
     }
+    dsu.init(n);
+    REP(i,n) dsu.addv(i,area[i]);
     for(auto &[id,v]:ml) sort(ALL(v));
     for(auto &[id,v]:mr) sort(ALL(v));
     for(auto &[id,v]:md) sort(ALL(v));
