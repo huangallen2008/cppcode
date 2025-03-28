@@ -56,6 +56,33 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct DSU {
+    int n;
+    Vi p,v,sz;
+    void init(int _n) {
+        n=_n;
+        p=v=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        v[y]+=v[x];
+    }
+    void addv(int u,int x) {
+        v[find(u)]+=x;
+    }
+    void addsz(int u,int x) { 
+        sz[find(u)]+=x;
+    }
+}dsu;
 #define piii pair<pii,int>
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
@@ -87,13 +114,14 @@ void solve(int n) {
     for(auto &[id,v]:mrb) sort(ALL(v));
     for(auto &[id,v]:mdb) sort(ALL(v));
     for(auto &[id,v]:mub) sort(ALL(v));
-    for(auto [x1,x2,y1,y2]:a) {
+    REP(i,n) {
+        auto [x1,x2,y1,y2]=a[i];
         {
             auto &v=mr[x1];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mrb[x1];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
-            
+            for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
     }
 }
