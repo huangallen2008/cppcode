@@ -56,21 +56,49 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+template<class T>
+struct Func {
+    T func;
+    Func(const T &func):func(func) {}
+    template<class... Args>
+    constexpr decltype(auto) operator()(Args &&... args) {
+        return func(*this, forward<Args>(args)...);
+    }
+};
+template<class T>
+Func(const T &) -> Func<T>;
 Vi f(47);
+vector<string> bfs(20);
 void solve() {
     int n,l,r;
     cin>>n>>l>>r;
+    l++,r++;
     int mx=0;
     for(int i=n&1;i<=n;i+=2) if(f[i]>=r) {
         mx=i;
         break;
     }
-    auto sol=[]
+    Func sol=[&](auto sol,int n,int l,int r) {
+        if(r>l) return;
+        if(l<=1&&r>=f[n]) {
+            cout<<bfs[n];
+            return;
+        }
+        if(r<=f[n-2]) sol(n-2,l,r);
+        else if(l>f[n-2]) sol(n-1,l-f[n-2],r-f[n-2]);
+        else {
+            sol(n-2,l,f[n-2]);
+            sol(n-1,f[n-2]+1,f[n]);
+        }
+    };
+    sol()
 }
 signed main() {
     IOS();  
     f[0]=f[1]=1;
+    bfs[0]="0",bfs[1]="1";
     for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
+    for(int i=2;i<20;i++) bfs[i]=bfs[i-1]+bfs[i-2];
     int T;
     cin>>T;
     while(T--) solve();
