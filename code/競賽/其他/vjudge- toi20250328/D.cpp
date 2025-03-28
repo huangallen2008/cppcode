@@ -125,7 +125,7 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mrb[x1];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
-            for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
+            for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
         {
             auto &v=ml[x2];
@@ -147,14 +147,14 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
             auto &v2=mdb[y1];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v.begin();
-            for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
+            for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
         {
             auto &v=mu[y2];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
             auto &v2=mub[y2];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v.begin();
-            for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
+            for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
     }
     cout<<dsu.getan()<<'\n';
