@@ -80,23 +80,23 @@ void solve() {
     }
     Func sol=[&](auto sol,int n,int l,int r) {
         if(l>r) return;
-        op(n)op(l)ope(r)
+        // op(n)op(l)ope(r)
         if(l<=1&&r>=f[n]) {
             cout<<bfs[n];
             return;
         }
         if(r<=f[n-2]) sol(n-2,l,r);
         else if(l>f[n-2]) {
-            ope("@@@")
+            // ope("@@@")
             sol(n-1,l-f[n-2],r-f[n-2]);
         }
         else {
-            ope("!!!")
+            // ope("!!!")
             sol(n-2,l,f[n-2]);
             sol(n-1,f[n-2]+1,f[n]);
         }
     };
-    ope(mx)
+    // ope(mx)
     sol(mx,l,r);
 }
 signed main() {
