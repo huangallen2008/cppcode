@@ -67,7 +67,7 @@ void solve(int n) {
         ml[x].pb({{y,y+h},i});
         mr[x+w].pb({{y,y+h},i});
         md[y].pb({{x,x+w},i});
-        md[y].pb({{x,x+w},i});
+        mu[y+h].pb({{x,x+w},i});
     }
 }
 signed main() {
