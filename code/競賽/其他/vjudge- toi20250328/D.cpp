@@ -67,6 +67,7 @@ void solve(int n) {
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
+        a[i]={x,x+w,y,y+h};
         area[i]=w*h;
         ml[x].pb({{y,y+h},i});
         mr[x+w].pb({{y,y+h},i});
@@ -77,7 +78,7 @@ void solve(int n) {
     for(auto &[id,v]:mr) sort(ALL(v));
     for(auto &[id,v]:md) sort(ALL(v));
     for(auto &[id,v]:mu) sort(ALL(v));
-
+    
 }
 signed main() {
     IOS();  
