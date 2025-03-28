@@ -107,6 +107,8 @@ signed main() {
             id[p]=nid++;
             dsu.addv(id[p],p);
             dsu.merge(id[p],id[q]);
+        }else if(opt==2) {
+            
         }
     }
     return 0;
