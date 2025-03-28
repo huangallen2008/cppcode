@@ -56,42 +56,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi prime;
-void p_init() {
-    vector<bool> isp(maxv,1);
-    for(int i=2;i<maxv;i++) {
-        if(isp[i]) {
-            prime.pb(i);
-            for(int j=i+i;j<maxv;j+=i) isp[j]=0;
-        }
-    }
-}
-int mlog(int p,int x) {
-    int r=1;
-    int an=-1;
-    for(;r<=x;r*=p,an++);
-    return an;
-}
-void solve() {
-    int l,r;
-    cin>>l>>r;
-    auto cnt=[&](int x) ->int{
-        if(x<=0) return 0;
-        int c=0;
-        for(int p:prime) {
-            c+=max(0ll,mlog(p,x)-1);
-            // op(x)op(p)ope(c)
-        }
-        return c;
-    };
-    int an=cnt(r)-cnt(l-1);
-    cout<<an<<'\n';
-}
 signed main() {
     IOS();
-    p_init();
-    int T;
-    cin>>T;
-    while(T--) solve();
+
     return 0;
 }
