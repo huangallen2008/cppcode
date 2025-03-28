@@ -117,9 +117,9 @@ signed main() {
             pii an=dsu.getan(p);
             cout<<an.f<<' '<<an.s<<'\n';
         }
-        // oparr(dsu.p)
-        // oparr(dsu.v)
-        // oparr(dsu.sz)
+        oparr(dsu.p)
+        oparr(dsu.v)
+        oparr(dsu.sz)
     }
     return 0;
 }
