@@ -63,6 +63,7 @@ void solve() {
     cin>>las;
     REP(i,n-1) {
         cin>>s;
+        int an=0;
         
         las=s;
     }
