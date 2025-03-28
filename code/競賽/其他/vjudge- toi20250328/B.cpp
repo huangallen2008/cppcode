@@ -94,5 +94,6 @@ signed main() {
     dsu.init(n+m+5);
     int nid=n+1;
     REP1(i,n) dsu.addv(i,i);
+    Vi id()
     return 0;
 }
