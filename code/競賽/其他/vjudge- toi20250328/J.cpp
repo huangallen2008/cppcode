@@ -105,7 +105,7 @@ signed main() {
     for(int i=2;i<50;i++) f[i]=f[i-1]+f[i-2];
     for(int i=2;i<22;i++) bfs[i]=bfs[i-2]+bfs[i-1];
     oparr(f)
-    cout<<bfs[10]<<'\n';
+    cout<<bfs[10]<<'\n'<<' ';
     int T;
     cin>>T;
     while(T--) solve();
