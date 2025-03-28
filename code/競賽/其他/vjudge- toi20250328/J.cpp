@@ -101,7 +101,7 @@ signed main() {
     f[0]=f[1]=1;
     bfs[0]="0",bfs[1]="1";
     for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
-    for(int i=2;i<20;i++) bfs[i]=bfs[i-1]+bfs[i-2];
+    for(int i=2;i<20;i++) bfs[i]=bfs[i-2]+bfs[i-1];
     REP(i,5) ope(bfs[i])
     oparr(f)
     int T;
