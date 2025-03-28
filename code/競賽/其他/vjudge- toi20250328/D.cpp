@@ -59,7 +59,11 @@ int rd(int l,int r) {
 #define piii pair<pii,int>
 void solve(int n) {
     map<int,piii> ml,mr,mu,md;
-    
+    REP(i,n) {
+        int x,y,w,h;
+        cin>>x>>y>>w>>h;
+        
+    }
 }
 signed main() {
     IOS();  
