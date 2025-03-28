@@ -81,6 +81,7 @@ void solve() {
 }
 signed main() {
     IOS();
+    p_init();
     for(int i=1;i<10;i++) {
         op(i)ope(log2(i))
     }
