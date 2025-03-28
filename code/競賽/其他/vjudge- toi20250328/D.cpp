@@ -64,3 +64,5 @@ signed main() {
     IOS();  
     int n;
     while(cin>>n) solve(n);
+    return 0;
+}
