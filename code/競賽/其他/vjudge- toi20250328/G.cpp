@@ -81,6 +81,7 @@ void solve() {
 }
 signed main() {
     IOS();
+    
     int T;
     cin>>T;
     while(T--) solve();
