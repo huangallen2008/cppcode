@@ -65,7 +65,7 @@ void solve() {
         mx=i;
         break;
     }
-    
+    auto sol=[]
 }
 signed main() {
     IOS();  
