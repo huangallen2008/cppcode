@@ -81,7 +81,7 @@ void solve(int n) {
     for(auto [x1,x2,y1,y2]:a) {
         {
             auto &v=mr[x1];
-            int id=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
+            int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
         }
     }
 }
