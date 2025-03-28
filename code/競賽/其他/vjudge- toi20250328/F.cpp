@@ -64,7 +64,7 @@ void solve() {
     ope(pw10)
     auto go=[&]() ->void{
         k=k*k;
-        if(k>=pw10) k/=10;
+        while(k>=pw10) k/=10;
     };
     map<int,bool> vis;
     int mx=k;
