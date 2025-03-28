@@ -141,7 +141,7 @@ void solve(int n) {
             }
             // entr
         }
-        // op(2)ope(i)
+        ope(i)
         {
             auto &v=md[y1];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
