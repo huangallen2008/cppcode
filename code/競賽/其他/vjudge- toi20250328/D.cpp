@@ -134,8 +134,8 @@ void solve(int n) {
             auto &v2=mlb[x2];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
             // ope(i)
-            // op(idl)ope(idr)
-            // oparr(v)
+            oparr(v)
+            op(idl)ope(idr)
             for(int j=idl;j<idr;j++) {
                 // ope(j)
                 dsu.merge(i,v[j].s);
