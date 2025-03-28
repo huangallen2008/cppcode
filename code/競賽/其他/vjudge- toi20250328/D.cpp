@@ -107,8 +107,8 @@ void solve(int n) {
 
         mlb[x].pb({{y+h,y},i});
         mrb[x+w].pb({{y+h,y},i});
-        mdb[y].pb({{x,x+w},i});
-        mub[y+h].pb({{x,x+w},i});
+        mdb[y].pb({{x+w,x},i});
+        mub[y+h].pb({{x+w,x},i});
     }
     dsu.init(n);
     REP(i,n) dsu.addv(i,area[i]);
