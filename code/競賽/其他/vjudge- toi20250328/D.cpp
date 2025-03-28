@@ -59,6 +59,7 @@ int rd(int l,int r) {
 #define piii pair<pii,int>
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
+    Vi area(n);
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
