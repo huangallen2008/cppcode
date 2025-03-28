@@ -58,11 +58,11 @@ int rd(int l,int r) {
 }
 #define piii pair<pii,int>
 void solve(int n) {
-    map<int,piii> ml,mr,mu,md;
+    map<int,vector<piii>> ml,mr,mu,md;
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
-        
+        ml[x].pb({{y,y+h},i});
     }
 }
 signed main() {
