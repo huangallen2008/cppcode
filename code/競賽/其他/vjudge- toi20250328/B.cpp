@@ -62,6 +62,7 @@ signed main() {
     while(cin>>n) {
         if(n==0) break;
         int x=sqrt(n-1)+1;
+        //(x,x) ->x*(x+1)
         
     }
     return 0;
