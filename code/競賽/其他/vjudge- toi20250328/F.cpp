@@ -61,7 +61,6 @@ void solve() {
     cin>>n>>k;
     int pw10=1;
     REP1(i,n) pw10*=10;
-    ope(pw10)
     auto go=[&]() ->void{
         k=k*k;
         while(k>=pw10) k/=10;
@@ -74,7 +73,6 @@ void solve() {
         if(vis[k]) break;
         chmax(mx,k);
         vis[k]=1;
-        ope(k)
     } 
     cout<<mx<<'\n';
 }
