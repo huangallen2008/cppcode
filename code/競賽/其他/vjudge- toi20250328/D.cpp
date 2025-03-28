@@ -79,9 +79,6 @@ struct DSU {
     void addv(int u,int x) {
         v[find(u)]+=x;
     }
-    void addsz(int u,int x) { 
-        sz[find(u)]+=x;
-    }
 }dsu;
 #define piii pair<pii,int>
 void solve(int n) {
