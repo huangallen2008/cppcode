@@ -105,7 +105,8 @@ signed main() {
             dsu.addv(p,-p);
             dsu.addsz(p,-1);
             dsu.addv(nid,p);
-            dsu.addv(nid,p);
+            dsu.merge(nid,q);
+            
         }
     }
     return 0;
