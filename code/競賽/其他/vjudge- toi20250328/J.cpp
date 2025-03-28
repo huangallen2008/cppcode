@@ -60,7 +60,8 @@ Vi f(47);
 void solve() {
     int n,l,r;
     cin>>n>>l>>r;
-    
+    int mx=0;
+    for(int i=n&1;i<=n;i+=2) if(f[i])
 }
 signed main() {
     IOS();  
