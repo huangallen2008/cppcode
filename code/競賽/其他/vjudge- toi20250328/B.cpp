@@ -86,6 +86,7 @@ struct DSU {
         int x=find(u);
         return {sz[x],v[x]};
     }
+    bool same(int a,int b) { return find(a)==find(b); }
 }dsu;
 signed main() {
     IOS();
