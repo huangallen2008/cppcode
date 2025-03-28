@@ -61,6 +61,7 @@ void solve() {
     cin>>k>>n;
     string las,s;
     cin>>las;
+    int ans=;
     REP(i,n-1) {
         cin>>s;
         int an=0;
