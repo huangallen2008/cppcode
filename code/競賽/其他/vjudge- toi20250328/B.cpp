@@ -102,14 +102,14 @@ signed main() {
         if(opt==1) {
             int p,q;
             cin>>p>>q;
-            dsu.addv(id[p],-p);
-            dsu.addsz(id[p],-1);
-            id[p]=nid++;
-            dsu.addv(id[p],p);
             dsu.merge(id[p],id[q]);
         }else if(opt==2) {
             int p,q;
             cin>>p>>q;
+            dsu.addv(id[p],-p);
+            dsu.addsz(id[p],-1);
+            id[p]=nid++;
+            dsu.addv(id[p],p);
             dsu.merge(id[p],id[q]);
         }else {
             int p;
