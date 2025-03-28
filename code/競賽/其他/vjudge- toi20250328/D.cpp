@@ -132,16 +132,16 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mlb[x2];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
-            ope(i)
-            op(idl)ope(idr)
-            oparr(v)
+            // ope(i)
+            // op(idl)ope(idr)
+            // oparr(v)
             for(int j=idl;j<idr;j++) {
-                ope(j)
+                // ope(j)
                 dsu.merge(i,v[j].s);
             }
-            entr
+            // entr
         }
-        op(2)ope(i)
+        // op(2)ope(i)
         {
             auto &v=md[y1];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
