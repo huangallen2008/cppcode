@@ -79,7 +79,10 @@ void solve(int n) {
     for(auto &[id,v]:md) sort(ALL(v));
     for(auto &[id,v]:mu) sort(ALL(v));
     for(auto [x1,x2,y1,y2]:a) {
-        
+        {
+            auto &v=mr[x1];
+            int id=lower_bound(ALL(v),piii{pii{y2,inf},inf})-v.begin();
+        }
     }
 }
 signed main() {
