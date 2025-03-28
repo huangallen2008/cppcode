@@ -107,6 +107,7 @@ signed main() {
         }else if(opt==2) {
             int p,q;
             cin>>p>>q;
+            if(dsu.same(id[p],id[q))
             dsu.addv(id[p],-p);
             dsu.addsz(id[p],-1);
             id[p]=nid++;
