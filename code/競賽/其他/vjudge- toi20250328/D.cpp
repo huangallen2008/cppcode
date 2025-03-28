@@ -130,9 +130,9 @@ void solve(int n) {
         {
             auto &v=ml[x2];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
-            ope(i)
             auto &v2=mlb[x2];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
+            ope(i)
             for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
         {
