@@ -60,7 +60,7 @@ Vi f(47);
 void solve() {
     int n,l,r;
     cin>>n>>l>>r;
-
+    
 }
 signed main() {
     IOS();  
