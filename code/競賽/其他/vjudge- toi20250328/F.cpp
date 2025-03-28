@@ -73,6 +73,7 @@ void solve() {
         if(vis[k]) break;
         chmax(mx,k);
         vis[k]=1;
+        ope(k)
     } 
     cout<<mx<<'\n';
 }
