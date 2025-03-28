@@ -135,10 +135,9 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mlb[x2];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v2.begin();
-            op(2)oparr(v)op(idl)ope(idr)
+            // op(2)oparr(v)op(idl)ope(idr)
             // ope(i)
             for(int j=idl;j<idr;j++) {
-                // ope(j)
                 dsu.merge(i,v[j].s);
             }
             // entr
@@ -148,7 +147,7 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
             auto &v2=mdb[y1];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v2.begin();
-            op(3)oparr(v)op(idl)ope(idr)
+            // op(3)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
         {
@@ -156,7 +155,7 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
             auto &v2=mub[y2];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v2.begin();
-            op(4)oparr(v)op(idl)ope(idr)
+            // op(4)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
     }
