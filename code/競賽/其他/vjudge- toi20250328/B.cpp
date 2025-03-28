@@ -63,8 +63,9 @@ signed main() {
         if(n==0) break;
         int x=sqrt(n-1)+1;
         //(x,x) ->x*x-x+1
-            
-
+        int dd=abs(n-(x*x-x+1));
+        int dir=(x&1)^(x*x-x+1>n);
+        
     }
     return 0;
 }
