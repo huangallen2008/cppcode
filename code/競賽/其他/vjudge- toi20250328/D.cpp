@@ -60,7 +60,10 @@ int rd(int l,int r) {
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
     Vi area(n);
-    
+    struct S {
+        int x1,x2,y1,y2;
+    };
+    vector<S> a(n);
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
