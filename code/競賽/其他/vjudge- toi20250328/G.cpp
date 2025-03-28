@@ -66,6 +66,7 @@ void p_init() {
         }
     }
 }
+
 void solve() {
     int l,r;
     cin>>l>>r;
