@@ -68,7 +68,8 @@ void p_init() {
 }
 int mlog(int p,int x) {
     int r=1;
-    
+    int an=0;
+    for()
 }
 void solve() {
     int l,r;
