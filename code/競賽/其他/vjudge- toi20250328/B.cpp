@@ -89,15 +89,10 @@ struct DSU {
 }dsu;
 signed main() {
     IOS();
-    int n;
-    while(cin>>n) {
-        if(n==0) break;
-        int x=sqrt(n-1)+1;
-        //(x,x) ->x*x-x+1
-        int dd=abs(n-(x*x-x+1));
-        int dir=(x&1)^(x*x-x+1>n);
-        if(!dir) cout<<x<<' '<<x-dd<<'\n';
-        else cout<<x-dd<<' '<<x<<'\n';
-    }
+    int n,m;
+    cin>>n>>m;
+    dsu.init(n+m);
+    int nid=n;
+    
     return 0;
 }
