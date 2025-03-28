@@ -67,7 +67,7 @@ struct Func {
 };
 template<class T>
 Func(const T &) -> Func<T>;
-Vi f(47);
+Vi f(50);
 vector<string> bfs(20);
 void solve() {
     int n,l,r;
