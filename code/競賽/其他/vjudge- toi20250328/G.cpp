@@ -74,7 +74,7 @@ void solve() {
         int c=0;
         for(int p:prime) {
             c+=max(0ll,(int)((double)log2(x)/log2(p) )-1);
-            op(x)op(p)ope(c)
+            // op(x)op(p)ope(c)
         }
         return c;
     };
