@@ -66,8 +66,10 @@ void solve() {
         cin>>s;
         int an=0;
         REP1(l,k) if(s.substr(0,l)==las.substr(k-l,l)) an=l;
+        ans-=an;
         las=s;
     }
+    cout<<ans<<'\n';
 }
 signed main() {
     IOS();
