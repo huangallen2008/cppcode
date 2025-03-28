@@ -59,6 +59,7 @@ int rd(int l,int r) {
 #define piii pair<pii,int>
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
+    map<int,vector<piii>> mlb,mrb,mub,mdb;
     Vi area(n);
     struct S {
         int x1,x2,y1,y2;
