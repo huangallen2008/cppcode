@@ -63,6 +63,8 @@ void solve(int n) {
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
+        area[i]=w*h;
+        ml[x].pb({{y,y+h},i});
         ml[x].pb({{y,y+h},i});
     }
 }
