@@ -58,7 +58,7 @@ int rd(int l,int r) {
 }
 #define piii pair<pii,int>
 void solve(int n) {
-    map<int,piii> mp;
+    map<int,piii> ml,mr,mu,md;
 }
 signed main() {
     IOS();  
