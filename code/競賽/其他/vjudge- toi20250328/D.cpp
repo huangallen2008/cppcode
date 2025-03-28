@@ -59,7 +59,6 @@ int rd(int l,int r) {
 #define piii pair<pii,int>
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
-    map<int,vector<piii>> ml2,mr2,mu2,md2;
     Vi area(n);
     struct S {
         int x1,x2,y1,y2;
@@ -80,7 +79,7 @@ void solve(int n) {
     for(auto &[id,v]:md) sort(ALL(v));
     for(auto &[id,v]:mu) sort(ALL(v));
     for(auto [x1,x2,y1,y2]:a) {
-
+        
     }
 }
 signed main() {
