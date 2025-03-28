@@ -68,7 +68,7 @@ void p_init() {
 }
 int mlog(int p,int x) {
     int r=1;
-    int an=0;
+    int an=-1;
     for(;r<=x;r*=p,an++);
     return an;
 }
