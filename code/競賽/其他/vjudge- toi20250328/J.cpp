@@ -98,6 +98,7 @@ void solve() {
     };
     // ope(mx)
     sol(mx,l,r);
+    cout<<'\n';
 }
 signed main() {
     IOS();  
