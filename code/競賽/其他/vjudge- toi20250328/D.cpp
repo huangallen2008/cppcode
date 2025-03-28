@@ -121,13 +121,13 @@ void solve(int n) {
     for(auto &[id,v]:mub) sort(ALL(v));
     REP(i,n) {
         auto [x1,x2,y1,y2]=a[i];
-        op("!!!!!!")ope(i)
+        // op("!!!!!!")ope(i)
         {
             auto &v=mr[x1];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mrb[x1];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v2.begin();
-            op(1)oparr(v)op(idl)ope(idr)
+            // op(1)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
         {
