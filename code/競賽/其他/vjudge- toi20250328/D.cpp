@@ -161,6 +161,7 @@ void solve(int n) {
         }
     }
     cout<<dsu.getan()<<'\n';
+    ope("ok")
 }
 signed main() {
     IOS();  
