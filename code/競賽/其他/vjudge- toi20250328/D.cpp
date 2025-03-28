@@ -155,7 +155,7 @@ void solve(int n) {
             auto &v=mu[y2];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
             auto &v2=mub[y2];
-            int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v.begin();
+            int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v2.begin();
             op(4)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
