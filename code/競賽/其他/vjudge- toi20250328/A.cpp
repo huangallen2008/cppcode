@@ -58,11 +58,13 @@ int rd(int l,int r) {
 }
 void solve() {
     int n,k;
-    cin>>n>>k;
+    cin>>k>>n;
     string las,s;
     cin>>las;
     REP(i,n-1) {
+        cin>>s;
         
+        las=s;
     }
 }
 signed main() {
