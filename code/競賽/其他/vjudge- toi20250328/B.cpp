@@ -65,7 +65,8 @@ signed main() {
         //(x,x) ->x*x-x+1
         int dd=abs(n-(x*x-x+1));
         int dir=(x&1)^(x*x-x+1>n);
-        
+        if(dir) cout<<x<<' '<<x-dd<<'\n';
+        else cout<<x-dd<<' '<<x<<'\n';
     }
     return 0;
 }
