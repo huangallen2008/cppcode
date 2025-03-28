@@ -79,6 +79,11 @@ struct DSU {
     void addv(int u,int x) {
         v[find(u)]+=x;
     }
+    int getan() {
+        int an=0;
+        REP(i,n) if(p[i]==i) chmax(an,v[i]);
+        return an;
+    }
 }dsu;
 #define piii pair<pii,int>
 void solve(int n) {
