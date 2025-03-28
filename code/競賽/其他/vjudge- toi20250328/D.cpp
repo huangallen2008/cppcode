@@ -127,7 +127,15 @@ void solve(int n) {
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
             for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
+        {
+            auto &v=mr[x1];
+            int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
+            auto &v2=mrb[x1];
+            int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
+            for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
+        }
     }
+    cout<<dsu.getan()<<'\n';
 }
 signed main() {
     IOS();  
