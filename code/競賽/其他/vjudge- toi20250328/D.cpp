@@ -139,6 +139,7 @@ void solve(int n) {
                 ope(j)
                 dsu.merge(i,v[j].s);
             }
+            entr
         }
         {
             auto &v=md[y1];
