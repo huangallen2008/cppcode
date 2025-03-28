@@ -119,7 +119,6 @@ void solve(int n) {
     for(auto &[id,v]:mdb) sort(ALL(v));
     for(auto &[id,v]:mub) sort(ALL(v));
     REP(i,n) {
-        ope(i)
         auto [x1,x2,y1,y2]=a[i];
         {
             auto &v=mr[x1];
@@ -128,6 +127,7 @@ void solve(int n) {
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
             for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
+        ope(i)
         {
             auto &v=ml[x2];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
