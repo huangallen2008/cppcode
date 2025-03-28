@@ -60,6 +60,7 @@ int rd(int l,int r) {
 void solve(int n) {
     map<int,vector<piii>> ml,mr,mu,md;
     Vi area(n);
+    
     REP(i,n) {
         int x,y,w,h;
         cin>>x>>y>>w>>h;
@@ -73,7 +74,7 @@ void solve(int n) {
     for(auto &[id,v]:mr) sort(ALL(v));
     for(auto &[id,v]:md) sort(ALL(v));
     for(auto &[id,v]:mu) sort(ALL(v));
-    
+
 }
 signed main() {
     IOS();  
