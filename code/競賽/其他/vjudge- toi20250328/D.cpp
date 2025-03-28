@@ -104,6 +104,7 @@ void solve(int n) {
         mr[x+w].pb({{y,y+h},i});
         md[y].pb({{x,x+w},i});
         mu[y+h].pb({{x,x+w},i});
+        
         mlb[x].pb({{y,y+h},i});
         mrb[x+w].pb({{y,y+h},i});
         mdb[y].pb({{x,x+w},i});
