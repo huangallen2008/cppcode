@@ -96,6 +96,12 @@ signed main() {
     REP1(i,n) dsu.addv(i,i);
     Vi id(n+1);
     REP1(i,n) id[i]=i;
-    
+    REP(i,m) {
+        int opt;
+        cin>>opt;
+        if(opt==1) {
+            
+        }
+    }
     return 0;
 }
