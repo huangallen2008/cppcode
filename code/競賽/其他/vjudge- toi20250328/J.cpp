@@ -106,10 +106,10 @@ signed main() {
     bfs[0]="0",bfs[1]="1";
     for(int i=2;i<47;i++) f[i]=f[i-1]+f[i-2];
     for(int i=2;i<20;i++) bfs[i]=bfs[i-2]+bfs[i-1];
+    ope(f[20])
     // REP(i,5) ope(bfs[i])
     // oparr(f)
     int T;
     cin>>T;
     while(T--) solve();
-    return 0;
-}
+    return 0
