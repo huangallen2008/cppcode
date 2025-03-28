@@ -100,7 +100,10 @@ signed main() {
         int opt;
         cin>>opt;
         if(opt==1) {
-            
+            int p,q;
+            cin>>p>>q;
+            dsu.addv(p,-p);
+            dsu.addv(p,-p);
         }
     }
     return 0;
