@@ -65,7 +65,7 @@ void solve(int n) {
         cin>>x>>y>>w>>h;
         area[i]=w*h;
         ml[x].pb({{y,y+h},i});
-        ml[x].pb({{y,y+h},i});
+        mr[x+h].pb({{y,y+h},i});
     }
 }
 signed main() {
