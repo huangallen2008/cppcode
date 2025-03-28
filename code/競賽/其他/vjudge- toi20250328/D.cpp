@@ -74,6 +74,10 @@ void solve(int n) {
         mr[x+w].pb({{y,y+h},i});
         md[y].pb({{x,x+w},i});
         mu[y+h].pb({{x,x+w},i});
+        mlb[x].pb({{y,y+h},i});
+        mr[x+w].pb({{y,y+h},i});
+        md[y].pb({{x,x+w},i});
+        mu[y+h].pb({{x,x+w},i});
     }
     for(auto &[id,v]:ml) sort(ALL(v));
     for(auto &[id,v]:mr) sort(ALL(v));
