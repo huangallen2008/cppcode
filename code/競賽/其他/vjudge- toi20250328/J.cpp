@@ -79,7 +79,7 @@ void solve() {
         break;
     }
     Func sol=[&](auto sol,int n,int l,int r) {
-        if(l>r) return;
+        if(l>r||r<1||) return;
         // op(n)op(l)ope(r)
         if(l<=1&&r>=f[n]) {
             cout<<bfs[n];
