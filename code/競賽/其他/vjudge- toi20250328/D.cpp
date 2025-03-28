@@ -135,7 +135,7 @@ void solve(int n) {
             ope(i)
             op(idl)ope(idr)
             oparr(v)
-            for(int j=idl;j<=idr;j++) {
+            for(int j=idl;j<idr;j++) {
                 ope(j)
                 dsu.merge(i,v[j].s);
             }
