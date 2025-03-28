@@ -74,6 +74,7 @@ void solve() {
         int c=0;
         for(int p:prime) {
             c+=((double)log2(x)/log2(p) );
+            op(x)ope(c)
         }
         return c;
     };
