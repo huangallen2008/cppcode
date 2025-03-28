@@ -89,40 +89,7 @@ struct DSU {
     bool same(int a,int b) { return find(a)==find(b); }
 }dsu;
 signed main() {
-    IOS();
-    int n,m;
-    while(cin>>n>>m) {
-        dsu.init(n+m+5);
-        int nid=n+1;
-        REP1(i,n) dsu.addv(i,i);
-        Vi id(n+1);
-        REP1(i,n) id[i]=i;
-        REP(i,m) {
-            int opt;
-            cin>>opt;
-            if(opt==1) {
-                int p,q;
-                cin>>p>>q;
-                dsu.merge(id[p],id[q]);
-            }else if(opt==2) {
-                int p,q;
-                cin>>p>>q;
-                if(dsu.same(id[p],id[q])) continue;
-                dsu.addv(id[p],-p);
-                dsu.addsz(id[p],-1);
-                id[p]=nid++;
-                dsu.addv(id[p],p);
-                dsu.merge(id[p],id[q]);
-            }else {
-                int p;
-                cin>>p;
-                pii an=dsu.getan(id[p]);
-                cout<<an.f<<' '<<an.s<<'\n';
-            }
-            // oparr(dsu.p)
-            // oparr(dsu.v)
-            // oparr(dsu.sz)
-        }
-    }
+    IOS();  
+    
     return 0;
 }
