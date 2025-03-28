@@ -114,7 +114,7 @@ signed main() {
         }else {
             int p;
             cin>>p;
-            pii an=dsu.getan(p);
+            pii an=dsu.getan(id[p]);
             cout<<an.f<<' '<<an.s<<'\n';
         }
         oparr(dsu.p)
