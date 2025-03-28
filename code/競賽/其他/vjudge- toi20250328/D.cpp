@@ -144,17 +144,17 @@ void solve(int n) {
             // entr
         }
         {
-            auto &v=md[y1];
+            auto &v=mu[y1];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
-            auto &v2=mdb[y1];
+            auto &v2=mub[y1];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v2.begin();
             // op(3)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
         }
         {
-            auto &v=mu[y2];
+            auto &v=md[y2];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
-            auto &v2=mub[y2];
+            auto &v2=mdb[y2];
             int idl=lower_bound(ALL(v2),piii{{x1,-inf},-inf})-v2.begin();
             // op(4)oparr(v)op(idl)ope(idr)
             for(int j=idl;j<idr;j++) dsu.merge(i,v[j].s);
