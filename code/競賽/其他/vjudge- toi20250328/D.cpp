@@ -135,9 +135,9 @@ void solve(int n) {
             for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
         {
-            auto &v=md[x1];
+            auto &v=md[y1];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
-            auto &v2=mdb[x1];
+            auto &v2=mdb[y1];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
             for(int j=idl;j<=idr;j++) dsu.merge(i,v[j].s);
         }
