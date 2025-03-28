@@ -91,7 +91,8 @@ void solve(int n) {
         {
             auto &v=mr[x1];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
-            int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
+            auto &v2=mrb[x1];
+            int idl=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
         }
     }
 }
