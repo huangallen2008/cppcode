@@ -108,7 +108,14 @@ signed main() {
             dsu.addv(id[p],p);
             dsu.merge(id[p],id[q]);
         }else if(opt==2) {
-            
+            int p,q;
+            cin>>p>>q;
+            dsu.merge(id[p],id[q]);
+        }else {
+            int p;
+            cin>>p;
+            pii an=dsu.getan(p);
+            cout<<an.f<<' '<<an.s<<'\n';
         }
     }
     return 0;
