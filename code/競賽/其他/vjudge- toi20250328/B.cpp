@@ -103,7 +103,8 @@ signed main() {
             int p,q;
             cin>>p>>q;
             dsu.addv(p,-p);
-            dsu.addv(p,-p);
+            dsu.addsz(p,-1);
+            
         }
     }
     return 0;
