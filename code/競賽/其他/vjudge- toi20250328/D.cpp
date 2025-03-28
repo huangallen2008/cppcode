@@ -121,6 +121,7 @@ void solve(int n) {
     for(auto &[id,v]:mub) sort(ALL(v));
     REP(i,n) {
         auto [x1,x2,y1,y2]=a[i];
+        op("!!!!!!")ope(i)
         {
             auto &v=mr[x1];
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
@@ -134,7 +135,7 @@ void solve(int n) {
             int idr=lower_bound(ALL(v),piii{{y2,inf},inf})-v.begin();
             auto &v2=mlb[x2];
             int idl=lower_bound(ALL(v2),piii{{y1,-inf},-inf})-v.begin();
-            oparr(v)op(idl)ope(idr)
+            op(2)oparr(v)op(idl)ope(idr)
             // ope(i)
             for(int j=idl;j<idr;j++) {
                 // ope(j)
@@ -142,7 +143,6 @@ void solve(int n) {
             }
             // entr
         }
-        ope(i)
         {
             auto &v=md[y1];
             int idr=lower_bound(ALL(v),piii{{x2,inf},inf})-v.begin();
