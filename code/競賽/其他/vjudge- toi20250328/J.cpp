@@ -61,7 +61,11 @@ void solve() {
     int n,l,r;
     cin>>n>>l>>r;
     int mx=0;
-    for(int i=n&1;i<=n;i+=2) if(f[i])
+    for(int i=n&1;i<=n;i+=2) if(f[i]>=r) {
+        mx=i;
+        break;
+    }
+    
 }
 signed main() {
     IOS();  
