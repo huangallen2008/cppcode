@@ -72,7 +72,9 @@ void solve() {
         go();
         if(vis[k]) break;
         chmax(mx,k);
+        vis[k]=1;
     } 
+    cout<<mx<<'\n';
 }
 signed main() {
     IOS();
