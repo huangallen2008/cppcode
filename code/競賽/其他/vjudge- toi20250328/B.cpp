@@ -56,7 +56,37 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-
+struct DSU {
+    int n;
+    Vi p,v,sz;
+    void init(int _n) {
+        n=_n;
+        p=v=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        v[y]+=v[x];
+    }
+    void addv(int u,int x) {
+        v[find(u)]+=x;
+    }
+    void addsz(int u,int x) { 
+        sz[find(u)]+=x;
+    }
+    pii getan(int u) {
+        int x=find(u);
+        return {sz[x],v[x]};
+    }
+}dsu;
 signed main() {
     IOS();
     int n;
