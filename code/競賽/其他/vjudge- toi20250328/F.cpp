@@ -61,6 +61,7 @@ void solve() {
     cin>>n>>k;
     int pw10=1;
     REP1(i,n) pw10*=10;
+    ope(pw10)
     auto go=[&]() ->void{
         k=k*k;
         if(k>=pw10) k/=10;
