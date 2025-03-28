@@ -66,7 +66,9 @@ void p_init() {
         }
     }
 }
-
+int mlog(int p,int x) {
+    
+}
 void solve() {
     int l,r;
     cin>>l>>r;
