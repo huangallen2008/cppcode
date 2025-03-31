@@ -62,6 +62,7 @@ void solve() {
     Vi dp(n+1);
     dp[0]=1;
     REP1(i,k) {
+        Vi ndp(n+1);
          
     }
 }
