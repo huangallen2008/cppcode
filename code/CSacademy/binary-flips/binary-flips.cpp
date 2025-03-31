@@ -82,7 +82,9 @@ void solve() {
     // oparr(dp1)oparr(dp2)
     int an=0;
     REP(c1,n+1) {
-        if(c1*2==n) continue;
+        if(c1*2==n) {
+            if(s%m) c
+        }
         if((s-c1*m)%(n-c1*2)) continue;
         int c2=(s-c1*m)/(n-c1*2);
         op(c1)ope(c2)
