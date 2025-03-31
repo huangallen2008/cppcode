@@ -59,10 +59,10 @@ int rd(int l,int r) {
 void solve() {
     int n,m,k,s;
     cin>>n>>m>>k>>s;
-    vector<int> dp(n+1);
+    Vi dp(n+1);
     dp[0]=1;
     REP1(i,k) {
-        
+         
     }
 }
 signed main() {
