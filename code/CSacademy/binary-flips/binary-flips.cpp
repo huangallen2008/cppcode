@@ -79,7 +79,7 @@ void solve() {
         } 
         swap(dp2,ndp);
     }
-    oparr(dp1)oparr(dp2)
+    // oparr(dp1)oparr(dp2)
     int an=0;
     REP(c1,n+1) {
         if(c1*2==n) continue;
