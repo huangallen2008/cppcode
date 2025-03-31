@@ -80,7 +80,10 @@ void solve() {
         swap(dp2,ndp);
     }
     REP(c1,n+1) {
-        
+        if(c1*2==n) continue;
+        if((s-c1*m)%(n-c1*2)) continue;
+        if((s-c1*m)%(n-c1*2)) continue;
+
     }
 }
 signed main() {
