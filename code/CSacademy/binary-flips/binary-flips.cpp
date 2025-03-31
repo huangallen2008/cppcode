@@ -67,6 +67,7 @@ void solve() {
             if(j) addmod(ndp[j],dp[j-1]*(n-j+1));
             if(j<n) addmod(ndp[j],dp[j+1]*(j+1));
         } 
+        swap(dp,ndp);
     }
 }
 signed main() {
