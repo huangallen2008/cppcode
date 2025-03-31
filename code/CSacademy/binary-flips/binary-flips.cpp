@@ -83,8 +83,8 @@ void solve() {
     int an=0;
     REP(c1,n+1) {
         if(c1*2==n) {
-            if(c1*m==s) continue;
-            int c2=s/m;
+            if(c1*m!=s) continue;
+            
         }
         if((s-c1*m)%(n-c1*2)) continue;
         int c2=(s-c1*m)/(n-c1*2);
