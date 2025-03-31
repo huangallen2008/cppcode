@@ -84,8 +84,9 @@ void solve() {
         if(c1*2==n) continue;
         if((s-c1*m)%(n-c1*2)) continue;
         int c2=(s-c1*m)/(n-c1*2);
-        addmod(an,dp1[c1]*)
+        addmod(an,dp1[c1]*dp2[c2]);
     }
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
