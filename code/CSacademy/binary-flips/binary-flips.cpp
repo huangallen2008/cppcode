@@ -74,10 +74,10 @@ void solve() {
     REP1(i,k) {
         Vi ndp(m+1);
         REP(j,m+1) {
-            if(j) addmod(ndp[j],dp1[j-1]*(n-j+1));
-            if(j<m) addmod(ndp[j],dp1[j+1]*(j+1));
+            if(j) addmod(ndp[j],dp2[j-1]*(n-j+1));
+            if(j<m) addmod(ndp[j],dp2[j+1]*(j+1));
         } 
-        swap(dp1,ndp);
+        swap(dp2,ndp);
     }
 }
 signed main() {
