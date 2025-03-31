@@ -84,7 +84,7 @@ void solve() {
     REP(c1,n+1) {
         if(c1*2==n) {
             if(c1*m!=s) continue;
-            
+            REP(c2,m+1) addmod(an,dp1[c1]*dp2[c2]);
         }
         if((s-c1*m)%(n-c1*2)) continue;
         int c2=(s-c1*m)/(n-c1*2);
