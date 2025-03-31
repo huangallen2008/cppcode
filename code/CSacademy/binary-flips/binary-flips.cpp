@@ -79,7 +79,9 @@ void solve() {
         } 
         swap(dp2,ndp);
     }
-    
+    REP(c1,n+1) {
+        
+    }
 }
 signed main() {
     IOS();
