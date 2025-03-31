@@ -57,19 +57,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int n,k;
-    cin>>k>>n;
-    string las,s;
-    cin>>las;
-    int ans=n*k;
-    REP(i,n-1) {
-        cin>>s;
-        int an=0;
-        REP1(l,k) if(s.substr(0,l)==las.substr(k-l,l)) an=l;
-        ans-=an;
-        las=s;
-    }
-    cout<<ans<<'\n';
+    
 }
 signed main() {
     IOS();
