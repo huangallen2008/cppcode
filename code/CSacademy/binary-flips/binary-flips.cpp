@@ -79,11 +79,12 @@ void solve() {
         } 
         swap(dp2,ndp);
     }
+    int an=0;
     REP(c1,n+1) {
         if(c1*2==n) continue;
         if((s-c1*m)%(n-c1*2)) continue;
-        if((s-c1*m)%(n-c1*2)) continue;
-
+        int c2=(s-c1*m)/(n-c1*2);
+        addmod(an,dp1[c1]*)
     }
 }
 signed main() {
