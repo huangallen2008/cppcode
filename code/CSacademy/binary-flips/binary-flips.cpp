@@ -89,6 +89,7 @@ void solve() {
         }
         if((s-c1*m)%(n-c1*2)) continue;
         int c2=(s-c1*m)/(n-c1*2);
+        if(c2<0||c2>m) continue;
         // op(c1)ope(c2)
         addmod(an,dp1[c1]*dp2[c2]);
     }
