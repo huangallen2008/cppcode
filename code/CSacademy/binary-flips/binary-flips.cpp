@@ -69,6 +69,16 @@ void solve() {
         } 
         swap(dp1,ndp);
     }
+    Vi dp1(m+1);
+    dp1[0]=1;
+    REP1(i,k) {
+        Vi ndp(m+1);
+        REP(j,n+1) {
+            if(j) addmod(ndp[j],dp1[j-1]*(n-j+1));
+            if(j<n) addmod(ndp[j],dp1[j+1]*(j+1));
+        } 
+        swap(dp1,ndp);
+    }
 }
 signed main() {
     IOS();
