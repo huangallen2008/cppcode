@@ -62,6 +62,6 @@ signed main() {
     string s;
     int n;
     cin>>s>>n;
-    cout<<0<<'\n';
+    cout<<rd(0,16)<<'\n';
     return 0;
 }
