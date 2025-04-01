@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<"No\n";
+    cout<<"-1\n";
     // cout<<'\n';
     return 0;
 }
