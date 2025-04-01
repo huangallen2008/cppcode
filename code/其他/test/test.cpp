@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<4<<'\n';
+    REP(i,17) cout<<i<<'\n';
+    // cout<<'\n';
     return 0;
 }
