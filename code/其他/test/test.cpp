@@ -67,6 +67,6 @@ signed main() {
     else if(n==3)cout<<2<<'\n';
     else {
         cout<<16<<'\n';
-    }
+    } 
     return 0;
 }
