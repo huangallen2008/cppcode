@@ -65,7 +65,7 @@ signed main() {
     if(n==1)cout<<2<<'\n';
     else if(n==2)cout<<16<<'\n';
     else {
-        cout<<2<
+        cout<<2<<'\n';
     }
     return 0;
 }
