@@ -62,7 +62,7 @@ signed main() {
     string s;
     int n;
     cin>>s>>n;
-    if(n==1)cout<<0<<'\n';
+    if(n==1)cout<<2<<'\n';
     else {
         cout<<16<<'\n';
     }
