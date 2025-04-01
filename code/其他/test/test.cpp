@@ -59,6 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<25<<'\n';
+    cout<<2<<'\n';
     return 0;
 }
