@@ -62,6 +62,6 @@ signed main() {
     string s;
     int n;
     cin>>s>>n;
-    cout<<2<<'\n';
+    cout<<0<<'\n';
     return 0;
 }
