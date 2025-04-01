@@ -59,6 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<1<<'\n';
+    string s;
+    int n;
+    cin>>s>>n;
     return 0;
 }
