@@ -64,7 +64,7 @@ signed main() {
     cin>>s>>n;
     if(n==1)cout<<2<<'\n';
     else if(n==2)cout<<16<<'\n';
-    else {
+    else if(n==3){
         cout<<2<<'\n';
     }
     return 0;
