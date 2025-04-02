@@ -84,7 +84,7 @@ signed main() {
     }
     REP1(i,n) {
         REP1(j,m) {
-            c1[i][j]=min()
+            c1[i][j]=min(cr[i][j],cd[i][j],c[r][d])
         }
     }
     return 0;
