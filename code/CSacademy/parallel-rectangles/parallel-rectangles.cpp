@@ -100,7 +100,6 @@ signed main() {
         if(isb[i]) continue;
         REP(j,SZ(a[i])) {
             REP(k,j) {
-                op(a[i][k])ope(a[i][j])
                 an+=mp[a[i][k]*maxv+a[i][j]]++;
             }
         }
