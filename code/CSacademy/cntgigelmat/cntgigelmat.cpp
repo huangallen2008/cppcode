@@ -60,6 +60,8 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<>
+    vector<Vi> a(n+2,Vi(m+1));
+    REP1(i,n) REP1(j,m) cin>>a[i][j];
+    
     return 0;
 }
