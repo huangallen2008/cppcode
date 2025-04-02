@@ -113,7 +113,7 @@ signed main() {
             bit.ud(i,1);
             del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
-            an+=bit.
+            an+=bit.qu(i-c1[i][j],i)
         }
     }
     return 0;
