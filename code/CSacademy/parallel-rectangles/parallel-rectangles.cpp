@@ -94,7 +94,6 @@ signed main() {
             an+=cnt*(cnt-1)>>1;
         }
     }
-    ope(an)
     map<int,int> mp;
     REP(i,maxv) {
         if(isb[i]) continue;
