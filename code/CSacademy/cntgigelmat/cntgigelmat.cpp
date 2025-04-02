@@ -110,12 +110,13 @@ signed main() {
         }
     }
     auto go=[&](int x,int y) {
-        op(x)ope(y)
         BIT bit;
         bit.init(n);
         vector<Vi> del(n+1);
         int an=0;
+        op(x)ope(y)
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
+            op(i)ope(j)
             bit.ud(i,1);
             del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
