@@ -69,6 +69,7 @@ signed main() {
         a[x].pb(y);
     }
     Vi bid;
-    REP(i,maxv) if(SZ(a[i])>S)
+    REP(i,maxv) if(SZ(a[i])>S) bid.pb(i);
+    
     return 0;
 }
