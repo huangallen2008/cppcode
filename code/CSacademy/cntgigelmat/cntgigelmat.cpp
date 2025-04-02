@@ -109,6 +109,7 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
+    oparr(c1)oparr(c2)
     auto go=[&](int x,int y) {
         BIT bit;
         bit.init(n);
