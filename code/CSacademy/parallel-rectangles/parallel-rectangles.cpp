@@ -79,7 +79,7 @@ signed main() {
             int cnt=0;
             int x2=bid[j];
             for(int t:a[x2]) cnt+=is[t];
-
+            an+=cnt*()
         }
     }
     return 0;
