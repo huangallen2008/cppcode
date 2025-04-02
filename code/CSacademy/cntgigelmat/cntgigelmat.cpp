@@ -109,7 +109,7 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
-    auto go=[&](int x,int y) {
+    auto go=[&](int x,int y) ->ll{
         BIT bit;
         bit.init(n);
         vector<Vi> del(n+1);
