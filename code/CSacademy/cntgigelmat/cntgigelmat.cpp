@@ -117,7 +117,9 @@ signed main() {
         }
         return an;
     };
+    int an=0;
     for(int i=n;i>1;i--) an+=go(i,1);
     REP1(i,m) an+=go(1,i);
+    cout<<an<<'\n';
     return 0;
 }
