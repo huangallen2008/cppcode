@@ -73,7 +73,8 @@ signed main() {
     REP(i,SZ(bid)) {
         int x=bid[i];
         Vi is(maxv);
-        for(int t:a[x]) 
+        for(int t:a[x]) is[t]=1;
+        
     }
     return 0;
 }
