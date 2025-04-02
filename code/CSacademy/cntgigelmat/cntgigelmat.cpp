@@ -121,7 +121,7 @@ signed main() {
     REP1(i,n) {
         string s=reads();
         REP1(j,m) {
-            a[i][j]=s[j]=='1';
+            a[i][j]=s[j-1]=='1';
         }
     }
     vector<Vi> cl,cr,cu,cd,clu,crd,c1,c2;
