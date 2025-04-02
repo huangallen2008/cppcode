@@ -68,6 +68,7 @@ signed main() {
         cin>>x>>y,x--,y--;
         a[x].pb(y);
     }
+    REP(i,maxv) sort(ALL(a[i]));
     Vi bid;
     Vi isb(maxv);
     REP(i,maxv) if(SZ(a[i])>S) bid.pb(i),isb[i]=1;
