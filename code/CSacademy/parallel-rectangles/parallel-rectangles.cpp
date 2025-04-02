@@ -61,6 +61,9 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    vector<Vi> 
+    vector<Vi> a(maxv);
+    REP(i,n) {
+        int x,y;
+    }
     return 0;
 }
