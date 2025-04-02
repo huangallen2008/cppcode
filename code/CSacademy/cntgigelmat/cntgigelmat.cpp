@@ -67,7 +67,8 @@ signed main() {
     REP1(i,n) {
         REP1(j,m) {
             if(a[i][j]) {
-                cl[i][j]=cl
+                cl[i][j]=cl[i][j-1]+1;
+                
             }
         }
     }
