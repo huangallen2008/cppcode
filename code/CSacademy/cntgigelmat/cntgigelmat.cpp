@@ -119,11 +119,12 @@ signed main() {
     cin>>n>>m;
     vector<Vi> a(n+2,Vi(m+2));
     REP1(i,n) {
+        string s=reads();
         REP1(j,m) {
-        char c;
-        cin>>c;
-        a[i][j]=c=='1';
-    }
+            char c;
+            cin>>c;
+            a[i][j]=c=='1';
+        }
     }
     vector<Vi> cl,cr,cu,cd,clu,crd,c1,c2;
     cl=cr=cu=cd=clu=crd=c1=c2=vector<Vi>(n+2,Vi(m+2));
