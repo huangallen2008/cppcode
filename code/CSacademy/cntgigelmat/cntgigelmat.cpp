@@ -115,7 +115,8 @@ signed main() {
             for(int t:del[i]) bit.ud(t,-1);
             an+=bit.qu(i-c1[i][j]+1,i);
         }
-        r
-    }
+        return an;
+    };
+    RREP()
     return 0;
 }
