@@ -83,6 +83,6 @@ signed main() {
             an+=cnt*(cnt-1)>>1;
         }
     }
-
+    
     return 0;
 }
