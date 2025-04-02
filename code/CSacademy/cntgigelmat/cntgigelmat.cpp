@@ -124,7 +124,7 @@ signed main() {
                 ope(t)
             }
             REP1(k,n) cout<<bit.qu(k,k)<<' ';entr
-            ope(c2[i][j])
+            op(i)ope(c2[i][j])
             an+=bit.qu(min(i-c2[i][j]+1,1ll),i);
             ope(an)
         }
