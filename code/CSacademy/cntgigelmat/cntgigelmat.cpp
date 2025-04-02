@@ -78,9 +78,10 @@ signed main() {
             if(a[i][j]) {
                 cr[i][j]=cr[i][j+1]+1;
                 cd[i][j]=cd[i+1][j]+1;
-                clu[i][j]=clu[i-1][j-1]+1;
+                crd[i][j]=crd[i+1][j+1]+1;
             }
         }
     }
+    
     return 0;
 }
