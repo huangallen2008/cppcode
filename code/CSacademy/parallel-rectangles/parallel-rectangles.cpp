@@ -64,6 +64,9 @@ signed main() {
     vector<Vi> a(maxv);
     REP(i,n) {
         int x,y;
+        cin>>x>>y,x--,y--;
+        a[x].pb(y);
     }
+    
     return 0;
 }
