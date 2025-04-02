@@ -117,6 +117,7 @@ signed main() {
         }
         return an;
     };
-    for(int i=m;i>1;i--) go()
+    for(int i=n;i>1;i--) go(i,1);
+    REP1(i,m) 
     return 0;
 }
