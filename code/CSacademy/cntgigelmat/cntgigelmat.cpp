@@ -108,11 +108,12 @@ signed main() {
     auto go=[&](int x,int y) {
         bit.init(n);
         vector<Vi> del(n+1);
+        int an=0;
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             bit.ud(i,1);
             del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
-            
+            an+=bit.
         }
     }
     return 0;
