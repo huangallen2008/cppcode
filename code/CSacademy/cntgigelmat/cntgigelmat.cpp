@@ -82,6 +82,10 @@ signed main() {
             }
         }
     }
-
+    REP1(i,n) {
+        REP1(j,m) {
+            c1[i][j]=min()
+        }
+    }
     return 0;
 }
