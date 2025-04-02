@@ -66,7 +66,9 @@ signed main() {
     cl=cr=cu=cd=clu=crd=vector<Vi>(n+2,Vi(m+2));
     REP1(i,n) {
         REP1(j,m) {
-            if(a[i][j]) 
+            if(a[i][j]) {
+                cl[i][j]=cl
+            }
         }
     }
     return 0;
