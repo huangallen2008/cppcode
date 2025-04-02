@@ -62,6 +62,7 @@ signed main() {
     cin>>n>>m;
     vector<Vi> a(n+2,Vi(m+1));
     REP1(i,n) REP1(j,m) cin>>a[i][j];
-    vector<Vi> cl,cr,cu,cd,clu,cr
+    vector<Vi> cl,cr,cu,cd,clu,crd;
+    cl=cr=cu=cd=clu=crd
     return 0;
 }
