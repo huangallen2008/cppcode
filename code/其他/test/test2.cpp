@@ -1,7 +1,4 @@
 #include <bits/stdc++.h>
-#include <queue>
-#include <vector>
-#include <cmath>
 #define int long long
 using namespace std;
 const int N = 1e5+7;
