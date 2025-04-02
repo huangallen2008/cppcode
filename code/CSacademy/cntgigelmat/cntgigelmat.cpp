@@ -107,8 +107,9 @@ signed main() {
     }
     auto go=[&](int x,int y) {
         bit.init(n);
+        vector<Vi> del(n+1);
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
-            
+
         }
     }
     return 0;
