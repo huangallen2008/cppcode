@@ -60,10 +60,6 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    Vpii b(m);
-    REP(i,m) cin>>b[i],b[i].f--,b[i].s--;
     
     return 0;
 }
