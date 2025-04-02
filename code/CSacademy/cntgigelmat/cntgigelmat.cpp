@@ -109,7 +109,6 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
-    oparr(c1)oparr(c2)
     auto go=[&](int x,int y) {
         BIT bit;
         bit.init(n);
@@ -121,7 +120,6 @@ signed main() {
             for(int t:del[i]) bit.ud(t,-1);
             an+=bit.qu(max(i-c2[i][j]+1,1ll),i);
         }
-        op(x)op(y)ope(an)
         return an;
     };
     int an=0;
