@@ -57,75 +57,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct BIT {
-    int n;
-    Vi b;
-    void init(int _n) {
-        n=_n;
-        b=Vi(n+1);
-    }
-    void ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]+=v;
-    }
-    int pre(int u) {
-        int r=0;
-        for(;u>0;u-=u&-u) r+=b[u];
-        return r;
-    }
-    int qu(int l,int r) { return pre(r)-pre(l-1); }
-};
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    vector<Vi> a(n+2,Vi(m+2));
-    REP1(i,n) REP1(j,m) {
-        char c;
-        cin>>c;
-        a[i][j]=c=='1';
-    }
-    vector<Vi> cl,cr,cu,cd,clu,crd,c1,c2;
-    cl=cr=cu=cd=clu=crd=c1=c2=vector<Vi>(n+2,Vi(m+2));
-    REP1(i,n) {
-        REP1(j,m) {
-            if(a[i][j]) {
-                cl[i][j]=cl[i][j-1]+1;
-                cu[i][j]=cu[i-1][j]+1;
-                clu[i][j]=clu[i-1][j-1]+1;
-            }
-        }
-    }
-    RREP1(i,n) {
-        RREP1(j,m) {
-            if(a[i][j]) {
-                cr[i][j]=cr[i][j+1]+1;
-                cd[i][j]=cd[i+1][j]+1;
-                crd[i][j]=crd[i+1][j+1]+1;
-            }
-        }
-    }
-    REP1(i,n) {
-        REP1(j,m) {
-            c1[i][j]=min({cr[i][j],cd[i][j],crd[i][j]});
-            c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
-        }
-    }
-    auto go=[&](int x,int y) ->ll{
-        BIT bit;
-        bit.init(n);
-        vector<Vi> del(n+1);
-        ll an=0;
-        for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
-            bit.ud(i,1);
-            if(i+c1[i][j]<=n) del[i+c1[i][j]].pb(i);
-            for(int t:del[i]) bit.ud(t,-1);
-            an+=bit.qu(max(i-c2[i][j]+1,1),i);
-        }
-        return an;
-    };
-    ll an=0;
-    for(int i=n;i>1;i--) an+=go(i,1);
-    REP1(i,m) an+=go(1,i);
-    cout<<an<<'\n';
+    
     return 0;
 }
