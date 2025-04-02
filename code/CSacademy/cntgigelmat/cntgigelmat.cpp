@@ -113,7 +113,7 @@ signed main() {
         BIT bit;
         bit.init(n);
         vector<Vi> del(n+1);
-        int an=0;
+        ll an=0;
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             bit.ud(i,1);
             if(i+c1[i][j]<=n) del[i+c1[i][j]].pb(i);
@@ -122,7 +122,7 @@ signed main() {
         }
         return an;
     };
-    int an=0;
+    ll an=0;
     for(int i=n;i>1;i--) an+=go(i,1);
     REP1(i,m) an+=go(1,i);
     cout<<an<<'\n';
