@@ -68,6 +68,7 @@ signed main() {
         cin>>x>>y,x--,y--;
         a[x].pb(y);
     }
-    
+    Vi bid;
+    REP(i,maxv) if(SZ(a[i])>S)
     return 0;
 }
