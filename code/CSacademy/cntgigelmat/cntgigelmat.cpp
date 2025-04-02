@@ -71,7 +71,8 @@ struct BIT {
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
-}
+    int qu(int l,int r) { return pre(r)-pre(l-1); }
+};
 signed main() {
     IOS();
     int n,m;
