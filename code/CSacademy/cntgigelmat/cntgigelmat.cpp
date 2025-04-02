@@ -115,8 +115,8 @@ struct BIT {
 };
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
+    int n=read(),m=read();
+    // cin>>n>>m;
     vector<Vi> a(n+2,Vi(m+2));
     REP1(i,n) {
         string s=reads();
