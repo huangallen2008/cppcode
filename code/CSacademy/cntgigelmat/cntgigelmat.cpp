@@ -110,7 +110,7 @@ signed main() {
         vector<Vi> del(n+1);
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             bit.ud(i,1);
-            del[i+]
+            del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
         }
     }
