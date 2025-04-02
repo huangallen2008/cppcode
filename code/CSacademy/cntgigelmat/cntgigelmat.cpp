@@ -120,7 +120,7 @@ signed main() {
             if(i+c1[i][j]<=n)del[i+c1[i][j]].pb(i);
             op(i)ope(j)
             for(int t:del[i]) bit.ud(t,-1);
-            an+=bit.qu(i-c2[i][j]+1>0?i-c2[i][j]+1,i);
+            an+=bit.qu(i-c2[i][j]+1>=1?i-c2[i][j]+1:1,i);
         }
         return an;
     };
