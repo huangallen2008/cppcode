@@ -57,7 +57,15 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct BIT {
-
+    int n;
+    Vi b;
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u>0)
+    }
 }
 signed main() {
     IOS();
