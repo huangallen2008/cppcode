@@ -110,6 +110,7 @@ signed main() {
         }
     }
     auto go=[&](int x,int y) {
+        op(x)ope(y)
         BIT bit;
         bit.init(n);
         vector<Vi> del(n+1);
