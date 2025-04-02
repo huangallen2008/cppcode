@@ -106,7 +106,9 @@ signed main() {
         }
     }
     auto go=[&](int x,int y) {
-        for(int i=x,j=y;i<=n&&j<=m;)
+        for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
+            
+        }
     }
     return 0;
 }
