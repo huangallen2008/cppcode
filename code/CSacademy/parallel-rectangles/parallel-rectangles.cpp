@@ -89,7 +89,7 @@ signed main() {
         REP(i,maxv) {
             if(isb[i]) continue;
             int cnt=0;
-            for(int t:a[x2]) cnt+=is[t];
+            for(int t:a[i]) cnt+=is[t];
             an+=cnt*(cnt-1)>>1;
         }
     }
