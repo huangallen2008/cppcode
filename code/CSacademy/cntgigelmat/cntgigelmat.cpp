@@ -106,6 +106,7 @@ signed main() {
         }
     }
     auto go=[&](int x,int y) {
+        bit.init(n);
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             
         }
