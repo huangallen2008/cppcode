@@ -53,7 +53,7 @@ const int mod=998244353;
 const int maxn=2e5+5;
 const int maxv=1e5+5;
 const int inf=1ll<<60;
-const inr S=1400;
+const int S=1400;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
@@ -68,6 +68,6 @@ signed main() {
         cin>>x>>y,x--,y--;
         a[x].pb(y);
     }
-
+    
     return 0;
 }
