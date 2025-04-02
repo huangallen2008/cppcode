@@ -114,14 +114,13 @@ signed main() {
         bit.init(n);
         vector<Vi> del(n+1);
         int an=0;
-        op(x)ope(y)
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             bit.ud(i,1);
             if(i+c1[i][j]<=n)del[i+c1[i][j]].pb(i);
-            op(i)ope(j)
             for(int t:del[i]) bit.ud(t,-1);
             an+=bit.qu(min(i-c2[i][j]+1,1ll),i);
         }
+        op(x)op(y)ope(an)
         return an;
     };
     int an=0;
