@@ -112,7 +112,6 @@ signed main() {
     auto go=[&](int x,int y) {
         BIT bit;
         bit.init(n);
-            ope("ok")
         vector<Vi> del(n+1);
         int an=0;
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
