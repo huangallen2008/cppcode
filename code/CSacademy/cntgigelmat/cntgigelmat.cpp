@@ -117,7 +117,7 @@ signed main() {
         op(x)ope(y)
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
             bit.ud(i,1);
-            del[i+c1[i][j]].pb(i);
+            if(i+c1[i][j]<=n)del[i+c1[i][j]].pb(i);
             op(i)ope(j)
             for(int t:del[i]) bit.ud(t,-1);
             an+=bit.qu(i-c1[i][j]+1,i);
