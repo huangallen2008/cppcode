@@ -105,6 +105,8 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
-    auto 
+    auto go=[&](int x,int y) {
+        for(int i=x,j=y;i<=n&&j<=m;)
+    }
     return 0;
 }
