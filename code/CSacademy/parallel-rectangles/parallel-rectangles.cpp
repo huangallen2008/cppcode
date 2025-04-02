@@ -70,7 +70,7 @@ signed main() {
     }
     Vi bid;
     Vi isb(maxv);
-    REP(i,maxv) if(SZ(a[i])>S) bid.pb(i);
+    REP(i,maxv) if(SZ(a[i])>S) bid.pb(i),isb[i]=1;
     int an=0;
     REP(i,SZ(bid)) {
         int x=bid[i];
