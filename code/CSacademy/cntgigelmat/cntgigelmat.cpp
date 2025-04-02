@@ -56,6 +56,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct BIT {
+    
+}
 signed main() {
     IOS();
     int n,m;
@@ -88,6 +91,6 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
-    
+
     return 0;
 }
