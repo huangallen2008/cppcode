@@ -70,6 +70,7 @@ signed main() {
     }
     Vi bid;
     REP(i,maxv) if(SZ(a[i])>S) bid.pb(i);
+    int an=0;
     REP(i,SZ(bid)) {
         int x=bid[i];
         Vi is(maxv);
@@ -77,7 +78,8 @@ signed main() {
         REP(j,i) {
             int cnt=0;
             int x2=bid[j];
-            for(int t:a[x2]) 
+            for(int t:a[x2]) cnt+=is[t];
+
         }
     }
     return 0;
