@@ -73,4 +73,14 @@ signed main() {
             }
         }
     }
-    r
+    RREP1(i,n) {
+        RREP1(j,m) {
+            if(a[i][j]) {
+                cr[i][j]=cl[i][j-1]+1;
+                cu[i][j]=cu[i-1][j]+1;
+                clu[i][j]=clu[i-1][j-1]+1;
+            }
+        }
+    }
+    return 0;
+}
