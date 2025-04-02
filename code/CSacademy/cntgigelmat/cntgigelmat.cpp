@@ -123,7 +123,7 @@ signed main() {
                 bit.ud(t,-1);
                 ope(t)
             }
-            REP1(j,n)
+            REP1(k,n) cout<<bit.qu(k)<<' ';entr
             an+=bit.qu(min(i-c2[i][j]+1,1ll),i);
             ope(an)
         }
