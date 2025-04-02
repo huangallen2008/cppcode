@@ -109,7 +109,7 @@ signed main() {
         bit.init(n);
         vector<Vi> del(n+1);
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
-
+            bit.
         }
     }
     return 0;
