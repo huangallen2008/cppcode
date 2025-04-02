@@ -119,6 +119,7 @@ signed main() {
             if(i+c1[i][j]<=n)del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
             an+=bit.qu(min(i-c2[i][j]+1,1ll),i);
+            ope(an)
         }
         op(x)op(y)ope(an)
         return an;
