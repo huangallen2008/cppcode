@@ -67,6 +67,6 @@ signed main() {
         cin>>x>>y,x--,y--;
         a[x].pb(y);
     }
-    
+
     return 0;
 }
