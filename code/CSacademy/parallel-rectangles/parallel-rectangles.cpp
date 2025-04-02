@@ -69,6 +69,7 @@ signed main() {
         a[x].pb(y);
     }
     Vi bid;
+    Vi isb(maxv);
     REP(i,maxv) if(SZ(a[i])>S) bid.pb(i);
     int an=0;
     REP(i,SZ(bid)) {
@@ -82,6 +83,6 @@ signed main() {
             an+=cnt*(cnt-1)>>1;
         }
     }
-    
+
     return 0;
 }
