@@ -105,6 +105,6 @@ signed main() {
             c2[i][j]=min({cl[i][j],cu[i][j],clu[i][j]});
         }
     }
-
+    auto 
     return 0;
 }
