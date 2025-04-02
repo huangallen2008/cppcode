@@ -2,7 +2,8 @@
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
+#define ll long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -118,7 +119,7 @@ signed main() {
             bit.ud(i,1);
             if(i+c1[i][j]<=n) del[i+c1[i][j]].pb(i);
             for(int t:del[i]) bit.ud(t,-1);
-            an+=bit.qu(max(i-c2[i][j]+1,1ll),i);
+            an+=bit.qu(max(i-c2[i][j]+1,1),i);
         }
         return an;
     };
