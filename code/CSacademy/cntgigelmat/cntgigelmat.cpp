@@ -109,8 +109,8 @@ signed main() {
         bit.init(n);
         vector<Vi> del(n+1);
         for(int i=x,j=y;i<=n&&j<=m;i++,j++) {
-            for(int t:del[i])
             bit.ud()
+            for(int t:del[i]) bit.ud(t,-1);
         }
     }
     return 0;
