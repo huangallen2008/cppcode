@@ -62,8 +62,8 @@ signed main() {
     cin>>n>>m;
     vector<Vi> a(n+2,Vi(m+1));
     REP1(i,n) REP1(j,m) cin>>a[i][j];
-    vector<Vi> cl,cr,cu,cd,clu,crd;
-    cl=cr=cu=cd=clu=crd=vector<Vi>(n+2,Vi(m+2));
+    vector<Vi> cl,cr,cu,cd,clu,crd,c1,c2;
+    cl=cr=cu=cd=clu=crd=c1=c2=vector<Vi>(n+2,Vi(m+2));
     REP1(i,n) {
         REP1(j,m) {
             if(a[i][j]) {
@@ -82,6 +82,6 @@ signed main() {
             }
         }
     }
-    
+
     return 0;
 }
