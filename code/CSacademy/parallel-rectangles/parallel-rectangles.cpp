@@ -76,7 +76,8 @@ signed main() {
         for(int t:a[x]) is[t]=1;
         REP(j,i) {
             int cnt=0;
-            
+            int x2=bid[j];
+            for(int t:a[x2]) 
         }
     }
     return 0;
