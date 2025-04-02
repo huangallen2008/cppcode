@@ -117,6 +117,6 @@ signed main() {
         }
         return an;
     };
-    RREP()
+    for(int i=m;i>1;i--) go()
     return 0;
 }
