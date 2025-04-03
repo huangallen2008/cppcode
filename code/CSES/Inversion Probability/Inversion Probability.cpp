@@ -83,8 +83,8 @@ signed main() {
         swap(dp,ndp);
     };
     REP(i,n) trans(a[i]);
-    ld sp;=0
-
+    ld sp=0;
+    REP(i,maxv) REP(j,n+1) sp+=ap[i][j].s;
     oparr(dp)
     return 0;
 }
