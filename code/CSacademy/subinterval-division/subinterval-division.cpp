@@ -74,12 +74,13 @@ signed main() {
         if(x1==x2) return y1<y2?inf:-inf;
         return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
     };
+    oparr(a)
     vector<pair<int,ld>> stk;
     REP(i,n) {
         while(stk.size()&&inter(stk.back().f,a[i])<=stk.back().s) stk.pop_back();
         ld xx;
         if(SZ(stk)==0||(xx=inter(stk.back().s,a[i]))<x) stk.pb({a[i],xx});
-        op(i)oparr(stk)
+        // op(i)oparr(stk)
     }
     vector<ld> an(n);
     REP(i,SZ(stk)) {
