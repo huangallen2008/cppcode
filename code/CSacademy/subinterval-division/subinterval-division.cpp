@@ -61,7 +61,8 @@ signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
-    vector<> a(n);
+    Vi a(n);
+    vector<ppi> t(n);
     Vpii b(n);
     REP(i,n) cin>>b[i].f>>b[i].s,t[i];
     sort(ALL(a));
