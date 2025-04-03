@@ -90,8 +90,8 @@ signed main() {
     Mat x(1,Vpii(n,{0,inf}));
     x[0][0]={1,0};
     REP(i,m) {
-        int u,v;
-        cin>>u>>v,u--,v--;
+        int u,v,w;
+        cin>>u>>v>>w,u--,v--;
         r[u][v]++;
     }
     Mat an=x*pw(r,k);
