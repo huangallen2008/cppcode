@@ -83,9 +83,9 @@ signed main() {
                 // ndp[i][j].f+=(dp[i][j].f)/v;
                 // ndp[i][j].s+=dp[i][j].s*(min(i,v)-1)/v;
                 if(j<n) {
-                    upd(ndp[i][j+1],{dp[i][j].f,dp[i][j].s/v});
-                    ndp[i][j+1].f+=(dp[i][j].f)*(v-min(i,v))/v;
-                    ndp[i][j+1].s+=(dp[i][j].s)*(v-min(i,v))/v;
+                    upd(ndp[i][j+1],{dp[i][j].f,dp[i][j].s*(v-min(i,v))/v});
+                    // ndp[i][j+1].f+=(dp[i][j].f)/v;
+                    // ndp[i][j+1].s+=(dp[i][j].s)*(v-min(i,v))/v;
                 }
             }
         }
