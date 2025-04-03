@@ -73,8 +73,8 @@ signed main() {
         REP(i,maxv) {
             REP(j,n+1) {
                 ndp[i][j].f+=(dp[i][j].f+j)/v;
-                ndp[i][j].s+=dp[i][j].s*min(i,v)/v;
-                ndp[i][j].f+=(dp[i][j].f+j)*min(i,v)/v;
+                ndp[i][j].s+=dp[i][j].s/v;
+                ndp[i][j].f+=(dp[i][j].f)*(min(i,v))/v;
                 ndp[i][j].s+=dp[i][j].s*min(i,v)/v;
                 if(j<n) {
                     ndp[i][j+1].f+=(dp[i][j].f)*(v-min(i,v))/v;
