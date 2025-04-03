@@ -72,7 +72,7 @@ signed main() {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP(i,maxv) {
             REP(j,n+1) {
-                ndp[i][j]+=dp[i][j]*
+                ndp[i][j]+=dp[i][j]*max(0ll,v)
             }
         }
     };
