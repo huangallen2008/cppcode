@@ -85,7 +85,7 @@ signed main() {
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
-        
+        r[u][v]++;
     }
     return 0;
 }
