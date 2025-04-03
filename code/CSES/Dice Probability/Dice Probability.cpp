@@ -68,7 +68,8 @@ Poly operator*(Poly a,Poly b) {
     return c;
 }
 Poly pw(Poly x,int p) {
-    Poly
+    Poly r(1);r[0]=1;
+    while(p>)
 }
 signed main() {
     IOS();
