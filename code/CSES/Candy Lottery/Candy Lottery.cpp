@@ -65,8 +65,8 @@ signed main() {
     REP1(i,k) {
         ld x=1,y=1;
         REP1(j,n) {
-            x*=i/k;
-            y*=
+            x*=(ld)i/k;
+            y*=(ld)(i-1)/k;
         }
     }
     printf("%.6Lf",an);
