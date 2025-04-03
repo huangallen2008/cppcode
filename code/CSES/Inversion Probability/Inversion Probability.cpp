@@ -76,6 +76,7 @@ signed main() {
                 ndp[i][j+1]+=dp[i][j]*(v-min(i,v));
             }
         }
+        swap
     };
     return 0;
 }
