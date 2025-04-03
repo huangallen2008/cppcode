@@ -93,7 +93,7 @@ signed main() {
     cin>>k;
     Vld an(64,1);
     REP(i,64) {
-        Vld x
+        Vld x(64,i);
     }
     oparr(an)
     ld ans=0;
