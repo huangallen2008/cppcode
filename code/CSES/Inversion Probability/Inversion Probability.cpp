@@ -71,7 +71,7 @@ signed main() {
     oparr(dp)
     auto merge=[&](pdd a,pdd b) {
         return {(a.f*a.s+b.f*b.s)/(a.s+b.s),a.s+b.s};
-    }
+    };
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP1(i,maxv-1) {
