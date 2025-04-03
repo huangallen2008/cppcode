@@ -67,8 +67,11 @@ Poly operator*(Poly a,Poly b) {
     renew(c);
     return c;
 }
+Poly pw(Poly x,int p) {
+    Poly
+}
 signed main() {
     IOS();
-    
+
     return 0;
 }
