@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 #define Poly vector<ld>
 Poly operator*(Poly a,Poly b) {
-    while(SZ(a)&&a.back())
+    while(SZ(a)&&a.back()==0) a.pop_back();
 }
 signed main() {
     IOS();
