@@ -82,7 +82,7 @@ signed main() {
     Mat r(64,Vld(64));
     REP(i,8) {
         REP(j,8) {
-            ld pos=(ld)1/((i!=0&&i!=7)+(j!=0&&j!=7));
+            ld pos=(ld)1/((i!=0&&i!=7)+(j!=0&&j!=7)+2);
             if(i!=0) r[i<<3|j][i-1<<3|j]=pos;
             if(i!=7) r[i<<3|j][i+1<<3|j]=pos;
             if(j!=0) r[i<<3|j][i<<3|j-1]=pos;
