@@ -71,6 +71,6 @@ signed main() {
         }
         an+=(ld)i*(x-y);
     }
-    cout<<fixed<<setprecision(6)<<(an+(ld)0.00000000000000000001)<<'\n';
+    cout<<fixed<<setprecision(6)<<(an+(ld)1e-18)<<'\n';
     return 0;
 }
