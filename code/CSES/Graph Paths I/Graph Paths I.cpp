@@ -88,6 +88,7 @@ signed main() {
         r[u][v]++;
     }
     Mat an=x*pw(r,k);
-    int ans=an[n-1];
+    int ans=(an[n-1]+mod)%mod;
+    cout<<ans<<'\n';
     return 0;
 }
