@@ -82,5 +82,10 @@ signed main() {
     Mat r(n,Vi(n));
     Mat x(1,Vi(n));
     x[0][0]=1;
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        
+    }
     return 0;
 }
