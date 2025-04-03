@@ -58,13 +58,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void print(f128 fp) {
-    char buf[32 + sizeof(".e+99999")];
+    char buf[32 + sizeof(".e+6")];
     int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
     fwrite(buf, 1, sz, stdout);
 }
 signed main() {
     IOS();
     f128 a=0.0000005;
-    cout<<fixed<<setprecision(6)<<a<<'\n';
+    print(a);
     return 0;
 }
