@@ -92,7 +92,7 @@ signed main() {
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
-        r[u][v]++;
+        r[u][v].f=1;
     }
     Mat an=x*pw(r,k);
     int ans=(an[0][n-1]+mod)%mod;
