@@ -92,9 +92,10 @@ signed main() {
         if(tt%10>=5 && (((tt/10)%10)&1)) an*=1e6,an=round(an),an/=1e6;
     };
     // cout<<fixed<<setprecision(10) <<an<<'\n';
-    cout<<fixed<<setprecision(20)<<an*(ld)1e6;
-    // an=(int)(an*(ld)1e8)/1e8;
-    an=rint(an*(ld)1e6)/1e6;
+    // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
+    // // an=(int)(an*(ld)1e8)/1e8;
+    // an=rint(an*(ld)1e6)/1e6;
+    rhe(an);
     cout<<fixed<<setprecision(6)<<an<<'\n';
     return 0;
 }
