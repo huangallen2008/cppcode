@@ -79,7 +79,7 @@ signed main() {
             REP(j,n+1) {
 
                 if(i<=v) upd(ndp[i][j],{dp[i][j].f+j,dp[i][j].s/v});
-                upd(ndp[i][j],{dp[i][j].f,dp[i][j].s*(min(i,v)+(i<=v))/v});
+                upd(ndp[i][j],{dp[i][j].f,dp[i][j].s*(min(i,v)-(i<=v))/v});
                 // ndp[i][j].f+=(dp[i][j].f+j)/v;
                 // ndp[i][j].s+=dp[i][j].s/v;
                 // ndp[i][j].f+=(dp[i][j].f)/v;
