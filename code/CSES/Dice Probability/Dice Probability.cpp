@@ -63,10 +63,12 @@ Poly operator*(Poly a,Poly b) {
     renew(a),renew(b);
     int n=SZ(a),m=SZ(b);
     Poly c(n+m);
-    REP(i,n) REP(j,m) c[i+j]+=
+    REP(i,n) REP(j,m) c[i+j]+=a[i]*b[j];
+    renew(c);
+    return c;
 }
 signed main() {
     IOS();
-
+    
     return 0;
 }
