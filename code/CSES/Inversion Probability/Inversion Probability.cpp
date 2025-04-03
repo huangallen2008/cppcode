@@ -77,27 +77,14 @@ signed main() {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP1(i,maxv-1) {
             REP(j,n) {
-
                 if(i<=v) upd(ndp[i][j],{dp[i][j].f+j,dp[i][j].s/v});
                 upd(ndp[i][j],{dp[i][j].f,dp[i][j].s*(min(i,v)-(i<=v))/v});
-                // ndp[i][j].f+=(dp[i][j].f+j)/v;
-                // ndp[i][j].s+=dp[i][j].s/v;
-                // ndp[i][j].f+=(dp[i][j].f)/v;
-                // ndp[i][j].s+=dp[i][j].s*(min(i,v)-1)/v;
-                if(j<n) {
-                    upd(ndp[i][j+1],{dp[i][j].f,dp[i][j].s*(v-min(i,v))/v});
-                    // ndp[i][j+1].f+=(dp[i][j].f)/v;
-                    // ndp[i][j+1].s+=(dp[i][j].s)*(v-min(i,v))/v;
-                }
+                upd(ndp[i][j+1],{dp[i][j].f,dp[i][j].s*(v-min(i,v))/v});
             }
         }
         swap(dp,ndp);
-        oparr(dp)
     };
     REP(i,n) trans(a[i]);
-    oparr(dp)
-    ld sp=0;
-    REP(j,n+1) sp+=dp[5][j].s;
     ld an=0;
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
     ope(an)
