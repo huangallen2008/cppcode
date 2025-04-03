@@ -68,8 +68,10 @@ signed main() {
         Vld ndp(k+1);
         REP1(i,k) {
             ndp[i]+=dp[i]*i/k;
-            for(int j=i+1;j<=k;j++) ndp[j]+=dp[i]*
+            for(int j=i+1;j<=k;j++) ndp[j]+=dp[i]/k;
         }
+        swap(dp,ndp);
     }
+    
     return 0;
 }
