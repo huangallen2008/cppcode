@@ -78,6 +78,8 @@ Poly pw(Poly x,int p) {
 }
 signed main() {
     IOS();
+    int n,a,b;
+    cin>>n>>a>>b;
     
     return 0;
 }
