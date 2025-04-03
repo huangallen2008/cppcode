@@ -73,7 +73,8 @@ signed main() {
         REP(i,maxv) {
             REP(j,n+1) {
                 ndp[i][j]+=dp[i][j]*min(i,v);
-                ndp[i][j+1]+=dp[i][j]*(v-min(i,v));
+                ndp[i][j+1]+=dp[i][j].f*(v-min(i,v));
+                ndp[i][j+1]+=dp[i][j].s*(v-min(i,v));
             }
         }
         swap(dp,ndp);
