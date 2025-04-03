@@ -62,10 +62,8 @@ int rd(int l,int r) {
 #define Vld vector<ld>
 float roundHalfToEven(ld f)
 {
-    const float r = round(f); // Result is round-half-away-from-zero
-    const float d = r - f; // Difference
-
-    // Result is not half, RHAFZ result same as RHTE
+    const ld r = round(f);
+    const ld d = r - f;
     if ((d != 0.5f) && (d != -0.5f))return r;
     if (fmod(r, 2.0) == 0.0)return r;
     return f - d;
