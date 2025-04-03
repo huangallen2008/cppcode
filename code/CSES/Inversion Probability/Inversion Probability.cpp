@@ -66,7 +66,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vpd dp(maxv);
+    vector<Vpd> dp(maxv,Vi());
 
     return 0;
 }
