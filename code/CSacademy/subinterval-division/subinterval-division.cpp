@@ -80,13 +80,13 @@ signed main() {
         while(stk.size()&&inter(stk.back().f,a[i])<=stk.back().s) stk.pop_back();
         ld xx;
         if(SZ(stk)==0||(xx=inter(stk.back().f,a[i]))<x) stk.pb({a[i],xx});
-        // op(i)oparr(stk)
+        op(i)oparr(stk)
     }
     vector<ld> an(n);
     REP(i,SZ(stk)) {
         an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].f)-stk[i].f;
     }
-    // oparr(stk)
+    oparr(stk)
     REP(i,n) cout<<an[i]<<'\n';
     return 0;
 }
