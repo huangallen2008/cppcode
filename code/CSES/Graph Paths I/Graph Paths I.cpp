@@ -81,5 +81,6 @@ signed main() {
     cin>>n>>m;
     Mat r(n,Vi(n));
     Mat x(1,Vi(n));
+    x[0][0]=1;
     return 0;
 }
