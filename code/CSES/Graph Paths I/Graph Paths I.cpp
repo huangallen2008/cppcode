@@ -65,7 +65,12 @@ Mat operator*(Mat a,Mat b) {
     return c;
 }
 Mat pw(Mat x,int p) {
-    int n=
+    int n=SZ(x);
+    Mat r(n,Vi(n));
+    REP(i,n) r[i][i]=1;
+    while(p>0) {
+        
+    }
 }
 signed main() {
     IOS();
