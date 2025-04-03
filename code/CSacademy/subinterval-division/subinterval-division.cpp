@@ -79,7 +79,6 @@ signed main() {
         ld xx=inter(stk.back().s,a[i]);
         if(SZ(stk)==0||xx<x) stk.pb({a[i],xx});
     }
-    ope("ok")
     vector<ld> an(n);
     REP(i,SZ(stk)) {
         an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].f)-stk[i].f;
