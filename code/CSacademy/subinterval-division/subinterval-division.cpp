@@ -60,6 +60,6 @@ signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
-    
+    V
     return 0;
 }
