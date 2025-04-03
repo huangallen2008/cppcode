@@ -84,5 +84,6 @@ signed main() {
     REP1(i,6) r[i]=(ld)1/6;
     Poly res=pw(r,n);
     ld ans=0;
+    
     return 0;
 }
