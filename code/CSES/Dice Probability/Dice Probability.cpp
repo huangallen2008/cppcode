@@ -58,7 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Poly vector<ld>
-
+Pol
 signed main() {
     IOS();
 
