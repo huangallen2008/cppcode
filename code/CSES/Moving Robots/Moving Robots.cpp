@@ -97,11 +97,11 @@ signed main() {
         Mat x(1,Vld(64));
         x[0][i]=1;
         Mat res=x*ra;
-        REP(j,64) 
+        REP(j,64) an[j]=an[j]*(1-res[j]);
     }
     oparr(an)
     ld ans=0;
-    REP(i,64) ans+=an[0][i]-1;
+    REP(i,64) ans+=an[0][i];
     cout<<fixed<<setprecision(6)<<ans<<'\n';
     return 0;
 }
