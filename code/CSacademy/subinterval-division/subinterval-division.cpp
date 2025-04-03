@@ -69,7 +69,8 @@ signed main() {
     REP(i,n) a[i]=t[i].s;
     auto inter=[&](int x,int y) ->ld {
         auto [x1,y1]=b[x];
-        auto [x2,y2]=b[x];
+        auto [x2,y2]=b[y];
+        return (x1*)
     }
     Vpii stk;
 
