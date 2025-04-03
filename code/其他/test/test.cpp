@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    ld a=0.00000051;
-    cout<<fixed<<setprecision(6)<<a<<'\n';
+    long double a=0.000005;
+    cout<<fixed<<setprecision(5)<<a<<'\n';
     return 0;
 }
