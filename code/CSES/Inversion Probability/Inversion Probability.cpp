@@ -87,7 +87,7 @@ signed main() {
     ld sp=0;
     REP(j,n+1) sp+=dp[5][j].s;
     ld an=0;
-    REP(i,maxv) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
+    REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
     ope(an)
     ope(sp)
     return 0;
