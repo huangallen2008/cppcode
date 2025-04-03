@@ -62,30 +62,23 @@ int rd(int l,int r) {
 #define Vld vector<ld>
 signed main() {
     IOS();
-    struct S {
-        ld po,pc,pi;
-    };
     int n;
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    #define VS vector<S>
-    vector<VS> dp(maxv,VS(n+1));
-    REP(i,maxv) dp[i][0]={1,0,0};
+    vector<Vpd> dp(maxv,Vpd(n+1));
+    REP(i,maxv) dp[i][0]={0,1};
     auto trans=[&](int v) {
-        vector<VS> ndp(maxv,VS(n+1));
+        vector<Vpd> ndp(maxv,Vpd(n+1));
         REP(i,maxv) {
             REP(j,n+1) {
-                ndp[i][j].po+=dp[i][j].po*min(i,v)/v;
-                ndp[i][j].pc+=dp[i][j].po*min(i,v)/v;
-                ndp[i][j].po+=dp[i][j].po*min(i,v)/v;
-
+                ndp[i][j].f+=dp[i][j].f*min(i,v)/v;
                 ndp[i][j+1]+=dp[i][j].f*(v-min(i,v));
                 ndp[i][j+1]+=dp[i][j].s*(v-min(i,v))/v;
             }
         }
         swap(dp,ndp);
     };
-    // oparr(dp)
+    oparr(dp)
     return 0;
 }
