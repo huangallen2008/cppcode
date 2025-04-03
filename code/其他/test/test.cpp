@@ -62,7 +62,7 @@ signed main() {
     ld a=0.5;
     cout<<round(a)<<'\n';
     a=0.51;cout<<round(a)<<'\n';
-    a=0.51;cout<<round(a)<<'\n';
-    a=0.51;cout<<round(a)<<'\n';
+    a=1.5;cout<<round(a)<<'\n';
+    a=1.51;cout<<round(a)<<'\n';
     return 0;
 }
