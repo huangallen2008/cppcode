@@ -89,12 +89,12 @@ signed main() {
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
     auto rhe=[&](ld &an)->void {
         an+=1e-18;
+        cout<<fixed<<setprecision(20) <<an<<'\n';
         int tt=an*1e7;
         // ope(tt)
         if(tt%10==5 && (~(int)(tt/10)&1))
             an-=1e-7;
     };
-    cout<<fixed<<setprecision(20) <<an<<'\n';
     // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
     // // an=(int)(an*(ld)1e8)/1e8;
     // an=rint(an*(ld)1e6)/1e6;
