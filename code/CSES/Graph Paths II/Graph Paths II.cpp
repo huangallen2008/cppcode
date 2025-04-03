@@ -87,6 +87,7 @@ signed main() {
         cin>>u>>v>>w,u--,v--;
         chmin(r[u][v],w);
     }
+    oparr(r)
     Mat an=x*pw(r,k);
     int ans=(an[0][n-1]+mod)%mod;
     cout<<ans<<'\n';
