@@ -76,7 +76,7 @@ signed main() {
     vector<pair<int,ld>> stk;
     REP(i,n) {
         while(stk.size()&&inter(stk.back().f,a[i])<=stk.back().s) stk.pop_back();
-        if(SZ(stk)==0||inter(stk.back().s))
+        if(SZ(stk)==0||inter(stk.back().s,a[i])<x)
     }
     return 0;
 }
