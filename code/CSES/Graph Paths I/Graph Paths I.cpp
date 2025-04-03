@@ -77,8 +77,8 @@ Mat pw(Mat x,int p) {
 }
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
+    int n,m,k;
+    cin>>n>>m>>k;
     Mat r(n,Vi(n));
     Mat x(1,Vi(n));
     x[0][0]=1;
@@ -88,5 +88,6 @@ signed main() {
         r[u][v]++;
     }
     Mat an=x*pw(r,k);
+    int ans=an[n-1]
     return 0;
 }
