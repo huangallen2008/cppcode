@@ -81,6 +81,7 @@ signed main() {
     int n,a,b;
     cin>>n>>a>>b;
     Poly r(7);
-    REP1(i,6) r[i]=1/6;
+    REP1(i,6) r[i]=(ld)1/6;
+    
     return 0;
 }
