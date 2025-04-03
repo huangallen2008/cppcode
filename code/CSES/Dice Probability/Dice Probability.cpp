@@ -82,6 +82,7 @@ signed main() {
     cin>>n>>a>>b;
     Poly r(7);
     REP1(i,6) r[i]=(ld)1/6;
-    Poly an=
+    Poly res=pw(r,n);
+    ld ans=0;
     return 0;
 }
