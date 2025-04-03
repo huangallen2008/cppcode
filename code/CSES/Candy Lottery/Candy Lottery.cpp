@@ -64,6 +64,8 @@ signed main() {
     cin>>n>>k;
     Vi dp(k+1);
     dp[0]=1;
-    
+    REP(_,n) {
+        
+    }
     return 0;
 }
