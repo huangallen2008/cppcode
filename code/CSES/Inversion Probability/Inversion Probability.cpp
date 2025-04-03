@@ -87,7 +87,6 @@ signed main() {
     REP(i,n) trans(a[i]);
     ld an=0;
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
-    ope(an)
-    ope(sp)
+    cout<<fixed<<setprecision(6)<<an<<'\n';
     return 0;
 }
