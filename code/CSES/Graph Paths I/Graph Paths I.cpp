@@ -87,5 +87,6 @@ signed main() {
         cin>>u>>v,u--,v--;
         r[u][v]++;
     }
+    
     return 0;
 }
