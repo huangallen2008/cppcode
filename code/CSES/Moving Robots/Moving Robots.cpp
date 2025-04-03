@@ -82,7 +82,7 @@ signed main() {
     Mat r(64,Vld(64));
     REP(i,8) {
         REP(j,8) {
-            int cnt=(i==0||i==7)+(j==0||j==7);
+            ld cnt=(ld)1/((i==0||i==7)+(j==0||j==7));
             if(i>0) r[i-1<<3|j]=(ld)
         }
     }
