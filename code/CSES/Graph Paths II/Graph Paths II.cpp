@@ -86,8 +86,8 @@ signed main() {
     IOS();
     int n,m,k;
     cin>>n>>m>>k;
-    Mat r(n,Vi(n));
-    Mat x(1,Vi(n));
+    Mat r(n,Vpii(n));
+    Mat x(1,Vpii(n));
     x[0][0]=1;
     REP(i,m) {
         int u,v;
