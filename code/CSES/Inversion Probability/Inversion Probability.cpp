@@ -69,7 +69,8 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    vector<vector<S>> dp(maxv,(n+1));
+    #define VS vector<S>
+    vector<VS> dp(maxv,(n+1));
     REP(i,maxv) dp[i][0]={1,0,0};
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
