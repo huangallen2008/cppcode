@@ -58,8 +58,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define f128 __float128
-void print(f128 fp) {
-    quadmath_snprintf (buf, sizeof buf, "%.30Qe", 64, r3);
+void print(f128 r) {
+    quadmath_snprintf (buf, sizeof buf, "%.30Qe", 64, r);
     puts (buf);
 }
 signed main() {
