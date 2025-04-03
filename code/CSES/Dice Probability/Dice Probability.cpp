@@ -58,7 +58,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Poly vector<ld>
-Pol
+Poly operator*(Poly a,Poly b) {
+    
+}
 signed main() {
     IOS();
 
