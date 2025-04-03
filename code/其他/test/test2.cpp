@@ -15,5 +15,5 @@ int main() {
         }
         ans += (double)i*(x-y);
     }
-    cout << fixed << setprecision(10) << ans << "\n";
+    cout << fixed << setprecision(6) << ans << "\n";
 }
