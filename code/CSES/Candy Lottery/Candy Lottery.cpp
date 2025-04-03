@@ -73,6 +73,7 @@ signed main() {
         REP1(i,k) ndp[i]/=k;
         swap(dp,ndp);
     }
+    oparr(dp)
     ld an=0;
     REP1(i,k) an+=i*dp[i];
     cout<<fixed<<setprecision(6)<<an<<'\n';
