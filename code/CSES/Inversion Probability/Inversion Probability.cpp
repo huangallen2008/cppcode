@@ -91,8 +91,8 @@ signed main() {
         an+=1e-18;
         int tt=an*1e7;
         ope(tt)
-        if(tt%10==5 && ((int)(tt/10)&1))
-            an+=1e-7;
+        if(tt%10==5 && (~(int)(tt/10)&1))
+            an-=1e-7;
     };
     cout<<fixed<<setprecision(10) <<an<<'\n';
     // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
