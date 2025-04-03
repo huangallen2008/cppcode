@@ -62,12 +62,12 @@ int rd(int l,int r) {
 Mat operator*(Mat a,Mat b) {
     int n=SZ(a),m=SZ(b),k=SZ(b[0]);
     Mat c(n,Vld(k));
-    REP(i,n) REP(j,m) REP(l,k) c[i][l]+=a[i][j]*b[j][l]);
+    REP(i,n) REP(j,m) REP(l,k) c[i][l]+=a[i][j]*b[j][l];
     return c;
 }
 Mat pw(Mat x,int p) {
     int n=SZ(x);
-    Mat r(n,Vi(n));
+    Mat r(n,Vld(n));
     REP(i,n) r[i][i]=1;
     while(p>0) {
         if(p&1) r=r*x;
