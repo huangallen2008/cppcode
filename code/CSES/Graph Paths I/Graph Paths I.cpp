@@ -69,6 +69,8 @@ Mat pw(Mat x,int p) {
     Mat r(n,Vi(n));
     REP(i,n) r[i][i]=1;
     while(p>0) {
+        if(p&1) r=r*x;
+        x=x*x;
         
     }
 }
