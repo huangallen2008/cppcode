@@ -78,6 +78,6 @@ signed main() {
     // cout<<fixed<<setprecision(10)<<an<<'\n';
     // ld ans=round(an*1000000)/1000000;
     // cout<<fixed<<setprecision(6)<<an<<'\n';
-    printf("%.6f",an);
+    printf("%.6lf",an);
     return 0;
 }
