@@ -65,8 +65,10 @@ Mat operator*(Mat a,Mat b) {
         int val=a[i][j].s+b[j][l].s;
         if(val<c[i][l].s) {
             c[i][l]={a[i][j]*b[j][l],val};
-        }else if(val==c[i][l])
-        addmod(c[i][l],a[i][j]*b[j][l]);
+        }else if(val==c[i][l].s) {
+            addmod(c[i][l].f,)
+            addmod(c[i][l],a[i][j]*b[j][l]);
+        }
     }
     return c;
 }
