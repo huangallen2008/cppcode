@@ -76,7 +76,8 @@ signed main() {
     }
     f128 an=0;
     REP1(i,k) an+=i*dp[i];
-    cout<<fixed<<setprecision(6)<<(ld)an<<'\n';
+    ld ans=an;
+    cout<<fixed<<setprecision(6)<<ans<<'\n';
     oparr(dp)
     return 0;
 }
