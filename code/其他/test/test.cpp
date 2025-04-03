@@ -60,6 +60,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     ld a=0.5;
-    cout<<round(a)
+    cout<<round(a)<<'\n';
+    a=0.51;cout<<round(a)<<'\n';
+    a=0.51;cout<<round(a)<<'\n';
+    a=0.51;cout<<round(a)<<'\n';
     return 0;
 }
