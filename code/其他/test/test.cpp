@@ -59,5 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ld a=1.54;
+    cout<<fixed<<setprecision()
     return 0;
 }
