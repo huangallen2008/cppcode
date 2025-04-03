@@ -67,7 +67,9 @@ signed main() {
     REP(i,n) cin>>b[i].f>>b[i].s,t[i]={b[i],i};
     sort(ALL(t));
     REP(i,n) a[i]=t[i].s;
-    auto inter=[&]()
+    auto inter=[&](int a,int b) ->ld {
+        
+    }
     Vpii stk;
 
     return 0;
