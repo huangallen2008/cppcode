@@ -73,14 +73,14 @@ signed main() {
     vector<VS> dp(maxv,(n+1));
     REP(i,maxv) dp[i][0]={1,0,0};
     auto trans=[&](int v) {
-        vector<Vpd> ndp(maxv,Vpd(n+1));
-        REP(i,maxv) {
-            REP(j,n+1) {
-                ndp[i][j].f+=dp[i][j].f*min(i,v)/v;
-                ndp[i][j+1]+=dp[i][j].f*(v-min(i,v));
-                ndp[i][j+1]+=dp[i][j].s*(v-min(i,v))/v;
-            }
-        }
+        vector<VS> ndp(maxv,VS(n+1));
+        // REP(i,maxv) {
+        //     REP(j,n+1) {
+        //         ndp[i][j].f+=dp[i][j].f*min(i,v)/v;
+        //         ndp[i][j+1]+=dp[i][j].f*(v-min(i,v));
+        //         ndp[i][j+1]+=dp[i][j].s*(v-min(i,v))/v;
+        //     }
+        // }
         swap(dp,ndp);
     };
     oparr(dp)
