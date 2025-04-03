@@ -92,6 +92,8 @@ signed main() {
     int k;
     cin>>k;
     Mat an=x*pw(r,k);
-    
+    ld ans=0;
+    REP(i,64) ans+=1-an[i];
+    cout<<fixed<<setprecision()
     return 0;
 }
