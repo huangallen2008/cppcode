@@ -72,6 +72,7 @@ signed main() {
         }
         swap(dp,ndp);
     }
-    
+    ld an=0;
+    REP1(i,k) an+=i*
     return 0;
 }
