@@ -97,7 +97,7 @@ signed main() {
         Mat x(1,Vld(64));
         x[0][i]=1;
         Mat res=x*ra;
-        REP(j,64) an[j]=an[j]*(1-res[j]);
+        REP(j,64) an[j]=an[j]*(1-res[0][j]);
     }
     // oparr(an)
     ld ans=0;
