@@ -62,7 +62,9 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    
+    REP1(i,k) {
+
+    }
     printf("%.6Lf",an);
     return 0;
 }
