@@ -60,6 +60,8 @@ int rd(int l,int r) {
 #define Vld vector<ld>
 signed main() {
     IOS();
-    
+    int n,k;
+    cin>>n>>k;
+    Vi
     return 0;
 }
