@@ -91,6 +91,7 @@ signed main() {
     oparr(r)
     int k;
     cin>>k;
+    Vld r=pw(r,k);
     Vld an(64,1);
     REP(i,64) {
         Vld x(64,i);
