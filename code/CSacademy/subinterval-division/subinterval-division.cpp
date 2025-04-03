@@ -81,7 +81,7 @@ signed main() {
     }
     vector<ld> an(n);
     REP(i,SZ(stk)) {
-        an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].s)
+        an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].f)-stk[i].f;
     }
     return 0;
 }
