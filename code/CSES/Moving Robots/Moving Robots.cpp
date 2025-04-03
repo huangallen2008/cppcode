@@ -78,6 +78,6 @@ Mat pw(Mat x,int p) {
 }
 signed main() {
     IOS();
-    Mat x
+    Mat x(64);
     return 0;
 }
