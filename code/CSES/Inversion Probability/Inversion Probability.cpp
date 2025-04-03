@@ -70,7 +70,7 @@ signed main() {
     REP(i,maxv) dp[i][0]={0,1};
     oparr(dp)
     auto merge=[&](pdd a,pdd b) {
-        return {a.f*a.s+b.f*b.s}
+        return {(a.f*a.s+b.f*b.s)/(a.)}
     }
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
