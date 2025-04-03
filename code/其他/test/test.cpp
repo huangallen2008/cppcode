@@ -58,10 +58,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define f128 __float128
-void print(f128 fp) {
-    char buf[32 + sizeof(".e+6")];
-    int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
-    fwrite(buf, 1, sz, stdout);
+void print(std::float128_t fp) {
+    std::println("{:.32g}", fp);  // std::println is C++26
+    // C++23: `std::cout << std::format("{:.32g}\n", fp);`
 }
 signed main() {
     IOS();
