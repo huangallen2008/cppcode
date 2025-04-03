@@ -1,19 +1,19 @@
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
+
 using namespace std;
-  
-int n, k;
-  
-int main() {
-    cin >> n >> k;
-    double ans = 0;
-    for (int i = 1; i <= k; i++){
-        double x = 1, y = 1;
-        for (int j = 1; j <= n; j++){
-            x *= (double)i/k;
-            y *= (double)(i-1)/k;
+
+int N, K;
+double ans, a, b;
+
+int main(){
+    scanf("%d %d", &N, &K);
+    for(int i = 1; i <= K; i++){
+        a = b = 1.0;
+        for(int j = 1; j <= N; j++){
+            a *= (double) i / K;
+            b *= (double) (i-1) / K;
         }
-        ans += (double)i*(x-y);
+        ans += (a-b) * i;
     }
-    cout << fixed << setprecision(6) << ans << "\n";
+    printf("%.6f\n", ans);
 }
