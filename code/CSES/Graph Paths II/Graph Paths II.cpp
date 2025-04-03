@@ -80,8 +80,8 @@ signed main() {
     int n,m,k;
     cin>>n>>m>>k;
     Mat r(n,Vi(n,inf));
-    Mat x(1,Vi(n));
-    x[0][0]=1;
+    Mat x(1,Vi(n,inf));
+    x[0][0]=0;
     REP(i,m) {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
