@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
-    vector<pair<pii,int>> a(n);
+    vector<piii> a(n);
     REP(i,n) cin>>a[i];
     return 0;
 }
