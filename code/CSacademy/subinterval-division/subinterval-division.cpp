@@ -64,8 +64,9 @@ signed main() {
     Vi a(n);
     vector<ppi> t(n);
     Vpii b(n);
-    REP(i,n) cin>>b[i].f>>b[i].s,t[i];
-    sort(ALL(a));
+    REP(i,n) cin>>b[i].f>>b[i].s,t[i]={b[i],i};
+    sort(ALL(t));
+    REP(i,n) a[i]=t[i].s;
     vector<p> stk;
     return 0;
 }
