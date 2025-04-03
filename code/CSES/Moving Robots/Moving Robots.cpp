@@ -92,7 +92,9 @@ signed main() {
     int k;
     cin>>k;
     Vld an(64,1);
-    
+    REP(i,64) {
+        Vld x
+    }
     oparr(an)
     ld ans=0;
     REP(i,64) ans+=an[0][i]-1;
