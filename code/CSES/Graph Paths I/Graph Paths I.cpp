@@ -60,7 +60,8 @@ int rd(int l,int r) {
 #define Mat vector<Vi>
 Mat operator*(Mat a,Mat b) {
     int n=SZ(a),m=SZ(b),k=SZ(b[0]);
-    MT
+    Mat c(n,Vi(k));
+    
 }
 signed main() {
     IOS();
