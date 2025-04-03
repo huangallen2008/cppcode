@@ -63,9 +63,7 @@ Poly operator*(Poly a,Poly b) {
     renew(a),renew(b);
     int n=SZ(a),m=SZ(b);
     Poly c(n+m);
-    REP(i,n) {
-        
-    }
+    REP(i,n) REP(j,m) c[i+j]+=
 }
 signed main() {
     IOS();
