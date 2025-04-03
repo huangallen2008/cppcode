@@ -86,7 +86,7 @@ signed main() {
     REP(i,SZ(stk)) {
         an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].f)-stk[i].f;
     }
-    oparr(stk)
+    // oparr(stk)
     REP(i,n) cout<<an[i]<<'\n';
     return 0;
 }
