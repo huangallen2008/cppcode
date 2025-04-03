@@ -87,6 +87,6 @@ signed main() {
         cin>>u>>v,u--,v--;
         r[u][v]++;
     }
-    
+    Mat an=x*pw(r,k);
     return 0;
 }
