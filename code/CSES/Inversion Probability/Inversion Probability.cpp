@@ -87,7 +87,7 @@ signed main() {
     REP(i,n) trans(a[i]);
     ld an=0;
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
-    auto ht
+    auto rhe=[&]()
     ll ans; ans=(round(res*1e7));
     if(ans%10>=5 && (((ans/10)%10)&1)) res*=1e6,res=round(res),res/=1e6;
     // cout<<fixed<<setprecision(10) <<an<<'\n';
