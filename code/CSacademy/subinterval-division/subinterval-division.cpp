@@ -59,51 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    vector<Vi> a(maxv);
-    REP(i,n) {
-        int x,y;
-        cin>>x>>y,x--,y--;
-        a[x].pb(y);
-    }
-    REP(i,maxv) sort(ALL(a[i]));
-    Vi bid;
-    Vi isb(maxv);
-    REP(i,maxv) if(SZ(a[i])>S) bid.pb(i),isb[i]=1;
-    int an=0;
-    REP(i,SZ(bid)) {
-        int x=bid[i];
-        Vi is(maxv);
-        for(int t:a[x]) is[t]=1;
-        REP(j,i) {
-            int cnt=0;
-            int x2=bid[j];
-            for(int t:a[x2]) cnt+=is[t];
-            an+=cnt*(cnt-1)>>1;
-        }
-    }
-    for(int x:bid) {
-        Vi is(maxv);
-        for(int t:a[x]) is[t]=1;
-        REP(i,maxv) {
-            if(isb[i]) continue;
-            int cnt=0;
-            for(int t:a[i]) cnt+=is[t];
-            an+=cnt*(cnt-1)>>1;
-        }
-    }
-
-
-    map<int,int> mp;
-    REP(i,maxv) {
-        if(isb[i]) continue;
-        REP(j,SZ(a[i])) {
-            REP(k,j) {
-                an+=mp[a[i][k]*maxv+a[i][j]]++;
-            }
-        }
-    }
-    cout<<an<<'\n';
+    
     return 0;
 }
