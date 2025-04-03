@@ -61,10 +61,7 @@ signed main() {
     IOS();
     
     fesetround(FE_TONEAREST);
-    ld a=0.5;
-    cout<<round(a)<<'\n';
-    a=0.51;cout<<round(a)<<'\n';
-    a=1.5;cout<<round(a)<<'\n';
-    a=1.51;cout<<round(a)<<'\n';
+    ld a=920312.5;
+    cout<<nearbyintl(a)<<'\n';
     return 0;
 }
