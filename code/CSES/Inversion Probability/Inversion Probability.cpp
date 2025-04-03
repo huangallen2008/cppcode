@@ -68,7 +68,6 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<Vpd> dp(maxv,Vpd(n+1));
     REP(i,maxv) dp[i][0]={0,1};
-    oparr(dp)
     auto upd=[&](pdd &a,pdd b) ->void{
         if(b.s==0) return;
         a={(a.f*a.s+b.f*b.s)/(a.s+b.s),a.s+b.s};
