@@ -92,6 +92,6 @@ signed main() {
     int k;
     cin>>k;
     Mat an=x*pw(r,k);
-
+    
     return 0;
 }
