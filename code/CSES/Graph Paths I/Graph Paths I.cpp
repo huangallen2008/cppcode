@@ -80,6 +80,6 @@ signed main() {
     int n,m;
     cin>>n>>m;
     Mat r(n,Vi(n));
-    Mat x()
+    Mat x(1,Vi(n));
     return 0;
 }
