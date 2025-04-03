@@ -58,15 +58,14 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Vld vector<ld>
-#define f128 __float128
 signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    vector<f128> dp(k+1);
+    Vld dp(k+1);
     dp[0]=1;
     REP(_,n) {
-        vector<f128> ndp(k+1);
+        Vld ndp(k+1);
         REP(i,k+1) {
             ndp[i]+=dp[i]*i;
             for(int j=i+1;j<=k;j++) ndp[j]+=dp[i];
@@ -74,10 +73,10 @@ signed main() {
         REP1(i,k) ndp[i]/=k;
         swap(dp,ndp);
     }
-    f128 an=0;
+    ld an=0;
     REP1(i,k) an+=i*dp[i];
-    // cout<<fixed<<setprecision(10)<<an<<'\n';
-    ld ans=round((ld)(an*1000000))/1000000;
+    cout<<fixed<<setprecision(10)<<an<<'\n';
+    ld ans=round(an*1000000)/1000000;
     cout<<fixed<<setprecision(6)<<ans<<'\n';
     return 0;
 }
