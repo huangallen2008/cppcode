@@ -88,7 +88,7 @@ signed main() {
     cin>>n>>m>>k;
     Mat r(n,Vpii(n));
     Mat x(1,Vpii(n,{0,inf}));
-    x[0][0]={1};
+    x[0][0]={1,0};
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
