@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 #define f128 __float128
 void print(f128 fp) {
-    println("{:.6g}", fp); 
+    cout << format("{:.6g}\n", fp);
 }
 signed main() {
     IOS();
