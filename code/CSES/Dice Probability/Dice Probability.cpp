@@ -61,7 +61,9 @@ int rd(int l,int r) {
 void renew(Poly &a) { while(SZ(a)&&a.back()==0) a.pop_back(); }
 Poly operator*(Poly a,Poly b) {
     renew(a),renew(b);
-    int n=SZ(a),
+    int n=SZ(a),m=SZ(b);
+    Poly c(n+m);
+    
 }
 signed main() {
     IOS();
