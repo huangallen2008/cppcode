@@ -91,6 +91,7 @@ signed main() {
     oparr(r)
     int k;
     cin>>k;
+    Vld an(64,1);
     Mat an=x*pw(r,k);
     oparr(an)
     ld ans=0;
