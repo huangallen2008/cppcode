@@ -15,6 +15,7 @@ using namespace std;
 #define SQ(x) ((x)*(x))
 #define pii pair<int,int>
 #define pipii pair<int,pii>
+#define piii pair<pii,int>
 #define Graph vector<vector<int>>
 #define Graphw vector<vector<pii>>
 #define IOS() ios::sync_with_stdio(0),cin.tie(0)
