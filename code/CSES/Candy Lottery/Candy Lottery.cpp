@@ -63,7 +63,7 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vld dp(k+1);
+    vector<f128> dp(k+1);
     dp[0]=1;
     REP(_,n) {
         Vld ndp(k+1);
