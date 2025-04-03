@@ -64,7 +64,9 @@ Mat operator*(Mat a,Mat b) {
     REP(i,n) REP(j,m) REP(l,k) addmod(c[i][l],a[i][j]*b[j][l]);
     return c;
 }
-Mat
+Mat pw(Mat x,int p) {
+    int n=
+}
 signed main() {
     IOS();
 
