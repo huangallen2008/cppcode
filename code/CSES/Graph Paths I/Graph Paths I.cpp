@@ -61,7 +61,9 @@ int rd(int l,int r) {
 Mat operator*(Mat a,Mat b) {
     int n=SZ(a),m=SZ(b),k=SZ(b[0]);
     Mat c(n,Vi(k));
-    
+    REP(i,n) {
+        REP
+    }
 }
 signed main() {
     IOS();
