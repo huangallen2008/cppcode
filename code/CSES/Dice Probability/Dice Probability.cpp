@@ -80,6 +80,6 @@ signed main() {
     IOS();
     int n,a,b;
     cin>>n>>a>>b;
-    Poly 
+    Poly r()
     return 0;
 }
