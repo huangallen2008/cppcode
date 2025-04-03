@@ -66,7 +66,9 @@ signed main() {
     dp[0]=1;
     REP(_,n) {
         Vld ndp(k+1);
-        REP1
+        REP1(i,k) {
+            
+        }
     }
     return 0;
 }
