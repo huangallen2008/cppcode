@@ -57,33 +57,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+
 signed main() {
     IOS();
-    cout<<fixed<<setprecision(9);
-    int n,x;
-    cin>>n>>x;
-    Vi a(n);
-    vector<ppi> t(n);
-    Vpii b(n);
-    REP(i,n) cin>>b[i].f>>b[i].s,t[i]={b[i],i};
-    sort(ALL(t));
-    REP(i,n) a[i]=t[i].s;
-    auto inter=[&](int x,int y) ->ld {
-        auto [x1,y1]=b[x];
-        auto [x2,y2]=b[y];
-        if(x1==x2) return y1<y2?inf:-inf;
-        return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
-    };
-    vector<pair<int,ld>> stk;
-    REP(i,n) {
-        while(stk.size()&&inter(stk.back().f,a[i])<=stk.back().s) stk.pop_back();
-        ld xx=0;
-        if(SZ(stk)==0||(xx=inter(stk.back().f,a[i]))<x) stk.pb({a[i],xx});
-    }
-    vector<ld> an(n);
-    REP(i,SZ(stk)) {
-        an[stk[i].f]=(i==SZ(stk)-1?x:stk[i+1].s)-stk[i].s;
-    }
-    REP(i,n) cout<<an[i]<<'\n';
+
     return 0;
 }
