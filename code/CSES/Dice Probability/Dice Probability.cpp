@@ -57,38 +57,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define Mat vector<Vi>
-Mat operator*(Mat a,Mat b) {
-    int n=SZ(a),m=SZ(b),k=SZ(b[0]);
-    Mat c(n,Vi(k,inf));
-    REP(i,n) REP(j,m) REP(l,k) chmin(c[i][l],a[i][j]+b[j][l]);
-    return c;
-}
-Mat pw(Mat x,int p) {
-    int n=SZ(x);
-    Mat r(n,Vi(n,inf));
-    REP(i,n) r[i][i]=0;
-    while(p>0) {
-        if(p&1) r=r*x;
-        x=x*x;
-        p>>=1;
-    }
-    return r;
-}
 signed main() {
     IOS();
-    int n,m,k;
-    cin>>n>>m>>k;
-    Mat r(n,Vi(n,inf));
-    Mat x(1,Vi(n,inf));
-    x[0][0]=0;
-    REP(i,m) {
-        int u,v,w;
-        cin>>u>>v>>w,u--,v--;
-        chmin(r[u][v],w);
-    }
-    Mat an=x*pw(r,k);
-    int ans=an[0][n-1];
-    cout<<(ans==inf?-1:ans)<<'\n';
+    
     return 0;
 }
