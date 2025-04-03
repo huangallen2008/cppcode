@@ -68,6 +68,8 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<Vpd> dp(maxv,Vpd(n+1,{0,0}));
     REP(i,maxv) dp[i][0]={0,1};
-    
+    auto trans=[&](int v) {
+        
+    };
     return 0;
 }
