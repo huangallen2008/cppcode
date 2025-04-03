@@ -67,7 +67,7 @@ Mat operator*(Mat a,Mat b) {
 Mat pw(Mat x,int p) {
     int n=SZ(x);
     Mat r(n,Vi(n,inf));
-    REP(i,n) r[i][i]=1;
+    REP(i,n) r[i][i]=0;
     while(p>0) {
         if(p&1) r=r*x;
         x=x*x;
