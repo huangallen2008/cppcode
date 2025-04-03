@@ -59,7 +59,8 @@ int rd(int l,int r) {
 }
 #define f128 __float128
 void print(f128 fp) {
-    cout << format("{:.6g}\n", fp);
+    quadmath_snprintf (buf, sizeof buf, "%.30Qe", 64, r3);
+    puts (buf);
 }
 signed main() {
     IOS();
