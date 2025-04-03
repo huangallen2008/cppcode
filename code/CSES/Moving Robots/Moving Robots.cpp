@@ -79,6 +79,6 @@ Mat pw(Mat x,int p) {
 signed main() {
     IOS();
     Mat x(1,Vld(64,1));
-    Mat
+    Mat r(64,Vld())
     return 0;
 }
