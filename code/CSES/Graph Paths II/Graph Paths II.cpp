@@ -63,6 +63,7 @@ Mat operator*(Mat a,Mat b) {
     Mat c(n,Vpii(k));
     REP(i,n) REP(j,m) REP(l,k) {
         int val=a[i][j].s+b[j][l].s;
+        if()
         addmod(c[i][l],a[i][j]*b[j][l]);
     }
     return c;
