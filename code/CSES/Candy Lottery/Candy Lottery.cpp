@@ -66,7 +66,7 @@ signed main() {
     vector<f128> dp(k+1);
     dp[0]=1;
     REP(_,n) {
-        Vld ndp(k+1);
+        vector<f128> ndp(k+1);
         REP(i,k+1) {
             ndp[i]+=dp[i]*i;
             for(int j=i+1;j<=k;j++) ndp[j]+=dp[i];
@@ -74,9 +74,9 @@ signed main() {
         REP1(i,k) ndp[i]/=k;
         swap(dp,ndp);
     }
-    ld an=0;
+    f128 an=0;
     REP1(i,k) an+=i*dp[i];
-    cout<<fixed<<setprecision(6)<<an<<'\n';
+    cout<<fixed<<setprecision(6)<<(ld)an<<'\n';
     oparr(dp)
     return 0;
 }
