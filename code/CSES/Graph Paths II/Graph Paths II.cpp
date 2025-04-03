@@ -84,8 +84,8 @@ signed main() {
     x[0][0]=1;
     REP(i,m) {
         int u,v,w;
-        cin>>u>>v,u--,v--;
-        r[u][v]++;
+        cin>>u>>v>>w,u--,v--;
+        chmin(r[u][v],w);
     }
     Mat an=x*pw(r,k);
     int ans=(an[0][n-1]+mod)%mod;
