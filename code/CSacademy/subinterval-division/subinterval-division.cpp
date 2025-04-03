@@ -76,4 +76,5 @@ signed main() {
     REP(i,n) {
         while(inter(stk.back()))
     }
-    return 0
+    return 0;
+}
