@@ -57,6 +57,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+#define f128 __float128
 void print(f128 fp) {
     char buf[32 + sizeof(".e+6")];
     int sz = strfromf128(buf, sizeof buf, "%.32g", fp);
