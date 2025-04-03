@@ -72,7 +72,7 @@ signed main() {
         auto [x2,y2]=b[y];
         return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
     };
-    Vpii stk;
+    vector<pair<>> stk;
 
     return 0;
 }
