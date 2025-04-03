@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    f128 a=0.5;
-    // print(a);
+    ld a=0.5;
+    cout<<round(a)
     return 0;
 }
