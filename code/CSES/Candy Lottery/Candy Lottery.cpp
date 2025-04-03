@@ -64,6 +64,9 @@ signed main() {
     cin>>n>>k;
     REP1(i,k) {
         ld x=1,y=1;
+        REP1(j,n) {
+            
+        }
     }
     printf("%.6Lf",an);
     return 0;
