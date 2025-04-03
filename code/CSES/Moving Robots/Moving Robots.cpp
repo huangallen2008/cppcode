@@ -61,8 +61,8 @@ int rd(int l,int r) {
 #define Mat vector<Vld>
 Mat operator*(Mat a,Mat b) {
     int n=SZ(a),m=SZ(b),k=SZ(b[0]);
-    Mat c(n,Vi(k));
-    REP(i,n) REP(j,m) REP(l,k) addmod(c[i][l],a[i][j]*b[j][l]);
+    Mat c(n,Vld(k));
+    REP(i,n) REP(j,m) REP(l,k) c[i][l]+=a[i][j]*b[j][l]);
     return c;
 }
 Mat pw(Mat x,int p) {
