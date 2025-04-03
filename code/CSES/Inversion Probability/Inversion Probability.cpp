@@ -83,9 +83,9 @@ signed main() {
         swap(dp,ndp);
     };
     REP(i,n) trans(a[i]);
+    oparr(dp)
     ld sp=0;
     REP(i,maxv) REP(j,n+1) sp+=dp[i][j].s;
     ope(sp)
-    oparr(dp)
     return 0;
 }
