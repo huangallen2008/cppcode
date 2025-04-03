@@ -83,7 +83,7 @@ signed main() {
     Mat x(1,Vi(n));
     x[0][0]=1;
     REP(i,m) {
-        int u,v;
+        int u,v,w;
         cin>>u>>v,u--,v--;
         r[u][v]++;
     }
