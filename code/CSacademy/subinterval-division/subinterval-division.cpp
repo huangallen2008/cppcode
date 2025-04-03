@@ -63,7 +63,7 @@ signed main() {
     cin>>n>>x;
     vector<> a(n);
     Vpii b(n);
-    REP(i,n) cin>>n[i].f>>a[i].f.s,a[i].s=i;
+    REP(i,n) cin>>b[i].f>>b[i].s,a[i].s=i;
     sort(ALL(a));
     vector<p> stk;
     return 0;
