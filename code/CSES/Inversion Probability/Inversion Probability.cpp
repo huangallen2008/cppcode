@@ -58,7 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define pdd pair<ld,ld>
-#define 
+#define Vpd vector<pdd>
 #define Vld vector<ld>
 signed main() {
     IOS();
@@ -66,7 +66,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vld dp(maxv);
+    Vpd dp(maxv,{});
 
     return 0;
 }
