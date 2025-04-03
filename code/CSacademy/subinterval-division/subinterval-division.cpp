@@ -70,6 +70,7 @@ signed main() {
     auto inter=[&](int x,int y) ->ld {
         auto [x1,y1]=b[x];
         auto [x2,y2]=b[y];
+        if(x1==x2) return inf;
         return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
     };
     vector<pair<int,ld>> stk;
