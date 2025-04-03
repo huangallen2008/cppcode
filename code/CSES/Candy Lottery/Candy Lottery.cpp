@@ -76,7 +76,7 @@ signed main() {
     }
     f128 an=0;
     REP1(i,k) an+=i*dp[i];
-    cout<<fixed<<setprecision(10)<<an<<'\n';
+    // cout<<fixed<<setprecision(10)<<an<<'\n';
     ld ans=round(an*1000000)/1000000;
     cout<<fixed<<setprecision(6)<<ans<<'\n';
     return 0;
