@@ -62,10 +62,10 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vi dp(k+1);
+    Vld dp(k+1);
     dp[0]=1;
     REP(_,n) {
-        
+        Vld 
     }
     return 0;
 }
