@@ -69,7 +69,9 @@ signed main() {
     vector<Vpd> dp(maxv,Vpd(n+1));
     REP(i,maxv) dp[i][0]={0,1};
     oparr(dp)
-    auto merge=
+    auto merge=[&](pdd a,pdd b) {
+        
+    }
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP1(i,maxv-1) {
