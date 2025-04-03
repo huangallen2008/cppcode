@@ -64,6 +64,6 @@ signed main() {
     vector<ppi> a(n);
     REP(i,n) cin>>a[i].f.f>>a[i].f.s,a[i].s=i;
     sort(ALL(a));
-    Vpii stk;
+     stk;
     return 0;
 }
