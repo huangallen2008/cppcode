@@ -87,8 +87,8 @@ signed main() {
     REP(i,n) trans(a[i]);
     ld an=1e-18;
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
-    cout<<fixed<<setprecision(10) <<an<<'\n';
-    cout<<fixed<<setprecision(20)<<an*(ld)1e6;
+    // cout<<fixed<<setprecision(10) <<an<<'\n';
+    // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
     an=(int)(an*(ld)1e8)/1e8;
     an=nearbyintl(an*(ld)1e6)/1e6;
     cout<<fixed<<setprecision(6)<<an<<'\n';
