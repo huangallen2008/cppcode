@@ -66,11 +66,11 @@ signed main() {
     REP1(i,k) {
         double x=1,y=1;
         REP1(j,n) {
-            x*=(ld)i/k;
-            y*=(ld)(i-1)/k;
+            x*=(double)i/k;
+            y*=(double)(i-1)/k;
         }
-        an+=(ld)i*(x-y);
+        an+=(double)i*(x-y);
     }
-    cout<<fixed<<setprecision(6)<<(an+(ld)0.000000000000000001)<<'\n';
+    cout<<fixed<<setprecision(6)<<(an+(double)0.000000000000000001)<<'\n';
     return 0;
 }
