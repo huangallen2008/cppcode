@@ -72,9 +72,7 @@ float roundHalfToEven(float f)
     }
 
     // Check if RHAFZ result is even, then RHAFZ result same as RHTE
-    if (fmod(r, 2.0f) == 0.0f)
-    {
-        return r;
+    if (fmod(r, 2.0f) == 0.0lf)return r;
     return f - d;
 }
 signed main() {
