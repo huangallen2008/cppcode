@@ -88,6 +88,6 @@ signed main() {
         r[u][v]++;
     }
     Mat an=x*pw(r,k);
-    int ans=an[n-1]
+    int ans=an[n-1];
     return 0;
 }
