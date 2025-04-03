@@ -60,8 +60,7 @@ int rd(int l,int r) {
 #define pdd pair<ld,ld>
 #define Vpd vector<pdd>
 #define Vld vector<ld>
-float roundHalfToEven(ld f)
-{
+ld rhe(ld f){
     const ld r = round(f);
     const ld d = r - f;
     if ((d != 0.5f) && (d != -0.5f))return r;
