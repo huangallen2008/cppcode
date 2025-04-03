@@ -22,6 +22,7 @@ using namespace std;
 #define md(x) (((x)%(mod)+(mod))%(mod))
 #define MD(x,M) (((x)%(M)+(M))%(M))
 #define ld long double
+#define f128 __float128
 #define pdd pair<ld,ld>
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
