@@ -67,7 +67,7 @@ signed main() {
     REP(_,n) {
         Vld ndp(k+1);
         REP1(i,k) {
-            
+            for(int j=1;j<=i;j++) ndp[i]
         }
     }
     return 0;
