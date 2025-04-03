@@ -62,6 +62,6 @@ signed main() {
     int n,x;
     cin>>n>>x;
     vector<ppi> a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>a[i].f.f>>a[i].f.s;
     return 0;
 }
