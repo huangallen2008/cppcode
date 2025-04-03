@@ -76,7 +76,10 @@ signed main() {
         vector<VS> ndp(maxv,VS(n+1));
         REP(i,maxv) {
             REP(j,n+1) {
-                ndp[i][j].f+=dp[i][j].f*min(i,v)/v;
+                ndp[i][j].po+=dp[i][j].po*min(i,v)/v;
+                ndp[i][j].pc+=dp[i][j].po*min(i,v)/v;
+                ndp[i][j].po+=dp[i][j].po*min(i,v)/v;
+
                 ndp[i][j+1]+=dp[i][j].f*(v-min(i,v));
                 ndp[i][j+1]+=dp[i][j].s*(v-min(i,v))/v;
             }
