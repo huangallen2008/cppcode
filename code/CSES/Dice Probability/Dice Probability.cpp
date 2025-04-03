@@ -57,7 +57,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-
+void renew()
 #define Poly vector<ld>
 Poly operator*(Poly a,Poly b) {
     while(SZ(a)&&a.back()==0) a.pop_back();
