@@ -70,7 +70,7 @@ signed main() {
             ndp[i]+=dp[i]*i;
             for(int j=i+1;j<=k;j++) ndp[j]+=dp[i];
         }
-        
+        REP1(i,k) ndp[i]/=k;
         swap(dp,ndp);
     }
     ld an=0;
