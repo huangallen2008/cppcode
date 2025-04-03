@@ -93,7 +93,7 @@ signed main() {
         if(tt%10==5 && ((int)(tt/10)&1))
             an+=1e-7;
     };
-    // cout<<fixed<<setprecision(10) <<an<<'\n';
+    cout<<fixed<<setprecision(10) <<an<<'\n';
     // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
     // // an=(int)(an*(ld)1e8)/1e8;
     // an=rint(an*(ld)1e6)/1e6;
