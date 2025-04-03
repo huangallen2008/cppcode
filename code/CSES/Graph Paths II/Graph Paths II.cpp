@@ -64,7 +64,7 @@ Mat operator*(Mat a,Mat b) {
     REP(i,n) REP(j,m) REP(l,k) {
         int val=a[i][j].s+b[j][l].s;
         if(val<c[i][l].s) {
-            c[i][l]={a[i][j]*b[j][l],}
+            c[i][l]={a[i][j]*b[j][l],val};
         }
         addmod(c[i][l],a[i][j]*b[j][l]);
     }
