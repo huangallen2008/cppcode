@@ -58,24 +58,6 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Vld vector<ld>
-#define Mat vector<Vld>
-Mat operator*(Mat a,Mat b) {
-    int n=SZ(a),m=SZ(b),k=SZ(b[0]);
-    Mat c(n,Vld(k));
-    REP(i,n) REP(j,m) REP(l,k) c[i][l]+=a[i][j]*b[j][l];
-    return c;
-}
-Mat pw(Mat x,int p) {
-    int n=SZ(x);
-    Mat r(n,Vld(n));
-    REP(i,n) r[i][i]=1;
-    while(p>0) {
-        if(p&1) r=r*x;
-        x=x*x;
-        p>>=1;
-    }
-    return r;
-}
 signed main() {
     IOS();
     
