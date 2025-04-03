@@ -58,6 +58,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-
+    
     return 0;
 }
