@@ -71,6 +71,6 @@ signed main() {
         }
         an+=(double)i*(x-y);
     }
-    cout<<fixed<<setprecision(6)<<(an+(double)1e-15)<<'\n';
+    cout<<fixed<<setprecision(6)<<(an+(double)1e-16)<<'\n';
     return 0;
 }
