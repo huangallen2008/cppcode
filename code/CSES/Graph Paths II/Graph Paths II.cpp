@@ -93,6 +93,7 @@ signed main() {
         int u,v,w;
         cin>>u>>v>>w,u--,v--;
         r[u][v].f=1;
+        chmin(r[u][v].s,w);
     }
     Mat an=x*pw(r,k);
     int ans=(an[0][n-1]+mod)%mod;
