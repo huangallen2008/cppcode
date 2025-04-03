@@ -62,22 +62,7 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vld dp(k+1);
-    dp[0]=1;
-    REP(_,n) {
-        Vld ndp(k+1);
-        REP(i,k+1) {
-            ndp[i]+=dp[i]*i;
-            for(int j=i+1;j<=k;j++) ndp[j]+=dp[i];
-        }
-        REP1(i,k) ndp[i]/=k;
-        swap(dp,ndp);
-    }
-    ld an=0;
-    REP1(i,k) an+=i*dp[i];
-    // cout<<fixed<<setprecision(10)<<an<<'\n';
-    // ld ans=round(an*1000000)/1000000;
-    // cout<<fixed<<setprecision(6)<<an<<'\n';
+    
     printf("%.6Lf",an);
     return 0;
 }
