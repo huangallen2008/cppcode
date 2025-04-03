@@ -68,6 +68,7 @@ signed main() {
             x*=(ld)i/k;
             y*=(ld)(i-1)/k;
         }
+        an+=(ld)*(x-)
     }
     printf("%.6Lf",an);
     return 0;
