@@ -79,6 +79,9 @@ signed main() {
         ld xx=inter(stk.back().s,a[i]);
         if(SZ(stk)==0||xx<x) stk.pb({a[i],xx});
     }
-    
+    vector<ld> an(n);
+    REP(i,SZ(stk)) {
+        
+    }
     return 0;
 }
