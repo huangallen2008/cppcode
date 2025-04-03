@@ -60,7 +60,7 @@ int rd(int l,int r) {
 #define Mat vector<Vpii>
 Mat operator*(Mat a,Mat b) {
     int n=SZ(a),m=SZ(b),k=SZ(b[0]);
-    Mat c(n,Vi(k));
+    Mat c(n,Vpii(k));
     REP(i,n) REP(j,m) REP(l,k) addmod(c[i][l],a[i][j]*b[j][l]);
     return c;
 }
