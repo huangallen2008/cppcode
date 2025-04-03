@@ -60,6 +60,23 @@ int rd(int l,int r) {
 #define pdd pair<ld,ld>
 #define Vpd vector<pdd>
 #define Vld vector<ld>
+float roundHalfToEven(float f)
+{
+    const float r = round(f); // Result is round-half-away-from-zero
+    const float d = r - f; // Difference
+
+    // Result is not half, RHAFZ result same as RHTE
+    if ((d != 0.5f) && (d != -0.5f))
+    {
+        return r;
+    }
+
+    // Check if RHAFZ result is even, then RHAFZ result same as RHTE
+    if (fmod(r, 2.0f) == 0.0f)
+    {
+        return r;
+    return f - d;
+}
 signed main() {
     IOS();
     fesetround(FE_TONEAREST);
