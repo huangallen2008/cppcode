@@ -62,6 +62,7 @@ int rd(int l,int r) {
 #define Vld vector<ld>
 signed main() {
     IOS();
+    fesetround(FE_TONEAREST);
     int n;
     cin>>n;
     Vi a(n);
