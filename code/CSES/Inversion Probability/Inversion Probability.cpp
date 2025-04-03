@@ -88,6 +88,7 @@ signed main() {
     ld an=0;
     REP1(i,maxv-1) REP(j,n+1) an+=dp[i][j].f*dp[i][j].s;
     auto rhe=[&](ld &an)->void {
+        an+=1e-18;
         int tt=an*1e7;
         // ope(tt)
         if(tt%10==5 && (~(int)(tt/10)&1))
