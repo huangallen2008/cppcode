@@ -62,9 +62,9 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    ld an=0;
+    double an=0;
     REP1(i,k) {
-        ld x=1,y=1;
+        double x=1,y=1;
         REP1(j,n) {
             x*=(ld)i/k;
             y*=(ld)(i-1)/k;
