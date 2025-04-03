@@ -73,6 +73,7 @@ signed main() {
         swap(dp,ndp);
     }
     ld an=0;
-    REP1(i,k) an+=i*
+    REP1(i,k) an+=i*dp[i];
+    cout<<an<<'\n';
     return 0;
 }
