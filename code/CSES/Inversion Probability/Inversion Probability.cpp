@@ -62,6 +62,9 @@ int rd(int l,int r) {
 #define Vld vector<ld>
 signed main() {
     IOS();
+    struct S {
+        ld 
+    }
     int n;
     cin>>n;
     Vi a(n);
