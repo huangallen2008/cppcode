@@ -89,6 +89,6 @@ signed main() {
     }
     Mat an=x*pw(r,k);
     int ans=an[0][n-1];
-    cout<<ans<<'\n';
+    cout<<(ans==inf?-1:ans)<<'\n';
     return 0;
 }
