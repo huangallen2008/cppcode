@@ -70,7 +70,7 @@ signed main() {
     REP(i,maxv) dp[i][0]={0,1};
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
-        REP(i,maxv) {
+        REP1(i,maxv-1) {
             REP(j,n) {
                 ndp[i][j].f+=(dp[i][j].f+j)/v;
                 ndp[i][j].s+=dp[i][j].s/v;
