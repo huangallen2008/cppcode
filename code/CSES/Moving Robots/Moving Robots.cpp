@@ -95,7 +95,7 @@ signed main() {
     Mat an=x*pw(r,k);
     oparr(an)
     ld ans=0;
-    REP(i,64) ans+=an[0][i];
+    REP(i,64) ans+=max(1-an[0][i],(ld)0);
     cout<<fixed<<setprecision(6)<<ans<<'\n';
     return 0;
 }
