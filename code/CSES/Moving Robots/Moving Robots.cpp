@@ -85,8 +85,8 @@ signed main() {
             ld pos=(ld)1/((i==0||i==7)+(j==0||j==7));
             if(i!=0) r[i-1<<3|j]=pos;
             if(i!=7) r[i+1<<3|j]=pos;
-            if(i!=0) r[i-1<<3|j]=pos;
-            if(i!=7) r[i+1<<3|j]=pos;
+            if(j!=0) r[i<<3|j-1]=pos;
+            if(j!=7) r[i<<3|j+1]=pos;
         }
     }
     return 0;
