@@ -94,7 +94,7 @@ signed main() {
     Mat ra=pw(r,k);
     Vld an(64,1);
     REP(i,64) {
-        Vld x(64,i);
+        Mat x(,1,Vld(64,i));
     }
     oparr(an)
     ld ans=0;
