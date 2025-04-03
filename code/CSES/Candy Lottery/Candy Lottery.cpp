@@ -58,7 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Vld vector<ld>
-#define f128
+#define f128 __float128
 signed main() {
     IOS();
     int n,k;
