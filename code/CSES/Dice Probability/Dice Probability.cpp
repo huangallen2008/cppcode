@@ -60,7 +60,8 @@ int rd(int l,int r) {
 #define Poly vector<ld>
 void renew(Poly &a) { while(SZ(a)&&a.back()==0) a.pop_back(); }
 Poly operator*(Poly a,Poly b) {
-    while(SZ(a)&&a.back()==0) .pop_back();
+    renew(a),renew(b);
+    int n=SZ(a),
 }
 signed main() {
     IOS();
