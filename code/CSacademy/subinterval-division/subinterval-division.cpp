@@ -84,6 +84,7 @@ signed main() {
         an[stk[i].s]=(i==SZ(stk)-1?x:stk[i+1].f)-stk[i].f;
     }
     cout<<fixed<<setprecision(9);
+    oparr(stk)
     REP(i,n) cout<<an[i]<<'\n';
     return 0;
 }
