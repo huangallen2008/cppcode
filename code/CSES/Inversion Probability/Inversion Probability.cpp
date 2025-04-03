@@ -71,7 +71,7 @@ signed main() {
     auto trans=[&](int v) {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP(i,maxv) {
-            REP(j,n+1) {
+            REP(j,n) {
                 ndp[i][j].f+=(dp[i][j].f+j)/v;
                 ndp[i][j].s+=dp[i][j].s/v;
                 ndp[i][j].f+=(dp[i][j].f)*(min(i,v)-1)/v;
