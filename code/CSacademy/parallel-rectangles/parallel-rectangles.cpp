@@ -94,6 +94,7 @@ signed main() {
         }
     }
 
+
     map<int,int> mp;
     REP(i,maxv) {
         if(isb[i]) continue;
