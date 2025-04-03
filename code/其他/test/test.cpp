@@ -61,6 +61,6 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     f128 a=0.0000005;
-    printf("%.6Q")
+    printf("%.6Qf",a);
     return 0;
 }
