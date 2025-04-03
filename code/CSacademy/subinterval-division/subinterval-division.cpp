@@ -74,7 +74,7 @@ signed main() {
     };
     vector<pair<int,ld>> stk;
     REP(i,n) {
-        
+        while()
     }
     return 0;
 }
