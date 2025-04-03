@@ -60,7 +60,7 @@ signed main() {
     IOS();
     int n,x;
     cin>>n>>x;
-    vector<> a(n);
+    vector<pair<pii,int>> a(n);
     REP(i,n) cin>>a[i];
     return 0;
 }
