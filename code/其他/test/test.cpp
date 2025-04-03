@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 #define f128 __float128
 void print(f128 r) {
+    char buf[64];
     quadmath_snprintf (buf, sizeof buf, "%.30Qe", 64, r);
     puts (buf);
 }
