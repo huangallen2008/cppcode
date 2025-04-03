@@ -59,6 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    
+    fesetround(FE_TONEAREST);
     ld a=0.5;
     cout<<round(a)<<'\n';
     a=0.51;cout<<round(a)<<'\n';
