@@ -77,8 +77,8 @@ signed main() {
         vector<Vpd> ndp(maxv,Vpd(n+1));
         REP1(i,maxv-1) {
             REP(j,n+1) {
-                
-                upd(ndp[i][j],{dp[i][j].f+j,dp[i][j].s/v});
+
+                if(i<=v)upd(ndp[i][j],{dp[i][j].f+j,dp[i][j].s/v});
                 upd(ndp[i][j],{dp[i][j].f,dp[i][j].s*(min(i,v)-1)/v});
                 // ndp[i][j].f+=(dp[i][j].f+j)/v;
                 // ndp[i][j].s+=dp[i][j].s/v;
