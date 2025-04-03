@@ -63,7 +63,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     struct S {
-        ld 
+        ld pos,pc,
     }
     int n;
     cin>>n;
