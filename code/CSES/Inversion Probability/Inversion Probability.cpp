@@ -70,6 +70,7 @@ signed main() {
     REP(i,maxv) dp[i][0]={0,1};
     oparr(dp)
     auto upd=[&](pdd &a,pdd b) ->void{
+        if(b.s==0) return;
         a={(a.f*a.s+b.f*b.s)/(a.s+b.s),a.s+b.s};
     };
     auto trans=[&](int v) {
