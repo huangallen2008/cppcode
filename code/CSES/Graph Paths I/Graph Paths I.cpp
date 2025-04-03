@@ -58,7 +58,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #define Mat vector<Vi>
-
+Mat operator*(Mat a,Mat b) {
+    
+}
 signed main() {
     IOS();
 
