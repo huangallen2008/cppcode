@@ -71,6 +71,6 @@ signed main() {
         }
         an+=(ld)i*(x-y);
     }
-    printf("%.6Lf",an);
+    cout<<fixed<<setprecision(6)<<an<<'\n';
     return 0;
 }
