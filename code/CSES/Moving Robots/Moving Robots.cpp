@@ -89,6 +89,7 @@ signed main() {
             if(j!=7) r[i<<3|j][i<<3|j+1]=pos;
         }
     }
+    oparr(r)
     int k;
     cin>>k;
     Mat an=x*pw(r,k);
