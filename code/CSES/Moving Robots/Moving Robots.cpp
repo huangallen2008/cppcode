@@ -98,7 +98,6 @@ signed main() {
         Mat res=x*ra;
         REP(j,64) an[j]=an[j]*(1-res[0][j]);
     }
-    // oparr(an)
     ld ans=0;
     REP(i,64) ans+=an[i];
     cout<<fixed<<setprecision(6)<<ans<<'\n';
