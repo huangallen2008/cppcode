@@ -69,10 +69,15 @@ Poly operator*(Poly a,Poly b) {
 }
 Poly pw(Poly x,int p) {
     Poly r(1);r[0]=1;
-    while(p>)
+    while(p>0) {
+        if(p&1) r=r*x;
+        x=x*x;
+        p>>=1;
+    }
+    return r;
 }
 signed main() {
     IOS();
-
+    
     return 0;
 }
