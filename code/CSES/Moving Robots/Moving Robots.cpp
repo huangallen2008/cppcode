@@ -83,8 +83,10 @@ signed main() {
     REP(i,8) {
         REP(j,8) {
             ld pos=(ld)1/((i==0||i==7)+(j==0||j==7));
-            if(i>0) r[i-1<<3|j]=pos;
-            if()
+            if(i!=0) r[i-1<<3|j]=pos;
+            if(i!=7) r[i+1<<3|j]=pos;
+            if(i!=0) r[i-1<<3|j]=pos;
+            if(i!=7) r[i+1<<3|j]=pos;
         }
     }
     return 0;
