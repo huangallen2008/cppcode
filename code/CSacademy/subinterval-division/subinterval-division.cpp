@@ -70,8 +70,8 @@ signed main() {
     auto inter=[&](int x,int y) ->ld {
         auto [x1,y1]=b[x];
         auto [x2,y2]=b[y];
-        return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1)
-    }
+        return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
+    };
     Vpii stk;
 
     return 0;
