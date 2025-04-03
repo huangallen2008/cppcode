@@ -74,7 +74,7 @@ signed main() {
     };
     vector<pair<int,ld>> stk;
     REP(i,n) {
-        while(inter(stk.back().f,a[i])<)
+        while(inter(stk.back().f,a[i])<=)
     }
     return 0;
 }
