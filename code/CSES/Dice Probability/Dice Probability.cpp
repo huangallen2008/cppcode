@@ -85,6 +85,6 @@ signed main() {
     Poly res=pw(r,n);
     ld ans=0;
     for(int i=a;i<=b;i++) ans+=res[i];
-    cout<<
+    cout<<fixed<<setprecision(6)<<ans<<'\n';
     return 0;
 }
