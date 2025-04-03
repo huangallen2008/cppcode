@@ -105,7 +105,7 @@ signed main() {
     // cout<<fixed<<setprecision(20)<<an*(ld)1e6;
     // // an=(int)(an*(ld)1e8)/1e8;
     // an=rint(an*(ld)1e6)/1e6;
-    an=rhe(an);
+    an=rhe(an*1e6)/1e6;
     cout<<fixed<<setprecision(6)<<an<<'\n';
     return 0;
 }
