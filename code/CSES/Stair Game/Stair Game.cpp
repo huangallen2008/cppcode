@@ -67,7 +67,7 @@ void solve() {
         cin>>x;
         if(i&1) an^=x;
     }
-    cout<<(an?"first")
+    cout<<(an?"first":"second")<<'\n';
 }
 signed main() {
     IOS();
