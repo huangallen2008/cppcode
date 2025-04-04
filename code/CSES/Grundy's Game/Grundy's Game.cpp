@@ -71,7 +71,7 @@ void solve() {
         }
         dp[i]=mex;
     }
-    if(dp[n])
+    cout<<(dp[n]?"first":"second")<<'\n';
 }
 signed main() {
     IOS();
