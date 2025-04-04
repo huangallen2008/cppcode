@@ -58,13 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    
-}
-signed main() {
-    IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+
     int n;
     cin>>n;
     int an=0;
@@ -73,6 +67,12 @@ signed main() {
         cin>>x;
         if(i&1) an^=x;
     }
-    cout<<()
+    cout<<(an?"first")
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
