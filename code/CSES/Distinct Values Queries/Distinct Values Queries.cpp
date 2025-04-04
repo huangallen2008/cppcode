@@ -98,6 +98,8 @@ signed main() {
     bit.init(n);
     REP(i,n) {
         if(las[a[i]]!=-1) bit.ud(las[a[i]],-1);
+        bit.ud(i,1);
+        las[a[i]]=i;
         
     }
     return 0;
