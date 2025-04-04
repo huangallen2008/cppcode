@@ -64,7 +64,7 @@ void solve() {
     for(int i=3;i<=n;i++) {
         Vi c(n+1>>1);
         int mex=0;
-        
+        for(int j=1;j)
     }
 }
 signed main() {
