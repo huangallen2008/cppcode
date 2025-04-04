@@ -67,8 +67,8 @@ signed main() {
     REP1(i,n) {
         Vi c(k+1);
         int mex=0;
-        REP(,k) {
-
+        for(int x:a) {
+            if(i<x||)
         }
     }
     return 0;
