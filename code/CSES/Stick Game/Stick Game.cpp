@@ -72,7 +72,6 @@ signed main() {
             c[dp[i-x]]=1;
             while(c[mex]) mex++;
         }
-        oparr(c)
         dp[i]=mex;
     }
     REP1(i,n) cout<<(dp[i]?'W':'L');
