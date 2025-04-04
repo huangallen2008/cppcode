@@ -59,22 +59,11 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,k;
-    cin>>n>>k;
-    Vi dp(n+1);
-    Vi a(k);
-    REP(i,k) cin>>a[i];
-    REP1(i,n) {
-        Vi c(k+1);
-        int mex=0;
-        for(int x:a) {
-            if(i<x||dp[i-x]>k) continue;
-            c[dp[i-x]]=1;
-            while(c[mex]) mex++;
-        }
-        dp[i]=mex;
+    int n;
+    cin>>n;
+    int an=0;
+    REP(i,n) {
+        
     }
-    REP1(i,n) cout<<(dp[i]?'W':'L');
-    cout<<'\n';
     return 0;
 }
