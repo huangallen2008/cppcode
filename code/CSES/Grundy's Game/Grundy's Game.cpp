@@ -63,6 +63,8 @@ void solve() {
     Vi dp(n+1);
     for(int i=3;i<=n;i++) {
         Vi c(n+1>>1);
+        int mex=0;
+        
     }
 }
 signed main() {
