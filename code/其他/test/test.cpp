@@ -61,7 +61,7 @@ Vi dp(maxv);
 void init() {
     int X;
     cin>>X;
-    for(int i=2;i<=X*2;i++) {
+    for(int i=2;i<=X*3;i++) {
         Vi c(i+10>>1);
         int mex=0;
         for(int j=1;j*2<=i;j++) {
