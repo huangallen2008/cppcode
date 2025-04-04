@@ -69,7 +69,7 @@ struct BIT {
     }
     int pre(int u) {
         int r=0;
-        \for(;)
+        for(;u>0;u-=u&-u) r+=b[u];
     }
 }
 signed main() {
