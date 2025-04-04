@@ -97,6 +97,7 @@ signed main() {
     BIT bit;
     bit.init(n);
     REP(i,n) {
+        if(las[a[i]]!=-1) bit.ud(las[a[i]],-1);
         
     }
     return 0;
