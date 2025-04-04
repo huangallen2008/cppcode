@@ -69,7 +69,8 @@ signed main() {
         int mex=0;
         for(int x:a) {
             if(i<x||a[i-x]>k) continue;
-            c[a[i-x]]
+            c[a[i-x]]=1;
+            while(c[mex]) mex++;
         }
     }
     return 0;
