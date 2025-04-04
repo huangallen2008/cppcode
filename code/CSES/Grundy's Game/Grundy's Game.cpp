@@ -60,6 +60,7 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
+    Vi dp(n+1);
     
 }
 signed main() {
