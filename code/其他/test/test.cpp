@@ -72,11 +72,12 @@ void init() {
         }
         dp[i]=mex;
     }
-    
+
     for(int i=1;i<=X;i++) cout<<dp[i]<<' ';entr
     for(int i=X+1;i<=X*2;i++) cout<<dp[i]<<' ';entr
     for(int i=X*2+1;i<=X*3;i++) cout<<dp[i]<<' ';entr
     for(int i=X*3+1;i<=X*4;i++) cout<<dp[i]<<' ';entr
+    for(int i=1;i<=X;i++) if(dp[i]) cout<<i<<' ';entr
 }
 signed main() {
     IOS();
