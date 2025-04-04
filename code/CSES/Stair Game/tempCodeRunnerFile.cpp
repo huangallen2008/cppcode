@@ -51,34 +51,28 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
 const int maxn=2e5+5;
-const int maxv=1000;
+const int maxv=105;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dp(maxv);
-void init() {
-    int X;
-    cin>>X;
-    for(int i=2;i<=X*2;i++) {
-        Vi c(i+10>>1);
-        int mex=0;
-        for(int j=1;j*2<=i;j++) {
-            if(((j)*(i-j))%X>0) continue;
-            int v=dp[j]^dp[i-j];
-            c[v]=1;
-            while(c[mex]) mex++;
-        }
-        dp[i]=mex;
+void solve() {
+
+    int n;
+    cin>>n;
+    int an=0;
+    REP(i,n) {
+        int x;
+        cin>>x;
+        if(i&1) an^=x;
     }
-    for(int i=1;i<=X;i++) cout<<dp[i]<<' ';entr
-    for(int i=X+1;i<=X*2;i++) cout<<dp[i]<<' ';entr
+    cout<<(an?"first":"second")<<'\n';
 }
 signed main() {
     IOS();
-    while(1) {
-    init();
-    }
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }

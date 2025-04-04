@@ -49,36 +49,41 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=1e9+7;
+const int mod=998244353;
 const int maxn=2e5+5;
-const int maxv=1000;
+const int maxv=1e5+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dp(maxv);
-void init() {
-    int X;
-    cin>>X;
-    for(int i=2;i<=X*2;i++) {
-        Vi c(i+10>>1);
-        int mex=0;
-        for(int j=1;j*2<=i;j++) {
-            if(((j)*(i-j))%X>0) continue;
-            int v=dp[j]^dp[i-j];
-            c[v]=1;
-            while(c[mex]) mex++;
-        }
-        dp[i]=mex;
-    }
-    for(int i=1;i<=X;i++) cout<<dp[i]<<' ';entr
-    for(int i=X+1;i<=X*2;i++) cout<<dp[i]<<' ';entr
-}
 signed main() {
     IOS();
-    while(1) {
-    init();
+    cout<<fixed<<setprecision(9);
+    int n,x;
+    cin>>n>>x;
+    Vi a(n);
+    vector<ppi> t(n);
+    Vpii b(n);
+    REP(i,n) cin>>b[i].f>>b[i].s,t[i]={b[i],i};
+    sort(ALL(t));
+    REP(i,n) a[i]=t[i].s;
+    auto inter=[&](int x,int y) ->ld {
+        auto [x1,y1]=b[x];
+        auto [x2,y2]=b[y];
+        if(x1==x2) return y1<y2?inf:-inf;
+        return (ld)(x2*x2+y2*y2-x1*x1-y1*y1)/(x2*2-x1*2);
+    };
+    vector<pair<int,ld>> stk;
+    REP(i,n) {
+        while(stk.size()&&inter(stk.back().f,a[i])<=stk.back().s) stk.pop_back();
+        ld xx=0;
+        if(SZ(stk)==0||(xx=inter(stk.back().f,a[i]))<x) stk.pb({a[i],xx});
     }
+    vector<ld> an(n);
+    REP(i,SZ(stk)) {
+        an[stk[i].f]=(i==SZ(stk)-1?x:stk[i+1].s)-stk[i].s;
+    }
+    REP(i,n) cout<<an[i]<<'\n';
     return 0;
 }
