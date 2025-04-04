@@ -68,8 +68,8 @@ signed main() {
         Vi c(k+1);
         int mex=0;
         for(int x:a) {
-            if(i<x||a[i-x]>k) continue;
-            c[a[i-x]]=1;
+            if(i<x||dp[i-x]>k) continue;
+            c[dp[i-x]]=1;
             while(c[mex]) mex++;
         }
         oparr(c)
