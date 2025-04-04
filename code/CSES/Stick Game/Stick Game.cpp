@@ -65,7 +65,8 @@ signed main() {
     Vi a(k);
     REP(i,k) cin>>a[i];
     REP1(i,n) {
-        V)
+        Vi c(k+1);
+        
     }
     return 0;
 }
