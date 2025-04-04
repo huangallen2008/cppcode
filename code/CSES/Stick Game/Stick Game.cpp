@@ -74,6 +74,7 @@ signed main() {
         }
         dp[i]=mex;
     }
-    REP1(i,n) cout<<(dp[i]?)
+    REP1(i,n) cout<<(dp[i]?'W':'L');
+    cout<<'\n';
     return 0;
 }
