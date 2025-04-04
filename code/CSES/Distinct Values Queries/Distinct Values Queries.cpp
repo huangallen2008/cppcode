@@ -96,6 +96,7 @@ signed main() {
     Vi las(n,-1);
     BIT bit;
     bit.init(n);
+    Vi an(q);
     REP(i,n) {
         if(las[a[i]]!=-1) bit.ud(las[a[i]],-1);
         bit.ud(i,1);
