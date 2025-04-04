@@ -68,7 +68,7 @@ signed main() {
         Vi c(k+1);
         int mex=0;
         for(int x:a) {
-            if(i<x||)
+            if(i<x||a[i-x]>k)
         }
     }
     return 0;
