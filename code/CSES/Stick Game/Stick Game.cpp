@@ -72,6 +72,8 @@ signed main() {
             c[a[i-x]]=1;
             while(c[mex]) mex++;
         }
+        dp[i]=mex;
     }
+    REP1(i,n) cout<<(dp[i]?)
     return 0;
 }
