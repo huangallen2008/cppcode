@@ -78,6 +78,8 @@ struct BIT {
 };
 signed main() {
     IOS();
-
+    int n,q;
+    cin>>n>>q;
+    
     return 0;
 }
