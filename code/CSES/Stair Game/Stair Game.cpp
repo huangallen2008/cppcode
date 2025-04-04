@@ -63,7 +63,10 @@ signed main() {
     cin>>n;
     int an=0;
     REP(i,n) {
-        
+        int x;
+        cin>>x;
+        if(i&1) an^=x;
     }
+    cout<<()
     return 0;
 }
