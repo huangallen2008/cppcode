@@ -97,7 +97,7 @@ signed main() {
     BIT bit;
     bit.init(n);
     REP(i,n) {
-
+        
     }
     return 0;
 }
