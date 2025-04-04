@@ -80,6 +80,7 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
-    Vi a
+    Vi a(n),t(n);
+    REP(i,n) cin>>a[i];
     return 0;
 }
