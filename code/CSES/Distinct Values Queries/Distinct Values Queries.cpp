@@ -90,7 +90,8 @@ signed main() {
     vector<Vpii> qu(n);
     REP(i,q) {
         int l,r;
-        cin>>l>>r,
+        cin>>l>>r,l--,r--;
+        qu[r].pb({l,i});
     }
     Vi las(n,-1);
     BIT bit;
