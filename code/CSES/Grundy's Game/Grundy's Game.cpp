@@ -66,8 +66,12 @@ void solve() {
         int mex=0;
         for(int j=1;j*2<i;j++) {
             int v=dp[j]^dp[i-j];
+            c[v]=1;
+            while(c[mex]) mex++;
         }
+        dp[i]=mex;
     }
+    if(dp[n])
 }
 signed main() {
     IOS();
