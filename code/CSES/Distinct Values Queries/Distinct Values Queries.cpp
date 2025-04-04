@@ -57,18 +57,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define pdd pair<ld,ld>
-#define Vpd vector<pdd>
-#define Vld vector<ld>
-ld rhe(ld f){
-    const ld r = round(f);
-    const ld d = r - f;
-    if ((d != 0.5f) && (d != -0.5f))return r;
-    if (fmod(r, 2.0) == 0.0)return r;
-    return f - d;
-}
 signed main() {
     IOS();
-    
+
     return 0;
 }
