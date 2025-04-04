@@ -65,7 +65,7 @@ void solve() {
         Vi c(n+1>>1);
         int mex=0;
         for(int j=1;j*2<i;j++) {
-            
+            int v=dp[j]^dp[i-j];
         }
     }
 }
