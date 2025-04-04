@@ -73,9 +73,9 @@ struct BIT {
         return r;
     }
     int qu(int l,int r) {
-        return 
+        return pre(r)-pre(l);
     }
-}
+};
 signed main() {
     IOS();
 
