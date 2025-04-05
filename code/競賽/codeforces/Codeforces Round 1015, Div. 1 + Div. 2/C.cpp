@@ -91,10 +91,7 @@ void solve() {
     Vi id(n+1);
     REP1(i,n) id[a[i]]=i;
     REP1(i,n){
-        if(is[a[i]]) {
-            if(i==it) continue;
-            an.pb({i,it});
-        }
+        if()
     } 
     cout<<SZ(an)<<'\n';  
 }
