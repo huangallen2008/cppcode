@@ -183,6 +183,7 @@ void solve() {
         }
         int ch=r+1-cnt;
         Vi v(cntm1+1);
+        ope(ch)
         REP(i,cntm1+1) {
             if(i<ch) continue;
             v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
