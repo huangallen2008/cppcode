@@ -85,7 +85,9 @@ signed main() {
             if(nok(nx,ny)) continue;
             if(a[nx][ny]) {
                 dis[nx][ny]=dis[x][y];
-                dq.pus
+                dq.push_front({nx,ny});
+            }else {
+                
             }
         }
     }
