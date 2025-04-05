@@ -124,12 +124,12 @@ Vi MTT(Vi a0,Vi a1) {
 	int M = int(sqrt(mod) + 1);
 
 	for(int i = 0; i <= n; i ++) {
-		int x = input() % mod;
+		int x = a[i] % mod;
 		a0[i] = x / M;
 		a1[i] = x % M;
 	}
 	for(int i = 0; i <= m; i ++) {
-		int x = input() % mod;
+		int x = b[i] % mod;
 		b0[i] = x / M;
 		b1[i] = x % M;
 	}
