@@ -162,7 +162,8 @@ Vi MTT(Vi a,Vi b) {
                 return an;
 }
 void solve() {
-    Vi a={1};
+    Vi a={1},b={1,2};
+    oparr(MTT(a,b))
 }
 signed main() {
     IOS();
