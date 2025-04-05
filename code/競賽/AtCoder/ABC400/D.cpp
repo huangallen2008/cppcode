@@ -84,11 +84,14 @@ signed main() {
             int nx=x+dx,ny=y+dy;
             if(nok(nx,ny)) continue;
             if(a[nx][ny]) {
-                if()
-                dis[nx][ny]=dis[x][y];
-                dq.push_front({nx,ny});
+                if(dis[nx][ny]>dis[x][y]) {
+                    dis[nx][ny]=dis[x][y];
+                    dq.push_front({nx,ny});
+                }
             }else {
-                if(dis[nx][ny]>dis[x][y]+1)
+                if(dis[nx][ny]>dis[x][y]+1) {
+                    
+                }
             }
         }
     }
