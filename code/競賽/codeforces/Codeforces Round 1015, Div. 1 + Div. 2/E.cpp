@@ -188,7 +188,7 @@ void solve() {
         }
         REP(i,n) {
             if(i>mx) {
-                c.pb(n-i);
+                if(a[i]==-1)c.pb(n-i);
             }
         }
         int ch=r+1-cnt;
