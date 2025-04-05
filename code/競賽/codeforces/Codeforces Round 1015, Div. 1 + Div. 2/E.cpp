@@ -180,6 +180,12 @@ void solve() {
             chmax(mx,id[r]);
             cnt++;
         }
+        int ch=r+1-cnt;
+        Vi v(cntm1+1);
+        REP(i,cntm1+1) {
+            if(i<ch) continue;
+            v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
+        }
         op(r)op(mn)ope(mx)
         Vi b,c;
         RREP(i,n) {
@@ -193,12 +199,6 @@ void solve() {
             }
         }
         oparr(b)oparr(c)
-        int ch=r+1-cnt;
-        Vi v(cntm1+1);
-        REP(i,cntm1+1) {
-            if(i<ch) continue;
-            v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
-        }
         Vi res=MTT(b,c);
         op(r)oparr(res)
     }
