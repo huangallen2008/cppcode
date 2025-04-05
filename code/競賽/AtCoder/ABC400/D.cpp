@@ -84,6 +84,7 @@ signed main() {
             int nx=x+dx,ny=y+dy;
             if(nok(nx,ny)) continue;
             if(a[nx][ny]) {
+
                 dis[nx][ny]=dis[x][y];
             }
         }
