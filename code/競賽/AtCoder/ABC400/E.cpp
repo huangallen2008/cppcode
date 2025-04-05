@@ -82,6 +82,12 @@ signed main() {
         if(isg[i]) now=i;
         a[i]=now;
     }
-    REP(i,11) cout<<a[i]<<' ';entr
+    int q;
+    cin>>q;
+    REP(i,q) {
+        int x;
+        cin>>x;
+        x=msqrt(x);
+    }
     return 0;
 }
