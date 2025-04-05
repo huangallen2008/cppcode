@@ -57,35 +57,66 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct BIT {
+    int n;
+    Vi b;
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+    }
+    void ud(int u,int v)  {
+        u++;
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    int pre(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
+    }
+    int qu(int l,int r) { l++,r++; return pre(r)-pre(l-1); }
+};
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    int n=SZ(s);
+    int n;
+    cin>>n;
     Vi a(n);
-    REP(i,n) a[i]=s[i]-'a';
-    Vi used(26);
-    Vi all;
-    for(int x:a) {
-        if(!used[x]) {
-            used[x]=1;
-            all.pb(x);
+    REP(i,n) cin>>a[i],a[i]--;
+    {
+        BIT bit;
+        bit.init(n);
+        int an=0;
+        REP(i,n) {
+            an+=bit.qu(a[i],n-1);
+            bit.ud(a[i],1);
         }
+        cout<<an<<' ';
     }
-    map<Vi,int> mp;
-    Vi cnt(26);
-    mp[cnt]++;
-    int an=0;
-    for(int x:a) {
-        if(x==all[0]) {
-            for(int c:all) if(c!=all[0]) {
-                cnt[c]--;
+    {
+        Vi vis(n);
+        int an=n;
+        REP(i,n) {
+            if(vis[i]) continue;
+            vis[i]=1;
+            int t=a[i];
+            while(t!=i) {
+                vis[t]=1;
+                t=a[t];
             }
-        }else {
-            cnt[x]++;
+            an--;
         }
-        an+=mp[cnt]++;
+        cout<<an<<' ';
     }
-    cout<<an<<'\n';
+    {
+        Vi b(n,inf);
+        REP(i,n) *lower_bound(ALL(b),a[i])=a[i];
+        int an=n-(lower_bound(ALL(b),inf)-b.begin());
+        cout<<an<<' ';
+    }
+    {
+        int cnt=0;
+        RREP(i,n) if(a[i]==n-1-cnt) cnt++; 
+        int an=n-cnt;
+        cout<<an<<'\n';
+    }
     return 0;
 }

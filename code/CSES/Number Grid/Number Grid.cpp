@@ -59,33 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    int n=SZ(s);
-    Vi a(n);
-    REP(i,n) a[i]=s[i]-'a';
-    Vi used(26);
-    Vi all;
-    for(int x:a) {
-        if(!used[x]) {
-            used[x]=1;
-            all.pb(x);
-        }
-    }
-    map<Vi,int> mp;
-    Vi cnt(26);
-    mp[cnt]++;
-    int an=0;
-    for(int x:a) {
-        if(x==all[0]) {
-            for(int c:all) if(c!=all[0]) {
-                cnt[c]--;
-            }
-        }else {
-            cnt[x]++;
-        }
-        an+=mp[cnt]++;
-    }
-    cout<<an<<'\n';
+    int x,y;
+    cin>>x>>y,x--,y--;
+    cout<<(x^y)<<'\n';
     return 0;
 }

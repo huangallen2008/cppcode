@@ -57,35 +57,53 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct DSU {
+    int n;
+    Vi p,sz;
+    int cc;
+    void init(int _n) {
+        n=cc=_n;
+        p=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
+    void merge(int a,int b) {
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        cc--;
+    }
+}dsu;
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    int n=SZ(s);
-    Vi a(n);
-    REP(i,n) a[i]=s[i]-'a';
-    Vi used(26);
-    Vi all;
-    for(int x:a) {
-        if(!used[x]) {
-            used[x]=1;
-            all.pb(x);
-        }
+    int n,m,k;
+    cin>>n>>m>>k;
+    dsu.init(n);
+    Vpii es(m);
+    set<pii> se;
+    REP(i,m) {
+        cin>>es[i],es[i].f--,es[i].s--;
+        if(es[i].f>es[i].s) swap(es[i].f,es[i].s);
+        se.insert(es[i]);
     }
-    map<Vi,int> mp;
-    Vi cnt(26);
-    mp[cnt]++;
-    int an=0;
-    for(int x:a) {
-        if(x==all[0]) {
-            for(int c:all) if(c!=all[0]) {
-                cnt[c]--;
-            }
-        }else {
-            cnt[x]++;
-        }
-        an+=mp[cnt]++;
+    Vpii ae(k);
+    REP(i,k) {
+        cin>>ae[i],ae[i].f--,ae[i].s--;
+        if(ae[i].f>ae[i].s) swap(ae[i].f,ae[i].s);
+        se.erase(ae[i]);
     }
-    cout<<an<<'\n';
+    for(auto [u,v]:se) dsu.merge(u,v);
+    Vi an(k);
+    RREP(i,k) {
+        an[i]=dsu.cc;
+        dsu.merge(ae[i].f,ae[i].s);
+    }
+    REP(i,k) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }

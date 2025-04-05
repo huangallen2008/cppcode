@@ -57,35 +57,42 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+template<class T>
+struct Func {
+    T func;
+    Func(const T &func):func(func) {}
+    template<class... Args>
+    constexpr decltype(auto) operator()(Args &&... args) {
+        return func(*this, forward<Args>(args)...);
+    }
+};
+template<class T>
+Func(const T &) -> Func<T>;
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    int n=SZ(s);
-    Vi a(n);
-    REP(i,n) a[i]=s[i]-'a';
-    Vi used(26);
-    Vi all;
-    for(int x:a) {
-        if(!used[x]) {
-            used[x]=1;
-            all.pb(x);
-        }
+    int n;
+    cin>>n;
+    Graph g(n);
+    REP(i,n-1) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+        g[v].pb(u);
     }
-    map<Vi,int> mp;
-    Vi cnt(26);
-    mp[cnt]++;
-    int an=0;
-    for(int x:a) {
-        if(x==all[0]) {
-            for(int c:all) if(c!=all[0]) {
-                cnt[c]--;
-            }
-        }else {
-            cnt[x]++;
+    Vi leaf;
+    Func dfs=[&](auto dfs,int u,int fa)->void {
+        for(int v:g[u]) {
+            if(v==fa) continue;
+            dfs(v,u);
         }
-        an+=mp[cnt]++;
+        if(SZ(g[u])==1) leaf.pb(u);
+    };
+    dfs(0,-1);
+    int cl=SZ(leaf);
+    cout<<(cl+1>>1)<<'\n';
+    int dif=cl-(cl+1>>1);
+    REP(i,cl+1>>1) {
+        cout<<leaf[i]+1<<' '<<1+leaf[i+dif]<<'\n';
     }
-    cout<<an<<'\n';
     return 0;
 }
