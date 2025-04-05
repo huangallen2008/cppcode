@@ -73,7 +73,7 @@ signed main() {
             for(int j=i;j<maxv;j+=i) mnf[j]=i;
         }
     }
-    
+    REP(i,10) cout<<mnf[i]<<' ';entr
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
         #ifdef LOCAL
