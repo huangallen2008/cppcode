@@ -75,7 +75,9 @@ signed main() {
     }
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
-        int 
+        int f1=mnf[i];
+        int c1=0;;
+        while()
     }
     Vi a(maxv);
     int now=-1;
