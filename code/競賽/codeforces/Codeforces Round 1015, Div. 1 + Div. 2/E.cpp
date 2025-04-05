@@ -96,7 +96,7 @@ void FFT(complex *A, int n, int t) {
 			A[i] /= n;
 }
 
-int mod;
+// int mod;
 inline lolong num(complex x) {
 	double d = x.real();
 	return d < 0 ? lolong(d - 0.5) % mod : lolong(d + 0.5) % mod;
