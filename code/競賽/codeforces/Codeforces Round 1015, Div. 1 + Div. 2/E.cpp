@@ -207,7 +207,8 @@ void solve() {
             REP(i,SZ(res))(an+=res[i]*v[i-SZ(b)+2]);
         }else {
             Vi b,c;
-            b={mn};
+            b={mn+1};
+            c={};
             RREP(i,n) {
                 if(i<mn) {
                     if(a[i]==-1)b.pb(i+1);
