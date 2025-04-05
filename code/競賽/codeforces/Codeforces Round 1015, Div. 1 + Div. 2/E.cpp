@@ -208,7 +208,7 @@ void solve() {
         }else {
             Vi b,c;
             b={mn+1};
-            c={};
+            c={n-mx};
             RREP(i,n) {
                 if(i<mn) {
                     if(a[i]==-1)b.pb(i+1);
