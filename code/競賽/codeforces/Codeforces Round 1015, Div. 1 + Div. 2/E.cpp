@@ -197,8 +197,8 @@ void solve() {
             v1[i]=(fac[i]*infac[i-ch+1]%mod)*fac[cntm1-ch+1]%mod;
         }
         REP(i,cntm1+1) {
-            if(i-ch+1<0) continue;
-            v2[i]=(fac[i]*infac[i-ch+1]%mod)*fac[cntm1-ch+1]%mod;
+            if(i-ch<0) continue;
+            v2[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
         }
         if(mn==inf) {
             Vi b,c;
