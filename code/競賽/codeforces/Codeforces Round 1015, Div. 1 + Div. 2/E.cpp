@@ -152,7 +152,11 @@ void solve() {
     REP(i,n) if(a[i]!=-1) id[i]=i;
     int mn=inf,mx=-inf;
     REP(i,n) {
-        if()
+        if(id[i]!=-1) {
+            chmin(mn,id[i]);
+            chmax(mx,id[i]);
+        }
+        
     }
 }
 signed main() {
