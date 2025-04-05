@@ -84,7 +84,8 @@ signed main() {
         int c2=0;
         while(t%f2==0) t/=f2,c2++;
         if(t!=1) continue;
-        if(())
+        if((c1&1)||(c2&1)) continue;
+        isg[i]=1;
     }
     Vi a(maxv);
     int now=-1;
