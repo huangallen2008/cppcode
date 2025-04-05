@@ -121,7 +121,7 @@ complex p[maxn], q[maxn];
 
 Vi MTT(Vi a,Vi b) {
 	int n = SZ(a), m = SZ(b);
-	int M = int(sqrt(mod) + 1);
+	int M = (int)(sqrt(mod) + 1);
 
 	for(int i = 0; i <= n; i ++) {
 		int x = a[i] % mod;
