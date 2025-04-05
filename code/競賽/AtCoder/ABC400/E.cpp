@@ -76,9 +76,9 @@ signed main() {
     // REP(i,10) cout<<mnf[i]<<' ';entr
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
-        #ifdef LOCAL
-        if(i>10) continue;
-        #endif
+        // #ifdef LOCAL
+        // if(i>10) continue;
+        // #endif
         int f1=mnf[i];
         int c1=0;
         int t=i;
