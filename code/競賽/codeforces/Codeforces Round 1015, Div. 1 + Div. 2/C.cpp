@@ -102,7 +102,7 @@ void solve() {
         if(na[i]!=a[i]) {
             int v1=na[i],v2=a[i];
             an.pb({i,id[v1]});
-            swap(a[id[v1]],i);
+            swap(a[id[v1]],a[i]);
             swap(id[v1],id[v2]);
         }
     } 
