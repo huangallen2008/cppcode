@@ -80,6 +80,7 @@ signed main() {
         if(i>100) continue;
         #endif
         int f1=mnf[i];
+        ope(f1)
         int c1=0;
         int t=i;
         while(t%f1==0) t/=f1,c1++;
