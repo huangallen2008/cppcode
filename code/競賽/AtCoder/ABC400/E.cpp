@@ -73,19 +73,9 @@ signed main() {
             for(int j=i;j<maxv;j+=i) mnf[j]=i;
         }
     }
-    Vi prime;
-    REP(i,maxv) if(isp[i]) prime.pb(i);
     Vi isg(maxv);
     REP(i,SZ(prime)) {
-        int p1=prime[i];
-        REP(j,i) {
-            int p2=prime[j];
-            int v=p1*p2;
-            while(v<maxv) {
-                isg[v]=1;
-
-            }
-        }
+        
     }
     Vi a(maxv);
     int now=-1;
