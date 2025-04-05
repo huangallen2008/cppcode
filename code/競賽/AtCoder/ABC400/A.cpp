@@ -49,6 +49,7 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
+const int mod=1e9+7;
 const int maxn=2e5+5;
 const int maxv=1300;
 const int inf=1ll<<60;
@@ -56,86 +57,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#define i128 __int128_t
-const int mod=(int)1e18+3;
-template<class T>
-struct Func {
-    T func;
-    Func(const T &func):func(func) {}
-    template<class... Args>
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class T>
-Func(const T &) -> Func<T>;
-i128 pw(i128 x,i128 p) {
-    i128 r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
-i128 inv(i128 x) { return pw(x,mod-2); }
-const i128 S=2765341283654;
-#define Vi1 vector<i128>
-#define oparr1(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<(int)allen<<" ";cout<<" size="<<(x).size()<<endl;}
-Vi1 gethash(int n) {
-    Graph g(n);
-    REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-    }
-    Vi1 dp(n,S),udp(n),adp(n);
-    Func dfs0=[&](auto dfs0,int u,int fa)->void {
-        for(int v:g[u]) {
-            if(v==fa) continue;
-            dfs0(v,u);
-            (dp[u]*=S+dp[v])%=mod;
-        }
-    };
-    dfs0(0,-1);
-    // ope((int)pw(5,mod-1))
-    // ope((int)((i128)(dp[1]+S)*inv(dp[1]+S)%mod))
-    Func dfs1=[&](auto dfs1,int u,int fa)->void {
-        adp[u]=(S+udp[u])*dp[u]%mod;
-        for(int v:g[u]) {
-            if(v==fa) continue;
-            udp[v]=adp[u]*inv(S+dp[v])%mod;
-            dfs1(v,u);
-        }
-    };
-    udp[0]=-S+1;
-    dfs1(0,-1);
-    // REP(i,n) udp[i]=(udp[i]+mod)%mod;
-    // REP(i,n) adp[i]=(adp[i]+mod)%mod;
-    REP(i,n) adp[i]=(adp[i]+mod)%mod;
-    // oparr1(dp)
-    // oparr1(udp)
-    // oparr1(adp)
-    return adp;
-};
-void solve() {
-    int n;
-    cin>>n;
-    Vi1 r1=gethash(n);
-    Vi1 r2=gethash(n);
-    // oparr1(r1)
-    // oparr1(r2)
-    map<i128,int> mp1;
-    for(auto x:r1) mp1[x]=1;
-    bool ok=0;
-    for(auto x:r2) if(mp1[x]) ok=1;
-    cout<<(ok?"YES":"NO")<<'\n';
-}
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    int n;
+    cin>>n;
+    if(400%n) cout<<"-1\n";
+    else cout<<400/n<<'\n';
     return 0;
 }
