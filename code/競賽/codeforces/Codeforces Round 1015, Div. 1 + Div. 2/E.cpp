@@ -120,7 +120,7 @@ complex a0[maxn], a1[maxn], b0[maxn], b1[maxn];
 complex p[maxn], q[maxn];
 
 Vi MTT(Vi a0,Vi a1) {
-	int n = SZ(a), m = SZ(a1);
+	int n = SZ(a0), m = SZ(a1);
 	int M = int(sqrt(mod) + 1);
 
 	for(int i = 0; i <= n; i ++) {
