@@ -93,7 +93,8 @@ signed main() {
                     dis[nx][ny]=dis[x][y]+1;
                     dq.pb({nx,ny});
                 }
-                
+                int nx2=nx+dx,ny2=ny+dy;
+                if(nok())
             }
         }
     }
