@@ -62,6 +62,7 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    int mnv=*min_element(ALL(a));
     sort(ALL(a));
     Vi mn(n);
     mn[0]=a[0];
