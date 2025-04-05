@@ -82,7 +82,8 @@ signed main() {
         dq.pop_front();
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
-            if(nok())
+            if(nok(nx,ny)||) continue;
+
         }
     }
     return 0;
