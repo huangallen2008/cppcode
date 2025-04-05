@@ -76,6 +76,7 @@ signed main() {
             isg[p1*p2]=1;
         }
     }
-    Vi 
+    Vi a(maxv);
+    int now=
     return 0;
 }
