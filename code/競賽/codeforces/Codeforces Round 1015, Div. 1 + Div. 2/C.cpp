@@ -78,7 +78,7 @@ void solve() {
             return ;
         }
     }
-    
+    oparr(f)
 }
 signed main() {
     IOS();
