@@ -81,8 +81,6 @@ void init() {
 }
 signed main() {
     IOS();
-    while(1) {
-    init();
-    }
+    
     return 0;
 }
