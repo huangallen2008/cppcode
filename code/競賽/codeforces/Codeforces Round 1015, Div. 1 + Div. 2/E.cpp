@@ -188,7 +188,7 @@ void solve() {
         ope(ch)
         REP(i,cntm1+1) {
             if(i<ch) continue;
-            v[i]=(fac[i]*infac[i-ch-2]%mod)*fac[cntm1-ch+2]%mod;
+            v[i]=(fac[i]*infac[i-ch+2]%mod)*fac[cntm1-ch+2]%mod;
         }
         if(mn==inf) {
             Vi b,c;
@@ -246,3 +246,4 @@ signed main() {
 1
 5
 -1 0 -1 2 -1
+*/
