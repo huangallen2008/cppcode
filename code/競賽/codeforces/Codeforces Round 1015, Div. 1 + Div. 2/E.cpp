@@ -187,20 +187,22 @@ void solve() {
             v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
         }
         if(mn==inf) {
-        Vi b,c;
-        RREP(i,n) {
-            if(i<mn) {
-                if(a[i]==-1)b.pb(i+1);
+            Vi b,c;
+            RREP(i,n) {
+                if(i<mn) {
+                    if(a[i]==-1)b.pb(i+1);
+                }
             }
-        }
-        REP(i,n) {
-            if(i>mx) {
-                if(a[i]==-1)c.pb(n-i);
+            REP(i,n) {
+                if(i>mx) {
+                    if(a[i]==-1)c.pb(n-i);
+                }
             }
+            oparr(b)oparr(c)
+            Vi res=MTT(b,c);
+            op(r)oparr(res)
+            
         }
-        oparr(b)oparr(c)
-        Vi res=MTT(b,c);
-        op(r)oparr(res)
     }
 }
 signed main() {
