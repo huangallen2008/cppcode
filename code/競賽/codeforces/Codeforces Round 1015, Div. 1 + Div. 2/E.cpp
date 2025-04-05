@@ -120,7 +120,6 @@ complex p[maxn], q[maxn];
 
 Vi MTT(Vi a,Vi b) {
 	int n = SZ(a), m = SZ(b);
-	mod = input();
 	int M = int(sqrt(mod) + 1);
 
 	for(int i = 0; i <= n; i ++) {
@@ -154,7 +153,7 @@ Vi MTT(Vi a,Vi b) {
 
 	FFT(p, len, -1);
 	FFT(q, len, -1);
-
+    Vi an(n+m);
 	for(int i = 0; i <= n + m; i ++)
 		printf("%lld ", (M * M * num(p[i].real()) % mod +
 				M * (num(p[i].imag()) + num(q[i].real())) % mod +
