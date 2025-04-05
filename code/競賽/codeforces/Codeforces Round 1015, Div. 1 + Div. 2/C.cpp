@@ -95,7 +95,8 @@ void solve() {
     REP1(i,n) id[a[i]]=i;
     REP1(i,n){
         if(na[i]!=a[i]) {
-            int 
+            int v1=na[i],v2=a[i];
+            
         }
     } 
     cout<<SZ(an)<<'\n';  
