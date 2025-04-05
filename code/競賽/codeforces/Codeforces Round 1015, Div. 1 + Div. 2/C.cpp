@@ -71,13 +71,14 @@ void solve() {
         if(p[i]==i) ceq++;
         else {
             if(p[p[i]]==i) {
+                f.pb(i);
                 continue;
             }
             cout<<"-1\n";
             return ;
         }
     }
-
+    
 }
 signed main() {
     IOS();
