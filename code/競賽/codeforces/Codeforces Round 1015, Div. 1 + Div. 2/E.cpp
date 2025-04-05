@@ -60,7 +60,7 @@ int rd(int l,int r) {
 }
 typedef long long lolong;
 typedef std::complex<double> complex;
-
+#define complex
 const int maxn = 400005, maxk = 20;
 const complex I(0, 1);
 int R[maxn];
