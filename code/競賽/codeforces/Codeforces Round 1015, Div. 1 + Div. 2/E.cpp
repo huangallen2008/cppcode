@@ -197,7 +197,8 @@ void solve() {
             if(i<ch) continue;
             v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
         }
-        Vi res=MTT()
+        Vi res=MTT(b,c);
+        
     }
 }
 signed main() {
