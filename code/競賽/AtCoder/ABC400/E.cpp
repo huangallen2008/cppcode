@@ -65,6 +65,7 @@ signed main() {
             for(int j=i+i;j<maxv;j+=j) isp[j]=0;
         }
     }
+    Vi prime;
     
     return 0;
 }
