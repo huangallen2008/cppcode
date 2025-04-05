@@ -61,14 +61,8 @@ void solve() {
     int n,m,k;
     cin>>n>>m>>k;
     int v=max(n/(m+1),k);
-    if(v>=k) {
-        REP(i,n) cout<<i%v<<' ';
-        cout<<'\n';
-        return;
-    }
-    else {
-
-    }
+    REP(i,n) cout<<i%v<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
