@@ -74,8 +74,8 @@ signed main() {
         }
     }
     Vi isg(maxv);
-    REP(i,SZ(prime)) {
-        
+    REP(i,maxv) {
+        int 
     }
     Vi a(maxv);
     int now=-1;
