@@ -137,9 +137,9 @@ int main() {
 	Poly::NTT(A, 0);
     Vi an(n+m);
 	for (int i = 0; i < n + m - 1; ++i) {
-		printf("%d", A[i].get());
+		an[i]=A[i].get();
 	}
-	return 0;
+	return an;
 }
 void solve() {
     Vi a={1},b={1,2};
@@ -151,4 +151,4 @@ signed main() {
     cin>>T;
     while(T--) solve();
     return 0;
-}
+}
