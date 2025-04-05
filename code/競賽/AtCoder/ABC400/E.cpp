@@ -51,7 +51,7 @@ template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
 const int maxn=2e5+5;
-const int maxv=1300;
+const int maxv=1e6+5;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
@@ -59,6 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    Vi 
     return 0;
 }
