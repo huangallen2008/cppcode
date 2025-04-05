@@ -98,7 +98,7 @@ signed main() {
         if(isg[i]) now=i;
         a[i]=now;
     }
-    REP(i,21) cout<<a[i]<<' ';entr
+    // REP(i,21) cout<<a[i]<<' ';entr
     int q;
     cin>>q;
     REP(i,q) {
