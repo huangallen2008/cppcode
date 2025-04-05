@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    Vi 
+    Vi isp(maxv);
+    
     return 0;
 }
