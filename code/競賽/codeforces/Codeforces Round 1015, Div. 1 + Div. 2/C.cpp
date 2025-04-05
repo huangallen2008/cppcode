@@ -88,7 +88,6 @@ void solve() {
     Vpii an;
     REP1(i,n){
         if(is[a[i]]) {
-
             if(i==it) continue;
             an.pb({i,it});
         }
