@@ -180,7 +180,7 @@ void solve() {
             chmax(mx,id[r]);
             cnt++;
         }
-        op(i)op(mn)ope(mx)
+        op(r)op(mn)ope(mx)
         Vi b,c;
         RREP(i,n) {
             if(i<mn) {
