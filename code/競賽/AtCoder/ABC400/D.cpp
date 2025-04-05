@@ -78,7 +78,7 @@ signed main() {
     dis[sx][sy]=0;
     dq.pb({sx,sy});
     while(SZ(dq)) {
-        
+        auto [x,y]=
     }
     return 0;
 }
