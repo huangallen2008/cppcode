@@ -63,7 +63,9 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     Vi mn(n);
-    mn[0]=
+    mn[0]=a[0];
+    REP1(i,n-1) mn[i]=min(mn[i-1],a[i]);
+    Vi gcd(n+1);
 }
 signed main() {
     IOS();
