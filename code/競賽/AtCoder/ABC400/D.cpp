@@ -87,7 +87,7 @@ signed main() {
                 dis[nx][ny]=dis[x][y];
                 dq.push_front({nx,ny});
             }else {
-                
+                if(dis)
             }
         }
     }
