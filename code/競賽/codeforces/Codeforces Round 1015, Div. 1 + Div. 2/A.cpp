@@ -64,7 +64,9 @@ void solve() {
         cout<<"-1\n";
         return;
     }
-    
+    cout<<n<<' ';
+    REP1(i,n-1) cout<<i<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
