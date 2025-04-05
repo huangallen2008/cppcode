@@ -209,6 +209,7 @@ void solve() {
             REP(i,min(SZ(res),ch+1))(an+=res[i]*(i-SZ(b)+2<ch?0:v[(i-SZ(b)+2)]))%=mod;
         }else {
             Vi b,c;
+            op(mn)ope(mx)
             b={mn+1};
             c={n-mx};
             RREP(i,n) {
