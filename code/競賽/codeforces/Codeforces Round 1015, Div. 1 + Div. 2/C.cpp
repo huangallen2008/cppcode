@@ -72,7 +72,7 @@ void solve() {
             ceq++;
             if(ceq>1) {
                 cout<<"-1\n";
-                return 0;
+                return;
             }
         }
         else {
