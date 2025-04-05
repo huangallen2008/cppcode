@@ -80,7 +80,9 @@ signed main() {
     while(SZ(dq)) {
         auto [x,y]=dq.front();
         dq.pop_front();
-        for(auto [dx,dy])
+        for(auto [dx,dy]:dir) {
+            int 
+        }
     }
     return 0;
 }
