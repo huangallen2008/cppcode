@@ -191,7 +191,8 @@ void solve() {
             }
         }
         int ch=i+1-cnt;
-        
+        Vi v(n+1);
+        REP(i,n+1) 
     }
 }
 signed main() {
