@@ -80,6 +80,7 @@ void solve() {
         }
         else {
             if(p[p[i]]==i) {
+                vis[p[i]]=1;
                 na[it]=i;
                 to[i]=it;
                 to[p[i]]=n-it+1;
