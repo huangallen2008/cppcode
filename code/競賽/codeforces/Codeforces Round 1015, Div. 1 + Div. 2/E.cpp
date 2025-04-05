@@ -227,7 +227,7 @@ void solve() {
             Vi res=MTT(b,c);
             oparr(b)oparr(c)
             oparr(res)
-            REP(i,SZ(res))(an+=res[i]*v[i+C])%=mod;
+            REP(i,SZ(res))(an+=res[i]*v[cntm1-i-C])%=mod;
         }
         ope(an)
     }
