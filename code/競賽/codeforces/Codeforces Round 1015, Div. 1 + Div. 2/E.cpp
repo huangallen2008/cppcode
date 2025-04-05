@@ -229,6 +229,7 @@ void solve() {
             oparr(res)
             REP(i,SZ(res))(an+=res[i]*v[i+C])%=mod;
         }
+        ope(an)
     }
     cout<<an<<'\n';
 }
