@@ -135,9 +135,9 @@ int main() {
 	Poly::NTT(A), Poly::NTT(B);
 	for (int i = 0; i < Poly::lim; ++i) A[i] = A[i] * B[i];
 	Poly::NTT(A, 0);
+    Vi an(n+m);
 	for (int i = 0; i < n + m - 1; ++i) {
 		printf("%d", A[i].get());
-		putchar(i == n + m - 2 ? '\n' : ' ');
 	}
 	return 0;
 }
