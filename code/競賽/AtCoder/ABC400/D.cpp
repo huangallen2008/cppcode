@@ -78,7 +78,9 @@ signed main() {
     dis[sx][sy]=0;
     dq.pb({sx,sy});
     while(SZ(dq)) {
-        auto [x,y]=
+        auto [x,y]=dq.front();
+        dq.pop_front();
+        
     }
     return 0;
 }
