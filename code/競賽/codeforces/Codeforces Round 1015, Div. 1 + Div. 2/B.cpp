@@ -60,13 +60,10 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    if(~n&1) {
-        cout<<"-1\n";
-        return;
-    }
-    cout<<n<<' ';
-    REP1(i,n-1) cout<<i<<' ';
-    cout<<'\n';
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    Vi mn(n);
+    mn[0]=
 }
 signed main() {
     IOS();
