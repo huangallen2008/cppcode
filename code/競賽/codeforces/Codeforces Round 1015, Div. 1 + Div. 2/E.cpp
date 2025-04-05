@@ -151,7 +151,9 @@ void solve() {
     Vi id(n,-1);
     REP(i,n) if(a[i]!=-1) id[i]=i;
     int mn=inf,mx=-inf;
-    
+    REP(i,n) {
+        if()
+    }
 }
 signed main() {
     IOS();
