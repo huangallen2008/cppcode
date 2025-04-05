@@ -129,8 +129,8 @@ int n, m;
 // Int A[maxn << 1], B[maxn << 1];
 Vi main(Vi A,Vi B) {
 	scanf("%d%d%d", &n, &m, &mod); ++n, ++m;
-	for (int i = 0, x; i < n; ++i) scanf("%d", &x), A[i] = Int(x % mod);
-	for (int i = 0, x; i < m; ++i) scanf("%d", &x), B[i] = Int(x % mod);
+	// for (int i = 0, x; i < n; ++i) scanf("%d", &x), A[i] = Int(x % mod);
+	// for (int i = 0, x; i < m; ++i) scanf("%d", &x), B[i] = Int(x % mod);
 	Poly::init(n + m);
 	Poly::NTT(A), Poly::NTT(B);
 	for (int i = 0; i < Poly::lim; ++i) A[i] = A[i] * B[i];
