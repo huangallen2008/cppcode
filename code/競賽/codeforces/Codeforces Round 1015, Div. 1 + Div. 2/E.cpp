@@ -121,8 +121,8 @@ complex a0[maxn], a1[maxn], b0[maxn], b1[maxn];
 /* complex a0b0[maxn], a1b0[maxn], a0b1[maxn], a1b1[maxn]; */
 complex p[maxn], q[maxn];
 
-Vi MTT() {
-	int n = input(), m = input();
+Vi MTT(Vi a,Vi b) {
+	int n = SZ(a), m = SZ(b);
 	mod = input();
 	int M = int(sqrt(mod) + 1);
 
