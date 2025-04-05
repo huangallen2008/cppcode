@@ -195,7 +195,7 @@ void solve() {
         Vi v(cntm1+1);
         REP(i,cntm1+1) {
             if(i<ch) continue;
-            v[i]=fac[i]*infac[i-ch] 
+            v[i]=(fac[i]*infac[i-ch]%mod)*
         }
     }
 }
