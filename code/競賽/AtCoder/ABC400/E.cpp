@@ -77,6 +77,7 @@ signed main() {
         }
     }
     Vi a(maxv);
-    int now=
+    int now=-1;
+    
     return 0;
 }
