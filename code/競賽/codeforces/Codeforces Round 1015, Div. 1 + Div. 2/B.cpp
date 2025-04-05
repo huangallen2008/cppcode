@@ -66,6 +66,10 @@ void solve() {
     int gcd=0;
     bool fir=1;
     REP(i,n-1) {
+        if(a[i]==mnv&&fir) {
+            fir=0;
+            continue;
+        }
         if(a[i]%mnv==0) gcd=__gcd(gcd,a[i]);
     }
     cout<<(gcd==mnv?"YES":"NO")<<'\n';
