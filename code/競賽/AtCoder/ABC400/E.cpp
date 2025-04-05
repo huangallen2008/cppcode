@@ -59,50 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int h,w;
-    cin>>h>>w;
-    vector<Vi> a(h,Vi(w));
-    REP(i,h) {
-        REP(j,w) {
-            char c;
-            cin>>c;
-            a[i][j]=c=='.';
-        }
-    }
-    int sx,sy,ex,ey;
-    cin>>sx>>sy>>ex>>ey,sx--,sy--,ex--,ey--;
-    Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
-    auto nok=[&](int x,int y) ->bool{ return x<0||y<0||x>=h||y>=w; };
-    vector<Vi> dis(h,Vi(w,inf));
-    deque<pii> dq;
-    dis[sx][sy]=0;
-    dq.pb({sx,sy});
-    while(SZ(dq)) {
-        auto [x,y]=dq.front();
-        dq.pop_front();
-        for(auto [dx,dy]:dir) {
-            int nx=x+dx,ny=y+dy;
-            if(nok(nx,ny)) continue;
-            if(a[nx][ny]) {
-                if(dis[nx][ny]>dis[x][y]) {
-                    dis[nx][ny]=dis[x][y];
-                    dq.push_front({nx,ny});
-                }
-            }else {
-                if(dis[nx][ny]>dis[x][y]+1) {
-                    dis[nx][ny]=dis[x][y]+1;
-                    dq.pb({nx,ny});
-                }
-                int nx2=nx+dx,ny2=ny+dy;
-                if(nok(nx2,ny2)) continue;
-                if(dis[nx2][ny2]>dis[x][y]+1) {
-                    dis[nx2][ny2]=dis[x][y]+1;
-                    dq.pb({nx2,ny2});
-                }
-            }
-        }
-    }
-    int an=dis[ex][ey];
-    cout<<an<<'\n';
+    
     return 0;
 }
