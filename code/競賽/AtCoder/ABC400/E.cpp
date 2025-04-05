@@ -87,8 +87,8 @@ signed main() {
         int f2=mnf[t];
         int c2=0;
         while(t%f2==0) t/=f2,c2++;
-        ope(f1)
-        op(i)ope(t)
+        // ope(f1)
+        // op(i)ope(t)
         if(t!=1) continue;
         isg[i]=1;
     }
