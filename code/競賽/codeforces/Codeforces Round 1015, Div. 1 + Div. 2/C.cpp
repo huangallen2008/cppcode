@@ -99,7 +99,6 @@ void solve() {
             an.pb({i,id[v1]});
             swap(a[id[v1]],i);
             swap(id[v1],id[v2]);
-
         }
     } 
     cout<<SZ(an)<<'\n';  
