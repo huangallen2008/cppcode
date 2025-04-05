@@ -102,6 +102,7 @@ signed main() {
             }
         }
     }
-    int an=dis[]
+    int an=dis[ex][ey];
+    cout<<an<<'\n';
     return 0;
 }
