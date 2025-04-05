@@ -60,9 +60,6 @@ int rd(int l,int r) {
 typedef long long lolong;
 typedef std::complex<double> complex;
 
-inline int input() { int x; scanf("%d", &x); return x; }
-inline lolong linput() { lolong x; scanf("%lld", &x); return x; }
-
 const int maxn = 400005, maxk = 20;
 const complex I(0, 1);
 int R[maxn];
