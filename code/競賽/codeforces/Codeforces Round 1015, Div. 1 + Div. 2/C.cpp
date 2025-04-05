@@ -67,6 +67,7 @@ void solve() {
     REP1(i,n) p[a[i]]=b[i];
     int ceq=0;
     Vi to(n+1);
+    Vi na(n+1);
     int it=1;
     REP1(i,n) {
         if(p[i]==i) {
@@ -81,7 +82,7 @@ void solve() {
                 na[it]=i;
                 to[i]=it;
                 to[p[i]]=n-it+1;
-                na[n-it+1]=i;
+                na[n-it+1]=p[i];
                 it++;
                 continue;
             }
