@@ -155,9 +155,9 @@ Vi MTT(Vi a,Vi b) {
 	FFT(q, len, -1);
     Vi an(n+m);
 	for(int i = 0; i <= n + m; i ++)
-		printf("%lld ", (M * M * num(p[i].real()) % mod +
+		an[i]=(M * M * num(p[i].real()) % mod +
 				M * (num(p[i].imag()) + num(q[i].real())) % mod +
-				num(q[i].imag())) % mod);
+				num(q[i].imag())) % mod;
 	puts("");
 }
 void solve() {
