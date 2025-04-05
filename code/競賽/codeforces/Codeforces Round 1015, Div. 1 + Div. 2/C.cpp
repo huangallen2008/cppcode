@@ -68,7 +68,10 @@ void solve() {
     int ceq=0;
     Vi f;
     REP1(i,n) {
-        if(p[i]==i) ceq++;
+        if(p[i]==i) {
+            ceq++;
+            if(ceq)
+        }
         else {
             if(p[p[i]]==i) {
                 f.pb(i);
