@@ -62,7 +62,7 @@ signed main() {
     Vi isp(maxv,1); isp[0]=isp[1]=0;
     for(int i=2;i*i<maxv;i++) {
         if(isp[i]) {
-            for(int j=i+i;j<maxv;j+=j) isp[j]=0;
+            for(int j=i+i;j<maxv;j+=i) isp[j]=0;
         }
     }
     Vi prime;
