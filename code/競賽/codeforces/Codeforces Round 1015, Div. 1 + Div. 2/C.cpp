@@ -60,9 +60,9 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    Vi a(n);
+    Vi a(n+1),b(n+1);
     REP(i,n) cin>>a[i];
-    
+
 }
 signed main() {
     IOS();
