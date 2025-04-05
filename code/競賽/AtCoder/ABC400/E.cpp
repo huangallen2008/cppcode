@@ -80,7 +80,7 @@ signed main() {
         int t=i;
         while(t%f1==0) t/=f1,c1++;
         if(t==1) continue;
-        
+        int f2=mnf[t];
     }
     Vi a(maxv);
     int now=-1;
