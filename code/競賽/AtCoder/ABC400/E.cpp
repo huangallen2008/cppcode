@@ -80,7 +80,10 @@ signed main() {
         REP(j,i) {
             int p2=prime[j];
             int v=p1*p2;
-            
+            while(v<maxv) {
+                isg[v]=1;
+                
+            }
         }
     }
     Vi a(maxv);
