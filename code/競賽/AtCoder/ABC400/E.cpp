@@ -78,6 +78,9 @@ signed main() {
     }
     Vi a(maxv);
     int now=-1;
-    
+    REP(i,maxv) {
+        if(isg[i]) now=i;
+        
+    }
     return 0;
 }
