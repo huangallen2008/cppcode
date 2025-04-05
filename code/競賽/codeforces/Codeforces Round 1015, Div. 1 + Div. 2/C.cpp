@@ -69,7 +69,8 @@ void solve() {
     REP1(i,n) {
         if(p[i]==i) ceq++;
         else {
-            if(p[p[i])
+            if(p[p[i]]==i) continue;
+            cout<<""
         }
     }
 }
