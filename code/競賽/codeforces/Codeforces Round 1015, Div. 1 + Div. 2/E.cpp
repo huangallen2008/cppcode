@@ -219,6 +219,8 @@ void solve() {
                     if(a[i]==-1)c.pb(n-i);
                 }
             }
+            int C=0;
+            for(int i=mn;i<=mx;i++) C+=a[i]==-1;
             oparr(v)
             oparr(b)oparr(c)
             Vi res=MTT(b,c);
