@@ -103,6 +103,7 @@ void solve() {
         }
     } 
     cout<<SZ(an)<<'\n';  
+    for(auto [x,y]:an) cout<<x<<' '<<y<<'\n';
 }
 signed main() {
     IOS();
