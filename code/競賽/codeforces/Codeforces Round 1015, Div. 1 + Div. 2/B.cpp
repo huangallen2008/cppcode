@@ -70,6 +70,7 @@ void solve() {
             fir=0;
             continue;
         }
+        ope(a[i])
         if(a[i]%mnv==0) gcd=__gcd(gcd,a[i]);
     }
     cout<<(gcd==mnv?"YES":"NO")<<'\n';
