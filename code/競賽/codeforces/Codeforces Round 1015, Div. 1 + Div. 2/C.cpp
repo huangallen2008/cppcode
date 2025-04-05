@@ -84,6 +84,7 @@ void solve() {
             return ;
         }
     }
+    int it=1;
     
 }
 signed main() {
