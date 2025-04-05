@@ -183,7 +183,7 @@ void solve() {
         Vi b,c;
         RREP(i,n) {
             if(i<mn) {
-                b.pb(i+1);
+                if(a[i]==-1)b.pb(i+1);
             }
         }
         REP(i,n) {
