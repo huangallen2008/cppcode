@@ -75,6 +75,9 @@ signed main() {
     }
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
+        #ifdef LOCAL
+        if(i>100) continue;
+        #endif
         int f1=mnf[i];
         int c1=0;
         int t=i;
