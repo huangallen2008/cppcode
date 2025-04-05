@@ -167,6 +167,7 @@ void solve() {
                 c.pb(n-i);
             }
         }
+        
     }
 }
 signed main() {
