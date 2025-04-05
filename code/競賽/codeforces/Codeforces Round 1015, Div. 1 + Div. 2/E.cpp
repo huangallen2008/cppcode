@@ -186,11 +186,15 @@ void solve() {
         int ch=r+1-cnt;
         Vi v(cntm1+1);
         Vi v1(cntm1+1);
-        Vi v(cntm1+1);
+        Vi v2(cntm1+1);
         ope(ch)
         REP(i,cntm1+1) {
             if(i-ch+2<0) continue;
             v[i]=(fac[i]*infac[i-ch+2]%mod)*fac[cntm1-ch+2]%mod;
+        }
+        REP(i,cntm1+1) {
+            if(i-ch+2<0) continue;
+            v1[i]=(fac[i]*infac[i-ch+2]%mod)*fac[cntm1-ch+2]%mod;
         }
         if(mn==inf) {
             Vi b,c;
