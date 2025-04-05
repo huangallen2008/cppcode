@@ -90,7 +90,6 @@ signed main() {
         ope(f1)
         op(i)ope(t)
         if(t!=1) continue;
-        if((c1&1)||(c2&1)) continue;
         isg[i]=1;
     }
     Vi a(maxv);
