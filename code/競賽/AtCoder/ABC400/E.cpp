@@ -72,7 +72,8 @@ signed main() {
         int p1=prime[i];
         REP(j,i) {
             int p2=prime[j];
-            if()
+            if(p1*p2>=maxv) break;
+            
         }
     }
     return 0;
