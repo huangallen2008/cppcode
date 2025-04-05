@@ -92,7 +92,8 @@ void solve() {
             if(i==it) continue;
             an.pb({i,it});
         }
-    }   
+    } 
+    cout<<SZ(an)<<'\n';  
 }
 signed main() {
     IOS();
