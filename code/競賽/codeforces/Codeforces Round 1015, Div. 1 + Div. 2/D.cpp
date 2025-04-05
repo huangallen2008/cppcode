@@ -60,14 +60,14 @@ int rd(int l,int r) {
 void solve() {
     int n,m,k;
     cin>>n>>m>>k;
-    int v=n/(m+1);
+    int v=max(n/(m+1),k);
     if(v>=k) {
         REP(i,n) cout<<i%v<<' ';
         cout<<'\n';
         return;
     }
     else {
-        
+
     }
 }
 signed main() {
