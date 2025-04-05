@@ -150,6 +150,8 @@ void solve() {
     REP(i,n) cin>>a[i];
     Vi id(n,-1);
     REP(i,n) if(a[i]!=-1) id[i]=i;
+    int mn=inf,mx=-inf;
+    
 }
 signed main() {
     IOS();
