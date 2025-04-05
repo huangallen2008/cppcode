@@ -29,7 +29,7 @@ using namespace std;
 #define addmod(x,y) x=((x+(y))%mod)
 #define Vi vector<int>
 #define Vpii vector<pii>
-#ifdef LOCAL_
+#ifdef LOCAL
 #define op(x) cout<<(#x)<<"="<<(x)<<", ";
 #define ope(x) cout<<(#x)<<"="<<(x)<<endl;
 #define oparr(x) {cout<<(#x)<<":";for(auto allen:(x)) cout<<allen<<" ";cout<<" size="<<(x).size()<<endl;}
