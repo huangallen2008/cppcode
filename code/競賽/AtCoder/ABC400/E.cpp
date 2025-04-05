@@ -74,7 +74,7 @@ signed main() {
         }
     }
     Vi isg(maxv);
-    REP(i,maxv) {
+    for(int i=6;i<maxv;i++) {
         int 
     }
     Vi a(maxv);
