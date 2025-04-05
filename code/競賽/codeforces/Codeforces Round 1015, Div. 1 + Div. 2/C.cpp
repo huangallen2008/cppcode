@@ -86,6 +86,7 @@ void solve() {
     }
     int it=1;
     Vpii an;
+    
     REP1(i,n){
         if(is[a[i]]) {
             if(i==it) continue;
