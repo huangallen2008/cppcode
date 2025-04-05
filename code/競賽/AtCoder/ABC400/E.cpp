@@ -66,7 +66,8 @@ int msqrt(int x) {
 }
 signed main() {
     IOS();
-    Vi isp(maxv,1); isp[0]=isp[1]=0;
+    Vi mnf(maxv,1); 
+    
     for(int i=2;i*i<maxv;i++) {
         if(isp[i]) {
             for(int j=i+i;j<maxv;j+=i) isp[j]=0;
@@ -82,7 +83,7 @@ signed main() {
             int v=p1*p2;
             while(v<maxv) {
                 isg[v]=1;
-                
+
             }
         }
     }
