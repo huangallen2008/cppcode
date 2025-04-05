@@ -59,7 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int T;
-    
+    int T=1;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
