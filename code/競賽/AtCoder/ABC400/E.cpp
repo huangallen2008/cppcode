@@ -79,6 +79,7 @@ signed main() {
         int p1=prime[i];
         REP(j,i) {
             int p2=prime[j];
+            int v=p
             if(p1*p2>=maxv) break;
             isg[p1*p2]=1;
         }
