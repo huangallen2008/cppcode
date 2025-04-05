@@ -89,7 +89,7 @@ void solve() {
     }
     Vpii an;
     Vi id(n+1);
-    
+    REP1(i,n) id[a[i]]=i;
     REP1(i,n){
         if(is[a[i]]) {
             if(i==it) continue;
