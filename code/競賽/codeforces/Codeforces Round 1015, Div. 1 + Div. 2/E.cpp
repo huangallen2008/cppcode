@@ -169,6 +169,7 @@ void solve() {
                 c.pb(n-i);
             }
         }
+        int ch=i+1-cnt;
         
     }
 }
