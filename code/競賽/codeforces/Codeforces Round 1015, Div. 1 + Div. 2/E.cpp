@@ -144,8 +144,11 @@ Vi MTT(Vi _A,Vi _B) {
 	return an;
 }
 void solve() {
-    Vi a={1,1},b={1,2};
-    oparr(MTT(a,b))
+    int n;
+    cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    
 }
 signed main() {
     IOS();
