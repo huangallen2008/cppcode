@@ -81,6 +81,9 @@ signed main() {
         while(t%f1==0) t/=f1,c1++;
         if(t==1) continue;
         int f2=mnf[t];
+        int c2=0;
+        while(t%f2==0) t/=f2,c2++;
+        
     }
     Vi a(maxv);
     int now=-1;
