@@ -58,56 +58,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int n;
-    cin>>n;
-    Vi a(n+1),b(n+1);
-    REP1(i,n) cin>>a[i];
-    REP1(i,n) cin>>b[i];
-    Vi p(n+1);
-    REP1(i,n) p[a[i]]=b[i];
-    int ceq=0;
-    Vi to(n+1);
-    Vi na(n+1);
-    int it=1;
-    Vi vis(n+1);
-    REP1(i,n) {
-        if(vis[i]) continue;
-        if(p[i]==i) {
-            ceq++;
-            na[n+1>>1]=i;
-            if(ceq>1) {
-                cout<<"-1\n";
-                return;
-            }
-        }
-        else {
-            if(p[p[i]]==i) {
-                vis[p[i]]=1;
-                na[it]=i;
-                to[i]=it;
-                to[p[i]]=n-it+1;
-                na[n-it+1]=p[i];
-                it++;
-                continue;
-            }
-            cout<<"-1\n";
-            return ;
-        }
-    }
-    // oparr(na)
-    Vpii an;
-    Vi id(n+1);
-    REP1(i,n) id[a[i]]=i;
-    REP1(i,n){
-        if(na[i]!=a[i]) {
-            int v1=na[i],v2=a[i];
-            an.pb({i,id[v1]});
-            swap(a[id[v1]],a[i]);
-            swap(id[v1],id[v2]);
-        }
-    } 
-    cout<<SZ(an)<<'\n';  
-    for(auto [x,y]:an) cout<<x<<' '<<y<<'\n';
+    int n,m,k;
+    cin>>n>>m>>k;
+    int v=n/(m+1);
+    if()
 }
 signed main() {
     IOS();
