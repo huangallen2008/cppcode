@@ -198,7 +198,7 @@ void solve() {
             v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
         }
         Vi res=MTT(b,c);
-        
+        op(r)oparr(res)
     }
 }
 signed main() {
