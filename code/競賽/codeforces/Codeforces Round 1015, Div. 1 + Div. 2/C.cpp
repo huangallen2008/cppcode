@@ -66,6 +66,7 @@ void solve() {
     Vi p(n+1);
     REP1(i,n) p[a[i]]=b[i];
     int ceq=0;
+    Vi f;
     REP1(i,n) {
         if(p[i]==i) ceq++;
         else {
