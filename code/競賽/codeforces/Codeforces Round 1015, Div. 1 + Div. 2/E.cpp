@@ -186,7 +186,7 @@ void solve() {
             if(i<ch) continue;
             v[i]=(fac[i]*infac[i-ch]%mod)*fac[cntm1-ch]%mod;
         }
-        op(r)op(mn)ope(mx)
+        if(mn==inf) {
         Vi b,c;
         RREP(i,n) {
             if(i<mn) {
