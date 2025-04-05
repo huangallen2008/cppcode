@@ -85,7 +85,10 @@ void solve() {
         }
     }
     int it=1;
-    
+    REP1(i,n){
+        if(is[a[i]]) continue;
+        
+    }
 }
 signed main() {
     IOS();
