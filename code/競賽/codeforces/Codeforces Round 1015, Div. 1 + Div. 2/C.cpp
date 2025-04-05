@@ -62,7 +62,9 @@ void solve() {
     cin>>n;
     Vi a(n+1),b(n+1);
     REP1(i,n) cin>>a[i];
-    REP1(i,n) cin>>a[i];
+    REP1(i,n) cin>>b[i];
+    Vi p(n+1);
+    REP1(i,n) p[a[i]]=b[i];
     
 }
 signed main() {
