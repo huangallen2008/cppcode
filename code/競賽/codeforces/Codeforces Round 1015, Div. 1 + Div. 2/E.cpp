@@ -143,6 +143,7 @@ Vi MTT(Vi _A,Vi _B) {
 	}
 	return an;
 }
+const int maxn2=
 int pw(int x,int p) {
     int r=1;
     while(p>0) {
