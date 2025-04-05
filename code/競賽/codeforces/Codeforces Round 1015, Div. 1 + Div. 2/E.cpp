@@ -193,7 +193,8 @@ void solve() {
         }
         int ch=i+1-cnt;
         Vi v(cntm1+1);
-        REP(i,cntm1+1) v[i]=fac[i] 
+        REP(i,cntm1+1) {
+            v[i]=fac[i]*infac[] 
     }
 }
 signed main() {
