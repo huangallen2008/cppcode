@@ -83,6 +83,7 @@ signed main() {
         int f2=mnf[t];
         int c2=0;
         while(t%f2==0) t/=f2,c2++;
+        op(i)ope(t)
         if(t!=1) continue;
         if((c1&1)||(c2&1)) continue;
         isg[i]=1;
