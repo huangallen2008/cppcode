@@ -162,7 +162,7 @@ Vi MTT(Vi a,Vi b) {
                 return an;
 }
 void solve() {
-
+    
 }
 signed main() {
     IOS();
