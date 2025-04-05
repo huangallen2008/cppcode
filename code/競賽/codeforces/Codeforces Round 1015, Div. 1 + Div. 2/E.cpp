@@ -162,6 +162,11 @@ void solve() {
                 b.pb(i+1);
             }
         }
+        REP(i,n) {
+            if(i>mx) {
+                c.pb(n-i);
+            }
+        }
     }
 }
 signed main() {
