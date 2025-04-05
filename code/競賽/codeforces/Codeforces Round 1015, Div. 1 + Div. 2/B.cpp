@@ -63,8 +63,8 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int mnv=*min_element(ALL(a));
-    a.era
     int gcd=0;
+    bool fir=1;
     REP(i,n-1) {
         if(a[i]%mnv==0) gcd=__gcd(gcd,a[i]);
     }
