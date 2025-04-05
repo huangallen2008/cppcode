@@ -61,7 +61,9 @@ void solve() {
     int n,m,k;
     cin>>n>>m>>k;
     int v=n/(m+1);
-    if()
+    if(v>=k) {
+        REP(i,n) 
+    }
 }
 signed main() {
     IOS();
