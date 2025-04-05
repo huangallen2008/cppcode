@@ -205,6 +205,24 @@ void solve() {
             Vi res=MTT(b,c);
             op(r)oparr(res)
             REP(i,SZ(res))(an+=res[i]*v[i-SZ(b)+2]);
+        }else {
+            Vi b,c;
+            RREP(i,n) {
+                if(i<mn) {
+                    if(a[i]==-1)b.pb(i+1);
+                }
+            }
+            REP(i,n) {
+                if(i>mx) {
+                    if(a[i]==-1)c.pb(n-i);
+                }
+            }
+            oparr(v)
+            oparr(b)oparr(c)
+            Vi res=MTT(b,c);
+            op(r)oparr(res)
+            REP(i,SZ(res))(an+=res[i]*v[i-SZ(b)+2]);
+
         }
     }
     cout<<an<<'\n';
