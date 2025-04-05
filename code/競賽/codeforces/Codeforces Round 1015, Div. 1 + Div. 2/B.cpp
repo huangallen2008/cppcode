@@ -65,8 +65,7 @@ void solve() {
     int mnv=*min_element(ALL(a));
     int gcd=0;
     REP(i,n) if(a[i]%mnv==0) gcd=__gcd(gcd,a[i]);
-    
-    cout<<(ok?"YES":"NO")<<'\n';
+    cout<<(gcd==mnv?"YES":"NO")<<'\n';
 }
 signed main() {
     IOS();
