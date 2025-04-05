@@ -67,6 +67,6 @@ signed main() {
     }
     Vi prime;
     REP(i,maxv) if(isp[i]) prime.pb(i);
-    oparr(prime)
+    
     return 0;
 }
