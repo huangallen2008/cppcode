@@ -172,7 +172,7 @@ void solve() {
     Vi id(n,-1);
     REP(i,n) if(a[i]!=-1) id[i]=i;
     int mn=inf,mx=-inf;
-    int cnt=0;
+    int cnt=0,cntm1;
     REP(r,n) {
         if(id[r]!=-1) {
             chmin(mn,id[r]);
