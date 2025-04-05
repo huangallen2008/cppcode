@@ -69,8 +69,10 @@ signed main() {
     REP(i,maxv) if(isp[i]) prime.pb(i);
     Vi isg(maxv);
     REP(i,SZ(prime)) {
+        int p1=prime[i];
         REP(j,i) {
-            
+            int p2=prime[j];
+            if()
         }
     }
     return 0;
