@@ -143,7 +143,7 @@ Vi MTT(Vi a,Vi b) {
 
 	for(int i = 0; i < len; i ++)
 		Wn[i] = complex(cos(M_PI / len * i), sin(M_PI / len * i));
-
+    
 	FFTFFT(a0, a1, len, 1);
 	FFTFFT(b0, b1, len, 1);
 
