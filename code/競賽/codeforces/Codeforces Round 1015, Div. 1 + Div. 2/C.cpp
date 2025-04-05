@@ -78,7 +78,7 @@ void solve() {
         }
         else {
             if(p[p[i]]==i) {
-                is[i]=1;
+                to[i]=
                 continue;
             }
             cout<<"-1\n";
