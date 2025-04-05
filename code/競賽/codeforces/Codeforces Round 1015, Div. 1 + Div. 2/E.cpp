@@ -191,7 +191,7 @@ void solve() {
                 c.pb(n-i);
             }
         }
-        int ch=i+1-cnt;
+        int ch=r+1-cnt;
         Vi v(cntm1+1);
         REP(i,cntm1+1) {
             if(i<ch) continue;
@@ -208,3 +208,7 @@ signed main() {
     while(T--) solve();
     return 0;
 }
+/*
+1
+
+*/
