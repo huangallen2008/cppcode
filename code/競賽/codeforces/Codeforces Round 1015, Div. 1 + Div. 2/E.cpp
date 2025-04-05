@@ -185,6 +185,8 @@ void solve() {
         }
         int ch=r+1-cnt;
         Vi v(cntm1+1);
+        Vi v1(cntm1+1);
+        Vi v(cntm1+1);
         ope(ch)
         REP(i,cntm1+1) {
             if(i-ch+2<0) continue;
