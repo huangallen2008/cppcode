@@ -239,6 +239,7 @@ void solve() {
             oparr(b)oparr(c)
             oparr(res)
             REP(i,min(SZ(res),ch+1))(an+=res[i]*v[i+C-2])%=mod;
+            
         }
         ope(an)
     }
