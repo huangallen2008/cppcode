@@ -85,9 +85,11 @@ void solve() {
         }
     }
     int it=1;
-    REP1(i,n){
+    REP1(i,n>>1){
         if(is[a[i]]) continue;
-        
+        else {
+            
+        }
     }
 }
 signed main() {
