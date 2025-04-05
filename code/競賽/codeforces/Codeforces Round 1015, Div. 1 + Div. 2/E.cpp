@@ -144,7 +144,7 @@ Vi MTT(Vi _A,Vi _B) {
 	return an;
 }
 void solve() {
-    Vi a={1},b={1,2};
+    Vi a={1,1},b={1,2};
     oparr(MTT(a,b))
 }
 signed main() {
