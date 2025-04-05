@@ -174,6 +174,7 @@ void solve() {
     int mn=inf,mx=-inf;
     int cnt=0,cntm1=0;
     REP(i,n) cntm1+=a[i]==-1;
+    int an=0;
     REP(r,n) {
         if(id[r]!=-1) {
             chmin(mn,id[r]);
@@ -201,9 +202,10 @@ void solve() {
             oparr(b)oparr(c)
             Vi res=MTT(b,c);
             op(r)oparr(res)
-            REP(i,SZ(res))(an+=res[i]*v[i-SZ(b)+1])
+            REP(i,SZ(res))(an+=res[i]*v[i-SZ(b)+2]);
         }
     }
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
