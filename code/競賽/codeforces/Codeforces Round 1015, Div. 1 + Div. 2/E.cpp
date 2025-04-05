@@ -59,8 +59,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 typedef long long lolong;
-typedef std::complex<double> complex;
-#define complex
+// typedef std::complex<double> complex;
+#define complex complex<double>
 const int maxn = 400005, maxk = 20;
 const complex I(0, 1);
 int R[maxn];
