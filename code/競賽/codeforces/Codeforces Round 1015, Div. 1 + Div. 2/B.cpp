@@ -69,6 +69,7 @@ void solve() {
     RREP(i,n) gcd[i]=__gcd(gcd[i+1],a[i]);
     bool ok=0;
     REP(i,n-1) if(mn[i]==gcd[i+1]) ok=1;
+    cout<<(ok?"YES":"NO")<<'\n';
 }
 signed main() {
     IOS();
