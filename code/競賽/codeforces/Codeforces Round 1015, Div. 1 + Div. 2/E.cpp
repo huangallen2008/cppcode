@@ -191,7 +191,7 @@ void solve() {
             }
         }
         int ch=i+1-cnt;
-
+        
     }
 }
 signed main() {
