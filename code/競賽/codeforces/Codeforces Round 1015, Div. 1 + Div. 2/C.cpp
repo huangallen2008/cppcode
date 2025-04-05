@@ -78,8 +78,10 @@ void solve() {
         }
         else {
             if(p[p[i]]==i) {
+                na[it]=i;
                 to[i]=it;
                 to[p[i]]=n-it+1;
+                na[n-it+1]=i;
                 it++;
                 continue;
             }
