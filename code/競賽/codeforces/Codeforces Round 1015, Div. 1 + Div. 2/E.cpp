@@ -127,7 +127,7 @@ namespace Poly {
 
 int n, m;
 // Int A[maxn << 1], B[maxn << 1];
-I
+
 Vi MTT(Vi A,Vi B) {
     n=SZ(A),m=SZ(B);
 	// scanf("%d%d%d", &n, &m, &mod); ++n, ++m;
