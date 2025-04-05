@@ -225,8 +225,7 @@ void solve() {
             oparr(b)oparr(c)
             Vi res=MTT(b,c);
             op(r)oparr(res)
-            REP(i,SZ(res))(an+=res[i]*v[i+C]);
-
+            REP(i,SZ(res))(an+=res[i]*v[i+C])%=mod;
         }
     }
     cout<<an<<'\n';
