@@ -67,7 +67,10 @@ void solve() {
     REP1(i,n) p[a[i]]=b[i];
     int ceq=0;
     REP1(i,n) {
-        if()
+        if(p[i]==i) ceq++;
+        else {
+            if(p[p[i])
+        }
     }
 }
 signed main() {
