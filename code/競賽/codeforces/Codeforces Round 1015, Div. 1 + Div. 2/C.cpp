@@ -69,6 +69,7 @@ void solve() {
     Vi to(n+1);
     Vi na(n+1);
     int it=1;
+    Vi vis(n+1);
     REP1(i,n) {
         if(vis[i]) continue;
         if(p[i]==i) {
