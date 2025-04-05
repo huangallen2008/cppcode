@@ -133,6 +133,7 @@ Vi MTT(Vi _A,Vi _B) {
 	// scanf("%d%d%d", &n, &m, &mod); ++n, ++m;
 	for (int i = 0, x; i < n; ++i) A[i] = Int(_A[i] % mod);
 	for (int i = 0, x; i < m; ++i) B[i] = Int(_B[i] % mod);
+    
 	Poly::init(n + m);
 	Poly::NTT(A), Poly::NTT(B);
 	for (int i = 0; i < Poly::lim; ++i) A[i] = A[i] * B[i];
