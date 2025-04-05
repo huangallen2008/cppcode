@@ -83,7 +83,9 @@ signed main() {
         for(auto [dx,dy]:dir) {
             int nx=x+dx,ny=y+dy;
             if(nok(nx,ny)) continue;
-            if(a)
+            if(a[nx][ny]) {
+                dis[nx][ny]=
+            }
         }
     }
     return 0;
