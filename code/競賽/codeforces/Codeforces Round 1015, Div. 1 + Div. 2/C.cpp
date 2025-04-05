@@ -85,10 +85,12 @@ void solve() {
         }
     }
     int it=1;
+    Vpii an;
     REP1(i,n){
         if(is[a[i]]) {
-            
-            continue;
+
+            if(i==it) continue;
+            an.pb({i,it});
         }
     }   
 }
