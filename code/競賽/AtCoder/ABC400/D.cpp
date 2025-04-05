@@ -81,7 +81,8 @@ signed main() {
         auto [x,y]=dq.front();
         dq.pop_front();
         for(auto [dx,dy]:dir) {
-            int 
+            int nx=x+dx,ny=y+dy;
+            if(nok())
         }
     }
     return 0;
