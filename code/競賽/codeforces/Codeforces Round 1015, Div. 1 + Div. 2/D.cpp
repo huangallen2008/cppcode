@@ -62,7 +62,12 @@ void solve() {
     cin>>n>>m>>k;
     int v=n/(m+1);
     if(v>=k) {
-        REP(i,n) 
+        REP(i,n) cout<<i%v<<' ';
+        cout<<'\n';
+        return;
+    }
+    else {
+        
     }
 }
 signed main() {
