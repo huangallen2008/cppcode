@@ -137,7 +137,7 @@ Vi MTT(Vi _A,Vi _B) {
 	Poly::NTT(A), Poly::NTT(B);
 	for (int i = 0; i < Poly::lim; ++i) A[i] = A[i] * B[i];
 	Poly::NTT(A, 0);
-    Vi an(n+m);
+    Vi an(n+m-1);
 	for (int i = 0; i < n + m - 1; ++i) {
 		an[i]=A[i].get();
 	}
