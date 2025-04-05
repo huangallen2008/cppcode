@@ -126,8 +126,8 @@ namespace Poly {
 }
 
 int n, m;
-Int A[maxn << 1], B[maxn << 1];
-int main() {
+// Int A[maxn << 1], B[maxn << 1];
+Vi main(Vi A,Vi B) {
 	scanf("%d%d%d", &n, &m, &mod); ++n, ++m;
 	for (int i = 0, x; i < n; ++i) scanf("%d", &x), A[i] = Int(x % mod);
 	for (int i = 0, x; i < m; ++i) scanf("%d", &x), B[i] = Int(x % mod);
@@ -151,4 +151,4 @@ signed main() {
     cin>>T;
     while(T--) solve();
     return 0;
-}
+}
