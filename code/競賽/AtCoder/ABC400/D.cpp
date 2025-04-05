@@ -90,7 +90,9 @@ signed main() {
                 }
             }else {
                 if(dis[nx][ny]>dis[x][y]+1) {
-                    
+                    dis[nx][ny]=dis[x][y]+1;
+                    dq.push_front({nx,ny});
+
                 }
             }
         }
