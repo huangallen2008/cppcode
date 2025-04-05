@@ -192,6 +192,7 @@ void solve() {
                 if(a[i]==-1)c.pb(n-i);
             }
         }
+        oparr(b)oparr(c)
         int ch=r+1-cnt;
         Vi v(cntm1+1);
         REP(i,cntm1+1) {
