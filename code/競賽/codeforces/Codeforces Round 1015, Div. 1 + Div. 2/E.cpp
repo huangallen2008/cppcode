@@ -159,7 +159,7 @@ void solve() {
         Vi b,c;
         RREP(i,n) {
             if(i<mn) {
-                b.pb(i);
+                b.pb(i+1);
             }
         }
     }
