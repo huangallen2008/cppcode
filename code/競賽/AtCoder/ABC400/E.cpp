@@ -73,6 +73,7 @@ signed main() {
             for(int j=i;j<maxv;j+=i) mnf[j]=i;
         }
     }
+    
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
         #ifdef LOCAL
