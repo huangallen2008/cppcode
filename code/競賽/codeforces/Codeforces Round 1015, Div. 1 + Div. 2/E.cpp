@@ -151,13 +151,15 @@ void solve() {
     Vi id(n,-1);
     REP(i,n) if(a[i]!=-1) id[i]=i;
     int mn=inf,mx=-inf;
-    REP(rr,n) {
-        if(id[rr]!=-1) {
+    REP(r,n) {
+        if(id[r]!=-1) {
             chmin(mn,id[r]);
             chmax(mx,id[r]);
         }
-        RREP(j,n) {
-
+        RREP(i,n) {
+            if(i<mn) {
+                
+            }
         }
     }
 }
