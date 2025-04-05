@@ -148,7 +148,8 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    
+    Vi id(n);
+    REP(i,n) if(a[i]!=-1) id[i]=i;
 }
 signed main() {
     IOS();
