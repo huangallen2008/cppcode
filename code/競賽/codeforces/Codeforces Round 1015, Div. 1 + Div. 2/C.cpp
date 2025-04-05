@@ -70,6 +70,7 @@ void solve() {
     Vi na(n+1);
     int it=1;
     REP1(i,n) {
+        if(vis[i]) continue;
         if(p[i]==i) {
             ceq++;
             na[n+1>>1]=i;
