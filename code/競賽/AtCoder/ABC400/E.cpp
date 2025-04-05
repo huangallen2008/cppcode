@@ -95,7 +95,7 @@ signed main() {
         int x;
         cin>>x;
         x=msqrt(x);
-        
+        cout<<SQ(a[x])<<'\n';
     }
     return 0;
 }
