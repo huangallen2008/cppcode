@@ -69,8 +69,8 @@ signed main() {
     Vi mnf(maxv,1); 
     REP(i,maxv) mnf[i]=i;
     for(int i=2;i*i<maxv;i++) {
-        if(mnf[i]) {
-            for(int j=i+i;j<maxv;j+=i) isp[j]=0;
+        if(mnf[i]==i) {
+            for(int j=i+i;j<maxv;j+=i) mnf[j]=0;
         }
     }
     Vi prime;
