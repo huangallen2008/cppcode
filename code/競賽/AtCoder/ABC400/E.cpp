@@ -57,6 +57,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int msqrt(int x) {
+    int t=sqrt(x);
+    for(int i=max(t-5,0ll);i<t+5;i++) {
+        if(i*i>x) return i-1;
+    }
+    return t;
+}
 signed main() {
     IOS();
     Vi isp(maxv,1); isp[0]=isp[1]=0;
@@ -88,6 +95,7 @@ signed main() {
         int x;
         cin>>x;
         x=msqrt(x);
+        
     }
     return 0;
 }
