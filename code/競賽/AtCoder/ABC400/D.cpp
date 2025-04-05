@@ -96,11 +96,12 @@ signed main() {
                 int nx2=nx+dx,ny2=ny+dy;
                 if(nok(nx2,ny2)) continue;
                 if(dis[nx2][ny2]>dis[x][y]+1) {
-                    dis[nx][ny]=dis[x][y]+1;
-                    dq.pb({nx,ny});
+                    dis[nx2][ny2]=dis[x][y]+1;
+                    dq.pb({nx2,ny2});
                 }
             }
         }
     }
+    int an=dis[]
     return 0;
 }
