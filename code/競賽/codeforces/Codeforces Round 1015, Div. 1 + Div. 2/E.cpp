@@ -158,7 +158,7 @@ Vi MTT(Vi a,Vi b) {
 		an[i]=(M * M * num(p[i].real()) % mod +
 				M * (num(p[i].imag()) + num(q[i].real())) % mod +
 				num(q[i].imag())) % mod;
-	puts("");
+                return an;
 }
 void solve() {
 
