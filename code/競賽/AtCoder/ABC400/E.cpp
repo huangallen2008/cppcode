@@ -80,7 +80,8 @@ signed main() {
     int now=-1;
     REP(i,maxv) {
         if(isg[i]) now=i;
-        
+        a[i]=now;
     }
+    
     return 0;
 }
