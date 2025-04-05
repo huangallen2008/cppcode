@@ -83,7 +83,8 @@ signed main() {
         int f2=mnf[t];
         int c2=0;
         while(t%f2==0) t/=f2,c2++;
-        
+        if(t!=1) continue;
+        if(())
     }
     Vi a(maxv);
     int now=-1;
