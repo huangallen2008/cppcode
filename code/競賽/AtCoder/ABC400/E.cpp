@@ -82,6 +82,6 @@ signed main() {
         if(isg[i]) now=i;
         a[i]=now;
     }
-    
+    REP(i,10) cout<<a[i]<<' ';entr
     return 0;
 }
