@@ -63,8 +63,9 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int mnv=*min_element(ALL(a));
+    a.era
     int gcd=0;
-    REP(i,n) {
+    REP(i,n-1) {
         if(a[i]%mnv==0) gcd=__gcd(gcd,a[i]);
     }
     cout<<(gcd==mnv?"YES":"NO")<<'\n';
