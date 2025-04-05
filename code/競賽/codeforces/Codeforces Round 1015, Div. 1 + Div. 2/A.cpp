@@ -60,7 +60,10 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
-    if()
+    if(~n&1) {
+        cout<<"-1\n";
+        return;
+    }
 }
 signed main() {
     IOS();
