@@ -72,7 +72,7 @@ void solve() {
     REP1(i,n) {
         if(p[i]==i) {
             ceq++;
-            na[]
+            na[n+1>>1]
             if(ceq>1) {
                 cout<<"-1\n";
                 return;
