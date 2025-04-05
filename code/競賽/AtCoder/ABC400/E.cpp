@@ -70,7 +70,7 @@ signed main() {
     REP(i,maxv) mnf[i]=i;
     for(int i=2;i*i<maxv;i++) {
         if(mnf[i]==i) {
-            for(int j=i+i;j<maxv;j+=i) mnf[j]=0;
+            for(int j=i;j<maxv;j+=i) mnf[j]=i;
         }
     }
     Vi prime;
