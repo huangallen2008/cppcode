@@ -199,6 +199,7 @@ void solve() {
                     if(a[i]==-1)c.pb(n-i);
                 }
             }
+            oparr(v)
             oparr(b)oparr(c)
             Vi res=MTT(b,c);
             op(r)oparr(res)
