@@ -90,6 +90,7 @@ void solve() {
             return ;
         }
     }
+    oparr(na)
     Vpii an;
     Vi id(n+1);
     REP1(i,n) id[a[i]]=i;
