@@ -206,7 +206,7 @@ void solve() {
             oparr(b)oparr(c)
             Vi res=MTT(b,c);
             op(r)oparr(res)
-            REP(i,min(SZ(res),ch+1))(an+=res[i]*v[cntm1-(i-SZ(b)+2)])%=mod;
+            REP(i,SZ(res))(an+=res[i]*v[cntm1-(i-SZ(b)+2)])%=mod;
         }else {
             Vi b,c;
             b={mn+1};
@@ -227,7 +227,7 @@ void solve() {
             Vi res=MTT(b,c);
             oparr(b)oparr(c)
             oparr(res)
-            REP(i,SZ(res))(an+=res[i]*v[cntm1-i-C])%=mod;
+            REP(i,SZ(res))(an+=res[i]*v[i+C])%=mod;
         }
         ope(an)
     }
