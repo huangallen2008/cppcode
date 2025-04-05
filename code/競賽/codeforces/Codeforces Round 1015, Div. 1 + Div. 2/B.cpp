@@ -63,14 +63,8 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int mnv=*min_element(ALL(a));
-    sort(ALL(a));
-    Vi mn(n);
-    mn[0]=a[0];
-    REP1(i,n-1) mn[i]=min(mn[i-1],a[i]);
-    Vi gcd(n+1);
-    RREP(i,n) gcd[i]=__gcd(gcd[i+1],a[i]);
-    bool ok=0;
-    REP(i,n-1) if(mn[i]==gcd[i+1]) ok=1;
+    int gcd=0;
+    REP(i,n) if(a[i])
     cout<<(ok?"YES":"NO")<<'\n';
 }
 signed main() {
