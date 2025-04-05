@@ -222,9 +222,9 @@ void solve() {
             int C=0;
             for(int i=mn;i<=mx;i++) C+=a[i]==-1;
             oparr(v)
-            oparr(b)oparr(c)
             Vi res=MTT(b,c);
-            op(r)oparr(res)
+            oparr(b)oparr(c)
+            oparr(res)
             REP(i,SZ(res))(an+=res[i]*v[i+C])%=mod;
         }
     }
