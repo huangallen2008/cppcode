@@ -96,7 +96,8 @@ void solve() {
     REP1(i,n){
         if(na[i]!=a[i]) {
             int v1=na[i],v2=a[i];
-            
+            swap(a[id[v1]],id[v2]);
+            swap(id[v1],id[v2]);
         }
     } 
     cout<<SZ(an)<<'\n';  
