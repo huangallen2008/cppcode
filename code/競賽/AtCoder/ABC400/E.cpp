@@ -73,14 +73,13 @@ signed main() {
             for(int j=i;j<maxv;j+=i) mnf[j]=i;
         }
     }
-    REP(i,10) cout<<mnf[i]<<' ';entr
+    // REP(i,10) cout<<mnf[i]<<' ';entr
     Vi isg(maxv);
     for(int i=6;i<maxv;i++) {
         #ifdef LOCAL
-        if(i>100) continue;
+        if(i>10) continue;
         #endif
         int f1=mnf[i];
-        ope(f1)
         int c1=0;
         int t=i;
         while(t%f1==0) t/=f1,c1++;
@@ -88,6 +87,7 @@ signed main() {
         int f2=mnf[t];
         int c2=0;
         while(t%f2==0) t/=f2,c2++;
+        ope(f1)
         op(i)ope(t)
         if(t!=1) continue;
         if((c1&1)||(c2&1)) continue;
