@@ -131,7 +131,7 @@ Int A[maxn << 1], B[maxn << 1];
 Vi MTT(Vi _A,Vi _B) {
     n=SZ(_A),m=SZ(_B);
 	// scanf("%d%d%d", &n, &m, &mod); ++n, ++m;
-	REP(i,n*2+m*2) A[i]=B[i]=0;
+	REP(i,n*2+m*2) A[i]=B[i]=Int(0);
     for (int i = 0, x; i < n; ++i) A[i] = Int(_A[i] % mod);
 	for (int i = 0, x; i < m; ++i) B[i] = Int(_B[i] % mod);
 
