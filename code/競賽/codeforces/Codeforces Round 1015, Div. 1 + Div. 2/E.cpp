@@ -151,6 +151,7 @@ void solve() {
     Vi id(n,-1);
     REP(i,n) if(a[i]!=-1) id[i]=i;
     int mn=inf,mx=-inf;
+    int cnt=0;
     REP(r,n) {
         if(id[r]!=-1) {
             chmin(mn,id[r]);
@@ -168,7 +169,7 @@ void solve() {
                 c.pb(n-i);
             }
         }
-
+        
     }
 }
 signed main() {
