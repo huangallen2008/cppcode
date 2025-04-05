@@ -156,9 +156,10 @@ void solve() {
             chmin(mn,id[r]);
             chmax(mx,id[r]);
         }
+        Vi b,c;
         RREP(i,n) {
             if(i<mn) {
-                
+                b.pb()
             }
         }
     }
