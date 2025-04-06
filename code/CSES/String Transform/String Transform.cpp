@@ -62,6 +62,7 @@ signed main() {
     ope((char)('a'+26))
     string s;
     cin>>s;
+    for()
     Vi cnt(27);
     int n=SZ(s);
     Vpii a(n);
