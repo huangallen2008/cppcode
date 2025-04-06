@@ -142,11 +142,9 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
-    for(auto [_1,_2,_3,_4]:dinic.es) cout<<_1<<' '<<_2<<' '<<_4<<'\n';
+    // for(auto [_1,_2,_3,_4]:dinic.es) cout<<_1<<' '<<_2<<' '<<_4<<'\n';
     REP(i,n) {
-        REP(j,n) {
-            cout<<(dinic.es[i*n+j<<1].r==0?'X':'.');
-        }
+        REP(j,n) out<<(dinic.es[i*n+j<<1].r==0?'X':'.');
         cout<<'\n';
     }
     return 0;
