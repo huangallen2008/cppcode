@@ -97,7 +97,9 @@ void solve() {
             cnt[sp]++;
         }
     }
-    
+    REP1(i,n) {
+        REP(j,n+1) 
+    }
 }
 signed main() {
     IOS();
