@@ -89,6 +89,7 @@ signed main() {
         }
         for(auto [x,y]:an) swap(a[x],a[y]);
     }
-
+    cout<<SZ(an)<<'\n';
+    for(auto)
     return 0;
 }
