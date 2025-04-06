@@ -87,14 +87,14 @@ void solve() {
     REP1(i,n) pmn[i]=min(pmn[i-1],a[i]?a[i]:inf);
     RREP1(i,n) smn[i]=min(smn[i+1],a[i]?a[i]:inf);
     vector<Vi> del(n+2,Vi(n+1));
-    Vi cnt0(n+1);
+    Vi cnt(n+1);
     Vi psp(n+1);
     REP1(i,n) psp[i]=psp[i-1]+(a[i]==0);
     REP1(r,n) {
         REP1(l,r) {
             int mn=min(pmn[l-1],smn[r+1]),sp=psp[r]-psp[l-1];
             del[mn][sp]++;
-            cnt0[sp]++;
+            cnt[sp]++;
         }
     }
     
