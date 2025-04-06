@@ -62,6 +62,7 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n+1);
+    REP1(i,n) cin>>a[i];
     
     return 0;
 }
