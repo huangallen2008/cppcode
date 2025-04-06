@@ -61,6 +61,7 @@ struct Dinic {
     struct E {
         int u,v,cap,r;
     };
+    vector<E> es;
     
 }
 signed main() {
