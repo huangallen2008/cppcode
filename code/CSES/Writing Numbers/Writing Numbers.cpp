@@ -67,7 +67,7 @@ signed main() {
         int an=0;
         while(x) {
             if(x%10) {
-                if(x%10==1) an+=
+                if(x%10==1) an+=x0%mul+1;
             } 
         }
     }
