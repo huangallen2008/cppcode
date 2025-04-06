@@ -85,7 +85,7 @@ signed main() {
                 if(SZ(v)==2) {
                     an.back().pb({v[0],v[1]});
                 }else {
-                    int 
+                    int nn=SZ(v)-1
                     for(int i=0;i*2<SZ(v)-1;i++) {
 
                     }
