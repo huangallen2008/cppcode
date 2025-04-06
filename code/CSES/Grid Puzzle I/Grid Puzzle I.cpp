@@ -60,7 +60,8 @@ int rd(int l,int r) {
 struct Dinic {
     struct E {
         int u,v,cap,r;
-    }
+    };
+    
 }
 signed main() {
     IOS();
