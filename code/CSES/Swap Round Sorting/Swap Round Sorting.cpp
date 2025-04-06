@@ -72,9 +72,12 @@ signed main() {
         Vi vis(n+1);
         REP1(i,n) {
             if(a[i]!=i) {
-                Vi r;
-                t.pb(i);
-                int 
+                Vi v;
+                v.pb(i);
+                int t=a[i];
+                while(t!=i) {
+                    
+                }
             }
         }
     }
