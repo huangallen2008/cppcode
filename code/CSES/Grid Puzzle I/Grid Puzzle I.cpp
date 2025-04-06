@@ -63,6 +63,11 @@ struct Dinic {
     };
     vector<E> es;
     Graphw g;
+    int n;
+    void init(int _n) {
+        n=_n;
+        g=Graphw(n);
+    }
     void addedge(int u,int v,int c) {
         es.pb({u,v,c,c});
         es.pb({v,u,c,0});
