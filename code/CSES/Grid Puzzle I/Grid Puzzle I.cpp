@@ -106,6 +106,7 @@ struct Dinic {
                 es[id].r-=ret;
                 es[id^1].r+=ret;
                 an+=ret;
+                cap-=ret;
                 return ret;
             }
         }
