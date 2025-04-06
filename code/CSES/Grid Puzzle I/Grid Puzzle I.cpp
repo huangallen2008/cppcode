@@ -72,7 +72,7 @@ struct Dinic {
         es.pb({u,v,c,c});
         es.pb({v,u,c,0});
         g[u].pb({v,SZ(es)-2});
-        g[v].pb({u,SZ(es)-2});
+        g[v].pb({u,SZ(es)-1});
     }
 }
 signed main() {
