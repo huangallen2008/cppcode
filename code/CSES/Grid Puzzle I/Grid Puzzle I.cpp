@@ -58,7 +58,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct Dinic {
-    
+    struct E {
+        
+    }
 }
 signed main() {
     IOS();
