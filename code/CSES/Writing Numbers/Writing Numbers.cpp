@@ -64,7 +64,9 @@ signed main() {
     auto check=[&](int x) {
         int mul=1;
         while(x) {
-            if(x%10==0) 
+            if(x%10) {
+                
+            } 
         }
     }
     return 0;
