@@ -67,7 +67,7 @@ signed main() {
     REP(i,n) {
         int mx=*max_element(ALL(cnt));
         if(mx>=n-i+1>>1) {
-            
+            int c=max_
         }
     }
     return 0;
