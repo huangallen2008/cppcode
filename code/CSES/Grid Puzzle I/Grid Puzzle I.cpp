@@ -84,7 +84,9 @@ struct Dinic {
         while(SZ(q)) {
             int u=q.front();
             q.pop();
-            for(auto)
+            for(auto id:g[u]) {
+                auto [_,v,]
+            }
         }
     }
     int mxf(int _s,int _t) {
