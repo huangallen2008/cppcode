@@ -71,6 +71,7 @@ signed main() {
     Vpii t=a;
     sort(ALL(t));
     vector<Vpii> g(27);
+    ope("ok")
     REP(i,27) g[i]=Vpii(cnt[i]);
     REP(i,n) g[a[i].f][a[i].s]=t[i];
     pii now={27,0};
