@@ -78,7 +78,14 @@ struct Dinic {
     }
     bool bfs() {
         dis=Vi(n,inf);
-        dis
+        dis[s]=0;
+        queue<int> q;
+        q.push(s);
+        while(SZ(q)) {
+            int u=q.front();
+            q.pop();
+            for(auto)
+        }
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
