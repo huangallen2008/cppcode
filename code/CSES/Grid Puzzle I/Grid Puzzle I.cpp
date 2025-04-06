@@ -64,7 +64,7 @@ struct Dinic {
     vector<E> es;
     Graph g;
     void addedge(int u,int v,int c) {
-        
+        E.pb()
     }
 }
 signed main() {
