@@ -96,14 +96,14 @@ struct Dinic {
     }
     int dfs(int u,int cap) {
         if(u==t||cap==0) return cap;
-        for(auto id:g[u]) {
+        for() {
 
         }
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
         while(bfs()) {
-
+            it=Vi(n);
         }
     }
 }
