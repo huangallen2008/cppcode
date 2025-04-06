@@ -88,6 +88,7 @@ struct Dinic {
                 auto [_,v,cap,r]=es[id];
                 if(r&&dis[v]>dis[u]+1) {
                     dis[v]=dis[u]+1;
+                    q.push(v);
                 }
             }
         }
