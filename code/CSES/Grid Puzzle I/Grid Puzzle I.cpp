@@ -142,6 +142,10 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
-    vector<Vi>
+    REP(i,n) {
+        REP(j,n) {
+            cout<<()
+        }
+    }
     return 0;
 }
