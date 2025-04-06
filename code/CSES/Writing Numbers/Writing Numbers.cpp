@@ -66,10 +66,10 @@ signed main() {
         int mul=1;
         int an=0;
         while(x) {
-            int v=x/10;
+            int v=x/10);
             if(x%10) {
                 if(x%10==1) an+=v*mul+x0%mul+1;
-                else an+=mul;
+                else an+=v*mul+mul;
             } 
         }
     }
