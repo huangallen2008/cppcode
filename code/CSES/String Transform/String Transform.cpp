@@ -61,7 +61,7 @@ signed main() {
     IOS();
     string s;
     cin>>s;
-    for(auto &c:s) if(c=='#') c='a'-1;
+    for(auto &c:s) if(c=='#') c='a'+26;
     Vi cnt(27);
     int n=SZ(s);
     Vpii a(n);
