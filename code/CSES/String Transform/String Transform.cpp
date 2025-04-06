@@ -71,5 +71,6 @@ signed main() {
     Vpii t=a;
     sort(ALL(t));
     vector<Vpii> g(27);
+    REP()
     return 0;
 }
