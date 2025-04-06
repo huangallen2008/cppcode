@@ -110,7 +110,7 @@ signed main() {
     REP(i,n<<1) if(p[i]!=-1) ism[p[i]]=1;
     vis=Vi(n<<1);
     REP(i,n) if(!ism[i]) dfs(i);
-    Vpii an(n);
-    
+    Vpii an;
+    REP(i,n) 
     return 0;
 }
