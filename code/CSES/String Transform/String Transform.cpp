@@ -66,7 +66,7 @@ signed main() {
     int n=SZ(s);
     Vpii a(n);
     REP(i,n) {
-        if()
+        // if()
     }
     return 0;
 }
