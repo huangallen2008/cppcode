@@ -61,17 +61,18 @@ signed main() {
     IOS();
     string s;
     cin>>s;
+    int n=SZ(s);
     Vi cnt(26);
     for(char c:s) cnt[c-'A']++;
     if(*max_element(ALL(cnt))>n+1>>1) {
         cout<<"-1\n";
         return 0;
     }
-    int n=SZ(s);
     REP(i,n) {
         int mx=*max_element(ALL(cnt));
         if((n-i&1)&&mx>=n-i+1>>1) {
             int c=max_element(ALL(cnt))-cnt.begin();
+
         }
     }
     return 0;
