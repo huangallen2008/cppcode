@@ -80,6 +80,8 @@ int C(int n,int k) {
 signed main() {
     IOS();
     com_init();
-    
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
