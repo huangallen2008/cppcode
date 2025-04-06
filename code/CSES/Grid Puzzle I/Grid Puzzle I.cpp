@@ -126,6 +126,8 @@ signed main() {
     int n;
     cin>>n;
     Vi r(n),c(n);
-    REP(i,n) cin>>r[i]
+    REP(i,n) cin>>r[i];
+    REP(i,n) cin>>c[i];
+    
     return 0;
 }
