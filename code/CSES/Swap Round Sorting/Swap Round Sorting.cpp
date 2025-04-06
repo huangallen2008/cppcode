@@ -85,7 +85,7 @@ signed main() {
                 if(SZ(v)==2) {
                     an.back().pb({v[0],v[1]});
                 }else {
-                    for(int i)
+                    for(int i=0;i)
                 }
             }
         }
