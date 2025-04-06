@@ -66,7 +66,8 @@ signed main() {
     int n=SZ(s);
     Vpii a(n);
     REP(i,n) {
-        a[i]={s[i]-'a',cnt[s[i]-;]}
+        a[i]={s[i]-'a',cnt[s[i]-'a']++};
     }
+    Vpii t(n);
     return 0;
 }
