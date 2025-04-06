@@ -77,6 +77,7 @@ signed main() {
         }
         return an;
     };
+    ope(check())
     int l=1,r=2e18,m;
     while(l<r) {
         m=l+r>>1;
