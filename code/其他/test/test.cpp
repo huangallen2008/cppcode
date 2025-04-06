@@ -94,9 +94,9 @@ signed main() {
                 q.push({x,x+y});
             }
         } 
-        if(x*2+y<maxn) {
-            if(dis[x][x+y]>dis[x][y]+1) {
-                dis[x][x+y]=dis[x][y]+1;
+        if(x+y*2<maxn) {
+            if(dis[x+y][y]>dis[x][y]+1) {
+                dis[x+y][y]=dis[x][y]+1;
                 q.push({x,x+y});
             }
         } 
