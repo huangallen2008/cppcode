@@ -61,6 +61,7 @@ signed main() {
     IOS();
     string s;
     cin>>s;
+    Vi cnt(26);
     
     return 0;
 }
