@@ -72,6 +72,7 @@ signed main() {
     sort(ALL(t));
     vector<Vpii> g(27);
     REP(i,27) g[i]=Vpii(cnt[i]);
-    REP(i,n) g[a[i].f][a[i].s]
+    REP(i,n) g[a[i].f][a[i].s]=t[i];
+    
     return 0;
 }
