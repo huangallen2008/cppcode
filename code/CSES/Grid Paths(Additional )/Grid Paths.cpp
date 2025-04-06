@@ -87,6 +87,6 @@ signed main() {
     a[m]={1,1};
     a[m+1]={n,n};
     sort(ALL(a));
-
+    
     return 0;
 }
