@@ -67,7 +67,7 @@ signed main() {
         int an=0;
         while(x) {
             an+=mul*(int)(x/10);
-            op(x)ope(an)
+            // op(x)ope(an)
             if(x%10) {
                 if(x%10==1) an+=x0%mul+1;
                 else an+=mul;
@@ -77,13 +77,13 @@ signed main() {
         }
         return an;
     };
-    // int l=1,r=2e18,m;
-    // while(l<r) {
-    //     m=l+r>>1;
-    //     if(check(m)>n) r=m;
-    //     else l=m+1;
-    // }
-    ope(check(11))
-    // cout<<r-1<<'\n';
+    int l=1,r=2e18,m;
+    while(l<r) {
+        m=l+r>>1;
+        if(check(m)>n) r=m;
+        else l=m+1;
+    }
+    // ope(check(11))
+    cout<<r-1<<'\n';
     return 0;
 }
