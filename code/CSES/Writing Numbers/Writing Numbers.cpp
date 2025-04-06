@@ -77,8 +77,8 @@ signed main() {
         }
         return an;
     };
-    ope(check(1e18))
-    int l=1,r=2e18,m;
+    ope(check(518))
+    int l=1,r=1e18,m;
     while(l<r) {
         m=l+r>>1;
         if(check(m)>n) r=m;
