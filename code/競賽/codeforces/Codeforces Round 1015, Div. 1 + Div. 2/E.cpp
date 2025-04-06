@@ -87,6 +87,7 @@ void solve() {
     REP1(i,n) pmn[i]=min(pmn[i-1],a[i]?a[i]:inf);
     RREP1(i,n) smn[i]=min(smn[i+1],a[i]?a[i]:inf);
     vector<Vi> del(n+2,Vi(n+1));
+    Vi cnt0(n+1);
     
 }
 signed main() {
