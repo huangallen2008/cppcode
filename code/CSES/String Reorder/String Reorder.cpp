@@ -69,14 +69,13 @@ signed main() {
         return 0;
     }
     REP(i,n) {
-        auto out=[&](int c) {
-            
-        }
+        auto out=[&](int c) ->void{
+            cout<<(char)('A'+c);
+            cnt[c]--;
+        };
         int mx=*max_element(ALL(cnt));
         if((n-i&1)&&mx>=n-i+1>>1) {
             int c=max_element(ALL(cnt))-cnt.begin();
-            cout<<(char)('A'+c);
-            cnt[c]--;
         }else {
 
         }
