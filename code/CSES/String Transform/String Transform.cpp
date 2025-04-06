@@ -78,7 +78,7 @@ signed main() {
     REP(i,n-1) {
         ope(now)
         now=g[now.f][now.s];
-        cout<<(char)('a'+now.f);
+        cout<<(char)('a'+now.f-1);
     }
     cout<<'\n';
     return 0;
