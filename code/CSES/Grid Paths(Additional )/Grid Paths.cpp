@@ -80,6 +80,7 @@ int C(int n,int k) {
 signed main() {
     IOS();
     com_init();
-    
+    int n;
+    cin>>n>>m;
     return 0;
 }
