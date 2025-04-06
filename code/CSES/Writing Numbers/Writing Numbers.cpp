@@ -61,6 +61,8 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    
+    auto check=[&](int x) {
+        
+    }
     return 0;
 }
