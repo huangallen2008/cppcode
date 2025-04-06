@@ -81,12 +81,12 @@ signed main() {
             g[j+n].pb(i);
         }
     }
-    Vi p(n),vis(n);
+    Vi p(n,-1),vis(n);
     Func dfs=[&](auto dfs,int u) {
         for(int v:g[u]) {
             if(vis[v]) continue;
 
         }
-    }
+    };
     return 0;
 }
