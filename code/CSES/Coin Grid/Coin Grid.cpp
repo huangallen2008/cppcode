@@ -87,9 +87,11 @@ signed main() {
             if(vis[v]) continue;
             if(p[v]==-1||match(p[v])) {
                 p[v]=u;
-                return;
+                return 1;
             }
         }
+        return 0;
     };
+    
     return 0;
 }
