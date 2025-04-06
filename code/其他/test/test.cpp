@@ -81,6 +81,7 @@ void init() {
 }
 signed main() {
     IOS();
-    vector<Vi> dis()
+    vector<Vi> dis(maxn,Vi(maxn,inf));
+    
     return 0;
 }
