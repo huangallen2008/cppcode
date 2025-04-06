@@ -98,6 +98,7 @@ signed main() {
         vis=Vi(n<<1);
         cnt+=match(i);
     }
+    oparr(p)
     ope(cnt)
     Func dfs=[&](auto dfs,int u)->void {
         vis[u]=1;
