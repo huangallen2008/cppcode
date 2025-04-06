@@ -105,7 +105,7 @@ void solve() {
         REP(j,n+1) cnt[j]-=del[i][j];
         op(i)oparr(cnt)
         int ch=i-apr[i];
-        for(int j=i;j<=n;j++) (an+=fac[j]*infac[j-ch]%mod*fac[psp[n]-i]%mod*cnt[j]%mod)%=mod;
+        for(int j=i;j<=n;j++) (an+=fac[j]*infac[j-ch]%mod*fac[psp[n]-ch]%mod*cnt[j]%mod)%=mod;
     }
     cout<<an<<'\n';
 }
