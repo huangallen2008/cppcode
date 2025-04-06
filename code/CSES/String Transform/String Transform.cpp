@@ -71,6 +71,7 @@ signed main() {
     Vpii t=a;
     sort(ALL(t));
     vector<Vpii> g(27);
-    REP()
+    REP(i,27) g[i]=Vpii(cnt[i]);
+    
     return 0;
 }
