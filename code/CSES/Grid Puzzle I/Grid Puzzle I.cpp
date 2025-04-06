@@ -75,8 +75,12 @@ struct Dinic {
         g[u].pb(SZ(es)-2);
         g[v].pb(SZ(es)-1);
     }
+    
     int mxf(int _s,int _t) {
         s=_s,t=_t;
+        while(bfs()) {
+
+        }
     }
 }
 signed main() {
