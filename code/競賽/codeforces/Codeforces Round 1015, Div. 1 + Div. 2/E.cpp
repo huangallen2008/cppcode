@@ -92,7 +92,7 @@ void solve() {
     REP1(i,n) psp[i]=psp[i-1]+(a[i]==0);
     REP1(r,n) {
         REP1(l,r) {
-            int mn=min(pmn[])
+            int mn=min(pmn[l-1],smn[r+1]),
         }
     }
 }
