@@ -98,7 +98,7 @@ signed main() {
         cnt+=match(i);
     }
     Func dfs=[&](auto dfs,int u) {
-        
+        if(vis[u]) retu;
         for(int v:g[u]) {
 
         }
