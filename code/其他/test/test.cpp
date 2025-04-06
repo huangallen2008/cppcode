@@ -102,6 +102,8 @@ signed main() {
         } 
     }
     Vi d(maxn,inf);
-    for(int i=2;)
+    for(int i=2;i<maxn;i++) {
+        REP1(j,i-1) chmin(d[i],)
+    }
     return 0;
 }
