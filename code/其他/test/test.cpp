@@ -86,7 +86,9 @@ signed main() {
     q.push({1,1});
     dis[1][1]=0;
     while(q.size()) {
-        auto [x,y]:
+        auto [x,y]=q.front();
+        q.pop();
+        if()
     }
     return 0;
 }
