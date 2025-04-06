@@ -95,7 +95,8 @@ struct Dinic {
         return dis[t]!=inf;
     }
     int dfs(int u,int cap) {
-        if()
+        if(u==t||cap==0) return cap;
+        for(auto id)
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
