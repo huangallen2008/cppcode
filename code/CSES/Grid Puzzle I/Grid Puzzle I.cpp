@@ -123,6 +123,6 @@ struct Dinic {
 };
 signed main() {
     IOS();
-
+    
     return 0;
 }
