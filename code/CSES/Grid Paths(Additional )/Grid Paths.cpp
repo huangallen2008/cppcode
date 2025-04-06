@@ -82,7 +82,8 @@ signed main() {
     com_init();
     int n,m;
     cin>>n>>m;
-    Vpii a(m+2);
+    m+=2;
+    Vpii a(m);
     REP(i,1) cin>>a[i];
     a[m]={1,1};
     a[m+1]={1,1};
