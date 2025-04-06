@@ -97,11 +97,12 @@ struct Dinic {
     int dfs(int u,int cap) {
         if(u==t||cap==0) return cap;
         for(int &i=it[u];i<SZ(g[u]);i++) {
+            int id=g[u][i];
             auto [_,v,_c,r]=es[g[u][i]];
             if(dis[v]!=dis[u]+1) continue;
             int ret=dfs(v,min(cap,r));
             if(ret>0) {
-                
+
             }
         }
         return 0;
