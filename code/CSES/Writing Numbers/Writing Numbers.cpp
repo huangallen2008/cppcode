@@ -65,7 +65,7 @@ signed main() {
         int mul=1;
         while(x) {
             if(x%10) {
-                
+                if(x%10==)
             } 
         }
     }
