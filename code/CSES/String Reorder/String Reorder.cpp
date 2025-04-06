@@ -66,7 +66,9 @@ signed main() {
     int n=SZ(s);
     REP(i,n) {
         int mx=*max_element(ALL(cnt));
-        
+        if(mx>=n-i+1>>1) {
+            
+        }
     }
     return 0;
 }
