@@ -93,7 +93,7 @@ void solve() {
     REP1(r,n) {
         REP1(l,r) {
             int mn=min(pmn[l-1],smn[r+1]),sp=psp[r]-psp[l-1];
-            del[mn]
+            del[mn][sp]++;
         }
     }
 }
