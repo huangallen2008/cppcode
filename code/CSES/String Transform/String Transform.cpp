@@ -61,7 +61,7 @@ signed main() {
     IOS();
     string s;
     cin>>s;
-    Vi cnt(26);
+    Vi cnt(27);
     int n=SZ(s);
     Vpii a(n);
     REP(i,n) {
