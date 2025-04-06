@@ -67,7 +67,9 @@ signed main() {
     REP(i,n) {
         bool ok=1;
         REP1(i,n) if(a[i]!=i) ok=0;
-        
+        if(ok) break;
+
     }
+    
     return 0;
 }
