@@ -85,6 +85,8 @@ void solve() {
     Vi pmn(n+1),smn(n+2);
     pmn[0]=smn[n+1]=inf;
     REP1(i,n) pmn[i]=min(pmn[i-1],a[i]?a[i]:inf);
+    RREP1(i,n) smn[i]=min(smn[i+1],a[i]?a[i]:inf);
+    
 }
 signed main() {
     IOS();
