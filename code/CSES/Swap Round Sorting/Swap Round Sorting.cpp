@@ -82,7 +82,9 @@ signed main() {
                     v.pb(t);
                     t=a[t];
                 }
-                if(SZ(t))
+                if(SZ(v)==2) {
+                    an.back().pb()
+                }
             }
         }
         for(auto [x,y]:an.back()) swap(a[x],a[y]);
