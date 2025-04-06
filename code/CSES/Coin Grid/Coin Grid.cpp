@@ -102,8 +102,9 @@ signed main() {
         for(int v:g[u]) {
             if(vis[v]) continue;
             if(p[v]==-1) continue;
+            vis[v]=1;
             dfs(p[v]);
         }
-    }
+    };
     return 0;
 }
