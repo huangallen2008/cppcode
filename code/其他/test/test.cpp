@@ -102,6 +102,7 @@ signed main() {
         } 
     }
     Vi d(maxn,inf);
+    d[0]=d[1]=0;
     for(int i=2;i<maxn;i++) {
         REP1(j,i-1) chmin(d[i],dis[j][i-j]);
     }
