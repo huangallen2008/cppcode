@@ -76,8 +76,10 @@ signed main() {
                 v.pb(i);
                 int t=a[i];
                 while(t!=i) {
-                    
+                    v.pb(t);
+                    t=a[t];
                 }
+                
             }
         }
     }
