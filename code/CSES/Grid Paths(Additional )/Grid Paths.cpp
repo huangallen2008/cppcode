@@ -80,7 +80,11 @@ int C(int n,int k) {
 signed main() {
     IOS();
     com_init();
-    int n;
+    int n,m;
     cin>>n>>m;
+    Vpii a(m);
+    REP(i,n) cin>>a[i];
+    sort(ALL(a));
+    
     return 0;
 }
