@@ -84,7 +84,7 @@ void solve() {
     REP1(i,n) cin>>a[i],a[i]++;
     Vi pmn(n+1),smn(n+2);
     pmn[0]=smn[n+1]=inf;
-    REP
+    REP1(i,n) pmn[i]=min(pmn[i-1],)
 }
 signed main() {
     IOS();
