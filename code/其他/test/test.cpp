@@ -89,7 +89,7 @@ signed main() {
         auto [x,y]=q.front();
         q.pop();
         if(x*2+y<maxn) {
-            
+            if(dis[x][x+y]>dis)
         } 
     }
     return 0;
