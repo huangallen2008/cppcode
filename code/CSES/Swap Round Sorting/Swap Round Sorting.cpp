@@ -87,7 +87,7 @@ signed main() {
                 }
             }
         }
-        
+        for(auto [x,y]:an) swap(a[x],a[y]);
     }
 
     return 0;
