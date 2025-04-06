@@ -75,7 +75,8 @@ signed main() {
     REP(i,n) g[a[i].f][a[i].s]=t[i];
     pii now={27,0};
     REP(i,n-1) {
-        now=
+        now=g[now.f][now.s];
+        
     }
     return 0;
 }
