@@ -82,7 +82,7 @@ signed main() {
                     v.pb(t);
                     t=a[t];
                 }
-                for(int j=0;j<SZ(v);j+=2) {
+                for(int j=0;j<SZ(v)-1;j+=2) {
                     an.back().pb({v[j],v[j+1]});
                 }
             }
