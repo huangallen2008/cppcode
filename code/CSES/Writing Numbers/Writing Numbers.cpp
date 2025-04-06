@@ -77,14 +77,12 @@ signed main() {
         }
         return an;
     };
-    ope(check(6e17))
     int l=1,r=6e17,m;
     while(l<r) {
         m=l+r>>1;
         if(check(m)>n) r=m;
         else l=m+1;
     }
-    // ope(check(11))
     cout<<r-1<<'\n';
     return 0;
 }
