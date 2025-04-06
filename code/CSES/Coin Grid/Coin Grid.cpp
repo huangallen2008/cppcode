@@ -85,7 +85,7 @@ signed main() {
     Func dfs=[&](auto dfs,int u) ->void{
         for(int v:g[u]) {
             if(vis[v]) continue;
-            
+            if(p[i]==-1)
         }
     };
     return 0;
