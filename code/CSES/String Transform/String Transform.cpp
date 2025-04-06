@@ -73,8 +73,9 @@ signed main() {
     vector<Vpii> g(27);
     REP(i,27) g[i]=Vpii(cnt[i]);
     REP(i,n) g[a[i].f][a[i].s]=t[i];
-    pii now={27,0};
+    pii now={26,0};
     REP(i,n-1) {
+        ope(now)
         now=g[now.f][now.s];
         cout<<(char)('a'+now.f);
     }
