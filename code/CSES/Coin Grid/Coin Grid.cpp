@@ -107,7 +107,7 @@ signed main() {
         }
     };
     Vi ism(n);
-    
+    REP(i,n<<1) if(p[i]!=-1) ism[p[i]]=1;
     REP(i,n)
     return 0;
 }
