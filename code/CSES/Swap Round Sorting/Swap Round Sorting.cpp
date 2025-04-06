@@ -70,7 +70,7 @@ signed main() {
         if(ok) break;
         an.pb({});
         Vi vis(n+1);
-        REP1(i,n) {
+        REP1(i,2) {
             if(vis[i]) continue;
             vis[i]=1;
             if(a[i]!=i) {
