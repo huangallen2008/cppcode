@@ -66,7 +66,7 @@ signed main() {
     int n=SZ(s);
     Vpii a(n);
     REP(i,n) {
-        a[i]={s[i]-'a',cnt[s[i]-'a']++};
+        a[i]={s[i]-'a',cnt[s[i]-'a'+1]++};
     }
     Vpii t=a;
     sort(ALL(t));
@@ -74,7 +74,7 @@ signed main() {
     vector<Vpii> g(27);
     REP(i,27) g[i]=Vpii(cnt[i]);
     REP(i,n) g[a[i].f][a[i].s]=t[i];
-    pii now={26,0};
+    pii now={0,0};
     REP(i,n-1) {
         ope(now)
         now=g[now.f][now.s];
