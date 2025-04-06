@@ -62,6 +62,7 @@ signed main() {
     string s;
     cin>>s;
     Vi cnt(26);
+    for(char c:s) cnt[c-'A']++;
     
     return 0;
 }
