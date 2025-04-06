@@ -70,7 +70,7 @@ signed main() {
     int n=SZ(s);
     REP(i,n) {
         int mx=*max_element(ALL(cnt));
-        if(mx>=n-i+1>>1) {
+        if((n-i&1)&&mx>=n-i+1>>1) {
             int c=max_element(ALL(cnt))-cnt.begin();
         }
     }
