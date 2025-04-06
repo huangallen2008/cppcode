@@ -89,16 +89,13 @@ signed main() {
     sort(ALL(a));
     Vi dp(m+2);
     dp[0]=mod-1;
-    oparr(a)
     REP1(i,m+1) {
         REP(j,i) {
             if(a[j].s>a[i].s) continue;
             addmod(dp[i],-dp[j]*C(a[i].f+a[i].s-a[j].f-a[j].s,a[i].f-a[j].f));
-            op(a[i].f+a[i].s-a[j].f-a[j].s)ope(a[i].f-a[j].f)
         }
     }
-    oparr(dp)
-    int an=(dp[m]+mod)%mod;
+    int an=(dp[m+1]+mod)%mod;
     cout<<an<<'\n';
     return 0;
 }
