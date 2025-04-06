@@ -83,9 +83,9 @@ signed main() {
     int n,m;
     cin>>n>>m;
     Vpii a(m+2);
-    REP(i,1) cin>>a[i];
+    REP(i,m) cin>>a[i];
     a[m]={1,1};
-    a[m+1]={1,1};
+    a[m+1]={n,n};
     sort(ALL(a));
 
     return 0;
