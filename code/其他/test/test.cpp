@@ -82,6 +82,8 @@ void init() {
 signed main() {
     IOS();
     vector<Vi> dis(maxn,Vi(maxn,inf));
-    
+    queue<pii> q;
+    q.push({1,1});
+    dis
     return 0;
 }
