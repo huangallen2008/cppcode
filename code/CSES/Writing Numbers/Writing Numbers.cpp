@@ -69,7 +69,7 @@ signed main() {
             an+=mul*(int)(x/10);
             if(x%10) {
                 if(x%10==1) an+=x0%mul+1;
-                else an+=v*mul+mul;
+                else an+=mul;
             } 
         }
     }
