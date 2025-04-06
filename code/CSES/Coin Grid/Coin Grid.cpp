@@ -78,8 +78,9 @@ signed main() {
             char c;
             cin>>c;
             if(c=='o') {
-            g[i].pb(j+n);
-            g[j+n].pb(i);
+                g[i].pb(j+n);
+                g[j+n].pb(i);
+            }
         }
     }
     Vi p(n<<1,-1),vis(n<<1);
