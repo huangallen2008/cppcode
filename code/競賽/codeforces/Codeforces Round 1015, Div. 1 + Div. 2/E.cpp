@@ -89,7 +89,8 @@ void solve() {
     vector<Vi> del(n+2,Vi(n+1));
     Vi cnt0(n+1);
     Vi psp(n+1);
-    REP1
+    REP1(i,n) psp[i]=psp[i-1]+(a[i]==0);
+    
 }
 signed main() {
     IOS();
