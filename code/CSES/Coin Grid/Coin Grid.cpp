@@ -77,6 +77,7 @@ signed main() {
         REP(j,n) {
             char c;
             cin>>c;
+            if(c=='o') {
             g[i].pb(j+n);
             g[j+n].pb(i);
         }
