@@ -65,6 +65,7 @@ struct Dinic {
     Graphw g;
     int n;
     int s,t;
+    Vi dis;
     void init(int _n) {
         n=_n;
         g=Graphw(n);
@@ -76,7 +77,7 @@ struct Dinic {
         g[v].pb(SZ(es)-1);
     }
     bool bfs() {
-        
+        dis=Vi(n);
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
