@@ -63,9 +63,10 @@ signed main() {
     cin>>n;
     auto check=[&](int x) {
         int mul=1;
+        int an=0;
         while(x) {
             if(x%10) {
-                if(x%10==)
+                if(x%10==1)
             } 
         }
     }
