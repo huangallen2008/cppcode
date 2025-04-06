@@ -70,6 +70,6 @@ signed main() {
     }
     Vpii t=a;
     sort(ALL(t));
-    vector<Vpii> 
+    vector<Vpii> g(27);
     return 0;
 }
