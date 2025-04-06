@@ -135,13 +135,13 @@ signed main() {
     }
     Dinic dinic;
     dinic.init(n*2+2);
+    REP(i,n) REP(j,n) dinic.addedge(i,j+n,1);
     REP(i,n) dinic.addedge(n<<1,i,r[i]);
     REP(i,n) dinic.addedge(i+n,n<<1|1,c[i]);
-    REP(i,n) REP(j,n) dinic.addedge(i,j+n,1);
     if(dinic.mxf(n<<1,n<<1|1)!=rs) {
         cout<<"-1\n";
         return 0;
     }
-    
+
     return 0;
 }
