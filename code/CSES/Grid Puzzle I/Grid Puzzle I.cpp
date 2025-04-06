@@ -96,7 +96,7 @@ struct Dinic {
     }
     int dfs(int u,int cap) {
         if(u==t||cap==0) return cap;
-        int 
+        int an=0;
         for(int &i=it[u];i<SZ(g[u]);i++) {
             int id=g[u][i];
             auto [_,v,_c,r]=es[id];
@@ -105,6 +105,7 @@ struct Dinic {
             if(ret>0) {
                 es[id].r-=ret;
                 es[id^1].r+=ret;
+                an+=ret;
                 return ret;
             }
         }
