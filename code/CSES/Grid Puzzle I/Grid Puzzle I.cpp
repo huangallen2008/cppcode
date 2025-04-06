@@ -114,7 +114,9 @@ struct Dinic {
         int an=0,mf;
         while(bfs()) {
             it=Vi(n);
-            while(mf=dfs(s,inf)>0)
+            while((mf=dfs(s,inf))>0) {
+                an+=
+            }
         }
     }
 }
