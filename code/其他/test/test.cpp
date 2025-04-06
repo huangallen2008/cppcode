@@ -81,6 +81,6 @@ void init() {
 }
 signed main() {
     IOS();
-    
+    vector<Vi> dis()
     return 0;
 }
