@@ -144,7 +144,7 @@ signed main() {
     }
     REP(i,n) {
         REP(j,n) {
-            cout<<()
+            cout<<(dinic.es[i*n+j<<1])
         }
     }
     return 0;
