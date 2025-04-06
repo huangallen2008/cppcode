@@ -92,6 +92,7 @@ signed main() {
         }
         return 0;
     };
-    
+    int cnt=0;
+    REP(i,n)
     return 0;
 }
