@@ -77,7 +77,8 @@ signed main() {
         if((n-i&1)&&mx>=n-i+1>>1) {
             out(int c=max_element(ALL(cnt))-cnt.begin());
         }else {
-            
+            int fir=0;
+            REP(i,26) 
         }
     }
     return 0;
