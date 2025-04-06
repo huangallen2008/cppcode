@@ -130,6 +130,7 @@ signed main() {
     REP(i,n) cin>>c[i];
     Dinic dinic;
     dinic.init(n*2+2);
-    REP(i,n) dinic.addedge(n<<1,i,)
+    REP(i,n) dinic.addedge(n<<1,i,r[i]);
+    REP(i,n) dinic.addedge(i+n,n<<1|1,r[i]);
     return 0;
 }
