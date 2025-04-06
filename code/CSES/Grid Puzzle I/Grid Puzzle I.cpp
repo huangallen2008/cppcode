@@ -107,10 +107,10 @@ struct Dinic {
                 es[id^1].r+=ret;
                 an+=ret;
                 cap-=ret;
-                return ;
+                if(cap==0) break;
             }
         }
-        return 0;
+        return an;
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
