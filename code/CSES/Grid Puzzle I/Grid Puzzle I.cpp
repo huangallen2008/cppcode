@@ -62,7 +62,8 @@ struct Dinic {
         int u,v,cap,r;
     };
     vector<E> es;
-    
+    Graph g;
+    void init()
 }
 signed main() {
     IOS();
