@@ -101,7 +101,7 @@ signed main() {
             }
         } 
     }
-    Vi d(maxn);
-    
+    Vi d(maxn,inf);
+    for(int i=2;)
     return 0;
 }
