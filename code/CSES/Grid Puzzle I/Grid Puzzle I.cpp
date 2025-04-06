@@ -111,9 +111,10 @@ struct Dinic {
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
+        int an,
         while(bfs()) {
             it=Vi(n);
-            int
+            
         }
     }
 }
