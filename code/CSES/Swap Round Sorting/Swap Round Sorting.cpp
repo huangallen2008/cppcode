@@ -83,7 +83,9 @@ signed main() {
                     t=a[t];
                 }
                 if(SZ(v)==2) {
-                    an.back().pb()
+                    an.back().pb({v[0],v[1]});
+                }else {
+                    for(int i)
                 }
             }
         }
