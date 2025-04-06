@@ -82,10 +82,10 @@ signed main() {
         }
     }
     Vi p(n,-1),vis(n);
-    Func dfs=[&](auto dfs,int u) {
+    Func dfs=[&](auto dfs,int u) ->void{
         for(int v:g[u]) {
             if(vis[v]) continue;
-
+            
         }
     };
     return 0;
