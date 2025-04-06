@@ -100,7 +100,7 @@ void solve() {
     int an=0;
     REP1(i,n) {
         REP(j,n+1) cnt[j]-=del[i][j];
-        for(int j=i;j<=n;j++) (an+=fac[j]*infac[])
+        for(int j=i;j<=n;j++) (an+=fac[j]*infac[j-i])
     }
 }
 signed main() {
