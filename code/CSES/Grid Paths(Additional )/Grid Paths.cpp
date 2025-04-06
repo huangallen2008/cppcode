@@ -91,7 +91,8 @@ signed main() {
     dp[0]=mod-1;
     REP1(i,m+1) {
         REP(j,i) {
-            if(a)
+            if(a[j].s>a[i].s) continue;
+            
         }
     }
     return 0;
