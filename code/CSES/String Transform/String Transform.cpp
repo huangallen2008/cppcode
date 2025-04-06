@@ -66,7 +66,7 @@ signed main() {
     int n=SZ(s);
     Vpii a(n);
     REP(i,n) {
-        a[i]={s[i]-'a',cnt[s[i]-'a'+1]++};
+        a[i]={s[i]-'a'+1,cnt[s[i]-'a'+1]++};
     }
     Vpii t=a;
     sort(ALL(t));
