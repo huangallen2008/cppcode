@@ -93,6 +93,8 @@ signed main() {
         return 0;
     };
     int cnt=0;
-    REP(i,n)
+    REP(i,n) {
+        cnt+=match(i);
+    }
     return 0;
 }
