@@ -90,7 +90,9 @@ signed main() {
     Vi dp(m+2);
     dp[0]=mod-1;
     REP1(i,m+1) {
-        
+        REP(j,i) {
+            if(a)
+        }
     }
     return 0;
 }
