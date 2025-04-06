@@ -94,8 +94,10 @@ void solve() {
         REP1(l,r) {
             int mn=min(pmn[l-1],smn[r+1]),sp=psp[r]-psp[l-1];
             del[mn][sp]++;
+            cnt0[sp]++;
         }
     }
+    
 }
 signed main() {
     IOS();
