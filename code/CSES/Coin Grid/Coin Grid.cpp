@@ -115,6 +115,7 @@ signed main() {
     REP(i,n<<1) if(p[i]!=-1) ism[p[i]]=1;
     vis=Vi(n<<1);
     REP(i,n) if(!ism[i]) dfs(i);
+    oparr(vis)
     Vpii an;
     REP(i,n) if(!vis[i]) an.pb({1,i+1});
     for(int i=n;i<=n<<1;i++) if(vis[i]) an.pb({2,i-n+1});
