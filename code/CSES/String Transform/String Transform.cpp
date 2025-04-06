@@ -59,10 +59,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    ope((char)('a'+26))
     string s;
     cin>>s;
-    for()
+    for(auto &c:s) if(c=='#') c='a'+26;
     Vi cnt(27);
     int n=SZ(s);
     Vpii a(n);
