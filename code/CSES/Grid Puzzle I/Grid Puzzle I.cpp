@@ -126,6 +126,7 @@ signed main() {
     int n;
     cin>>n;
     Vi r(n),c(n);
+    int rs=0,cs=0;
     REP(i,n) cin>>r[i];
     REP(i,n) cin>>c[i];
     Dinic dinic;
@@ -133,6 +134,6 @@ signed main() {
     REP(i,n) dinic.addedge(n<<1,i,r[i]);
     REP(i,n) dinic.addedge(i+n,n<<1|1,c[i]);
     REP(i,n) REP(j,n) dinic.addedge(i,j+n,1);
-    
+
     return 0;
 }
