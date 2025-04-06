@@ -68,10 +68,12 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
+    int las=-1;
     REP(i,n) {
         auto out=[&](int c) ->void{
             cout<<(char)('A'+c);
             cnt[c]--;
+            las=c;
         };
         int mx=*max_element(ALL(cnt));
         if((n-i&1)&&mx>=n-i+1>>1) out(max_element(ALL(cnt))-cnt.begin());
