@@ -63,6 +63,9 @@ signed main() {
     cin>>s;
     Vi cnt(26);
     for(char c:s) cnt[c-'A']++;
-    
+    int n=SZ(s);
+    REP(i,n) {
+        
+    }
     return 0;
 }
