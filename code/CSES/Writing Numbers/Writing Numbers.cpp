@@ -71,7 +71,10 @@ signed main() {
                 if(x%10==1) an+=x0%mul+1;
                 else an+=mul;
             } 
+            x/=10;
         }
-    }
+        return an;
+    };
+    int l=1,r=
     return 0;
 }
