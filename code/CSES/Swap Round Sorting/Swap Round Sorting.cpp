@@ -64,13 +64,13 @@ signed main() {
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
     vector<Vpii> an;
-    REP(i,n) {
+    REP(i,2) {
         bool ok=1;
         REP1(i,n) if(a[i]!=i) ok=0;
         if(ok) break;
         an.pb({});
         Vi vis(n+1);
-        REP1(i,2) {
+        REP1(i,n) {
             if(vis[i]) continue;
             vis[i]=1;
             if(a[i]!=i) {
