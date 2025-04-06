@@ -64,7 +64,8 @@ signed main() {
     Vi cnt(26);
     for(char c:s) cnt[c-'A']++;
     if(*max_element(ALL(cnt))>n+1>>1) {
-        cout<<
+        cout<<"-1\n";
+        return 0;
     }
     int n=SZ(s);
     REP(i,n) {
