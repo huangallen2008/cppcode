@@ -92,7 +92,7 @@ signed main() {
     REP1(i,m+1) {
         REP(j,i) {
             if(a[j].s>a[i].s) continue;
-            addmod(dp[i],dp[j]*C())
+            addmod(dp[i],-dp[j]*C(a))
         }
     }
     return 0;
