@@ -59,6 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    s
+    string s;
+    cin>>s;
+    
     return 0;
 }
