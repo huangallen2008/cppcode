@@ -77,7 +77,10 @@ signed main() {
     };
     int l=1,r=2e18,m;
     while(l<r) {
-        
+        m=l+r>>1;
+        if(check(m)>n) r=m;
+        else l=m+1;
     }
+    cout<<r-1<<'\n';
     return 0;
 }
