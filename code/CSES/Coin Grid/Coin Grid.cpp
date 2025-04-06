@@ -81,12 +81,12 @@ signed main() {
             g[j+n].pb(i);
         }
     }
-    Vi p(n,-1),vis(n);
+    Vi p(n<<1,-1),vis(n<<1);
     Func match=[&](auto match,int u) ->bool{
         for(int v:g[u]) {
             if(vis[v]) continue;
             if(p[v]==-1||match(p[v])) {
-                
+
             }
         }
     };
