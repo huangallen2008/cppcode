@@ -82,9 +82,10 @@ signed main() {
     com_init();
     int n,m;
     cin>>n>>m;
-    Vpii a(m);
+    Vpii a(m+2);
     REP(i,n) cin>>a[i];
-    sort(ALL(a));
     
+    sort(ALL(a));
+
     return 0;
 }
