@@ -63,6 +63,7 @@ signed main() {
     cin>>s;
     Vi cnt(26);
     for(char c:s) cnt[c-'A']++;
+    if(*max)
     int n=SZ(s);
     REP(i,n) {
         int mx=*max_element(ALL(cnt));
