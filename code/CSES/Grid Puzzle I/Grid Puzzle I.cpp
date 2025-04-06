@@ -57,41 +57,11 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct Dinic {
+    
+}
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    n+=2;
-    int mn=inf,mnid=0;
-    for(int v1=1;v1*2<=n;v1++) {
-        int v2=n-v1;
-        int cnt=0;
-        int t1=v1,t2=v2;
-        while(t1>0) {
-            cnt+=(t2-t2%t1)/t1;
-            int t22=t2;
-            t2=t1;
-            t1=t22%t1;
-        }
-        if(t2!=1) continue;
-        if(cnt<mn) {
-            mn=cnt;
-            mnid=v1;
-        }
-    }
-    string s;
-    int t1=mnid,t2=n-mnid;
-    int now=0;
-    while(t1>0) {
-        int cnt=(t2-t2%t1)/t1;
-        REP(i,cnt) s+='0'+now;
-        now^=1;
-        int t22=t2;
-        t2=t1;
-        t1=t22%t1;
-    }
-    s.pop_back();
-    reverse(ALL(s));
-    cout<<s<<'\n';
+
     return 0;
 }
