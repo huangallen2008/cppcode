@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    ope((cg))
     string s;
     cin>>s;
     Vi cnt(27);
