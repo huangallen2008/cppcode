@@ -79,7 +79,7 @@ signed main() {
                     v.pb(t);
                     t=a[t];
                 }
-                
+                for(int i=0;i*2<SZ(t);)
             }
         }
     }
