@@ -128,6 +128,8 @@ signed main() {
     Vi r(n),c(n);
     REP(i,n) cin>>r[i];
     REP(i,n) cin>>c[i];
-    Dinic dinic
+    Dinic dinic;
+    dinic.init(n*2+2);
+    
     return 0;
 }
