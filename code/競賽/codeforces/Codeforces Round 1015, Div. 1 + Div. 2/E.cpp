@@ -78,6 +78,10 @@ int C(int n,int k) {
     return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
 }
 void solve() {
+    int n;
+    cin>>n;
+    Vi a(n+1);
+    REP1(i,n) cin>>a[i],a[i]++;
     
 }
 signed main() {
