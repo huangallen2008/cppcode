@@ -97,9 +97,11 @@ signed main() {
         if(x+y*2<maxn) {
             if(dis[x+y][y]>dis[x][y]+1) {
                 dis[x+y][y]=dis[x][y]+1;
-                q.push({x,x+y});
+                q.push({x+y,y});
             }
         } 
     }
+    Vi d(maxn);
+    
     return 0;
 }
