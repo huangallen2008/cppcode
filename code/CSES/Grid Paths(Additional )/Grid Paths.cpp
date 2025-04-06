@@ -95,6 +95,7 @@ signed main() {
             addmod(dp[i],-dp[j]*C(a[i].f+a[i].s-a[j].f-a[j].s,a[i].f-a[j].f));
         }
     }
-    int an=(dp[n]+mod)
+    int an=(dp[n]+mod)%mod;
+    cout<<an<<'\n';
     return 0;
 }
