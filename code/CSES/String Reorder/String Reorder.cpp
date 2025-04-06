@@ -78,7 +78,7 @@ signed main() {
             out(int c=max_element(ALL(cnt))-cnt.begin());
         }else {
             int fir=0;
-            REP(i,26) 
+            REP(i,26) if()
         }
     }
     return 0;
