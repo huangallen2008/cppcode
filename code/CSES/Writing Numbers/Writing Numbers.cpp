@@ -81,6 +81,7 @@ signed main() {
         if(check(m)>n) r=m;
         else l=m+1;
     }
+    REP1(i,10) op(check(i))
     cout<<r-1<<'\n';
     return 0;
 }
