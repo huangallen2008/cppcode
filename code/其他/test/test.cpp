@@ -91,7 +91,13 @@ signed main() {
         if(x*2+y<maxn) {
             if(dis[x][x+y]>dis[x][y]+1) {
                 dis[x][x+y]=dis[x][y]+1;
-                q.push({})
+                q.push({x,x+y});
+            }
+        } 
+        if(x*2+y<maxn) {
+            if(dis[x][x+y]>dis[x][y]+1) {
+                dis[x][x+y]=dis[x][y]+1;
+                q.push({x,x+y});
             }
         } 
     }
