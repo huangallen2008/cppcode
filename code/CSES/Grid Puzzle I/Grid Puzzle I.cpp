@@ -96,7 +96,7 @@ struct Dinic {
     }
     int dfs(int u,int cap) {
         if(u==t||cap==0) return cap;
-        for() {
+        for(int &i=it[u];i<) {
 
         }
     }
