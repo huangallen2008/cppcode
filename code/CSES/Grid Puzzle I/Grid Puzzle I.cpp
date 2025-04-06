@@ -74,7 +74,7 @@ struct Dinic {
         g[u].pb(SZ(es)-2);
         g[v].pb(SZ(es)-1);
     }
-    int fl
+    int mxf()
 }
 signed main() {
     IOS();
