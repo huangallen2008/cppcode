@@ -85,7 +85,7 @@ struct Dinic {
             int u=q.front();
             q.pop();
             for(auto id:g[u]) {
-                auto [_,v,]
+                auto [_,v,cap,r]=es[id];
             }
         }
     }
