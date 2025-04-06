@@ -123,6 +123,9 @@ struct Dinic {
 };
 signed main() {
     IOS();
-    
+    int n;
+    cin>>n;
+    Vi r(n),c(n);
+    REP(i,n) cin>>r[i]
     return 0;
 }
