@@ -118,7 +118,7 @@ signed main() {
     oparr(vis)
     Vpii an;
     REP(i,n) if(!vis[i]) an.pb({1,i+1});
-    for(int i=n;i<=n<<1;i++) if(vis[i]) an.pb({2,i-n+1});
+    for(int i=n;i<n<<1;i++) if(vis[i]) an.pb({2,i-n+1});
     cout<<SZ(an)<<'\n';
     for(auto [x,y]:an) cout<<x<<' '<<y<<'\n';
     return 0;
