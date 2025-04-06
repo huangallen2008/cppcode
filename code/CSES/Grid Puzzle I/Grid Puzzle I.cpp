@@ -127,8 +127,9 @@ signed main() {
     cin>>n;
     Vi r(n),c(n);
     int rs=0,cs=0;
-    REP(i,n) cin>>r[i];
-    REP(i,n) cin>>c[i];
+    REP(i,n) cin>>r[i],rs+=r[i];
+    REP(i,n) cin>>c[i],cs+=c[i];
+    if()
     Dinic dinic;
     dinic.init(n*2+2);
     REP(i,n) dinic.addedge(n<<1,i,r[i]);
