@@ -92,6 +92,7 @@ struct Dinic {
                 }
             }
         }
+        return dis[t]!=inf;
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
