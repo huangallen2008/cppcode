@@ -73,6 +73,6 @@ signed main() {
     vector<Vpii> g(27);
     REP(i,27) g[i]=Vpii(cnt[i]);
     REP(i,n) g[a[i].f][a[i].s]=t[i];
-    
+    int now=27;
     return 0;
 }
