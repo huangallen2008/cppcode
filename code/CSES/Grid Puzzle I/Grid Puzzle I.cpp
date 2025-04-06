@@ -65,7 +65,7 @@ struct Dinic {
     Graphw g;
     int n;
     int s,t;
-    Vi dis;
+    Vi dis,it;
     void init(int _n) {
         n=_n;
         g=Graphw(n);
@@ -96,7 +96,9 @@ struct Dinic {
     }
     int dfs(int u,int cap) {
         if(u==t||cap==0) return cap;
-        for(auto id)
+        for(auto id:g[u]) {
+
+        }
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
