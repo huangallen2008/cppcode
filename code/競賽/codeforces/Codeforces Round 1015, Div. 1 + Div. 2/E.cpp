@@ -97,8 +97,10 @@ void solve() {
             cnt[sp]++;
         }
     }
+    int an=0;
     REP1(i,n) {
-        REP(j,n+1) 
+        REP(j,n+1) cnt[j]-=del[i][j];
+
     }
 }
 signed main() {
