@@ -57,33 +57,29 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
+    }
+    return r;
+}
+int inv(int x) { return pw(x,mod-2); }
+Vi fac(maxn),infac(maxn);
+void com_init() {
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
+    infac[maxn-1]=inv(fac[maxn-1]);
+    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
+}
+int C(int n,int k) {
+    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
+}
 signed main() {
     IOS();
-    string s;
-    cin>>s;
-    int n=SZ(s);
-    Vi cnt(26);
-    for(char c:s) cnt[c-'A']++;
-    if(*max_element(ALL(cnt))>n+1>>1) {
-        cout<<"-1\n";
-        return 0;
-    }
-    int las=-1;
-    REP(i,n) {
-        auto out=[&](int c) ->void{
-            cout<<(char)('A'+c);
-            cnt[c]--;
-            las=c;
-        };
-        int mx=*max_element(ALL(cnt));
-        if((n-i&1)&&mx>=n-i+1>>1) out(max_element(ALL(cnt))-cnt.begin());
-        else {
-            REP(i,26) if(cnt[i]&&i!=las) {
-                out(i);
-                break;
-            }
-        }
-    }
-    cout<<'\n';
+    com_init();
+    
     return 0;
 }
