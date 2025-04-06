@@ -57,91 +57,22 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 const int mod=1e9+7;
-template<class T>
-struct Func {
-    T func;
-    Func(const T &func):func(func) {}
-    template<class... Args>
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class T>
-Func(const T &) -> Func<T>;
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
-int inv(int x) { return pw(x,mod-2); }
-const Vi S={487631};
-const int TS=1;
-vector<Vi> gethash(int n) {
-    Graph g(n);
-    REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-    }
-    vector<Vi> ret(TS);
-    auto gh=[&](int S) ->Vi {
-        Vi dp(n,S),udp(n),adp(n);
-        Func dfs0=[&](auto dfs0,int u,int fa)->void {
-            for(int v:g[u]) {
-                if(v==fa) continue;
-                dfs0(v,u);
-                (dp[u]*=S+dp[v])%=mod;
-            }
-        };
-        dfs0(0,-1);
-        Func dfs1=[&](auto dfs1,int u,int fa)->void {
-            adp[u]=(S+udp[u])*dp[u]%mod;
-            for(int v:g[u]) {
-                if(v==fa) continue;
-                udp[v]=adp[u]*inv(S+dp[v])%mod;
-                dfs1(v,u);
-            }
-        };
-        udp[0]=-S+1;
-        dfs1(0,-1);
-        // REP(i,n) udp[i]=(udp[i]+mod)%mod;
-        // REP(i,n) adp[i]=(adp[i]+mod)%mod;
-        REP(i,n) adp[i]=(adp[i]+mod)%mod;
-        // oparr(dp)
-        // oparr(udp)
-        // oparr(adp)
-        return adp;
-    };
-    REP(i,TS) ret[i]=gh(S[i]);
-    return ret;
-};
 void solve() {
-    int n;
-    cin>>n;
-    auto r1=gethash(n);
-    auto r2=gethash(n);
-    auto same=[&](Vi a,Vi b) { 
-        map<int,int> mp1;
-        for(auto x:a) mp1[x]++;
-        for(auto x:b) if(--mp1[x]<0) return 0;
-        return 1;
-    };
-    bool ok=1;
-    REP(i,TS) ok&=same(r1[i],r2[i]);
-    cout<<(ok?"YES":"NO")<<'\n';
+    int n=100000;
+    cout<<n<<'\n';
+    Vi p(n+1);
+    for(int i=2;i<=n;i++) p[i]=rd(1,i-1);
+    Vi s(n+1);
+    REP1(i,n) s[i]=i;
+    shuffle(1+ALL(s),rng);
+    for(int i=2;i<=n;i++) cout<<p[i]<<' '<<i<<'\n';
+    for(int i=2;i<=n;i++) cout<<s[p[i]]<<' '<<s[i]<<'\n';
 }
 signed main() {
     IOS();
-    #ifdef LOCAL
-    // freopen("in.txt","r",stdin);
-    #endif
-    int T;
-    cin>>T;
+    freopen("in.txt","w",stdout);
+    int T=1;
+    cout<<T<<'\n';
     while(T--) solve();
     return 0;
 }
