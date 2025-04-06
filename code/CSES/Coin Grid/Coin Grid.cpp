@@ -97,7 +97,7 @@ signed main() {
         vis=Vi(n<<1);
         cnt+=match(i);
     }
-    Func dfs=[&](auto dfs,int u) {
+    Func dfs=[&](auto dfs,int u)->void {
         vis[u]=1;
         for(int v:g[u]) {
             if(vis[v]) continue;
