@@ -98,6 +98,7 @@ struct Dinic {
         if(u==t||cap==0) return cap;
         for(int &i=it[u];i<SZ(g[u]);i++) {
             auto [_,v,_c,r]=es[g[u][i]];
+            if(dis[v]!=dis[u]+1) continue;
             
         }
     }
