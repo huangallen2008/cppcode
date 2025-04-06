@@ -68,6 +68,8 @@ signed main() {
     REP(i,n) {
         a[i]={s[i]-'a',cnt[s[i]-'a']++};
     }
-    Vpii t(n);
+    Vpii t=a;
+    sort(ALL(t));
+    vector<Vpii> 
     return 0;
 }
