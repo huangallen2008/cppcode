@@ -98,7 +98,7 @@ void solve() {
         }
     }
     Vi apr(n+1);
-    
+    REP1(i,n) 
     int an=0;
     REP1(i,n) {
         REP(j,n+1) cnt[j]-=del[i][j];
