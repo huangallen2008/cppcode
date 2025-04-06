@@ -88,7 +88,9 @@ signed main() {
     while(q.size()) {
         auto [x,y]=q.front();
         q.pop();
-        if()
+        if(x*2+y<maxn) {
+            
+        } 
     }
     return 0;
 }
