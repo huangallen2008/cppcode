@@ -85,6 +85,7 @@ signed main() {
     Func match=[&](auto match,int u) ->bool{
         for(int v:g[u]) {
             if(vis[v]) continue;
+            vis[v]=1;
             if(p[v]==-1||match(p[v])) {
                 p[v]=u;
                 return 1;
