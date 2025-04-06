@@ -101,7 +101,7 @@ signed main() {
         vis[u]=1;
         for(int v:g[u]) {
             if(vis[v]) continue;
-            
+            if(p[v]==-1) continue;
         }
     }
     return 0;
