@@ -86,7 +86,9 @@ struct Dinic {
             q.pop();
             for(auto id:g[u]) {
                 auto [_,v,cap,r]=es[id];
-                if(r&&dis)
+                if(r&&dis[v]>dis[u]+1) {
+                    dis[v]=dis[u]+1;
+                }
             }
         }
     }
