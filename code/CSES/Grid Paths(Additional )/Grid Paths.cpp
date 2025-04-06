@@ -94,6 +94,7 @@ signed main() {
         REP(j,i) {
             if(a[j].s>a[i].s) continue;
             addmod(dp[i],-dp[j]*C(a[i].f+a[i].s-a[j].f-a[j].s,a[i].f-a[j].f));
+            op(a[i].f+a[i].s-a[j].f-a[j].s)opa[i].f-a[j].f));
         }
     }
     oparr(dp)
