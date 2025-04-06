@@ -67,6 +67,7 @@ signed main() {
         int an=0;
         while(x) {
             an+=mul*(int)(x/10);
+            op(x)ope(an)
             if(x%10) {
                 if(x%10==1) an+=x0%mul+1;
                 else an+=mul;
