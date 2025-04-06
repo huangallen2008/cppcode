@@ -61,29 +61,6 @@ signed main() {
     IOS();
     string s;
     cin>>s;
-    int n=SZ(s);
-    Vi cnt(26);
-    for(char c:s) cnt[c-'A']++;
-    if(*max_element(ALL(cnt))>n+1>>1) {
-        cout<<"-1\n";
-        return 0;
-    }
-    int las=-1;
-    REP(i,n) {
-        auto out=[&](int c) ->void{
-            cout<<(char)('A'+c);
-            cnt[c]--;
-            las=c;
-        };
-        int mx=*max_element(ALL(cnt));
-        if((n-i&1)&&mx>=n-i+1>>1) out(max_element(ALL(cnt))-cnt.begin());
-        else {
-            REP(i,26) if(cnt[i]&&i!=las) {
-                out(i);
-                break;
-            }
-        }
-    }
-    cout<<'\n';
+    
     return 0;
 }
