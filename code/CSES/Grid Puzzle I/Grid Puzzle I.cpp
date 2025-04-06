@@ -63,7 +63,9 @@ struct Dinic {
     };
     vector<E> es;
     Graph g;
-    void init()
+    void addedge(int u,int v,int c) {
+        
+    }
 }
 signed main() {
     IOS();
