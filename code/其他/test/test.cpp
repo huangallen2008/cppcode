@@ -81,6 +81,6 @@ void init() {
 }
 signed main() {
     IOS();
-    
+    int
     return 0;
 }
