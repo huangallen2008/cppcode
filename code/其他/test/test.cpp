@@ -81,9 +81,6 @@ void init() {
 }
 signed main() {
     IOS();
-    int a=1000000006;
-    int cnt=0;
-    while(a%2==0) a/=2,cnt++;
-    ope(cnt)
+    
     return 0;
 }
