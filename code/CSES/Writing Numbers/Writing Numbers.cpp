@@ -62,6 +62,7 @@ signed main() {
     int n;
     cin>>n;
     auto check=[&](int x) {
+        int mul=1;
         
     }
     return 0;
