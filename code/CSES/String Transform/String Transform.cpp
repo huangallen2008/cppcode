@@ -64,6 +64,8 @@ signed main() {
     Vi cnt(26);
     int n=SZ(s);
     Vpii a(n);
-    
+    REP(i,n) {
+        if()
+    }
     return 0;
 }
