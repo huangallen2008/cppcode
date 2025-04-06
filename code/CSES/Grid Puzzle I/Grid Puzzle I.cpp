@@ -64,6 +64,7 @@ struct Dinic {
     vector<E> es;
     Graphw g;
     int n;
+    int s,t;
     void init(int _n) {
         n=_n;
         g=Graphw(n);
@@ -74,7 +75,9 @@ struct Dinic {
         g[u].pb(SZ(es)-2);
         g[v].pb(SZ(es)-1);
     }
-    int mxf(int _s,int _t)
+    int mxf(int _s,int _t) {
+        s=_s,t=_t;
+    }
 }
 signed main() {
     IOS();
