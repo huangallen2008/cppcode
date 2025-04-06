@@ -111,6 +111,6 @@ signed main() {
     vis=Vi(n<<1);
     REP(i,n) if(!ism[i]) dfs(i);
     Vpii an;
-    REP(i,n) 
+    REP(i,n) if(!vis[i]) an.pb()
     return 0;
 }
