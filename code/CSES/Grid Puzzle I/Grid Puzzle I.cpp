@@ -77,7 +77,8 @@ struct Dinic {
         g[v].pb(SZ(es)-1);
     }
     bool bfs() {
-        dis=Vi(n);
+        dis=Vi(n,inf);
+        dis
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
