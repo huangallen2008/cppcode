@@ -92,7 +92,7 @@ signed main() {
     cout<<SZ(an)<<'\n';
     for(auto v:an) {
         cout<<SZ(v)<<'\n';
-        
+        for(auto [x,y]:v) cout<<x<<' '<<y<<'\n';
     }
     return 0;
 }
