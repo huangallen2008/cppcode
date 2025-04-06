@@ -65,7 +65,8 @@ signed main() {
     for(char c:s) cnt[c-'A']++;
     int n=SZ(s);
     REP(i,n) {
-        int mx=*max
+        int mx=*max_element(ALL(cnt));
+        
     }
     return 0;
 }
