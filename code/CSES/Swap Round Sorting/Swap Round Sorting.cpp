@@ -63,6 +63,7 @@ signed main() {
     cin>>n;
     Vi a(n+1);
     REP1(i,n) cin>>a[i];
+    vector<Vpii> an;
     
     return 0;
 }
