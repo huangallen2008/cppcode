@@ -104,6 +104,7 @@ struct Dinic {
             if(ret>0) {
                 es[id].r-=ret;
                 es[id^1].r+=ret;
+                return ret;
             }
         }
         return 0;
