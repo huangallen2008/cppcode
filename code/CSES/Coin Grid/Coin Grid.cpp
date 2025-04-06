@@ -94,7 +94,9 @@ signed main() {
     };
     int cnt=0;
     REP(i,n) {
+        vis=Vi(n<<1);
         cnt+=match(i);
     }
+    
     return 0;
 }
