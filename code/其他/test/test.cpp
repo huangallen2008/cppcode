@@ -84,6 +84,9 @@ signed main() {
     vector<Vi> dis(maxn,Vi(maxn,inf));
     queue<pii> q;
     q.push({1,1});
-    dis
+    dis[1][1]=0;
+    while(q.size()) {
+        
+    }
     return 0;
 }
