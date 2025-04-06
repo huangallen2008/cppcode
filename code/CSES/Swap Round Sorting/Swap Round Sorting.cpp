@@ -68,8 +68,9 @@ signed main() {
         bool ok=1;
         REP1(i,n) if(a[i]!=i) ok=0;
         if(ok) break;
-
+        an.pb({});
+        
     }
-    
+
     return 0;
 }
