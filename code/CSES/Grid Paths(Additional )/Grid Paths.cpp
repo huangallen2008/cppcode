@@ -87,6 +87,8 @@ signed main() {
     a[m]={1,1};
     a[m+1]={n,n};
     sort(ALL(a));
+    Vi dp(m+2);
+    dp[0]=mod-1;
     
     return 0;
 }
