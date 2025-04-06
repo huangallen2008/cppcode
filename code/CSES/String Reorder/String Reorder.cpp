@@ -72,7 +72,10 @@ signed main() {
         int mx=*max_element(ALL(cnt));
         if((n-i&1)&&mx>=n-i+1>>1) {
             int c=max_element(ALL(cnt))-cnt.begin();
-            cout<<(char)('A'+c)<<'\n';
+            cout<<(char)('A'+c);
+            cnt[c]--;
+        }else {
+            
         }
     }
     return 0;
