@@ -76,7 +76,7 @@ signed main() {
     pii now={27,0};
     REP(i,n-1) {
         now=g[now.f][now.s];
-        
+        cout<<(char)
     }
     return 0;
 }
