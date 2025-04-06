@@ -102,7 +102,8 @@ struct Dinic {
             if(dis[v]!=dis[u]+1) continue;
             int ret=dfs(v,min(cap,r));
             if(ret>0) {
-                es[id].r-
+                es[id].r-=ret;
+                es[id^1].r+=ret;
             }
         }
         return 0;
