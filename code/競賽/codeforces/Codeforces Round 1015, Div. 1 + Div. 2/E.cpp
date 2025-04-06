@@ -90,7 +90,11 @@ void solve() {
     Vi cnt0(n+1);
     Vi psp(n+1);
     REP1(i,n) psp[i]=psp[i-1]+(a[i]==0);
-    REP
+    REP1(r,n) {
+        REP1(l,r) {
+            
+        }
+    }
 }
 signed main() {
     IOS();
