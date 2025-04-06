@@ -87,7 +87,7 @@ signed main() {
                 }else {
                     int nn=SZ(v)-1>>1;
                     REP(j,nn) {
-                        an.back().pb({})
+                        an.back().pb({v[j],v[SZ(v)-2-j]});
                     }
                 }
             }
