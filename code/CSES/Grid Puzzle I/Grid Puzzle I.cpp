@@ -99,7 +99,10 @@ struct Dinic {
         for(int &i=it[u];i<SZ(g[u]);i++) {
             auto [_,v,_c,r]=es[g[u][i]];
             if(dis[v]!=dis[u]+1) continue;
-            int ret=dfs
+            int ret=dfs(v,min(cap,r));
+            if(ret>0) {
+                
+            }
         }
     }
     int mxf(int _s,int _t) {
