@@ -69,7 +69,12 @@ signed main() {
         REP1(i,n) if(a[i]!=i) ok=0;
         if(ok) break;
         an.pb({});
-        
+        Vi vis(n+1);
+        REP1(i,n) {
+            if(a[i]!=i) {
+                
+            }
+        }
     }
 
     return 0;
