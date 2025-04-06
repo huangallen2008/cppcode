@@ -103,7 +103,6 @@ void solve() {
     int an=0;
     REP1(i,n) {
         REP(j,n+1) cnt[j]-=del[i][j];
-        op(i)oparr(cnt)
         int ch=i-apr[i];
         for(int j=ch;j<=n;j++) (an+=fac[j]*infac[j-ch]%mod*fac[psp[n]-ch]%mod*cnt[j]%mod)%=mod;
     }
