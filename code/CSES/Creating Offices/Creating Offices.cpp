@@ -123,9 +123,9 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    cerr<<"ok"<<endl;
     dfs(0,-1);
     st_init();
+    cerr<<"ok"<<endl;
     Vi p(n);
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
