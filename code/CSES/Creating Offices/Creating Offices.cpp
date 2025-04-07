@@ -78,7 +78,7 @@ void st_init() {
     REP(i,nn) st[0][i]=dep[dfn[i]];
     op("st!!!")REP(i,nn) cout<<st[0][i]<<' ';entr
     REP1(i,maxb-1) {
-        REP(j,n) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
+        REP(j,nn) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
     }
 }
 int st_qu(int l,int r) {
