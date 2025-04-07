@@ -90,5 +90,6 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
+    st_init();
     return 0;
 }
