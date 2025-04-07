@@ -72,7 +72,7 @@ struct MCMF {
     }
     void addedge(int u,int v,int w,int c) {
         e.pb({u,v,w,c,c});
-        e.pb({v,u,w,c,0});
+        e.pb({v,u,-w,c,0});
         g[u].pb(SZ(e)-2);
         g[v].pb(SZ(e)-1);
     }
