@@ -100,7 +100,7 @@ struct MCMF {
                 }
             }
         }
-        
+
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
@@ -125,20 +125,6 @@ signed main() {
     if(rs!=cs) {
         cout<<"-1\n";
         return 0;
-    }
-    Dinic dinic;
-    dinic.init(n*2+2);
-    REP(i,n) REP(j,n) dinic.addedge(i,j+n,1);
-    REP(i,n) dinic.addedge(n<<1,i,r[i]);
-    REP(i,n) dinic.addedge(i+n,n<<1|1,c[i]);
-    if(dinic.mxf(n<<1,n<<1|1)!=rs) {
-        cout<<"-1\n";
-        return 0;
-    }
-    // for(auto [_1,_2,_3,_4]:dinic.es) cout<<_1<<' '<<_2<<' '<<_4<<'\n';
-    REP(i,n) {
-        REP(j,n) cout<<(dinic.es[i*n+j<<1].r==0?'X':'.');
-        cout<<'\n';
     }
     return 0;
 }
