@@ -67,10 +67,6 @@ int ___=0;
 void dfs(int u,int fa) {
     if((++___)==21000) {
         cerr<<u<<endl;
-        
-        
-        
-        
         (SZ(dfn))
     }
     in[u]=SZ(dfn);
