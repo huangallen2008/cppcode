@@ -126,7 +126,7 @@ signed main() {
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
     auto gdis=[&](int x) {
         int mn=dis[x];
-        
+        for(int x:v2) chmin(mn,qu_dis(x,u)
     }
 
     return 0;
