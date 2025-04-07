@@ -79,8 +79,10 @@ void st_init() {
     }
 }
 int st_qu(int l,int r) {
-    int lg()
+    int lg=__lg(r-l+1);
+    return min(st[lg][l],st[lg][r-(1<<lg)+1]);
 }
+
 signed main() {
     IOS();
     cin>>n>>d;
