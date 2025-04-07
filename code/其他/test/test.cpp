@@ -81,7 +81,7 @@ void init() {
 }
 int dd(int n) {
     if(n==0) return 0;
-    return dd(n)+1;
+    return dd(n-1)+1;
 }
 signed main() {
     IOS();
