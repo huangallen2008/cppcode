@@ -76,7 +76,7 @@ void dfs(int u,int fa) {
 void st_init() {
     int nn=SZ(dfn);
     REP(i,nn) st[0][i]=dep[dfn[i]];
-    oparr(st[0])
+    REP(i,n) cout<<st[0][i]<<' ';entr
     REP1(i,maxb-1) {
         REP(j,n) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
     }
