@@ -144,6 +144,6 @@ signed main() {
     vector<Vi> an(n,Vi(n));
     int ans=0;
 
-    REP(i,n) REP(j,n) cout<<(mcmf.e[i*n+j<<1].r==0?'X':'.');
+    REP(i,n) REP(j,n) ans+=(an[i][j]=(mcmf.e[i*n+j<<1].r==0?'X':'.'))*;
     return 0;
 }
