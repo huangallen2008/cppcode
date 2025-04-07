@@ -130,7 +130,9 @@ signed main() {
         return mn;
     };
     REP(i,n) {
-        int dd=
+        int dd=gdis(p[i]);
+        if(dd<d) continue;
+        
     }
     return 0;
 }
