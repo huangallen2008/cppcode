@@ -62,7 +62,7 @@ Graph g;
 Vi dep,in;
 int st[maxb][maxn];
 void dfs(int u,int fa) {
-    id[u]=SZ(dfn);
+    in[u]=SZ(dfn);
     dfn.pb(u);
     for(int v:g[u]) {
         if(v==fa) continue;
@@ -83,7 +83,7 @@ signed main() {
     IOS();
     cin>>n>>d;
     g=Graph(n);
-    dep=Vi(n);
+    dep=in=Vi(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
