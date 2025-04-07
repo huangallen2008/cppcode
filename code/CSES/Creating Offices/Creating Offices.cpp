@@ -132,33 +132,33 @@ signed main() {
         g[v].pb(u);
     }
     dfs(0,-1);
-    st_init();
+    // st_init();
     cerr<<"ok"<<endl;
-    Vi p(n);
-    REP(i,n)p[i]=i;
-    sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
-    auto gdis=[&](int x) {
-        int mn=dis[x];
-        for(int u:v2) chmin(mn,qu_dis(x,u));
-        return mn;
-    };
-    REP(i,n) {
-        cerr<<'.';
-        int dd=gdis(p[i]);
-        if(dd<d) continue;
-        all.pb(p[i]);
-        v2.pb(p[i]);
-        if(SZ(v2)==sn) {
-            for(int x:v2) v1.pb(x);
-            v2.clear();
-            bfs();
-        }
-    }
-    cout<<SZ(all)<<'\n';
-    for(int x:all) cout<<x+1<<' ';
-    cout<<'\n';
-    #ifdef LOCAL
-    cerr<<clock()<<'\n';
-    #endif
+    // Vi p(n);
+    // REP(i,n)p[i]=i;
+    // sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
+    // auto gdis=[&](int x) {
+    //     int mn=dis[x];
+    //     for(int u:v2) chmin(mn,qu_dis(x,u));
+    //     return mn;
+    // };
+    // REP(i,n) {
+    //     cerr<<'.';
+    //     int dd=gdis(p[i]);
+    //     if(dd<d) continue;
+    //     all.pb(p[i]);
+    //     v2.pb(p[i]);
+    //     if(SZ(v2)==sn) {
+    //         for(int x:v2) v1.pb(x);
+    //         v2.clear();
+    //         bfs();
+    //     }
+    // }
+    // cout<<SZ(all)<<'\n';
+    // for(int x:all) cout<<x+1<<' ';
+    // cout<<'\n';
+    // #ifdef LOCAL
+    // cerr<<clock()<<'\n';
+    // #endif
     return 0;
 }
