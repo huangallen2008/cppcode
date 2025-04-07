@@ -127,7 +127,7 @@ signed main() {
     auto gdis=[&](int x) {
         int mn=dis[x];
         for(int u:v2) chmin(mn,qu_dis(x,u));
-        for(int u:v2) chmin(mn,qu_dis(x,u));
+        for(int u:v2)   {op(u)ope(qu_dis(x,u))}
         op(x)oparr(v2)ope(mn)
         return mn;
     };
