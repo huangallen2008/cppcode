@@ -79,33 +79,9 @@ void init() {
     for(int i=X*3+1;i<=X*4;i++) cout<<dp[i]<<' ';entr
     for(int i=1;i<=X;i++) if(dp[i]) cout<<i<<' ';entr
 }
+
 signed main() {
     IOS();
-    vector<Vi> dis(maxn,Vi(maxn,inf));
-    queue<pii> q;
-    q.push({1,1});
-    dis[1][1]=0;
-    while(q.size()) {
-        auto [x,y]=q.front();
-        q.pop();
-        if(x*2+y<maxn) {
-            if(dis[x][x+y]>dis[x][y]+1) {
-                dis[x][x+y]=dis[x][y]+1;
-                q.push({x,x+y});
-            }
-        } 
-        if(x+y*2<maxn) {
-            if(dis[x+y][y]>dis[x][y]+1) {
-                dis[x+y][y]=dis[x][y]+1;
-                q.push({x+y,y});
-            }
-        } 
-    }
-    Vi d(maxn,inf);
-    d[0]=d[1]=0;
-    for(int i=2;i<maxn;i++) {
-        REP1(j,i-1) chmin(d[i],dis[j][i-j]);
-    }
-    oparr(d)
+
     return 0;
 }
