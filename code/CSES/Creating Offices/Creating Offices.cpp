@@ -109,6 +109,8 @@ void bfs() {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+    #endif
     cin>>n>>d;
     g=Graph(n);
     dep=in=Vi(n);
