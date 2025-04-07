@@ -77,7 +77,7 @@ struct MCMF {
         g[v].pb(SZ(e)-1);
     }
     int spfa() {
-
+        dis=Vi(n);
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
