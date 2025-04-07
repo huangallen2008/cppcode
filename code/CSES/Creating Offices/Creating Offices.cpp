@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 int n,d;
 Graph g;
-
+Vi dep;
 signed main() {
     IOS();
     cin>>n>>d;
