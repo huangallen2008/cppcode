@@ -61,7 +61,7 @@ struct MCMF {
     struct E {
         int u,v,cap,r;
     };
-    vector<E> es;
+    vector<E> e;
     Graph g;
     int n;
     int s,t;
@@ -71,8 +71,8 @@ struct MCMF {
         g=Graph(n);
     }
     void addedge(int u,int v,int c) {
-        es.pb({u,v,c,c});
-        es.pb({v,u,c,0});
+        e.pb({u,v,c,c});
+        e.pb({v,u,c,0});
         g[u].pb(SZ(es)-2);
         g[v].pb(SZ(es)-1);
     }
