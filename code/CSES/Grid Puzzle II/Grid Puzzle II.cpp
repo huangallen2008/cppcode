@@ -88,7 +88,7 @@ struct MCMF {
             int u=q.front();
             q.pop();
             vis[u]=0;
-            for(auto [v,])
+            for(auto [_,v,])
         }
     }
     int mxf(int _s,int _t) {
