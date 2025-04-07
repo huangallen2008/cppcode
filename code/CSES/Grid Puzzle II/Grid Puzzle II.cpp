@@ -139,6 +139,6 @@ signed main() {
     REP(i,n) REP(j,n) mcmf.addedge(i,j+n,-v[i][j],1);
     REP(i,n) mcmf.addedge(n<<1,i,0,c[i]);
     REP(i,n) mcmf.addedge(i+n,n<<1|1,0,r[i]);
-    if(mcmf.)
+    if(mcmf.mxf())
     return 0;
 }
