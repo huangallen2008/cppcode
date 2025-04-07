@@ -91,7 +91,11 @@ int lca_dep(int a,int b) {
 int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
 void bfs() {
     dis=Vi(n,inf);
-    for(int x:v1)
+    queue<int> q;
+    for(int x:v1) {
+        q.push(x);
+        dis[x]=0;
+    }
 }
 signed main() {
     IOS();
