@@ -61,6 +61,9 @@ int n,d;
 Graph g;
 signed main() {
     IOS();
-    cin
+    cin>>n>>d;
+    REP(i,n-1) {
+        
+    }
     return 0;
 }
