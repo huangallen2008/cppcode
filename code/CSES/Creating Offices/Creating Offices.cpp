@@ -76,7 +76,6 @@ void dfs(int u,int fa) {
 void st_init() {
     int nn=SZ(dfn);
     REP(i,nn) st[0][i]=dep[dfn[i]];
-    op("st!!!")REP(i,nn) cout<<st[0][i]<<' ';entr
     REP1(i,maxb-1) {
         REP(j,nn) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
     }
@@ -122,15 +121,12 @@ signed main() {
     }
     dfs(0,-1);
     st_init();
-    oparr(dfn)oparr(dep)oparr(in)
     Vi p(n);
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
     auto gdis=[&](int x) {
         int mn=dis[x];
         for(int u:v2) chmin(mn,qu_dis(x,u));
-        for(int u:v2)   {op(u)ope(qu_dis(x,u))}
-        op("!!!")op(x)oparr(v2)ope(mn)
         return mn;
     };
     // REP(i,n) REP(j,n) {
