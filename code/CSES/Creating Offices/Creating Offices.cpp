@@ -62,6 +62,7 @@ Graph g;
 Vi dep;
 int st[maxb][maxn];
 void dfs(int u,int fa) {
+    id[u]=SZ(dfn);
     dfn.pb(u);
     for(int v:g[u]) {
         if(v==fa) continue;
