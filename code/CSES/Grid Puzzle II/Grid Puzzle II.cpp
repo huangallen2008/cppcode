@@ -65,7 +65,7 @@ struct MCMF {
     Graph g;
     int n;
     int s,t;
-    Vi dis,;
+    Vi dis,incf;
     void init(int _n) {
         n=_n;
         g=Graph(n);
