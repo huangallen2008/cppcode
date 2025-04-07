@@ -132,6 +132,8 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
-    vector<>Vi?
+    vector<Vi> v(n,Vi(n));
+    REP(i,n) REP(j,n) cin>>v[i][j];
+    
     return 0;
 }
