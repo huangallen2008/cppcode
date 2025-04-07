@@ -136,11 +136,11 @@ signed main() {
     vector<Vi> v(n,Vi(n));
     REP(i,n) REP(j,n) cin>>v[i][j];
     MCMF mcmf;
-    mcmf.init(n);
-    ope("ok")
+    mcmf.init(n*2+2);
     REP(i,n) REP(j,n) mcmf.addedge(i,j+n,-v[i][j],1);
     REP(i,n) mcmf.addedge(n<<1,i,0,c[i]);
     REP(i,n) mcmf.addedge(i+n,n<<1|1,0,r[i]);
+    ope("ok")
     if(mcmf.mxf(n<<1,n<<1|1)!=rs) {
         cout<<"-1\n";
         return 0;
