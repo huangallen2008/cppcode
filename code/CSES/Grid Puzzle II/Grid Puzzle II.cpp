@@ -144,7 +144,7 @@ signed main() {
         return 0;
     }
     REP(i,n) {
-        REP(j,n) cout<<mcmf.e[i*n+j<<1].
+        REP(j,n) cout<<mcmf.e[i*n+j<<1].r==
     }
     return 0;
 }
