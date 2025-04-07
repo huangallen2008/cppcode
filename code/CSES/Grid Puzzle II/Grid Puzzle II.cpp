@@ -134,6 +134,8 @@ signed main() {
     }
     vector<Vi> v(n,Vi(n));
     REP(i,n) REP(j,n) cin>>v[i][j];
-    
+    MCMF mcmf;
+    mcmf.init(n);
+    REP(i,n) 
     return 0;
 }
