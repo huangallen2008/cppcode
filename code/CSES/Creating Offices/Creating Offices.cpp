@@ -132,7 +132,7 @@ signed main() {
     REP(i,n) {
         int dd=gdis(p[i]);
         if(dd<d) continue;
-        
+        all.pb(dd)
     }
     return 0;
 }
