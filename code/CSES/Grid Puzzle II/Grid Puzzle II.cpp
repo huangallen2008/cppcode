@@ -143,6 +143,8 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
-    
+    REP(i,n) {
+        REP(j,n) cout<<
+    }
     return 0;
 }
