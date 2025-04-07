@@ -63,7 +63,10 @@ signed main() {
     IOS();
     cin>>n>>d;
     REP(i,n-1) {
-        
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+        g[u].pb(v);
     }
     return 0;
 }
