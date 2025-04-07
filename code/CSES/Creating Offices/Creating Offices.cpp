@@ -128,7 +128,7 @@ signed main() {
         int mn=dis[x];
         for(int u:v2) chmin(mn,qu_dis(x,u));
         for(int u:v2)   {op(u)ope(qu_dis(x,u))}
-        op(x)oparr(v2)ope(mn)
+        op("!!!")op(x)oparr(v2)ope(mn)
         return mn;
     };
     // REP(i,n) REP(j,n) {
