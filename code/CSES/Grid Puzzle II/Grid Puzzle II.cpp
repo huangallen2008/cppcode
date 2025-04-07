@@ -70,7 +70,7 @@ struct MCMF {
         n=_n;
         g=Graph(n);
     }
-    void addedge(int u,int v,int c,int w) {
+    void addedge(int u,int v,int w,int c) {
         e.pb({u,v,w,c,c});
         e.pb({v,u,w,c,0});
         g[u].pb(SZ(e)-2);
