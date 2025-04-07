@@ -140,8 +140,8 @@ signed main() {
             bfs();
         }
     }
-    cout<<SZ(an)<<'\n';
-    for(int x:an) cout<<x<<' ';
+    cout<<SZ(all)<<'\n';
+    for(int x:all) cout<<x<<' ';
     cout<<'\n';
     return 0;
 }
