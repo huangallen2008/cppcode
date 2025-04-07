@@ -135,7 +135,9 @@ signed main() {
         all.pb(p[i]);
         v2.pb(p[i]);
         if(SZ(v2)==sn) {
-            for(int x:v2)
+            for(int x:v2) v1.pb(x);
+            v2.clear();
+            bfs();
         }
     }
     return 0;
