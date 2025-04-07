@@ -60,7 +60,7 @@ int rd(int l,int r) {
 }
 int n,d;
 Graph g;
-Vi dep,in;
+Vi dep,in,dis;
 int st[maxb][maxn];
 void dfs(int u,int fa) {
     in[u]=SZ(dfn);
@@ -105,7 +105,7 @@ signed main() {
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
     auto gdis=[&](int x) {
-        
+
     }
     Vi all;
 
