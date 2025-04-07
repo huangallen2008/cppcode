@@ -94,6 +94,7 @@ struct MCMF {
                 dis[v]=dis[u]+w;
                 incf[v]=min(incf[u],r);
                 pre[v]=u;
+                if(!vis[v]) 
             }
         }
     }
