@@ -77,7 +77,11 @@ struct MCMF {
         g[v].pb(SZ(e)-1);
     }
     int spfa() {
-        dis=Vi(n);
+        dis=Vi(n,inf);
+        dis[s]=0;
+        queue<int> q;
+        q.push(s);
+        
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
