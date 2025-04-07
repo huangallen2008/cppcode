@@ -78,8 +78,7 @@ struct MCMF {
     }
     int spfa() {
         dis=Vi(n,inf);
-        incf=Vi(n);
-        
+        incf=pre=Vi(n);
         dis[s]=0;
         incf[s]=inf;
         vis[s]=1;
@@ -93,6 +92,7 @@ struct MCMF {
                 auto [_,v,w,cap,r]=e[id];
                 if(r==0||dis[v]<=dis[u]+w) continue;
                 dis[v]=dis[u]+w;
+                
             }
         }
     }
