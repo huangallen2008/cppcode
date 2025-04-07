@@ -105,13 +105,13 @@ struct MCMF {
     int mxf(int _s,int _t) {
         s=_s,t=_t;
         int an=0,mf;
-        while(bfs()) {
-            it=Vi(n);
-            while((mf=dfs(s,inf))>0) {
-                an+=mf;
-            }
-        }
-        return an;
+        // while(bfs()) {
+        //     it=Vi(n);
+        //     while((mf=dfs(s,inf))>0) {
+        //         an+=mf;
+        //     }
+        // }
+        // return an;
     }
 };
 signed main() {
