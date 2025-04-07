@@ -147,5 +147,7 @@ signed main() {
     cout<<SZ(all)<<'\n';
     for(int x:all) cout<<x+1<<' ';
     cout<<'\n';
+    #ifdef LOCAL
+    #endif
     return 0;
 }
