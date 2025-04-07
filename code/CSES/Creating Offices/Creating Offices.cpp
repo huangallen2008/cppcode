@@ -63,6 +63,7 @@ Graph g;
 Vi dep,in,dis,dfn;
 Vi all,v1,v2;
 int st[maxb][maxn];
+
 void dfs(int u,int fa) {
     in[u]=SZ(dfn);
     dfn.pb(u);
