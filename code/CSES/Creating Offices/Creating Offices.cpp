@@ -70,7 +70,9 @@ void dfs(int u,int fa) {
         dfn.pb(u);
     }
 }
-
+void st_init() {
+    
+}
 signed main() {
     IOS();
     cin>>n>>d;
