@@ -65,7 +65,7 @@ struct MCMF {
     Graph g;
     int n;
     int s,t;
-    Vi dis,incf,vis;
+    Vi dis,incf,vis,pre;
     void init(int _n) {
         n=_n;
         g=Graph(n);
@@ -79,6 +79,7 @@ struct MCMF {
     int spfa() {
         dis=Vi(n,inf);
         incf=Vi(n);
+        
         dis[s]=0;
         incf[s]=inf;
         vis[s]=1;
