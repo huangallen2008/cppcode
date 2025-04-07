@@ -73,8 +73,8 @@ struct MCMF {
     void addedge(int u,int v,int c) {
         e.pb({u,v,c,c});
         e.pb({v,u,c,0});
-        g[u].pb(SZ(es)-2);
-        g[v].pb(SZ(es)-1);
+        g[u].pb(SZ(e)-2);
+        g[v].pb(SZ(e)-1);
     }
     bool bfs() {
         dis=Vi(n,inf);
