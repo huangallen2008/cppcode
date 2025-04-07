@@ -73,6 +73,9 @@ void dfs(int u,int fa) {
 void st_init() {
     int nn=SZ(dfn);
     REP(i,nn) st[0][i]=dep[dfn[i]];
+    REP1(i,maxb-1) {
+        REP(j,n) st[i][j]=min()
+    }
 }
 signed main() {
     IOS();
