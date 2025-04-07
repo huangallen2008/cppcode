@@ -76,6 +76,7 @@ struct MCMF {
         g[u].pb(SZ(e)-2);
         g[v].pb(SZ(e)-1);
     }
+    
     int mxf(int _s,int _t) {
         s=_s,t=_t;
         int an=0,mf;
