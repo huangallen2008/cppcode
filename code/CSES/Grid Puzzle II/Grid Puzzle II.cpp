@@ -59,13 +59,13 @@ int rd(int l,int r) {
 }
 struct MCMF {
     struct E {
-        int u,v,cap,r;
+        int u,v,w,cap,r;
     };
     vector<E> e;
     Graph g;
     int n;
     int s,t;
-    Vi dis,it;
+    Vi dis;
     void init(int _n) {
         n=_n;
         g=Graph(n);
@@ -77,7 +77,7 @@ struct MCMF {
         g[v].pb(SZ(e)-1);
     }
     int spfa() {
-        
+
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
