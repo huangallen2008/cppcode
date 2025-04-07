@@ -86,7 +86,9 @@ struct MCMF {
         q.push(s);
         while(SQ(q)) {
             int u=q.front();
-
+            q.pop();
+            vis[u]=0;
+            for(auto [v,])
         }
     }
     int mxf(int _s,int _t) {
