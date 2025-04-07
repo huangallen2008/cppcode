@@ -146,7 +146,7 @@ signed main() {
     REP(i,n) REP(j,n) ans+=(an[i][j]=(mcmf.e[i*n+j<<1].r==0))*v[i][j];
     cout<<ans<<'\n';
     REP(i,n) {
-        REP(j,n) cout<<
+        REP(j,n) cout<<(an[i][j]?'')
     }
     return 0;
 }
