@@ -115,10 +115,6 @@ struct MCMF {
         s=_s,t=_t;
         int an=0,mf;
         while(mf=spfa()) {
-            it=Vi(n);
-            while((mf=dfs(s,inf))>0) {
-                an+=mf;
-            }
         }
         return an;
     }
