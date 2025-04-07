@@ -90,7 +90,7 @@ int lca_dep(int a,int b) {
 }
 int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
 void bfs() {
-
+    
 }
 signed main() {
     IOS();
@@ -112,7 +112,6 @@ signed main() {
     auto gdis=[&](int x) {
 
     }
-    Vi all;
 
     return 0;
 }
