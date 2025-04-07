@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 int n,d;
 Graph g;
-Vi dep;
+Vi dep,in;
 int st[maxb][maxn];
 void dfs(int u,int fa) {
     id[u]=SZ(dfn);
