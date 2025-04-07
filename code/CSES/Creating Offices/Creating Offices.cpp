@@ -96,6 +96,11 @@ void bfs() {
         q.push(x);
         dis[x]=0;
     }
+    while(SZ(q)) {
+        int u=q.front();
+        q.pop();
+        
+    }
 }
 signed main() {
     IOS();
