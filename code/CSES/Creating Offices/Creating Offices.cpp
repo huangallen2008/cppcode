@@ -103,6 +103,7 @@ signed main() {
     st_init();
     Vi p(n);
     REP(i,n)p[i]=i;
-    sort(ALL(p),[])
+    sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
+    
     return 0;
 }
