@@ -63,6 +63,8 @@ Vi dep;
 void dfs(int u,int fa) {
     for(int v:g[u]) {
         if(v==fa) continue;
+        dep[v]=dep[u]+1;
+        dfs(v,u);
         
     }
 }
