@@ -84,7 +84,7 @@ struct MCMF {
         vis[s]=1;
         queue<int> q;
         q.push(s);
-        while(SQ(q)) {
+        while(SZ(q)) {
             int u=q.front();
             q.pop();
             vis[u]=0;
