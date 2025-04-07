@@ -86,7 +86,7 @@ int lca_dep(int a,int b) {
     if(in[a]>in[b]) swap(a,b);
     return st_qu(in[a],in[b]); 
 }
-
+int 
 signed main() {
     IOS();
     cin>>n>>d;
