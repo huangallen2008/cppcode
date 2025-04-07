@@ -101,6 +101,7 @@ struct MCMF {
             }
         }
         if(dis[t]==inf) return 0;
+        int fl=incf[t];
         
     }
     int mxf(int _s,int _t) {
