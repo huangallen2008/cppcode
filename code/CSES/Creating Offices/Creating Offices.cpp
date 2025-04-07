@@ -148,6 +148,7 @@ signed main() {
     for(int x:all) cout<<x+1<<' ';
     cout<<'\n';
     #ifdef LOCAL
+    cout<<clock()<<'\n';
     #endif
     return 0;
 }
