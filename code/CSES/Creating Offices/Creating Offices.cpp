@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 int n,d;
 Graph g;
+
 signed main() {
     IOS();
     cin>>n>>d;
@@ -66,7 +67,7 @@ signed main() {
         int u,v;
         cin>>u>>v,u--,v--;
         g[u].pb(v);
-        g[u].pb(v);
+        g[v].pb(u);
     }
     return 0;
 }
