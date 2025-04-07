@@ -86,7 +86,7 @@ int lca_dep(int a,int b) {
     if(in[a]>in[b]) swap(a,b);
     return st_qu(in[a],in[b]); 
 }
-int 
+int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
 signed main() {
     IOS();
     cin>>n>>d;
