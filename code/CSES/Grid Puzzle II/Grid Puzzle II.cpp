@@ -80,6 +80,7 @@ struct MCMF {
         dis=Vi(n,inf);
         incf=Vi(n);
         dis[s]=0;
+        incf[s]=inf;
         queue<int> q;
         q.push(s);
 
