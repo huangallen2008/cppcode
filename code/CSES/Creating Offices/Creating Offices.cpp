@@ -99,7 +99,9 @@ void bfs() {
     while(SZ(q)) {
         int u=q.front();
         q.pop();
-        
+        for(int v:g[u]) {
+            
+        }
     }
 }
 signed main() {
