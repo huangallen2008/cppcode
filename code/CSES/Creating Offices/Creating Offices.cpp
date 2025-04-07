@@ -130,9 +130,9 @@ signed main() {
         op(x)ope(mn)
         return mn;
     };
-    REP(i,n) REP(j,n) {
-        op(i)op(j)ope(qu_dis(i,j))
-    }
+    // REP(i,n) REP(j,n) {
+    //     op(i)op(j)ope(qu_dis(i,j))
+    // }
     REP(i,n) {
         int dd=gdis(p[i]);
         if(dd<d) continue;
