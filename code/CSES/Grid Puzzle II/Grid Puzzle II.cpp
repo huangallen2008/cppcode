@@ -140,11 +140,11 @@ signed main() {
     REP(i,n) REP(j,n) mcmf.addedge(i,j+n,-v[i][j],1);
     REP(i,n) mcmf.addedge(n<<1,i,0,c[i]);
     REP(i,n) mcmf.addedge(i+n,n<<1|1,0,r[i]);
-    ope("ok")
     if(mcmf.mxf(n<<1,n<<1|1)!=rs) {
         cout<<"-1\n";
         return 0;
     }
+    ope("ok")
     REP(i,n) {
         REP(j,n) cout<<(mcmf.e[i*n+j<<1].r==0?'X':'.');
         cout<<'\n';
