@@ -134,7 +134,9 @@ signed main() {
         if(dd<d) continue;
         all.pb(p[i]);
         v2.pb(p[i]);
-        if(SZ(v2)==)
+        if(SZ(v2)==sn) {
+            for(int x:v2)
+        }
     }
     return 0;
 }
