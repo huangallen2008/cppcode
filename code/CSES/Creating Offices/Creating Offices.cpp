@@ -88,6 +88,7 @@ int lca_dep(int a,int b) {
     return st_qu(in[a],in[b]); 
 }
 int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
+void bfs
 signed main() {
     IOS();
     cin>>n>>d;
