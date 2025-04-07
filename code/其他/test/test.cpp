@@ -85,6 +85,6 @@ int dd(int n) {
 }
 signed main() {
     IOS();
-    cout<<dd(200000);
+    cout<<dd(1);
     return 0;
 }
