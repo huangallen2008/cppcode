@@ -61,6 +61,7 @@ int rd(int l,int r) {
 int n,d;
 Graph g;
 Vi dep,in,dis;
+Vi all,v1,v2;
 int st[maxb][maxn];
 void dfs(int u,int fa) {
     in[u]=SZ(dfn);
@@ -89,7 +90,7 @@ int lca_dep(int a,int b) {
 }
 int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
 void bfs() {
-    
+
 }
 signed main() {
     IOS();
