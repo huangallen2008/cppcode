@@ -134,6 +134,7 @@ signed main() {
         return mn;
     };
     REP(i,n) {
+        cerr<<
         int dd=gdis(p[i]);
         if(dd<d) continue;
         all.pb(p[i]);
