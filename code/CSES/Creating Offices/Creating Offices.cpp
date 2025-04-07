@@ -101,6 +101,8 @@ signed main() {
     }
     dfs(0,-1);
     st_init();
-    
+    Vi p(n);
+    REP(i,n)p[i]=i;
+    sort(ALL(p),[])
     return 0;
 }
