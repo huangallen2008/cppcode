@@ -129,6 +129,6 @@ signed main() {
         for(int u:v2) chmin(mn,qu_dis(x,u));
         return mn;
     };
-    
+
     return 0;
 }
