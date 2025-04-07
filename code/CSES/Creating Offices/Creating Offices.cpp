@@ -53,6 +53,7 @@ const int mod=1e9+7;
 const int maxn=4e5+5;
 const int maxb=19;
 const int inf=1ll<<60;
+const int sn=
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
