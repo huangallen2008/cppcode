@@ -125,7 +125,7 @@ signed main() {
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
     auto gdis=[&](int x) {
-
+        
     }
 
     return 0;
