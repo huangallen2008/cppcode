@@ -65,7 +65,7 @@ Vi all,v1,v2;
 int st[maxb][maxn];
 int ___=0;
 void dfs(int u,int fa) {
-    if(++___%10000) cerr<<u<<endl;
+    if(++___%10000==0) cerr<<u<<endl;
     in[u]=SZ(dfn);
     dfn.pb(u);
     for(int v:g[u]) {
