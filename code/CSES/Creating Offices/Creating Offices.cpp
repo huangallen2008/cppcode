@@ -75,7 +75,7 @@ void dfs(int u,int fa) {
         dep[v]=dep[u]+1;
         dfs(v,u);
         dfn.pb(u);
-        cerr<<"o"
+        cerr<<"o"<<endl;
     }
 }
 void st_init() {
