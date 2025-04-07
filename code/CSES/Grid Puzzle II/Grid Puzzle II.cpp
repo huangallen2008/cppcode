@@ -136,6 +136,6 @@ signed main() {
     REP(i,n) REP(j,n) cin>>v[i][j];
     MCMF mcmf;
     mcmf.init(n);
-    REP(i,n) 
+    REP(i,n) REP(j,n) mcmf.addedge(i,j+n)
     return 0;
 }
