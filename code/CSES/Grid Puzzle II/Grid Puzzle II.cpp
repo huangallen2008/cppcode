@@ -103,7 +103,9 @@ struct MCMF {
         if(dis[t]==inf) return 0;
         int fl=incf[t];
         int now=t;
-        
+        while(now!=s) {
+            
+        }
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
