@@ -60,7 +60,12 @@ int rd(int l,int r) {
 int n,d;
 Graph g;
 Vi dep;
-
+void dfs(int u,int fa) {
+    for(int v:g[u]) {
+        if(v==fa) continue;
+        
+    }
+}
 signed main() {
     IOS();
     cin>>n>>d;
