@@ -143,10 +143,7 @@ signed main() {
     }
     vector<Vi> an(n,Vi(n));
     int ans=0;
-    
-    REP(i,n) {
-        REP(j,n) cout<<(mcmf.e[i*n+j<<1].r==0?'X':'.');
-        cout<<'\n';
-    }
+
+    REP(i,n) REP(j,n) cout<<(mcmf.e[i*n+j<<1].r==0?'X':'.');
     return 0;
 }
