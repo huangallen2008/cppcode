@@ -90,7 +90,7 @@ struct MCMF {
             vis[u]=0;
             for(auto id:g[u]) {
                 auto [_,v,w,cap,r]=e[id];
-                if(r==0||)
+                if(r==0||dis[v]<=dis[u]+)
             }
         }
     }
