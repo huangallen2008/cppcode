@@ -65,7 +65,7 @@ struct MCMF {
     Graph g;
     int n;
     int s,t;
-    Vi dis;
+    Vi dis,;
     void init(int _n) {
         n=_n;
         g=Graph(n);
@@ -81,7 +81,7 @@ struct MCMF {
         dis[s]=0;
         queue<int> q;
         q.push(s);
-        
+
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
