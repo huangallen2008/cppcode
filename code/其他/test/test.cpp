@@ -79,7 +79,10 @@ void init() {
     for(int i=X*3+1;i<=X*4;i++) cout<<dp[i]<<' ';entr
     for(int i=1;i<=X;i++) if(dp[i]) cout<<i<<' ';entr
 }
-
+int dd(int n) {
+    if(n==0) return 0;
+    return dd(n)+1;
+}
 signed main() {
     IOS();
 
