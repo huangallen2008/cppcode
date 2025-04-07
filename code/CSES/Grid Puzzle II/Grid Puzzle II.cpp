@@ -78,6 +78,7 @@ struct MCMF {
     }
     int spfa() {
         dis=Vi(n,inf);
+        incf=Vi(n);
         dis[s]=0;
         queue<int> q;
         q.push(s);
