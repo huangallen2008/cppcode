@@ -78,7 +78,9 @@ void st_init() {
         REP(j,n) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
     }
 }
-
+int st_qu(int l,int r) {
+    int lg()
+}
 signed main() {
     IOS();
     cin>>n>>d;
