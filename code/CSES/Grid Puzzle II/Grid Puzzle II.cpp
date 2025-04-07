@@ -81,9 +81,13 @@ struct MCMF {
         incf=Vi(n);
         dis[s]=0;
         incf[s]=inf;
+        vis[s]=1;
         queue<int> q;
         q.push(s);
+        while(SQ(q)) {
+            int u=q.front();
 
+        }
     }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
