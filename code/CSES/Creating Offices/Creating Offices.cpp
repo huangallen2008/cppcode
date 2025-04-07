@@ -130,7 +130,7 @@ signed main() {
         return mn;
     };
     REP(i,n) {
-        int u=p[i];
+        int dd=
     }
     return 0;
 }
