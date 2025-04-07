@@ -77,6 +77,7 @@ struct MCMF {
         g[v].pb(SZ(e)-1);
     }
     int spfa() {
+        ope("ok")
         dis=Vi(n,inf);
         incf=pre=Vi(n);
         dis[s]=0;
