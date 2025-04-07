@@ -89,7 +89,8 @@ struct MCMF {
             q.pop();
             vis[u]=0;
             for(auto id:g[u]) {
-                auto [_,v,w,cap,r]
+                auto [_,v,w,cap,r]=e[id];
+                
             }
         }
     }
