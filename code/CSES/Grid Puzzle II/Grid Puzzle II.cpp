@@ -115,6 +115,7 @@ struct MCMF {
         s=_s,t=_t;
         int an=0,mf;
         while(mf=spfa()) {
+            
             an+=mf;
         }
         return an;
