@@ -104,7 +104,8 @@ signed main() {
     Vi p(n);
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
+    auto 
     Vi all;
-    
+
     return 0;
 }
