@@ -107,6 +107,7 @@ struct MCMF {
             int id=pre[now];
             e[id].r-=fl;
             e[id^1].r+=fl;
+            now=
         }
     }
     int mxf(int _s,int _t) {
