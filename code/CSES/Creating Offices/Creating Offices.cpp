@@ -121,7 +121,7 @@ signed main() {
     }
     dfs(0,-1);
     st_init();
-    oparr(dfn)oparr(dep)
+    oparr(dfn)oparr(dep)oparr(in)
     Vi p(n);
     REP(i,n)p[i]=i;
     sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
