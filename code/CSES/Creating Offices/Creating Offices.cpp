@@ -100,7 +100,10 @@ void bfs() {
         int u=q.front();
         q.pop();
         for(int v:g[u]) {
-            
+            if(dis[v]>dis[u]+1) {
+                dis[v]=dis[u]+1;
+                q.push(v);
+            }
         }
     }
 }
