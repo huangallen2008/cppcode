@@ -141,6 +141,7 @@ signed main() {
         cout<<"-1\n";
         return 0;
     }
+    vectorM<
     REP(i,n) {
         REP(j,n) cout<<(mcmf.e[i*n+j<<1].r==0?'X':'.');
         cout<<'\n';
