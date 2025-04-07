@@ -77,7 +77,6 @@ struct MCMF {
         g[v].pb(SZ(e)-1);
     }
     int spfa() {
-        ope("ok")
         dis=Vi(n,inf);
         incf=pre=Vi(n);
         dis[s]=0;
@@ -85,6 +84,7 @@ struct MCMF {
         vis[s]=1;
         queue<int> q;
         q.push(s);
+        ope("ok")
         while(SZ(q)) {
             int u=q.front();
             q.pop();
