@@ -104,7 +104,8 @@ struct MCMF {
         int fl=incf[t];
         int now=t;
         while(now!=s) {
-            
+            int id=pre[now];
+            e
         }
     }
     int mxf(int _s,int _t) {
