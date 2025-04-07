@@ -111,6 +111,9 @@ struct MCMF {
         }
         return fl;
     }
+    int dijk() {
+        
+    }
     int mxf(int _s,int _t) {
         s=_s,t=_t;
         int an=0,mf;
