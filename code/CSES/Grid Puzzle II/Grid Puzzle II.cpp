@@ -93,7 +93,7 @@ struct MCMF {
                 if(r==0||dis[v]<=dis[u]+w) continue;
                 dis[v]=dis[u]+w;
                 incf[v]=min(incf[u],r);
-                pre[v]=pre[u]+1;
+                pre[v]=u;
             }
         }
     }
