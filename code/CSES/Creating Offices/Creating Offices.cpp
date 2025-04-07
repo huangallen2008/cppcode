@@ -93,6 +93,7 @@ signed main() {
     cin>>n>>d;
     g=Graph(n);
     dep=in=Vi(n);
+    dis=Vi(n,inf);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
