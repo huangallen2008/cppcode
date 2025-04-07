@@ -71,7 +71,8 @@ void dfs(int u,int fa) {
     }
 }
 void st_init() {
-    REP(i,) st[0][i]=dep[dfn[i]];
+    int nn=SZ(dfn);
+    REP(i,nn) st[0][i]=dep[dfn[i]];
 }
 signed main() {
     IOS();
