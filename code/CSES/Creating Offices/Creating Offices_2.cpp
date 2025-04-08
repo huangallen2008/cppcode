@@ -63,6 +63,7 @@ signed main() {
     int n,d;
     cin>>n>>d;
     int d2=d-1>>1;
-    
+    Graph g(n);
+    REP(i,n-1) 
     return 0;
 }
