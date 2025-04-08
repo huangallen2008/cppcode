@@ -88,18 +88,18 @@ signed main() {
         if(SZ(g[u])==1&&fa!=-1) {
             dp[u]={0,u};
         }else {
-        pii mx={-inf,-1};
-        for(int v:g[u]) {
-            if(v==fa) continue;
-            dfs(v,u);
-            chmin(nr[u],nr[v]+1);
-        }
-        for(int v:g[u]) {
-            if(v==fa) continue;
-            if(abs(dp[v].f+1)+nr[u]<d) continue;
-            chmax(dp[u],dp[v]);
-        }
-        dp[u].f++;
+            pii mx={-inf,-1};
+            for(int v:g[u]) {
+                if(v==fa) continue;
+                dfs(v,u);
+                chmin(nr[u],nr[v]+1);
+            }
+            for(int v:g[u]) {
+                if(v==fa) continue;
+                if(abs(dp[v].f+1)+nr[u]<d) continue;
+                chmax(dp[u],dp[v]);
+            }
+            dp[u].f++;
         }
         if(dp[u].f==0) dp[u].s=u;
         if(dp[u].f==d2) {
