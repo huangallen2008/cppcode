@@ -67,7 +67,7 @@ void st_init() {
     REP(i,n) {
         int lg=__lg(a[i]);
         st[lg][0][i]=a[i];
-        
+        sum[lg]+=a[i];
     }
     REP(i,lgv) {
         REP1(j,maxb-1) {
@@ -86,5 +86,6 @@ signed main() {
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
+    
     return 0;
 }
