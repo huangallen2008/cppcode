@@ -111,6 +111,7 @@ signed main() {
     dfs(0,-1);
     // if(dp[0].f>=0) an.pb(0);
     cout<<SZ(an)<<'\n';
+    sort(ALL(an));
     for(int x:an) cout<<x+1<<' ';
     cout<<'\n';
     return 0;
