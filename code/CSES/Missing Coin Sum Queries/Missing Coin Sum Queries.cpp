@@ -109,7 +109,9 @@ signed main() {
     };
     REP(i,q) {
         while(itl>qu[i].f.f) upd(a[--itl],1);
-        while(itl>qu[i].f.f) upd(a[++itr],1);
+        while(itr<qu[i].f.s) upd(a[++itr],1);
+        while(itl>qu[i].f.f) upd(a[--itl],-1);
+        while(itr<qu[i].f.s) upd(a[++itr],-1);
     }
     return 0;
 }
