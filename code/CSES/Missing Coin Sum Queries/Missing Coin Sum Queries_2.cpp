@@ -93,6 +93,10 @@ signed main() {
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
-    
+    REP(i,q) {
+        int l,r;
+        cin>>l>>r,l--,r--;
+        cout<<qur(l,r)<<'\n';
+    }
     return 0;
 }
