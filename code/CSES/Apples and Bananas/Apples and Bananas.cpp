@@ -63,6 +63,7 @@ int rd(int l,int r) {
 namespace FFT {
     #define Cd complex<ld>
     #define VC vector<Cd>
+    const Cd PI=acos(-1);
     int t,lt;
     VC a,b;
     Vi r;
