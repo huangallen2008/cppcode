@@ -54,7 +54,8 @@ const int mod=1e9+7;
 const int maxn=2e5+5;
 const int maxb=18;
 const int lgv=30;
-const signed inf=1<<30;
+const int inf=1ll<<60;
+const iint iinf=1<<30;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
