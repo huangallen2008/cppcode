@@ -101,7 +101,9 @@ signed main() {
         }
         dp[u].f++;
         if(dp[u].f==0) dp[u].s=u;
-        
+        if(dp[u].f==d2) {
+            an.pb()
+        }
     }
     return 0;
 }
