@@ -63,7 +63,7 @@ int rd(int l,int r) {
 namespace FFT {
     #define Cd complex<ld>
     #define VC vector<Cd>
-    const ld PI=acos(-1);
+    const ld PI=acosl(-1);
     int t,lt;
     VC a,b;
     Vi r;
@@ -71,7 +71,7 @@ namespace FFT {
     void _fft(VC &a,int on=1) {
         REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
         for(int m=2;m<=t;m<<=1) {
-            Cd wn(cosl)
+            Cd wn(cosl())
         }
     }
     void fft(Vi _a,Vi _b) {
