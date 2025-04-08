@@ -102,7 +102,7 @@ namespace FFT {
         REP(i,t) c[i]=a[i]*b[i];
         _fft(c,-1);
         Vi _c(t);
-        REP(i,t) _c[i]=c[i];
+        REP(i,t) _c[i]=c[i].real;
         while(SZ(_c)&&_c.back()==0) _c.pop_back();
         return _c;
     }
