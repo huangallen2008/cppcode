@@ -120,6 +120,7 @@ signed main() {
         cin>>x;
         b[x]++;
     }
-    Vi c()
+    Vi c=FFT::fft(a,b);
+    for(int i=2;i<)
     return 0;
 }
