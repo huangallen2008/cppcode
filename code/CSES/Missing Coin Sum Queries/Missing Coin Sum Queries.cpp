@@ -90,6 +90,8 @@ signed main() {
     t.pb(-inf);
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
+    BIT bit;
+    bit.init(n);
     
     return 0;
 }
