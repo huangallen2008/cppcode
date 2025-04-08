@@ -86,7 +86,7 @@ signed main() {
     Vi dn(n);
     REP(i,n) dn[i]=i/sn;
     sort(ALL(qu),[&](ppi a,ppi b) { 
-        return dn[a.f.f]==dn[b.f.f/sn?((a.f.f/sn)&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
+        return dn[a.f.f]==dn[b.f.f]?(dn[a.f.f]&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
     });
     Vi t=a;
     t.pb(-inf);
