@@ -107,8 +107,8 @@ namespace FFT {
 };
 signed main() {
     IOS();
-    Vi a={1};
-    Vi b={1};
+    Vi a={1,1,1,1,1,1,1};
+    Vi b={1,1,1,1,1,1,1,1};
     Vi c=FFT::fft(a,b);
     oparr(c)
     return 0;
