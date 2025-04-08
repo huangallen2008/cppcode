@@ -106,6 +106,9 @@ signed main() {
             lid=id;
         }
         return now;
+    };
+    REP(i,q) {
+        
     }
     return 0;
 }
