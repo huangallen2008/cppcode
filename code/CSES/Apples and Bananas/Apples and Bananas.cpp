@@ -114,10 +114,11 @@ signed main() {
         cin>>x;
         a[x]++;
     }
-    REP(i,n) {
+    REP(i,m) {
         int x;
         cin>>x;
-        a[x]++;
+        b[x]++;
     }
+    Vi c()
     return 0;
 }
