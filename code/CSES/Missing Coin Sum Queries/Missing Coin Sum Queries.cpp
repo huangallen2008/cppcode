@@ -116,7 +116,7 @@ struct BIT {
 };
 signed main() {
     IOS();
-    int n,q;
+    int n=read(),q=read();
     // cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
