@@ -61,8 +61,9 @@ int rd(int l,int r) {
 int n,q;
 Vi a;
 int st[lgv][maxb][maxn];
-vector<Vi> sum(lgv);
+vector<Vi> sum;
 void st_init() {
+    sum=vector<Vi>(lgv,Vi(n));
     REP(i,lgv) REP(j,n) st[i][0][j]=inf;
     REP(i,n) {
         int lg=__lg(a[i]);
