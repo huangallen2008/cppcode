@@ -67,6 +67,7 @@ namespace FFT {
     int n,m;
     void fft(Vi _a,Vi _b) {
         a=_a,b=_b;
+        n=SZ(a),m=SZ(b);
         
     }
 };
