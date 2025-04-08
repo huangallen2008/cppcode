@@ -85,8 +85,9 @@ signed main() {
     Func dfs=[&](auto dfs,int u,int fa) ->void{
         for(int v:g[u]) {
             if(v==fa) continue;
-            
+
         }
+        if(SZ(g[u]) ==1)
     }
     return 0;
 }
