@@ -100,9 +100,9 @@ signed main() {
         int now=1,id=upper_bound(ALL(t),now)-t.begin()-1;
         int lid=0;
         while(id!=lid&&id<=n) {
+            id=upper_bound(ALL(t),now)-t.begin()-1;
             now+=bit.qu(lid+1,id);
             lid=id;
-            id=upper_bound(ALL(t),now)-t.begin()-1;
         }
     }
     return 0;
