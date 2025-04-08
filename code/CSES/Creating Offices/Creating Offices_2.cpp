@@ -87,7 +87,6 @@ signed main() {
     Func dfs=[&](auto dfs,int u,int fa) ->void{
         if(SZ(g[u])==1&&fa!=-1) {
             dp[u]={0,u};
-            ope(u)
             return;
         }
         pii mx={-inf,-1};
@@ -110,7 +109,6 @@ signed main() {
         }
     };
     dfs(0,-1);
-    oparr(dp)oparr(nr)
     if(dp[0].f>=0) an.pb(0);
     cout<<SZ(an)<<'\n';
     for(int x:an) cout<<x+1<<' ';
