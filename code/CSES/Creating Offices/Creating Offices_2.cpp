@@ -96,7 +96,7 @@ signed main() {
         }
         for(int v:g[u]) {
             if(v==fa) continue;
-            if(dp[v].f+1+nr[u])
+            if(dp[v].f+1+nr[u]<d) 
         }
     }
     return 0;
