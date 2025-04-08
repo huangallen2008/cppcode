@@ -81,7 +81,7 @@ signed main() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    Vpii dp(n);
+    Vpii mn(n),mx;
     Func dfs=[&](auto dfs,int u,int fa) ->void{
         if(SZ(g[u])==1) {
             dp[u]={0,u};
@@ -91,7 +91,7 @@ signed main() {
         for(int v:g[u]) {
             if(v==fa) continue;
             dfs(v,u);
-            
+
         }
     }
     return 0;
