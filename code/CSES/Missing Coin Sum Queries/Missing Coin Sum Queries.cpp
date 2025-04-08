@@ -97,13 +97,13 @@ signed main() {
         bit.ud(x,a[x]*c);
     };
     auto gan=[&]() {
-        int now=1,id=upper_bound(ALL(t))-t.begin()-1;
+        int now=1,id=upper_bound(ALL(t),now)-t.begin()-1;
         int lid=0;
         while(now!=las ) {
             int tt=now;
             now+=bit.qu(lid+1,id);
             lid=id;
-            id=
+            id=upper_bound(ALL(t),now)-t.begin()-1;
         }
     }
     return 0;
