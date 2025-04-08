@@ -93,8 +93,9 @@ signed main() {
     BIT bit;
     bit.init(n);
     int itl=0,itr=-1;
+    auto 
     auto gan=[&]() {
-        
+        int now=1;
     }
     return 0;
 }
