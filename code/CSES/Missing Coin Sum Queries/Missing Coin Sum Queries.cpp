@@ -84,8 +84,9 @@ signed main() {
     vector<ppi> qu(q);
     REP(i,q) cin>>qu[i].f,qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
     Vi dn(n);
+    REP(i,n) dn[i]=i/sn;
     sort(ALL(qu),[&](ppi a,ppi b) { 
-        return a.f.f/sn==b.f.f/sn?((a.f.f/sn)&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
+        return dn[a.f.f]==dn[b.f.f/sn?((a.f.f/sn)&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
     });
     Vi t=a;
     t.pb(-inf);
