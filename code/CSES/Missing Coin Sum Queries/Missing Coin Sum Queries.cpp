@@ -66,5 +66,6 @@ signed main() {
     REP(i,b) cin>>a[i];
     Vpii qu(q);
     REP(i,n) cin>>qu[i],qu[i].f--,qu[i].s--;
+    
     return 0;
 }
