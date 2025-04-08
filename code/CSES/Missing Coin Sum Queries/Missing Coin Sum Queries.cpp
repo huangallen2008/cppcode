@@ -99,8 +99,7 @@ signed main() {
     auto gan=[&]() {
         int now=1,id=upper_bound(ALL(t),now)-t.begin()-1;
         int lid=0;
-        while(now!=las ) {
-            int tt=now;
+        while(id!=las ) {
             now+=bit.qu(lid+1,id);
             lid=id;
             id=upper_bound(ALL(t),now)-t.begin()-1;
