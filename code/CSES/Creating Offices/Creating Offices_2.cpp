@@ -99,7 +99,8 @@ signed main() {
             if(dp[v].f+1+nr[u]<d) continue;
             chmax(mx,dp[v]);
         }
-        
+        mx.f++;
+        dp[u]=mx;
     }
     return 0;
 }
