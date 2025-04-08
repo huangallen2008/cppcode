@@ -71,7 +71,7 @@ namespace FFT {
     void _fft(VC &a,int on=1) {
         REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
         for(int m=2;m<=t;m<<=1) {
-            Cd wn(cos()))
+            Cd wn(cos)
         }
     }
     void fft(Vi _a,Vi _b) {
