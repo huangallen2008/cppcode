@@ -161,6 +161,6 @@ signed main() {
         while(itr>qu[i].f.s) upd(a[itr--],-1);
         an[qu[i].s]=gan();
     }
-    REP(i,q) cout<<an[i]<<'\n';
+    REP(i,q) out(an[i]),PC('\n');
     return 0;
 }
