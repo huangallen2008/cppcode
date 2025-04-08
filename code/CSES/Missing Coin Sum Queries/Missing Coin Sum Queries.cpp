@@ -93,8 +93,8 @@ signed main() {
     BIT bit;
     bit.init(n);
     int itl=0,itr=-1;
-    auto upd=[&](int x) {
-        
+    auto upd=[&](int x,int v) {
+        bit.ud(x,a[x]);
     }
     auto gan=[&]() {
         int now=1;
