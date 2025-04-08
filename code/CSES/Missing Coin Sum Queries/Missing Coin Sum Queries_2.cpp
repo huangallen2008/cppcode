@@ -86,7 +86,7 @@ int st_qu(int b,int l,int r) {
 int qur(int l,int r) {
     int now=1;
     REP(i,lgv) {
-        if(now>=st_qu(i,l,r)) now+=sum[i][r]-(l?);
+        if(now>=st_qu(i,l,r)) now+=sum[i][r]-(l?sum[i][l-1]:0);
         op(l)op(r)op(i)ope(now)
     }
     return now;
