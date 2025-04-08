@@ -60,6 +60,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    int n,d;
+    cin>>n>>d;
+    int d2=d-1>>1;
     
     return 0;
 }
