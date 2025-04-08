@@ -3,6 +3,7 @@ using namespace std;
 // #pragma GCC optimize("Ofast,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 #define int long long
+#define iint signed
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -50,117 +51,58 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
-const int maxn=4e5+5;
-const int maxb=19;
-const int inf=1<<30;
-const int sn=400;
+const int maxn=2e5+5;
+const int maxb=18;
+const int lgv=30;
+const int inf=1ll<<60;
+const iint iinf=1<<30;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
+int n,q;
+Vi a;
+iint st[lgv][maxb][maxn];
+vector<Vi> sum;
+void st_init() {
+    sum=vector<Vi>(lgv,Vi(n));
+    REP(i,lgv) REP(j,n) st[i][0][j]=iinf;
+    REP(i,n) {
+        int lg=__lg(a[i]);
+        st[lg][0][i]=a[i];
+        sum[lg][i]+=a[i];
+    }
+    REP(i,lgv) REP1(j,n-1) sum[i][j]+=sum[i][j-1];
+    REP(i,lgv) {
+        REP1(j,maxb-1) {
+            REP(k,n) {
+                st[i][j][k]=min(st[i][j-1][k],st[i][j-1][min(n-1,k+(1<<j-1))]);
+            }
+        } 
+    }
 }
-inline string reads()
-{
-    char c=GC;
-    string s;
-    while(c==' '||c=='\n')c=GC;
-    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
-    return s;
+int st_qu(int b,int l,int r) {
+    int lg=__lg(r-l+1);
+    return min(st[b][lg][l],st[b][lg][r-(1<<lg)+1]);
 }
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
+int qur(int l,int r) {
+    int now=1;
+    REP(i,lgv) {
+        if(now>=st_qu(i,l,r)) now+=sum[i][r]-(l?sum[i][l-1]:0);
+        // op(l)op(r)op(i)ope(now)
     }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    // PC('\n');
+    return now;
 }
-struct BIT {
-    int n;
-    Vi b;
-    void init(int _n) {
-        n=_n;
-        b=Vi(n+1);
-    }
-    void ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]+=v;
-    }
-    int pre(int u) {
-        int r=0;
-        for(;u>0;u-=u&-u) r+=b[u];
-        return r;
-    }
-    int qu(int l,int r){ return pre(r)-pre(l-1); }
-};
 signed main() {
     IOS();
-    int n=read(),q=read();
-    // cin>>n>>q;
-    Vi a(n);
-    REP(i,n) a[i]=read();//cin>>a[i];
-    vector<ppi> qu(q);
+    cin>>n>>q;
+    a=Vi(n);
+    REP(i,n) cin>>a[i];
+    st_init();
     REP(i,q) {
-        qu[i].f.f=read();
-        qu[i].f.s=read();
-        // cin>>qu[i].f;
-        qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
+        int l,r;
+        cin>>l>>r,l--,r--;
+        cout<<qur(l,r)<<'\n';
     }
-    Vi dn(n);
-    REP(i,n) dn[i]=i/sn;
-    sort(ALL(qu),[&](ppi a,ppi b) { 
-        return dn[a.f.f]==dn[b.f.f]?(dn[a.f.f]&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
-    });
-    Vi t=a;
-    t.pb(-inf);
-    sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    BIT bit;
-    bit.init(n);
-    int itl=0,itr=-1;
-    auto upd=[&](int x,int c=1) {
-        bit.ud(x,t[x]*c);
-    };
-    auto gan=[&]() {
-        int now=1,id=0;
-        int lid=0;
-        while(id<n) {
-            id=upper_bound(ALL(t),now)-t.begin()-1;
-            if(id==lid) break;
-            now+=bit.qu(lid+1,id);
-            lid=id;
-        }
-        return now;
-    };
-    Vi an(q);
-    REP(i,q) {
-        while(itl>qu[i].f.f) upd(a[--itl],1);
-        while(itr<qu[i].f.s) upd(a[++itr],1);
-        while(itl<qu[i].f.f) upd(a[itl++],-1);
-        while(itr>qu[i].f.s) upd(a[itr--],-1);
-        an[qu[i].s]=gan();
-    }
-    REP(i,q) out(an[i]),PC('\n');
     return 0;
 }
