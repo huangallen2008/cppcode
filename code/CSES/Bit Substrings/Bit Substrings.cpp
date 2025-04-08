@@ -125,6 +125,8 @@ signed main() {
     Vi ret=FFT::fft(a,ra);
     Vi an(n+1);
     for(int i=cnt1;i>0;i--) an[i]=ret[cnt1-i];
-    REP
+    for(int v:a) an[0]+=v*(v+1)>>1;
+    REP(i,n+1) cout<<an[i]<<' ';
+    cout<<'\n';
     return 0;
 }
