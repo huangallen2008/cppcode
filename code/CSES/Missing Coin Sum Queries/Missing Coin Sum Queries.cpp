@@ -122,7 +122,8 @@ signed main() {
     REP(i,n) a[i]=read();//cin>>a[i];
     vector<ppi> qu(q);
     REP(i,q) {
-    qu[i]
+        qu[i].f.f=read();
+        qu[i].f.s=read();
         // cin>>qu[i].f;
         qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
     }
