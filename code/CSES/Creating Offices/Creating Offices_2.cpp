@@ -88,7 +88,6 @@ signed main() {
         if(SZ(g[u])-(fa!=-1)==0) {
             dp[u]={0,u};
         }else {
-            pii mx={-inf,-1};
             for(int v:g[u]) {
                 if(v==fa) continue;
                 dfs(v,u);
