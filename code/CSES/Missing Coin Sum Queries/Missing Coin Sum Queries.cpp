@@ -93,7 +93,9 @@ signed main() {
     BIT bit;
     bit.init(n);
     int itl=0,itr=-1;
-    auto 
+    auto upd=[&](int x) {
+        
+    }
     auto gan=[&]() {
         int now=1;
     }
