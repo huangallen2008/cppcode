@@ -108,7 +108,7 @@ signed main() {
         return now;
     };
     REP(i,q) {
-        
+        while()
     }
     return 0;
 }
