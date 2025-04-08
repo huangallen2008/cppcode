@@ -98,7 +98,8 @@ signed main() {
     };
     auto gan=[&]() {
         int now=1;
-        
+        int las=0;
+        while()
     }
     return 0;
 }
