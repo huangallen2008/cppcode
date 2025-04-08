@@ -63,6 +63,7 @@ Vi a;
 int st[lgv][maxb][maxn];
 void st_init() {
     REP(i,lgv) REP(j,n) st[i][0][j]=inf;
+    REP(i,n) st[__lg(a[i])][0][i]=a[i];
     
 }
 signed main() {
