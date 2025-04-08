@@ -100,8 +100,8 @@ namespace FFT {
         // VC c(t);
         REP(i,t) a[i]=a[i]*b[i];
         _fft(a,-1);
-        Vi _c(t);
         ope(t)
+        Vi _c(t);
         REP(i,t) _c[i]=a[i].real();
         while(SZ(_c)&&_c.back()==0) _c.pop_back();
         return _c;
