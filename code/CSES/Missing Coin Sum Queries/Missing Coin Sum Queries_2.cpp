@@ -73,7 +73,8 @@ void st_init() {
     }
 }
 int st_qu(int b,int l,int r) {
-    i
+    int lg=__lg(r-l+1);
+    return 
 }
 signed main() {
     IOS();
