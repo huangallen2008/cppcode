@@ -103,8 +103,8 @@ namespace FFT {
         _fft(c,-1);
         Vi _c(t);
         REP(i,t) _c[i]=c[i];
-        while(SZ(c)&&c.back()==0) c.pop_back();
-        return c;
+        while(SZ(_c)&&_c.back()==0) _c.pop_back();
+        return _c;
     }
 };
 signed main() {
