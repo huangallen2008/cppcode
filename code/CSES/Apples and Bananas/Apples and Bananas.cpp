@@ -59,7 +59,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 namespace FFT {
-    #define Cd complex<ld>
+    #define Cd complex<double>
     #define VC vector<Cd>
     const ld PI=acosl(-1);
     int t,lt;
