@@ -101,7 +101,9 @@ signed main() {
         int lid=0;
         while(now!=las ) {
             int tt=now;
-            now+=bit.qu()
+            now+=bit.qu(lid+1,id);
+            lid=id;
+            id=
         }
     }
     return 0;
