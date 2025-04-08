@@ -87,7 +87,6 @@ signed main() {
     Func dfs=[&](auto dfs,int u,int fa) ->void{
         if(SZ(g[u])==1&&fa!=-1) {
             dp[u]={0,u};
-            return;
         }
         pii mx={-inf,-1};
         for(int v:g[u]) {
