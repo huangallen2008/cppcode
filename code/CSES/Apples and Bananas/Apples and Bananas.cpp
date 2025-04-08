@@ -106,8 +106,8 @@ namespace FFT {
 };
 signed main() {
     IOS();
-    int n,m;
+    int k,n,m;
     cin>>n>>m;
-    
+
     return 0;
 }
