@@ -72,7 +72,7 @@ namespace FFT {
         REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
         for(int m=2;m<=t;m<<=1) {
             Cd wn(cosl(2*PI/m),sinl(on*2*PI/m));
-            
+            for()
         }
     }
     void fft(Vi _a,Vi _b) {
