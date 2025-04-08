@@ -121,6 +121,6 @@ signed main() {
         b[x]++;
     }
     Vi c=FFT::fft(a,b);
-    for(int i=2;i<)
+    for(int i=2;i<=k*2;i++)
     return 0;
 }
