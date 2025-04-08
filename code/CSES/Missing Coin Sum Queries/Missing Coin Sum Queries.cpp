@@ -98,7 +98,7 @@ signed main() {
     };
     auto gan=[&]() {
         int now=1,id=upper_bound(ALL(t))-t.begin()-1;
-        int las=0;
+        int lid=0;
         while(now!=las ) {
             int tt=now;
             now=bit.
