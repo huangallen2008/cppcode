@@ -118,6 +118,6 @@ signed main() {
             cnt=1;
         }else cnt++;
     }
-    
+
     return 0;
 }
