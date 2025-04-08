@@ -114,8 +114,10 @@ signed main() {
     int cnt=1;
     for(char c:s) {
         if(c=='1') {
-            
-        }
+            a.pb(cnt);
+            cnt=1;
+        }else cnt++;
     }
+    
     return 0;
 }
