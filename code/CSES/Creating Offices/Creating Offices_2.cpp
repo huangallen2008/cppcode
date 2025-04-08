@@ -100,6 +100,7 @@ signed main() {
             chmax(dp[u],dp[v]);
         }
         dp[u].f++;
+        if(dp[u].f==0) dp[u].s=u;
         
     }
     return 0;
