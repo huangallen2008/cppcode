@@ -62,7 +62,7 @@ int rd(int l,int r) {
 }
 int n,q;
 Vi a;
-int st[lgv][maxb][maxn];
+iint st[lgv][maxb][maxn];
 vector<Vi> sum;
 void st_init() {
     sum=vector<Vi>(lgv,Vi(n));
