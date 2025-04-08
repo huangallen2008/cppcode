@@ -1,3 +1,63 @@
+namespace FFT {
+    #define Cd complex<double>
+    #define VC vector<Cd>
+    const ld PI=acosl(-1);
+    int t,lt;
+    VC a,b;
+    Vi r;
+    int n1,n2;
+    void _fft(VC &a,int on=1) {
+        REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
+        for(int m=2;m<=t;m<<=1) {
+            Cd wn(cosl(2*PI/m),sinl(on*2*PI/m));
+            for(int l=0;l<t;l+=m) {
+                Cd w=1;
+                for(int k=l;k<l+m/2;k++) {
+                    Cd x=a[k],y=a[k+m/2]*w;
+                    a[k]=x+y;
+                    a[k+m/2]=x-y;
+                    w*=wn;
+                }
+            }
+        }
+        if(on==-1) {
+            REP(i,t) a[i]/=t;
+        }
+    }
+    Vi fft(Vi _a,Vi _b) {
+        n1=SZ(_a),n2=SZ(_b);
+        a=VC(n1),b=VC(n2);
+        REP(i,n1) a[i]=_a[i];
+        REP(i,n2) b[i]=_b[i];
+        lt=0,t=1;
+        while(t<n1+n2) t<<=1,lt++;
+        while(SZ(a)<t) a.pb(0);
+        while(SZ(b)<t) b.pb(0);
+        r=Vi(t);
+        REP(i,t) r[i]=r[i>>1]>>1|(i&1)<<lt-1;
+        _fft(a),_fft(b);
+        REP(i,t) a[i]=a[i]*b[i];
+        _fft(a,-1);
+        Vi _c(t);
+        REP(i,t) _c[i]=a[i].real()+0.5;
+        while(SZ(_c)>n1+n2-1) _c.pop_back();
+        // while(SZ(_c)&&_c.back()==0) _c.pop_back();
+        return _c;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 namespace FFT{
 	struct comp{
 		db x,y;
