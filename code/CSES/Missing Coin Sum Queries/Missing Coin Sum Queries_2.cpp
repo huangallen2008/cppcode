@@ -70,6 +70,7 @@ void st_init() {
         st[lg][0][i]=a[i];
         sum[lg][i]+=a[i];
     }
+    REP(i,lgv) REP1(j,n-1) sum[i][j]+=sum[i][j-1];
     REP(i,lgv) {
         REP1(j,maxb-1) {
             REP(k,n) {
