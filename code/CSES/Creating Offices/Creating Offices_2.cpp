@@ -103,7 +103,7 @@ signed main() {
         if(dp[u].f==0) dp[u].s=u;
         if(dp[u].f==d2) {
             an.pb(dp[u].s);
-            dp[u]={-d}
+            dp[u]={-d+d2,-1};
         }
     }
     return 0;
