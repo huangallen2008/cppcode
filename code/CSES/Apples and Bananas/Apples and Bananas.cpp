@@ -60,49 +60,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int n,q;
-Vi a;
-iint st[lgv][maxb][maxn];
-vector<Vi> sum;
-void st_init() {
-    sum=vector<Vi>(lgv,Vi(n));
-    REP(i,lgv) REP(j,n) st[i][0][j]=iinf;
-    REP(i,n) {
-        int lg=__lg(a[i]);
-        st[lg][0][i]=a[i];
-        sum[lg][i]+=a[i];
-    }
-    REP(i,lgv) REP1(j,n-1) sum[i][j]+=sum[i][j-1];
-    REP(i,lgv) {
-        REP1(j,maxb-1) {
-            REP(k,n) {
-                st[i][j][k]=min(st[i][j-1][k],st[i][j-1][min(n-1,k+(1<<j-1))]);
-            }
-        } 
-    }
-}
-int st_qu(int b,int l,int r) {
-    int lg=__lg(r-l+1);
-    return min(st[b][lg][l],st[b][lg][r-(1<<lg)+1]);
-}
-int qur(int l,int r) {
-    int now=1;
-    REP(i,lgv) {
-        if(now>=st_qu(i,l,r)) now+=sum[i][r]-(l?sum[i][l-1]:0);
-        // op(l)op(r)op(i)ope(now)
-    }
-    return now;
-}
+
 signed main() {
     IOS();
-    cin>>n>>q;
-    a=Vi(n);
-    REP(i,n) cin>>a[i];
-    st_init();
-    REP(i,q) {
-        int l,r;
-        cin>>l>>r,l--,r--;
-        cout<<qur(l,r)<<'\n';
-    }
+
     return 0;
 }
