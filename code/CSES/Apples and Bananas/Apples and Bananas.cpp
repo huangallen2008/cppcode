@@ -63,9 +63,11 @@ int rd(int l,int r) {
 namespace FFT {
     #define Cd complex<ld>
     int t,lt;
-    Vi a,b;
+    Vi a,b,r;
     int n1,n2;
-    void _fft(Vi &a,in)
+    void _fft(Vi &a,int on) {
+
+    }
     void fft(Vi _a,Vi _b) {
         a=_a,b=_b;
         n1=SZ(a),n2=SZ(b);
