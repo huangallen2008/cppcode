@@ -73,8 +73,8 @@ struct BIT {
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
-    int qu(int l,int ){}
-}
+    int qu(int l,int r){ return pre(r)-pre(l-1); }
+};
 signed main() {
     IOS();
     int n,q;
@@ -86,6 +86,6 @@ signed main() {
     sort(ALL(qu),[&](pii a,pii b) { 
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
     });
-
+    
     return 0;
 }
