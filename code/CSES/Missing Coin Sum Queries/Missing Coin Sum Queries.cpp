@@ -108,7 +108,7 @@ signed main() {
         return now;
     };
     REP(i,q) {
-        while(itl>qu[i].f.f)
+        while(itl>qu[i].f.f) upd(a[--itl])
     }
     return 0;
 }
