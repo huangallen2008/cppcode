@@ -97,7 +97,6 @@ namespace FFT {
         REP(i,t) r[i]=r[i>>1]<<1|(i&1)<<lt-1;
         _fft(a),_fft(b);
         ope(t)
-        VC __(5);
         // VC c(t);
         REP(i,t) a[i]=a[i]*b[i];
         _fft(a,-1);
