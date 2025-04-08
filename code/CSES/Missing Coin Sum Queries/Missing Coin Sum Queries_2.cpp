@@ -60,7 +60,8 @@ int rd(int l,int r) {
 }
 int n,q;
 Vi a;
-int st[l]
+int st[lgv][maxb][maxn];
+
 signed main() {
     IOS();
     cin>>n>>q;
