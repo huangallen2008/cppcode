@@ -63,7 +63,7 @@ int rd(int l,int r) {
 namespace FFT {
     #define Cd complex<ld>
     int t,lt;
-    void init
+    void 
 };
 signed main() {
     IOS();
