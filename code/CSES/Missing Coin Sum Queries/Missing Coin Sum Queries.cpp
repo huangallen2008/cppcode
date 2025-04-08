@@ -82,7 +82,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     vector<ppi> qu(q);
-    REP(i,n) cin>>qu[i],qu[i].f--,qu[i].s--;
+    REP(i,n) cin>>qu[i],qu[i].f.f--,qu[i].f.s--;
     sort(ALL(qu),[&](pii a,pii b) { 
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
     });
