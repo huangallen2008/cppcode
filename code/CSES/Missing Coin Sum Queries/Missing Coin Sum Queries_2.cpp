@@ -64,7 +64,9 @@ int st[lgv][maxb][maxn];
 Vi sum(lgv);
 void st_init() {
     REP(i,lgv) REP(j,n) st[i][0][j]=inf;
-    REP(i,n) st[__lg(a[i])][0][i]=a[i];
+    REP(i,n) {
+        st[__lg(a[i])][0][i]=a[i],;
+    }
     REP(i,lgv) {
         REP1(j,maxb-1) {
             REP(k,n) {
