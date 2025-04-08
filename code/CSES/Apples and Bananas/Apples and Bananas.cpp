@@ -69,7 +69,8 @@ namespace FFT {
         a=_a,b=_b;
         n1=SZ(a),n2=SZ(b);
         lt=0,t=1;
-        while(t<n1+n2) 
+        while(t<n1+n2) t<<=1,lt++;
+        
     }
 };
 signed main() {
