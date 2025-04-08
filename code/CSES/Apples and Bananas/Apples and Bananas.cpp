@@ -100,7 +100,8 @@ namespace FFT {
         _fft(a),_fft(b);
         VC c(t);
         REP(i,t) c[i]=a[i]*b[i];
-        
+        _fft(c,-1);
+        Vi _c()
     }
 };
 signed main() {
