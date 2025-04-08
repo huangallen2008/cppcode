@@ -81,6 +81,7 @@ signed main() {
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
-    
+    Vi sum(lgv);
+    REP(i,n)
     return 0;
 }
