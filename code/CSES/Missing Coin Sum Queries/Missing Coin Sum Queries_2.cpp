@@ -84,7 +84,7 @@ int st_qu(int b,int l,int r) {
 int qur(int l,int r) {
     int now=1;
     REP(i,lgv) {
-        if(now>)
+        if(now>=st_qu(i,))
     }
 }
 signed main() {
