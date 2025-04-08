@@ -82,7 +82,10 @@ int st_qu(int b,int l,int r) {
     return min(st[b][lg][l],st[b][lg][r-(1<<lg)+1]);
 }
 int qur(int l,int r) {
-    
+    int now=1;
+    REP(i,lgv) {
+        if(now>)
+    }
 }
 signed main() {
     IOS();
