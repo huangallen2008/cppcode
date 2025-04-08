@@ -120,5 +120,7 @@ signed main() {
         }else cnt++;
     }
     a.pb(cnt);
+    Vi ra=a;
+    reverse(ALL(a));
     return 0;
 }
