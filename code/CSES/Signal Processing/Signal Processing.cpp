@@ -109,6 +109,8 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    Vi a()
+    Vi a(n),b(m);
+    REP(i,n) cin>>a[i];
+    REP(i,m) cin>>b[i];
     return 0;
 }
