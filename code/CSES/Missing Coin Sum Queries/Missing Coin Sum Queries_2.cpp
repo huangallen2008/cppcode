@@ -66,7 +66,7 @@ iint st[lgv][maxb][maxn];
 vector<Vi> sum;
 void st_init() {
     sum=vector<Vi>(lgv,Vi(n));
-    REP(i,lgv) REP(j,n) st[i][0][j]=inf;
+    REP(i,lgv) REP(j,n) st[i][0][j]=iinf;
     REP(i,n) {
         int lg=__lg(a[i]);
         st[lg][0][i]=a[i];
