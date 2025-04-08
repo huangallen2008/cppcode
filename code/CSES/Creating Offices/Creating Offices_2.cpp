@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("Ofast,unroll-loops")
-#pragma GCC target("avx2,sse4,bmi2,popcnt")
-// #define int long long
+// #pragma GCC target("avx2,sse4,bmi2,popcnt")
+#define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -58,97 +58,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#ifdef LOCAL
-#define GC _getchar_nolock()
-#define PC _putchar_nolock
-#else 
-#define GC getchar_unlocked()
-#define PC putchar_unlocked
-#endif
-inline int read()
-{
-    int x=0;
-    bool neg=0;
-    char c=GC;
-    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
-    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
-    if(neg) x=-x;
-    return x;
-}
-inline string reads()
-{
-    char c=GC;
-    string s;
-    while(c==' '||c=='\n')c=GC;
-    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
-    return s;
-}
-inline void out(int x) {
-    if(x<0) {
-        PC('-');
-        x=-x;
-    }
-    char str[18];
-	auto it=str;
-    do { 
-        *it=x%10+'0',it++;
-        x/=10;
-    } while(x);
-    for(it--;it>=str;it--) PC(*it);
-    // PC('\n');
-}
-int n,d;
-Graph g;
-Vi dep,in,dis,dfn;
-Vi all,v1,v2;
-int st[maxb][maxn];
-int ___=0;
-void dfs(int u,int fa) {
-    in[u]=SZ(dfn);
-    dfn.pb(u);
-    for(int v:g[u]) {
-        if(v==fa) continue;
-        dep[v]=dep[u]+1;
-        dfs(v,u);
-        dfn.pb(u);
-    }
-}
-void st_init() {
-    int nn=SZ(dfn);
-    REP(i,nn) st[0][i]=dep[dfn[i]];
-    REP1(i,maxb-1) {
-        REP(j,nn) st[i][j]=min(st[i-1][j],st[i-1][min(nn-1,j+(1<<i-1))]);
-    }
-}
-int st_qu(int l,int r) {
-    int lg=__lg(r-l+1);
-    return min(st[lg][l],st[lg][r-(1<<lg)+1]);
-}
-int lca_dep(int a,int b) { 
-    if(in[a]>in[b]) swap(a,b);
-    return st_qu(in[a],in[b]); 
-}
-int qu_dis(int a,int b) { return dep[a]+dep[b]-2*lca_dep(a,b); }
-void bfs() {
-    dis=Vi(n,inf);
-    queue<int> q;
-    for(int x:v1) {
-        q.push(x);
-        dis[x]=0;
-    }
-    while(SZ(q)) {
-        int u=q.front();
-        q.pop();
-        for(int v:g[u]) {
-            if(dis[v]>dis[u]+1) {
-                dis[v]=dis[u]+1;
-                q.push(v);
-            }
-        }
-    }
-}
 signed main() {
     IOS();
-    
+
     return 0;
 }
