@@ -101,9 +101,11 @@ signed main() {
         int lid=0;
         while(id<n) {
             id=upper_bound(ALL(t),now)-t.begin()-1;
+            if(id==lid) break;
             now+=bit.qu(lid+1,id);
             lid=id;
         }
+        return now;
     }
     return 0;
 }
