@@ -94,7 +94,7 @@ namespace FFT {
         while(SZ(a)<t) a.pb(0);
         while(SZ(b)<t) b.pb(0);
         r=Vi(t);
-        REP(i,t) r[i]=r[i>>1]<<1|(i&1)<<lt-1;
+        REP(i,t) r[i]=r[i>>1]>>1|(i&1)<<lt-1;
         _fft(a),_fft(b);
         REP(i,t) a[i]=a[i]*b[i];
         _fft(a,-1);
