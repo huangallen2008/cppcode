@@ -112,6 +112,6 @@ signed main() {
     int n=SZ(s);
     Vi a;
     int cnt=1;
-    
+    REP
     return 0;
 }
