@@ -86,7 +86,7 @@ namespace FFT {
             REP(i,t) a[i]/=t;
         }
     }
-    void fft(Vi _a,Vi _b) {
+    Vi fft(Vi _a,Vi _b) {
         n1=SZ(_a),n2=SZ(_b);
         a=VC(n1),b=VC(n2);
         REP(i,n1) a[i]=_a[i];
@@ -103,11 +103,12 @@ namespace FFT {
         _fft(c,-1);
         Vi _c(t);
         REP(i,t) _c[i]=c[i];
-        while(SZ(c)&&c.back()==0)
+        while(SZ(c)&&c.back()==0) c.pop_back();
+        return c;
     }
 };
 signed main() {
     IOS();
-
+    
     return 0;
 }
