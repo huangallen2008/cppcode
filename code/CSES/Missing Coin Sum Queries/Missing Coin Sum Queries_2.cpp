@@ -61,6 +61,7 @@ int rd(int l,int r) {
 int n,q;
 Vi a;
 int st[lgv][maxb][maxn];
+Vi sum(lgv);
 void st_init() {
     REP(i,lgv) REP(j,n) st[i][0][j]=inf;
     REP(i,n) st[__lg(a[i])][0][i]=a[i];
@@ -81,7 +82,5 @@ signed main() {
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
-    Vi sum(lgv);
-    REP(i,n)
     return 0;
 }
