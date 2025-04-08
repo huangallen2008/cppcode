@@ -64,12 +64,12 @@ namespace FFT {
     #define Cd complex<ld>
     int t,lt;
     Vi a,b;
-    int n,m;
+    int n1,n2;
     void fft(Vi _a,Vi _b) {
         a=_a,b=_b;
         n1=SZ(a),n2=SZ(b);
         lt=0,t=1;
-        while(t<n+m)
+        while(t<n1+n2) 
     }
 };
 signed main() {
