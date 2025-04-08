@@ -58,6 +58,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct BIT {
+    
+}
 signed main() {
     IOS();
     int n,q;
@@ -69,6 +72,6 @@ signed main() {
     sort(ALL(qu),[&](pii a,pii b) { 
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
     });
-    
+
     return 0;
 }
