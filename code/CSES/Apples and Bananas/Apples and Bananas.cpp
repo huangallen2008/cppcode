@@ -74,6 +74,7 @@ namespace FFT {
         }
     }
     void fft(Vi _a,Vi _b) {
+        a=_a;
         n1=SZ(_a),n2=SZ(_b);
         a=VC(n1),b=VC(n2);
         REP(i,n1) a[i]=_a[i];
