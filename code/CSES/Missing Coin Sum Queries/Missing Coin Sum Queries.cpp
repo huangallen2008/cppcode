@@ -92,6 +92,7 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     BIT bit;
     bit.init(n);
+    int itl=0,itr=-1;
     
     return 0;
 }
