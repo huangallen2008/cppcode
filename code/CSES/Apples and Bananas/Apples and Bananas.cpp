@@ -109,6 +109,7 @@ namespace FFT {
 };
 signed main() {
     IOS();
-    
+    Vi a={1,2,1};
+    Vi b={1,2,1};
     return 0;
 }
