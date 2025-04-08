@@ -76,7 +76,8 @@ namespace FFT {
                 Cd w=1;
                 for(int k=l;k<l+m;k++) {
                     Cd x=a[k],y=a[k+m/2]*w;
-
+                    a[k]=x+y;
+                    a[k]=x+y;
                 }
             }
         }
