@@ -82,9 +82,10 @@ signed main() {
         g[v].pb(u);
     }
     Vpii dp(n);
-    Func dfs=[&](auto dfs,int u,int fa) {
+    Func dfs=[&](auto dfs,int u,int fa) ->void{
         for(int v:g[u]) {
             if(v==fa) continue;
+            
         }
     }
     return 0;
