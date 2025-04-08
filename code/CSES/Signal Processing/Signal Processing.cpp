@@ -112,5 +112,6 @@ signed main() {
     Vi a(n),b(m);
     REP(i,n) cin>>a[i];
     REP(i,m) cin>>b[i];
+    Vi c=FFT:fft(a,b);
     return 0;
 }
