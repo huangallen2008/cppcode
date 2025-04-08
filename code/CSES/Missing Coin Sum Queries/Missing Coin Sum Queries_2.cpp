@@ -94,6 +94,7 @@ signed main() {
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
+    st_init();
     REP(i,q) {
         int l,r;
         cin>>l>>r,l--,r--;
