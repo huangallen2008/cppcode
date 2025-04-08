@@ -83,6 +83,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     vector<ppi> qu(q);
     REP(i,q) cin>>qu[i].f,qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
+    
     sort(ALL(qu),[&](ppi a,ppi b) { 
         return a.f.f/sn==b.f.f/sn?((a.f.f/sn)&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
     });
