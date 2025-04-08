@@ -123,6 +123,6 @@ signed main() {
     Vi ra=a;
     reverse(ALL(a));
     Vi ret=FFT::fft(a,ra);
-    for()
+    for(int i=cnt1;i>)
     return 0;
 }
