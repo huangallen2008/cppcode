@@ -87,8 +87,9 @@ signed main() {
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
     });
     Vi t=a;
+    t.pb(-inf);
     sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
+    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     
     return 0;
 }
