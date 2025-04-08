@@ -83,7 +83,7 @@ namespace FFT {
             }
         }
         if(on==-1) {
-            REP(i,t) 
+            REP(i,t) a[i]/=t;
         }
     }
     void fft(Vi _a,Vi _b) {
