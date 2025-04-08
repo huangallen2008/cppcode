@@ -114,7 +114,6 @@ signed main() {
     REP(i,m) cin>>b[i];
     reverse(ALL(b));
     Vi c=FFT::fft(a,b);
-    reverse(ALL(c));
     oparr(c)
     return 0;
 }
