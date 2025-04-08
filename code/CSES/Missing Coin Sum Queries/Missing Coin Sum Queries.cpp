@@ -81,7 +81,7 @@ signed main() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vpii qu(q);
+    vector<ppi> qu(q);
     REP(i,n) cin>>qu[i],qu[i].f--,qu[i].s--;
     sort(ALL(qu),[&](pii a,pii b) { 
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
@@ -93,6 +93,6 @@ signed main() {
     BIT bit;
     bit.init(n);
     int itl=0,itr=-1;
-    
+
     return 0;
 }
