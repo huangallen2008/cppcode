@@ -63,7 +63,9 @@ int rd(int l,int r) {
 namespace FFT {
     #define Cd complex<ld>
     int t,lt;
-    void 
+    void fft(Vi a,Vi b) {
+        
+    }
 };
 signed main() {
     IOS();
