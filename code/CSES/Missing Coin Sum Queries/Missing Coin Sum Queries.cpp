@@ -97,7 +97,7 @@ signed main() {
         bit.ud(x,a[x]*c);
     };
     auto gan=[&]() {
-        int now=1,id=upper_bound(ALL(t),now)-t.begin()-1;
+        int now=1,id=0;
         int lid=0;
         while(id!=lid&&id<=n) {
             id=upper_bound(ALL(t),now)-t.begin()-1;
