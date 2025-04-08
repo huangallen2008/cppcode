@@ -107,6 +107,7 @@ signed main() {
         }
         return now;
     };
+    Vi an(q);
     REP(i,q) {
         while(itl>qu[i].f.f) upd(a[--itl],1);
         while(itr<qu[i].f.s) upd(a[++itr],1);
@@ -114,6 +115,6 @@ signed main() {
         while(itr>qu[i].f.s) upd(a[itr--],-1);
         an[qu[i].s]=gan();
     }
-    
+    REP(i,q) cout<<an[i]<<'\n';
     return 0;
 }
