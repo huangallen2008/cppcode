@@ -67,6 +67,7 @@ namespace FFT {
     int n1,n2;
     void _fft(Vi &a,int on) {
         REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
+        
     }
     void fft(Vi _a,Vi _b) {
         a=_a,b=_b;
