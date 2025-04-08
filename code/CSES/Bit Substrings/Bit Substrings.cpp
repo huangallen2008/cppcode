@@ -111,11 +111,12 @@ signed main() {
     cin>>s;
     int n=SZ(s);
     Vi a;
-    int cnt=1;
+    int cnt=1,cnt1=0;
     for(char c:s) {
         if(c=='1') {
             a.pb(cnt);
             cnt=1;
+            cnt1++;
         }else cnt++;
     }
     a.pb(cnt);
