@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("O3,unroll-loops")
+// #pragma GCC optimize("Ofast,unroll-loops")
 #pragma GCC target("avx2,sse4,bmi2,popcnt")
-#define int long long
+// #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
 #define REP1(i,n) for(int i=1;i<=(n);i++)
 #define RREP(i,n) for(int i=(n)-1;i>=0;i--)
@@ -52,11 +52,50 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=1e9+7;
 const int maxn=4e5+5;
 const int maxb=19;
-const int inf=1ll<<60;
-const int sn=200;
+const int inf=1<<30;
+const int sn=400;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
+}
+#ifdef LOCAL
+#define GC _getchar_nolock()
+#define PC _putchar_nolock
+#else 
+#define GC getchar_unlocked()
+#define PC putchar_unlocked
+#endif
+inline int read()
+{
+    int x=0;
+    bool neg=0;
+    char c=GC;
+    while(c<'0'||c>'9'){if(c=='-') neg=1;c=GC;}
+    while(c>='0'&&c<='9') x=(x<<3)+(x<<1)+(c^48),c=GC;
+    if(neg) x=-x;
+    return x;
+}
+inline string reads()
+{
+    char c=GC;
+    string s;
+    while(c==' '||c=='\n')c=GC;
+    while(c!=' '&&c!='\n'&&c!=EOF) s+=c,c=GC;
+    return s;
+}
+inline void out(int x) {
+    if(x<0) {
+        PC('-');
+        x=-x;
+    }
+    char str[18];
+	auto it=str;
+    do { 
+        *it=x%10+'0',it++;
+        x/=10;
+    } while(x);
+    for(it--;it>=str;it--) PC(*it);
+    // PC('\n');
 }
 int n,d;
 Graph g;
@@ -65,9 +104,6 @@ Vi all,v1,v2;
 int st[maxb][maxn];
 int ___=0;
 void dfs(int u,int fa) {
-    if((++___)==21483) {
-        cerr<<u<<endl;
-    }
     in[u]=SZ(dfn);
     dfn.pb(u);
     for(int v:g[u]) {
@@ -75,7 +111,6 @@ void dfs(int u,int fa) {
         dep[v]=dep[u]+1;
         dfs(v,u);
         dfn.pb(u);
-        cerr<<"o"<<endl;
     }
 }
 void st_init() {
@@ -118,44 +153,44 @@ signed main() {
     freopen("in.txt","r",stdin);
     freopen("out.txt","w",stdout);
     #endif
-    cin>>n>>d;
+    n=read(),d=read();
+    // cin>>n>>d;
     g=Graph(n);
     dep=in=Vi(n);
     dis=Vi(n,inf);
     REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
+        int u=read()-1,v=read()-1;
+        // cin>>u>>v,u--,v--;
         g[u].pb(v);
         g[v].pb(u);
     }
-    dfs(0,-1);
-    // st_init();
-    cerr<<"ok"<<endl;
-    // Vi p(n);
-    // REP(i,n)p[i]=i;
-    // sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
-    // auto gdis=[&](int x) {
-    //     int mn=dis[x];
-    //     for(int u:v2) chmin(mn,qu_dis(x,u));
-    //     return mn;
-    // };
-    // REP(i,n) {
-    //     cerr<<'.';
-    //     int dd=gdis(p[i]);
-    //     if(dd<d) continue;
-    //     all.pb(p[i]);
-    //     v2.pb(p[i]);
-    //     if(SZ(v2)==sn) {
-    //         for(int x:v2) v1.pb(x);
-    //         v2.clear();
-    //         bfs();
-    //     }
-    // }
-    // cout<<SZ(all)<<'\n';
-    // for(int x:all) cout<<x+1<<' ';
-    // cout<<'\n';
-    // #ifdef LOCAL
-    // cerr<<clock()<<'\n';
-    // #endif
+    dfs(rd(0,n-1),-1);
+    st_init();
+    Vi p(n);
+    REP(i,n)p[i]=i;
+    sort(ALL(p),[&](int a,int b) { return dep[a]>dep[b]; });
+    auto gdis=[&](int x) {
+        int mn=dis[x];
+        for(int u:v2) chmin(mn,qu_dis(x,u));
+        return mn;
+    };
+    REP(i,n) {
+        int dd=gdis(p[i]);
+        if(dd<d) continue;
+        all.pb(p[i]);
+        v2.pb(p[i]);
+        if(SZ(v2)==sn) {
+            for(int x:v2) v1.pb(x);
+            v2.clear();
+            bfs();
+        }
+    }
+    out(SZ(all));
+    PC('\n');
+    for(int x:all) out(x+1),PC(' ');
+    PC('\n');
+    #ifdef LOCAL
+    cerr<<clock()<<'\n';
+    #endif
     return 0;
 }
