@@ -58,60 +58,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-template<class T>
-struct Func {
-    T func;
-    Func(const T &func):func(func) {}
-    template<class... Args>
-    constexpr decltype(auto) operator()(Args &&... args) {
-        return func(*this, forward<Args>(args)...);
-    }
-};
-template<class T>
-Func(const T &) -> Func<T>;
 signed main() {
     IOS();
-    int n,d;
-    cin>>n>>d;
-    int d2=d-1>>1;
-    Graph g(n);
-    REP(i,n-1) {
-        int u,v;
-        cin>>u>>v,u--,v--;
-        g[u].pb(v);
-        g[v].pb(u);
-    }
-    Vpii dp(n,{-inf,-1});
-    Vi nr(n,inf);
-    Vi an;
-    Func dfs=[&](auto dfs,int u,int fa) ->void{
-        if(SZ(g[u])-(fa!=-1)==0) {
-            dp[u]={0,u};
-        }else {
-            for(int v:g[u]) {
-                if(v==fa) continue;
-                dfs(v,u);
-                chmin(nr[u],nr[v]+1);
-            }
-            for(int v:g[u]) {
-                if(v==fa) continue;
-                if(abs(dp[v].f+1)+nr[u]<d) continue;
-                chmax(dp[u],dp[v]);
-            }
-            dp[u].f++;
-        }
-        if(dp[u].f==0) dp[u].s=u;
-        if(dp[u].f==d2) {
-            an.pb(dp[u].s);
-            dp[u]={-d+d2,-1};
-            nr[u]=d2;
-        }
-    };
-    dfs(0,-1);
-    if(dp[0].f>=0) an.pb(dp[0].s);
-    cout<<SZ(an)<<'\n';
-    // sort(ALL(an));
-    for(int x:an) cout<<x+1<<' ';
-    cout<<'\n';
+
     return 0;
 }
