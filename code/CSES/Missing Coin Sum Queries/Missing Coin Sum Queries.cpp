@@ -99,7 +99,9 @@ signed main() {
     auto gan=[&]() {
         int now=1;
         int las=0;
-        while()
+        while(now!=las ) {
+            
+        }
     }
     return 0;
 }
