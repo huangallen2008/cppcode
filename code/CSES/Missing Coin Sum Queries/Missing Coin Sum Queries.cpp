@@ -67,7 +67,8 @@ signed main() {
     Vpii qu(q);
     REP(i,n) cin>>qu[i],qu[i].f--,qu[i].s--;
     sort(ALL(qu),[&](pii a,pii b) { 
-        return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):
-    })
+        return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
+    });
+    
     return 0;
 }
