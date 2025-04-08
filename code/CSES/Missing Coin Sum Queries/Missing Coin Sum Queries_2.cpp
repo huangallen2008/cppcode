@@ -72,7 +72,7 @@ void st_init() {
     REP(i,lgv) {
         REP1(j,maxb-1) {
             REP(k,n) {
-                st[i][j][k]=min(st[i][j-1][k],st[i][j-1][min(n-1,k+(1<<i-1))]);
+                st[i][j][k]=min(st[i][j-1][k],st[i][j-1][min(n-1,k+(1<<j-1))]);
             }
         } 
     }
