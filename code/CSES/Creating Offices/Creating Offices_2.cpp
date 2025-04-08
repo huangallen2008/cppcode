@@ -97,9 +97,6 @@ signed main() {
             for(int v:g[u]) {
                 if(v==fa) continue;
                 if(abs(dp[v].f+1)+nr[u]<d) continue;
-                if(dp[v].f+1==d2) {
-                    
-                }
                 chmax(dp[u],dp[v]);
             }
             dp[u].f++;
