@@ -107,7 +107,17 @@ namespace FFT {
 signed main() {
     IOS();
     int k,n,m;
-    cin>>n>>m;
-
+    cin>>k>>n>>m;
+    Vi a(k+1),b(k+1);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        a[x]++;
+    }
+    REP(i,n) {
+        int x;
+        cin>>x;
+        a[x]++;
+    }
     return 0;
 }
