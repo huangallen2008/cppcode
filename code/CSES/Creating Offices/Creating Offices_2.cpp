@@ -64,6 +64,12 @@ signed main() {
     cin>>n>>d;
     int d2=d-1>>1;
     Graph g(n);
-    REP(i,n-1) 
+    REP(i,n-1) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+        g[v].pb(u);
+    }
+    
     return 0;
 }
