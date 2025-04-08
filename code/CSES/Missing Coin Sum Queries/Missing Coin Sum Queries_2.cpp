@@ -62,7 +62,8 @@ int n,q;
 Vi a;
 int st[lgv][maxb][maxn];
 void st_init() {
-    REP(i,)
+    REP(i,lgv) REP(j,n) st[i][0][j]=inf;
+    
 }
 signed main() {
     IOS();
