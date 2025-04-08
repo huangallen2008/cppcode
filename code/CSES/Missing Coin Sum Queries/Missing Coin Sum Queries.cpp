@@ -121,7 +121,11 @@ signed main() {
     Vi a(n);
     REP(i,n) a[i]=read();//cin>>a[i];
     vector<ppi> qu(q);
-    REP(i,q) cin>>qu[i].f,qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
+    REP(i,q) {
+    qu[i]
+        // cin>>qu[i].f;
+        qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
+    }
     Vi dn(n);
     REP(i,n) dn[i]=i/sn;
     sort(ALL(qu),[&](ppi a,ppi b) { 
