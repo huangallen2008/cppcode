@@ -106,6 +106,8 @@ signed main() {
             dp[u]={-d+d2,-1};
             nr[u]=d2;
         }
-    }
+    };
+    dfs(0,-1);
+    
     return 0;
 }
