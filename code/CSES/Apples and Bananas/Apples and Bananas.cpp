@@ -78,6 +78,7 @@ namespace FFT {
                     Cd x=a[k],y=a[k+m/2]*w;
                     a[k]=x+y;
                     a[k+m/2]=x-y;
+                    w*=wn;
                 }
             }
         }
