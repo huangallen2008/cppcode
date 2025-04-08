@@ -64,7 +64,8 @@ namespace FFT {
     #define Cd complex<ld>
     #define VC vector<Cd>
     int t,lt;
-    Vi a,b,r;
+    VC a,b;
+    Vi r;
     int n1,n2;
     void _fft(VC &a,int on) {
         REP(i,t) if(i<r[i]) swap(a[i],a[r[i]]);
