@@ -85,7 +85,6 @@ signed main() {
     Vi nr(n,inf);
     Vi an;
     Func dfs=[&](auto dfs,int u,int fa) ->void{
-        ope(u)
         if(SZ(g[u])-(fa!=-1)==0) {
             dp[u]={0,u};
         }else {
@@ -111,7 +110,7 @@ signed main() {
     dfs(0,-1);
     if(dp[0].f>=0) an.pb(dp[0].s);
     cout<<SZ(an)<<'\n';
-    sort(ALL(an));
+    // sort(ALL(an));
     for(int x:an) cout<<x+1<<' ';
     cout<<'\n';
     return 0;
