@@ -1,5 +1,5 @@
 namespace FFT {
-    #define Cd complex<double>
+    #define Cd complex<double> //long double
     #define VC vector<Cd>
     const ld PI=acosl(-1);
     int t,lt;
