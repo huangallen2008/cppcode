@@ -72,7 +72,7 @@ namespace FFT {
             Cd wn(cosl(2*PI/m),sinl(on*2*PI/m));
             for(int l=0;l<t;l+=m) {
                 Cd w=1;
-                for(int k=l;k<l+m;k++) {
+                for(int k=l;k<l+m/2;k++) {
                     Cd x=a[k],y=a[k+m/2]*w;
                     a[k]=x+y;
                     a[k+m/2]=x-y;
