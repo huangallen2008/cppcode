@@ -88,5 +88,6 @@ signed main() {
     });
     Vi t=a;
     sort(ALL(t));
+    REP(i,n) a[i]=
     return 0;
 }
