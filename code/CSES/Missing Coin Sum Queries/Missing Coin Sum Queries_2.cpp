@@ -86,13 +86,13 @@ int qur(int l,int r) {
     REP(i,lgv) {
         if(now>=st_qu(i,l,r)) now+=sum[i];
     }
-    
+    return now;
 }
 signed main() {
     IOS();
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
-
+    
     return 0;
 }
