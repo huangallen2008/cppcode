@@ -122,5 +122,7 @@ signed main() {
     a.pb(cnt);
     Vi ra=a;
     reverse(ALL(a));
+    Vi ret=FFT::fft(a,ra);
+    for()
     return 0;
 }
