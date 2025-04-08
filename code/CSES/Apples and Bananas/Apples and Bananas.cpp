@@ -98,11 +98,11 @@ namespace FFT {
         _fft(a),_fft(b);
         VC __(5);
         ope(t)
-        VC c(t);
-        REP(i,t) c[i]=a[i]*b[i];
-        _fft(c,-1);
+        // VC c(t);
+        REP(i,t) a[i]=a[i]*b[i];
+        _fft(a,-1);
         Vi _c(t);
-        REP(i,t) _c[i]=c[i].real();
+        REP(i,t) _c[i]=a[i].real();
         while(SZ(_c)&&_c.back()==0) _c.pop_back();
         return _c;
     }
