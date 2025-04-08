@@ -83,12 +83,15 @@ signed main() {
     }
     Vpii dp(n);
     Func dfs=[&](auto dfs,int u,int fa) ->void{
+        if(SZ(g[u])==1) {
+            dp[u]={0,u};
+            return;
+        }
         pii 
         for(int v:g[u]) {
             if(v==fa) continue;
 
         }
-        if(SZ(g[u])==1) dp[u]={0,u};
     }
     return 0;
 }
