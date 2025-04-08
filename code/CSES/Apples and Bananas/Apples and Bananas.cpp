@@ -74,10 +74,10 @@ namespace FFT {
         }
     }
     void fft(Vi _a,Vi _b) {
-        a=_a;
         n1=SZ(_a),n2=SZ(_b);
         a=VC(n1),b=VC(n2);
         REP(i,n1) a[i]=_a[i];
+        REP(i,n2) b[i]=_b[i];
         lt=0,t=1;
         while(t<n1+n2) t<<=1,lt++;
         while(SZ(a)<t) a.pb(0);
