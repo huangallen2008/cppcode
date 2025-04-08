@@ -107,21 +107,9 @@ namespace FFT {
 };
 signed main() {
     IOS();
-    int k,n,m;
-    cin>>k>>n>>m;
-    Vi a(k+1),b(k+1);
-    REP(i,n) {
-        int x;
-        cin>>x;
-        a[x]++;
-    }
-    REP(i,m) {
-        int x;
-        cin>>x;
-        b[x]++;
-    }
-    Vi c=FFT::fft(a,b);
-    for(int i=2;i<=k*2;i++) cout<<c[i]<<' ';
-    cout<<'\n';
+    string s;
+    cin>>s;
+    int n=SZ(s);
+    
     return 0;
 }
