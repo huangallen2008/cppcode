@@ -74,8 +74,7 @@ namespace FFT {
         }
     }
     void fft(Vi _a,Vi _b) {
-        a=_a,b=_b;
-        n1=SZ(a),n2=SZ(b);
+        n1=SZ(_a),n2=SZ(b);
         lt=0,t=1;
         while(t<n1+n2) t<<=1,lt++;
         while(SZ(a)<t) a.pb(0);
