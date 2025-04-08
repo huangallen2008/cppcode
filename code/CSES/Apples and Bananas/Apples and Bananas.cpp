@@ -75,7 +75,8 @@ namespace FFT {
         while(t<n1+n2) t<<=1,lt++;
         while(SZ(a)<t) a.pb(0);
         while(SZ(b)<t) b.pb(0);
-
+        r=Vi(t);
+        REP(i,t) r[i]=
     }
 };
 signed main() {
