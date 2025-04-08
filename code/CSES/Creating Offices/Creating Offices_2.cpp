@@ -104,6 +104,7 @@ signed main() {
         if(dp[u].f==d2) {
             an.pb(dp[u].s);
             dp[u]={-d+d2,-1};
+            nr[u]=d2;
         }
     }
     return 0;
