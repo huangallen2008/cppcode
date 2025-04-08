@@ -82,6 +82,9 @@ namespace FFT {
                 }
             }
         }
+        if(on==-1) {
+            REP(i,t) 
+        }
     }
     void fft(Vi _a,Vi _b) {
         n1=SZ(_a),n2=SZ(_b);
