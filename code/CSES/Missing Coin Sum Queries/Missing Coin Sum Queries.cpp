@@ -100,7 +100,8 @@ signed main() {
         int now=1;
         int las=0;
         while(now!=las ) {
-            
+            int tt=now;
+            now=bit.
         }
     }
     return 0;
