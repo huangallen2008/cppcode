@@ -74,13 +74,13 @@ void st_init() {
 }
 int st_qu(int b,int l,int r) {
     int lg=__lg(r-l+1);
-    return 
+    return min(st[b][lg][l],st[b][lg][r-(1<<lg)+1]);
 }
 signed main() {
     IOS();
     cin>>n>>q;
     a=Vi(n);
     REP(i,n) cin>>a[i];
-
+    
     return 0;
 }
