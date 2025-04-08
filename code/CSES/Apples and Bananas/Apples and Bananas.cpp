@@ -66,7 +66,7 @@ namespace FFT {
     Vi a,b,r;
     int n1,n2;
     void _fft(Vi &a,int on) {
-
+        
     }
     void fft(Vi _a,Vi _b) {
         a=_a,b=_b;
@@ -77,7 +77,7 @@ namespace FFT {
         while(SZ(b)<t) b.pb(0);
         r=Vi(t);
         REP(i,t) r[i]=r[i>>1]<<1|(i&1)<<lt-1;
-        
+
     }
 };
 signed main() {
