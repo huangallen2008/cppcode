@@ -94,6 +94,7 @@ signed main() {
     bit.init(n);
     int itl=0,itr=-1;
     auto upd=[&](int x,int c=1) {
+        op(x)ope(c)
         bit.ud(x,a[x]*c);
     };
     auto gan=[&]() {
@@ -105,6 +106,7 @@ signed main() {
             now+=bit.qu(lid+1,id);
             lid=id;
         }
+        ope(now)
         return now;
     };
     Vi an(q);
