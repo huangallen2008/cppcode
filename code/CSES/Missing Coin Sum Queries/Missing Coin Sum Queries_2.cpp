@@ -72,7 +72,9 @@ void st_init() {
         } 
     }
 }
-
+int st_qu(int b,int l,int r) {
+    i
+}
 signed main() {
     IOS();
     cin>>n>>q;
