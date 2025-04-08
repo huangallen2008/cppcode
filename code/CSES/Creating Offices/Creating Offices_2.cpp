@@ -110,6 +110,6 @@ signed main() {
     };
     dfs(0,-1);
     if(dp[0].f>=0) an.pb(0);
-    
+    cout<<SZ(an)<<'\n';
     return 0;
 }
