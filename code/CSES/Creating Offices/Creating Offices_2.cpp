@@ -92,7 +92,10 @@ signed main() {
         for(int v:g[u]) {
             if(v==fa) continue;
             dfs(v,u);
-            chmin
+            chmin(nr[u],nr[v]+1);
+        }
+        for(int v:g[u]) {
+            
         }
     }
     return 0;
