@@ -99,10 +99,10 @@ namespace FFT {
         VC __(5);
         // VC c(t);
         REP(i,t) a[i]=a[i]*b[i];
-        ope(t)
         _fft(a,-1);
         Vi _c(t);
         REP(i,t) _c[i]=a[i].real();
+        ope(t)
         while(SZ(_c)&&_c.back()==0) _c.pop_back();
         return _c;
     }
