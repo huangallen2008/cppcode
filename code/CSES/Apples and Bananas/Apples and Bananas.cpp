@@ -61,7 +61,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 namespace FFT {
-    complex<ld>
+    #define Cd complex<ld>
     
 };
 signed main() {
