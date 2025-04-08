@@ -101,7 +101,7 @@ signed main() {
         int lid=0;
         while(now!=las ) {
             int tt=now;
-            now=bit.
+            now+=bit.qu()
         }
     }
     return 0;
