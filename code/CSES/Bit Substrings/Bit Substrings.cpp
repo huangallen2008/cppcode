@@ -110,6 +110,8 @@ signed main() {
     string s;
     cin>>s;
     int n=SZ(s);
+    Vi a;
+    int cnt=1;
     
     return 0;
 }
