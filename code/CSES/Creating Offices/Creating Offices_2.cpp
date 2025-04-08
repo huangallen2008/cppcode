@@ -87,9 +87,10 @@ signed main() {
             dp[u]={0,u};
             return;
         }
-        pii mn={inf,-1};
+        pii mx={-inf,-1};
         for(int v:g[u]) {
             if(v==fa) continue;
+            dfs(v,u);
             
         }
     }
