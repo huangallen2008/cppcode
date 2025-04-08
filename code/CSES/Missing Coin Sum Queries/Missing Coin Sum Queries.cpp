@@ -63,7 +63,7 @@ signed main() {
     int n,q;
     cin>>n>>q;
     Vi a(n);
-    REP(i,b) cin>>a[i];
+    REP(i,n) cin>>a[i];
     Vpii qu(q);
     REP(i,n) cin>>qu[i],qu[i].f--,qu[i].s--;
     sort(ALL(qu),[&](pii a,pii b) { 
