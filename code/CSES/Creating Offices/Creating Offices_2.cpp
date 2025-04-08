@@ -95,7 +95,8 @@ signed main() {
             chmin(nr[u],nr[v]+1);
         }
         for(int v:g[u]) {
-            
+            if(v==fa) continue;
+            if()
         }
     }
     return 0;
