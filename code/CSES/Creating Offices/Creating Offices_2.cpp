@@ -85,7 +85,7 @@ signed main() {
     Vi nr(n,inf);
     Vi an;
     Func dfs=[&](auto dfs,int u,int fa) ->void{
-        if(SZ(g[u])==1) {
+        if(SZ(g[u])==1&&fa!=-1) {
             dp[u]={0,u};
             ope(u)
             return;
