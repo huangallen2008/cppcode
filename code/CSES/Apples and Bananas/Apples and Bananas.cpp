@@ -111,5 +111,7 @@ signed main() {
     IOS();
     Vi a={1,2,1};
     Vi b={1,2,1};
+    Vi c=FFT::fft(a,b);
+    oparr(c)
     return 0;
 }
