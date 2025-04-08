@@ -97,9 +97,9 @@ namespace FFT {
         REP(i,t) r[i]=r[i>>1]<<1|(i&1)<<lt-1;
         _fft(a),_fft(b);
         VC __(5);
-        ope(t)
         // VC c(t);
         REP(i,t) a[i]=a[i]*b[i];
+        ope(t)
         _fft(a,-1);
         Vi _c(t);
         REP(i,t) _c[i]=a[i].real();
