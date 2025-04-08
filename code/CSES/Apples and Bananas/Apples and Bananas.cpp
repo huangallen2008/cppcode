@@ -100,7 +100,7 @@ namespace FFT {
         _fft(a,-1);
         Vi _c(t);
         REP(i,t) _c[i]=a[i].real()+0.5;
-        
+        while(SZ(c)>)
         // while(SZ(_c)&&_c.back()==0) _c.pop_back();
         return _c;
     }
