@@ -118,6 +118,6 @@ signed main() {
             cnt=1;
         }else cnt++;
     }
-
+    a.pb(cnt);
     return 0;
 }
