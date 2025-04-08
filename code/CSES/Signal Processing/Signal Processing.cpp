@@ -114,6 +114,7 @@ signed main() {
     REP(i,m) cin>>b[i];
     reverse(ALL(b));
     Vi c=FFT::fft(a,b);
-    oparr(c)
+    REP(i,n+m-1) cout<<c[i]<<' ';
+    cout<<'\n';
     return 0;
 }
