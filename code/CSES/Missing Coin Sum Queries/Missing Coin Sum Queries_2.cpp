@@ -60,51 +60,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n=read(),q=read();
-    // cin>>n>>q;
-    Vi a(n);
-    REP(i,n) a[i]=read();//cin>>a[i];
-    vector<ppi> qu(q);
-    REP(i,q) {
-        qu[i].f.f=read();
-        qu[i].f.s=read();
-        // cin>>qu[i].f;
-        qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
-    }
-    Vi dn(n);
-    REP(i,n) dn[i]=i/sn;
-    sort(ALL(qu),[&](ppi a,ppi b) { 
-        return dn[a.f.f]==dn[b.f.f]?(dn[a.f.f]&1?a.f.s>b.f.s:a.f.s<b.f.s):a.f.f<b.f.f;
-    });
-    Vi t=a;
-    t.pb(-inf);
-    sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    BIT bit;
-    bit.init(n);
-    int itl=0,itr=-1;
-    auto upd=[&](int x,int c=1) {
-        bit.ud(x,t[x]*c);
-    };
-    auto gan=[&]() {
-        int now=1,id=0;
-        int lid=0;
-        while(id<n) {
-            id=upper_bound(ALL(t),now)-t.begin()-1;
-            if(id==lid) break;
-            now+=bit.qu(lid+1,id);
-            lid=id;
-        }
-        return now;
-    };
-    Vi an(q);
-    REP(i,q) {
-        while(itl>qu[i].f.f) upd(a[--itl],1);
-        while(itr<qu[i].f.s) upd(a[++itr],1);
-        while(itl<qu[i].f.f) upd(a[itl++],-1);
-        while(itr>qu[i].f.s) upd(a[itr--],-1);
-        an[qu[i].s]=gan();
-    }
-    REP(i,q) out(an[i]),PC('\n');
+    
     return 0;
 }
