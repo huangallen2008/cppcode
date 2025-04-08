@@ -74,6 +74,7 @@ namespace FFT {
             Cd wn(cosl(2*PI/m),sinl(on*2*PI/m));
             for(int l=0;l<t;l+=m) {
                 Cd w=1;
+                
             }
         }
     }
