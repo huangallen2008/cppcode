@@ -113,7 +113,9 @@ signed main() {
     Vi a;
     int cnt=1;
     for(char c:s) {
-        
+        if(c=='1') {
+            
+        }
     }
     return 0;
 }
