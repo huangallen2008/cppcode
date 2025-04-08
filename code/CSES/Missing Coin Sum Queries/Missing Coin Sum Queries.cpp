@@ -86,6 +86,7 @@ signed main() {
     sort(ALL(qu),[&](pii a,pii b) { 
         return a.f/sn==b.f/sn?((a.f/sn)&1?a.s>b.s:a.s<b.s):a.f<b.f;
     });
-    
+    Vi t=a;
+    sort(ALL(t));
     return 0;
 }
