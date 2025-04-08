@@ -119,7 +119,7 @@ signed main() {
     int n=read(),q=read();
     // cin>>n>>q;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) a[i]=read();//cin>>a[i];
     vector<ppi> qu(q);
     REP(i,q) cin>>qu[i].f,qu[i].f.f--,qu[i].f.s--,qu[i].s=i;
     Vi dn(n);
