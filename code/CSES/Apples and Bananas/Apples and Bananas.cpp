@@ -62,7 +62,7 @@ int rd(int l,int r) {
 }
 namespace FFT {
     
-}
+};
 signed main() {
     IOS();
 
