@@ -87,10 +87,10 @@ signed main() {
             dp[u]={0,u};
             return;
         }
-        pii 
+        pii mn={inf,-1};
         for(int v:g[u]) {
             if(v==fa) continue;
-
+            
         }
     }
     return 0;
