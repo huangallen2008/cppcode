@@ -67,9 +67,15 @@ signed main() {
     s.append(3);
     t.append(4);
     t.append(4);
-
+    auto it=s.begin()+2;
     for(int x:s) cout<<x<<' ';entr
-    s.copy(1,,t);
+    ope(*it)
+    ope(it-s.begin())
+    s.insert(0,1);
+    // s.copy(1,,t);
     for(int x:s) cout<<x<<' ';
+    ope(*it)
+    ope(*prev(it))
+    ope(it-s.begin())
     return 0;
 }
