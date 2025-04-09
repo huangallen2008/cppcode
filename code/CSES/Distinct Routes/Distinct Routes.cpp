@@ -158,6 +158,7 @@ signed main() {
             if(vis[id]) continue;
             vis[id]=1;
             dfs(v);
+            break;
         }
     };
     cout<<ans<<'\n';
