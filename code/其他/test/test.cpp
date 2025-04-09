@@ -1,3 +1,5 @@
+#include<bits/extc++.h>
+using namespace __gnu_cxx;
 #include<bits/stdc++.h>
 using namespace std;
 // #pragma GCC optimize("O3,unroll-loops")
@@ -57,8 +59,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-#include<bits/extc++.h>
-using namespace __gnu_cxx;
 signed main() {
     IOS();
     // rope<int> s;
