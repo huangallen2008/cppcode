@@ -133,7 +133,8 @@ signed main() {
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
-        dinic.addedge(u,v)
+        dinic.addedge(u,v,1);
+        dinic.addedge(u,v,1);
     }
     return 0;
 }
