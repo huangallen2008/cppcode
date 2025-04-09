@@ -64,7 +64,5 @@ struct Dinic {
         }
         return an;
     }
+    bool inS(int u) { return dis[u]!=inf; }
 };
-
-
-
