@@ -136,6 +136,6 @@ signed main() {
         dinic.addedge(u,v,1);
         dinic.addedge(v,u,1);
     }
-    int an=dinic.
+    int an=dinic.mxf(0,n-1);
     return 0;
 }
