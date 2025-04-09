@@ -87,7 +87,7 @@ signed main() {
     dp1[0][0]=dp2[0][0]=1;
     REP1(i,n2) {
         REP(j,k+1) {
-            
+            if(j) 
         }
     }
     return 0;
