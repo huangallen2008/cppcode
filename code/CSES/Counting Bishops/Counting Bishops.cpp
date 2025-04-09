@@ -62,6 +62,6 @@ signed main() {
     int n,k;
     cin>>n>>k;
     int n2=n>>1;
-    
+    Vi dp
     return 0;
 }
