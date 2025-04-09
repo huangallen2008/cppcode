@@ -69,7 +69,7 @@ signed main() {
     int it=0;
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
-        
+            int c0=a[0][i]-1,c2=a
         }
     }
     return 0;
