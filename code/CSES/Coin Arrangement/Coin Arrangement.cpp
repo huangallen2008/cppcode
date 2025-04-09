@@ -61,19 +61,8 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    vecy
-    REP(i,n) {
-        int x;
-        cin>>x;
-        if(x==0) a.pb({i,0});
-        else REP(_,x-1) b.pb({i,0});
-    }
-    REP(i,n) {
-        int x;
-        cin>>x;
-        if(x==0) a.pb({i,1});
-        else REP(_,x-1) b.pb({i,1});
-    }
+    vector<Vi> a(2,Vi(n);)
+    
     sort(ALL(a));
     sort(ALL(b));
     REP(i,SZ(b)-1) {
