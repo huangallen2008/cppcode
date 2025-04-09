@@ -105,9 +105,7 @@ signed main() {
     if(n&1) {
         REP1(i,k) addmod(an1[i],dp1[n1][i-1]*(n-i+1));
     }else {
-        an1=dp1[n1];
-        an2=dp2[n2];
-        REP1(i,k) an2[i]=(dp2[n2][i]+dp2[n2][i-1]*(n-i+1));
+        REP1(i,k) addmod(an2[i]=(dp2[n2][i]+dp2[n2][i-1]*(n-i+1));
     }
     oparr(an1)oparr(an2)
     REP(i,k+1) addmod(an,an1[i]*an2[k-i]);
