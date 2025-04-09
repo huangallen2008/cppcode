@@ -68,6 +68,11 @@ signed main() {
         if(x==0) a.pb({i,0});
         else REP(_,x-1) b.pb({i,0});
     }
-    REP(i,n) cin>>b[i];
+    REP(i,n) {
+        int x;
+        cin>>x;
+        if(x==0) a.pb({i,0});
+        else REP(_,x-1) b.pb({i,0});
+    }
     return 0;
 }
