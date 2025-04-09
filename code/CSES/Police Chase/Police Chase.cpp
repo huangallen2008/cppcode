@@ -138,6 +138,6 @@ signed main() {
     }
     int an=dinic.mxf(0,n-1);
     Vi ans;
-    REP(i,m) if(dinic.)
+    REP(i,m) if(dinic.es[i<<2])
     return 0;
 }
