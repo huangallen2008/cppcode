@@ -159,6 +159,11 @@ signed main() {
             dfs(v);
         }
     };
-    
+    cout<<ans<<'\n';
+    REP(i,ans) {
+        path.clear();
+        dfs(0);
+        
+    }
     return 0;
 }
