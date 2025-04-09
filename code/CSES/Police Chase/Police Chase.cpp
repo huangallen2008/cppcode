@@ -123,7 +123,7 @@ struct Dinic {
         }
         return an;
     }
-    bool inS
+    bool inS(int u) { return  }
 };
 signed main() {
     IOS();
