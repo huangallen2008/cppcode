@@ -72,6 +72,7 @@ signed main() {
             int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
             int c0=0,c1=0;
             REP(x,n0+n1) {  
+                an+=
                 if(h[it].s==0) c0++;
                 else c1++;
                 it++;
@@ -88,7 +89,7 @@ signed main() {
                 }
             }
             an+=abs(n0-c0);
-            
+
         }
     }
     int an=0;
