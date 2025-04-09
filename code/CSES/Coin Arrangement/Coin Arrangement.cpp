@@ -68,7 +68,9 @@ signed main() {
     REP(i,n) REP(j,2) if(a[j][i]==0) h.pb({i,j});
     int it=0;
     REP(i,n) {
+        if(a[0][i]>1||a[1][i]>1) {
         
+        }
     }
     return 0;
 }
