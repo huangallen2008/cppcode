@@ -164,7 +164,8 @@ signed main() {
         path.clear();
         dfs(0);
         cout<<SZ(path)<<'\n';
-        for(int x)
+        for(int x:path) cout<<x+1<<' ';
+        cout<<'\n';
     }
     return 0;
 }
