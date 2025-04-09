@@ -63,6 +63,6 @@ signed main() {
     IOS();
     rope<int> s={1,2,3},t={4,4};
     s.replace(1,t);
-    
+    for(int x:s) cout<<x<<' ';
     return 0;
 }
