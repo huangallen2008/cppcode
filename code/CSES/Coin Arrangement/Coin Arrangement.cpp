@@ -62,9 +62,11 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n),b(n);
+    Vpii 
     REP(i,n) {
         cin>>a[i];
-        }
+
+    }
     REP(i,n) cin>>b[i];
     return 0;
 }
