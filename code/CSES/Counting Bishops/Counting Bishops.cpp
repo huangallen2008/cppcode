@@ -82,10 +82,10 @@ signed main() {
     com_init();
     int n,k;
     cin>>n>>k;
-    int n1=n-1>>1;
-    vector<Vi> dp1(n2+1,Vi(k+1)),dp2(n2+1,Vi(k+1));
+    int n1=n>>1,n2=n-1>>1;
+    vector<Vi> dp1(n1+1,Vi(k+1)),dp2(n2+1,Vi(k+1));
     dp1[0][0]=dp2[0][0]=1;
-    REP1(i,n2) {
+    REP1(i,n1) {
         REP(j,min(i*2,k+1)) {
             addmod(dp1[i][j],dp1[i-1][j]);
             if(j) addmod(dp1[i][j],dp1[i-1][j-1]*(i*2-1-j+1));
