@@ -82,7 +82,10 @@ signed main() {
     com_init();
     int n,k;
     cin>>n>>k;
-    if(k>n*2-1)
+    if(k>n*2-1) {
+        cout<<"0\n";
+        return 0;
+    }
     int n1=n>>1,n2=n-1>>1;
     vector<Vi> dp1(n1+1,Vi(k+1)),dp2(n2+1,Vi(k+1));
     dp1[0][0]=dp2[0][0]=1;
