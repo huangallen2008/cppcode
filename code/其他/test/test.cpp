@@ -61,6 +61,6 @@ int rd(int l,int r) {
 using namespace __gnu_cxx;
 signed main() {
     IOS();
-    crope s;
+    rope
     return 0;
 }
