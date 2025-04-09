@@ -68,7 +68,7 @@ signed main() {
     t.append(4);
     t.append(4);
 
-    for(int x:s) cout<<x<<' ';
+    for(int x:s) cout<<x<<' ';entr
     s.replace(1,t);
     for(int x:s) cout<<x<<' ';
     return 0;
