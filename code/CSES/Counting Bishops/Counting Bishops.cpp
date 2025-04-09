@@ -98,6 +98,8 @@ signed main() {
         }
     }
     int an=0;
-    if()
+    if(n&1) {
+        
+    }
     return 0;
 }
