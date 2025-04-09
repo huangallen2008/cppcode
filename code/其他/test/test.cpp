@@ -61,6 +61,6 @@ int rd(int l,int r) {
 using namespace __gnu_cxx;
 signed main() {
     IOS();
-    rope
+    // rope<int> s;
     return 0;
 }
