@@ -149,7 +149,6 @@ signed main() {
     int ans=dinic.mxf(0,n-1);
     Graphw g(n);
     REP(i,m) if(dinic.es[i<<1].r==0) g[dinic.es[i<<1].u].pb({dinic.es[i<<1].v,i});
-    oparr(g)
     Vi path;
     Vi vis(m);
     Func dfs=[&](auto dfs,int u) ->void {
