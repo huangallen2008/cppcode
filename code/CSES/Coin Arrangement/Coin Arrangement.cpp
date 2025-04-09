@@ -61,8 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a(n);
-    Vi b(n);
+    Vi a(n),b(n);
     REP(i,n) 
     return 0;
 }
