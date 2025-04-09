@@ -61,12 +61,9 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    vector<Vi> a(2,Vi(n);)
+    vector<Vi> a(2,Vi(n));
+    REP(i,n) cin>>a[0][i];
+    REP(i,n) cin>>a[1][i];
     
-    sort(ALL(a));
-    sort(ALL(b));
-    REP(i,SZ(b)-1) {
-        if(b[i].f==b[i])
-    }
     return 0;
 }
