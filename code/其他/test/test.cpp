@@ -61,7 +61,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    rope<int> s({1ll,2ll,3ll}),t({4ll,4ll});
+    rope<int> s,t;
+    s.a
     s.replace(1,t);
     for(int x:s) cout<<x<<' ';
     return 0;
