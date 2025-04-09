@@ -141,7 +141,7 @@ signed main() {
     }
     int an=dinic.mxf(0,n-1);
     Vpii ans;
-    for(auto [u,v]:e) if(dinic.inS(u))
+    for(auto [u,v]:e) if(dinic.inS(u)^dinic.inS(v))
     cout<<SZ(ans)<<'\n';
     for(auto [x,y]:ans) cout<<x+1<<' '<<y+1<<'\n';
     return 0;
