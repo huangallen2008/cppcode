@@ -163,6 +163,7 @@ signed main() {
     REP(i,ans) {
         path.clear();
         dfs(0);
+        cout<<SZ(path)<<'\n';
         
     }
     return 0;
