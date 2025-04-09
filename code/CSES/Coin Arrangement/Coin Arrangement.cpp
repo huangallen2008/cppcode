@@ -64,6 +64,8 @@ signed main() {
     vector<Vi> a(2,Vi(n));
     REP(i,n) cin>>a[0][i];
     REP(i,n) cin>>a[1][i];
-    
+    REP(i,n) {
+        REP(j,2) 
+    }
     return 0;
 }
