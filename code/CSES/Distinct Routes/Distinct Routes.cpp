@@ -130,15 +130,13 @@ signed main() {
     cin>>n>>m;
     Dinic dinic;
     dinic.init(n);
-    Graph g(n);
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
-        g[u].pb(v);
         dinic.addedge(u,v,1);
     }
     int ans=dinic.mxf(0,n-1);
-    Graph ng(n);
-    REP(i,m) if(dinic.es[i<<1].r==0) ng[dinic.es[i<<1].u].pb()
+    Graph g(n);
+    REP(i,m) if(dinic.es[i<<1].r==0) ng[dinic.es[i<<1].u].pb(dinic.es[i<<1].v);
     return 0;
 }
