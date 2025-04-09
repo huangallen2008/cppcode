@@ -87,6 +87,7 @@ signed main() {
                     c1++;
                 }
             }
+            an+=
         }
     }
     int an=0;
