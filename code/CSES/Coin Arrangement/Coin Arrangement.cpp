@@ -69,8 +69,8 @@ signed main() {
     int it=0;
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
-            int n0=max(0ll,a[0][i]-1),c1=max(0ll,a[1][i]-1);
-
+            int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
+            int c0,c1;
             REP(x,c0+c1) {
 
             }
