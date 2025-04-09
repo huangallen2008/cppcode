@@ -103,7 +103,7 @@ signed main() {
     int an=0;
     Vi an1,an2;
     if(n&1) {
-        an1=Vi(k+1);
+        an1=dp1[n1];
         REP1(i,k) an1[i]=(dp1[n1][i]+dp1[n1][i-1]*(n-i+1));
         an2=dp2[n2];
     }else {
