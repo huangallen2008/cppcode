@@ -91,5 +91,11 @@ signed main() {
             if(j>1) addmod(dp1[i][j],dp1[i-1][j-2]*(i*2-1-j+2)*(i*2-1-j+1));
         }
     }
+    REP1(i,n2) {
+        REP(j,min(i*2-1,k+1)) {
+            if(j) addmod(dp1[i][j],dp1[i-1][j-1]*(i*2-1-j+1));
+            if(j>1) addmod(dp1[i][j],dp1[i-1][j-2]*(i*2-1-j+2)*(i*2-1-j+1));
+        }
+    }
     return 0;
 }
