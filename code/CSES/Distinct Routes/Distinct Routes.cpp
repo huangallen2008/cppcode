@@ -130,11 +130,13 @@ signed main() {
     cin>>n>>m;
     Dinic dinic;
     dinic.init(n);
-    Graph g;
+    Graph g(n);
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
         g[u].pb(v);
+        dinic.addedge(u,v,1);
     }
+    
     return 0;
 }
