@@ -64,6 +64,8 @@ signed main() {
     int n2=n>>1;
     Vi dp1(n2+1),dp2(n2+1);
     dp1[0]=dp2[0]=1;
-    
+    REP1(i,n2) {
+        addmod(dp1)
+    }
     return 0;
 }
