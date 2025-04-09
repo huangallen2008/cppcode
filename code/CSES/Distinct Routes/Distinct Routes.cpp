@@ -152,7 +152,9 @@ signed main() {
     Vi path;
     Func dfs=[&](int u) ->void {
         path.pb(u);
-        
+        for(int v:g[u]) {
+            
+        }
     }
     return 0;
 }
