@@ -139,6 +139,6 @@ signed main() {
     }
     int ans=dinic.mxf(0,n-1);
     Graph ng(n);
-    REP(i,m) if(dinic.es[i<<1].r==0) ng
+    REP(i,m) if(dinic.es[i<<1].r==0) ng[dinic]
     return 0;
 }
