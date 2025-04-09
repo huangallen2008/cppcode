@@ -62,6 +62,12 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n),b(n);
-    REP(i,n) 
+    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>b[i];
+    int ps=0;
+    REP(i,n-1) {
+        ps+=a[i]+b[i];
+        an+=
+    }
     return 0;
 }
