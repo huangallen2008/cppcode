@@ -86,7 +86,7 @@ signed main() {
     vector<Vi> dp1(n2+1,Vi(k+1)),dp2(n2+1,Vi(k+1));
     dp1[0][0]=dp2[0][0]=1;
     REP1(i,n2) {
-        REP(j,k+1) {
+        REP(j,min(i*2-1)) {
             if(j) addmod(dp1[i][j],dp1[i-1][j-1]*(i*2-1-j+1));
             if(j>1) 
         }
