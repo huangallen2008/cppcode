@@ -87,12 +87,14 @@ signed main() {
     dp1[0][0]=dp2[0][0]=1;
     REP1(i,n2) {
         REP(j,min(i*2,k+1)) {
+            addmod(dp1[i][j],dp1[i-1][j]);
             if(j) addmod(dp1[i][j],dp1[i-1][j-1]*(i*2-1-j+1));
             if(j>1) addmod(dp1[i][j],dp1[i-1][j-2]*(i*2-1-j+2)*(i*2-1-j+1));
         }
     }
     REP1(i,n2) {
         REP(j,min(i*2+1,k+1)) {
+            addmod(dp2[i][j],dp2[i-1][j]);
             if(j) addmod(dp2[i][j],dp2[i-1][j-1]*(i*2-j+1));
             if(j>1) addmod(dp2[i][j],dp2[i-1][j-2]*(i*2-j+2)*(i*2-j+1));
         }
