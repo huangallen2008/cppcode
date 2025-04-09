@@ -101,7 +101,7 @@ signed main() {
     Vi an1,an2;
     if(n&1) {
         an1=Vi(k+1);
-        
+        if(j) addmod(dp2[i],dp1[i-1][j-1]*(i*2-j+1));
     }
     return 0;
 }
