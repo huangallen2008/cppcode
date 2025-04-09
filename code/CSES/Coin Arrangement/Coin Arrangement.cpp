@@ -76,6 +76,8 @@ signed main() {
     }
     sort(ALL(a));
     sort(ALL(b));
-    REP
+    REP(i,SZ(b)-1) {
+        if(b[i].f==b[i])
+    }
     return 0;
 }
