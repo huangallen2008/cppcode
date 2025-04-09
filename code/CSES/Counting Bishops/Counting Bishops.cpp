@@ -79,6 +79,7 @@ int C(int n,int k) {
 }
 signed main() {
     IOS();
+    com_init();
     int n,k;
     cin>>n>>k;
     int n2=n>>1;
@@ -86,7 +87,7 @@ signed main() {
     dp1[0][0]=dp2[0][0]=1;
     REP1(i,n2) {
         REP(j,k+1) {
-
+            
         }
     }
     return 0;
