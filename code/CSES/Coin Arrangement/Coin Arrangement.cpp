@@ -72,7 +72,7 @@ signed main() {
             int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
             int c0=0,c1=0;
             REP(x,n0+n1) {  
-                if(h[it])
+                if(h[it].s)
             }
         }
     }
