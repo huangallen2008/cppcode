@@ -124,6 +124,17 @@ struct Dinic {
         return an;
     }
 };
+template<class T>
+struct Func {
+    T func;
+    Func(const T &func):func(func) {}
+    template<class... Args>
+    constexpr decltype(auto) operator()(Args &&... args) {
+        return func(*this, forward<Args>(args)...);
+    }
+};
+template<class T>
+Func(const T &) -> Func<T>;
 signed main() {
     IOS();
     int n,m;
@@ -138,6 +149,6 @@ signed main() {
     int ans=dinic.mxf(0,n-1);
     Graph g(n);
     REP(i,m) if(dinic.es[i<<1].r==0) g[dinic.es[i<<1].u].pb(dinic.es[i<<1].v);
-    
+
     return 0;
 }
