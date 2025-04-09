@@ -67,6 +67,7 @@ signed main() {
     Vpii h;
     REP(i,n) REP(j,2) if(a[j][i]==0) h.pb({i,j});
     int it=0,an=0;
+    oparr(h)
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
             int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
