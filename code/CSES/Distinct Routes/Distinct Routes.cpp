@@ -154,7 +154,9 @@ signed main() {
     Func dfs=[&](int u) ->void {
         path.pb(u);
         for(auto [v,id]:g[u]) {
-            if()
+            if(vis[id]) continue;
+            vis[id]=1;
+            dfs(v);
         }
     }
     return 0;
