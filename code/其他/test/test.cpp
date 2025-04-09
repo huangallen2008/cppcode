@@ -59,8 +59,8 @@ int rd(int l,int r) {
 }
 #include<bits/extc++.h>
 using namespace __gnu_cxx;
-crope s;
 signed main() {
     IOS();
+    crope s;
     return 0;
 }
