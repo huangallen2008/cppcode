@@ -99,7 +99,7 @@ signed main() {
             if(j>1) addmod(dp2[i][j],dp2[i-1][j-2]*(i*2-j+2)*(i*2-j+1));
         }
     }
-    oparr(dp1)oparr(dp2)
+    // oparr(dp1)oparr(dp2)
     int an=0;
     Vi an1=dp1[n1],an2=dp2[n2];;
     if(n&1) {
@@ -107,7 +107,7 @@ signed main() {
     }else {
         REP1(i,k) addmod(an2[i],dp2[n2][i-1]*(n-i+1));
     }
-    oparr(an1)oparr(an2)
+    // oparr(an1)oparr(an2)
     REP(i,k+1) addmod(an,an1[i]*an2[k-i]);
     cout<<an<<'\n';
     return 0;
