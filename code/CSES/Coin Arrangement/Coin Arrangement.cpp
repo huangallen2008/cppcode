@@ -66,13 +66,13 @@ signed main() {
     REP(i,n) cin>>a[1][i];
     Vpii h;
     REP(i,n) REP(j,2) if(a[j][i]==0) h.pb({i,j});
-    int it=0;
+    int it=0,an=0;
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
             int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
             int c0=0,c1=0;
             REP(x,n0+n1) {  
-                an+=
+                an+=abs(h[it].f-i);
                 if(h[it].s==0) c0++;
                 else c1++;
                 it++;
