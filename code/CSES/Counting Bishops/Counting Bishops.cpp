@@ -100,7 +100,8 @@ signed main() {
     int an=0;
     Vi an1,an2;
     if(n&1) {
-        an1
+        an1=Vi(k+1);
+        
     }
     return 0;
 }
