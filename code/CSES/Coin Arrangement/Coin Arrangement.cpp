@@ -79,7 +79,7 @@ signed main() {
             if(it<n&&h[it].f==h[it-1].f) {
                 if(h[it].s==0) c0--;
                 else c1--;
-                if(c0<n0)
+                if(c0<n0) 
             }
         }
     }
