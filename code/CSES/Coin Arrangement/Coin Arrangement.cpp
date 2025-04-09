@@ -70,7 +70,7 @@ signed main() {
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
             int c0=max(0ll,a[0][i]-1),c1=max(0ll,a[1][i]-1);
-            for(int )
+            REP(x,c0+c1)
         }
     }
     return 0;
