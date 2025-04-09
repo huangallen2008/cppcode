@@ -62,16 +62,9 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n),b(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) {
+        cin>>a[i];
+        }
     REP(i,n) cin>>b[i];
-    int ps=0,an=0;
-    REP(i,n-1) {
-        ps+=a[i]+b[i];
-        an+=abs(ps-(i+1)*2);
-    }
-    int suma=0;
-    REP(i,n) suma+=a[i];
-    an+=abs(suma-n);
-    cout<<an<<'\n';
     return 0;
 }
