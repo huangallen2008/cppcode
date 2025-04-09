@@ -108,7 +108,7 @@ signed main() {
         an2=dp2[n2];
     }else {
         an1=dp1[n1];
-        an2=Vi(k+1);
+        an2=dp2[n2];
         REP1(i,k) an2[i]=(dp2[n2][i]+dp2[n2][i-1]*(n-i+1));
     }
     oparr(an1)oparr(an2)
