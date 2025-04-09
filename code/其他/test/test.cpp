@@ -65,8 +65,8 @@ signed main() {
     s.append(1);
     s.append(2);
     s.append(3);
-    t.append(3);
-    t.append(3);
+    t.append(4);
+    t.append(4);
 
     s.replace(1,t);
     for(int x:s) cout<<x<<' ';
