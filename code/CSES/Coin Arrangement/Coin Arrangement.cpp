@@ -63,7 +63,9 @@ signed main() {
     cin>>n;
     Vpii a,b;
     REP(i,n) {
-        
+        int x;
+        cin>>x;
+        if(x==0) a.pb()
     }
     REP(i,n) cin>>b[i];
     return 0;
