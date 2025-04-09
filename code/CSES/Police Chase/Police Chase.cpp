@@ -128,6 +128,11 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    
+    Dinic dinic;
+    dinic.init(n);
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+    }
     return 0;
 }
