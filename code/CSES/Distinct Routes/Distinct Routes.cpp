@@ -130,6 +130,10 @@ signed main() {
     cin>>n>>m;
     Dinic dinic;
     dinic.init(n);
-    REP
+    REP(i,m) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+        g[u].pb(v);
+    }
     return 0;
 }
