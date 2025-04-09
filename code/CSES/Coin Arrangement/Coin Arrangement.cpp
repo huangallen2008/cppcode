@@ -87,7 +87,8 @@ signed main() {
                     c1++;
                 }
             }
-            an+=
+            an+=abs(n0-c0);
+            
         }
     }
     int an=0;
