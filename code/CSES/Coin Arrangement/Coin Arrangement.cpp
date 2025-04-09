@@ -92,7 +92,6 @@ signed main() {
 
         }
     }
-    int an=0;
-    
+    cout<<an<<'\n';
     return 0;
 }
