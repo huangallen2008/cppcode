@@ -138,6 +138,7 @@ signed main() {
         dinic.addedge(u,v,1);
     }
     int ans=dinic.mxf(0,n-1);
-    
+    Graph ng(n);
+    REP(i,m) ng
     return 0;
 }
