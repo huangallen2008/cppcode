@@ -151,13 +151,14 @@ signed main() {
     REP(i,m) if(dinic.es[i<<1].r==0) g[dinic.es[i<<1].u].pb({dinic.es[i<<1].v,i});
     Vi path;
     Vi vis(m);
-    Func dfs=[&](int u) ->void {
+    Func dfs=[&](auto dfs,int u) ->void {
         path.pb(u);
         for(auto [v,id]:g[u]) {
             if(vis[id]) continue;
             vis[id]=1;
             dfs(v);
         }
-    }
+    };
+    
     return 0;
 }
