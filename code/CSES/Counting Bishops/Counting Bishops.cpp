@@ -94,7 +94,7 @@ signed main() {
     REP1(i,n2) {
         REP(j,min(i*2+1,k+1)) {
             if(j) addmod(dp2[i][j],dp1[i-1][j-1]*(i*2-j+1));
-            if(j>1) addmod(dp2[i][j],dp1[i-1][j-2]*(i*2-1-j+2)*(i*2-1-j+1));
+            if(j>1) addmod(dp2[i][j],dp1[i-1][j-2]*(i*2-j+2)*(i*2-j+1));
         }
     }
     return 0;
