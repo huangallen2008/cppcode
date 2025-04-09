@@ -66,5 +66,7 @@ signed main() {
     REP(i,n) cin>>a[1][i];
     Vpii h;
     REP(i,n) REP(j,2) if(a[j][i]==0) h.pb({i,j});
+    int it=0;
+    
     return 0;
 }
