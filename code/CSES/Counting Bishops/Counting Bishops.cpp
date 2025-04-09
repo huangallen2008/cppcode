@@ -110,6 +110,6 @@ signed main() {
         an2=Vi(k+1);
         REP1(i,k) an2[i]=(dp2[n2][i]+dp2[n2][i-1]*(n-i+1));
     }
-    
+    REP(i,k+1) addmod(an,dp1[i]*dp2[k-i]);
     return 0;
 }
