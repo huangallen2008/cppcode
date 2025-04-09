@@ -62,7 +62,7 @@ signed main() {
     int n,k;
     cin>>n>>k;
     int n2=n>>1;
-    vector<Vi> dp1(n2+1),dp2(n2+1);
+    vector<Vi> dp1(n2+1,Vi(k+1)),dp2(n2+1,Vi(k+1));
     dp1[0]=dp2[0]=1;
     REP1(i,n2) {
         addmod(dp1)
