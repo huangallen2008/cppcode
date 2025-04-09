@@ -62,7 +62,12 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     rope<int> s,t;
-    s.a
+    s.append(1);
+    s.append(2);
+    s.append(3);
+    t.append(3);
+    t.append(3);
+
     s.replace(1,t);
     for(int x:s) cout<<x<<' ';
     return 0;
