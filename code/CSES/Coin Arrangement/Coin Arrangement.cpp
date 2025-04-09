@@ -76,7 +76,9 @@ signed main() {
                 else c1++;
                 it++;
             }
-            if(it<n&&)
+            if(it<n&&h[it].f==h[it-1].f) {
+                
+            }
         }
     }
     return 0;
