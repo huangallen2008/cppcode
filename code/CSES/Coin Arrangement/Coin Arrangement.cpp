@@ -71,6 +71,7 @@ signed main() {
     }
     int suma=0;
     REP(i,n) suma+=a[i];
-    an+=suma
+    an+=abs(suma-n);
+    cout<<an<<'\n';
     return 0;
 }
