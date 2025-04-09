@@ -67,7 +67,7 @@ signed main() {
     int ps=0;
     REP(i,n-1) {
         ps+=a[i]+b[i];
-        an+=
+        an+=abs(ps-(i+1)*2)
     }
     return 0;
 }
