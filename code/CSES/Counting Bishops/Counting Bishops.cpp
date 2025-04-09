@@ -88,6 +88,7 @@ signed main() {
     REP1(i,n2) {
         REP(j,k+1) {
             if(j) addmod(dp1[i][j],dp1[i-1][j-1]*(i*2-1-j+1));
+            if(j>1) 
         }
     }
     return 0;
