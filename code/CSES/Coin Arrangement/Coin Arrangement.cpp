@@ -71,6 +71,7 @@ signed main() {
     REP(i,n) {
         if(a[0][i]>1||a[1][i]>1) {
             int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
+            op(i)op(n0)ope(n1)
             int c0=0,c1=0;
             REP(x,n0+n1) {  
                 an+=abs(h[it].f-i);
