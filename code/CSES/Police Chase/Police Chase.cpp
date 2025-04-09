@@ -131,11 +131,13 @@ signed main() {
     cin>>n>>m;
     Dinic dinic;
     dinic.init(n);
+    Vpii e;
     REP(i,m) {
         int u,v;
         cin>>u>>v,u--,v--;
         dinic.addedge(u,v,1);
         dinic.addedge(v,u,1);
+        e.pb({u,v});
     }
     int an=dinic.mxf(0,n-1);
     Vpii ans;
