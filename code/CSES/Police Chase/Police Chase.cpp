@@ -59,41 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    vector<Vi> a(2,Vi(n));
-    REP(i,n) cin>>a[0][i];
-    REP(i,n) cin>>a[1][i];
-    Vpii h;
-    REP(i,n) REP(j,2) if(a[j][i]==0) h.pb({i,j});
-    int it=0,an=0;
-    oparr(h)
-    REP(i,n) {
-        if(a[0][i]>1||a[1][i]>1) {
-            int n0=max(0ll,a[0][i]-1),n1=max(0ll,a[1][i]-1);
-            op(i)op(n0)ope(n1)
-            int c0=0,c1=0;
-            REP(x,n0+n1) {  
-                an+=abs(h[it].f-i);
-                if(h[it].s==0) c0++;
-                else c1++;
-                it++;
-            }
-            if(it<n&&h[it].f==h[it-1].f) {
-                if(h[it-1].s==0) c0--;
-                else c1--;
-                if(c0<n0) {
-                    if(h[it].s==0) swap(h[it],h[it-1]);
-                    c0++;
-                }else {
-                    if(h[it].s==1) swap(h[it],h[it-1]);
-                    c1++;
-                }
-            }
-            an+=abs(n0-c0);
-
-        }
-    }
-    cout<<an<<'\n';
+    
     return 0;
 }
