@@ -58,7 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 #include<bits/extc++.h>
-
+using namespace __gnu_
 signed main() {
     IOS();
     cout<<dd(200000);
