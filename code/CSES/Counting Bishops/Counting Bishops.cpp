@@ -107,8 +107,8 @@ signed main() {
         an2=dp2[n2];
     }else {
         an1=dp1[n2];
-        an1=Vi(k+1);
-        REP1(i,k) an1[i]=(dp1[n2][i]+dp1[n2][i-1]*(n-i+1));
+        an2=Vi(k+1);
+        REP1(i,k) an2[i]=(dp2[n2][i]+dp2[n2][i-1]*(n-i+1));
     }
     return 0;
 }
