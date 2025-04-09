@@ -57,32 +57,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi dp(maxv);
-void init() {
-    int X;
-    cin>>X;
-    for(int i=2;i<=X*4;i++) {
-        Vi c(i+10>>1);
-        int mex=0;
-        for(int j=1;j*2<=i;j++) {
-            if(((j)*(i-j))%X>0) continue;
-            int v=dp[j]^dp[i-j];
-            c[v]=1;
-            while(c[mex]) mex++;
-        }
-        dp[i]=mex;
-    }
-
-    for(int i=1;i<=X;i++) cout<<dp[i]<<' ';entr
-    for(int i=X+1;i<=X*2;i++) cout<<dp[i]<<' ';entr
-    for(int i=X*2+1;i<=X*3;i++) cout<<dp[i]<<' ';entr
-    for(int i=X*3+1;i<=X*4;i++) cout<<dp[i]<<' ';entr
-    for(int i=1;i<=X;i++) if(dp[i]) cout<<i<<' ';entr
-}
-int dd(int n) {
-    if(n==0) return 0;
-    return dd(n-1)+1;
-}
 signed main() {
     IOS();
     cout<<dd(200000);
