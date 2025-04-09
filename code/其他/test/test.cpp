@@ -61,6 +61,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    // rope<int> s;
+    rope<int> s;
+    s.
     return 0;
 }
