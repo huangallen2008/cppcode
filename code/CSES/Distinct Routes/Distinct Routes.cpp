@@ -147,13 +147,13 @@ signed main() {
         dinic.addedge(u,v,1);
     }
     int ans=dinic.mxf(0,n-1);
-    Graph g(n);
+    Graphw g(n);
     REP(i,m) if(dinic.es[i<<1].r==0) g[dinic.es[i<<1].u].pb({dinic.es[i<<1].v,i});
     Vi path;
     Vi vis(m);
     Func dfs=[&](int u) ->void {
         path.pb(u);
-        for(int v:g[u]) {
+        for(auto [v,id]:g[u]) {
             if()
         }
     }
