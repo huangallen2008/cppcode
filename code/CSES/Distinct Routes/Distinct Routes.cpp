@@ -126,6 +126,10 @@ struct Dinic {
 };
 signed main() {
     IOS();
-    
+    int n,m;
+    cin>>n>>m;
+    Dinic dinic;
+    dinic.init(n);
+    REP
     return 0;
 }
