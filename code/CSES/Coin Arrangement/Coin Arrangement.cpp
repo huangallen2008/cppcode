@@ -81,9 +81,8 @@ signed main() {
                 else c1--;
                 if(c0<n0) {
                     if(h[it].s==0) swap(h[it],h[it-1]);
-                    if(h[it].s==0) swap(h[it],h[it-1]);
                 }else {
-                    
+                    if(h[it].s==1) swap(h[it],h[it-1]);
                 }
             }
         }
