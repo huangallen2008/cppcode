@@ -73,8 +73,10 @@ signed main() {
             int c0=0,c1=0;
             REP(x,n0+n1) {  
                 if(h[it].s==0) c0++;
-                else h[it]
+                else c1++;
+                it++;
             }
+            if(it<n&&)
         }
     }
     return 0;
