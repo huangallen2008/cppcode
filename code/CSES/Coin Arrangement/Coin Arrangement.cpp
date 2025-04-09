@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vpii a,b;
+    vecy
     REP(i,n) {
         int x;
         cin>>x;
