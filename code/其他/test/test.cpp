@@ -62,6 +62,6 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     rope<int> s,t;
-    s.replace(t);
+    s.replace(1,h,t);
     return 0;
 }
