@@ -69,6 +69,8 @@ signed main() {
         ps+=a[i]+b[i];
         an+=abs(ps-(i+1)*2);
     }
-    
+    int suma=0;
+    REP(i,n) suma+=a[i];
+    an+=suma
     return 0;
 }
