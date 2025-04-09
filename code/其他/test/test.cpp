@@ -62,6 +62,6 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     rope<int> s;
-    s.
+    s.re
     return 0;
 }
