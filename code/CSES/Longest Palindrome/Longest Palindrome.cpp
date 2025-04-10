@@ -71,6 +71,6 @@ signed main() {
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
         if(i+p[i]>r) m=i,r=i+p[i];
     }
-    int 
+    int an=*max_element(ALL())
     return 0;
 }
