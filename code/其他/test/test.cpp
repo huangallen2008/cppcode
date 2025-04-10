@@ -75,7 +75,7 @@ signed main() {
     
     for(int i=0;i<__lg(V);i++) {
         oparr(v)
-        
+        REP(j,SZ(v))
     }
     return 0;
 }
