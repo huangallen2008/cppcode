@@ -71,7 +71,7 @@ signed main() {
     oparr(b)
     int dif=0;
     for(int i=0;i<__lg(V);i++) {
-        dif|=(~i&1)*(1<<i);
+        dif=dif<<1|(~i&1);
         for(int j=n+1;j<V;j+=dif) cout<<b[j]<<' ';entr
     }
     return 0;
