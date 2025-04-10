@@ -63,7 +63,7 @@ signed main() {
     IOS();
     int n=5;
     Vi b(50);
-    REP1(i,n) b[i]=1<<i;
+    REP1(i,n) b[i]=1<<i-1;
     for(int i=n+1;i<50;i++) {
         REP1(j,i>>1) b[i]^=b[j];
     }
