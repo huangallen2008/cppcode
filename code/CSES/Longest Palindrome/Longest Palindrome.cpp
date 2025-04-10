@@ -72,7 +72,7 @@ signed main() {
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
         if(i+p[i]>r) m=i,r=i+p[i];
     
-    ope(t)}
+    ope}
     oparr(p)
     int anl=0;
     string ans;
