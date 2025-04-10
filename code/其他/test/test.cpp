@@ -69,6 +69,6 @@ signed main() {
         REP1(j,i>>1) b[i]^=b[j];
     }
     oparr(b)
-    for(int i=)
+    for(int i=0)
     return 0;
 }
