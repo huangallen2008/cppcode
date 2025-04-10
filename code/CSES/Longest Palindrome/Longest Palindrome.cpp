@@ -63,9 +63,9 @@ signed main() {
     cin>>s;
     int n=SZ(s);
     int N=n<<1|1;
-    ope("ok")
     string t(N,'.');
-    REP(i,N) t[i<<1|1]=s[i];
+    REP(i,n) t[i<<1|1]=s[i];
+    ope("ok")
     int m=0,r=0;
     Vi p(N);
     REP(i,N) {
