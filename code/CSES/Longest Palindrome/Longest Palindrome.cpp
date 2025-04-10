@@ -67,7 +67,7 @@ signed main() {
     REP(i,N) t[i<<1|1]=s[i];
     int m=0,r=0;
     REP(i,N) {
-        p[i]=
+        p[i]=r>i?min(r-i,p[n])
     }
     return 0;
 }
