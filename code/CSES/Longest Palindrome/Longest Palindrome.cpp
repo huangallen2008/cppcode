@@ -72,12 +72,12 @@ signed main() {
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
         if(i+p[i]>r) m=i,r=i+p[i];
     }
-    int an=0;
+    int anl=0;
     REP(i,N) {
-        if(i&1) chmax(an,p[i]-(p[i]+1&1));
-        else chmax(an,p[i]&~1);
+        if(i&1) chmax(anl,p[i]-(p[i]+1&1));
+        else chmax(anl,p[i]&~1);
     }
-    
+
     cout<<an<<'\n';
     return 0;
 }
