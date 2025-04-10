@@ -77,6 +77,7 @@ signed main() {
     REP(i,N) chmax(anl,i&1?p[i]-(p[i]+1&1):p[i]&~1);
     ope(anl)
     REP(i,N) {
+        if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)
         if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
             string an;
             for(int j=i-p[i]+1;j<=i+p[i]-1;j++) an+=s[j];
