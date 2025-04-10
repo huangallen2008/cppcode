@@ -74,8 +74,8 @@ signed main() {
     }
     int anl=0;
     REP(i,N) {
-        if(i&1) chmax(anl,p[i]-(p[i]+1&1));
-        else chmax(anl,p[i]&~1);
+        if(i&1) chmax(anl,i&1?p[i]-(p[i]+1&1)p[i]&~1);
+        else chmax(anl,);
     }
     REP(i,M) {
         if(i&1) chmax(anl,p[i]-(p[i]+1&1));
