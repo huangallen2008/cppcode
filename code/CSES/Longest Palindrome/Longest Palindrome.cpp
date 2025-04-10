@@ -62,6 +62,7 @@ signed main() {
     string s;
     cin>>s;
     int n=SZ(s);
-    Vi 
+    Vi p(n);
+    
     return 0;
 }
