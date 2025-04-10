@@ -65,12 +65,13 @@ signed main() {
     int V=100;
     Vi b(V);
     REP1(i,n) b[i]=1<<i-1;
+    Vi v;
     for(int i=n+1;i<V;i++) {
         REP1(j,i>>1) b[i]^=b[j];
+        
     }
     oparr(b)
     int dif=0;
-    Vi v;
     
     for(int i=0;i<__lg(V);i++) {
 
