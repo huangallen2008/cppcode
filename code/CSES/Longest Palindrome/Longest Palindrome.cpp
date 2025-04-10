@@ -79,10 +79,10 @@ signed main() {
         if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
             string an;
             for(int j=i-p[i]+1;j<=i+p[i]-1;j++) an+=s[j];
-            
+            for(char c:an) if(c!='.') ans+=c;
             break;
         }
     }
-    cout<<an<<'\n';
+    cout<<ans<<'\n';
     return 0;
 }
