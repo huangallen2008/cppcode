@@ -61,21 +61,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    rope<int> s,t;
-    s.append(1);
-    s.append(2);
-    s.append(3);
-    t.append(4);
-    t.append(4);
-    auto it=s.begin()+2;
-    for(int x:s) cout<<x<<' ';entr
-    ope(*it)
-    ope(it-s.begin())
-    s.insert(0,1);
-    // s.copy(1,,t);
-    for(int x:s) cout<<x<<' ';
-    ope(*it)
-    ope(*prev(it))
-    ope(it-s.begin())
+    
     return 0;
 }
