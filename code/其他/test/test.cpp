@@ -76,7 +76,7 @@ signed main() {
     for(int i=0;i<__lg(V);i++) {
         oparr(v)
         Vi nv;
-        REP(j,SZ(v)) if(j-i&1)
+        REP(j,SZ(v)) if(j-i&1) 
     }
     return 0;
 }
