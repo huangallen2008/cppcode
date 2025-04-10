@@ -71,6 +71,7 @@ signed main() {
     oparr(b)
     int dif=0;
     Vi v;
+    
     for(int i=0;i<__lg(V);i++) {
 
     }
