@@ -65,7 +65,8 @@ signed main() {
     Vi b(50);
     REP1(i,n) b[i]=1<<i;
     for(int i=n+1;i<50;i++) {
-        REP1(j,)
+        REP1(j,i>>1) b[i]^=b[j];
     }
+    oparr(b)
     return 0;
 }
