@@ -69,7 +69,7 @@ signed main() {
         REP1(j,i>>1) b[i]^=b[j];
     }
     oparr(b)
-    for(int i=0;i<__lg(V);i++) {
+    for(int i=1;i<__lg(V);i++) {
         for(int j=n+1;j<V;j+=1<<i) cout<<b[j]<<' ';entr
     }
     return 0;
