@@ -63,11 +63,11 @@ signed main() {
     cin>>s;
     int n=SZ(s);
     int N=n<<1|1;
+    ope("ok")
     string t(N,'.');
     REP(i,N) t[i<<1|1]=s[i];
     int m=0,r=0;
     Vi p(N);
-    ope("ok")
     REP(i,N) {
         p[i]=r>i?min(r-i,p[m*2-i]):1;
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
