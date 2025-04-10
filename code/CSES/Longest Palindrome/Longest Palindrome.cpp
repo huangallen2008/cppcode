@@ -63,7 +63,7 @@ signed main() {
     cin>>s;
     int n=SZ(s);
     int N=n<<1|1;
-    string t(N,)
-
+    string t(N,'.');
+    REP(i,N) t[i]
     return 0;
 }
