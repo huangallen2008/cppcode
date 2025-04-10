@@ -70,7 +70,7 @@ signed main() {
     }
     oparr(b)
     for(int i=0;i<__lg(V);i++) {
-        dif+=1<<i;
+        if()dif+=(1<<i);
         for(int j=n+1;j<V;j+=1<<i) cout<<b[j]<<' ';entr
     }
     return 0;
