@@ -70,7 +70,7 @@ signed main() {
     }
     oparr(b)
     for(int i=0;i<5;i++) {
-        
+        for(int j=n+1;j<V;j+=1<<i) 
     }
     return 0;
 }
