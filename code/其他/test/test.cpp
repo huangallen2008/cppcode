@@ -62,6 +62,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n=5;
+    Vi b(50);
     
     return 0;
 }
