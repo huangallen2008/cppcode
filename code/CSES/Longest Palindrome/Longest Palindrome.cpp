@@ -71,8 +71,8 @@ signed main() {
         p[i]=r>i?min(r-i,p[m*2-i]):1;
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
         if(i+p[i]>r) m=i,r=i+p[i];
-    
-    ope}
+    }
+    ope(t)
     oparr(p)
     int anl=0;
     string ans;
