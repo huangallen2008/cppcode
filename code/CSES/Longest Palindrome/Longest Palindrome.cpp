@@ -59,6 +59,9 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    string s;
+    cin>>s;
+    int n=SZ(s);
+    Vi 
     return 0;
 }
