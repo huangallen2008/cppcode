@@ -68,13 +68,13 @@ signed main() {
     Vi v;
     for(int i=n+1;i<V;i++) {
         REP1(j,i>>1) b[i]^=b[j];
-        
+        v.pb(b[i]);
     }
     oparr(b)
     int dif=0;
     
     for(int i=0;i<__lg(V);i++) {
-
+        
     }
     return 0;
 }
