@@ -68,7 +68,7 @@ signed main() {
     int m=0,r=0;
     REP(i,N) {
         p[i]=r>i?min(r-i,p[m*2-i]):1;
-        
+        while()
     }
     return 0;
 }
