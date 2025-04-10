@@ -65,6 +65,9 @@ signed main() {
     int N=n<<1|1;
     string t(N,'.');
     REP(i,N) t[i<<1|1]=s[i];
-    
+    int m=0,r=0;
+    REP(i,N) {
+        p[i]=
+    }
     return 0;
 }
