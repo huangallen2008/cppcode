@@ -62,6 +62,7 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n=5;
+    int V=100;
     Vi b(V);
     REP1(i,n) b[i]=1<<i-1;
     for(int i=n+1;i<V;i++) {
