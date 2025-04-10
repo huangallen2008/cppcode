@@ -74,6 +74,7 @@ signed main() {
     int dif=0;
     
     for(int i=0;i<__lg(V);i++) {
+        oparr(v)
         
     }
     return 0;
