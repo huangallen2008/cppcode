@@ -63,7 +63,7 @@ signed main() {
     cin>>s;
     int n=SZ(s);
     int N=n<<1|1;
-    Vi p(n);
+    string t(N,)
 
     return 0;
 }
