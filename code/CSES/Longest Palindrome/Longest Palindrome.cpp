@@ -72,15 +72,11 @@ signed main() {
         while(i-p[i]>=0&&i+p[i]<N&&t[i+p[i]]==t[i-p[i]]) p[i]++;
         if(i+p[i]>r) m=i,r=i+p[i];
     }
-    ope(t)
-    oparr(p)
-    ope(N)
     int anl=0;
     string ans;
     REP(i,N) chmax(anl,i&1?p[i]-(p[i]+1&1):p[i]&~1);
     ope(anl)
     REP(i,N) {
-        op(i)ope(i&1?p[i]-(p[i]+1&1):p[i]&~1)
         if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
             string an;
             for(int j=i-p[i]+1;j<=i+p[i]-1;j++) an+=t[j];
