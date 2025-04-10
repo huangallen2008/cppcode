@@ -69,9 +69,10 @@ signed main() {
         REP1(j,i>>1) b[i]^=b[j];
     }
     oparr(b)
+    int dif=0;
     for(int i=0;i<__lg(V);i++) {
         dif|=(~i&1)*(1<<i);
-        for(int j=n+1;j<V;j+=1<<i) cout<<b[j]<<' ';entr
+        for(int j=n+1;j<V;j+=dif) cout<<b[j]<<' ';entr
     }
     return 0;
 }
