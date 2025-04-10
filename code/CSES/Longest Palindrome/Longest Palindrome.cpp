@@ -72,6 +72,8 @@ signed main() {
         if(i+p[i]>r) m=i,r=i+p[i];
     }
     int an=0;
-    REP(i,N) 
+    REP(i,N) {
+        if(i&1) chmax(an,p[i])
+    }
     return 0;
 }
