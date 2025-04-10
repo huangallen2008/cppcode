@@ -62,9 +62,9 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     int n=5;
-    Vi b(50);
+    Vi b(V);
     REP1(i,n) b[i]=1<<i-1;
-    for(int i=n+1;i<50;i++) {
+    for(int i=n+1;i<V;i++) {
         REP1(j,i>>1) b[i]^=b[j];
     }
     oparr(b)
