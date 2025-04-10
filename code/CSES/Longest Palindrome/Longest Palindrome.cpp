@@ -77,7 +77,10 @@ signed main() {
         if(i&1) chmax(anl,p[i]-(p[i]+1&1));
         else chmax(anl,p[i]&~1);
     }
-
+    REP(i,M) {
+        if(i&1) chmax(anl,p[i]-(p[i]+1&1));
+        else chmax(anl,p[i]&~1);
+    }
     cout<<an<<'\n';
     return 0;
 }
