@@ -78,7 +78,7 @@ signed main() {
     REP(i,M) {
         if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
             string an;
-            for(int )
+            for(int j=i-p[i]+1;)
             break;
         }
     }
