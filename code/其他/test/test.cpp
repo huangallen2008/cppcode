@@ -61,6 +61,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    int n=5;
     
     return 0;
 }
