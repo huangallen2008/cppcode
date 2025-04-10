@@ -73,10 +73,10 @@ signed main() {
         if(i+p[i]>r) m=i,r=i+p[i];
     }
     int anl=0;
+    string ans;
     REP(i,N) chmax(anl,i&1?p[i]-(p[i]+1&1):p[i]&~1);
     REP(i,M) {
         if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
-            string 
             break;
         }
     }
