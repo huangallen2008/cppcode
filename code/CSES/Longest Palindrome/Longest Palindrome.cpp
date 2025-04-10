@@ -75,7 +75,10 @@ signed main() {
     int anl=0;
     REP(i,N) chmax(anl,i&1?p[i]-(p[i]+1&1):p[i]&~1);
     REP(i,M) {
-        if(anl==i&1?p[i]-(p[i]+1&1):p[i]&~1)
+        if(anl==(i&1?p[i]-(p[i]+1&1):p[i]&~1)) {
+            string 
+            break;
+        }
     }
     cout<<an<<'\n';
     return 0;
