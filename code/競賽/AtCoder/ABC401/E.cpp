@@ -93,14 +93,16 @@ signed main() {
     }
     Vi col(n);
     int an=0;
+    dsu.init(n);
     REP(i,n) {
         if(col[i]==2) an--;
         col[i]=1;
         for(int v:g[i]) if(v<i) {
             if(col[v]!=2) an++;
             col[v]=2;
+            dsu.merge(i)
         }
-        
+
     }
     return 0;
 }
