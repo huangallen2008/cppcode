@@ -97,7 +97,7 @@ Vpii get_g() {
     }
     Vi dp(n),mxd(n);
     auto dfs=[&](int u,int fa) {
-        int mx=0,mx2=0;
+        int mx=-1,mx2=-1;
         for(int v:g[u]) {
             if(v==fa) continue;
             dfs(v,u);
