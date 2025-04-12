@@ -110,8 +110,8 @@ struct AC {
         Vi an(n);
         int now=root;
         Vi vv;
-        for(char _c:s) {
-            int c=_c-'a';
+        REP(i,SZ(s)) {
+            int c=s[i]-'a';
             now=ac[now].ch[c];
             for(int t=now;t!=root&&!ac[t].vis;t=ac[t].fail) {
                 ac[t].vis=1;
