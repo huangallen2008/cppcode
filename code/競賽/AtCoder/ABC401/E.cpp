@@ -74,7 +74,8 @@ struct DSU {
     void merge(int a,int b) {
         int x=find(a),y=find(b);
         if(x==y) return;
-        if(sz[x]>sz[y]) 
+        if(sz[x]>sz[y]) swap(x,y);
+        
     }
 }
 signed main() {
