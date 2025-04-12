@@ -63,8 +63,8 @@ signed main() {
     cin>>n>>k;
     string s;
     cin>>s;
-    Vi oid;
-    REP(i,n) if(s[i]=='o') oid.pb(i);
-    
+    Vi id;
+    REP(i,n) if(s[i]!='o') oid.pb(i);
+
     return 0;
 }
