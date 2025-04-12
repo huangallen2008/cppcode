@@ -92,14 +92,18 @@ signed main() {
             }
         }
         REP(i,n) {
-            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) s[i]='.';
+            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
         }
         string ans;
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
     }else {
+        string an=s;
+        REP(i,n) {
+            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
+        }
         string ans;
-        REP1(i,n) ans+=s[i];
+        REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
     }
     return 0;
