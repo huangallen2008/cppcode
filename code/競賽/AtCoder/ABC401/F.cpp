@@ -86,8 +86,11 @@ struct BIT {
     int qu(int l,int r) { return pre(r)-pre(l-1); }
 };
 Vpii get_g() {
-    int n,m
+    int n;
+    cin>>n;
 }
 signed main() {
     IOS();
-  
+    
+    return 0;
+}
