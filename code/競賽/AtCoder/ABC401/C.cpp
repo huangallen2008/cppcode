@@ -64,7 +64,7 @@ signed main() {
     n++;
     Vi a(n+1),p(n+1);
     REP1(i,n) {
-        a[i]=i<
+        a[i]=i<=k?1:
     }
     return 0;
 }
