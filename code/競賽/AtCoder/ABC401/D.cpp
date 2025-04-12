@@ -81,8 +81,8 @@ signed main() {
     REP(i,SZ(id)) cnt+=id[i].s-id[i].f+2>>1;
     // ope(cnt)
     if(cnto==k) {
-    }
-    else if(cnt+cnto==k) {
+        
+    }else if(cnt+cnto==k) {
         string an=s;
         REP(i,SZ(id)) {
             if(id[i].s-id[i].f&1) continue;
