@@ -75,7 +75,6 @@ signed main() {
             id.pb({st,i});
         }
     }
-    Vi id;
     int cnto=0;
     for(char c:s) cnto+=c=='o';
     int cnt=0;
