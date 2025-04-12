@@ -66,7 +66,7 @@ signed main() {
         cin>>s;
         if(s=="login") login=1;
         else if(s=="logout") login=0;
-        else if()
+        else if(s==private) an+=login==0;
     }
     return 0;
 }
