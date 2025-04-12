@@ -84,8 +84,8 @@ signed main() {
     if(cnt+cnto==k) {
         string an=s;
         REP(i,SZ(id)) {
-            if(id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')&1) continue;
-            for(int j=id[i]+(s[id[i]]=='o')+1;j<=id[i+1]-1-(s[id[i+1]]=='o');j+=2) {
+            if(id[i].s-id[i].f&1) continue;
+            for(int j=id[i].f;j<=id[i+1].s;j+=2) {
                 an[j]='o';
             }
         }
