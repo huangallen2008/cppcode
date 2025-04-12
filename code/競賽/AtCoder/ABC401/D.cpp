@@ -59,14 +59,5 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,k;
-    cin>>n>>k;
-    n++;
-    Vi a(n+1),p(n+1);
-    REP1(i,n) {
-        (a[i]=i<=k?1:p[i-1]-p[i-k-1])%=mod;
-        (p[i]=p[i-1]+a[i])%=mod;
-    }
-    cout<<(a[n]+mod)%mod<<'\n';
     return 0;
 }
