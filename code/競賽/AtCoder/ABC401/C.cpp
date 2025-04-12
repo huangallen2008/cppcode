@@ -63,6 +63,6 @@ signed main() {
     cin>>n>>k;
     n++;
     Vi a(n+1),p(n+1);
-    
+    REP1(i,k) 
     return 0;
 }
