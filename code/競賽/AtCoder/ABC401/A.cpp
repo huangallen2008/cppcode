@@ -61,6 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    if(200<=n&&n<=299) cout<<""
+    if(200<=n&&n<=299) cout<<"Success\n";
+    else cout<<"Failure\n";
     return 0;
 }
