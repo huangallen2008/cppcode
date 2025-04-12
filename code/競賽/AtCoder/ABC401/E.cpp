@@ -100,9 +100,9 @@ signed main() {
         for(int v:g[i]) if(v<i) {
             if(col[v]!=2) an++;
             col[v]=2;
-            dsu.merge(i)
+            dsu.merge(i,v);
         }
-
+        if(dsu.cc==n-i) cout<<
     }
     return 0;
 }
