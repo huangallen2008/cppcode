@@ -70,7 +70,7 @@ signed main() {
     int st=-1;
     Vpii id;
     REP(i,n+2) {
-        
+        if(s[i])
     }
     Vi id;
     int cnto=0;
