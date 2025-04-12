@@ -111,7 +111,7 @@ Vpii get_g() {
     };
     dfs(0,-1);
     auto dfs2=[&](auto dfs2,int u,int fa) {
-        amx
+        amx[u]=max()
         for(int v:g[u]) {
             if(v==fa) continue;
         }
