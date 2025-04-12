@@ -70,7 +70,8 @@ signed main() {
     int st=-1;
     Vpii id;
     REP(i,n+2) {
-        if(i<n+1&&s[i]=='.')
+        if(i<n+1&&s[i]=='.'&&s[i+1]=='?') st=i+1;
+        
     }
     Vi id;
     int cnto=0;
