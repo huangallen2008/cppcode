@@ -95,7 +95,7 @@ Vpii get_g() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    Vi 
+    Vi dp(n);
 }
 signed main() {
     IOS();
