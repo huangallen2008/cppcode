@@ -64,7 +64,7 @@ signed main() {
     string s;
     cin>>s;
     Vi id;
-    REP(i,n) if(s[i]!='o') oid.pb(i);
-
+    REP(i,n) if(s[i]!='?') id.pb(i);
+    
     return 0;
 }
