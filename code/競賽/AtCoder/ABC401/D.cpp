@@ -64,7 +64,7 @@ signed main() {
     string s;
     cin>>s;
     s='.'+s+'.';
-    REP(i,n+2) {
+    REP1(i,n) {
         if(s[i]=='?'&&(s[i-1]=='o'||s[i+1]=='o')) s[i]='.';
     }
     int st=-1;
