@@ -69,6 +69,7 @@ struct AC {
     int root;
     int n;
     Vi mp;
+    vector<string> a; 
     void add(string s,int id) {
         int now=root;
         for(char _c:s) {
