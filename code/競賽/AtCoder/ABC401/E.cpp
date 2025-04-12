@@ -71,6 +71,9 @@ struct DSU {
     int find(int u) {
         return p[u]==u?u:p[u]=find(p[u]);
     }
+    void merge(int a,int b) {
+        return 
+    }
 }
 signed main() {
     IOS();
