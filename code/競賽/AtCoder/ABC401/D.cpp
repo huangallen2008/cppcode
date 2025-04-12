@@ -72,7 +72,9 @@ signed main() {
 
     }else {
         string an=s;
-        REP1(i,n) an[i]
+        REP1(i,n) {
+            if(an[i]=='?'&&(an[i-1])
+        }
     }
     return 0;
 }
