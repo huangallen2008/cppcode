@@ -105,8 +105,9 @@ Vpii get_g() {
             chmax(mxd[u],mxd[v]+1);
             int v=mxd[v]+1;
             if(v>mx) mx2=mx,mx=v;
-            else 
+            else if(v>mx2) mx2=v;
         }
+        
     }
 }
 signed main() {
