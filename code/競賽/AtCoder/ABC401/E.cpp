@@ -98,8 +98,9 @@ signed main() {
         col[i]=1;
         for(int v:g[i]) if(v<i) {
             if(col[v]!=2) an++;
-            
+            col[v]=2;
         }
+        
     }
     return 0;
 }
