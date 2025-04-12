@@ -60,7 +60,15 @@ int rd(int l,int r) {
 struct DSU {
     int n;
     Vi p,sz;
-    void init(int _n) {}
+    void init(int _n) {
+        n=_n;
+        p=Vi(n);
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
+    }
+    int find(int u) {
+        return p[u]==u?u:p[u]=find(p[u]);
+    }
 }
 signed main() {
     IOS();
