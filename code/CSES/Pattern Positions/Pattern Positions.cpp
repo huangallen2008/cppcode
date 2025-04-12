@@ -122,7 +122,7 @@ struct AC {
             }
         }
         for(int x:vv) ac[x].vis=0;
-        REP(i,n) an[i]=ac[mp[i]].ans;
+        REP(i,n) an[i]=ac[mp[i]].ans-SZ(a[i])+2;
         return an;
     }
 };
