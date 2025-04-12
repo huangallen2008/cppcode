@@ -60,7 +60,7 @@ int rd(int l,int r) {
 struct AC_node {
     int fail;
     int ch[26];
-    int ans=0;
+    int ans=-1;
     int ind=0;
     bool vis;
 }ac[maxn];
@@ -122,7 +122,7 @@ struct AC {
             }
         }
         for(int x:vv) ac[x].vis=0;
-        REP(i,n) an[i]=ac[mp[i]]ac[mp[i]].ans-SZ(a[i])+2;
+        REP(i,n) an[i]=ac[mp[i]].ans!=-1?ac[mp[i]].ans-SZ(a[i])+2:-1;
         return an;
     }
 };
