@@ -64,10 +64,12 @@ signed main() {
     string s;
     cin>>s;
     s='.'+s+'.';
-    int st=-1;
     REP(i,n) {
         if(s[i]=='?'&&(s[i-1]=='o'||s[i+1]=='o')) s[i]='.';
     }
+    int st=-1;
+    Vpii id;
+    
     Vi id;
     int cnto=0;
     for(char c:s) cnto+=c=='o';
