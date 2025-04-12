@@ -111,9 +111,10 @@ Vpii get_g() {
     };
     dfs(0,-1);
     auto dfs2=[&](auto dfs2,int u,int fa) {
-        amx[u]=max()
+        amx[u]=max(mxd[u],umx[u]);
         for(int v:g[u]) {
             if(v==fa) continue;
+            umx[v]=
         }
     }
 }
