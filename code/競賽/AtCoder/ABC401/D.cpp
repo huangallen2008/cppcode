@@ -83,7 +83,7 @@ signed main() {
     if(cnto==k) {
         REP1(i,n) if(s[i]=='?') s[i]='.';
         string ans;
-        REP1(i,n) ans+=an[i];
+        REP1(i,n) ans+=[i];
         cout<<ans<<'\n';
     }else if(cnt+cnto==k) {
         string an=s;
