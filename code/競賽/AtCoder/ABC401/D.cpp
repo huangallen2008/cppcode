@@ -59,5 +59,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    int n,k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    Vi 
     return 0;
 }
