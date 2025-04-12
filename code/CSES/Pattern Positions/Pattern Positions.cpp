@@ -98,7 +98,8 @@ struct AC {
             }
         }
     }
-    void init(int _n,vector<string> v) { 
+    void init(int _n,vector<string> _a) {
+        a=_a; 
         root=AC_node_id++; 
         ac[root].fail=root;
         n=_n;
