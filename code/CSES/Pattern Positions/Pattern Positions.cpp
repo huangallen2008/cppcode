@@ -115,7 +115,7 @@ struct AC {
             now=ac[now].ch[c];
             for(int t=now;t!=root&&!ac[t].vis;t=ac[t].fail) {
                 ac[t].vis=1;
-                for(int id:ac[t].end) an[id]=1;
+                for(int id:ac[t].end) ac[t].ans=1;
                 vv.pb(t);
             }
         }
