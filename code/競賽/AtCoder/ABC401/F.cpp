@@ -97,12 +97,12 @@ Vpii get_g() {
     }
     Vi dp(n),mxd(n);
     auto dfs=[&](int u,int fa) {
-        
+        int mx=0,mx2=0;
         for(int v:g[u]) {
             if(v==fa) continue;
             dfs(v,u);
             chmax(dp[u],dp[v]);
-
+            int v
         }
     }
 }
