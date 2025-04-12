@@ -69,7 +69,9 @@ signed main() {
     }
     int st=-1;
     Vpii id;
-    
+    REP(i,n+2) {
+        
+    }
     Vi id;
     int cnto=0;
     for(char c:s) cnto+=c=='o';
