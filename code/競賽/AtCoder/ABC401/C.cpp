@@ -67,6 +67,6 @@ signed main() {
         (a[i]=i<=k?1:p[i-1]-p[i-k-1])%=mod;
         (p[i]=p[i-1]+a[i])%=mod;
     }
-    cout<<a[n]
+    cout<<(a[n]+mod)%mod<<'\n';
     return 0;
 }
