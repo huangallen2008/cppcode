@@ -95,7 +95,7 @@ Vpii get_g() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    Vi dp(n),mxd(n),amx,umx(n);
+    Vi dp(n),mxd(n),amx(n),umx(n);
     auto dfs=[&](auto dfs,int u,int fa) {
         int mx=0,mx2=0;
         for(int v:g[u]) {
