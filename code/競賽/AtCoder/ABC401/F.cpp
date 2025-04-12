@@ -59,9 +59,10 @@ int rd(int l,int r) {
 }
 struct BIT {
     int n;
+    Vi b;
     void init(int _n) {
         n=_n;
-        
+        b=Vi(n+1);
     }
 }
 signed main() {
