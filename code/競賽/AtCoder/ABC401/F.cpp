@@ -96,6 +96,12 @@ Vpii get_g() {
         g[v].pb(u);
     }
     Vi dp(n),mxd(n);
+    auto dfs=[&](int u,int fa) {
+        for(int v:g[u]) {
+            if(v==fa) continue;
+            
+        }
+    }
 }
 signed main() {
     IOS();
