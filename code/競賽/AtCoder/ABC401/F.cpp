@@ -95,7 +95,7 @@ Vpii get_g() {
         g[u].pb(v);
         g[v].pb(u);
     }
-    Vi dp(n),mxd(n);
+    Vi dp(n),mxd(n),amx,umx(n);
     auto dfs=[&](auto dfs,int u,int fa) {
         int mx=0,mx2=0;
         for(int v:g[u]) {
@@ -110,7 +110,7 @@ Vpii get_g() {
         chmax(dp[u],mx1+mx2);
     };
     dfs(0,-1);
-    
+
 }
 signed main() {
     IOS();
