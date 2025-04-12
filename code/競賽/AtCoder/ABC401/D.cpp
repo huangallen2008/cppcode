@@ -67,5 +67,6 @@ signed main() {
     Vi id;
     REP(i,n+2) if(s[i]!='?') id.pb(i);
     int cnt=0;
-    REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]-(id[i])
-    return
+    REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]-(s[id[i]]=='o')
+    return 0;
+}
