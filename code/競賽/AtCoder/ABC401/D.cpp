@@ -72,7 +72,7 @@ signed main() {
 
     }else {
         string an=s;
-        
+        REP1(i,n+1)
     }
     return 0;
 }
