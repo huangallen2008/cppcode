@@ -74,7 +74,7 @@ struct BIT {
     }
     int qu(int l,int r) { return pre(r)-pre(l-1); }
 };
-
+Vpii get
 signed main() {
     IOS();
     
