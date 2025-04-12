@@ -71,6 +71,7 @@ signed main() {
     if(cnt==k) {
 
     }else {
+        string an=s;
         
     }
     return 0;
