@@ -88,7 +88,7 @@ signed main() {
                 an[j]='o';
             }
         }
-        REP(i,n) {
+        REP1(i,n) {
             if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
         }
         string ans;
@@ -96,7 +96,7 @@ signed main() {
         cout<<ans<<'\n';
     }else {
         string an=s;
-        REP(i,n) {
+        REP1(i,n) {
             if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
         }
         string ans;
