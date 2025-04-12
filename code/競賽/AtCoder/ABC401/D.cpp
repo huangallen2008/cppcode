@@ -79,7 +79,7 @@ signed main() {
     int cnto=0;
     for(char c:s) cnto+=c=='o';
     int cnt=0;
-    REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]>>1;
+    REP(i,SZ(id)) cnt+=id[i]>>1;
     // ope(cnt)
     if(cnt+cnto==k) {
         string an=s;
