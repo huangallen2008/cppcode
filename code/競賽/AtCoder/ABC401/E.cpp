@@ -96,7 +96,10 @@ signed main() {
     REP(i,n) {
         if(col[i]==2) an--;
         col[i]=1;
-        
+        for(int v:g[i]) if(v<i) {
+            if(col[v]!=2) an++;
+            
+        }
     }
     return 0;
 }
