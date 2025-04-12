@@ -89,8 +89,8 @@ signed main() {
         string an=s;
         REP(i,SZ(id)-1) {
             if(id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')&1) continue;
-            for(int j=id[i]+(s[id[i]]=='o')+1;j<=id[i+1]-1-(s[id[i+1]]=='o');j+=2) {
-                an[j]='o';
+            for(int j=id[i]+(s[id[i]]=='o')+2;j<=id[i+1]-2-(s[id[i+1]]=='o');j+=2) {
+                an[j]='i';
             }
         }
         REP1(i,n) {
