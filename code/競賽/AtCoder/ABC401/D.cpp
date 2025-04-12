@@ -69,12 +69,19 @@ signed main() {
     int cnt=0;
     REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')-2>>1;
     if(cnt==k) {
+        string an=s;
+        REP1(i,n) {
+            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
+        }
         REP(i,SZ(id)-1) {
             if(id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')&1) continue;
             for(int j=id[i]+(s[id[i]]=='o')+1;j<=id[i+1]-1-(s[id[i+1]]=='o');j+=2) {
                 an[j]='o';
             }
         }
+        string ans;
+        REP1(i,n) ans+=an[i];
+        cout<<ans<<'\n';
     }else {
         string an=s;
         REP1(i,n) {
