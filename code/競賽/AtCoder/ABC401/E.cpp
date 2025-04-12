@@ -101,7 +101,7 @@ signed main() {
             if(col[v]!=2) an++;
             col[v]=2;
         }
-        dsu.merge(i,v);
+        for(int v:g[i]) if(v<i)dsu.merge(i,v);
         oparr(col)ope(an)
         if(dsu.cc==n-i) cout<<an<<'\n';
         else cout<<"-1\n";
