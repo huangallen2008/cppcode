@@ -93,9 +93,8 @@ signed main() {
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
     }else {
-        string an=s;
         string ans;
-        REP1(i,n) ans+=an[i];
+        REP1(i,n) ans+=s[i];
         cout<<ans<<'\n';
     }
     return 0;
