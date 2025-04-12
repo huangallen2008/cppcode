@@ -69,8 +69,8 @@ signed main() {
     }
     int st=-1;
     Vpii id;
-    REP(i,n+2) {
-        if(i<n+1&&s[i]=='.'&&s[i+1]=='?') st=i+1;
+    REP(i,n+1) {
+        if(s[i]=='.'&&s[i+1]=='?') st=i+1;
         if(i<n+1&&s[i]=='?'&&s[i+1]=='.') {
             id.pb({st,i});
         }
