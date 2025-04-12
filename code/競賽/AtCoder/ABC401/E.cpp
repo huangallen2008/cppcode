@@ -75,9 +75,11 @@ struct DSU {
         int x=find(a),y=find(b);
         if(x==y) return;
         if(sz[x]>sz[y]) swap(x,y);
-        
+        p[x]=y;
+        sz[y]+=sz[x];
+        cc--;
     }
-}
+}dsu;
 signed main() {
     IOS();
 
