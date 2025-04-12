@@ -85,7 +85,7 @@ signed main() {
         string ans;
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
-    }if(cnt+cnto==k-1) {
+    }else if(cnt+cnto==k-1) {
         string an=s;
         REP(i,SZ(id)-1) {
             if(id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')&1) continue;
