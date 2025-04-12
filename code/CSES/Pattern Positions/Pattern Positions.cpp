@@ -109,12 +109,17 @@ struct AC {
     Vi qu(string s) {
         Vi an(n);
         int now=root;
+        Vi vv;
         for(char _c:s) {
             int c=_c-'a';
             now=ac[now].ch[c];
-            ac[now].ans++;
+            for(int t=now;t!=root&&!ac[t].vis;t=ac[t].fail) {
+                ac[t].vis=1;
+                for(int id:ac[t].end) an[id]=1;
+                vv.pb(t);
+            }
         }
-        
+        for(int x:vv) ac[x].vis=0;
         REP(i,n) an[i]=ac[mp[i]].ans;
         return an;
     }
