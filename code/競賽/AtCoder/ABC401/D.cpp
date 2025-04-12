@@ -72,7 +72,7 @@ signed main() {
 
     }else {
         string an=s;
-        REP1(i,n+1)
+        REP1(i,n) an[i]
     }
     return 0;
 }
