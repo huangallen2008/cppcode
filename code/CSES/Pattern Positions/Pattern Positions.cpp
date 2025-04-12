@@ -62,6 +62,7 @@ struct AC_node {
     int ch[26];
     int ans=0;
     int ind=0;
+    bool vis;
 }ac[maxn];
 int AC_node_id=1;
 struct AC {
