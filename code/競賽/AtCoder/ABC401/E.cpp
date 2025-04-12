@@ -102,7 +102,8 @@ signed main() {
             col[v]=2;
             dsu.merge(i,v);
         }
-        if(dsu.cc==n-i) cout<<
+        if(dsu.cc==n-i) cout<<an<<'\n';
+        else cout<<"-1\n";
     }
     return 0;
 }
