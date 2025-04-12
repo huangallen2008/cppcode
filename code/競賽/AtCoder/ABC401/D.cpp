@@ -65,7 +65,7 @@ signed main() {
     cin>>s;
     s='.'+s+'.';
     Vi id;
-    REP(i,n) if(s[i]!='?') id.pb(i);
-    
+    REP(i,n+2) if(s[i]!='?') id.pb(i);
+    int cnt=0;
     return 0;
 }
