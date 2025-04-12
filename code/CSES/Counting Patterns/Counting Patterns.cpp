@@ -128,12 +128,12 @@ struct AC {
 };
 signed main() {
     IOS();
+    string s;
+    cin>>s;
     int n;
     cin>>n;
     vector<string> a(n);
     REP(i,n) cin>>a[i];
-    string s;
-    cin>>s;
     AC ac;
     ac.init(n,a);
     Vi an=ac.qu(s);
