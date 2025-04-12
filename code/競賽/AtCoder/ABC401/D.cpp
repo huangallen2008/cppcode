@@ -100,7 +100,8 @@ signed main() {
     //     string ans;
     //     REP1(i,n) ans+=an[i];
     //     cout<<ans<<'\n';
-    // }else {
+    // }
+    else {
         string an=s;
         REP1(i,n) {
             if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
