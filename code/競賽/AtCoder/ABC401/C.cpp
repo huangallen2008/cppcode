@@ -65,6 +65,7 @@ signed main() {
     Vi a(n+1),p(n+1);
     REP1(i,n) {
         a[i]=i<=k?1:p[i-1]-p[i-k-1];
+        (p[i]=p[i-1]+a[i]);
     }
     return 0;
 }
