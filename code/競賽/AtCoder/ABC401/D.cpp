@@ -69,7 +69,7 @@ signed main() {
     int cnt=0;
     REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')-2>>1;
     if(cnt==k) {
-        
+        REP
     }else {
         string an=s;
         REP1(i,n) {
