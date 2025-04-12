@@ -88,6 +88,11 @@ struct BIT {
 Vpii get_g() {
     int n;
     cin>>n;
+    Graph g(n);
+    REP(i,n-1 ) {
+        int u,v;
+        cin>>u>>v,u--,v--;
+    }
 }
 signed main() {
     IOS();
