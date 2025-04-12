@@ -49,7 +49,7 @@ template<typename S>
 istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;return os; }
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
-const int mod=1e9+7;
+const int mod=1e9;
 const int maxn=500+5;
 const int maxb=18;
 const int inf=1ll<<60;
@@ -64,8 +64,9 @@ signed main() {
     n++;
     Vi a(n+1),p(n+1);
     REP1(i,n) {
-        a[i]=i<=k?1:p[i-1]-p[i-k-1]);
+        (a[i]=i<=k?1:p[i-1]-p[i-k-1])%=mod;
         (p[i]=p[i-1]+a[i])%=mod;
     }
+    cout<<a[n]
     return 0;
 }
