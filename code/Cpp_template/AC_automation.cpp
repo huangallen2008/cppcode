@@ -190,3 +190,73 @@ struct AC {
         return an;
     }
 };
+////////////////////////////////////////////////////////////////
+struct AC_node {
+    int fail;
+    int ch[26];
+    int ans=-1;
+    int ind=0;
+    bool vis=0;
+}ac[maxn];
+int AC_node_id=1;
+struct AC {
+    int root;
+    int n;
+    Vi mp;
+    vector<string> a; 
+    void add(string s,int id) {
+        int now=root;
+        for(char _c:s) {
+            int c=_c-'a';
+            if(!ac[now].ch[c]) ac[now].ch[c]=AC_node_id++;
+            now=ac[now].ch[c];
+        }
+        mp[id]=now;
+    }
+    void build_fail() {
+        queue<int> q;
+        REP(i,26) {
+            if(ac[root].ch[i]) {
+                ac[ac[root].ch[i]].fail=root;
+                q.push(ac[root].ch[i]);
+            }else ac[root].ch[i]=root;
+        }
+        while(SZ(q)) {
+            int u=q.front();
+            q.pop();
+            REP(c,26) {
+                if(ac[u].ch[c]) {
+                    ac[ac[u].ch[c]].fail=ac[ac[u].fail].ch[c];
+                    ac[ac[ac[u].fail].ch[c]].ind++;
+                    q.push(ac[u].ch[c]);
+                }else ac[u].ch[c]=ac[ac[u].fail].ch[c];
+            }
+        }
+    }
+    void init(int _n,vector<string> _a) {
+        a=_a; 
+        root=AC_node_id++; 
+        ac[root].fail=root;
+        n=_n;
+        mp=Vi(n);
+        REP(i,n) add(a[i],i);
+        build_fail();
+    }
+    Vi qu(string s) {
+        Vi an(n);
+        int now=root;
+        Vi vv;
+        REP(i,SZ(s)) {
+            int c=s[i]-'a';
+            now=ac[now].ch[c];
+            for(int t=now;t!=root&&!ac[t].vis;t=ac[t].fail) {
+                ac[t].vis=1;
+                ac[t].ans=i;
+                vv.pb(t);
+            }
+        }
+        for(int x:vv) ac[x].vis=0;
+        REP(i,n) an[i]=ac[mp[i]].ans!=-1?ac[mp[i]].ans-SZ(a[i])+2:-1;
+        return an;
+    }
+};
