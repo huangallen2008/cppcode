@@ -62,7 +62,7 @@ signed main() {
     int n,k;
     cin>>n>>k;
     n++;
-    Vi a(n+1);
+    Vi a(n+1),p(n+1);
     
     return 0;
 }
