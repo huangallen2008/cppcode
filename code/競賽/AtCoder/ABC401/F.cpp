@@ -114,7 +114,7 @@ Vpii get_g() {
         amx[u]=max(mxd[u],umx[u]);
         for(int v:g[u]) {
             if(v==fa) continue;
-            umx[v]=
+            
         }
     }
 }
