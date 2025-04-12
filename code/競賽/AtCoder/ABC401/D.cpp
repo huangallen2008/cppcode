@@ -91,6 +91,9 @@ signed main() {
                 an[j]='o';
             }
         }
+        REP(i,n) {
+            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) s[i]='.';
+        }
         string ans;
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
