@@ -92,5 +92,9 @@ signed main() {
         g[v].pb(u);
     }
     Vi col(n);
+    int an=0;
+    REP(i,n) {
+        if(col[i]==)
+    }
     return 0;
 }
