@@ -73,7 +73,7 @@ signed main() {
     }else {
         string an=s;
         REP1(i,n) {
-            if(an[i]=='?'&&(an[i-1])
+            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='o';
         }
     }
     return 0;
