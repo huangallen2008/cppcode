@@ -102,8 +102,9 @@ Vpii get_g() {
             if(v==fa) continue;
             dfs(v,u);
             chmax(dp[u],dp[v]);
-            chmax()
+            chmax(mxd[u],mxd[v]+1);
             int v=mxd[v]+1;
+            
         }
     }
 }
