@@ -60,13 +60,18 @@ int rd(int l,int r) {
 struct AC_node {
     int fail;
     int ch[26];
-    int ans=0;
+    int cnt;
+    Vi end;
+    bool vis;
 }ac[maxn];
 int AC_node_id=1;
 struct AC {
     int root;
     int n;
-    Vi mp;
+    void init() { 
+        root=AC_node_id++; 
+        ac[root].fail=root;
+    }
     void add(string s,int id) {
         int now=root;
         for(char _c:s) {
@@ -74,9 +79,12 @@ struct AC {
             if(!ac[now].ch[c]) ac[now].ch[c]=AC_node_id++;
             now=ac[now].ch[c];
         }
-        mp[id]=now;
+        ac[now].cnt++;
+        ac[now].end.pb(id);
     }
-    void build_fail() {
+    void build(vector<string> v) {
+        n=SZ(v);
+        REP(i,n) add(v[i],i);
         queue<int> q;
         REP(i,26) {
             if(ac[root].ch[i]) {
@@ -95,37 +103,35 @@ struct AC {
             }
         }
     }
-    void init(int _n,vector<string> v) { 
-        root=AC_node_id++; 
-        ac[root].fail=root;
-        n=_n;
-        mp=Vi(n);
-        REP(i,n) add(v[i],i);
-        build_fail();
-    }
     Vi qu(string s) {
         Vi an(n);
         int now=root;
+        Vi vv;
         for(char _c:s) {
             int c=_c-'a';
             now=ac[now].ch[c];
-            ac[now].ans++;
+            for(int t=now;t!=root&&!ac[t].vis;t=ac[t].fail) {
+                ac[t].vis=1;
+                for(int id:ac[t].end) an[id]=1;
+                vv.pb(t);
+            }
         }
-        
+        for(int x:vv) ac[x].vis=0;
         return an;
     }
 };
 signed main() {
     IOS();
+    string s;
+    cin>>s;
     int n;
     cin>>n;
     vector<string> a(n);
     REP(i,n) cin>>a[i];
-    string s;
-    cin>>s;
     AC ac;
-    ac.init(n,a);
+    ac.init();
+    ac.build(a);
     Vi an=ac.qu(s);
-    REP(i,n) cout<<an[i]<<'\n';
+    REP(i,n) cout<<(an[i]?"YES":"NO")<<'\n';
     return 0;
 }
