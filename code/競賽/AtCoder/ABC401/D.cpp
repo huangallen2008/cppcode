@@ -64,6 +64,9 @@ signed main() {
     string s;
     cin>>s;
     s='.'+s+'.';
+    REP1(i,n) {
+        if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
+    }
     Vi id;
     int cnto=0;
     for(char c:s) cnto+=c=='o';
@@ -78,9 +81,6 @@ signed main() {
             for(int j=id[i]+(s[id[i]]=='o')+1;j<=id[i+1]-1-(s[id[i+1]]=='o');j+=2) {
                 an[j]='o';
             }
-        }
-        REP1(i,n) {
-            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
         }
         string ans;
         REP1(i,n) ans+=an[i];
