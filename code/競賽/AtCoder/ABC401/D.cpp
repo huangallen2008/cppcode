@@ -85,20 +85,6 @@ signed main() {
         string ans;
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
-    }else if(cnt+cnto==k-1) {
-        string an=s;
-        REP(i,SZ(id)-1) {
-            if(id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')&1) continue;
-            for(int j=id[i]+(s[id[i]]=='o')+2;j<=id[i+1]-2-(s[id[i+1]]=='o');j+=2) {
-                an[j]='.';
-            }
-        }
-        REP1(i,n) {
-            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
-        }
-        string ans;
-        REP1(i,n) ans+=an[i];
-        cout<<ans<<'\n';
     }else {
         string an=s;
         REP1(i,n) {
