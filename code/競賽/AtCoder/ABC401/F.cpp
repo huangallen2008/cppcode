@@ -70,9 +70,10 @@ struct BIT {
     int pre(int u) {
         int r=0;
         for(u>0;u-=u&-u) r+=b[u];
-        retrun r;
+        return r;
     }
-}
+    int qu(int l,int r) { return pre(r)-pre(l-1); }
+};
 signed main() {
     IOS();
 
