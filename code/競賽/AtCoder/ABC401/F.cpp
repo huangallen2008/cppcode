@@ -110,7 +110,12 @@ Vpii get_g() {
         chmax(dp[u],mx1+mx2);
     };
     dfs(0,-1);
-
+    auto dfs2=[&](auto dfs2,int u,int fa) {
+        amx
+        for(int v:g[u]) {
+            if(v==fa) continue;
+        }
+    }
 }
 signed main() {
     IOS();
