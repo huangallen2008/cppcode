@@ -103,7 +103,7 @@ signed main() {
             col[v]=2;
         }
         for(int v:g[i]) if(v<i)dsu.merge(i,v);
-        oparr(col)ope(an)
+        // oparr(col)ope(an)
         if(dsu.cc==n-i) cout<<an<<'\n';
         else cout<<"-1\n";
     }
