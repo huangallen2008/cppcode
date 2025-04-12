@@ -85,7 +85,7 @@ signed main() {
         string an=s;
         REP(i,SZ(id)) {
             if(id[i].s-id[i].f&1) continue;
-            for(int j=id[i].f;j<=id[i+1].s;j+=2) {
+            for(int j=id[i].f;j<=id[i].s;j+=2) {
                 an[j]='o';
             }
         }
@@ -94,9 +94,6 @@ signed main() {
         cout<<ans<<'\n';
     }else {
         string an=s;
-        REP1(i,n) {
-            if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
-        }
         string ans;
         REP1(i,n) ans+=an[i];
         cout<<ans<<'\n';
