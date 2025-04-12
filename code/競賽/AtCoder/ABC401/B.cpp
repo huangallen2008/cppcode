@@ -65,7 +65,8 @@ signed main() {
         string s;
         cin>>s;
         if(s=="login") login=1;
-        else if(s=="logout")
+        else if(s=="logout") login=0;
+        else if()
     }
     return 0;
 }
