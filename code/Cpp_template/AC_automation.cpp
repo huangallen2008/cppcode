@@ -1,4 +1,4 @@
-問有沒有
+//問有沒有
 struct AC_node {
     int fail;
     int ch[26];
