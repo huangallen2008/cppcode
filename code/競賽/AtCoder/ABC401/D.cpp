@@ -80,7 +80,9 @@ signed main() {
     int cnt=0;
     REP(i,SZ(id)) cnt+=id[i].s-id[i].f+2>>1;
     // ope(cnt)
-    if(cnt+cnto==k) {
+    if(cnto==k) {
+    }
+    else if(cnt+cnto==k) {
         string an=s;
         REP(i,SZ(id)) {
             if(id[i].s-id[i].f&1) continue;
