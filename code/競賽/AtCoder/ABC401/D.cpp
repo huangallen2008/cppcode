@@ -64,8 +64,8 @@ signed main() {
     string s;
     cin>>s;
     s='.'+s+'.';
-    REP1(i,n) {
-        if(an[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
+    REP(i,n) {
+        if(s[i]=='?'&&(an[i-1]=='o'||an[i+1]=='o')) an[i]='.';
     }
     Vi id;
     int cnto=0;
