@@ -70,7 +70,7 @@ signed main() {
     REP(i,SZ(id)-1) cnt+=id[i+1]-id[i]-(s[id[i]]=='o')-(s[id[i+1]]=='o')-2>>1;
     if(cnt==k) {
         REP(i,SZ(id)-1) {
-            for(int j=id[i]+(s[id]))
+            for(int j=id[i]+(s[id[i]]=='o');j<)
         }
     }else {
         string an=s;
