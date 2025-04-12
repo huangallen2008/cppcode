@@ -81,7 +81,10 @@ signed main() {
     REP(i,SZ(id)) cnt+=id[i].s-id[i].f+2>>1;
     // ope(cnt)
     if(cnto==k) {
-        
+        REP1(i,n) if(s[i]=='?') s[i]='.';
+        string ans;
+        REP1(i,n) ans+=an[i];
+        cout<<ans<<'\n';
     }else if(cnt+cnto==k) {
         string an=s;
         REP(i,SZ(id)) {
