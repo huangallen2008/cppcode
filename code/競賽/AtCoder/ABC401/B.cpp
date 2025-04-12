@@ -64,7 +64,8 @@ signed main() {
     REP(i,n) {
         string s;
         cin>>s;
-        if(s=="login")
+        if(s=="login") login=1;
+        else if(s=="logout")
     }
     return 0;
 }
