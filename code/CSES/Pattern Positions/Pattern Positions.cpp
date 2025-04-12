@@ -114,15 +114,7 @@ struct AC {
             now=ac[now].ch[c];
             ac[now].ans++;
         }
-        queue<int> q;
-        REP1(i,AC_node_id-1) if(ac[i].ind==0) q.push(i);
-        while(SZ(q)) {
-            int u=q.front();
-            q.pop();
-            int v=ac[u].fail;
-            ac[v].ans+=ac[u].ans;
-            if(--ac[v].ind==0) q.push(v);
-        }
+        
         REP(i,n) an[i]=ac[mp[i]].ans;
         return an;
     }
