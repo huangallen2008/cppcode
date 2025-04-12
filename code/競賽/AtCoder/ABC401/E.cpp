@@ -97,11 +97,11 @@ signed main() {
     REP(i,n) {
         if(col[i]==2) an--;
         col[i]=1;
-        for(int v:g[i]) if(v<i) {
+        for(int v:g[i])  {
             if(col[v]!=2) an++;
             col[v]=2;
-            dsu.merge(i,v);
         }
+        dsu.merge(i,v);
         oparr(col)ope(an)
         if(dsu.cc==n-i) cout<<an<<'\n';
         else cout<<"-1\n";
