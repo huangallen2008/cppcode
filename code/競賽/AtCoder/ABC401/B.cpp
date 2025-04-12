@@ -61,6 +61,10 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    
+    REP(i,n) {
+        string s;
+        cin>>s;
+        if(s=="login")
+    }
     return 0;
 }
