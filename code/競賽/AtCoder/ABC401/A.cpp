@@ -61,6 +61,6 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    if()
+    if(200<=n&&n<=299) cout<<""
     return 0;
 }
