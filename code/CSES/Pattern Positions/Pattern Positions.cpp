@@ -104,7 +104,7 @@ struct AC {
         ac[root].fail=root;
         n=_n;
         mp=Vi(n);
-        REP(i,n) add(v[i],i);
+        REP(i,n) add(a[i],i);
         build_fail();
     }
     Vi qu(string s) {
