@@ -61,6 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    int login=0,an=0;
     REP(i,n) {
         string s;
         cin>>s;
@@ -68,5 +69,6 @@ signed main() {
         else if(s=="logout") login=0;
         else if(s==private) an+=login==0;
     }
+    cout<<an<<'\n';
     return 0;
 }
