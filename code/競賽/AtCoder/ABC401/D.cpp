@@ -67,6 +67,9 @@ signed main() {
     REP(i,n) {
         if(s[i]=='?'&&(s[i-1]=='o'||s[i+1]=='o')) s[i]='.';
     }
+    REP(i,n) {
+        if(s[i]=='?'&&(s[i-1]=='o'||s[i+1]=='o')) s[i]='.';
+    }
     int st=-1;
     Vpii id;
     REP(i,n+2) {
