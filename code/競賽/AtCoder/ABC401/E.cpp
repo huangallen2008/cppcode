@@ -94,7 +94,9 @@ signed main() {
     Vi col(n);
     int an=0;
     REP(i,n) {
-        if(col[i]==)
+        if(col[i]==2) an--;
+        col[i]=1;
+        
     }
     return 0;
 }
