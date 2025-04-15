@@ -31,6 +31,7 @@ Graphw g;
 Vi vis;
 Vi ol;
 Vi deg;
+Vi cur;
 void dfs(int u) {
     for(auto [v,id]:g[u]) {
       if(vis[id]) continue;
