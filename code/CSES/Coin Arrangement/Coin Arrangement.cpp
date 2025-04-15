@@ -64,7 +64,7 @@ signed main() {
     vector<Vi> a(2,Vi(n));
     REP(i,n) cin>>a[0][i];
     REP(i,n) cin>>a[1][i];
-    int
+    int v1=0,v2=0;
     cout<<an<<'\n';
     return 0;
 }
