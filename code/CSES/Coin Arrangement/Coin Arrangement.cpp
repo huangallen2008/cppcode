@@ -71,7 +71,7 @@ signed main() {
             if(abs(v0)<abs(v1)) {
                 an+=abs(v0);
                 v1+=v0;
-                v10=0;
+                v0=0;
             }else {
                 an+=abs(v1);
                 v0+=v1;
