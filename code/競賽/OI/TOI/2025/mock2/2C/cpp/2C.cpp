@@ -44,7 +44,7 @@ void construct_logic(const std::string &s, signed K) {
     int R=SZ(s);
     _id2=id2;
     int nowid=0;
-        int T=7;
+        int T=8;
     if(SZ(s)<T) {
         int fir=1,fir2=1;
         if(s[0]=='1') {
@@ -77,19 +77,28 @@ void construct_logic(const std::string &s, signed K) {
         else if(!fir2) id=id2;
         nowid=id;
     }else {
+        Vi cnt(1<<T);
+        for(int i=0;i<R;i+=T) {
+            if(i+T-1>=R) i=R-T;
+            int tid=0;
+            for(int j=i+T-1;j>=i;j--) tid=tid*2+(s[j]=='1');
+            cnt[tid]++;
+        }
+
         Vi lids(2); lids[0]=_id2,lids[1]=_id;
         Vi ids=lids;
-        for(int K=2;K<=T;K++) {
+        for(int K=2;K<=T;K*=2) {
             ids=Vi(1<<K);
-            int tt1=add_lshift(_id,K-1);
-            int tt2=add_lshift(_id2,K-1);
             REP(i,1<<K) {
-                int nid=lids[i&((1<<K-1)-1)];
-                if(i>>(K-1)&1) {
-                    nid=add_and(nid,tt1);
-                }else {
-                    nid=add_and(nid,tt2);
-                }
+                if(K==T&&cnt[i]==0) continue;
+                int nid=lids[i&((1<<(K>>1))-1)];
+                int nid2=lids[i>>(K>>1)];
+                // int tt=
+                // if(i>>(K-1)&1) {
+                    nid=add_and(nid,add_lshift(nid2,K>>1));
+                // }else {
+                //     nid=add_and(nid,tt2);
+                // }
                 ids[i]=nid;
             }
             // oparr(ids)
@@ -108,6 +117,10 @@ void construct_logic(const std::string &s, signed K) {
         }
     }
     }
+    // int tt=add_lshift(id2,R);id2=add_and(id2,tt);
+    // tt=add_lshift(id2,R);id2=add_and(id2,tt);
+    // if(!fir){
+        ope("o1")
         int now=1;
         while(now*2<k) {
             int lid=nowid;
@@ -122,5 +135,22 @@ void construct_logic(const std::string &s, signed K) {
             ope(k-now)
             nowid=add_and(nowid,lid);
         }
+    // }
+    // if(!fir2){
+    //     ope("o2")
+    //     int now=1;
+    //     while(now*2<k) {
+    //         int lid=id2;
+    //         id2=add_lshift(id2,R*now);
+    //         id2=add_and(id2,lid);
+    //         now<<=1;
+    //     }
+    //     if(now<k){
+    //         int lid=id2;
+    //         id2=add_lshift(id2,R*(k-now));
+    //         id2=add_and(id2,lid);
+    //     }
+    // }
+    // op(id)ope(id2)
     
 }
