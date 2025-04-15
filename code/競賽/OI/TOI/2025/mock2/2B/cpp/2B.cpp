@@ -34,7 +34,7 @@ Vi cur;
 void dfs(int u) {
     for(auto [v,id]:g[u]) {
       if(vis[id]) continue;
-      
+      ol.pb(id);
     }
 }
 std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<signed> &V) { 
