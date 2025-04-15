@@ -86,7 +86,7 @@ void construct_logic(const std::string &s, signed K) {
         }
 
         Vi lids(2); lids[0]=_id2,lids[1]=_id;
-        Vi lids2(2); lids2
+        Vi lids2(2); lids2[0]=
         Vi ids=lids;
         for(int K=2;K<=T;K*=2) {
             ids=Vi(1<<K);
