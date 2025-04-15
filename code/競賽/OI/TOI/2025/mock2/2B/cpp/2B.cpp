@@ -31,11 +31,13 @@ Graphw g;
 Vi vis;
 Vi ol;
 Vi cur;
+Vi deg;
 void dfs(int u) {
     for(auto [v,id]:g[u]) {
       if(vis[id]) continue;
       ol.pb(id);
       vis[id]=1;
+      deg[u]--,deg[v]--;
       dfs(v);
     }
 }
