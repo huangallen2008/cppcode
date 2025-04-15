@@ -64,6 +64,7 @@ std::vector<long long> maximum_profit(const std::vector<signed> &A, const std::v
         if(it==res.begin()||it==prev(res.end())) {
             an.pb(now-v);
             s.erase({abs(a[id]),id});
+            res.
             continue;
           }
         an.pb(now-v);
