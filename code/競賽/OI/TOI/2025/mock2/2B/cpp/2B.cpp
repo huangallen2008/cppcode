@@ -49,5 +49,43 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
         g[U[i]-1].pb({V[i]-1,i});
         g[V[i]-1].pb({U[i]-1,i});
     }
+    string an;
+    int nowmn=inf;
+    REP(i,1<<m) {
+        #ifdef LOCAL
+        if(i!=25) continue;
+        #endif
+        Vi cnt0(n),cnt1(n);
+        bool ok=1;
+        REP(u,n) {
+            for(auto [v,id]:g[u]) {
+                if(i>>id&1) cnt1[u]++;
+                else cnt0[u]++;
+            }
+            op(cnt0[u])ope(cnt1[u])
+            if(abs(cnt0[u]-cnt1[u])>1) {
+                ok=0;
+                break;
+            }
+        }
+        if(!ok) break;
+        int tv=0;
+        int c0=0,c1=0;
+        REP(j,m) {
+            if(i>>j&1) c1++;
+            else c0++;
+        }
+        int dif=abs(c0-c1);
+        string r;
+        REP(j,m) {
+            if(i>>j&1) r+='R';
+            else r+='B';
+        }
+        ope(dif)
+        if(dif<nowmn) {
+            nowmn=dif;
+            an=r;
+        }
+    }
     return an;
 }
