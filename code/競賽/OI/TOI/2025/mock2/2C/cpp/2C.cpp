@@ -99,7 +99,7 @@ void construct_logic(const std::string &s, signed K) {
                 int nid2=lids2[i>>(K>>1)];
                 // int tt=
                 // if(i>>(K-1)&1) {
-                    nid=add_and(nid,add_lshift(nid2,K>>1));
+                    nid=add_and(nid,nid2);
                 // }else {
                 //     nid=add_and(nid,tt2);
                 // }
