@@ -30,7 +30,6 @@ const int inf=(1ll<<60);
 Graphw g;
 Vi vis;
 Vi ol;
-Vi cur;
 Vi deg;
 void dfs(int u) {
     for(auto [v,id]:g[u]) {
