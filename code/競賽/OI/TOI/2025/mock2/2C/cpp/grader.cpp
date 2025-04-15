@@ -4,7 +4,6 @@
 #include <vector>
 #include <bitset>
 #include <string>
-#include "2C.cpp"
 namespace {
     const int L = 50000;
     const int LIMIT = 10000;
@@ -20,8 +19,8 @@ namespace {
         assert(scanf("%s", buffer) == 1);
         assert(int(strlen(buffer)) == length);
         for (int i = 0; i < length; i++)
-            if (buffer[i] == '1')
-                res[length - 1 - i] = 1;
+        if (buffer[i] == '1')
+        res[length - 1 - i] = 1;
     }
     std::bitset<L> calculate(const std::bitset<L> &input) {
         std::vector<std::bitset<L>> outputs(gates.size(), input);
@@ -47,7 +46,7 @@ namespace {
             else {
                 assert(0);
             }
-
+            
             outputs[i] &= field;
         }
         return outputs.back();
@@ -58,15 +57,15 @@ namespace {
     }
     void check_index(int X) {
         if (X < 0 || X >= int(gates.size()))
-            wrong_answer("Invalid index");
+        wrong_answer("Invalid index");
     }
     void check_offset(int D) {
         if (D < 0)
-            wrong_answer("Invalid offset");
+        wrong_answer("Invalid offset");
     }
     void append(const operation &op) {
         if (int(gates.size()) >= LIMIT)
-            wrong_answer("Too many gates");
+        wrong_answer("Too many gates");
         gates.push_back(op);
     }
 } // global variables
@@ -134,8 +133,10 @@ int main() {
     for (auto &input : querys) {
         auto output = calculate(input);
         for (int i = 0; i < N; i++)
-            buffer[N - 1 - i] = output[i] + '0';
+        buffer[N - 1 - i] = output[i] + '0';
         buffer[N] = 0;
         printf("%s\n", buffer);
     }
 }
+
+#include "2C.cpp"
