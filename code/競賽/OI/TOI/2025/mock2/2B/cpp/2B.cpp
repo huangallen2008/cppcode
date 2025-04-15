@@ -27,7 +27,6 @@ const int inf=(1ll<<60);
 #define oparr(x) ;
 #define entr ;
 #endif
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 Graphw g;
 Vi vis;
 Vi ol;
@@ -49,43 +48,35 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
         g[U[i]-1].pb({V[i]-1,i});
         g[V[i]-1].pb({U[i]-1,i});
     }
+    Vi odd;
+    int mid=m;
+    REP(i,n) if(SZ(g[i])&1) odd.pb(i);
+    for(int i=0;i<SZ(odd);i+=2) {
+        g[odd[i]].pb({odd[i+1],mid}),g[odd[i+1]].pb({odd[i],mid});
+        mid++;
+    }
+    int st=0;
+    // if(n&1) {
+    //     if(SZ(odd)) {
+    //         st=odd[0];
+    //     }else {
+    //         g[0].pb({1,mid});
+    //         g[1].pb({0,mid});
+    //         mid++;
+    //     }
+    // }
+    // entr
+    // for(auto [x,y]:g[0]) cout<<x<<' '<<y<<'\n';
+    // entr
+    vis=Vi(m+1);
+    ol.clear();
+    cur=Vi(n);
+    for(int x:odd) dfs(x);
+    REP(i,n) dfs(i);
     string an;
-    int nowmn=inf;
-    REP(i,1<<m) {
-        #ifdef LOCAL
-        if(i!=25) continue;
-        #endif
-        Vi cnt0(n),cnt1(n);
-        bool ok=1;
-        REP(u,n) {
-            for(auto [v,id]:g[u]) {
-                if(i>>id&1) cnt1[u]++;
-                else cnt0[u]++;
-            }
-            op(cnt0[u])ope(cnt1[u])
-            if(abs(cnt0[u]-cnt1[u])>1) {
-                ok=0;
-                break;
-            }
-        }
-        if(!ok) break;
-        int tv=0;
-        int c0=0,c1=0;
-        REP(j,m) {
-            if(i>>j&1) c1++;
-            else c0++;
-        }
-        int dif=abs(c0-c1);
-        string r;
-        REP(j,m) {
-            if(i>>j&1) r+='R';
-            else r+='B';
-        }
-        ope(dif)
-        if(dif<nowmn) {
-            nowmn=dif;
-            an=r;
-        }
+    REP(i,m) an+='R';
+    REP(i,SZ(ol)) {
+        if(ol[i]<m) an[ol[i]]=i&1?'R':'B';
     }
     return an;
 }
