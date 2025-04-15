@@ -56,18 +56,6 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
         mid++;
     }
     int st=0;
-    // if(n&1) {
-    //     if(SZ(odd)) {
-    //         st=odd[0];
-    //     }else {
-    //         g[0].pb({1,mid});
-    //         g[1].pb({0,mid});
-    //         mid++;
-    //     }
-    // }
-    // entr
-    // for(auto [x,y]:g[0]) cout<<x<<' '<<y<<'\n';
-    // entr
     vis=Vi(m+1);
     ol.clear();
     for(int x:odd) dfs(x);
