@@ -96,7 +96,7 @@ void construct_logic(const std::string &s, signed K) {
             REP(i,1<<K) {
                 if(K==T&&cnt[i]==0) continue;
                 int nid=lids[i&((1<<(K>>1))-1)];
-                int nid2=lids[i>>(K>>1)];
+                int nid2=lids2[i>>(K>>1)];
                 // int tt=
                 // if(i>>(K-1)&1) {
                     nid=add_and(nid,add_lshift(nid2,K>>1));
