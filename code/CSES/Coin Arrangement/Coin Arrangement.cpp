@@ -65,6 +65,9 @@ signed main() {
     REP(i,n) cin>>a[0][i];
     REP(i,n) cin>>a[1][i];
     int v1=0,v2=0;
+    REP(i,n) {
+        
+    }
     cout<<an<<'\n';
     return 0;
 }
