@@ -60,7 +60,9 @@ std::vector<long long> maximum_profit(const std::vector<signed> &A, const std::v
         auto [v,id]=*s.begin();
         op(v)ope(id)
         auto it=res.lower_bound(id);
-        if(it==res.begin()||it==prev(res.end())) continue;
+        if(it==res.begin()||it==prev(res.end())) {
+          
+        }
         int now=an.back();
         an.pb(now-v);
         an.pb(now-v*2);
