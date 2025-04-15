@@ -34,6 +34,7 @@ Vi deg;
 Vi cur;
 void dfs(int u) {
     for(auto [v,id]:g[u]) {
+      auto [v,id]=g[u][i];
       if(vis[id]) continue;
       ol.pb(id);
       vis[id]=1;
