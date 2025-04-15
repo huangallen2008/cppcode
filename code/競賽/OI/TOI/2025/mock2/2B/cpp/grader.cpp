@@ -18,3 +18,5 @@ int main() {
   printf("%s\n", C.c_str());
   return 0;
 }
+
+#include "2B.cpp"
