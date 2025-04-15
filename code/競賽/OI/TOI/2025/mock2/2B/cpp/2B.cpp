@@ -45,13 +45,14 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
     if(n==1) return "";
     int m=SZ(U);
     g=Graphw(n);
+    deg=Vi(n);
     REP(i,m) {
         g[U[i]-1].pb({V[i]-1,i});
         g[V[i]-1].pb({U[i]-1,i});
     }
     Vi odd;
     int mid=m;
-    REP(i,n) if(SZ(g[i])&1) odd.pb(i);
+    REP(i,n) if(deg&1) odd.pb(i);
     int st=0;
     vis=Vi(m+1);
     ol.clear();
