@@ -39,6 +39,7 @@ void dfs(int u) {
       vis[id]=1;
       deg[u]--,deg[v]--;
       dfs(v);
+      break;
     }
 }
 std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<signed> &V) { 
