@@ -1,7 +1,7 @@
 #include <cassert>
 #include <cstdio>
 #include <vector>
-
+#include "2A.cpp"
 std::vector<long long> maximum_profit(const std::vector<int> &A,
                                       const std::vector<int> &Q);
 
