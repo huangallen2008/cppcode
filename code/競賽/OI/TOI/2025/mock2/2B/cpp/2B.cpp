@@ -56,6 +56,7 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
     Vi odd;
     int mid=m;
     ol.clear();
+    cur=Vi(n);
     vis=Vi(m+1);
     REP(i,n) if(deg[i]&1) dfs(i);
     REP(i,n) {dfs(i);
