@@ -91,7 +91,7 @@ void construct_logic(const std::string &s, signed K) {
             ids=Vi(1<<K);
             Vi lids2(1<<(K>>1));
             REP(i,1<<(K>>1)) {
-                
+                lids[i]=add_lshift()
             }
             REP(i,1<<K) {
                 if(K==T&&cnt[i]==0) continue;
