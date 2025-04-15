@@ -50,6 +50,7 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
         g[U[i]-1].pb({V[i]-1,i});
         g[V[i]-1].pb({U[i]-1,i});
     }
+    REP(i,n) deg[i]=SZ(g[i]);
     Vi odd;
     int mid=m;
     ol.clear();
