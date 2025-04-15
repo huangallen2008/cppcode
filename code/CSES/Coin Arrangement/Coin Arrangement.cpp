@@ -79,7 +79,7 @@ signed main() {
                 v1=0;
             }
         }
-        an+=abs(v0-v1);
+        an+=abs(v0+v1);
     }
     cout<<an<<'\n';
     return 0;
