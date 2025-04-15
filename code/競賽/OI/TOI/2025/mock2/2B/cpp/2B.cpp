@@ -58,7 +58,7 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
     string an;
     REP(i,m) an+='R';
     REP(i,SZ(ol)) {
-        if(ol[i]<m) an[ol[i]]=i&1?'R':'B';
+        an[ol[i]]=i&1?'R':'B';
     }
     return an;
 }
