@@ -69,17 +69,16 @@ std::vector<long long> maximum_profit(const std::vector<signed> &A, const std::v
         }
         an.pb(now-v);
         an.pb(now-v*2);
-        if(next(it)!=res.end()) {
-            ope("ok1")
+            // ope("ok1")
             s.erase({abs(a[*next(it)]),*next(it)});
             s.erase({abs(a[id]),id});
             a[id]+=a[*next(it)];
             s.insert({abs(a[id]),id});
             res.erase(next(it));
             oparr(a)
-        }
-        if(it!=res.begin()) {
-            ope("ok2")
+        // }
+        // if(it!=res.begin()) {
+            // ope("ok2")
             s.erase({abs(a[*prev(it)]),*prev(it)});
             s.erase({abs(a[id]),id});
             a[*prev(it)]+=a[id];
