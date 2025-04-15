@@ -70,7 +70,6 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
     // entr
     vis=Vi(m+1);
     ol.clear();
-    cur=Vi(n);
     for(int x:odd) dfs(x);
     REP(i,n) dfs(i);
     string an;
