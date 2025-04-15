@@ -33,7 +33,7 @@ Vi ol;
 Vi deg;
 Vi cur;
 void dfs(int u) {
-    for(int &i=cur[u];i<SZ(g[u])) {
+    for(int &i=cur[u];i<SZ(g[u]);i++) {
       auto [v,id]=g[u][i];
       if(vis[id]) continue;
       ol.pb(id);
