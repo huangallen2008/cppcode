@@ -4,7 +4,7 @@
 #include <vector>
 #include <bitset>
 #include <string>
-
+#include "2C.cpp"
 namespace {
     const int L = 50000;
     const int LIMIT = 10000;
