@@ -35,6 +35,8 @@ void dfs(int u) {
     for(auto [v,id]:g[u]) {
       if(vis[id]) continue;
       ol.pb(id);
+      vis[id]=1;
+      dfs(v);
     }
 }
 std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<signed> &V) { 
