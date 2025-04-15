@@ -108,10 +108,6 @@ void construct_logic(const std::string &s, signed K) {
         }
     }
     }
-    // int tt=add_lshift(id2,R);id2=add_and(id2,tt);
-    // tt=add_lshift(id2,R);id2=add_and(id2,tt);
-    // if(!fir){
-        ope("o1")
         int now=1;
         while(now*2<k) {
             int lid=nowid;
@@ -126,22 +122,5 @@ void construct_logic(const std::string &s, signed K) {
             ope(k-now)
             nowid=add_and(nowid,lid);
         }
-    // }
-    // if(!fir2){
-    //     ope("o2")
-    //     int now=1;
-    //     while(now*2<k) {
-    //         int lid=id2;
-    //         id2=add_lshift(id2,R*now);
-    //         id2=add_and(id2,lid);
-    //         now<<=1;
-    //     }
-    //     if(now<k){
-    //         int lid=id2;
-    //         id2=add_lshift(id2,R*(k-now));
-    //         id2=add_and(id2,lid);
-    //     }
-    // }
-    // op(id)ope(id2)
     
 }
