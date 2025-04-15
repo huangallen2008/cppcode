@@ -105,9 +105,11 @@ void construct_logic(const std::string &s, signed K) {
                 // }
                 ids[i]=nid;
             }
-            REP(i,1<<K)
             // oparr(ids)
-            if(K<T)swap(lids,ids);
+            if(K<T){
+                swap(lids,ids);
+                REP(i,1<<K)
+            }
         }
     nowid=-1;
     for(int i=0;i<R;i+=T) {
