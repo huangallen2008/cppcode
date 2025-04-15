@@ -67,7 +67,9 @@ signed main() {
     int v0=0,v1=0;
     REP(i,n) {
         v0+=a[0][i],v1+=a[1][i];
-        if(v1*v1)
+        if(v1*v1<0) {
+            
+        }
     }
     cout<<an<<'\n';
     return 0;
