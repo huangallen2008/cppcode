@@ -78,6 +78,7 @@ signed main() {
                 v2=0;
             }
         }
+        an+=abs(v0-v1);
     }
     cout<<an<<'\n';
     return 0;
