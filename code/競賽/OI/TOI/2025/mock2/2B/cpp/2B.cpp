@@ -32,13 +32,7 @@ Vi vis;
 Vi ol;
 Vi cur;
 void dfs(int u) {
-    for(;cur[u]<SZ(g[u]);){
-        auto [v,id]=g[u][cur[u]++];
-        if(vis[id]) continue;
-        vis[id]=1;
-        dfs(v);
-        ol.pb(id);
-    }
+    for(auto )
 }
 std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<signed> &V) { 
     if(n==1) return "";
