@@ -67,7 +67,6 @@ signed main() {
     int v0=0,v1=0,an=0;
     REP(i,n) {
         v0+=a[0][i],v1+=a[1][i];
-        op(v0)ope(v1)
         if(v0*v1<0) {
             if(abs(v0)<abs(v1)) {
                 an+=abs(v0);
