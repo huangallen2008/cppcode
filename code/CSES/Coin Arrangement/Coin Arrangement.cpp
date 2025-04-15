@@ -69,9 +69,12 @@ signed main() {
         v0+=a[0][i],v1+=a[1][i];
         if(v1*v1<0) {
             if(abs(v1)<abs(v2)) {
-                an+=v1;
+                an+=abs(v1);
                 v2+=v1;
                 v1=0;
+            }else {
+                an+=abs(v2);
+                
             }
         }
     }
