@@ -107,7 +107,7 @@ void construct_logic(const std::string &s, signed K) {
             }
             // oparr(ids)
             if(K<T){
-                REP(i,1<<K) lids2
+                REP(i,1<<K) ids2[i]=adds
                 swap(lids,ids);
                 swap(lids2,ids2);
             }
