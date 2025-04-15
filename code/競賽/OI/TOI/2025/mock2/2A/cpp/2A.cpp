@@ -84,7 +84,7 @@ std::vector<long long> maximum_profit(const std::vector<signed> &A, const std::v
             a[*prev(it)]+=a[id];
             s.insert({abs(a[*prev(it)]),*prev(it)});
             res.erase(it);
-        }
+        // }
     }
     oparr(an)
     Vi ans(m);
