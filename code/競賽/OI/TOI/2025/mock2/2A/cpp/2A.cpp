@@ -55,7 +55,7 @@ std::vector<long long> maximum_profit(const std::vector<signed> &A, const std::v
     ope(s.begin()->f)
     oparr(a)
     int ccc=0;
-    while(res.size()>2) {
+    while(res.size()) {
         // if(ccc++>5) break;
         auto [v,id]=*s.begin();
         op(v)ope(id)
