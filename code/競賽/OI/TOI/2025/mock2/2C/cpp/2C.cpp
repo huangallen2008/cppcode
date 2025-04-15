@@ -89,9 +89,10 @@ void construct_logic(const std::string &s, signed K) {
         Vi lids2(2); 
         lids2[0]=add_lshift(_id2,1);
         lids2[1]=add_lshift(_id,1);
-        Vi ids=lids;
+        Vi ids=lids,ids2=lids2;
         for(int K=2;K<=T;K*=2) {
             ids=Vi(1<<K);
+            ids2=Vi(1<<K);
             REP(i,1<<K) {
                 if(K==T&&cnt[i]==0) continue;
                 int nid=lids[i&((1<<(K>>1))-1)];
