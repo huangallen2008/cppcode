@@ -74,7 +74,8 @@ signed main() {
                 v1=0;
             }else {
                 an+=abs(v2);
-                
+                v1+=v2;
+                v2=0;
             }
         }
     }
