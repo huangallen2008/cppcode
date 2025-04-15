@@ -32,7 +32,7 @@ Vi vis;
 Vi ol;
 Vi cur;
 void dfs(int u) {
-    for(auto )
+    for(auto [])
 }
 std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<signed> &V) { 
     if(n==1) return "";
@@ -45,10 +45,6 @@ std::string bicoloring(signed n,const std::vector<signed> &U,const std::vector<s
     Vi odd;
     int mid=m;
     REP(i,n) if(SZ(g[i])&1) odd.pb(i);
-    for(int i=0;i<SZ(odd);i+=2) {
-        g[odd[i]].pb({odd[i+1],mid}),g[odd[i+1]].pb({odd[i],mid});
-        mid++;
-    }
     int st=0;
     vis=Vi(m+1);
     ol.clear();
