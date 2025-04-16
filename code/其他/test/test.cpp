@@ -130,6 +130,7 @@ signed main() {
     IOS();
     Vi a(12);
     REP(i,12) a[i]=i+1;
-    sh
+    shuffle(ALL(a));
+    op(a[0])ope(a[1])
     return 0;
 }
