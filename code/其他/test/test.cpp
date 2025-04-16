@@ -128,6 +128,8 @@ struct AC {
 };
 signed main() {
     IOS();
-    
+    Vi a(12);
+    REP(i,12) a[i]=i+1;
+    sh
     return 0;
 }
