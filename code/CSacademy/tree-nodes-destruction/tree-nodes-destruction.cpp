@@ -61,21 +61,6 @@ int rd(int l,int r)
 signed main() 
 {
     IOS();
-    int X,n;
-    cin>>X>>n;
-    Vpii a(n);
-    REP(i,n) {
-        int v,l,r;
-        cin>>v>>l>>r;
-        a[i]={v,r-l+1};
-    }
-    int q;
-    cin>>q;
-    Vi b(q);
-    REP(i,q) cin>>b[i];
-    sort(ALL(b));
-    int an=0;
-    REP(i,n) (an+=a[i].f*a[i].s%mod*(lower_bound(ALL(b),a[i].f)-b.begin()))%=mod;
-    cout<<an<<'\n';
+    
     return 0;
 }
