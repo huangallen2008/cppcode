@@ -54,13 +54,14 @@ const int maxn=1e6+5;
 const int maxv=1000;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int rd(int l,int r) 
-{
+int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed main() 
-{
+signed main() {
     IOS();
-    
+    Vi a(12);
+    REP(i,12) a[i]=i+1;
+    shuffle(ALL(a),rng);
+    op(a[0])ope(a[1])
     return 0;
 }
