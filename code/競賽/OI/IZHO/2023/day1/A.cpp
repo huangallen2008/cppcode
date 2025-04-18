@@ -70,6 +70,8 @@ signed main() {
         }
     }
     Vi mxx(m,-1);
-
+    REP(i,n) {
+        
+    }
     return 0;
 }
