@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<Vi> a(n+1,Vi(m+1));
+    vector<Vi> a(n+1,Vi(m+1,-1));
     REP1(i,n) {
         REP1(j,m) {
             char c;
