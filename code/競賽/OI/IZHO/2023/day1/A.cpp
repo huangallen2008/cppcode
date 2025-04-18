@@ -61,18 +61,14 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    int an=0;
-    int las=-1,now=0;
+    vector<Vi> a(n,Vi(m));
     REP(i,n) {
         REP(j,m) {
             char c;
             cin>>c;
-            if(c=='X') {
-                chmax(an,now);
-                now=0;
-            }else now+=c-'0';
+            a[i][j]=c=='X'?-1:c-'0';
         }
     }
-    cout<<an<<'\n';
+    
     return 0;
 }
