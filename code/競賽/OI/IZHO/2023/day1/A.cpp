@@ -80,6 +80,9 @@ signed main() {
         Vi pa(m+1);
         Vpii stk={{i,0}};
         int now=0;
+        REP1(j,m) {
+            
+        }
     }
     return 0;
 }
