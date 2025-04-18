@@ -67,7 +67,7 @@ signed main() {
         REP(j,m) {
             char c;
             cin>>c;
-            an+=c-'0';
+            
         }
     }
     cout<<an<<'\n';
