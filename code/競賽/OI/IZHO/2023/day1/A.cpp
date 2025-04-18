@@ -97,6 +97,8 @@ signed main() {
                 stk.pop_back();
             }
             now+=asum(mxx[j]+1,i,j,stk.back().s-1);
+            stk.pb({mxx[j],j});
+            
         }
     }
     return 0;
