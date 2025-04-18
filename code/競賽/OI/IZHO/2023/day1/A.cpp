@@ -81,7 +81,7 @@ signed main() {
         Vpii stk={{i,0}};
         int now=0;
         REP1(j,m) {
-            while(SZ(stk)&&stk.back().f)
+            while(SZ(stk)&&stk.back().f<mxx[j])
         }
     }
     return 0;
