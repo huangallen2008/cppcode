@@ -57,80 +57,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct AC_node {
-    int fail;
-    int ch[26];
-    int ans=0;
-    int ind=0;
-}ac[maxn];
-int AC_node_id=1;
-struct AC {
-    int root;
-    int n;
-    Vi mp;
-    void add(string s,int id) {
-        int now=root;
-        for(char _c:s) {
-            int c=_c-'a';
-            if(!ac[now].ch[c]) ac[now].ch[c]=AC_node_id++;
-            now=ac[now].ch[c];
-        }
-        mp[id]=now;
-    }
-    void build_fail() {
-        queue<int> q;
-        REP(i,26) {
-            if(ac[root].ch[i]) {
-                ac[ac[root].ch[i]].fail=root;
-                q.push(ac[root].ch[i]);
-            }else ac[root].ch[i]=root;
-        }
-        while(SZ(q)) {
-            int u=q.front();
-            q.pop();
-            REP(c,26) {
-                if(ac[u].ch[c]) {
-                    ac[ac[u].ch[c]].fail=ac[ac[u].fail].ch[c];
-                    ac[ac[ac[u].fail].ch[c]].ind++;
-                    q.push(ac[u].ch[c]);
-                }else ac[u].ch[c]=ac[ac[u].fail].ch[c];
-            }
-        }
-    }
-    void init(int _n,vector<string> v) { 
-        root=AC_node_id++; 
-        ac[root].fail=root;
-        n=_n;
-        mp=Vi(n);
-        REP(i,n) add(v[i],i);
-        build_fail();
-    }
-    Vi qu(string s) {
-        Vi an(n);
-        int now=root;
-        for(char _c:s) {
-            int c=_c-'a';
-            now=ac[now].ch[c];
-            ac[now].ans++;
-        }
-        queue<int> q;
-        REP1(i,AC_node_id-1) if(ac[i].ind==0) q.push(i);
-        while(SZ(q)) {
-            int u=q.front();
-            q.pop();
-            int v=ac[u].fail;
-            ac[v].ans+=ac[u].ans;
-            if(--ac[v].ind==0) q.push(v);
-        }
-        REP(i,n) an[i]=ac[mp[i]].ans;
-        return an;
-    }
-};
 signed main() {
     IOS();
-    Vi a(12);
-    REP(i,12) a[i]=i+1;
-    shuffle(ALL(a),rng);
-    op(a[0])ope(a[1])
+    
     return 0;
 }
