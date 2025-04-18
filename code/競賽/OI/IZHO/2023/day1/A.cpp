@@ -91,7 +91,9 @@ signed main() {
         stk={{inf,m+1}};
         now=0;
         Vi sa(m+1);
-        
+        RREP1(j,m) {
+            while(SZ(stk))
+        }
     }
     return 0;
 }
