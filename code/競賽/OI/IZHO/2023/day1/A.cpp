@@ -93,7 +93,7 @@ signed main() {
         Vi sa(m+1);
         RREP1(j,m) {
             while(SZ(stk)&&stk.back().f<mxx[j]) {
-                now-=asum(stk.back().f+1,i,stk[SZ(stk)-2].s)
+                now-=asum(stk.back().f+1,i,stk.back().s,stk[SZ(stk)-2].s)
             }
         }
     }
