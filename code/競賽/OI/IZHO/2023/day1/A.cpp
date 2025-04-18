@@ -82,7 +82,7 @@ signed main() {
         int now=0;
         REP1(j,m) {
             while(SZ(stk)&&stk.back().f<mxx[j]) {
-                now-=
+                now-=asum()
             }
         }
     }
