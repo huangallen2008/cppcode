@@ -67,7 +67,7 @@ signed main() {
             char c;
             cin>>c;
             a[i][j]=c=='X'?-1:c-'0';
-            ps[i][j]=ps[i-1][j]+ps[i][j-1]
+            ps[i][j]=ps[i-1][j]+ps[i][j-1]-ps[i-1][j-1]+a[i][j];
         }
     }
     Vi mxx(m);
