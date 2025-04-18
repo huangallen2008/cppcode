@@ -81,7 +81,7 @@ signed main() {
         Vpii stk={{i,0}};
         int now=0;
         REP1(j,m) {
-            while()
+            while(SZ(stk))
         }
     }
     return 0;
