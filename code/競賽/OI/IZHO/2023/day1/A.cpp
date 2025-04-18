@@ -81,7 +81,7 @@ signed main() {
         int now=0;
         REP1(j,m) {
             while(SZ(stk)&&stk.back().f<mxx[j]) {
-                now-=asum(stk.back().f+1,i,stk[SZ(stk)-2].s+1,stk.back().s);
+                now-=asum(stk.back().f+1,i-1,stk[SZ(stk)-2].s+1,stk.back().s);
                 stk.pop_back();
             }
             now+=asum(mxx[j]+1,i,stk.back().s+1,j);
@@ -93,7 +93,7 @@ signed main() {
         Vi sa(m+1);
         RREP1(j,m) {
             while(SZ(stk)&&stk.back().f<mxx[j]) {
-                now-=asum(i,)
+                now-=asum(i+1,)
             }
         }
     }
