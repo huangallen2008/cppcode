@@ -74,6 +74,7 @@ signed main() {
         return ps[x2][y2]-ps[x2][y1-1]-ps[x1-1][y2]+ps[x1-1][y1-1];
     };
     Vi mxx(m+1);
+    int an=0;
     REP1(i,n) {
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
         Vi pa(m+1);
@@ -100,7 +101,7 @@ signed main() {
             stk.pb({mxx[j],j});
             sa[j]=now;
         }
-        
+
     }
     return 0;
 }
