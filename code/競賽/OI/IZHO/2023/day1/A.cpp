@@ -71,8 +71,8 @@ signed main() {
         }
     }
     auto asum=[&](int x1,int x2,int y1,int y2) {
-        return ps[x2][y2]-ps[x2][y1-1]-ps[x1-1][]
-    }
+        return ps[x2][y2]-ps[x2][y1-1]-ps[x1-1][y2]+ps[x1-1][y1-1];
+    };
     Vi mxx(m);
     REP1(i,n) {
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
