@@ -76,7 +76,8 @@ signed main() {
     Vi mxx(m+1);
     REP1(i,n) {
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
-        Vi 
+        Vi pa(m+1);
+        
     }
     return 0;
 }
