@@ -88,7 +88,9 @@ signed main() {
             stk.pb({mxx[j],j});
             pa[j]=now;
         }
-        Vi
+        stk={{inf,m+1}};
+        now=0;
+        Vi sa(m+1);
     }
     return 0;
 }
