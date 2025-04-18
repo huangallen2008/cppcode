@@ -59,6 +59,16 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    int n,m;
+    cin>>n>>m;
+    int an=0;
+    REP(i,n) {
+        REP(j,m) {
+            char c;
+            cin>>c;
+            an+=c-'0';
+        }
+    }
+    cout<<an<<'\n';
     return 0;
 }
