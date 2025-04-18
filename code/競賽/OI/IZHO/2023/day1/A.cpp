@@ -101,7 +101,7 @@ signed main() {
             stk.pb({mxx[j],j});
             sa[j]=now;
         }
-        REP1(j,m) chmax(an,pa[j]+sa[j]-asum())
+        REP1(j,m) chmax(an,pa[j]+sa[j]-asum(mxx[j]+1,i,j,j));
     }
     return 0;
 }
