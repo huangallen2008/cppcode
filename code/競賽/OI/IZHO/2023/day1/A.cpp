@@ -70,7 +70,7 @@ signed main() {
             if(c=='X') {
                 chmax(an,now);
                 now=0;
-            }
+            }else now+=c-'0';
         }
     }
     cout<<an<<'\n';
