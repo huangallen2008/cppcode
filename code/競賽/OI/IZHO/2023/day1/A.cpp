@@ -98,8 +98,9 @@ signed main() {
             }
             now+=asum(mxx[j]+1,i,j,stk.back().s-1);
             stk.pb({mxx[j],j});
-            
+            sa[j]=now;
         }
+        
     }
     return 0;
 }
