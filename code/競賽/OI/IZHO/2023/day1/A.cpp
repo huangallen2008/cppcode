@@ -86,8 +86,9 @@ signed main() {
             }
             now+=asum(mxx[j]+1,i,stk.back().s+1,j);
             stk.pb({mxx[j],j});
-            pa
+            pa[j]=now;
         }
+        Vi
     }
     return 0;
 }
