@@ -67,7 +67,10 @@ signed main() {
         REP(j,m) {
             char c;
             cin>>c;
-            if(c=='')
+            if(c=='X') {
+                chmax(an,now);
+                now=0;
+            }
         }
     }
     cout<<an<<'\n';
