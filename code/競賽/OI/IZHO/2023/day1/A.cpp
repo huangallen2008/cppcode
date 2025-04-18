@@ -61,9 +61,9 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<Vi> a(n,Vi(m));
-    REP(i,n) {
-        REP(j,m) {
+    vector<Vi> a(n+1,Vi(m+1));
+    REP1(i,n) {
+        REP1(j,m) {
             char c;
             cin>>c;
             a[i][j]=c=='X'?-1:c-'0';
@@ -72,7 +72,7 @@ signed main() {
     Vi mxx(m,-1);
     REP(i,n) {
         REP(j,m) if(a[i][j]==-1) mxx[j]=i;
-        
+
     }
     return 0;
 }
