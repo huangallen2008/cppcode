@@ -70,6 +70,7 @@ signed main() {
             ps[i][j]=ps[i-1][j]+ps[i][j-1]-ps[i-1][j-1]+a[i][j];
         }
     }
+    auto 
     Vi mxx(m);
     REP1(i,n) {
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
