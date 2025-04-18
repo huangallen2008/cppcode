@@ -91,6 +91,7 @@ signed main() {
         stk={{inf,m+1}};
         now=0;
         Vi sa(m+1);
+        
     }
     return 0;
 }
