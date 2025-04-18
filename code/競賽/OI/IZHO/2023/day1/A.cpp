@@ -67,6 +67,7 @@ signed main() {
             char c;
             cin>>c;
             a[i][j]=c=='X'?-1:c-'0';
+            ps[i][j]=
         }
     }
     Vi mxx(m);
