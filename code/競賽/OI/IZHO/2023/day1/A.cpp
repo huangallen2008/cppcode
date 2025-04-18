@@ -77,7 +77,7 @@ signed main() {
     REP1(i,n) {
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
         Vi pa(m+1);
-        
+        Vpii stk;
     }
     return 0;
 }
