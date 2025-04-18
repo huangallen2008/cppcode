@@ -69,9 +69,9 @@ signed main() {
             a[i][j]=c=='X'?-1:c-'0';
         }
     }
-    Vi mxx(m,-1);
-    REP(i,n) {
-        REP(j,m) if(a[i][j]==-1) mxx[j]=i;
+    Vi mxx(m);
+    REP1(i,n) {
+        REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
 
     }
     return 0;
