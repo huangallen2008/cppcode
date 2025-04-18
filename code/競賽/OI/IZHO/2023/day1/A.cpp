@@ -75,7 +75,6 @@ signed main() {
     };
     Vi mxx(m+1);
     REP1(i,n) {
-        mxx[0]=i;
         REP1(j,m) if(a[i][j]==-1) mxx[j]=i;
         Vi pa(m+1);
         Vpii stk={{inf,0}};
