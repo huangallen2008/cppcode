@@ -69,7 +69,7 @@ signed main() {
             a[i][j]=c=='X'?-1:c-'0';
         }
     }
-    Vi mxx(m);
-    
+    Vi mxx(m,-1);
+
     return 0;
 }
