@@ -82,7 +82,7 @@ signed main() {
         REP1(j,m) {
             while(SZ(stk)&&stk.back().f<mxx[j]) {
                 now-=asum(stk.back().f+1,i,stk[SZ(stk)-2].s+1,stk.back().s);
-
+                stk.
             }
         }
     }
