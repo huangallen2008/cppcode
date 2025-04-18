@@ -62,7 +62,7 @@ signed main() {
     int n,m;
     cin>>n>>m;
     int an=0;
-    vector<Vi>
+    int las=-1;
     REP(i,n) {
         REP(j,m) {
             char c;
