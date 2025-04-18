@@ -96,7 +96,7 @@ signed main() {
                 now-=asum(stk.back().f+1,i,stk.back().s,stk[SZ(stk)-2].s-1);
                 stk.pop_back();
             }
-            now+=asum(stk.)
+            now+=asum(mxx[j]+1,i,stk)
         }
     }
     return 0;
