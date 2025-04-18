@@ -62,12 +62,12 @@ signed main() {
     int n,m;
     cin>>n>>m;
     int an=0;
-    int las=-1;
+    int las=-1,now=0;
     REP(i,n) {
         REP(j,m) {
             char c;
             cin>>c;
-            
+            if(c=='')
         }
     }
     cout<<an<<'\n';
