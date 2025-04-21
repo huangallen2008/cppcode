@@ -72,6 +72,7 @@ signed main() {
     while(cin>>n) {
         if(n==0) break;
         int d=90;
+        pair<ld,ld> an=
         REP(i,n)
     }
     return 0;
