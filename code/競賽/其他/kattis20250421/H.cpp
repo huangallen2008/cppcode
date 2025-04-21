@@ -84,13 +84,13 @@ int tar2(pii a,pii b,pii c) {
     return abs(cros(a,b)+cros(b,c)+cros(c,a));
 }
 bool intr(pii a,pii b,pii c,pii p) {
-    return tar2(a,b,p)+tarw(a,c,p)+tar2(b,c,p)==tar2(a,b,c);
+    return tar2(a,b,p)+tar2(a,c,p)+tar2(b,c,p)==tar2(a,b,c);
 }
 signed main() {
     IOS();
     pii x1,x2,x3;
     cin>>x1>>x2>>x3;
-    cout<<fixed<<setprecision(2)<<(ld)tar2(x1,x2,x3)/2<<'\n';
+    cout<<fixed<<setprecision(1)<<(ld)tar2(x1,x2,x3)/2<<'\n';
     int n;
     cin>>n;
     int an=0;
