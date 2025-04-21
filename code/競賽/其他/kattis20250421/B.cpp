@@ -89,6 +89,10 @@ void solve() {
         cout<<"0.00\n";
         return;
     }
+    ope(seg_dis(a,b,c))
+    ope(seg_dis(a,b,c))
+    ope(seg_dis(a,b,c))
+    ope(seg_dis(a,b,c))
     ld an=min({seg_dis(a,b,c),seg_dis(a,b,d),seg_dis(c,d,a),seg_dis(c,d,b)});
     cout<<fixed<<setprecision(2)<<an<<'\n';
 }
