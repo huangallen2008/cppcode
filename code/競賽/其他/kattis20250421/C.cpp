@@ -95,7 +95,8 @@ void solve() {
         ld x,y,w,h,v;
         cin>>x>>y>>w>>h>>v;
         A0+=w*h;
-        p.pb()
+        p.pb({x,y});
+        p.pb({x,y});
     }
 }
 signed main() {
