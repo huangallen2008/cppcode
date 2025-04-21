@@ -79,6 +79,9 @@ bool kill1(pii a,pii b,pii c) {//1:can kill
 bool kill2(pii a,pii b,pii c) {//1:can kill
     return cros(to(a,b),to(a,c))>0;
 }
+int tar2(pii a,pii b,pii c) {
+    return abs(cros(a,b)+cros(b,c)+cros(c,a));
+}
 signed main() {
     IOS();
     
@@ -101,6 +104,6 @@ signed main() {
     Vi a=c;
     for(auto x:c) a.pb(x);
     a.pb(c[0]);
-    
+
     return 0;
 }
