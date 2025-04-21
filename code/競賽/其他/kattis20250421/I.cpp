@@ -107,7 +107,7 @@ signed main() {
     int it=2;
     int an=0;
     REP(i,n) {
-        while(cros(a[i+1]-a[i],a[it+1]-a[it])<0) it++;
+        while(cros(a[i+1]-a[i],a[it+1]-a[it])<=0) it++;
         chmax(an,tar2(a[i],a[i+1],a[it]));
     }
     cout<<fixed<<setprecision(9)<<((ld)an/2)<<'\n';
