@@ -83,7 +83,9 @@ ld seg_dis(pii a,pii b,pii c) {
 int tar2(pii a,pii b,pii c) {
     return abs(cros(a,b)+cros(b,c)+cros(c,a));
 }
-bool intr()
+bool intr(pii a,pii b,pii c,pii p) {
+    return tar2(a,b,p)
+}
 signed main() {
     IOS();
     pii x1,x2,x3;
