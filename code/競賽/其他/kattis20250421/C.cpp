@@ -77,6 +77,7 @@ ld convex_area(Vpdd p) {
     int n=SZ(p);
     sort(ALL(p));
     ope("ok")
+    oparr(p)
     vector<pdd> convex={p[0]};
     REP1(i,n-1) {
         while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
