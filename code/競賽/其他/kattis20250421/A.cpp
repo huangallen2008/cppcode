@@ -72,8 +72,10 @@ void solve() {
     if(a>b) swap(a,b);
     if(c>d) swap(c,d);
     if(!inters(a,b,c,d)) {
-        cout<<""
+        cout<<"none\n";
+        return;
     }
+    
 }
 signed main() {
     IOS();
