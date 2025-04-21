@@ -78,7 +78,7 @@ void solve() {
     if(a>b) swap(a,b);
     if(c>d) swap(c,d);
     op(a)op(b)op(c)ope(d)
-    op(onl(a,b,c))op(onl(a,b,d))op(onl(c,d,a))op(onl(c,d,b))
+    op(onl(a,b,c))op(onl(a,b,d))op(onl(c,d,a))ope(onl(c,d,b))
     if(!inters(a,b,c,d)) {
         cout<<"none\n";
         return;
