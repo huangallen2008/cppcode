@@ -88,6 +88,6 @@ signed main() {
     cin>>n;
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
-    pii 
+    pii o=
     return 0;
 }
