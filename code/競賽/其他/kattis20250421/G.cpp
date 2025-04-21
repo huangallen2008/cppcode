@@ -77,6 +77,7 @@ void solve() {
         d+=x;
         an.f+=sinl(d)*l;
         an.s+=cosl(d)*l;
+        op(an.f)ope(an.s)
     }
     cout<<fixed<<setprecision(6)<<an.f<<' '<<an.s<<'\n';
 }
