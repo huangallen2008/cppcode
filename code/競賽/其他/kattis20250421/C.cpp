@@ -65,16 +65,6 @@ pdd to(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
 ld cros(pdd a,pdd b) { return a.f*b.s-a.s*b.f; }
 ld dot(pdd a,pdd b) { return a.f*b.f+a.s*b.s; }
 int sign(ld x) { if(x>0) return 1;else if(x<0) return -1;else return 0; }
-void solve() {
-    int n;
-    cin>n;
-    ld A0=0;
-    REP(i,n) {
-        ld x,y,w,h,v;
-        cin>>x>>y>>w>>h>>v;
-        A0+=w*h;
-    }
-}
 bool kill1(pdd a,pdd b,pdd c) {//1:can kill
     return cros(to(a,b),to(a,c))<0;
 }
@@ -95,6 +85,17 @@ ld convex_area(Vpdd p) {
     convex.pop_back();
     ld A=cros(convex.back(),convex[0]);
     REP(i,SZ(convex)-1) A+=cros(convex[i],convex[i+1]);
+}
+void solve() {
+    int n;
+    cin>n;
+    ld A0=0;
+    REP(i,n) {
+        ld x,y,w,h,v;
+        cin>>x>>y>>w>>h>>v;
+        A0+=w*h;
+        
+    }
 }
 signed main() {
     IOS();
