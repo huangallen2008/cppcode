@@ -87,7 +87,7 @@ signed main() {
     IOS();
     pii x1,x2,x3;
     cin>>x1>>x2>>x3;
-    cout<<fixed<<setprecision(2)<<(ld)an1/2<<'\n';
+    cout<<fixed<<setprecision(2)<<(ld)tar2(x1,x2,x3)/2<<'\n';
     int n;
     cin>>n;
 
