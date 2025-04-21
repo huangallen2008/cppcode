@@ -70,7 +70,8 @@ void solve() {
     pii a,b,c,d;
     cin>>a>>b>>c>>d;
     if(a>b) swap(a,b);
-    if(c>d) swap(a,b);
+    if(c>d) swap(c,d);
+    if(inters(a,b,c,d))
 }
 signed main() {
     IOS();
