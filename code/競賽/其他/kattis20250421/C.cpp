@@ -93,7 +93,8 @@ ld convex_area(Vpdd p) {
         convex.pb(p[i]);
     }
     convex.pop_back();
-    ld 
+    ld A=0;
+    REP(i,SZ(convex)-1)
 }
 signed main() {
     IOS();
