@@ -98,6 +98,10 @@ signed main() {
         id1=i;
         break;
     }
-    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o)>)
+    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o)>45*PI/180) {
+        id2=i;
+        break;
+    }
+    ld A=cros()
     return 0;
 }
