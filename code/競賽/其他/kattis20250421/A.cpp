@@ -81,7 +81,9 @@ void solve() {
         cout<<"none\n";
         return;
     }
-    if(cros(b-a,d-c))
+    if(cros(b-a,d-c)==0) {
+
+    }else 
 }
 signed main() {
     IOS();
