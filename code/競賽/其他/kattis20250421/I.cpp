@@ -106,7 +106,7 @@ signed main() {
     int it=2;
     REP(i,n) {
         while(cros(a[i+1]-a[i],a[it+1]-a[it])<0) it++;
-        
+        chmax(an,tar2)
     }
     return 0;
 }
