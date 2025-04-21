@@ -111,6 +111,6 @@ signed main() {
     pii v1=p[1]-o;
     np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{v1.f-v1.s,v1.f+v1.s})));
     for(int i=id1;i<=id2;i++) np.pb(p[i]);
-    np.pb()
+    np.pb(inters_p(p[id2],p[id2+1],o,o+40000*(pdd{})))
     return 0;
 }
