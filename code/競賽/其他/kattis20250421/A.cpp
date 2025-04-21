@@ -84,7 +84,7 @@ void solve() {
     if(cros(b-a,d-c)==0) {
 
     }else {
-        pdd an=
+        pdd an=inters_p()
     }
 }
 signed main() {
