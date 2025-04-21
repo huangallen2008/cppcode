@@ -75,24 +75,7 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     return (c*y+d*x)/(x+y);
 }
 void solve() {
-    pii a,b,c,d;
-    cin>>a>>b>>c>>d;
-    if(a>b) swap(a,b);
-    if(c>d) swap(c,d);
-    if(!inters(a,b,c,d)) {
-        cout<<"none\n";
-        return;
-    }
-    cout<<fixed<<setprecision(2);
-    if(cros(b-a,d-c)==0) {
-        pdd p1=max(a,c),p2=min(b,d);
-        if(p1==p2) cout<<p1.f<<' '<<p1.s<<'\n';
-        else cout<<p1.f<<' '<<p1.s<<' '<<p2.f<<' '<<p2.s<<'\n';
-    }else {
-        pdd _an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
-        pdd an=inters_p(a,b,c,d);
-        cout<<an.f<<' '<<an.s<<'\n';
-    }
+    
 }
 signed main() {
     IOS();
