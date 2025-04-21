@@ -88,11 +88,7 @@ ld deg(pii a,pii b) {
     return acosl(cros(a,b)/(len(a)*len(b)));
 }
 const ld PI=acosl(-1);
-signed main() {
-    IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+void solve() {
     int n;
     cin>>n;
     vector<pii> p(n);
@@ -120,5 +116,11 @@ signed main() {
     REP(i,SZ(np)-1) A2+=cros(np[i],np[i+1]);
     ld an=A2/A;
     cout<<fixed<<setprecision(9)<<an<<'\n';
+}
+signed main() {
+    IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
