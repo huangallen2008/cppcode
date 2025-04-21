@@ -83,7 +83,7 @@ void solve() {
     }
     cout<<fixed<<setprecision(2);
     if(cros(b-a,d-c)==0) {
-        pdd
+        pii p1=max(),p2;
     }else {
         pdd an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
         cout<<an.f<<' '<<an.s<<'\n';
