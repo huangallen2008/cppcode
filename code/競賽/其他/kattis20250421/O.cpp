@@ -108,6 +108,6 @@ signed main() {
     Vpii np;
     np.pb(o);
     pii v1=p[1]-o;
-    np.pb(inters_p(p[id1-1],p[id1],o,o+))
+    np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{})))
     return 0;
 }
