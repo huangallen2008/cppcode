@@ -71,10 +71,10 @@ signed main() {
     int n;
     while(cin>>n) {
         if(n==0) break;
-        int d=90;
+        ld d=90;
         pair<ld,ld> an={0,0};
         REP(i,n) {
-            int x,l;
+            ld x,l;
             cin>>x>>l;
         }
     }
