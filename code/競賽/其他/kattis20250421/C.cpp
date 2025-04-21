@@ -73,8 +73,12 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     return (c*y+d*x)/(x+y);
 }
 void solve() {
+    int n;
+    cin>n;
+    REP(i,n) {
     ld x,y,w,h,v;
-    cin>>x>>y>>w>>h>>v;
+        cin>>x>>y>>w>>h>>v;
+    }
     ld A0;
 }
 signed main() {
