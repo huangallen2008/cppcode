@@ -100,7 +100,7 @@ signed main() {
     }
     c.pop_back();
     n=SZ(c);
-    Vi a=c;
+    Vpii a=c;
     for(auto x:c) a.pb(x);
     a.pb(c[0]);
     int it=2;
