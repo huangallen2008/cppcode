@@ -109,11 +109,11 @@ void solve() {
     vector<pdd> np;
     np.pb(o);
     pii v1=p[1]-o;
-    op(o)ope(v1)op(v1.f-v1.s)ope(v1.f+v1.s)
+    // op(o)ope(v1)op(v1.f-v1.s)ope(v1.f+v1.s)
     np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{v1.f-v1.s,v1.f+v1.s})));
     for(int i=id1;i<=id2;i++) np.pb(p[i]);
     pii v2=p[0]-o;
-    op(o)ope(v2)op(v2.f+v2.s)ope(v2.s-v2.f)
+    // op(o)ope(v2)op(v2.f+v2.s)ope(v2.s-v2.f)
     np.pb(inters_p(p[id2],p[id2==n-1?0:id2+1],o,o+40000*(pdd{v2.f+v2.s,v2.s-v2.f})));
     ld A2=np.back().f*np[0].s-np.back().s*np[0].f;
     REP(i,SZ(np)-1) A2+=np[i].f*np[i+1].s-np[i].s*np[i+1].f;
