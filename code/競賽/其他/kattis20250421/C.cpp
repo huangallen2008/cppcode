@@ -57,13 +57,13 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
-pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
-pii operator*(pii a,int b) { return {b*a.f,b*a.s}; }
-pdd operator/(pii a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
-pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
-int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
-int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
+pii operator-(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
+pdd operator+(pdd a,pdd b) { return {b.f+a.f,b.s+a.s}; }
+pdd operator*(pdd a,int b) { return {b*a.f,b*a.s}; }
+pdd operator/(pdd a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
+pdd to(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
+int cros(pdd a,pdd b) { return a.f*b.s-a.s*b.f; }
+int dot(pdd a,pdd b) { return a.f*b.f+a.s*b.s; }
 int sign(int x) { if(x>0) return 1;else if(x<0) return -1;else return 0; }
 void solve() {
     int n;
