@@ -91,7 +91,7 @@ ld convex_area(Vpdd p) {
     oparr(convex)
     ld A=cros(convex.back(),convex[0]);
     REP(i,SZ(convex)-1) A+=cros(convex[i],convex[i+1]);
-    return A;
+    return A/2;
 }
 void solve() {
     int n;
@@ -117,7 +117,7 @@ void solve() {
     }
     oparr(p)
     ld A=convex_area(p);
-    ld ans=(A-A0)*100/A;
+    ld ans=(A0)*100/A;
     cout<<fixed<<setprecision(1)<<ans<<" %\n";
 }
 signed main() {
