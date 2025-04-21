@@ -71,6 +71,7 @@ bool kill1(pdd a,pdd b,pdd c) {//1:can kill
 bool kill2(pdd a,pdd b,pdd c) {//1:can kill
     return cros(to(a,b),to(a,c))>0;
 }
+#define Vpdd vector<pdd>
 ld convex_area(Vpdd p) {
     sort(ALL(p));
     vector<pdd> convex={p[0]};
