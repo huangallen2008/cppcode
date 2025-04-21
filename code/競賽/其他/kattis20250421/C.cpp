@@ -75,6 +75,7 @@ void solve() {
         A0+=w*h;
     }
 }
+vector<pdd> convex
 signed main() {
     IOS();
     int T;
