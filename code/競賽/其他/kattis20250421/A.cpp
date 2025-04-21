@@ -81,7 +81,7 @@ void solve() {
         cout<<"none\n";
         return;
     }
-    cout<<fixed<<setprecision()
+    cout<<fixed<<setprecision(2);
     if(cros(b-a,d-c)==0) {
 
     }else {
