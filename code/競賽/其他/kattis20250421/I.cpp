@@ -88,23 +88,7 @@ ld ssdis(pii a,pii b,pii c,pii d) {
     ld an=min({segp_dis(a,b,c),segp_dis(a,b,d),segp_dis(c,d,a),segp_dis(c,d,b)});
     return an;
 }
-void solve() {
-    int n1,n2;
-    cin>>n1;
-    Vpii a(n1);
-    REP(i,n1) cin>>a[i];
-    cin>>n2;
-    Vpii b(n2);
-    REP(i,n2) cin>>b[i];
-    ld an=ssdis(a[0],a[1],b[0],b[1]);
-    REP(i,n1) REP(j,n2) chmin(an,ssdis(a[i],a[i==n1-1?0:i+1],b[j],b[j==n2-1?0:j+1]));
-    an=an/2;
-    cout<<fixed<<setprecision(9)<<an<<'\n';
-}
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
     return 0;
 }
