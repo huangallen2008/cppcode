@@ -91,7 +91,10 @@ ld ssdis(pii a,pii b,pii c,pii d) {
 void solve() {
     int n1,n2;
     cin>>n1;
-    Vp
+    Vpii a(n1);
+    REP(i,n1) cin>>a[i];
+    cin>>n2;
+    REP
 }
 signed main() {
     IOS();
