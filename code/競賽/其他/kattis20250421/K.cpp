@@ -98,6 +98,7 @@ void solve() {
     REP(i,n2) cin>>b[i];
     ld an=ssdis(a[0],a[1],b[0],b[1]);
     REP(i,n1) REP(j,n2) chmin(an,ssdis(a[i],a[i==n1-1?0:i+1],b[j],b[j==n2-1?0:j+1]));
+    an=an/2;
     cout<<fixed<<setprecision(9)<<an<<'\n';
 }
 signed main() {
