@@ -74,7 +74,9 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     op(a)op(b)op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
-
+ld dis(pii a,pii b,pii c) {
+    
+}
 void solve() {
     pii a,b,c,d;
     cin>>a>>b>>c>>d;
