@@ -108,7 +108,7 @@ void solve() {
     }
     ld A=convex_area(p);
     ld ans=A0*100/A;
-    cout<<fixed<<setprecision(1)<<
+    cout<<fixed<<setprecision(1)<<ans<<" %\n";
 }
 signed main() {
     IOS();
