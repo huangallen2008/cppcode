@@ -76,7 +76,7 @@ void solve() {
         ld x,l;
         cin>>x>>l;
         d+=x;
-        ope(d)
+        op(d)op(sinl(d))ope(cosl(d))
         an.f+=sinl(d)*l;
         an.s+=cosl(d)*l;
         op(an.f)ope(an.s)
