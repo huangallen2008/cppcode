@@ -96,8 +96,8 @@ void solve() {
     cin>>n2;
     Vpii b(n2);
     REP(i,n2) cin>>b[i];
-    ld an=inf;
-    
+    ld an=ssdis(a[0],a[1],b[0],b[1]);
+    REP(i,)
 }
 signed main() {
     IOS();
