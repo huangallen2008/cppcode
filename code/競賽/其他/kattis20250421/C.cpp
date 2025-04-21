@@ -103,8 +103,8 @@ void solve() {
         cin>>x>>y>>w>>h>>v;
         pdd po={x,y};
         A0+=w*h;
-        pdd v1=pdd{w*cosl((-v)*PI/180),w*sinl(-v*PI/180)};
-        pdd v2=pdd{h*cosl((90-v)*PI/180),h*sinl((90-v)*PI/180)};
+        pdd v1=pdd{w*cosl((-v)*PI/180)/2,w*sinl(-v*PI/180)/2};
+        pdd v2=pdd{h*cosl((90-v)*PI/180),h*sinl((90-v)*PI/180)/2};
         // p.pb({x,y});
         // p.pb({x+v1,y});
         // p.pb({x,y+v2});
