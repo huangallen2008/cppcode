@@ -84,7 +84,6 @@ int tar2(pii a,pii b,pii c) {
 }
 signed main() {
     IOS();
-    
     int n;
     cin>>n;
     vector<pii> p(n);
@@ -104,6 +103,6 @@ signed main() {
     Vi a=c;
     for(auto x:c) a.pb(x);
     a.pb(c[0]);
-
+    
     return 0;
 }
