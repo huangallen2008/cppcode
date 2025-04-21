@@ -82,14 +82,15 @@ ld convex_area(Vpdd p) {
         while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
         convex.pb(p[i]);
     }
-    ope("ok")
     RREP(i,n-1) {
         while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
         convex.pb(p[i]);
     }
     convex.pop_back();
+    ope("ok")
     ld A=cros(convex.back(),convex[0]);
     REP(i,SZ(convex)-1) A+=cros(convex[i],convex[i+1]);
+    return A;
 }
 void solve() {
     int n;
