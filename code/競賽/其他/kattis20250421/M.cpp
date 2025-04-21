@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int r,c;
     cin>>r>>c;
-    ld an=(ld)(SQ(r-c))/SQ(r);
+    ld an=(ld)(SQ(r-c)*100)/SQ(r);
     cout<<fixed<<setprecision(9)<<an<<'\n';
     return 0; 
 }
