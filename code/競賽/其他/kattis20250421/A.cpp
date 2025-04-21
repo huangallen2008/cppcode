@@ -81,11 +81,11 @@ void solve() {
         cout<<"none\n";
         return;
     }
+    cout<<fixed<<setprecision()
     if(cros(b-a,d-c)==0) {
 
     }else {
         pdd an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
-        cout<<
     }
 }
 signed main() {
