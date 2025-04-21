@@ -109,6 +109,6 @@ signed main() {
         while(cros(a[i+1]-a[i],a[it+1]-a[it])<0) it++;
         chmax(an,tar2(a[i],a[i+1],a[it]));
     }
-    cout<<fixed<<setprecision()
+    cout<<fixed<<setprecision(9)<<((ld)an/2)
     return 0;
 }
