@@ -99,4 +99,6 @@ signed main() {
         cin>>p;
         if(intr(x1,x2,x3,p)) an++;
     }
-   
+    cout<<an<<'\n';
+    return 0;
+}
