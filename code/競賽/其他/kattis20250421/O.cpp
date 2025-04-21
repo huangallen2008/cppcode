@@ -85,7 +85,7 @@ int tar2(pii a,pii b,pii c) {
 }
 ld len(pii x) { return sqrtl(SQ(x.f)+SQ(x.s)); }
 ld deg(pii a,pii b) {
-    return acosl(cros(a,b)/(len(a)*len(b)));
+    return acosl(dot(a,b)/(len(a)*len(b)));
 }
 const ld PI=acosl(-1);
 void solve() {
