@@ -75,7 +75,7 @@ signed main() {
         REP(i,n-1) {
             pii x;
             cin>>x;
-            an+=cros
+            an+=cros(las,x);
         }
     }
     return 0; 
