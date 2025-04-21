@@ -112,7 +112,7 @@ signed main() {
     int an=0;
     REP(i,n) {
         ope(i)
-        while(cros(a[i+1]-a[i],a[it+1]-a[it])<=0) {
+        while(cros(a[i+1]-a[i],a[it+1]-a[it])>=0) {
             it++;
         }
         op(i)op(i+1)ope(it)
