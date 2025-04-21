@@ -90,7 +90,6 @@ signed main() {
     REP(i,n) cin>>p[i].f>>p[i].s;
     sort(ALL(p));
     p.erase(unique(ALL(p)),p.end());
-    oparr(p
     n=SZ(p);
     vector<pii> c={p[0]};
     REP1(i,n-1) {
