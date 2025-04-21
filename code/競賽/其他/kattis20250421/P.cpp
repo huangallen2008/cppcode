@@ -76,7 +76,10 @@ signed main() {
     while(cin>>n) {
         Vpii a(n);
         REP(i,n) cin>>a[i];
-        if(n==1) 
+        if(n==1) {
+            cout<<"1\n";
+            continue;
+        }
         int an=0;
         REP(i,n) {
             REP(j,i) {
