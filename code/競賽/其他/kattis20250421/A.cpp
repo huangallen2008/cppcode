@@ -71,6 +71,7 @@ bool inters(pii a,pii b,pii c,pii d) { return onl(a,b,c)||onl(a,b,d)||onl(c,d,a)
 pdd inters_p(pii a,pii b,pii c,pii d) { 
     int x=abs(cros(b-a,c-a)),y=abs(cros(b-a,d-a));
     op(x)ope(y)
+    op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
 void solve() {
