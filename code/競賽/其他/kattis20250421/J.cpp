@@ -84,7 +84,7 @@ signed main() {
         if(an<0) an=-an;
         else cout<<'C';
         double ans=(ld)an/2;
-        cout<<"CW "<<ans<<'\n';
+        cout<<"CW "<<fixed<<setprecision(1)<<ans<<'\n';
     }
     return 0; 
 }
