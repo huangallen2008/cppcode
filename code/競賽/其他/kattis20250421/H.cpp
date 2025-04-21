@@ -81,8 +81,7 @@ ld seg_dis(pii a,pii b,pii c) {
     else return min(dis(c,a),dis(c,b));
 }
 int tar2(pii a,pii b,pii c) {
-    return cros(a,b)+cros(b,c)+cros(x3,x1);
-
+    return abs(cros(a,b)+cros(b,c)+cros(c,a));
 }
 signed main() {
     IOS();
