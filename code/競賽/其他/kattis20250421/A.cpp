@@ -68,6 +68,6 @@ pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 signed main() {
     IOS();
-    
+    pii
     return 0;
 }
