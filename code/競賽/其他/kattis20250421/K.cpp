@@ -81,9 +81,9 @@ ld seg_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
 }
-void solve() {
-    pii a,b,c,d;
-    cin>>a>>b>>c>>d;
+void solve(pii a,pii b,pii c,pii d) {
+    // pii a,b,c,d;
+    // cin>>a>>b>>c>>d;
     if(inters(a,b,c,d)) {
         cout<<"0.00\n";
         return;
