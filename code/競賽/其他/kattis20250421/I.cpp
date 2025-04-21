@@ -105,7 +105,8 @@ signed main() {
     a.pb(c[0]);
     int it=2;
     REP(i,n) {
-        while(cros())
+        while(cros(a[i+1]-a[i],a[it+1]-a[it])<0) it++;
+        
     }
     return 0;
 }
