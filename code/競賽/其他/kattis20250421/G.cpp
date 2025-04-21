@@ -76,6 +76,7 @@ signed main() {
         REP(i,n) {
             ld x,l;
             cin>>x>>l;
+            
         }
     }
     return 0;
