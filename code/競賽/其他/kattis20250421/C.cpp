@@ -88,7 +88,7 @@ ld convex_area(Vpdd p) {
 }
 void solve() {
     int n;
-    cin>n;
+    cin>>n;
     ld A0=0;
     vector<pdd> p;
     REP(i,n) {
