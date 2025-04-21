@@ -72,6 +72,9 @@ bool inters(pii a,pii b,pii c,pii d) {
 }
 signed main() {
     IOS();
-    
+    int n;
+    while(cin>>n) {
+        
+    }
     return 0;
 }
