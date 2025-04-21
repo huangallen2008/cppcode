@@ -98,6 +98,8 @@ signed main() {
     }
     c.pop_back();
     n=SZ(c);
-    Vi a
+    Vi a=c;
+    for(auto x:c) a.pb(x);
+    
     return 0;
 }
