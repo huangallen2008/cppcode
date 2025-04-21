@@ -98,7 +98,7 @@ void solve() {
         pdd v1={w*cosl((-v)*PI/180),w*sinl(-v*PI/180)};
         pdd v2={cosl((90-v)*PI/180),sinl((90-v)*PI/180)};
         p.pb({x,y});
-        p.pb({x,y});
+        // p.pb({x,y});
     }
 }
 signed main() {
