@@ -98,6 +98,6 @@ signed main() {
         id1=i;
         break;
     }
-    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o))
+    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o)>)
     return 0;
 }
