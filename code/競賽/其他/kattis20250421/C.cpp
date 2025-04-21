@@ -73,6 +73,7 @@ bool kill2(pdd a,pdd b,pdd c) {//1:can kill
 }
 #define Vpdd vector<pdd>
 ld convex_area(Vpdd p) {
+    int n=SZ(p);
     sort(ALL(p));
     vector<pdd> convex={p[0]};
     REP1(i,n-1) {
