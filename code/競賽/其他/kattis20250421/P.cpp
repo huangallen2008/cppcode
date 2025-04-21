@@ -74,7 +74,8 @@ signed main() {
     IOS();
     int n;
     while(cin>>n) {
-        
+        Vpii a(n);
+        REP(i,n)
     }
     return 0;
 }
