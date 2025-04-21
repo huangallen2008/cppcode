@@ -75,7 +75,7 @@ void solve() {
         cout<<"none\n";
         return;
     }
-    
+    if()
 }
 signed main() {
     IOS();
