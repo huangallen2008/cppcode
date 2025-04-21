@@ -90,11 +90,12 @@ void solve() {
     int n;
     cin>n;
     ld A0=0;
+    vector<pdd> p;
     REP(i,n) {
         ld x,y,w,h,v;
         cin>>x>>y>>w>>h>>v;
         A0+=w*h;
-        
+        p.pb()
     }
 }
 signed main() {
