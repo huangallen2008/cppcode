@@ -78,7 +78,7 @@ signed main() {
             cin>>x>>l;
             d+=x;
             an.f+=sinl(d)*l;
-            an.s+=sinl(d)*l;
+            an.s+=cosl(d)*l;
         }
     }
     return 0;
