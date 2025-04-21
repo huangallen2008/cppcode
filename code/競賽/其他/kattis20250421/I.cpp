@@ -73,21 +73,6 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     return (c*y+d*x)/(x+y);
 }
 ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
-ld l_dis(pii a,pii b,pii c) {
-    // op(a)op(b)ope(c)
-    return a==b?dis(a,c):(ld)abs(cros(b-a,c-a))/sqrtl(SQ(b.f-a.f)+SQ(b.s-a.s));
-}
-ld segp_dis(pii a,pii b,pii c) {
-    if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
-    else return min(dis(c,a),dis(c,b));
-}
-ld ssdis(pii a,pii b,pii c,pii d) {
-    // pii a,b,c,d;
-    // cin>>a>>b>>c>>d;
-    if(inters(a,b,c,d)) return 0;
-    ld an=min({segp_dis(a,b,c),segp_dis(a,b,d),segp_dis(c,d,a),segp_dis(c,d,b)});
-    return an;
-}
 signed main() {
     IOS();
     return 0;
