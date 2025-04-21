@@ -80,11 +80,15 @@ ld seg_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
 }
+
 signed main() {
     IOS();
     pii x1,x2,x3;
     cin>>x1>>x2>>x3;
     int an1=cros(x1,x2)+cros(x2,x3)+cros(x3,x1);
-    cout<<fixed<<setprecision(2)<<(ld)an1/2
+    cout<<fixed<<setprecision(2)<<(ld)an1/2<<'\n';
+    int n;
+    cin>>n;
+
     return 0;
 }
