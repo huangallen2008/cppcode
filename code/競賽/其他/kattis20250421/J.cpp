@@ -70,6 +70,7 @@ signed main() {
     IOS();
     int n;
     while(cin>>n) {
+        if(n==0) break;
         pii a0,las;
         cin>>a0,las=a0;
         int an=0;
