@@ -76,10 +76,12 @@ signed main() {
     while(cin>>n) {
         Vpii a(n);
         REP(i,n) cin>>a[i];
+        int an=0;
         REP(i,n) {
             REP(j,i) {
                 int cnt=0;
                 REP(k,n) if(cros(a[i]-a[j],a[k]-a[j])==0) cnt++;
+                chmax(an,cnt);
             }
         }
     }
