@@ -82,7 +82,9 @@ signed main() {
         an+=cros(las,a0);
         if(an<0) {
             cout<<"C";
+            an=-an;
         }
+        cout<<"CW "<<
     }
     return 0; 
 }
