@@ -13,7 +13,8 @@ using namespace std;
 #define ALL(x) (x).begin(),(x).end()
 #define SZ(x) ((int)((x).size()))
 #define SQ(x) ((x)*(x))
-#define pii pair<int,int>
+// #define pii pair<int,int>
+#define pii pair<ld,ld>
 #define pipii pair<int,pii>
 #define ppi pair<pii,int>
 #define Graph vector<vector<int>>
