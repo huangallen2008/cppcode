@@ -90,6 +90,9 @@ signed main() {
     cout<<fixed<<setprecision(2)<<(ld)tar2(x1,x2,x3)/2<<'\n';
     int n;
     cin>>n;
-
+    REP(i,n) {
+        pii p;
+        cin>>p;
+    }
     return 0;
 }
