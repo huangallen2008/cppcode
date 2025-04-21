@@ -106,6 +106,7 @@ signed main() {
     ld A=cros(p.back(),p[0]);
     REP(i,SZ(p)-1) A+=cros(p[i],p[i+1]);
     Vpii np;
-    mp
+    np.pb(o);
+    np.pb()
     return 0;
 }
