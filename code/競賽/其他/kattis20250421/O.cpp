@@ -107,6 +107,6 @@ signed main() {
     REP(i,SZ(p)-1) A+=cros(p[i],p[i+1]);
     Vpii np;
     np.pb(o);
-    np.pb()
+    np.pb(inters_p())
     return 0;
 }
