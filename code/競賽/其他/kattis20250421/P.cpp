@@ -76,7 +76,11 @@ signed main() {
     while(cin>>n) {
         Vpii a(n);
         REP(i,n) cin>>a[i];
-        
+        REP(i,n) {
+            REP(j,i) {
+                REP(k,n) 
+            }
+        }
     }
     return 0;
 }
