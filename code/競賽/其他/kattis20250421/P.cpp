@@ -78,7 +78,8 @@ signed main() {
         REP(i,n) cin>>a[i];
         REP(i,n) {
             REP(j,i) {
-                REP(k,n) if(cros(a[i]-a[j],))
+                int cnt=0;
+                REP(k,n) if(cros(a[i]-a[j],a[k]-a[j])==0) cnt++;
             }
         }
     }
