@@ -59,9 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int r,c;
-    cin>>r>>c;
-    ld an=(ld)(SQ(r-c)*100)/SQ(r);
-    cout<<fixed<<setprecision(9)<<an<<'\n';
+    pii a,b,c;
+    cin>>a>>b>>c;
+    if()
     return 0; 
 }
