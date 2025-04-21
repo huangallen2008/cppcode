@@ -102,7 +102,7 @@ void solve() {
         id1=i;
         break;
     }
-    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o)>45*PI/180) {
+    RREP1(i,n-1) if(deg(p[i]-o,p[0]-o)>=45*PI/180) {
         id2=i;
         break;
     }
