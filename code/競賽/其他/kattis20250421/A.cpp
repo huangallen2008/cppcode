@@ -95,7 +95,7 @@ void solve() {
         else if(onl(a,b,d)) an=d;
         else if(onl(c,d,a)) an=a;
         else if(onl(c,d,b)) an=b;
-        else inters_p(a,b,c,d);
+        else an=inters_p(a,b,c,d);
         cout<<an.f<<' '<<an.s<<'\n';
     }
 }
