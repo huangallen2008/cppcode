@@ -73,6 +73,12 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     return (c*y+d*x)/(x+y);
 }
 ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
+bool kill1(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))<0;
+}
+bool kill2(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))>0;
+}
 signed main() {
     IOS();
     return 0;
