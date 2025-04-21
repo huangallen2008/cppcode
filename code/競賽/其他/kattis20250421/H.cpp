@@ -85,6 +85,6 @@ signed main() {
     pii x1,x2,x3;
     cin>>x1>>x2>>x3;
     int an1=cros(x1,x2)+cros(x2,x3)+cros(x3,x1);
-    
+    cout<<fixed<<setprecision(2)<<(ld)an1/2
     return 0;
 }
