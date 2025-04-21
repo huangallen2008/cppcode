@@ -90,7 +90,7 @@ void solve() {
         else cout<<p1.f<<' '<<p1.s<<' '<<p2.f<<' '<<p2.s<<'\n';
     }else {
         pdd an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
-        pdd an=inters_p(a,b,c,d);
+        pdd _an=inters_p(a,b,c,d);
         cout<<an.f<<' '<<an.s<<'\n';
     }
 }
