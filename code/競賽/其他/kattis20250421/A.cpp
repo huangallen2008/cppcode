@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
-pii operator*(pii a,int b) { return {b.f*a.f,b.s+a.s}; }
+pii operator*(pii a,int b) { return {b*a.f,b*a.s}; }
 pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
 int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
