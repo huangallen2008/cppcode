@@ -111,7 +111,7 @@ signed main() {
     int an=0;
     REP(i,n) {
         for(int j=i+1;j<n;j++) {
-            while(it<n&&cros(a[i+1]-a[i],a[it+1]-a[it])>=0) it++;
+            while(it<n&&cros(a[j]-a[i],a[it+1]-a[it])>=0) it++;
             // op(i)op(i+1)ope(it)
             chmax(an,tar2(a[i],a[i+1],a[it]));
         }
