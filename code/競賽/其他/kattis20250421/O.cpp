@@ -60,6 +60,7 @@ int rd(int l,int r) {
 pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 pii operator*(pii a,int b) { return {b*a.f,b*a.s}; }
+pii operator*(int b,pii a) { return {b*a.f,b*a.s}; }
 pdd operator/(pii a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
 pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
