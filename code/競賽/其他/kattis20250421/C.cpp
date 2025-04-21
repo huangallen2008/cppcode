@@ -75,7 +75,19 @@ void solve() {
         A0+=w*h;
     }
 }
-vector<pdd> convex
+vector<pdd> convex(Vpdd p) {
+    sort(ALL(p));
+    vector<pdd> convex={p[0]};
+    REP1(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
+    }
+    RREP(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
+    }
+    convex.pop_back();
+}
 signed main() {
     IOS();
     int T;
