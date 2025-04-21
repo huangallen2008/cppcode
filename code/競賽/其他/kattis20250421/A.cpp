@@ -70,8 +70,8 @@ bool dif_side(pii a,pii b,pii c,pii d) {return sign(cros(to(a,b),to(a,c)))*sign(
 bool inters(pii a,pii b,pii c,pii d) { return onl(a,b,c)||onl(a,b,d)||onl(c,d,a)||onl(c,d,b)||(dif_side(a,b,c,d)&&dif_side(c,d,a,b)); }
 pdd inters_p(pii a,pii b,pii c,pii d) { 
     int x=abs(cros(b-a,c-a)),y=abs(cros(b-a,d-a));
-    // op(x)ope(y)
-    // op(a)op(b)op(c)ope(d)
+    op(x)ope(y)
+    op(a)op(b)op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
 void solve() {
@@ -89,13 +89,8 @@ void solve() {
         if(p1==p2) cout<<p1.f<<' '<<p1.s<<'\n';
         else cout<<p1.f<<' '<<p1.s<<' '<<p2.f<<' '<<p2.s<<'\n';
     }else {
-        
-        pdd an;
-        if(onl(a,b,c)) an=c;
-        else if(onl(a,b,d)) an=d;
-        else if(onl(c,d,a)) an=a;
-        else if(onl(c,d,b)) an=b;
-        else an=inters_p(a,b,c,d);
+        pdd _an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
+        pdd an=inters_p(a,b,c,d);
         cout<<an.f<<' '<<an.s<<'\n';
     }
 }
