@@ -100,6 +100,7 @@ signed main() {
     n=SZ(c);
     Vi a=c;
     for(auto x:c) a.pb(x);
+    a.pb(c[0]);
     
     return 0;
 }
