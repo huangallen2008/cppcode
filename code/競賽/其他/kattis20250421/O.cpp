@@ -109,7 +109,7 @@ void solve() {
     vector<pdd> np;
     np.pb(o);
     pii v1=p[1]-o;
-    op(o)ope(v1)op(v1.f-v1.s)
+    op(o)ope(v1)op(v1.f-v1.s)ope(v1.f+v1.s)
     np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{v1.f-v1.s,v1.f+v1.s})));
     for(int i=id1;i<=id2;i++) np.pb(p[i]);
     pii v2=p[0]-o;
