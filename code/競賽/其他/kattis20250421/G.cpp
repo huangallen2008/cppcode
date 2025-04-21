@@ -84,7 +84,7 @@ signed main() {
     int T;
     cin>>T;
     while(T--) {
-        if(n==0) break;
+        solve();
     }
     return 0;
 }
