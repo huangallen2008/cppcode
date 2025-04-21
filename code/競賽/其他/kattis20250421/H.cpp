@@ -84,7 +84,7 @@ int tar2(pii a,pii b,pii c) {
     return abs(cros(a,b)+cros(b,c)+cros(c,a));
 }
 bool intr(pii a,pii b,pii c,pii p) {
-    return tar2(a,b,p)
+    return tar2(a,b,p)+tarw(a,c,p)+tar2(b,c,p)==tar2(a,b,c);
 }
 signed main() {
     IOS();
@@ -96,6 +96,7 @@ signed main() {
     REP(i,n) {
         pii p;
         cin>>p;
+        if(intr(p))
     }
     return 0;
 }
