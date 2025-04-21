@@ -87,17 +87,17 @@ signed main() {
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
     sort(ALL(p));
-    vector<pii> convex={p[0]};
+    vector<pii> c={p[0]};
     REP1(i,n-1) {
-        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
-        convex.pb(p[i]);
+        while(c.size()>=2&&kill1(c[SZ(c)-2],c[SZ(c)-1],p[i])) c.pop_back();
+        c.pb(p[i]);
     }
     RREP(i,n-1) {
-        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
-        convex.pb(p[i]);
+        while(c.size()>=2&&kill1(c[SZ(c)-2],c[SZ(c)-1],p[i])) c.pop_back();
+        c.pb(p[i]);
     }
-    convex.pop_back();
-    n=SZ(convex);
-    
+    c.pop_back();
+    n=SZ(c);
+
     return 0;
 }
