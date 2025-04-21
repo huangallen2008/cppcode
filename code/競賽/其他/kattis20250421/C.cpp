@@ -95,7 +95,7 @@ void solve() {
         ld x,y,w,h,v;
         cin>>x>>y>>w>>h>>v;
         A0+=w*h;
-        pdd v1={}
+        pdd v1={x+w*cosl(-v),y+}
         p.pb({x,y});
         p.pb({x,y});
     }
