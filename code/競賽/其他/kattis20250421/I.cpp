@@ -97,6 +97,6 @@ signed main() {
         convex.pb(p[i]);
     }
     convex.pop_back();
-    
+    n=
     return 0;
 }
