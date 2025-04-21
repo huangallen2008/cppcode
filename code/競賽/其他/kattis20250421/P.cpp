@@ -112,7 +112,7 @@ signed main() {
         n=read();
         if(n==0) break;
         Vpii a(n);
-        REP(i,n) cin>>a[i];
+        REP(i,n) a[i].f=read(),a[i].s=read();
         if(n==1) {
             cout<<"1\n";
             continue;
