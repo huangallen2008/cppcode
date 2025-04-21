@@ -71,8 +71,8 @@ signed main() {
     pii a,b,c;
     cin>>a>>b>>c;
     pii an;
-    if(dot(b-a,c-a)==0) an=-b-c+a;
-    else if(dot(a-b,c-b)==0) an=a+c-b;
+    if(dot(b-a,c-a)==0) an=b-b-c;
+    else if(dot(a-b,c-b)==0) an=b-a-c;
     else an=-a-b+c;
     cout<<an.f<<' '<<an.s<<'\n';
     return 0; 
