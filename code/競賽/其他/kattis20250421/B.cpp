@@ -89,6 +89,7 @@ void solve() {
         cout<<"0.00\n";
         return;
     }
+    op(dis())
     ope(seg_dis(a,b,c))
     ope(seg_dis(a,b,d))
     ope(seg_dis(c,d,a))
