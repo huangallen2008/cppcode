@@ -57,6 +57,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
+pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
+pii operator*(pii a,int b) { return {b.f*a.f,b.s+a.s}; }
 pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
 int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
@@ -68,8 +71,6 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     int x=cros(b-a,c-a),y=cros(b-a,d-a);
     return {c*y}
 }
-pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
-pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 void solve() {
     pii a,b,c,d;
     cin>>a>>b>>c>>d;
