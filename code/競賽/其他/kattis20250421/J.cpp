@@ -85,7 +85,7 @@ signed main() {
             an=-an;
         }
         double ans=(ld)an/2;
-        cout<<"CW "<<ans<<
+        cout<<"CW "<<ans<<'\n';
     }
     return 0; 
 }
