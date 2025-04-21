@@ -62,6 +62,6 @@ signed main() {
     int r,c;
     cin>>r>>c;
     ld an=(ld)(SQ(r-c))/SQ(r);
-    cout<<fixed<<setprecision()
+    cout<<fixed<<setprecision(9)<<an<<'\n';
     return 0; 
 }
