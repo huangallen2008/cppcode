@@ -89,7 +89,9 @@ ld ssdis(pii a,pii b,pii c,pii d) {
     return an;
 }
 void solve() {
-    
+    int n1,n2;
+    cin>>n1;
+    Vp
 }
 signed main() {
     IOS();
