@@ -74,11 +74,10 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     op(a)op(b)op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
+
 void solve() {
     pii a,b,c,d;
     cin>>a>>b>>c>>d;
-    if(a>b) swap(a,b);
-    if(c>d) swap(c,d);
     cout<<fixed<<setprecision(2);
 }
 signed main() {
