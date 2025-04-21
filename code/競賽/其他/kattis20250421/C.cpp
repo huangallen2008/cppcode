@@ -75,6 +75,12 @@ void solve() {
         A0+=w*h;
     }
 }
+bool kill1(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))<0;
+}
+bool kill2(pii a,pii b,pii c) {//1:can kill
+    return cros(to(a,b),to(a,c))>0;
+}
 vector<pdd> convex(Vpdd p) {
     sort(ALL(p));
     vector<pdd> convex={p[0]};
