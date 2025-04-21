@@ -81,11 +81,10 @@ ld segp_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
 }
-ld solve(pii a,pii b,pii c,pii d) {
+ld ssdis(pii a,pii b,pii c,pii d) {
     // pii a,b,c,d;
     // cin>>a>>b>>c>>d;
     if(inters(a,b,c,d)) return 0;
-    }
     ld an=min({segp_dis(a,b,c),segp_dis(a,b,d),segp_dis(c,d,a),segp_dis(c,d,b)});
     return an;
 }
