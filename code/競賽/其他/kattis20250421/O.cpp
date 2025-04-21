@@ -102,6 +102,7 @@ signed main() {
         id2=i;
         break;
     }
-    ld A=cros()
+    ld A=cros(p.back(),p[0]);
+    REP(i,SZ(p)-1) A+=cros(p[i],p[i+1]);
     return 0;
 }
