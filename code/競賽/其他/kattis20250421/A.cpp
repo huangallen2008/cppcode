@@ -70,7 +70,7 @@ bool dif_side(pii a,pii b,pii c,pii d) {return sign(cros(to(a,b),to(a,c)))*sign(
 bool inters(pii a,pii b,pii c,pii d) { return !onl(a,b,c)&&!onl(a,b,d)&&!onl(c,d,a)&&!onl(c,d,b)&&dif_side(a,b,c,d)&&dif_side(c,d,a,b); }
 pdd inters_p(pii a,pii b,pii c,pii d) { 
     int x=cros(b-a,c-a),y=cros(b-a,d-a);
-    return (c*y+d*x)/(c+d);
+    return (c*y+d*x)/(x+y);
 }
 void solve() {
     pii a,b,c,d;
