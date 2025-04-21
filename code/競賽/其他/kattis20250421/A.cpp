@@ -69,7 +69,7 @@ bool onl(pii l1,pii l2,pii p) {return cros(to(l1,l2),to(l1,p))==0&&dot(to(l1,l2)
 bool dif_side(pii a,pii b,pii c,pii d) {return sign(cros(to(a,b),to(a,c)))*sign(cros(to(a,b),to(a,d)))<0;}
 bool inters(pii a,pii b,pii c,pii d) { return !onl(a,b,c)&&!onl(a,b,d)&&!onl(c,d,a)&&!onl(c,d,b)&&dif_side(a,b,c,d)&&dif_side(c,d,a,b); }
 pdd inters_p(pii a,pii b,pii c,pii d) { 
-    int x=cros(b-a,c-a),y=cros(b-a,d-a);
+    int x=abs(cros(b-a,c-a)),y=abs(cros(b-a,d-a));
     op(x)ope(y)
     return (c*y+d*x)/(x+y);
 }
