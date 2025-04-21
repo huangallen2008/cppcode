@@ -80,7 +80,7 @@ ld seg_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
 }
-
+int tar2
 signed main() {
     IOS();
     pii x1,x2,x3;
