@@ -94,7 +94,9 @@ void solve() {
     Vpii a(n1);
     REP(i,n1) cin>>a[i];
     cin>>n2;
-    REP
+    Vpii b(n2);
+    REP(i,n2) cin>>b[i];
+    
 }
 signed main() {
     IOS();
