@@ -61,6 +61,6 @@ signed main() {
     IOS();
     int r,c;
     cin>>r>>c;
-    
+    ld an=(ld)(SQ(r-c))/SQ(c);
     return 0; 
 }
