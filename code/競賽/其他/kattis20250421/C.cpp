@@ -57,7 +57,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-pii operator-(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
+pdd operator-(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
 pdd operator+(pdd a,pdd b) { return {b.f+a.f,b.s+a.s}; }
 pdd operator*(pdd a,int b) { return {b*a.f,b*a.s}; }
 pdd operator/(pdd a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
