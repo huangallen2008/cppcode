@@ -76,6 +76,7 @@ signed main() {
     while(cin>>n) {
         Vpii a(n);
         REP(i,n) cin>>a[i];
+        if(n==1) 
         int an=0;
         REP(i,n) {
             REP(j,i) {
@@ -84,6 +85,7 @@ signed main() {
                 chmax(an,cnt);
             }
         }
+        cout<<an<<'\n';
     }
     return 0;
 }
