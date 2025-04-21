@@ -89,7 +89,7 @@ signed main() {
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
     sort(ALL(p));
-    
+    p.erase(p.)
     vector<pii> c={p[0]};
     REP1(i,n-1) {
         while(c.size()>=2&&kill1(c[SZ(c)-2],c[SZ(c)-1],p[i])) c.pop_back();
