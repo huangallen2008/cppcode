@@ -67,7 +67,8 @@ bool inters(pii a,pii b,pii c,pii d) { return !onl(a,b,c)&&!onl(a,b,d)&&!onl(c,d
 pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 void solve() {
-
+    int n;
+    cin>>n;
     ld d=90;
     pair<ld,ld> an={0,0};
     REP(i,n) {
