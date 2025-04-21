@@ -75,7 +75,7 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     return (c*y+d*x)/(x+y);
 }
 ld l_dis(pii a,pii b,pii c) {
-    return (ld)abs(cros(b-a,c-a))/(SQ(b.f-a.f)+SQ(b.s-a.s));
+    return a==b?dis(a,c):(ld)abs(cros(b-a,c-a))/(SQ(b.f-a.f)+SQ(b.s-a.s));
 }
 ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
 ld seg_dis(pii a,pii b,pii c) {
