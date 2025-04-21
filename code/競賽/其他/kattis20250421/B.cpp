@@ -85,7 +85,7 @@ ld seg_dis(pii a,pii b,pii c) {
 void solve() {
     pii a,b,c,d;
     cin>>a>>b>>c>>d;
-    if()
+    if(onl(a,b,c)&&onl(a,b,d)&&onl(c,d,a)&&)
     ld an=min({seg_dis(a,b,c),seg_dis(a,b,d),seg_dis(c,d,a),seg_dis(c,d,b)});
     cout<<fixed<<setprecision(2)<<an<<'\n';
 }
