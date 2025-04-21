@@ -83,7 +83,7 @@ void solve() {
     }
     cout<<fixed<<setprecision(2);
     if(cros(b-a,d-c)==0) {
-        pii p1=max(a,c),p2=min(b,d);
+        pdd p1=max(a,c),p2=min(b,d);
         if(p1==p2) cout<<p1.f<<' '<<p1.s<<'\n';
         else cout<<p1.f<<' '<<p1.s<<' '<<p2.f<<' '<<p2.s<<'\n';
     }else {
