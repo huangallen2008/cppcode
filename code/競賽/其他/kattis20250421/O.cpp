@@ -94,6 +94,6 @@ signed main() {
     REP(i,n) cin>>p[i].f>>p[i].s;
     pii o=(p[0]+p[1])/2;
     int id1,id2;
-    REP1(i,n-1) if(deg(p[1]-o,p[i]-o)>=)
+    REP1(i,n-1) if(deg(p[1]-o,p[i]-o)>=45*PI/180)
     return 0;
 }
