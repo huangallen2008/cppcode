@@ -80,7 +80,7 @@ signed main() {
             an.f+=sinl(d)*l;
             an.s+=cosl(d)*l;
         }
-        cout<<fixed<<setprecision()
+        cout<<fixed<<setprecision(6)<<an.f<<' '<<an.s<<'\n';
     }
     return 0;
 }
