@@ -59,8 +59,8 @@ int rd(int l,int r) {
 }
 pdd operator-(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
 pdd operator+(pdd a,pdd b) { return {b.f+a.f,b.s+a.s}; }
-pdd operator*(pdd a,int b) { return {b*a.f,b*a.s}; }
-pdd operator/(pdd a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
+pdd operator*(pdd a,ld b) { return {b*a.f,b*a.s}; }
+pdd operator/(pdd a,ld b) { return {(ld)a.f/b,(ld)a.s/b}; }
 pdd to(pdd a,pdd b) { return {b.f-a.f,b.s-a.s}; }
 ld cros(pdd a,pdd b) { return a.f*b.s-a.s*b.f; }
 ld dot(pdd a,pdd b) { return a.f*b.f+a.s*b.s; }
