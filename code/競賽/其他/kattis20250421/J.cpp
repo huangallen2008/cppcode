@@ -80,10 +80,8 @@ signed main() {
             las=x;
         }
         an+=cros(las,a0);
-        if(an<0) {
-            cout<<"C";
-            an=-an;
-        }
+        if(an<0) an=-an;
+        else cout<<'C';
         double ans=(ld)an/2;
         cout<<"CW "<<ans<<'\n';
     }
