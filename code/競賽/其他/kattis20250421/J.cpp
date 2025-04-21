@@ -70,7 +70,9 @@ signed main() {
     IOS();
     int n;
     while(cin>>n) {
-        pii 
+        pii a0,las;
+        cin>>a0,las=a0;
+        REP(i,n-1)
     }
     return 0; 
 }
