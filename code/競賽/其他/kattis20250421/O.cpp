@@ -84,7 +84,7 @@ int tar2(pii a,pii b,pii c) {
 }
 ld len(pii x) { return sqrtl(SQ(x.f)+SQ(x.s)); }
 ld deg(pii a,pii b) {
-    
+    return acosl()
 }
 signed main() {
     IOS();
