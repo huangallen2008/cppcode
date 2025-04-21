@@ -97,7 +97,7 @@ void solve() {
     Vpii b(n2);
     REP(i,n2) cin>>b[i];
     ld an=ssdis(a[0],a[1],b[0],b[1]);
-    REP(i,n1) REP(j,n2) chmin(an,ssdis(a[i],a[i==i+1]))
+    REP(i,n1) REP(j,n2) chmin(an,ssdis(a[i],a[i==n1-1?0:i+1],b[j],b[j==n2-1?0:j+1]))
 }
 signed main() {
     IOS();
