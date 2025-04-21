@@ -90,6 +90,9 @@ ld deg(pii a,pii b) {
 const ld PI=acosl(-1);
 signed main() {
     IOS();
+    int T;
+    cin>>T;
+    while(T--) solve();
     int n;
     cin>>n;
     vector<pii> p(n);
