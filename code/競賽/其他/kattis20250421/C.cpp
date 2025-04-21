@@ -75,11 +75,12 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
 void solve() {
     int n;
     cin>n;
+    ld A0=0;
     REP(i,n) {
-    ld x,y,w,h,v;
+        ld x,y,w,h,v;
         cin>>x>>y>>w>>h>>v;
+        A0+=w*h;
     }
-    ld A0;
 }
 signed main() {
     IOS();
