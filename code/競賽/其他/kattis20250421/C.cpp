@@ -106,7 +106,8 @@ void solve() {
         p.pb({x+v1,y+v2});
         // p.pb({x,y});
     }
-    int A=con
+    int A=convex_area(p);
+    ld
 }
 signed main() {
     IOS();
