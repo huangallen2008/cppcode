@@ -88,34 +88,6 @@ signed main() {
     cin>>n;
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
-    sort(ALL(p));
-    p.erase(unique(ALL(p)),p.end());
-    n=SZ(p);
-    vector<pii> c={p[0]};
-    REP1(i,n-1) {
-        while(c.size()>=2&&kill1(c[SZ(c)-2],c[SZ(c)-1],p[i])) c.pop_back();
-        c.pb(p[i]);
-    }
-    RREP(i,n-1) {
-        while(c.size()>=2&&kill1(c[SZ(c)-2],c[SZ(c)-1],p[i])) c.pop_back();
-        c.pb(p[i]);
-    }
-    c.pop_back();
-    // oparr(c)
-    n=SZ(c);
-    Vpii a=c;
-    // for(auto x:c) a.pb(x);
-    a.pb(c[0]);
-    // oparr(a)
-    int an=0;
-    REP(i,n) {
-        int it=i+2;
-        for(int j=i+1;j<n;j++) {
-            while(it<n&&cros(a[j]-a[i],a[it+1]-a[it])>=0) it++;
-            // op(i)op(i+1)ope(it)
-            chmax(an,tar2(a[i],a[j],a[it]));
-        }
-    }
-    cout<<fixed<<setprecision(9)<<((ld)an/2)<<'\n';
+    pii 
     return 0;
 }
