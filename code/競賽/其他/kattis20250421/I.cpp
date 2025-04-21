@@ -99,6 +99,7 @@ signed main() {
         c.pb(p[i]);
     }
     c.pop_back();
+    oparr(c)
     n=SZ(c);
     Vpii a=c;
     for(auto x:c) a.pb(x);
