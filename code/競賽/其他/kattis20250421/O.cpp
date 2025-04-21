@@ -82,7 +82,9 @@ bool kill2(pii a,pii b,pii c) {//1:can kill
 int tar2(pii a,pii b,pii c) {
     return abs(cros(a,b)+cros(b,c)+cros(c,a));
 }
-ld 
+ld deg(pii a,pii b) {
+    
+}
 signed main() {
     IOS();
     int n;
