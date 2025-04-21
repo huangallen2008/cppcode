@@ -94,6 +94,7 @@ void solve() {
     cin>>n;
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
+    p.pb(p[0]);
     pii o=(p[0]+p[1])/2;
     int id1,id2;
     // REP1(i,n-1) ope(deg(p[1]-o,p[i]-o)*180/PI)
