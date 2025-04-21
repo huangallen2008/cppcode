@@ -75,7 +75,7 @@ void solve() {
         A0+=w*h;
     }
 }
-bool kill1(pii a,pii b,pdd c) {//1:can kill
+bool kill1(pdd a,pdd b,pdd c) {//1:can kill
     return cros(to(a,b),to(a,c))<0;
 }
 bool kill2(pdd a,pdd b,pdd c) {//1:can kill
