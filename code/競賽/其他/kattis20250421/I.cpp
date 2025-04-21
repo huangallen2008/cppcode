@@ -109,6 +109,7 @@ signed main() {
     // oparr(a)
     int an=0;
     REP(i,n) {
+        int it=i+2;
         for(int j=i+1;j<n;j++) {
             while(it<n&&cros(a[j]-a[i],a[it+1]-a[it])>=0) it++;
             // op(i)op(i+1)ope(it)
