@@ -82,8 +82,8 @@ ld seg_dis(pii a,pii b,pii c) {
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    pii x1,x2,x3;
+    cin>>x1>>x2>>x3;
+    
     return 0;
 }
