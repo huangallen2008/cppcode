@@ -109,7 +109,6 @@ signed main() {
     REP(i,n) {
         ope(i)
         while(cros(a[i+1]-a[i],a[it+1]-a[it])<=0) {
-            ope(it)
             it++;
         }
         chmax(an,tar2(a[i],a[i+1],a[it]));
