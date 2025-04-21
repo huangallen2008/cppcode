@@ -79,7 +79,8 @@ signed main() {
             an+=cros(las,x);
             las=x;
         }
-        an+=
+        an+=cros(las,a0);
+        
     }
     return 0; 
 }
