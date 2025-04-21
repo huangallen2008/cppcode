@@ -90,7 +90,7 @@ signed main() {
     REP(i,n) cin>>p[i].f>>p[i].s;
     sort(ALL(p));
     p.erase(unique(ALL(p)),p.end());
-    oparr(p)
+    oparr(p
     n=SZ(p);
     vector<pii> c={p[0]};
     REP1(i,n-1) {
@@ -111,7 +111,6 @@ signed main() {
     int it=2;
     int an=0;
     REP(i,n) {
-        ope(i)
         while(cros(a[i+1]-a[i],a[it+1]-a[it])>=0) it++;
         // op(i)op(i+1)ope(it)
         chmax(an,tar2(a[i],a[i+1],a[it]));
