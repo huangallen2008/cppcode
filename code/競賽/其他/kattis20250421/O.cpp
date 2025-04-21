@@ -116,9 +116,9 @@ void solve() {
     op(o)ope(v2)op(v2.f+v2.s)ope(v2.s-v2.f)
     np.pb(inters_p(p[id2],p[id2==n-1?0:id2+1],o,o+40000*(pdd{v2.f+v2.s,v2.s-v2.f})));
     ld A2=np.back().f*np[0].s-np.back().s*np[0].f;
-    REP(i,SZ(np)-1) A2+=np[i].f*np[i+1].s-;
-    oparr(p)oparr(np)op(id1)ope(id2)
-    op(A)ope(A2)
+    REP(i,SZ(np)-1) A2+=np[i].f*np[i+1].s-np[i].s*np[i+1].f;
+    // oparr(p)oparr(np)op(id1)ope(id2)
+    // op(A)ope(A2)
     ld an=A2/A;
     cout<<fixed<<setprecision(9)<<an<<'\n';
 }
