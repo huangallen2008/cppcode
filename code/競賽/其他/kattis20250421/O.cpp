@@ -89,6 +89,6 @@ signed main() {
     vector<pii> p(n);
     REP(i,n) cin>>p[i].f>>p[i].s;
     pii o=(p[0]+p[1])/2;
-    
+    int id1,id2;
     return 0;
 }
