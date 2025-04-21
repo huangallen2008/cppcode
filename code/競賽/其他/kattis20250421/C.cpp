@@ -111,9 +111,9 @@ void solve() {
         p.pb(po+v1+v2);
         // p.pb({x,y});
     }
-    // ld A=convex_area(p);
-    // ld ans=A0*100/A;
-    // cout<<fixed<<setprecision(1)<<ans<<" %\n";
+    ld A=convex_area(p);
+    ld ans=A0*100/A;
+    cout<<fixed<<setprecision(1)<<ans<<" %\n";
 }
 signed main() {
     IOS();
