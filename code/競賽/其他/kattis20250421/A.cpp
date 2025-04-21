@@ -91,7 +91,7 @@ void solve() {
     }else {
         
         pdd an;
-        
+        if(onl(a,b,c)) an=c;
         inters_p(a,b,c,d);
         cout<<an.f<<' '<<an.s<<'\n';
     }
