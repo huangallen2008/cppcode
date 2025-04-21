@@ -73,7 +73,9 @@ signed main() {
     pii an;
     if(dot(b-a,c-a)==0) an=b+c-a;
     else if(dot(a-b,c-b)) an=a+c-b;
-    else an=a+b-c;
+    else {
+        an=a+b-c;
+    }
     cout<<an.f<<' '<<an.s<<'\n';
     return 0; 
 }
