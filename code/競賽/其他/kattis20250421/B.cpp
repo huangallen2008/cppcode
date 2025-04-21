@@ -74,10 +74,10 @@ pdd inters_p(pii a,pii b,pii c,pii d) {
     op(a)op(b)op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
+ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
 ld l_dis(pii a,pii b,pii c) {
     return a==b?dis(a,c):(ld)abs(cros(b-a,c-a))/(SQ(b.f-a.f)+SQ(b.s-a.s));
 }
-ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
 ld seg_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
