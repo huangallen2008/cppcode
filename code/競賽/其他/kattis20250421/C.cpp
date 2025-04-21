@@ -114,6 +114,7 @@ void solve() {
         p.pb(po+v1+v2);
         // p.pb({x,y});
     }
+    oparr(p)
     ld A=convex_area(p);
     ld ans=(A-A0)*100/A;
     cout<<fixed<<setprecision(1)<<ans<<" %\n";
