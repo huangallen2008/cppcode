@@ -84,11 +84,13 @@ ld segp_dis(pii a,pii b,pii c) {
 ld solve(pii a,pii b,pii c,pii d) {
     // pii a,b,c,d;
     // cin>>a>>b>>c>>d;
-    if(inters(a,b,c,d)) {
-        return 0;
+    if(inters(a,b,c,d)) return 0;
     }
     ld an=min({segp_dis(a,b,c),segp_dis(a,b,d),segp_dis(c,d,a),segp_dis(c,d,b)});
     return an;
+}
+void solve() {
+
 }
 signed main() {
     IOS();
