@@ -72,11 +72,14 @@ signed main() {
     while(cin>>n) {
         pii a0,las;
         cin>>a0,las=a0;
+        int an=0;
         REP(i,n-1) {
             pii x;
             cin>>x;
             an+=cros(las,x);
+            las=x;
         }
+        an+=
     }
     return 0; 
 }
