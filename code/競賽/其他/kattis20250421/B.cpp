@@ -70,13 +70,11 @@ bool dif_side(pii a,pii b,pii c,pii d) {return sign(cros(to(a,b),to(a,c)))*sign(
 bool inters(pii a,pii b,pii c,pii d) { return onl(a,b,c)||onl(a,b,d)||onl(c,d,a)||onl(c,d,b)||(dif_side(a,b,c,d)&&dif_side(c,d,a,b)); }
 pdd inters_p(pii a,pii b,pii c,pii d) { 
     int x=abs(cros(b-a,c-a)),y=abs(cros(b-a,d-a));
-    op(x)ope(y)
-    op(a)op(b)op(c)ope(d)
     return (c*y+d*x)/(x+y);
 }
 ld dis(pii a,pii b) { return sqrtl(SQ(a.f-b.f)+SQ(a.s-b.s)); }
 ld l_dis(pii a,pii b,pii c) {
-    op(a)op(b)ope(c)
+    // op(a)op(b)ope(c)
     return a==b?dis(a,c):(ld)abs(cros(b-a,c-a))/sqrtl(SQ(b.f-a.f)+SQ(b.s-a.s));
 }
 ld seg_dis(pii a,pii b,pii c) {
