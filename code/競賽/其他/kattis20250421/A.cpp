@@ -84,7 +84,8 @@ void solve() {
     if(cros(b-a,d-c)==0) {
 
     }else {
-        pdd an=inters_p()
+        pdd an=inters_p(a+a-b,b+b-a,c+c-d,d+d-c);
+        cout<<
     }
 }
 signed main() {
