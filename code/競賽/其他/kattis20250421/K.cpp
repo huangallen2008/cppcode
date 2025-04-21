@@ -77,7 +77,7 @@ ld l_dis(pii a,pii b,pii c) {
     // op(a)op(b)ope(c)
     return a==b?dis(a,c):(ld)abs(cros(b-a,c-a))/sqrtl(SQ(b.f-a.f)+SQ(b.s-a.s));
 }
-ld seg_dis(pii a,pii b,pii c) {
+ld segp_dis(pii a,pii b,pii c) {
     if(dot(b-a,c-a)>=0&&dot(a-b,c-b)>=0) return l_dis(a,b,c);
     else return min(dis(c,a),dis(c,b));
 }
@@ -87,7 +87,7 @@ void solve(pii a,pii b,pii c,pii d) {
     if(inters(a,b,c,d)) {
         return 0;
     }
-    ld an=min({seg_dis(a,b,c),seg_dis(a,b,d),seg_dis(c,d,a),seg_dis(c,d,b)});
+    ld an=min({segp_dis(a,b,c),segp_dis(a,b,d),segp_dis(c,d,a),segp_dis(c,d,b)});
     cout<<fixed<<setprecision(2)<<an<<'\n';
 }
 signed main() {
