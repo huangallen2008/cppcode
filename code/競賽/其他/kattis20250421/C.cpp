@@ -76,7 +76,7 @@ const ld PI=acosl(-1);
 ld convex_area(Vpdd p) {
     int n=SZ(p);
     sort(ALL(p));
-    oparr(p)
+    // oparr(p)
     vector<pdd> convex={p[0]};
     REP1(i,n-1) {
         while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
@@ -88,7 +88,7 @@ ld convex_area(Vpdd p) {
     }
     convex.pop_back();
     // ope("ok")
-    oparr(convex)
+    // oparr(convex)
     ld A=cros(convex.back(),convex[0]);
     REP(i,SZ(convex)-1) A+=cros(convex[i],convex[i+1]);
     return A/2;
@@ -112,7 +112,7 @@ void solve() {
     }
     // oparr(p)
     ld A=convex_area(p);
-    op(A0)ope(A)
+    // op(A0)ope(A)
     ld ans=(A0)*100/A;
     cout<<fixed<<setprecision(1)<<ans<<" %\n";
 }
