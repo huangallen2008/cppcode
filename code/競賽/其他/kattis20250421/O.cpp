@@ -14,7 +14,6 @@ using namespace std;
 #define SZ(x) ((int)((x).size()))
 #define SQ(x) ((x)*(x))
 // #define pii pair<int,int>
-#define pii pair<ld,ld>
 #define pipii pair<int,pii>
 #define ppi pair<pii,int>
 #define Graph vector<vector<int>>
@@ -24,6 +23,7 @@ using namespace std;
 #define MD(x,M) (((x)%(M)+(M))%(M))
 #define ld long double
 #define pdd pair<ld,ld>
+#define pii pair<ld,ld>
 #define chmax(x,y) x=max(x,y)
 #define chmin(x,y) x=min(x,y)
 #define addmod(x,y) x=((x+(y))%mod)
