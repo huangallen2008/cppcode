@@ -83,7 +83,9 @@ void solve() {
     }
     if(cros(b-a,d-c)==0) {
 
-    }else 
+    }else {
+        pdd an=
+    }
 }
 signed main() {
     IOS();
