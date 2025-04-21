@@ -86,6 +86,7 @@ ld len(pii x) { return sqrtl(SQ(x.f)+SQ(x.s)); }
 ld deg(pii a,pii b) {
     return acosl(cros(a,b)/(len(a)*len(b)));
 }
+const ld PI=acosl(-1);
 signed main() {
     IOS();
     int n;
