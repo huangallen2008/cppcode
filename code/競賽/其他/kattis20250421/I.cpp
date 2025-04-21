@@ -81,5 +81,22 @@ bool kill2(pii a,pii b,pii c) {//1:can kill
 }
 signed main() {
     IOS();
+    
+    int n;
+    cin>>n;
+    vector<pii> p(n);
+    REP(i,n) cin>>p[i].f>>p[i].s;
+    sort(ALL(p));
+    vector<pii> convex={p[0]};
+    REP1(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
+    }
+    RREP(i,n-1) {
+        while(convex.size()>=2&&kill1(convex[SZ(convex)-2],convex[SZ(convex)-1],p[i])) convex.pop_back();
+        convex.pb(p[i]);
+    }
+    convex.pop_back();
+    
     return 0;
 }
