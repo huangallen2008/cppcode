@@ -76,7 +76,9 @@ signed main() {
         REP(i,n) {
             ld x,l;
             cin>>x>>l;
-            
+            d+=x;
+            an.f+=sinl(d)*l;
+            an.s+=sinl(d)*l;
         }
     }
     return 0;
