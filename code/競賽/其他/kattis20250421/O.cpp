@@ -113,7 +113,7 @@ void solve() {
     np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{v1.f-v1.s,v1.f+v1.s})));
     for(int i=id1;i<=id2;i++) np.pb(p[i]);
     pii v2=p[0]-o;
-    op(o)ope(v1)op(v2.f+v2.s)ope(v2.s-v2.f)
+    op(o)ope(v2)op(v2.f+v2.s)ope(v2.s-v2.f)
     np.pb(inters_p(p[id2],p[id2+1],o,o+40000*(pdd{v2.f+v2.s,v2.s-v2.f})));
     ld A2=cros(np.back(),np[0]);
     REP(i,SZ(np)-1) A2+=cros(np[i],np[i+1]);
