@@ -107,6 +107,7 @@ signed main() {
     REP(i,SZ(p)-1) A+=cros(p[i],p[i+1]);
     Vpii np;
     np.pb(o);
+    pii v1={}
     np.pb(inters_p(p[id1-1],p[id1],))
     return 0;
 }
