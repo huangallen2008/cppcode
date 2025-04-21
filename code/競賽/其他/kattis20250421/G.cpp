@@ -72,7 +72,7 @@ void solve() {
     cin>>n;
     ld d=90;
     pair<ld,ld> an={0,0};
-    ope(an)
+    // ope(an)
     REP(i,n) {
         ld x,l;
         cin>>x>>l;
