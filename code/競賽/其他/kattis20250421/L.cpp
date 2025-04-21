@@ -69,6 +69,6 @@ signed main() {
     IOS();
     pii a,b,c;
     cin>>a>>b>>c;
-    if()
+    if(dot())
     return 0; 
 }
