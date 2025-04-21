@@ -105,6 +105,10 @@ void solve() {
         // p.pb({x+v1,y});
         // p.pb({x,y+v2});
         // p.pb({x+v1,y+v2});
+        p.pb(po);
+        p.pb(po+v1);
+        p.pb(po+v2);
+        p.pb(po+v1+v2);
         // p.pb({x,y});
     }
     // ld A=convex_area(p);
