@@ -72,6 +72,8 @@ signed main() {
     cin>>a>>b>>c;
     pii an;
     if(dot(b-a,c-a)==0) an=b+c-a;
-    else if(dot(a-b,c-b))
+    else if(dot(a-b,c-b)) an=a+c-b;
+    else an=a+b-c;
+    
     return 0; 
 }
