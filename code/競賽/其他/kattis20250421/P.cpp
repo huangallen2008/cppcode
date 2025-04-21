@@ -74,6 +74,7 @@ signed main() {
     IOS();
     int n;
     while(cin>>n) {
+        if(n==0) break;
         Vpii a(n);
         REP(i,n) cin>>a[i];
         if(n==1) {
