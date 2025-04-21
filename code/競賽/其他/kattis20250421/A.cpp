@@ -60,7 +60,7 @@ int rd(int l,int r) {
 pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 pii operator*(pii a,int b) { return {b*a.f,b*a.s}; }
-pdd operator/(pii a,int b) { return {(ld)a.f,b*a.s}; }
+pdd operator/(pii a,int b) { return {(ld)a.f/b,(ld)a.s/b}; }
 pii to(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 int cros(pii a,pii b) { return a.f*b.s-a.s*b.f; }
 int dot(pii a,pii b) { return a.f*b.f+a.s*b.s; }
@@ -70,7 +70,7 @@ bool dif_side(pii a,pii b,pii c,pii d) {return sign(cros(to(a,b),to(a,c)))*sign(
 bool inters(pii a,pii b,pii c,pii d) { return !onl(a,b,c)&&!onl(a,b,d)&&!onl(c,d,a)&&!onl(c,d,b)&&dif_side(a,b,c,d)&&dif_side(c,d,a,b); }
 pdd inters_p(pii a,pii b,pii c,pii d) { 
     int x=cros(b-a,c-a),y=cros(b-a,d-a);
-    return {}
+    return 
 }
 void solve() {
     pii a,b,c,d;
