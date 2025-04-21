@@ -105,7 +105,7 @@ void solve() {
     }
     ld A=cros(p.back(),p[0]);
     REP(i,SZ(p)-1) A+=cros(p[i],p[i+1]);
-    Vpii np;
+    vector<pdd> np;
     np.pb(o);
     pii v1=p[1]-o;
     np.pb(inters_p(p[id1-1],p[id1],o,o+40000*(pdd{v1.f-v1.s,v1.f+v1.s})));
