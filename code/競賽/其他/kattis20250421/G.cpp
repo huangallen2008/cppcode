@@ -78,8 +78,8 @@ void solve() {
         cin>>x>>l;
         d+=x;
         op(d)op(sinl(d))ope(cosl(d))
-        an.f+=sinl(d*PI)*l;
-        an.s+=cosl(d)*l;
+        an.f+=sinl(d*PI/180)*l;
+        an.s+=cosl(d*{})*l;
         op(an.f)ope(an.s)
     }
     cout<<fixed<<setprecision(6)<<an.f<<' '<<an.s<<'\n';
