@@ -104,6 +104,7 @@ signed main() {
     Vpii a=c;
     for(auto x:c) a.pb(x);
     a.pb(c[0]);
+    oparr(a)
     int it=2;
     int an=0;
     REP(i,n) {
