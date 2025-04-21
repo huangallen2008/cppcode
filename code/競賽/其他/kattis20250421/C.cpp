@@ -110,7 +110,7 @@ void solve() {
         p.pb(po-v1+v2);
         p.pb(po-v1-v2);
     }
-    oparr(p)
+    // oparr(p)
     ld A=convex_area(p);
     op(A0)ope(A)
     ld ans=(A0)*100/A;
