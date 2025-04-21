@@ -107,7 +107,7 @@ signed main() {
     for(auto x:c) a.pb(x);
     a.pb(c[0]);
     // oparr(a)
-    int it=2;
+    int it=1;
     int an=0;
     REP(i,n) {
         while(cros(a[i+1]-a[i],a[it+1]-a[it])>=0) it++;
