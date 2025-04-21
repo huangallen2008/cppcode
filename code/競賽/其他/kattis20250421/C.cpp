@@ -97,7 +97,7 @@ void solve() {
     REP(i,n) {
         ld x,y,w,h,v;
         cin>>x>>y>>w>>h>>v;
-        pdd p={x,y};
+        pdd po={x,y};
         A0+=w*h;
         pdd v1=pdd{w*cosl((-v)*PI/180),w*sinl(-v*PI/180)};
         pdd v2=pdd{h*cosl((90-v)*PI/180),h*sinl((90-v)*PI/180)};
