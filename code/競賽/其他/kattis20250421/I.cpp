@@ -105,7 +105,7 @@ signed main() {
     a.pb(c[0]);
     int it=2;
     REP(i,n) {
-        while()
+        while(cros())
     }
     return 0;
 }
