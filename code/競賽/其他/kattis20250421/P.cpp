@@ -81,8 +81,8 @@ signed main() {
         REP(i,n) {
             REP(j,i) {
                 int cnt=0;
-                
-                REP(k,n) if(cros(a[i]-a[j],a[k]-a[j])==0) cnt++;
+                pii p=a[i]-a[j];
+                REP(k,n) if(cros(p,a[k]-a[j])==0) cnt++;
                 chmax(an,cnt);
             }
         }
