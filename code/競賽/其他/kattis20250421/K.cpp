@@ -96,6 +96,7 @@ void solve() {
     cin>>n2;
     Vpii b(n2);
     REP(i,n2) cin>>b[i];
+    ld an=inf;
     
 }
 signed main() {
