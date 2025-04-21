@@ -108,7 +108,8 @@ pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 signed main() {
     IOS();
     int n;
-    while(cin>>n) {
+    while(1) {
+        n=read();
         if(n==0) break;
         Vpii a(n);
         REP(i,n) cin>>a[i];
