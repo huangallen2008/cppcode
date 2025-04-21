@@ -80,7 +80,9 @@ signed main() {
             las=x;
         }
         an+=cros(las,a0);
-        
+        if(an<0) {
+            cout<<"C";
+        }
     }
     return 0; 
 }
