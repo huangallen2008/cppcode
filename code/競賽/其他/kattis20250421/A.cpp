@@ -77,7 +77,7 @@ void solve() {
     cin>>a>>b>>c>>d;
     if(a>b) swap(a,b);
     if(c>d) swap(c,d);
-    op(o)
+    
     if(!inters(a,b,c,d)) {
         cout<<"none\n";
         return;
