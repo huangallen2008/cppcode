@@ -87,7 +87,8 @@ ld convex_area(Vpdd p) {
         convex.pb(p[i]);
     }
     convex.pop_back();
-    ope("ok")
+    // ope("ok")
+    oparr(convex)
     ld A=cros(convex.back(),convex[0]);
     REP(i,SZ(convex)-1) A+=cros(convex[i],convex[i+1]);
     return A;
