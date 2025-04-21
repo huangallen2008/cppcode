@@ -113,6 +113,6 @@ signed main() {
     for(int i=id1;i<=id2;i++) np.pb(p[i]);
     pii v2=p[0]-o;
     np.pb(inters_p(p[id2],p[id2+1],o,o+40000*(pdd{v2.f+v2.s,v2.s-v2.f})));
-    ld A2=cros()
+    ld A2=cros(np.back(),np)
     return 0;
 }
