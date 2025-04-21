@@ -67,23 +67,24 @@ bool inters(pii a,pii b,pii c,pii d) { return !onl(a,b,c)&&!onl(a,b,d)&&!onl(c,d
 pii operator-(pii a,pii b) { return {b.f-a.f,b.s-a.s}; }
 pii operator+(pii a,pii b) { return {b.f+a.f,b.s+a.s}; }
 void solve() {
-    
+
+    ld d=90;
+    pair<ld,ld> an={0,0};
+    REP(i,n) {
+        ld x,l;
+        cin>>x>>l;
+        d+=x;
+        an.f+=sinl(d)*l;
+        an.s+=cosl(d)*l;
+    }
+    cout<<fixed<<setprecision(6)<<an.f<<' '<<an.s<<'\n';
 }
 signed main() {
     IOS();
-    int n;
-    while(cin>>n) {
+    int T;
+    cin>>T;
+    while(T--) {
         if(n==0) break;
-        ld d=90;
-        pair<ld,ld> an={0,0};
-        REP(i,n) {
-            ld x,l;
-            cin>>x>>l;
-            d+=x;
-            an.f+=sinl(d)*l;
-            an.s+=cosl(d)*l;
-        }
-        cout<<fixed<<setprecision(6)<<an.f<<' '<<an.s<<'\n';
     }
     return 0;
 }
