@@ -81,8 +81,8 @@ struct SEG {
         int m=l+r>>1;
         return min(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
-    int qu(int l,int r) { return __unique_copy() }
-}
+    int qu(int l,int r) { return _qu(1,0,n-1,l,r); }
+};
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
     int n = L.size();
     int m = J.size();
