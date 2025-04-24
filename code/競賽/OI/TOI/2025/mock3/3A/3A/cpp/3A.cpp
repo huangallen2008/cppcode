@@ -57,5 +57,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {int n = L.size();int m = J.size();int k = Q.size();return 0;
+signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
+    int n = L.size();
+    int m = J.size();
+    int k = Q.size();
+    
+    return 0;
 }
