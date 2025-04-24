@@ -103,7 +103,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     seg.init(N);
     seg.ud(0,0);
     sort(ALL(a));
-    REP(i,n) {
+    for(auto [l,r]:a) {
         
     }
     return 0;
