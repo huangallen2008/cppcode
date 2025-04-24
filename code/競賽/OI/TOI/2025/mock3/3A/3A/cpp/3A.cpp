@@ -62,6 +62,6 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     int m = J.size();
     int k = Q.size();
     Vpii a(n);
-    REP(i,n) a[i]={L[i],R[i]};
+    Vi t,b,c;
     return 0;
 }
