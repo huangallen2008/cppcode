@@ -26,3 +26,6 @@ int main() {
         for (int j = 0; j < int(ans[i].size()); j++)
             printf("%d%c", ans[i][j], " \n"[j + 1 == int(ans[i].size())]);
 }
+
+
+#include "3C.cpp"
