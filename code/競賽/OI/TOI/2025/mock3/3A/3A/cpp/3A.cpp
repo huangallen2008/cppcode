@@ -75,7 +75,9 @@ struct SEG {
         s[w]=min(s[w<<1],s[w<<1|1]);
     }
     void ud(int u,int v) { _ud(1,0,n-1,u,v); }
-    int _qu()
+    int _qu(int w,int l,int r,int ql,int qr) {
+        if(ql<=l&&&)
+    }
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
     int n = L.size();
