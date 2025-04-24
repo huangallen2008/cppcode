@@ -107,7 +107,8 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     seg.ud(0,0);
     sort(ALL(a));
     int N=SZ(t);
-    Vi dp(N+1);
+    Vi dp(N+1,inf);
+    dp[0]=0;
     for(auto [l,r]:a) {
         int l2=*prev(upper_bound(ALL(b),l));
         chmin(dp[r],seg.qu(l2,r)+pc[r]);
