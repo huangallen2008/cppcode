@@ -58,6 +58,12 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct SEG {
+    int n;
+    Vi s;
+    void init(int _n) {
+        n=_n;
+        s=Vi(n<<2,inf);
+    }
     
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
