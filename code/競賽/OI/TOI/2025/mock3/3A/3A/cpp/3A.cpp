@@ -96,8 +96,8 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     sort(ALL(t));
     t.erase(unique(ALL(t)),t.end());
     REP(i,m) b[i]=lower_bound(ALL(t),b[i])-t.begin();
-    // b.pb(0);
     sort(ALL(b));
+    b.pb(0);
     REP(i,k) c[i]=lower_bound(ALL(t),c[i])-t.begin();
     REP(i,n) a[i]={lower_bound(ALL(t),L[i])-t.begin(),upper_bound(ALL(t),R[i])-t.begin()-1};
     oparr(b)oparr(c)oparr(a)
@@ -112,7 +112,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     Vi dp(N+1,inf);
     dp[0]=0;
     for(auto [l,r]:a) {
-        int l2=*lower_bound(ALL(b),l);
+        int l2=*prev(upper_bound(ALL(b),l));
         chmin(dp[r],seg.qu(l2,r)+pc[r]);
         seg.ud(r,dp[r]-pc[r]);
         oparr(dp)
