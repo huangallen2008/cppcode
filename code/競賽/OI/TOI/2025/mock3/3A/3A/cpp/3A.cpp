@@ -72,7 +72,7 @@ struct SEG {
         int m=l+r>>1;
         if(u<=m) _ud(w<<1,l,m,u,v);
         else _ud(w<<1|1,m+1,r,u,v);
-        
+        s[w]=min(s[w<<1],s[w<<1|1]);
     }
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
