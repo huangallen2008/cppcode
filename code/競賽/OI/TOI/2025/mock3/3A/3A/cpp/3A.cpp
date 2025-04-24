@@ -99,6 +99,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     REP(i,m) b[i]=lower_bound(ALL(t),b[i])-t.begin();
     REP(i,k) c[i]=lower_bound(ALL(t),c[i])-t.begin();
     REP(i,n) a[i]={lower_bound(ALL(t),L[i])-t.begin(),upper_bound(ALL(t),R[i])-t.begin()-1};
+    int N=SZ(t);
     Vi pc(N+1);
     REP(i,k) pc[c[i]]++;
     REP1(i,N-1) pc[i]+=pc[i-1];
@@ -106,7 +107,6 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     seg.init(N);
     seg.ud(0,0);
     sort(ALL(a));
-    int N=SZ(t);
     Vi dp(N+1,inf);
     dp[0]=0;
     for(auto [l,r]:a) {
