@@ -57,39 +57,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct AC_node {
-    int fail;
-    int ch[26];
-    int ans=0;
-    int ind=0;
-}ac[maxn];
-int AC_node_id=1;
-struct AC {
-    int root;
-    int n;
-    Vi mp;
-    void add(string s,int id) {
-        int now=root;
-        for(char _c:s) {
-            int c=_c-'a';
-            if(!ac[now].ch[c]) ac[now].ch[c]=AC_node_id++;
-            now=ac[now].ch[c];
-        }
-        mp[id]=now;
-    }
-    void build_fail() {
-        queue<int> q;
-        REP(i,26) {
-            if(ac[root].ch[i]) {
-                ac[ac[root].ch[i]].fail=root;
-                q.push(ac[root].ch[i]);
-            }else ac[root].ch[i]=root;
-        }
-        while(SZ(q)) {
-            int u=q.front();
-            q.pop();
-            REP(c,26) {
-
 signed main() {
     IOS();
     Vi a(12);
