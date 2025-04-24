@@ -109,8 +109,8 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     int N=SZ(t);
     for(auto [l,r]:a) {
         int l2=*prev(upper_bound(ALL(b),l));
-        chmin(dp[r],seg.qu(l2,r)+)
-        seg.ud(r,seg.qu())
+        chmin(dp[r],seg.qu(l2,r)+pc[r]);
+        seg.ud(r,dp[r])
     }
     return 0;
 }
