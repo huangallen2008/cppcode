@@ -64,7 +64,9 @@ struct SEG {
         n=_n;
         s=Vi(n<<2,inf);
     }
-    void _ud(int w,int l,int r)
+    void _ud(int w,int l,int r,int u,int v) {
+        if(l==r)
+    }
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
     int n = L.size();
