@@ -115,7 +115,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     dp[0]=0;
     for(auto [l,r]:a) {
         int l1=*prev(upper_bound(ALL(b),l));
-        chmin(dp[r],min(seg.qu(l1,l)+pc[r]-pc[l-1]));
+        chmin(dp[r],min(seg.qu(l1,l-1)+pc[r]-pc[l-1],));
         seg2.ud(r,dp[r]-pc[r]);
         seg.ud(r,dp[r]);
         oparr(dp)
