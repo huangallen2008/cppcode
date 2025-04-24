@@ -104,7 +104,8 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     seg.ud(0,0);
     sort(ALL(a));
     for(auto [l,r]:a) {
-        int l2=*prev(upper_bound(ALL(b),l)-b.begin()-1;
+        int l2=*prev(upper_bound(ALL(b),l));
+        seg.ud()
     }
     return 0;
 }
