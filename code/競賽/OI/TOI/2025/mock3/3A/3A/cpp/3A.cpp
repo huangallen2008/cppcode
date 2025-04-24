@@ -66,7 +66,8 @@ struct SEG {
     }
     void _ud(int w,int l,int r,int u,int v) {
         if(l==r) {
-            chmin(s[w],)
+            chmin(s[w],v);
+            return;
         }
     }
 }
