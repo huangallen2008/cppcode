@@ -107,7 +107,9 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     REP1(i,N-1) pc[i]+=pc[i-1];
     SEG seg,seg2;
     seg.init(N);
+    seg2.init(N);
     seg.ud(0,0);
+    seg2.ud(0,0);
     sort(ALL(a));
     Vi dp(N+1,inf);
     dp[0]=0;
