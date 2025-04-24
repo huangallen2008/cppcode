@@ -114,6 +114,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
         int l2=*prev(upper_bound(ALL(b),l));
         chmin(dp[r],seg.qu(l2,r)+pc[r]);
         seg.ud(r,dp[r]-pc[r]);
+        oparr(dp)
     }
     int an=dp[b.back()];
     return an;
