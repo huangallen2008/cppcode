@@ -64,6 +64,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     int N=m+k;
     Vpii a(n);
     Vi t,b(m),c(k);
-    
+    REP(i,m) b[i]=J[i];
+    REP(i,k) 
     return 0;
 }
