@@ -89,43 +89,7 @@ struct AC {
             int u=q.front();
             q.pop();
             REP(c,26) {
-                if(ac[u].ch[c]) {
-                    ac[ac[u].ch[c]].fail=ac[ac[u].fail].ch[c];
-                    ac[ac[ac[u].fail].ch[c]].ind++;
-                    q.push(ac[u].ch[c]);
-                }else ac[u].ch[c]=ac[ac[u].fail].ch[c];
-            }
-        }
-    }
-    void init(int _n,vector<string> v) { 
-        root=AC_node_id++; 
-        ac[root].fail=root;
-        n=_n;
-        mp=Vi(n);
-        REP(i,n) add(v[i],i);
-        build_fail();
-    }
-    Vi qu(string s) {
-        Vi an(n);
-        int now=root;
-        for(char _c:s) {
-            int c=_c-'a';
-            now=ac[now].ch[c];
-            ac[now].ans++;
-        }
-        queue<int> q;
-        REP1(i,AC_node_id-1) if(ac[i].ind==0) q.push(i);
-        while(SZ(q)) {
-            int u=q.front();
-            q.pop();
-            int v=ac[u].fail;
-            ac[v].ans+=ac[u].ans;
-            if(--ac[v].ind==0) q.push(v);
-        }
-        REP(i,n) an[i]=ac[mp[i]].ans;
-        return an;
-    }
-};
+
 signed main() {
     IOS();
     Vi a(12);
