@@ -95,6 +95,4 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     sort(ALL(b));
     sort(ALL(c));
     sort(ALL(t));
-    
-    return 0;
-}
+    REP(i,m) b[i]=lower_bound(ALL()
