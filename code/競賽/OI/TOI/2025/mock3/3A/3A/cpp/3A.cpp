@@ -59,9 +59,5 @@ int rd(int l,int r) {
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,
                     const std::vector<signed> &J, const std::vector<signed> &Q) {
-  int n = L.size();
-  int m = J.size();
-  int K = Q.size();
-
-  return 0;
+  int n = L.size();int m = J.size();int k = Q.size();return 0;
 }
