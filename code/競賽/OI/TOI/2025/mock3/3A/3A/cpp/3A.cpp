@@ -103,7 +103,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     seg.init(N);
     seg.ud(0,0);
     sort(ALL(a));
-    int N=m+k+1;
+    int N=SZ(t);
     for(auto [l,r]:a) {
         int l2=*prev(upper_bound(ALL(b),l));
         seg.ud(r,seg.qu())
