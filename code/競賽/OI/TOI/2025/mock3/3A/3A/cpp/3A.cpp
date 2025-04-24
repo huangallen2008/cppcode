@@ -58,9 +58,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,
-                    const std::vector<signed> &J, const std::vector<int> &Q) {
-  int N = L.size();
-  int M = J.size();
+                    const std::vector<signed> &J, const std::vector<signed> &Q) {
+  int n = L.size();
+  int m = J.size();
   int K = Q.size();
+
   return 0;
 }
