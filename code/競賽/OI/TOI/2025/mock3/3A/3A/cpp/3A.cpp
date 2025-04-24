@@ -90,7 +90,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     int N=m+k+1;
     Vpii a(n);
     Vi t,b(m),c(k);
-    t.pb()
+    t.pb(-inf);
     REP(i,m) b[i]=J[i],t.pb(b[i]);
     REP(i,k) c[i]=Q[i],t.pb(c[i]);
     sort(ALL(b));
@@ -101,6 +101,7 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     REP(i,n) a[i]={lower_bound(ALL(t),L[i])-t.begin(),upper_bound(ALL(t),R[i])-t.begin()-1};
     SEG seg;
     seg.init(N);
-
+    seg.ud(0,0);
+    
     return 0;
 }
