@@ -28,3 +28,5 @@ int main() {
   printf("%d\n", minimum_garbage(L, R, J, G));
   return 0;
 }
+
+#include ""
