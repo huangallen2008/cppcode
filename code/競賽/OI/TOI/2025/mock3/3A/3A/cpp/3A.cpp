@@ -90,10 +90,10 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     int N=m+k;
     Vpii a(n);
     Vi t,b(m),c(k);
-    REP(i,m) b[i]=J[i];
+    REP(i,m) b[i]=J[i],t.pb(b[i]);
     REP(i,k) c[i]=Q[i];
     sort(ALL(b));
     sort(ALL(c));
-    
+
     return 0;
 }
