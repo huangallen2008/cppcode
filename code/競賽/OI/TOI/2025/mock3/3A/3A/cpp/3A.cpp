@@ -79,8 +79,9 @@ struct SEG {
         if(ql<=l&&r<=qr) return s[w];
         if(ql>r||qr<l) return inf;
         int m=l+r>>1;
-        
+        return min(_qu(w<<1,l,m,ql,qr),_qu(w<<1|1,m+1,r,ql,qr));
     }
+    int qu(int l,int r) { return __unique_copy() }
 }
 signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &R,const std::vector<signed> &J, const std::vector<signed> &Q) {
     int n = L.size();
