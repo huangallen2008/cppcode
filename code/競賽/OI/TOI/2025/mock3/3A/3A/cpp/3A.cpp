@@ -94,6 +94,6 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
     REP(i,k) c[i]=Q[i];
     sort(ALL(b));
     sort(ALL(c));
-
+    
     return 0;
 }
