@@ -121,5 +121,5 @@ signed minimum_garbage(const std::vector<signed> &L, const std::vector<signed> &
         oparr(dp)
     }
     int an=dp[b.back()];
-    return an>?-1:an;
+    return an>m?-1:an;
 }
