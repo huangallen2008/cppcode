@@ -72,6 +72,8 @@ signed main() {
                 cnt=0;
             }
         }
+        chmax(mx,cnt);
+        if(mx>(n-1)/2)
     }
     return 0;
 }
