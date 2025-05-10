@@ -66,7 +66,11 @@ signed main() {
     auto check=[&](int h) {
         int mx=0,cnt=0;
         REP(i,n) {
-            if(a[i]<h)
+            if(a[i]<h) cnt++;
+            else {
+                chmax(mx,cnt);
+                cnt=0;
+            }
         }
     }
     return 0;
