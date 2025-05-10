@@ -73,6 +73,7 @@ signed main() {
             }
         }
         chmax(mx,cnt);
+        op(h)ope(mx)
         if(mx>n/2) return 0;
         else return 1; 
     };
