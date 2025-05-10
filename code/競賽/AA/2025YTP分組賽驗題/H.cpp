@@ -70,6 +70,6 @@ signed main() {
         }
     }
     int N=n*m;
-    
+    int 
     return 0;
 }
