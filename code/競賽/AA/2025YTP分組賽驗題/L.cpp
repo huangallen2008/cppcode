@@ -82,6 +82,7 @@ void solve() {
     cin>>n>>m;
     string s,t;
     cin>>s>>t;
+    Vi dp(n+1);
     
 }
 signed main() {
