@@ -69,8 +69,10 @@ void solve() {
     REP(i,n) {
         int x=s[i]-'0';
         if(s[i]>=2) an++;
-        else if(s[i]==0&&cnt>0) {
-            an++,cnt--;
+        else if(s[i]==0) {
+            if(cnt)an++,cnt--;
+        }else {
+            
         }
     }
 }
