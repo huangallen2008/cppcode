@@ -92,6 +92,9 @@ void solve() {
             else dp[i]=dp[i+1];
         }
     }
+    int an=0;
+    REP(i,n) addmod(an,dp[i]);
+    
 }
 signed main() {
     IOS();
