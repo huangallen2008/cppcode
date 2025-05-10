@@ -85,21 +85,17 @@ void solve() {
     cin>>s>>t;
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
-    oparr(dp)
     for(int l=2;l<=m;l++) {
         RREP(i,n) (dp[i]+=dp[i+1])%=mod;
-        oparr(dp)
         REP(i,n) {
             if(s[i]>t[m-l]) dp[i]=C(n-i-1,m-l+1);
             else if(s[i]<t[m-l]) dp[i]=0;
             else dp[i]=dp[i+1];
         }
-        oparr(dp)
     }
     int an=0;
     REP(i,n) addmod(an,dp[i]);
     REP(i,n) if(s[i]!='0') {
-        // op(i)ope(C(n-i-1,m-1))
         for(int l=m;l<=n-i-1;l++)addmod(an,C(n-i-1,l));
     }
     an=(an+mod)%mod;
