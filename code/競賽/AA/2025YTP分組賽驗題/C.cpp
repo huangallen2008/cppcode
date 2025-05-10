@@ -75,6 +75,7 @@ signed main() {
         chmax(mx,a-b);
         chmin(mn,a-b);
     }
-    if(c1==0)
+    if(c1==0) sum+=mn;
+    else 
     return 0;
 }
