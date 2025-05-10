@@ -57,52 +57,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
-int inv(int x) { return pw(x,mod-2); }
-Vi fac(maxn),infac(maxn);
-void com_init() {
-    fac[0]=1;
-    REP1(i,maxn-1) fac[i]=fac[i-1]*i%mod;
-    infac[maxn-1]=inv(fac[maxn-1]);
-    RREP(i,maxn-1) infac[i]=infac[i+1]*(i+1)%mod;
-}
-int C(int n,int k) {
-    if(n<k) return 0;
-    return (fac[n]*infac[k]%mod)*infac[n-k]%mod;
-}
-void solve() {
-    int n,m;
-    cin>>n>>m;
-    string s,t;
-    cin>>s>>t;
-    Vi dp(n+1);
-    REP(i,n) dp[i]=s[i]>t[m-1];
-    for(int l=2;l<=m;l++) {
-        RREP(i,n) (dp[i]+=dp[i+1])%=mod;
-        REP(i,n) {
-            if(s[i]>t[m-l]) dp[i]=C(n-i-1,m-l+1);
-            else if(s[i]<t[m-l]) dp[i]=0;
-            else dp[i]=dp[i+1];
-        }
-    }
-    int an=0;
-    REP(i,n) addmod(an,dp[i]);
-    REP(i,n) if(s[i]!='0') {
-        for(int l=m;l<=n-i-1;l++)addmod(an,C(n-i-1,l));
-    }
-    an=(an+mod)%mod;
-    cout<<an<<'\n';
-}
 signed main() {
     IOS();
+    int n,m;
+    cin>>n>>m;
     
     return 0;
 }
