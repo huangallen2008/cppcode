@@ -67,6 +67,6 @@ signed main() {
         cin>>a[i].f>>a[i].s;
         if(a[i].f==-1) id=i;
     }
-    Vi p
+    Vi p0(n);
     return 0;
 }
