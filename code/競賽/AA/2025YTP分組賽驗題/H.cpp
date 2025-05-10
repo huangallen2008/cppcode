@@ -74,7 +74,8 @@ signed main() {
     Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
     REP(mask,1<<N) {
         vector<Vi> t(n,Vi(m));
-        REP(i,n) REP(j,m) t[i][j]=
+        REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
+        
     }
     return 0;
 }
