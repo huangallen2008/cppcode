@@ -78,8 +78,6 @@ signed main() {
     REP(i,n) REP(j,m) t[i][j]=a[i][j];
     REP(t,1<<N) {
         int id=__lg(t&-t);
-        bool ok=1;
-        REP(i,n) REP(j,m) {
             int x=a[i][j]^t[i][j];
             for(auto [dx,dy]:dir) {
                 int nx=i+dx,ny=j+dy;
@@ -87,7 +85,6 @@ signed main() {
                 x^=t[nx][ny];
             }
             if(x==0) ok=0;
-        }
         if(ok) chmin(mn,(int)__builtin_popcount(mask));
     }
     if(mn==inf) cout<<"-1\n";
