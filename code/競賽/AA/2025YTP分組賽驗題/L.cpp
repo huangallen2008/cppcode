@@ -85,6 +85,7 @@ void solve() {
     cin>>s>>t;
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
+    oparr(dp)
     for(int l=2;l<=m;l++) {
         RREP(i,n) (dp[i]+=dp[i+1])%=mod;
         REP(i,n) {
