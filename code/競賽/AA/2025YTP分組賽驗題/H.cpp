@@ -71,7 +71,7 @@ signed main() {
     }
     int N=n*m;
     int mn=inf;
-    Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
+    Vpii dir={{0,0},{0,1},{0,-1},{1,0},{-1,0}};
     auto nok=[&](int x,int y) { return x<0||x>=n||y<0||y>=m; };
     int now=0;
     vector<Vi> t(n,Vi(m));
@@ -85,7 +85,6 @@ signed main() {
                 if(nok(nx,ny)) continue;
                 x^=t[nx][ny];
             }
-            if(x==0) ok=0;
         if(cnt==0) chmin(mn,(int)__builtin_popcount(mask));
     }
     if(mn==inf) cout<<"-1\n";
