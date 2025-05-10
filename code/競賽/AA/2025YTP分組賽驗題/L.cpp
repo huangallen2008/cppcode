@@ -101,7 +101,8 @@ void solve() {
         for(int l=m;l<=n-i-1;l++)addmod(an,C(n-i-1,l));
     }
     an=(an+mod)%mod;
-    cout<<an<<'\n';
+    // cout<<an<<'\n';
+    if(an!=(pw(2,n)))
 }
 signed main() {
     IOS();
