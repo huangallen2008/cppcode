@@ -90,9 +90,9 @@ signed main() {
         }
         REP(i,n) {
             REP(j,m) {
-            cout<<now>>(i*m+j)
-        }entr
-    }
+            cout<<(now>>(i*m+j)&1);
+        }entr 
+    }entr 
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
