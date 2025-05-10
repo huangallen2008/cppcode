@@ -80,7 +80,7 @@ signed main() {
         REP(i,n) REP(j,m) {
             int x=a[i][j]^t[i][j];
             for(auto [dx,dy]:dir) {
-                int nx=x+dx,ny=y+dy;
+                int nx=i+dx,ny=j+dy;
                 if(nok(nx,ny)) continue;
                 x^=t[nx][ny];
             }
