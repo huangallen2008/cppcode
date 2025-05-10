@@ -83,7 +83,7 @@ void solve() {
     string s,t;
     cin>>s>>t;
     Vi dp(n+1);
-    
+    REP(i,n) dp[i]=
 }
 signed main() {
     IOS();
