@@ -81,7 +81,6 @@ signed main() {
         int id=__lg(mask&-mask);
         now^=mask&-mask;
         int i=id/m,j=id%m;
-        op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(nok(nx,ny)) continue;
@@ -89,15 +88,6 @@ signed main() {
             if(t[nx][ny]==0) cnt++;
             else cnt--;
         }
-        REP(i,n) {
-            REP(j,m) {
-            cout<<(now>>(i*m+j)&1);
-        }entr }entr
-        REP(i,n) {
-            REP(j,m) {
-            cout<<t[i][j];
-        }entr 
-    }ope(cnt)entr
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
