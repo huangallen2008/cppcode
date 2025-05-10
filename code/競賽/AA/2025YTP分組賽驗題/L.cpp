@@ -88,7 +88,7 @@ void solve() {
     for(int l=2;l<=m;l++) {
         RREP(i,n) (dp[i]+=dp[i+1])%=mod;
         REP(i,n) {
-            if(s[i]>t[m-l]) dp[i]=C(n-i-1,l);
+            if(s[i]>t[m-l]) dp[i]=C(n-i-1,l-1);
             else if(s[i]<t[m-l]) dp[i]=0;
             else dp[i]=dp[i+1];
         }
