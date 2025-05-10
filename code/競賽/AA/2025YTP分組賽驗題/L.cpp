@@ -84,7 +84,7 @@ void solve() {
     cin>>s>>t;
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
-    
+    for(int l=2)
 }
 signed main() {
     IOS();
