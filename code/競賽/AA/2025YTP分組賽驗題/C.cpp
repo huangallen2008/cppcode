@@ -75,6 +75,6 @@ signed main() {
         chmax(mx,a-b);
         chmin(mn,a-b);
     }
-    
+    if(c1==0)
     return 0;
 }
