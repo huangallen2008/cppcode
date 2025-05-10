@@ -68,7 +68,7 @@ signed main() {
     REP(i,q) {
         int x;
         cin>>x;
-        while(s[pq.top().s])
+        while(s[pq.top().s]!=pq.top().f) pq.pop();
         int id=pq.top().s;
         if(a[x]-a[id]&1) cout<<'1';
         else cout<<'0';
