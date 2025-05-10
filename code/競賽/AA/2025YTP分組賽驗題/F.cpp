@@ -82,5 +82,6 @@ signed main() {
         if(check(m)) l=m;
         else r=m-1;
     }
+    cout<<l<<'\n';
     return 0;
 }
