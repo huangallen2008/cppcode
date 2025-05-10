@@ -70,6 +70,9 @@ signed main() {
         }
     }
     int N=n*m;
-    int 
+    int mn=inf;
+    REP(mask,1<<N) {
+        
+    }
     return 0;
 }
