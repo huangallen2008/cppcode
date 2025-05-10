@@ -61,6 +61,14 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vi p
+    Vi p(n+1);
+    REP1(i,n) p[i]=i;
+    REP(i,k) {
+        int a,b;
+        cin>>a>>b;
+        swap(p[a],p[b]);
+    }
+    REP1(i,n) cout<<p[i]<<' ';
+    cout<<'\n';
     return 0;
 }
