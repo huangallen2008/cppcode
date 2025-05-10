@@ -64,12 +64,11 @@ signed main() {
     Vi a(n+1);
     REP1(i,n) a[i]=i*999;
     priority_queue<pii,Vpii,greater<pii>> pq;
-    // set<pii> s;
-    REP1(i,n) pq.insert({a[i],i});
+    REP1(i,n) pq.push({a[i],i});
     REP(i,q) {
         int x;
         cin>>x;
-        int id=s.begin()->s;
+        int id=pq.top;
         if(a[x]-a[id]&1) cout<<'1';
         else cout<<'0';
         if(id==x) continue;
