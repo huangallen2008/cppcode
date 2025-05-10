@@ -64,7 +64,7 @@ signed main() {
     int an=0;
     REP(s,n+1) {
         int t=s==0?n:n/s;
-        
+        an+=
     }
     return 0;
 }
