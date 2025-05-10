@@ -65,6 +65,10 @@ signed main() {
     REP1(i,n) a[i]=i*999;
     set<pii> s;
     REP1(i,n) s.insert({a[i],i});
-    
+    REP(i,q) {
+        int x;
+        cin>>x;
+        if(a[x]-s)
+    }
     return 0;
 }
