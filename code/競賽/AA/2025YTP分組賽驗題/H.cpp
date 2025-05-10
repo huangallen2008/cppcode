@@ -72,7 +72,7 @@ signed main() {
     int N=n*m;
     int mn=inf;
     Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
-    auto ok=[&]
+    auto nok=[&]()
     REP(mask,1<<N) {
         vector<Vi> t(n,Vi(m));
         REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
