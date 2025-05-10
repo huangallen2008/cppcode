@@ -62,6 +62,7 @@ void solve() {
     cin>>n;
     string s;
     cin>>s;
+    int an=0,cnt=0;
     REP(i,n) {
         
     }
