@@ -63,7 +63,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    auto check=[&](int h) {
+    auto check=[&](int h) ->bool{
         int mx=0,cnt=0;
         REP(i,n) {
             if(a[i]<h) cnt++;
