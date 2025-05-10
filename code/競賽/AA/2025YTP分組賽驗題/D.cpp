@@ -62,5 +62,11 @@ signed main() {
     int n,k;
     cin>>n>>k;
     Vpii a(k);
+    int id=0;
+    REP(i,k) {
+        cin>>a[i].f>>a[i].s;
+        if(a[i].f==-1) id=i;
+    }
+    Vi p
     return 0;
 }
