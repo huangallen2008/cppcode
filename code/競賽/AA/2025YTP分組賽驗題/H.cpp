@@ -88,6 +88,7 @@ signed main() {
         }
         if(ok) chmin(mn,__builtin_popcount(mask));
     }
-    if(mn==inf) cout<<
+    if(mn==inf) cout<<"-1\n";
+    else cout<<mn<<'\n';
     return 0;
 }
