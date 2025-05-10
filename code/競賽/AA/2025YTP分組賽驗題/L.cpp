@@ -96,6 +96,9 @@ void solve() {
     }
     int an=0;
     REP(i,n) addmod(an,dp[i]);
+    REP(i,n) if(s[i]!='0') {
+        
+    }
     an=(an+mod)%mod;
     cout<<an<<'\n';
     entr
