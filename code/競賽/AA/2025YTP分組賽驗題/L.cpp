@@ -100,7 +100,6 @@ void solve() {
     }
     an=(an+mod)%mod;
     cout<<an<<'\n';
-    entr
 }
 signed main() {
     IOS();
