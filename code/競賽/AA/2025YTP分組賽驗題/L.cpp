@@ -87,7 +87,7 @@ void solve() {
     for(int l=2;l<=m;l++) {
         RREP(i,n) dp[i]+=dp[i+1];
         REP(i,n) {
-            if(s[i]>t[i]) dp[i]=C(n-i)
+            if(s[i]>t[i]) dp[i]=C(n-i-1,)
         }
     }
 }
