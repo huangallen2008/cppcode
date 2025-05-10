@@ -85,9 +85,10 @@ void solve() {
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
     for(int l=2;l<=m;l++) {
-        RREP(i,n) dp[i]+=dp[i+1];
+        RREP(i,n) (dp[i]+=dp[i+1])%=mod;
         REP(i,n) {
-            if(s[i]>t[i]) dp[i]=C(n-i-1,m-l+1)
+            if(s[i]>t[i]) dp[i]=C(n-i-1,m-l+1);
+            else if()
         }
     }
 }
