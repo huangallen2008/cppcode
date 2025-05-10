@@ -73,11 +73,10 @@ signed main() {
         if(a[x]-a[id]&1) cout<<'1';
         else cout<<'0';
         if(id==x) continue;
-        s.erase({a[x],x});
-        s.erase({a[id],id});
+        pq.pop();
         int val=a[x]+a[id]>>1;
         a[x]=a[id]=val;
-        s.insert({val,x});
+        pq.push({val,x});
         s.insert({val,id});
     }
     cout<<'\n';
