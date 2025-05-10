@@ -71,6 +71,11 @@ signed main() {
         }
     }
     int mx=max({cnt[0][0],cnt[0][1],cnt[1][0],cnt[1][1]});
-    REP(a1,2) REP(a2,2) 
+    REP(a1,2) REP(a2,2) {
+        if(cnt[a1][a2]==mx) {
+            
+            break;
+        }
+    }
     return 0;
 }
