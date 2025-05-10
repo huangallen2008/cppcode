@@ -76,7 +76,8 @@ signed main() {
         s.erase({a[id],id});
         int val=a[x]+a[id]>>1;
         a[x]=a[id]=val;
-        s.insert({})
+        s.insert({val,x});
+        s.insert({val,id});
     }
     return 0;
 }
