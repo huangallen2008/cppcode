@@ -91,11 +91,13 @@ void solve() {
             else if(s[i]<t[i]) dp[i]=0;
             else dp[i]=dp[i+1];
         }
+        oparr(dp)
     }
     int an=0;
     REP(i,n) addmod(an,dp[i]);
     an=(an+mod)%mod;
     cout<<an<<'\n';
+    entr
 }
 signed main() {
     IOS();
