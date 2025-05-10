@@ -62,8 +62,9 @@ signed main() {
     int n;
     cin>>n;
     int an=0;
-    REP(i,n+1) {
-        int t=
+    REP(s,n+1) {
+        int t=s==0?n:n/s;
+        
     }
     return 0;
 }
