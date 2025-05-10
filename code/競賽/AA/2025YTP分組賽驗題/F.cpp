@@ -79,7 +79,8 @@ signed main() {
     int l=1,r=2e6+5,m;
     while(l<r) {//find last h : check(h)=1
         m=l+r+1>>1;
-        if(check(m)) 
+        if(check(m)) l=m;
+        else r=m-1;
     }
     return 0;
 }
