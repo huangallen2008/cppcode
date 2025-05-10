@@ -74,6 +74,7 @@ signed main() {
         if(id==x) continue;
         s.erase({a[x],x});
         s.erase({a[id],id});
+        a
     }
     return 0;
 }
