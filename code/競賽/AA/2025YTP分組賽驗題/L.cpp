@@ -92,6 +92,7 @@ void solve() {
             else if(s[i]<t[m-l]) dp[i]=0;
             else dp[i]=dp[i+1];
         }
+        oparr(dp)
     }
     int an=0;
     REP(i,n) addmod(an,dp[i]);
