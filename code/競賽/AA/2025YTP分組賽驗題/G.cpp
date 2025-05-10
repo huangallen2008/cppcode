@@ -65,7 +65,9 @@ signed main() {
     vector<Vi> cnt(2,Vi(2));
     REP(i,n) {
         REP(j,n) {
-            int a
+            int x;
+            cin>>x;
+            cnt[i&1][j&1]+=x;
         }
     }
     return 0;
