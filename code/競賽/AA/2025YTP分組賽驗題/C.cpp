@@ -61,16 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    string s;
-    REP(i,n) {
-        string t;
-        cin>>t;
-        s+=t;
-    }
-    REP(i,SZ(s)) if(s[i]!=s[SZ(s)-1-i]) {
-        cout<<"No\n";
-        return 0;
-    }
-    cout<<"Yes\n";
+    int mx=-inf,mn=inf,sum=0;
+    
     return 0;
 }
