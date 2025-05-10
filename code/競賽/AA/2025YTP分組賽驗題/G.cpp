@@ -77,7 +77,7 @@ signed main() {
             REP(i,n) REP(j,n) if((i&1)==a1&&(j&1)==a2) an.pb({i,j});
             cout<<SZ(an)<<'\n';
             for(auto [x,y]:an) cout<<x+1<<' '<<y+1<<'\n';
-            break;
+            return 0;
         }
     }
     return 0;
