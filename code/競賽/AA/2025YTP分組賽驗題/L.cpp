@@ -94,7 +94,8 @@ void solve() {
     }
     int an=0;
     REP(i,n) addmod(an,dp[i]);
-    
+    an=(an+mod)%mod;
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
