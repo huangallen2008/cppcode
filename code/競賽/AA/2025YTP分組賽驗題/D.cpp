@@ -67,6 +67,9 @@ signed main() {
         cin>>a[i].f>>a[i].s;
         if(a[i].f==-1) id=i;
     }
-    Vi p0(n);
+    Vi p0(n+1),p(n+1);
+    REP1(i,n) p0[i]=i;
+    REP1(i,n) cin>>p[i];
+    REP(i,id) swap(p0[])
     return 0;
 }
