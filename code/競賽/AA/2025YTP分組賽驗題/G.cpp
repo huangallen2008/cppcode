@@ -70,5 +70,7 @@ signed main() {
             cnt[i&1][j&1]+=x;
         }
     }
+    int mx=max({cnt[0][0],cnt[0][1],cnt[1][0],cnt[1][1]});
+    
     return 0;
 }
