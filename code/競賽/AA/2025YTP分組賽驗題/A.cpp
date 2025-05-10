@@ -59,8 +59,5 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int a,e,s,y;
-    cin>>a>>e>>s>>y;
-    cout<<a+e-s*y<<'\n';
     return 0;
 }
