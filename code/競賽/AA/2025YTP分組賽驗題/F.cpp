@@ -64,6 +64,7 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     auto check=[&](int h) {
+        int mx=0,cnt=0;
         
     }
     return 0;
