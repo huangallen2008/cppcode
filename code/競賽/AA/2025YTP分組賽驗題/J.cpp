@@ -68,7 +68,7 @@ signed main() {
     REP(i,q) {
         int x;
         cin>>x;
-        if(a[x]-s)
+        if(a[x]-s.begin()->f&1) 
     }
     return 0;
 }
