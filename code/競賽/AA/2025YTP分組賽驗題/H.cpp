@@ -92,7 +92,7 @@ signed main() {
             REP(j,m) {
             cout<<(now>>(i*m+j)&1);
         }entr 
-    }entr 
+    }ope(cnt)
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
