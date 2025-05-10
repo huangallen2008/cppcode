@@ -73,8 +73,8 @@ void solve() {
         else if(x==0) {
             if(cnt>0)an++,cnt--;
         }else {
-            if(cnt>=ss[i+1]) cnt++;
-            else an++,cnt--;
+            if(cnt>=ss[i+1]&&cnt>0) an++,cnt--;
+            else cnt++;
         }
     }
     cout<<an<<'\n';
