@@ -80,7 +80,7 @@ signed main() {
             }
         }
         chmax(mx,cnt);
-        op(h)ope(mx)
+        // op(h)ope(mx)
         if(mx<(n-1)/2) return 1;
         else return 0; 
     };
