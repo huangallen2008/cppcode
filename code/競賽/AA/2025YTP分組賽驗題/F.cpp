@@ -80,18 +80,18 @@ signed main() {
             }
         }
         chmax(mx,cnt);
-        op(h)ope(mx)
+        // op(h)ope(mx)
         if(mx>n/2) return 0;
         else return 1; 
     };
     int l=1,r=2e6+5,m;
     while(l<r) {//find last h : check(h)=1
         m=l+r+1>>1;
-        op(m)ope(check(m))
+        // op(m)ope(check(m))
         if(check(m)) l=m;
         else r=m-1;
     }
-    ope(l)
+    // ope(l)
     int an=0;
     REP(i,n) an+=max(0ll,a[i]-l);
     cout<<an<<'\n';
