@@ -91,7 +91,7 @@ signed main() {
         REP(i,n) {
             REP(j,m) {
             cout<<(now>>(i*m+j)&1);
-        }entr }
+        }entr }entr
         REP(i,n) {
             REP(j,m) {
             cout<<t[i][j];
