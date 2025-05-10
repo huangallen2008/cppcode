@@ -72,5 +72,9 @@ signed main() {
             c1++;
             sum+=a;
         }
+        chmax(mx,a-b);
+        chmin(mn,a-b);
     }
+    
     return 0;
+}
