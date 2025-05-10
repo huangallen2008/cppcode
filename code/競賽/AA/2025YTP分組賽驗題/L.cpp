@@ -80,11 +80,9 @@ int C(int n,int k) {
 }
 void solve() {
     int n,m;
-    // cin>>n>>m;
-    n=rd(1,3000),m=1;
+    cin>>n>>m;
     string s,t;
-    // cin>>s>>t;
-    REP(i,n) s+='2'; t="1";
+    cin>>s>>t;
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
     for(int l=2;l<=m;l++) {
@@ -101,11 +99,7 @@ void solve() {
         for(int l=m;l<=n-i-1;l++)addmod(an,C(n-i-1,l));
     }
     an=(an+mod)%mod;
-    // cout<<an<<'\n';
-    if(an!=(pw(2,n)-1+mod)%mod) {
-        cout<<"WA!\n";
-        ope(n)exit(0);
-    }
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
