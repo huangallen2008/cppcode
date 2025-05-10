@@ -97,8 +97,8 @@ void solve() {
     int an=0;
     REP(i,n) addmod(an,dp[i]);
     REP(i,n) if(s[i]!='0') {
-        op(i)ope(C(n-i-1,m-1))
-        for(int l=m-1;l<n-i-1;l++)addmod(an,C(n-i-1,m-1));
+        // op(i)ope(C(n-i-1,m-1))
+        for(int l=m-1;l<=n-i-1;l++)addmod(an,C(n-i-1,l));
     }
     an=(an+mod)%mod;
     cout<<an<<'\n';
