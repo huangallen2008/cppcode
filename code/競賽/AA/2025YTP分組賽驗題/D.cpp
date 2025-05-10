@@ -70,6 +70,6 @@ signed main() {
     Vi p0(n+1),p(n+1);
     REP1(i,n) p0[i]=i;
     REP1(i,n) cin>>p[i];
-    REP(i,id) swap(p0[])
+    REP(i,id) swap(p0[a[i].f])
     return 0;
 }
