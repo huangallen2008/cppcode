@@ -88,7 +88,11 @@ signed main() {
             if(t[nx][ny]==0) cnt++;
             else cnt--;
         }
-        
+        REP(i,n) {
+            REP(j,m) {
+            
+        }entr
+    }
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
