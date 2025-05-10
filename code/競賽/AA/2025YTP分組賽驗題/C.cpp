@@ -67,8 +67,10 @@ signed main() {
         cin>>a>>b;
         if(a>b) {
             c2++;
-            
+            sum+=b;
+        }else {
+            c1++;
+            sum+=a;
         }
     }
     return 0;
-}
