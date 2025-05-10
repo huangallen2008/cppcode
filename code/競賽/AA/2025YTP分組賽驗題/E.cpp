@@ -69,7 +69,6 @@ void solve() {
         else if(s[i]==0&&cnt>0) {
             an++,cnt--;
         }
-        if()
     }
 }
 signed main() {
