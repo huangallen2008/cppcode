@@ -81,7 +81,7 @@ signed main() {
         }
         chmax(mx,cnt);
         op(h)ope(mx)
-        if(mx<n/2) return 1;
+        if(mx<(n-1)/2) return 1;
         else return 0; 
     };
     int l=1,r=2e6+5,m;
