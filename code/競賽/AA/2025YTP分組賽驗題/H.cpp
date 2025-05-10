@@ -72,12 +72,14 @@ signed main() {
     int N=n*m;
     int mn=inf;
     Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
+    auto ok=[&]
     REP(mask,1<<N) {
         vector<Vi> t(n,Vi(m));
         REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
         bool ok=1;
         REP(i,n) REP(j,m) {
-            int x=
+            int x=a[i][j]^t[i][j];
+            for(auto [dx,dy]:dir)
         }
     }
     return 0;
