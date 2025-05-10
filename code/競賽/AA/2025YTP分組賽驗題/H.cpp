@@ -71,6 +71,7 @@ signed main() {
     }
     int N=n*m;
     int mn=inf;
+    Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
     REP(mask,1<<N) {
         
     }
