@@ -61,6 +61,8 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
+    Vi a(n+1);
+    REP1(i,n) a[i]=i*999;
     
     return 0;
 }
