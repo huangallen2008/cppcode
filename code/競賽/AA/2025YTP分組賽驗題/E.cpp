@@ -64,7 +64,7 @@ void solve() {
     cin>>s;
     Vi ss(n+1);
     REP(i,n) ss[i]=s[i]-'0'<=1;
-    
+    RREP(i,n) ss[i]+=ss[i+1];
     int an=0,cnt=0;
     REP(i,n) {
         int x=s[i]-'0';
