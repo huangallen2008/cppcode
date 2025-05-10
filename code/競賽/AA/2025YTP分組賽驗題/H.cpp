@@ -86,7 +86,8 @@ signed main() {
             }
             if(x==0) ok=0;
         }
-        if(ok) chmin(__builtin_popcount())
+        if(ok) chmin(mn,__builtin_popcount(mask));
     }
+    if(mn==inf) cout<<
     return 0;
 }
