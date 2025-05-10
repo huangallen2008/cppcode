@@ -79,7 +79,10 @@ signed main() {
         bool ok=1;
         REP(i,n) REP(j,m) {
             int x=a[i][j]^t[i][j];
-            for(auto [dx,dy]:dir)
+            for(auto [dx,dy]:dir) {
+                int nx=x+dx,ny=y+dy;
+                if(nok())
+            }
         }
     }
     return 0;
