@@ -75,7 +75,10 @@ signed main() {
     REP(mask,1<<N) {
         vector<Vi> t(n,Vi(m));
         REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
-        
+        bool ok=1;
+        REP(i,n) REP(j,m) {
+            int x=
+        }
     }
     return 0;
 }
