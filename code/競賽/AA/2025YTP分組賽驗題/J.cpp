@@ -59,13 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    int an=0;
-    REP(s,n+1) {
-        int t=s==0?n:n/s;
-        an+=(__int128_t)(n+1)*(t+1)-(__int128_t)s*t*(t+1)/2;
-    }
-    cout<<an<<'\n';
+    int n,q;
+    cin>>n>>q;
+    
     return 0;
 }
