@@ -59,26 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    cout<<"2\n25000000 25000000\n25000000 25000000\n";
-    int n;
-    cin>>n;
-    vector<Vi> cnt(2,Vi(2));
-    REP(i,n) {
-        REP(j,n) {
-            int x;
-            cin>>x;
-            cnt[i&1][j&1]+=x;
-        }
-    }
-    int mx=max({cnt[0][0],cnt[0][1],cnt[1][0],cnt[1][1]});
-    REP(a1,2) REP(a2,2) {
-        if(cnt[a1][a2]==mx) {
-            Vpii an;
-            REP(i,n) REP(j,n) if((i&1)==a1&&(j&1)==a2) an.pb({i,j});
-            cout<<SZ(an)<<'\n';
-            for(auto [x,y]:an) cout<<x+1<<' '<<y+1<<'\n';
-            return 0;
-        }
-    }
+    
     return 0;
 }
