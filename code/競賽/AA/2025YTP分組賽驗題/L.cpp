@@ -81,7 +81,7 @@ int C(int n,int k) {
 void solve() {
     int n,m;
     // cin>>n>>m;
-    n=dr()
+    n=rd(1,3000),m=1;
     string s,t;
     // cin>>s>>t;
     REP(i,n) s+='2'; t="1";
