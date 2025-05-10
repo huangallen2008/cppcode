@@ -84,7 +84,7 @@ signed main() {
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(nok(nx,ny)) continue;
-            t[nx][ny]^=1;
+            t[nx][ny]=t[nx][ny]^1;
             if(t[nx][ny]==0) cnt++;
             else cnt--;
         }
