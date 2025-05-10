@@ -68,7 +68,9 @@ signed main() {
         s+=t;
     }
     REP(i,SZ(t)) if(t[i]!=t[SZ(t)-1-i]) {
-        cout<<""
+        cout<<"No\n";
+        return 0;
     }
+    cout<<"Yes\n";
     return 0;
 }
