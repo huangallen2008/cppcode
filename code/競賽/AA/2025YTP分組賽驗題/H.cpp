@@ -86,6 +86,7 @@ signed main() {
             }
             if(x==0) ok=0;
         }
+        if(ok) chmin(__builtin_popcount())
     }
     return 0;
 }
