@@ -66,7 +66,8 @@ int pw(int x,int p) {
     }
     return r;
 }
-int inv()
+int inv(int x) { return pw(x,mod-2); }
+
 signed main() {
     IOS();
 
