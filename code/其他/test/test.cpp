@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    vector<string> 
+    vector<string> v={}
     Vi a(12);
     REP(i,12) a[i]=i+1;
     shuffle(ALL(a),rng);
