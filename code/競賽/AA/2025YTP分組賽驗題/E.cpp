@@ -68,8 +68,8 @@ void solve() {
     int an=0,cnt=0;
     REP(i,n) {
         int x=s[i]-'0';
-        if(s[i]>=2) an++;
-        else if(s[i]==0) {
+        if(x>=2) an++;
+        else if(x==0) {
             if(cnt>0)an++,cnt--;
         }else {
             if(cnt<ss[i+1]) cnt++;
