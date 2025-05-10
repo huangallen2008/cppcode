@@ -57,28 +57,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int x,int k)
 signed main() {
     IOS();
-    int n,q;
-    cin>>n>>q;
-    Vi a(n+1);
-    REP1(i,n) a[i]=i*999;
-    priority_queue<pii,Vpii,greater<pii>> pq;
-    REP1(i,n) pq.push({a[i],i});
-    REP(i,q) {
-        int x;
-        cin>>x;
-        while(a[pq.top().s]!=pq.top().f) pq.pop();
-        int id=pq.top().s;
-        if(a[x]-a[id]&1) cout<<'1';
-        else cout<<'0';
-        if(id==x) continue;
-        pq.pop();
-        int val=a[x]+a[id]>>1;
-        a[x]=a[id]=val;
-        pq.push({val,x});
-        pq.push({val,id});
-    }
-    cout<<'\n';
+
     return 0;
 }
