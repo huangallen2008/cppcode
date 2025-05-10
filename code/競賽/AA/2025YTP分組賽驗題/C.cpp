@@ -62,6 +62,12 @@ signed main() {
     int n;
     cin>>n;
     int mx=-inf,mn=inf,sum=0,c1=0,c2=0;
-    
+    REP(i,n) {
+        int a,b;
+        cin>>a>>b;
+        if(a>b) {
+            
+        }
+    }
     return 0;
 }
