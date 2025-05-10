@@ -65,7 +65,7 @@ void solve() {
     int an=0,cnt=0;
     REP(i,n) {
         int x=s[i]-'0';
-        if()
+        if(s[i])
     }
 }
 signed main() {
