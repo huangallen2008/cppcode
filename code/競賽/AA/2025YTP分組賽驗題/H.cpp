@@ -92,6 +92,10 @@ signed main() {
             REP(j,m) {
             cout<<(now>>(i*m+j)&1);
         }entr 
+        REP(i,n) {
+            REP(j,m) {
+            cout<<t[i][j];
+        }entr 
     }ope(cnt)
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
