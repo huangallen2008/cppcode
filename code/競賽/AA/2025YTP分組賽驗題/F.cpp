@@ -72,6 +72,13 @@ signed main() {
                 cnt=0;
             }
         }
+        REP(i,n) {
+            if(a[i]<h) cnt++;
+            else {
+                chmax(mx,cnt);
+                cnt=0;
+            }
+        }
         chmax(mx,cnt);
         op(h)ope(mx)
         if(mx>n/2) return 0;
