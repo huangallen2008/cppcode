@@ -59,8 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    vector<string> v={}
-    Vi a(12);
+    vector<string> v={"萬博將","蔡孟廷","陳柏凱","Alvin Chang","蔡兆豐","詹哲崴","蔡宗邑","李浩睿","Wayne Wei","翁御軒","黃傳耀","陳品宇","盧品均","黃宇綸","Brown Toad","林祺祐","何樂望","廖偉丞","蕭鈺宸","石承翰","陳宥鈞","王以安","威達陳","王昱婷","林志穎"};
     REP(i,12) a[i]=i+1;
     shuffle(ALL(a),rng);
     op(a[0])ope(a[1])
