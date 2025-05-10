@@ -73,7 +73,8 @@ signed main() {
     int mn=inf;
     Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
     auto nok=[&](int x,int y) { return x<0||x>=n||y<0||y>=m; };
-    REP(now,1<<N) {
+    int now=0;
+    REP(t,1<<N) {
         vector<Vi> t(n,Vi(m));
         REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
         bool ok=1;
