@@ -72,9 +72,11 @@ void solve() {
         else if(s[i]==0) {
             if(cnt)an++,cnt--;
         }else {
-            if(cnt<ss[i+1]) 
+            if(cnt<ss[i+1]) cnt++;
+            else an++,cnt--;
         }
     }
+    cout<<an<<'\n';
 }
 signed main() {
     IOS();
