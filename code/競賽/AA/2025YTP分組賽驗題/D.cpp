@@ -59,24 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    int mx=-inf,mn=inf,sum=0,c1=0,c2=0;
-    REP(i,n) {
-        int a,b;
-        cin>>a>>b;
-        if(a>b) {
-            c2++;
-            sum+=b;
-        }else {
-            c1++;
-            sum+=a;
-        }
-        chmax(mx,a-b);
-        chmin(mn,a-b);
-    }
-    if(c1==0) sum+=mn;
-    else if(c2==0) sum-=mx;
-    cout<<sum<<'\n';
+    
     return 0;
 }
