@@ -71,7 +71,7 @@ signed main() {
         int id=s.begin()->s;
         if(a[x]-s[id]&1) cout<<'1';
         else cout<<'0';
-        
+        s.erase({a[x],x});
     }
     return 0;
 }
