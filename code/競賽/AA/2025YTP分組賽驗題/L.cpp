@@ -83,7 +83,7 @@ void solve() {
     cin>>n>>m;
     string s,t;
     // cin>>s>>t;
-    
+    REP(i,n) s+='2';
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
     for(int l=2;l<=m;l++) {
