@@ -59,6 +59,11 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    int n;
+    cin>>n;
+    int an=0;
+    REP(i,n+1) {
+        int t=
+    }
     return 0;
 }
