@@ -81,6 +81,7 @@ signed main() {
         int id=__lg(mask&-mask);
         now^=mask&-mask;
         int i=id/m,j=id%m;
+        op(i)ope(j)
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(nok(nx,ny)) continue;
