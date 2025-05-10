@@ -76,6 +76,9 @@ signed main() {
         if(mx>n/2) return 0;
         else return 1; 
     };
-    int l=1,r=
+    int l=1,r=2e6+5,m;
+    while(l<r) {//find last
+
+    }
     return 0;
 }
