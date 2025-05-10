@@ -80,7 +80,7 @@ signed main() {
     REP(t,1<<N) {
         int id=__lg(t&-t);
         now^=t&-t;
-        int i=i
+        int i=id/m,j=id%m;
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(nok(nx,ny)) continue;
