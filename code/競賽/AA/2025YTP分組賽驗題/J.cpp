@@ -68,9 +68,10 @@ signed main() {
     REP(i,q) {
         int x;
         cin>>x;
+        int id=
         if(a[x]-s.begin()->f&1) cout<<'1';
         else cout<<'0';
-        
+
     }
     return 0;
 }
