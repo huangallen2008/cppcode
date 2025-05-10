@@ -77,5 +77,6 @@ signed main() {
     }
     if(c1==0) sum+=mn;
     else if(c2==0) sum-=mx;
+    cout<<sum<<'\n';
     return 0;
 }
