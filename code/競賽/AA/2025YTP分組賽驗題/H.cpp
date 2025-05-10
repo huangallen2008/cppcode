@@ -61,6 +61,15 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
+    vector<Vi> a(n,Vi(m));
+    REP(i,n) {
+        REP(j,m) {
+            char c;
+            cin>>c;
+            a[i][j]=c=='O';
+        }
+    }
+    int N=n*m;
     
     return 0;
 }
