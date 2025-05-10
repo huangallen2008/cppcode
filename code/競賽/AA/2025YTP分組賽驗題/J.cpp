@@ -77,7 +77,7 @@ signed main() {
         int val=a[x]+a[id]>>1;
         a[x]=a[id]=val;
         pq.push({val,x});
-        s.insert({val,id});
+        pq.push({val,id});
     }
     cout<<'\n';
     return 0;
