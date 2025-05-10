@@ -72,6 +72,7 @@ signed main() {
     REP1(i,n) cin>>p[i];
     REP(i,id) swap(p0[a[i].f],p0[a[i].s]);
     for(int i=k-1;i>id;i--) swap(p[a[i].f],p[a[i].s]);
-    
+    REP1(i,n) if(p[i]!=p0[i]) cout<<i<<' ';
+    cout<<'\n';
     return 0;
 }
