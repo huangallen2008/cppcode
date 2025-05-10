@@ -81,8 +81,10 @@ signed main() {
             int x=a[i][j]^t[i][j];
             for(auto [dx,dy]:dir) {
                 int nx=x+dx,ny=y+dy;
-                if(nok())
+                if(nok(nx,ny)) continue;
+                x^=t[nx][ny];
             }
+            if(x==0) ok=0;
         }
     }
     return 0;
