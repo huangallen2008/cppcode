@@ -77,8 +77,8 @@ signed main() {
         else return 1; 
     };
     int l=1,r=2e6+5,m;
-    while(l<r) {//find last
-
+    while(l<r) {//find last h : check(h)=1
+        
     }
     return 0;
 }
