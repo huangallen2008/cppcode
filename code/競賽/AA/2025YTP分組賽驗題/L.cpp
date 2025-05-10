@@ -80,10 +80,11 @@ int C(int n,int k) {
 }
 void solve() {
     int n,m;
-    cin>>n>>m;
+    // cin>>n>>m;
+    n=dr()
     string s,t;
     // cin>>s>>t;
-    REP(i,n) s+='2';
+    REP(i,n) s+='2'; t="1";
     Vi dp(n+1);
     REP(i,n) dp[i]=s[i]>t[m-1];
     for(int l=2;l<=m;l++) {
