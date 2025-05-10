@@ -63,8 +63,9 @@ signed main() {
     cin>>n>>q;
     Vi a(n+1);
     REP1(i,n) a[i]=i*999;
-    set<pii> s;
-    REP1(i,n) s.insert({a[i],i});
+    priority_queue<pii,Vpii,greater<pii>> pq;
+    // set<pii> s;
+    REP1(i,n) pq.insert({a[i],i});
     REP(i,q) {
         int x;
         cin>>x;
