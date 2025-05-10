@@ -61,18 +61,6 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    Vpii a(k);
-    int id=0;
-    REP(i,k) {
-        cin>>a[i].f>>a[i].s;
-        if(a[i].f==-1) id=i;
-    }
-    Vi p0(n+1),p(n+1);
-    REP1(i,n) p0[i]=i;
-    REP1(i,n) cin>>p[i];
-    REP(i,id) swap(p0[a[i].f],p0[a[i].s]);
-    for(int i=k-1;i>id;i--) swap(p[a[i].f],p[a[i].s]);
-    REP1(i,n) if(p[i]!=p0[i]) cout<<i<<' ';
-    cout<<'\n';
+    Vi p
     return 0;
 }
