@@ -70,7 +70,7 @@ void solve() {
         int x=s[i]-'0';
         if(s[i]>=2) an++;
         else if(s[i]==0) {
-            if(cnt)an++,cnt--;
+            if(cnt>0)an++,cnt--;
         }else {
             if(cnt<ss[i+1]) cnt++;
             else an++,cnt--;
