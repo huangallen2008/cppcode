@@ -65,7 +65,9 @@ signed main() {
     REP(i,n) cin>>a[i];
     auto check=[&](int h) {
         int mx=0,cnt=0;
-        REP(i,n) {})
+        REP(i,n) {
+            if(a[i]<h)
+        }
     }
     return 0;
 }
