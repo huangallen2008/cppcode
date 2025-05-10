@@ -64,7 +64,8 @@ signed main() {
     int an=0;
     REP(s,n+1) {
         int t=s==0?n:n/s;
-        an+=(n+1)*(t+1)-
+        an+=(n+1)*(t+1)-s*t*(t+1)/2;
     }
+    cout<<an<<'\n';
     return 0;
 }
