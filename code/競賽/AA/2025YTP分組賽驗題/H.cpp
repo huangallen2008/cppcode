@@ -77,7 +77,7 @@ signed main() {
     vector<Vi> t(n,Vi(m));
     int cnt=0;
     REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
-    REP(t,1<<N) {
+    REP(,1<<N) {
         int id=__lg(t&-t);
         now^=t&-t;
         int i=id/m,j=id%m;
