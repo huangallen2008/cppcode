@@ -82,6 +82,7 @@ signed main() {
         if(check(m)) l=m;
         else r=m-1;
     }
+    ope(l)
     int an=0;
     REP(i,n) an+=max(0ll,a[i]-l);
     cout<<an<<'\n';
