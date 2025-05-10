@@ -67,6 +67,8 @@ signed main() {
         cin>>t;
         s+=t;
     }
-    
+    REP(i,SZ(t)) if(t[i]!=t[SZ(t)-1-i]) {
+        cout<<""
+    }
     return 0;
 }
