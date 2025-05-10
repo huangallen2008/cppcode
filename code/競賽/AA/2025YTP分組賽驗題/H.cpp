@@ -75,8 +75,9 @@ signed main() {
     auto nok=[&](int x,int y) { return x<0||x>=n||y<0||y>=m; };
     int now=0;
     vector<Vi> t(n,Vi(m));
-    REP(i,n) REP(j,m) t[i][j]=mask>>(i*m+j)&1;
+    REP(i,n) REP(j,m) t[i][j]=a[i][j];
     REP(t,1<<N) {
+        
         bool ok=1;
         REP(i,n) REP(j,m) {
             int x=a[i][j]^t[i][j];
