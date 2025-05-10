@@ -71,6 +71,6 @@ signed main() {
         }
     }
     int mx=max({cnt[0][0],cnt[0][1],cnt[1][0],cnt[1][1]});
-    
+    REP()
     return 0;
 }
