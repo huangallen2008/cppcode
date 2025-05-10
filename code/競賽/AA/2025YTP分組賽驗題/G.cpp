@@ -74,7 +74,7 @@ signed main() {
     REP(a1,2) REP(a2,2) {
         if(cnt[a1][a2]==mx) {
             Vpii an;
-            REP(i,n) REP(j,n) if((i&1)==a1&&(i&2))
+            REP(i,n) REP(j,n) if((i&1)==a1&&(j&1)==a2)
             break;
         }
     }
