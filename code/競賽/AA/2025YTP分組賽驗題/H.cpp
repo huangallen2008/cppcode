@@ -75,7 +75,8 @@ signed main() {
     auto nok=[&](int x,int y) { return x<0||x>=n||y<0||y>=m; };
     int now=0;
     vector<Vi> t(n,Vi(m));
-    REP(i,n) REP(j,m) t[i][j]=a[i][j];
+    int cnt=0;
+    REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
     REP(t,1<<N) {
         int id=__lg(t&-t);
             int x=a[i][j]^t[i][j];
@@ -85,7 +86,7 @@ signed main() {
                 x^=t[nx][ny];
             }
             if(x==0) ok=0;
-        if(ok) chmin(mn,(int)__builtin_popcount(mask));
+        if(cnt==0) chmin(mn,(int)__builtin_popcount(mask));
     }
     if(mn==inf) cout<<"-1\n";
     else cout<<mn<<'\n';
