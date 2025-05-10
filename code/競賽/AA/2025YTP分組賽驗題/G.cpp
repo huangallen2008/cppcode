@@ -60,6 +60,8 @@ int rd(int l,int r) {
 signed main() {
     IOS();
     cout<<"2\n25000000 25000000\n25000000 25000000\n";
-    
+    int n;
+    cin>>n;
+    vector<Vi>
     return 0;
 }
