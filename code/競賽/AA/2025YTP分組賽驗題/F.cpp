@@ -59,8 +59,12 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    int n;
+    cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    auto check=[&](int h) {
+        
+    }
     return 0;
 }
