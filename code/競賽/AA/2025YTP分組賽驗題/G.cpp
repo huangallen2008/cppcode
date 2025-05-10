@@ -62,6 +62,11 @@ signed main() {
     cout<<"2\n25000000 25000000\n25000000 25000000\n";
     int n;
     cin>>n;
-    vector<Vi>
+    vector<Vi> cnt(2,Vi(2));
+    REP(i,n) {
+        REP(j,n) {
+            int a
+        }
+    }
     return 0;
 }
