@@ -77,8 +77,8 @@ signed main() {
     vector<Vi> t(n,Vi(m));
     int cnt=0;
     REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
-    REP(,1<<N) {
-        int id=__lg(t&-t);
+    REP(mask,1<<N) {
+        int id=__lg(mask&-mask);
         now^=t&-t;
         int i=id/m,j=id%m;
         for(auto [dx,dy]:dir) {
