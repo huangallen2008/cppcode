@@ -102,7 +102,7 @@ void solve() {
     }
     an=(an+mod)%mod;
     // cout<<an<<'\n';
-    if(an!=(pw(2,n)))
+    if(an!=(pw(2,n)-1+mod)%mod) cout<<""
 }
 signed main() {
     IOS();
