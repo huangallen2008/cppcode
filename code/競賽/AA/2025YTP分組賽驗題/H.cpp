@@ -79,7 +79,7 @@ signed main() {
     REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
     REP(mask,1<<N) {
         int id=__lg(mask&-mask);
-        now^=t&-t;
+        now^=mask&-mask;
         int i=id/m,j=id%m;
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
