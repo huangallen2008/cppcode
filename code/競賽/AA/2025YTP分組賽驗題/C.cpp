@@ -61,7 +61,7 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    int mx=-inf,mn=inf,sum=0;
+    int mx=-inf,mn=inf,sum=0,c1=0,c2=0;
     
     return 0;
 }
