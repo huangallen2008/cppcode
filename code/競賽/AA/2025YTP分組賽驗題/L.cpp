@@ -97,7 +97,7 @@ void solve() {
     int an=0;
     REP(i,n) addmod(an,dp[i]);
     REP(i,n) if(s[i]!='0') {
-        
+        op(i)ope(C(n-i-1,m-1))
         addmod(an,C(n-i-1,m-1));
     }
     an=(an+mod)%mod;
