@@ -79,6 +79,6 @@ int C(int n,int k) {
 }
 signed main() {
     IOS();
-
+    com_init();
     return 0;
 }
