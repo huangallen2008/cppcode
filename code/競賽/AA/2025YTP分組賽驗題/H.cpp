@@ -77,7 +77,7 @@ signed main() {
     vector<Vi> t(n,Vi(m));
     REP(i,n) REP(j,m) t[i][j]=a[i][j];
     REP(t,1<<N) {
-        
+        int id=
         bool ok=1;
         REP(i,n) REP(j,m) {
             int x=a[i][j]^t[i][j];
