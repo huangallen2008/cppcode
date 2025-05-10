@@ -73,7 +73,8 @@ signed main() {
     int mn=inf;
     Vpii dir={{0,1},{0,-1},{1,0},{-1,0}};
     REP(mask,1<<N) {
-        
+        vector<Vi> t(n,Vi(m));
+        REP(i,n) REP(j,m) t[i][j]=
     }
     return 0;
 }
