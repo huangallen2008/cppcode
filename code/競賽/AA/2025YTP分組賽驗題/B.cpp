@@ -67,7 +67,7 @@ signed main() {
         cin>>t;
         s+=t;
     }
-    REP(i,SZ(t)) if(t[i]!=t[SZ(t)-1-i]) {
+    REP(i,SZ(s)) if(s[i]!=s[SZ(s)-1-i]) {
         cout<<"No\n";
         return 0;
     }
