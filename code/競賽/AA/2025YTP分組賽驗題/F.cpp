@@ -76,6 +76,6 @@ signed main() {
         if(mx>n/2) return 0;
         else return 1; 
     };
-    
+    int l=1,r=
     return 0;
 }
