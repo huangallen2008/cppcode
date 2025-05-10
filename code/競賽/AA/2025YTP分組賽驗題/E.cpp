@@ -72,7 +72,7 @@ void solve() {
         else if(s[i]==0) {
             if(cnt)an++,cnt--;
         }else {
-            if(cnt<)
+            if(cnt<ss[i+1]) 
         }
     }
 }
