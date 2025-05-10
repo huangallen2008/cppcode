@@ -79,12 +79,11 @@ signed main() {
     REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
     REP(t,1<<N) {
         int id=__lg(t&-t);
-            int x=a[i][j]^t[i][j];
-            for(auto [dx,dy]:dir) {
-                int nx=i+dx,ny=j+dy;
-                if(nok(nx,ny)) continue;
-                x^=t[nx][ny];
-            }
+        for(auto [dx,dy]:dir) {
+            int nx=i+dx,ny=j+dy;
+            if(nok(nx,ny)) continue;
+            t[nx][ny];
+        }
         if(cnt==0) chmin(mn,(int)__builtin_popcount(mask));
     }
     if(mn==inf) cout<<"-1\n";
