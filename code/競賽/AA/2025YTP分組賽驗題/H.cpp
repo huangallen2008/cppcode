@@ -96,7 +96,7 @@ signed main() {
             REP(j,m) {
             cout<<t[i][j];
         }entr 
-    }ope(cnt)
+    }ope(cnt)entr
         if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
