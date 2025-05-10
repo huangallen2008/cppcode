@@ -79,6 +79,7 @@ signed main() {
     REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
     REP(t,1<<N) {
         int id=__lg(t&-t);
+        now^=t&-t;
         for(auto [dx,dy]:dir) {
             int nx=i+dx,ny=j+dy;
             if(nok(nx,ny)) continue;
@@ -86,7 +87,7 @@ signed main() {
             if(t[nx][ny]==0) cnt++;
             else cnt--;
         }
-        if(cnt==0) chmin(mn,(int)__builtin_popcount(mask));
+        if(cnt==0) chmin(mn,(int)__builtin_popcount(now));
     }
     if(mn==inf) cout<<"-1\n";
     else cout<<mn<<'\n';
