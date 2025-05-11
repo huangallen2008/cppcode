@@ -124,6 +124,8 @@ signed main() {
     }
     dfn={-1};
     pe=in=out=dfnp=dep=Vi(n);
-
+    dfs(0,-1);
+    st_init();
+    
     return 0;
 }
