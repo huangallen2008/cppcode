@@ -151,6 +151,7 @@ signed main() {
             upd_chain(qu_lca(b[j],b[j-1]),b[j],1);
         }
     }
-    int 
+    Vi an;
+    REP(i,n-1)
     return 0;
 }
