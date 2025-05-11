@@ -116,6 +116,7 @@ int qu_lca(int a,int b) {
 signed main() {
     IOS();
     cin>>n>>m>>k;
+    g=Graphw(n);
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
