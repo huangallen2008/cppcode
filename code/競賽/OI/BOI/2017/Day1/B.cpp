@@ -99,9 +99,10 @@ void st_init() {
     int N=SZ(dfn2);
     REP(i,N) st[0][i]=dfn2[i];
     REP1(i,maxb-1) {
-        REP(j,N) st[i][j]=min(st[i-1][j],st[i-1][min(N-1,)])
+        REP(j,N) st[i][j]=min(st[i-1][j],st[i-1][min(N-1,j+(1<<i-1))]);
     }
 }
+
 signed main() {
     IOS();
     cin>>n>>m>>k;
