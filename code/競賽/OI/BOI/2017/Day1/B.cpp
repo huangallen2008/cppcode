@@ -77,6 +77,7 @@ struct BIT {
 int n,m,k;
 Graphw g;
 Vi dfn;
+
 signed main() {
     IOS();
     cin>>n>>m>>k;
@@ -86,6 +87,6 @@ signed main() {
         g[u].pb({v,i});
         g[v].pb({u,i});
     }
-    
+
     return 0;
 }
