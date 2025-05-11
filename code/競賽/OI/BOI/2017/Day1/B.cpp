@@ -153,7 +153,7 @@ signed main() {
             b.pb(a[j]);
         }
         // op(i)ope("ok")
-        sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
+        sort(ALL(b),[&](int x,int y) {return dfnp[x]<dfnp[y]; });
         b.erase(unique(ALL(b)),b.end());
         oparr(b)
         REP1(j,SZ(b)-1) {
