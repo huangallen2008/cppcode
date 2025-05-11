@@ -83,7 +83,9 @@ signed main() {
     REP(i,n-1) {
         int u,v;
         cin>>u>>v,u--,v--;
-
+        g[u].pb({v,i});
+        g[v].pb({u,i});
     }
+    
     return 0;
 }
