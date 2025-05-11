@@ -104,7 +104,7 @@ void st_init() {
 }
 int st_qu(int l,int r) {
     int lg=__lg(r-l+1);
-    return 
+    return min(st)
 }
 signed main() {
     IOS();
