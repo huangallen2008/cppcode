@@ -126,7 +126,9 @@ signed main() {
     pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
-    auto upd_ch
+    auto upd_chain=[&](int a,int b) {
+        
+    }
     REP(i,m) {
         int s;
         cin>>s;
