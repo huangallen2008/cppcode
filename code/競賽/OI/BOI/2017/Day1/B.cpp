@@ -139,7 +139,7 @@ signed main() {
         int s;
         cin>>s;
         Vi a(s);
-        REP(j,s) cin>>a[j];
+        REP(j,s) cin>>a[j],a[j]--;
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         REP1(j,s-1) {
