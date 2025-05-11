@@ -101,7 +101,7 @@ signed main() {
         g[v].pb({u,i});
     }
     dfn={-1};
-    pe=in=out=Vi(n);
+    pe=in=out=dfnp=Vi(n);
 
     return 0;
 }
