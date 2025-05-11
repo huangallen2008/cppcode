@@ -126,5 +126,12 @@ signed main() {
     pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
+    REP(i,m) {
+        int s;
+        cin>>s;
+        REP(j,s) {
+            
+        }
+    }
     return 0;
 }
