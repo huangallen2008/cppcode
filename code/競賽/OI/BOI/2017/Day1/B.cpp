@@ -107,7 +107,8 @@ int st_qu(int l,int r) {
     return min(st[lg][l],st[lg][r-(1<<lg)+1]).s;
 }
 int qu_lca(int a,int b) {
-    if(dfn)
+    if(dfnp[a]>dfnp[b]) swap(a,b);
+    return st_qu()
 }
 signed main() {
     IOS();
