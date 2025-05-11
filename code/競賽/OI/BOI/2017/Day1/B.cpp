@@ -79,9 +79,12 @@ struct BIT {
 };
 int n,m,k;
 Graphw g;
-Vi dfn,dep;
+Vi dfn,dfnp,dep;
+Vpii dfn2;
 Vi in,out,pe;
 void dfs(int u,int fa) {
+    dfnp[u]=SZ(dfn2);
+    dfn2.pb({dep[u],u});
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         pe[v]=id;
@@ -91,12 +94,13 @@ void dfs(int u,int fa) {
         dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
+        dfn2.pb({dep[u],u});
     }
 }
 pii st[maxb][maxn];
 void st_init() {
-    int N=SZ(dfn);
-    REP(i,N) st[0][i]={dep[dfn[i]],dfn[i]};
+    int N=SZ(dfn2);
+    REP(i,N) st[0][i]=dfn2[i];
     REP1(i,maxb-1) {
         REP(j,N) st[i][j]=min(st[i-1][j],st[i-1][min(N-1,j+(1<<i-1))]);
     }
@@ -106,8 +110,8 @@ int st_qu(int l,int r) {
     return min(st[lg][l],st[lg][r-(1<<lg)+1]).s;
 }
 int qu_lca(int a,int b) {
-    if(in[a]>in[b]) swap(a,b);
-    return st_qu(in[a],in[b]);
+    if(dfnp[a]>dfnp[b]) swap(a,b);
+    return st_qu(dfnp[a],dfnp[b]);
 }
 signed main() {
     IOS();
@@ -119,9 +123,8 @@ signed main() {
         g[v].pb({u,i});
     }
     dfn={-1};
-    pe=in=out=dep=Vi(n);
+    pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
-
     return 0;
 }
