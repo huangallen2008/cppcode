@@ -76,7 +76,7 @@ struct BIT {
 };
 int n,m,k;
 Graphw g;
-Vi dfn;
+Vi dfn,dfn2;
 Vi in,out,pe;
 void dfs(int u,int fa) {
     for(auto [v,id]:g[u]) {
@@ -100,6 +100,6 @@ signed main() {
     }
     dfn={-1};
     pe=in=out=Vi(n);
-    
+
     return 0;
 }
