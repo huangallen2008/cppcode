@@ -77,6 +77,7 @@ struct BIT {
 int n,m,k;
 Graphw g;
 Vi dfn;
+Vi in,out;
 void dfs(int u,int fa) {
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
