@@ -57,6 +57,21 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct BIT {
+    int n;
+    Vi b;
+    void init(int _n) {
+        n=_n;
+        b=Vi(n+1);
+    }
+    void ud(int u,int v) {
+        for(;u<=n;u-=u&-u) b[u]+=v;
+    }
+    int pre(int u) {
+        int r=0;
+        for(;)
+    }
+}
 signed main() {
     IOS();
     int n,m,k;
