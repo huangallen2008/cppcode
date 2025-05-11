@@ -129,8 +129,9 @@ signed main() {
     REP(i,m) {
         int s;
         cin>>s;
+        Vi a(s);
         REP(j,s) {
-            
+            cin
         }
     }
     return 0;
