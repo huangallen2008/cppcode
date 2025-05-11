@@ -140,13 +140,13 @@ signed main() {
         cin>>s;
         Vi a(s);
         REP(j,s) cin>>a[j];
-        op(i)ope("ok")
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         REP1(i,s-1) {
             b.pb(qu_lca(a[i-1],a[i]));
             b.pb(a[i]);
         }
+        op(i)ope("ok")
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
         b.erase(unique(ALL(b)),b.end());
         REP1(j,SZ(b)-1) {
