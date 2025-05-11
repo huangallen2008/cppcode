@@ -140,6 +140,7 @@ signed main() {
         cin>>s;
         Vi a(s);
         REP(j,s) cin>>a[j];
+        op(i)ope("ok")
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         REP1(i,s-1) {
