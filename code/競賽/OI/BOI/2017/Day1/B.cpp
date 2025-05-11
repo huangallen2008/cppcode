@@ -71,12 +71,11 @@ struct BIT {
         _ud(l,v);
         _ud(r+1,-v);
     }
-    int pre(int u) {
+    int qu(int u) {
         int r=0;
         for(;u>0;u-=u&-u) r+=b[u];
         return r;
     }
-    int qu(int l,int r) { return pre(r)-pre(l-1); }
 };
 int n,m,k;
 Graphw g;
