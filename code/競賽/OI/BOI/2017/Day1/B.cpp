@@ -130,9 +130,8 @@ signed main() {
         int s;
         cin>>s;
         Vi a(s);
-        REP(j,s) {
-            cin
-        }
+        REP(j,s) cin>>a[j];
+        sort(ALL(a),[&](int x,int y) {return })
     }
     return 0;
 }
