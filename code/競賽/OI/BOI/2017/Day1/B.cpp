@@ -94,6 +94,7 @@ void dfs(int u,int fa) {
         dfn2.pb({dep[u],u});
     }
 }
+pii st[maxb][maxn];
 signed main() {
     IOS();
     cin>>n>>m>>k;
