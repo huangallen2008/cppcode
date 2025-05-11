@@ -126,6 +126,8 @@ signed main() {
     pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
+    BIT bit;
+    bit.init(n*2+10);
     auto upd_chain=[&](int a,int b) {
         
     }
