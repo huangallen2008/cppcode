@@ -131,7 +131,8 @@ signed main() {
         cin>>s;
         Vi a(s);
         REP(j,s) cin>>a[j];
-        sort(ALL(a),[&](int x,int y) {return })
+        sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
+        
     }
     return 0;
 }
