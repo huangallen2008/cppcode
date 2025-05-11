@@ -96,7 +96,7 @@ void dfs(int u,int fa) {
 }
 pii st[maxb][maxn];
 void st_init() {
-    int N=dfn2
+    int N=SZ(dfn2);
 }
 signed main() {
     IOS();
