@@ -94,6 +94,6 @@ signed main() {
         g[u].pb({v,i});
         g[v].pb({u,i});
     }
-
+    dfn={-1};
     return 0;
 }
