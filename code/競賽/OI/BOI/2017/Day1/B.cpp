@@ -67,6 +67,9 @@ struct BIT {
     void _ud(int u,int v) {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
+    void ud(int l,int r,int v)  {
+        _ud(l,v)
+    }
     int pre(int u) {
         int r=0;
         for(;u>0;u-=u&-u) r+=b[u];
