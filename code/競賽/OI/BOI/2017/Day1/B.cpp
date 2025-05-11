@@ -94,13 +94,12 @@ void dfs(int u,int fa) {
         dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
-        dfn2.pb({dep[u],u});
     }
 }
 pii st[maxb][maxn];
 void st_init() {
     int N=SZ(dfn);
-    REP(i,N) st[0][i]={dfn[i]};
+    REP(i,N) st[0][i]={dep[dfn[i]],dfn[i]};
     REP1(i,maxb-1) {
         REP(j,N) st[i][j]=min(st[i-1][j],st[i-1][min(N-1,j+(1<<i-1))]);
     }
