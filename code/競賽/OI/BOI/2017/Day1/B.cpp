@@ -143,9 +143,9 @@ signed main() {
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         op(i)ope("ok")
-        REP1(i,s-1) {
-            b.pb(qu_lca(a[i-1],a[i]));
-            b.pb(a[i]);
+        REP1(j,s-1) {
+            b.pb(qu_lca(a[j-1],a[j]));
+            b.pb(a[j]);
         }
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
         b.erase(unique(ALL(b)),b.end());
