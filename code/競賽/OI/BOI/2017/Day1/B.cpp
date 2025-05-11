@@ -80,7 +80,7 @@ Vi dfn,dfn2,dfnp,dep;
 Vi in,out,pe;
 void dfs(int u,int fa) {
     dfnp[u]=SZ(dfn2);
-    dfn2.pb(u);
+    dfn2.pb(dep[u]);
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         pe[v]=id;
@@ -90,7 +90,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
-        dfn2.pb(u);
+        dfn2.pb(dep[u]);
     }
 }
 signed main() {
