@@ -99,7 +99,7 @@ void dfs(int u,int fa) {
 }
 pii st[maxb][maxn];
 void st_init() {
-    int N=SZ(dfn2);
+    int N=SZ(dfn);
     REP(i,N) st[0][i]=dfn2[i];
     REP1(i,maxb-1) {
         REP(j,N) st[i][j]=min(st[i-1][j],st[i-1][min(N-1,j+(1<<i-1))]);
@@ -126,6 +126,6 @@ signed main() {
     pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
-    
+
     return 0;
 }
