@@ -128,12 +128,12 @@ signed main() {
     st_init();
     BIT bit;
     bit.init(n*2+10);
-    auto upd_chain=[&](int a,int b,int v) {
+    auto upd_chain=[&](int a,int b,int v) {// a,b: node id
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
     };
-    auto qu_val=[&](int u) {//edge id
+    auto qu_val=[&](int u) {// u:edge id
         return bit.qu(in[u])-bit.qu(out[u]);
-    }
+    };
     REP(i,m) {
         int s;
         cin>>s;
@@ -150,4 +150,3 @@ signed main() {
 
     }
     return 0;
-}
