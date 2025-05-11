@@ -77,7 +77,7 @@ struct BIT {
 int n,m,k;
 Graphw g;
 Vi dfn;
-
+void dfs()
 signed main() {
     IOS();
     cin>>n>>m>>k;
