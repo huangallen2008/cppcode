@@ -65,11 +65,12 @@ struct BIT {
         b=Vi(n+1);
     }
     void ud(int u,int v) {
-        for(;u<=n;u-=u&-u) b[u]+=v;
+        for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
         int r=0;
-        for(;)
+        for(;u>0;u-=u&-u) r+=b[u];
+        retrun r;
     }
 }
 signed main() {
