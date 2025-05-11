@@ -77,13 +77,14 @@ struct BIT {
 int n,m,k;
 Graphw g;
 Vi dfn;
-Vi in,out;
+Vi in,out,pe;
 void dfs(int u,int fa) {
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         pe[v]=id;
         in[id]=SZ(dfn);
         dfn.pb(id);
+        dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
     }
