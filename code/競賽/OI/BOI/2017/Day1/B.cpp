@@ -97,6 +97,7 @@ void dfs(int u,int fa) {
 pii st[maxb][maxn];
 void st_init() {
     int N=SZ(dfn2);
+    REP(i,N) st[0][i]=dfn2[i];
 }
 signed main() {
     IOS();
