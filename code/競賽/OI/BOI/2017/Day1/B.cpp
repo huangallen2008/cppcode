@@ -74,9 +74,11 @@ struct BIT {
     }
     int qu(int l,int r) { return pre(r)-pre(l-1); }
 };
+int n,m,k;
+Graph g;
+Vi dfn;
 signed main() {
     IOS();
-    int n,m,k;
-    
+
     return 0;
 }
