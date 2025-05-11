@@ -86,6 +86,7 @@ void dfs(int u,int fa) {
         pe[v]=id;
         in[id]=SZ(dfn);
         dfn.pb(id);
+        dep[v]=dep[u]+1;
         dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
