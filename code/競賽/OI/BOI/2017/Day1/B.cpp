@@ -78,7 +78,12 @@ int n,m,k;
 Graphw g;
 Vi dfn;
 void dfs(int u,int fa) {
-    for()
+    for(auto [v,id]:g[u]) {
+        if(v==fa) continue;
+        pe[v]=id;
+        dfn.pb(id);
+        dfn.pb(id);
+    }
 }
 signed main() {
     IOS();
