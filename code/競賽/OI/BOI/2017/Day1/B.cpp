@@ -148,8 +148,9 @@ signed main() {
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
         b.erase(unique(ALL(b)),b.end());
         REP1(j,SZ(b)-1) {
-            upd_chain(qu_lca())
+            upd_chain(qu_lca(b[j],b[j-1]),b[j],1);
         }
     }
+    int 
     return 0;
 }
