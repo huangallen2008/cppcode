@@ -130,6 +130,9 @@ signed main() {
     bit.init(n*2+10);
     auto upd_chain=[&](int a,int b,int v) {
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
+    };
+    auto qu_val=[&](int u) {
+        return bit.qu()
     }
     REP(i,m) {
         int s;
