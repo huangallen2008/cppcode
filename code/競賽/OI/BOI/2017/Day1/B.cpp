@@ -76,7 +76,7 @@ struct BIT {
 };
 int n,m,k;
 Graphw g;
-Vi dfn,dfn2,dfnp;
+Vi dfn,dfn2,dfnp,dep;
 Vi in,out,pe;
 void dfs(int u,int fa) {
     dfnp[u]=SZ(dfn2);
@@ -102,7 +102,7 @@ signed main() {
         g[v].pb({u,i});
     }
     dfn={-1};
-    pe=in=out=dfnp=Vi(n);
+    pe=in=out=dfnp=dep=Vi(n);
 
     return 0;
 }
