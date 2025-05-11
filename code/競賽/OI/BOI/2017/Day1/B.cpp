@@ -136,7 +136,7 @@ signed main() {
     auto qu_val=[&](int u) {// u:edge id
         return bit.qu(in[u])-bit.qu(out[u]);
     };
-    oparr(dfn)
+    oparr(dfn2)
     REP(i,m) {
         int s;
         cin>>s;
