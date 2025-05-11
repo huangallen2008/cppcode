@@ -152,6 +152,6 @@ signed main() {
         }
     }
     Vi an;
-    REP(i,n-1)
+    REP(i,n-1) if(qu_val)
     return 0;
 }
