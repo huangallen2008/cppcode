@@ -128,8 +128,8 @@ signed main() {
     st_init();
     BIT bit;
     bit.init(n*2+10);
-    auto upd_chain=[&](int a,int b) {
-        bit.ud(in[pe[a]]+1,in[pe[b]]);
+    auto upd_chain=[&](int a,int b,int v) {
+        bit.ud(in[pe[a]]+1,in[pe[b]],v);
     }
     REP(i,m) {
         int s;
