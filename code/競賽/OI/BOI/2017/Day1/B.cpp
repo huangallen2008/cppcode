@@ -82,8 +82,9 @@ void dfs(int u,int fa) {
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         pe[v]=id;
-        in[id]=
+        in[id]=SZ(dfn);
         dfn.pb(id);
+        out[id]=SZ(dfn);
         dfn.pb(id);
     }
 }
