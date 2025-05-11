@@ -126,6 +126,7 @@ signed main() {
     pe=in=out=dfnp=dep=Vi(n);
     dfs(0,-1);
     st_init();
+    auto upd_ch
     REP(i,m) {
         int s;
         cin>>s;
@@ -139,7 +140,7 @@ signed main() {
         }
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
         b.erase(unique(ALL(b)),b.end());
-        
+
     }
     return 0;
 }
