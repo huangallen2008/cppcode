@@ -136,6 +136,7 @@ signed main() {
     auto qu_val=[&](int u) {// u:edge id
         return bit.qu(in[u])-bit.qu(out[u]);
     };
+    oparr(dfn)
     REP(i,m) {
         int s;
         cin>>s;
@@ -152,6 +153,7 @@ signed main() {
         // op(i)ope("ok")
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
         b.erase(unique(ALL(b)),b.end());
+        oparr(b)
         REP1(j,SZ(b)-1) {
             upd_chain(qu_lca(b[j],b[j-1]),b[j],1);
         }
