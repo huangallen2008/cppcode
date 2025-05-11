@@ -79,6 +79,7 @@ Graphw g;
 Vi dfn,dfn2;
 Vi in,out,pe;
 void dfs(int u,int fa) {
+    dfn2.
     for(auto [v,id]:g[u]) {
         if(v==fa) continue;
         pe[v]=id;
