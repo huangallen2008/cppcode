@@ -143,6 +143,7 @@ signed main() {
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         REP1(j,s-1) {
+            op(i)ope(j)
             b.pb(qu_lca(a[j-1],a[j]));
             b.pb(a[j]);
         }
