@@ -129,7 +129,7 @@ signed main() {
     BIT bit;
     bit.init(n*2+10);
     auto upd_chain=[&](int a,int b) {
-        
+        bit.ud(in[u]+1,in[b]);
     }
     REP(i,m) {
         int s;
