@@ -79,6 +79,11 @@ Graphw g;
 Vi dfn;
 signed main() {
     IOS();
+    cin>>n>>m>>k;
+    REP(i,n-1) {
+        int u,v;
+        cin>>u>>v,u--,v--;
 
+    }
     return 0;
 }
