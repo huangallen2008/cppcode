@@ -108,7 +108,7 @@ int st_qu(int l,int r) {
 }
 int qu_lca(int a,int b) {
     if(dfnp[a]>dfnp[b]) swap(a,b);
-    return st_qu()
+    return st_qu(dfnp[a],dfnp[b]);
 }
 signed main() {
     IOS();
