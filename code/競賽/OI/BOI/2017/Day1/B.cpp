@@ -132,7 +132,7 @@ signed main() {
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
     };
     auto qu_val=[&](int u) {
-        return bit.qu(in)
+        return bit.qu(in[])
     }
     REP(i,m) {
         int s;
