@@ -98,7 +98,9 @@ pii st[maxb][maxn];
 void st_init() {
     int N=SZ(dfn2);
     REP(i,N) st[0][i]=dfn2[i];
-    
+    REP1(i,maxb-1) {
+        REP(j,N) st[i][j]=m
+    }
 }
 signed main() {
     IOS();
