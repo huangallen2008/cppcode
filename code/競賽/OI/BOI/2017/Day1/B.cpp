@@ -131,8 +131,8 @@ signed main() {
     auto upd_chain=[&](int a,int b,int v) {
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
     };
-    auto qu_val=[&](int u) {
-        return bit.qu(in[u])
+    auto qu_val=[&](int u) {//edge id
+        return bit.qu(in[u])-bit.qu(out[u]);
     }
     REP(i,m) {
         int s;
