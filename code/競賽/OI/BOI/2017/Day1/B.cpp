@@ -130,7 +130,7 @@ signed main() {
     BIT bit;
     bit.init(n*2+10);
     auto upd_chain=[&](int a,int b,int v) {// a,b: node id
-        op(a)ope(b)
+        // op(a)ope(b)
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
     };
     auto qu_val=[&](int u) {// u:edge id
