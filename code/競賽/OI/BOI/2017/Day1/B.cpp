@@ -95,6 +95,9 @@ void dfs(int u,int fa) {
     }
 }
 pii st[maxb][maxn];
+void st_init() {
+    
+}
 signed main() {
     IOS();
     cin>>n>>m>>k;
