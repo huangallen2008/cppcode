@@ -152,6 +152,8 @@ signed main() {
         }
     }
     Vi an;
-    REP(i,n-1) if(qu_val())
+    REP(i,n-1) if(qu_val(i)>=k) an.pb(i);
+    cout<<SZ(an)<<'\n';
+    for(int c:an ) cou
     return 0;
 }
