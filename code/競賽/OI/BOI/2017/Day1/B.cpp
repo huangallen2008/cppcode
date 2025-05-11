@@ -137,6 +137,7 @@ signed main() {
         return bit.qu(in[u])-bit.qu(out[u]);
     };
     oparr(dfn2)
+    oparr(dfnp)
     REP(i,m) {
         int s;
         cin>>s;
