@@ -144,6 +144,7 @@ signed main() {
         Vi a(s);
         REP(j,s) cin>>a[j],a[j]--;
         sort(ALL(a),[&](int x,int y) {return dfnp[x]<dfnp[y]; });
+        oparr(a)
         Vi b;b.pb(a[0]);
         REP1(j,s-1) {
             // op(a[j-1])ope(a[j]);
