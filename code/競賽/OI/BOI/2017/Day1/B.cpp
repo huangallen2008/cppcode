@@ -137,6 +137,8 @@ signed main() {
             b.pb(qu_lca(a[i-1],a[i]));
             b.pb(a[i]);
         }
+        sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
+        b.erase()
     }
     return 0;
 }
