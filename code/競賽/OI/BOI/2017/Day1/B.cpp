@@ -130,6 +130,7 @@ signed main() {
     BIT bit;
     bit.init(n*2+10);
     auto upd_chain=[&](int a,int b,int v) {// a,b: node id
+        op(a)ope(b)
         bit.ud(in[pe[a]]+1,in[pe[b]],v);
     };
     auto qu_val=[&](int u) {// u:edge id
@@ -143,9 +144,9 @@ signed main() {
         sort(ALL(a),[&](int x,int y) {return in[x]<in[y]; });
         Vi b;b.pb(a[0]);
         REP1(j,s-1) {
-            op(a[j-1])ope(a[j]);
+            // op(a[j-1])ope(a[j]);
             b.pb(qu_lca(a[j-1],a[j]));
-            op(i)ope(j)
+            // op(i)ope(j)
             b.pb(a[j]);
         }
         op(i)ope("ok")
