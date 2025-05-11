@@ -136,15 +136,15 @@ signed main() {
     auto qu_val=[&](int u) {// u:edge id
         return bit.qu(in[u])-bit.qu(out[u]);
     };
-    oparr(dfn2)
-    oparr(dfnp)
+    // oparr(dfn2)
+    // oparr(dfnp)
     REP(i,m) {
         int s;
         cin>>s;
         Vi a(s);
         REP(j,s) cin>>a[j],a[j]--;
         sort(ALL(a),[&](int x,int y) {return dfnp[x]<dfnp[y]; });
-        oparr(a)
+        // oparr(a)
         Vi b;b.pb(a[0]);
         REP1(j,s-1) {
             // op(a[j-1])ope(a[j]);
@@ -155,7 +155,7 @@ signed main() {
         // op(i)ope("ok")
         sort(ALL(b),[&](int x,int y) {return dfnp[x]<dfnp[y]; });
         b.erase(unique(ALL(b)),b.end());
-        oparr(b)
+        // oparr(b)
         REP1(j,SZ(b)-1) {
             upd_chain(qu_lca(b[j],b[j-1]),b[j],1);
         }
