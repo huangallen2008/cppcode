@@ -138,7 +138,7 @@ signed main() {
             b.pb(a[i]);
         }
         sort(ALL(b),[&](int x,int y) {return in[x]<in[y]; });
-        b.erase()
+        b.erase(unique(ALL(b)))
     }
     return 0;
 }
