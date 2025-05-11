@@ -59,39 +59,5 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    vector<Vi> a(n,Vi(m));
-    REP(i,n) {
-        REP(j,m) {
-            char c;
-            cin>>c;
-            a[i][j]=c=='O';
-        }
-    }
-    int N=n*m;
-    int mn=inf;
-    Vpii dir={{0,0},{0,1},{0,-1},{1,0},{-1,0}};
-    auto nok=[&](int x,int y) { return x<0||x>=n||y<0||y>=m; };
-    int now=0;
-    vector<Vi> t(n,Vi(m));
-    int cnt=0;
-    REP(i,n) REP(j,m) t[i][j]=a[i][j],cnt+=a[i][j]==0;
-    if(cnt==0) mn=0;
-    REP1(mask,(1<<N)-1) {
-        int id=__lg(mask&-mask);
-        now^=mask&-mask;
-        int i=id/m,j=id%m;
-        // op(i)ope(j)
-        for(auto [dx,dy]:dir) {
-            int nx=i+dx,ny=j+dy;
-            if(nok(nx,ny)) continue;
-            t[nx][ny]=t[nx][ny]^1;
-            if(t[nx][ny]==0) cnt++;
-            else cnt--;
-        }
-    //     REP(i,n) {
-    //         REP(j,m) {
-    //         cout<<(now>>(i*m+j)&1);
     return 0;
 }
