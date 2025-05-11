@@ -90,7 +90,7 @@ void dfs(int u,int fa) {
         dfs(v,u);
         out[id]=SZ(dfn);
         dfn.pb(id);
-        dfn2.pb(dep[u]);
+        dfn2.pb({dep[u],u});
     }
 }
 signed main() {
