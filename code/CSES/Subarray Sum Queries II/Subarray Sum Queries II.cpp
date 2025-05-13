@@ -61,6 +61,7 @@ struct SEG {
     struct Seg {
         int sum,mp,ms,ma;
     };
+    Seg merge(Seg b,Seg )
     int n;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
