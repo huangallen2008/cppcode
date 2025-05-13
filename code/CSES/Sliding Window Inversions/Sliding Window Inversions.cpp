@@ -89,6 +89,7 @@ signed main() {
     Vi cnt(n);
     auto push=[&](int x) {
         an+=bit.qu(x+1,n);
+        bit.ud(x,1);
     };
     auto pop=[&](int x) {
         an-=bit.qu(1,x-1);
