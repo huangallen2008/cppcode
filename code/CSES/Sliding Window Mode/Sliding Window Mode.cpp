@@ -85,7 +85,10 @@ signed main() {
     REP(i,k) add(a[i]);
     cout<<mode()<<' ';
     for(int i=k;i<n;i++) {
-        
+        add(a[i]);
+        del(a[i-k]);
+        cout<<mode()<<' '; 
     }
+    cout<<'\n';
     return 0;
 }
