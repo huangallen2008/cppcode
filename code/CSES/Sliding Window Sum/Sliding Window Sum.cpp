@@ -68,6 +68,7 @@ signed main() {
     for(int i=2;i<=n;i++) p[i]=(a*p[i-1]+b)%c;
     REP1(i,n) p[i]+=p[i-1];
     int an=0;
-    for(int r=k;r<=n;r++)
+    for(int r=k;r<=n;r++) an^=p[r]-p[r-k];
+    cout<<an<<'\n';
     return 0;
 }
