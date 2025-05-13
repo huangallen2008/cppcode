@@ -58,8 +58,8 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct cmp {
-    bool operator()(pii a,pii b) { return a.}
-}
+    bool operator()(pii a,pii b) { return a.f==b.f?a.s<b.s:a.f>b.f; }
+};
 signed main() {
     IOS();
     int n,k;
@@ -71,6 +71,6 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     set<pii,cmp> s;
     Vi cnt(n);
-    auto add=[&]()
+    // auto add=[&]()
     return 0;
 }
