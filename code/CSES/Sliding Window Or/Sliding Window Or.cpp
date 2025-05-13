@@ -73,7 +73,10 @@ struct mystk {
     int size() { return SZ(a); }
 };
 struct myq {
-    my
+    mystk s1,s2;
+    void push(int x) {
+        s1.push()
+    }
 }
 signed main() {
     IOS();
