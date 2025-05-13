@@ -59,7 +59,9 @@ int rd(int l,int r) {
 }
 Vi bas(maxb);
 void add(int x) {
-    RREP(i,maxb) 
+    RREP(i,maxb) if(x>>i&1) {
+        
+    }
 }
 signed main() {
     IOS();
