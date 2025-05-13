@@ -93,6 +93,7 @@ signed main() {
     stk.pb({inf,-1});
     BIT bit;
     bit.init(n);
+    Vi an(q);
     REP(i,n) {
         while(SZ(stk)&&a[i]>stk.back().f) stk.pop_back();
         bit.ud(stk.back().s+1,i,1);
