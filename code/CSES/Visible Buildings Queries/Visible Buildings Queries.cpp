@@ -93,6 +93,8 @@ signed main() {
     stk.pb({inf,-1});
     BIT bit;
     bit.init(n);
-    
+    REP(i,n) {
+        while()
+    }
     return 0;
 }
