@@ -61,7 +61,12 @@ struct SEG {
     struct Seg {
         int sum,mp,ms,ma;
     };
-    
+    int n;
+    vector<Seg> s;
+    void init(int _n) {
+        n=_n;
+        s=vector<S>(n<<2);
+    }
 }
 signed main() {
     IOS();
