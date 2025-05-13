@@ -68,6 +68,6 @@ void ans(int x) {
 }
 signed main() {
     IOS();
-    int 
+    int l=1,r=1e9;
     return 0;
 }
