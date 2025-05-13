@@ -70,9 +70,7 @@ signed main() {
     REP(i,n+1) s.insert(i);
     Vi cnt(n);
     auto add=[&](int x) {
-        s.erase({cnt[x],x});
-        cnt[x]++;
-        s.insert({cnt[x],x});
+        if(x>n)
     };
     auto del=[&](int x) {
         s.erase({cnt[x],x});
