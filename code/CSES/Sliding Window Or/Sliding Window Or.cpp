@@ -84,7 +84,7 @@ struct myq {
             s2.pop();
         }
     }
-    int size()
+    int size() { return }
     int or() { }
 }
 signed main() {
