@@ -97,7 +97,7 @@ signed main() {
     }
     Vi an(q);
     BIT bit;
-    bit.init(n);
+    bit.init(n+5);
     REP(i,n) {
         bit.ud(a[i],1);
         for(auto [l,r,id,f]:qu[i]) {
