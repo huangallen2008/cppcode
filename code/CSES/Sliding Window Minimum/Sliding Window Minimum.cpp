@@ -66,10 +66,10 @@ signed main() {
     Vi a(n);
     a[0]=x0;
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
-    Vpii stk;
+    deque<pii> dq;
     REP(i,k) {
-        while(SZ(stk)&&a[i]<=stk.back().f) stk.pop_back();
-        stk.pb({a[i],i});
+        while(SZ(dq)&&a[i]<=stk.back().f) stk.pop_back();
+        dq.pb({a[i],i});
     }
     int an=stk
     return 0;
