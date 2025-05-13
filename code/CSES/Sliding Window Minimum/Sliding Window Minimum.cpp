@@ -71,6 +71,6 @@ signed main() {
         while(SZ(dq)&&a[i]<=dq.back().f) dq.pop_back();
         dq.pb({a[i],i});
     }
-    int an=dq[0]
+    int an=dq[0].f;
     return 0;
 }
