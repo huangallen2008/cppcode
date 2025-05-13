@@ -93,7 +93,8 @@ signed main() {
         s.insert({cnt[x],x});
     };
     auto pop=[&](int x) {
-        an-=bit.qu(1,)
+        an-=bit.qu(1,x-1);
+        bit.ud(x,-1);
     };
     auto mode=[&]() { return t[s.begin()->s]; };
     REP(i,k) add(a[i]);
