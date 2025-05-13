@@ -69,6 +69,9 @@ void ans(Vi a) {
     cout<<endl;
 }
 signed main() {
-    IOS();int n;
+    IOS();
+    int n;
+    cin>>n;
+    Vi a()
     return 0;
 }
