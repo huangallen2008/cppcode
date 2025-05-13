@@ -59,8 +59,9 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int sum,mp,
-    }
+        int sum,mp,ms,ma;
+    };
+    
 }
 signed main() {
     IOS();
