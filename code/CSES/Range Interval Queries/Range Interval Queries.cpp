@@ -105,6 +105,6 @@ signed main() {
             an[id]+=f*bit.qu(l,r);
         }
     }
-    REP(i,q) cout<<qu
+    REP(i,q) cout<<an[i]<<'\n';
     return 0;
 }
