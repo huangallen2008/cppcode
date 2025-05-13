@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("O3,unroll-loops")
+#pragma GCC optimize("O3,unroll-loops")
 // #pragma GCC target("avx2,sse4,bmi2,popcnt")
 // #define int long long
 #define REP(i,n) for(int i=0;i<(n);i++)
@@ -66,7 +66,6 @@ signed main() {
     int an=x0;
     REP1(i,n-1) {
         x0=((long long)a0*x0+b0)%c0;
-        int cnt=;
         if(min({i+1,n-i,k})&1) an^=x0;
     }
     cout<<an<<'\n';
