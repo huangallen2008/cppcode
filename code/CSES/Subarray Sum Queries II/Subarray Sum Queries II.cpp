@@ -65,7 +65,8 @@ struct SEG {
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
-            
+            s[w].sum=a[l];
+            s[w].sum=a[l];
         }
     }
     void init(int _n) {
