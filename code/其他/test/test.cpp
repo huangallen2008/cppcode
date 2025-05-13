@@ -81,8 +81,8 @@ struct DSU {
 signed main() {
     IOS();
     int n=5;
-    Vi cnt(6);
-    REP(a,n) REP(b,4) REP(c,4) REP(d,4) RE{
+    Vi cnt(n+1);
+    REP(a,n) REP(b,n) REP(c,n) REP(d,n) REP(){
         DSU dsu;
         dsu.init(4);
         dsu.merge(0,a);
