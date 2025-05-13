@@ -68,9 +68,12 @@ struct BIT {
         for(;u<=n;u+=u&-u) b[u]+=v;
     }
     int pre(int u) {
-        int 
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
     }
-}
+    int qu(int l,int r) { return pre(r)-pre(l-1); }
+};
 signed main() {
     IOS();
 
