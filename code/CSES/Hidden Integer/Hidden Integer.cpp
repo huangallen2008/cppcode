@@ -57,32 +57,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-Vi bas(maxb);
-void add(int x) {
-    RREP(i,maxb) if(x>>i&1) {
-        if(bas[i]==0) {
-            bas[i]=x;
-            return;
-        }
-        x^=bas[i];
-    }
-}
+
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    REP(i,n) {
-        int x;
-        cin>>x;
-        add(x);
-    }
-    int all=0;
-    REP(i,maxb) if(bas[i])all|=1<<i;
-    Vi an;
-    for(int i=all;i;i=(i-1)&all) an.pb(i);
-    reverse(ALL(an));
-    cout<<SZ(an)<<'\n';
-    for(int x:an) cout<<x<<' ';
-    cout<<'\n';
+
     return 0;
 }
