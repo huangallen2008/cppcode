@@ -81,7 +81,6 @@ signed main() {
     Vi an;
     for(int i=all;i;i=(i-1)&all) an.pb(i);
     reverse(ALL(an));
-    cout<<0<<' ';
-    cout<<
+    ccout<<SZ(am)
     return 0;
 }
