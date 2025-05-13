@@ -99,6 +99,10 @@ signed main() {
     myq q;
     REP(i,k) q.push(a[i]);
     int an=q.or();
-    for(int )
+    for(int i=k;i<n;i++) {
+        q.push(a[i]);
+        q.pop();
+        an^=q.
+    }
     return 0;
 }
