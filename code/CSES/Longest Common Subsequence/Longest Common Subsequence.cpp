@@ -64,6 +64,6 @@ signed main() {
     Vi a(n+1),b(m+1);
     REP1(i,n) cin>>a[i];
     REP1(i,m) cin>>b[i];
-    vector<Vi>
+    vector<Vi> dp(n+1,Vi(m+1)),;
     return 0;
 }
