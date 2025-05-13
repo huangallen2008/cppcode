@@ -74,7 +74,8 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,10) {
-        string
+        string s(n,'0');
+        REP
     }
     return 0;
 }
