@@ -83,11 +83,16 @@ signed main() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    vector<Vpii> qu
+    vector<Vpii> qu(n);
+    REP(i,q) {
+        int l,r;
+        cin>>l>>r,l--,r--;
+        qu[r].pb({l,i});
+    }
     Vpii stk;
     stk.pb({inf,-1});
     BIT bit;
     bit.init(n);
-
+    
     return 0;
 }
