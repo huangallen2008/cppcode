@@ -85,9 +85,10 @@ struct SEG {
         build(w<<1|1,m+1,r,a);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int _n,Vi & a) {
+    void init(int _n,Vi &a) {
         n=_n;
         s=vector<S>(n<<2);
+        build(1,0,n-1,a);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
         if(ql<=l&&r<=qr) return s[w];
