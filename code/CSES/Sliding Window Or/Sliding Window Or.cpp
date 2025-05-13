@@ -85,8 +85,8 @@ struct myq {
         }
     }
     int size() { return SZ(s1)+SZ(s2); }
-    int or() { return size()? }
-}
+    int or() { return size()?s1.or()|s2.or():0; }
+};
 signed main() {
     IOS();
     int n,k;
