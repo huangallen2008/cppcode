@@ -74,7 +74,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) a[i]=i+1;
-    sort(ALL(a),[&](int a,int b) { return qur(a,b); });
+    stable_sort(ALL(a),[&](int a,int b) { return qur(a,b); });
     Vi an(n);
     REP(i,n) an[a[i]-1]=i+1;
     ans(an);
