@@ -63,6 +63,9 @@ struct mystk {
         a.pb(x);
         stk.pb(SZ(stk)?x|stk.back():x);
     }
+    int pop() { 
+        int val=a.
+    }
 }
 signed main() {
     IOS();
