@@ -78,6 +78,6 @@ signed main() {
         if(--cnt[x]==0) s.insert(x);
     };
     auto mex=[&]() { return *s.begin(); };
-    
+    REP(i,k) add(a[i]);
     return 0;
 }
