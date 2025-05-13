@@ -69,7 +69,9 @@ void add(int x) {
 }
 int mxv() {
     int an=0;
-    RREP(i,maxb) if(~an)
+    RREP(i,maxb) if(~an>>i&1) {
+        
+    }
 }
 signed main() {
     IOS();
