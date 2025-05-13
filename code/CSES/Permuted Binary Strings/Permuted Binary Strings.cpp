@@ -77,7 +77,8 @@ signed main() {
         string s(n,'0');
         REP(j,n) if(j>>i&1) s[j]='1';
         string ret=qur(s);
-        REP(j,n) if(ret[j]=='1') a
+        REP(j,n) if(ret[j]=='1') a[j]|=1<<i;
     }
+    ans(a);
     return 0;
-}
+}
