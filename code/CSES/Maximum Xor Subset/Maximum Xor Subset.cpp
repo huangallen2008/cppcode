@@ -83,6 +83,6 @@ signed main() {
         cin>>x;
         add(x);
     }
-
+    cout<<mxv()<<'\n';
     return 0;
 }
