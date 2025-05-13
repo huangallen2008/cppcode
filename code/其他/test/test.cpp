@@ -65,11 +65,15 @@ struct DSU {
         p=Vi(n);
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
+        cc=n;
     }
     void merge(int a,int b) {
         int x=find(a),y=find(b);
         if(x==y) return;
-        if(sz[x])
+        if(sz[x]>sz[y]) swap(x,y);
+        p[x]=y;
+        sz[y]+=sz[x];
+        cc--;
     }
 }
 signed main() {
