@@ -70,7 +70,8 @@ void solve() {
         cout<<"NO\n";
         return;
     }
-    REP(i,a+b) cout<<i
+    REP(i,a+b) cout<<i+1<<' '; cout<<'\n';
+    REP(i,a+b) cout<<(i+a)%n+1<<' '; cout<<'\n';
 }
 signed main() {
     IOS();
