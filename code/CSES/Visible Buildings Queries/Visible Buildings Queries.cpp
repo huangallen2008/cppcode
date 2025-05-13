@@ -95,7 +95,7 @@ signed main() {
     bit.init(n);
     REP(i,n) {
         while(SZ(stk)&&a[i]>stk.back().f) stk.pop_back();
-        
+        bit.
         stk.pb({a[i],i});
     }
     return 0;
