@@ -61,6 +61,7 @@ struct SEG {
     struct Seg {
         int sum,mp,ms,ma;
     };
+    const Seg zr={0,0,0,0};
     Seg merge(Seg b,Seg c) {
         Seg a;
         a.sum=b.sum+c.sum;
