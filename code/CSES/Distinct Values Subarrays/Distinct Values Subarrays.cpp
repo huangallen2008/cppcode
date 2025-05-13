@@ -74,6 +74,7 @@ signed main() {
         chmax(l,las[a[i]]);
         las[a[i]]=i;
         an+=i-l;
+        op(i)oparr(las)
     }
     cout<<an<<'\n';
     return 0;
