@@ -69,7 +69,9 @@ struct SEG {
         a.ma=max({b.ma,c.ma,b.ms+c.mp});
         return a;
     }
-    void 
+    void pull(Seg &a,Seg &b,Seg &c) {
+        a=merge(b,c);
+    }
     int n;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
@@ -86,6 +88,7 @@ struct SEG {
         n=_n;
         s=vector<S>(n<<2);
     }
+    
 }
 signed main() {
     IOS();
