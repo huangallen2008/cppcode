@@ -61,6 +61,7 @@ struct SEG {
     struct Seg {
         int sum,mp,ms,ma;
     };
+    const Seg 
     Seg merge(Seg b,Seg c) {
         Seg a;
         a.sum=b.sum+c.sum;
@@ -88,7 +89,9 @@ struct SEG {
         n=_n;
         s=vector<S>(n<<2);
     }
-    
+    Seg _qu(int w,int l,int r,int ql,int qr) {
+
+    }
 }
 signed main() {
     IOS();
