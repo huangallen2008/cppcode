@@ -81,7 +81,12 @@ struct DSU {
 signed main() {
     IOS();
     REP(a,4) REP(b,4) REP(c,4) REP(d,4) {
-        
+        DSU dsu;
+        dsu.init(4);
+        dsu.merge(0,a);
+        dsu.merge(1,a);
+        dsu.merge(2,a);
+        dsu.merge(3,a);
     }
     return 0;
 }
