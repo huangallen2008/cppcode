@@ -100,7 +100,9 @@ signed main() {
     bit.init(n);
     REP(i,n) {
         bit.ud(a[i],1);
-        
+        for(auto [l,r,id,f]:qu[i]) {
+            an
+        }
     }
     return 0;
 }
