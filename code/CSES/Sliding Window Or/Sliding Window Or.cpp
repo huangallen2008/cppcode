@@ -98,11 +98,12 @@ signed main() {
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
     myq q;
     REP(i,k) q.push(a[i]);
-    int an=q.or();
+    int an=q.orv();
     for(int i=k;i<n;i++) {
         q.push(a[i]);
         q.pop();
-        an^=q.
+        an^=q.orv();
     }
+    cout<<an<<'\n';
     return 0;
 }
