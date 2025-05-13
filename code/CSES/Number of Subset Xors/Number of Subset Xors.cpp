@@ -76,6 +76,8 @@ signed main() {
         cin>>x;
         add(x);
     }
+    int cnt=0;
+    REP(i,maxb) cnt+=bas[i]!=0;
     
     return 0;
 }
