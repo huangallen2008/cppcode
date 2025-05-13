@@ -72,7 +72,7 @@ void solve() {
     }
     cout<<"YES\n";
     REP(i,a+b) cout<<i+1<<' '; for(int i=a+b+1;i<=n;i++) cout<<i<<' ';cout<<'\n';
-    REP(i,a+b) cout<<(i+a)%n+1<<' '; for(int i=a+b+1;i<=n;i++) cout<<i<<' ';cout<<'\n';
+    REP(i,a+b) cout<<(i+a)%(a+b)+1<<' '; for(int i=a+b+1;i<=n;i++) cout<<i<<' ';cout<<'\n';
 }
 signed main() {
     IOS();
