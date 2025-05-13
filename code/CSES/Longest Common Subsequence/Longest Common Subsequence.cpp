@@ -59,17 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    Vi t=a;
-    sort(ALL(t));
-    Vi cnt(n);
-    REP(i,n) cnt[lower_bound(ALL(t),a[i])-t.begin()]++;
-    int an=1;
-    REP(i,n) an=(an*(cnt[i]+1))%mod;
-    an=(an+mod-1)%mod;
-    cout<<an<<'\n';
+    int n,m;
+    cin>>n>>m;
     return 0;
 }
