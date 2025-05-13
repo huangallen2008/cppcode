@@ -70,6 +70,8 @@ signed main() {
     int cnt=0;
     auto add=[&](int x) { cnt+=mp[x]++==0; };
     auto del=[&](int x) { cnt-=--mp[x]==0; };
+    REP(i,k) add(a[i]);
+    cout<<cnt<<' ';
     
     return 0;
 }
