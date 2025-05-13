@@ -70,7 +70,9 @@ void solve() {
         cout<<"NO\n";
         return;
     }
-    
+    REP(i,a+b) {
+        
+    }
 }
 signed main() {
     IOS();
