@@ -90,6 +90,7 @@ signed main() {
         dsu.merge(2,c);
         dsu.merge(3,d);
         dsu.merge(4,e);
+        dsu.merge(5,f);
         cnt[dsu.cc]++;
     }
     oparr(cnt)
