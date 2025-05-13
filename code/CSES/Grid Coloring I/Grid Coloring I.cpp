@@ -61,7 +61,10 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<string> a(n+1,string(m,'A'));
+    vector<string> a(n+1,string(m+1,'A'));
     REP1(i,n) REP1(j,m) cin>>a[i][j];
+    auto dif=[&](char a,char b,char c) {
+        
+    }
     return 0;
 }
