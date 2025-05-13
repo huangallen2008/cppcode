@@ -58,7 +58,7 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 struct cmp {
-    bool operator()(pii a,pii b) { return a.f==b.f?a.s<b.s:a.f>b.f; }
+    bool operator()(pii a,pii b) const{ return a.f==b.f?a.s<b.s:a.f>b.f; }
 };
 signed main() {
     IOS();
