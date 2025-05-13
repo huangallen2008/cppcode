@@ -66,14 +66,5 @@ signed main() {
     Vi t=a;
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    Vi las(n,-1);
-    int l=-1;
-    int an=0;
-    REP(i,n) {
-        chmax(l,las[a[i]]);
-        las[a[i]]=i;
-        an+=i-l;
-    }
-    cout<<an<<'\n';
     return 0;
 }
