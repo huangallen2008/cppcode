@@ -58,7 +58,9 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 Vi bas(maxb);
-
+void add(int x) {
+    RREP(i,maxb) 
+}
 signed main() {
     IOS();
     int n;
