@@ -80,8 +80,9 @@ struct DSU {
 };
 signed main() {
     IOS();
-    Vi cnt(5);
-    REP(a,4) REP(b,4) REP(c,4) REP(d,4) {
+    int n=5;
+    Vi cnt(6);
+    REP(a,n) REP(b,4) REP(c,4) REP(d,4) RE{
         DSU dsu;
         dsu.init(4);
         dsu.merge(0,a);
