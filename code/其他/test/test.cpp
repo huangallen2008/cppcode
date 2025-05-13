@@ -80,6 +80,7 @@ struct DSU {
 };
 signed main() {
     IOS();
+    Vi cnt(5);
     REP(a,4) REP(b,4) REP(c,4) REP(d,4) {
         DSU dsu;
         dsu.init(4);
