@@ -72,6 +72,9 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a()
+    Vi a(n);
+    REP(i,n) a[i]=i+1;
+    sort(ALL(a),[&](int a,int b) { return qur(a,b); });
+    
     return 0;
 }
