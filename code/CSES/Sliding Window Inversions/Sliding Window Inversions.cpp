@@ -83,7 +83,8 @@ signed main() {
     Vi t=a;
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
-    
+    BIT bit;
+    bit.init(n);
     set<pii,cmp> s;
     Vi cnt(n);
     auto push=[&](int x) {
