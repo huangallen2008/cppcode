@@ -71,5 +71,11 @@ signed main() {
     IOS();
     int n;
     cin>>n;
+    REP(i,n) {
+        int x;
+        cin>>x;
+        add(x);
+    }
+    
     return 0;
 }
