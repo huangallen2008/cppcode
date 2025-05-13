@@ -71,6 +71,8 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     set<pii,cmp> s;
     Vi cnt(n);
-    auto add=[&](){};
+    auto add=[&](int x) {
+        
+    };
     return 0;
 }
