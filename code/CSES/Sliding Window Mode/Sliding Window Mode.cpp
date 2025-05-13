@@ -81,7 +81,7 @@ signed main() {
         cnt[x]--;
         s.insert({cnt[x],x});
     };
-    auto mode=[&]() { return s.begin()->s; };
+    auto mode=[&]() { return t[s.begin()->s]; };
     REP(i,k) add(a[i]);
     cout<<mode()<<' ';
     for(int i=k;i<n;i++) {
