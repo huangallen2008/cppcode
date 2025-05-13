@@ -66,7 +66,7 @@ signed main() {
     Vi t=a;
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    Vi las(n);
+    Vi las(n,-1);
     int l=-1;
     int an=0;
     oparr(a)
