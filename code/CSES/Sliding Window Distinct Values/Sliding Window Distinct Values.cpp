@@ -61,19 +61,8 @@ signed main() {
     IOS();
     int n,k;
     cin>>n>>k;
-    int x0,a0,b0,c0;
-    cin>>x0>>a0>>b0>>c0;
     Vi a(n);
-    a[0]=x0;
-    REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
-    myq q;
-    REP(i,k) q.push(a[i]);
-    int an=q.orv();
-    for(int i=k;i<n;i++) {
-        q.push(a[i]);
-        q.pop();
-        an^=q.orv();
-    }
-    cout<<an<<'\n';
+    REP(i,n) cin>>a[i];
+    
     return 0;
 }
