@@ -76,9 +76,9 @@ signed main() {
         cin>>x;
         add(x);
     }
-    int cnt=0;
-    REP(i,maxb) all|=;
-    int an=1<<cnt;
-    cout<<an<<'\n';
+    int all=0;
+    REP(i,maxb) if(bas[i])all|=1<<i;
+    Vi an;
+    
     return 0;
 }
