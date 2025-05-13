@@ -60,6 +60,11 @@ int rd(int l,int r) {
 struct DSU {
     int n;
     Vi p,sz;
+    void init(int _n) {
+        n=_n;
+        p=Vi(n);
+        sz=V
+    }
 }
 signed main() {
     IOS();
