@@ -70,6 +70,6 @@ signed main() {
         cnt[c-'A']=1;
         REP(i,4) if(cnt[i]==0) return 'A'+i;
     };
-    
+    REP1(i,n) REP1(j,m) a[i][j]=dif
     return 0;
 }
