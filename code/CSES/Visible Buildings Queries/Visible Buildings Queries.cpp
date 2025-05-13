@@ -79,6 +79,10 @@ struct BIT {
 };
 signed main() {
     IOS();
+    int n,q;
+    cin>>n>>q;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
     
     return 0;
 }
