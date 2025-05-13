@@ -97,11 +97,9 @@ signed main() {
     REP(i,n) {
         while(SZ(stk)&&a[i]>stk.back().f) stk.pop_back();
         bit.ud(stk.back().s+1,i,1);
-        ope(i)
         stk.pb({a[i],i});
         for(auto [l,id]:qu[i]) an[id]=bit.qu(l);
     }
     REP(i,q) cout<<an[i]<<'\n';
-
     return 0;
 }
