@@ -76,6 +76,9 @@ struct BIT {
 };
 signed main() {
     IOS();
-
+    int n,q;
+    cin>>n>>q;
+    int N=n+q*2;
+    
     return 0;
 }
