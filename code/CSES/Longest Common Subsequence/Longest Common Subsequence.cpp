@@ -83,6 +83,7 @@ signed main() {
         else ny--;
     }
     reverse(ALL(an));
-    
+    cout<<SZ(an)<<'\n';
+    for(int x:an) cout<<x<<' ';
     return 0;
 }
