@@ -63,7 +63,8 @@ struct DSU {
     void init(int _n) {
         n=_n;
         p=Vi(n);
-        sz=V
+        sz=Vi(n,1);
+        REP(i,n) p[i]=i;
     }
 }
 signed main() {
