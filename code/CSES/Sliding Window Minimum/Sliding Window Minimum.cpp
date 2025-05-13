@@ -64,7 +64,7 @@ signed main() {
     int x0,a0,b0,c0;
     cin>>x0>>a0>>b0>>c0;
     Vi a(n+1);
-    a[1]=x0;
-    for(int i=2;i<=n;i++) p[i]=(a*p[i-1]+b)%c;
+    a[0]=x0;
+    REP1(i,n-1) a[i]=(a*p[i-1]+b)%c;
     return 0;
 }
