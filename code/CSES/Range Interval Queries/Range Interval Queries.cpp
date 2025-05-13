@@ -79,7 +79,6 @@ signed main() {
     int n,q;
     cin>>n>>q;
     Vi a(n);
-    Vi t;
     REP(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
