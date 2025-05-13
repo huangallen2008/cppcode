@@ -60,12 +60,6 @@ int rd(int l,int r) {
 void solve() {
     int n,a,b;
     cin>>n>>a>>b;
-    if(a==0&&b==0) {
-        cout<<"YES\n";
-        REP1(i,n) cout<<i<<' ';cout<<'\n';
-        REP1(i,n) cout<<i<<' ';cout<<'\n';
-        return;
-    }
     if(a+b>n||a==0||b==0) {
         cout<<"NO\n";
         return;
