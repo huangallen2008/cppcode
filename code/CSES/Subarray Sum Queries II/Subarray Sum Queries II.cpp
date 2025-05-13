@@ -98,13 +98,13 @@ struct SEG {
     int qu(int l,int r) {
         return _qu(1,0,n-1,l,r).ma;
     }
-};
+}seg;
 signed main() {
     IOS();
     int n,q;
     cin>>n>>q;  
     Vi a(n);
-    REP(i,n) cin>>A[i];
-    
+    REP(i,n) cin>>a[i];
+    seg.init(n,a);
     return 0;
 }
