@@ -74,7 +74,9 @@ signed main() {
     Vi an;
     int nx=n,ny=m;
     while(nx>0&&ny>0) {
-        if()
+        if(pre[nx][ny]==0) {
+            nx--,ny--''
+        }
     }
     return 0;
 }
