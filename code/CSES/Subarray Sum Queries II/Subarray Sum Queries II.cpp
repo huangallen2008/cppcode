@@ -106,5 +106,11 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     seg.init(n,a);
+    REp(i,q) {
+        int l,r;
+        cin>>l>>r,l--,r--;
+        int an=seg.qu(l,r);
+        cout<<an<<'\n';
+    }
     return 0;
 }
