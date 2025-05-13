@@ -98,5 +98,8 @@ signed main() {
     }
     BIT bit;
     bit.init(n);
+    REP(i,n) {
+        bit.
+    }
     return 0;
 }
