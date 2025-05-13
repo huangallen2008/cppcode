@@ -69,7 +69,9 @@ struct SEG {
             s[w].mp=s[w].ms=s[w].ma=max(a[l],0ll);
         }
         int m=l+r>>1;
-        
+        build(w<<1,l,m,a);
+        build(w<<1|1,m+1,r,a);
+        pull(s[w],s[w<<1],s[w<<1|1]);
     }
     void init(int _n) {
         n=_n;
