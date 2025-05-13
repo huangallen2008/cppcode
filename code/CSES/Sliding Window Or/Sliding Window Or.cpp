@@ -67,7 +67,9 @@ struct mystk {
         int val=a.back();
         a.pop_back();
         stk.pop_back();
+        return val;
     }
+    int or() { return stk.back(); }
 }
 signed main() {
     IOS();
