@@ -88,7 +88,8 @@ signed main() {
         dsu.merge(1,b);
         dsu.merge(2,c);
         dsu.merge(3,d);
-        if(dsu.cc==1) cnt++;
+        cnt[dsu.cc]++;
     }
+    oparr(cnt)
     return 0;
 }
