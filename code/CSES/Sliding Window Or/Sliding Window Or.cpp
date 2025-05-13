@@ -75,7 +75,10 @@ struct mystk {
 struct myq {
     mystk s1,s2;
     void push(int x) {
-        s1.push()
+        s1.push(x);
+    }
+    void pop() {
+        if(SZ(s2)) 
     }
 }
 signed main() {
