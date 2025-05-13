@@ -68,13 +68,13 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     set<int> s;
     REP(i,n+1) s.insert(i);
-    Vi cnt(n);
+    Vi cnt(n+1);
     auto add=[&](int x) {
         if(x>n) return;
     };
     auto del=[&](int x) {
         if(x>n) return;
-        
+
     };
     auto mex=[&]() { return t[s.begin()->s]; };
     return 0;
