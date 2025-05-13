@@ -79,6 +79,7 @@ struct SEG {
         if(l==r) {
             s[w].sum=a[l];
             s[w].mp=s[w].ms=s[w].ma=max(a[l],0ll);
+            return;
         }
         int m=l+r>>1;
         build(w<<1,l,m,a);
