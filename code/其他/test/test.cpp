@@ -60,6 +60,7 @@ int rd(int l,int r) {
 struct DSU {
     int n;
     Vi p,sz;
+    int cc;
     void init(int _n) {
         n=_n;
         p=Vi(n);
@@ -67,6 +68,7 @@ struct DSU {
         REP(i,n) p[i]=i;
         cc=n;
     }
+    int find(int u) { return p[u]==u?u:p[u]=find(p[u]); }
     void merge(int a,int b) {
         int x=find(a),y=find(b);
         if(x==y) return;
