@@ -118,10 +118,10 @@ struct BIT {
 };
 signed main() {
     IOS();
-    int n,q;
+    int n=read(),q=read();
     // cin>>n>>q;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    REP(i,n) a[i]=read();//cin>>a[i];
     vector<Vpii> qu(n);
     REP(i,q) {
         int l,r;
