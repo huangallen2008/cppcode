@@ -77,7 +77,7 @@ signed main() {
         add(x);
     }
     int cnt=0;
-    REP(i,maxb) cnt+=bas[i]!=0;
+    REP(i,maxb) all|=;
     int an=1<<cnt;
     cout<<an<<'\n';
     return 0;
