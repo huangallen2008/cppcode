@@ -79,7 +79,7 @@ signed main() {
         if(pre[nx][ny]==0) {
             an.pb(a[nx]);
             nx--,ny--;
-        }
+        }else 
     }
     return 0;
 }
