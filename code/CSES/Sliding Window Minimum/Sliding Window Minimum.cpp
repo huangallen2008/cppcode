@@ -72,5 +72,8 @@ signed main() {
         dq.pb({a[i],i});
     }
     int an=dq[0].f;
+    for(int i=k;i<n;i++) {
+        
+    }
     return 0;
 }
