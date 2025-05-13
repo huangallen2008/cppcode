@@ -67,7 +67,9 @@ struct DSU {
         REP(i,n) p[i]=i;
     }
     void merge(int a,int b) {
-        
+        int x=find(a),y=find(b);
+        if(x==y) return;
+        if(sz[x])
     }
 }
 signed main() {
