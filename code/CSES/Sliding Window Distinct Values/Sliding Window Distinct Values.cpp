@@ -63,6 +63,8 @@ signed main() {
     cin>>n>>k;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    
+    Vi t=a;
+    sort(ALL(t));
+    REP(i,n) a[i]=
     return 0;
 }
