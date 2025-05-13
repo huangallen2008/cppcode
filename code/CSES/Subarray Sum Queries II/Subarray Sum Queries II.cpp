@@ -87,7 +87,7 @@ struct SEG {
     }
     void init(int _n,Vi &a) {
         n=_n;
-        s=vector<S>(n<<2);
+        s=vector<Seg>(n<<2);
         build(1,0,n-1,a);
     }
     Seg _qu(int w,int l,int r,int ql,int qr) {
