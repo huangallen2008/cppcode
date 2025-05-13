@@ -80,9 +80,12 @@ struct myq {
     void pop() {
         if(SZ(s2)) s2.pop();
         else {
-            
+            while(SZ(s1)) s2.push(s1.pop());
+            s2.pop();
         }
     }
+    int size()
+    int or() { }
 }
 signed main() {
     IOS();
