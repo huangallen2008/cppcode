@@ -66,8 +66,10 @@ struct SEG {
     void build(int w,int l,int r,Vi &a) {
         if(l==r) {
             s[w].sum=a[l];
-            s[w].mp=s[w].ms=s[w].ma=a[l];
+            s[w].mp=s[w].ms=s[w].ma=max(a[l],0ll);
         }
+        int m=l+r>>1;
+        
     }
     void init(int _n) {
         n=_n;
