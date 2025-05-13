@@ -92,9 +92,7 @@ signed main() {
         s.insert({cnt[x],x});
     };
     auto pop=[&](int x) {
-        s.erase({cnt[x],x});
-        cnt[x]--;
-        s.insert({cnt[x],x});
+        an-=bit.
     };
     auto mode=[&]() { return t[s.begin()->s]; };
     REP(i,k) add(a[i]);
