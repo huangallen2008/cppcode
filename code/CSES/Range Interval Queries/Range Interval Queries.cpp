@@ -83,7 +83,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
-    R
+    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     struct S {
         int l,r,id,f;
     };
@@ -91,7 +91,7 @@ signed main() {
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r;
-
+        
     }
     return 0;
 }
