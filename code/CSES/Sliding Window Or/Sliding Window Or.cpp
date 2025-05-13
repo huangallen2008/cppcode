@@ -78,7 +78,10 @@ struct myq {
         s1.push(x);
     }
     void pop() {
-        if(SZ(s2)) 
+        if(SZ(s2)) s2.pop();
+        else {
+            
+        }
     }
 }
 signed main() {
