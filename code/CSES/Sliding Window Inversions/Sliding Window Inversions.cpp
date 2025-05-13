@@ -88,9 +88,7 @@ signed main() {
     set<pii,cmp> s;
     Vi cnt(n);
     auto push=[&](int x) {
-        s.erase({cnt[x],x});
-        cnt[x]++;
-        s.insert({cnt[x],x});
+        an+=bit.qu(x+1,n);
     };
     auto pop=[&](int x) {
         an-=bit.qu(1,x-1);
