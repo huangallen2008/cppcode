@@ -94,7 +94,7 @@ signed main() {
     BIT bit;
     bit.init(n);
     REP(i,n) {
-        while()
+        while(SZ(stk)&&a[i]>)
     }
     return 0;
 }
