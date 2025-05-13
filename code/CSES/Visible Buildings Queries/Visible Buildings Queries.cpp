@@ -97,6 +97,7 @@ signed main() {
         while(SZ(stk)&&a[i]>stk.back().f) stk.pop_back();
         bit.ud(stk.back().s+1,i,1);
         stk.pb({a[i],i});
+        for(auto [l,id]:qu[i]) an[id]=bit.qu(l);
     }
     return 0;
 }
