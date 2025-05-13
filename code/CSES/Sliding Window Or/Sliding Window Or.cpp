@@ -64,7 +64,9 @@ struct mystk {
         stk.pb(SZ(stk)?x|stk.back():x);
     }
     int pop() { 
-        int val=a.
+        int val=a.back();
+        a.pop_back();
+        stk.pop_back();
     }
 }
 signed main() {
