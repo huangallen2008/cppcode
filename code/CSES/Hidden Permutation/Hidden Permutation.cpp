@@ -66,16 +66,9 @@ bool qur(int a,int b) {
 void ans(Vi a) {
     cout<<"! ";
     for(int x:a) cout<<x<<' ';
-    cout<<'\n';
+    cout<<endl;
 }
 signed main() {
-    IOS();
-    int l=1,r=1e9,m;
-    while(l<r) {
-        m=l+r>>1;
-        if(!qur(m)) r=m;
-        else l=m+1;
-    }
-    ans(l);
+    IOS();int n;
     return 0;
 }
