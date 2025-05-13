@@ -81,7 +81,9 @@ signed main() {
     Vi a(n);
     Vi t;
     REP(i,n) cin>>a[i];
-    t.
+    Vi t=a;
+    sort(ALL(t));
+    R
     struct S {
         int l,r,id,f;
     };
