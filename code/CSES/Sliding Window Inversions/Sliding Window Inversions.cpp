@@ -95,11 +95,11 @@ signed main() {
         bit.ud(x,-1);
     };
     REP(i,k) push(a[i]);
-    cout<<mode()<<' ';
+    cout<<an<<' ';
     for(int i=k;i<n;i++) {
-        add(a[i]);
-        del(a[i-k]);
-        cout<<mode()<<' '; 
+        push(a[i]);
+        pop(a[i-k]);
+        cout<<an<<' '; 
     }
     cout<<'\n';
     return 0;
