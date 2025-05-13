@@ -63,8 +63,6 @@ signed main() {
     cin>>n>>k;
     int x0,a0,b0,c0;
     cin>>x0>>a0>>b0>>c0;
-    Vi a(n);
-    a[0]=x0;
-    REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
+    REP1(i,n-1) a[i]=(a0*x0+b0)%c0;
     return 0;
 }
