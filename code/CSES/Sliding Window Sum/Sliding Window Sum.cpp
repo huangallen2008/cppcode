@@ -66,5 +66,8 @@ signed main() {
     Vi p(n+1);
     p[1]=x;
     for(int i=2;i<=n;i++) p[i]=(a*p[i-1]+b)%c;
+    REP1(i,n) p[i]+=p[i-1];
+    int an=0;
+    REP
     return 0;
 }
