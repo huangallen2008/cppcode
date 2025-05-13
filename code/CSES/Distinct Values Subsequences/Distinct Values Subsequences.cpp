@@ -68,6 +68,6 @@ signed main() {
     Vi cnt(n);
     REP(i,n) cnt[lower_bound(ALL(t),a[i])-t.begin()]++;
     int an=1;
-    
+    REP(i,n) an=(an*)
     return 0;
 }
