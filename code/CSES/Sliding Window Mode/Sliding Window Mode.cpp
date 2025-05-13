@@ -78,9 +78,8 @@ signed main() {
     };
     auto del=[&](int x) {
         s.erase({cnt[x],x});
-        cnt[x]++;
+        cnt[x]--;
         s.insert({cnt[x],x});
-
     }
     return 0;
 }
