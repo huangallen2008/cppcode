@@ -83,7 +83,7 @@ signed main() {
     Vi t=a;
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
-
+    
     set<pii,cmp> s;
     Vi cnt(n);
     auto push=[&](int x) {
@@ -92,7 +92,7 @@ signed main() {
         s.insert({cnt[x],x});
     };
     auto pop=[&](int x) {
-        an-=bit.
+        an-=bit.qu(1,)
     };
     auto mode=[&]() { return t[s.begin()->s]; };
     REP(i,k) add(a[i]);
