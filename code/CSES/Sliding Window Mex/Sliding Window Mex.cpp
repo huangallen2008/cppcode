@@ -75,7 +75,7 @@ signed main() {
     };
     auto del=[&](int x) {
         if(x>n) return;
-
+        if(--cnt[x]==0) s.insert(x);
     };
     auto mex=[&]() { return t[s.begin()->s]; };
     return 0;
