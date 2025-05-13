@@ -70,8 +70,9 @@ void add(int x) {
 int mxv() {
     int an=0;
     RREP(i,maxb) if(~an>>i&1) {
-        
+        an^=bas[i];
     }
+    return an;
 }
 signed main() {
     IOS();
