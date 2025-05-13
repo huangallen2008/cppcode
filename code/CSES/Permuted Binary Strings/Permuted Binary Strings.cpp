@@ -75,7 +75,7 @@ signed main() {
     Vi a(n);
     REP(i,10) {
         string s(n,'0');
-        REP(j,n) if(j>>i&1) s[j]='1';
+        REP(j,n) if(j+1>>i&1) s[j]='1';
         string ret=qur(s);
         REP(j,n) if(ret[j]=='1') a[j]|=1<<i;
     }
