@@ -57,17 +57,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void solve() {
-    int n,a,b;
-    cin>>n>>a>>b;
-    if(a+b>n||((a==0||b==0)&&a+b>0)) {
-        cout<<"NO\n";
-        return;
-    }
-    cout<<"YES\n";
-    REP(i,a+b) cout<<i+1<<' '; for(int i=a+b+1;i<=n;i++) cout<<i<<' ';cout<<'\n';
-    REP(i,a+b) cout<<(i+a)%(a+b)+1<<' '; for(int i=a+b+1;i<=n;i++) cout<<i<<' ';cout<<'\n';
-}
 signed main() {
     IOS();
     int T;
