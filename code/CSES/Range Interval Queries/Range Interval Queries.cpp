@@ -89,6 +89,7 @@ signed main() {
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r;
+        
     }
     return 0;
 }
