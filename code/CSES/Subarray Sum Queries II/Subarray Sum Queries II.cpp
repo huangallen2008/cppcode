@@ -63,6 +63,11 @@ struct SEG {
     };
     int n;
     vector<Seg> s;
+    void build(int w,int l,int r,Vi &a) {
+        if(l==r) {
+            
+        }
+    }
     void init(int _n) {
         n=_n;
         s=vector<S>(n<<2);
