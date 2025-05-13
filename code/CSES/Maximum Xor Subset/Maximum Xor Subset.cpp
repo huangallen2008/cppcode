@@ -64,7 +64,7 @@ void add(int x) {
             bas[i]=x;
             return;
         }
-        
+        x^=bas[i];
     }
 }
 signed main() {
