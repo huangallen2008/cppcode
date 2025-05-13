@@ -94,9 +94,9 @@ signed main() {
     BIT bit;
     bit.init(n);
     Vi an(q);
-    ope("ok")
     REP(i,n) {
         while(SZ(stk)&&a[i]>stk.back().f) stk.pop_back();
+        ope(i)
         bit.ud(stk.back().s+1,i,1);
         stk.pb({a[i],i});
         for(auto [l,id]:qu[i]) an[id]=bit.qu(l);
