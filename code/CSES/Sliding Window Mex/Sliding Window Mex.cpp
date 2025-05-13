@@ -70,12 +70,11 @@ signed main() {
     REP(i,n+1) s.insert(i);
     Vi cnt(n);
     auto add=[&](int x) {
-        if(x>n)
+        if(x>n) return;
     };
     auto del=[&](int x) {
-        s.erase({cnt[x],x});
-        cnt[x]--;
-        s.insert({cnt[x],x});
+        if(x>n) return;
+        
     };
     auto mex=[&]() { return t[s.begin()->s]; };
     return 0;
