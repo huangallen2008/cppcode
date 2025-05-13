@@ -79,5 +79,6 @@ signed main() {
     };
     auto mex=[&]() { return *s.begin(); };
     REP(i,k) add(a[i]);
+    
     return 0;
 }
