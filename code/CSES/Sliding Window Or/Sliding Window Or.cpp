@@ -61,7 +61,7 @@ struct mystk {
     Vi a,stk;
     void push(int x) {
         a.pb(x);
-        stk.pb(SZ(stk)?x|)
+        stk.pb(SZ(stk)?x|stk.back():x);
     }
 }
 signed main() {
