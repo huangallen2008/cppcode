@@ -92,7 +92,8 @@ signed main() {
         int a,b,l,r;
         cin>>a>>b>>l>>r,a--,b--;
         l=lower_bound(ALL(t),l)-t.begin();
-        r=
+        r=upper_bound(ALL(t),r)-t.begin();
+        
     }
     return 0;
 }
