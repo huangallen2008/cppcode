@@ -82,5 +82,7 @@ signed main() {
         }else if(pre[nx][ny]==1) nx--;
         else ny--;
     }
+    reverse(ALL(an));
+    
     return 0;
 }
