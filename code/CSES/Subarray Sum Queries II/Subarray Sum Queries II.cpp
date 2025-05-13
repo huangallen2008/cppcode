@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 struct SEG {
     struct Seg {
-        int 
+        int sum,mp,
     }
 }
 signed main() {
