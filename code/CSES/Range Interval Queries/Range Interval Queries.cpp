@@ -87,7 +87,7 @@ signed main() {
     struct S {
         int l,r,id,f;
     };
-    vector<S> qu(n);
+    vector<vector<S>> qu(n);
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r,a--,b--;
