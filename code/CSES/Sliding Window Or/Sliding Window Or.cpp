@@ -97,6 +97,8 @@ signed main() {
     a[0]=x0;
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
     myq q;
-    REP(i,k) q.push()
+    REP(i,k) q.push(a[i]);
+    int an=q.or();
+    for(int )
     return 0;
 }
