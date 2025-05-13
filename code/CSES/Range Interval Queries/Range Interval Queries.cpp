@@ -92,6 +92,7 @@ signed main() {
         cin>>a>>b>>l>>r,a--,b--;
         l=lower_bound(ALL(t),l)-t.begin();
         r=upper_bound(ALL(t),r)-t.begin()-1;
+        
         qu[b].pb({l,r,i,1});
         if(a) qu[a-1].pb({l,r,i,-1});
     }
