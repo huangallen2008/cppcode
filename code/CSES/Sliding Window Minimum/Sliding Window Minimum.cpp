@@ -68,9 +68,9 @@ signed main() {
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
     deque<pii> dq;
     REP(i,k) {
-        while(SZ(dq)&&a[i]<=stk.back().f) stk.pop_back();
+        while(SZ(dq)&&a[i]<=dq.back().f) dq.pop_back();
         dq.pb({a[i],i});
     }
-    int an=stk
+    int an=dq[0]
     return 0;
 }
