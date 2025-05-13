@@ -61,6 +61,6 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    
+    Vi a(n+1),;
     return 0;
 }
