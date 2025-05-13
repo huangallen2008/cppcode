@@ -69,5 +69,6 @@ signed main() {
     Vi mp(n);
     int cnt=0;
     auto add=[&](int x) { cnt+=mp[x]++==0; };
+    auto del=[&](int x) { cnt-=--mp[x]==0; };
     return 0;
 }
