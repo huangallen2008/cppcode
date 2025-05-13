@@ -59,31 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n,m;
-    cin>>n>>m;
-    Vi a(n+1),b(m+1);
-    REP1(i,n) cin>>a[i];
-    REP1(i,m) cin>>b[i];
-    vector<Vi> dp(n+1,Vi(m+1)),pre(n+1,Vi(m+1));
-    REP1(i,n) REP1(j,m) {
-        dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
-        if(a[i]==b[j]) chmax(dp[i][j],dp[i-1][j-1]+1);
-
-        if(a[i]==b[j]&&dp[i-1][j-1]+1==dp[i][j]) pre[i][j]=0;
-        else if(dp[i-1][j]==dp[i][j]) pre[i][j]=1;
-        else pre[i][j]=2;
-    }
-    Vi an;
-    int nx=n,ny=m;
-    while(nx>0&&ny>0) {
-        if(pre[nx][ny]==0) {
-            an.pb(a[nx]);
-            nx--,ny--;
-        }else if(pre[nx][ny]==1) nx--;
-        else ny--;
-    }
-    reverse(ALL(an));
-    cout<<SZ(an)<<'\n';
-    for(int x:an) cout<<x<<' ';
+    
     return 0;
 }
