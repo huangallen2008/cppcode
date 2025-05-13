@@ -96,6 +96,7 @@ signed main() {
         qu[b].pb({l,r,i,1});
         if(a) qu[a-1].pb({l,r,i,-1});
     }
+    Vi an(q);
     BIT bit;
     bit.init(n);
     REP(i,n) {
@@ -104,5 +105,6 @@ signed main() {
             an[id]+=f*bit.qu(l,r);
         }
     }
+    REP(i,q) cout<<qu
     return 0;
 }
