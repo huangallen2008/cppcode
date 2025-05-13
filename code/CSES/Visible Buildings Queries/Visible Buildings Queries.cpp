@@ -71,9 +71,14 @@ struct BIT {
         _ud(l,v);
         _ud(r+1,-v);
     }
-}
+    int qu(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
+    }
+};
 signed main() {
     IOS();
-
+    
     return 0;
 }
