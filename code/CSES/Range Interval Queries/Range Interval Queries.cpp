@@ -78,10 +78,10 @@ signed main() {
     IOS();
     int n,q;
     cin>>n>>q;
-    int N=n+q*2;
     Vi a(n);
     Vi t;
-    REP(i,n) cin>>a[i],t.pb(a[i]);
+    REP(i,n) cin>>a[i];
+    t.
     struct S {
         int l,r,id,f;
     };
@@ -89,7 +89,7 @@ signed main() {
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r;
-        
+
     }
     return 0;
 }
