@@ -82,9 +82,9 @@ signed main() {
     IOS();
     int n=5;
     Vi cnt(n+1);
-    REP(a,n) REP(b,n) REP(c,n) REP(d,n) REP(){
+    REP(a,n) REP(b,n) REP(c,n) REP(d,n) REP(e,n){
         DSU dsu;
-        dsu.init(4);
+        dsu.init(n);
         dsu.merge(0,a);
         dsu.merge(1,b);
         dsu.merge(2,c);
