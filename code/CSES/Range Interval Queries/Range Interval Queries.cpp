@@ -79,6 +79,10 @@ signed main() {
     int n,q;
     cin>>n>>q;
     int N=n+q*2;
-    
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    struct S {
+        int l,r
+    }
     return 0;
 }
