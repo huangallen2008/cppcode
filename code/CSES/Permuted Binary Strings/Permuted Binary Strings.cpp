@@ -58,10 +58,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 bool qur(string s) {
-    cout<<"? "<<a<<' '<<b<<endl;
+    cout<<"? "<<s<<endl;
     string ret;
     cin>>ret;
-    return ret[0]=='Y';
+    return ret;
 }
 void ans(Vi a) {
     cout<<"! ";
@@ -72,11 +72,6 @@ signed main() {
     IOS();
     int n;
     cin>>n;
-    Vi a(n);
-    REP(i,n) a[i]=i+1;
-    stable_sort(ALL(a),[&](int a,int b) { return qur(a,b); });
-    Vi an(n);
-    REP(i,n) an[a[i]-1]=i+1;
-    ans(an);
+    
     return 0;
 }
