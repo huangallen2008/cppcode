@@ -67,8 +67,10 @@ signed main() {
     sort(ALL(t));
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     Vi las(n);
-    int l=0;
+    int l=-1;
     int an=0;
-    REP(i,n) 
+    REP(i,n) {
+        
+    }
     return 0;
 }
