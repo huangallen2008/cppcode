@@ -66,6 +66,9 @@ struct DSU {
         sz=Vi(n,1);
         REP(i,n) p[i]=i;
     }
+    void merge(int a,int b) {
+        
+    }
 }
 signed main() {
     IOS();
