@@ -64,7 +64,9 @@ bool qur(int a,int b) {
     return ret[0]=='Y';
 }
 void ans(Vi a) {
-    cout<<"! "<<endl;
+    cout<<"! ";
+    for(int x:a) cout<<x<<' ';
+    cout<<'\n';
 }
 signed main() {
     IOS();
