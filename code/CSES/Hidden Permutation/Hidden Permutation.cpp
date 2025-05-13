@@ -75,6 +75,7 @@ signed main() {
     Vi a(n);
     REP(i,n) a[i]=i+1;
     sort(ALL(a),[&](int a,int b) { return qur(a,b); });
-    Vi an
+    Vi an(n);
+    
     return 0;
 }
