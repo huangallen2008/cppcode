@@ -61,6 +61,7 @@ signed main() {
     IOS();
     int n,m;
     cin>>n>>m;
-    vector<string>
+    vector<string> a(n,string(m,'A'));
+    
     return 0;
 }
