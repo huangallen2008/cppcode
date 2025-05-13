@@ -87,7 +87,7 @@ signed main() {
         int l,r,id,f;
     };
     vector<vector<S>> qu(n);
-    oparr(a)
+    oparr(a)oparr(t)
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r,a--,b--;
