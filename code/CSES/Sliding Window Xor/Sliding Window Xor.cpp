@@ -65,7 +65,7 @@ signed main() {
     cin>>x0>>a0>>b0>>c0;
     int an=x0;
     REP1(i,n-1) {
-        x0=(a0*x0+b0)%c0;
+        x0=((long long)a0*x0+b0)%c0;
         int cnt=min({i+1,n-i,k});
         if(cnt&1) an^=x0;
     }
