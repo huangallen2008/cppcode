@@ -75,7 +75,7 @@ signed main() {
     for(int i=k;i<n;i++) {
         while(SZ(dq)&&a[i]<=dq.back().f) dq.pop_back();
         dq.pb({a[i],i});
-
+        while(dq[0].)
     }
     return 0;
 }
