@@ -74,6 +74,9 @@ signed main() {
     cout<<cnt<<' ';
     for(int i=k;i<n;i++) {
         add(a[i]);
+        del(a[i-k]);
+        cout<<cnt<<' ';
     }
+    cout<<'\n';
     return 0;
 }
