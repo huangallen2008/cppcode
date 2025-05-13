@@ -69,7 +69,7 @@ struct mystk {
         stk.pop_back();
         return val;
     }
-    int or() { return SZ(stk)?stk.back():0; }
+    int orv() { return SZ(stk)?stk.back():0; }
     int size() { return SZ(a); }
 };
 struct myq {
@@ -85,7 +85,7 @@ struct myq {
         }
     }
     int size() { return SZ(s1)+SZ(s2); }
-    int or() { return size()?s1.or()|s2.or():0; }
+    int orv() { return size()?s1.orv()|s2.orv():0; }
 };
 signed main() {
     IOS();
