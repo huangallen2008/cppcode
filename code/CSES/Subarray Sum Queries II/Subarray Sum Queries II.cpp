@@ -67,7 +67,9 @@ struct SEG {
         a.mp=max(b.mp,b.sum+c.mp);
         a.ms=max(c.ms,c.sum+b.ms);
         a.ma=max({b.ma,c.ma,b.ms+c.mp});
+        return a;
     }
+    void 
     int n;
     vector<Seg> s;
     void build(int w,int l,int r,Vi &a) {
@@ -88,4 +90,5 @@ struct SEG {
 signed main() {
     IOS();
 
-    return
+    return 0;
+}
