@@ -52,7 +52,7 @@ pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p
 const int mod=1e9+7;
 const int maxn=1e6+5;
 const int maxv=1000;
-const int inf=1ll<<60;
+const int inf=1<<30;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
