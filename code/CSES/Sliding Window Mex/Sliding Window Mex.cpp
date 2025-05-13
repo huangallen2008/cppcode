@@ -77,6 +77,7 @@ signed main() {
         if(x>n) return;
         if(--cnt[x]==0) s.insert(x);
     };
-    auto mex=[&]() { return t[s.begin()->s]; };
+    auto mex=[&]() { return *s.begin(); };
+    
     return 0;
 }
