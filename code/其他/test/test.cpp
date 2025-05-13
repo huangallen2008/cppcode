@@ -80,6 +80,8 @@ struct DSU {
 };
 signed main() {
     IOS();
-    REP()
+    REP(a,4) REP(b,4) REP(c,4) REP(d,4) {
+        
+    }
     return 0;
 }
