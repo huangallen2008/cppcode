@@ -71,6 +71,7 @@ signed main() {
         else if(dp[i-1][j]==dp[i][j]) pre[i][j]=1;
         else pre[i][j]=2;
     }
-    int nx,y;
+    Vi an;
+    int nx=n,ny;
     return 0;
 }
