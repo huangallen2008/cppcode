@@ -72,6 +72,8 @@ signed main() {
     auto del=[&](int x) { cnt-=--mp[x]==0; };
     REP(i,k) add(a[i]);
     cout<<cnt<<' ';
-    
+    for(int i=k;i<n;i++) {
+        add(a[i]);
+    }
     return 0;
 }
