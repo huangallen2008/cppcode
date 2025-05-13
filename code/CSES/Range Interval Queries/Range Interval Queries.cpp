@@ -64,7 +64,12 @@ struct BIT {
         n=_n;
         b=Vi(n+1);
     }
-    void ud(int u,)
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    int pre(int u) {
+        int 
+    }
 }
 signed main() {
     IOS();
