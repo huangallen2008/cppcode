@@ -101,6 +101,10 @@ struct SEG {
 };
 signed main() {
     IOS();
-    int 
+    int n,q;
+    cin>>n>>q;  
+    Vi a(n);
+    REP(i,n) cin>>A[i];
+    
     return 0;
 }
