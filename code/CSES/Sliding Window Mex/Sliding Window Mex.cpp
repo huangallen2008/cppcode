@@ -63,9 +63,6 @@ signed main() {
     cin>>n>>k;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vi t=a;
-    sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     set<int> s;
     REP(i,n+1) s.insert(i);
     Vi cnt(n+1);
