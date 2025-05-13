@@ -85,8 +85,7 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
     BIT bit;
     bit.init(n);
-    set<pii,cmp> s;
-    Vi cnt(n);
+    int an=0;
     auto push=[&](int x) {
         an+=bit.qu(x+1,n);
         bit.ud(x,1);
@@ -95,8 +94,7 @@ signed main() {
         an-=bit.qu(1,x-1);
         bit.ud(x,-1);
     };
-    auto mode=[&]() { return t[s.begin()->s]; };
-    REP(i,k) add(a[i]);
+    REP(i,k) push(a[i]);
     cout<<mode()<<' ';
     for(int i=k;i<n;i++) {
         add(a[i]);
