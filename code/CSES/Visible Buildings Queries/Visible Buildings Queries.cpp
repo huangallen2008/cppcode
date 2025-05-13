@@ -83,6 +83,7 @@ signed main() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    
+    Vpii stk;
+    stk.pb({})
     return 0;
 }
