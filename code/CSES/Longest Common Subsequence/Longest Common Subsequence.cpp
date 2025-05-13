@@ -75,7 +75,7 @@ signed main() {
     int nx=n,ny=m;
     while(nx>0&&ny>0) {
         if(pre[nx][ny]==0) {
-            an.pb(a[])
+            an.pb(a[nx]);
             nx--,ny--;
         }
     }
