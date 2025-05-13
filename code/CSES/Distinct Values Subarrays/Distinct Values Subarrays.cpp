@@ -69,12 +69,10 @@ signed main() {
     Vi las(n,-1);
     int l=-1;
     int an=0;
-    oparr(a)
     REP(i,n) {
         chmax(l,las[a[i]]);
         las[a[i]]=i;
         an+=i-l;
-        op(i)oparr(las)
     }
     cout<<an<<'\n';
     return 0;
