@@ -72,6 +72,7 @@ signed main() {
     REP(i,n) {
         chmax(l,las[a[i]]);
         las[a[i]]=i;
+        op(i)ope(l)
         an+=i-l;
     }
     cout<<an<<'\n';
