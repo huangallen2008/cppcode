@@ -60,7 +60,7 @@ int rd(int l,int r) {
 void solve() {
     int n,a,b;
     cin>>n>>a>>b;
-    if(a+b>n||a==0||b==0) {
+    if(a+b>n||(a==0||b==0)) {
         cout<<"NO\n";
         return;
     }
