@@ -62,6 +62,6 @@ signed main() {
     int n,m;
     cin>>n>>m;
     vector<string> a(n,string(m,'A'));
-    
+    REP1(i,n) REP1(j,m) cin>>a[i][j];
     return 0;
 }
