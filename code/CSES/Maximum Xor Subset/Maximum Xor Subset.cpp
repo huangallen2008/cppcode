@@ -60,7 +60,11 @@ int rd(int l,int r) {
 Vi bas(maxb);
 void add(int x) {
     RREP(i,maxb) if(x>>i&1) {
-        if(b)
+        if(bas[i]==0) {
+            bas[i]=x;
+            return;
+        }
+        
     }
 }
 signed main() {
