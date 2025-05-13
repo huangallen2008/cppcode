@@ -70,7 +70,8 @@ signed main() {
     int l=-1;
     int an=0;
     REP(i,n) {
-        
+        chmax(l,las[a[i]]);
+        las[a[i]]=i;
     }
     return 0;
 }
