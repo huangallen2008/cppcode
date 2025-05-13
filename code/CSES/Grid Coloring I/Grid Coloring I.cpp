@@ -68,7 +68,8 @@ signed main() {
         cnt[a-'A']=1;
         cnt[b-'A']=1;
         cnt[c-'A']=1;
-
-    }
+        REP(i,4) if(cnt[i]==0) return 'A'+i;
+    };
+    
     return 0;
 }
