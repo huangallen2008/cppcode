@@ -91,7 +91,8 @@ signed main() {
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r,a--,b--;
-        l=lower_bound
+        l=lower_bound(ALL(t),l)-t.begin();
+        r=
     }
     return 0;
 }
