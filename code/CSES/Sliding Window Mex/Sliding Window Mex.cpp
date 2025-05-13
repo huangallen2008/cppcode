@@ -79,6 +79,12 @@ signed main() {
     };
     auto mex=[&]() { return *s.begin(); };
     REP(i,k) add(a[i]);
-    
+    cout<<mex()<<' ';
+    for(int i=k;i<n;i++) {
+        add(a[i]);
+        del(a[i-k]);
+        cout<<mex()<<' ';
+    }
+    cout<<'\n';
     return 0;
 }
