@@ -58,13 +58,13 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 bool qur(int a,int b) {
-    cout<<"? "<<x<<endl;
+    cout<<"? "<<a<<' '<<b<<endl;
     string ret;
     cin>>ret;
     return ret[0]=='Y';
 }
-void ans(int x) {
-    cout<<"! "<<x<<endl;
+void ans(Vi a) {
+    cout<<"! "<<endl;
 }
 signed main() {
     IOS();
