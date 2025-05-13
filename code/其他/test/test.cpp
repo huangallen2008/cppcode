@@ -84,9 +84,10 @@ signed main() {
         DSU dsu;
         dsu.init(4);
         dsu.merge(0,a);
-        dsu.merge(1,a);
-        dsu.merge(2,a);
-        dsu.merge(3,a);
+        dsu.merge(1,b);
+        dsu.merge(2,c);
+        dsu.merge(3,d);
+        if(dsu.cc==1) cnt++;
     }
     return 0;
 }
