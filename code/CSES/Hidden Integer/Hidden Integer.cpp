@@ -61,8 +61,9 @@ bool qur(int x) {
     cout<<"? "<<x<<endl;
     string ret;
     cin>>ret;
-    
+    return ret[0]=='Y';
 }
+void ans()
 signed main() {
     IOS();
 
