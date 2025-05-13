@@ -66,6 +66,7 @@ signed main() {
     Vi a(n);
     a[0]=x0;
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
+    Vpii stk;
     
     return 0;
 }
