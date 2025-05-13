@@ -60,7 +60,7 @@ int rd(int l,int r) {
 void solve() {
     int n,a,b;
     cin>>n>>a>>b;
-    if()
+    if(a==0)
 }
 signed main() {
     IOS();
