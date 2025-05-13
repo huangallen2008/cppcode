@@ -59,15 +59,15 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    struct cmp {
-        bool operator()(pii a,pii b) { return a.f==b.f?a.s<b.s:a.f>b.f; }
-    };
     int n,k;
     cin>>n>>k;
     Vi a(n);
     REP(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
+    struct cmp {
+        bool operator()(pii a,pii b) { return a.f==b.f?a.s<b.s:a.f>b.f; }
+    };
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     set<pii,cmp> s;
     Vi cnt(n);
