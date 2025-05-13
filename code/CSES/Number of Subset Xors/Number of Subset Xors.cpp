@@ -67,13 +67,6 @@ void add(int x) {
         x^=bas[i];
     }
 }
-int mxv() {
-    int an=0;
-    RREP(i,maxb) if(~an>>i&1) {
-        an^=bas[i];
-    }
-    return an;
-}
 signed main() {
     IOS();
     int n;
@@ -83,6 +76,6 @@ signed main() {
         cin>>x;
         add(x);
     }
-    cout<<mxv()<<'\n';
+    
     return 0;
 }
