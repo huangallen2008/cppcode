@@ -124,8 +124,8 @@ signed main() {
     REP(i,n) a[i]=read();//cin>>a[i];
     vector<Vpii> qu(n);
     REP(i,q) {
-        int l,r;
-        cin>>l>>r,l--,r--;
+        int l=read()-1,r=read()-1;
+        // cin>>l>>r,l--,r--;
         qu[r].pb({l,i});
     }
     Vpii stk;
