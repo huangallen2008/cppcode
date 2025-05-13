@@ -59,8 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    int n,m;
+    cin>>n>>m;
+    vector<string>
     return 0;
 }
