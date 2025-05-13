@@ -64,7 +64,7 @@ struct SEG {
     Seg merge(Seg b,Seg c) {
         Seg a;
         a.sum=b.sum+c.sum;
-        a.mp=
+        a.mp=max()
     }
     int n;
     vector<Seg> s;
