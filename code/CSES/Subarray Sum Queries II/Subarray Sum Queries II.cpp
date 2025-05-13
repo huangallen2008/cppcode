@@ -85,7 +85,7 @@ struct SEG {
         build(w<<1|1,m+1,r,a);
         pull(s[w],s[w<<1],s[w<<1|1]);
     }
-    void init(int _n) {
+    void init(int _n,Vi & a) {
         n=_n;
         s=vector<S>(n<<2);
     }
