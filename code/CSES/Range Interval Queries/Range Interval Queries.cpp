@@ -99,7 +99,8 @@ signed main() {
     BIT bit;
     bit.init(n);
     REP(i,n) {
-        bit.
+        bit.ud(a[i],1);
+        
     }
     return 0;
 }
