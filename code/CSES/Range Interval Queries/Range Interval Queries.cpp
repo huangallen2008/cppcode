@@ -80,7 +80,8 @@ signed main() {
     cin>>n>>q;
     int N=n+q*2;
     Vi a(n);
-    REP(i,n) cin>>a[i];
+    Vi t;
+    REP(i,n) cin>>a[i],t.pb(a[i]);
     struct S {
         int l,r,id,f;
     };
