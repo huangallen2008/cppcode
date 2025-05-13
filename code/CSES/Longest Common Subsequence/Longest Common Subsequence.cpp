@@ -67,6 +67,8 @@ signed main() {
     vector<Vi> dp(n+1,Vi(m+1)),pre(n+1,Vi(m+1));
     REP1(i,n) REP1(j,m) {
         dp[i][j]=max({dp[i-1][j-1]+1,dp[i][j-1],dp[i-1][j]});
+        if(dp[i-1][j-1]+1==dp[i][j]) pre[i][j]=0;
+        else id()
     }
     return 0;
 }
