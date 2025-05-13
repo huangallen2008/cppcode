@@ -77,9 +77,9 @@ struct DSU {
         sz[y]+=sz[x];
         cc--;
     }
-}
+};
 signed main() {
     IOS();
-    
+    REP()
     return 0;
 }
