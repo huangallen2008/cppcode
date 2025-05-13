@@ -72,7 +72,9 @@ signed main() {
     set<pii,cmp> s;
     Vi cnt(n);
     auto add=[&](int x) {
-        
+        s.erase({cnt[x],x});
+        cnt[x]++;
+        s.insert({cnt[x],x});
     };
     return 0;
 }
