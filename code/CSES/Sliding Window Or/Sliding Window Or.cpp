@@ -59,7 +59,10 @@ int rd(int l,int r) {
 }
 struct mystk {
     Vi a,stk;
-    void push(int)
+    void push(int x) {
+        a.pb(x);
+        stk.pb(SZ(stk)?x|)
+    }
 }
 signed main() {
     IOS();
