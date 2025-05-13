@@ -71,12 +71,13 @@ signed main() {
     Vi cnt(n+1);
     auto add=[&](int x) {
         if(x>n) return;
-        op(x)
+        op(x)ope(cnt[x])
         if(cnt[x]++==0) s.erase(x);
     };
     auto del=[&](int x) {
         if(x>n) return;
         if(--cnt[x]==0) s.insert(x);
+        op("d")op(x)ope(cnt[x])
     };
     auto mex=[&]() { return *s.begin(); };
     REP(i,k) add(a[i]);
