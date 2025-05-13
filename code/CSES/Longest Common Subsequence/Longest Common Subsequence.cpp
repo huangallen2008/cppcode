@@ -72,6 +72,9 @@ signed main() {
         else pre[i][j]=2;
     }
     Vi an;
-    int nx=n,ny;
+    int nx=n,ny=m;
+    while(nx>0&&ny>0) {
+        if()
+    }
     return 0;
 }
