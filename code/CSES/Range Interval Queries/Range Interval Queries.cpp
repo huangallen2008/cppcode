@@ -90,7 +90,8 @@ signed main() {
     vector<S> qu(n);
     REP(i,q) {
         int a,b,l,r;
-        cin>>a>>b>>l>>r;
+        cin>>a>>b>>l>>r,a--,b--;
+        l=lower_bound
     }
     return 0;
 }
