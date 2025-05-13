@@ -62,7 +62,14 @@ struct BIT {
     Vi b;
     void init(int _n) {
         n=_n;
-        b=Vi(n);
+        b=Vi(n+1);
+    }
+    void _ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    void ud(int l,int r,int v) {
+        _ud(l,v);
+        _ud(r+1,-v);
     }
 }
 signed main() {
