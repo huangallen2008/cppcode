@@ -68,7 +68,7 @@ signed main() {
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
     Vpii stk;
     REP(i,k) {
-        while(SZ(stk)&&a)
+        while(SZ(stk)&&a[i]<)
     }
     return 0;
 }
