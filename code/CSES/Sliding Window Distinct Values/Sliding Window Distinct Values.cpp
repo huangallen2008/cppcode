@@ -65,6 +65,7 @@ signed main() {
     REP(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
-    REP(i,n) a[i]=
+    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
+    
     return 0;
 }
