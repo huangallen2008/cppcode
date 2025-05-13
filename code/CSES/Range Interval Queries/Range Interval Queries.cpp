@@ -86,7 +86,8 @@ signed main() {
     };
     vector<S> qu(n);
     REP(i,q) {
-        int 
+        int a,b,l,r;
+        cin>>a>>b>>l>>r;
     }
     return 0;
 }
