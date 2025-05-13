@@ -68,6 +68,10 @@ void ans(int x) {
 }
 signed main() {
     IOS();
-    int l=1,r=1e9;
+    int l=1,r=1e9,m;
+    while(l<r) {
+        m=l+r>>1;
+        if(!qur(m))
+    }
     return 0;
 }
