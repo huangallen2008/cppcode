@@ -57,50 +57,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct BIT {
-    int n;
-    Vi b;
-    void init(int _n) {
-        n=_n;
-        b=Vi(n+1);
-    }
-    void ud(int u,int v) {
-        for(;u<=n;u+=u&-u) b[u]+=v;
-    }
-    int pre(int u) {
-        int r=0;
-        for(;u>0;u-=u&-u) r+=b[u];
-        return r;
-    }
-    int qu(int l,int r) { return pre(r)-pre(l-1); }
-};
 signed main() {
     IOS();
-    int n,k;
-    cin>>n>>k;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    Vi t=a;
-    sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
-    BIT bit;
-    bit.init(n);
-    int an=0;
-    auto push=[&](int x) {
-        an+=bit.qu(x+1,n);
-        bit.ud(x,1);
-    };
-    auto pop=[&](int x) {
-        an-=bit.qu(1,x-1);
-        bit.ud(x,-1);
-    };
-    REP(i,k) push(a[i]);
-    cout<<an<<' ';
-    for(int i=k;i<n;i++) {
-        push(a[i]);
-        pop(a[i-k]);
-        cout<<an<<' '; 
-    }
-    cout<<'\n';
+    
     return 0;
 }
