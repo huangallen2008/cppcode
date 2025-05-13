@@ -69,10 +69,10 @@ signed main() {
     Vi las(n);
     int l=-1;
     int an=0;
+    oparr(a)
     REP(i,n) {
         chmax(l,las[a[i]]);
         las[a[i]]=i;
-        op(i)ope(l)
         an+=i-l;
     }
     cout<<an<<'\n';
