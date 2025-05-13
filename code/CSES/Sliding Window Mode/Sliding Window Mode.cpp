@@ -76,5 +76,11 @@ signed main() {
         cnt[x]++;
         s.insert({cnt[x],x});
     };
+    auto del=[&](int x) {
+        s.erase({cnt[x],x});
+        cnt[x]++;
+        s.insert({cnt[x],x});
+
+    }
     return 0;
 }
