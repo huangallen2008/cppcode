@@ -79,6 +79,6 @@ signed main() {
     int all=0;
     REP(i,maxb) if(bas[i])all|=1<<i;
     Vi an;
-    for(int i=all;i;i=)
+    for(int i=all;i;i=(i-1))
     return 0;
 }
