@@ -81,6 +81,6 @@ signed main() {
         cnt[x]--;
         s.insert({cnt[x],x});
     };
-    
+    auto 
     return 0;
 }
