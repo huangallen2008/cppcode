@@ -82,6 +82,7 @@ signed main() {
         s.insert({cnt[x],x});
     };
     auto mode=[&]() { return s.begin()->s; };
-    REP(i,k) 
+    REP(i,k) add(a[i]);
+    int an=mode
     return 0;
 }
