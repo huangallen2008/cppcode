@@ -66,7 +66,7 @@ signed main() {
     int an=x0;
     REP1(i,n-1) {
         x0=(a0*x0+b0)%c0;
-        int cnt=min(i+1,)
+        int cnt=min({i+1,n-i)
     }
     return 0;
 }
