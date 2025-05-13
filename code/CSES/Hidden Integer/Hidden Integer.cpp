@@ -59,7 +59,9 @@ int rd(int l,int r) {
 }
 bool qur(int x) {
     cout<<"? "<<x<<endl;
-    int
+    string ret;
+    cin>>ret;
+    
 }
 signed main() {
     IOS();
