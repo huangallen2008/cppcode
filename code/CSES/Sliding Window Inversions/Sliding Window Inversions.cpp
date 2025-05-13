@@ -86,12 +86,12 @@ signed main() {
 
     set<pii,cmp> s;
     Vi cnt(n);
-    auto add=[&](int x) {
+    auto push=[&](int x) {
         s.erase({cnt[x],x});
         cnt[x]++;
         s.insert({cnt[x],x});
     };
-    auto del=[&](int x) {
+    auto pop=[&](int x) {
         s.erase({cnt[x],x});
         cnt[x]--;
         s.insert({cnt[x],x});
