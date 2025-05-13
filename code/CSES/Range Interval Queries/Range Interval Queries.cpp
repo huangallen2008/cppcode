@@ -101,7 +101,7 @@ signed main() {
     REP(i,n) {
         bit.ud(a[i],1);
         for(auto [l,r,id,f]:qu[i]) {
-            an
+            an[id]+=f*bit.qu(l,r);
         }
     }
     return 0;
