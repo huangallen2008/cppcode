@@ -83,6 +83,9 @@ signed main() {
     };
     auto mode=[&]() { return s.begin()->s; };
     REP(i,k) add(a[i]);
-    int an=mode
+    cout<<mode()<<' ';
+    for(int i=k;i<n;i++) {
+        
+    }
     return 0;
 }
