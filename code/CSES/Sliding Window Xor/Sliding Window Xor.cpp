@@ -63,9 +63,10 @@ signed main() {
     cin>>n>>k;
     int x0,a0,b0,c0;
     cin>>x0>>a0>>b0>>c0;
+    int an=x0;
     REP1(i,n-1) {
         x0=(a0*x0+b0)%c0;
-        
+        int cnt=min(i+1,)
     }
     return 0;
 }
