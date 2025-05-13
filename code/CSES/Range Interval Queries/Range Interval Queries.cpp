@@ -87,13 +87,11 @@ signed main() {
         int l,r,id,f;
     };
     vector<vector<S>> qu(n);
-    oparr(a)oparr(t)
     REP(i,q) {
         int a,b,l,r;
         cin>>a>>b>>l>>r,a--,b--;
         l=lower_bound(ALL(t),l)-t.begin()+1;
         r=upper_bound(ALL(t),r)-t.begin();
-        op(i)op(a)op(b)op(l)ope(r)
         qu[b].pb({l,r,i,1});
         if(a) qu[a-1].pb({l,r,i,-1});
     }
