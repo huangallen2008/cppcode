@@ -70,7 +70,10 @@ struct mystk {
         return val;
     }
     int or() { return SZ(stk)?stk.back():0; }
-    int siz()
+    int size() { return SZ(a); }
+};
+struct myq {
+    my
 }
 signed main() {
     IOS();
