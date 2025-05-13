@@ -63,11 +63,12 @@ signed main() {
     cin>>n>>m;
     vector<string> a(n+1,string(m+1,'A'));
     REP1(i,n) REP1(j,m) cin>>a[i][j];
-    auto dif=[&](char a,char b,char c) {
+    auto dif=[&](char a,char b,char c) ->char{
         Vi cnt(4);
         cnt[a-'A']=1;
         cnt[b-'A']=1;
         cnt[c-'A']=1;
+
     }
     return 0;
 }
