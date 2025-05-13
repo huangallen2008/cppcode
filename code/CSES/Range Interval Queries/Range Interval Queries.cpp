@@ -82,7 +82,11 @@ signed main() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     struct S {
-        int l,r
+        int l,r,id,f;
+    };
+    vector<S> qu(n);
+    REP(i,q) {
+        int 
     }
     return 0;
 }
