@@ -57,6 +57,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+
 signed main() {
     IOS();
     int n,k;
@@ -66,18 +67,6 @@ signed main() {
     Vi a(n);
     a[0]=x0;
     REP1(i,n-1) a[i]=(a0*a[i-1]+b0)%c0;
-    deque<pii> dq;
-    REP(i,k) {
-        while(SZ(dq)&&a[i]<=dq.back().f) dq.pop_back();
-        dq.pb({a[i],i});
-    }
-    int an=dq[0].f;
-    for(int i=k;i<n;i++) {
-        while(SZ(dq)&&a[i]<=dq.back().f) dq.pop_back();
-        dq.pb({a[i],i});
-        while(SZ(dq)&&dq[0].s<=i-k) dq.pop_front();
-        an^=dq[0].f;
-    }
-    cout<<an<<'\n';
+    
     return 0;
 }
