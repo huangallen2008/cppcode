@@ -68,6 +68,6 @@ signed main() {
     REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
     Vi mp(n);
     int cnt=0;
-    
+    auto add=[&](int x) {}
     return 0;
 }
