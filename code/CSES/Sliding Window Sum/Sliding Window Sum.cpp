@@ -65,6 +65,6 @@ signed main() {
     cin>>x>>a>>b>>c;
     Vi a(n+1);
     a[1]=x;
-    for()
+    for(int i=2;i<=n;i++) a[i]=
     return 0;
 }
