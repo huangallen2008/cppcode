@@ -69,7 +69,8 @@ struct mystk {
         stk.pop_back();
         return val;
     }
-    int or() { return stk.back(); }
+    int or() { return SZ(stk)?stk.back():0; }
+    int siz()
 }
 signed main() {
     IOS();
