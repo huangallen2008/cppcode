@@ -71,6 +71,7 @@ signed main() {
     Vi cnt(n+1);
     auto add=[&](int x) {
         if(x>n) return;
+        op(x)
         if(cnt[x]++==0) s.erase(x);
     };
     auto del=[&](int x) {
