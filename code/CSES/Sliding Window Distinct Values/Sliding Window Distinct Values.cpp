@@ -57,36 +57,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct mystk {
-    Vi a,stk;
-    void push(int x) {
-        a.pb(x);
-        stk.pb(SZ(stk)?x|stk.back():x);
-    }
-    int pop() { 
-        int val=a.back();
-        a.pop_back();
-        stk.pop_back();
-        return val;
-    }
-    int orv() { return SZ(stk)?stk.back():0; }
-    int size() { return SZ(a); }
-};
-struct myq {
-    mystk s1,s2;
-    void push(int x) {
-        s1.push(x);
-    }
-    void pop() {
-        if(SZ(s2)) s2.pop();
-        else {
-            while(SZ(s1)) s2.push(s1.pop());
-            s2.pop();
-        }
-    }
-    int size() { return SZ(s1)+SZ(s2); }
-    int orv() { return size()?s1.orv()|s2.orv():0; }
-};
 signed main() {
     IOS();
     int n,k;
