@@ -70,6 +70,7 @@ signed main() {
         if(a[i]==b[j]) chmax(dp[i][j],dp[i-1][j-1]+1);
 
 
+
         
         if(a[i]==b[j]&&dp[i-1][j-1]+1==dp[i][j]) pre[i][j]=0;
         else if(dp[i-1][j]==dp[i][j]) pre[i][j]=1;
