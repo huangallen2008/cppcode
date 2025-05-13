@@ -63,8 +63,8 @@ signed main() {
     cin>>n>>k;
     int x,a,b,c;
     cin>>x>>a>>b>>c;
-    Vi a(n+1);
-    a[1]=x;
-    for(int i=2;i<=n;i++) a[i]=(a*)
+    Vi p(n+1);
+    p[1]=x;
+    for(int i=2;i<=n;i++) p[i]=(a*p[i-1]+b)
     return 0;
 }
