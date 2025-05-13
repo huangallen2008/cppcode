@@ -71,6 +71,9 @@ signed main() {
         REP(i,4) if(cnt[i]==0) return 'A'+i;
     };
     REP1(i,n) REP1(j,m) a[i][j]=dif(a[i-1][j],a[i][j-1],a[i][j]);
-    
+    REP1(i,n) {
+        REP1(j,m) cout<<a[i][j];
+        cout<<'\n';
+    }
     return 0;
 }
