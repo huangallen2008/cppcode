@@ -100,5 +100,7 @@ signed main() {
         stk.pb({a[i],i});
         for(auto [l,id]:qu[i]) an[id]=bit.qu(l);
     }
+    REP(i,q) cout<<an[i]<<'\n';
+    
     return 0;
 }
