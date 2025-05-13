@@ -79,6 +79,9 @@ signed main() {
     int all=0;
     REP(i,maxb) if(bas[i])all|=1<<i;
     Vi an;
-    for(int i=all;i;i=(i-1))
+    for(int i=all;i;i=(i-1)&all) an.pb(i);
+    reverse(ALL(an));
+    cout<<0<<' ';
+    cout<<
     return 0;
 }
