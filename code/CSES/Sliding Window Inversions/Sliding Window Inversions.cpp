@@ -57,9 +57,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct cmp {
-    bool operator()(pii a,pii b) const{ return a.f==b.f?a.s<b.s:a.f>b.f; }
-};
+struct BIT {
+    int n;
+
+}
 signed main() {
     IOS();
     int n,k;
@@ -68,8 +69,8 @@ signed main() {
     REP(i,n) cin>>a[i];
     Vi t=a;
     sort(ALL(t));
-    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin();
-    
+    REP(i,n) a[i]=lower_bound(ALL(t),a[i])-t.begin()+1;
+
     set<pii,cmp> s;
     Vi cnt(n);
     auto add=[&](int x) {
