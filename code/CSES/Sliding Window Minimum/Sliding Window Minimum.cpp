@@ -71,5 +71,6 @@ signed main() {
         while(SZ(stk)&&a[i]<=stk.back().f) stk.pop_back();
         stk.pb({a[i],i});
     }
+    int an=stk
     return 0;
 }
