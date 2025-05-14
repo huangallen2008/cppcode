@@ -59,25 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int n;
-    cin>>n;
-    Vi a(n);
-    REP(i,n) cin>>a[i];
-    Vpii stk;
-    Vi h(n,1);
-    REP(i,n) {
-        while(SZ(stk)&&a[i]>=stk.back().f) {
-            if(SZ(stk)>1) chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
-            if(a[i]>stk.back().f)chmax(h[i],h[stk.back().s]+1);
-            stk.pop_back();
-        }
-        stk.pb({a[i],i});
-    }
-    while(SZ(stk)>1) {
-        chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
-        stk.pop_back();
-    }
-    int an=*max_element(ALL(h));
-    cout<<an<<'\n';
+    
     return 0;
 }
