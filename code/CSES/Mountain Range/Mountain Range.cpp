@@ -69,6 +69,7 @@ signed main() {
         while(SZ(stk)&&a[i]>=stk.back().f) {
             if(SZ(stk)>1) chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
         }
+        
     }
     return 0;
 }
