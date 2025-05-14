@@ -76,7 +76,8 @@ signed main() {
     while(l+1<r) {
         m=l+r>>1;
         a[m]=qur(m);
-        if((a[m]^a[l]^(m-l))&1) 
+        if((a[m]^a[l]^(m-l))&1) r=m;
+        else l=m;
     }
     ans(l);
     return 0;
