@@ -59,7 +59,7 @@ int rd(int l,int r) {
 }
 bool qur(int x) {
     cout<<"? "<<x<<endl;
-    string ret;
+    char ret;
     cin>>ret;
     return ret[0]=='Y';
 }
