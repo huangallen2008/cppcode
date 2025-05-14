@@ -75,8 +75,7 @@ signed main() {
     int l=1,r=n+1,m;
     while(l<r) {
         m=l+r>>1;
-        if(!qur(m)) r=m;
-        else l=m+1;
+        
     }
     ans(l);
     return 0;
