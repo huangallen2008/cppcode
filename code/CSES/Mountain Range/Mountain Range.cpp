@@ -68,6 +68,7 @@ signed main() {
     REP(i,n) {
         while(SZ(stk)&&a[i]>stk.back().f) {
             if(SZ(stk)>1) chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
+            chmax(h[i],h[stk.back().s]+1);
             stk.pop_back();
         }
         if(SZ(stk)&&stk.back().f==a[i]) {
