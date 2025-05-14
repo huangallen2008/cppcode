@@ -63,6 +63,7 @@ signed main() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    Vi st
+    Vpii stk;
+    
     return 0;
 }
