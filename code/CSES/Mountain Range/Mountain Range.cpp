@@ -66,7 +66,9 @@ signed main() {
     Vpii stk;
     Vi h(n,1);
     REP(i,n) {
-        while(SZ(stk)&&a[i]>)
+        while(SZ(stk)&&a[i]>=stk.back().f) {
+            
+        }
     }
     return 0;
 }
