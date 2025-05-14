@@ -59,6 +59,10 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    
+    int n;
+    cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
+    Vi st
     return 0;
 }
