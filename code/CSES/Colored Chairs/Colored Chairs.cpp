@@ -73,7 +73,7 @@ signed main() {
     Vi a(n+2);
     a[1]=a[n+1]=qur(1);
     int l=1,r=n+1,m;
-    while(l<r) {
+    while(l+1<r) {
         m=l+r>>1;
         
     }
