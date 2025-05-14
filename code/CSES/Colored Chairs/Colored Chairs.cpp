@@ -68,6 +68,9 @@ void ans(int x) {
 }
 signed main() {
     IOS();
+    int n;
+    cin>>n;
+    Vi a(n+2);
     int l=1,r=1e9,m;
     while(l<r) {
         m=l+r>>1;
