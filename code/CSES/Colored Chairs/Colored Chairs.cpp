@@ -71,7 +71,8 @@ signed main() {
     int n;
     cin>>n;
     Vi a(n+2);
-    int l=1,r=1e9,m;
+    a[1]=a[n+1]
+    int l=1,r=n+1,m;
     while(l<r) {
         m=l+r>>1;
         if(!qur(m)) r=m;
