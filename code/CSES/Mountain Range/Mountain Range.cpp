@@ -70,7 +70,8 @@ signed main() {
             if(SZ(stk)>1) chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
             chmax(h[i],h[stk.back().s]+1);
         }
-        stk.pb({})
+        stk.pb({a[i],i});
     }
+    
     return 0;
 }
