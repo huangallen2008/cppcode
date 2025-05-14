@@ -61,7 +61,7 @@ bool qur(int x) {
     cout<<"? "<<x<<endl;
     char ret;
     cin>>ret;
-    return ret[0]=='Y';
+    return ret=='R';
 }
 void ans(int x) {
     cout<<"! "<<x<<endl;
