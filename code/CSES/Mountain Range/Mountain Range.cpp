@@ -67,7 +67,7 @@ signed main() {
     Vi h(n,1);
     REP(i,n) {
         while(SZ(stk)&&a[i]>=stk.back().f) {
-            if(S)
+            if(SZ(stk)>1)
         }
     }
     return 0;
