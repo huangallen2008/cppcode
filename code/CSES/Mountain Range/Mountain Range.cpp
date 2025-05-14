@@ -73,7 +73,7 @@ signed main() {
         stk.pb({a[i],i});
     }
     while(SZ(stk)>1) {
-        chmax(stk)
+        chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
     }
     return 0;
 }
