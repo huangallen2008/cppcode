@@ -77,6 +77,7 @@ signed main() {
         chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
         stk.pop_back();
     }
-    int an=
+    int an=h[stk[0].s];
+    cout<<an<<'\n';
     return 0;
 }
