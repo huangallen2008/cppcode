@@ -75,7 +75,8 @@ signed main() {
     int l=1,r=n+1,m;
     while(l+1<r) {
         m=l+r>>1;
-        
+        a[m]=qur(m);
+        if(a[m]^a[l]^(m-l))&1)
     }
     ans(l);
     return 0;
