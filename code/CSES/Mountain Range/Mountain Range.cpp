@@ -72,6 +72,8 @@ signed main() {
         }
         stk.pb({a[i],i});
     }
-    
+    while(SZ(stk)>1) {
+        chmax(stk)
+    }
     return 0;
 }
