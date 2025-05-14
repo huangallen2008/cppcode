@@ -66,11 +66,12 @@ signed main() {
     Vpii stk;
     Vi h(n,1);
     REP(i,n) {
-        while(SZ(stk)&&a[i]>=stk.back().f) {
+        while(SZ(stk)&&a[i]>stk.back().f) {
             if(SZ(stk)>1) chmax(h[stk[SZ(stk)-2].s],h[stk.back().s]+1);
             chmax(h[i],h[stk.back().s]+1);
             stk.pop_back();
         }
+        
         stk.pb({a[i],i});
     }
     while(SZ(stk)>1) {
