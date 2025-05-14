@@ -71,7 +71,7 @@ signed main() {
             stk.pop_back();
         }
         if(SZ(stk)&&stk.back().f==a[i]) {
-
+            
         }
         stk.pb({a[i],i});
     }
