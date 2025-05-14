@@ -71,7 +71,9 @@ signed main() {
             chmax(h[i],h[stk.back().s]+1);
             stk.pop_back();
         }
-        
+        if(SZ(stk)&&stk.back().f==a[i]) {
+            
+        }
         stk.pb({a[i],i});
     }
     while(SZ(stk)>1) {
