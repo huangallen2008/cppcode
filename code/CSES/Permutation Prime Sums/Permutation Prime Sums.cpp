@@ -69,4 +69,7 @@ signed main() {
     int t=n;
     Vpii a;
     while() {
- 
+        int np=upper_bound(ALL(pr))
+    }
+    return 0;
+}
