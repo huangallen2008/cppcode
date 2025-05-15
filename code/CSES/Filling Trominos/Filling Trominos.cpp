@@ -72,7 +72,9 @@ void solve() {
     }
     vector<Vi> a(n,Vi(m));
     if(m%2==0) {
-        
+        REP(i,n) REP(j,m) {
+            
+        }
     }
 }
 signed main() {
