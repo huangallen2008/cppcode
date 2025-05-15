@@ -76,7 +76,9 @@ signed main() {
     Vi a,b;
     for(auto [l,r]:v) {
         for(int i=l;i<=r;i++) a.pb(i);
-        for(int i=r;i>=l;i++) b.pb(i);
+        for(int i=r;i>=l;i--) b.pb(i);
     }
+    REP(i,n) cout<<a[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<a[i]<<' ';cout<<'\n';
     return 0;
 }
