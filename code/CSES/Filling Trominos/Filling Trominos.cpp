@@ -79,6 +79,8 @@ void solve() {
             }
             cout<<'\n';
         }
+    }else {
+        
     }
 }
 signed main() {
