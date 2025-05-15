@@ -67,10 +67,10 @@ signed main() {
     int n;
     cin>>n;
     int t=n;
-    Vpii a;
+    Vpii v;
     while(t>0) {
         int np=*upper_bound(ALL(pr),t);
-        a.pb({np-t,t});
+        v.pb({np-t,t});
         t=np-t-1;
     }
     Vi 
