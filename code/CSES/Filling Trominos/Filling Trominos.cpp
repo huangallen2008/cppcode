@@ -60,7 +60,9 @@ int rd(int l,int r) {
 void solve() {
     int n,m;
     cin>>n>>m;
-    if((n*m)%3!=0)
+    if((n*m)%3!=0||(n&1)) {
+        cout
+    }
 }
 signed main() {
     IOS();
