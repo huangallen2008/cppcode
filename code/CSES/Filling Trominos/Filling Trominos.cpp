@@ -70,7 +70,7 @@ void solve() {
         swap(n,m);
         rev=1;
     }
-    vector<Vi> a(n,Vi(m));
+    vector<vector<char>> a(n,Vi(m));
     if(m%2==0) {
         REP(i,n) REP(j,m) {
             if(i%3+j%2<=1) a[i][j]=(j>>1&1?'A':'B');
