@@ -79,6 +79,6 @@ signed main() {
         for(int i=r;i>=l;i--) b.pb(i);
     }
     REP(i,n) cout<<a[i]<<' ';cout<<'\n';
-    REP(i,n) cout<<a[i]<<' ';cout<<'\n';
+    REP(i,n) cout<<b[i]<<' ';cout<<'\n';
     return 0;
 }
