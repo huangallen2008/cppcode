@@ -70,7 +70,8 @@ void solve() {
         swap(n,m);
         rev=1;
     }
-    
+    vector<Vi> a(n,Vi(m));
+    if(m%)
 }
 signed main() {
     IOS();
