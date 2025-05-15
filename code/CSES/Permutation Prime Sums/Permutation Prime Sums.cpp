@@ -74,6 +74,9 @@ signed main() {
         t=np-t-1;
     }
     Vi a,b;
-    for(auto [l,r]:)
+    for(auto [l,r]:v) {
+        for(int i=l;i<=r;i++) a.pb(i);
+        for(int i=r;i>=l;i++) b.pb(i);
+    }
     return 0;
 }
