@@ -68,10 +68,11 @@ signed main() {
     cin>>n;
     int t=n;
     Vpii a;
-    while() {
+    while(t>0) {
         int np=*upper_bound(ALL(pr),t);
         a.pb({np-t,t});
         t=np-t-1;
     }
+    oparr(a)
     return 0;
 }
