@@ -71,7 +71,9 @@ void solve() {
         rev=1;
     }
     vector<Vi> a(n,Vi(m));
-    if(m%)
+    if(m%2==0) {
+        
+    }
 }
 signed main() {
     IOS();
