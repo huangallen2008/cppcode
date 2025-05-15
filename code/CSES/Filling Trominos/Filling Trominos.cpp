@@ -65,6 +65,11 @@ void solve() {
         return;
     }
     cout<<"YES\n";
+    bool rev=0;
+    if(m%3==0) {
+        swap(n,m);
+        rev=1;
+    }
     
 }
 signed main() {
