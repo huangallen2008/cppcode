@@ -63,6 +63,9 @@ signed main() {
     isp[0]=isp[1]=0;
     for(int i=2;i<maxn;i++) if(isp[i]) for(int j=i+i;j<maxn;j+=i) isp[j]=0;
     Vi pr;
-    REP(i,maxn) pr.pb(i);
+    REP(i,maxn) if(isp[i])pr.pb(i);
+    int n;
+    cin>>n;
+    
     return 0;
 }
