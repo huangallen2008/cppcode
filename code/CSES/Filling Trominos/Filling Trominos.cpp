@@ -81,7 +81,7 @@ void solve() {
             if(i%3+j%2<=1) a[i][j]=(j>>1&1?'A':'B');
             else  a[i][j]=(j>>1&1?'C':'D');
         }
-        for()
+        REP(i,n) REP
     }
 }
 signed main() {
