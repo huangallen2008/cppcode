@@ -66,6 +66,7 @@ signed main() {
     REP(i,maxn) if(isp[i])pr.pb(i);
     int n;
     cin>>n;
-    
-    return 0;
-}
+    int t=n;
+    Vpii a;
+    while() {
+ 
