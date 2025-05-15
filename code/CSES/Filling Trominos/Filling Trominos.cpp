@@ -93,7 +93,8 @@ void solve() {
         }
     }else {
         REP(i,n) {
-            REP()
+            REP(j,m) cout<<a[i][j];
+            cout<<'\n';
         }
     }
 }
