@@ -59,7 +59,8 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    Vi isp(maxn);
+    Vi isp(maxn,1);
     isp[0]=isp[1]=0;
+    for(int i=2;i<)
     return 0;
 }
