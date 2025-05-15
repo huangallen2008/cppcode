@@ -60,7 +60,7 @@ int rd(int l,int r) {
 void solve() {
     int n,m;
     cin>>n>>m;
-    if((n*m)%3!=0||(n%2==1&&m%2==1)) {
+    if((n*m)%3!=0||(n%2==1&&m%2==1)||) {
         cout<<"NO\n";
         return;
     }
@@ -73,9 +73,6 @@ void solve() {
     vector<Vi> a(n,Vi(m));
     if(m%2==0) {
 
-
-
-        
     }
 }
 signed main() {
