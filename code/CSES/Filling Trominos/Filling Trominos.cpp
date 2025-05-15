@@ -86,7 +86,16 @@ void solve() {
             else a[i][j]=(i>>1&1?'G':'H');
         }
     }
-    
+    if(rev) {
+        REP(i,m) {
+            REP(j,n) cout<<a[j][i];
+            cout<<'\n';
+        }
+    }else {
+        REP(i,n) {
+            REP()
+        }
+    }
 }
 signed main() {
     IOS();
