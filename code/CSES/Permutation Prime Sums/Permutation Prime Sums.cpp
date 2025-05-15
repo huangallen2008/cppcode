@@ -70,7 +70,7 @@ signed main() {
     Vpii a;
     while() {
         int np=*upper_bound(ALL(pr),t);
-        
+        a.pb({np-n,n});
     }
     return 0;
 }
