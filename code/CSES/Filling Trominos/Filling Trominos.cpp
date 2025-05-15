@@ -83,9 +83,10 @@ void solve() {
         }
         REP(i,n) for(int j=m-3;j<m;j++) {
             if(i%2+(j-(m-3))%3<=1) a[i][j]=(i>>1&1?'E':'F');
-            if(i%2+(j-(m-3))%3<=1) a[i][j]=(i>>1&1?'E':'F');
+            else a[i][j]=(i>>1&1?'G':'H');
         }
     }
+    
 }
 signed main() {
     IOS();
