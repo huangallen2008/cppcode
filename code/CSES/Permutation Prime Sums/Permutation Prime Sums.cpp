@@ -61,6 +61,6 @@ signed main() {
     IOS();
     Vi isp(maxn,1);
     isp[0]=isp[1]=0;
-    for(int i=2;i<)
+    for(int i=2;i<maxn;i++) if(isp[i]) for(int j=i+i;j<maxn;j+=i) 
     return 0;
 }
