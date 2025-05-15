@@ -61,8 +61,11 @@ void solve() {
     int n,m;
     cin>>n>>m;
     if((n*m)%3!=0||(n%2==1&&m%2==1)) {
-        cout
+        cout<<"NO\n";
+        return;
     }
+    cout<<"YES\n";
+    
 }
 signed main() {
     IOS();
