@@ -73,6 +73,6 @@ signed main() {
         a.pb({np-t,t});
         t=np-t-1;
     }
-    oparr(a)
+    Vi 
     return 0;
 }
