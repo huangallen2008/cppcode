@@ -80,7 +80,13 @@ void solve() {
             cout<<'\n';
         }
     }else {
-        
+        REP(i,n) {
+            REP(j,m-3) {
+                if(i%3+j%2<=1) cout<<(j>>1&1?'A':'B');
+                else  cout<<(j>>1&1?'C':'D');
+            }
+            cout<<'\n';
+        }
     }
 }
 signed main() {
