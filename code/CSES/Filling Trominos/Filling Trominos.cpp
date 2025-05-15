@@ -73,9 +73,11 @@ void solve() {
     vector<Vi> a(n,Vi(m));
     if(m%2==0) {
         REP(i,n) {
-             REP(j,m) {
-            if(i%3+j%2<=1) cout<<(j>>1&1?'A':'B');
-            else  cout<<(j>>1&1?'C':'D');
+            REP(j,m) {
+                if(i%3+j%2<=1) cout<<(j>>1&1?'A':'B');
+                else  cout<<(j>>1&1?'C':'D');
+            }
+            cout<<'\n';
         }
     }
 }
