@@ -59,8 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    int T;
-    cin>>T;
-    while(T--) solve();
+    Vi isp(maxn);
     return 0;
 }
