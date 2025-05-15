@@ -60,7 +60,7 @@ int rd(int l,int r) {
 void solve() {
     int n,m;
     cin>>n>>m;
-    if((n*m)%3!=0||(n%2==1&&m%2==1)||) {
+    if((n*m)%3!=0||(n%2==1&&m%2==1)||n==1||m==1) {
         cout<<"NO\n";
         return;
     }
