@@ -1,3 +1,7 @@
+import jieba
+from collections import Counter
+import jieba.analyse
+
 text = """
 隋末民間動亂削弱了隋朝的軍事實力，而導致突厥崛起，成為中原一帶強大的勢力，藉此對中原形成巨大壓力。
 而李淵在起兵反隋時，由於意識自身力量不足，依劉文靜建議，決定借助突厥的支持，以財帛金寶作為借兵的交換條件，
@@ -15,33 +19,40 @@ text = """
 李樹桐認為高祖未稱臣的論點有四，其一為高祖不稱天子表示其未受突厥封號，也未稱臣，且當時情勢並不危急，無稱臣之必要；其二高祖致書突厥用啓字為政治操作；
 其三記載高祖稱臣之紀錄為史官欲討太宗喜所寫，因修史者缺乏史德，素有「誣高祖之惡，溢太宗之美」之舉，且高祖與太宗間有嫌隙，其晚景淒涼，故當朝史官多抹黑高祖以悅太宗，而李樹桐以記載高祖稱臣與太宗渭水之恥的時間點推論史官欲以高祖誠稱臣掩太宗的渭水之恥，此亦符合史官一貫貶高祖的敘事筆法，若真稱臣當為國恥，豈會不察而錄；其四因未有稱臣與結束稱臣的紀錄，故未稱臣。
 """
-import jieba
-from collections import Counter
-import jieba.analyse
 
+# 移除換行符號
 text = text.replace("\n", "")
-stop_words = set(['所以', '好', '因為', '；', '的', '是', '了', '欲', '也', '在', '和', '就', '不', '有',
-                 '以', '與', '、', '為', '這個', '而', '「', '」', '，', '。', '《', '》', "對", "於", "\n"])
 
+# 自訂詞彙加入 jieba
 custom_dict = [
-    '陳寅恪', 
+    '陳寅恪',
     "渭水之恥",
     "論唐高祖稱臣於突厥事",
     "資治通鑑",
     "舊唐書"
 ]
- 
 for word in custom_dict:
     jieba.add_word(word)
 
+# 停用詞
+stop_words = set(['所以', '好', '因為', '；', '的', '是', '了', '欲', '也', '在', '和', '就', '不', '有',
+                 '以', '與', '、', '為', '這個', '而', '「', '」', '，', '。', '《', '》', "對", "於", "\n"])
+
+# 斷詞並去除停用詞
+words = jieba.lcut(text)
 filtered_words = [word for word in words if word not in stop_words]
- 
+
+# 統計詞頻並過濾出現次數大於1的詞彙
 word_count = Counter(filtered_words)
 filtered_word_count = {word: count for word, count in word_count.items() if count > 1}
+sorted_filtered_word_count = sorted(filtered_word_count.items(), key=lambda x: x[1], reverse=True)
+
+# 摘要
 keywords = jieba.analyse.extract_tags(text, topK=10)
 sentences = text.split('。')
 top_sentences = sorted(sentences, key=lambda x: sum(1 for word in jieba.cut(x) if word in keywords), reverse=True)[:3]
 summary = '。'.join(top_sentences).replace("\n", "")
+
 print(summary)
 print("-----")
 print(''.join(keywords))
