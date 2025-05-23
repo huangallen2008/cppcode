@@ -28,7 +28,7 @@ custom_dict = [
     "渭水之恥",
     "論唐高祖稱臣於突厥事",
     "資治通鑑",
-    "舊唐書"# 直接添加词汇
+    "舊唐書"
 ]
  
 for word in custom_dict:
