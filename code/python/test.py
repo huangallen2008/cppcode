@@ -1,4 +1,6 @@
 def get_grade(score):
+    if not isinstance(score, (int, float)) or score < 0 or score > 100:
+        return 'Invalid score'
     if 90 <= score <= 100:
             return '優'
     elif 80 <= score < 90:
