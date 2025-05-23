@@ -61,6 +61,7 @@ signed main() {
     IOS();
     int n=5;
     vector<ld> w(n),s(n);
-    
+    REP(i,n) cin>>w[i];    
+    REP(i,n) cin>>s[i];    
     return 0;
 }
