@@ -17,8 +17,7 @@ def get_grade(score):
         return '掰掰你被死當了'
 try:
     w = float(input().split(' ')) 
-    score = float(input().split(' ')) 
-    grade = get_grade(score) 
+    s = float(input().split(' ')) 
     print(f"你的成績等第是 {grade}。")
 except ValueError:
     print("輸入的不是有效的數字。")
