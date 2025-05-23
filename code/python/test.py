@@ -16,7 +16,7 @@
 #     else:
 #         return '掰掰你被死當了'
 try:
-    w=[float(x) for x in input().spl]
+    w=[float(x) for x in input().split(' ')]
     # w = map(float,input().split(' '))
     # s = map(float,input().split(' '))
 except ValueError:
