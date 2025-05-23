@@ -61,5 +61,6 @@ signed main() {
     IOS();
     int n=5;
     vector<ld> w(n),s(n);
+    
     return 0;
 }
