@@ -62,6 +62,8 @@ signed main() {
     int n=5;
     vector<ld> w(n),s(n);
     REP(i,n) cin>>w[i];    
-    REP(i,n) cin>>s[i];    
+    REP(i,n) cin>>s[i];
+    ld avg=0;
+    REP(i,n) a    
     return 0;
 }
