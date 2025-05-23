@@ -59,5 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
+    Vi
     return 0;
 }
