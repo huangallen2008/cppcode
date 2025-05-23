@@ -2,7 +2,7 @@ import numpy as np
 
 # 給定的數據
 X = np.array([5, 4, 3, 2, 1])
-y = np.array([1, 2, 3, 4, 5])
+y = np.array( [1, 2, 3, 4, 5])
 
 # 計算 x 和 y 的均值
 x_mean = np.mean(X)
