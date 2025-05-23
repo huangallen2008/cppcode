@@ -11,7 +11,7 @@ def get_grade(score):
         return '丁'
     elif 40 <= score < 50:
         return '不及格'
-    elif 0 <= score < 40:
+    else:
         return '掰掰你被死當了'
 try:
     score = float(input())  # 輸入一個成績並轉換為浮點數
