@@ -1,6 +1,6 @@
 try:
-    weights_input = input().strip()
-    scores_input = input().strip()
+    weights_input = input()
+    scores_input = input()
 
     weights = list(map(float, weights_input.split()))
     scores = list(map(int, scores_input.split()))
