@@ -1,35 +1,23 @@
-try:
-    weights_input = input()
-    scores_input = input()
+import pandas as pd
 
-    weights = list(map(float, weights_input.split()))
-    scores = list(map(int, scores_input.split()))
+data = {
+    'Date': ['1/3/2023', '1/3/2023', '1/3/2023', '1/3/2023', '1/3/2023', '1/3/2023', '1/3/2023', '1/3/2023', '2/3/2023', '2/3/2023'],
+    'Item': ['chai', 'chai', 'juice', 'coffee', 'coffee', 'chai', 'coldrink', 'others', 'chai', 'juice'],
+    'Amount': [7, 20, 15, 12, 12, 25, 10, 10, 7, 15]
+}
+df = pd.DataFrame(data)
 
-    if len(weights) != 5 or len(scores) != 5:
-        print("輸入的成績數量不符合科目數量。")
-    elif not all(0 <= score <= 100 for score in scores):
-        print("成績應在0到100之間。")
-    else:
-        total = sum(w * s for w, s in zip(weights, scores))
-        total_rounded = round(total , 2) 
-        print(f"{total_rounded:.2f}")
+results = {'chai': 0, 'juice': 0, 'coffee': 0, 'coldrink': 0, 'others': 0}
 
-        if total_rounded >= 90:
-            grade = 'A+'
-        elif total_rounded >= 85:
-            grade = 'A'
-        elif total_rounded >= 80:
-            grade = 'B+'
-        elif total_rounded >= 75:
-            grade = 'B'
-        elif total_rounded >= 70:
-            grade = 'C+'
-        elif total_rounded >= 65:
-            grade = 'C'
-        elif total_rounded >= 60:
-            grade = 'D'
-        else:
-            grade = 'F'
-        print(grade)
-except ValueError:
-    print("輸入的不是有效的數字。")
+# 過濾出 1/3/2023 當天的資料
+filtered_df = df[df['Date'] == '1/3/2023']
+
+# 使用 groupby 計算各商品的總銷量
+grouped = filtered_df.groupby('Item')['Amount'].sum()
+
+# 更新 results 字典
+for item in results:
+    if item in grouped:
+        results[item] = grouped[item]
+
+print(results)
