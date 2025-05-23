@@ -41,6 +41,9 @@ filtered_word_count = {word: count for word, count in word_count.items() if coun
 keywords = jieba.analyse.extract_tags(text, topK=10)
 sentences = text.split('。')
 top_sentences = sorted(sentences, key=lambda x: sum(1 for word in jieba.cut(x) if word in keywords), reverse=True)[:3]
- 
-# 生成摘要並去除換行符
 summary = '。'.join(top_sentences).replace("\n", "")
+print(summary)
+print("-----")
+print(''.join(keywords))
+print("-----")
+print(sorted_filtered_word_count)
