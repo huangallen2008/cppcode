@@ -59,6 +59,7 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    vector<ld> w,s;
+    int n=5;
+    vector<ld> w(n),s(n);
     return 0;
 }
