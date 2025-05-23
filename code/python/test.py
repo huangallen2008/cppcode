@@ -9,8 +9,6 @@ try:
         print("輸入的成績數量不符合科目數量。")
     elif not all(0 <= score <= 100 for score in scores):
         print("成績應在0到100之間。")
-    elif abs(sum(weights) - 1.0) > 1e-6:
-        print("權重總和必須為1。")
     else:
         total = sum(w * s for w, s in zip(weights, scores))
         total_rounded = round(total + 1e-8, 2)  # 加上微小值避免浮點誤差
