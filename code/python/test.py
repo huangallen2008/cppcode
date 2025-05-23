@@ -10,11 +10,11 @@ def chat_bot():
         return
     while 1:
         user_input = input("").lower()
+        if user_input == "exit":
+            print("Goodbye!")
+            break  
         if user_input in translations and target_language in translations[user_input]:
             print(f"Translation to {target_language}: {translations[user_input][target_language]}")
         else:
             print("Sorry, translation not found.")  
-        if user_input == "exit":
-            print("Goodbye!")
-            break  
 chat_bot()
