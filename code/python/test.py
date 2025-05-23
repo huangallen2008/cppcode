@@ -1,25 +1,37 @@
-# def get_grade(score):
-#     if not isinstance(score, (int, float)) or score < 0 or score > 100:
-#         return 'Invalid score'
-#     if 90 <= score <= 100:
-#             return '優'
-#     elif 80 <= score < 90:
-#         return '甲'
-#     elif 70 <= score < 80:
-#         return '乙'
-#     elif 60 <= score < 70:
-#         return '丙'
-#     elif 50 <= score < 60:
-#         return '丁'
-#     elif 40 <= score < 50:
-#         return '不及格'
-#     else:
-#         return '掰掰你被死當了'
 try:
-    w=[float(x) for x in input().split(' ')]
-    s=[float(x) for x in input().split(' ')]
-    avg=sum(w[i]*s[i] for i in range(5) )
-    print("{:.2f}".format(avg))
-    
+    weights_input = input().strip()
+    scores_input = input().strip()
+
+    weights = list(map(float, weights_input.split()))
+    scores = list(map(int, scores_input.split()))
+
+    if len(weights) != 5 or len(scores) != 5:
+        print("輸入的成績數量不符合科目數量。")
+    elif not all(0 <= score <= 100 for score in scores):
+        print("成績應在0到100之間。")
+    elif abs(sum(weights) - 1.0) > 1e-6:
+        print("權重總和必須為1。")
+    else:
+        total = sum(w * s for w, s in zip(weights, scores))
+        total_rounded = round(total + 1e-8, 2)  # 加上微小值避免浮點誤差
+        print(f"{total_rounded:.2f}")
+
+        if total_rounded >= 90:
+            grade = 'A+'
+        elif total_rounded >= 85:
+            grade = 'A'
+        elif total_rounded >= 80:
+            grade = 'B+'
+        elif total_rounded >= 75:
+            grade = 'B'
+        elif total_rounded >= 70:
+            grade = 'C+'
+        elif total_rounded >= 65:
+            grade = 'C'
+        elif total_rounded >= 60:
+            grade = 'D'
+        else:
+            grade = 'F'
+        print(grade)
 except ValueError:
     print("輸入的不是有效的數字。")
