@@ -16,7 +16,7 @@
 #     else:
 #         return '掰掰你被死當了'
 try:
-    w = list(map(double,))
+    w = list(map(float,))
     s = float(input().split(' ')) 
 
 except ValueError:
