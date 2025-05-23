@@ -42,12 +42,9 @@ stop_words = set(['所以', '好', '因為', '；', '的', '是', '了', '欲', 
 words = jieba.lcut(text)
 filtered_words = [word for word in words if word not in stop_words]
 
-# 統計詞頻並過濾出現次數大於1的詞彙
 word_count = Counter(filtered_words)
 filtered_word_count = {word: count for word, count in word_count.items() if count > 1}
 sorted_filtered_word_count = sorted(filtered_word_count.items(), key=lambda x: x[1], reverse=True)
-
-# 摘要
 keywords = jieba.analyse.extract_tags(text, topK=10)
 sentences = text.split('。')
 top_sentences = sorted(sentences, key=lambda x: sum(1 for word in jieba.cut(x) if word in keywords), reverse=True)[:3]
