@@ -16,6 +16,7 @@ def get_grade(score):
     else:
         return '掰掰你被死當了'
 try:
+    w = float(input().split(' ')) 
     score = float(input().split(' ')) 
     grade = get_grade(score) 
     print(f"你的成績等第是 {grade}。")
