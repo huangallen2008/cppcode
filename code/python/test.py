@@ -16,8 +16,8 @@ def get_grade(score):
     else:
         return '掰掰你被死當了'
 try:
-    score = float(input())  # 輸入一個成績並轉換為浮點數
-    grade = get_grade(score)  # 根據成績獲取等第
+    score = float(input()) 
+    grade = get_grade(score) 
     print(f"你的成績等第是 {grade}。")  # 顯示結果
 except ValueError:
     print("輸入的不是有效的數字。")
