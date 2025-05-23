@@ -33,3 +33,5 @@ custom_dict = [
  
 for word in custom_dict:
     jieba.add_word(word)
+
+    
