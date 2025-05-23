@@ -18,3 +18,8 @@ text = """
 import jieba
 from collections import Counter
 import jieba.analyse
+
+text = text.replace("\n", "")
+# 排除停用詞
+stop_words = set(['所以', '好', '因為', '；', '的', '是', '了', '欲', '也', '在', '和', '就', '不', '有',
+                 '以', '與', '、', '為', '這個', '而', '「', '」', '，', '。', '《', '》', "對", "於", "\n"])
