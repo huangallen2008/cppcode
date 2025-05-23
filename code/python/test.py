@@ -17,3 +17,4 @@ def chat_bot():
         if user_input == "exit":
             print("Goodbye!")
             break  
+chat_bot()
