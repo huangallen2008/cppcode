@@ -34,4 +34,7 @@ custom_dict = [
 for word in custom_dict:
     jieba.add_word(word)
 
-    
+filtered_words = [word for word in words if word not in stop_words]
+ 
+word_count = Counter(filtered_words)
+filtered_word_count = {word: count for word, count in word_count.items() if count > 1}
