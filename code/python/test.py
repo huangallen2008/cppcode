@@ -18,5 +18,6 @@
 try:
     w=[float(x) for x in input().split(' ')]
     s=[float(x) for x in input().split(' ')]
+    
 except ValueError:
     print("輸入的不是有效的數字。")
