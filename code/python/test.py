@@ -19,6 +19,6 @@ try:
     w=[float(x) for x in input().split(' ')]
     s=[float(x) for x in input().split(' ')]
     avg=sum(w[i]*s[i] for i in range(5) )
-    print(avg)
+    print({""})
 except ValueError:
     print("輸入的不是有效的數字。")
