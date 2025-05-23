@@ -6,9 +6,10 @@ def chat_bot():
     }
     target_language = input("")
     if target_language not in ["French", "Korean", "Chinese"]:
-            print("Sorry, that language is not supported.")
-            return
+        print("Sorry, that language is not supported.")
+        return
     user_input = input("").lower()
     if user_input in translations and target_language in translations[user_input]:
-            print(f"Translation to {target_language}: {translations[user_input][target_language]}")
-    
+        print(f"Translation to {target_language}: {translations[user_input][target_language]}")
+    else:
+            print("Sorry, translation not found.")    
