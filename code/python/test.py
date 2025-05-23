@@ -4,10 +4,10 @@ import numpy as np
 X = np.array([5, 4, 3, 2, 1])
 y = np.array( [1, 2, 3, 4, 5])
 
-# 計算 x 和 y 的均值
+# 計算 x 和 y 的均值 
 x_mean = np.mean(X)
 y_mean = np.mean(y)
-
+ 
 # 計算 m（斜率）
 m = np.sum((X - x_mean) * (y - y_mean)) / np.sum((X - x_mean)**2)
 
