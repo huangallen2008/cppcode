@@ -18,6 +18,6 @@ def get_grade(score):
 try:
     w = float(input().split(' ')) 
     s = float(input().split(' ')) 
-    print(f"你的成績等第是 {grade}。")
+    
 except ValueError:
     print("輸入的不是有效的數字。")
