@@ -8,4 +8,5 @@ data = {
 df = pd.DataFrame(data)
 df['興趣'] = ['探尋美食', '寫程式', '睡覺']
 df['性別'] = ['女', '女', '男']
-df = df.drop('職業', axis=1)  # 刪除 "職業" 列
+df = df.drop('職業', axis=1) 
+print(df)
