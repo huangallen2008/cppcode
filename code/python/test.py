@@ -11,7 +11,7 @@ try:
         print("成績應在0到100之間。")
     else:
         total = sum(w * s for w, s in zip(weights, scores))
-        total_rounded = round(total + 1e-8, 2)  # 加上微小值避免浮點誤差
+        total_rounded = round(total + 1e-8, 2) 
         print(f"{total_rounded:.2f}")
 
         if total_rounded >= 90:
