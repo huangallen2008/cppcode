@@ -1,20 +1,7 @@
-def chat_bot():
-    translations = {
-    "hello": {"French": "bonjour", "Korean": "안녕하세요", "Chinese": "你好"},
-    "goodbye": {"French": "au revoir", "Korean": "안녕히 가세요", "Chinese": "再見"},
-    "thank you": {"French": "merci", "Korean": "감사합니다", "Chinese": "謝謝"},
-    }
-    target_language = input("")
-    if target_language not in ["French", "Korean", "Chinese"]:
-        print("Sorry, that language is not supported.")
-        return
-    while 1:
-        user_input = input("").lower()
-        if user_input == "exit":
-            print("Goodbye!")
-            break  
-        if user_input in translations and target_language in translations[user_input]:
-            print(f"Translation to {target_language}: {translations[user_input][target_language]}")
-        else:
-            print("Sorry, translation not found.")  
-chat_bot()
+import pandas as pd
+data = {
+    '姓名': ['張乃云', '蔡芸琤', '許家瑋'],
+    '職業': ['工程師', '教授', '學生'],
+    '城市': ['台北', '台東', '新北'],
+    '畢業高中': ['新竹女中', '台東女中', '新莊高中']
+}
