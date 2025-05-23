@@ -50,43 +50,36 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
-const int maxn=1e6+5;
-const int maxv=1000;
+const int maxn=2e5+5;
+const int maxb=18;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
-    int n;
-    Vi p,sz;
-    int cc;
-    void init(int _n) {
-        n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        REP(i,n) p[i]=i;
-        cc=n;
+int pw(int x,int p) {
+    int r=1;
+    while(p>0) {
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
     }
-    int find(int u) { return p[u]==u?u:p[u]=find(p[u]); }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        p[x]=y;
-        sz[y]+=sz[x];
-        cc--;
-    }
-};
+    return r;
+}
 signed main() {
     IOS();
-    auto isp=[&](int n) {
-        if(n<=1) return 0;
-        for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
-        return 1;
-    };
-    int an=0;
-    REP1(i,100000) if(isp(i)) an+=2*sqrt(1000000000/i);
-    ope(an)
+    int n;
+    cin>>n;
+    Vi cnt(n+1);
+    REP(i,n) {
+        int x;
+        cin>>x;
+        cnt[x]++;
+    }
+    REP(i,maxb) REP(j,n+1) if(j>>i&1) addmod(cnt[j^(1<<i)],cnt[j]);
+    REP(i,n) cnt[i]=pw(2,cnt[i])-1;
+    REP(i,maxb) REP(j,n+1) if(j>>i&1) addmod(cnt[j^(1<<i)],-cnt[j]);
+    REP(i,n+1) cout<<(cnt[i]+mod)%mod<<' ';
+    cout<<'\n';
     return 0;
 }

@@ -50,43 +50,38 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
-const int maxn=1e6+5;
-const int maxv=1000;
+const int maxn=1e5+20;
+const int maxb=30;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
-    int n;
-    Vi p,sz;
-    int cc;
-    void init(int _n) {
-        n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        REP(i,n) p[i]=i;
-        cc=n;
-    }
-    int find(int u) { return p[u]==u?u:p[u]=find(p[u]); }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        p[x]=y;
-        sz[y]+=sz[x];
-        cc--;
-    }
-};
 signed main() {
     IOS();
-    auto isp=[&](int n) {
-        if(n<=1) return 0;
-        for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
-        return 1;
-    };
-    int an=0;
-    REP1(i,100000) if(isp(i)) an+=2*sqrt(1000000000/i);
-    ope(an)
+    int n;
+    cin>>n;
+    Vi a(n),b(n);
+    REP(i,n) cin>>a[i];
+    REP(i,n) cin>>b[i];
+    Vi p(n);
+    REP(i,n) p[i]=i+1;
+    int T=50;
+    while(T--) {
+        shuffle(ALL(p),rng);
+        bool ok=1;
+        REP(i,n) {
+            if(p[i]==a[i]||p[i]==b[i]) {
+                ok=0;
+                break;
+            }
+        }
+        if(ok) {
+            REP(i,n) cout<<p[i]<<' ';
+            cout<<'\n';
+            return 0;
+        }
+    }
+    cout<<"IMPOSSIBLE\n";
     return 0;
 }

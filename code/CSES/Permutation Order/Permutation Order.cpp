@@ -50,43 +50,84 @@ istream& operator>>(istream& os,vector<S> &p) { for(auto &allen:p) os>>allen;ret
 template<typename T1,typename T2>
 pair<T1,T2> operator+(pair<T1,T2> p1,pair<T1,T2> p2) { return pair<T1,T2>(p1.f+p2.f,p1.s+p2.s); }
 const int mod=1e9+7;
-const int maxn=1e6+5;
-const int maxv=1000;
+const int maxn=20;
+const int maxb=30;
 const int inf=1ll<<60;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-struct DSU {
+Vi fac(maxn);
+struct BIT {
     int n;
-    Vi p,sz;
-    int cc;
+    Vi b;
+    int lg;
     void init(int _n) {
         n=_n;
-        p=Vi(n);
-        sz=Vi(n,1);
-        REP(i,n) p[i]=i;
-        cc=n;
+        b=Vi(n+1);
+        lg=__lg(n);
     }
-    int find(int u) { return p[u]==u?u:p[u]=find(p[u]); }
-    void merge(int a,int b) {
-        int x=find(a),y=find(b);
-        if(x==y) return;
-        if(sz[x]>sz[y]) swap(x,y);
-        p[x]=y;
-        sz[y]+=sz[x];
-        cc--;
+    void ud(int u,int v) {
+        for(;u<=n;u+=u&-u) b[u]+=v;
+    }
+    int qu(int u) {
+        int r=0;
+        for(;u>0;u-=u&-u) r+=b[u];
+        return r;
+    }
+    int kth(int k) {
+        int now=0;
+        RREP(i,lg+1) {
+            if(now+(1<<i)<=n&&b[now+(1<<i)]<k) {
+                now+=1<<i;
+                k-=b[now];
+            }
+        }
+        return now+1;
     }
 };
+void solve() {
+    int opt;
+    cin>>opt;
+    if(opt==1) {
+        int n,k;
+        cin>>n>>k;
+        k--;
+        BIT bit;
+        bit.init(n);
+        REP1(i,n) bit.ud(i,1);
+        RREP(i,n) {
+            int v=bit.kth(k/fac[i]+1);
+            cout<<v<<' ';
+            bit.ud(v,-1);
+            k%=fac[i];
+        }
+        cout<<'\n';
+    }else {
+        int n;
+        cin>>n;
+        Vi a(n);
+        REP(i,n) cin>>a[i];
+        BIT bit;
+        bit.init(n);
+        REP1(i,n) bit.ud(i,1);
+        int an=0;
+        REP(i,n) {
+            bit.ud(a[i],-1);
+            an+=fac[n-1-i]*bit.qu(a[i]);
+        }
+        an++;
+        cout<<an<<'\n';
+    }
+}
 signed main() {
     IOS();
-    auto isp=[&](int n) {
-        if(n<=1) return 0;
-        for(int i=2;i*i<=n;i++) if(n%i==0) return 0;
-        return 1;
-    };
-    int an=0;
-    REP1(i,100000) if(isp(i)) an+=2*sqrt(1000000000/i);
-    ope(an)
+    fac[0]=1;
+    REP1(i,maxn-1) fac[i]=fac[i-1]*i;
+    oparr(fac)
+
+    int T;
+    cin>>T;
+    while(T--) solve();
     return 0;
 }
