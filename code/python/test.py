@@ -18,6 +18,5 @@
 try:
     w = map(float,input().split(' '))
     s = map(float,input().split(' '))
-
 except ValueError:
     print("輸入的不是有效的數字。")
