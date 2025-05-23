@@ -1,12 +1,6 @@
-import pandas as pd
-data = {
-    '姓名': ['張乃云', '蔡芸琤', '許家瑋'],
-    '職業': ['工程師', '教授', '學生'],
-    '城市': ['台北', '台東', '新北'],
-    '畢業高中': ['新竹女中', '台東女中', '新莊高中']
+def chat_bot():
+    translations = {
+    "hello": {"French": "bonjour", "Korean": "안녕하세요", "Chinese": "你好"},
+    "goodbye": {"French": "au revoir", "Korean": "안녕히 가세요", "Chinese": "再見"},
+    "thank you": {"French": "merci", "Korean": "감사합니다", "Chinese": "謝謝"},
 }
-df = pd.DataFrame(data)
-df['興趣'] = ['探尋美食', '寫程式', '睡覺']
-df['性別'] = ['女', '女', '男']
-df = df.drop('職業', axis=1) 
-print(df)
