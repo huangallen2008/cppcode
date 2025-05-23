@@ -2,8 +2,8 @@ try:
     weights_input = input().strip()
     scores_input = input().strip()
 
-    weights = list(map(float, weights_input.split()))
-    scores = list(map(int, scores_input.split()))
+    weights = (map(float, weights_input.split()))
+    scores = (map(int, scores_input.split()))
 
     if len(weights) != 5 or len(scores) != 5:
         print("輸入的成績數量不符合科目數量。")
