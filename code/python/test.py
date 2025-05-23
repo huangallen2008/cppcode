@@ -12,7 +12,7 @@ df = pd.DataFrame(json_data)
 
 money_input = int(input())
 
-filtered_df = df[df['Price'] >= money_input]
+filtered_df = df[df['Price'] <= money_input]
 
 for _, row in filtered_df.iterrows():
     hotel_name = row['HotelName']
