@@ -34,17 +34,16 @@ custom_dict = [
 for word in custom_dict:
     jieba.add_word(word)
 
-# 停用詞
 stop_words = set(['所以', '好', '因為', '；', '的', '是', '了', '欲', '也', '在', '和', '就', '不', '有',
                  '以', '與', '、', '為', '這個', '而', '「', '」', '，', '。', '《', '》', "對", "於", "\n"])
 
-# 斷詞並去除停用詞
 words = jieba.lcut(text)
 filtered_words = [word for word in words if word not in stop_words]
 
 word_count = Counter(filtered_words)
 filtered_word_count = {word: count for word, count in word_count.items() if count > 1}
 sorted_filtered_word_count = sorted(filtered_word_count.items(), key=lambda x: x[1], reverse=True)
+
 keywords = jieba.analyse.extract_tags(text, topK=10)
 sentences = text.split('。')
 top_sentences = sorted(sentences, key=lambda x: sum(1 for word in jieba.cut(x) if word in keywords), reverse=True)[:3]
