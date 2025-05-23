@@ -64,6 +64,6 @@ signed main() {
     REP(i,n) cin>>w[i];    
     REP(i,n) cin>>s[i];
     ld avg=0;
-    REP(i,n) a    
+    REP(i,n) avg+=s[i]*w[i];    
     return 0;
 }
