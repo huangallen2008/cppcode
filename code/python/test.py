@@ -38,3 +38,5 @@ filtered_words = [word for word in words if word not in stop_words]
  
 word_count = Counter(filtered_words)
 filtered_word_count = {word: count for word, count in word_count.items() if count > 1}
+keywords = jieba.analyse.extract_tags(text, topK=10)
+sentences = text.split('。')
