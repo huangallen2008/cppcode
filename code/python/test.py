@@ -9,7 +9,6 @@ df = pd.DataFrame(data)
 
 results = {'chai': 0, 'juice': 0, 'coffee': 0, 'coldrink': 0, 'others': 0}
 
-# 過濾出 1/3/2023 當天的資料
 filtered_df = df[df['Date'] == '1/3/2023']
 
 # 使用 groupby 計算各商品的總銷量
