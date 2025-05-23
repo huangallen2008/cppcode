@@ -59,6 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    Vi
+    vector<ld> w,s;
     return 0;
 }
