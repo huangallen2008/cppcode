@@ -12,4 +12,5 @@ def chat_bot():
     if user_input in translations and target_language in translations[user_input]:
         print(f"Translation to {target_language}: {translations[user_input][target_language]}")
     else:
-            print("Sorry, translation not found.")    
+        print("Sorry, translation not found.")  
+      
