@@ -16,8 +16,8 @@
 #     else:
 #         return '掰掰你被死當了'
 try:
-    w = list(map(float,))
-    s = float(input().split(' ')) 
+    w = list(map(float,input().split(' ')))
+    w = list(map(float,input().split(' ')))
 
 except ValueError:
     print("輸入的不是有效的數字。")
