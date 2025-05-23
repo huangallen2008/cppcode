@@ -12,10 +12,8 @@ df = pd.DataFrame(json_data)
 
 money_input = int(input())
 
-# 過濾符合條件的資料（Price >= money_input）
 filtered_df = df[df['Price'] >= money_input]
 
-# 輸出符合條件的旅館資訊
 for _, row in filtered_df.iterrows():
     hotel_name = row['HotelName']
     city = row['PostalAddress']['City']
