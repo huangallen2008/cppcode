@@ -62,10 +62,10 @@ void solve() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int N=n+q+5;
     Vi vs=a;
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
+    int N=n+q+vs.size();
     
 }
 signed main() {
