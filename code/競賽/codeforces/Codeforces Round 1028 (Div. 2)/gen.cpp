@@ -101,7 +101,7 @@ signed main() {
         cout<<n<<' '<<q<<'\n';
         REP(i,n) cout<<rd(1,9)<<' ';cout<<'\n';
         REP(i,q) {
-            cout<<rd(0,)
+            cout<<rd(1,n)<<' '<<rd(1,n)<
         }
     }
     return 0;
