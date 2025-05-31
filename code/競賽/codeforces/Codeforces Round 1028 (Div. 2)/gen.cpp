@@ -96,6 +96,9 @@ signed main() {
     freopen("in.txt","w",stdout);
     int T=1000;
     cout<<T<<'\n';
-    
+    while(T--) {
+        int n=10;
+        cout<<
+    }
     return 0;
 }
