@@ -82,7 +82,8 @@ void solve() {
             id[z]=node_id++;
         }else {
             if(z==y) swap(x,y);
-            //z==x
+            //now z==x is true
+            
         }
     }
 }
