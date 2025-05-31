@@ -170,10 +170,11 @@ void solve() {
             if(z==y) swap(x,y);
             //now z==x is true
             add(id[z],id[y]);
-            
+            if(x!=y) {
             int _=id[z];
             id[z]=node_id++;
             add(_,id[z]);
+            }
         }
     }
     // ope("ok")
