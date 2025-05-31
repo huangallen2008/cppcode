@@ -173,7 +173,8 @@ void solve() {
     }
     // ope("ok")
     int ret=scc.init(N,g,vs);
-    ope(ret)
+    if(ret==0) 
+    // ope(ret)
 }
 signed main() {
     IOS();
