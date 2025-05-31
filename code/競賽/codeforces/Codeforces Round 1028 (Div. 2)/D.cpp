@@ -58,7 +58,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int n
+    int n,q;
+    cin>>n>>q;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
 }
 signed main() {
     IOS();
