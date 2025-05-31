@@ -73,8 +73,8 @@ void solve() {
         cout<<cnt<<'\n';
         return;
     }
-    int A=0;
-    REP(i,10) cout<<c[i]<<' ';entr
+    int A=1;
+    // REP(i,10) cout<<c[i]<<' ';entr
     while(c[1]==0) {
         A++;
         Vi nc(maxv);
