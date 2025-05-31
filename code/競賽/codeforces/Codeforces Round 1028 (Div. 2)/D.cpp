@@ -83,9 +83,7 @@ struct SCC {
                 dfs2(u);
             }
         }
-        val=vector<int>(sccc);
         ngb=Graph(n);
-        REP(i,n) val[sccid[i]]+=v[i];
         REP(u,n) {
             for(auto v:g[u]) {
                 if(sccid[u]!=sccid[v]) {
