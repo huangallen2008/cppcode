@@ -157,6 +157,7 @@ void solve() {
     auto add=[&](int u,int v) {
         g[u].pb(v);
     };
+    ope("owo")
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
             add(id[z],id[x]);
