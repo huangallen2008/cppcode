@@ -108,6 +108,7 @@ struct SCC {
                 }
             }
         }
+        return 1;
         // dis=val;
         // REP(u,sccc) {
         //     for(auto v:ngb[u]) {
