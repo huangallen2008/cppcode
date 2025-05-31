@@ -194,6 +194,7 @@ void solve() {
         };
         if(!check()) {
             oparr(a)
+            
         }
     }
     // entr
