@@ -67,6 +67,6 @@ signed main() {
     IOS();
     int T;
     cin>>T;
-    while(T--) solve()
+    while(T--) solve();
     return 0;
 }
