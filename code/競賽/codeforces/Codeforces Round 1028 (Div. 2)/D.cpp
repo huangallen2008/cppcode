@@ -181,6 +181,7 @@ void solve() {
         REP(i,n) cout<<an[i]<<' ';
         cout<<'\n';
     }
+    entr
     // ope(ret)
 }
 signed main() {
