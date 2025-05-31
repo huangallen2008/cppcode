@@ -65,7 +65,8 @@ void solve() {
     REP(i,n) cin>>b[i];
     int i1=0,i2=0;
     REP(i,n) {
-        if()
+        if(a[i]>a[i1]) i1=i;
+        if(a[i]>a[i1]) i1=i;
     }
 }
 signed main() {
