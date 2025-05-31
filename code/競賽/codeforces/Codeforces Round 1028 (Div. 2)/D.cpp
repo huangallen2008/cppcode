@@ -64,7 +64,7 @@ struct SCC {
     Graph ng,ngb;
     Graph g,gb;
     int an=0;
-    void init(int n,Graph &_g) {
+    void init(int n,Graph &_g,Vi vs) {
         g=_g;
         sccid=vector<int>(n);
         dfn.clear();
