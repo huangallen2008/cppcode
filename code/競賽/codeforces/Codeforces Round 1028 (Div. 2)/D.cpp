@@ -92,13 +92,13 @@ struct SCC {
             }
         }
         vis.reset();
-        val=Vi(sccc,inf);
+        val=Vi(sccc,-inf);
         REP(i,SZ(vs)) {
-            if(val[sccid[i]]==inf) val[sccid[i]]=vs[i];
+            if(val[sccid[i]]==-inf) val[sccid[i]]=vs[i];
             else return 0;
         }
         REP(i,sccc) {
-            if()
+            if(val[i]==inf)
         }
         // dis=val;
         // REP(u,sccc) {
