@@ -59,9 +59,6 @@ int rd(int l,int r) {
 }
 signed main() {
     IOS();
-    // int n;
-    // cin>>n;
-    REP1(i,3) go(3,i);
-    go(4,2);
+    
     return 0;
 }
