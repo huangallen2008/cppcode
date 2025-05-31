@@ -68,7 +68,7 @@ void solve() {
     int N=n+q+vs.size();
     int node_id=vs.size();
     Vi id(n);
-    REP(i,n) id[i]=;
+    REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
 }
 signed main() {
     IOS();
