@@ -202,6 +202,8 @@ void solve() {
 }
 signed main() {
     IOS();
+    #ifdef LOCAL
+    #endif
     int T;
     cin>>T;
     while(T--) solve();
