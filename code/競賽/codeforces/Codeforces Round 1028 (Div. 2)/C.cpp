@@ -67,6 +67,12 @@ void solve() {
     REP(i,n) a[i]/=_g;
     Vi c(maxv);
     REP(i,n) c[a[i]]=1;
+    if(c[1]) {
+        int cnt=0;
+        REP(i,n) cnt+=a[i]!=1;
+        cout<<cnt<<'\n';
+        return;
+    }
     int A=0;
     while(c[1]==0) {
         A++;
