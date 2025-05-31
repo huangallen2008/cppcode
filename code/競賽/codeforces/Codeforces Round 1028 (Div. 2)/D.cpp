@@ -104,7 +104,7 @@ struct SCC {
                 }
             }else {
                 for(int v:ngb[i]) {
-                    if()
+                    if(val[v]>val)
                 }
             }
         }
