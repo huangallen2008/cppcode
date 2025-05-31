@@ -74,7 +74,10 @@ void solve() {
     };
     vector<S> qu(q);
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
-    
+    reverse(ALL(qu));
+    for(auto [x,y,z]:qu) {
+        
+    }
 }
 signed main() {
     IOS();
