@@ -74,6 +74,7 @@ void solve() {
     };
     vector<S> qu(q);
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
+    
 }
 signed main() {
     IOS();
