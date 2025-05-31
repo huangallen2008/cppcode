@@ -57,34 +57,10 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-int pw(int x,int p) {
-    int r=1;
-    while(p>0) {
-        if(p&1) r=r*x%mod;
-        x=x*x%mod;
-        p>>=1;
-    }
-    return r;
-}
 void solve() {
     int n;
     cin>>n;
-    Vi a(n),b(n);
-    REP(i,n) cin>>a[i];
-    REP(i,n) cin>>b[i];
-    int i1=0,i2=0;
-    REP(i,n) {
-        if(a[i]>a[i1]) i1=i;
-        if(b[i]>b[i2]) i2=i;
-        pii r1={a[i1],b[i-i1]};
-        pii r2={a[i-i2],b[i2]};
-        if(r1.f<r1.s) swap(r1.f,r1.s);
-        if(r2.f<r2.s) swap(r2.f,r2.s);
-        pii r=max(r1,r2);
-        int an=((pw(2,r.f)+pw(2,r.s))%mod+mod)%mod;
-        cout<<an<<' ';
-    }
-    cout<<'\n';
+    int 
 }
 signed main() {
     IOS();
