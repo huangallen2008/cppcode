@@ -67,12 +67,12 @@ void solve() {
     REP(i,n) a[i]/=_g;
     Vi c(maxv);
     REP(i,n) c[a[i]]=1;
-    int 
+    int A=0;
+    while()
 }
 signed main() {
     IOS();
     int T;
     cin>>T;
     while(T--) solve();
-    return 0;
-}
+    r
