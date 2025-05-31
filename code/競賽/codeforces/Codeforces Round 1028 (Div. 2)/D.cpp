@@ -142,6 +142,7 @@ void solve() {
     Vi vs=a;
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
+    ope("ok")
     int N=n+q+vs.size();
     int node_id=vs.size();
     Vi id(n);
