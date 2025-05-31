@@ -97,6 +97,9 @@ struct SCC {
             if(val[sccid[i]]==inf) val[sccid[i]]=vs[i];
             else return 0;
         }
+        REP(i,sccc) {
+            if()
+        }
         // dis=val;
         // REP(u,sccc) {
         //     for(auto v:ngb[u]) {
