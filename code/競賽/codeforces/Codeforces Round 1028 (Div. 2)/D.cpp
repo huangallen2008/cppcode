@@ -155,7 +155,7 @@ void solve() {
     reverse(ALL(qu));
     Graph g(N);
     auto add=[&](int u,int v) {
-        // op(u)ope(v)
+        op(u)ope(v)
         g[u].pb(v);
     };
     for(auto [x,y,z]:qu) {
