@@ -97,7 +97,7 @@ signed main() {
     int T=1000;
     cout<<T<<'\n';
     while(T--) {
-        int n=10;
+        int n=5,q=5;
         cout<<
     }
     return 0;
