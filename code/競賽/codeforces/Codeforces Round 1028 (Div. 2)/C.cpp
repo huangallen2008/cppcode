@@ -80,9 +80,9 @@ void solve() {
         Vi nc(maxv);
         REP(i,maxv) if(c[i]) REP(j,n) nc[__gcd(i,a[j])]=1;
         c=nc;
-        REP(i,10) cout<<c[i]<<' ';entr
+        // REP(i,10) cout<<c[i]<<' ';entr
     }
-    ope(A)ope(n)
+    // ope(A)ope(n)
     cout<<A+n-2<<'\n';
 }
 signed main() {
