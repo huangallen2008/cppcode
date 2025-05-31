@@ -190,7 +190,9 @@ void solve() {
                 an[z]=min(an[x],an[y]);
             }
             bool ok=an==a;
+            return ok;
         };
+        if()
     }
     // entr
     // ope(ret)
