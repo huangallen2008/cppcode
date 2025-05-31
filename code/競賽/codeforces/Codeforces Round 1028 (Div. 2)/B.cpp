@@ -80,7 +80,8 @@ void solve() {
         pii r2={a[i-i2],b[i2]};
         if(r1.f<r1.s) swap(r1.f,r1.s);
         if(r2.f<r2.s) swap(r2.f,r2.s);
-        if()
+        pii r=max(r1,r2);
+        int an=pw(2,)
     }
 }
 signed main() {
