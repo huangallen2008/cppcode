@@ -97,9 +97,9 @@ signed main() {
     int T=1000;
     cout<<T<<'\n';
     while(T--) {
-        int n=5,q=5;
+        int n=4,q=5;
         cout<<n<<' '<<q<<'\n';
-        REP(i,n) cout<<rd(1,9)<<' ';cout<<'\n';
+        REP(i,n) cout<<rd(1,5)<<' ';cout<<'\n';
         REP(i,q) {
             cout<<rd(1,n)<<' '<<rd(1,n)<<' '<<rd(1,n)<<'\n';
         }
