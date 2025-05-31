@@ -189,8 +189,8 @@ void solve() {
                 auto [x,y,z]=qu[i];
                 an[z]=min(an[x],an[y]);
             }
-            bool ok=an==
-        }
+            bool ok=an==a;
+        };
     }
     // entr
     // ope(ret)
