@@ -77,13 +77,13 @@ void solve() {
     reverse(ALL(qu));
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
-            //add(id[z],id[x])
-            //add(id[z],id[y])
+            //add(id[z],id[x]);
+            //add(id[z],id[y]);
             id[z]=node_id++;
         }else {
             if(z==y) swap(x,y);
             //now z==x is true
-            //add
+            //add(id[z],id[y]);
         }
     }
 }
