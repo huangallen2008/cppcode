@@ -177,7 +177,7 @@ void solve() {
     }
     // ope("ok")
     int ret=scc.init(N,g,vs);
-    oparr(id)
+    // oparr(id)
     if(ret==0) cout<<"-1\n";
     else {
         Vi an(n);
