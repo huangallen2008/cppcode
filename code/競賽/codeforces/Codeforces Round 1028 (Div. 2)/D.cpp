@@ -147,10 +147,10 @@ void solve() {
     oparr(vs)
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
-    ope("ok")
     struct S {
         int x,y,z;
     };
+    ope("ok")
     vector<S> qu(q);
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
     reverse(ALL(qu));
