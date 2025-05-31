@@ -144,7 +144,7 @@ void solve() {
     vs.erase(unique(ALL(vs)),vs.begin());
     int N=n+q+vs.size();
     int node_id=vs.size();
-    ope("ok")
+    oparr(vs)
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
     struct S {
