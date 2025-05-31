@@ -64,7 +64,7 @@ struct SCC {
     Graph ng,ngb;
     Graph g,gb;
     int an=0;
-    void init(int n,Graph &_g,Vi vs) {
+    int init(int n,Graph &_g,Vi vs) {
         g=_g;
         sccid=vector<int>(n);
         dfn.clear();
@@ -95,7 +95,7 @@ struct SCC {
         val=Vi(sccc,inf);
         REP(i,SZ(vs)) {
             if(val[sccid[i]]==inf) val[sccid[i]]=vs[i];
-            else 
+            else return -1;
         }
         // dis=val;
         // REP(u,sccc) {
