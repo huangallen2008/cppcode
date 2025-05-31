@@ -71,7 +71,7 @@ void solve() {
     while(c[0]==0) {
         A++;
         Vi nc(maxv);
-        REP(i,maxv) if(c[i]) REP(j,n) nc[]
+        REP(i,maxv) if(c[i]) REP(j,n) nc[__gcd(i,0)]
     }
 }
 signed main() {
