@@ -82,7 +82,9 @@ void solve() {
         if(r2.f<r2.s) swap(r2.f,r2.s);
         pii r=max(r1,r2);
         int an=((pw(2,r.f)+pw(2,r.s))%mod+mod)%mod;
+        cout<<an<<' ';
     }
+    cout<<'\n';
 }
 signed main() {
     IOS();
