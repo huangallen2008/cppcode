@@ -71,7 +71,7 @@ void solve() {
     while(c[0]==0) {
         A++;
         Vi nc(maxv);
-        
+        REP(i,maxv)
     }
 }
 signed main() {
