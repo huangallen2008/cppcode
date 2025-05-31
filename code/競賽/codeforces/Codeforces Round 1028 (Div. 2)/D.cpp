@@ -192,7 +192,9 @@ void solve() {
             bool ok=an==a;
             return ok;
         };
-        if()
+        if(!check()) {
+            
+        }
     }
     // entr
     // ope(ret)
