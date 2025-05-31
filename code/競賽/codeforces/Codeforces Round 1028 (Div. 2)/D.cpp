@@ -167,7 +167,8 @@ void solve() {
             add(id[z],id[y]);
         }
     }
-    scc.init(N,g,vs);
+    int ret=scc.init(N,g,vs);
+    ope(ret)
 }
 signed main() {
     IOS();
