@@ -66,6 +66,7 @@ void solve() {
     Vi vs=a;
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
+    
 }
 signed main() {
     IOS();
