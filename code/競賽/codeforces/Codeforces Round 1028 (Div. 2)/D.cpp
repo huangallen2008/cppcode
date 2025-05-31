@@ -184,13 +184,13 @@ void solve() {
         REP(i,n) an[i]=scc.val[scc.sccid[id[i]]];
         REP(i,n) cout<<an[i]<<' ';
         cout<<'\n';
+        auto check=[&]() {
+    
+        }
     }
     // entr
     // ope(ret)
 
-    auto check=[&]() {
-        
-    }
 }
 signed main() {
     IOS();
