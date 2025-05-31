@@ -144,7 +144,7 @@ void solve() {
     vs.erase(unique(ALL(vs)),vs.end());
     int N=n+q+vs.size();
     int node_id=vs.size();
-    oparr(vs)
+    // oparr(vs)
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
     struct S {
@@ -158,7 +158,7 @@ void solve() {
         g[u].pb(v);
     };
     for(auto [x,y,z]:qu) {
-        op(x)op(y)ope(z)
+        // op(x)op(y)ope(z)
         if(z!=x&&z!=y) {
             add(id[z],id[x]);
             add(id[z],id[y]);
@@ -169,7 +169,7 @@ void solve() {
             add(id[z],id[y]);
         }
     }
-    ope("ok")
+    // ope("ok")
     int ret=scc.init(N,g,vs);
     ope(ret)
 }
