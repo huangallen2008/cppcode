@@ -80,7 +80,7 @@ void solve() {
         REP(i,maxv) if(c[i]) REP(j,n) nc[__gcd(i,a[j])]=1;
         c=nc;
     }
-    cout<<A+n<<'\n';
+    cout<<A+n-2<<'\n';
 }
 signed main() {
     IOS();
