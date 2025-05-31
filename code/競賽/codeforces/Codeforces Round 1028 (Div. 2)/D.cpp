@@ -65,7 +65,7 @@ void solve() {
     int N=n+q+5;
     Vi vs=a;
     sort(ALL(vs));
-    vs.
+    vs.erase(uni)
 }
 signed main() {
     IOS();
