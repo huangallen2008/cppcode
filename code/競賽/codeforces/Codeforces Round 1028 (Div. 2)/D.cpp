@@ -170,7 +170,7 @@ void solve() {
             if(z==y) swap(x,y);
             //now z==x is true
             add(id[z],id[y]);
-            
+
             int _=id[z];
             id[z]=node_id++;
             add(_,id[z]);
@@ -197,6 +197,7 @@ void solve() {
             oparr(a)
             cout<<n<<' '<<q<<'\n';
             RREP(i,q) cout<<"{"<<qu[i].x<<' '<<qu[i].y<<' '<<qu[i].z<<'}';
+            oparr(an)
             exit(0);
         }
     }
