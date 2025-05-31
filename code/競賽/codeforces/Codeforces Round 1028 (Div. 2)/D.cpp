@@ -76,7 +76,9 @@ void solve() {
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
     reverse(ALL(qu));
     for(auto [x,y,z]:qu) {
-        
+        if(z!=x&&z!=y) {
+            
+        }
     }
 }
 signed main() {
