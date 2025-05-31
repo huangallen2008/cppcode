@@ -57,6 +57,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+int pw(int )
 void solve() {
     int n;
     cin>>n;
@@ -66,7 +67,8 @@ void solve() {
     int i1=0,i2=0;
     REP(i,n) {
         if(a[i]>a[i1]) i1=i;
-        if(a[i]>a[i1]) i1=i;
+        if(b[i]>b[i2]) i2=i;
+
     }
 }
 signed main() {
