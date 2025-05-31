@@ -98,7 +98,8 @@ signed main() {
     cout<<T<<'\n';
     while(T--) {
         int n=5,q=5;
-        cout<<
+        cout<<n<<' '<<q<<'\n';
+        
     }
     return 0;
 }
