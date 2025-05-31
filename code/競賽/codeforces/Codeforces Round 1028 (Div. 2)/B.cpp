@@ -60,8 +60,11 @@ int rd(int l,int r) {
 int pw(int x,int p) {
     int r=1;
     while(p>0) {
-        if(p&1) r
+        if(p&1) r=r*x%mod;
+        x=x*x%mod;
+        p>>=1;
     }
+    return r;
 }
 void solve() {
     int n;
