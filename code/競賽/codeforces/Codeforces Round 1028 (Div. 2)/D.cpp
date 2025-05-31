@@ -150,7 +150,7 @@ void solve() {
             add(id[z],id[y]);
         }
     }
-    scc.init(N,g);
+    scc.init(N,g,vs);
 }
 signed main() {
     IOS();
