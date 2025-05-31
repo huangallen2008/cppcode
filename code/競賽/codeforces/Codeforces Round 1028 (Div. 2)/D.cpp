@@ -63,7 +63,7 @@ void solve() {
     Vi a(n);
     REP(i,n) cin>>a[i];
     int N=n+q+5;
-    
+    Vi 
 }
 signed main() {
     IOS();
