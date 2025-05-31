@@ -138,7 +138,9 @@ void solve() {
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
     reverse(ALL(qu));
     Graph g(N);
-    auto add=[&]()
+    auto add=[&](int u,int v) {
+        
+    }
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
             //add(id[z],id[x]);
