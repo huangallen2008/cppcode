@@ -64,6 +64,9 @@ void solve() {
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
     int i1=0,i2=0;
+    REP(i,n) {
+        if()
+    }
 }
 signed main() {
     IOS();
