@@ -60,6 +60,8 @@ int rd(int l,int r) {
 void solve() {
     int n;
     cin>>n;
+    Vi a(n);
+    REP(i,n) cin>>a[i];
     int 
 }
 signed main() {
