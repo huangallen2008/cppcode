@@ -195,7 +195,7 @@ void solve() {
         if(!check()) {
             oparr(a)
             cout<<n<<' '<<q<<'\n';
-            REP(i,q) 
+            RREP(i,q) cout<<"{"<<qu[i].x<<' '<<qu[i].y<<' '<<qu[i].z<<'}';
         }
     }
     // entr
