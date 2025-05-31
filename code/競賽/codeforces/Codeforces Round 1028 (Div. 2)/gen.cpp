@@ -100,6 +100,9 @@ signed main() {
         int n=5,q=5;
         cout<<n<<' '<<q<<'\n';
         REP(i,n) cout<<rd(1,9)<<' ';cout<<'\n';
+        REP(i,q) {
+            cout<<rd(0,)
+        }
     }
     return 0;
 }
