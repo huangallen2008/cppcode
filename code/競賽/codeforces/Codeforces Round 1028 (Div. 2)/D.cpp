@@ -93,7 +93,7 @@ struct SCC {
         }
         vis.reset();
         val=Vi(sccc,inf);
-        REP(i,)
+        REP(i,SZ(vs)) val[sccid[i]]
         // dis=val;
         // REP(u,sccc) {
         //     for(auto v:ngb[u]) {
