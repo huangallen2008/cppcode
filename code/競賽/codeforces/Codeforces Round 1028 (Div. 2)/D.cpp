@@ -186,7 +186,7 @@ void solve() {
         cout<<'\n';
         auto check=[&]() {
             RREP(i,q) {
-                
+                an[]
             }
         }
     }
