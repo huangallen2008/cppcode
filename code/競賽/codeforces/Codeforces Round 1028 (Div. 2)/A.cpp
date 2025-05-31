@@ -58,7 +58,10 @@ int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
 void solve() {
-    int 
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    if(min(a,c)>=min(b,d)) cout<<"Gellyfish\n";
+    else cout<<"Flow"
 }
 signed main() {
     IOS();
