@@ -57,6 +57,68 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
+struct SCC {
+    vector<int> sccid,dfn,val,dis;
+    bitset<maxn> vis;
+    int sccc=0;
+    Graph ng,ngb;
+    Graph g,gb;
+    int an=0;
+    void init(int n,Graph &_g,vector<int> &v) {
+        g=_g;
+        sccid=vector<int>(n);
+        dfn.clear();
+        sccc=0;
+        an=0;
+        vis.reset();
+        REP(i,n) if(!vis[i]) dfs1(i);
+        reverse(ALL(dfn));
+        gb=Graph(n);
+        REP(u,n) for(auto v:g[u]) gb[v].pb(u);
+        vis.reset();
+        REP(i,n) {
+            int u=dfn[i];
+            if(!vis[u]) {
+                sccid[u]=sccc++;
+                dfs2(u);
+            }
+        }
+        val=vector<int>(sccc);
+        ngb=Graph(n);
+        REP(i,n) val[sccid[i]]+=v[i];
+        REP(u,n) {
+            for(auto v:g[u]) {
+                if(sccid[u]!=sccid[v]) {
+                    ngb[sccid[v]].pb(sccid[u]);
+                }
+            }
+        }
+        vis.reset();
+        dis=val;
+        REP(u,sccc) {
+            for(auto v:ngb[u]) {
+                chmax(dis[u],dis[v]+val[u]);
+            }
+        }
+        an=*max_element(ALL(dis));
+    }
+    void dfs1(int u) {
+        vis[u]=1;
+        for(auto v:g[u]) {
+            if(vis[v]) continue;
+            dfs1(v);
+        }
+        dfn.pb(u);
+    }
+    void dfs2(int u) {
+        vis[u]=1;
+        for(auto v:gb[u]) {
+            if(vis[v]) continue;
+            sccid[v]=sccid[u];
+            dfs2(v);
+        }
+    }
+}scc;
 void solve() {
     int n,q;
     cin>>n>>q;
