@@ -63,7 +63,7 @@ void solve() {
     Vi a(n),b(n);
     REP(i,n) cin>>a[i];
     REP(i,n) cin>>b[i];
-    
+    int i1=0,i2=0;
 }
 signed main() {
     IOS();
