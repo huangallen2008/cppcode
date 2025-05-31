@@ -99,7 +99,9 @@ struct SCC {
         }
         REP(i,sccc) {
             if(val[i]==-inf) {
-                for(int v:g[i])
+                for(int v:ngb[i]) {
+                    chmax(val[i],)
+                }
             }
         }
         // dis=val;
