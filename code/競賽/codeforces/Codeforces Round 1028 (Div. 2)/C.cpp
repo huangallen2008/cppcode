@@ -68,11 +68,14 @@ void solve() {
     Vi c(maxv);
     REP(i,n) c[a[i]]=1;
     int A=0;
-    while()
+    while(c[0]==0) {
+        
+    }
 }
 signed main() {
     IOS();
     int T;
     cin>>T;
     while(T--) solve();
-    r
+    return 0;
+}
