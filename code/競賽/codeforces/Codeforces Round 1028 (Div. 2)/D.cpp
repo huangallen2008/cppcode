@@ -203,6 +203,7 @@ void solve() {
 signed main() {
     IOS();
     #ifdef LOCAL
+    freopen("in.txt","r",stdin);
     #endif
     int T;
     cin>>T;
