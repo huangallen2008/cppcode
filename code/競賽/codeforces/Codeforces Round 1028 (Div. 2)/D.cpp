@@ -94,7 +94,7 @@ struct SCC {
         vis.reset();
         val=Vi(sccc,inf);
         REP(i,SZ(vs)) {
-            val[sccid[i]]
+            if(val[sccid[i]]==inf) val=
         }
         // dis=val;
         // REP(u,sccc) {
