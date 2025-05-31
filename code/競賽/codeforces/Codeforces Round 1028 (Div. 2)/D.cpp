@@ -69,7 +69,7 @@ void solve() {
     int node_id=vs.size();
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
-    
+    struct 
 }
 signed main() {
     IOS();
