@@ -93,9 +93,7 @@ void go(int n,int m) {
 }
 signed main() {
     IOS();
-    // int n;
-    // cin>>n;
-    REP1(i,3) go(3,i);
-    go(4,2);
+    freopen("in.txt","w",stdout);
+    
     return 0;
 }
