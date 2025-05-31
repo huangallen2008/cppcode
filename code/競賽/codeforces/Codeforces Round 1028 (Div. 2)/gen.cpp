@@ -94,6 +94,8 @@ void go(int n,int m) {
 signed main() {
     IOS();
     freopen("in.txt","w",stdout);
+    int T=1000;
+    cout<<T<<'\n';
     
     return 0;
 }
