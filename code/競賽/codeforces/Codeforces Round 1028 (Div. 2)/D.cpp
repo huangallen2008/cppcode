@@ -68,7 +68,7 @@ void solve() {
     int N=n+q+vs.size();
     int node_id=vs.size();
     Vi id(n);
-    REP(i,n) id[i]=node_id++;
+    REP(i,n) id[i]=;
 }
 signed main() {
     IOS();
