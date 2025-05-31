@@ -98,7 +98,9 @@ struct SCC {
             else return 0;
         }
         REP(i,sccc) {
-            if(val[i]==inf)
+            if(val[i]==-inf) {
+                for(int v:g[i])
+            }
         }
         // dis=val;
         // REP(u,sccc) {
