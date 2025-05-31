@@ -128,7 +128,6 @@ void solve() {
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
     int N=n+q+vs.size();
-    scc.init(N);
     int node_id=vs.size();
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
@@ -149,6 +148,7 @@ void solve() {
             //add(id[z],id[y]);
         }
     }
+    scc.init(N);
 }
 signed main() {
     IOS();
