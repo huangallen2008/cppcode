@@ -68,10 +68,10 @@ void solve() {
     Vi c(maxv);
     REP(i,n) c[a[i]]=1;
     int A=0;
-    while(c[0]==0) {
+    while(c[1]==0) {
         A++;
         Vi nc(maxv);
-        REP(i,maxv) if(c[i]) REP(j,n) nc[__gcd(i,0)]
+        REP(i,maxv) if(c[i]) REP(j,n) nc[__gcd(i,)]
     }
 }
 signed main() {
