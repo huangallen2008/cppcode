@@ -92,12 +92,12 @@ struct SCC {
             }
         }
         vis.reset();
-        dis=val;
-        REP(u,sccc) {
-            for(auto v:ngb[u]) {
-                chmax(dis[u],dis[v]+val[u]);
-            }
-        }
+        // dis=val;
+        // REP(u,sccc) {
+        //     for(auto v:ngb[u]) {
+        //         chmax(dis[u],dis[v]+val[u]);
+        //     }
+        // }
         an=*max_element(ALL(dis));
     }
     void dfs1(int u) {
