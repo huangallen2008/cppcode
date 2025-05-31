@@ -114,7 +114,7 @@ struct SCC {
         //         chmax(dis[u],dis[v]+val[u]);
         //     }
         // }
-        an=*max_element(ALL(dis));
+        // an=*max_element(ALL(dis));
     }
     void dfs1(int u) {
         vis[u]=1;
