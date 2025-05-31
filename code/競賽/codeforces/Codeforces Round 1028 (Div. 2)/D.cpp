@@ -176,7 +176,7 @@ void solve() {
     if(ret==0) cout<<"-1\n";
     else {
         Vi an(n);
-        REP(i,n) an[i]=id[i]
+        REP(i,n) an[i]=scc.sccid[id[i]]
     }
     // ope(ret)
 }
