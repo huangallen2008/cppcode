@@ -151,7 +151,7 @@ void solve() {
         int x,y,z;
     };
     vector<S> qu(q);
-    REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
+    REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z,qu[i].x--,qu[i].y--,qu[i].z--;
     reverse(ALL(qu));
     Graph g(N);
     auto add=[&](int u,int v) {
