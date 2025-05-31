@@ -57,45 +57,20 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 int rd(int l,int r) {
     return uniform_int_distribution<int>(l,r)(rng);
 }
-void go(int n,int m) {
-
-    int N=n*m;
-    Vi a(N);
-    REP(i,N) a[i]=i;
-    map<Vi,int> mp;
-    do {
-        Vi vis(N);
-        int cnt=0;
-        REP(i,N) if(a[i]!=i&&!vis[i]){
-            int t=a[i];
-            while(t!=i) {
-                vis[t]=1;
-                t=a[t];
-                cnt++;
-            }
-        }
-        Vi a0(N);
-        REP(i,N) a0[i]=a[i]/m;
-        if(!mp[a0]) mp[a0]=inf;
-        chmin(mp[a0],cnt);
-    }while(next_permutation(ALL(a)));
-    {
-        Vi _(N);
-        REP(i,N) _[i]=i/m;
-        mp[_]=0;
-    }
-    Vi an(N);
-    for(auto [x,y]:mp) {
-        // for(int t:x) cout<<t<<' ';cout<<": "<<y<<endl;
-        an[y]++;
-    }
-    cout<<"n="<<n<<" m="<<m<<": "; REP(i,N-m+1) cout<<an[i]<<' ';cout<<endl;
-}
 signed main() {
     IOS();
-    // int n;
-    // cin>>n;
-    REP1(i,3) go(3,i);
-    go(4,2);
+    int n;
+    cin>>n;
+    int smx=-inf,smn=inf,dmx=-inf,dmn=inf;
+    REP(i,n) {
+        int x,y;
+        cin>>x>>y;
+        chmax(smx,x+y);
+        chmin(smn,x+y);
+        chmax(dmx,x-y);
+        chmin(dmn,x-y);
+        int an=max(smx-smn,dmx-dmn);
+        cout<<an<<'\n';
+    }
     return 0;
 }
