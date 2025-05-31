@@ -62,6 +62,7 @@ void solve() {
     cin>>n>>q;
     Vi a(n);
     REP(i,n) cin>>a[i];
+    
 }
 signed main() {
     IOS();
