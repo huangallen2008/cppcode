@@ -80,6 +80,8 @@ void solve() {
             //add(id[z],id[x])
             //add(id[z],id[y])
             id[z]=node_id++;
+        }else {
+            
         }
     }
 }
