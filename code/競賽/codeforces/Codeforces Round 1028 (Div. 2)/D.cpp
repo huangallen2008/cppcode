@@ -168,6 +168,7 @@ void solve() {
             if(z==y) swap(x,y);
             //now z==x is true
             add(id[z],id[y]);
+            id[z]=node_id++;
         }
     }
     // ope("ok")
