@@ -188,7 +188,9 @@ void solve() {
     // entr
     // ope(ret)
 
-    
+    auto check=[&]() {
+        
+    }
 }
 signed main() {
     IOS();
