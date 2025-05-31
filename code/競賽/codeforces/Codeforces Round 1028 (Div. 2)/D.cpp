@@ -186,7 +186,8 @@ void solve() {
         cout<<'\n';
         auto check=[&]() {
             RREP(i,q) {
-                an[]
+                auto [x,y,z]=qu[i];
+                an[z]=min(an[x],an[y]);
             }
         }
     }
