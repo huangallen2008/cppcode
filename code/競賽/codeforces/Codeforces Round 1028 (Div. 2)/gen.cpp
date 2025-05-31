@@ -99,7 +99,7 @@ signed main() {
     while(T--) {
         int n=5,q=5;
         cout<<n<<' '<<q<<'\n';
-        REP(i,n) cout<<rd(1,5)<<' ';
+        REP(i,n) cout<<rd(1,9)<<' ';cout<<'\n';
     }
     return 0;
 }
