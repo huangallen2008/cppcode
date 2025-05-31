@@ -150,7 +150,6 @@ void solve() {
     struct S {
         int x,y,z;
     };
-    ope("ok")
     vector<S> qu(q);
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
     reverse(ALL(qu));
@@ -169,6 +168,7 @@ void solve() {
             add(id[z],id[y]);
         }
     }
+    ope("ok")
     int ret=scc.init(N,g,vs);
     ope(ret)
 }
