@@ -193,7 +193,7 @@ void solve() {
             return ok;
         };
         if(!check()) {
-            
+            oparr(a)
         }
     }
     // entr
