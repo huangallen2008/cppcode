@@ -69,6 +69,8 @@ void solve() {
     REP(i,n) c[a[i]]=1;
     int A=0;
     while(c[0]==0) {
+        A++;
+        Vi nc(maxv);
         
     }
 }
