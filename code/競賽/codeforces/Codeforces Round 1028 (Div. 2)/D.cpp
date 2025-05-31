@@ -102,6 +102,10 @@ struct SCC {
                 for(int v:ngb[i]) {
                     chmax(val[i],val[v]);
                 }
+            }else {
+                for(int v:ngb[i]) {
+                    if()
+                }
             }
         }
         // dis=val;
