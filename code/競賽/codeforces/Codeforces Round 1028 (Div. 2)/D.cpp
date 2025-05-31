@@ -173,7 +173,10 @@ void solve() {
     }
     // ope("ok")
     int ret=scc.init(N,g,vs);
-    if(ret==0) 
+    if(ret==0) cout<<"-1\n";
+    else {
+        
+    }
     // ope(ret)
 }
 signed main() {
