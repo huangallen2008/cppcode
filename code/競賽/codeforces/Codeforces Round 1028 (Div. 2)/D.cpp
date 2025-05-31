@@ -194,7 +194,8 @@ void solve() {
         };
         if(!check()) {
             oparr(a)
-            
+            cout<<n<<' '<<q<<'\n';
+            REP(i,q) 
         }
     }
     // entr
