@@ -139,8 +139,8 @@ void solve() {
     reverse(ALL(qu));
     Graph g(N);
     auto add=[&](int u,int v) {
-        
-    }
+        g[u].pb(v);
+    };
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
             //add(id[z],id[x]);
