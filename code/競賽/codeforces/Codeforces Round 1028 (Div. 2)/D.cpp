@@ -77,7 +77,9 @@ void solve() {
     reverse(ALL(qu));
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
-            //add()
+            //add(id[z],id[x])
+            //add(id[z],id[y])
+            
         }
     }
 }
