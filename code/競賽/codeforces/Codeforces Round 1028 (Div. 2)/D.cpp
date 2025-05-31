@@ -201,7 +201,7 @@ void solve() {
             exit(0);
         }
     }
-    // entr
+    entr
     // ope(ret)
 
 }
