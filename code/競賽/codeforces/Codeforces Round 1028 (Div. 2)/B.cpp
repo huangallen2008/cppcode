@@ -76,7 +76,7 @@ void solve() {
     REP(i,n) {
         if(a[i]>a[i1]) i1=i;
         if(b[i]>b[i2]) i2=i;
-        
+        pii r1={a[i1],b[]}
     }
 }
 signed main() {
