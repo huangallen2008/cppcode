@@ -142,11 +142,11 @@ void solve() {
     Vi vs=a;
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
-    ope("ok")
     int N=n+q+vs.size();
     int node_id=vs.size();
     Vi id(n);
     REP(i,n) id[i]=lower_bound(ALL(vs),a[i])-vs.begin();
+    ope("ok")
     struct S {
         int x,y,z;
     };
