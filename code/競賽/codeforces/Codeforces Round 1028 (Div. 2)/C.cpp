@@ -66,7 +66,8 @@ void solve() {
     REP(i,n) _g=__gcd(_g,a[i]);
     REP(i,n) a[i]/=_g;
     Vi c(maxv);
-    REP(i,n) 
+    REP(i,n) c[a[i]]=1;
+    int 
 }
 signed main() {
     IOS();
