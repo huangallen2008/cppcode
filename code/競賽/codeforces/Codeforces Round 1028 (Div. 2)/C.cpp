@@ -62,7 +62,10 @@ void solve() {
     cin>>n;
     Vi a(n);
     REP(i,n) cin>>a[i];
-    int 
+    int _g=0;
+    REP(i,n) _g=__gcd(_g,a[i]);
+    REP(i,n) a[i]/=_g;
+    
 }
 signed main() {
     IOS();
