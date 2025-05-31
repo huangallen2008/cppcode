@@ -66,6 +66,7 @@ void solve() {
     sort(ALL(vs));
     vs.erase(unique(ALL(vs)),vs.begin());
     int N=n+q+vs.size();
+    int node_id=vs.size();
     
 }
 signed main() {
