@@ -95,7 +95,7 @@ struct SCC {
         val=Vi(sccc,-inf);
         REP(i,SZ(vs)) {
             if(val[sccid[i]]==-inf) val[sccid[i]]=vs[i];
-            else return 0;
+            else if(val[sccid[i]]!=vs[i]) return 0;
         }
         REP(i,sccc) {
             if(val[i]==-inf) {
