@@ -159,7 +159,7 @@ void solve() {
         g[u].pb(v);
     };
     for(auto [x,y,z]:qu) {
-        // op(x)op(y)ope(z)
+        op(x)op(y)ope(z)
         if(z!=x&&z!=y) {
             add(id[z],id[x]);
             add(id[z],id[y]);
