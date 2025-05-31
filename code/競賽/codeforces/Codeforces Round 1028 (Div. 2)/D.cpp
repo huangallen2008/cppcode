@@ -185,7 +185,9 @@ void solve() {
         REP(i,n) cout<<an[i]<<' ';
         cout<<'\n';
         auto check=[&]() {
-            REP()
+            RREP(i,q) {
+                
+            }
         }
     }
     // entr
