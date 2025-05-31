@@ -137,6 +137,8 @@ void solve() {
     vector<S> qu(q);
     REP(i,q) cin>>qu[i].x>>qu[i].y>>qu[i].z;
     reverse(ALL(qu));
+    Graph g(N);
+    auto add=[]
     for(auto [x,y,z]:qu) {
         if(z!=x&&z!=y) {
             //add(id[z],id[x]);
