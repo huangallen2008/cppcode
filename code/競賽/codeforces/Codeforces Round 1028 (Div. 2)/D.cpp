@@ -141,7 +141,7 @@ void solve() {
     REP(i,n) cin>>a[i];
     Vi vs=a;
     sort(ALL(vs));
-    vs.erase(unique(ALL(vs)),vs.begin());
+    vs.erase(unique(ALL(vs)),vs.end());
     int N=n+q+vs.size();
     int node_id=vs.size();
     oparr(vs)
