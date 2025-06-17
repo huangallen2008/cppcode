@@ -92,14 +92,18 @@ void go(int n,int m) {
     cout<<"n="<<n<<" m="<<m<<": "; REP(i,N-m+1) cout<<an[i]<<' ';cout<<endl;
 }
 int dp[100];
-void F(int n) {
-    
+int F(int n) {
+    if(n==1||n==2) return 1;
+    if(dp[n]) return dp[n];
+    return dp[n]=F(n-1)+F(n-2);
 }
 signed main() {
     IOS();
-    // int n;
-    // cin>>n;
-    REP1(i,3) go(3,i);
-    go(4,2);
+    int n;
+    cin>>n;
+    vector<int> dp(n+1);
+    dp[1]=dp[2]=1;
+    for(int i=2;i<=n;i++) dp[i]=dp[i-1]+dp[i-2];
+    cout<<dp[n]<<'\n';
     return 0;
 }
