@@ -92,7 +92,9 @@ void go(int n,int m) {
     cout<<"n="<<n<<" m="<<m<<": "; REP(i,N-m+1) cout<<an[i]<<' ';cout<<endl;
 }
 int dp[100];
-
+void F(int n) {
+    
+}
 signed main() {
     IOS();
     // int n;
